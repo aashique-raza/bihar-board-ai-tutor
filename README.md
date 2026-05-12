@@ -1,78 +1,78 @@
-# Bihar Board Class 10 Science AI Tutor
+# Bihar Board AI Tutor
 
-An AI tutor for Bihar Board Class 10 Science students.
+## Goal
 
-The tutor should answer student questions in simple Hinglish, using only approved study content. The first version is intentionally narrow: Class 10 Science, 2 chapters, and a thin working RAG pipeline.
+Build a Bihar Board Class 10 Science AI Tutor that answers student questions using approved study content through Retrieval-Augmented Generation (RAG).
 
-## Core Flow
+Students may ask questions in Hindi, Hinglish, or simple English. The final answer should be simple Hinglish and must be grounded only in retrieved/indexed source content.
+
+## Current Status
+
+Planning and context phase.
+
+No application code has been added yet. The project direction is being documented before implementation starts.
+
+## Initial Scope
+
+- Class 10 Science only.
+- First milestone uses only 2 verified chapters.
+- Chapter names are not decided yet.
+- Backend RAG pipeline first.
+- Source content stored locally as clean text files first.
+- Local vector store or JSON-based persisted store first.
+- One API endpoint later for question answering.
+
+## Architecture Summary
 
 ```text
-Study content
--> prepare/index
--> vector search
--> grounded AI answer
--> simple Hinglish answer with sources
+Study Content
+-> Data Loader
+-> Text Cleaner
+-> Chunker
+-> Metadata Builder
+-> Embedding Generator
+-> Local Vector Store
+-> Retriever
+-> Grounded Prompt Builder
+-> LLM Answer Generator
+-> Hinglish Answer with Sources
+```
+
+Student question flow:
+
+```text
+Student Question
+-> API Endpoint
+-> Query Processing
+-> Vector Search
+-> Relevant Chunks
+-> Grounded Hinglish Prompt
+-> LLM
+-> Answer + Sources + Status
 ```
 
 ## First Milestone
 
-Build a minimal backend RAG pipeline:
+Create a minimal backend pipeline that can:
 
-1. Load source content for 2 Science chapters.
-2. Clean the text.
-3. Split content into searchable chunks.
+1. Load 2 verified Class 10 Science chapter text files.
+2. Clean and normalize text.
+3. Chunk content with useful metadata.
 4. Generate embeddings.
-5. Store chunks in a local vector store.
-6. Retrieve relevant content for a student question.
-7. Generate a grounded Hinglish answer.
-8. Expose one API endpoint for question answering.
+5. Persist chunks in a local vector store or JSON-based store.
+6. Retrieve relevant chunks for a student question.
+7. Generate a simple Hinglish answer grounded only in retrieved chunks.
+8. Return answer, sources, and status from one API endpoint.
 
-## Current Constraints
+## Intentionally Not Included Yet
 
-- Start with Class 10 Science only.
-- Start with 2 chapters only.
-- Source content can be Hindi.
-- Questions can be Hindi, Hinglish, or English.
-- Final answer must be simple Hinglish.
-- Do not hallucinate.
-- Answer only from retrieved content.
-- Include sources with answers.
-- Do not build frontend yet.
-- Do not set up database yet.
-
-## Planned Architecture Stages
-
-1. Minimal backend setup
-2. Data loading
-3. Text cleaning
-4. Chunking
-5. Embeddings
-6. Vector store
-7. Retriever
-8. Grounded Hinglish answer generation
-9. API endpoint
-10. Frontend
-11. Admin panel
-12. Analytics/quiz
-
-## Documentation
-
-- `AGENTS.md` - Instructions for AI agents working on this project.
-- `TASKS.md` - Milestone task list.
-- `DECISIONS.md` - Product and technical decisions.
-- `docs/00-project-brief.md` - Product brief.
-- `docs/01-architecture.md` - System architecture.
-- `docs/02-build-roadmap.md` - Build roadmap.
-- `docs/03-data-strategy.md` - Data and content strategy.
-- `docs/04-rag-rules.md` - RAG behavior rules.
-- `docs/05-coding-standards.md` - Future coding standards.
-- `docs/06-api-contract.md` - Planned API contract.
-
-## Success Definition
-
-The first useful version is not a polished app. It is a working backend flow where a student asks a question and receives:
-
-- A simple Hinglish answer.
-- Grounding from retrieved chapter content.
-- Clear source references.
-- A refusal when the answer is not present in the content.
+- Frontend.
+- Database.
+- Admin panel.
+- Analytics.
+- Quiz system.
+- Authentication.
+- Chat history.
+- PDF/OCR pipeline.
+- Hardcoded chapter names.
+- LangChain implementation.

@@ -1,96 +1,109 @@
 # Architecture
 
-## Overview
+## First Milestone Boundary
 
-The project should begin as a minimal backend RAG system.
+The first milestone is backend-only. It proves the RAG pipeline before any frontend, database, admin panel, analytics, or quiz work begins.
+
+## Main Architecture
 
 ```text
-Raw chapter content
--> loader
--> cleaner
--> chunker
--> embeddings
--> vector store
--> retriever
--> grounded answer generator
--> API response
+                     ┌────────────────────┐
+                     │  Study Content      │
+                     │  TXT first          │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │  Loader             │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │  Cleaner            │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │  Chunker + Metadata │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │  Embeddings         │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │ Local Vector Store  │
+                     └─────────┬──────────┘
+                               │
+Student Question ───►│ Retriever           │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │ Grounded Prompt     │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │ LLM Generator       │
+                     └─────────┬──────────┘
+                               │
+                     ┌─────────▼──────────┐
+                     │ Hinglish Answer     │
+                     │ + Sources + Status  │
+                     └────────────────────┘
 ```
 
-## Stage 1: Minimal Backend Setup
+## Indexing Flow
 
-Create the smallest backend needed to run the RAG flow and expose one question-answer endpoint.
+```text
+Study Content
+-> Data Loader
+-> Text Cleaner
+-> Chunker
+-> Metadata Builder
+-> Embedding Generator
+-> Local Vector Store
+```
 
-No frontend.  
-No database.  
-No auth.  
-No admin panel.
+The indexing flow prepares approved study content for retrieval. For the first milestone, input content should be clean `.txt` files from 2 verified Class 10 Science chapters.
 
-## Stage 2: Data Loading
+## Query/Answer Flow
 
-Load approved source files for the first 2 chapters. Content may be Hindi. Each loaded document should carry metadata:
+```text
+Student Question
+-> API Endpoint
+-> Query Processing
+-> Vector Search
+-> Relevant Chunks
+-> Grounded Hinglish Prompt
+-> LLM
+-> Answer + Sources + Status
+```
 
-- Subject
-- Class
-- Chapter
-- Section, if available
-- Source file
-- Page, paragraph, or location reference if available
+The answer generator must use only the retrieved chunks. If the retrieved chunks are insufficient, the response should clearly say that the available material does not contain the answer.
 
-## Stage 3: Text Cleaning
+## Storage Layers
 
-Clean text enough for retrieval quality:
+First milestone:
 
-- Remove repeated headers and footers.
-- Normalize whitespace.
-- Preserve Hindi text.
-- Preserve formulas, units, and important terms.
-- Avoid aggressive translation during cleaning.
+- Local files for source content.
+- Local vector store or JSON-based persisted store.
+- No MongoDB.
+- No Postgres.
+- No production vector database.
 
-## Stage 4: Chunking
+Future storage:
 
-Split content into meaningful chunks.
+- MongoDB or Postgres for users, chat history, feedback, and content metadata.
+- Vector database for semantic search at larger scale.
+- File storage for PDFs, images, and documents.
 
-Chunks should be:
+## Future Architecture Additions
 
-- Small enough for precise retrieval.
-- Large enough to preserve explanation context.
-- Linked to source metadata.
+Possible later additions:
 
-## Stage 5: Embeddings
+- Frontend student interface.
+- Admin content management.
+- Database-backed chat history and feedback.
+- Production vector database.
+- PDF/OCR ingestion.
+- Quiz and practice features.
+- Analytics and quality monitoring.
 
-Generate embeddings for each chunk. The embedding model should handle Hindi and mixed-language content well.
-
-## Stage 6: Vector Store
-
-Use a simple local vector store for the first milestone. This keeps setup fast and avoids database work.
-
-## Stage 7: Retriever
-
-Given a question, retrieve top matching chunks. The retriever should return:
-
-- Chunk text
-- Relevance score, if available
-- Chapter metadata
-- Source reference
-
-## Stage 8: Grounded Hinglish Answer Generation
-
-The generator receives only:
-
-- The user question
-- Retrieved chunks
-- Source metadata
-
-It must produce:
-
-- Simple Hinglish answer
-- Sources used
-- Safe refusal if chunks do not answer the question
-
-## Stage 9: API Endpoint
-
-Expose one endpoint for asking questions. The endpoint should return answer text, sources, and basic retrieval metadata.
-
-## Later Stages
-
-Frontend, admin panel, analytics, and quiz features should come only after the backend pipeline is reliable.
+These are intentionally excluded from the first milestone.

@@ -1,83 +1,119 @@
 # Build Roadmap
 
-## Phase 0: Planning
+## Principle
 
-Create project context files and align on the first milestone.
+Build the smallest backend-first RAG pipeline that proves grounded answering before adding product features.
 
-Output:
+## Stage 0: Documentation/context setup
 
-- Clear scope.
-- RAG rules.
-- Architecture stages.
-- API contract.
-- Task list.
+Status: complete.
 
-## Phase 1: Thin RAG Pipeline
+Outcome:
 
-This is the first implementation phase.
+- Project direction documented.
+- Milestone boundary documented.
+- Non-goals documented.
 
-Build only what is needed to prove the full backend flow:
+## Stage 1: Minimal backend setup
 
-1. Minimal backend project setup.
-2. Load 2 chapters of Class 10 Science content.
-3. Clean text.
-4. Chunk text with metadata.
-5. Create embeddings.
-6. Store vectors locally.
-7. Retrieve relevant chunks.
-8. Generate simple Hinglish answer from retrieved chunks.
-9. Return answer and sources from one API endpoint.
+Status: active next task.
 
-Exit criteria:
+Goal:
 
-- One local command can index the 2 chapters.
-- One API request can ask a question.
-- The answer includes sources.
-- Unsupported questions produce a safe refusal.
+- Create the minimal backend structure only.
+- Keep it simple and easy to replace.
+- Avoid RAG implementation until the structure is approved.
 
-## Phase 2: Evaluation and Reliability
+Do not include:
 
-Improve confidence before adding UI.
+- Frontend.
+- Database.
+- Admin.
+- Analytics.
+- Quiz.
+- LangChain code.
 
-Tasks:
+## Stage 2: Source content setup
 
-- Add chapter-wise test questions.
-- Add tests for missing-content questions.
-- Inspect retrieved chunks for sample questions.
-- Tune chunk size and top-k retrieval.
-- Add logging for retrieval results.
+Goal:
 
-## Phase 3: Frontend
+- Add a local content folder.
+- Add 2 verified Class 10 Science chapter text files.
+- Keep chapter names TBD until sources are verified.
+- Record source metadata.
 
-Build the student-facing UI after backend behavior is stable.
+## Stage 3: Loader
 
-Minimum UI:
+Goal:
 
-- Question input.
-- Answer display.
-- Source list.
-- Error and loading states.
-- Mobile-friendly layout.
+- Load approved `.txt` files.
+- Preserve file and source metadata.
+- Fail clearly if expected source files are missing.
 
-## Phase 4: Admin Panel
+## Stage 4: Cleaner
 
-Add content management only after the first RAG flow is useful.
+Goal:
 
-Possible features:
+- Normalize text.
+- Remove noise.
+- Preserve Hindi meaning and educational structure.
 
-- Upload source files.
-- Rebuild index.
-- View chunks.
-- Review bad answers.
+## Stage 5: Chunker + metadata
 
-## Phase 5: Analytics and Quiz
+Goal:
 
-Add learning features after the tutor can answer reliably.
+- Split content into searchable chunks.
+- Attach source, chapter, section, and location metadata where available.
+- Keep every chunk traceable.
 
-Possible features:
+## Stage 6: Embeddings
 
-- Track common doubts.
-- Track questions with insufficient answers.
-- Generate chapter practice questions.
-- Quiz mode.
-- Weak-topic summary.
+Goal:
+
+- Generate embeddings for chunks.
+- Keep embedding generation replaceable.
+- Store model/provider details in metadata.
+
+## Stage 7: Local vector store persistence
+
+Goal:
+
+- Persist chunks and vectors locally.
+- Support rebuilding from source text.
+- Avoid database setup.
+
+## Stage 8: Retriever
+
+Goal:
+
+- Retrieve relevant chunks for a student question.
+- Return source metadata.
+- Detect weak or empty retrieval.
+
+## Stage 9: Grounded Hinglish answer generator
+
+Goal:
+
+- Generate a simple Hinglish answer.
+- Use only retrieved chunks.
+- Refuse when retrieved content is insufficient.
+- Include sources.
+
+## Stage 10: API endpoint
+
+Goal:
+
+- Provide one backend endpoint for questions.
+- Return answer, sources, and status.
+
+## Stage 11: Evaluation/debugging
+
+Goal:
+
+- Test Hindi, Hinglish, and simple English questions.
+- Test unsupported questions.
+- Inspect retrieval and source attribution.
+
+## Later Stages
+
+Frontend, admin, database, quiz, analytics, auth, and chat history come later only after the thin backend RAG flow works.

@@ -1,79 +1,81 @@
 # Coding Standards
 
-These standards apply when implementation begins. This document does not define current application code.
+## Current Note
 
-## General Principles
+No application code should be written until the user asks for implementation.
 
-- Keep the first implementation small.
-- Prefer clear code over clever abstractions.
-- Make each pipeline stage testable.
-- Preserve source metadata throughout the flow.
-- Keep configuration explicit.
+These standards guide later coding work.
 
-## Project Boundaries
+## Project Style
 
-For the first milestone:
+- Prefer clean, simple Node.js structure.
+- Keep modules small and focused.
+- Keep the pipeline easy to replace later.
+- Avoid unnecessary abstractions.
+- Avoid framework lock-in during the first milestone.
 
-- No frontend.
-- No database.
-- No auth.
-- No admin panel.
-- No analytics.
-- No quiz.
+## Implementation Boundaries
 
-## Module Shape
+Do not add these until explicitly requested:
 
-When code is added later, keep these responsibilities separate:
+- Frontend.
+- Database.
+- Admin panel.
+- Analytics.
+- Quiz system.
+- Auth.
+- Chat history.
+- LangChain code.
 
-- Loading source documents.
-- Cleaning text.
-- Chunking text.
-- Creating embeddings.
-- Storing and searching vectors.
-- Building prompts.
-- Calling the answer model.
-- Formatting API responses.
+## Code Comments
 
-## Data Handling
+Every code file later should have clear comments where comments help explain purpose or non-obvious logic.
 
-- Never drop source metadata from chunks.
-- Keep raw content separate from processed content.
-- Make indexing repeatable.
-- Avoid manual edits to generated indexes.
+Avoid noisy comments that repeat the code.
 
-## RAG Safety
+## RAG Code Expectations
 
-- The answer generator should receive only retrieved context.
-- The API should expose sources with every answer.
-- Unsupported questions should produce a safe refusal.
-- Tests should cover both answerable and unanswerable questions.
+Future RAG modules should keep these responsibilities separate:
 
-## Language Handling
+- Loading.
+- Cleaning.
+- Chunking.
+- Metadata building.
+- Embedding.
+- Local storage.
+- Retrieval.
+- Prompt building.
+- Answer generation.
+- API response formatting.
 
-- Preserve Hindi source content.
-- Accept Hindi, Hinglish, and simple English questions.
-- Return final student answer in simple Hinglish.
-- Avoid unnecessary translation of source text before indexing.
+## Error Handling
 
-## Testing Expectations
+Errors should be clear and actionable.
 
-Start with focused tests:
+For student-facing answer generation:
 
-- Loader reads expected files.
-- Cleaner preserves important Hindi and Science terms.
-- Chunker attaches metadata.
-- Retriever returns expected chapter chunks for known questions.
-- Generator refuses when context is insufficient.
-- API response includes answer and sources.
+- Missing content should produce an insufficient-context status.
+- Failed processing should produce an error status.
+- The system should not silently answer from outside knowledge.
 
-## Logging
+## Configuration
 
-Useful logs for early development:
+Keep provider/model settings configurable later.
 
-- Number of documents loaded.
-- Number of chunks created.
-- Embedding/index creation status.
-- Retrieved chunk ids and scores.
-- Whether the answer was generated or refused.
+Do not hardcode:
 
-Do not log private user data beyond what is needed for local development.
+- Chapter names before verification.
+- API keys.
+- Absolute local machine paths.
+- Production storage assumptions.
+
+## Testing Approach
+
+Start with practical tests:
+
+- Loader can read approved files.
+- Cleaner preserves meaning.
+- Chunker creates traceable chunks.
+- Retriever returns relevant chunks.
+- Generator refuses on insufficient context.
+- API returns answer, sources, and status.

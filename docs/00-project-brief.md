@@ -1,60 +1,67 @@
 # Project Brief
 
-## Name
+## Product Goal
 
-Bihar Board Class 10 Science AI Tutor.
+Build a Bihar Board Class 10 Science AI Tutor that answers student questions using approved study content through RAG.
 
-## Goal
+The tutor should help students understand Science concepts in simple Hinglish while staying grounded only in the indexed source material.
 
-Build an AI tutor that answers Bihar Board Class 10 Science questions using approved study content. Students can ask questions in Hindi, Hinglish, or simple English. The tutor replies in simple Hinglish and includes sources.
+## Target User
+
+Bihar Board Class 10 students studying Science.
+
+Students may ask questions in:
+
+- Hindi.
+- Hinglish.
+- Simple English.
+
+## Problem
+
+Students need simple, trustworthy explanations that match their study material. A generic chatbot may answer from outside knowledge, use language that is too advanced, or provide unsupported claims.
+
+This product should provide traceable answers from approved content only.
 
 ## Initial Scope
 
-The first version must be intentionally small:
-
 - Class 10 Science only.
-- 2 chapters only.
-- Backend RAG pipeline only.
-- No frontend.
-- No database.
-- No admin panel.
-- No analytics.
-- No quiz.
+- First milestone uses 2 verified chapters only.
+- Chapter names are TBD.
+- Backend RAG pipeline first.
+- Local source text files first.
+- Local vector store or JSON-based persistence first.
+- One question-answer API endpoint later.
 
-## Core User Flow
+## Non-Goals
 
-1. Student asks a Science question.
-2. System searches indexed chapter content.
-3. System retrieves relevant chunks.
-4. AI generates an answer only from retrieved chunks.
-5. Student receives a simple Hinglish answer with sources.
+- No frontend in the first milestone.
+- No database in the first milestone.
+- No admin panel in the first milestone.
+- No analytics in the first milestone.
+- No quiz system in the first milestone.
+- No authentication in the first milestone.
+- No chat history in the first milestone.
+- No PDF/OCR pipeline in the first milestone.
+- No hardcoded chapter names before source verification.
 
-## Student Experience
+## Success Criteria for First Milestone
 
-The answer should feel like a helpful tutor:
+The first milestone is successful when the system can:
 
-- Simple words.
-- Short explanation first.
-- Step-by-step detail only when useful.
-- Hindi/Hinglish-friendly terminology.
-- No unnecessary English complexity.
-- No unsupported facts.
+- Load 2 verified Class 10 Science text files.
+- Clean and chunk the content.
+- Generate embeddings.
+- Persist chunks locally.
+- Retrieve relevant chunks for a student question.
+- Generate a simple Hinglish answer using only retrieved content.
+- Return source attribution.
+- Clearly refuse when retrieved content is insufficient.
 
 ## Hard Constraints
 
-- The assistant must not hallucinate.
-- It must not answer from general model knowledge.
-- It must answer only from retrieved content.
-- If the answer is missing from retrieved content, it must say so clearly.
-- Sources must be included.
-
-## First Milestone Success Criteria
-
-The project reaches the first milestone when:
-
-- 2 chapters are loaded and indexed.
-- A backend endpoint accepts a question.
-- Retrieval returns relevant chunks.
-- Answer generation produces simple Hinglish.
-- Every answer includes source references.
-- Insufficient-content questions are refused safely.
+- Do not answer from general model knowledge.
+- Do not hallucinate.
+- Answer only from retrieved/indexed content.
+- Preserve source attribution.
+- Keep final answers in simple Hinglish.
+- Keep the first milestone thin and testable.

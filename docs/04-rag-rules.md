@@ -1,82 +1,75 @@
 # RAG Rules
 
-## Purpose
+## Core Rule
 
-These rules define how the tutor retrieves content and generates answers.
+The system must answer only from retrieved/indexed source content.
+
+It must not answer from general model knowledge.
+
+## Refusal Rule
+
+If retrieved content is insufficient, irrelevant, or missing, the system must clearly refuse.
+
+Recommended student-facing refusal style:
+
+```text
+Available material mein is question ka answer clearly nahi mila.
+```
+
+The refusal may include a short suggestion to ask a related question from the available chapter material, but it must not invent an answer.
+
+## Language Rules
+
+- Source content may be Hindi.
+- User questions may be Hindi, Hinglish, or simple English.
+- Final answer must be simple Hinglish.
+- Avoid overly formal or advanced language.
+- Keep explanations student-friendly.
+
+## Grounding Rules
+
+The prompt sent to the LLM must include:
+
+- Retrieved chunks.
+- Source metadata.
+- Instruction to answer only from the chunks.
+- Instruction to refuse if chunks are insufficient.
+- Instruction to produce simple Hinglish.
+- Instruction to include sources.
+
+## Source Attribution
+
+Every successful answer must include sources.
+
+Sources should be traceable to:
+
+- Chapter/source document.
+- Section or heading if available.
+- Chunk ID or location if available.
 
 ## Retrieval Rules
 
-- Retrieve only from indexed Bihar Board Class 10 Science content.
-- Start with the first 2 approved chapters only.
-- Return top relevant chunks with metadata.
-- Prefer precision over broad coverage.
-- Do not use content from unapproved sources.
+Retriever should return:
 
-## Generation Rules
+- Relevant chunks.
+- Similarity/relevance scores if available.
+- Metadata for each chunk.
 
-The answer generator must:
+The system should treat low-confidence retrieval as insufficient rather than forcing an answer.
 
-- Use only retrieved chunks.
-- Not use general model knowledge.
-- Not invent definitions, examples, formulas, or facts.
-- Write in simple Hinglish.
-- Include sources.
-- Say when the retrieved material is insufficient.
+## Answer Status
 
-## Safe Refusal
+API responses should include a status such as:
 
-If the retrieved chunks do not contain the answer, reply with a short message like:
+- `answered`
+- `insufficient_context`
+- `error`
 
-```text
-Is question ka answer available chapter content me clearly nahi mila. Please chapter/section specify karo ya doosra question pucho.
-```
+## Do Not
 
-The refusal should still include any retrieval metadata useful for debugging, but it should not pretend to answer.
-
-## Answer Style
-
-Use simple Hinglish:
-
-- Explain like a Class 10 tutor.
-- Keep sentences short.
-- Use Hindi-friendly terms where natural.
-- Use English scientific terms when they are common in textbooks.
-- Avoid complex wording.
-
-Example style:
-
-```text
-Photosynthesis ek process hai jisme green plants sunlight ki help se carbon dioxide aur water se food banate hain. Is process me oxygen bhi release hoti hai.
-```
-
-## Source Style
-
-Each answer should include sources in a simple list:
-
-```text
-Sources:
-- Chapter 1, Section: ...
-- Chapter 1, Page: ...
-```
-
-Exact source format can improve later, but every answer must be traceable to chunks.
-
-## Prompt Requirements
-
-The generation prompt should clearly say:
-
-- Answer only from provided context.
-- If context is insufficient, refuse.
-- Final answer must be simple Hinglish.
-- Do not mention unsupported facts.
-- Include sources.
-
-## Quality Checks
-
-For each test question, check:
-
-- Did retrieval find the right chapter section?
-- Did the answer use only retrieved content?
-- Did the answer avoid unsupported claims?
-- Is the Hinglish simple enough for Class 10?
-- Are sources included?
+- Do not hallucinate.
+- Do not add outside facts.
+- Do not answer from memory.
+- Do not hide missing context.
+- Do not omit sources for grounded answers.
+- Do not hardcode chapter names before verification.

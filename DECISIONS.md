@@ -1,59 +1,72 @@
 # DECISIONS.md
 
-## Decision Log
+## Architecture Decisions
 
-### D001: Start Narrow
+### Start with a thin RAG pipeline
 
-Decision: Start with Class 10 Science only, and only 2 chapters.
+The first milestone should prove the smallest useful RAG flow before adding product surface area.
 
-Reason: A small content set makes it easier to test retrieval quality, answer grounding, source citation, and Hinglish answer style before expanding.
+Chosen flow:
 
-Status: Accepted.
+```text
+Study Content
+-> Data Loader
+-> Text Cleaner
+-> Chunker
+-> Metadata Builder
+-> Embedding Generator
+-> Local Vector Store
+-> Retriever
+-> Grounded Prompt Builder
+-> LLM Answer Generator
+-> Hinglish Answer with Sources
+```
 
-### D002: Backend Before Frontend
+### Start with clean `.txt` content
 
-Decision: Build the thin RAG backend before any frontend.
+Use verified clean text files first. Do not start with PDFs, OCR, scanned documents, or image extraction.
 
-Reason: The main product risk is not UI. The main risk is whether the tutor can reliably answer from source content without hallucinating.
+Reason: clean text makes the first milestone easier to test and debug.
 
-Status: Accepted.
+### Keep source Hindi if needed
 
-### D003: No Database in First Milestone
+Source content may be Hindi. The pipeline should preserve the meaning of Hindi source material during cleaning and chunking.
 
-Decision: Avoid database setup in the first milestone.
+### Final response must be Hinglish
 
-Reason: Early development should focus on the pipeline. A local file-based content store and local vector store are enough for proof of concept.
+Student-facing answers should be simple Hinglish, even when the source content is Hindi or the question is in Hindi, Hinglish, or simple English.
 
-Status: Accepted.
+### No database first
 
-### D004: Source-Only Answers
+Do not set up MongoDB, Postgres, or any database in the first milestone.
 
-Decision: The answer generator must use only retrieved content.
+First milestone storage:
 
-Reason: This is a board exam study tutor. Trust and correctness matter more than broad conversational ability.
+- Local files for source content.
+- Local vector store or JSON-based persisted store for chunks and embeddings.
 
-Status: Accepted.
+### No frontend first
 
-### D005: Hinglish Output
+Do not build a frontend in the first milestone. Prove the backend RAG pipeline first.
 
-Decision: Final answers should be in simple Hinglish even if the source content is Hindi.
+### No admin first
 
-Reason: Many students are comfortable asking in Hindi/Hinglish, and simple Hinglish can make Science explanations easier to understand.
+Do not build admin tools, upload workflows, dashboards, or content management in the first milestone.
 
-Status: Accepted.
+### Local vector store first
 
-### D006: Refuse When Content Is Insufficient
+Use a local vector store or simple JSON-based persistence first. A production vector database can be considered later after the retrieval behavior is validated.
 
-Decision: If retrieval does not provide enough information, the tutor should say it cannot answer from the available material.
+### Chapter names are TBD
 
-Reason: A transparent refusal is better than a confident unsupported answer.
+The first milestone will use 2 verified Class 10 Science chapters, but chapter names are not decided yet. Do not hardcode chapter names until verified source selection is complete.
 
-Status: Accepted.
+### Correctness over cleverness
 
-### D007: Sources Required
+The system must prioritize:
 
-Decision: Every answer should include source references.
-
-Reason: Sources help students trust the answer and help developers debug retrieval quality.
-
-Status: Accepted.
+- Grounded answers.
+- Clear refusals when content is insufficient.
+- Source attribution.
+- Simple student-friendly language.
+- Easy debugging.

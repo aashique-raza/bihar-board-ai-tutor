@@ -1,66 +1,108 @@
 # TASKS.md
 
-## Milestone 0: Planning Context
+## Current Active Next Task
 
-- [x] Create project planning files.
-- [x] Define scope and constraints.
-- [x] Define architecture stages.
-- [x] Define RAG behavior rules.
-- [x] Define first API contract.
+Stage 1: Minimal backend setup only
 
-## Milestone 1: Thin Working RAG Pipeline
+## Staged Checklist
 
-Goal: prove the full backend flow with 2 chapters and no frontend.
+### Stage 0: Documentation/context setup
 
-- [ ] Choose the first 2 Class 10 Science chapters.
-- [ ] Collect source content for those chapters.
-- [ ] Store raw source files in a clear local folder.
-- [ ] Add metadata for each source: chapter, section, language, page or paragraph reference.
-- [ ] Implement a data loader.
-- [ ] Implement text cleaning for Hindi and mixed Hindi-English text.
-- [ ] Implement chunking with source metadata.
+- [x] Recreate `AGENTS.md`.
+- [x] Recreate `README.md`.
+- [x] Recreate `TASKS.md`.
+- [x] Recreate `DECISIONS.md`.
+- [x] Recreate docs folder documentation.
+- [x] Confirm project direction and first milestone limits.
+
+### Stage 1: Minimal backend setup
+
+- [ ] Create a minimal backend folder structure only.
+- [ ] Add basic Node.js project files only if requested.
+- [ ] Add a simple health endpoint only if requested.
+- [ ] Do not add RAG implementation yet.
+- [ ] Do not install packages without approval or clear need.
+
+### Stage 2: Data folder + two verified chapter text files
+
+- [ ] Create a local source content folder.
+- [ ] Add only 2 verified Class 10 Science chapter text files.
+- [ ] Keep chapter names TBD until verified.
+- [ ] Record source metadata for each file.
+
+### Stage 3: Loader
+
+- [ ] Load local text files.
+- [ ] Preserve file-level metadata.
+- [ ] Validate that only approved files are loaded.
+
+### Stage 4: Cleaner
+
+- [ ] Normalize whitespace.
+- [ ] Remove irrelevant noise.
+- [ ] Preserve meaningful Hindi text.
+- [ ] Avoid changing educational meaning.
+
+### Stage 5: Chunker + metadata
+
+- [ ] Split cleaned text into chunks.
+- [ ] Attach chapter/source/page/section metadata where available.
+- [ ] Keep chunks traceable to original content.
+
+### Stage 6: Embeddings
+
+- [ ] Choose embedding provider/model.
 - [ ] Generate embeddings for chunks.
-- [ ] Store vectors in a simple local vector store.
-- [ ] Build a retriever that returns top relevant chunks.
-- [ ] Build grounded answer generation with strict source-only behavior.
-- [ ] Return simple Hinglish answer with sources.
-- [ ] Add one question-answer API endpoint.
-- [ ] Add basic tests for retrieval and grounded answer behavior.
+- [ ] Store embedding metadata.
 
-## Milestone 2: Reliability Improvements
+### Stage 7: Local vector store persistence
 
-- [ ] Add test questions for each chapter.
-- [ ] Add "insufficient content" test cases.
-- [ ] Add source citation checks.
-- [ ] Add logging for retrieval scores and selected chunks.
-- [ ] Add configurable chunk size and top-k retrieval.
-- [ ] Add simple evaluation notes for answer quality.
+- [ ] Persist chunks and embeddings locally.
+- [ ] Support rebuild from source text.
+- [ ] Avoid database setup.
 
-## Milestone 3: Frontend
+### Stage 8: Retriever
 
-Not part of the first milestone.
+- [ ] Accept a student question.
+- [ ] Search local vector store.
+- [ ] Return top relevant chunks with metadata.
+- [ ] Handle low-confidence or empty retrieval.
 
-- [ ] Student question input.
-- [ ] Answer display.
-- [ ] Source display.
-- [ ] Loading and error states.
-- [ ] Mobile-friendly layout.
+### Stage 9: Grounded Hinglish answer generator
 
-## Milestone 4: Admin Panel
+- [ ] Build a prompt using only retrieved chunks.
+- [ ] Generate simple Hinglish answer.
+- [ ] Refuse when retrieved content is insufficient.
+- [ ] Include sources in output.
 
-Not part of the first milestone.
+### Stage 10: API endpoint
 
-- [ ] Upload or manage chapter content.
-- [ ] Re-index content.
-- [ ] View indexed chunks.
-- [ ] Check failed or low-confidence answers.
+- [ ] Add one question-answer endpoint.
+- [ ] Return answer, sources, and status.
+- [ ] Keep API contract simple and testable.
 
-## Milestone 5: Analytics and Quiz
+### Stage 11: Evaluation/debugging
 
-Not part of the first milestone.
+- [ ] Add small manual test set.
+- [ ] Test Hindi, Hinglish, and simple English questions.
+- [ ] Test insufficient-context refusal.
+- [ ] Inspect retrieved chunks and source attribution.
 
-- [ ] Track common question topics.
-- [ ] Track unanswered questions.
-- [ ] Generate simple practice questions from approved content.
-- [ ] Add chapter-wise quiz mode.
-- [ ] Add weak-topic recommendations.
+### Stage 12: Frontend later
+
+- [ ] Defer until backend RAG flow works.
+
+### Stage 13: Admin later
+
+- [ ] Defer content management/admin workflows.
+
+### Stage 14: Database later
+
+- [ ] Defer MongoDB/Postgres.
+- [ ] Defer user, chat history, feedback, and metadata persistence.
+
+### Stage 15: Quiz/analytics later
+
+- [ ] Defer quizzes.
+- [ ] Defer analytics.
+- [ ] Defer dashboards and reporting.

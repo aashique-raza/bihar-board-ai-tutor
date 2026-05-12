@@ -1,99 +1,89 @@
 # Data Strategy
 
-## Initial Content Scope
-
-Use only 2 chapters from Bihar Board Class 10 Science for the first milestone.
-
-The exact chapters should be chosen before implementation. Good selection criteria:
-
-- Common exam importance.
-- Clear textual explanations.
-- Enough student questions to test retrieval.
-- Content available in clean Hindi or bilingual format.
-
 ## Source Content
 
-Source content can be Hindi. Do not translate the entire source before indexing unless testing shows retrieval is poor.
+The first milestone uses approved Bihar Board Class 10 Science study content only.
 
-Preferred source properties:
+Start with 2 verified chapters. Chapter names are TBD and must not be hardcoded before source verification.
 
-- Official or approved.
-- Chapter and section structure available.
-- Page numbers or stable references available.
-- Clean text extraction possible.
+## Input Format
 
-## File Organization
+Use clean `.txt` files first.
 
-Suggested future structure:
+Do not start with:
+
+- PDFs.
+- OCR.
+- Scanned documents.
+- Images.
+- Web scraping.
+
+Clean text makes the pipeline easier to test and keeps early debugging focused on RAG behavior.
+
+## Language
+
+Source content may be Hindi.
+
+The pipeline should preserve Hindi text and meaning during cleaning, chunking, and metadata creation.
+
+Students may ask in:
+
+- Hindi.
+- Hinglish.
+- Simple English.
+
+Final answers must be simple Hinglish.
+
+## Local Folder Plan
+
+The later implementation may use a structure like:
 
 ```text
 data/
-  raw/
-    class-10-science/
-      chapter-01/
-      chapter-02/
+  source/
   processed/
-  indexes/
+  vector-store/
 ```
 
-Do not add these folders until implementation begins.
+This is a planning suggestion, not an instruction to create application code immediately.
 
 ## Metadata
 
-Every document and chunk should preserve metadata:
+Each source document should eventually track:
 
-- `class`: `10`
-- `subject`: `Science`
-- `board`: `Bihar Board`
-- `chapter_id`
-- `chapter_title`
-- `section_title`, if available
-- `source_file`
-- `page`, paragraph, or location reference if available
-- `language`
+- Subject.
+- Class.
+- Board.
+- Chapter identifier.
+- Chapter title after verification.
+- Source file path.
+- Source type.
+- Version or date added.
 
-## Cleaning Rules
+Each chunk should eventually track:
 
-Cleaning should improve retrieval without damaging meaning.
+- Chunk ID.
+- Source document ID.
+- Chapter identifier.
+- Section or heading if available.
+- Text range or location if available.
+- Original source reference.
 
-Keep:
+## Content Approval
 
-- Hindi terms.
-- Scientific names.
-- Chemical symbols.
-- Equations.
-- Units.
-- Numbered points.
-- Definitions.
+Only approved source files should enter the index.
 
-Remove or normalize:
+The system should be able to rebuild the local vector store from approved source text.
 
-- Repeated headers and footers.
-- Page noise.
-- Broken spacing.
-- Duplicate lines.
-- OCR artifacts when safe.
+## Future Data Work
 
-## Chunking Strategy
+Later versions may add:
 
-Start with simple chunking:
+- PDF ingestion.
+- OCR.
+- File storage.
+- Content review workflows.
+- Database-backed content metadata.
+- Versioned content releases.
 
-- Prefer section-aware chunks.
-- Keep definitions and examples together.
-- Use overlap to avoid losing context.
-- Store source metadata with every chunk.
-
-Avoid:
-
-- Huge chunks that mix many topics.
-- Tiny chunks that lose meaning.
-- Chunks without source references.
-
-## Expansion Strategy
-
-After the first 2 chapters are reliable:
-
-1. Add more chapters one by one.
-2. Run the same evaluation questions.
-3. Compare retrieval quality.
-4. Only then consider a stronger content pipeline or database.
+These are outside the first milestone.
