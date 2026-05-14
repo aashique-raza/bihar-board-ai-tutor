@@ -24,3 +24,7 @@ storage/
 .DS_Store
 Thumbs.db
 .vscode/
+
+
+data/raw-pdf/
+data/extracted/*.md
