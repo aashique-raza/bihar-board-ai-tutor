@@ -14,10 +14,10 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-003: Curated Content Loader
+TASK-004: Chunking Strategy
 
 Task file:
-tasks/TASK-003-curated-content-loader.md
+tasks/TASK-004-chunking-strategy.md
 
 ## Completed Tasks
 
@@ -47,6 +47,20 @@ Completed:
 - Established curated English Markdown as the primary RAG source.
 - Kept Hindi PDFs as reference material only.
 - Confirmed no embeddings, chunking, vector DB, or RAG were added.
+
+### TASK-003: Curated Content Loader
+
+Status: DONE
+
+Task file:
+tasks/TASK-003-curated-content-loader.md
+
+Completed:
+- Created curated Markdown loader.
+- Loaded Markdown files recursively from data/curated.
+- Parsed frontmatter metadata.
+- Added preview command for loaded curated content.
+- Confirmed no embeddings, chunking, vector DB, retrieval, LLM, or API endpoint were added.
 
 ## Staged Project Roadmap
 
@@ -107,7 +121,7 @@ Acceptance Criteria:
 
 ### Stage 3: Curated Content Loader
 
-Status: IN PROGRESS
+Status: DONE
 
 Goal:
 Load curated Markdown files from data/curated.
@@ -123,7 +137,7 @@ No embeddings in this stage.
 
 ### Stage 4: Chunking Strategy
 
-Status: NOT STARTED
+Status: IN PROGRESS
 
 Goal:
 Split curated Markdown into clean RAG-friendly chunks.

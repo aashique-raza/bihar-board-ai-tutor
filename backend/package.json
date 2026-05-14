@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "rag:preview-content": "node src/rag/dev/previewCuratedContent.js"
+    "rag:preview-content": "node src/rag/dev/previewCuratedContent.js",
+    "rag:preview-chunks": "node src/rag/dev/previewChunks.js"
   },
   "dependencies": {
     "@langchain/classic": "^1.0.32",
