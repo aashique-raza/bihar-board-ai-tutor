@@ -14,10 +14,10 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-002: Curated Content Foundation
+TASK-003: Curated Content Loader
 
 Task file:
-tasks/TASK-002-curated-content-foundation.md
+tasks/TASK-003-curated-content-loader.md
 
 ## Completed Tasks
 
@@ -34,6 +34,19 @@ Completed:
 - Added basic Express app/server setup.
 - Added config, middleware, utils, and route structure.
 - Backend runs successfully.
+
+### TASK-002: Curated Content Foundation
+
+Status: DONE
+
+Task file:
+tasks/TASK-002-curated-content-foundation.md
+
+Completed:
+- Confirmed curated Markdown content path.
+- Established curated English Markdown as the primary RAG source.
+- Kept Hindi PDFs as reference material only.
+- Confirmed no embeddings, chunking, vector DB, or RAG were added.
 
 ## Staged Project Roadmap
 
@@ -68,7 +81,7 @@ Completed:
 
 ### Stage 2: Curated Content Foundation
 
-Status: IN PROGRESS
+Status: DONE
 
 Goal:
 Set up clean curated Markdown content as the real knowledge source.
@@ -94,7 +107,7 @@ Acceptance Criteria:
 
 ### Stage 3: Curated Content Loader
 
-Status: NOT STARTED
+Status: IN PROGRESS
 
 Goal:
 Load curated Markdown files from data/curated.
