@@ -24,7 +24,7 @@
 
 ### TASK-001: Minimal Backend Foundation
 
-Status: TODO
+Status: DONE
 
 Task File:
 tasks/TASK-001-minimal-backend-foundation.md
@@ -102,25 +102,25 @@ Test Plan:
 
 ### Stage 1: Minimal backend setup
 
-- [ ] Create `backend/` folder.
-- [ ] Initialize Node.js project.
-- [ ] Configure ES Modules.
-- [ ] Install only required packages:
+- [x] Create `backend/` folder.
+- [x] Initialize Node.js project.
+- [x] Configure ES Modules.
+- [x] Install only required packages:
   - express
   - dotenv
   - cors
   - morgan
   - nodemon as dev dependency
-- [ ] Add basic Express app.
-- [ ] Add `/health` endpoint.
-- [ ] Add centralized error handling.
-- [ ] Add `.env.example`.
-- [ ] Add clean folder structure.
-- [ ] Verify server runs locally.
-- [ ] Do not add RAG implementation.
-- [ ] Do not add database.
-- [ ] Do not add auth.
-- [ ] Do not add frontend.
+- [x] Add basic Express app.
+- [x] Add `/health` endpoint.
+- [x] Add centralized error handling.
+- [x] Add `.env.example`.
+- [x] Add clean folder structure.
+- [x] Verify server runs locally.
+- [x] Do not add RAG implementation.
+- [x] Do not add database.
+- [x] Do not add auth.
+- [x] Do not add frontend.
 
 ### Stage 2: Data folder + two verified chapter text files
 

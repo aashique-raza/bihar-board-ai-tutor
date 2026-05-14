@@ -1,6 +1,6 @@
 # TASK-001: Minimal Backend Foundation
 
-Status: TODO
+Status: DONE
 
 ## Goal
 
