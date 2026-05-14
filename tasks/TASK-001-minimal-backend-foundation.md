@@ -144,3 +144,25 @@ After implementing this task later, Codex must report:
 - Commands run
 - How to test
 - Assumptions made
+
+## Completion Report
+
+TASK-001 is completed.
+
+Verified:
+- Backend folder was created.
+- Node.js project was initialized inside backend.
+- ES Modules were configured.
+- Express server was added.
+- `/health` endpoint works.
+- Unknown routes return clean JSON error.
+- `.env.example` exists.
+- No database was added.
+- No RAG logic was added.
+- No frontend was added.
+- No auth was added.
+
+Manual Test Result:
+- `npm run dev` passed.
+- `GET /health` passed.
+- `GET /wrong-route` returned clean JSON error.

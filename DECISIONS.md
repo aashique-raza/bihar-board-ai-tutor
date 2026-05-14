@@ -70,3 +70,16 @@ The system must prioritize:
 - Source attribution.
 - Simple student-friendly language.
 - Easy debugging.
+
+## TASK-001 Completed
+
+Minimal backend foundation is complete.
+
+Verified:
+- Backend server runs locally.
+- Health endpoint works.
+- Unknown route error handling works.
+- No database, RAG, auth, frontend, or admin logic was added.
+
+Next decision:
+TASK-002 will prepare local source content structure only. Actual chapter content will not be invented or added until verified.

@@ -22,72 +22,45 @@
 
 ## Current Active Next Task
 
-### TASK-001: Minimal Backend Foundation
+### TASK-002: Local Source Content Folder Setup
 
-Status: DONE
+Status: TODO
 
 Task File:
-tasks/TASK-001-minimal-backend-foundation.md
+tasks/TASK-002-local-source-content-setup.md
 
 Goal:
-Create a minimal backend foundation for the Bihar Board Class 10 Science AI Tutor project.
+Create the local source content folder structure and metadata tracking format for the first 2 verified Class 10 Science chapters.
+
+Important:
+Do not write or invent chapter content. Actual chapter text will be added only after source verification.
 
 Allowed Changes:
-- Create `backend/` folder.
-- Initialize Node.js project inside `backend/`.
-- Use ES Modules.
-- Add Express server.
-- Add `/health` endpoint.
-- Add basic centralized error response.
-- Add `.env.example`.
-- Add basic folder structure.
+- Create local content folder structure.
+- Create metadata template for source tracking.
+- Create README explaining how verified content should be added.
+- Prepare placeholder folder names only if needed.
 
 Forbidden Changes:
-- Do not add RAG logic.
+- Do not add fake educational content.
+- Do not add unverified chapter notes.
 - Do not add embeddings.
-- Do not add vector store.
-- Do not add database.
-- Do not add authentication.
-- Do not add frontend.
-- Do not add admin panel.
-- Do not add quiz logic.
-- Do not add deployment config.
-
-Expected Folder Structure:
-
-```text
-backend/
-  package.json
-  .env.example
-  src/
-    app.js
-    server.js
-    config/
-      env.js
-    routes/
-      health.routes.js
-    controllers/
-      health.controller.js
-    middlewares/
-      error.middleware.js
-    utils/
-      ApiError.js
-      sendResponse.js
-```
+- Do not add loader code.
+- Do not add cleaner code.
+- Do not add RAG code.
+- Do not modify backend code.
 
 Acceptance Criteria:
-- `npm run dev` starts the backend server.
-- `GET /health` returns a JSON success response.
-- Unknown routes return a clean JSON error.
-- No database connection exists.
-- No RAG code exists.
-- No frontend code exists.
+- Content folder structure is clearly defined.
+- Source metadata format is ready.
+- No fake study content exists.
+- Next step is ready for adding 2 verified chapter text files.
 
 Test Plan:
-- Run `npm install`.
-- Run `npm run dev`.
-- Open `http://localhost:5000/health`.
-- Test invalid route like `/wrong-route`.
+- Confirm folder structure exists.
+- Confirm metadata JSON is valid.
+- Confirm no unverified educational content was added.
+- Confirm backend code was not changed.
 
 ## Staged Checklist
 
