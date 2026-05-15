@@ -87,3 +87,24 @@ Run from the backend folder:
 ```powershell
 npm run rag:preview-chunks
 ```
+
+## Multi-file Scalability Check
+
+- The curated Markdown loader reads recursively from `data/curated`.
+- The loader returns all `.md` files and sorts them by file path for stable output.
+- The chunker works on the full documents array, not a single file.
+- Each chunk preserves source metadata and includes per-document `chunkIndex` plus `globalChunkIndex`.
+- Future chapters such as `chapter-02.md` or `chapter-03.md` need no code changes when added under `data/curated/{subject}/{classLevel}/`.
+- Validation command:
+
+```powershell
+npm run rag:validate-content
+```
+
+- Multi-file smoke test command:
+
+```powershell
+npm run rag:smoke-multi-file
+```
+
+The smoke test creates temporary curated files and removes them in a `finally` block.

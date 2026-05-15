@@ -9,15 +9,28 @@ const previewText = (text, length = 300) => text.replace(/\s+/g, ' ').trim().sli
 const getChapterTitle = (metadata) =>
   metadata.title || metadata.chapter_title || metadata.chapterTitle || metadata.chapterSlug || 'Untitled';
 
+const countChunksBySource = (chunks) =>
+  chunks.reduce((counts, chunk) => {
+    const source = chunk.metadata.filePath || chunk.metadata.source || 'unknown';
+    counts[source] = (counts[source] || 0) + 1;
+    return counts;
+  }, {});
+
 const run = async () => {
   const documents = await loadCuratedMarkdownDocuments();
   const chunks = await chunkMarkdownDocuments(documents);
+  const sourceCounts = countChunksBySource(chunks);
 
   console.log(`Source documents loaded: ${documents.length}`);
   console.log(`Total chunks created: ${chunks.length}`);
   console.log(
     `Chunk config: size=${DEFAULT_MARKDOWN_CHUNK_OPTIONS.chunkSize}, overlap=${DEFAULT_MARKDOWN_CHUNK_OPTIONS.chunkOverlap}`,
   );
+  console.log('Chunk count per source file:');
+
+  Object.entries(sourceCounts).forEach(([source, count]) => {
+    console.log(`- ${source}: ${count}`);
+  });
 
   chunks.forEach((chunk, index) => {
     const { metadata, pageContent } = chunk;

@@ -49,11 +49,17 @@ export const loadCuratedMarkdownDocuments = async (options = {}) => {
     return [];
   }
 
-  return loadedDocs.map((doc) => {
+  return loadedDocs
+    .sort((left, right) => left.metadata.source.localeCompare(right.metadata.source))
+    .map((doc) => {
     const sourcePath = doc.metadata.source;
     const parsed = matter(doc.pageContent);
     const pathMetadata = inferMetadataFromPath(sourcePath, curatedRoot);
     const relativeFilePath = normalizePath(path.relative(repoRoot, sourcePath));
+    const frontmatterMetadata = {
+      ...parsed.data,
+      title: parsed.data.title || parsed.data.chapter_title || parsed.data.chapterTitle,
+    };
 
     return {
       pageContent: parsed.content.trim(),
@@ -63,7 +69,7 @@ export const loadCuratedMarkdownDocuments = async (options = {}) => {
         filePath: relativeFilePath,
         fileName: path.basename(sourcePath),
         ...pathMetadata,
-        ...parsed.data,
+        ...frontmatterMetadata,
       },
     };
   });

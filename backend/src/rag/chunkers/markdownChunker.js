@@ -38,6 +38,7 @@ export const chunkMarkdownDocuments = async (documents, options = {}) => {
   });
 
   const chunks = [];
+  let globalChunkIndex = 0;
 
   for (const document of documents) {
     const splitDocuments = await splitter.createDocuments(
@@ -60,12 +61,15 @@ export const chunkMarkdownDocuments = async (documents, options = {}) => {
           ...document.metadata,
           ...splitDocument.metadata,
           chunkIndex: index,
+          globalChunkIndex,
           chunkType: 'markdown_section',
           sectionTitle: headingMetadata.sectionTitle,
           sectionLevel: headingMetadata.sectionLevel,
           charCount: pageContent.length,
         },
       });
+
+      globalChunkIndex += 1;
     });
   }
 

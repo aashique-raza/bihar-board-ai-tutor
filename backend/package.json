@@ -8,7 +8,9 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "rag:preview-content": "node src/rag/dev/previewCuratedContent.js",
-    "rag:preview-chunks": "node src/rag/dev/previewChunks.js"
+    "rag:preview-chunks": "node src/rag/dev/previewChunks.js",
+    "rag:validate-content": "node src/rag/dev/validateCuratedContent.js",
+    "rag:smoke-multi-file": "node src/rag/dev/smokeTestMultipleCuratedFiles.js"
   },
   "dependencies": {
     "@langchain/classic": "^1.0.32",
