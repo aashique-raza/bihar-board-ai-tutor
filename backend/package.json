@@ -12,10 +12,13 @@
     "rag:validate-content": "node src/rag/dev/validateCuratedContent.js",
     "rag:smoke-multi-file": "node src/rag/dev/smokeTestMultipleCuratedFiles.js",
     "test:loader": "node src/loaders/testMarkdownLoader.js",
-    "inspect:loader": "node src/loaders/inspectMarkdownLoader.js"
+    "inspect:loader": "node src/loaders/inspectMarkdownLoader.js",
+    "test:chunks": "node src/chunkers/testMarkdownChunker.js",
+    "inspect:chunks": "node src/chunkers/inspectMarkdownChunks.js"
   },
   "dependencies": {
     "@langchain/classic": "^1.0.32",
+    "@langchain/textsplitters": "^1.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
