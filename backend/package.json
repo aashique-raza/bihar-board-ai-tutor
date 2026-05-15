@@ -7,14 +7,10 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "rag:preview-content": "node src/rag/dev/previewCuratedContent.js",
-    "rag:preview-chunks": "node src/rag/dev/previewChunks.js",
-    "rag:validate-content": "node src/rag/dev/validateCuratedContent.js",
-    "rag:smoke-multi-file": "node src/rag/dev/smokeTestMultipleCuratedFiles.js",
-    "test:loader": "node src/loaders/testMarkdownLoader.js",
-    "inspect:loader": "node src/loaders/inspectMarkdownLoader.js",
-    "test:chunks": "node src/chunkers/testMarkdownChunker.js",
-    "inspect:chunks": "node src/chunkers/inspectMarkdownChunks.js"
+    "test:loader": "node src/rag/loaders/testMarkdownLoader.js",
+    "inspect:loader": "node src/rag/loaders/inspectMarkdownLoader.js",
+    "test:chunks": "node src/rag/chunkers/testMarkdownChunker.js",
+    "inspect:chunks": "node src/rag/chunkers/inspectMarkdownChunks.js"
   },
   "dependencies": {
     "@langchain/classic": "^1.0.32",
