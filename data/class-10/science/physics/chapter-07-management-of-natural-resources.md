@@ -2,8 +2,8 @@
 board: Bihar Board
 class: 10
 subject: Science
-section: Biology
-chapter_no: 6
+section: Physics
+chapter_no: 7
 original_science_chapter_no: 16
 chapter_title: Management of Natural Resources
 language: English

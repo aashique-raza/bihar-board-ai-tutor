@@ -4,6 +4,7 @@ class: 10
 subject: Science
 section: Chemistry
 chapter_no: 5
+original_science_chapter_no: 5
 chapter_title: Periodic Classification of Elements
 language: English
 source_type: cleaned_markdown

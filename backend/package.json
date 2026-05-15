@@ -10,7 +10,9 @@
     "rag:preview-content": "node src/rag/dev/previewCuratedContent.js",
     "rag:preview-chunks": "node src/rag/dev/previewChunks.js",
     "rag:validate-content": "node src/rag/dev/validateCuratedContent.js",
-    "rag:smoke-multi-file": "node src/rag/dev/smokeTestMultipleCuratedFiles.js"
+    "rag:smoke-multi-file": "node src/rag/dev/smokeTestMultipleCuratedFiles.js",
+    "test:loader": "node src/loaders/testMarkdownLoader.js",
+    "inspect:loader": "node src/loaders/inspectMarkdownLoader.js"
   },
   "dependencies": {
     "@langchain/classic": "^1.0.32",

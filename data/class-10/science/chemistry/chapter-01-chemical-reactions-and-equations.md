@@ -4,6 +4,7 @@ class: 10
 subject: Science
 section: Chemistry
 chapter_no: 1
+original_science_chapter_no: 1
 chapter_title: Chemical Reactions and Equations
 language: English
 source_language: Hindi

@@ -4,6 +4,7 @@ class: 10
 subject: Science
 section: Chemistry
 chapter_no: 4
+original_science_chapter_no: 4
 chapter_title: Carbon and Its Compounds
 language: English
 source_type: cleaned_markdown

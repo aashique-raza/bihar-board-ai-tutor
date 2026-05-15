@@ -4,6 +4,7 @@ class: 10
 subject: Science
 section: Chemistry
 chapter_no: 3
+original_science_chapter_no: 3
 chapter_title: Metals and Non-metals
 language: English
 source_type: cleaned_markdown
