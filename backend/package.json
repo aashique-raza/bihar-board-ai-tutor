@@ -13,6 +13,7 @@
     "inspect:chunks": "node src/rag/chunkers/inspectMarkdownChunks.js",
     "rag:index": "node src/rag/pipelines/indexPipeline.js",
     "rag:query": "node src/rag/pipelines/queryPipeline.js",
+    "rag:test-retriever": "node scripts/test-retriever.js",
     "test:embedding-smoke": "node scripts/test-langchain-embedding-smoke.js",
     "test:vector-store": "node scripts/validate-vector-store.js",
     "test:retrieval": "node scripts/test-vector-store-load-search.js"
