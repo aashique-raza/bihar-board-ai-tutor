@@ -57,6 +57,56 @@ Do not build admin tools, upload workflows, dashboards, or content management in
 
 Use a local vector store or simple JSON-based persistence first. A production vector database can be considered later after the retrieval behavior is validated.
 
+### Gemini embeddings first
+
+Use Gemini as the current embedding provider.
+
+Current embedding model:
+
+- `gemini-embedding-001`
+
+Current implementation:
+
+- LangChain `GoogleGenerativeAIEmbeddings`
+- LangChain `Document`
+- LangChain `MemoryVectorStore`
+
+Observed embedding dimension:
+
+- 3072
+
+The project may benchmark OpenAI embeddings later, but Gemini remains the accepted provider for the current retrieval milestone.
+
+### LangChain MemoryVectorStore for local MVP
+
+Use LangChain `MemoryVectorStore` for the current local MVP retrieval layer.
+
+Reason:
+
+- This is a LangChain learning and RAG project.
+- LangChain already provides document, embedding, vector store, and retrieval primitives.
+- Manual custom vector search should not replace LangChain retrieval in the active pipeline.
+
+### Persist MemoryVectorStore to local JSON
+
+Persist the current LangChain `MemoryVectorStore` to:
+
+```text
+backend/storage/vector-store.json
+```
+
+This is temporary MVP storage. It depends on LangChain's internal `memoryVectors` shape and is acceptable for local testing, but not production.
+
+### Real vector DB later
+
+Do not add Qdrant, Chroma, Pinecone, MongoDB Vector Search, Supabase Vector, or another real vector database yet.
+
+Move to a production vector database only after local retrieval behavior is validated.
+
+### OpenAI embeddings benchmark later
+
+Keep OpenAI embedding comparison as a later benchmark. Do not switch providers until retrieval quality, cost, and implementation tradeoffs are evaluated.
+
 ### Chapter names are TBD
 
 The first milestone will use 2 verified Class 10 Science chapters, but chapter names are not decided yet. Do not hardcode chapter names until verified source selection is complete.

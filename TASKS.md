@@ -6,7 +6,7 @@ Bihar Board Class 10 Science AI Tutor
 
 ## Current Direction
 
-The project will use curated English Markdown files as the primary knowledge source for RAG.
+The project uses curated English Markdown files as the primary knowledge source for RAG.
 
 Hindi PDFs are reference material only.
 
@@ -14,10 +14,13 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-004: Chunking Strategy
+TASK-009: RAG Answer Generation Pipeline
 
 Task file:
-tasks/TASK-004-chunking-strategy.md
+To be created when implementation starts.
+
+Goal:
+Use retrieved chunks to generate grounded simple Hinglish answers with sources, and refuse when retrieved context is insufficient.
 
 ## Completed Tasks
 
@@ -57,19 +60,65 @@ tasks/TASK-003-curated-content-loader.md
 
 Completed:
 - Created curated Markdown loader.
-- Loaded Markdown files recursively from data/curated.
+- Loaded Markdown files recursively.
 - Parsed frontmatter metadata.
 - Added preview command for loaded curated content.
-- Confirmed no embeddings, chunking, vector DB, retrieval, LLM, or API endpoint were added.
+
+### TASK-004: Chunking Strategy
+
+Status: DONE
+
+Task file:
+tasks/TASK-004-chunking-strategy.md
+
+Completed:
+- Split curated Markdown into RAG-friendly chunks.
+- Preserved chapter, section, heading, and source metadata.
+- Verified chunker behavior with 27/27 tests passing.
+- Generated 600 valid chunks from 16 Science documents.
+
+### TASK-006: LangChain Embeddings and Vector Store Fix
+
+Status: DONE
+
+Task file:
+tasks/TASK-006-langchain-embeddings-vector-store-fix.md
+
+Completed:
+- Rejected the earlier manual embedding/search approach.
+- Moved active embedding and retrieval implementation to LangChain primitives.
+- Used LangChain `GoogleGenerativeAIEmbeddings`, `Document`, and `MemoryVectorStore`.
+
+### TASK-007: LangChain Embedding Retrieval Tests
+
+Status: DONE
+
+Task file:
+tasks/TASK-007-langchain-embedding-retrieval-tests.md
+
+Completed:
+- Added embedding smoke, vector-store validation, and retrieval smoke scripts.
+- Verified imports, environment setup, and active pipeline wiring.
+
+### TASK-008: LangChain Embeddings, Vector Store, and Retrieval
+
+Status: DONE
+
+Task file:
+tasks/TASK-008-langchain-embeddings-vector-store-retrieval.md
+
+Completed:
+- Indexed 16 documents.
+- Generated 600 chunks.
+- Saved 600 vectors to `backend/storage/vector-store.json`.
+- Verified vector store validation with embedding dimension 3072.
+- Verified retrieval for Hindi, Hinglish, and English queries.
 
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
 
 Status: DONE
-
-Goal:
-Create project control documents so development stays owner-controlled and Codex does not randomly change direction.
 
 Completed:
 - AGENTS.md
@@ -81,9 +130,6 @@ Completed:
 ### Stage 1: Minimal Backend Foundation
 
 Status: DONE
-
-Goal:
-Create only the basic backend foundation.
 
 Completed:
 - backend/
@@ -97,110 +143,66 @@ Completed:
 
 Status: DONE
 
-Goal:
-Set up clean curated Markdown content as the real knowledge source.
-
-Current content:
-- data/curated/science/class-10/chapter-01.md
-
-Rules:
-- Hindi PDFs are reference only.
-- Curated English Markdown is the real RAG source.
-- No raw PDF parsing dependency for MVP.
-- No embeddings yet.
-- No chunking yet.
-- No vector DB yet.
-
-Acceptance Criteria:
-- data/curated/science/class-10/chapter-01.md exists.
-- File has clean Markdown structure.
-- File has frontmatter metadata.
-- Content is readable.
-- Content is suitable for chunking.
-- No PDF cleanup scripts are required for the MVP path.
+Completed:
+- Clean curated Markdown content path established.
+- Hindi PDFs kept as reference only.
+- Curated Markdown confirmed as the real RAG source.
 
 ### Stage 3: Curated Content Loader
 
 Status: DONE
 
-Goal:
-Load curated Markdown files from data/curated.
-
-Expected work:
-- Create content loader.
-- Read .md files recursively.
-- Extract metadata from frontmatter.
-- Extract metadata from file path.
-- Print loaded document preview.
-
-No embeddings in this stage.
+Completed:
+- Markdown files load recursively.
+- Metadata is extracted and validated.
+- Loader inspection and test scripts exist.
 
 ### Stage 4: Chunking Strategy
 
-Status: IN PROGRESS
+Status: DONE
 
-Goal:
-Split curated Markdown into clean RAG-friendly chunks.
-
-Expected work:
-- Split by headings.
-- Preserve equations.
-- Preserve Q&A blocks.
-- Preserve chapter/section metadata.
-- Test chunk size.
-- Print chunk preview.
-
-No embeddings in this stage.
+Completed:
+- Chunker tests passed.
+- 600 valid chunks generated from 16 Science documents.
 
 ### Stage 5: Embeddings and Vector Store
 
-Status: NOT STARTED
+Status: DONE
 
-Goal:
-Convert chunks into embeddings and store them.
-
-Expected work:
-- Choose embedding model.
-- Create embeddings service.
-- Store vectors.
-- Save metadata.
-- Avoid duplicate embeddings.
-- Add local persistence first.
+Completed:
+- Gemini `gemini-embedding-001` selected.
+- LangChain `GoogleGenerativeAIEmbeddings` used.
+- LangChain `MemoryVectorStore` used.
+- Local JSON persistence added at `backend/storage/vector-store.json`.
+- 600 vectors saved.
 
 ### Stage 6: Retrieval Pipeline
 
-Status: NOT STARTED
+Status: DONE
 
-Goal:
-Search relevant chunks for a student question.
-
-Expected work:
-- Similarity search.
-- topK control.
-- minScore control.
-- Metadata filtering by class, subject, chapter.
-- Retrieval debug output.
+Completed:
+- Query loads saved vector store.
+- Query embeds only the user question.
+- LangChain `similaritySearchWithScore` retrieves matching chunks.
+- Retrieval tested with Hindi, Hinglish, and English queries.
 
 ### Stage 7: Grounded Answer Generation
 
-Status: NOT STARTED
+Status: NEXT
 
-Goal:
-Generate answer only from retrieved content.
-
-Expected work:
-- RAG prompt.
-- Source-grounded answer.
-- Fallback when context is insufficient.
-- Simple English/Hinglish answer style.
-- No hallucination.
+Next task:
+- Take retrieved chunks.
+- Format sources.
+- Build grounded prompt.
+- Use LLM through LangChain.
+- Generate simple Hinglish answer.
+- Show sources.
+- Refuse when context is insufficient.
+- Avoid hallucination.
 
 ### Stage 8: Backend API Integration
 
 Status: NOT STARTED
-
-Goal:
-Expose tutor functionality through backend API.
 
 Expected work:
 - Ask question endpoint.
@@ -213,9 +215,6 @@ Expected work:
 
 Status: NOT STARTED
 
-Goal:
-Test if answers are accurate and exam-useful.
-
 Expected work:
 - Prepare test questions.
 - Check retrieval quality.
@@ -226,9 +225,6 @@ Expected work:
 ### Stage 10: Minimal Frontend Demo
 
 Status: NOT STARTED
-
-Goal:
-Create a simple student-facing chat UI.
 
 Expected work:
 - React frontend.
@@ -241,9 +237,6 @@ Expected work:
 
 Status: NOT STARTED
 
-Goal:
-Deploy project as portfolio/demo.
-
 Expected work:
 - Frontend deployment.
 - Backend deployment.
@@ -254,15 +247,13 @@ Expected work:
 ## Development Rules
 
 - Work on only one task at a time.
-- Do not start the next task without owner approval.
-- Do not modify unrelated files.
-- Do not build ahead.
-- Do not add auth, database, admin panel, quiz, frontend, vector DB, or embeddings unless the current task explicitly asks.
+- Do not overbuild.
+- Do not add auth, database, admin panel, quiz, frontend, analytics, or chat history unless explicitly asked.
 - Keep backend separate from content preparation.
-- Keep curated content in data/curated.
-- Commit curated content.
+- Keep curated content in data folders.
 - Do not commit raw PDFs unless explicitly approved.
+- Retrieval must stay grounded in indexed source content.
 
 ## Next Task Rule
 
-After TASK-002 is complete, wait for owner approval before starting TASK-003.
+The next approved task is the RAG answer generation pipeline.

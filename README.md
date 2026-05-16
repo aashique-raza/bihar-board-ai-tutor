@@ -8,9 +8,21 @@ Students may ask questions in Hindi, Hinglish, or simple English. The final answ
 
 ## Current Status
 
-Planning and context phase.
+Backend RAG retrieval foundation is in progress.
 
-No application code has been added yet. The project direction is being documented before implementation starts.
+Completed:
+
+- Curated Science Markdown loader.
+- RAG chunker.
+- LangChain-based Gemini embeddings.
+- LangChain MemoryVectorStore retrieval.
+- Local JSON vector-store persistence.
+
+Not included yet:
+
+- Final LLM answer generation.
+- Frontend.
+- Database or production vector DB.
 
 ## Initial Scope
 
@@ -51,6 +63,36 @@ Student Question
 -> Answer + Sources + Status
 ```
 
+## RAG Commands
+
+Run commands from the `backend/` folder.
+
+Create or refresh the local vector store:
+
+```bash
+npm run rag:index
+```
+
+This command loads the curated Science documents, chunks them, creates LangChain documents, generates Gemini embeddings, builds a LangChain `MemoryVectorStore`, and saves it to:
+
+```text
+backend/storage/vector-store.json
+```
+
+Retrieve relevant chunks for a question:
+
+```bash
+npm run rag:query -- "your question"
+```
+
+Example:
+
+```bash
+npm run rag:query -- "प्रकाश संश्लेषण क्या होता है?"
+```
+
+The query command loads saved vectors from `vector-store.json`. It does not re-embed all chunks; it embeds only the user question and prints retrieved chunks with scores and metadata.
+
 ## First Milestone
 
 Create a minimal backend pipeline that can:
@@ -75,4 +117,3 @@ Create a minimal backend pipeline that can:
 - Chat history.
 - PDF/OCR pipeline.
 - Hardcoded chapter names.
-- LangChain implementation.
