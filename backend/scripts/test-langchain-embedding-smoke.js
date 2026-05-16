@@ -3,7 +3,7 @@ import 'dotenv/config';
 import {
   createDocumentEmbeddings,
   createQueryEmbeddings,
-} from '../src/rag/embeddings/langchainGeminiEmbeddings.js';
+} from '../src/rag/indexing/embeddings/langchainGeminiEmbeddings.js';
 
 const allFiniteNumbers = (embedding) =>
   Array.isArray(embedding) && embedding.every((value) => Number.isFinite(value));

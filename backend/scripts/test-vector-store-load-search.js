@@ -3,8 +3,8 @@ import 'dotenv/config';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { createQueryEmbeddings } from '../src/rag/embeddings/langchainGeminiEmbeddings.js';
-import { loadLangChainMemoryVectorStore } from '../src/rag/vector-store/langchainMemoryVectorStorePersistence.js';
+import { createQueryEmbeddings } from '../src/rag/indexing/embeddings/langchainGeminiEmbeddings.js';
+import { loadLangChainMemoryVectorStore } from '../src/rag/indexing/vector-store/langchainMemoryVectorStorePersistence.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

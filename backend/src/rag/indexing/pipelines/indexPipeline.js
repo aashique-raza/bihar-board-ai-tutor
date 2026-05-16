@@ -17,7 +17,7 @@ import { saveLangChainMemoryVectorStore } from '../vector-store/langchainMemoryV
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const backendRoot = path.resolve(__dirname, '..', '..', '..');
+const backendRoot = path.resolve(__dirname, '..', '..', '..', '..');
 const baseDataDir = path.resolve(backendRoot, '..', 'data', 'class-10', 'science');
 const outputFilePath = path.resolve(backendRoot, 'storage', 'vector-store.json');
 

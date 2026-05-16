@@ -36,6 +36,7 @@ const RELATED_FUNCTION_INTENT_BOOST = 0.04;
 const QA_WITHOUT_HEADING_MATCH_PENALTY = 0.06;
 const CONTENT_ONLY_MATCH_PENALTY = 0.035;
 const ACTIVITY_DEFINITION_PENALTY = 0.05;
+const FLOWCHART_FUNCTION_PENALTY = 0.11;
 const DIVERSITY_PENALTY = 0.035;
 
 const normalizeText = (text) =>
@@ -294,6 +295,14 @@ const calculatePenalty = ({ intent, result, matchedTerms, searchableFields }) =>
     (headingPath.includes('activity') || contentType.includes('activity'))
   ) {
     penalty += ACTIVITY_DEFINITION_PENALTY;
+  }
+
+  // Function questions need explanatory chunks, not just path/flowchart recall aids.
+  if (
+    intent.isFunction &&
+    includesAny(headingPath, ['flowchart', 'flowcharts', 'path of', 'important equations'])
+  ) {
+    penalty += FLOWCHART_FUNCTION_PENALTY;
   }
 
   return penalty;

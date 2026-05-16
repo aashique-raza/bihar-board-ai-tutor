@@ -1,8 +1,8 @@
 import path from 'node:path';
 
-import { createQueryEmbeddings } from '../embeddings/langchainGeminiEmbeddings.js';
+import { createQueryEmbeddings } from '../../indexing/embeddings/langchainGeminiEmbeddings.js';
 import { loadLangChainMemoryVectorStore } from './langchainMemoryStore.js';
-import { rerankResults } from './reranker.js';
+import { rerankResults } from '../reranker/reranker.js';
 import { retrieverConfig } from './retriever.config.js';
 
 const STRONG_VECTOR_SCORE_THRESHOLD = 0.7;

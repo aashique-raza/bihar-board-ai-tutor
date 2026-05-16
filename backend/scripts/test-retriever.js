@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
-import { retrieveRelevantChunks } from '../src/rag/retriever/retriever.js';
-import { retrieverConfig } from '../src/rag/retriever/retriever.config.js';
+import { retrieveRelevantChunks } from '../src/rag/query/retriever/retriever.js';
+import { retrieverConfig } from '../src/rag/query/retriever/retriever.config.js';
 
 const testQuestions = [
   'blood ka function kya hai?',

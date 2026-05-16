@@ -71,7 +71,19 @@ class SequentialGoogleGenerativeAIEmbeddings extends GoogleGenerativeAIEmbedding
 }
 
 const getGoogleApiKey = () => {
-  const apiKey = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
+  const isUsableApiKey = (value) =>
+    typeof value === 'string' &&
+    value.trim().length > 10 &&
+    !value.includes('your_') &&
+    value !== '...';
+
+  const googleApiKey = isUsableApiKey(process.env.GOOGLE_API_KEY)
+    ? process.env.GOOGLE_API_KEY
+    : undefined;
+  const geminiApiKey = isUsableApiKey(process.env.GEMINI_API_KEY)
+    ? process.env.GEMINI_API_KEY
+    : undefined;
+  const apiKey = googleApiKey || geminiApiKey;
 
   if (!apiKey) {
     throw new Error(
@@ -79,8 +91,8 @@ const getGoogleApiKey = () => {
     );
   }
 
-  if (!process.env.GOOGLE_API_KEY && process.env.GEMINI_API_KEY) {
-    process.env.GOOGLE_API_KEY = process.env.GEMINI_API_KEY;
+  if (!googleApiKey && geminiApiKey) {
+    process.env.GOOGLE_API_KEY = geminiApiKey;
   }
 
   return apiKey;
