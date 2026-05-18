@@ -14,13 +14,13 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-009: RAG Answer Generation Pipeline
+TASK-010: Backend API Verification and Quality Evaluation
 
 Task file:
 To be created when implementation starts.
 
 Goal:
-Use retrieved chunks to generate grounded simple Hinglish answers with sources, and refuse when retrieved context is insufficient.
+Verify the Study Map API and Ask API end to end, prepare a small evaluation question set, check grounded answer quality, confirm source attribution, and identify any retrieval or prompt tuning needed before frontend work.
 
 ## Completed Tasks
 
@@ -114,6 +114,24 @@ Completed:
 - Verified vector store validation with embedding dimension 3072.
 - Verified retrieval for Hindi, Hinglish, and English queries.
 
+### TASK-009: RAG Query Layer and Grounded Answer Generation
+
+Status: DONE
+
+Task file:
+tasks/TASK-009-rag-query-answer-generation.md
+
+Completed:
+- Added query-side RAG structure for retriever, reranker, prompt, chain, parser, LLM config, and answer service.
+- Added lightweight reranking and final filtering after vector search.
+- Added grounded prompt builder through LangChain `ChatPromptTemplate`.
+- Added provider-based LLM answer generation through LangChain LCEL.
+- Added simple Hinglish answer generation with sources.
+- Added insufficient-context fallback.
+- Added Ask API with Global Mode and Focus Mode.
+- Added Study Map API for frontend chapter discovery.
+- Documented Ask API and Study Map API behavior.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -188,32 +206,33 @@ Completed:
 
 ### Stage 7: Grounded Answer Generation
 
-Status: NEXT
+Status: DONE
 
-Next task:
-- Take retrieved chunks.
-- Format sources.
-- Build grounded prompt.
-- Use LLM through LangChain.
-- Generate simple Hinglish answer.
-- Show sources.
-- Refuse when context is insufficient.
-- Avoid hallucination.
+Completed:
+- Retrieved chunks are formatted into grounded context.
+- Sources are formatted and attached to answers.
+- Grounded tutor prompt is implemented.
+- LangChain LCEL answer chain is implemented.
+- Simple Hinglish answers are generated.
+- Insufficient-context fallback is implemented.
+- Extractive fallback exists for model errors.
 
 ### Stage 8: Backend API Integration
 
-Status: NOT STARTED
+Status: DONE
 
-Expected work:
-- Ask question endpoint.
-- Chapter filter support.
-- Request validation.
-- Error handling.
-- Response format.
+Completed:
+- Ask question endpoint exists at `POST /api/v1/ask`.
+- Study Map endpoint exists at `GET /api/v1/study-map`.
+- Global Mode is supported.
+- Focus Mode with chapter filter is supported.
+- Request validation exists.
+- Central error handling is used.
+- Structured response format is documented.
 
 ### Stage 9: Evaluation and Quality Testing
 
-Status: NOT STARTED
+Status: NEXT
 
 Expected work:
 - Prepare test questions.
@@ -256,4 +275,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next approved task is the RAG answer generation pipeline.
+The next recommended task is backend API verification and quality evaluation.
+
+Do not start frontend work until the backend API behavior has been verified with a small evaluation set.

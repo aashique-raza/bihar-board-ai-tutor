@@ -8,7 +8,7 @@ Students may ask questions in Hindi, Hinglish, or simple English. The final answ
 
 ## Current Status
 
-Backend RAG retrieval foundation is in progress.
+Backend RAG MVP is working end to end.
 
 Completed:
 
@@ -17,12 +17,19 @@ Completed:
 - LangChain-based Gemini embeddings.
 - LangChain MemoryVectorStore retrieval.
 - Local JSON vector-store persistence.
+- Lightweight reranking and final retrieval filtering.
+- Grounded LLM answer generation.
+- Simple Hinglish answers with source attribution.
+- Safe fallback when retrieved context is insufficient.
+- Study Map API for available chapters.
+- Ask API with Global Mode and Focus Mode.
 
 Not included yet:
 
-- Final LLM answer generation.
 - Frontend.
 - Database or production vector DB.
+- Production deployment.
+- Formal evaluation question set.
 
 ## Initial Scope
 
@@ -105,6 +112,14 @@ Create a minimal backend pipeline that can:
 6. Retrieve relevant chunks for a student question.
 7. Generate a simple Hinglish answer grounded only in retrieved chunks.
 8. Return answer, sources, and status from one API endpoint.
+
+Current backend status:
+
+- Steps 1-8 are implemented for local backend testing.
+- The local vector store has been generated at `backend/storage/vector-store.json`.
+- The Ask API is available at `POST /api/v1/ask`.
+- The Study Map API is available at `GET /api/v1/study-map`.
+- The next work is verification, quality evaluation, frontend demo, and deployment.
 
 ## Intentionally Not Included Yet
 
