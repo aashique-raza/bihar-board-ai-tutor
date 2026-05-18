@@ -15,6 +15,7 @@
     "rag:query": "node src/rag/query/pipelines/queryPipeline.js",
     "rag:test-retriever": "node scripts/test-retriever.js",
     "rag:test-answer": "node scripts/test-rag-answer.js",
+    "test:study-map": "node scripts/test-study-map.js",
     "test:embedding-smoke": "node scripts/test-langchain-embedding-smoke.js",
     "test:vector-store": "node scripts/validate-vector-store.js",
     "test:retrieval": "node scripts/test-vector-store-load-search.js"
