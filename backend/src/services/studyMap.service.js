@@ -55,6 +55,19 @@ const createChapterItem = (doc) => {
   };
 };
 
+const createChapterLookupItem = ({ subject, section, chapter }) => ({
+  ...chapter,
+  subjectId: subject.id,
+  subjectTitle: subject.title,
+  sectionId: section.id,
+  sectionTitle: section.title,
+  metadataFilter: {
+    subject: subject.title,
+    section: section.title,
+    chapter_no: chapter.number,
+  },
+});
+
 const getOrCreateSection = (sectionsById, sectionTitle) => {
   const id = createSectionId(sectionTitle);
 
@@ -127,4 +140,20 @@ export const getStudyMap = async ({ refresh = false } = {}) => {
   cachedStudyMap = buildStudyMapFromDocuments(documents);
 
   return cachedStudyMap;
+};
+
+export const findStudyMapChapter = async (chapterId) => {
+  const studyMap = await getStudyMap();
+
+  for (const subject of studyMap.focusStudy.subjects) {
+    for (const section of subject.sections) {
+      const chapter = section.chapters.find((item) => item.id === chapterId);
+
+      if (chapter) {
+        return createChapterLookupItem({ subject, section, chapter });
+      }
+    }
+  }
+
+  return null;
 };

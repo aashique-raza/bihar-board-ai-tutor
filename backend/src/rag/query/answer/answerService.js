@@ -1,6 +1,7 @@
 import { retrieveRelevantChunks } from '../retriever/retriever.js';
 import { createRagAnswerChain } from '../chains/ragAnswerChain.js';
 import { INSUFFICIENT_CONTEXT_ANSWER } from '../prompts/tutorPrompt.js';
+import { getAnswerLanguageInstruction } from '../../../utils/languageDetector.js';
 
 const cleanText = (text) =>
   String(text || '').replace(/\s+/g, ' ').trim();
@@ -50,8 +51,12 @@ export const formatSources = (chunks) =>
     return {
       sourceNumber: index + 1,
       chapter_title: metadata.chapter_title || 'Unknown',
+      chapterTitle: metadata.chapter_title || 'Unknown',
+      section: metadata.section || 'Unknown',
       heading_path: metadata.heading_path || 'Unknown',
+      headingPath: metadata.heading_path || 'Unknown',
       chunk_id: metadata.chunk_id || chunk.id || 'Unknown',
+      chunkId: metadata.chunk_id || chunk.id || 'Unknown',
     };
   });
 
@@ -142,6 +147,7 @@ export const generateRagAnswer = async (question, options = {}) => {
   try {
     const rawAnswer = await chain.invoke({
       question: query,
+      answerLanguageInstruction: getAnswerLanguageInstruction(options.answerLanguage),
       context: formatContext(retrieval.results),
     });
     const answer = removeRepeatedQuestionOpening(rawAnswer, query);

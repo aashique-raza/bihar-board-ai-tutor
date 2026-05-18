@@ -2,6 +2,7 @@ import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 
+import askRoutes from './routes/ask.routes.js';
 import healthRoutes from './routes/health.routes.js';
 import studyMapRoutes from './routes/studyMap.routes.js';
 import ApiError from './utils/ApiError.js';
@@ -21,6 +22,7 @@ app.get('/', (_req, res) => {
 });
 
 app.use('/health', healthRoutes);
+app.use('/api/v1/ask', askRoutes);
 app.use('/api/v1/study-map', studyMapRoutes);
 
 app.use((req, _res, next) => {
