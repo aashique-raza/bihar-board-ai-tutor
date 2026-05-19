@@ -15,6 +15,7 @@
     "rag:query": "node src/rag/query/pipelines/queryPipeline.js",
     "db:ping": "node scripts/test-mongo-connection.js",
     "test:chat-db-models": "node scripts/test-chat-db-models.js",
+    "test:ask-db": "node scripts/test-ask-db-integration.js",
     "curriculum:build": "node scripts/build-curriculum-index.js",
     "test:curriculum-resolvers": "node scripts/test-curriculum-resolvers.js",
     "rag:test-retriever": "node scripts/test-retriever.js",

@@ -14,13 +14,13 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-012: DB-backed Ask API Integration
+TASK-013: Frontend Session Handling
 
 Task file:
 To be created when implementation starts.
 
 Goal:
-Wire `chat_sessions`, `chat_history`, and `chat_states` into the Ask API so every conversation can persist history and current learning state.
+Update the frontend to store the Ask API `sessionId` and send it on the next request.
 
 ## Completed Tasks
 
@@ -175,6 +175,22 @@ Current scope:
 
 Verified:
 - `npm.cmd run test:chat-db-models` passed against MongoDB Atlas.
+
+### TASK-012: DB-backed Ask API Integration
+
+Status: DONE
+
+Task file:
+tasks/TASK-012-db-backed-ask-api-integration.md
+
+Completed:
+- Ask API creates a DB chat session when `sessionId` is missing.
+- Ask API reuses a DB chat session when `sessionId` is provided.
+- Student messages are saved in `chat_history`.
+- Tutor responses are saved in `chat_history`.
+- `chat_states` is created/updated with basic current state.
+- Ask response still returns `session.sessionId`.
+- `npm.cmd run test:ask-db` passed against MongoDB Atlas.
 
 ## Staged Project Roadmap
 
@@ -342,6 +358,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is DB-backed Ask API Integration.
+The next recommended implementation task is Frontend Session Handling.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.

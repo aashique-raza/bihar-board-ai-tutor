@@ -11,6 +11,9 @@ import { routeMessage } from '../tutor/router/hybridRouter.js';
 import { ROUTER_CONFIDENCE, ROUTER_INTENTS } from '../tutor/router/routerIntents.js';
 import { detectQuestionLanguage } from '../utils/languageDetector.js';
 import ApiError from '../utils/ApiError.js';
+import { addChatMessage } from './chatHistory.service.js';
+import { getOrCreateChatSession, createChatSession } from './chatSession.service.js';
+import { getOrCreateChatState, updateChatState } from './chatState.service.js';
 import { findStudyMapChapter } from './studyMap.service.js';
 
 const STUDY_MODES = {
@@ -37,6 +40,64 @@ const GLOBAL_CONTEXT_NOT_FOUND_ENGLISH_ANSWER =
   'I do not have enough information in the provided Science content to answer this.';
 
 const normalizeText = (value) => String(value || '').trim();
+
+const getLearningMode = ({ route, status }) => {
+  if (route.intent === ROUTER_INTENTS.studyIntent) {
+    return 'lesson';
+  }
+
+  if (status === STATUS.answered || route.intent === ROUTER_INTENTS.followUp) {
+    return 'doubt';
+  }
+
+  return 'idle';
+};
+
+const getDbSession = async (requestedSessionId) => {
+  if (requestedSessionId) {
+    return getOrCreateChatSession(requestedSessionId);
+  }
+
+  return createChatSession();
+};
+
+const saveTutorTurn = async ({
+  sessionId,
+  question,
+  response,
+  sessionContext,
+  route,
+  status = null,
+}) => {
+  await addChatMessage({
+    sessionId,
+    role: 'tutor',
+    text: response.answer,
+    action: response.intent || route.intent,
+    sources: response.sources || [],
+    metadata: {
+      status: response.status,
+      studyMode: response.studyMode,
+      scope: response.scope || null,
+      normalizedQuestion: response.normalizedQuestion || null,
+      resolvedQuestion: response.resolvedQuestion || null,
+    },
+  });
+
+  await updateChatState(sessionId, {
+    currentSubjectId: sessionContext.lastSubject || null,
+    currentSectionId: sessionContext.lastSection || null,
+    currentChapterId: sessionContext.lastChapterId || null,
+    currentTopicId: null,
+    learningMode: getLearningMode({ route, status }),
+    preferredStudyMode: response.studyMode,
+    pendingAction: response.suggestedActions?.[0]?.type || null,
+    lastTutorAction: response.intent || route.intent,
+    lastStudentMessage: question,
+  });
+
+  return response;
+};
 
 const validateStudyMode = (studyMode) => {
   if (!Object.values(STUDY_MODES).includes(studyMode)) {
@@ -151,7 +212,7 @@ const getAnswer = ({ status, result, answerLanguage }) => {
 export const askQuestion = async (body = {}) => {
   const question = normalizeText(body.question);
   const studyMode = normalizeText(body.studyMode);
-  const sessionId = normalizeSessionId(body.sessionId);
+  const requestedSessionId = normalizeText(body.sessionId);
 
   if (!question) {
     throw new ApiError(400, 'question is required.');
@@ -171,6 +232,20 @@ export const askQuestion = async (body = {}) => {
     };
   }
 
+  const dbSession = await getDbSession(requestedSessionId);
+  const sessionId = normalizeSessionId(dbSession.sessionId);
+
+  await getOrCreateChatState(sessionId);
+  await addChatMessage({
+    sessionId,
+    role: 'student',
+    text: question,
+    metadata: {
+      studyMode,
+      chapterId: body.chapterId || null,
+    },
+  });
+
   const language = detectQuestionLanguage(question);
   const normalized = normalizeMessage(question);
   const sessionContext = getSessionContext(sessionId);
@@ -185,7 +260,7 @@ export const askQuestion = async (body = {}) => {
       lastQuestion: question,
     });
 
-    return withSession(
+    const response = withSession(
       createClarificationResponse({
         question,
         studyMode,
@@ -195,6 +270,14 @@ export const askQuestion = async (body = {}) => {
       }),
       nextSession
     );
+
+    return saveTutorTurn({
+      sessionId,
+      question,
+      response,
+      sessionContext: nextSession,
+      route,
+    });
   }
 
   if (route.intent === ROUTER_INTENTS.greeting) {
@@ -203,7 +286,7 @@ export const askQuestion = async (body = {}) => {
       lastQuestion: question,
     });
 
-    return withSession(
+    const response = withSession(
       createGreetingResponse({
         question,
         studyMode,
@@ -213,6 +296,14 @@ export const askQuestion = async (body = {}) => {
       }),
       nextSession
     );
+
+    return saveTutorTurn({
+      sessionId,
+      question,
+      response,
+      sessionContext: nextSession,
+      route,
+    });
   }
 
   if (route.intent === ROUTER_INTENTS.studyIntent) {
@@ -223,7 +314,7 @@ export const askQuestion = async (body = {}) => {
       lastSection: route.sectionHint || sessionContext.lastSection,
     });
 
-    return withSession(
+    const response = withSession(
       createStudyIntentResponse({
         question,
         studyMode,
@@ -233,6 +324,14 @@ export const askQuestion = async (body = {}) => {
       }),
       nextSession
     );
+
+    return saveTutorTurn({
+      sessionId,
+      question,
+      response,
+      sessionContext: nextSession,
+      route,
+    });
   }
 
   if (route.intent === ROUTER_INTENTS.metadataQuestion) {
@@ -250,7 +349,13 @@ export const askQuestion = async (body = {}) => {
       lastSection: response.scope?.sectionId || route.sectionHint || sessionContext.lastSection,
     });
 
-    return withSession(response, nextSession);
+    return saveTutorTurn({
+      sessionId,
+      question,
+      response: withSession(response, nextSession),
+      sessionContext: nextSession,
+      route,
+    });
   }
 
   const resolvedQuestion = resolveQuestionWithContext({
@@ -273,7 +378,7 @@ export const askQuestion = async (body = {}) => {
       lastQuestion: question,
     });
 
-    return withSession(
+    const response = withSession(
       createClarificationResponse({
         question,
         studyMode,
@@ -283,6 +388,14 @@ export const askQuestion = async (body = {}) => {
       }),
       nextSession
     );
+
+    return saveTutorTurn({
+      sessionId,
+      question,
+      response,
+      sessionContext: nextSession,
+      route: clarificationRoute,
+    });
   }
 
   const result = await generateRagAnswer(resolvedQuestion || normalized.normalizedText, {
@@ -318,5 +431,12 @@ export const askQuestion = async (body = {}) => {
     })
   );
 
-  return withSession(response, nextSession);
+  return saveTutorTurn({
+    sessionId,
+    question,
+    response: withSession(response, nextSession),
+    sessionContext: nextSession,
+    route,
+    status,
+  });
 };
