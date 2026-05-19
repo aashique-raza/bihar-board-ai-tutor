@@ -45,9 +45,25 @@ const chatStateSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+    lastIntent: {
+      type: String,
+      default: null,
+    },
+    lastTopic: {
+      type: String,
+      default: null,
+    },
     lastStudentMessage: {
       type: String,
       default: null,
+    },
+    lastAnswer: {
+      type: String,
+      default: null,
+    },
+    lastSources: {
+      type: Array,
+      default: [],
     },
   },
   {
@@ -58,4 +74,3 @@ const chatStateSchema = new mongoose.Schema(
 
 export const ChatState =
   mongoose.models.ChatState || mongoose.model('ChatState', chatStateSchema);
-

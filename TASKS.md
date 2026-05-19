@@ -14,13 +14,13 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-013: Frontend Session Handling
+TASK-014: DB-backed Tutor State Context
 
 Task file:
-To be created when implementation starts.
+tasks/TASK-014-db-backed-tutor-state-context.md
 
 Goal:
-Update the frontend to store the Ask API `sessionId` and send it on the next request.
+Use `chat_states` as the saved backend context source before moving to lesson start/continue flows.
 
 ## Completed Tasks
 
@@ -192,6 +192,39 @@ Completed:
 - Ask response still returns `session.sessionId`.
 - `npm.cmd run test:ask-db` passed against MongoDB Atlas.
 
+### TASK-013: Frontend Session Handling
+
+Status: DONE
+
+Task file:
+tasks/TASK-013-frontend-session-handling.md
+
+Completed:
+- Frontend reads saved `sessionId` from localStorage.
+- First Ask request can be sent without `sessionId`.
+- Frontend saves backend returned `session.sessionId`.
+- Later Ask requests send saved `sessionId`.
+- `npm.cmd run build` passed.
+- `npm.cmd run test:ask-db` passed.
+
+### TASK-014: DB-backed Tutor State Context
+
+Status: DONE
+
+Task file:
+tasks/TASK-014-db-backed-tutor-state-context.md
+
+Current scope:
+- Load saved `chat_states` into Ask API context before routing.
+- Save last topic/answer/sources/intent back into `chat_states`.
+- Use DB-backed state for metadata follow-up context.
+
+Verified:
+- `npm.cmd run test:ask-db` passed with DB state hydration.
+- `npm.cmd run test:chat-db-models` passed.
+- `npm.cmd run test:study-map` passed.
+- `npm.cmd run test:curriculum-resolvers` passed.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -358,6 +391,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is Frontend Session Handling.
+The next recommended implementation task is Lesson Start / Continue Backend Flow.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.

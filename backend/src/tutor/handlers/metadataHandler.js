@@ -46,7 +46,9 @@ export const createMetadataResponse = async ({
   sessionContext,
 }) => {
   const studyMap = await getStudyMap();
-  const matchedSection = findSection(studyMap, route.sectionHint);
+  const sectionHint = route.sectionHint || sessionContext?.lastSection;
+  const subjectHint = route.subjectHint || sessionContext?.lastSubject;
+  const matchedSection = findSection(studyMap, sectionHint);
 
   if (matchedSection) {
     const { subject, section } = matchedSection;
@@ -80,7 +82,7 @@ export const createMetadataResponse = async ({
     };
   }
 
-  const matchedSubject = findSubject(studyMap, route.subjectHint);
+  const matchedSubject = findSubject(studyMap, subjectHint);
 
   if (matchedSubject) {
     const chapterCount = matchedSubject.sections.reduce(
@@ -131,4 +133,3 @@ export const createMetadataResponse = async ({
     session: sessionContext,
   };
 };
-

@@ -1,6 +1,6 @@
 import { generateRagAnswer } from '../rag/query/answer/answerService.js';
 import { INSUFFICIENT_CONTEXT_ANSWER } from '../rag/query/prompts/tutorPrompt.js';
-import { getSessionContext, normalizeSessionId, updateSessionContext } from '../tutor/context/sessionContextStore.js';
+import { getSessionContext, normalizeSessionId, saveSessionContext, updateSessionContext } from '../tutor/context/sessionContextStore.js';
 import { createContextPatchFromAnswer, resolveQuestionWithContext } from '../tutor/context/contextResolver.js';
 import { createClarificationResponse } from '../tutor/handlers/clarificationHandler.js';
 import { createGreetingResponse } from '../tutor/handlers/greetingHandler.js';
@@ -61,6 +61,31 @@ const getDbSession = async (requestedSessionId) => {
   return createChatSession();
 };
 
+const removeEmptyFields = (data) => {
+  const cleanData = {};
+
+  for (const [key, value] of Object.entries(data)) {
+    if (value !== undefined && value !== null) {
+      cleanData[key] = value;
+    }
+  }
+
+  return cleanData;
+};
+
+const loadDbStateIntoSession = (sessionId, chatState) => {
+  saveSessionContext(sessionId, {
+    lastIntent: chatState.lastIntent || chatState.lastTutorAction || null,
+    lastSubject: chatState.currentSubjectId || null,
+    lastSection: chatState.currentSectionId || null,
+    lastChapterId: chatState.currentChapterId || null,
+    lastTopic: chatState.lastTopic || chatState.currentTopicId || null,
+    lastQuestion: chatState.lastStudentMessage || null,
+    lastAnswer: chatState.lastAnswer || null,
+    lastSources: chatState.lastSources || [],
+  });
+};
+
 const saveTutorTurn = async ({
   sessionId,
   question,
@@ -84,17 +109,20 @@ const saveTutorTurn = async ({
     },
   });
 
-  await updateChatState(sessionId, {
+  await updateChatState(sessionId, removeEmptyFields({
     currentSubjectId: sessionContext.lastSubject || null,
     currentSectionId: sessionContext.lastSection || null,
     currentChapterId: sessionContext.lastChapterId || null,
-    currentTopicId: null,
     learningMode: getLearningMode({ route, status }),
     preferredStudyMode: response.studyMode,
     pendingAction: response.suggestedActions?.[0]?.type || null,
     lastTutorAction: response.intent || route.intent,
+    lastIntent: sessionContext.lastIntent || response.intent || route.intent,
+    lastTopic: sessionContext.lastTopic,
     lastStudentMessage: question,
-  });
+    lastAnswer: response.answer,
+    lastSources: response.sources || [],
+  }));
 
   return response;
 };
@@ -235,7 +263,8 @@ export const askQuestion = async (body = {}) => {
   const dbSession = await getDbSession(requestedSessionId);
   const sessionId = normalizeSessionId(dbSession.sessionId);
 
-  await getOrCreateChatState(sessionId);
+  const chatState = await getOrCreateChatState(sessionId);
+  loadDbStateIntoSession(sessionId, chatState);
   await addChatMessage({
     sessionId,
     role: 'student',

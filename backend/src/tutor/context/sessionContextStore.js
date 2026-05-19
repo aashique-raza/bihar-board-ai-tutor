@@ -21,6 +21,16 @@ export const getSessionContext = (sessionId) => {
   };
 };
 
+export const saveSessionContext = (sessionId, context = {}) => {
+  const normalizedSessionId = normalizeSessionId(sessionId);
+
+  sessionContexts.set(normalizedSessionId, {
+    ...getSessionContext(normalizedSessionId),
+    ...context,
+    sessionId: normalizedSessionId,
+  });
+};
+
 export const updateSessionContext = (sessionId, patch = {}) => {
   const currentContext = getSessionContext(sessionId);
   const nextContext = {
@@ -35,4 +45,3 @@ export const updateSessionContext = (sessionId, patch = {}) => {
 
   return nextContext;
 };
-
