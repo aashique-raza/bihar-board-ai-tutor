@@ -2,7 +2,7 @@
 
 ## Status
 
-IN PROGRESS
+PAUSED
 
 Current completed parts:
 
@@ -13,6 +13,12 @@ Current completed parts:
 Current next part:
 
 - Part 4: Tutor State Design.
+
+Pause reason:
+
+- Tutor State should now be DB-backed instead of in-memory.
+- TASK-011 will set up MongoDB/Mongoose first.
+- Resume this task after DB-backed state/history foundation is ready.
 
 ## Why This Task Exists
 

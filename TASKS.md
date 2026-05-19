@@ -14,13 +14,13 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-010: LangChain-First Tutor Engine Planning Layer
+TASK-012: DB-backed Ask API Integration
 
 Task file:
-tasks/TASK-010-tutor-engine-langchain-planning-layer.md
+To be created when implementation starts.
 
 Goal:
-Move Zuno from a patched RAG Q&A bot toward a stateful LangChain-first Tutor Engine with curriculum structure, tutor state, structured planning, action execution, lesson generation, and conversation regression tests.
+Wire `chat_sessions`, `chat_history`, and `chat_states` into the Ask API so every conversation can persist history and current learning state.
 
 ## Completed Tasks
 
@@ -134,7 +134,7 @@ Completed:
 
 ### TASK-010: LangChain-First Tutor Engine Planning Layer
 
-Status: ACTIVE
+Status: PAUSED
 
 Task file:
 tasks/TASK-010-tutor-engine-langchain-planning-layer.md
@@ -153,6 +153,28 @@ Latest completed within TASK-010:
 
 Next scope:
 - Tutor State schema/store.
+
+Pause reason:
+- Tutor State should be DB-backed because chat history will be needed soon.
+- MongoDB/Mongoose setup is now the immediate prerequisite.
+
+### TASK-011: MongoDB/Mongoose Foundation
+
+Status: DONE
+
+Task file:
+tasks/TASK-011-mongodb-mongoose-foundation.md
+
+Current scope:
+- Add Mongoose dependency.
+- Add `MONGODB_URI` environment config.
+- Add MongoDB connect/disconnect helper.
+- Wire server startup to MongoDB connection.
+- Add a DB ping script for Atlas connection verification.
+- Add beginner-friendly Mongoose schemas/services for `chat_sessions`, `chat_history`, and `chat_states`.
+
+Verified:
+- `npm.cmd run test:chat-db-models` passed against MongoDB Atlas.
 
 ## Staged Project Roadmap
 
@@ -320,6 +342,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is Tutor State Foundation for the LangChain-first Tutor Engine.
+The next recommended implementation task is DB-backed Ask API Integration.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.

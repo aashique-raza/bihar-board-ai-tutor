@@ -45,6 +45,30 @@ First milestone storage:
 - Local files for source content.
 - Local vector store or JSON-based persisted store for chunks and embeddings.
 
+### MongoDB with Mongoose for tutor state and chat history
+
+After the backend RAG MVP and Curriculum Brain foundations were validated, the project decision changed for conversation persistence.
+
+Use MongoDB Atlas with Mongoose for:
+
+- Chat sessions through `chat_sessions`.
+- Chat messages through `chat_history`.
+- Current learning state through `chat_states`.
+- Later planner/action logs.
+
+Reason:
+
+- The user already has experience with MongoDB and Mongoose.
+- Tutor state and chat messages fit a document-oriented model.
+- MongoDB Atlas is already available for this project owner.
+
+Current boundary:
+
+- Add only the connection foundation now.
+- Do not move RAG vectors into MongoDB.
+- Do not add auth, analytics, admin, quiz history, or a production vector database as part of this setup.
+- Keep schemas thin when tutor state/history implementation begins.
+
 ### No frontend first
 
 Do not build a frontend in the first milestone. Prove the backend RAG pipeline first.

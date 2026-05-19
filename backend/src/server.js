@@ -1,15 +1,34 @@
 import app from './app.js';
 import { env } from './config/env.js';
+import { connectDB, disconnectDB } from './db/mongooseClient.js';
 
-const server = app.listen(env.port, () => {
-  console.log(`Server running on port ${env.port}`);
-});
+let server;
 
-const shutdown = (signal) => {
-  console.log(`${signal} received. Shutting down server.`);
-  server.close(() => {
-    process.exit(0);
+try {
+  await connectDB();
+
+  server = app.listen(env.port, () => {
+    console.log(`Server running on port ${env.port}`);
   });
+} catch (error) {
+  console.error(`Failed to start server: ${error.message}`);
+  process.exit(1);
+}
+
+const shutdown = async (signal) => {
+  console.log(`${signal} received. Shutting down server.`);
+
+  const exit = async () => {
+    await disconnectDB();
+    process.exit(0);
+  };
+
+  if (server) {
+    server.close(exit);
+    return;
+  }
+
+  await exit();
 };
 
 process.on('SIGINT', () => shutdown('SIGINT'));

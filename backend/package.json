@@ -13,6 +13,8 @@
     "inspect:chunks": "node src/rag/indexing/chunkers/inspectMarkdownChunks.js",
     "rag:index": "node src/rag/indexing/pipelines/indexPipeline.js",
     "rag:query": "node src/rag/query/pipelines/queryPipeline.js",
+    "db:ping": "node scripts/test-mongo-connection.js",
+    "test:chat-db-models": "node scripts/test-chat-db-models.js",
     "curriculum:build": "node scripts/build-curriculum-index.js",
     "test:curriculum-resolvers": "node scripts/test-curriculum-resolvers.js",
     "rag:test-retriever": "node scripts/test-retriever.js",
@@ -34,6 +36,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "gray-matter": "^4.0.3",
+    "mongoose": "^9.6.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
