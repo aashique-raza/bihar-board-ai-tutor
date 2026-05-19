@@ -151,14 +151,18 @@ export const generateRagAnswer = async (question, options = {}) => {
       context: formatContext(retrieval.results),
     });
     const answer = removeRepeatedQuestionOpening(rawAnswer, query);
+    const finalAnswer =
+      normalizeForComparison(answer) === normalizeForComparison(INSUFFICIENT_CONTEXT_ANSWER)
+        ? createExtractiveFallbackAnswer(retrieval.results)
+        : answer;
 
     return {
       question: query,
-      answer,
-      answerWithSources: appendSourcesToAnswer({ answer, sources }),
+      answer: finalAnswer,
+      answerWithSources: appendSourcesToAnswer({ answer: finalAnswer, sources }),
       sources,
       retrieval,
-      generationMode: 'llm',
+      generationMode: finalAnswer === answer ? 'llm' : 'extractive_fallback',
     };
   } catch (error) {
     if (options.throwOnModelError) {

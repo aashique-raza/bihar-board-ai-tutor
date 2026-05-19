@@ -9,6 +9,7 @@ import { retrieverConfig } from './retriever.config.js';
 
 const STRONG_VECTOR_SCORE_THRESHOLD = 0.7;
 const FINAL_SCORE_THRESHOLD = 0.65;
+const TERM_MATCH_VECTOR_SCORE_THRESHOLD = 0.62;
 const DEVANAGARI_PATTERN = /[\u0900-\u097F]/;
 
 const normalizeRetrieverOptions = ({ topK, minScore } = {}) => {
@@ -39,7 +40,8 @@ const isStrongVectorFallback = (result) =>
 const isDevanagariQuery = (query) => DEVANAGARI_PATTERN.test(query);
 
 const passesFinalFilter = (result, query) =>
-  result.finalScore >= FINAL_SCORE_THRESHOLD &&
+  (result.finalScore >= FINAL_SCORE_THRESHOLD ||
+    (hasMatchedTerms(result) && result.score >= TERM_MATCH_VECTOR_SCORE_THRESHOLD)) &&
   (hasMatchedTerms(result) || isStrongVectorFallback(result) || isDevanagariQuery(query));
 
 const matchesMetadataFilter = (metadata, filter = {}) =>

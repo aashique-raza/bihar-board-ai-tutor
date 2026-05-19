@@ -13,6 +13,7 @@
     "inspect:chunks": "node src/rag/indexing/chunkers/inspectMarkdownChunks.js",
     "rag:index": "node src/rag/indexing/pipelines/indexPipeline.js",
     "rag:query": "node src/rag/query/pipelines/queryPipeline.js",
+    "curriculum:build": "node scripts/build-curriculum-index.js",
     "rag:test-retriever": "node scripts/test-retriever.js",
     "rag:test-answer": "node scripts/test-rag-answer.js",
     "test:study-map": "node scripts/test-study-map.js",

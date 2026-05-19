@@ -1,5 +1,14 @@
 import { generateRagAnswer } from '../rag/query/answer/answerService.js';
 import { INSUFFICIENT_CONTEXT_ANSWER } from '../rag/query/prompts/tutorPrompt.js';
+import { getSessionContext, normalizeSessionId, updateSessionContext } from '../tutor/context/sessionContextStore.js';
+import { createContextPatchFromAnswer, resolveQuestionWithContext } from '../tutor/context/contextResolver.js';
+import { createClarificationResponse } from '../tutor/handlers/clarificationHandler.js';
+import { createGreetingResponse } from '../tutor/handlers/greetingHandler.js';
+import { createMetadataResponse } from '../tutor/handlers/metadataHandler.js';
+import { createStudyIntentResponse } from '../tutor/handlers/studyIntentHandler.js';
+import { normalizeMessage } from '../tutor/normalization/normalizeMessage.js';
+import { routeMessage } from '../tutor/router/hybridRouter.js';
+import { ROUTER_CONFIDENCE, ROUTER_INTENTS } from '../tutor/router/routerIntents.js';
 import { detectQuestionLanguage } from '../utils/languageDetector.js';
 import ApiError from '../utils/ApiError.js';
 import { findStudyMapChapter } from './studyMap.service.js';
@@ -101,6 +110,18 @@ const formatApiSources = (sources) =>
     chunkId: source.chunkId || source.chunk_id,
   }));
 
+const withSession = (response, sessionContext) => ({
+  ...response,
+  session: {
+    sessionId: sessionContext.sessionId,
+    turnCount: sessionContext.turnCount,
+    lastTopic: sessionContext.lastTopic,
+    lastSubject: sessionContext.lastSubject,
+    lastSection: sessionContext.lastSection,
+    lastChapterId: sessionContext.lastChapterId,
+  },
+});
+
 const getStatus = ({ studyMode, result }) => {
   if (result.retrieval.results.length > 0 && !isContextNotFoundAnswer(result.answer)) {
     return STATUS.answered;
@@ -130,6 +151,7 @@ const getAnswer = ({ status, result, answerLanguage }) => {
 export const askQuestion = async (body = {}) => {
   const question = normalizeText(body.question);
   const studyMode = normalizeText(body.studyMode);
+  const sessionId = normalizeSessionId(body.sessionId);
 
   if (!question) {
     throw new ApiError(400, 'question is required.');
@@ -150,22 +172,151 @@ export const askQuestion = async (body = {}) => {
   }
 
   const language = detectQuestionLanguage(question);
-  const result = await generateRagAnswer(question, {
+  const normalized = normalizeMessage(question);
+  const sessionContext = getSessionContext(sessionId);
+  const route = await routeMessage({
+    normalized,
+    sessionContext,
+  });
+
+  if (route.needsClarification || route.intent === ROUTER_INTENTS.unclear) {
+    const nextSession = updateSessionContext(sessionId, {
+      lastIntent: route.intent,
+      lastQuestion: question,
+    });
+
+    return withSession(
+      createClarificationResponse({
+        question,
+        studyMode,
+        language,
+        route,
+        sessionContext: nextSession,
+      }),
+      nextSession
+    );
+  }
+
+  if (route.intent === ROUTER_INTENTS.greeting) {
+    const nextSession = updateSessionContext(sessionId, {
+      lastIntent: route.intent,
+      lastQuestion: question,
+    });
+
+    return withSession(
+      createGreetingResponse({
+        question,
+        studyMode,
+        language,
+        route,
+        sessionContext: nextSession,
+      }),
+      nextSession
+    );
+  }
+
+  if (route.intent === ROUTER_INTENTS.studyIntent) {
+    const nextSession = updateSessionContext(sessionId, {
+      lastIntent: route.intent,
+      lastQuestion: question,
+      lastSubject: route.subjectHint || sessionContext.lastSubject,
+      lastSection: route.sectionHint || sessionContext.lastSection,
+    });
+
+    return withSession(
+      createStudyIntentResponse({
+        question,
+        studyMode,
+        language,
+        route,
+        sessionContext: nextSession,
+      }),
+      nextSession
+    );
+  }
+
+  if (route.intent === ROUTER_INTENTS.metadataQuestion) {
+    const response = await createMetadataResponse({
+      question,
+      studyMode,
+      language,
+      route,
+      sessionContext,
+    });
+    const nextSession = updateSessionContext(sessionId, {
+      lastIntent: route.intent,
+      lastQuestion: question,
+      lastSubject: response.scope?.subjectId || route.subjectHint || sessionContext.lastSubject,
+      lastSection: response.scope?.sectionId || route.sectionHint || sessionContext.lastSection,
+    });
+
+    return withSession(response, nextSession);
+  }
+
+  const resolvedQuestion = resolveQuestionWithContext({
+    normalized,
+    route,
+    sessionContext,
+  });
+
+  if (!resolvedQuestion && route.intent === ROUTER_INTENTS.followUp) {
+    const clarificationRoute = {
+      ...route,
+      intent: ROUTER_INTENTS.unclear,
+      confidence: Math.min(route.confidence, ROUTER_CONFIDENCE.medium),
+      needsClarification: true,
+      clarificationQuestion:
+        'Aap kis topic ke baare me puch rahe ho? Topic ka naam likh do, jaise blood, cornea, ozone layer.',
+    };
+    const nextSession = updateSessionContext(sessionId, {
+      lastIntent: clarificationRoute.intent,
+      lastQuestion: question,
+    });
+
+    return withSession(
+      createClarificationResponse({
+        question,
+        studyMode,
+        language,
+        route: clarificationRoute,
+        sessionContext: nextSession,
+      }),
+      nextSession
+    );
+  }
+
+  const result = await generateRagAnswer(resolvedQuestion || normalized.normalizedText, {
     answerLanguage: language.answerLanguage,
     retrieverOptions,
   });
   const status = getStatus({ studyMode, result });
   const answer = getAnswer({ status, result, answerLanguage: language.answerLanguage });
 
-  return {
+  const response = {
     status,
+    intent: route.intent,
+    confidence: route.confidence,
     studyMode,
     question,
+    normalizedQuestion: normalized.normalizedText,
+    resolvedQuestion: resolvedQuestion || normalized.normalizedText,
     detectedLanguage: language.detectedLanguage,
     answerLanguage: language.answerLanguage,
     answer,
     sources: status === STATUS.answered ? formatApiSources(result.sources) : [],
     suggestedActions: getSuggestedActions(status),
     scope: getScope({ studyMode, chapter }),
+    router: route,
   };
+  const nextSession = updateSessionContext(
+    sessionId,
+    createContextPatchFromAnswer({
+      route,
+      question: resolvedQuestion || normalized.normalizedText,
+      answerPayload: response,
+      scope: response.scope,
+    })
+  );
+
+  return withSession(response, nextSession);
 };
