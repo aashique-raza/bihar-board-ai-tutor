@@ -14,13 +14,13 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-010: Backend API Verification and Quality Evaluation
+TASK-010: LangChain-First Tutor Engine Planning Layer
 
 Task file:
-To be created when implementation starts.
+tasks/TASK-010-tutor-engine-langchain-planning-layer.md
 
 Goal:
-Verify the Study Map API and Ask API end to end, prepare a small evaluation question set, check grounded answer quality, confirm source attribution, and identify any retrieval or prompt tuning needed before frontend work.
+Move Zuno from a patched RAG Q&A bot toward a stateful LangChain-first Tutor Engine with curriculum structure, tutor state, structured planning, action execution, lesson generation, and conversation regression tests.
 
 ## Completed Tasks
 
@@ -132,6 +132,28 @@ Completed:
 - Added Study Map API for frontend chapter discovery.
 - Documented Ask API and Study Map API behavior.
 
+### TASK-010: LangChain-First Tutor Engine Planning Layer
+
+Status: ACTIVE
+
+Task file:
+tasks/TASK-010-tutor-engine-langchain-planning-layer.md
+
+Current scope:
+- Document the LangChain-first Tutor Engine architecture.
+- Treat existing rule/hybrid router as a temporary compatibility layer, not the final solution.
+- Plan Curriculum Brain, Tutor State, LangChain Planner, Action Executor, Lesson Generator, and conversation tests.
+- Keep implementation future-ready for Math, Hindi, English, Social Science, Urdu, and Sanskrit.
+
+Latest completed within TASK-010:
+- Curriculum Brain foundation from curated Markdown.
+- Chapter/topic resolver foundation.
+- Resolver regression tests.
+- Loader/chunker test path correction so the deterministic regression suite points at root `data/class-10/science`.
+
+Next scope:
+- Tutor State schema/store.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -232,27 +254,50 @@ Completed:
 
 ### Stage 9: Evaluation and Quality Testing
 
-Status: NEXT
+Status: PARTIAL
+
+Completed:
+- Manual API and frontend tests found important tutor-flow gaps.
+- Initial router/session improvements were tested.
+
+Remaining work:
+- Add conversation-level regression tests.
+- Track planner/action failures.
+- Improve answer quality and source display.
+
+### Stage 10: LangChain Tutor Engine
+
+Status: ACTIVE
+
+Completed:
+- Curriculum Brain from curated Markdown.
+- Chapter/topic resolver.
 
 Expected work:
-- Prepare test questions.
-- Check retrieval quality.
-- Check answer quality.
-- Track failure cases.
-- Improve content/chunking if needed.
+- Tutor State.
+- LangChain structured planner.
+- Action executor.
+- Lesson generation chain.
+- Conversation regression tests.
 
-### Stage 10: Minimal Frontend Demo
+### Stage 11: Minimal Frontend Demo
 
-Status: NOT STARTED
+Status: PARTIAL
 
-Expected work:
-- React frontend.
-- Ask question box.
-- Chapter selector.
-- Answer display.
-- Source display.
+Completed:
+- Zuno React frontend exists.
+- Ask question box exists.
+- Global/Focus mode exists.
+- Chapter selector exists.
+- Answer and sources display exists.
 
-### Stage 11: Deployment Demo
+Remaining work:
+- Add lesson state display.
+- Add continue lesson action.
+- Compact source chips.
+- Render structured Tutor Engine actions.
+
+### Stage 12: Deployment Demo
 
 Status: NOT STARTED
 
@@ -275,6 +320,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended task is backend API verification and quality evaluation.
+The next recommended implementation task is Tutor State Foundation for the LangChain-first Tutor Engine.
 
-Do not start frontend work until the backend API behavior has been verified with a small evaluation set.
+Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.
