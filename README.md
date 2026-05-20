@@ -26,6 +26,9 @@ Completed:
 - MongoDB-backed chat sessions, chat history, and tutor state.
 - Lesson start/continue flow.
 - Grounded lesson generation from retrieved topic context.
+- Deterministic Tutor Engine planner/action executor foundation.
+- Conversation regression test for core tutor flows.
+- Lesson state stability across side doubts and no-context answers.
 - Zuno React frontend foundation.
 - Initial temporary router/session layer for greetings, study intent, metadata, and simple follow-ups.
 
@@ -34,7 +37,7 @@ Not included yet:
 - Production vector DB.
 - Production deployment.
 - Formal evaluation question set.
-- Final LangChain Tutor Engine planner.
+- Optional LangChain structured planner upgrade.
 - Frontend lesson-specific UI polish.
 
 ## Initial Scope
@@ -147,7 +150,8 @@ Current backend status:
 - MongoDB-backed session/history/state is implemented.
 - The Zuno frontend foundation exists under `frontend/`.
 - The lesson flow can start and continue topics with grounded lesson content and sources.
-- The next core work is TASK-017: Tutor Engine Planner and Action Executor Foundation.
+- The Tutor Engine planner/action executor foundation is implemented.
+- The next work is frontend lesson experience improvements.
 
 ## Intentionally Not Included Yet
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-READY
+DONE
 
 ## Why This Task Exists
 
@@ -37,13 +37,14 @@ This task should make future flows easier to add without growing scattered manua
 
 ## Scope
 
-Add:
+Added:
 
 - Shared action names for tutor workflows.
-- A planner module that returns a validated action plan.
+- A deterministic planner module that returns a validated action plan.
 - An action executor module that calls existing services/chains.
 - Conversation regression test script for the most important flows.
-- Integration path that can run behind the existing Ask API without breaking current behavior.
+- Integration path behind the existing Ask API without breaking current frontend response behavior.
+- State patching fix so side doubts and no-context answers do not clear active lesson context.
 
 Initial actions should cover only current needs:
 
@@ -77,17 +78,29 @@ Use existing code where possible:
 
 ## Acceptance Criteria
 
-- Planner output is a small validated object, not free-form text.
-- Executor owns action dispatch in one place.
-- Ask API behavior remains compatible with the current frontend.
-- Existing tests still pass.
-- New conversation regression test covers at least:
+- Planner output is a small validated object, not free-form text. DONE.
+- Executor owns action dispatch in one place. DONE.
+- Ask API behavior remains compatible with the current frontend. DONE.
+- Existing tests still pass. DONE.
+- New conversation regression test covers:
   - greeting,
   - subject-only study intent,
-  - chapter start,
+  - chapter follow-up lesson start,
   - next topic,
   - grounded doubt answer,
-  - metadata chapter count.
+  - metadata chapter count. DONE.
+
+## Current Implementation Status
+
+- `backend/src/tutor/planner/tutorActions.js` defines shared action names.
+- `backend/src/tutor/planner/tutorPlanner.js` creates deterministic action plans.
+- `backend/src/tutor/executor/actionExecutor.js` dispatches actions to existing handlers, metadata, RAG, and lesson services.
+- `backend/src/services/ask.service.js` now delegates decision/action handling to the planner/executor.
+- `backend/src/services/ask.service.js` preserves active lesson state during normal doubts and no-context answers.
+- `backend/src/tutor/context/contextResolver.js` avoids writing null subject/chapter context patches.
+- `backend/scripts/test-tutor-conversations.js` covers the core conversation path.
+- Conversation regression now asserts that an out-of-scope side doubt does not clear lesson chapter, lesson mode, or pending `continue_lesson`.
+- `npm.cmd run test:tutor-conversations` was added.
 
 ## Verification Commands
 
@@ -110,3 +123,11 @@ docs/polish-notes.md
 ```
 
 Do not spend this task polishing tone/source display unless it is required for planner correctness.
+
+## Next Step After This Task
+
+Improve the frontend lesson experience:
+
+- show current lesson topic,
+- make suggested actions clickable,
+- display lesson sources more compactly.

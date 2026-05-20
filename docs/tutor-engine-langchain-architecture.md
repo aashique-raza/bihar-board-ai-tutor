@@ -46,13 +46,15 @@ Implemented now:
 - Temporary rule/hybrid router and handlers.
 - Deterministic lesson start/continue flow.
 - Grounded lesson generation chain from retrieved topic context.
+- Deterministic planner/action executor foundation.
+- Conversation regression test script for core flows.
+- State patching preserves active lesson context across side doubts and no-context answers.
 - React frontend foundation with session persistence.
 
 Still missing:
 
-- LangChain structured planner.
-- Action executor module.
-- Conversation-level regression test suite.
+- Optional LangChain structured planner upgrade.
+- Broader conversation-level regression suite.
 - Frontend rendering for structured Tutor Engine actions.
 
 ## Layers
@@ -382,11 +384,11 @@ backend/src/tutor/
 3. Upgrade session context into DB-backed tutor state. DONE.
 4. Add deterministic lesson start/continue flow. DONE.
 5. Build grounded lesson generator chain. DONE.
-6. Build LangChain planner with structured JSON output. NEXT.
-7. Build action executor.
-8. Route `/api/v1/ask` through Tutor Engine.
-9. Update frontend to render lesson state and suggested actions.
-10. Add conversation regression tests.
+6. Build deterministic planner with validated action output. DONE.
+7. Build action executor. DONE.
+8. Route `/api/v1/ask` through Tutor Engine foundation. DONE.
+9. Add initial conversation regression tests. DONE.
+10. Update frontend to render lesson state and suggested actions. NEXT.
 11. Remove temporary router/handler files after replacement is verified.
 
 ## Test Strategy

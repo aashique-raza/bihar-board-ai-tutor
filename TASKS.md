@@ -17,7 +17,7 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 No active implementation task.
 
 Next recommended task:
-TASK-017: Tutor Engine Planner and Action Executor Foundation
+Frontend Lesson Experience Improvements
 
 ## Completed Tasks
 
@@ -257,19 +257,28 @@ Verified:
 - `npm.cmd run test:lesson-flow` passed.
 - `npm.cmd run test:ask-db` passed.
 
-## Ready Tasks
-
 ### TASK-017: Tutor Engine Planner and Action Executor Foundation
 
-Status: READY
+Status: DONE
 
 Task file:
 tasks/TASK-017-tutor-engine-planner-executor-foundation.md
 
-Goal:
+Completed:
 - Create a small planner/executor foundation so Ask API decisions move out of scattered router/handler logic.
+- Add shared tutor action names.
+- Add deterministic planner that returns validated action plans.
+- Add action executor that owns dispatch to existing handlers, RAG, metadata, and lesson services.
 - Add conversation regression tests for core tutor flows.
+- Fix state patching so normal doubts and no-context answers do not clear active lesson state.
 - Keep current frontend-compatible response behavior.
+
+Verified:
+- `npm.cmd run test:tutor-conversations` passed.
+- `npm.cmd run test:lesson-flow` passed.
+- `npm.cmd run test:ask-db` passed.
+- `npm.cmd run test:curriculum-resolvers` passed.
+- `npm.cmd run test:study-map` passed.
 
 ## Staged Project Roadmap
 
@@ -377,10 +386,10 @@ Completed:
 - Manual API and frontend tests found important tutor-flow gaps.
 - Initial router/session improvements were tested.
 - Lesson-flow regression test covers lesson start/continue, grounded sources, and old placeholder regression.
+- Conversation regression test covers greeting, subject-only study intent, chapter follow-up lesson start, next topic, metadata chapter count, grounded doubt answer, and side-doubt state stability.
 - Polish issues from real chat testing are tracked in `docs/polish-notes.md`.
 
 Remaining work:
-- Add conversation-level regression tests.
 - Track planner/action failures.
 - Improve answer quality, source display, and tone after the core Tutor Engine path is stable.
 
@@ -394,11 +403,13 @@ Completed:
 - DB-backed tutor state.
 - Deterministic lesson start/continue flow.
 - Grounded lesson generation from retrieved topic context.
+- Deterministic planner/action executor foundation.
+- Lesson state remains stable when a student asks a side doubt or out-of-scope question during a lesson.
 
 Expected work:
-- LangChain structured planner.
-- Action executor.
-- Conversation regression tests.
+- Optional LangChain structured planner upgrade after deterministic engine behavior is stable.
+- Frontend rendering for lesson state and suggested actions.
+- More conversation regression coverage as new workflows are added.
 
 ### Stage 11: Minimal Frontend Demo
 
@@ -441,6 +452,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is TASK-017: Tutor Engine Planner and Action Executor Foundation.
+The next recommended implementation task is Frontend Lesson Experience Improvements.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.

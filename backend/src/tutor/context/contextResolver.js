@@ -46,20 +46,36 @@ export const resolveQuestionWithContext = ({ normalized, route, sessionContext }
 
 export const createContextPatchFromAnswer = ({ route, question, answerPayload, scope }) => {
   const firstSource = answerPayload.sources?.[0] || {};
-
-  return {
+  const patch = {
     lastIntent: route.intent,
-    lastSubject: scope?.subjectId || route.subjectHint || firstSource.subject || null,
-    lastSection: scope?.sectionId || route.sectionHint || firstSource.section?.toLowerCase() || null,
-    lastChapterId: scope?.chapterId || null,
-    lastTopic:
-      route.topicHint ||
-      extractTopicFromQuestion(question) ||
-      firstSource.chapterTitle ||
-      firstSource.chapter_title ||
-      question,
     lastQuestion: question,
     lastAnswer: answerPayload.answer,
     lastSources: answerPayload.sources || [],
   };
+  const lastSubject = scope?.subjectId || route.subjectHint || firstSource.subject || null;
+  const lastSection = scope?.sectionId || route.sectionHint || firstSource.section?.toLowerCase() || null;
+  const lastChapterId = scope?.chapterId || null;
+
+  if (lastSubject) {
+    patch.lastSubject = lastSubject;
+  }
+
+  if (lastSection) {
+    patch.lastSection = lastSection;
+  }
+
+  if (lastChapterId) {
+    patch.lastChapterId = lastChapterId;
+  }
+
+  if (answerPayload.status === 'answered') {
+    patch.lastTopic =
+      route.topicHint ||
+      extractTopicFromQuestion(question) ||
+      firstSource.chapterTitle ||
+      firstSource.chapter_title ||
+      question;
+  }
+
+  return patch;
 };

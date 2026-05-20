@@ -161,14 +161,20 @@ const createLessonFinishedPayload = ({ question, studyMode, chapter }) => ({
   },
 });
 
-export const getLessonResponse = async ({ question, normalizedText, studyMode, chatState }) => {
+export const getLessonResponse = async ({
+  question,
+  normalizedText,
+  studyMode,
+  chatState,
+  forceStart = false,
+}) => {
   const curriculumIndex = await loadCurriculumIndex();
   const chapterMatch = resolveChapterForLesson(curriculumIndex, normalizedText, chatState);
   const wantsStart = hasAnyWord(normalizedText, START_WORDS);
   const wantsNext = hasAnyWord(normalizedText, NEXT_WORDS);
   const hasCurrentChapter = Boolean(chatState.currentChapterId);
 
-  if (chapterMatch.status === 'resolved' && wantsStart) {
+  if (chapterMatch.status === 'resolved' && (wantsStart || forceStart)) {
     const chapter = chapterMatch.chapter;
     const topics = getChapterCoreTopics(curriculumIndex, chapter.chapterId);
     const topic = topics[0];

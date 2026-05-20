@@ -17,6 +17,7 @@
     "test:chat-db-models": "node scripts/test-chat-db-models.js",
     "test:ask-db": "node scripts/test-ask-db-integration.js",
     "test:lesson-flow": "node scripts/test-lesson-flow.js",
+    "test:tutor-conversations": "node scripts/test-tutor-conversations.js",
     "curriculum:build": "node scripts/build-curriculum-index.js",
     "test:curriculum-resolvers": "node scripts/test-curriculum-resolvers.js",
     "rag:test-retriever": "node scripts/test-retriever.js",
