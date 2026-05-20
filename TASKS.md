@@ -17,7 +17,10 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 No active implementation task.
 
 Next recommended task:
-Tutor Engine State and Planner Edge-case Cleanup
+Source Dedupe and Compact Backend Source Contract
+
+Known performance backlog:
+TASK-020: Performance Known Issues Backlog
 
 ## Completed Tasks
 
@@ -312,6 +315,50 @@ Verified:
 - `npm.cmd run rag:test-retriever` passed.
 - Frontend `npm.cmd run build` passed.
 
+### TASK-019: Tutor State and Planner Edge-case Cleanup
+
+Status: DONE
+
+Task file:
+tasks/TASK-019-tutor-state-planner-edge-cleanup.md
+
+Completed:
+- Added separate `lastDoubtTopic`, `lastDoubtQuestion`, and `lastDoubtSources` fields to chat state.
+- Added matching in-memory session context fields.
+- Updated DB state hydration so follow-up routing can use saved doubt context.
+- Updated follow-up routing and context resolution to prefer last grounded doubt context before lesson topic context.
+- Updated Ask API state saving so side doubts during active lessons do not overwrite the active lesson topic.
+- Cleared stale doubt context when the student changes learning target or starts a new lesson.
+- Strengthened conversation regression tests for side-doubt follow-ups and active lesson state stability.
+- Strengthened chat DB model tests for the new state fields.
+
+Verified:
+- `npm.cmd run test:chat-db-models` passed.
+- `npm.cmd run test:tutor-conversations` passed.
+- `npm.cmd run test:lesson-flow` passed.
+- `npm.cmd run test:ask-db` passed.
+- `npm.cmd run test:curriculum-resolvers` passed.
+
+### TASK-020: Performance Known Issues Backlog
+
+Status: BACKLOG
+
+Task file:
+tasks/TASK-020-performance-known-issues-backlog.md
+
+Tracked issues:
+- Real LLM-mode QA conversation did not finish within a 10-minute timeout.
+- Deterministic regression mode still takes roughly 3-8 seconds per Ask turn.
+- Ask API latency likely comes from vector-store loading, embedding calls, LLM calls, MongoDB round trips, and lack of caching/streaming.
+- Keep this as a later optimization backlog after the core product goal is stable.
+
+Later expected work:
+- Add timing logs.
+- Cache loaded vector store in process.
+- Reuse embedding/vector-store clients.
+- Keep metadata/clarification paths free of RAG/LLM work.
+- Consider streaming and production vector DB later.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -424,6 +471,7 @@ Completed:
 Remaining work:
 - Track planner/action failures.
 - Improve answer quality, source display, and tone after the core Tutor Engine path is stable.
+- Improve API latency later; details are tracked in TASK-020.
 
 ### Stage 10: LangChain Tutor Engine
 
@@ -438,9 +486,11 @@ Completed:
 - Deterministic planner/action executor foundation.
 - Lesson state remains stable when a student asks a side doubt or out-of-scope question during a lesson.
 - Expanded conversation regression coverage for planner/state edge cases.
+- Last answered doubt context is now stored separately from active lesson topic context.
 
 Expected work:
-- State/planner edge-case cleanup, including clearer separation of active lesson state from last answered doubt context.
+- Source dedupe and compact backend source contract.
+- Performance optimization later; known issues are tracked in TASK-020.
 - Optional LangChain structured planner upgrade after deterministic engine behavior is stable.
 - Frontend rendering for lesson state and suggested actions.
 - More conversation regression coverage as new workflows are added.
@@ -486,7 +536,7 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended backend implementation task is Tutor Engine State and Planner Edge-case Cleanup.
+The next recommended backend implementation task is Source Dedupe and Compact Backend Source Contract.
 
 Frontend Lesson Experience Improvements remains the next recommended frontend task.
 

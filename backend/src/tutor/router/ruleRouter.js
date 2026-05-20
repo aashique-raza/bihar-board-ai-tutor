@@ -48,6 +48,9 @@ const hasRagQuestionIntent = (text) =>
     /\?$/
   ]);
 
+const getFollowUpTopic = (sessionContext) =>
+  sessionContext?.lastDoubtTopic || sessionContext?.lastTopic || null;
+
 export const routeWithRules = ({ normalized, sessionContext }) => {
   const text = normalized.normalizedText;
   const base = {
@@ -84,11 +87,13 @@ export const routeWithRules = ({ normalized, sessionContext }) => {
   }
 
   if (hasFollowUpIntent(text)) {
+    const topicHint = getFollowUpTopic(sessionContext);
+
     return createRoute({
       ...base,
       intent: ROUTER_INTENTS.followUp,
-      confidence: sessionContext?.lastTopic ? 0.88 : 0.62,
-      topicHint: sessionContext?.lastTopic || null,
+      confidence: topicHint ? 0.88 : 0.62,
+      topicHint,
       reason: 'Follow-up wording detected.',
     });
   }

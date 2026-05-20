@@ -31,7 +31,12 @@ export const resolveQuestionWithContext = ({ normalized, route, sessionContext }
     return normalized.normalizedText;
   }
 
-  const topic = route.topicHint || sessionContext?.lastTopic || extractTopicFromSources(sessionContext?.lastSources);
+  const topic =
+    route.topicHint ||
+    sessionContext?.lastDoubtTopic ||
+    sessionContext?.lastTopic ||
+    extractTopicFromSources(sessionContext?.lastDoubtSources) ||
+    extractTopicFromSources(sessionContext?.lastSources);
 
   if (!topic) {
     return null;

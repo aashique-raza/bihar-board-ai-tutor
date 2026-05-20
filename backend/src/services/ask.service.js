@@ -49,6 +49,9 @@ const loadDbStateIntoSession = (sessionId, chatState) => {
     lastSection: chatState.currentSectionId || null,
     lastChapterId: chatState.currentChapterId || null,
     lastTopic: chatState.lastTopic || chatState.currentTopicId || null,
+    lastDoubtTopic: chatState.lastDoubtTopic || null,
+    lastDoubtQuestion: chatState.lastDoubtQuestion || null,
+    lastDoubtSources: chatState.lastDoubtSources || [],
     lastQuestion: chatState.lastStudentMessage || null,
     lastAnswer: chatState.lastAnswer || null,
     lastSources: chatState.lastSources || [],
@@ -84,12 +87,18 @@ const saveTutorTurn = async ({
     status === STATUS.answered &&
     !chatState.currentChapterId &&
     sessionContext.lastTopic;
+  const shouldSaveDoubtContext = status === STATUS.answered && sessionContext.lastTopic;
 
   await updateChatState(sessionId, removeUndefinedFields({
     preferredStudyMode: response.studyMode,
     lastTutorAction: response.intent || route.intent,
     lastIntent: sessionContext.lastIntent || response.intent || route.intent,
     lastTopic: shouldSaveDoubtTopic ? sessionContext.lastTopic : undefined,
+    lastDoubtTopic: shouldSaveDoubtContext ? sessionContext.lastTopic : undefined,
+    lastDoubtQuestion: shouldSaveDoubtContext
+      ? response.resolvedQuestion || question
+      : undefined,
+    lastDoubtSources: shouldSaveDoubtContext ? response.sources || [] : undefined,
     lastStudentMessage: question,
     lastAnswer: response.answer,
     lastSources: response.sources || [],

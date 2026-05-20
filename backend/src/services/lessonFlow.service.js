@@ -203,6 +203,9 @@ export const getLessonResponse = async ({
         pendingAction: topics.length === 1 ? null : 'continue_lesson',
         completedTopicIds: [topic.topicId],
         lastTopic: cleanTopicTitle(topic.title),
+        lastDoubtTopic: null,
+        lastDoubtQuestion: null,
+        lastDoubtSources: [],
       },
     };
   }

@@ -80,6 +80,7 @@ const withSession = (response, sessionContext) => ({
     sessionId: sessionContext.sessionId,
     turnCount: sessionContext.turnCount,
     lastTopic: sessionContext.lastTopic,
+    lastDoubtTopic: sessionContext.lastDoubtTopic,
     lastSubject: sessionContext.lastSubject,
     lastSection: sessionContext.lastSection,
     lastChapterId: sessionContext.lastChapterId,
@@ -196,6 +197,9 @@ const createLearningTargetResponse = async ({ question, studyMode, language, pla
       learningMode: 'idle',
       pendingAction: 'choose_chapter',
       completedTopicIds: [],
+      lastDoubtTopic: null,
+      lastDoubtQuestion: null,
+      lastDoubtSources: [],
     },
   };
 };

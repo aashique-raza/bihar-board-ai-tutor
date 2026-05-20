@@ -53,6 +53,18 @@ const chatStateSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+    lastDoubtTopic: {
+      type: String,
+      default: null,
+    },
+    lastDoubtQuestion: {
+      type: String,
+      default: null,
+    },
+    lastDoubtSources: {
+      type: Array,
+      default: [],
+    },
     lastStudentMessage: {
       type: String,
       default: null,

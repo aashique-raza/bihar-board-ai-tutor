@@ -99,6 +99,10 @@ const runChemistryLessonConversation = async () => {
     stateAfterSideDoubt.pendingAction === 'continue_lesson',
     'Out-of-scope side doubt should preserve the continue lesson action.'
   );
+  assert(
+    !stateAfterSideDoubt.lastDoubtTopic,
+    'Out-of-scope side doubt should not replace the last grounded doubt topic.'
+  );
 
   return sessionId;
 };
@@ -201,11 +205,24 @@ const runFollowUpDoubtConversation = async () => {
 
   assert(followUp.status === 'answered', 'Follow-up doubt should resolve using previous context.');
   assert(followUp.resolvedQuestion !== followUp.normalizedQuestion, 'Follow-up should include resolved context.');
+  assertIncludes(
+    followUp.resolvedQuestion,
+    'blood',
+    'Follow-up should use the last grounded doubt topic, not the active lesson topic.'
+  );
 
   const state = await getChatState(sessionId);
   assert(
     state.currentChapterId === 'science.biology.chapter-01',
     'Follow-up doubt should not clear the active Biology lesson.'
+  );
+  assert(
+    state.lastDoubtTopic === 'blood',
+    'Answered side doubt should be saved separately from the active lesson topic.'
+  );
+  assert(
+    state.lastTopic !== 'blood',
+    'Active lesson topic should not be overwritten by a side doubt topic.'
   );
 
   return sessionId;

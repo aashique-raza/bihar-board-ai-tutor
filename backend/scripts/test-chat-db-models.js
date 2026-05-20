@@ -68,6 +68,9 @@ try {
     preferredStudyMode: 'global',
     pendingAction: 'continue_lesson',
     completedTopicIds: ['science.physics.chapter-03.topic-04'],
+    lastDoubtTopic: 'electric current',
+    lastDoubtQuestion: 'electric current kya hai',
+    lastDoubtSources: [{ chapterTitle: 'Electricity' }],
     lastTutorAction: 'start_lesson',
     lastStudentMessage: 'physics chapter 3 padhao',
   });
@@ -75,6 +78,8 @@ try {
   assert(updatedState.learningMode === 'lesson', 'Learning mode was not updated.');
   assert(updatedState.currentChapterId === 'science.physics.chapter-03', 'Chapter was not updated.');
   assert(updatedState.completedTopicIds.length === 1, 'Completed topics were not saved.');
+  assert(updatedState.lastDoubtTopic === 'electric current', 'Last doubt topic was not saved.');
+  assert(updatedState.lastDoubtSources.length === 1, 'Last doubt sources were not saved.');
 
   console.log('Chat DB model tests passed.');
   console.log(JSON.stringify({
