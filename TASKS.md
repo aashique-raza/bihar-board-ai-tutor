@@ -14,13 +14,10 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 
 ## Current Active Task
 
-TASK-014: DB-backed Tutor State Context
+No active implementation task.
 
-Task file:
-tasks/TASK-014-db-backed-tutor-state-context.md
-
-Goal:
-Use `chat_states` as the saved backend context source before moving to lesson start/continue flows.
+Next recommended task:
+Frontend lesson experience improvements.
 
 ## Completed Tasks
 
@@ -225,6 +222,45 @@ Verified:
 - `npm.cmd run test:study-map` passed.
 - `npm.cmd run test:curriculum-resolvers` passed.
 
+### TASK-015: Lesson Start / Continue Backend Flow
+
+Status: DONE
+
+Task file:
+tasks/TASK-015-lesson-start-continue-backend-flow.md
+
+Current scope:
+- Start lesson from chapter request.
+- Continue lesson from DB state.
+- Save current topic and completed topics.
+- Add lesson flow regression test.
+
+Verified:
+- `npm.cmd run test:lesson-flow` passed.
+- `npm.cmd run test:ask-db` passed.
+- `npm.cmd run test:chat-db-models` passed.
+- `npm.cmd run test:study-map` passed.
+- `npm.cmd run test:curriculum-resolvers` passed.
+
+### TASK-016: Grounded Lesson Generation from Retrieved Topic Context
+
+Status: DONE
+
+Task file:
+tasks/TASK-016-grounded-lesson-generation.md
+
+Completed:
+- Added topic-based lesson retrieval scoped to the current chapter.
+- Added grounded lesson prompt and LangChain lesson chain.
+- Replaced lesson placeholder text with generated lesson content from retrieved chunks.
+- Returned sources in lesson start/continue responses.
+- Saved lesson sources in session context.
+- Strengthened lesson-flow regression test to require sources and reject old placeholder text.
+
+Verified:
+- `npm.cmd run test:lesson-flow` passed.
+- `npm.cmd run test:ask-db` passed.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -343,12 +379,13 @@ Status: ACTIVE
 Completed:
 - Curriculum Brain from curated Markdown.
 - Chapter/topic resolver.
+- DB-backed tutor state.
+- Deterministic lesson start/continue flow.
+- Grounded lesson generation from retrieved topic context.
 
 Expected work:
-- Tutor State.
 - LangChain structured planner.
 - Action executor.
-- Lesson generation chain.
 - Conversation regression tests.
 
 ### Stage 11: Minimal Frontend Demo
@@ -391,6 +428,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is Lesson Start / Continue Backend Flow.
+The next recommended implementation task is Frontend Lesson Experience Improvements.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.

@@ -23,13 +23,19 @@ Completed:
 - Safe fallback when retrieved context is insufficient.
 - Study Map API for available chapters.
 - Ask API with Global Mode and Focus Mode.
+- MongoDB-backed chat sessions, chat history, and tutor state.
+- Lesson start/continue flow.
+- Grounded lesson generation from retrieved topic context.
+- Zuno React frontend foundation.
+- Initial temporary router/session layer for greetings, study intent, metadata, and simple follow-ups.
 
 Not included yet:
 
-- Frontend.
-- Database or production vector DB.
+- Production vector DB.
 - Production deployment.
 - Formal evaluation question set.
+- Final LangChain Tutor Engine planner.
+- Frontend lesson-specific UI polish.
 
 ## Initial Scope
 
@@ -68,6 +74,25 @@ Student Question
 -> Grounded Hinglish Prompt
 -> LLM
 -> Answer + Sources + Status
+```
+
+Next architecture direction:
+
+```text
+User Message
+-> Tutor State
+-> Curriculum Context
+-> LangChain Planner
+-> Action Executor
+-> RAG / Lesson Chains
+-> Updated Tutor State
+-> Structured API Response
+```
+
+See:
+
+```text
+docs/tutor-engine-langchain-architecture.md
 ```
 
 ## RAG Commands
@@ -119,16 +144,16 @@ Current backend status:
 - The local vector store has been generated at `backend/storage/vector-store.json`.
 - The Ask API is available at `POST /api/v1/ask`.
 - The Study Map API is available at `GET /api/v1/study-map`.
-- The next work is verification, quality evaluation, frontend demo, and deployment.
+- The Zuno frontend foundation exists under `frontend/`.
+- The lesson flow can start and continue topics with grounded lesson content and sources.
+- The next work is frontend lesson experience polish and then LangChain-first Tutor Engine planner/action architecture.
 
 ## Intentionally Not Included Yet
 
-- Frontend.
-- Database.
 - Admin panel.
 - Analytics.
 - Quiz system.
 - Authentication.
-- Chat history.
 - PDF/OCR pipeline.
 - Hardcoded chapter names.
+- Production vector database.

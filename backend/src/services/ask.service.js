@@ -14,6 +14,7 @@ import ApiError from '../utils/ApiError.js';
 import { addChatMessage } from './chatHistory.service.js';
 import { getOrCreateChatSession, createChatSession } from './chatSession.service.js';
 import { getOrCreateChatState, updateChatState } from './chatState.service.js';
+import { getLessonResponse } from './lessonFlow.service.js';
 import { findStudyMapChapter } from './studyMap.service.js';
 
 const STUDY_MODES = {
@@ -42,6 +43,10 @@ const GLOBAL_CONTEXT_NOT_FOUND_ENGLISH_ANSWER =
 const normalizeText = (value) => String(value || '').trim();
 
 const getLearningMode = ({ route, status }) => {
+  if (route.intent === 'start_lesson' || route.intent === 'continue_lesson') {
+    return 'lesson';
+  }
+
   if (route.intent === ROUTER_INTENTS.studyIntent) {
     return 'lesson';
   }
@@ -93,6 +98,7 @@ const saveTutorTurn = async ({
   sessionContext,
   route,
   status = null,
+  stateUpdates = {},
 }) => {
   await addChatMessage({
     sessionId,
@@ -122,6 +128,7 @@ const saveTutorTurn = async ({
     lastStudentMessage: question,
     lastAnswer: response.answer,
     lastSources: response.sources || [],
+    ...stateUpdates,
   }));
 
   return response;
@@ -278,6 +285,36 @@ export const askQuestion = async (body = {}) => {
   const language = detectQuestionLanguage(question);
   const normalized = normalizeMessage(question);
   const sessionContext = getSessionContext(sessionId);
+  const lessonResult = await getLessonResponse({
+    question,
+    normalizedText: normalized.normalizedText,
+    studyMode,
+    chatState,
+  });
+
+  if (lessonResult) {
+    const route = lessonResult.response.router;
+    const nextSession = updateSessionContext(sessionId, {
+      lastIntent: lessonResult.response.intent,
+      lastQuestion: question,
+      lastSubject: lessonResult.response.scope?.subjectId || sessionContext.lastSubject,
+      lastSection: lessonResult.response.scope?.sectionId || sessionContext.lastSection,
+      lastChapterId: lessonResult.response.scope?.chapterId || sessionContext.lastChapterId,
+      lastTopic: lessonResult.stateUpdates.lastTopic || sessionContext.lastTopic,
+      lastAnswer: lessonResult.response.answer,
+      lastSources: lessonResult.response.sources || [],
+    });
+
+    return saveTutorTurn({
+      sessionId,
+      question,
+      response: withSession(lessonResult.response, nextSession),
+      sessionContext: nextSession,
+      route,
+      stateUpdates: lessonResult.stateUpdates,
+    });
+  }
+
   const route = await routeMessage({
     normalized,
     sessionContext,
