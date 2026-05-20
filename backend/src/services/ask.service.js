@@ -147,6 +147,7 @@ export const askQuestion = async (body = {}) => {
     chapter = await validateFocusRequest(body);
     retrieverOptions = {
       metadataFilter: chapter.metadataFilter,
+      requireTermMatchForLatinQuery: true,
     };
   }
 

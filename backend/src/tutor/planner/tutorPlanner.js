@@ -107,6 +107,27 @@ export const planTutorAction = async ({ normalized, sessionContext, chatState })
     });
   }
 
+  if (wantsStart && hasChapterSignal(text) && chapterMatch.status === 'ambiguous') {
+    const route = createRoute({
+      intent: ROUTER_INTENTS.unclear,
+      confidence: ROUTER_CONFIDENCE.medium,
+      source: 'tutor_planner',
+      subjectHint: normalized.subjectHint,
+      sectionHint: normalized.sectionHint,
+      needsClarification: true,
+      clarificationQuestion:
+        'Chapter number multiple sections me ho sakta hai. Aap Physics, Chemistry, ya Biology ke saath chapter number likh do, jaise "biology chapter 2 padhao".',
+      reason: 'Chapter number matched multiple sections without enough context.',
+    });
+
+    return createPlan({
+      action: TUTOR_ACTIONS.askClarification,
+      route,
+      confidence: route.confidence,
+      reason: route.reason,
+    });
+  }
+
   const route = await routeMessage({
     normalized,
     sessionContext,

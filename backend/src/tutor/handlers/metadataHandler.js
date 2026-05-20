@@ -10,6 +10,10 @@ const normalize = (value) =>
 const formatChapterList = (chapters) =>
   chapters.map((chapter) => `${chapter.number}. ${chapter.title}`).join('\n');
 
+const isDifficultyRankingQuestion = (question) =>
+  /\b(tough|hard|difficult|easy|easiest|hardest|mushkil|asaan|aasan|kaun sa)\b/i.test(question)
+  && /\bchapter\b/i.test(question);
+
 const findSection = (studyMap, sectionHint) => {
   if (!sectionHint) {
     return null;
@@ -49,6 +53,34 @@ export const createMetadataResponse = async ({
   const sectionHint = route.sectionHint || sessionContext?.lastSection;
   const subjectHint = route.subjectHint || sessionContext?.lastSubject;
   const matchedSection = findSection(studyMap, sectionHint);
+
+  if (isDifficultyRankingQuestion(question)) {
+    const scope = matchedSection
+      ? {
+          subjectId: matchedSection.subject.id,
+          subjectTitle: matchedSection.subject.title,
+          sectionId: matchedSection.section.id,
+          sectionTitle: matchedSection.section.title,
+        }
+      : null;
+
+    return {
+      status: 'study_advice_guardrail',
+      intent: route.intent,
+      confidence: route.confidence,
+      studyMode,
+      question,
+      detectedLanguage: language.detectedLanguage,
+      answerLanguage: language.answerLanguage,
+      answer:
+        'Mere source material me chapter-wise difficulty ranking nahi di gayi hai, isliye main guess nahi karunga. Aap chahein to kisi chapter ka naam likh do, main usko simple Hinglish me step-by-step padha sakta hoon.',
+      sources: [],
+      suggestedActions: [],
+      scope,
+      router: route,
+      session: sessionContext,
+    };
+  }
 
   if (matchedSection) {
     const { subject, section } = matchedSection;

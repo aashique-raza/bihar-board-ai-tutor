@@ -17,7 +17,7 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 No active implementation task.
 
 Next recommended task:
-Frontend Lesson Experience Improvements
+Tutor Engine State and Planner Edge-case Cleanup
 
 ## Completed Tasks
 
@@ -280,6 +280,38 @@ Verified:
 - `npm.cmd run test:curriculum-resolvers` passed.
 - `npm.cmd run test:study-map` passed.
 
+### TASK-018: Conversation Regression Coverage
+
+Status: DONE
+
+Task file:
+tasks/TASK-018-conversation-regression-coverage.md
+
+Completed:
+- Expanded backend conversation regression coverage from 3 to 10 multi-turn scenarios.
+- Covered Biology subject selection followed by chapter number and next-topic continuation.
+- Covered Focus Mode out-of-chapter refusal.
+- Covered follow-up doubt context resolution.
+- Covered ambiguous chapter-number clarification.
+- Covered subject change during an active lesson.
+- Covered out-of-scope question during an active lesson without clearing lesson state.
+- Covered the tough chapter / difficulty-ranking guardrail so the backend does not guess unsupported rankings.
+- Added deterministic extractive-only regression mode for lesson and RAG test scripts.
+- Tightened Focus Mode retrieval for Latin/Hinglish questions so unrelated selected-chapter context is refused.
+
+Verified:
+- `npm.cmd run test:chunks` passed.
+- `npm.cmd run test:study-map` passed.
+- `npm.cmd run test:curriculum-resolvers` passed.
+- `npm.cmd run test:vector-store` passed.
+- `npm.cmd run test:chat-db-models` passed.
+- `npm.cmd run test:ask-db` passed.
+- `npm.cmd run test:lesson-flow` passed.
+- `npm.cmd run test:tutor-conversations` passed.
+- `npm.cmd run test:retrieval` passed.
+- `npm.cmd run rag:test-retriever` passed.
+- Frontend `npm.cmd run build` passed.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -386,7 +418,7 @@ Completed:
 - Manual API and frontend tests found important tutor-flow gaps.
 - Initial router/session improvements were tested.
 - Lesson-flow regression test covers lesson start/continue, grounded sources, and old placeholder regression.
-- Conversation regression test covers greeting, subject-only study intent, chapter follow-up lesson start, next topic, metadata chapter count, grounded doubt answer, and side-doubt state stability.
+- Conversation regression test now covers greeting, subject-only study intent, chapter follow-up lesson start, next topic, metadata chapter count, grounded doubt answer, side-doubt state stability, Biology chapter-number follow-up, Focus Mode out-of-chapter refusal, follow-up doubt context, ambiguous chapter clarification, subject change during lesson, out-of-scope during lesson, and tough chapter guardrail.
 - Polish issues from real chat testing are tracked in `docs/polish-notes.md`.
 
 Remaining work:
@@ -405,8 +437,10 @@ Completed:
 - Grounded lesson generation from retrieved topic context.
 - Deterministic planner/action executor foundation.
 - Lesson state remains stable when a student asks a side doubt or out-of-scope question during a lesson.
+- Expanded conversation regression coverage for planner/state edge cases.
 
 Expected work:
+- State/planner edge-case cleanup, including clearer separation of active lesson state from last answered doubt context.
 - Optional LangChain structured planner upgrade after deterministic engine behavior is stable.
 - Frontend rendering for lesson state and suggested actions.
 - More conversation regression coverage as new workflows are added.
@@ -452,6 +486,8 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is Frontend Lesson Experience Improvements.
+The next recommended backend implementation task is Tutor Engine State and Planner Edge-case Cleanup.
+
+Frontend Lesson Experience Improvements remains the next recommended frontend task.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.

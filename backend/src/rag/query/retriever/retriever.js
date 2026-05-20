@@ -39,10 +39,15 @@ const isStrongVectorFallback = (result) =>
 
 const isDevanagariQuery = (query) => DEVANAGARI_PATTERN.test(query);
 
-const passesFinalFilter = (result, query) =>
-  (result.finalScore >= FINAL_SCORE_THRESHOLD ||
-    (hasMatchedTerms(result) && result.score >= TERM_MATCH_VECTOR_SCORE_THRESHOLD)) &&
-  (hasMatchedTerms(result) || isStrongVectorFallback(result) || isDevanagariQuery(query));
+const passesFinalFilter = (result, query, options = {}) => {
+  if (options.requireTermMatchForLatinQuery && !isDevanagariQuery(query) && !hasMatchedTerms(result)) {
+    return false;
+  }
+
+  return (result.finalScore >= FINAL_SCORE_THRESHOLD ||
+      (hasMatchedTerms(result) && result.score >= TERM_MATCH_VECTOR_SCORE_THRESHOLD)) &&
+    (hasMatchedTerms(result) || isStrongVectorFallback(result) || isDevanagariQuery(query));
+};
 
 const matchesMetadataFilter = (metadata, filter = {}) =>
   Object.entries(filter).every(([key, value]) => metadata?.[key] === value);
@@ -98,7 +103,7 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
       score,
     }));
   const rerankedResults = rerankResults(query, candidates);
-  const filteredResults = rerankedResults.filter((result) => passesFinalFilter(result, query));
+  const filteredResults = rerankedResults.filter((result) => passesFinalFilter(result, query, options));
   const results = filteredResults.slice(0, topK);
 
   return {

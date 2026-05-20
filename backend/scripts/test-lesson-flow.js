@@ -6,6 +6,8 @@ import { askQuestion } from '../src/services/ask.service.js';
 import { getChatHistory } from '../src/services/chatHistory.service.js';
 import { getChatState } from '../src/services/chatState.service.js';
 
+process.env.RAG_EXTRACTIVE_ONLY = 'true';
+
 const assert = (condition, message) => {
   if (!condition) {
     throw new Error(message);

@@ -72,6 +72,9 @@ const createExtractiveLesson = ({ chapter, topic, chunks }) => {
   ].join('\n');
 };
 
+const shouldUseExtractiveOnly = () =>
+  process.env.RAG_EXTRACTIVE_ONLY === 'true';
+
 export const generateLessonFromTopic = async ({ chapter, topic, chain, retrieverOptions = {} }) => {
   const query = createLessonSearchQuery({ chapter, topic });
   const retrieval = await retrieveRelevantChunks(query, {
@@ -87,6 +90,15 @@ export const generateLessonFromTopic = async ({ chapter, topic, chain, retriever
       sources: [],
       retrieval,
       generationMode: 'no_context_fallback',
+    };
+  }
+
+  if (shouldUseExtractiveOnly()) {
+    return {
+      answer: createExtractiveLesson({ chapter, topic, chunks: retrieval.results }),
+      sources,
+      retrieval,
+      generationMode: 'extractive_only',
     };
   }
 

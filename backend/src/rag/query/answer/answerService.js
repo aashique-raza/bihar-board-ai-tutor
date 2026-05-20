@@ -100,6 +100,9 @@ const createNoContextAnswer = (question, retrieval) => ({
   generationMode: 'no_context_fallback',
 });
 
+const shouldUseExtractiveOnly = () =>
+  process.env.RAG_EXTRACTIVE_ONLY === 'true';
+
 const createExtractiveFallbackAnswer = (chunks) => {
   const snippets = chunks
     .map((chunk) => stripContextPrefix(chunk.metadata?.originalText || chunk.content))
@@ -140,6 +143,20 @@ export const generateRagAnswer = async (question, options = {}) => {
   }
 
   const sources = formatSources(retrieval.results);
+
+  if (shouldUseExtractiveOnly()) {
+    const answer = createExtractiveFallbackAnswer(retrieval.results);
+
+    return {
+      question: query,
+      answer,
+      answerWithSources: appendSourcesToAnswer({ answer, sources }),
+      sources,
+      retrieval,
+      generationMode: 'extractive_only',
+    };
+  }
+
   const chain = options.chain || createRagAnswerChain({
     chatModel: options.chatModel,
     llmConfig: options.llmConfig,

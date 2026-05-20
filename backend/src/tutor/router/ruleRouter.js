@@ -29,6 +29,7 @@ const hasMetadataIntent = (text) =>
   hasAny(text, [
     /\bkitne\b.*\bchapter\b/i,
     /\bchapter\b.*\b(kitne|list|dikhao|kaun|available)\b/i,
+    /\bkaun\s+sa\b.*\bchapter\b/i,
     /\bsyllabus\b/i,
     /\bsubject\b.*\b(kitne|list|available)\b/i,
   ]);
@@ -109,4 +110,3 @@ export const routeWithRules = ({ normalized, sessionContext }) => {
     reason: 'No confident rule matched.',
   });
 };
-
