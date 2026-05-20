@@ -8,9 +8,9 @@ This project is an education-focused RAG system. It should help Bihar Board Clas
 
 ## Current Phase
 
-Planning and context setup.
+Core MVP implementation.
 
-Do not write application code until the user asks for implementation.
+Application code may be written when the user explicitly asks for implementation. Keep changes scoped to the active task.
 
 ## Core Product Rule
 
@@ -21,8 +21,8 @@ The tutor must answer only from retrieved/indexed source content. If the availab
 - Always read the project documentation before coding.
 - Work on one task at a time.
 - Do not overbuild.
-- Do not add a database until explicitly asked.
-- Do not add a frontend until explicitly asked.
+- MongoDB/Mongoose has already been added for chat sessions, chat history, and tutor state.
+- A minimal React frontend has already been added.
 - Do not add an admin panel until explicitly asked.
 - Do not add analytics, quizzes, auth, or chat history until explicitly asked.
 - Do not install packages without a clear reason.
@@ -53,7 +53,7 @@ Study Content
 -> Hinglish Answer with Sources
 ```
 
-The first milestone uses only 2 verified Class 10 Science chapters. The chapter names are still TBD and must not be hardcoded before source verification.
+The current curated Science set has 16 Markdown chapters across Physics, Chemistry, and Biology. Do not hardcode chapter lists in frontend/router logic; read available content from Study Map or Curriculum Brain.
 
 ## After Each Task
 

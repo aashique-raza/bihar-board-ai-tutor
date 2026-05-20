@@ -100,9 +100,9 @@ npm.cmd run curriculum:build
 
 The generated index validates before it is saved and again when it is loaded.
 
-## Next Step
+## Current Follow-Up
 
-Build the Chapter/Topic Resolver on top of this index.
+Chapter/Topic Resolver is now built on top of this index.
 
 The resolver should map natural student requests to exact curriculum IDs:
 
@@ -112,3 +112,4 @@ electricity start kro -> science.physics.chapter-03
 biology ka first chapter -> science.biology.chapter-01
 ```
 
+Current next core step is the Tutor Engine planner/action executor foundation, using this Curriculum Brain plus DB-backed tutor state.

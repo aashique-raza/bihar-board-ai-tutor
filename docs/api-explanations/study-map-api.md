@@ -33,10 +33,9 @@ Discussion me ye decide hua tha ki:
 - Focus mode me global fallback automatically nahi hona chahiye.
 - Frontend chapter list apne andar hardcode nahi karega.
 - Backend study-map provide karega.
-- Abhi MongoDB ya koi database add nahi karna hai.
 - Current source of truth curated markdown files rahengi.
 
-DB abhi avoid kiya gaya kyunki hamare actual RAG content already `data/` folder me curated markdown files ke form me hai. Agar chapter list DB me rakhte, to DB, markdown files, aur vector-store metadata ke beech sync problem create ho sakti thi.
+Study Map abhi bhi curated Markdown metadata se banta hai. MongoDB chat sessions/history/state ke liye use hota hai, chapter catalog ke source of truth ke liye nahi.
 
 ## Ye API Kya Karegi?
 
@@ -240,7 +239,7 @@ Later this API can support:
 - Quiz availability per chapter.
 - Published/unpublished content status.
 
-But abhi intentionally simple rakha gaya hai. Current goal hai frontend ko available focus-study content dena without adding database complexity.
+But abhi intentionally simple rakha gaya hai. Current goal hai frontend ko available focus-study content dena without duplicating chapter catalog data in the database.
 
 ## GitHub Commit Message
 

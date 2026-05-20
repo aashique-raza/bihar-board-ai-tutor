@@ -55,4 +55,4 @@ npm.cmd run test:ask-db
 
 ## Next Step After This Task
 
-Add chat history loading from DB so refresh can show previous messages, not only continue the same backend session.
+Chat history loading from DB is still a later product feature. The immediate core path moved to DB-backed tutor state, lesson flow, and Tutor Engine planning.

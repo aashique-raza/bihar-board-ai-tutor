@@ -48,7 +48,7 @@ Local JSON persistence is simple and transparent for debugging, but it is not op
 - `npm run rag:query -- "question"` loads saved vectors.
 - Query uses LangChain `similaritySearchWithScore(...)`.
 - Query prints top chunks with scores and metadata.
-- No final AI answer generation is added.
+- No final AI answer generation is added in this task.
 - Existing loader and chunker remain unchanged.
 
 ## Future upgrade path
@@ -56,5 +56,5 @@ Local JSON persistence is simple and transparent for debugging, but it is not op
 - Move persistence to Chroma or Qdrant when a real vector database is needed.
 - Benchmark OpenAI embeddings against Gemini embeddings.
 - Add hybrid keyword plus vector search.
-- Add reranking after first-pass retrieval.
-- Add final RAG answer chain only after retrieval quality is verified.
+- Lightweight reranking and final RAG answer generation were added later in TASK-009.
+- Move persistence to a production vector database only after local retrieval behavior and Tutor Engine flow are stable.

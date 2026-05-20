@@ -64,14 +64,16 @@ Reason:
 
 Current boundary:
 
-- Add only the connection foundation now.
+- MongoDB/Mongoose is now implemented for chat sessions, chat history, and current tutor state.
 - Do not move RAG vectors into MongoDB.
 - Do not add auth, analytics, admin, quiz history, or a production vector database as part of this setup.
-- Keep schemas thin when tutor state/history implementation begins.
+- Keep schemas thin while the Tutor Engine planner/executor is still evolving.
 
 ### No frontend first
 
 Do not build a frontend in the first milestone. Prove the backend RAG pipeline first.
+
+Current status: a minimal Zuno React frontend now exists after the backend RAG and DB-backed session flow were validated.
 
 ### No admin first
 
@@ -131,9 +133,11 @@ Move to a production vector database only after local retrieval behavior is vali
 
 Keep OpenAI embedding comparison as a later benchmark. Do not switch providers until retrieval quality, cost, and implementation tradeoffs are evaluated.
 
-### Chapter names are TBD
+### Curated Science chapter set is now selected
 
-The first milestone will use 2 verified Class 10 Science chapters, but chapter names are not decided yet. Do not hardcode chapter names until verified source selection is complete.
+The current curated source set contains 16 Class 10 Science Markdown chapters across Physics, Chemistry, and Biology.
+
+Do not hardcode chapter lists in frontend or router logic. Read available chapters from Study Map / Curriculum Brain so future content changes do not require code changes.
 
 ### Correctness over cleverness
 

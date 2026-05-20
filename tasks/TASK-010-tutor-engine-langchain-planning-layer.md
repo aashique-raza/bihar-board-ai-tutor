@@ -2,23 +2,25 @@
 
 ## Status
 
-PAUSED
+DONE for architecture, Curriculum Brain, and resolver foundation.
 
 Current completed parts:
 
 - Part 1: Architecture documentation.
 - Part 2: Curriculum Brain Foundation.
 - Part 3: Chapter/Topic Resolver Foundation.
+- DB-backed state was completed later in TASK-011 through TASK-014.
+- Lesson start/continue and grounded lesson generation were completed later in TASK-015 and TASK-016.
 
-Current next part:
+Current next core part:
 
-- Part 4: Tutor State Design.
+- LangChain Planner and Action Executor Foundation.
 
-Pause reason:
+Status note:
 
-- Tutor State should now be DB-backed instead of in-memory.
-- TASK-011 will set up MongoDB/Mongoose first.
-- Resume this task after DB-backed state/history foundation is ready.
+- This task is no longer paused.
+- The original in-memory Tutor State plan has been replaced by MongoDB-backed `chat_states`.
+- The remaining Tutor Engine work should be split into a new implementation task instead of expanding this planning task forever.
 
 ## Why This Task Exists
 
@@ -207,14 +209,20 @@ electric current padhao -> science.physics.chapter-03 topic
 
 ### Part 4: Tutor State Design
 
-Add state schema/store:
+Original plan:
 
 ```text
 backend/src/tutor/state/tutorStateSchema.js
 backend/src/tutor/state/tutorStateStore.js
 ```
 
-Initial in-memory state should track:
+Current implementation:
+
+- Tutor state is DB-backed through `backend/src/models/chatState.model.js`.
+- State services live in `backend/src/services/chatState.service.js`.
+- Ask API hydrates temporary session context from `chat_states`.
+
+State tracks:
 
 - current subject
 - current section
@@ -295,7 +303,8 @@ Minimum conversations:
 - Existing temporary router is documented as temporary, not expanded as the long-term solution.
 - Curriculum index design supports future subjects.
 - Planner design uses LangChain structured output, not manual routing as the main decision engine.
-- No database, auth, admin, analytics, quiz, or production vector DB is added.
+- MongoDB-backed tutor state/history is implemented.
+- Auth, admin, analytics, quiz, and production vector DB are still not added.
 
 ## Commands To Verify Later
 
@@ -319,17 +328,10 @@ npm.cmd run build
 
 ## Next Step After This Task
 
-Start implementing Part 4:
+Start a new implementation task:
 
 ```text
-Tutor State Design
+Tutor Engine Planner and Action Executor Foundation
 ```
 
-Curriculum Brain and Chapter/Topic Resolver are now in place. Tutor State is required before the planner can reliably handle:
-
-```text
-physics chapter 3 padhao
-chapter 3 ke important topics
-next topic
-global mode me hi padhao
-```
+The planner/executor should use the existing Curriculum Brain, DB-backed state, RAG answer chain, and grounded lesson generation chain.

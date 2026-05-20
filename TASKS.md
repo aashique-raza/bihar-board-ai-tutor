@@ -17,7 +17,7 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 No active implementation task.
 
 Next recommended task:
-Frontend lesson experience improvements.
+TASK-017: Tutor Engine Planner and Action Executor Foundation
 
 ## Completed Tasks
 
@@ -129,31 +129,27 @@ Completed:
 - Added Study Map API for frontend chapter discovery.
 - Documented Ask API and Study Map API behavior.
 
-### TASK-010: LangChain-First Tutor Engine Planning Layer
+### TASK-010: LangChain-First Tutor Engine Architecture and Curriculum Foundation
 
-Status: PAUSED
+Status: DONE
 
 Task file:
 tasks/TASK-010-tutor-engine-langchain-planning-layer.md
 
-Current scope:
-- Document the LangChain-first Tutor Engine architecture.
-- Treat existing rule/hybrid router as a temporary compatibility layer, not the final solution.
-- Plan Curriculum Brain, Tutor State, LangChain Planner, Action Executor, Lesson Generator, and conversation tests.
-- Keep implementation future-ready for Math, Hindi, English, Social Science, Urdu, and Sanskrit.
-
-Latest completed within TASK-010:
+Completed:
+- Documented the LangChain-first Tutor Engine architecture.
+- Marked the existing rule/hybrid router as a temporary compatibility layer.
 - Curriculum Brain foundation from curated Markdown.
 - Chapter/topic resolver foundation.
 - Resolver regression tests.
 - Loader/chunker test path correction so the deterministic regression suite points at root `data/class-10/science`.
+- DB-backed Tutor State was completed later in TASK-011 through TASK-014.
+- Deterministic lesson flow and grounded lesson generation were completed later in TASK-015 and TASK-016.
 
-Next scope:
-- Tutor State schema/store.
-
-Pause reason:
-- Tutor State should be DB-backed because chat history will be needed soon.
-- MongoDB/Mongoose setup is now the immediate prerequisite.
+Remaining Tutor Engine work is tracked as the next recommended implementation task:
+- LangChain structured planner.
+- Action executor.
+- Conversation regression tests.
 
 ### TASK-011: MongoDB/Mongoose Foundation
 
@@ -261,6 +257,20 @@ Verified:
 - `npm.cmd run test:lesson-flow` passed.
 - `npm.cmd run test:ask-db` passed.
 
+## Ready Tasks
+
+### TASK-017: Tutor Engine Planner and Action Executor Foundation
+
+Status: READY
+
+Task file:
+tasks/TASK-017-tutor-engine-planner-executor-foundation.md
+
+Goal:
+- Create a small planner/executor foundation so Ask API decisions move out of scattered router/handler logic.
+- Add conversation regression tests for core tutor flows.
+- Keep current frontend-compatible response behavior.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -366,11 +376,13 @@ Status: PARTIAL
 Completed:
 - Manual API and frontend tests found important tutor-flow gaps.
 - Initial router/session improvements were tested.
+- Lesson-flow regression test covers lesson start/continue, grounded sources, and old placeholder regression.
+- Polish issues from real chat testing are tracked in `docs/polish-notes.md`.
 
 Remaining work:
 - Add conversation-level regression tests.
 - Track planner/action failures.
-- Improve answer quality and source display.
+- Improve answer quality, source display, and tone after the core Tutor Engine path is stable.
 
 ### Stage 10: LangChain Tutor Engine
 
@@ -398,6 +410,7 @@ Completed:
 - Global/Focus mode exists.
 - Chapter selector exists.
 - Answer and sources display exists.
+- Browser session handling exists through `localStorage` session id.
 
 Remaining work:
 - Add lesson state display.
@@ -428,6 +441,6 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is Frontend Lesson Experience Improvements.
+The next recommended implementation task is TASK-017: Tutor Engine Planner and Action Executor Foundation.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.

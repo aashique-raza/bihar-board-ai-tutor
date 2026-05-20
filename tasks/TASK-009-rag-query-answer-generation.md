@@ -13,7 +13,7 @@ Student question
 -> Hinglish answer with sources
 ```
 
-The goal was backend-only RAG behavior. No frontend, auth, database, admin panel, quiz, analytics, or deployment code was added.
+The goal of this task was backend-only RAG behavior. Frontend, database-backed session state, and lesson flow were added later in separate tasks.
 
 ## Final decisions
 
@@ -182,4 +182,4 @@ Placenta ka main role mother aur embryo ke beech material exchange surface ka ka
 
 DONE.
 
-The backend RAG query layer and grounded answer generation layer are working and tested. The next recommended step is to expose this through a minimal backend API endpoint.
+The backend RAG query layer and grounded answer generation layer are working and tested. Ask API, Study Map API, DB-backed state, frontend session handling, and lesson flow were added later in TASK-009 through TASK-016.

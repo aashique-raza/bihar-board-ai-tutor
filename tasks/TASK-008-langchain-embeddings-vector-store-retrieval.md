@@ -4,7 +4,7 @@
 
 The project already had curated Science content, a loader, and a tested chunker. The next required step was to turn chunks into embeddings, persist them locally, and prove retrieval works before adding final LLM answer generation.
 
-This task completes the retrieval foundation only. It does not generate final student-facing answers yet.
+This task completed the retrieval foundation only. Final student-facing answer generation was added later in TASK-009.
 
 ## Final decisions
 
@@ -15,7 +15,7 @@ This task completes the retrieval foundation only. It does not generate final st
 - Vector store: LangChain `MemoryVectorStore`
 - Persistence: local JSON file at `backend/storage/vector-store.json`
 - Retrieval: LangChain `similaritySearchWithScore`
-- Final AI answer generation: not included yet
+- Final AI answer generation: added later in TASK-009, not part of this task.
 
 ## Why Gemini was selected
 
@@ -125,17 +125,15 @@ Retrieval examples:
 - Embedding dimension is currently 3072, not optimized to 768 yet.
 - Retrieval can sometimes return one irrelevant lower-ranked chunk.
 - No hybrid search yet.
-- No reranking yet.
-- No final AI answer generation yet.
+- Lightweight reranking and grounded answer generation were added later in TASK-009.
 
 ## Future upgrade path
 
 - Benchmark OpenAI embeddings against Gemini embeddings.
 - Tune embedding dimensionality if supported safely through LangChain.
 - Add hybrid keyword plus vector search.
-- Add reranking.
+- Improve reranking beyond the current lightweight heuristic reranker if needed.
 - Move to Qdrant, Chroma, MongoDB Vector Search, or Supabase Vector when local JSON is no longer enough.
-- Add a grounded answer generation chain after retrieval quality is stable.
 
 ## Acceptance criteria
 
@@ -150,10 +148,10 @@ Retrieval examples:
 - 600 chunks are generated.
 - 600 vectors are saved.
 - Retrieval works for Hindi, Hinglish, and English queries.
-- No final AI answer generation is added.
+- No final AI answer generation was added in this task; it was added later in TASK-009.
 
 ## Final status
 
 DONE.
 
-The LangChain-based embedding, local vector storage, and retrieval foundation is complete. The next step is to build the grounded RAG answer generation pipeline using retrieved chunks.
+The LangChain-based embedding, local vector storage, and retrieval foundation is complete. Grounded RAG answer generation was completed later in TASK-009.

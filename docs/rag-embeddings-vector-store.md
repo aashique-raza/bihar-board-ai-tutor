@@ -4,7 +4,7 @@
 
 This document explains the current local MVP retrieval pipeline for the Bihar Board Class 10 Science AI Tutor.
 
-The current stage retrieves relevant source chunks only. It does not generate final AI answers yet.
+The current retrieval layer powers grounded doubt answers and grounded lesson generation.
 
 ## Current Flow
 
@@ -16,6 +16,8 @@ Loader
 -> LangChain MemoryVectorStore
 -> JSON persistence
 -> Query retrieval
+-> Reranking / final filtering
+-> Grounded answer or lesson generation
 ```
 
 ## Components
@@ -143,18 +145,8 @@ Retrieval examples:
 - Embedding dimension is currently 3072, not optimized to 768 yet.
 - Retrieval can sometimes return one irrelevant lower-ranked chunk.
 - No hybrid search yet.
-- No reranking yet.
-- No final AI answer generation yet.
+- Reranking is lightweight and local, not a full learned reranker.
 
 ## Next Step
 
-Build the RAG answer generation pipeline:
-
-- Take retrieved chunks.
-- Format sources.
-- Build a grounded prompt.
-- Use an LLM through LangChain.
-- Generate a simple Hinglish answer.
-- Show sources.
-- Refuse when context is insufficient.
-- Avoid hallucination.
+Use the retrieval layer inside the upcoming Tutor Engine planner/action architecture, and later evaluate whether a production vector database or stronger reranker is needed.

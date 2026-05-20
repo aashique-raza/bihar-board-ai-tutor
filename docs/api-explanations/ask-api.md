@@ -18,6 +18,8 @@ Is API ka goal hai:
 
 - Global Mode me full available Science content se answer dena.
 - Focus Mode me sirf selected chapter ke andar answer dena.
+- Lesson start/continue flow handle karna.
+- DB-backed session id ke saath conversation state continue karna.
 - Answer ke saath sources dena.
 - Agar selected chapter me answer nahi mile, to frontend ko structured signal dena taaki chat me "Switch to Global Mode" aur "Cancel" buttons dikh sakein.
 
@@ -47,7 +49,8 @@ Discussion me ye final decisions liye gaye:
 ```json
 {
   "question": "what is photosynthesis?",
-  "studyMode": "global"
+  "studyMode": "global",
+  "sessionId": "optional-existing-session-id"
 }
 ```
 
@@ -84,6 +87,10 @@ Allowed values:
 
 Sirf focus mode ke liye required. Isse backend selected chapter identify karta hai aur retrieval ko strict chapter scope me rakhta hai.
 
+`sessionId`
+
+Optional. Agar frontend ke paas previous response se `session.sessionId` hai, to next request me bhejna chahiye. Isse backend same `chat_sessions`, `chat_history`, aur `chat_states` records continue karta hai.
+
 ## Successful Answer Response
 
 ```json
@@ -114,7 +121,64 @@ Sirf focus mode ke liye required. Isse backend selected chapter identify karta h
       "sectionTitle": "Biology",
       "subjectId": "science",
       "subjectTitle": "Science"
+    },
+    "session": {
+      "sessionId": "generated-or-reused-session-id",
+      "turnCount": 1,
+      "lastTopic": "Nutrition",
+      "lastSubject": "science",
+      "lastSection": "biology",
+      "lastChapterId": "science.biology.chapter-01"
     }
+  }
+}
+```
+
+## Lesson Response
+
+Lesson start/continue responses use the same Ask API.
+
+Example request:
+
+```json
+{
+  "question": "physics chapter 3 padhao",
+  "studyMode": "global"
+}
+```
+
+Example response data:
+
+```json
+{
+  "status": "lesson_started",
+  "intent": "start_lesson",
+  "studyMode": "global",
+  "answer": "Grounded Hinglish lesson text...",
+  "sources": [
+    {
+      "sourceNumber": 1,
+      "chapterTitle": "Electricity",
+      "section": "Physics",
+      "headingPath": "Chapter 3: Electricity > Electric Current and Electric Circuit",
+      "chunkId": "physics-chapter-03-chunk-001"
+    }
+  ],
+  "suggestedActions": [
+    {
+      "type": "continue_lesson",
+      "label": "Next topic"
+    }
+  ],
+  "lesson": {
+    "chapterId": "science.physics.chapter-03",
+    "chapterTitle": "Electricity",
+    "topicId": "science.physics.chapter-03.topic-03",
+    "topicTitle": "Electric Current and Electric Circuit",
+    "topicNumber": 1,
+    "totalTopics": 13,
+    "nextAction": "continue_lesson",
+    "generationMode": "llm"
   }
 }
 ```
@@ -182,6 +246,18 @@ Frontend isi response me `suggestedActions` ke base par same chat bubble me butt
 `answered`
 
 Relevant context mila aur answer generate hua.
+
+`lesson_started`
+
+Chapter/topic resolve hua aur first lesson topic grounded retrieved context se generate hua.
+
+`lesson_continued`
+
+Saved DB state se next lesson topic continue hua.
+
+`lesson_completed`
+
+Current chapter ke core lesson topics complete ho gaye.
 
 `focus_context_not_found`
 
@@ -361,7 +437,7 @@ Later this API can support:
 
 - User-selected answer language.
 - Streaming responses.
-- Chat history.
+- Chat history loading endpoint.
 - Per-chapter quiz handoff.
 - Chapter summary mode.
 - Section-level focus mode, like full Physics or full Biology.

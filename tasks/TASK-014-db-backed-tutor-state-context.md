@@ -6,7 +6,7 @@ DONE
 
 ## Why This Task Exists
 
-Ask API turns are now saved in MongoDB, but the active tutor context still mostly comes from the old in-memory session context.
+Ask API turns are now saved in MongoDB, but at the start of this task the active tutor context still mostly came from the old in-memory session context.
 
 The backend should begin using `chat_states` as the saved source of current learning context.
 

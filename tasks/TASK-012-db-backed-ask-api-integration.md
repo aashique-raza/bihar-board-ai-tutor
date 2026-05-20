@@ -46,7 +46,7 @@ Do not add yet:
 - Ask API reuses a DB chat session when `sessionId` is provided.
 - Student message is saved before routing.
 - Tutor response is saved before returning.
-- Chat state is updated with study mode, last action, last student message, and available in-memory context.
+- Chat state is updated with study mode, last action, last student message, and available temporary session context.
 - `npm.cmd run test:ask-db` added.
 - `npm.cmd run test:ask-db` passed against MongoDB Atlas.
 

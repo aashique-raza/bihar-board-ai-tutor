@@ -36,6 +36,25 @@ RAG is one tool inside the tutor system. It is not the whole tutor.
 
 The Tutor Engine decides what should happen next. LangChain should be used wherever it gives us structured orchestration, prompts, tools, runnable chains, output parsing, and later graph-style flows.
 
+## Current Implementation Snapshot
+
+Implemented now:
+
+- Curriculum Brain from curated Markdown.
+- Chapter and topic resolvers.
+- MongoDB-backed `chat_sessions`, `chat_history`, and `chat_states`.
+- Temporary rule/hybrid router and handlers.
+- Deterministic lesson start/continue flow.
+- Grounded lesson generation chain from retrieved topic context.
+- React frontend foundation with session persistence.
+
+Still missing:
+
+- LangChain structured planner.
+- Action executor module.
+- Conversation-level regression test suite.
+- Frontend rendering for structured Tutor Engine actions.
+
 ## Layers
 
 ### 1. Curriculum Brain
@@ -123,8 +142,9 @@ State shape:
 ```
 
 Storage:
-- In-memory first.
-- Interface must be replaceable later by Redis/Postgres without changing planner/executor code.
+- MongoDB Atlas through Mongoose.
+- Current collections are `chat_sessions`, `chat_history`, and `chat_states`.
+- Keep the state access behind services so planner/executor code does not depend directly on Mongoose model details.
 
 LangChain usage:
 - State is injected into planner prompt as structured context.
@@ -246,8 +266,7 @@ Purpose:
 Lesson response should:
 - Use simple Hinglish.
 - Teach one concept at a time.
-- Include a simple example.
-- Ask a small check question.
+- Include examples or check questions only when the retrieved context supports them.
 - Stay grounded in retrieved chapter/topic content.
 
 LangChain flow:
@@ -358,16 +377,17 @@ backend/src/tutor/
 
 ## Implementation Order
 
-1. Create curriculum index from Markdown headings.
-2. Add chapter/topic resolver against the curriculum index.
-3. Upgrade session context into tutor state.
-4. Build LangChain planner with structured JSON output.
-5. Build action executor.
-6. Build lesson generator chain.
-7. Route `/api/v1/ask` through Tutor Engine.
-8. Update frontend to render lesson state and suggested actions.
-9. Add conversation regression tests.
-10. Remove temporary router/handler files after replacement is verified.
+1. Create curriculum index from Markdown headings. DONE.
+2. Add chapter/topic resolver against the curriculum index. DONE.
+3. Upgrade session context into DB-backed tutor state. DONE.
+4. Add deterministic lesson start/continue flow. DONE.
+5. Build grounded lesson generator chain. DONE.
+6. Build LangChain planner with structured JSON output. NEXT.
+7. Build action executor.
+8. Route `/api/v1/ask` through Tutor Engine.
+9. Update frontend to render lesson state and suggested actions.
+10. Add conversation regression tests.
+11. Remove temporary router/handler files after replacement is verified.
 
 ## Test Strategy
 
@@ -397,11 +417,9 @@ Expected:
 
 ## Non-Goals For This Milestone
 
-- No database.
 - No auth.
 - No admin panel.
 - No quiz engine.
 - No analytics.
 - No production vector DB.
-- No frontend redesign beyond what the new response contract requires.
-
+- No major frontend redesign beyond what the new response contract requires.

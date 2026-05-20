@@ -19,9 +19,9 @@ Science is divided into:
 Chapter file naming must follow this format:
 
 ```text
-chapter-01.md
-chapter-02.md
-chapter-03.md
+chapter-01-short-title.md
+chapter-02-short-title.md
+chapter-03-short-title.md
 ```
 
 Folder names must stay lowercase.
@@ -47,8 +47,4 @@ Do not create a processed folder.
 
 Do not delete existing project files.
 
-Do not modify `package.json`.
-
-Do not add new libraries.
-
-Do not write loader or chunking code.
+Do not add raw PDFs or generated storage files here.

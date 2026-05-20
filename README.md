@@ -8,7 +8,7 @@ Students may ask questions in Hindi, Hinglish, or simple English. The final answ
 
 ## Current Status
 
-Backend RAG MVP is working end to end.
+Backend RAG MVP and the first lesson-flow MVP are working end to end.
 
 Completed:
 
@@ -40,12 +40,11 @@ Not included yet:
 ## Initial Scope
 
 - Class 10 Science only.
-- First milestone uses only 2 verified chapters.
-- Chapter names are not decided yet.
+- Current curated content includes 16 Science chapter Markdown files across Physics, Chemistry, and Biology.
 - Backend RAG pipeline first.
 - Source content stored locally as clean text files first.
 - Local vector store or JSON-based persisted store first.
-- One API endpoint later for question answering.
+- Ask API is implemented for question answering and lesson flow.
 
 ## Architecture Summary
 
@@ -127,9 +126,9 @@ The query command loads saved vectors from `vector-store.json`. It does not re-e
 
 ## First Milestone
 
-Create a minimal backend pipeline that can:
+The original first milestone was to create a minimal backend pipeline that can:
 
-1. Load 2 verified Class 10 Science chapter text files.
+1. Load curated Class 10 Science chapter text files.
 2. Clean and normalize text.
 3. Chunk content with useful metadata.
 4. Generate embeddings.
@@ -141,12 +140,14 @@ Create a minimal backend pipeline that can:
 Current backend status:
 
 - Steps 1-8 are implemented for local backend testing.
+- The active curated dataset contains 16 Science chapters.
 - The local vector store has been generated at `backend/storage/vector-store.json`.
 - The Ask API is available at `POST /api/v1/ask`.
 - The Study Map API is available at `GET /api/v1/study-map`.
+- MongoDB-backed session/history/state is implemented.
 - The Zuno frontend foundation exists under `frontend/`.
 - The lesson flow can start and continue topics with grounded lesson content and sources.
-- The next work is frontend lesson experience polish and then LangChain-first Tutor Engine planner/action architecture.
+- The next core work is TASK-017: Tutor Engine Planner and Action Executor Foundation.
 
 ## Intentionally Not Included Yet
 
@@ -155,5 +156,4 @@ Current backend status:
 - Quiz system.
 - Authentication.
 - PDF/OCR pipeline.
-- Hardcoded chapter names.
 - Production vector database.
