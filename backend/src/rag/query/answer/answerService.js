@@ -44,26 +44,70 @@ const isBareQuestionLine = (text) =>
   /^\d+\.?\s*(what|why|how|explain|define|describe|write)\b/i.test(text) ||
   /\?$/.test(text.trim());
 
-export const formatSources = (chunks) =>
-  chunks.map((chunk, index) => {
-    const metadata = chunk.metadata || {};
+const getHeadingParts = (headingPath) =>
+  String(headingPath || '')
+    .split('>')
+    .map((part) => part.trim())
+    .filter(Boolean);
 
-    return {
-      sourceNumber: index + 1,
-      chapter_title: metadata.chapter_title || 'Unknown',
-      chapterTitle: metadata.chapter_title || 'Unknown',
+const cleanTopicTitle = (headingPath, chapterTitle) => {
+  const parts = getHeadingParts(headingPath);
+  const leaf = parts[parts.length - 1] || chapterTitle || 'Unknown topic';
+
+  return leaf
+    .replace(/^chapter\s+\d+\s*:\s*/i, '')
+    .replace(/^\d+\.?\s*/, '')
+    .trim() || 'Unknown topic';
+};
+
+const createSourceKey = ({ chapterTitle, headingPath }) =>
+  `${normalizeForComparison(chapterTitle)}::${normalizeForComparison(headingPath)}`;
+
+const createSourceLabel = ({ chapterTitle, topicTitle }) =>
+  topicTitle && topicTitle !== chapterTitle
+    ? `${chapterTitle} - ${topicTitle}`
+    : chapterTitle;
+
+export const formatSources = (chunks) =>
+  chunks.reduce((sources, chunk) => {
+    const metadata = chunk.metadata || {};
+    const chapterTitle = metadata.chapter_title || 'Unknown';
+    const headingPath = metadata.heading_path || 'Unknown';
+    const topicTitle = cleanTopicTitle(headingPath, chapterTitle);
+    const chunkId = metadata.chunk_id || chunk.id || 'Unknown';
+    const key = createSourceKey({ chapterTitle, headingPath });
+    const existingSource = sources.find((source) => source.sourceId === key);
+
+    if (existingSource) {
+      existingSource.chunkIds = [...new Set([...existingSource.chunkIds, chunkId])];
+      return sources;
+    }
+
+    const sourceNumber = sources.length + 1;
+    const source = {
+      sourceNumber,
+      sourceId: key,
+      label: `Source ${sourceNumber}: ${createSourceLabel({ chapterTitle, topicTitle })}`,
+      sourceTitle: createSourceLabel({ chapterTitle, topicTitle }),
+      chapter_title: chapterTitle,
+      chapterTitle,
+      topicTitle,
       section: metadata.section || 'Unknown',
-      heading_path: metadata.heading_path || 'Unknown',
-      headingPath: metadata.heading_path || 'Unknown',
-      chunk_id: metadata.chunk_id || chunk.id || 'Unknown',
-      chunkId: metadata.chunk_id || chunk.id || 'Unknown',
+      sectionTitle: metadata.section || 'Unknown',
+      heading_path: headingPath,
+      headingPath,
+      chunk_id: chunkId,
+      chunkId,
+      chunkIds: [chunkId],
     };
-  });
+
+    return [...sources, source];
+  }, []);
 
 export const formatSourcesText = (sources) =>
   sources
     .map((source) =>
-      `${source.sourceNumber}. ${source.chapter_title} | ${source.heading_path} | ${source.chunk_id}`
+      `${source.sourceNumber}. ${source.sourceTitle || source.chapter_title} | ${source.heading_path} | ${(source.chunkIds || [source.chunk_id]).join(', ')}`
     )
     .join('\n');
 

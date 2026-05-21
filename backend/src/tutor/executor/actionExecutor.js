@@ -53,10 +53,16 @@ const getSuggestedActions = (status) => {
 const formatApiSources = (sources) =>
   sources.map((source) => ({
     sourceNumber: source.sourceNumber,
+    sourceId: source.sourceId,
+    label: source.label,
+    sourceTitle: source.sourceTitle,
     chapterTitle: source.chapterTitle || source.chapter_title,
+    topicTitle: source.topicTitle,
     section: source.section,
+    sectionTitle: source.sectionTitle || source.section,
     headingPath: source.headingPath || source.heading_path,
     chunkId: source.chunkId || source.chunk_id,
+    chunkIds: source.chunkIds || [source.chunkId || source.chunk_id].filter(Boolean),
   }));
 
 const getScope = ({ studyMode, chapter }) => {

@@ -14,6 +14,20 @@ const assert = (condition, message) => {
   }
 };
 
+const assertCompactSources = (sources, message) => {
+  assert(sources.length > 0, `${message}: expected sources.`);
+
+  const sourceIds = sources.map((source) => source.sourceId || source.headingPath || source.chunkId);
+  assert(new Set(sourceIds).size === sourceIds.length, `${message}: sources should be deduplicated.`);
+
+  for (const source of sources) {
+    assert(source.label, `${message}: source label is required.`);
+    assert(source.sourceTitle, `${message}: sourceTitle is required.`);
+    assert(source.topicTitle, `${message}: topicTitle is required.`);
+    assert(Array.isArray(source.chunkIds), `${message}: chunkIds should be an array.`);
+  }
+};
+
 let sessionId = null;
 let sectionSessionId = null;
 
@@ -30,7 +44,7 @@ try {
   assert(firstResponse.status === 'lesson_started', 'First response should start lesson.');
   assert(firstResponse.lesson.chapterId === 'science.physics.chapter-03', 'Lesson should use Physics chapter 3.');
   assert(firstResponse.lesson.topicId, 'Lesson should include first topic id.');
-  assert(firstResponse.sources.length > 0, 'Started lesson should include grounded sources.');
+  assertCompactSources(firstResponse.sources, 'Started lesson');
   assert(firstResponse.lesson.generationMode, 'Started lesson should include generation mode.');
   assert(
     !firstResponse.answer.includes('Next step me is topic ka grounded lesson content'),
@@ -54,7 +68,7 @@ try {
 
   assert(secondResponse.status === 'lesson_continued', 'Second response should continue lesson.');
   assert(secondResponse.lesson.topicId !== firstResponse.lesson.topicId, 'Next should move to a new topic.');
-  assert(secondResponse.sources.length > 0, 'Continued lesson should include grounded sources.');
+  assertCompactSources(secondResponse.sources, 'Continued lesson');
   assert(
     !secondResponse.answer.includes('enough lesson content nahi hai'),
     'Continued lesson should generate usable lesson content.'

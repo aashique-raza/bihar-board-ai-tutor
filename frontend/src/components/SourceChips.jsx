@@ -9,7 +9,7 @@ function SourceChips({ sources }) {
     <div className="source-chips" aria-label="Answer sources">
       {sources.map((source) => (
         <span key={`${source.sourceNumber}-${source.chunkId}`}>
-          {source.chapterTitle} / {source.headingPath}
+          {source.label || source.sourceTitle || `${source.chapterTitle} / ${source.headingPath}`}
         </span>
       ))}
     </div>

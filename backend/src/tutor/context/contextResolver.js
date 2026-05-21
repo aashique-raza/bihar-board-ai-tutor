@@ -8,7 +8,7 @@ const extractTopicFromSources = (sources = []) => {
     return null;
   }
 
-  return firstSource.chapterTitle || firstSource.chapter_title || null;
+  return firstSource.topicTitle || firstSource.chapterTitle || firstSource.chapter_title || null;
 };
 
 const extractTopicFromQuestion = (question) => {

@@ -17,6 +17,25 @@ const assertIncludes = (value, expected, message) => {
   assert(String(value || '').includes(expected), message);
 };
 
+const assertCompactSources = (sources, message) => {
+  assert(sources.length > 0, `${message}: expected sources.`);
+
+  const sourceIds = sources.map((source) => source.sourceId || source.headingPath || source.chunkId);
+  assert(
+    new Set(sourceIds).size === sourceIds.length,
+    `${message}: sources should be deduplicated.`
+  );
+
+  for (const source of sources) {
+    assert(source.label, `${message}: source label is required.`);
+    assert(source.sourceTitle, `${message}: sourceTitle is required.`);
+    assert(source.chapterTitle, `${message}: chapterTitle is required.`);
+    assert(source.topicTitle, `${message}: topicTitle is required.`);
+    assert(source.chunkId, `${message}: chunkId is required for compatibility.`);
+    assert(Array.isArray(source.chunkIds), `${message}: chunkIds should be an array.`);
+  }
+};
+
 const cleanupSessions = async (sessionIds) => {
   for (const sessionId of sessionIds.filter(Boolean)) {
     await ChatHistory.deleteMany({ sessionId });
@@ -64,7 +83,7 @@ const runChemistryLessonConversation = async () => {
 
   assert(lesson.status === 'lesson_started', 'Chapter number follow-up should start a lesson.');
   assert(lesson.lesson.chapterId === 'science.chemistry.chapter-04', 'Lesson should use Chemistry chapter 4.');
-  assert(lesson.sources.length > 0, 'Started lesson should include sources.');
+  assertCompactSources(lesson.sources, 'Started lesson');
 
   const nextLesson = await askQuestion({
     sessionId,
@@ -126,7 +145,7 @@ const runDoubtConversation = async () => {
   });
 
   assert(response.status === 'answered', 'Grounded doubt should be answered.');
-  assert(response.sources.length > 0, 'Grounded doubt should include sources.');
+  assertCompactSources(response.sources, 'Grounded doubt answer');
 
   return response.session.sessionId;
 };
@@ -197,6 +216,7 @@ const runFollowUpDoubtConversation = async () => {
   });
 
   assert(doubt.status === 'answered', 'Side doubt during lesson should be answered when context exists.');
+  assertCompactSources(doubt.sources, 'Side doubt answer');
 
   const followUp = await askInSession({
     sessionId,

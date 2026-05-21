@@ -17,7 +17,7 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 No active implementation task.
 
 Next recommended task:
-Source Dedupe and Compact Backend Source Contract
+Frontend Lesson Experience Improvements
 
 Known performance backlog:
 TASK-020: Performance Known Issues Backlog
@@ -359,6 +359,31 @@ Later expected work:
 - Keep metadata/clarification paths free of RAG/LLM work.
 - Consider streaming and production vector DB later.
 
+### TASK-021: Source Dedupe and Compact Backend Source Contract
+
+Status: DONE
+
+Task file:
+tasks/TASK-021-source-dedupe-compact-contract.md
+
+Completed:
+- Deduplicated RAG/lesson sources by chapter and heading path.
+- Added compact source fields: `sourceId`, `label`, `sourceTitle`, `chapterTitle`, `topicTitle`, `sectionTitle`, and `chunkIds`.
+- Preserved compatibility fields: `sourceNumber`, `section`, `headingPath`, and `chunkId`.
+- Updated doubt answer API formatting to preserve compact source fields.
+- Updated lesson sources through the shared formatter.
+- Updated follow-up context extraction to prefer source `topicTitle`.
+- Updated frontend source chips to display `label` / `sourceTitle` when available.
+- Strengthened regression tests for compact, deduplicated source shape.
+
+Verified:
+- `npm.cmd run test:lesson-flow` passed.
+- `npm.cmd run test:tutor-conversations` passed.
+- `npm.cmd run test:ask-db` passed.
+- `npm.cmd run test:chat-db-models` passed.
+- Frontend `npm.cmd run build` passed.
+- Manual source payload QA confirmed compact source fields are returned.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -536,8 +561,8 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended backend implementation task is Source Dedupe and Compact Backend Source Contract.
+The next recommended implementation task is Frontend Lesson Experience Improvements.
 
-Frontend Lesson Experience Improvements remains the next recommended frontend task.
+The next backend polish tasks are answer quality/tone improvements and performance work later from TASK-020.
 
 Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.
