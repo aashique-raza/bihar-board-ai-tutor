@@ -12,12 +12,26 @@ Hindi PDFs are reference material only.
 
 The app should not depend on raw PDF parsing quality for production RAG content.
 
+The active Ask API architecture is now LLM-first:
+
+```text
+User message
+-> compact DB memory + recent history
+-> LLM scope/retrieval decider
+-> optional RAG retrieval
+-> tutor response LLM with strong system prompt
+-> structured sections + sources
+-> saved history/state
+```
+
+The old deterministic planner/router/executor runtime path has been removed.
+
 ## Current Active Task
 
 No active implementation task.
 
 Next recommended task:
-Frontend lesson actions and tutor-flow UI polish
+Add curated foundation/orientation Markdown content, then run live QA for the LLM-first Ask flow
 
 Known performance backlog:
 TASK-020: Performance Known Issues Backlog
@@ -412,6 +426,44 @@ Completed:
 Verified:
 - Frontend `npm.cmd run build` passed.
 
+### TASK-023: LLM-first Ask Flow Rebuild
+
+Status: DONE
+
+Task file:
+tasks/TASK-023-llm-first-ask-flow-rebuild.md
+
+Completed:
+- Replaced the old deterministic Ask API planner/router/executor path with a simpler LLM-first flow.
+- Added LLM scope/retrieval decider.
+- Added main tutor response LLM with flexible structured `sections`.
+- Kept existing RAG retriever and source formatting.
+- Simplified session/state get-or-create helpers and turn-level history persistence.
+- Removed old lesson-flow, planner, router, executor, handler, and session-context files.
+- Removed old regression scripts tied to the previous response contract.
+- Strengthened tutor prompt with Roman Hinglish lock, silent self-check, last-response awareness, no fake physical identity, and repair behavior for robotic/repetitive replies.
+- Added frontend rendering for structured Zuno `sections`.
+
+Known issues:
+- Broad foundation questions such as `Science kya hai?`, `Physics kya hai?`, `Chemistry kya hai?`, and `Biology kya hai?` need curated Markdown content.
+- Study-support questions such as `main padhta hu par yaad nahi rehta` need curated study-skill/learning-support content.
+- Until that content exists, LLM may answer from general knowledge or repeat weak broad explanations.
+
+Verified:
+- `node --check` passed for changed Ask/LLM flow files.
+- `npm.cmd run test:study-map` passed.
+- `npm.cmd run test:chunks` passed.
+- `npm.cmd run test:curriculum-resolvers` passed.
+- `npm.cmd run test:vector-store` passed.
+- Frontend `npm.cmd run build` passed.
+- `npm.cmd run test:chat-db-models` passed when network access was allowed.
+- `npm.cmd run test:retrieval` passed when Gemini network access was allowed.
+- `npm.cmd run rag:test-retriever` passed when Gemini network access was allowed.
+- `npm.cmd run test:ask-db` passed earlier when provider quota was available; latest pre-push rerun reached Groq daily token rate limit.
+
+QA:
+- Added `docs/qa-report-2026-05-21.md` with detailed findings, possible solutions, and tradeoffs.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -526,7 +578,7 @@ Remaining work:
 - Improve answer quality, source display, and tone after the core Tutor Engine path is stable.
 - Improve API latency later; details are tracked in TASK-020.
 
-### Stage 10: LangChain Tutor Engine
+### Stage 10: LLM-first Tutor Engine
 
 Status: ACTIVE
 
@@ -534,19 +586,18 @@ Completed:
 - Curriculum Brain from curated Markdown.
 - Chapter/topic resolver.
 - DB-backed tutor state.
-- Deterministic lesson start/continue flow.
-- Grounded lesson generation from retrieved topic context.
-- Deterministic planner/action executor foundation.
-- Lesson state remains stable when a student asks a side doubt or out-of-scope question during a lesson.
-- Expanded conversation regression coverage for planner/state edge cases.
-- Last answered doubt context is now stored separately from active lesson topic context.
+- LLM-first Ask flow.
+- Scope/retrieval decider.
+- Strong tutor response prompt.
+- Structured response sections.
+- Old deterministic planner/router/executor runtime removed.
 
 Expected work:
-- Source dedupe and compact backend source contract.
+- Add curated foundation/orientation Markdown content.
+- Rebuild RAG index after foundation content is added.
+- Live prompt QA for Hinglish consistency, non-repetition, and grounded broad answers.
 - Performance optimization later; known issues are tracked in TASK-020.
-- Optional LangChain structured planner upgrade after deterministic engine behavior is stable.
-- Frontend rendering for lesson state and suggested actions.
-- More conversation regression coverage as new workflows are added.
+- More LLM-first conversation regression coverage after the response contract stabilizes.
 
 ### Stage 11: Minimal Frontend Demo
 
@@ -595,8 +646,8 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is frontend lesson actions and tutor-flow UI polish.
+The next recommended implementation task is curated foundation/orientation Markdown content for broad student questions and study-support situations.
 
-The next backend polish tasks are answer quality/tone improvements and performance work later from TASK-020.
+The next backend polish tasks are live prompt QA, answer quality/tone improvements, and performance work later from TASK-020.
 
-Do not keep expanding manual router rules as the primary solution. New tutor workflows should move into the Tutor Engine planner/action architecture.
+Do not return to large manual intent/router rules as the primary solution. Keep the current LLM-first flow and solve broad knowledge gaps through curated Markdown content plus prompt refinement.

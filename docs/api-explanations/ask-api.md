@@ -1,97 +1,60 @@
 # Ask API Explanation
 
-## API Name
-
-Ask API
-
-## Final URL
+## Endpoint
 
 ```http
 POST http://localhost:5000/api/v1/ask
 ```
 
-## Ye API Kyun Banayi Gayi Hai?
+## Purpose
 
-Ye main student question API hai. Student Hindi, Hinglish, ya simple English me question puch sakta hai. Backend question ko RAG pipeline se process karega, approved indexed study content se relevant chunks retrieve karega, aur grounded answer return karega.
+This is the main Zuno tutor endpoint. It accepts a student message, keeps session continuity, optionally retrieves approved study content, and returns a structured tutor response.
 
-Is API ka goal hai:
+The current Ask API uses the LLM-first flow:
 
-- Global Mode me full available Science content se answer dena.
-- Focus Mode me sirf selected chapter ke andar answer dena.
-- Lesson start/continue flow handle karna.
-- DB-backed session id ke saath conversation state continue karna.
-- Answer ke saath sources dena.
-- Agar selected chapter me answer nahi mile, to frontend ko structured signal dena taaki chat me "Switch to Global Mode" aur "Cancel" buttons dikh sakein.
+```text
+User message
+-> compact memory + recent history
+-> LLM scope/retrieval decider
+-> optional RAG retrieval
+-> tutor response LLM
+-> structured sections + sources
+-> save history/state
+```
 
-## Hamne Iske Baare Me Kya Discuss Kiya Tha?
+## Request
 
-Discussion me ye final decisions liye gaye:
-
-- App ka default mode Global Mode rahega.
-- Focus Study Mode optional rahega.
-- Focus mode strict rahega.
-- Focus mode me automatic global fallback nahi hoga.
-- Agar selected chapter me answer nahi mila, backend `focus_context_not_found` status bhejega.
-- Frontend natural language message parse nahi karega.
-- Frontend `status` aur `suggestedActions` ke base par buttons show karega.
-- Debug/retrieval details client ko send nahi karenge.
-- LLM se structured output abhi force nahi karenge.
-- Backend final API response ko structured banayega.
-- Language detection manual lightweight logic se hogi.
-- English question ka answer simple English me aayega.
-- Hindi, Hinglish, ya uncertain question ka answer simple Hinglish me aayega.
-- Hinglish answer Roman script me hoga, Devanagari/Hindi script me nahi.
-
-## Request Payload
-
-### Global Mode
+Global mode:
 
 ```json
 {
-  "question": "what is photosynthesis?",
+  "question": "physics ka matlab samjhao",
   "studyMode": "global",
   "sessionId": "optional-existing-session-id"
 }
 ```
 
-Global mode me `chapterId` nahi bhejna hai.
-
-### Focus Mode
+Focus mode:
 
 ```json
 {
-  "question": "nutrition kya hota hai?",
+  "question": "ohm law kya hai?",
   "studyMode": "focus",
-  "chapterId": "science.biology.chapter-01"
+  "chapterId": "science.physics.chapter-03",
+  "sessionId": "optional-existing-session-id"
 }
 ```
 
-Focus mode me `chapterId` required hai. Ye `chapterId` Study Map API se milega.
+Rules:
 
-## Request Keys Ka Meaning
+- `question` is required.
+- `studyMode` must be `global` or `focus`.
+- `chapterId` is required only in focus mode.
+- `chapterId` is not allowed in global mode.
 
-`question`
+## Response
 
-Student ka actual question. Required.
-
-`studyMode`
-
-Question kis mode me ask ho raha hai.
-
-Allowed values:
-
-- `global`
-- `focus`
-
-`chapterId`
-
-Sirf focus mode ke liye required. Isse backend selected chapter identify karta hai aur retrieval ko strict chapter scope me rakhta hai.
-
-`sessionId`
-
-Optional. Agar frontend ke paas previous response se `session.sessionId` hai, to next request me bhejna chahiye. Isse backend same `chat_sessions`, `chat_history`, aur `chat_states` records continue karta hai.
-
-## Successful Answer Response
+Current response shape:
 
 ```json
 {
@@ -99,179 +62,87 @@ Optional. Agar frontend ke paas previous response se `session.sessionId` hai, to
   "message": "Question processed successfully.",
   "data": {
     "status": "answered",
-    "studyMode": "focus",
-    "question": "nutrition kya hota hai?",
+    "intent": "study_tutor",
+    "responseMode": "study_tutor",
+    "studyMode": "global",
+    "question": "physics ka matlab samjhao",
     "detectedLanguage": "hinglish",
     "answerLanguage": "hinglish",
-    "answer": "Nutrition ka matlab hai...",
-    "sources": [
+    "title": "Physics",
+    "sections": [
       {
-        "sourceNumber": 1,
-        "chapterTitle": "Life Processes",
-        "section": "Biology",
-        "headingPath": "Chapter 1: Life Processes > Nutrition",
-        "chunkId": "biology-chapter-01-chunk-003"
+        "heading": "Simple matlab",
+        "content": "Physics science ka wo part hai jisme hum motion, force, light, electricity aur energy jaisi cheezon ko samajhte hain."
       }
     ],
+    "answer": "Physics\n\nSimple matlab\nPhysics science ka wo part hai...",
+    "sources": [],
     "suggestedActions": [],
-    "scope": {
-      "chapterId": "science.biology.chapter-01",
-      "chapterTitle": "Life Processes",
-      "sectionId": "biology",
-      "sectionTitle": "Biology",
-      "subjectId": "science",
-      "subjectTitle": "Science"
+    "retrieval": null,
+    "decision": {
+      "inScope": true,
+      "needsRetrieval": false,
+      "responseMode": "study_tutor",
+      "searchQuery": null
     },
     "session": {
       "sessionId": "generated-or-reused-session-id",
-      "turnCount": 1,
-      "lastTopic": "Nutrition",
-      "lastSubject": "science",
-      "lastSection": "biology",
-      "lastChapterId": "science.biology.chapter-01"
+      "lastTopic": null,
+      "lastDoubtTopic": null,
+      "lastSubject": null,
+      "lastSection": null,
+      "lastChapterId": null
     }
   }
 }
 ```
 
-## Lesson Response
+## Response Fields
 
-Lesson start/continue responses use the same Ask API.
+`status`
 
-Example request:
+Main result status. Common values:
 
-```json
-{
-  "question": "physics chapter 3 padhao",
-  "studyMode": "global"
-}
-```
+- `answered`
+- `insufficient_context`
+- `needs_clarification`
+- `out_of_scope`
 
-Example response data:
+`responseMode`
 
-```json
-{
-  "status": "lesson_started",
-  "intent": "start_lesson",
-  "studyMode": "global",
-  "answer": "Grounded Hinglish lesson text...",
-  "sources": [
-    {
-      "sourceNumber": 1,
-      "chapterTitle": "Electricity",
-      "section": "Physics",
-      "headingPath": "Chapter 3: Electricity > Electric Current and Electric Circuit",
-      "chunkId": "physics-chapter-03-chunk-001"
-    }
-  ],
-  "suggestedActions": [
-    {
-      "type": "continue_lesson",
-      "label": "Next topic"
-    }
-  ],
-  "lesson": {
-    "chapterId": "science.physics.chapter-03",
-    "chapterTitle": "Electricity",
-    "topicId": "science.physics.chapter-03.topic-03",
-    "topicTitle": "Electric Current and Electric Circuit",
-    "topicNumber": 1,
-    "totalTopics": 13,
-    "nextAction": "continue_lesson",
-    "generationMode": "llm"
-  }
-}
-```
+High-level response mode from the LLM-first flow:
 
-## Focus Mode Me Answer Na Mile To Response
+- `conversation`
+- `study_tutor`
+- `redirect`
 
-```json
-{
-  "success": true,
-  "message": "Question processed successfully.",
-  "data": {
-    "status": "focus_context_not_found",
-    "studyMode": "focus",
-    "question": "ohm law kya hai?",
-    "detectedLanguage": "hinglish",
-    "answerLanguage": "hinglish",
-    "answer": "Mere paas selected chapter ke provided context me is question ka enough information nahi hai. Aap chaho to Global Mode me search kar sakte ho.",
-    "sources": [],
-    "suggestedActions": [
-      {
-        "type": "switch_to_global",
-        "label": "Switch to Global Mode"
-      },
-      {
-        "type": "cancel",
-        "label": "Cancel"
-      }
-    ],
-    "scope": {
-      "chapterId": "science.biology.chapter-01",
-      "chapterTitle": "Life Processes",
-      "sectionId": "biology",
-      "sectionTitle": "Biology",
-      "subjectId": "science",
-      "subjectTitle": "Science"
-    }
-  }
-}
-```
+`sections`
 
-Frontend isi response me `suggestedActions` ke base par same chat bubble me buttons show karega.
+Structured response blocks for frontend rendering. The frontend should prefer this over parsing the `answer` string.
 
-## Global Mode Me Answer Na Mile To Response
+`answer`
 
-```json
-{
-  "success": true,
-  "message": "Question processed successfully.",
-  "data": {
-    "status": "global_context_not_found",
-    "studyMode": "global",
-    "question": "random unrelated question",
-    "detectedLanguage": "english",
-    "answerLanguage": "english",
-    "answer": "Mere paas provided Science content me is question ka enough information nahi hai.",
-    "sources": [],
-    "suggestedActions": [],
-    "scope": null
-  }
-}
-```
+Compatibility text made from `title` + `sections`. Kept for older UI paths.
 
-## Status Values
+`sources`
 
-`answered`
+Compact sources attached when RAG retrieval returns approved content.
 
-Relevant context mila aur answer generate hua.
+`decision`
 
-`lesson_started`
+Debuggable decider output. Useful during MVP QA; can be hidden later.
 
-Chapter/topic resolve hua aur first lesson topic grounded retrieved context se generate hua.
+`session`
 
-`lesson_continued`
+Session continuity data.
 
-Saved DB state se next lesson topic continue hua.
+## Current Frontend Behavior
 
-`lesson_completed`
+The frontend now renders `sections` for Zuno responses, so headings and content do not appear glued together in one paragraph.
 
-Current chapter ke core lesson topics complete ho gaye.
+## Validation Errors
 
-`focus_context_not_found`
-
-Focus mode me selected chapter ke andar enough context nahi mila. Frontend switch/cancel buttons dikha sakta hai.
-
-`global_context_not_found`
-
-Global mode me available Science content ke andar enough context nahi mila.
-
-## Error Responses
-
-Validation errors central error middleware se aayenge.
-
-### Missing Question
+Missing question:
 
 ```json
 {
@@ -283,7 +154,7 @@ Validation errors central error middleware se aayenge.
 }
 ```
 
-### Invalid Study Mode
+Invalid study mode:
 
 ```json
 {
@@ -295,7 +166,7 @@ Validation errors central error middleware se aayenge.
 }
 ```
 
-### Focus Mode Without Chapter
+Focus mode without chapter:
 
 ```json
 {
@@ -307,7 +178,7 @@ Validation errors central error middleware se aayenge.
 }
 ```
 
-### Invalid Chapter
+Invalid chapter:
 
 ```json
 {
@@ -319,133 +190,8 @@ Validation errors central error middleware se aayenge.
 }
 ```
 
-## Postman Tests
+## Known Gaps
 
-### Global Mode
-
-Method:
-
-```http
-POST
-```
-
-URL:
-
-```http
-http://localhost:5000/api/v1/ask
-```
-
-Body:
-
-```json
-{
-  "question": "what is photosynthesis?",
-  "studyMode": "global"
-}
-```
-
-### Focus Mode
-
-Method:
-
-```http
-POST
-```
-
-URL:
-
-```http
-http://localhost:5000/api/v1/ask
-```
-
-Body:
-
-```json
-{
-  "question": "nutrition kya hota hai?",
-  "studyMode": "focus",
-  "chapterId": "science.biology.chapter-01"
-}
-```
-
-### Focus Mode Out Of Chapter
-
-Method:
-
-```http
-POST
-```
-
-URL:
-
-```http
-http://localhost:5000/api/v1/ask
-```
-
-Body:
-
-```json
-{
-  "question": "ohm law kya hai?",
-  "studyMode": "focus",
-  "chapterId": "science.biology.chapter-01"
-}
-```
-
-Expected:
-
-```text
-status: focus_context_not_found
-suggestedActions: switch_to_global, cancel
-```
-
-## Current Backend Files
-
-Route:
-
-```text
-backend/src/routes/ask.routes.js
-```
-
-Controller:
-
-```text
-backend/src/controllers/ask.controller.js
-```
-
-Service:
-
-```text
-backend/src/services/ask.service.js
-```
-
-Language detector:
-
-```text
-backend/src/utils/languageDetector.js
-```
-
-Retriever filter:
-
-```text
-backend/src/rag/query/retriever/retriever.js
-```
-
-## Future Scope
-
-Later this API can support:
-
-- User-selected answer language.
-- Streaming responses.
-- Chat history loading endpoint.
-- Per-chapter quiz handoff.
-- Chapter summary mode.
-- Section-level focus mode, like full Physics or full Biology.
-- Better language detection using a small model if manual detection becomes weak.
-- Production vector database filters.
-
-## GitHub Commit Message
-
-```text
-Add ask API with global and focus study modes
-```
+- Foundation/orientation content is not complete yet.
+- Questions like `Science kya hai?`, `Physics kya hai?`, and `main padh kar bhool jata hu` need curated Markdown content for reliable grounded answers.
+- MongoDB Atlas access may block local DB smoke tests if the current IP is not allowlisted.

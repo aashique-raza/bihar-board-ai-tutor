@@ -23,13 +23,20 @@ export const findChatSession = async (sessionId) => {
 };
 
 export const getOrCreateChatSession = async (sessionId) => {
-  let session = await findChatSession(sessionId);
-
-  if (!session) {
-    session = await createChatSession({ sessionId });
-  }
-
-  return session;
+  return ChatSession.findOneAndUpdate(
+    { sessionId },
+    {
+      $setOnInsert: {
+        sessionId,
+        mode: 'guest',
+        title: 'New Chat',
+      },
+    },
+    {
+      returnDocument: 'after',
+      upsert: true,
+    }
+  );
 };
 
 export const updateChatSessionLastMessageTime = async (sessionId) => {

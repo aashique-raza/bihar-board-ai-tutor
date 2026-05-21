@@ -2,15 +2,26 @@ const DEVANAGARI_PATTERN = /[\u0900-\u097F]/;
 
 const HINGLISH_SIGNALS = new Set([
   'aap',
+  'ab',
+  'accha',
   'batao',
+  'bat',
   'btao',
+  'bta',
+  'fir',
   'hai',
   'hain',
+  'ho',
   'hota',
   'hote',
   'hoti',
+  'hu',
+  'hun',
   'ka',
+  'kaha',
   'ke',
+  'kr',
+  'kro',
   'kya',
   'kyu',
   'kyun',
@@ -19,8 +30,16 @@ const HINGLISH_SIGNALS = new Set([
   'mai',
   'me',
   'mein',
+  'mujhe',
   'nahi',
+  'nhi',
+  'rahe',
+  'rhe',
+  'rhta',
+  'rhte',
   'samjhao',
+  'tum',
+  'yad',
 ]);
 
 const tokenize = (text) =>
@@ -59,6 +78,30 @@ export const detectQuestionLanguage = (question) => {
     detectedLanguage: 'unknown',
     answerLanguage: 'hinglish',
   };
+};
+
+export const detectConversationLanguage = ({ question, recentMessages = [] }) => {
+  const latestLanguage = detectQuestionLanguage(question);
+
+  if (latestLanguage.answerLanguage === 'hinglish') {
+    return latestLanguage;
+  }
+
+  const recentStudentText = recentMessages
+    .filter((message) => message.role === 'student')
+    .slice(-4)
+    .map((message) => message.text)
+    .join(' ');
+  const recentLanguage = detectQuestionLanguage(recentStudentText);
+
+  if (recentLanguage.answerLanguage === 'hinglish') {
+    return {
+      detectedLanguage: latestLanguage.detectedLanguage,
+      answerLanguage: 'hinglish',
+    };
+  }
+
+  return latestLanguage;
 };
 
 export const getAnswerLanguageInstruction = (answerLanguage) => {

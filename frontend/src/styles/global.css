@@ -202,6 +202,35 @@ body {
   letter-spacing: 0 !important;
 }
 
+.message-sections {
+  min-width: 0;
+}
+
+.message-section {
+  min-width: 0;
+}
+
+.message-section-heading {
+  margin-bottom: 4px !important;
+  color: #f4d48a;
+  font-size: 0.82rem !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+.message-section-content {
+  color: #edf4ff;
+  font-size: 0.98rem !important;
+  line-height: 1.62 !important;
+  white-space: pre-wrap;
+}
+
+.chat-message.zuno > p,
+.chat-message.zuno .message-section-content {
+  overflow-wrap: anywhere;
+}
+
 .thinking-indicator {
   display: inline-flex;
   align-items: center;

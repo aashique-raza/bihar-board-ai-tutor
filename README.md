@@ -8,7 +8,7 @@ Students may ask questions in Hindi, Hinglish, or simple English. The final answ
 
 ## Current Status
 
-Backend RAG MVP and the first lesson-flow MVP are working end to end.
+Backend RAG MVP is working, and the Ask API has been rebuilt around a simpler LLM-first tutor flow.
 
 Completed:
 
@@ -24,20 +24,19 @@ Completed:
 - Study Map API for available chapters.
 - Ask API with Global Mode and Focus Mode.
 - MongoDB-backed chat sessions, chat history, and tutor state.
-- Lesson start/continue flow.
-- Grounded lesson generation from retrieved topic context.
-- Deterministic Tutor Engine planner/action executor foundation.
-- Conversation regression test for core tutor flows.
-- Lesson state stability across side doubts and no-context answers.
+- LLM-first scope/retrieval decider.
+- Optional RAG retrieval only when study content is needed.
+- Main tutor response LLM with a strong tutoring system prompt.
+- Flexible structured response sections for frontend rendering.
 - Zuno React frontend foundation.
-- Initial temporary router/session layer for greetings, study intent, metadata, and simple follow-ups.
+- MongoDB-backed compact memory and chat history.
 
 Not included yet:
 
 - Production vector DB.
 - Production deployment.
 - Formal evaluation question set.
-- Optional LangChain structured planner upgrade.
+- Live QA pass for the new LLM-first Ask flow.
 - Frontend lesson-specific UI polish.
 
 ## Initial Scope
@@ -78,17 +77,16 @@ Student Question
 -> Answer + Sources + Status
 ```
 
-Next architecture direction:
+Current Ask API direction:
 
 ```text
 User Message
--> Tutor State
--> Curriculum Context
--> LangChain Planner
--> Action Executor
--> RAG / Lesson Chains
--> Updated Tutor State
--> Structured API Response
+-> Compact Memory + Recent History
+-> LLM Scope/Retrieval Decider
+-> Optional RAG Retrieval
+-> Tutor Response LLM
+-> Structured Sections + Sources
+-> Saved History/Memory
 ```
 
 See:
@@ -149,9 +147,10 @@ Current backend status:
 - The Study Map API is available at `GET /api/v1/study-map`.
 - MongoDB-backed session/history/state is implemented.
 - The Zuno frontend foundation exists under `frontend/`.
-- The lesson flow can start and continue topics with grounded lesson content and sources.
-- The Tutor Engine planner/action executor foundation is implemented.
-- The next work is frontend lesson experience improvements.
+- The Ask API now uses the LLM-first scope/retrieval decider and tutor response prompt.
+- The old deterministic planner/router/executor runtime path has been removed.
+- The frontend can render structured Zuno response sections.
+- The next work is curated foundation/orientation Markdown content plus live prompt QA.
 
 ## Intentionally Not Included Yet
 

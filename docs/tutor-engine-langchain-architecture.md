@@ -1,427 +1,170 @@
-# Zuno Tutor Engine: LangChain-First Architecture
+# Zuno Tutor Engine: Current LLM-first Architecture
 
-## Why This Architecture Is Needed
+## Current Direction
 
-The current backend can answer grounded RAG questions, but a real tutor must do more than answer isolated doubts.
-
-Students naturally say things like:
+The previous deterministic planner/router/executor Ask flow has been removed from the runtime code. The active Ask API now uses a simpler LLM-first flow:
 
 ```text
-aaj biology padhna hai
-biology me kitne chapter hai
-inme sabse tough kaun sa hai
-physics chapter 3 padhao
-global mode me hi padhao
-start kro ek ek krke
+User message
+-> basic validation
+-> compact DB memory + recent history
+-> LLM scope/retrieval decider
+-> optional RAG retrieval
+-> tutor response LLM with strong system prompt
+-> structured sections + sources
+-> saved chat history + compact memory
 ```
 
-These are not all simple RAG questions. Some are curriculum navigation, some are teaching commands, some are study guidance, and some are follow-ups that depend on session state.
-
-The reliable solution is not to keep adding manual rules. Zuno needs a LangChain-first Tutor Engine:
+## Core Principle
 
 ```text
-User Message
--> Tutor State
--> Curriculum Context
--> LangChain Planner
--> Action Executor
--> LangChain RAG / Teaching Chains
--> Updated Tutor State
--> Structured API Response
+Facts come from approved Markdown/RAG content.
+Teaching style comes from the tutor LLM prompt.
+Backend owns validation, retrieval, persistence, and source attachment.
+Frontend renders structured sections instead of parsing natural language.
 ```
 
-## Core Design Principle
+The LLM is intentionally not boxed into many rigid intents. The only first-stage decision is:
 
-RAG is one tool inside the tutor system. It is not the whole tutor.
+- Is the message in scope for Zuno?
+- Does this turn need retrieved study content?
+- If retrieval is needed, what search query should be used?
 
-The Tutor Engine decides what should happen next. LangChain should be used wherever it gives us structured orchestration, prompts, tools, runnable chains, output parsing, and later graph-style flows.
-
-## Current Implementation Snapshot
-
-Implemented now:
-
-- Curriculum Brain from curated Markdown.
-- Chapter and topic resolvers.
-- MongoDB-backed `chat_sessions`, `chat_history`, and `chat_states`.
-- Temporary rule/hybrid router and handlers.
-- Deterministic lesson start/continue flow.
-- Grounded lesson generation chain from retrieved topic context.
-- Deterministic planner/action executor foundation.
-- Conversation regression test script for core flows.
-- State patching preserves active lesson context across side doubts and no-context answers.
-- React frontend foundation with session persistence.
-
-Still missing:
-
-- Optional LangChain structured planner upgrade.
-- Broader conversation-level regression suite.
-- Frontend rendering for structured Tutor Engine actions.
-
-## Layers
-
-### 1. Curriculum Brain
-
-Purpose:
-- Give Zuno structured knowledge of subjects, sections, chapters, and topics.
-- Support future subjects such as Math, Hindi, English, Social Science, Urdu, and Sanskrit.
-- Avoid relying on vector search for curriculum navigation.
-
-Current source:
-- Curated Markdown content in `data/`.
-
-Generated output:
+## Active Runtime Modules
 
 ```text
-backend/storage/curriculum-index.json
+backend/src/services/ask.service.js
+backend/src/tutor/llmFlow/retrievalDecider.js
+backend/src/tutor/llmFlow/tutorResponder.js
+backend/src/tutor/llmFlow/promptHelpers.js
+backend/src/tutor/llmFlow/json.js
+backend/src/rag/query/retriever/retriever.js
+backend/src/rag/query/answer/answerService.js
 ```
 
-Target shape:
+Old modules removed from runtime:
+
+```text
+backend/src/tutor/router/*
+backend/src/tutor/planner/*
+backend/src/tutor/executor/*
+backend/src/tutor/handlers/*
+backend/src/tutor/context/*
+backend/src/services/lessonFlow.service.js
+backend/src/services/lessonGeneration.service.js
+```
+
+## Decider Layer
+
+The retrieval decider does not write student-facing answers.
+
+It returns a small JSON decision:
 
 ```json
 {
-  "subjects": [
+  "inScope": true,
+  "needsRetrieval": true,
+  "responseMode": "study_tutor",
+  "searchQuery": "electric current simple explanation",
+  "reason": "Student is asking for a Science explanation."
+}
+```
+
+Response modes:
+
+- `conversation`: greeting, identity, motivation, light tutor chat.
+- `study_tutor`: Science learning, study support, explanation, lesson, or doubt.
+- `redirect`: out-of-scope request.
+
+## Tutor Response Layer
+
+The main tutor response LLM receives:
+
+- Latest student message.
+- Mandatory language instruction.
+- Recent conversation.
+- Last Zuno response.
+- Compact memory from `chat_states`.
+- Curriculum summary.
+- Focus chapter, if selected.
+- Retrieved study context, if retrieval was needed.
+
+It returns flexible structured sections:
+
+```json
+{
+  "status": "answered",
+  "responseMode": "study_tutor",
+  "title": "Electric Current",
+  "sections": [
     {
-      "subjectId": "science",
-      "title": "Science",
-      "sections": [
-        {
-          "sectionId": "physics",
-          "title": "Physics",
-          "chapters": [
-            {
-              "chapterId": "science.physics.chapter-03",
-              "number": 3,
-              "title": "Electricity",
-              "topics": [
-                {
-                  "topicId": "science.physics.chapter-03.topic-01",
-                  "title": "Electric Current",
-                  "order": 1,
-                  "headingPath": "Chapter 3: Electricity > Electric Current",
-                  "ragHints": ["electric current", "flow of charge"]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "heading": "Simple matlab",
+      "content": "Electric current ka matlab charge ka flow hota hai."
     }
-  ]
-}
-```
-
-LangChain usage:
-- Convert topic records into LangChain `Document` objects when needed.
-- Optionally create a small curriculum vector store later for semantic chapter/topic resolution.
-- Use `RunnableSequence` for curriculum index generation validation if LLM extraction is needed later.
-
-First implementation:
-- Deterministically extract chapter/topic structure from Markdown headings.
-- Do not use an LLM to invent curriculum structure.
-
-### 2. Tutor State
-
-Purpose:
-- Remember what the student is currently studying.
-- Keep teaching flow stable across messages.
-
-State shape:
-
-```json
-{
-  "sessionId": "abc",
-  "currentSubjectId": "science",
-  "currentSectionId": "physics",
-  "currentChapterId": "science.physics.chapter-03",
-  "currentTopicId": "science.physics.chapter-03.topic-01",
-  "learningMode": "teaching",
-  "preferredStudyMode": "global",
-  "pendingAction": "continue_lesson",
-  "completedTopicIds": [],
-  "lastStudentMessage": "start kro",
-  "lastTutorAction": "start_lesson"
-}
-```
-
-Storage:
-- MongoDB Atlas through Mongoose.
-- Current collections are `chat_sessions`, `chat_history`, and `chat_states`.
-- Keep the state access behind services so planner/executor code does not depend directly on Mongoose model details.
-
-LangChain usage:
-- State is injected into planner prompt as structured context.
-- Later, LangGraph can manage state transitions if the project moves beyond simple LCEL chains.
-
-### 3. LangChain Tutor Planner
-
-Purpose:
-- Decide the next action using the user message, tutor state, curriculum context, and available tools.
-- Replace fragile intent-routing loops with a structured planning step.
-
-Planner input:
-
-```json
-{
-  "message": "physics chapter 3 padhao",
-  "normalizedMessage": "physics chapter 3 padhao",
-  "tutorState": {},
-  "curriculumContext": {},
-  "availableActions": []
-}
-```
-
-Planner output:
-
-```json
-{
-  "action": "start_lesson",
-  "confidence": 0.9,
-  "target": {
-    "subjectId": "science",
-    "sectionId": "physics",
-    "chapterNumber": 3,
-    "chapterId": "science.physics.chapter-03"
-  },
-  "needsRag": true,
-  "ragQuery": "Electricity chapter introduction and electric current",
-  "clarificationQuestion": null,
-  "reason": "Student wants to start Physics chapter 3."
-}
-```
-
-Stable planner actions:
-
-```text
-respond_smalltalk
-set_learning_target
-answer_metadata
-start_lesson
-continue_lesson
-answer_doubt
-give_study_advice
-change_mode
-ask_clarification
-refuse_out_of_scope
-```
-
-LangChain usage:
-- `ChatPromptTemplate` for planner prompt.
-- Provider-based `ChatModel` from existing LLM config.
-- Structured JSON output through a parser.
-- `RunnableSequence` for:
-
-```text
-plannerPrompt -> chatModel -> outputParser -> schema validation
-```
-
-Important rule:
-- Planner does not write final student-facing answers.
-- Planner only returns a validated action plan.
-
-### 4. Action Executor
-
-Purpose:
-- Execute the planner action with deterministic code and LangChain chains.
-
-Examples:
-
-```text
-start_lesson
--> resolve chapter
--> choose first topic
--> retrieve topic context
--> run lesson generation chain
--> update state
-```
-
-```text
-answer_metadata
--> use curriculum index
--> return deterministic chapter/topic answer
-```
-
-```text
-answer_doubt
--> run existing RAG answer chain
--> update last topic/source state
-```
-
-LangChain usage:
-- Existing RAG chain for grounded doubt answers.
-- New lesson generation chain for teaching.
-- Tool-style functions can wrap deterministic operations:
-  - `resolveChapter`
-  - `getChapterTopics`
-  - `getNextTopic`
-  - `retrieveGroundedContext`
-
-First implementation:
-- Use a normal action executor module.
-- Keep action functions small and testable.
-- Do not add LangGraph yet unless LCEL becomes hard to manage.
-
-### 5. Lesson Generator
-
-Purpose:
-- Generate teaching responses, not just answers.
-
-Lesson response should:
-- Use simple Hinglish.
-- Teach one concept at a time.
-- Include examples or check questions only when the retrieved context supports them.
-- Stay grounded in retrieved chapter/topic content.
-
-LangChain flow:
-
-```text
-topicContext
--> ChatPromptTemplate
--> ChatModel
--> StringOutputParser
-```
-
-Lesson output example:
-
-```text
-Chalo Electricity ka first topic start karte hain: Electric Current.
-
-Simple meaning:
-Electric current ka matlab hai charge ka flow.
-
-Example:
-Jaise pipe me water flow karta hai, waise wire me charge flow karta hai.
-
-Quick check:
-Current ka SI unit kya hota hai?
-```
-
-### 6. Response Contract
-
-The frontend should not parse natural language. Backend response must be structured.
-
-Example:
-
-```json
-{
-  "status": "lesson_started",
-  "action": "start_lesson",
-  "answer": "...",
-  "lesson": {
-    "chapterId": "science.physics.chapter-03",
-    "chapterTitle": "Electricity",
-    "topicId": "science.physics.chapter-03.topic-01",
-    "topicTitle": "Electric Current",
-    "nextAction": "continue_lesson"
-  },
-  "suggestedActions": [
-    { "type": "continue_lesson", "label": "Next topic" },
-    { "type": "ask_doubt", "label": "Ask doubt" }
   ],
-  "sources": []
+  "suggestedActions": [],
+  "memoryUpdate": {}
 }
 ```
 
-## Relationship To Current Router
+The backend keeps a compatibility `answer` string for the current frontend while the frontend increasingly renders `sections` directly.
 
-Current files under `backend/src/tutor/router`, `backend/src/tutor/handlers`, and `backend/src/tutor/context` are a temporary compatibility layer.
+## Conversation Quality Rules
 
-They fixed immediate UX issues, but they are not the final architecture.
+The prompt now includes:
 
-Do not keep adding manual rules for every new student phrase. New learning workflows should move into:
+- Roman Hinglish language lock when the student uses Hinglish/Hindi-in-Roman.
+- Silent self-check before answering.
+- Last-response awareness to avoid repeating the same explanation.
+- Repair behavior if the student says Zuno is robotic, repetitive, or using the wrong language.
+- No fake physical identity or location.
+- Few-shot good/bad examples.
 
-```text
-Tutor Planner -> Action Executor -> LangChain chains/tools
-```
+## Current Known Issues
 
-Cleanup rule:
-- Keep current router until Tutor Engine fully replaces `/api/v1/ask`.
-- After the new engine passes conversation regression tests, remove or collapse the old rule-router files.
+The new flow exposed content and prompt issues:
 
-## Target Folder Structure
+- Broad foundation questions such as `Science kya hai?`, `Physics kya hai?`, `Chemistry kya hai?`, and `Biology kya hai?` are not yet well-covered by approved RAG content.
+- Study support questions such as `main padhta hu par yaad nahi rehta` need curated foundation/study-skill content.
+- Without curated foundation content, the LLM may answer from general knowledge, which weakens the project’s grounding rule.
+- The frontend previously rendered only the flattened `answer`, causing headings and content to appear glued together. It now renders `sections` for Zuno messages.
 
-```text
-backend/src/tutor/
-  curriculum/
-    curriculumIndexBuilder.js
-    curriculumIndexStore.js
-    chapterResolver.js
-    topicResolver.js
+## Content Plan
 
-  state/
-    tutorStateStore.js
-    tutorStateSchema.js
+Add curated Foundation Markdown content under `data/class-10/science/foundation/`.
 
-  planner/
-    plannerActions.js
-    plannerPrompt.js
-    tutorPlanner.js
-    plannerOutputParser.js
-
-  executor/
-    actionExecutor.js
-
-  actions/
-    answerDoubt.js
-    answerMetadata.js
-    askClarification.js
-    changeMode.js
-    continueLesson.js
-    giveStudyAdvice.js
-    refuseOutOfScope.js
-    respondSmalltalk.js
-    setLearningTarget.js
-    startLesson.js
-
-  teaching/
-    lessonPrompt.js
-    lessonGenerator.js
-```
-
-## Implementation Order
-
-1. Create curriculum index from Markdown headings. DONE.
-2. Add chapter/topic resolver against the curriculum index. DONE.
-3. Upgrade session context into DB-backed tutor state. DONE.
-4. Add deterministic lesson start/continue flow. DONE.
-5. Build grounded lesson generator chain. DONE.
-6. Build deterministic planner with validated action output. DONE.
-7. Build action executor. DONE.
-8. Route `/api/v1/ask` through Tutor Engine foundation. DONE.
-9. Add initial conversation regression tests. DONE.
-10. Update frontend to render lesson state and suggested actions. NEXT.
-11. Remove temporary router/handler files after replacement is verified.
-
-## Test Strategy
-
-Single prompt tests are not enough. Use conversation tests.
-
-Example:
+Recommended files:
 
 ```text
-hii
-aaj biology padhna hai
-biology me kitne chapter hai
-inme sabse tough kaun sa hai
-life processes start kro
-ek ek krke padhao
-next
-blood kya hai
+01-science-orientation.md
+02-subject-orientation.md
+03-study-skills.md
+04-learning-support.md
 ```
 
-Expected:
-- smalltalk
-- learning target set
-- metadata answer
-- study advice
-- lesson start
-- lesson continuation
-- grounded doubt answer
+Target content:
 
-## Non-Goals For This Milestone
+- Science kya hai?
+- Physics/Chemistry/Biology kya hai?
+- Science kaise padhein?
+- Padhta hu par yaad nahi rehta.
+- Padhne ka man nahi karta.
+- Samajh nahi aaye to kya karein?
 
-- No auth.
+After adding content:
+
+```bash
+cd backend
+npm.cmd run rag:index
+```
+
+Then live-test the same conversation prompts.
+
+## Non-Goals
+
 - No admin panel.
+- No auth.
 - No quiz engine.
 - No analytics.
-- No production vector DB.
-- No major frontend redesign beyond what the new response contract requires.
+- No production vector DB yet.
+- No return to manual intent explosion unless a narrow deterministic helper is truly needed.

@@ -9,13 +9,14 @@ export const getChatState = async (sessionId) => {
 };
 
 export const getOrCreateChatState = async (sessionId) => {
-  let state = await getChatState(sessionId);
-
-  if (!state) {
-    state = await createChatState(sessionId);
-  }
-
-  return state;
+  return ChatState.findOneAndUpdate(
+    { sessionId },
+    { $setOnInsert: { sessionId } },
+    {
+      returnDocument: 'after',
+      upsert: true,
+    }
+  );
 };
 
 export const updateChatState = async (sessionId, updates) => {
