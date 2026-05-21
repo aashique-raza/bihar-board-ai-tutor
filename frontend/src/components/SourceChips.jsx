@@ -1,4 +1,7 @@
 import React from 'react';
+import SourceRounded from '@mui/icons-material/SourceRounded';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 function SourceChips({ sources }) {
   if (!sources.length) {
@@ -6,13 +9,27 @@ function SourceChips({ sources }) {
   }
 
   return (
-    <div className="source-chips" aria-label="Answer sources">
+    <Stack
+      aria-label="Answer sources"
+      direction="row"
+      flexWrap="wrap"
+      gap={1}
+      sx={{ mt: 1.5 }}
+    >
       {sources.map((source) => (
-        <span key={`${source.sourceNumber}-${source.chunkId}`}>
-          {source.label || source.sourceTitle || `${source.chapterTitle} / ${source.headingPath}`}
-        </span>
+        <Chip
+          icon={<SourceRounded />}
+          key={`${source.sourceNumber}-${source.chunkId || source.sourceId}`}
+          label={
+            source.label ||
+            source.sourceTitle ||
+            `${source.chapterTitle} / ${source.headingPath}`
+          }
+          size="small"
+          sx={{ maxWidth: '100%', fontWeight: 750 }}
+        />
       ))}
-    </div>
+    </Stack>
   );
 }
 

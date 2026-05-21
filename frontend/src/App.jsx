@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import Box from '@mui/material/Box';
 import { askTutor, fetchStudyMap } from './api/tutorApi.js';
 import AppHeader from './components/AppHeader.jsx';
 import AskBar from './components/AskBar.jsx';
-import ChapterPicker from './components/ChapterPicker.jsx';
 import ChatMessage from './components/ChatMessage.jsx';
-import EmptyState from './components/EmptyState.jsx';
-import ModeSwitch from './components/ModeSwitch.jsx';
+import FocusModal from './components/FocusModal.jsx';
+import Sidebar from './components/Sidebar.jsx';
 import StatusNotice from './components/StatusNotice.jsx';
 import { STUDY_MODES } from './constants/studyModes.js';
 import { getSavedSessionId, saveSessionId } from './utils/session.js';
@@ -15,8 +15,7 @@ const createWelcomeMessage = () => ({
   id: 'welcome',
   role: 'zuno',
   status: 'intro',
-  answer:
-    'Hey, main Zuno hoon. Global mode me koi bhi Science doubt pucho, ya Focus mode me ek chapter lock karke study karo.',
+  answer: 'Main Zuno hoon, tumhara Class 10 personal tutor. Aaj jis topic par atke ho, wahi se start karte hain.',
   sources: [],
 });
 
@@ -32,6 +31,14 @@ const createAnswerMessage = (payload) => ({
   ...payload,
 });
 
+const createFocusMessage = (chapter) => ({
+  id: crypto.randomUUID(),
+  role: 'zuno',
+  status: 'focus_selected',
+  answer: `Focus mode on hai. Ab hum ${chapter.subjectTitle} > ${chapter.sectionTitle} > ${chapter.title} par kaam karenge. Is chapter ka topic, concept, ya question likho.`,
+  sources: [],
+});
+
 function App() {
   const [studyMode, setStudyMode] = useState(STUDY_MODES.global);
   const [studyMap, setStudyMap] = useState(null);
@@ -39,8 +46,10 @@ function App() {
   const [messages, setMessages] = useState([createWelcomeMessage()]);
   const [sessionId, setSessionId] = useState(() => getSavedSessionId());
   const [isStudyMapLoading, setIsStudyMapLoading] = useState(true);
+  const [isFocusModalOpen, setIsFocusModalOpen] = useState(false);
   const [isAsking, setIsAsking] = useState(false);
   const [error, setError] = useState('');
+  const chatEndRef = useRef(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -70,6 +79,10 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }, [messages, isAsking]);
+
   const selectedChapter = useMemo(() => {
     const subjects = studyMap?.focusStudy?.subjects || [];
 
@@ -92,8 +105,46 @@ function App() {
     return null;
   }, [selectedChapterId, studyMap]);
 
-  const handleModeChange = (nextMode) => {
-    setStudyMode(nextMode);
+  const findChapterById = (chapterId) => {
+    const subjects = studyMap?.focusStudy?.subjects || [];
+
+    for (const subject of subjects) {
+      for (const section of subject.sections || []) {
+        const chapter = (section.chapters || []).find(
+          (item) => item.id === chapterId
+        );
+
+        if (chapter) {
+          return {
+            ...chapter,
+            sectionTitle: section.title,
+            subjectTitle: subject.title,
+          };
+        }
+      }
+    }
+
+    return null;
+  };
+
+  const handleFocusChapterSelect = (chapterId) => {
+    const nextChapter = findChapterById(chapterId);
+
+    setSelectedChapterId(chapterId);
+    setStudyMode(STUDY_MODES.focus);
+    setIsFocusModalOpen(false);
+    setError('');
+
+    if (nextChapter) {
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        createFocusMessage(nextChapter),
+      ]);
+    }
+  };
+
+  const handleClearFocus = () => {
+    setStudyMode(STUDY_MODES.global);
     setError('');
   };
 
@@ -147,26 +198,18 @@ function App() {
   };
 
   return (
-    <main className="app-shell">
-      <section className="app-card" aria-label="Zuno tutor app">
-        <AppHeader />
+    <Box className="app-shell" component="main">
+      <Sidebar />
+      <Box className="app-card" component="section" aria-label="Zuno tutor app">
+        <AppHeader
+          activeMode={studyMode}
+          isFocusLoading={isStudyMapLoading}
+          selectedChapter={selectedChapter}
+          onClearFocus={handleClearFocus}
+          onOpenFocus={() => setIsFocusModalOpen(true)}
+        />
 
-        <div className="control-panel">
-          <ModeSwitch activeMode={studyMode} onChange={handleModeChange} />
-          {studyMode === STUDY_MODES.focus && (
-            <ChapterPicker
-              chapters={studyMap?.focusStudy?.subjects || []}
-              isLoading={isStudyMapLoading}
-              selectedChapter={selectedChapter}
-              selectedChapterId={selectedChapterId}
-              onChange={setSelectedChapterId}
-            />
-          )}
-        </div>
-
-        <section className="chat-panel" aria-live="polite">
-          <EmptyState studyMode={studyMode} selectedChapter={selectedChapter} />
-
+        <Box className="chat-panel" component="section" aria-live="polite">
           <div className="message-list">
             {messages.map((message) => (
               <ChatMessage
@@ -180,19 +223,29 @@ function App() {
                 message={{
                   id: 'thinking',
                   role: 'zuno',
-                  answer: 'Zuno context check kar raha hai...',
+                  answer: '',
                   status: 'thinking',
                   sources: [],
                 }}
               />
             )}
+            <div ref={chatEndRef} />
           </div>
-        </section>
+        </Box>
 
         <StatusNotice error={error} />
         <AskBar disabled={isAsking} onAsk={handleAsk} studyMode={studyMode} />
-      </section>
-    </main>
+      </Box>
+
+      <FocusModal
+        isOpen={isFocusModalOpen}
+        isLoading={isStudyMapLoading}
+        selectedChapterId={selectedChapterId}
+        studyMap={studyMap}
+        onClose={() => setIsFocusModalOpen(false)}
+        onSelectChapter={handleFocusChapterSelect}
+      />
+    </Box>
   );
 }
 

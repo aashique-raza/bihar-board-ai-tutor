@@ -1,4 +1,6 @@
 import React from 'react';
+import Alert from '@mui/material/Alert';
+import Box from '@mui/material/Box';
 
 function StatusNotice({ error }) {
   if (!error) {
@@ -6,9 +8,11 @@ function StatusNotice({ error }) {
   }
 
   return (
-    <div className="status-notice" role="alert">
-      {error}
-    </div>
+    <Box sx={{ px: { xs: 2, md: 3 }, pb: 1.5 }}>
+      <Alert severity="error" variant="outlined">
+        {error}
+      </Alert>
+    </Box>
   );
 }
 

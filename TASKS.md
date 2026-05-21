@@ -17,7 +17,7 @@ The app should not depend on raw PDF parsing quality for production RAG content.
 No active implementation task.
 
 Next recommended task:
-Frontend Lesson Experience Improvements
+Frontend lesson actions and tutor-flow UI polish
 
 Known performance backlog:
 TASK-020: Performance Known Issues Backlog
@@ -384,6 +384,34 @@ Verified:
 - Frontend `npm.cmd run build` passed.
 - Manual source payload QA confirmed compact source fields are returned.
 
+### TASK-022: Premium Dark Frontend Tutor UI Refresh
+
+Status: DONE
+
+Task file:
+tasks/TASK-022-premium-dark-frontend-ui-refresh.md
+
+Completed:
+- Reworked Zuno frontend into a premium dark personal tutor interface.
+- Added Material UI, Emotion, and MUI icons as the frontend component foundation.
+- Replaced the old segmented Global/Focus mode switch with default Global behavior plus a focused chapter-selection modal.
+- Added a future-ready sidebar for Tutor, History, Tracking, Quiz, and Account.
+- Moved Account to the bottom of the sidebar.
+- Rebuilt Focus Mode selection as a subject -> section -> chapter flow.
+- Added subject-specific and section-specific icons.
+- Removed the old large empty-state hero panel from the chat surface.
+- Added compact Focus Mode state in the header after chapter selection.
+- Added a contextual Zuno message when a Focus Mode chapter is selected.
+- Fixed page scroll behavior so the page shell stays fixed and only the chat panel scrolls.
+- Added chat auto-scroll after new student/tutor messages.
+- Reworked chat bubbles, input bar, status alert, and loading state using Material UI components.
+- Replaced the old loading text with an animated thinking indicator.
+- Hid source chips from the student-facing chat UI while preserving backend source payloads.
+- Removed old `ModeSwitch`, `ChapterPicker`, and `EmptyState` frontend components.
+
+Verified:
+- Frontend `npm.cmd run build` passed.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -531,12 +559,18 @@ Completed:
 - Chapter selector exists.
 - Answer and sources display exists.
 - Browser session handling exists through `localStorage` session id.
+- Premium dark personal tutor UI foundation exists.
+- Material UI frontend component foundation exists.
+- Sidebar foundation exists for future History, Tracking, Quiz, and Account features.
+- Focus Mode now opens a subject/section/chapter selection modal.
+- Chat panel auto-scrolls without scrolling the whole page.
+- Student-facing source chips are hidden in the chat UI.
 
 Remaining work:
 - Add lesson state display.
 - Add continue lesson action.
-- Compact source chips.
 - Render structured Tutor Engine actions.
+- Add more mobile and browser visual QA polish.
 
 ### Stage 12: Deployment Demo
 
@@ -561,7 +595,7 @@ Expected work:
 
 ## Next Task Rule
 
-The next recommended implementation task is Frontend Lesson Experience Improvements.
+The next recommended implementation task is frontend lesson actions and tutor-flow UI polish.
 
 The next backend polish tasks are answer quality/tone improvements and performance work later from TASK-020.
 
