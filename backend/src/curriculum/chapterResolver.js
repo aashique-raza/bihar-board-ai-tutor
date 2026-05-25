@@ -12,13 +12,13 @@
 const cleanText = (text) => String(text || '').replace(/\s+/g, ' ').trim();
 
 const SUBJECT_KEYWORDS = {
-  'science.physics': ['physics', 'bijli', 'electricity', 'light', 'wave', 'force', 'refraction'],
+  'science.physics': ['physics', 'physic', 'bijli', 'electricity', 'light', 'wave', 'force', 'refraction'],
   'science.chemistry': ['chemistry', 'rasayan', 'reaction', 'acid', 'base', 'metal', 'nonmetal'],
   'science.biology': ['biology', 'jeev', 'life', 'digestion', 'reproduction', 'genetics', 'ecosystem'],
 };
 
 const SECTION_KEYWORDS = {
-  'science.physics.section-01': ['physics', 'bijli', 'electricity', 'light', 'force'],
+  'science.physics.section-01': ['physics', 'physic', 'bijli', 'electricity', 'light', 'force'],
   'science.chemistry.section-01': ['chemistry', 'rasayan', 'reaction', 'acid', 'metal'],
   'science.biology.section-01': ['biology', 'jeev', 'life', 'digestion', 'reproduction'],
 };
@@ -108,9 +108,9 @@ const createChapterMatch = ({ chapter, normalizedText, sectionHint, subjectHint,
   if (chapter.originalScienceChapterNumber && chapter.originalScienceChapterNumber !== chapter.number && chapterNumbers.includes(chapter.originalScienceChapterNumber)) { score += 45; reasons.push('original_science_chapter_number'); }
   if (titleText && normalizedText.includes(titleText)) { score += 90; reasons.push('chapter_title'); }
   else if (overlap > 0) { score += overlap * 20; reasons.push('chapter_title_tokens'); }
-  if (sectionHint && sectionHint === chapter.sectionId) { score += 35; reasons.push('section_hint'); }
+  if (sectionHint && sectionHint.includes(chapter.sectionId)) { score += 35; reasons.push('section_hint'); }
   else if (sectionHint) { score -= 25; }
-  if (subjectHint && subjectHint === chapter.subjectId) { score += 10; reasons.push('subject_hint'); }
+  if (subjectHint && subjectHint.includes(chapter.subjectId)) { score += 10; reasons.push('subject_hint'); }
   return { chapter, score, reasons };
 };
 

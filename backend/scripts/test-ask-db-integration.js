@@ -2,7 +2,7 @@ import { connectDB, disconnectDB } from '../src/db/mongooseClient.js';
 import { ChatHistory } from '../src/models/chatHistory.model.js';
 import { ChatSession } from '../src/models/chatSession.model.js';
 import { ChatState } from '../src/models/chatState.model.js';
-import { askQuestion } from '../src/services/ask.service.js';
+import { askQuestion } from '../src/ask/askOrchestrator.js';
 import { getChatHistory } from '../src/services/chatHistory.service.js';
 import { getChatState } from '../src/services/chatState.service.js';
 

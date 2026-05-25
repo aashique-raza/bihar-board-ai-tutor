@@ -71,7 +71,7 @@ const createFallbackResponse = ({ responseMode, message }) => ({
     {
       heading: 'Zuno',
       content: responseMode === 'redirect'
-        ? 'Main is topic me help nahi kar paunga. Main Class 10 Science padhane ke liye bana hoon.'
+        ? 'Main is topic me help nahi kar paunga. Main Class 10 padhane ke liye bana hoon.'
         : `Chalo, is par simple tareeke se kaam karte hain: ${message}`,
     },
   ],

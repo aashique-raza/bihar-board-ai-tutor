@@ -20,13 +20,13 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-const class10Subjects = [
-  { id: 'hindi', title: 'Hindi', available: false, icon: TranslateRounded },
-  { id: 'english', title: 'English', available: false, icon: AutoStoriesRounded },
-  { id: 'math', title: 'Math', available: false, icon: FunctionsRounded },
-  { id: 'science', title: 'Science', available: true, icon: ScienceRounded },
-  { id: 'social-science', title: 'Social Science', available: false, icon: PublicRounded },
-  { id: 'sanskrit', title: 'Sanskrit', available: false, icon: MenuBookRounded },
+const baseSubjects = [
+  { id: 'hindi', title: 'Hindi', icon: TranslateRounded },
+  { id: 'english', title: 'English', icon: AutoStoriesRounded },
+  { id: 'math', title: 'Math', icon: FunctionsRounded },
+  { id: 'science', title: 'Science', icon: ScienceRounded },
+  { id: 'social-science', title: 'Social Science', icon: PublicRounded },
+  { id: 'sanskrit', title: 'Sanskrit', icon: MenuBookRounded },
 ];
 
 const sectionIcons = {
@@ -34,15 +34,6 @@ const sectionIcons = {
   chemistry: ScienceRounded,
   biology: BiotechRounded,
 };
-
-function getScienceSubject(studyMap) {
-  const subjects = studyMap?.focusStudy?.subjects || [];
-
-  return (
-    subjects.find((subject) => subject.title?.toLowerCase() === 'science') ||
-    subjects[0]
-  );
-}
 
 function FocusModal({
   isOpen,
@@ -54,14 +45,45 @@ function FocusModal({
 }) {
   const [activeSubjectId, setActiveSubjectId] = useState('');
   const [activeSectionId, setActiveSectionId] = useState('');
-  const scienceSubject = useMemo(() => getScienceSubject(studyMap), [studyMap]);
 
-  const sections = scienceSubject?.sections || [];
+  // Determine which subjects are actually loaded in the study map
+  const subjectsInMap = useMemo(() => {
+    const subjects = studyMap?.focusStudy?.subjects || [];
+    return new Set(subjects.map((sub) => sub.id || sub.title?.toLowerCase()));
+  }, [studyMap]);
+
+  // Enrich the subject list with dynamic availability
+  const enrichedSubjects = useMemo(() => {
+    return baseSubjects.map((sub) => ({
+      ...sub,
+      available: subjectsInMap.has(sub.id),
+    }));
+  }, [subjectsInMap]);
+
+  // Map of subject ID -> total chapters count
+  const subjectChapterCounts = useMemo(() => {
+    const counts = {};
+    const subjects = studyMap?.focusStudy?.subjects || [];
+    for (const subject of subjects) {
+      const total = (subject.sections || []).reduce(
+        (acc, sec) => acc + (sec.chapters?.length || 0),
+        0
+      );
+      counts[subject.id || subject.title?.toLowerCase()] = total;
+    }
+    return counts;
+  }, [studyMap]);
+
+  // Find the selected subject dynamically
+  const selectedSubject = useMemo(() => {
+    const subjects = studyMap?.focusStudy?.subjects || [];
+    return subjects.find(
+      (sub) => sub.id === activeSubjectId || sub.title?.toLowerCase() === activeSubjectId
+    );
+  }, [activeSubjectId, studyMap]);
+
+  const sections = selectedSubject?.sections || [];
   const activeSection = sections.find((section) => section.id === activeSectionId);
-  const totalScienceChapters = sections.reduce(
-    (total, section) => total + (section.chapters?.length || 0),
-    0
-  );
 
   const handleClose = () => {
     setActiveSubjectId('');
@@ -116,7 +138,7 @@ function FocusModal({
           <Box>
             <Typography className="section-label">Class 10 Subjects</Typography>
             <Box className="focus-grid subjects">
-              {class10Subjects.map((subject) => {
+              {enrichedSubjects.map((subject) => {
                 const Icon = subject.icon;
                 const isSelected = activeSubjectId === subject.id;
 
@@ -144,7 +166,7 @@ function FocusModal({
                           color={subject.available ? 'primary' : 'default'}
                           label={
                             subject.available
-                              ? `${totalScienceChapters || 16} chapters`
+                              ? `${subjectChapterCounts[subject.id] || 0} chapters`
                               : 'Coming soon'
                           }
                           size="small"
@@ -158,7 +180,7 @@ function FocusModal({
             </Box>
           </Box>
 
-          {activeSubjectId === 'science' && (
+          {activeSubjectId && enrichedSubjects.find(s => s.id === activeSubjectId)?.available && (
             <Box>
               <Typography className="section-label">Sections</Typography>
               <Box className="focus-grid sections">

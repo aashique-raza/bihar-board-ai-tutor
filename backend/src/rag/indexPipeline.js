@@ -47,7 +47,7 @@ const getMetadataValue = (metadata, key, fallback = 'Unknown') => {
 // Each chunk's page content includes a structured header so the LLM has full context
 const buildLangChainPageContent = (chunk) => {
   const metadata = chunk.metadata || {};
-  return `Bihar Board Class 10 Science
+  return `Bihar Board Class 10 ${getMetadataValue(metadata, 'subject')}
 Section: ${getMetadataValue(metadata, 'section')}
 Chapter: ${getMetadataValue(metadata, 'chapter_title')}
 Topic/Heading: ${getMetadataValue(metadata, 'heading_path')}

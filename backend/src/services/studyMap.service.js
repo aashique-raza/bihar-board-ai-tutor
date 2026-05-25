@@ -8,8 +8,12 @@ const __dirname = path.dirname(__filename);
 const backendRoot = path.resolve(__dirname, '..', '..');
 const scienceContentDir = path.resolve(backendRoot, '..', 'data', 'class-10', 'science');
 
-const SUBJECT_ORDER = ['Science'];
-const SECTION_ORDER = ['Physics', 'Chemistry', 'Biology'];
+const SUBJECT_ORDER = ['Hindi', 'English', 'Math', 'Science', 'Social Science', 'Sanskrit'];
+const SECTION_ORDER = [
+  'Physics', 'Chemistry', 'Biology',
+  'History', 'Geography', 'Civics', 'Economics',
+  'Grammar', 'Prose', 'Poetry', 'Non-Fiction', 'Algebra', 'Geometry', 'Trigonometry', 'Statistics'
+];
 
 let cachedStudyMap = null;
 

@@ -174,7 +174,6 @@ export const validateMarkdownDocument = (doc, options = {}) => {
   if (doc.pageContent?.trimStart().startsWith('---')) errors.push('YAML frontmatter was not removed from pageContent.');
   if (metadata.board !== 'Bihar Board') errors.push(`board must be "Bihar Board"; received "${metadata.board}".`);
   if (metadata.class !== 10) errors.push(`class must be 10; received "${metadata.class}".`);
-  if (metadata.subject !== 'Science') errors.push(`subject must be "Science"; received "${metadata.subject}".`);
   if (metadata.language !== 'English') errors.push(`language must be "English"; received "${metadata.language}".`);
   if (metadata.source_type !== 'cleaned_markdown') errors.push(`source_type must be "cleaned_markdown"; received "${metadata.source_type}".`);
 
@@ -184,28 +183,35 @@ export const validateMarkdownDocument = (doc, options = {}) => {
   const folderSection = absoluteSourcePath ? getSectionFolder(absoluteSourcePath) : undefined;
   const sectionRule = folderSection ? SECTION_RULES[folderSection] : undefined;
 
-  if (!sectionRule) {
-    errors.push(`source_path must be inside chemistry, biology, or physics; received "${metadata.source_path}".`);
-  } else if (metadata.section !== sectionRule.section) {
-    errors.push(`section must match folder "${sectionRule.section}"; received "${metadata.section}".`);
-  }
+  if (sectionRule) {
+    if (metadata.section !== sectionRule.section) {
+      errors.push(`section must match folder "${sectionRule.section}"; received "${metadata.section}".`);
+    }
 
-  if (!Number.isInteger(metadata.chapter_no)) {
-    errors.push(`chapter_no must be an integer; received "${metadata.chapter_no}".`);
-  } else if (sectionRule && (metadata.chapter_no < sectionRule.chapterStart || metadata.chapter_no > sectionRule.chapterEnd)) {
-    errors.push(`chapter_no for ${sectionRule.section} must be ${sectionRule.chapterStart}-${sectionRule.chapterEnd}; received ${metadata.chapter_no}.`);
-  }
+    if (!Number.isInteger(metadata.chapter_no)) {
+      errors.push(`chapter_no must be an integer; received "${metadata.chapter_no}".`);
+    } else if (metadata.chapter_no < sectionRule.chapterStart || metadata.chapter_no > sectionRule.chapterEnd) {
+      errors.push(`chapter_no for ${sectionRule.section} must be ${sectionRule.chapterStart}-${sectionRule.chapterEnd}; received ${metadata.chapter_no}.`);
+    }
 
-  if (!Number.isInteger(metadata.original_science_chapter_no)) {
-    errors.push(`original_science_chapter_no must be an integer; received "${metadata.original_science_chapter_no}".`);
-  } else if (sectionRule && (metadata.original_science_chapter_no < sectionRule.originalStart || metadata.original_science_chapter_no > sectionRule.originalEnd)) {
-    errors.push(`original_science_chapter_no for ${sectionRule.section} must be ${sectionRule.originalStart}-${sectionRule.originalEnd}; received ${metadata.original_science_chapter_no}.`);
-  }
+    if (!Number.isInteger(metadata.original_science_chapter_no)) {
+      errors.push(`original_science_chapter_no must be an integer; received "${metadata.original_science_chapter_no}".`);
+    } else if (metadata.original_science_chapter_no < sectionRule.originalStart || metadata.original_science_chapter_no > sectionRule.originalEnd) {
+      errors.push(`original_science_chapter_no for ${sectionRule.section} must be ${sectionRule.originalStart}-${sectionRule.originalEnd}; received ${metadata.original_science_chapter_no}.`);
+    }
 
-  if (sectionRule && Number.isInteger(metadata.chapter_no)) {
-    const expectedOriginal = getExpectedOriginalChapterNo(folderSection, metadata.chapter_no);
-    if (metadata.original_science_chapter_no !== expectedOriginal) {
-      errors.push(`original_science_chapter_no must be ${expectedOriginal} for ${metadata.section} chapter ${metadata.chapter_no}; received ${metadata.original_science_chapter_no}.`);
+    if (Number.isInteger(metadata.chapter_no)) {
+      const expectedOriginal = getExpectedOriginalChapterNo(folderSection, metadata.chapter_no);
+      if (metadata.original_science_chapter_no !== expectedOriginal) {
+        errors.push(`original_science_chapter_no must be ${expectedOriginal} for ${metadata.section} chapter ${metadata.chapter_no}; received ${metadata.original_science_chapter_no}.`);
+      }
+    }
+  } else {
+    // General (non-Science) validation: just ensure chapter_no is an integer
+    if (metadata.chapter_no !== undefined && metadata.chapter_no !== null) {
+      if (!Number.isInteger(metadata.chapter_no)) {
+        errors.push(`chapter_no must be an integer; received "${metadata.chapter_no}".`);
+      }
     }
   }
 
