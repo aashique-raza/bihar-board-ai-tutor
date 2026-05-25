@@ -7,7 +7,7 @@ import healthRoutes from './routes/health.routes.js';
 import studyMapRoutes from './routes/studyMap.routes.js';
 import ApiError from './utils/ApiError.js';
 import { sendResponse } from './utils/sendResponse.js';
-import { errorHandler, notFoundHandler } from './middlewares/error.middleware.js';
+import { errorHandler } from './middlewares/error.middleware.js';
 
 const app = express();
 
@@ -29,7 +29,6 @@ app.use((req, _res, next) => {
   next(new ApiError(404, `Route not found: ${req.originalUrl}`));
 });
 
-app.use(notFoundHandler);
 app.use(errorHandler);
 
 export default app;

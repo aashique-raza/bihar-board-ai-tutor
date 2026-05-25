@@ -36,6 +36,11 @@ export const validateInput = async (body = {}) => {
   const studyMode = cleanText(body.studyMode);
   const requestedSessionId = cleanText(body.sessionId);
 
+  console.log('step1.validateInput.js: body', body);
+  console.log('step1.validateInput.js: question', question);
+  console.log('step1.validateInput.js: studyMode', studyMode);
+  console.log('step1.validateInput.js: requestedSessionId', requestedSessionId);
+
   // question is mandatory
   if (!question) {
     throw new ApiError(400, 'question is required.');

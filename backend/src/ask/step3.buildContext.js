@@ -54,26 +54,37 @@ const buildFocusChapterPrompt = (focusChapter) => {
  * @returns {{ language, memory, history, lastTutorResponse, curriculumSummary, focusChapterPrompt }}
  */
 export const buildContext = async ({ question, focusChapter }, { chatState, recentMessages }) => {
+  console.log('step3.buildContext.js: question', question);
+  console.log('step3.buildContext.js: focusChapter', focusChapter);
+  console.log('step3.buildContext.js: chatState', chatState);
+  console.log('step3.buildContext.js: recentMessages', recentMessages);
   // Load the study map (needed for curriculum summary in the prompt)
   const studyMap = await getStudyMap();
+  console.log('step3.buildContext.js: studyMap', studyMap);
 
   // Detect whether student is writing in Hindi, Hinglish, or English
   const language = detectConversationLanguage({ question, recentMessages });
+  console.log('step3.buildContext.js: language', language);
 
   // Format compact tutor state for the prompt (current chapter, mode, etc.)
   const memory = JSON.stringify(formatMemoryForPrompt(chatState), null, 2);
+  console.log('step3.buildContext.js: memory', memory);
 
   // Format recent chat history as a readable conversation block
   const history = formatRecentHistory(recentMessages);
+  console.log('step3.buildContext.js: history', history);
 
   // Get the last thing Zuno said (to avoid repeating the same wording)
   const lastTutorResponse = getLastTutorResponse(recentMessages);
+  console.log('step3.buildContext.js: lastTutorResponse', lastTutorResponse);
 
   // Generate the available chapters summary for the curriculum overview
   const curriculumSummary = formatStudyMapSummary(studyMap);
+  console.log('step3.buildContext.js: curriculumSummary', curriculumSummary);
 
   // Build the focus chapter prompt (JSON for Focus Mode, text for Global Mode)
   const focusChapterPrompt = buildFocusChapterPrompt(focusChapter);
+  console.log('step3.buildContext.js: focusChapterPrompt', focusChapterPrompt);
 
   return {
     language,
