@@ -1,24 +1,8 @@
-/**
- * promptHelpers.js
- *
- * Shared text formatting helpers used when building LLM prompts.
- * Used by Step 3 (build context) and Step 6 (generate response).
- *
- * FUNCTIONS:
- *   formatRecentHistory(messages)       → converts DB messages to "Student: ... / Zuno: ..." text
- *   getLastTutorResponse(messages)      → gets the last thing Zuno said
- *   formatStudyMapSummary(studyMap)     → formats available chapters as a readable summary
- *   formatMemoryForPrompt(chatState)    → picks relevant fields from chatState for the prompt
- *   formatRetrievedContext(chunks)      → formats RAG chunks as "[Source N] ..." blocks
- *   sectionsToAnswerText({ title, sections }) → converts sections to a plain text answer
- */
-
 export const compactText = (value) =>
   String(value || '').replace(/\s+/g, ' ').trim();
 
 /**
- * Formats recent DB messages as a readable conversation block for LLM prompts.
- * Example output: "Student: photosynthesis kya hai\nZuno: Photosynthesis ek process hai..."
+ * DB chat logs ko conversation blocks me text-format karta hai.
  */
 export const formatRecentHistory = (messages = []) => {
   if (!messages.length) {
@@ -31,8 +15,7 @@ export const formatRecentHistory = (messages = []) => {
 };
 
 /**
- * Returns the last Zuno message from recent history as a plain string.
- * Used to help the LLM avoid repeating itself.
+ * Repetition checks ko bypass karne ke liye tutor ka pichla turn response nikalta hai.
  */
 export const getLastTutorResponse = (messages = []) => {
   const lastTutorMessage = [...messages]
@@ -45,13 +28,7 @@ export const getLastTutorResponse = (messages = []) => {
 };
 
 /**
- * Formats the study map (available chapters) as a plain text curriculum summary.
- * Example:
- *   Physics
- *   1. Electricity; 2. Magnetic Effects...
- *
- *   Chemistry
- *   1. Chemical Reactions; ...
+ * Available chapters list ko generic presentation summary me format karta hai.
  */
 export const formatStudyMapSummary = (studyMap) => {
   const subjects = studyMap?.focusStudy?.subjects || [];
@@ -73,8 +50,7 @@ export const formatStudyMapSummary = (studyMap) => {
 };
 
 /**
- * Extracts the relevant fields from the chatState for use in LLM prompts.
- * Converts undefined fields to null/defaults so the prompt is always valid.
+ * State records fields mapping rules definitions.
  */
 export const formatMemoryForPrompt = (chatState) => ({
   currentSubjectId: chatState?.currentSubjectId || null,
@@ -90,14 +66,7 @@ export const formatMemoryForPrompt = (chatState) => ({
 });
 
 /**
- * Formats RAG chunks as a labeled context block for the Tutor LLM prompt.
- * Returns 'NO_RETRIEVED_CONTEXT' if no chunks are available.
- *
- * Example output:
- *   [Source 1]
- *   Chapter: Life Processes
- *   Heading: Nutrition
- *   Content: ...
+ * RAG nodes lists processing module block string assembler.
  */
 export const formatRetrievedContext = (chunks = []) => {
   if (!chunks.length) {
@@ -118,8 +87,7 @@ ${content}`;
 };
 
 /**
- * Converts a structured { title, sections } response into a plain text answer string.
- * This is used for storing the tutor's reply in chat history (plain text format).
+ * Multi blocks elements strings mapping utility.
  */
 export const sectionsToAnswerText = ({ title, sections = [] }) => {
   const parts = [];
