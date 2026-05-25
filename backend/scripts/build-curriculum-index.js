@@ -2,8 +2,8 @@ import {
   createCurriculumIndexFromMarkdown,
   DEFAULT_CURRICULUM_INDEX_PATH,
   saveCurriculumIndex,
-} from '../src/tutor/curriculum/curriculumIndexStore.js';
-import { createCurriculumTopicDocuments } from '../src/tutor/curriculum/curriculumIndexBuilder.js';
+} from '../src/curriculum/curriculumIndexStore.js';
+import { createCurriculumTopicDocuments } from '../src/curriculum/curriculumIndexBuilder.js';
 
 const summarizeIndex = (curriculumIndex) => {
   const summary = {

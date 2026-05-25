@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
 
-import { loadCurriculumIndex } from '../src/tutor/curriculum/curriculumIndexStore.js';
-import { resolveChapter } from '../src/tutor/curriculum/chapterResolver.js';
+import { loadCurriculumIndex } from '../src/curriculum/curriculumIndexStore.js';
+import { resolveChapter } from '../src/curriculum/chapterResolver.js';
 import {
   getChapterCoreTopics,
   resolveTopic,
-} from '../src/tutor/curriculum/topicResolver.js';
+} from '../src/curriculum/topicResolver.js';
 
 const curriculumIndex = await loadCurriculumIndex();
 

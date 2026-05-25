@@ -1,4 +1,4 @@
-import { askQuestion } from '../services/ask.service.js';
+import { askQuestion } from '../ask/askOrchestrator.js';
 import { sendResponse } from '../utils/sendResponse.js';
 
 export const askQuestionController = async (req, res, next) => {
