@@ -1,22 +1,6 @@
 /**
  * step5.retrieveContent.js — Step 5 of the Ask API flow
- *
- * WHAT IT DOES:
- *   If the Decider (Step 4) said needsRetrieval=true, this step:
- *   1. Searches the vector store using the Decider's searchQuery
- *   2. Applies Focus Mode metadata filter (if chapterId was selected)
- *   3. Formats the raw chunks into clean source objects for the API response
- *
- *   If needsRetrieval=false (e.g., greeting, redirect), this step is skipped
- *   and returns empty results immediately.
- *
- * RETURNS:
- *   { retrieval, chunks, sources, retrievedContext }
- *
- *   retrieval       → raw retriever output (includes debug info)
- *   chunks          → top-K matched document chunks
- *   sources         → formatted, deduplicated source objects for the response
- *   retrievedContext → formatted text for the Tutor LLM prompt (Step 6)
+ * * PRODUCTION-GRADE ORCHESTRATOR COMPONENT
  */
 
 import { retrieveRelevantChunks } from '../rag/retriever.js';
@@ -24,31 +8,29 @@ import { formatSources } from '../rag/sourceFormatter.js';
 import { formatRetrievedContext } from './promptHelpers.js';
 
 /**
- * Builds retriever options.
- * In Focus Mode, adds a metadata filter so only that chapter's chunks are searched.
+ * Builds retriever options with explicit boundaries.
  */
 const getRetrieverOptions = (focusChapter) => {
   if (!focusChapter) {
-    return {}; // Global Mode: search all chunks
+    return {}; // Global Mode: search across all branches
   }
 
   return {
-    metadataFilter: focusChapter.metadataFilter, // e.g. { chapter_id: 'science.biology.chapter-01' }
-    requireTermMatchForLatinQuery: true,          // Stricter matching in focused search
+    metadataFilter: focusChapter.metadataFilter, // Scopes to e.g. { subject: 'Science', section: 'Biology', chapter_no: 1 }
+    requireTermMatchForLatinQuery: true,          // Restricts loose embedding drifts
   };
 };
 
 /**
  * Step 5: Search the vector store for relevant content.
- * If retrieval is not needed, returns empty immediately.
- *
- * @param {{ needsRetrieval, searchQuery }} decision     - From Step 4
- * @param {{ focusChapter }}                 input       - From Step 1
- * @returns {{ retrieval, chunks, sources, retrievedContext }}
+ * Bypasses immediately if Step 4 router evaluated needsRetrieval as false.
  */
 export const retrieveContent = async ({ needsRetrieval, searchQuery }, { focusChapter }) => {
-  // If the Decider said no retrieval needed (e.g. greeting), skip this step
+  console.log(`[Step 5 Execution] Initiating Retrieval Decision Verification. Required: ${needsRetrieval}`);
+
+  // Short-circuit routing check
   if (!needsRetrieval) {
+    console.log('[Step 5 Bypassed] Skipping vector database lookups due to conversational context routing rule.');
     return {
       retrieval: null,
       chunks: [],
@@ -57,7 +39,8 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery }, { focusCh
     };
   }
 
-  // Search the vector store using the Decider's search query
+  console.log(`[Step 5 DB Scan] Querying index vectors using computed target: "${searchQuery}"`);
+
   const retrieval = await retrieveRelevantChunks(
     searchQuery,
     getRetrieverOptions(focusChapter)
@@ -65,11 +48,13 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery }, { focusCh
 
   const chunks = retrieval.results || [];
 
-  // Format chunks into deduplicated source objects (for the API response)
+  // Format candidate chunks into structural objects for user consumption
   const sources = formatSources(chunks);
 
-  // Format chunks into a readable text block (for the Tutor LLM prompt)
+  // Format document boundaries into text sections for the subsequent Tutor prompt
   const retrievedContext = formatRetrievedContext(chunks);
+
+  console.log(`[Step 5 Complete] Successfully packaged ${chunks.length} ground truth chunks for text generation layer.`);
 
   return {
     retrieval,
