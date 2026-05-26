@@ -1,39 +1,27 @@
 /**
  * retriever.js
- *
- * The RAG retriever — Step 5 of the Ask API flow.
- *
- * HOW IT WORKS:
- *   1. Load the in-memory vector store (from vector-store.json)
- *   2. Optionally scope to a specific chapter using metadataFilter (Focus Mode)
- *   3. Run vector similarity search to get candidate chunks
- *   4. Rerank those candidates using keyword + intent signals
- *   5. Apply a final score filter and return the top-K results
- *
- * MAIN EXPORT:
- *   retrieveRelevantChunks(question, options) → { results, debug, ... }
- *
- * OPTIONS:
- *   - topK           → max results to return (default: 5)
- *   - minScore       → minimum vector similarity (default: 0.55)
- *   - metadataFilter → e.g. { chapter_id: 'science.biology.chapter-01' } for Focus Mode
- *   - vectorStorePath → override the default vector store file path
+ * * UPGRADED PRODUCTION-GRADE RAG RETRIEVER (STEP 5)
+ * * FIXES IMPLEMENTED:
+ * 1. Scoped Vector Cache Map: Static chapters ka memory overhead allocation zero kiya.
+ * 2. LangChain Distance Trap Fix: Evaluated distance into proper Cosine Similarity (1 - Distance).
+ * 3. Streamlined Score Normalization: Clean mathematical pipeline for robust filtering.
  */
 
 import path from 'node:path';
-
 import { MemoryVectorStore } from '@langchain/classic/vectorstores/memory';
-
 import { createQueryEmbeddings } from './geminiEmbeddings.js';
 import { loadLangChainMemoryVectorStore } from './vectorStoreLoader.js';
 import { rerankResults } from './reranker.js';
 import { retrieverConfig } from './retriever.config.js';
 
-// Rerank scoring thresholds (tuned for class 10 content)
+// Rerank scoring thresholds tuned for Bihar Board Class 10
 const STRONG_VECTOR_SCORE_THRESHOLD = 0.7;
 const FINAL_SCORE_THRESHOLD = 0.65;
 const TERM_MATCH_VECTOR_SCORE_THRESHOLD = 0.62;
 const DEVANAGARI_PATTERN = /[\u0900-\u097F]/;
+
+// Global In-Memory Cache to prevent multiple allocations of chapter-scoped stores
+const CHAPTER_STORE_CACHE = new Map();
 
 const normalizeRetrieverOptions = ({ topK, minScore } = {}) => {
   const parsedTopK = Number(topK);
@@ -52,8 +40,6 @@ const isStrongVectorFallback = (result) =>
 
 const isDevanagariQuery = (query) => DEVANAGARI_PATTERN.test(query);
 
-// A result passes if its combined rerank score meets the threshold,
-// or if it's a strong pure-vector match, or if the query is Hindi (Devanagari)
 const passesFinalFilter = (result, query, options = {}) => {
   if (options.requireTermMatchForLatinQuery && !isDevanagariQuery(query) && !hasMatchedTerms(result)) {
     return false;
@@ -69,20 +55,40 @@ const matchesMetadataFilter = (metadata, filter = {}) =>
   Object.entries(filter).every(([key, value]) => metadata?.[key] === value);
 
 /**
- * Creates a scoped vector store (for Focus Mode).
- * If no metadataFilter is given, returns the full store unchanged.
+ * Creates or retrieves a cached scoped vector store (Focus Mode optimization)
+ * Reduces CPU and garbage collection locks under multi-user traffic.
  */
-const createScopedVectorStore = (loadedStore, embeddings, metadataFilter) => {
+const getOrCreateScopedVectorStore = (loadedStore, embeddings, metadataFilter) => {
   if (!metadataFilter || Object.keys(metadataFilter).length === 0) {
     return { vectorStore: loadedStore.vectorStore, totalVectors: loadedStore.totalVectors };
   }
 
+  // Create unique cache key string based on metadata filter values
+  const cacheKey = Object.entries(metadataFilter)
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([k, v]) => `${k}:${v}`)
+    .join('|');
+
+  if (CHAPTER_STORE_CACHE.has(cacheKey)) {
+    console.log(`[Retriever Cache Hit] Serving scoped store from cache for key: ${cacheKey}`);
+    return CHAPTER_STORE_CACHE.get(cacheKey);
+  }
+
+  console.log(`[Retriever Cache Miss] Building new scoped in-memory store for key: ${cacheKey}`);
   const scopedVectorStore = new MemoryVectorStore(embeddings);
+
+  // Extract matching memory vectors from the master loaded store
   scopedVectorStore.memoryVectors = loadedStore.vectorStore.memoryVectors.filter((vector) =>
     matchesMetadataFilter(vector.metadata, metadataFilter)
   );
 
-  return { vectorStore: scopedVectorStore, totalVectors: scopedVectorStore.memoryVectors.length };
+  const cachedData = {
+    vectorStore: scopedVectorStore,
+    totalVectors: scopedVectorStore.memoryVectors.length
+  };
+
+  CHAPTER_STORE_CACHE.set(cacheKey, cachedData);
+  return cachedData;
 };
 
 export const loadRetrieverVectorStore = async (
@@ -92,10 +98,6 @@ export const loadRetrieverVectorStore = async (
 
 /**
  * Main retrieval function — called by Step 5 of the Ask API.
- *
- * @param {string} question - The search query (often from the Decider's searchQuery)
- * @param {object} options  - See file header for available options
- * @returns {{ question, results, topK, minScore, debug, ... }}
  */
 export const retrieveRelevantChunks = async (question, options = {}) => {
   const query = String(question || '').trim();
@@ -110,7 +112,9 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
   const embeddings = options.embeddings || createQueryEmbeddings();
 
   const loadedStore = await loadRetrieverVectorStore(vectorStorePath, embeddings);
-  const scopedStore = createScopedVectorStore(loadedStore, embeddings, options.metadataFilter);
+
+  // Using the new optimized, memoized scoped cache lookups
+  const scopedStore = getOrCreateScopedVectorStore(loadedStore, embeddings, options.metadataFilter);
 
   const resultsWithScores =
     scopedStore.totalVectors > 0
@@ -119,14 +123,19 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
 
   const candidateCount = resultsWithScores.length;
 
-  // Normalize LangChain results to plain objects
+  // FIXING THE DISTANCE TRAP: LangChain returns Cosine Distance. 
+  // We map it cleanly to Cosine Similarity: 1 - Distance
   const candidates = resultsWithScores
-    .filter(([, score]) => score >= minScore)
-    .map(([document, score]) => ({
+    .map(([document, distanceScore]) => {
+      const similarityScore = 1 - distanceScore; // Mathematical conversion to standard similarity range
+      return [document, similarityScore];
+    })
+    .filter(([, similarityScore]) => similarityScore >= minScore)
+    .map(([document, similarityScore]) => ({
       id: document.id || document.metadata?.chunk_id,
       content: document.pageContent,
       metadata: document.metadata || {},
-      score,
+      score: similarityScore, // Clean un-skewed score passed downstream
     }));
 
   // Apply custom keyword + intent reranking
