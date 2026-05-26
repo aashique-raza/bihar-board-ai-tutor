@@ -1,28 +1,10 @@
 /**
  * step6.generateResponse.js — Step 6 of the Ask API flow
- *
- * WHAT IT DOES:
- *   This is the SECOND LLM call in the Ask API.
- *   The Tutor LLM generates the actual student-facing answer using:
- *   - The student's question
- *   - The Decider's routing decision (Step 4)
- *   - The retrieved study content (Step 5)
- *   - The conversation history and tutor memory (Step 2 & 3)
- *
- * RETURNS:
- *   A normalized tutor response object:
- *   { status, responseMode, title, sections, answer, suggestedActions, memoryUpdate }
- *
- *   - sections → array of { heading, content } blocks for the frontend to render
- *   - answer   → plain text version of sections joined together (for chat history)
- *   - memoryUpdate → what the LLM suggests to update in the tutor's state
- *
- * NOTE:
- *   The prompt for this LLM call is in src/prompts/tutorPrompt.js
+ * * UPGRADED ROBUST LLM GENERATION WITH CONVERSATIONAL INTENT FIREWALL GATES
+ * * FIXES: State mismatch bug by forcing status 'answered' on non-academic intents.
  */
 
 import { RunnableSequence } from '@langchain/core/runnables';
-
 import { createChatModel } from '../llm/chatModel.js';
 import { stringParser } from '../llm/stringParser.js';
 import { tutorResponsePrompt } from '../prompts/tutorPrompt.js';
@@ -30,23 +12,21 @@ import { parseJsonObject } from '../utils/jsonParser.js';
 import { getAnswerLanguageInstruction } from '../utils/languageDetector.js';
 import { sectionsToAnswerText } from './promptHelpers.js';
 
-// Lazy-initialized singleton — created once and reused across requests
 let responseChain = null;
 
 const getResponseChain = () => {
   if (!responseChain) {
     responseChain = RunnableSequence.from([
-      tutorResponsePrompt, // formats the full tutor prompt
-      createChatModel(),   // Groq/Gemini/OpenAI depending on LLM_PROVIDER env
-      stringParser,        // converts AIMessage to plain string
+      tutorResponsePrompt, // Formats the full tutor prompt
+      createChatModel(),   // Groq/Gemini/OpenAI depending on env
+      stringParser,        // Converts AIMessage to plain string
     ]);
   }
   return responseChain;
 };
 
 /**
- * Normalizes the sections array from the LLM response.
- * Ensures each section has a heading and content, capped at 5 sections.
+ * Normalizes the sections array from the LLM response safely.
  */
 const normalizeSections = (sections) => {
   if (!Array.isArray(sections)) return [];
@@ -60,19 +40,18 @@ const normalizeSections = (sections) => {
 };
 
 /**
- * Creates a safe fallback response if the LLM returns unparseable output.
- * This ensures the API always returns something meaningful.
+ * Creates an authentic localized fallback response if the LLM fails or hits syntax errors.
  */
 const createFallbackResponse = ({ responseMode, message }) => ({
-  status: responseMode === 'redirect' ? 'out_of_scope' : 'answered',
+  status: ['GREETING', 'CONVERSATION'].includes(responseMode?.toUpperCase()) ? 'answered' : 'insufficient_context',
   responseMode,
   title: null,
   sections: [
     {
-      heading: 'Zuno',
+      heading: 'Zuno Help',
       content: responseMode === 'redirect'
-        ? 'Main is topic me help nahi kar paunga. Main Class 10 padhane ke liye bana hoon.'
-        : `Chalo, is par simple tareeke se kaam karte hain: ${message}`,
+        ? 'Babu, hum abhi is topic me madad nahi kar payenge. Hum bas aapke Class 10 ke board syllabus ko simple banane ke liye hain.'
+        : `Chalo beta, isko ek baar fir se thode aasan dhang se samajhte hain. Aapne pucha: ${message}`,
     },
   ],
   suggestedActions: [],
@@ -81,12 +60,6 @@ const createFallbackResponse = ({ responseMode, message }) => ({
 
 /**
  * Step 6: Call the Tutor LLM to generate the student-facing answer.
- *
- * @param {{ question }}                                  input     - From Step 1
- * @param {{ language, memory, history, lastTutorResponse, curriculumSummary, focusChapterPrompt }} context - From Step 3
- * @param {{ responseMode }}                              decision  - From Step 4
- * @param {{ retrievedContext }}                          retrieval - From Step 5
- * @returns {{ status, responseMode, title, sections, answer, suggestedActions, memoryUpdate }}
  */
 export const generateResponse = async (
   { question },
@@ -94,43 +67,73 @@ export const generateResponse = async (
   { responseMode },
   { retrievedContext }
 ) => {
-  // Call the Tutor LLM with all context
-  const rawResponse = await getResponseChain().invoke({
-    message: question,
-    answerLanguageInstruction: getAnswerLanguageInstruction(language.answerLanguage),
-    responseMode,
-    decision: JSON.stringify({ responseMode }, null, 2),
-    memory,
-    history,
-    lastTutorResponse,
-    curriculumSummary,
-    focusChapter: focusChapterPrompt,
-    retrievedContext,
-  });
+  console.log(`[Step 6 Execution] Invoking Tutor Generation Engine. Script Target: ${language.answerLanguage}`);
 
-  // Parse the JSON from the LLM response
-  const parsed = parseJsonObject(rawResponse, 'Tutor response');
+  try {
+    const targetLanguageInstruction = getAnswerLanguageInstruction(language.answerLanguage);
 
-  // Normalize the sections array
-  const sections = normalizeSections(parsed.sections);
+    // FIXING EMITTED OBJECT BOUNDARIES: Safely stringify memory to prevent [object Object] tokens inside the prompt
+    const serializedMemory = memory && typeof memory === 'object'
+      ? JSON.stringify(memory, null, 2)
+      : String(memory || 'No active state records.');
 
-  // Build the normalized response object
-  const normalized = {
-    status: ['answered', 'insufficient_context', 'needs_clarification', 'out_of_scope'].includes(parsed.status)
-      ? parsed.status
-      : 'answered',
-    responseMode,
-    title: parsed.title ? String(parsed.title).trim() : null,
-    sections: sections.length ? sections : createFallbackResponse({ responseMode, message: question }).sections,
-    suggestedActions: Array.isArray(parsed.suggestedActions) ? parsed.suggestedActions.slice(0, 4) : [],
-    memoryUpdate: parsed.memoryUpdate && typeof parsed.memoryUpdate === 'object'
-      ? parsed.memoryUpdate
-      : {},
-  };
+    const rawResponse = await getResponseChain().invoke({
+      message: question,
+      answerLanguageInstruction: targetLanguageInstruction,
+      responseMode,
+      decision: JSON.stringify({ responseMode }, null, 2),
+      memory: serializedMemory,
+      history,
+      lastTutorResponse,
+      curriculumSummary,
+      focusChapter: focusChapterPrompt,
+      retrievedContext,
+    });
 
-  return {
-    ...normalized,
-    // answer = sections joined as plain text (used for chat history and response)
-    answer: sectionsToAnswerText(normalized),
-  };
+    // Parse the JSON from the LLM response safely using fence removal utility
+    const parsed = parseJsonObject(rawResponse, 'Tutor response payload');
+
+    // Normalize the sections array structure cleanly
+    const sections = normalizeSections(parsed.sections);
+
+    // --- SENIOR INTENT ENFORCEMENT FIREWALL GATES ---
+    // If Step 4 marked this as conversational, the code overrides the status to prevent prompt leakages.
+    let targetStatus = parsed.status ? String(parsed.status).trim() : 'answered';
+    const normalizedIntent = String(responseMode || '').toUpperCase();
+
+    if (['GREETING', 'CONVERSATION', 'GREETINGS'].includes(normalizedIntent)) {
+      console.log(`[Step 6 Intent Firewall] Forcing status 'answered' for conversational intent: ${responseMode}`);
+      targetStatus = 'answered';
+    } else {
+      // Academic questions standard normalization limits
+      targetStatus = ['answered', 'insufficient_context', 'needs_clarification', 'out_of_scope'].includes(targetStatus)
+        ? targetStatus
+        : 'answered';
+    }
+
+    // Build the fully compliant normalized response block structure
+    const normalized = {
+      status: targetStatus,
+      responseMode,
+      title: parsed.title ? String(parsed.title).trim() : null,
+      sections: sections.length ? sections : createFallbackResponse({ responseMode, message: question }).sections,
+      suggestedActions: Array.isArray(parsed.suggestedActions) ? parsed.suggestedActions.slice(0, 4) : [],
+      memoryUpdate: parsed.memoryUpdate && typeof parsed.memoryUpdate === 'object' ? parsed.memoryUpdate : {},
+    };
+
+    console.log(`[Step 6 Success] Response successfully structured. Final Status: ${normalized.status}`);
+
+    return {
+      ...normalized,
+      answer: sectionsToAnswerText(normalized),
+    };
+
+  } catch (error) {
+    console.error(`[Step 6 Runtime Exception] Generation parsing pipeline crashed: ${error.message}`);
+    const fallback = createFallbackResponse({ responseMode, message: question });
+    return {
+      ...fallback,
+      answer: sectionsToAnswerText(fallback),
+    };
+  }
 };

@@ -1,65 +1,54 @@
 /**
  * step7.saveAndRespond.js — Step 7 of the Ask API flow
- *
- * WHAT IT DOES:
- *   Final step — saves all results to MongoDB and builds the API response.
- *
- *   1. Clean and validate the memoryUpdate from the LLM (prevent bad values)
- *   2. Update the chat state in MongoDB (tutor's memory for next turn)
- *   3. Save both the student message and Zuno's reply to chat history
- *   4. Build and return the final API response payload
- *
- * RETURNS:
- *   The complete API response object that gets sent back to the frontend.
- *   Includes: status, intent, question, answer, sections, sources, session, etc.
+ * * UPGRADED PRODUCTION-GRADE STATE COMMITER
+ * * CHANGES: Integrated nested state mutations via updateChatSessionState.
  */
 
 import { addChatMessages } from '../services/chatHistory.service.js';
-import { updateChatState } from '../services/chatState.service.js';
+import { updateChatSessionState } from '../services/chatSession.service.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
-const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'revision']);
+const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
+
+// Allowed operational state properties inside our new ChatSession layout
 const ALLOWED_STATE_FIELDS = [
-  'currentSubjectId', 'currentSectionId', 'currentChapterId',
-  'currentTopicId', 'learningMode', 'pendingAction',
-  'lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion',
+  'status', 'learningMode', 'currentSubjectId', 'currentSectionId',
+  'currentChapterId', 'currentTopicId', 'abuseCount', 'answerLanguage',
+  'sessionTopicsProgress', 'pendingAction'
 ];
 
 /**
- * Sanitizes the LLM's memoryUpdate to only allow known fields and valid values.
- * Prevents the LLM from corrupting the state with unexpected fields or values.
+ * Sanitizes the LLM's memoryUpdate to match the new strict chatState machine.
  */
-const sanitizeMemoryUpdate = ({ memoryUpdate, question, response, studyMode, sources }) => {
+const sanitizeMemoryUpdate = ({ memoryUpdate }) => {
   const cleanUpdate = {};
 
   for (const field of ALLOWED_STATE_FIELDS) {
     if (Object.hasOwn(memoryUpdate || {}, field)) {
       const cleanValue = memoryUpdate[field] === null
         ? null
-        : cleanText(memoryUpdate[field]);
+        : memoryUpdate[field];
 
-      // Ensure learningMode only gets valid values
-      cleanUpdate[field] = field === 'learningMode' && cleanValue && !VALID_LEARNING_MODES.has(cleanValue)
-        ? 'idle'
-        : cleanValue;
+      // Safe string normalization for scalar types
+      if (typeof cleanValue === 'string') {
+        cleanUpdate[field] = cleanText(cleanValue);
+      } else {
+        cleanUpdate[field] = cleanValue;
+      }
+
+      // Enforce learningMode boundaries safely
+      if (field === 'learningMode' && cleanUpdate[field] && !VALID_LEARNING_MODES.has(cleanUpdate[field])) {
+        cleanUpdate[field] = 'idle';
+      }
     }
   }
 
-  return {
-    ...cleanUpdate,
-    preferredStudyMode: studyMode,
-    lastTutorAction: response.responseMode,
-    lastIntent: response.responseMode,
-    lastStudentMessage: question,
-    lastAnswer: response.answer,
-    lastSources: sources,
-    lastDoubtSources: response.responseMode === 'study_tutor' ? sources : undefined,
-  };
+  return cleanUpdate;
 };
 
 /**
- * Removes undefined fields from an object (MongoDB update objects don't allow undefined).
+ * Removes undefined fields to keep MongoDB queries compliant.
  */
 const removeUndefinedFields = (data) => {
   const cleanData = {};
@@ -70,8 +59,7 @@ const removeUndefinedFields = (data) => {
 };
 
 /**
- * Sanitizes the suggested actions from the LLM response.
- * Each action must have a type and label; capped at 4 actions.
+ * Sanitizes action labels for interface cards rendering.
  */
 const sanitizeSuggestedActions = (actions) => {
   if (!Array.isArray(actions)) return [];
@@ -86,27 +74,23 @@ const sanitizeSuggestedActions = (actions) => {
 };
 
 /**
- * Builds the session info block in the response (for frontend state tracking).
+ * Formats data snapshots back to the client interface layer.
  */
-const buildSessionPayload = (sessionId, chatState) => ({
-  sessionId,
-  lastTopic: chatState?.lastTopic || null,
-  lastDoubtTopic: chatState?.lastDoubtTopic || null,
-  lastSubject: chatState?.currentSubjectId || null,
-  lastSection: chatState?.currentSectionId || null,
-  lastChapterId: chatState?.currentChapterId || null,
-});
+const buildSessionPayload = (sessionId, updatedSession) => {
+  const chatState = updatedSession?.chatState || {};
+  return {
+    sessionId,
+    status: chatState.status || 'active',
+    learningMode: chatState.learningMode || 'idle',
+    lastTopic: chatState.lastTopic || null,
+    lastSubject: chatState.currentSubjectId || null,
+    lastSection: chatState.currentSectionId || null,
+    lastChapterId: chatState.currentChapterId || null,
+  };
+};
 
 /**
- * Step 7: Save to MongoDB and build the final API response.
- *
- * @param {{ question, studyMode }}                            input    - From Step 1
- * @param {{ sessionId }}                                      session  - From Step 2
- * @param {{ language }}                                       context  - From Step 3
- * @param {{ responseMode }}                                   decision - From Step 4
- * @param {{ retrieval, sources }}                             retrieval - From Step 5
- * @param {object}                                             response - From Step 6
- * @returns {object}                                                    - Final API response
+ * Step 7: Commits transaction updates to DB and responds to client.
  */
 export const saveAndRespond = async (
   { question, studyMode, focusChapter },
@@ -116,18 +100,22 @@ export const saveAndRespond = async (
   { retrieval, sources },
   response
 ) => {
-  // Step 7a: Clean the LLM's memory update and save it to MongoDB
+  console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
+
+  // Step 7a: Sanitize the state updates generated during the conversation turn
   const stateUpdates = sanitizeMemoryUpdate({
     memoryUpdate: response.memoryUpdate,
-    question,
-    response,
-    studyMode,
-    sources,
   });
 
-  const updatedState = await updateChatState(sessionId, removeUndefinedFields(stateUpdates));
+  // Automatically update dynamic tracking metrics on user interaction
+  if (response.responseMode) {
+    stateUpdates.answerLanguage = language.answerLanguage;
+  }
 
-  // Step 7b: Build the final API response payload
+  // Persist nested states cleanly using our updated session logic helper
+  const updatedSession = await updateChatSessionState(sessionId, removeUndefinedFields(stateUpdates));
+
+  // Step 7b: Assemble the standardized outer structural response contract
   const answerPayload = {
     status: response.status,
     intent: response.responseMode,
@@ -145,10 +133,10 @@ export const saveAndRespond = async (
       ? { question: retrieval.question, returnedCount: retrieval.debug?.returnedCount || 0 }
       : null,
     decision,
-    session: buildSessionPayload(sessionId, updatedState),
+    session: buildSessionPayload(sessionId, updatedSession),
   };
 
-  // Step 7c: Save both messages to chat history for future context
+  // Step 7c: Append historical text prose into the isolated history bank log
   await addChatMessages(sessionId, [
     {
       role: 'student',
@@ -166,11 +154,11 @@ export const saveAndRespond = async (
       metadata: {
         status: answerPayload.status,
         responseMode: answerPayload.responseMode,
-        decision,
         sections: answerPayload.sections,
       },
     },
   ]);
 
+  console.log('[Step 7 Complete] Database sync finalized successfully. Releasing payload.');
   return answerPayload;
 };

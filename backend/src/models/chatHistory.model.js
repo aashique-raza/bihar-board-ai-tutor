@@ -1,39 +1,50 @@
 import mongoose from 'mongoose';
 
-const chatMessageSchema = new mongoose.Schema(
+// Individual Message Structure inside the array
+const messageItemSchema = new mongoose.Schema({
+  role: {
+    type: String,
+    enum: ['student', 'tutor'],
+    required: true,
+  },
+  text: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  action: {
+    type: String,
+    default: null,
+  },
+  sources: {
+    type: Array,
+    default: [],
+  },
+  metadata: {
+    type: Object,
+    default: {},
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  }
+}, { _id: false }); // sub-document key disable taaki array compact rahe
+
+const chatHistorySchema = new mongoose.Schema(
   {
     sessionId: {
       type: String,
       required: true,
-      index: true, // Blindingly fast queries using session UUID
+      unique: true, // ABOLUTE LOCK: Pure session ka sirf EK document hoga
+      index: true,
     },
     userId: {
       type: String,
       default: null,
-      index: true, // ADDED: Safe indexing for aggregate progress reporting per student
+      index: true, // For cross-session dynamic student analytics later
     },
-    role: {
-      type: String,
-      enum: ['student', 'tutor'],
-      required: true,
-    },
-    text: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    action: {
-      type: String,
-      default: null, // Stores transient system intents if needed
-    },
-    sources: {
-      type: Array,
-      default: [], // Ground truth reference links attached down the line
-    },
-    metadata: {
-      type: Object,
-      default: {}, // For future flags (e.g. bookmarks, topic categories)
-    },
+    // The Core Memory Array
+    messages: [messageItemSchema]
   },
   {
     timestamps: true,
@@ -41,9 +52,5 @@ const chatMessageSchema = new mongoose.Schema(
   }
 );
 
-// SENIOR ARCHITECT HACK: Compound index matching for Step 2 historical data fetches.
-// When Step 2 reads history, it queries by sessionId and sorts by chronological order.
-chatMessageSchema.index({ sessionId: 1, createdAt: 1 });
-
 export const ChatHistory =
-  mongoose.models.ChatHistory || mongoose.model('ChatHistory', chatMessageSchema);
+  mongoose.models.ChatHistory || mongoose.model('ChatHistory', chatHistorySchema);
