@@ -1,11 +1,16 @@
 import mongoose from 'mongoose';
 
-const chatHistorySchema = new mongoose.Schema(
+const chatMessageSchema = new mongoose.Schema(
   {
     sessionId: {
       type: String,
       required: true,
-      index: true,
+      index: true, // Blindingly fast queries using session UUID
+    },
+    userId: {
+      type: String,
+      default: null,
+      index: true, // ADDED: Safe indexing for aggregate progress reporting per student
     },
     role: {
       type: String,
@@ -19,15 +24,15 @@ const chatHistorySchema = new mongoose.Schema(
     },
     action: {
       type: String,
-      default: null,
+      default: null, // Stores transient system intents if needed
     },
     sources: {
       type: Array,
-      default: [],
+      default: [], // Ground truth reference links attached down the line
     },
     metadata: {
       type: Object,
-      default: {},
+      default: {}, // For future flags (e.g. bookmarks, topic categories)
     },
   },
   {
@@ -36,6 +41,9 @@ const chatHistorySchema = new mongoose.Schema(
   }
 );
 
-export const ChatHistory =
-  mongoose.models.ChatHistory || mongoose.model('ChatHistory', chatHistorySchema);
+// SENIOR ARCHITECT HACK: Compound index matching for Step 2 historical data fetches.
+// When Step 2 reads history, it queries by sessionId and sorts by chronological order.
+chatMessageSchema.index({ sessionId: 1, createdAt: 1 });
 
+export const ChatHistory =
+  mongoose.models.ChatHistory || mongoose.model('ChatHistory', chatMessageSchema);
