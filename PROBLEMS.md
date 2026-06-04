@@ -61,7 +61,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/ask/step7.saveAndRespond.js` lines 119–137 — `sources` is in the API response
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: WONT_FIX
+- **Resolution**: Intentional product decision. Source chips made UI heavy and degraded student experience. Sources will not be displayed in the frontend.
+- **Closed**: 2026-06-04
 
 ---
 
@@ -633,7 +635,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `frontend/src/components/ChatMessage.jsx` — needs the import
 - **Depends on**: BUG-003
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: CLOSED
+- **Resolution**: Closed with BUG-003. SourceChips.jsx deleted — dead code removed.
+- **Closed**: 2026-06-04
 
 ---
 

@@ -161,3 +161,18 @@ Verified:
 
 Next decision:
 TASK-002 will prepare local source content structure only. Actual chapter content will not be invented or added until verified.
+
+### Source attribution not shown in frontend UI (2026-06-04)
+
+Source chips were built but removed from the frontend after product review.
+
+Reason:
+- Showing sources below every answer made the UI visually heavy.
+- Student experience was worse with chips displayed after every response.
+- The backend still formats and sends sources in the API response — this is not removed.
+- Frontend simply does not render them.
+
+Decision:
+- Delete SourceChips.jsx (dead component).
+- Do not render message.sources in ChatMessage.jsx.
+- Backend source formatting stays as-is — may be used for logging or future admin view.
