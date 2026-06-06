@@ -58,8 +58,20 @@ const normalizeDecision = (decision, rawQuestion) => {
   const needsRetrieval = (intent === 'CONCEPT_QUESTION' && inScope) ? Boolean(decision.needsRetrieval) : false;
 
   // Search parameter text standardization guards
-  const searchQuery = needsRetrieval
-    ? String(decision.searchQuery || rawQuestion).replace(/\s+/g, ' ').trim()
+  // Devanagari detection — vector store Hinglish/English mein indexed hai
+  // Devanagari searchQuery se retrieval fail hoga
+  const DEVANAGARI_PATTERN = /[ऀ-ॿ]/;
+  const rawSearchQuery = String(decision.searchQuery || '').trim();
+  const isDevanagari = DEVANAGARI_PATTERN.test(rawSearchQuery);
+
+  if (needsRetrieval && isDevanagari) {
+    // Prompt ne instruction follow nahi kiya — Devanagari searchQuery aaya
+    // Retrieval skip karna better hai than bad retrieval
+    console.warn('[Step 4] searchQuery contains Devanagari script — skipping retrieval to prevent bad vector match');
+  }
+
+  const searchQuery = needsRetrieval && rawSearchQuery && !isDevanagari
+    ? rawSearchQuery.replace(/\s+/g, ' ').trim()
     : null;
 
   return {

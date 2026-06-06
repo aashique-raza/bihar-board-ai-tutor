@@ -41,7 +41,7 @@ You must classify the user's input into exactly ONE of the following 7 fine-grai
 
 CRITICAL RETRIEVAL & QUERY FORMATTING RULES:
 - Set needsRetrieval to true ONLY if the intent is CONCEPT_QUESTION. For everything else, it MUST be false.
-- If needsRetrieval is true, generate a concise, clean academic keyword string for searchQuery (e.g., "Prakash ka paravartan rules"). Keep search query in English or transliterated Hindi based on the student's question theme for optimal retrieval mapping.
+- If needsRetrieval is true, generate a concise, clean academic keyword string for searchQuery (e.g., "photosynthesis process", "refraction of light rules"). The searchQuery field MUST always be in English or Roman-script Hinglish — NEVER in Devanagari script. Reason: the vector store is indexed in Hinglish/English only. Devanagari searchQuery will cause retrieval failure. If the student asked in Hindi/Devanagari, translate the core concept to English for searchQuery. Examples: "प्रकाश संश्लेषण" → "photosynthesis", "अम्ल और क्षार" → "acid and base", "विद्युत धारा" → "electric current".
 - If needsRetrieval is false, searchQuery MUST be null.
 - Contextual Resolution: If the student uses relative terms ("this", "iska", "usko", "again"), evaluate the provided 'Recent history' and 'Last Zuno Response' to resolve references and output a complete search query.
 

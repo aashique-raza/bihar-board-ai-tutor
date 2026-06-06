@@ -98,7 +98,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/utils/languageDetector.js` lines 85–93 — `getAnswerLanguageInstruction` handles all three cases; the English case should be removed or redirected to hinglish
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: (1) `detectQuestionLanguage()` English fallback ab `answerLanguage: 'hinglish'` return karta hai. (2) `getAnswerLanguageInstruction('english')` ab Hinglish instruction return karta hai (safety net). (3) `deciderPrompt.js` mein searchQuery instruction strengthen ki — Devanagari forbidden, English/Roman-script Hinglish only. (4) `normalizeDecision()` mein Devanagari guard add kiya — agar LLM ne Devanagari searchQuery diya toh `null` set hota hai aur warn log hota hai.
+- **Closed**: 2026-06-06
 
 ---
 

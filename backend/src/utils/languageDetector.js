@@ -38,9 +38,11 @@ export const detectQuestionLanguage = (question) => {
   }
 
   if (tokens.length > 0) {
+    // English questions ko bhi Hinglish mein answer karo
+    // Bihar Board students Hinglish samajhte hain — aur vector store Hinglish mein indexed hai
     return {
       detectedLanguage: 'english',
-      answerLanguage: 'english',
+      answerLanguage: 'hinglish',
     };
   }
 
@@ -83,8 +85,10 @@ export const detectConversationLanguage = ({ question, recentMessages = [] }) =>
  * Downstream prompts ke liye target system language instructions generate karta hai.
  */
 export const getAnswerLanguageInstruction = (answerLanguage) => {
+  // Note: answerLanguage 'english' ab set nahi hota (detectQuestionLanguage mein 'hinglish' ho gaya)
+  // Ye case ab practically trigger nahi hoga — but safety ke liye hinglish instruction return karo
   if (answerLanguage === 'english') {
-    return 'Write the final answer in simple English for a Class 10 student.';
+    return 'Write the final answer in simple Hinglish for a Class 10 student. Use Roman script only, like "Nutrition ek process hai". Do not use Devanagari/Hindi script.';
   }
   if (answerLanguage === 'hindi') {
     return 'Write the final answer in simple, warm, and clear Hindi using Devanagari script since the student asked in Devanagari. Keep the explanation engaging like a Bihar classroom teacher addressing their student.';
