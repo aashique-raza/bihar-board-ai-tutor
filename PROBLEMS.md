@@ -29,7 +29,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/prompts/tutorPrompt.js` lines 44–50 — tutor prompt template explicitly sets these fields in `memoryUpdate`
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: Added `lastTopic`, `lastDoubtTopic`, `lastDoubtQuestion` to `ALLOWED_STATE_FIELDS` in `step7.saveAndRespond.js` and to Mongoose schema in `chatSession.model.js`
+- **Closed**: 2026-06-06
 
 ---
 

@@ -15,7 +15,8 @@ const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
 const ALLOWED_STATE_FIELDS = [
   'status', 'learningMode', 'currentSubjectId', 'currentSectionId',
   'currentChapterId', 'currentTopicId', 'abuseCount', 'answerLanguage',
-  'sessionTopicsProgress', 'pendingAction'
+  'sessionTopicsProgress', 'pendingAction',
+  'lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion'
 ];
 
 /**

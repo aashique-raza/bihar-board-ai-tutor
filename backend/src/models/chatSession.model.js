@@ -69,6 +69,18 @@ const chatSessionSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.Mixed,
         default: null, // Proposed vs Committed loop for subject changes
       },
+      lastTopic: {
+        type: String,
+        default: null,
+      },
+      lastDoubtTopic: {
+        type: String,
+        default: null,
+      },
+      lastDoubtQuestion: {
+        type: String,
+        default: null,
+      },
     },
   },
   {
