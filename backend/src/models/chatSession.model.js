@@ -81,6 +81,14 @@ const chatSessionSchema = new mongoose.Schema(
         type: String,
         default: null,
       },
+      consecutiveErrors: {
+        type: Number,
+        default: 0,
+      },
+      lastErrorAt: {
+        type: Date,
+        default: null,
+      },
     },
   },
   {

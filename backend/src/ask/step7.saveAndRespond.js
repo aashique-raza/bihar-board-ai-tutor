@@ -16,7 +16,8 @@ const ALLOWED_STATE_FIELDS = [
   'status', 'learningMode', 'currentSubjectId', 'currentSectionId',
   'currentChapterId', 'currentTopicId', 'abuseCount', 'answerLanguage',
   'sessionTopicsProgress', 'pendingAction',
-  'lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion'
+  'lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion',
+  'consecutiveErrors', 'lastErrorAt'
 ];
 
 /**
@@ -107,6 +108,10 @@ export const saveAndRespond = async (
   const stateUpdates = sanitizeMemoryUpdate({
     memoryUpdate: response.memoryUpdate,
   });
+
+  // Successful response — provider is working. Reset error tracking.
+  stateUpdates.consecutiveErrors = 0;
+  stateUpdates.lastErrorAt = null;
 
   // Automatically update dynamic tracking metrics on user interaction
   if (response.responseMode) {

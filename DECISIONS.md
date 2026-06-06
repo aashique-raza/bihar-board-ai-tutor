@@ -176,3 +176,18 @@ Decision:
 - Delete SourceChips.jsx (dead component).
 - Do not render message.sources in ChatMessage.jsx.
 - Backend source formatting stays as-is — may be used for logging or future admin view.
+
+### LLM Provider Fallback Chain — planned for future (2026-06-06)
+
+Current error handling uses consecutive error tracking and student-friendly 
+Hinglish messages when the primary LLM provider fails.
+
+Future plan — when a paid GPT model is added as primary:
+- Primary: GPT-4 (when paid subscription is active)
+- Fallback: Groq llama-3.3-70b-versatile
+- Last resort: Hardcoded Hinglish error strings (current approach)
+
+Why not implemented now:
+- Both providers need to be active and tested simultaneously
+- Response format consistency must be verified across providers
+- Implement when GPT subscription is added and both providers are ready

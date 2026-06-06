@@ -3,6 +3,7 @@ import { createChatModel } from '../llm/chatModel.js';
 import { stringParser } from '../llm/stringParser.js';
 import { deciderPrompt } from '../prompts/deciderPrompt.js';
 import { parseJsonObject } from '../utils/jsonParser.js';
+import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 
 // Pre-defined set of accepted target intent structures
 const VALID_INTENTS = new Set([
@@ -86,26 +87,48 @@ const normalizeDecision = (decision, rawQuestion) => {
  * @returns {Promise<{ intent: string, inScope: boolean, needsRetrieval: boolean, responseMode: string, searchQuery: string|null, reason: string }>}
  */
 export const decideRetrieval = async ({ question }, { history, lastTutorResponse, focusChapterPrompt, currentStudyContext }) => {
-  console.log('step4.decideRetrieval.js: Dispatching context metrics into Intent Mapping layer...');
+  console.log('[Step 4] Running intent classifier...');
 
-  // Invoke the modular execution sequence pipeline concurrently
-  const rawDecision = await getDeciderChain().invoke({
-    message: question,
-    currentStudyContext, // Brand new hydrated text layer from Step 3 fix
-    lastTutorResponse,   // Anti loop repetition token block
-    history,
-    focusChapter: focusChapterPrompt
-  });
+  try {
+    const rawDecision = await getDeciderChain().invoke({
+      message: question,
+      currentStudyContext,
+      lastTutorResponse,
+      history,
+      focusChapter: focusChapterPrompt,
+    });
 
-  console.log('step4.decideRetrieval.js: Raw payload output captured. Parsing JSON string patterns...');
+    console.log('[Step 4] Response received. Parsing...');
 
-  // Parse structural elements via safe utility mechanisms
-  const parsed = parseJsonObject(rawDecision, 'Retrieval intent classification decision maps');
+    const parsed = parseJsonObject(rawDecision, 'Step 4 intent decision');
+    const finalDecision = normalizeDecision(parsed, question);
 
-  // Standardize the shape layout to isolate down pipelines components from hallucinations
-  const finalDecision = normalizeDecision(parsed, question);
+    console.log(`[Step 4] Intent: ${finalDecision.intent} | Needs RAG: ${finalDecision.needsRetrieval}`);
 
-  console.log(`Router Execution Diagnostics -> Selected Intent: ${finalDecision.intent} | RAG Retrieval Action Required: ${finalDecision.needsRetrieval}`);
+    return finalDecision;
 
-  return finalDecision;
+  } catch (error) {
+    // Reset singleton — prevents reusing a broken chain on next request
+    deciderChain = null;
+
+    const errorType = classifyProviderError(error);
+
+    // Parse error means the provider responded but output was malformed.
+    // Safe to continue pipeline with a default decision.
+    if (errorType === 'parse_error') {
+      console.error('[Step 4] JSON parse failed. Using safe default decision.', error.message);
+      return {
+        intent: 'CONCEPT_QUESTION',
+        inScope: true,
+        needsRetrieval: false, // safer — avoids unnecessary RAG call
+        responseMode: 'study_tutor',
+        searchQuery: null,
+        reason: 'Parse error fallback',
+      };
+    }
+
+    // Provider is down — throw so orchestrator can handle it centrally
+    console.error(`[Step 4] Provider error (${errorType}):`, error.message);
+    throw new ProviderUnavailableError(errorType, error.message);
+  }
 };

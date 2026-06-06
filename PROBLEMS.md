@@ -47,7 +47,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/middlewares/error.middleware.js` lines 1–14 — returns `error.message` raw
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: Added try/catch to step4.decideRetrieval.js and step6.generateResponse.js. Provider errors throw ProviderUnavailableError, caught centrally in askOrchestrator.js. Parse errors use safe defaults. consecutiveErrors tracked in chatState for context-aware student messages.
+- **Closed**: 2026-06-06
 
 ---
 
@@ -450,7 +452,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/middlewares/error.middleware.js` lines 1–14
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: error.middleware.js updated — raw error.message no longer sent to clients for 5xx errors. Safe Hinglish message returned instead. Real error logged server-side.
+- **Closed**: 2026-06-06
 
 ---
 

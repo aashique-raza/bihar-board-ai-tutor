@@ -11,6 +11,7 @@ import { tutorResponsePrompt } from '../prompts/tutorPrompt.js';
 import { parseJsonObject } from '../utils/jsonParser.js';
 import { getAnswerLanguageInstruction } from '../utils/languageDetector.js';
 import { sectionsToAnswerText } from './promptHelpers.js';
+import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 
 let responseChain = null;
 
@@ -39,19 +40,16 @@ const normalizeSections = (sections) => {
     .slice(0, 5);
 };
 
-/**
- * Creates an authentic localized fallback response if the LLM fails or hits syntax errors.
- */
-const createFallbackResponse = ({ responseMode, message }) => ({
-  status: ['GREETING', 'CONVERSATION'].includes(responseMode?.toUpperCase()) ? 'answered' : 'insufficient_context',
-  responseMode,
+// Creates a safe fallback response when LLM output cannot be parsed.
+// Used only for parse errors — provider is alive but output was malformed.
+const createFallbackResponse = ({ responseMode }) => ({
+  status: 'error',
+  responseMode: responseMode || 'study_tutor',
   title: null,
   sections: [
     {
-      heading: 'Zuno Help',
-      content: responseMode === 'redirect'
-        ? 'Babu, hum abhi is topic me madad nahi kar payenge. Hum bas aapke Class 10 ke board syllabus ko simple banane ke liye hain.'
-        : `Chalo beta, isko ek baar fir se thode aasan dhang se samajhte hain. Aapne pucha: ${message}`,
+      heading: '',
+      content: 'Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.',
     },
   ],
   suggestedActions: [],
@@ -129,11 +127,23 @@ export const generateResponse = async (
     };
 
   } catch (error) {
-    console.error(`[Step 6 Runtime Exception] Generation parsing pipeline crashed: ${error.message}`);
-    const fallback = createFallbackResponse({ responseMode, message: question });
-    return {
-      ...fallback,
-      answer: sectionsToAnswerText(fallback),
-    };
+    const errorType = classifyProviderError(error);
+
+    // Parse error — provider is alive, just output was bad.
+    // Return fallback and let pipeline continue to Step 7.
+    if (errorType === 'parse_error') {
+      console.error('[Step 6] Parse error. Returning fallback response.', error.message);
+      responseChain = null; // reset singleton
+      const fallback = createFallbackResponse({ responseMode });
+      return {
+        ...fallback,
+        answer: sectionsToAnswerText(fallback),
+      };
+    }
+
+    // Provider is down — reset singleton and throw to orchestrator
+    console.error(`[Step 6] Provider error (${errorType}):`, error.message);
+    responseChain = null;
+    throw new ProviderUnavailableError(errorType, error.message);
   }
 };
