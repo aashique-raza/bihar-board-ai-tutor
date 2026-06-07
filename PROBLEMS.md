@@ -116,7 +116,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/ask/step7.saveAndRespond.js` lines 15–19 — lastTopic not in allowlist (BUG-001 dependency)
 - **Depends on**: BUG-001
 - **Effort**: L
-- **Status**: PENDING
+- **Status**: FIXED
+- **Fixed date**: 2026-06-07
+- **Resolution**: Implemented full NEXT_STEP pipeline — curriculumIndexLoader, nextTopicResolver, step5 NEXT_STEP handler, step6 CHAPTER_COMPLETE signal, step7 nextTopicSignal state update. Two additional bugs found and fixed during QA: getNextTopic null guard (nextTopicResolver.js:26) and buildTopicSearchQuery semantic query builder (step5). Retriever score inversion (see retriever fix commit) was masking the bug in integration tests — fixed separately.
 
 ---
 
@@ -132,7 +134,22 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/models/chatSession.model.js` lines 29–72
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Fixed date**: 2026-06-07
+- **Resolution**: completedTopicIds added to chatSession.model.js schema ([String], default []) and to ALLOWED_STATE_FIELDS in step7. Backend manages this field directly via nextTopicSignal — LLM instructed not to override it. Fixed together with BUG-006 as planned.
+
+---
+
+## Hidden Bugs Found During QA
+
+---
+
+### BUG-H01 — retriever.js cosine score inversion
+
+- **File**: `backend/src/rag/retriever.js`
+- **Found**: 2026-06-07 during BUG-006 API integration testing
+- **Status**: FIXED (commit 1 of this session)
+- **Description**: Commit 3ff9f01 added `1 - distanceScore` conversion under the incorrect belief that MemoryVectorStore returns cosine distance. It actually returns cosine similarity. This inverted all scores (e.g. 0.68 → 0.32), dropping every candidate below `minScore: 0.55`. Result: RAG returned 0 chunks for every API request since that commit. All responses were generated from LLM general knowledge — core product rule violation. Fixed by removing the conversion and using raw score. Verified via smoke test (scores 0.68-0.75 now pass filter correctly) and API integration tests (status: answered with real retrieved content).
 
 ---
 
