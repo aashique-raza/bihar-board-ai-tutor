@@ -65,6 +65,10 @@ const chatSessionSchema = new mongoose.Schema(
         type: [String],
         default: [], // Memory footprint for summary feature without array bloat
       },
+      completedTopicIds: {
+        type: [String],
+        default: [],
+      },
       pendingAction: {
         type: mongoose.Schema.Types.Mixed,
         default: null, // Proposed vs Committed loop for subject changes

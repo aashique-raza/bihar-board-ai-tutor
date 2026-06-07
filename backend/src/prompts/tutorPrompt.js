@@ -51,7 +51,15 @@ You must respond with a strictly valid JSON object structure following this exac
 }}
 
 Valid status values: "answered", "insufficient_context", "needs_clarification", "out_of_scope".
-Do not append any conversational pre-text or post-text outside the JSON block. Ensure perfect double-quote escaping inside the properties.`,
+Do not append any conversational pre-text or post-text outside the JSON block. Ensure perfect double-quote escaping inside the properties.
+
+NEXT_STEP memoryUpdate rules:
+When the response contains retrieved content for a NEXT_STEP request:
+- The system has already determined the next topic and retrieved its content
+- Teach this content naturally as the next lesson
+- In memoryUpdate, set lastTopic to the topic title from the retrieved content
+- Do NOT change currentTopicId — the backend manages this field directly
+- Do NOT change completedTopicIds — the backend manages this field directly`,
   ],
   [
     'human',

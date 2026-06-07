@@ -15,7 +15,7 @@ const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
 const ALLOWED_STATE_FIELDS = [
   'status', 'learningMode', 'currentSubjectId', 'currentSectionId',
   'currentChapterId', 'currentTopicId', 'abuseCount', 'answerLanguage',
-  'sessionTopicsProgress', 'pendingAction',
+  'sessionTopicsProgress', 'completedTopicIds', 'pendingAction',
   'lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion',
   'consecutiveErrors', 'lastErrorAt'
 ];
@@ -96,10 +96,10 @@ const buildSessionPayload = (sessionId, updatedSession) => {
  */
 export const saveAndRespond = async (
   { question, studyMode, focusChapter },
-  { sessionId },
+  { sessionId, chatState },
   { language },
   decision,
-  { retrieval, sources },
+  { retrieval, sources, nextTopicSignal },
   response
 ) => {
   console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
@@ -108,6 +108,18 @@ export const saveAndRespond = async (
   const stateUpdates = sanitizeMemoryUpdate({
     memoryUpdate: response.memoryUpdate,
   });
+
+  // If NEXT_STEP resolved a new topic, advance the pointer and record the completed one
+  if (nextTopicSignal) {
+    stateUpdates.currentTopicId = nextTopicSignal.topicId;
+
+    if (chatState?.currentTopicId) {
+      stateUpdates.completedTopicIds = [
+        ...(chatState.completedTopicIds || []),
+        chatState.currentTopicId,
+      ];
+    }
+  }
 
   // Successful response — provider is working. Reset error tracking.
   stateUpdates.consecutiveErrors = 0;

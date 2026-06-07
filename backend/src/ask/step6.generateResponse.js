@@ -65,6 +65,22 @@ export const generateResponse = async (
   { responseMode },
   { retrievedContext }
 ) => {
+  // CHAPTER_COMPLETE: skip the LLM entirely and return a fixed completion message
+  if (retrievedContext === 'CHAPTER_COMPLETE') {
+    const chapterCompleteResponse = {
+      status: 'answered',
+      responseMode: 'study_tutor',
+      title: 'Chapter Complete!',
+      sections: [{
+        heading: '',
+        content: 'Iss chapter ke saare topics cover ho gaye! Bahut badhiya padha tumne. Aage kya karna chahte ho — agla chapter shuru karein ya koi topic dobara dekhna hai?',
+      }],
+      suggestedActions: [],
+      memoryUpdate: {},
+    };
+    return { ...chapterCompleteResponse, answer: sectionsToAnswerText(chapterCompleteResponse) };
+  }
+
   console.log(`[Step 6 Execution] Invoking Tutor Generation Engine. Script Target: ${language.answerLanguage}`);
 
   try {

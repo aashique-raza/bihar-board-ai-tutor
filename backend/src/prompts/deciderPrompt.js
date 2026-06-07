@@ -25,7 +25,7 @@ You must classify the user's input into exactly ONE of the following 7 fine-grai
 
 4. "NEXT_STEP":
    - Criteria: Content pacing or progression commands indicating completion of the current block. Examples: "Agla topic padhao", "Aage badhiye", "Next concept", "Chalo aage badho".
-   - Routing: needsRetrieval=false (we use studyMap logic downstream), responseMode="study_tutor"
+   - Routing: needsRetrieval=false (step5 handles retrieval for NEXT_STEP directly), responseMode="study_tutor"
 
 5. "EXPLAIN_MORE":
    - Criteria: Clarification or simplification requests on the topic just covered in the immediate history. Examples: "Nahi samajh aaya", "Thoda aur aasan kijiye", "Koi simple example do", "Dubara samjhao".

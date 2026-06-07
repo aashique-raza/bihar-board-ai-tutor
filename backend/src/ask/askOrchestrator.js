@@ -70,7 +70,8 @@ export const askQuestion = async (body = {}) => {
   // --- MAIN PIPELINE: Steps 4-7 ---
   try {
     const decision = await decideRetrieval(input, context);
-    const retrieval = await retrieveContent(decision, input);
+    console.log('[DEBUG] intent:', decision.intent, 'needsRetrieval:', decision.needsRetrieval);
+    const retrieval = await retrieveContent(decision, input, session);
     const response = await generateResponse(input, context, decision, retrieval);
     return saveAndRespond(input, session, context, decision, retrieval, response);
 
