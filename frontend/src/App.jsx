@@ -42,7 +42,7 @@ const createFocusMessage = (chapter) => ({
 function App() {
   const [studyMode, setStudyMode] = useState(STUDY_MODES.global);
   const [studyMap, setStudyMap] = useState(null);
-  const [selectedChapterId, setSelectedChapterId] = useState('');
+  const [selectedChapterId, setSelectedChapterId] = useState(null);
   const [messages, setMessages] = useState([createWelcomeMessage()]);
   const [sessionId, setSessionId] = useState(() => getSavedSessionId());
   const [isStudyMapLoading, setIsStudyMapLoading] = useState(true);
@@ -77,7 +77,7 @@ function App() {
         }
 
         setStudyMap(map);
-        setSelectedChapterId(findFirstChapter(map)?.id || '');
+        setSelectedChapterId(null);
       })
       .catch((loadError) => {
         if (isMounted) {
@@ -161,6 +161,7 @@ function App() {
 
   const handleClearFocus = () => {
     setStudyMode(STUDY_MODES.global);
+    setSelectedChapterId(null);
     setError('');
   };
 
