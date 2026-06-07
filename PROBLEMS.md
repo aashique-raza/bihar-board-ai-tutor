@@ -167,7 +167,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `frontend/src/api/tutorApi.js` lines 36–43
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: `askTutor()` ab `signal` parameter accept karta hai. `App.jsx` mein `controllerRef` (AbortController) aur `timeoutRef` (60s timeout) add kiye — dono `useRef` mein. `handleAsk` `useCallback([])` mein wrap hai aur `controllerRef.current` se guard karta hai (double-submit impossible). Timeout fire hone ya Stop click hone par `AbortError` catch hoti hai aur student ko Hinglish message milta hai: "Zuno thoda busy hai abhi, thodi der baad try karo." `AskBar` mein Stop button add kiya (request in-flight hone par Send ki jagah dikha), `React.memo` wrap, aur 300ms `cancelCooling` guard. Port mismatch bhi fix kiya: `backend/.env` se duplicate `PORT=5000` hataya (5001 retain), `tutorApi.js` fallback `localhost:6000` → `localhost:5001`.
+- **Closed**: 2026-06-07
 
 ---
 
@@ -676,7 +678,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/.env` — gitignored, must be fixed locally
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: `backend/.env` se line 1 ka `PORT=5000` hataya — sirf `PORT=5001` remain kiya. Fixed as part of STB-001.
+- **Closed**: 2026-06-07
 
 ---
 

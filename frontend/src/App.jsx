@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import { askTutor, fetchStudyMap } from './api/tutorApi.js';
 import AppHeader from './components/AppHeader.jsx';
@@ -50,6 +50,22 @@ function App() {
   const [isAsking, setIsAsking] = useState(false);
   const [error, setError] = useState('');
   const chatEndRef = useRef(null);
+  const controllerRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const sessionIdRef = useRef(sessionId);
+  const selectedChapterIdRef = useRef(selectedChapterId);
+  const studyModeRef = useRef(studyMode);
+
+  useEffect(() => { sessionIdRef.current = sessionId; }, [sessionId]);
+  useEffect(() => { selectedChapterIdRef.current = selectedChapterId; }, [selectedChapterId]);
+  useEffect(() => { studyModeRef.current = studyMode; }, [studyMode]);
+
+  useEffect(() => {
+    return () => {
+      controllerRef.current?.abort();
+      clearTimeout(timeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -148,17 +164,25 @@ function App() {
     setError('');
   };
 
-  const handleAsk = async (question, requestMode = studyMode) => {
+  const handleAsk = useCallback(async (question, requestMode) => {
     const cleanQuestion = question.trim();
+    const currentMode = requestMode ?? studyModeRef.current;
 
-    if (!cleanQuestion || isAsking) {
+    if (!cleanQuestion || controllerRef.current) {
       return;
     }
 
-    if (requestMode === STUDY_MODES.focus && !selectedChapterId) {
+    if (currentMode === STUDY_MODES.focus && !selectedChapterIdRef.current) {
       setError('Focus mode ke liye pehle chapter select karo.');
       return;
     }
+
+    const controller = new AbortController();
+    controllerRef.current = controller;
+
+    timeoutRef.current = setTimeout(() => {
+      controllerRef.current?.abort();
+    }, 60000);
 
     setError('');
     setIsAsking(true);
@@ -168,15 +192,19 @@ function App() {
     ]);
 
     try {
-      const answerPayload = await askTutor({
-        question: cleanQuestion,
-        studyMode: requestMode,
-        chapterId: selectedChapterId,
-        sessionId,
-      });
+      const answerPayload = await askTutor(
+        {
+          question: cleanQuestion,
+          studyMode: currentMode,
+          chapterId: selectedChapterIdRef.current,
+          sessionId: sessionIdRef.current,
+        },
+        controller.signal,
+      );
+      clearTimeout(timeoutRef.current);
       const nextSessionId = answerPayload.session?.sessionId;
 
-      if (nextSessionId && nextSessionId !== sessionId) {
+      if (nextSessionId && nextSessionId !== sessionIdRef.current) {
         saveSessionId(nextSessionId);
         setSessionId(nextSessionId);
       }
@@ -186,11 +214,21 @@ function App() {
         createAnswerMessage(answerPayload),
       ]);
     } catch (askError) {
-      setError(askError.message);
+      clearTimeout(timeoutRef.current);
+      if (askError.name === 'AbortError') {
+        setError('Zuno thoda busy hai abhi, thodi der baad try karo.');
+      } else {
+        setError(askError.message);
+      }
     } finally {
+      controllerRef.current = null;
       setIsAsking(false);
     }
-  };
+  }, []);
+
+  const handleCancel = useCallback(() => {
+    controllerRef.current?.abort();
+  }, []);
 
   const handleSwitchToGlobal = async (question) => {
     setStudyMode(STUDY_MODES.global);
@@ -234,7 +272,7 @@ function App() {
         </Box>
 
         <StatusNotice error={error} />
-        <AskBar disabled={isAsking} onAsk={handleAsk} studyMode={studyMode} />
+        <AskBar disabled={isAsking} onAsk={handleAsk} onCancel={handleCancel} studyMode={studyMode} />
       </Box>
 
       <FocusModal

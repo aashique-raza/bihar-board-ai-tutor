@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
 
 const parseJsonResponse = async (response) => {
   const payload = await response.json().catch(() => null);
@@ -17,12 +17,13 @@ const parseJsonResponse = async (response) => {
 
 export const fetchStudyMap = async () => {
   const response = await fetch(`${API_BASE_URL}/api/v1/study-map`);
+  console.log('fetchStudyMap response:', response);
   const payload = await parseJsonResponse(response);
 
   return payload.data;
 };
 
-export const askTutor = async ({ question, studyMode, chapterId, sessionId }) => {
+export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal) => {
   const body = { question, studyMode };
 
   if (sessionId) {
@@ -39,6 +40,7 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body),
+    signal,
   });
   const payload = await parseJsonResponse(response);
 
