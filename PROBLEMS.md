@@ -83,7 +83,7 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/ask/step5.retrieveContent.js` lines 31–39 — bypass block
 - **Depends on**: BUG-001 (lastTopic needed to re-retrieve)
 - **Effort**: M
-- **Status**: PENDING
+- **Status**: FIXED
 
 ---
 
