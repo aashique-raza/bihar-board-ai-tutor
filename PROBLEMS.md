@@ -214,7 +214,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/rag/vectorStoreLoader.js` lines 101–141
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Fixed date**: 2026-06-07
+- **Resolution**: `loadRetrieverVectorStore()` called in `server.js` try block after `connectDB()` and before `app.listen()`. On load success, logs vector count and embedding dimension. On failure, existing try/catch exits with `process.exit(1)` — server never starts without a valid vector store.
 
 ---
 
