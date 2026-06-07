@@ -262,7 +262,10 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/package.json` line 31 — `"@langchain/classic": "^1.0.32"` (caret allows minor version bumps)
 - **Depends on**: none
 - **Effort**: M
-- **Status**: PENDING
+- **Status**: FIXED
+- **Fixed date**: 2026-06-07
+- **Resolution**: @langchain/classic pinned to exact version 1.0.32 in package.json (caret removed). Defensive Array.isArray guards added in: vectorStorePersistence.js (save), vectorStoreLoader.js (hydrate), retriever.js (chapter-scoped filter) — each throws a clear diagnostic error if memoryVectors is invalid after a future package update. TDT-002 and TDT-010 closed together as planned.
+- **Verified**: 2026-06-07 — All guards confirmed active (both throw correct diagnostic messages on injected invalid input). test:chunks (17/17), test:study-map, test:curriculum-resolvers, test:vector-store (600 vectors, 3072-dim), test:retrieval (5/5 queries), rag:test-retriever (7/7 queries) all passed. package.json caret confirmed absent.
 
 ---
 
@@ -575,7 +578,10 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/rag/vectorStoreLoader.js` — authoritative version to keep
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Fixed date**: 2026-06-07
+- **Resolution**: loadLangChainMemoryVectorStore removed from vectorStorePersistence.js. vectorStoreLoader.js is the single authoritative loader with full dimension validation. test-vector-store-load-search.js import updated to vectorStoreLoader.js.
+- **Verified**: 2026-06-07 — Importing 'loadLangChainMemoryVectorStore' from vectorStorePersistence.js throws SyntaxError at parse time (named export does not exist). vectorStoreLoader.js import resolves correctly. test:vector-store and test:retrieval both pass against the single authoritative loader.
 
 ---
 
@@ -701,7 +707,10 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/package.json` line 31 — `@langchain/classic` version
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Fixed date**: 2026-06-07
+- **Resolution**: BUG-H01 already removed the incorrect 1-distanceScore conversion. retriever.js file header updated to document that @langchain/classic@1.0.32 similaritySearchWithScore returns cosine SIMILARITY (raw score used directly, no conversion). Verified score range: 0.68–0.75 for strong Bihar Board content matches.
+- **Verified**: 2026-06-07 — Live test:retrieval run confirmed: top scores 0.6836–0.7503 for strong-match queries (photosynthesis, acid-base, heart, electricity). rag:test-retriever confirmed reranked final scores are non-inverted (0.68–1.08). Scores would be near-zero if distance conversion were still active.
 
 ---
 

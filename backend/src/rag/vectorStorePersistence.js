@@ -10,7 +10,6 @@
  *
  * FUNCTIONS:
  *   saveLangChainMemoryVectorStore(vectorStore, filePath, metadata)
- *   loadLangChainMemoryVectorStore(filePath, embeddings)
  */
 
 import fs from 'node:fs/promises';
@@ -50,7 +49,16 @@ const validateMemoryVectors = (memoryVectors) => {
  * @param {object} metadata              - Extra metadata to include (provider, model, etc.)
  */
 export const saveLangChainMemoryVectorStore = async (vectorStore, filePath, metadata = {}) => {
+  // Depends on memoryVectors being a public array on @langchain/classic@1.0.32 MemoryVectorStore.
+  // Package is pinned to exact version in package.json — do NOT add ^ caret.
   const memoryVectors = vectorStore?.memoryVectors;
+  if (!Array.isArray(memoryVectors)) {
+    throw new Error(
+      '[vectorStorePersistence] MemoryVectorStore.memoryVectors is not a valid array. ' +
+      '@langchain/classic may have changed its internal API. ' +
+      'Package must stay pinned to 1.0.32 in package.json.'
+    );
+  }
   validateMemoryVectors(memoryVectors);
 
   const absoluteFilePath = path.resolve(filePath);
@@ -67,44 +75,3 @@ export const saveLangChainMemoryVectorStore = async (vectorStore, filePath, meta
   await fs.writeFile(absoluteFilePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 };
 
-/**
- * Loads a previously saved vector store JSON file back into a MemoryVectorStore.
- * Used by the retriever at query time.
- *
- * @param {string} filePath   - Path to the saved JSON file
- * @param {object} embeddings - LangChain embeddings instance
- * @returns {{ vectorStore, metadata }}
- */
-export const loadLangChainMemoryVectorStore = async (filePath, embeddings) => {
-  const absoluteFilePath = path.resolve(filePath);
-  let rawJson;
-
-  try {
-    rawJson = await fs.readFile(absoluteFilePath, 'utf8');
-  } catch (error) {
-    if (error?.code === 'ENOENT') {
-      throw new Error(`Vector store file not found at ${absoluteFilePath}. Run npm run rag:index first.`);
-    }
-    throw new Error(`Unable to read vector store file at ${absoluteFilePath}: ${error.message}`);
-  }
-
-  let payload;
-  try {
-    payload = JSON.parse(rawJson);
-  } catch (error) {
-    throw new Error(`Vector store JSON is corrupt at ${absoluteFilePath}: ${error.message}`);
-  }
-
-  if (payload.vectorStoreType !== VECTOR_STORE_TYPE) {
-    throw new Error(
-      `Unsupported vector store type "${payload.vectorStoreType}". Expected "${VECTOR_STORE_TYPE}".`
-    );
-  }
-
-  validateMemoryVectors(payload.memoryVectors);
-
-  const vectorStore = new MemoryVectorStore(embeddings);
-  vectorStore.memoryVectors = payload.memoryVectors;
-
-  return { vectorStore, metadata: payload };
-};

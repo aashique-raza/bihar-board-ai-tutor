@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { createQueryEmbeddings } from '../src/rag/geminiEmbeddings.js';
-import { loadLangChainMemoryVectorStore } from '../src/rag/vectorStorePersistence.js';
+import { loadLangChainMemoryVectorStore } from '../src/rag/vectorStoreLoader.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

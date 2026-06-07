@@ -1,10 +1,17 @@
 /**
  * retriever.js
- * * UPGRADED PRODUCTION-GRADE RAG RETRIEVER (STEP 5)
- * * FIXES IMPLEMENTED:
- * 1. Scoped Vector Cache Map: Static chapters ka memory overhead allocation zero kiya.
- * 2. LangChain Distance Trap Fix: Evaluated distance into proper Cosine Similarity (1 - Distance).
- * 3. Streamlined Score Normalization: Clean mathematical pipeline for robust filtering.
+ *
+ * RAG retriever — Step 5 of the Ask pipeline.
+ *
+ * Loads the vector store, applies optional chapter-scoped filtering (Focus Mode),
+ * runs similarity search, then applies keyword + intent reranking.
+ *
+ * Score note: @langchain/classic@1.0.32 MemoryVectorStore.similaritySearchWithScore()
+ * returns cosine SIMILARITY (higher = better, range 0–1). Raw scores used directly.
+ * Do NOT apply (1 - score) — that inverts scores and breaks retrieval. See BUG-H01.
+ *
+ * Package is pinned to exact version 1.0.32 in package.json.
+ * memoryVectors is a public array property — do NOT add ^ to the version pin.
  */
 
 import path from 'node:path';
@@ -77,8 +84,18 @@ const getOrCreateScopedVectorStore = (loadedStore, embeddings, metadataFilter) =
   console.log(`[Retriever Cache Miss] Building new scoped in-memory store for key: ${cacheKey}`);
   const scopedVectorStore = new MemoryVectorStore(embeddings);
 
-  // Extract matching memory vectors from the master loaded store
-  scopedVectorStore.memoryVectors = loadedStore.vectorStore.memoryVectors.filter((vector) =>
+  // Extract matching memory vectors from the master loaded store.
+  // Depends on memoryVectors being a public array on @langchain/classic@1.0.32 MemoryVectorStore.
+  // Package is pinned to exact version — if this throws, check @langchain/classic changelog.
+  const allVectors = loadedStore.vectorStore.memoryVectors;
+  if (!Array.isArray(allVectors)) {
+    throw new Error(
+      '[retriever] MemoryVectorStore.memoryVectors is not a valid array. ' +
+      '@langchain/classic may have changed its internal API. ' +
+      'Package must stay pinned to 1.0.32 in package.json.'
+    );
+  }
+  scopedVectorStore.memoryVectors = allVectors.filter((vector) =>
     matchesMetadataFilter(vector.metadata, metadataFilter)
   );
 

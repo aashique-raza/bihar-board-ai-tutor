@@ -118,9 +118,18 @@ export const loadLangChainMemoryVectorStore = async (filePath, embeddings) => {
     const embeddingDimension = validateMemoryVectors(payload.memoryVectors);
     const vectorStore = new MemoryVectorStore(embeddings);
 
-    // Hydrate LangChain's in-memory store from saved vectors.
-    // No re-embedding happens here — query embedding happens during similarity search.
+    // Hydrate MemoryVectorStore from saved vectors — no re-embedding needed.
+    // Depends on memoryVectors being a settable public array on @langchain/classic@1.0.32.
+    // Package is pinned to exact version in package.json. Do NOT add ^ caret.
+    // If this guard throws after a package update, check @langchain/classic changelog.
     vectorStore.memoryVectors = payload.memoryVectors;
+    if (!Array.isArray(vectorStore.memoryVectors) || vectorStore.memoryVectors.length !== payload.memoryVectors.length) {
+      throw new Error(
+        '[vectorStoreLoader] Failed to hydrate MemoryVectorStore.memoryVectors. ' +
+        '@langchain/classic may have changed its internal API. ' +
+        'Package must stay pinned to 1.0.32 in package.json.'
+      );
+    }
 
     return {
       vectorStore,
