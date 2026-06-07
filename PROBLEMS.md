@@ -183,7 +183,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/package.json` line 15
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: `rag:query` script entry `backend/package.json` se remove kar diya. Working alternative `rag:test-retriever` (`scripts/test-retriever.js`) pehle se exist karta hai.
+- **Closed**: 2026-06-07
 
 ---
 

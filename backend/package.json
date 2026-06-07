@@ -12,7 +12,6 @@
     "test:chunks": "node src/inspectors/testMarkdownChunker.js",
     "inspect:chunks": "node src/inspectors/inspectMarkdownChunks.js",
     "rag:index": "node src/rag/indexPipeline.js",
-    "rag:query": "node src/rag/query/pipelines/queryPipeline.js",
     "db:ping": "node scripts/test-mongo-connection.js",
     "test:chat-db-models": "node scripts/test-chat-db-models.js",
     "test:ask-db": "node scripts/test-ask-db-integration.js",
