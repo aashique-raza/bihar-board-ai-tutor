@@ -125,6 +125,16 @@ export const saveAndRespond = async (
   stateUpdates.consecutiveErrors = 0;
   stateUpdates.lastErrorAt = null;
 
+  // STB-008: Force sync DB state on global mode — do not rely on LLM memoryUpdate.
+  // LLM never returns chapter fields on global turns, so DB would retain stale 'lesson' values.
+  if (studyMode === 'global') {
+    stateUpdates.learningMode = 'idle';
+    stateUpdates.currentSubjectId = null;
+    stateUpdates.currentSectionId = null;
+    stateUpdates.currentChapterId = null;
+    stateUpdates.currentTopicId = null;
+  }
+
   // Automatically update dynamic tracking metrics on user interaction
   if (response.responseMode) {
     stateUpdates.answerLanguage = language.answerLanguage;

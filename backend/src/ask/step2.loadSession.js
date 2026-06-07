@@ -75,6 +75,10 @@ export const loadSession = async ({ requestedSessionId, studyMode, focusChapter 
   } else if (studyMode === 'global') {
     console.log('[Step 2 Sandbox Override] Global exploration active. Capping tutor focus to idle.');
     chatState.learningMode = 'idle';
+    chatState.currentSubjectId = null;
+    chatState.currentSectionId = null;
+    chatState.currentChapterId = null;
+    chatState.currentTopicId = null;
   }
 
   return {

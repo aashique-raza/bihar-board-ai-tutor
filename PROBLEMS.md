@@ -277,7 +277,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/ask/step7.saveAndRespond.js` lines 106–116 — stateUpdates assembly
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: Two changes applied together. (1) `step2.loadSession.js` global-mode block now nulls all four chapter context fields (`currentSubjectId`, `currentSectionId`, `currentChapterId`, `currentTopicId`) in addition to resetting `learningMode`. (2) `step7.saveAndRespond.js` force-writes the same five fields directly into `stateUpdates` before `updateChatSessionState` is called, so DB is always overwritten regardless of what the LLM returns in `memoryUpdate`. Note: `test:ask-db` and `test:chat-db-models` both import `chatState.model.js` / `chatState.service.js` which no longer exist (pre-existing breakage — `chatState` is embedded in `chatSession` since an earlier refactor). Regression verified via `test:chunks` (17/17 pass) and `test:study-map` (16 chapters clean).
+- **Closed**: 2026-06-07
 
 ---
 
