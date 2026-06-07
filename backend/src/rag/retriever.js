@@ -123,19 +123,15 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
 
   const candidateCount = resultsWithScores.length;
 
-  // FIXING THE DISTANCE TRAP: LangChain returns Cosine Distance. 
-  // We map it cleanly to Cosine Similarity: 1 - Distance
+  // MemoryVectorStore.similaritySearchWithScore() returns cosine SIMILARITY
+  // (higher = better, range 0-1). Use raw score directly — no conversion needed.
   const candidates = resultsWithScores
-    .map(([document, distanceScore]) => {
-      const similarityScore = 1 - distanceScore; // Mathematical conversion to standard similarity range
-      return [document, similarityScore];
-    })
-    .filter(([, similarityScore]) => similarityScore >= minScore)
-    .map(([document, similarityScore]) => ({
+    .filter(([, score]) => score >= minScore)
+    .map(([document, score]) => ({
       id: document.id || document.metadata?.chunk_id,
       content: document.pageContent,
       metadata: document.metadata || {},
-      score: similarityScore, // Clean un-skewed score passed downstream
+      score,
     }));
 
   // Apply custom keyword + intent reranking
