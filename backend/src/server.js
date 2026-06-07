@@ -1,6 +1,8 @@
 import app from './app.js';
-import { env } from './config/env.js';
+import { env, validateEnv } from './config/env.js';
 import { connectDB, disconnectDB } from './db/mongooseClient.js';
+
+validateEnv();
 
 let server;
 

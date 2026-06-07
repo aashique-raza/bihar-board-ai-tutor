@@ -229,7 +229,9 @@ Pick any PENDING item, read the **Files** and **Current behavior** sections, and
   - `backend/src/server.js` lines 7–15
 - **Depends on**: none
 - **Effort**: S
-- **Status**: PENDING
+- **Status**: FIXED
+- **Resolution**: `validateEnv()` function added to `backend/src/config/env.js`. Always-required checks: `MONGODB_URI` (MONGO_URI fallback preserved), `GEMINI_API_KEY` (GOOGLE_API_KEY accepted as fallback), `LLM_PROVIDER` (must be groq/openai/google). Provider-specific check via `PROVIDER_KEY_MAP` — adding a new provider in future needs one map entry only. `isRealKey()` guard rejects placeholder values like `"..."` and `"your_key"` (mirrors geminiEmbeddings.js behaviour). `validateEnv()` called as the very first line in `server.js`, before `connectDB()` or `app.listen()`. On failure: all missing keys collected and logged together, then `process.exit(1)`.
+- **Closed**: 2026-06-07
 
 ---
 
@@ -745,7 +747,7 @@ These are not demo issues — they are correctness, safety, and security issues:
 | SEC-004 | No Helmet.js | Missing basic HTTP security headers |
 | STB-003 | No rate limiting | Quota exhausted in minutes under load |
 | BUG-002 | Provider errors → students | Crash messages instead of friendly fallback |
-| STB-005 | No env validation at startup | Server starts silently broken, crashes on first request |
+| ~~STB-005~~ | ~~No env validation at startup~~ | **FIXED** |
 
 ---
 
