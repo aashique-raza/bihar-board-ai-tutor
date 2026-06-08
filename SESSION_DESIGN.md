@@ -116,6 +116,7 @@ This will be decided during schema implementation discussion.
 - [ ] Guest session merge after login (FET — future feature)
 - [ ] Quiz/exam integration with focus sessions (future feature)
 - [ ] Chapter completion marking logic (future feature)
+- [ ] chatSession + chatHistory model migration to ObjectId refs — DEFERRED until auth is fully complete. Reason: pipeline-wide breaking change, safer to do as one coordinated update after auth is stable.
 
 ---
 
