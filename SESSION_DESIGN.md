@@ -5,6 +5,16 @@
 
 ---
 
+## Completed Steps
+
+- [x] Step 1: Install all required packages (backend + frontend) — DONE
+- [x] Step 2: Redis client setup (redisClient.js, Upstash) — DONE
+- [x] Step 3: User model (user.model.js) — DONE
+- [x] Step 4: tokenHelpers.js — generateAccessToken, generateRefreshToken, verifyAccessToken, verifyRefreshToken — DONE
+- [x] Step 5: authMiddleware.js — optionalAuth, requireAuth, requireAdmin — DONE
+
+---
+
 ## Core Architecture: Bounded Multi-Session
 
 - One user can have multiple sessions (like GPT/Claude sidebar)
