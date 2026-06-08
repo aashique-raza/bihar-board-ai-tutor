@@ -2,6 +2,7 @@ import app from './app.js';
 import { env, validateEnv } from './config/env.js';
 import { connectDB, disconnectDB } from './db/mongooseClient.js';
 import { loadRetrieverVectorStore } from './rag/retriever.js';
+import { connectRedis } from './config/redisClient.js';
 
 validateEnv();
 
@@ -14,6 +15,13 @@ try {
   // Failure here means RAG cannot work at all — hard exit is correct.
   const { totalVectors, embeddingDimension } = await loadRetrieverVectorStore();
   console.log(`[Zuno] Vector store pre-warmed: ${totalVectors} vectors (${embeddingDimension}-dim)`);
+
+  try {
+    await connectRedis();
+  } catch (err) {
+    console.error('[Redis] Startup failed — exiting');
+    process.exit(1);
+  }
 
   server = app.listen(env.port, () => {
     console.log(`Server running on port ${env.port}`);
