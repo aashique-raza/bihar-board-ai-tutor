@@ -408,6 +408,33 @@ export const googleAuth = (req, res) => {
 };
 
 /**
+ * GET /api/v1/auth/me
+ * Returns the authenticated user's profile.
+ * req.user is the full Mongoose document attached by requireAuth — no DB call needed.
+ */
+export const getMe = async (req, res) => {
+  try {
+    const { _id, name, email, role, plan, isEmailVerified, authProvider } = req.user;
+    return sendResponse(res, 200, {
+      data: {
+        user: {
+          id: _id.toString(),
+          name,
+          email,
+          role,
+          plan,
+          isEmailVerified,
+          authProvider,
+        },
+      },
+    });
+  } catch (err) {
+    console.error('getMe error:', err);
+    return sendResponse(res, 500, { message: 'Something went wrong.' });
+  }
+};
+
+/**
  * GET /api/v1/auth/google/callback
  * Handles the OAuth callback from Google, finds or creates the user,
  * issues tokens, and redirects to the frontend with the access token.
