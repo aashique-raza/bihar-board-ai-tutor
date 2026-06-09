@@ -4,7 +4,7 @@ import redis from '../config/redisClient.js';
 import User from '../models/user.model.js';
 import ApiError from '../utils/ApiError.js';
 import { sendResponse } from '../utils/sendResponse.js';
-import { sendVerificationEmail } from '../auth/emailHelpers.js';
+import { sendVerificationEmail, sendPasswordResetEmail } from '../auth/emailHelpers.js';
 import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from '../auth/tokenHelpers.js';
 
 // Simple email format check — not too strict, just catches obvious mistakes
@@ -12,6 +12,7 @@ const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 // TTL constants
 const VERIFY_EMAIL_TTL = 60 * 60 * 24; // 24 hours in seconds
+const RESET_PASSWORD_TTL = 60 * 15;    // 15 minutes in seconds
 
 /**
  * POST /api/v1/auth/register
@@ -304,6 +305,83 @@ export const refreshToken = async (req, res) => {
 
   } catch (err) {
     console.error('refreshToken error:', err);
+    return sendResponse(res, 500, { message: 'Something went wrong. Please try again.' });
+  }
+};
+
+/**
+ * POST /api/v1/auth/forgot-password
+ * Sends a password reset email if the email is registered with email auth.
+ * Always returns the same safe response to prevent email enumeration.
+ */
+export const forgotPassword = async (req, res) => {
+  try {
+    const email = (req.body.email || '').trim().toLowerCase();
+    const safeResponse = 'If this email is registered, a password reset link has been sent.';
+
+    if (!email) {
+      return sendResponse(res, 400, { message: 'Email daalna zaroori hai.' });
+    }
+
+    const user = await User.findOne({ email });
+
+    if (!user || user.authProvider !== 'email') {
+      return sendResponse(res, 200, { message: safeResponse });
+    }
+
+    const token = crypto.randomBytes(32).toString('hex');
+    const userId = user._id.toString();
+
+    await redis.set(`reset_password:${token}`, userId, 'EX', RESET_PASSWORD_TTL);
+
+    try {
+      await sendPasswordResetEmail(user.email, token);
+    } catch (emailErr) {
+      console.error('[ForgotPassword] Email send failed:', emailErr);
+    }
+
+    return sendResponse(res, 200, { message: safeResponse });
+
+  } catch (err) {
+    console.error('forgotPassword error:', err);
+    return sendResponse(res, 500, { message: 'Something went wrong. Please try again.' });
+  }
+};
+
+/**
+ * POST /api/v1/auth/reset-password
+ * Resets the user's password using a valid reset token.
+ * Invalidates the reset token and existing refresh token after success.
+ */
+export const resetPassword = async (req, res) => {
+  try {
+    const { token, newPassword } = req.body;
+
+    if (!token || !newPassword) {
+      return sendResponse(res, 400, { message: 'Token aur naya password dono zaroori hain.' });
+    }
+
+    if (newPassword.length < 8) {
+      return sendResponse(res, 400, { message: 'Password kam se kam 8 characters ka hona chahiye.' });
+    }
+
+    const userId = await redis.get(`reset_password:${token}`);
+    if (!userId) {
+      return sendResponse(res, 400, { message: 'Reset link expired or invalid.' });
+    }
+
+    const saltRounds = Number(process.env.BCRYPT_SALT_ROUNDS) || 12;
+    const passwordHash = await bcrypt.hash(newPassword, saltRounds);
+
+    await User.findByIdAndUpdate(userId, { passwordHash });
+
+    await redis.del(`reset_password:${token}`);
+    await redis.del(`refresh_token:${userId}`);
+
+    return sendResponse(res, 200, { message: 'Password reset successful. Please login again.' });
+
+  } catch (err) {
+    console.error('resetPassword error:', err);
     return sendResponse(res, 500, { message: 'Something went wrong. Please try again.' });
   }
 };
