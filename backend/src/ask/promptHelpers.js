@@ -2,7 +2,7 @@ export const compactText = (value) =>
   String(value || '').replace(/\s+/g, ' ').trim();
 
 /**
- * DB chat logs ko conversation blocks me text-format karta hai.
+ * Formats DB chat logs into plain text conversation lines for the prompt.
  */
 export const formatRecentHistory = (messages = []) => {
   if (!messages.length) {
@@ -15,7 +15,7 @@ export const formatRecentHistory = (messages = []) => {
 };
 
 /**
- * Repetition checks ko bypass karne ke liye tutor ka pichla turn response nikalta hai.
+ * Returns the tutor's previous reply (used for repetition checks).
  */
 export const getLastTutorResponse = (messages = []) => {
   const lastTutorMessage = [...messages]
@@ -28,7 +28,7 @@ export const getLastTutorResponse = (messages = []) => {
 };
 
 /**
- * Available chapters list ko generic presentation summary me format karta hai.
+ * Formats the available chapters list into a short summary for the prompt.
  */
 export const formatStudyMapSummary = (studyMap) => {
   const subjects = studyMap?.focusStudy?.subjects || [];

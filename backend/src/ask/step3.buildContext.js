@@ -27,9 +27,8 @@ const buildFocusChapterPrompt = (focusChapter) => {
 };
 
 /**
- * Senior Architecture Hack: Semantic Hydration Engine
- * Cryptic database IDs (jaise ch_01, t_02) ko core curriculum titles strings me hydrate karta hai.
- * Isse Decider aur Tutor LLM ko bache ka precise contextual status real-time me dikhta hai.
+ * Turns cryptic database IDs (like ch_01, t_02) into readable curriculum titles,
+ * so the Decider and Tutor LLM get the student's real context instead of raw IDs.
  */
 const buildSemanticStudyContext = (chatState, studyMap) => {
   if (!chatState || !chatState.currentChapterId) {

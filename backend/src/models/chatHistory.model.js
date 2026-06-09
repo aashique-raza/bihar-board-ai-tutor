@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-// Individual Message Structure inside the array
+// Shape of one message inside the messages array
 const messageItemSchema = new mongoose.Schema({
   role: {
     type: String,
@@ -28,22 +28,22 @@ const messageItemSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   }
-}, { _id: false }); // sub-document key disable taaki array compact rahe
+}, { _id: false }); // No _id on sub-documents to keep the array compact
 
 const chatHistorySchema = new mongoose.Schema(
   {
     sessionId: {
       type: String,
       required: true,
-      unique: true, // ABOLUTE LOCK: Pure session ka sirf EK document hoga
+      unique: true, // One history document per session
       index: true,
     },
     userId: {
       type: String,
       default: null,
-      index: true, // For cross-session dynamic student analytics later
+      index: true, // For per-student analytics across sessions later
     },
-    // The Core Memory Array
+    // All messages for this session, in order
     messages: [messageItemSchema]
   },
   {

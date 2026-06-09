@@ -3,12 +3,12 @@ import { findStudyMapChapter } from '../services/studyMap.service.js';
 
 const VALID_STUDY_MODES = ['global', 'focus'];
 
-// Regex check: Kam se kam ek English letter, number, ya Devanagari character hona mandatory hai
-// Yeh filter out karega pure emojis, excessive question marks, ya blank symbols ko
+// Question must contain at least one letter, number, or Devanagari character.
+// This filters out pure emojis, "?????", or blank/symbol-only input.
 const VALID_TEXT_PATTERN = /[a-zA-Z0-9\u0900-\u097F]/;
 
 /**
- * Multiple spaces ko single space me badalta hai aur trim karta hai
+ * Collapses repeated spaces into one and trims the ends.
  */
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 

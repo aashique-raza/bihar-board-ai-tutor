@@ -1,7 +1,7 @@
 /**
- * step6.generateResponse.js — Step 6 of the Ask API flow
- * * UPGRADED ROBUST LLM GENERATION WITH CONVERSATIONAL INTENT FIREWALL GATES
- * * FIXES: State mismatch bug by forcing status 'answered' on non-academic intents.
+ * step6.generateResponse.js — Step 6 of the Ask API flow.
+ * Generates the tutor's answer with the LLM. For non-academic intents
+ * (greetings/small talk) it forces status to 'answered' to avoid a state mismatch.
  */
 
 import { RunnableSequence } from '@langchain/core/runnables';
@@ -110,8 +110,9 @@ export const generateResponse = async (
     // Normalize the sections array structure cleanly
     const sections = normalizeSections(parsed.sections);
 
-    // --- SENIOR INTENT ENFORCEMENT FIREWALL GATES ---
-    // If Step 4 marked this as conversational, the code overrides the status to prevent prompt leakages.
+    // --- Intent status guard ---
+    // If Step 4 marked this turn as conversational, force the status below so the
+    // LLM's status field cannot leak the wrong state to the frontend.
     let targetStatus = parsed.status ? String(parsed.status).trim() : 'answered';
     const normalizedIntent = String(responseMode || '').toUpperCase();
 

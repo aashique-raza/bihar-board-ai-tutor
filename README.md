@@ -111,19 +111,19 @@ This command loads the curated Science documents, chunks them, creates LangChain
 backend/storage/vector-store.json
 ```
 
-Retrieve relevant chunks for a question:
+Retrieve relevant chunks for a question (retriever smoke test):
 
 ```bash
-npm run rag:query -- "your question"
+npm run rag:test-retriever
 ```
 
-Example:
+Run a full grounded-answer smoke test:
 
 ```bash
-npm run rag:query -- "प्रकाश संश्लेषण क्या होता है?"
+npm run rag:test-answer
 ```
 
-The query command loads saved vectors from `vector-store.json`. It does not re-embed all chunks; it embeds only the user question and prints retrieved chunks with scores and metadata.
+These commands load the saved vectors from `vector-store.json`. They do not re-embed all chunks; they embed only the query and print the retrieved chunks (with scores and metadata) and, for `rag:test-answer`, the generated Hinglish answer.
 
 ## First Milestone
 
@@ -157,6 +157,9 @@ Current backend status:
 - Admin panel.
 - Analytics.
 - Quiz system.
-- Authentication.
 - PDF/OCR pipeline.
 - Production vector database.
+
+Authentication is now in progress (Redis, user model, JWT helpers, auth middleware,
+and email register + verification are implemented). See `AUTH_PLAN.md` for the full
+plan and current status.

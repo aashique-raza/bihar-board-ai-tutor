@@ -3,6 +3,7 @@ import { env, validateEnv } from './config/env.js';
 import { connectDB, disconnectDB } from './db/mongooseClient.js';
 import { loadRetrieverVectorStore } from './rag/retriever.js';
 import { connectRedis } from './config/redisClient.js';
+import { connectMailer } from './auth/emailHelpers.js';
 
 validateEnv();
 
@@ -16,11 +17,30 @@ try {
   const { totalVectors, embeddingDimension } = await loadRetrieverVectorStore();
   console.log(`[Zuno] Vector store pre-warmed: ${totalVectors} vectors (${embeddingDimension}-dim)`);
 
+  // connectMailer verifies the SMTP credentials are live.
+  // In production this is fatal (broken email = broken registration).
+  // In development we warn and continue so the API still works without email config.
+  try {
+    await connectMailer();
+  } catch (err) {
+    if (process.env.NODE_ENV === 'production') {
+      throw err; // re-throw so the outer catch exits the process
+    }
+    console.warn('[Mailer] SMTP connection failed — email features will not work:', err.message);
+    console.warn('[Mailer] Set EMAIL_HOST, EMAIL_USER, EMAIL_PASS in .env to fix this.');
+  }
+
+  // Redis is required for auth (tokens, sessions). Fatal in production.
+  // In development, warn and continue so non-auth features still work.
   try {
     await connectRedis();
   } catch (err) {
-    console.error('[Redis] Startup failed — exiting');
-    process.exit(1);
+    if (process.env.NODE_ENV === 'production') {
+      console.error('[Redis] Startup failed — exiting');
+      process.exit(1);
+    }
+    console.warn('[Redis] Connection failed — auth features will not work:', err.code || err.message || err);
+    console.warn('[Redis] Check REDIS_URL in .env and verify your Upstash instance is active.');
   }
 
   server = app.listen(env.port, () => {

@@ -13,17 +13,16 @@ const tokenize = (text) =>
     .match(/[a-z]+/g) || [];
 
 /**
- * Single question ki text script analyze karke target script language set karta hai.
- * Bug Fix: Strict Roman script forcing hata kar dynamic alignment set kiya gaya hai.
+ * Detects the language of a single question and picks the language to answer in.
  */
 export const detectQuestionLanguage = (question) => {
   const text = String(question || '').trim();
 
-  // Core Fix: Agar query me Devanagari characters hain, toh output language ko bhi Devanagari Hindi lock karo
+  // If the question contains Devanagari characters, answer in Hindi too
   if (DEVANAGARI_PATTERN.test(text)) {
     return {
       detectedLanguage: 'hindi',
-      answerLanguage: 'hindi', // Upgraded to genuine Hindi instead of forcing 'hinglish'
+      answerLanguage: 'hindi',
     };
   }
 
@@ -38,8 +37,8 @@ export const detectQuestionLanguage = (question) => {
   }
 
   if (tokens.length > 0) {
-    // English questions ko bhi Hinglish mein answer karo
-    // Bihar Board students Hinglish samajhte hain — aur vector store Hinglish mein indexed hai
+    // Answer English questions in Hinglish too: Bihar Board students understand
+    // Hinglish, and the vector store content is indexed in Hinglish.
     return {
       detectedLanguage: 'english',
       answerLanguage: 'hinglish',
@@ -53,12 +52,12 @@ export const detectQuestionLanguage = (question) => {
 };
 
 /**
- * Conversation ki dynamic context analysis script lock karta hai.
+ * Picks the answer language using the current question plus recent chat history.
  */
 export const detectConversationLanguage = ({ question, recentMessages = [] }) => {
   const latestLanguage = detectQuestionLanguage(question);
 
-  // Agar user live turn me pure Hindi script ya Hinglish use kar raha hai, toh use priority do
+  // If the current message is already Hindi or Hinglish, use that
   if (latestLanguage.answerLanguage === 'hindi' || latestLanguage.answerLanguage === 'hinglish') {
     return latestLanguage;
   }
@@ -82,11 +81,11 @@ export const detectConversationLanguage = ({ question, recentMessages = [] }) =>
 };
 
 /**
- * Downstream prompts ke liye target system language instructions generate karta hai.
+ * Builds the language instruction line that gets added to the LLM prompts.
  */
 export const getAnswerLanguageInstruction = (answerLanguage) => {
-  // Note: answerLanguage 'english' ab set nahi hota (detectQuestionLanguage mein 'hinglish' ho gaya)
-  // Ye case ab practically trigger nahi hoga — but safety ke liye hinglish instruction return karo
+  // 'english' is no longer returned by detectQuestionLanguage (it maps to 'hinglish'),
+  // but we keep this branch as a safe fallback.
   if (answerLanguage === 'english') {
     return 'Write the final answer in simple Hinglish for a Class 10 student. Use Roman script only, like "Nutrition ek process hai". Do not use Devanagari/Hindi script.';
   }

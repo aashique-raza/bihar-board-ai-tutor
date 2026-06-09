@@ -57,16 +57,15 @@ const normalizeDecision = (decision, rawQuestion) => {
   // True structural RAG can only occur if the query is a genuine conceptual student question
   const needsRetrieval = (intent === 'CONCEPT_QUESTION' && inScope) ? Boolean(decision.needsRetrieval) : false;
 
-  // Search parameter text standardization guards
-  // Devanagari detection — vector store Hinglish/English mein indexed hai
-  // Devanagari searchQuery se retrieval fail hoga
+  // The vector store is indexed in Hinglish/English, so a Devanagari searchQuery
+  // would retrieve poorly. Detect it here and skip retrieval below if found.
   const DEVANAGARI_PATTERN = /[ऀ-ॿ]/;
   const rawSearchQuery = String(decision.searchQuery || '').trim();
   const isDevanagari = DEVANAGARI_PATTERN.test(rawSearchQuery);
 
   if (needsRetrieval && isDevanagari) {
-    // Prompt ne instruction follow nahi kiya — Devanagari searchQuery aaya
-    // Retrieval skip karna better hai than bad retrieval
+    // The LLM ignored the instruction and returned a Devanagari searchQuery.
+    // Skipping retrieval is better than a bad vector match.
     console.warn('[Step 4] searchQuery contains Devanagari script — skipping retrieval to prevent bad vector match');
   }
 

@@ -1,6 +1,22 @@
 AUTH_PLAN.md — Zuno Authentication System
 Overview
 This document is the complete authentication plan for Zuno (Bihar Board AI Tutor). It covers User Schema, Endpoints, Redis strategy, Middleware, and implementation order. Every decision in this file has been reviewed and locked.
+
+Implementation Status (updated 2026-06-08)
+
+Done:
+* Step 1 — packages installed (bcrypt, jsonwebtoken, ioredis, nodemailer, cookie-parser, express-rate-limit).
+* Step 2 — Redis client (backend/src/config/redisClient.js), verified on startup.
+* Step 3 — User model (backend/src/models/user.model.js).
+* Step 4 — tokenHelpers.js (access + refresh generate/verify).
+* Step 5 — authMiddleware.js (optionalAuth, requireAuth, requireAdmin).
+* Step 6 — register + email verification (controllers/auth.controller.js, routes/auth.routes.js, auth/emailHelpers.js).
+
+Plan-vs-code drift to reconcile later (not yet done):
+* user.model.js does NOT yet have dailyQueryCount / lastQueryReset — add when query limits (Step 14) are built.
+* Google OAuth will use google-auth-library (already installed), not Passport.js as written below.
+
+Steps 7–19 (login, logout, refresh, forgot/reset password, Google OAuth, /auth/me, rate limiting, query counting, frontend) are still pending.
 Tech Stack (Auth-specific)
 
 * JWT — Access Token + Refresh Token pattern

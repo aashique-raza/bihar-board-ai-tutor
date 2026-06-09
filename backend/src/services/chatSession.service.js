@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { ChatSession } from '../models/chatSession.model.js'; // Paths perfectly aligned to your config
+import { ChatSession } from '../models/chatSession.model.js';
 
 export const createChatSession = async ({
   sessionId = randomUUID(),
@@ -47,13 +47,14 @@ export const updateChatSessionLastMessageTime = async (sessionId) => {
 };
 
 /**
- * NEW ARCHITECTURE ENGINE: Updates fields inside the nested chatState object safely
- * Uses MongoDB dot-notation ($set) to avoid overwriting or dropping other sibling state fields.
+ * Updates fields inside the nested chatState object safely.
+ * Uses MongoDB dot-notation ($set) so only the given fields change and the
+ * other chatState fields are left untouched.
  */
 export const updateChatSessionState = async (sessionId, updates) => {
   const updateFields = {};
 
-  // Flat parameters ko atomic MongoDB dot-notation ($set) queries me dynamic map karna
+  // Turn { key: value } into { 'chatState.key': value } for a dot-notation $set
   for (const [key, value] of Object.entries(updates)) {
     updateFields[`chatState.${key}`] = value;
   }

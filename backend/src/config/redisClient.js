@@ -1,38 +1,54 @@
 // Redis singleton — one shared connection for the entire backend process
 import Redis from 'ioredis';
 
-// REDIS_URL is loaded from .env by env.js (imported before this module runs in server.js)
-const REDIS_URL = process.env.REDIS_URL;
+// Same ESM initialization-order problem as emailHelpers: this module is loaded
+// (as a dep of app.js → authController) before env.js runs dotenv.config().
+// So we must NOT create the Redis instance at module level — process.env.REDIS_URL
+// would be undefined and ioredis would silently connect to localhost:6379.
+// Solution: lazy singleton created on first use via a Proxy.
 
-// Retry strategy — stop retrying after 3 attempts by returning null
 const retryStrategy = (times) => {
   if (times >= 3) return null;
   return Math.min(times * 200, 2000);
 };
 
-// Create the singleton Redis instance with Upstash TLS config
-const redis = new Redis(REDIS_URL, {
-  maxRetriesPerRequest: 3,
-  enableReadyCheck: true,
-  retryStrategy,
-});
+let _instance = null;
 
-// Connection lifecycle event handlers
-redis.on('connect', () => console.log('[Redis] Connecting...'));
-redis.on('ready', () => console.log('[Redis] Connected and ready'));
-redis.on('error', (err) => console.error('[Redis] Error:', err.message));
-redis.on('close', () => console.log('[Redis] Connection closed'));
-redis.on('reconnecting', () => console.log('[Redis] Reconnecting...'));
+const getInstance = () => {
+  if (!_instance) {
+    _instance = new Redis(process.env.REDIS_URL, {
+      maxRetriesPerRequest: 3,
+      enableReadyCheck: true,
+      retryStrategy,
+    });
 
-// Ping check — called at server startup to verify the connection is live
+    _instance.on('connect', () => console.log('[Redis] Connecting...'));
+    _instance.on('ready', () => console.log('[Redis] Connected and ready'));
+    _instance.on('error', (err) => console.error('[Redis] Error:', err.code || err.message || err));
+    _instance.on('close', () => console.log('[Redis] Connection closed'));
+    _instance.on('reconnecting', () => console.log('[Redis] Reconnecting...'));
+  }
+  return _instance;
+};
+
+// Ping check — called at server startup to verify the connection is live.
+// This is also the first call that triggers the lazy Redis creation.
 export const connectRedis = async () => {
   try {
-    await redis.ping();
+    await getInstance().ping();
     console.log('[Redis] Ping successful');
   } catch (err) {
-    console.error('[Redis] Ping failed:', err.message);
+    console.error('[Redis] Ping failed:', err.code || err.message || err);
     throw err;
   }
 };
+
+// Proxy so all callers (redis.get, redis.set, redis.del, etc.) work without changes.
+// Every property access is transparently forwarded to the lazily-created instance.
+const redis = new Proxy({}, {
+  get(_, prop) {
+    return getInstance()[prop];
+  },
+});
 
 export default redis;

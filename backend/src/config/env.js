@@ -89,6 +89,22 @@ export const validateEnv = () => {
     }
   }
 
+  // Email — required for sending verification and reset emails
+  if (!process.env.EMAIL_HOST || !process.env.EMAIL_HOST.trim()) {
+    missing.push('EMAIL_HOST (e.g. smtp.gmail.com)');
+  }
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_USER.trim()) {
+    missing.push('EMAIL_USER');
+  }
+  if (!process.env.EMAIL_PASS || !process.env.EMAIL_PASS.trim()) {
+    missing.push('EMAIL_PASS');
+  }
+
+  // Frontend URL — required for building email links
+  if (!process.env.FRONTEND_URL || !process.env.FRONTEND_URL.trim()) {
+    missing.push('FRONTEND_URL');
+  }
+
   if (missing.length === 0) return;
 
   console.error(

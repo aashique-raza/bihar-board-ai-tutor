@@ -22,8 +22,7 @@
     "test:study-map": "node scripts/test-study-map.js",
     "test:embedding-smoke": "node scripts/test-langchain-embedding-smoke.js",
     "test:vector-store": "node scripts/validate-vector-store.js",
-    "test:retrieval": "node scripts/test-vector-store-load-search.js",
-    "test:bug006-api": "node scripts/test-bug006-api.js"
+    "test:retrieval": "node scripts/test-vector-store-load-search.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

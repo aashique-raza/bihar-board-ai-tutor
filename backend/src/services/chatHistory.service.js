@@ -2,8 +2,8 @@ import { ChatHistory } from '../models/chatHistory.model.js';
 import { updateChatSessionLastMessageTime } from './chatSession.service.js';
 
 /**
- * ATOMIC INGESTION ENGINE: Appends an array of messages into the session's history document.
- * Automatically caps history length to the last 30 messages inside the MongoDB layer!
+ * Appends messages to the session's history document.
+ * Keeps only the last 30 messages, capped by MongoDB in the same update.
  */
 export const addChatMessages = async (sessionId, messages = [], userId = null) => {
   if (!messages.length) {
@@ -19,7 +19,7 @@ export const addChatMessages = async (sessionId, messages = [], userId = null) =
     createdAt: new Date()
   }));
 
-  // Native NoSQL Magic: Upsert the container, push items, and slice array to retain only last 30 elements
+  // Upsert the session's history doc, push the new messages, and keep only the last 30
   const historyDoc = await ChatHistory.findOneAndUpdate(
     { sessionId },
     {
@@ -27,7 +27,7 @@ export const addChatMessages = async (sessionId, messages = [], userId = null) =
       $push: {
         messages: {
           $each: formattedMessages,
-          $slice: -30 // Keeps only the last 30 operational turns atomically!
+          $slice: -30 // Keep only the last 30 messages
         }
       }
     },
@@ -38,7 +38,7 @@ export const addChatMessages = async (sessionId, messages = [], userId = null) =
     }
   );
 
-  // Sync timeline activity timestamp with parent session
+  // Update the parent session's lastMessageAt timestamp
   await updateChatSessionLastMessageTime(sessionId);
 
   return historyDoc?.messages || [];
@@ -52,7 +52,7 @@ export const addChatMessage = async ({ sessionId, role, text, action = null, sou
 };
 
 /**
- * Returns full historical array up to standard caps
+ * Returns the last `limit` messages for a session (default 50).
  */
 export const getChatHistory = async (sessionId, limit = 50) => {
   const history = await ChatHistory.findOne({ sessionId }, { messages: { $slice: -limit } }).lean();
@@ -60,10 +60,10 @@ export const getChatHistory = async (sessionId, limit = 50) => {
 };
 
 /**
- * FAST RETRIEVAL LAYER: Extracts the tail window array elements cleanly for the Ask flow prompt context.
+ * Returns the most recent `limit` messages (default 14) for the Ask prompt context.
  */
 export const getRecentChatHistory = async (sessionId, limit = 14) => {
-  // Directly projection slice from tail. Since it's stored in order, $slice negative fetches the last N elements.
+  // Messages are stored in order, so a negative $slice fetches the last N.
   const history = await ChatHistory.findOne({ sessionId }, { messages: { $slice: -limit } }).lean();
   return history ? history.messages : [];
 };

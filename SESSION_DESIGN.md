@@ -98,7 +98,15 @@
 
 ---
 
-## ChatSession Schema (decided, not yet implemented)
+## ChatSession Schema (target design)
+
+> Current implementation note (2026-06-08): A `ChatSession` model already exists today
+> at `backend/src/models/chatSession.model.js`. It is the tutor-state version
+> (`sessionId`, `userId`, `mode`, `title`, `lastMessageAt`, and a nested `chatState`
+> object), and chat messages live in a **separate** `chatHistory` collection — i.e.
+> Option B below was chosen. The token-bounded fields listed here (`totalTokensUsed`,
+> `isLocked`, `sessionType`, etc.) are the planned target and are **not yet merged**
+> into that model. This section stays LOCKED as the design goal.
 
 Fields to include:
 - userId         → ref: User (required)
@@ -110,11 +118,11 @@ Fields to include:
 - messages       → Array (or separate collection — TBD)
 - createdAt / updatedAt → auto timestamps
 
-### Message Storage — Decision Pending:
-Two options to evaluate before implementation:
+### Message Storage — Decided: Option B
   Option A: Embed messages array inside ChatSession document
-  Option B: Separate ChatMessage collection with sessionId reference
-This will be decided during schema implementation discussion.
+  Option B: Separate ChatMessage collection with sessionId reference  ← chosen
+The current code uses Option B: a separate `chatHistory` collection keyed by
+`sessionId` (see `backend/src/models/chatHistory.model.js`).
 
 ---
 
