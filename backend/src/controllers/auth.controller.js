@@ -5,7 +5,7 @@ import User from '../models/user.model.js';
 import ApiError from '../utils/ApiError.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import { sendVerificationEmail } from '../auth/emailHelpers.js';
-import { generateAccessToken, generateRefreshToken } from '../auth/tokenHelpers.js';
+import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from '../auth/tokenHelpers.js';
 
 // Simple email format check — not too strict, just catches obvious mistakes
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -272,5 +272,38 @@ export const logout = async (req, res, next) => {
 
   } catch (err) {
     next(err);
+  }
+};
+
+/**
+ * POST /api/v1/auth/refresh
+ * Issues a new access token using a valid refresh token cookie.
+ */
+export const refreshToken = async (req, res) => {
+  try {
+    const token = req.cookies?.refreshToken;
+    if (!token) return sendResponse(res, 401, { message: 'No refresh token.' });
+
+    const decoded = verifyRefreshToken(token);
+    if (!decoded || !decoded.userId) {
+      return sendResponse(res, 401, { message: 'Invalid refresh token.' });
+    }
+
+    const userId = decoded.userId;
+    const storedToken = await redis.get(`refresh_token:${userId}`);
+    if (!storedToken) {
+      return sendResponse(res, 401, { message: 'Session expired. Please login again.' });
+    }
+    if (storedToken !== token) {
+      return sendResponse(res, 401, { message: 'Invalid session.' });
+    }
+
+    const accessToken = generateAccessToken(userId);
+
+    return sendResponse(res, 200, { message: 'Token refreshed.', data: { accessToken } });
+
+  } catch (err) {
+    console.error('refreshToken error:', err);
+    return sendResponse(res, 500, { message: 'Something went wrong. Please try again.' });
   }
 };
