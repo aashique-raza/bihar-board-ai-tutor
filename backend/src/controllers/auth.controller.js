@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
 import bcrypt from 'bcrypt';
+import { OAuth2Client } from 'google-auth-library';
 import redis from '../config/redisClient.js';
 import User from '../models/user.model.js';
 import ApiError from '../utils/ApiError.js';
@@ -383,5 +384,115 @@ export const resetPassword = async (req, res) => {
   } catch (err) {
     console.error('resetPassword error:', err);
     return sendResponse(res, 500, { message: 'Something went wrong. Please try again.' });
+  }
+};
+
+/**
+ * GET /api/v1/auth/google
+ * Redirects the user to Google's OAuth consent screen.
+ */
+export const googleAuth = (req, res) => {
+  const client = new OAuth2Client(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    process.env.GOOGLE_CALLBACK_URL
+  );
+
+  const url = client.generateAuthUrl({
+    access_type: 'offline',
+    scope: ['email', 'profile'],
+    prompt: 'select_account',
+  });
+
+  return res.redirect(url);
+};
+
+/**
+ * GET /api/v1/auth/google/callback
+ * Handles the OAuth callback from Google, finds or creates the user,
+ * issues tokens, and redirects to the frontend with the access token.
+ */
+export const googleCallback = async (req, res) => {
+  const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+
+  try {
+    // 1. Check code exists
+    const { code } = req.query;
+    if (!code) {
+      return res.redirect(`${FRONTEND_URL}/auth/callback?error=google_cancelled`);
+    }
+
+    // 2. Exchange code for tokens
+    const client = new OAuth2Client(
+      process.env.GOOGLE_CLIENT_ID,
+      process.env.GOOGLE_CLIENT_SECRET,
+      process.env.GOOGLE_CALLBACK_URL
+    );
+
+    const { tokens } = await client.getToken(code);
+    const idToken = tokens.id_token;
+
+    if (!idToken) {
+      return res.redirect(`${FRONTEND_URL}/auth/callback?error=google_failed`);
+    }
+
+    // 3. Verify ID token and extract user info
+    const ticket = await client.verifyIdToken({
+      idToken,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const payload = ticket.getPayload();
+    const googleId = payload.sub;
+    const email = payload.email?.toLowerCase().trim();
+    const name = payload.name || email.split('@')[0];
+
+    if (!email) {
+      return res.redirect(`${FRONTEND_URL}/auth/callback?error=google_failed`);
+    }
+
+    // 4. Find or create user
+    let user = await User.findOne({ email });
+
+    if (user) {
+      if (user.authProvider !== 'google') {
+        return res.redirect(`${FRONTEND_URL}/auth/callback?error=account_exists`);
+      }
+      if (!user.isActive) {
+        return res.redirect(`${FRONTEND_URL}/auth/callback?error=account_disabled`);
+      }
+    } else {
+      user = await User.create({
+        name,
+        email,
+        authProvider: 'google',
+        googleId,
+        isEmailVerified: true,
+        passwordHash: null,
+      });
+    }
+
+    // 5. Generate tokens
+    const userId = user._id.toString();
+    const accessToken = generateAccessToken(userId);
+    const refreshToken = generateRefreshToken(userId);
+
+    // 6. Store refresh token in Redis (TTL: 7 days = 604800 seconds)
+    await redis.set(`refresh_token:${userId}`, refreshToken, 'EX', 604800);
+
+    // 7. Set HttpOnly cookie — identical options to login()
+    res.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: REFRESH_TOKEN_COOKIE_MAX_AGE,
+    });
+
+    // 8. Redirect to frontend with access token
+    return res.redirect(`${FRONTEND_URL}/auth/callback?token=${accessToken}`);
+
+  } catch (err) {
+    console.error('[GoogleCallback] Error:', err);
+    return res.redirect(`${FRONTEND_URL}/auth/callback?error=google_failed`);
   }
 };

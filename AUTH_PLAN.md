@@ -15,12 +15,13 @@ Done:
 * Step 8  — logout endpoint (auth.controller.js logout(), POST /logout with requireAuth). Redis DEL refresh_token:<userId>, HttpOnly cookie cleared.
 * Step 9  — refresh token endpoint (auth.controller.js refreshToken(), POST /refresh). Reads HttpOnly cookie, verifies JWT, checks Redis whitelist, returns new access token.
 * Step 10 — forgot-password + reset-password endpoints (auth.controller.js forgotPassword(), resetPassword(), routes wired). Email-enumeration-safe response. Reset token TTL 15 min. Password reset forces re-login via Redis DEL refresh_token:<userId>.
+* Step 11 — Google OAuth (googleAuth, googleCallback in controllers/auth.controller.js, GET /google and GET /google/callback in routes/auth.routes.js). Uses google-auth-library OAuth2Client. User created in DB with authProvider: 'google', isEmailVerified: true, passwordHash: null.
 
 Plan-vs-code drift to reconcile later (not yet done):
 * user.model.js does NOT yet have dailyQueryCount / lastQueryReset — add when query limits (Step 14) are built.
 * Google OAuth will use google-auth-library (already installed), not Passport.js as written below.
 
-Steps 11–19 (Google OAuth, /auth/me, rate limiting, query counting, frontend, E2E tests) are still pending.
+Steps 12–19 (/auth/me, rate limiting, query counting, frontend, E2E tests) are still pending.
 Tech Stack (Auth-specific)
 
 * JWT — Access Token + Refresh Token pattern
@@ -411,7 +412,7 @@ Security Checklist
 * [x] Password reset tokens expire in 15 minutes
 * [x] Password reset forces re-login (Redis DEL refresh_token:<userId> on reset)
 * [x] isActive check on every login
-* [ ] Google OAuth callback wrapped in try-catch  (Step 11 — not yet built)
+* [x] Google OAuth callback wrapped in try-catch
 * [ ] Rate limiting on login + register  (Step 13 — not yet built)
 * [x] Redis TTL set on every key
 * [x] .env never committed to git
