@@ -2,22 +2,25 @@ AUTH_PLAN.md — Zuno Authentication System
 Overview
 This document is the complete authentication plan for Zuno (Bihar Board AI Tutor). It covers User Schema, Endpoints, Redis strategy, Middleware, and implementation order. Every decision in this file has been reviewed and locked.
 
-Implementation Status (updated 2026-06-08)
+Implementation Status (updated 2026-06-09)
 
 Done:
-* Step 1 — packages installed (bcrypt, jsonwebtoken, ioredis, nodemailer, cookie-parser, express-rate-limit).
-* Step 2 — Redis client (backend/src/config/redisClient.js), verified on startup.
-* Step 3 — User model (backend/src/models/user.model.js).
-* Step 4 — tokenHelpers.js (access + refresh generate/verify).
-* Step 5 — authMiddleware.js (optionalAuth, requireAuth, requireAdmin).
-* Step 6 — register + email verification (controllers/auth.controller.js, routes/auth.routes.js, auth/emailHelpers.js).
-* Step 7 — login endpoint (controllers/auth.controller.js login(), routes/auth.routes.js POST /login). Bug fixed: sendResponse payload wrapped in data key.
+* Step 1  — packages installed (bcrypt, jsonwebtoken, ioredis, nodemailer, cookie-parser, express-rate-limit).
+* Step 2  — Redis client (backend/src/config/redisClient.js), verified on startup.
+* Step 3  — User model (backend/src/models/user.model.js).
+* Step 4  — tokenHelpers.js (generateAccessToken, generateRefreshToken, verifyAccessToken, verifyRefreshToken).
+* Step 5  — authMiddleware.js (optionalAuth, requireAuth, requireAdmin).
+* Step 6  — register + email verification (auth.controller.js register(), verifyEmail(), emailHelpers.js sendVerificationEmail(), routes wired).
+* Step 7  — login endpoint (auth.controller.js login(), POST /login). Bug fixed: sendResponse payload wrapped in data key. Timing-safe dummy hash for user-not-found case.
+* Step 8  — logout endpoint (auth.controller.js logout(), POST /logout with requireAuth). Redis DEL refresh_token:<userId>, HttpOnly cookie cleared.
+* Step 9  — refresh token endpoint (auth.controller.js refreshToken(), POST /refresh). Reads HttpOnly cookie, verifies JWT, checks Redis whitelist, returns new access token.
+* Step 10 — forgot-password + reset-password endpoints (auth.controller.js forgotPassword(), resetPassword(), routes wired). Email-enumeration-safe response. Reset token TTL 15 min. Password reset forces re-login via Redis DEL refresh_token:<userId>.
 
 Plan-vs-code drift to reconcile later (not yet done):
 * user.model.js does NOT yet have dailyQueryCount / lastQueryReset — add when query limits (Step 14) are built.
 * Google OAuth will use google-auth-library (already installed), not Passport.js as written below.
 
-Steps 8–19 (logout, refresh, forgot/reset password, Google OAuth, /auth/me, rate limiting, query counting, frontend) are still pending.
+Steps 11–19 (Google OAuth, /auth/me, rate limiting, query counting, frontend, E2E tests) are still pending.
 Tech Stack (Auth-specific)
 
 * JWT — Access Token + Refresh Token pattern
@@ -398,17 +401,17 @@ Step 19  E2E test: forgot password → reset → login
 
 Security Checklist
 
-* [ ] Passwords never stored in plain text — always bcrypt hashed
-* [ ] JWT secrets are strong random strings — never hardcoded
-* [ ] Refresh token in HttpOnly Cookie — not accessible via JS
-* [ ] Access token in Redux memory only — not in localStorage
-* [ ] Same error for "email not found" and "wrong password" — prevents enumeration
-* [ ] Same response for forgot-password regardless of email existence
-* [ ] Email verification tokens are one-time use
-* [ ] Password reset tokens expire in 15 minutes
-* [ ] Password reset forces re-login
-* [ ] isActive check on every login
-* [ ] Google OAuth callback wrapped in try-catch
-* [ ] Rate limiting on login + register
-* [ ] Redis TTL set on every key
-* [ ] .env never committed to git
+* [x] Passwords never stored in plain text — always bcrypt hashed
+* [x] JWT secrets are strong random strings — never hardcoded
+* [x] Refresh token in HttpOnly Cookie — not accessible via JS
+* [ ] Access token in Redux memory only — not in localStorage  (frontend auth not yet built)
+* [x] Same error for "email not found" and "wrong password" — prevents enumeration (timing-safe dummy hash used)
+* [x] Same response for forgot-password regardless of email existence
+* [x] Email verification tokens are one-time use
+* [x] Password reset tokens expire in 15 minutes
+* [x] Password reset forces re-login (Redis DEL refresh_token:<userId> on reset)
+* [x] isActive check on every login
+* [ ] Google OAuth callback wrapped in try-catch  (Step 11 — not yet built)
+* [ ] Rate limiting on login + register  (Step 13 — not yet built)
+* [x] Redis TTL set on every key
+* [x] .env never committed to git
