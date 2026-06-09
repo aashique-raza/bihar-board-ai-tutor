@@ -11,12 +11,13 @@ Done:
 * Step 4 — tokenHelpers.js (access + refresh generate/verify).
 * Step 5 — authMiddleware.js (optionalAuth, requireAuth, requireAdmin).
 * Step 6 — register + email verification (controllers/auth.controller.js, routes/auth.routes.js, auth/emailHelpers.js).
+* Step 7 — login endpoint (controllers/auth.controller.js login(), routes/auth.routes.js POST /login). Bug fixed: sendResponse payload wrapped in data key.
 
 Plan-vs-code drift to reconcile later (not yet done):
 * user.model.js does NOT yet have dailyQueryCount / lastQueryReset — add when query limits (Step 14) are built.
 * Google OAuth will use google-auth-library (already installed), not Passport.js as written below.
 
-Steps 7–19 (login, logout, refresh, forgot/reset password, Google OAuth, /auth/me, rate limiting, query counting, frontend) are still pending.
+Steps 8–19 (logout, refresh, forgot/reset password, Google OAuth, /auth/me, rate limiting, query counting, frontend) are still pending.
 Tech Stack (Auth-specific)
 
 * JWT — Access Token + Refresh Token pattern
