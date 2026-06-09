@@ -246,3 +246,31 @@ export const verifyEmail = async (req, res, next) => {
     next(err);
   }
 };
+
+/**
+ * POST /api/v1/auth/logout
+ * Invalidates the refresh token and clears the cookie.
+ */
+export const logout = async (req, res, next) => {
+  try {
+    const userId = req.user._id.toString();
+
+    try {
+      await redis.del(`refresh_token:${userId}`);
+    } catch (redisErr) {
+      console.error('[Logout] Redis DEL failed:', redisErr);
+    }
+
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      path: '/',
+    });
+
+    return sendResponse(res, 200, { message: 'Logged out successfully.' });
+
+  } catch (err) {
+    next(err);
+  }
+};
