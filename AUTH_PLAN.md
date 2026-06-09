@@ -16,12 +16,15 @@ Done:
 * Step 9  — refresh token endpoint (auth.controller.js refreshToken(), POST /refresh). Reads HttpOnly cookie, verifies JWT, checks Redis whitelist, returns new access token.
 * Step 10 — forgot-password + reset-password endpoints (auth.controller.js forgotPassword(), resetPassword(), routes wired). Email-enumeration-safe response. Reset token TTL 15 min. Password reset forces re-login via Redis DEL refresh_token:<userId>.
 * Step 11 — Google OAuth (googleAuth, googleCallback in controllers/auth.controller.js, GET /google and GET /google/callback in routes/auth.routes.js). Uses google-auth-library OAuth2Client. User created in DB with authProvider: 'google', isEmailVerified: true, passwordHash: null.
+* Step 12 — /auth/me endpoint (getMe in auth.controller.js, GET /me with requireAuth in auth.routes.js). Returns id, name, email, role, plan, isEmailVerified, authProvider.
+* Step 13 — Rate limiting (backend/src/middlewares/rateLimiter.js). loginLimiter: 10 req/15min. registerLimiter: 5 req/1hr. Applied to POST /login and POST /register.
+* Step 14 — Query counting middleware (backend/src/middlewares/queryCount.js). Guest: 5 queries/day via X-Guest-Id UUID header. Free user: 20 queries/day. Pro user: unlimited (skip). Redis SET NX EX + INCR pattern. Fail-open on Redis error. Applied to POST /api/v1/ask via optionalAuth → queryCountMiddleware chain.
 
 Plan-vs-code drift to reconcile later (not yet done):
 * user.model.js does NOT yet have dailyQueryCount / lastQueryReset — add when query limits (Step 14) are built.
 * Google OAuth will use google-auth-library (already installed), not Passport.js as written below.
 
-Steps 12–19 (/auth/me, rate limiting, query counting, frontend, E2E tests) are still pending.
+Steps 15–19 (frontend, E2E tests) are still pending.
 Tech Stack (Auth-specific)
 
 * JWT — Access Token + Refresh Token pattern
@@ -413,6 +416,7 @@ Security Checklist
 * [x] Password reset forces re-login (Redis DEL refresh_token:<userId> on reset)
 * [x] isActive check on every login
 * [x] Google OAuth callback wrapped in try-catch
-* [ ] Rate limiting on login + register  (Step 13 — not yet built)
+* [x] Rate limiting on login + register
+* [x] Query counting enforced on /ask (guest: 5/day, free: 20/day, pro: unlimited)
 * [x] Redis TTL set on every key
 * [x] .env never committed to git
