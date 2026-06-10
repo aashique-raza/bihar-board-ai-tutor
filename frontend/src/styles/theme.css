@@ -1,0 +1,105 @@
+/* ============================================================
+   Zuno Design System — Slate & Pearl
+   Light mode: :root
+   Dark mode:  [data-theme="dark"]
+   ============================================================ */
+
+/* Google Fonts are loaded via index.html */
+
+/* ── Light Mode (default) ─────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-page:        #F0F2F5;
+  --bg-surface:     #FFFFFF;
+  --bg-input:       #F9FAFB;
+  --bg-hover:       #F3F4F6;
+
+  /* Borders */
+  --border:         #E4E7EC;
+  --border-strong:  #D1D5DB;
+
+  /* Primary — Indigo */
+  --primary:        #4F46E5;
+  --primary-hover:  #4338CA;
+  --primary-tint:   #EEF2FF;
+  --primary-border: #C7D2FE;
+  --primary-label:  #4338CA;
+
+  /* Text */
+  --text-primary:      #111827;
+  --text-secondary:    #374151;
+  --text-muted:        #6B7280;
+  --text-hint:         #9CA3AF;
+  --text-placeholder:  #C4C9D4;
+
+  /* Semantic */
+  --success:  #10B981;
+  --error:    #EF4444;
+  --warning:  #F59E0B;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+
+  /* Typography */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-code: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  /* Border Radius */
+  --radius-sm:     5px;
+  --radius-md:     8px;
+  --radius-lg:     12px;
+  --radius-xl:     16px;
+  --radius-avatar: 9px;
+  --radius-full:   9999px;
+
+  /* Layout */
+  --topbar-height:    54px;
+  --chat-max-width:   700px;
+  --padding-desktop:  24px;
+  --padding-mobile:   16px;
+}
+
+/* ── Dark Mode ────────────────────────────────────────────── */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-page:        #111827;
+  --bg-surface:     #1F2937;
+  --bg-input:       #111827;
+  --bg-hover:       #374151;
+
+  /* Borders */
+  --border:         #374151;
+  --border-strong:  #4B5563;
+
+  /* Primary — Indigo (lighter for dark bg) */
+  --primary:        #6366F1;
+  --primary-hover:  #4F46E5;
+  --primary-tint:   #1E1B4B;
+  --primary-border: #312E81;
+  --primary-label:  #818CF8;
+
+  /* Text */
+  --text-primary:      #F9FAFB;
+  --text-secondary:    #D1D5DB;
+  --text-muted:        #9CA3AF;
+  --text-hint:         #4B5563;
+  --text-placeholder:  #4B5563;
+
+  /* Semantic */
+  --success:  #34D399;
+  --error:    #F87171;
+  --warning:  #FBBF24;
+
+  /* Shadows — none in dark mode */
+  --shadow-sm: none;
+  --shadow-md: none;
+}

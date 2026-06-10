@@ -156,7 +156,7 @@ frontend/src/
 - MODIFY: `frontend/src/theme/zunoTheme.js` (point MUI theme to CSS vars)
 - MODIFY: `frontend/src/main.jsx` (import theme.css)
 - CREATE: `frontend/src/hooks/useTheme.js` (dark mode toggle hook — reads/writes localStorage)
-**Status:** ⬜ PENDING
+**Status:** ✅ DONE
 ---
 ### Step B — App Layout Restructure
 **What:** New full-screen layout — topbar + chat area + input bar. Remove old sidebar structure.  
@@ -238,7 +238,7 @@ frontend/src/
 ## Implementation Status Summary
 | Step | What | Status |
 |------|------|--------|
-| A | theme.css + dark mode hook + MUI update | ⬜ PENDING |
+| A | theme.css + dark mode hook + MUI update | ✅ DONE |
 | B | App layout + Topbar rebuild | ⬜ PENDING |
 | C | ChatMessage redesign | ⬜ PENDING |
 | D | AskBar / Input redesign | ⬜ PENDING |
