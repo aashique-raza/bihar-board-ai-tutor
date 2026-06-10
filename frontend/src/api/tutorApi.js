@@ -1,26 +1,16 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
-
-const parseJsonResponse = async (response) => {
-  const payload = await response.json().catch(() => null);
-
-  if (!response.ok) {
-    const message =
-      payload?.error?.message ||
-      payload?.message ||
-      'Something went wrong while talking to Zuno.';
-
-    throw new Error(message);
-  }
-
-  return payload;
-};
+import axiosInstance from '../services/axios/axiosInstance.js';
 
 export const fetchStudyMap = async () => {
-  const response = await fetch(`${API_BASE_URL}/api/v1/study-map`);
-  console.log('fetchStudyMap response:', response);
-  const payload = await parseJsonResponse(response);
-
-  return payload.data;
+  try {
+    const { data } = await axiosInstance.get('/api/v1/study-map');
+    return data.data;
+  } catch (error) {
+    const message =
+      error.response?.data?.error?.message ||
+      error.response?.data?.message ||
+      'Something went wrong while loading the study map.';
+    throw new Error(message);
+  }
 };
 
 export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal) => {
@@ -34,15 +24,21 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
     body.chapterId = chapterId;
   }
 
-  const response = await fetch(`${API_BASE_URL}/api/v1/ask`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-    signal,
-  });
-  const payload = await parseJsonResponse(response);
-
-  return payload.data;
+  try {
+    const { data } = await axiosInstance.post('/api/v1/ask', body, { signal });
+    return data.data;
+  } catch (error) {
+    // Axios uses CanceledError / ERR_CANCELED when aborted via AbortController.
+    // App.jsx checks error.name === 'AbortError', so we re-throw with that name.
+    if (error.code === 'ERR_CANCELED' || error.name === 'CanceledError') {
+      const abortError = new Error('Request was cancelled');
+      abortError.name = 'AbortError';
+      throw abortError;
+    }
+    const message =
+      error.response?.data?.error?.message ||
+      error.response?.data?.message ||
+      'Something went wrong while talking to Zuno.';
+    throw new Error(message);
+  }
 };

@@ -396,6 +396,10 @@ Step 12  Implement /auth/me endpoint
 Step 13  Add rate limiting to login + register
 Step 14  Add query counting middleware (guest + logged-in)
 Step 15  Frontend: Redux auth slice (no persist), token storage, auto-refresh on load
+* Step 15 — DONE. authSlice, store (persist-ready, auth excluded), axiosInstance 
+  (interceptors + refresh queue), authService, useAuth hook, AppInitializer 
+  (silent refresh + 1 retry), AuthCallback (Google OAuth landing), 
+  tutorApi migrated from fetch to axios. Build passing.
 Step 16  Frontend: Login page, Register page, Google button
 Step 17  E2E test: register → verify → login → refresh → logout
 Step 18  E2E test: Google login → logout → login again
