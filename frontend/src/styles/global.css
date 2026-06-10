@@ -33,268 +33,174 @@ body {
   border: 0;
 }
 
-/* ── Preserved layout + component classes (Step B/C/D will replace these) ── */
+/* ── Layout (Step B) — theme-aware ──────────────────────── */
 
-.app-shell {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 16px;
-  width: 100%;
-  height: 100vh;
-  padding: 16px;
-  overflow: hidden;
-}
+/* App shell — all layout now handled via MUI sx in App.jsx */
+/* These classes are kept only for legacy FocusModal and ChatMessage — Step C/G will clean them */
 
-.sidebar,
-.app-card {
-  border: 1px solid rgba(151, 175, 215, 0.14);
-  background:
-    linear-gradient(180deg, rgba(17, 23, 35, 0.94), rgba(7, 11, 19, 0.96)),
-    #101826;
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.46);
-  backdrop-filter: blur(20px);
-}
-
-.sidebar {
-  height: calc(100vh - 32px);
-  padding: 20px;
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-.app-card {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto auto;
-  height: calc(100vh - 32px);
-  min-width: 0;
-  border-radius: 24px;
-  overflow: hidden;
-}
-
+/* ── App header (legacy — kept for FocusModal reference) ── */
 .app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   min-width: 0;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(151, 175, 215, 0.14);
+  padding: 0 24px;
+  height: var(--topbar-height);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
 }
 
+/* ── Logo mark — new theme-aware version ── */
 .zuno-logo {
   display: grid;
-  width: 46px;
-  height: 46px;
+  width: 34px;
+  height: 34px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid rgba(243, 182, 63, 0.45);
-  border-radius: 13px;
-  background: linear-gradient(145deg, #f2c86b, #bd862d);
-  color: #08111f;
-  font-size: 1.35rem;
-  font-weight: 950;
-  box-shadow: 0 16px 34px rgba(243, 182, 63, 0.18);
+  border-radius: var(--radius-lg);
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
-.nav-active {
-  border: 1px solid rgba(90, 183, 255, 0.28) !important;
-  background: rgba(90, 183, 255, 0.1) !important;
-}
-
+/* ── Focus chip (Topbar) ── */
 .focus-chip {
-  display: grid;
-  grid-template-columns: auto minmax(0, 220px) auto;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  max-width: 390px;
-  min-height: 48px;
-  padding: 6px 8px;
-  border: 1px solid rgba(119, 151, 202, 0.28);
-  border-radius: 14px;
-  background:
-    linear-gradient(135deg, rgba(71, 99, 142, 0.18), transparent 58%),
-    rgba(10, 17, 29, 0.78);
+  gap: 6px;
+  max-width: 220px;
+  padding: 4px 10px 4px 8px;
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  background: var(--primary-tint);
+  overflow: hidden;
 }
 
-.focus-chip-section {
-  display: block;
-  color: #9fb7d8;
-  font-size: 0.64rem !important;
-  font-weight: 900 !important;
-  line-height: 1.1 !important;
-  text-transform: uppercase;
-}
-
-.focus-chip-title {
-  color: #f4f7fb;
-  font-size: 0.86rem !important;
-  font-weight: 850 !important;
-  line-height: 1.2 !important;
-}
-
-.chat-panel {
-  min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding: 22px clamp(18px, 3vw, 32px);
-  padding-bottom: 36px;
-  scroll-behavior: smooth;
-}
-
-.chat-panel::-webkit-scrollbar {
-  width: 10px;
-}
-
-.chat-panel::-webkit-scrollbar-thumb {
-  border: 3px solid transparent;
-  border-radius: 999px;
-  background: rgba(151, 175, 215, 0.28);
-  background-clip: padding-box;
-}
-
-.message-list {
-  display: grid;
-  gap: 18px;
-  min-height: 0;
-  padding-bottom: 36px;
-}
-
+/* ── Chat messages ── */
 .message-row {
   display: flex;
+  gap: 10px;
   width: 100%;
-  gap: 12px;
-}
-
-.zuno-row {
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 
 .student-row {
   justify-content: flex-end;
-  align-items: flex-start;
 }
 
-.zuno-avatar {
-  margin-top: 6px;
-  background: linear-gradient(145deg, #f2c86b, #bd862d) !important;
-  color: #07111e !important;
+.zuno-row {
+  justify-content: flex-start;
 }
 
 .chat-message {
-  max-width: min(780px, 86%);
-  padding: 15px 17px;
-  border: 1px solid rgba(151, 175, 215, 0.14);
-  border-radius: 18px !important;
-  background-image: none !important;
-}
-
-.chat-message.zuno {
-  background: rgba(16, 24, 38, 0.96) !important;
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  max-width: 65%;
+  word-break: break-word;
 }
 
 .chat-message.student {
-  border-color: rgba(243, 182, 63, 0.25);
-  background: linear-gradient(135deg, #f3b63f, #d89125) !important;
+  background: var(--primary);
+  color: #ffffff;
+  border-radius: var(--radius-lg) var(--radius-sm) var(--radius-lg) var(--radius-lg);
+  max-width: 65%;
 }
 
-.chat-message.student p {
-  color: #08111f;
-  font-weight: 750;
+.chat-message.zuno {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm) var(--radius-lg) var(--radius-lg) var(--radius-lg);
+  max-width: 75%;
 }
 
+@media (max-width: 639px) {
+  .chat-message.student { max-width: 85%; }
+  .chat-message.zuno    { max-width: 90%; }
+}
+
+/* ── Zuno avatar ── */
+.zuno-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 2px;
+  background: var(--primary) !important;
+  border-radius: var(--radius-avatar) !important;
+}
+
+/* ── Message sections ── */
 .message-kicker {
-  display: inline-block;
-  margin-bottom: 5px;
-  color: #f3b63f;
-  font-weight: 950 !important;
-  letter-spacing: 0 !important;
-}
-
-.message-sections {
-  min-width: 0;
-}
-
-.message-section {
-  min-width: 0;
+  display: block;
+  font-weight: 700 !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 4px;
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .message-section-heading {
-  margin-bottom: 4px !important;
-  color: #f4d48a;
-  font-size: 0.82rem !important;
-  font-weight: 900 !important;
-  line-height: 1.25 !important;
-  letter-spacing: 0 !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  color: var(--text-secondary) !important;
+  margin-bottom: 2px !important;
 }
 
 .message-section-content {
-  color: #edf4ff;
-  font-size: 0.98rem !important;
-  line-height: 1.62 !important;
-  white-space: pre-wrap;
+  font-size: 0.9rem !important;
+  color: var(--text-primary) !important;
+  line-height: 1.6 !important;
 }
 
-.chat-message.zuno > p,
-.chat-message.zuno .message-section-content {
-  overflow-wrap: anywhere;
-}
-
+/* ── Thinking indicator ── */
 .thinking-indicator {
-  display: inline-flex;
+  display: flex;
+  gap: 5px;
   align-items: center;
-  gap: 7px;
-  min-width: 78px;
-  min-height: 28px;
+  padding: 4px 0;
 }
 
 .thinking-indicator span {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: linear-gradient(145deg, #f2c86b, #8fb7e8);
-  animation: zunoThinking 1.05s infinite ease-in-out;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: thinking-pulse 1.2s ease-in-out infinite;
 }
 
-.thinking-indicator span:nth-child(2) {
-  animation-delay: 0.14s;
+.thinking-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.thinking-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes thinking-pulse {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+  40%            { transform: scale(1);   opacity: 1;   }
 }
 
-.thinking-indicator span:nth-child(3) {
-  animation-delay: 0.28s;
-}
-
-@keyframes zunoThinking {
-  0%,
-  80%,
-  100% {
-    opacity: 0.35;
-    transform: translateY(0) scale(0.82);
-  }
-
-  40% {
-    opacity: 1;
-    transform: translateY(-5px) scale(1);
-  }
-}
-
+/* ── AskBar ── */
 .ask-area {
-  padding: 0 24px 22px;
+  width: 100%;
 }
 
 .ask-bar {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 10px;
+  display: flex;
   align-items: center;
-  min-height: 64px;
-  padding: 8px 10px 8px 16px;
-  border: 1px solid rgba(119, 151, 202, 0.22);
-  border-radius: 18px !important;
-  background: rgba(5, 9, 17, 0.84) !important;
-  background-image: none !important;
+  gap: 8px;
+  padding: 8px 8px 8px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-input);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease;
 }
 
+.ask-bar:focus-within {
+  border-color: var(--primary);
+}
+
+/* ── FocusModal (preserved from TASK-022 — Step G will restyle) ── */
 .focus-dialog {
   border: 1px solid rgba(151, 175, 215, 0.16);
   border-radius: 24px !important;
@@ -319,10 +225,7 @@ body {
   border: 1px solid rgba(151, 175, 215, 0.16) !important;
   background: rgba(255, 255, 255, 0.06) !important;
   color: #f4f7fb !important;
-  transition:
-    transform 160ms ease,
-    background 160ms ease,
-    border-color 160ms ease !important;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease !important;
 }
 
 .focus-close-button:hover {
@@ -331,8 +234,7 @@ body {
   background: rgba(243, 182, 63, 0.12) !important;
 }
 
-.modal-icon,
-.card-icon {
+.modal-icon, .card-icon {
   display: grid;
   place-items: center;
   border-radius: 14px;
@@ -374,118 +276,32 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.focus-card,
-.chapter-card,
-.section-card {
+.focus-card, .chapter-card, .section-card {
   border-color: rgba(151, 175, 215, 0.16) !important;
   border-radius: 16px !important;
   background: rgba(15, 23, 36, 0.86) !important;
   background-image: none !important;
-  transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    background 160ms ease;
+  transition: transform 160ms ease, border-color 160ms ease !important;
 }
 
-.focus-card {
-  min-height: 128px;
-}
-
-.section-card {
-  min-height: 82px;
-}
-
-.chapter-card {
-  min-height: 112px;
-}
-
-.focus-card:hover,
-.section-card:hover,
-.chapter-card:hover {
+.focus-card:hover, .chapter-card:hover, .section-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(119, 151, 202, 0.42) !important;
-  background: rgba(18, 28, 44, 0.98) !important;
+  border-color: rgba(90, 183, 255, 0.36) !important;
 }
 
-.focus-card.selected,
-.chapter-card.selected,
+.focus-card.selected, .chapter-card.selected {
+  border-color: rgba(90, 183, 255, 0.55) !important;
+  background: rgba(90, 183, 255, 0.1) !important;
+  background-image: none !important;
+}
+
 .selected-section {
-  border-color: rgba(243, 182, 63, 0.5) !important;
-  background:
-    linear-gradient(135deg, rgba(243, 182, 63, 0.15), transparent 60%),
-    rgba(15, 23, 36, 0.94) !important;
+  border-color: rgba(90, 183, 255, 0.55) !important;
+  background: rgba(90, 183, 255, 0.1) !important;
+  background-image: none !important;
 }
 
-.focus-card .MuiCardActionArea-root,
-.section-card .MuiCardActionArea-root,
-.chapter-card .MuiCardActionArea-root {
-  border-radius: 16px !important;
-}
-
-.focus-card .MuiCardActionArea-root:hover,
-.section-card .MuiCardActionArea-root:hover,
-.chapter-card .MuiCardActionArea-root:hover {
-  background-color: transparent !important;
-}
-
-.focus-card .MuiTouchRipple-root,
-.section-card .MuiTouchRipple-root,
-.chapter-card .MuiTouchRipple-root {
-  border-radius: 16px !important;
-}
-
-.subject-icon {
-  color: #f2c86b;
-  background: rgba(243, 182, 63, 0.12);
-}
-
-.section-icon {
-  color: #9fb7d8;
-  background: rgba(119, 151, 202, 0.14);
-}
-
-@media (max-width: 980px) {
-  .app-shell {
-    grid-template-columns: 1fr;
-    padding: 0;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .app-card {
-    height: 100vh;
-    border: 0;
-    border-radius: 0;
-  }
-}
-
-@media (max-width: 760px) {
-  .app-header {
-    align-items: flex-start;
-    padding: 16px;
-  }
-
-  .focus-chip {
-    display: none;
-  }
-
-  .chat-panel {
-    padding: 16px;
-  }
-
-  .chat-message {
-    max-width: 92%;
-  }
-
-  .ask-area {
-    padding: 0 16px 16px;
-  }
-
-  .focus-grid.subjects,
-  .focus-grid.sections,
-  .focus-grid.chapters {
-    grid-template-columns: 1fr;
-  }
+.nav-active {
+  border: 1px solid rgba(90, 183, 255, 0.28) !important;
+  background: rgba(90, 183, 255, 0.1) !important;
 }

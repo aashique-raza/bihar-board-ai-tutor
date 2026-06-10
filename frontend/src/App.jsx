@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import { askTutor, fetchStudyMap } from './api/tutorApi.js';
-import AppHeader from './components/AppHeader.jsx';
 import AskBar from './components/AskBar.jsx';
 import ChatMessage from './components/ChatMessage.jsx';
 import FocusModal from './components/FocusModal.jsx';
-import Sidebar from './components/Sidebar.jsx';
 import StatusNotice from './components/StatusNotice.jsx';
+import Topbar from './components/Topbar.jsx';
 import { STUDY_MODES } from './constants/studyModes.js';
+import { useTheme } from './hooks/useTheme.js';
 import { getSavedSessionId, saveSessionId } from './utils/session.js';
 import { findFirstChapter } from './utils/studyMap.js';
 
@@ -40,6 +40,7 @@ const createFocusMessage = (chapter) => ({
 });
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
   const [studyMode, setStudyMode] = useState(STUDY_MODES.global);
   const [studyMap, setStudyMap] = useState(null);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
@@ -237,43 +238,86 @@ function App() {
   };
 
   return (
-    <Box className="app-shell" component="main">
-      <Sidebar />
-      <Box className="app-card" component="section" aria-label="Zuno tutor app">
-        <AppHeader
-          activeMode={studyMode}
-          isFocusLoading={isStudyMapLoading}
-          selectedChapter={selectedChapter}
-          onClearFocus={handleClearFocus}
-          onOpenFocus={() => setIsFocusModalOpen(true)}
-        />
+    <Box
+      component="main"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+        bgcolor: 'var(--bg-page)',
+        overflow: 'hidden',
+      }}
+    >
+      <Topbar
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        selectedChapter={selectedChapter}
+        isFocusLoading={isStudyMapLoading}
+        onOpenFocus={() => setIsFocusModalOpen(true)}
+        onClearFocus={handleClearFocus}
+      />
 
-        <Box className="chat-panel" component="section" aria-live="polite">
-          <div className="message-list">
-            {messages.map((message) => (
-              <ChatMessage
-                key={message.id}
-                message={message}
-                onSwitchToGlobal={handleSwitchToGlobal}
-              />
-            ))}
-            {isAsking && (
-              <ChatMessage
-                message={{
-                  id: 'thinking',
-                  role: 'zuno',
-                  answer: '',
-                  status: 'thinking',
-                  sources: [],
-                }}
-              />
-            )}
-            <div ref={chatEndRef} />
-          </div>
+      {/* Chat area — scrollable */}
+      <Box
+        component="section"
+        aria-live="polite"
+        sx={{
+          flex: 1,
+          overflowY: 'auto',
+          px: { xs: 2, sm: 3 },
+          py: 2,
+        }}
+      >
+        <Box
+          sx={{
+            maxWidth: 'var(--chat-max-width)',
+            mx: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+          }}
+        >
+          {messages.map((message) => (
+            <ChatMessage
+              key={message.id}
+              message={message}
+              onSwitchToGlobal={handleSwitchToGlobal}
+            />
+          ))}
+          {isAsking && (
+            <ChatMessage
+              message={{
+                id: 'thinking',
+                role: 'zuno',
+                answer: '',
+                status: 'thinking',
+                sources: [],
+              }}
+            />
+          )}
+          <div ref={chatEndRef} />
         </Box>
+      </Box>
 
-        <StatusNotice error={error} />
-        <AskBar disabled={isAsking} onAsk={handleAsk} onCancel={handleCancel} studyMode={studyMode} />
+      {/* Input zone — sticky bottom */}
+      <Box
+        sx={{
+          flexShrink: 0,
+          bgcolor: 'var(--bg-surface)',
+          borderTop: '1px solid var(--border)',
+          px: { xs: 2, sm: 3 },
+          py: 1.5,
+        }}
+      >
+        <Box sx={{ maxWidth: 'var(--chat-max-width)', mx: 'auto' }}>
+          <StatusNotice error={error} />
+          <AskBar
+            disabled={isAsking}
+            onAsk={handleAsk}
+            onCancel={handleCancel}
+            studyMode={studyMode}
+          />
+        </Box>
       </Box>
 
       <FocusModal

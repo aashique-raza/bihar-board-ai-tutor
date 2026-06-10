@@ -29,6 +29,7 @@ function getInitialTheme() {
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-color-scheme', theme);
 }
 
 export function useTheme() {

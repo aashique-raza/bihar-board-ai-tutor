@@ -160,12 +160,20 @@ frontend/src/
 ---
 ### Step B — App Layout Restructure
 **What:** New full-screen layout — topbar + chat area + input bar. Remove old sidebar structure.  
-**Files:**
-- MODIFY: `frontend/src/App.jsx`
-- REBUILD: `frontend/src/components/AppHeader.jsx` → rename to `Topbar.jsx`
-  - Logo left, chapter pill center-right, Focus Mode button, theme toggle icon
-  - Mobile: chapter pill hidden, minimal layout
-**Status:** ⬜ PENDING  
+**Files changed:**
+- `frontend/src/hooks/useTheme.js` — added `data-color-scheme` attribute sync alongside `data-theme` so MUI color scheme system stays in sync with our custom CSS variable system
+- `frontend/src/components/Topbar.jsx` — **NEW FILE.** Replaces AppHeader. Contains: indigo "Z" logo mark (34×34px, CSS variable based, no gradient), "Zuno" brand text, chapter pill (desktop only, hidden on mobile <640px, shows active focus chapter with clear button), Focus outlined button, dark/light theme toggle icon button
+- `frontend/src/App.jsx` — removed Sidebar and AppHeader imports, added useTheme hook and Topbar, replaced entire JSX return with new 3-zone column layout: Topbar (fixed 54px) + scrollable chat area (flex:1, overflow-y:auto, max-width 700px centered) + fixed bottom input zone (bg-surface, border-top)
+- `frontend/src/styles/global.css` — removed all old hardcoded dark layout classes, replaced with CSS variable based theme-aware classes for layout, chat messages, ask bar, avatar, thinking indicator. FocusModal dark classes preserved (Step G will restyle)
+- `frontend/src/components/Sidebar.jsx` — **DELETED**
+
+**Known issues deferred to next steps:**
+- ChatMessage left/right alignment needs Step C fix
+- Avatar shows graduation cap icon instead of "Z" — Step C fix
+- `AppHeader.jsx` still exists on disk (unused) — delete in Step C cleanup
+
+**Build status:** ✅ `npm run build` passed, 0 errors, 654 modules transformed.  
+**Status:** ✅ COMPLETE  
 **Depends on:** Step A
 ---
 ### Step C — ChatMessage Redesign
@@ -239,7 +247,7 @@ frontend/src/
 | Step | What | Status |
 |------|------|--------|
 | A | theme.css + dark mode hook + MUI update | ✅ DONE |
-| B | App layout + Topbar rebuild | ⬜ PENDING |
+| B | App layout + Topbar rebuild | ✅ DONE |
 | C | ChatMessage redesign | ⬜ PENDING |
 | D | AskBar / Input redesign | ⬜ PENDING |
 | E | Login + Register pages | ⬜ PENDING |
