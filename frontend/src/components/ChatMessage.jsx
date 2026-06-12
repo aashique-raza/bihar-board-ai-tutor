@@ -1,36 +1,40 @@
 import React from 'react';
-import SchoolRounded from '@mui/icons-material/SchoolRounded';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+import SourceChips from './SourceChips.jsx';
 
+// Returns true if message has at least one section with heading or content
 const hasStructuredSections = (message) =>
   Array.isArray(message.sections) &&
-  message.sections.some((section) => section?.heading || section?.content);
+  message.sections.some((s) => s?.heading || s?.content);
 
+// Renders AI response sections — each section has an optional heading with left bar + content
 function MessageSections({ sections }) {
   return (
-    <Stack className="message-sections" spacing={1.35}>
+    <div className="message-sections">
       {sections
-        .filter((section) => section?.heading || section?.content)
+        .filter((s) => s?.heading || s?.content)
         .map((section, index) => (
-          <Box className="message-section" key={`${section.heading || 'section'}-${index}`}>
+          <div className="section-block" key={`${section.heading || 'section'}-${index}`}>
             {section.heading && (
-              <Typography className="message-section-heading" component="h3">
-                {section.heading}
-              </Typography>
+              <div className="section-heading">{section.heading}</div>
             )}
             {section.content && (
-              <Typography className="message-section-content" component="p">
-                {section.content}
-              </Typography>
+              <div className="section-content">{section.content}</div>
             )}
-          </Box>
+          </div>
         ))}
-    </Stack>
+    </div>
+  );
+}
+
+// Animated thinking dots — shown while Zuno is preparing a response
+function ThinkingDots() {
+  return (
+    <div className="thinking-indicator" aria-label="Zuno is preparing an answer">
+      <span />
+      <span />
+      <span />
+    </div>
   );
 }
 
@@ -38,48 +42,71 @@ function ChatMessage({ message, onSwitchToGlobal }) {
   const isStudent = message.role === 'student';
   const isFocusMiss = message.status === 'focus_context_not_found';
   const isThinking = message.status === 'thinking';
-  const shouldRenderSections = !isStudent && hasStructuredSections(message);
+  const showSections = !isStudent && !isThinking && hasStructuredSections(message);
+  const showSources = !isStudent && !isThinking && Array.isArray(message.sources) && message.sources.length > 0;
 
+  // Student message — right-aligned bubble
+  if (isStudent) {
+    return (
+      <div className="message-row student-row">
+        <div className="student-bubble">
+          {message.answer}
+        </div>
+      </div>
+    );
+  }
+
+  // Zuno message — free text layout with avatar on left
   return (
-    <div className={`message-row ${isStudent ? 'student-row' : 'zuno-row'}`}>
-      {!isStudent && (
-        <Avatar className="zuno-avatar">
-          <SchoolRounded fontSize="small" />
-        </Avatar>
-      )}
+    <div className="message-row zuno-row">
+      {/* Avatar — plain div with "Z", no MUI icon */}
+      <div className="zuno-avatar">Z</div>
 
-      <Paper className={`chat-message ${isStudent ? 'student' : 'zuno'}`}>
-        {!isStudent && !isThinking && (
-          <Typography className="message-kicker" variant="caption">
-            Zuno
-          </Typography>
+      {/* Message content */}
+      <div className="zuno-message">
+        {!isThinking && (
+          <div className="message-kicker">Zuno</div>
         )}
 
         {isThinking ? (
-          <Box className="thinking-indicator" aria-label="Zuno is preparing an answer">
-            <span />
-            <span />
-            <span />
-          </Box>
-        ) : shouldRenderSections ? (
+          <ThinkingDots />
+        ) : showSections ? (
           <MessageSections sections={message.sections} />
         ) : (
-          <Typography component="p">{message.answer}</Typography>
+          <div className="section-content">{message.answer}</div>
         )}
 
+        {/* Source chips — shown below content */}
+        {showSources && (
+          <SourceChips sources={message.sources} />
+        )}
+
+        {/* Focus miss button */}
         {isFocusMiss && (
-          <Box sx={{ mt: 1.5 }}>
+          <div style={{ marginTop: '12px' }}>
             <Button
-              color="secondary"
-              type="button"
               variant="outlined"
+              size="small"
               onClick={() => onSwitchToGlobal(message.question)}
+              sx={{
+                borderColor: 'var(--border-strong)',
+                color: 'var(--text-secondary)',
+                borderRadius: 'var(--radius-full)',
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                textTransform: 'none',
+                '&:hover': {
+                  borderColor: 'var(--primary)',
+                  color: 'var(--primary)',
+                  bgcolor: 'transparent',
+                },
+              }}
             >
               Search globally
             </Button>
-          </Box>
+          </div>
         )}
-      </Paper>
+      </div>
     </div>
   );
 }

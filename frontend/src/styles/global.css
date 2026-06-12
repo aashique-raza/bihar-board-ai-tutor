@@ -83,6 +83,7 @@ body {
   display: flex;
   gap: 10px;
   width: 100%;
+  padding: 2px 0;
 }
 
 .student-row {
@@ -91,67 +92,114 @@ body {
 
 .zuno-row {
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.chat-message {
-  padding: 10px 14px;
-  border-radius: var(--radius-lg);
+/* Student bubble — right-aligned */
+.student-bubble {
   max-width: 65%;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: #ffffff;
+  border-radius: 12px 12px 3px 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
   word-break: break-word;
 }
 
-.chat-message.student {
-  background: var(--primary);
-  color: #ffffff;
-  border-radius: var(--radius-lg) var(--radius-sm) var(--radius-lg) var(--radius-lg);
-  max-width: 65%;
+@media (max-width: 639px) {
+  .student-bubble { max-width: 85%; }
 }
 
-.chat-message.zuno {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm) var(--radius-lg) var(--radius-lg) var(--radius-lg);
-  max-width: 75%;
+/* Zuno message — no box, free text */
+.zuno-message {
+  max-width: 80%;
+  min-width: 0;
+  flex: 1;
 }
 
 @media (max-width: 639px) {
-  .chat-message.student { max-width: 85%; }
-  .chat-message.zuno    { max-width: 90%; }
+  .zuno-message { max-width: 100%; }
 }
 
 /* ── Zuno avatar ── */
 .zuno-avatar {
-  width: 32px !important;
-  height: 32px !important;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
-  align-self: flex-start;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-avatar);
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
   margin-top: 2px;
-  background: var(--primary) !important;
-  border-radius: var(--radius-avatar) !important;
+  user-select: none;
 }
 
 /* ── Message sections ── */
 .message-kicker {
-  display: block;
-  font-weight: 700 !important;
-  color: var(--text-muted) !important;
-  margin-bottom: 4px;
-  font-size: 0.75rem !important;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
 }
 
-.message-section-heading {
-  font-weight: 700 !important;
-  font-size: 0.9rem !important;
-  color: var(--text-secondary) !important;
-  margin-bottom: 2px !important;
+.message-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.message-section-content {
-  font-size: 0.9rem !important;
-  color: var(--text-primary) !important;
-  line-height: 1.6 !important;
+.section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Section heading — with left accent bar */
+.section-heading {
+  border-left: 3px solid var(--primary);
+  border-radius: 2px;
+  padding-left: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* Section body text */
+.section-content {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  word-break: break-word;
+}
+
+/* ── Source chips ── */
+.source-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.source-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--primary-label);
+  background: var(--primary-tint);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── Thinking indicator ── */

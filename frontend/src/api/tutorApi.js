@@ -1,5 +1,15 @@
 import axiosInstance from '../services/axios/axiosInstance.js';
 
+const getGuestId = () => {
+  const GUEST_ID_KEY = 'zuno-guest-id';
+  let guestId = localStorage.getItem(GUEST_ID_KEY);
+  if (!guestId) {
+    guestId = crypto.randomUUID();
+    localStorage.setItem(GUEST_ID_KEY, guestId);
+  }
+  return guestId;
+};
+
 export const fetchStudyMap = async () => {
   try {
     const { data } = await axiosInstance.get('/api/v1/study-map');
@@ -25,7 +35,10 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
   }
 
   try {
-    const { data } = await axiosInstance.post('/api/v1/ask', body, { signal });
+    const { data } = await axiosInstance.post('/api/v1/ask', body, {
+      signal,
+      headers: { 'X-Guest-Id': getGuestId() },
+    });
     return data.data;
   } catch (error) {
     // Axios uses CanceledError / ERR_CANCELED when aborted via AbortController.
