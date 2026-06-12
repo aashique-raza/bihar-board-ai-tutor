@@ -178,25 +178,26 @@ frontend/src/
 ---
 ### Step C — ChatMessage Redesign
 **What:** AI response — no box, free text with avatar. Sections with left bar, formula block, tags. User message — right-aligned clean bubble.  
-**Files:**
-- REBUILD: `frontend/src/components/ChatMessage.jsx`
-  - AI message: avatar left, name label, free prose, section heads with left bar, formula block, source tags
-  - User message: right bubble, max-width 65%, subtle border
-  - Date chip between conversation groups
-  - Responsive: mobile bubble max-width 85%
-**Status:** ⬜ PENDING  
+**Files changed:**
+- REBUILT: `frontend/src/components/ChatMessage.jsx` — student bubble (right-aligned, primary bg, border-radius 12 12 3 12), Zuno message (avatar "Z" on left, free text layout, section headings with 3px primary left bar), ThinkingDots animated component, SourceChips below content, focus-miss "Search globally" button
+- `frontend/src/styles/global.css` — added all Step C classes: `.message-row`, `.student-row`, `.zuno-row`, `.student-bubble`, `.zuno-avatar`, `.message-kicker`, `.message-sections`, `.section-block`, `.section-heading`, `.section-content`, `.source-chips`, `.source-chip`, `.thinking-indicator` with pulse animation
+- Responsive: student bubble max-width 85% on mobile (<640px), zuno-message max-width 100% on mobile
+
+**Build status:** ✅ `npm run build` passed  
+**Status:** ✅ COMPLETE  
 **Depends on:** Step A, Step B
 ---
 ### Step D — AskBar / Input Redesign
 **What:** New input — no ugly browser textarea, send button inside input row, no resize arrows  
-**Files:**
-- REBUILD: `frontend/src/components/AskBar.jsx`
-  - Single row: textarea (flex 1) + Focus Mode chip + Send button
-  - 1.5px border, focus = primary color border
-  - resize: none, -webkit-appearance: none
-  - Below hint: "Zuno sirf Bihar Board Class 10 Science syllabus se jawab deta hai"
-  - Responsive: full width on mobile
-**Status:** ⬜ PENDING  
+**Files changed:**
+- REBUILT: `frontend/src/components/AskBar.jsx` — MUI Paper wrapper with `.ask-bar` class, InputBase (flex 1), Send/Cancel icon buttons inside row, cancel cooldown to prevent double-fire
+- `frontend/src/styles/global.css` — added `.ask-area`, `.ask-bar` with 1.5px border and `:focus-within` primary border
+
+**Deferred / Not yet done:**
+- Focus Mode chip inside AskBar row (currently Focus button is only in Topbar — decision: keep in Topbar, skip chip in AskBar)
+- Hint text below input: *"Zuno sirf Bihar Board Class 10 Science syllabus se jawab deta hai"* — not added yet
+
+**Status:** 🟡 MOSTLY DONE — core structure complete, hint text still pending  
 **Depends on:** Step A, Step B
 ---
 ### Step E — Login + Register Pages
@@ -248,8 +249,8 @@ frontend/src/
 |------|------|--------|
 | A | theme.css + dark mode hook + MUI update | ✅ DONE |
 | B | App layout + Topbar rebuild | ✅ DONE |
-| C | ChatMessage redesign | ⬜ PENDING |
-| D | AskBar / Input redesign | ⬜ PENDING |
+| C | ChatMessage redesign | ✅ DONE |
+| D | AskBar / Input redesign | 🟡 MOSTLY DONE (hint text pending) |
 | E | Login + Register pages | ⬜ PENDING |
 | F | Landing page | ⬜ PENDING |
 | G | Responsive polish + FocusModal | ⬜ PENDING |
