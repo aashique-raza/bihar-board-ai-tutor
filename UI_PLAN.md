@@ -193,11 +193,10 @@ frontend/src/
 - REBUILT: `frontend/src/components/AskBar.jsx` — MUI Paper wrapper with `.ask-bar` class, InputBase (flex 1), Send/Cancel icon buttons inside row, cancel cooldown to prevent double-fire
 - `frontend/src/styles/global.css` — added `.ask-area`, `.ask-bar` with 1.5px border and `:focus-within` primary border
 
-**Deferred / Not yet done:**
-- Focus Mode chip inside AskBar row (currently Focus button is only in Topbar — decision: keep in Topbar, skip chip in AskBar)
-- Hint text below input: *"Zuno sirf Bihar Board Class 10 Science syllabus se jawab deta hai"* — not added yet
+- Hint text added below input: "Zuno sirf Bihar Board Class 10 Science syllabus se jawab deta hai" — `.ask-hint` class in global.css
+- Message spacing fixed: `gap: 0` on chat messages Box in App.jsx
 
-**Status:** 🟡 MOSTLY DONE — core structure complete, hint text still pending  
+**Status:** ✅ COMPLETE  
 **Depends on:** Step A, Step B
 ---
 ### Step E — Login + Register Pages
@@ -250,7 +249,7 @@ frontend/src/
 | A | theme.css + dark mode hook + MUI update | ✅ DONE |
 | B | App layout + Topbar rebuild | ✅ DONE |
 | C | ChatMessage redesign | ✅ DONE |
-| D | AskBar / Input redesign | 🟡 MOSTLY DONE (hint text pending) |
+| D | AskBar / Input redesign | ✅ DONE |
 | E | Login + Register pages | ⬜ PENDING |
 | F | Landing page | ⬜ PENDING |
 | G | Responsive polish + FocusModal | ⬜ PENDING |

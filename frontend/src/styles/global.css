@@ -248,6 +248,15 @@ body {
   border-color: var(--primary);
 }
 
+/* Hint text below input */
+.ask-hint {
+  margin-top: 6px;
+  padding-left: 4px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* ── FocusModal (preserved from TASK-022 — Step G will restyle) ── */
 .focus-dialog {
   border: 1px solid rgba(151, 175, 215, 0.16);

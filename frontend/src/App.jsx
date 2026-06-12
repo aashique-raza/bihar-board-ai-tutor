@@ -274,7 +274,7 @@ function App() {
             mx: 'auto',
             display: 'flex',
             flexDirection: 'column',
-            gap: 1,
+            gap: 0,
           }}
         >
           {messages.map((message) => (
