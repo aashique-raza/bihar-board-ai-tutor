@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
+import CheckCircleOutlineRounded from '@mui/icons-material/CheckCircleOutlineRounded';
 import { registerUser } from '../services/axios/authService';
-import { setCredentials } from '../store/slices/authSlice';
+import Toast from '../components/Toast';
+import { useToast } from '../hooks/useToast';
 
 const FIELD_SX = {
   '& .MuiOutlinedInput-root': {
@@ -40,46 +41,46 @@ function getPasswordStrength(password) {
   return { label: 'Weak', color: '#ef4444', width: '25%' };
 }
 
-function validateNaam(value) {
-  if (!value.trim()) return 'Naam daalna zaroori hai';
-  if (value.trim().length < 2) return 'Naam kam se kam 2 characters ka hona chahiye';
-  if (value.trim().length > 50) return 'Naam bahut lamba hai';
+function validateName(value) {
+  if (!value.trim()) return 'Name is required';
+  if (value.trim().length < 2) return 'Name must be at least 2 characters';
+  if (value.trim().length > 50) return 'Name is too long';
   return '';
 }
 
 function validateEmail(value) {
-  if (!value.trim()) return 'Email daalna zaroori hai';
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return 'Sahi email likho (example@gmail.com)';
+  if (!value.trim()) return 'Email is required';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return 'Enter a valid email address';
   return '';
 }
 
 function validatePassword(value) {
-  if (!value) return 'Password daalna zaroori hai';
-  if (value.length < 8) return 'Password kam se kam 8 characters ka hona chahiye';
-  if (!/\d/.test(value)) return 'Password mein ek number hona chahiye (jaise: 1, 2, 3)';
-  if (!/[A-Z]/.test(value)) return 'Password mein ek capital letter hona chahiye (jaise: A, B, C)';
+  if (!value) return 'Password is required';
+  if (value.length < 8) return 'Password must be at least 8 characters';
+  if (!/\d/.test(value)) return 'Password must contain at least one number';
+  if (!/[A-Z]/.test(value)) return 'Password must contain at least one uppercase letter';
   return '';
 }
 
 function RegisterPage() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const { toast, showToast, hideToast } = useToast();
 
-  const [naam, setNaam] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState({ naam: '', email: '', password: '' });
-  const [submitError, setSubmitError] = useState('');
+  const [errors, setErrors] = useState({ name: '', email: '', password: '' });
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const strength = password ? getPasswordStrength(password) : null;
-  const hasErrors = !!(errors.naam || errors.email || errors.password);
-  const hasEmpty = !naam.trim() || !email.trim() || !password;
+  const hasErrors = !!(errors.name || errors.email || errors.password);
+  const hasEmpty = !name.trim() || !email.trim() || !password;
   const isDisabled = hasErrors || hasEmpty || loading;
 
-  function handleBlurNaam() {
-    setErrors(e => ({ ...e, naam: validateNaam(naam) }));
+  function handleBlurName() {
+    setErrors(e => ({ ...e, name: validateName(name) }));
   }
   function handleBlurEmail() {
     setErrors(e => ({ ...e, email: validateEmail(email) }));
@@ -90,23 +91,47 @@ function RegisterPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const naamErr = validateNaam(naam);
+    const nameErr = validateName(name);
     const emailErr = validateEmail(email);
     const pwErr = validatePassword(password);
-    setErrors({ naam: naamErr, email: emailErr, password: pwErr });
-    if (naamErr || emailErr || pwErr) return;
+    setErrors({ name: nameErr, email: emailErr, password: pwErr });
+    if (nameErr || emailErr || pwErr) return;
 
     setLoading(true);
-    setSubmitError('');
     try {
-      const data = await registerUser({ name: naam.trim(), email: email.trim(), password });
-      dispatch(setCredentials({ user: data.user, accessToken: data.accessToken }));
-      navigate('/');
+      await registerUser({ name: name.trim(), email: email.trim(), password });
+      showToast('Verification email sent! Please check your inbox.', 'success');
+      setSubmitted(true);
     } catch (err) {
-      setSubmitError(err.message);
+      showToast(err.message, 'error');
     } finally {
       setLoading(false);
     }
+  }
+
+  if (submitted) {
+    return (
+      <div className="auth-page">
+        <div className="auth-card">
+          <div className="auth-logo-row">
+            <div className="zuno-logo">Z</div>
+            <span className="auth-logo-text">Zuno</span>
+          </div>
+          <CheckCircleOutlineRounded
+            sx={{ fontSize: 48, color: 'var(--primary)', mb: 1 }}
+          />
+          <h2 className="auth-heading">Check your email</h2>
+          <p className="auth-subtext" style={{ whiteSpace: 'normal' }}>
+            We've sent a verification link to your email address.
+            The link is valid for 24 hours.
+          </p>
+          <div className="auth-bottom-link">
+            <a role="button" onClick={() => navigate('/login')}>Go to login →</a>
+          </div>
+        </div>
+        <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
+      </div>
+    );
   }
 
   return (
@@ -117,24 +142,24 @@ function RegisterPage() {
           <span className="auth-logo-text">Zuno</span>
         </div>
 
-        <h2 className="auth-heading">Apna account banao</h2>
-        <p className="auth-subtext">Bihar Board Class 10 ke liye AI tutor</p>
+        <h2 className="auth-heading">Create your account</h2>
+        <p className="auth-subtext">Your AI tutor for Bihar Board Class 10 Science</p>
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="auth-fields">
             <div className="auth-field-wrap">
               <TextField
-                label="Naam"
-                value={naam}
-                onChange={e => setNaam(e.target.value)}
-                onBlur={handleBlurNaam}
-                error={!!errors.naam}
+                label="Full Name"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                onBlur={handleBlurName}
+                error={!!errors.name}
                 fullWidth
                 variant="outlined"
                 size="small"
                 sx={FIELD_SX}
               />
-              {errors.naam && <span className="auth-field-error">{errors.naam}</span>}
+              {errors.name && <span className="auth-field-error">{errors.name}</span>}
             </div>
 
             <div className="auth-field-wrap">
@@ -174,7 +199,7 @@ function RegisterPage() {
                           edge="end"
                           size="small"
                           tabIndex={-1}
-                          aria-label={showPassword ? 'Password chhupao' : 'Password dikhaao'}
+                          aria-label={showPassword ? 'Hide password' : 'Show password'}
                           sx={{ color: 'var(--text-muted)' }}
                         >
                           {showPassword
@@ -201,8 +226,6 @@ function RegisterPage() {
             </div>
           </div>
 
-          {submitError && <span className="auth-submit-error">{submitError}</span>}
-
           <Button
             type="submit"
             variant="contained"
@@ -222,11 +245,11 @@ function RegisterPage() {
               boxShadow: 'none',
             }}
           >
-            {loading ? 'Account ban raha hai...' : 'Account Banao'}
+            {loading ? 'Creating account...' : 'Create Account'}
           </Button>
         </form>
 
-        <div className="auth-divider">ya</div>
+        <div className="auth-divider">or</div>
 
         <Button
           variant="outlined"
@@ -250,14 +273,15 @@ function RegisterPage() {
             boxShadow: 'none',
           }}
         >
-          Google se register karo
+          Continue with Google
         </Button>
 
         <div className="auth-bottom-link">
-          Pehle se account hai?{' '}
-          <a role="button" onClick={() => navigate('/login')}>Login karo</a>
+          Already have an account?{' '}
+          <a role="button" onClick={() => navigate('/login')}>Sign in</a>
         </div>
       </div>
+      <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
     </div>
   );
 }

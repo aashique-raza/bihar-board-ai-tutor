@@ -68,3 +68,41 @@ export const getMe = async (accessToken) => {
     );
   }
 };
+
+// POST /api/v1/auth/verify-email
+// token: string from URL query param
+export const verifyEmailToken = async (token) => {
+  try {
+    const { data } = await authAxios.post('/api/v1/auth/verify-email', { token });
+    return data;
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message || 'Email verify nahi ho saka. Please dobara try karo.'
+    );
+  }
+};
+
+// POST /api/v1/auth/forgot-password
+export const forgotPasswordRequest = async (email) => {
+  try {
+    const { data } = await authAxios.post('/api/v1/auth/forgot-password', { email });
+    return data;
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message || 'Request fail hui. Please dobara try karo.'
+    );
+  }
+};
+
+// POST /api/v1/auth/reset-password
+// token: from URL query param, newPassword: user input
+export const resetPasswordRequest = async (token, newPassword) => {
+  try {
+    const { data } = await authAxios.post('/api/v1/auth/reset-password', { token, newPassword });
+    return data;
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message || 'Password reset nahi hua. Please dobara try karo.'
+    );
+  }
+};

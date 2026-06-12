@@ -6,6 +6,9 @@ import ChatPage from './pages/ChatPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import AuthCallback from './pages/AuthCallback.jsx';
+import VerifyEmailPage from './pages/VerifyEmailPage.jsx';
+import ForgotPasswordPage from './pages/ForgotPasswordPage.jsx';
+import ResetPasswordPage from './pages/ResetPasswordPage.jsx';
 
 function App() {
   // Theme state lives here so all pages (Chat, Login, Register) share it
@@ -25,7 +28,7 @@ function App() {
         background: 'var(--bg-page)',
       }}>
         <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-          Zuno load ho raha hai...
+          Loading...
         </div>
       </div>
     );
@@ -43,6 +46,11 @@ function App() {
 
       {/* Google OAuth callback — backend redirects here after OAuth */}
       <Route path="/auth/callback" element={<AuthCallback />} />
+
+      {/* Email verification and password reset flows */}
+      <Route path="/verify-email" element={<VerifyEmailPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      <Route path="/reset-password" element={<ResetPasswordPage />} />
 
       {/* Catch-all — unknown URLs go to home */}
       <Route path="*" element={<Navigate to="/" replace />} />

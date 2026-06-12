@@ -9,6 +9,8 @@ import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
 import { loginUser, getMe } from '../services/axios/authService';
 import { setCredentials } from '../store/slices/authSlice';
+import Toast from '../components/Toast';
+import { useToast } from '../hooks/useToast';
 
 const FIELD_SX = {
   '& .MuiOutlinedInput-root': {
@@ -23,25 +25,25 @@ const FIELD_SX = {
 };
 
 function validateEmail(value) {
-  if (!value.trim()) return 'Email daalna zaroori hai';
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return 'Sahi email likho (example@gmail.com)';
+  if (!value.trim()) return 'Email is required';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return 'Enter a valid email address';
   return '';
 }
 
 function validatePassword(value) {
-  if (!value) return 'Password daalna zaroori hai';
+  if (!value) return 'Password is required';
   return '';
 }
 
 function LoginPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { toast, showToast, hideToast } = useToast();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({ email: '', password: '' });
-  const [submitError, setSubmitError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const hasErrors = !!(errors.email || errors.password);
@@ -63,7 +65,6 @@ function LoginPage() {
     if (emailErr || pwErr) return;
 
     setLoading(true);
-    setSubmitError('');
     try {
       const data = await loginUser({ email: email.trim(), password });
       console.log('login response', data);
@@ -72,7 +73,7 @@ function LoginPage() {
       dispatch(setCredentials({ user, accessToken }));
       navigate('/');
     } catch (err) {
-      setSubmitError(err.message);
+      showToast(err.message, 'error');
     } finally {
       setLoading(false);
     }
@@ -86,8 +87,8 @@ function LoginPage() {
           <span className="auth-logo-text">Zuno</span>
         </div>
 
-        <h2 className="auth-heading">Wapas aao!</h2>
-        <p className="auth-subtext">Apne account mein login karo</p>
+        <h2 className="auth-heading">Welcome back</h2>
+        <p className="auth-subtext">Sign in to your account</p>
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="auth-fields">
@@ -128,7 +129,7 @@ function LoginPage() {
                           edge="end"
                           size="small"
                           tabIndex={-1}
-                          aria-label={showPassword ? 'Password chhupao' : 'Password dikhaao'}
+                          aria-label={showPassword ? 'Hide password' : 'Show password'}
                           sx={{ color: 'var(--text-muted)' }}
                         >
                           {showPassword
@@ -144,7 +145,15 @@ function LoginPage() {
             </div>
           </div>
 
-          {submitError && <span className="auth-submit-error">{submitError}</span>}
+          <div style={{ textAlign: 'right', marginTop: '2px' }}>
+            <span
+              className="auth-bottom-link"
+              style={{ fontSize: '0.8rem', cursor: 'pointer' }}
+              onClick={() => navigate('/forgot-password')}
+            >
+              Forgot password?
+            </span>
+          </div>
 
           <Button
             type="submit"
@@ -165,11 +174,11 @@ function LoginPage() {
               boxShadow: 'none',
             }}
           >
-            {loading ? 'Login ho raha hai...' : 'Login Karo'}
+            {loading ? 'Signing in...' : 'Sign In'}
           </Button>
         </form>
 
-        <div className="auth-divider">ya</div>
+        <div className="auth-divider">or</div>
 
         <Button
           variant="outlined"
@@ -193,14 +202,15 @@ function LoginPage() {
             boxShadow: 'none',
           }}
         >
-          Google se login karo
+          Continue with Google
         </Button>
 
         <div className="auth-bottom-link">
-          Naya account?{' '}
-          <a role="button" onClick={() => navigate('/register')}>Register karo</a>
+          Don't have an account?{' '}
+          <a role="button" onClick={() => navigate('/register')}>Sign up</a>
         </div>
       </div>
+      <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
     </div>
   );
 }
