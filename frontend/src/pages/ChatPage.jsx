@@ -1,14 +1,17 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
+import { useLocation } from 'react-router-dom';
 import { askTutor, fetchStudyMap } from '../api/tutorApi.js';
 import AskBar from '../components/AskBar.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import FocusModal from '../components/FocusModal.jsx';
 import StatusNotice from '../components/StatusNotice.jsx';
+import Toast from '../components/Toast.jsx';
 import Topbar from '../components/Topbar.jsx';
 import { STUDY_MODES } from '../constants/studyModes.js';
 import { getSavedSessionId, saveSessionId } from '../utils/session.js';
 import { findFirstChapter } from '../utils/studyMap.js';
+import { useToast } from '../hooks/useToast.js';
 
 // --- Message factory helpers ---
 
@@ -43,6 +46,16 @@ const createFocusMessage = (chapter) => ({
 // --- ChatPage component ---
 
 function ChatPage({ theme, toggleTheme }) {
+  const location = useLocation();
+  const { toast, showToast, hideToast } = useToast();
+
+  useEffect(() => {
+    if (location.state?.toastSuccess) {
+      showToast(location.state.toastSuccess, 'success');
+      window.history.replaceState({}, '', location.pathname);
+    }
+  }, []);
+
   const [studyMode, setStudyMode] = useState(STUDY_MODES.global);
   const [studyMap, setStudyMap] = useState(null);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
@@ -269,6 +282,8 @@ function ChatPage({ theme, toggleTheme }) {
         onClose={() => setIsFocusModalOpen(false)}
         onSelectChapter={handleFocusChapterSelect}
       />
+
+      <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
     </Box>
   );
 }

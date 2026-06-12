@@ -8,9 +8,11 @@ import DarkModeRounded from '@mui/icons-material/DarkModeRounded';
 import LightModeRounded from '@mui/icons-material/LightModeRounded';
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
 import { clearCredentials } from '../store/slices/authSlice.js';
 import { logoutUser } from '../services/axios/authService.js';
+
 
 export default function Topbar({
   theme,
@@ -22,6 +24,7 @@ export default function Topbar({
 }) {
   const { user, isLoggedIn, isLoading } = useAuth();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -45,7 +48,7 @@ export default function Topbar({
       // Even if API call fails, clear local state and redirect
     }
     dispatch(clearCredentials());
-    window.location.href = '/login';
+    navigate('/login', { state: { toastSuccess: 'Logout ho gaya! Phir milenge.' } });
   };
 
   return (

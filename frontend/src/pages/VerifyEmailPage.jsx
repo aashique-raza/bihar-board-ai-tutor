@@ -18,17 +18,24 @@ function VerifyEmailPage() {
   useEffect(() => {
     const token = searchParams.get('token');
     if (!token) {
-      setErrorMessage('Verification token not found.');
+      const msg = 'Verification token not found.';
+      setErrorMessage(msg);
       setStatus('error');
+      showToast(msg, 'error');
       return;
     }
     verifyEmailToken(token)
-      .then(() => setStatus('success'))
+      .then(() => {
+        setStatus('success');
+        showToast('Email verified successfully!', 'success');
+      })
       .catch((err) => {
-        setErrorMessage(err.message);
+        const msg = err.message || 'Verification failed. Please try again.';
+        setErrorMessage(msg);
         setStatus('error');
+        showToast(msg, 'error');
       });
-  }, []);
+  }, [showToast]);
 
   return (
     <div className="auth-page">

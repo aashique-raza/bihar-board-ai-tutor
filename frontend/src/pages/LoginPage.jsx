@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -37,8 +37,19 @@ function validatePassword(value) {
 
 function LoginPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const { toast, showToast, hideToast } = useToast();
+
+  useEffect(() => {
+    if (location.state?.toastError) {
+      showToast(location.state.toastError, 'error');
+      window.history.replaceState({}, '', location.pathname);
+    } else if (location.state?.toastSuccess) {
+      showToast(location.state.toastSuccess, 'success');
+      window.history.replaceState({}, '', location.pathname);
+    }
+  }, []);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -71,6 +82,7 @@ function LoginPage() {
       const accessToken = data.data?.accessToken || data.accessToken;
       const user = await getMe(accessToken);
       dispatch(setCredentials({ user, accessToken }));
+      showToast('Logged in successfully', 'success');
       navigate('/');
     } catch (err) {
       showToast(err.message, 'error');

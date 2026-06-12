@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { setCredentials, setError } from '../store/slices/authSlice.js';
 import { getMe } from '../services/axios/authService.js';
 
@@ -15,6 +16,7 @@ const ERROR_MESSAGES = {
 // react-router-dom is not installed — using window.location.href for navigation.
 function AuthCallback() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [statusText, setStatusText] = useState('Logging you in...');
 
   useEffect(() => {
@@ -27,7 +29,7 @@ function AuthCallback() {
         const message =
           ERROR_MESSAGES[errorParam] || 'Login fail hua. Please dobara try karo.';
         dispatch(setError(message));
-        window.location.href = '/login';
+        navigate('/login', { state: { toastError: message } });
         return;
       }
 
@@ -35,22 +37,21 @@ function AuthCallback() {
         try {
           const user = await getMe(tokenParam);
           dispatch(setCredentials({ user, accessToken: tokenParam }));
-          // Remove the token from the URL bar before navigating away
           window.history.replaceState({}, '', '/auth/callback');
-          window.location.href = '/';
+          navigate('/', { state: { toastSuccess: 'Google se login successful!' } });
         } catch {
           setStatusText('Login mein error aaya. Please dobara try karo.');
-          setTimeout(() => { window.location.href = '/login'; }, 2000);
+          setTimeout(() => { navigate('/login', { state: { toastError: 'Login mein error aaya. Please dobara try karo.' } }); }, 2000);
         }
         return;
       }
 
       // Neither token nor error — unexpected state, send to login
-      window.location.href = '/login';
+      navigate('/login');
     };
 
     handleCallback();
-  }, [dispatch]);
+  }, [dispatch, navigate]);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
