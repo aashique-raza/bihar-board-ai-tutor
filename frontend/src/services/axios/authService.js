@@ -59,7 +59,9 @@ export const getMe = async (accessToken) => {
     const { data } = await authAxios.get('/api/v1/auth/me', {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
-    return data;
+    // Backend returns { success, data: { user: {...} } }
+    // Normalize here so all callers get the user object directly
+    return data?.data?.user || data?.data || data;
   } catch (error) {
     throw new Error(
       error.response?.data?.message || 'User info load nahi hui.'

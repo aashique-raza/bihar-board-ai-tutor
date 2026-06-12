@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
-import { loginUser } from '../services/axios/authService';
+import { loginUser, getMe } from '../services/axios/authService';
 import { setCredentials } from '../store/slices/authSlice';
 
 const FIELD_SX = {
@@ -66,7 +66,10 @@ function LoginPage() {
     setSubmitError('');
     try {
       const data = await loginUser({ email: email.trim(), password });
-      dispatch(setCredentials({ user: data.user, accessToken: data.accessToken }));
+      console.log('login response', data);
+      const accessToken = data.data?.accessToken || data.accessToken;
+      const user = await getMe(accessToken);
+      dispatch(setCredentials({ user, accessToken }));
       navigate('/');
     } catch (err) {
       setSubmitError(err.message);

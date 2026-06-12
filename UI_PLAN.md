@@ -175,6 +175,13 @@ frontend/src/
 **Build status:** ✅ `npm run build` passed, 0 errors, 654 modules transformed.  
 **Status:** ✅ COMPLETE  
 **Depends on:** Step A
+
+**Addendum (added post Step E):**
+- MODIFIED: `frontend/src/components/Topbar.jsx` — added auth slot between Focus button and theme toggle:
+  - Logged out: outlined "Login" pill button → navigates to /login
+  - Loading (app start): blank — no flash of wrong state
+  - Logged in: 30×30px indigo avatar with user's first initial (radius-avatar), click opens dropdown popover with user name, email, and Logout button
+  - Logout flow: calls logoutUser() API → dispatches clearCredentials() → redirects to /login
 ---
 ### Step C — ChatMessage Redesign
 **What:** AI response — no box, free text with avatar. Sections with left bar, formula block, tags. User message — right-aligned clean bubble.  
@@ -213,7 +220,21 @@ frontend/src/
 - Google OAuth button (secondary style)
 - Link between login/register pages
 - Responsive: card full-width on mobile with 16px padding
-**Status:** ⬜ PENDING  
+
+**Files changed:**
+- CREATED: `frontend/src/pages/LoginPage.jsx` — email/password form, validation, getMe() call after login, setCredentials dispatch, Google OAuth button, link to Register
+- CREATED: `frontend/src/pages/RegisterPage.jsx` — name/email/password form, validation, register + auto-login flow, Google OAuth button, link to Login
+- MODIFIED: `frontend/src/App.jsx` — added routes for /login, /register, /auth/callback
+- MODIFIED: `frontend/src/services/axios/authService.js` — getMe() now returns normalized user object directly (data?.data?.user || data?.data || data) so all callers receive clean user object without nesting
+- MODIFIED: `frontend/src/components/AppInitializer.jsx` — updated getMe() caller pattern: `const user = await getMe(newToken)` (no .data unwrap needed)
+- MODIFIED: `frontend/src/pages/AuthCallback.jsx` — updated getMe() caller pattern: `const user = await getMe(tokenParam)` (no .data unwrap needed)
+
+**Bugs fixed this session:**
+- BUG: user.name showing "?" in Topbar after login — root cause was getMe() returning nested { user: {...} } object instead of flat user object. Fixed in authService.js getMe() with normalization. All three callers (LoginPage, AuthCallback, AppInitializer) updated.
+
+**Build status:** ✅ npm run build passed
+
+**Status:** ✅ COMPLETE  
 **Depends on:** Step A
 ---
 ### Step F — Landing Page
@@ -250,7 +271,7 @@ frontend/src/
 | B | App layout + Topbar rebuild | ✅ DONE |
 | C | ChatMessage redesign | ✅ DONE |
 | D | AskBar / Input redesign | ✅ DONE |
-| E | Login + Register pages | ⬜ PENDING |
+| E | Login + Register pages | ✅ DONE |
 | F | Landing page | ⬜ PENDING |
 | G | Responsive polish + FocusModal | ⬜ PENDING |
 ---

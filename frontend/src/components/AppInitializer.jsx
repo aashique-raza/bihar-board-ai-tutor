@@ -15,8 +15,7 @@ function AppInitializer() {
     const tryRefresh = async () => {
       const data = await refreshAccessToken();
       const newToken = data.data?.accessToken || data.accessToken;
-      const userData = await getMe(newToken);
-      const user = userData.data;
+      const user = await getMe(newToken);
       return { user, accessToken: newToken };
     };
 

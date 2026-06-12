@@ -33,8 +33,7 @@ function AuthCallback() {
 
       if (tokenParam) {
         try {
-          const userData = await getMe(tokenParam);
-          const user = userData.data;
+          const user = await getMe(tokenParam);
           dispatch(setCredentials({ user, accessToken: tokenParam }));
           // Remove the token from the URL bar before navigating away
           window.history.replaceState({}, '', '/auth/callback');

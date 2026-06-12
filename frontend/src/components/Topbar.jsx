@@ -6,8 +6,11 @@ import Typography from '@mui/material/Typography';
 import CloseRounded from '@mui/icons-material/CloseRounded';
 import DarkModeRounded from '@mui/icons-material/DarkModeRounded';
 import LightModeRounded from '@mui/icons-material/LightModeRounded';
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth.js';
+import { clearCredentials } from '../store/slices/authSlice.js';
+import { logoutUser } from '../services/axios/authService.js';
 
 export default function Topbar({
   theme,
@@ -18,6 +21,32 @@ export default function Topbar({
   onClearFocus,
 }) {
   const { user, isLoggedIn, isLoading } = useAuth();
+  const dispatch = useDispatch();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleClick = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [menuOpen]);
+
+  const handleLogout = async () => {
+    setMenuOpen(false);
+    try {
+      await logoutUser();
+    } catch {
+      // Even if API call fails, clear local state and redirect
+    }
+    dispatch(clearCredentials());
+    window.location.href = '/login';
+  };
 
   return (
     <Box
@@ -134,24 +163,94 @@ export default function Topbar({
         {!isLoading && (
           <>
             {isLoggedIn && user ? (
-              <Box
-                sx={{
-                  width: 30,
-                  height: 30,
-                  flexShrink: 0,
-                  display: 'grid',
-                  placeItems: 'center',
-                  borderRadius: 'var(--radius-avatar)',
-                  bgcolor: 'var(--primary)',
-                  color: '#ffffff',
-                  fontSize: '0.8rem',
-                  fontWeight: 700,
-                  userSelect: 'none',
-                }}
-              >
-                {user.name?.charAt(0)?.toUpperCase() || 'U'}
+              /* Avatar with dropdown menu */
+              <Box ref={menuRef} sx={{ position: 'relative' }}>
+                {/* Avatar button */}
+                <Box
+                  onClick={() => setMenuOpen((prev) => !prev)}
+                  sx={{
+                    width: 30,
+                    height: 30,
+                    flexShrink: 0,
+                    display: 'grid',
+                    placeItems: 'center',
+                    borderRadius: 'var(--radius-avatar)',
+                    bgcolor: 'var(--primary)',
+                    color: '#ffffff',
+                    fontSize: '0.8rem',
+                    fontWeight: 700,
+                    userSelect: 'none',
+                    cursor: 'pointer',
+                    transition: 'opacity 0.15s ease',
+                    '&:hover': { opacity: 0.85 },
+                  }}
+                >
+                  {user.name?.charAt(0)?.toUpperCase() || '?'}
+                </Box>
+
+                {/* Dropdown menu */}
+                {menuOpen && (
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: 'calc(100% + 8px)',
+                      right: 0,
+                      minWidth: 200,
+                      bgcolor: 'var(--bg-surface)',
+                      border: '1px solid var(--border)',
+                      borderRadius: 'var(--radius-lg)',
+                      boxShadow: 'var(--shadow-md)',
+                      overflow: 'hidden',
+                      zIndex: 1000,
+                    }}
+                  >
+                    {/* User info section */}
+                    <Box sx={{ px: 2, py: 1.5, borderBottom: '1px solid var(--border)' }}>
+                      <Typography
+                        sx={{
+                          fontSize: '0.875rem',
+                          fontWeight: 600,
+                          color: 'var(--text-primary)',
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {user.name}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontSize: '0.75rem',
+                          color: 'var(--text-muted)',
+                          lineHeight: 1.4,
+                          mt: 0.25,
+                        }}
+                      >
+                        {user.email}
+                      </Typography>
+                    </Box>
+
+                    {/* Logout button */}
+                    <Box
+                      onClick={handleLogout}
+                      sx={{
+                        px: 2,
+                        py: 1.25,
+                        fontSize: '0.875rem',
+                        color: 'var(--error)',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        '&:hover': { bgcolor: 'var(--bg-hover)' },
+                        transition: 'background 0.15s ease',
+                      }}
+                    >
+                      Logout
+                    </Box>
+                  </Box>
+                )}
               </Box>
             ) : (
+              /* Login button */
               <Button
                 variant="outlined"
                 size="small"
