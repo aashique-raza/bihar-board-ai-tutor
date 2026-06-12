@@ -1,334 +1,52 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import Box from '@mui/material/Box';
-import { askTutor, fetchStudyMap } from './api/tutorApi.js';
-import AskBar from './components/AskBar.jsx';
-import ChatMessage from './components/ChatMessage.jsx';
-import FocusModal from './components/FocusModal.jsx';
-import StatusNotice from './components/StatusNotice.jsx';
-import Topbar from './components/Topbar.jsx';
-import { STUDY_MODES } from './constants/studyModes.js';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useAuth } from './hooks/useAuth.js';
 import { useTheme } from './hooks/useTheme.js';
-import { getSavedSessionId, saveSessionId } from './utils/session.js';
-import { findFirstChapter } from './utils/studyMap.js';
-
-const createWelcomeMessage = () => ({
-  id: 'welcome',
-  role: 'zuno',
-  status: 'intro',
-  answer: 'Main Zuno hoon, tumhara Class 10 personal tutor. Aaj jis topic par atke ho, wahi se start karte hain.',
-  sources: [],
-});
-
-const createQuestionMessage = (question) => ({
-  id: crypto.randomUUID(),
-  role: 'student',
-  answer: question,
-});
-
-const createAnswerMessage = (payload) => ({
-  id: crypto.randomUUID(),
-  role: 'zuno',
-  ...payload,
-});
-
-const createFocusMessage = (chapter) => ({
-  id: crypto.randomUUID(),
-  role: 'zuno',
-  status: 'focus_selected',
-  answer: `Focus mode on hai. Ab hum ${chapter.subjectTitle} > ${chapter.sectionTitle} > ${chapter.title} par kaam karenge. Is chapter ka topic, concept, ya question likho.`,
-  sources: [],
-});
+import ChatPage from './pages/ChatPage.jsx';
+import RegisterPage from './pages/RegisterPage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import AuthCallback from './pages/AuthCallback.jsx';
 
 function App() {
+  // Theme state lives here so all pages (Chat, Login, Register) share it
   const { theme, toggleTheme } = useTheme();
-  const [studyMode, setStudyMode] = useState(STUDY_MODES.global);
-  const [studyMap, setStudyMap] = useState(null);
-  const [selectedChapterId, setSelectedChapterId] = useState(null);
-  const [messages, setMessages] = useState([createWelcomeMessage()]);
-  const [sessionId, setSessionId] = useState(() => getSavedSessionId());
-  const [isStudyMapLoading, setIsStudyMapLoading] = useState(true);
-  const [isFocusModalOpen, setIsFocusModalOpen] = useState(false);
-  const [isAsking, setIsAsking] = useState(false);
-  const [error, setError] = useState('');
-  const chatEndRef = useRef(null);
-  const controllerRef = useRef(null);
-  const timeoutRef = useRef(null);
-  const sessionIdRef = useRef(sessionId);
-  const selectedChapterIdRef = useRef(selectedChapterId);
-  const studyModeRef = useRef(studyMode);
 
-  useEffect(() => { sessionIdRef.current = sessionId; }, [sessionId]);
-  useEffect(() => { selectedChapterIdRef.current = selectedChapterId; }, [selectedChapterId]);
-  useEffect(() => { studyModeRef.current = studyMode; }, [studyMode]);
+  // isLoading is true while AppInitializer is doing the silent refresh on startup
+  const { isLoading } = useAuth();
 
-  useEffect(() => {
-    return () => {
-      controllerRef.current?.abort();
-      clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    fetchStudyMap()
-      .then((map) => {
-        if (!isMounted) {
-          return;
-        }
-
-        setStudyMap(map);
-        setSelectedChapterId(null);
-      })
-      .catch((loadError) => {
-        if (isMounted) {
-          setError(loadError.message);
-        }
-      })
-      .finally(() => {
-        if (isMounted) {
-          setIsStudyMapLoading(false);
-        }
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
-  }, [messages, isAsking]);
-
-  const selectedChapter = useMemo(() => {
-    const subjects = studyMap?.focusStudy?.subjects || [];
-
-    for (const subject of subjects) {
-      for (const section of subject.sections || []) {
-        const chapter = (section.chapters || []).find(
-          (item) => item.id === selectedChapterId
-        );
-
-        if (chapter) {
-          return {
-            ...chapter,
-            sectionTitle: section.title,
-            subjectTitle: subject.title,
-          };
-        }
-      }
-    }
-
-    return null;
-  }, [selectedChapterId, studyMap]);
-
-  const findChapterById = (chapterId) => {
-    const subjects = studyMap?.focusStudy?.subjects || [];
-
-    for (const subject of subjects) {
-      for (const section of subject.sections || []) {
-        const chapter = (section.chapters || []).find(
-          (item) => item.id === chapterId
-        );
-
-        if (chapter) {
-          return {
-            ...chapter,
-            sectionTitle: section.title,
-            subjectTitle: subject.title,
-          };
-        }
-      }
-    }
-
-    return null;
-  };
-
-  const handleFocusChapterSelect = (chapterId) => {
-    const nextChapter = findChapterById(chapterId);
-
-    setSelectedChapterId(chapterId);
-    setStudyMode(STUDY_MODES.focus);
-    setIsFocusModalOpen(false);
-    setError('');
-
-    if (nextChapter) {
-      setMessages((currentMessages) => [
-        ...currentMessages,
-        createFocusMessage(nextChapter),
-      ]);
-    }
-  };
-
-  const handleClearFocus = () => {
-    setStudyMode(STUDY_MODES.global);
-    setSelectedChapterId(null);
-    setError('');
-  };
-
-  const handleAsk = useCallback(async (question, requestMode) => {
-    const cleanQuestion = question.trim();
-    const currentMode = requestMode ?? studyModeRef.current;
-
-    if (!cleanQuestion || controllerRef.current) {
-      return;
-    }
-
-    if (currentMode === STUDY_MODES.focus && !selectedChapterIdRef.current) {
-      setError('Focus mode ke liye pehle chapter select karo.');
-      return;
-    }
-
-    const controller = new AbortController();
-    controllerRef.current = controller;
-
-    timeoutRef.current = setTimeout(() => {
-      controllerRef.current?.abort();
-    }, 60000);
-
-    setError('');
-    setIsAsking(true);
-    setMessages((currentMessages) => [
-      ...currentMessages,
-      createQuestionMessage(cleanQuestion),
-    ]);
-
-    try {
-      const answerPayload = await askTutor(
-        {
-          question: cleanQuestion,
-          studyMode: currentMode,
-          chapterId: selectedChapterIdRef.current,
-          sessionId: sessionIdRef.current,
-        },
-        controller.signal,
-      );
-      clearTimeout(timeoutRef.current);
-      const nextSessionId = answerPayload.session?.sessionId;
-
-      if (nextSessionId && nextSessionId !== sessionIdRef.current) {
-        saveSessionId(nextSessionId);
-        setSessionId(nextSessionId);
-      }
-
-      setMessages((currentMessages) => [
-        ...currentMessages,
-        createAnswerMessage(answerPayload),
-      ]);
-    } catch (askError) {
-      clearTimeout(timeoutRef.current);
-      if (askError.name === 'AbortError') {
-        setError('Zuno thoda busy hai abhi, thodi der baad try karo.');
-      } else {
-        setError(askError.message);
-      }
-    } finally {
-      controllerRef.current = null;
-      setIsAsking(false);
-    }
-  }, []);
-
-  const handleCancel = useCallback(() => {
-    controllerRef.current?.abort();
-  }, []);
-
-  const handleSwitchToGlobal = async (question) => {
-    setStudyMode(STUDY_MODES.global);
-    await handleAsk(question, STUDY_MODES.global);
-  };
-
-  return (
-    <Box
-      component="main"
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
+  // Show blank screen while session is being restored — prevents flash of wrong page
+  if (isLoading) {
+    return (
+      <div style={{
         height: '100vh',
-        bgcolor: 'var(--bg-page)',
-        overflow: 'hidden',
-      }}
-    >
-      <Topbar
-        theme={theme}
-        onToggleTheme={toggleTheme}
-        selectedChapter={selectedChapter}
-        isFocusLoading={isStudyMapLoading}
-        onOpenFocus={() => setIsFocusModalOpen(true)}
-        onClearFocus={handleClearFocus}
-      />
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'var(--bg-page)',
+      }}>
+        <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+          Zuno load ho raha hai...
+        </div>
+      </div>
+    );
+  }
 
-      {/* Chat area — scrollable */}
-      <Box
-        component="section"
-        aria-live="polite"
-        sx={{
-          flex: 1,
-          overflowY: 'auto',
-          px: { xs: 2, sm: 3 },
-          py: 2,
-        }}
-      >
-        <Box
-          sx={{
-            maxWidth: 'var(--chat-max-width)',
-            mx: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 0,
-          }}
-        >
-          {messages.map((message) => (
-            <ChatMessage
-              key={message.id}
-              message={message}
-              onSwitchToGlobal={handleSwitchToGlobal}
-            />
-          ))}
-          {isAsking && (
-            <ChatMessage
-              message={{
-                id: 'thinking',
-                role: 'zuno',
-                answer: '',
-                status: 'thinking',
-                sources: [],
-              }}
-            />
-          )}
-          <div ref={chatEndRef} />
-        </Box>
-      </Box>
+  // Once loading is done, render the correct page based on the URL
+  return (
+    <Routes>
+      {/* Main chat page — accessible to everyone (guest + logged in) */}
+      <Route path="/" element={<ChatPage theme={theme} toggleTheme={toggleTheme} />} />
 
-      {/* Input zone — sticky bottom */}
-      <Box
-        sx={{
-          flexShrink: 0,
-          bgcolor: 'var(--bg-surface)',
-          borderTop: '1px solid var(--border)',
-          px: { xs: 2, sm: 3 },
-          py: 1.5,
-        }}
-      >
-        <Box sx={{ maxWidth: 'var(--chat-max-width)', mx: 'auto' }}>
-          <StatusNotice error={error} />
-          <AskBar
-            disabled={isAsking}
-            onAsk={handleAsk}
-            onCancel={handleCancel}
-            studyMode={studyMode}
-          />
-        </Box>
-      </Box>
+      {/* Auth pages */}
+      <Route path="/login" element={<LoginPage theme={theme} toggleTheme={toggleTheme} />} />
+      <Route path="/register" element={<RegisterPage theme={theme} toggleTheme={toggleTheme} />} />
 
-      <FocusModal
-        isOpen={isFocusModalOpen}
-        isLoading={isStudyMapLoading}
-        selectedChapterId={selectedChapterId}
-        studyMap={studyMap}
-        onClose={() => setIsFocusModalOpen(false)}
-        onSelectChapter={handleFocusChapterSelect}
-      />
-    </Box>
+      {/* Google OAuth callback — backend redirects here after OAuth */}
+      <Route path="/auth/callback" element={<AuthCallback />} />
+
+      {/* Catch-all — unknown URLs go to home */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 

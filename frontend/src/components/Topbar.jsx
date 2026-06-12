@@ -7,6 +7,7 @@ import CloseRounded from '@mui/icons-material/CloseRounded';
 import DarkModeRounded from '@mui/icons-material/DarkModeRounded';
 import LightModeRounded from '@mui/icons-material/LightModeRounded';
 import React from 'react';
+import { useAuth } from '../hooks/useAuth.js';
 
 export default function Topbar({
   theme,
@@ -16,6 +17,8 @@ export default function Topbar({
   onOpenFocus,
   onClearFocus,
 }) {
+  const { user, isLoggedIn, isLoading } = useAuth();
+
   return (
     <Box
       component="header"
@@ -126,6 +129,54 @@ export default function Topbar({
         >
           Focus
         </Button>
+
+        {/* Auth slot */}
+        {!isLoading && (
+          <>
+            {isLoggedIn && user ? (
+              <Box
+                sx={{
+                  width: 30,
+                  height: 30,
+                  flexShrink: 0,
+                  display: 'grid',
+                  placeItems: 'center',
+                  borderRadius: 'var(--radius-avatar)',
+                  bgcolor: 'var(--primary)',
+                  color: '#ffffff',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  userSelect: 'none',
+                }}
+              >
+                {user.name?.charAt(0)?.toUpperCase() || 'U'}
+              </Box>
+            ) : (
+              <Button
+                variant="outlined"
+                size="small"
+                onClick={() => { window.location.href = '/login'; }}
+                sx={{
+                  borderColor: 'var(--border-strong)',
+                  color: 'var(--text-secondary)',
+                  borderRadius: 'var(--radius-full)',
+                  fontSize: '0.8rem',
+                  fontWeight: 600,
+                  px: 1.5,
+                  py: 0.5,
+                  textTransform: 'none',
+                  '&:hover': {
+                    borderColor: 'var(--primary)',
+                    color: 'var(--primary)',
+                    bgcolor: 'transparent',
+                  },
+                }}
+              >
+                Login
+              </Button>
+            )}
+          </>
+        )}
 
         {/* Theme toggle */}
         <IconButton
