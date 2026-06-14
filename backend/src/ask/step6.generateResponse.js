@@ -18,9 +18,9 @@ let responseChain = null;
 const getResponseChain = () => {
   if (!responseChain) {
     responseChain = RunnableSequence.from([
-      tutorResponsePrompt, // Formats the full tutor prompt
-      createChatModel(),   // Groq/Gemini/OpenAI depending on env
-      stringParser,        // Converts AIMessage to plain string
+      tutorResponsePrompt,
+      createChatModel({ temperature: 0.3 }), // Tutor needs variation; decider (step4) stays at 0
+      stringParser,
     ]);
   }
   return responseChain;
