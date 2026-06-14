@@ -40,9 +40,9 @@ are excluded. See PROBLEMS.md for those.
 ### FIX-001 — tutorPrompt: Add differentiated conversation-mode instruction
 
 **Priority:** CRITICAL  
-**Type:** Prompt-only  
+**Type:** Prompt + Code guard (hybrid)  
 **Estimated effort:** 1 hour  
-**Status:** PENDING  
+**Status:** VERIFIED ✅ — 2026-06-14  
 **Depends on:** none — can do standalone  
 **QA Report reference:** BUG-008 (no META_COMPLAINT/CONVERSATION intent), BUG-009 (empty-context rule undifferentiated)  
 **PROBLEMS.md reference:** new
@@ -118,7 +118,7 @@ Strict Grounding (applies ONLY when responseMode is "study_tutor"):
 **Priority:** HIGH  
 **Type:** Prompt-only  
 **Estimated effort:** 30 minutes  
-**Status:** PENDING  
+**Status:** VERIFIED ✅ — 2026-06-14 (batched with FIX-001 in tutorPrompt.js)  
 **Depends on:** none — standalone (can batch into same tutorPrompt.js edit as FIX-001 for efficiency, but verify independently)  
 **QA Report reference:** BUG-010  
 **PROBLEMS.md reference:** new
@@ -249,9 +249,9 @@ No changes needed to deciderPrompt.js — `needsRetrieval=false` for EXPLAIN_MOR
 ### FIX-004 — CHOOSE_COURSE: Add tutorPrompt instruction for subject selection turns
 
 **Priority:** HIGH  
-**Type:** Prompt-only  
+**Type:** Prompt-only + step6 intent pass (1 line)  
 **Estimated effort:** 1 hour  
-**Status:** PENDING  
+**Status:** VERIFIED ✅ — 2026-06-14 (batched with FIX-001; step6 now passes intent in decision field)  
 **Depends on:** none — standalone  
 **QA Report reference:** BUG-014  
 **PROBLEMS.md reference:** new
@@ -582,3 +582,6 @@ Note: Full end-to-end brain test (actual LLM calls) requires manual testing via 
 | Date | Fix ID | Action | Result |
 |------|--------|--------|--------|
 | 2026-06-14 | — | BRAIN_FIXES.md created | 8 claims verified, 6 active fixes, 5 deferred |
+| 2026-06-14 | FIX-001 | Hybrid fix: tutorPrompt Response Mode Branching + step6 code guard | VERIFIED — "Hi Zuno!" → warm Hinglish, emotional → empathetic, study → RAG unaffected |
+| 2026-06-14 | FIX-002 | Anti-repetition rule added to tutorPrompt Core Identity section | VERIFIED — batched with FIX-001 |
+| 2026-06-14 | FIX-004 | CHOOSE_COURSE tutorPrompt rule + step6 intent pass in decision field | VERIFIED — "Chemistry padhni hai" → lists all 5 Chemistry chapters correctly |
