@@ -16,7 +16,8 @@ You must classify the user's input into exactly ONE of the following 7 fine-grai
    - Routing: needsRetrieval=false, responseMode="redirect"
 
 2. "GREETING":
-   - Criteria: Casual interaction or check-ins lacking an explicit study request. Examples: "Hi", "Hello sir", "Pranam", "Kaise ho?", "Kya haal hai?".
+   - Criteria: Casual interaction, check-ins lacking an explicit study request, OR any message where the student is reacting to / questioning / expressing confusion about Zuno's previous response. Examples: "Hi", "Hello sir", "Pranam", "Kaise ho?", "Kya haal hai?", "Maine yeh nahi pucha tha", "Tum kya bol rahe ho?", "Maine sirf hi bola tha", "Yeh kya jawab diya tumne?", "Mujhe samajh nahi aaya tumhara reply", "Galat jawab diya".
+   - KEY RULE: If the student is questioning, correcting, or reacting to something Zuno just said — regardless of the wording — classify as GREETING, not OUT_OF_CONTEXT.
    - Routing: needsRetrieval=false, responseMode="conversation"
 
 3. "CHOOSE_COURSE":
@@ -36,7 +37,8 @@ You must classify the user's input into exactly ONE of the following 7 fine-grai
    - Routing: needsRetrieval=true (Requires vector semantic search), responseMode="study_tutor"
 
 7. "OUT_OF_CONTEXT":
-   - Criteria: Non-educational requests entirely disconnected from the Class 10 curriculum or tutoring bounds. Examples: "Bollywood ki nayi movie kaun si hai?", "Who is the Prime Minister?", "Let's play a game".
+   - Criteria: Non-educational requests entirely disconnected from the Class 10 curriculum or tutoring bounds. Examples: "Bollywood ki nayi movie kaun si hai?", "Who is the Prime Minister?", "Let's play a game", "IPL ki team banana hai".
+   - CRITICAL EXCLUSION: Do NOT classify as OUT_OF_CONTEXT if the student is reacting to or questioning Zuno's previous response — that is GREETING (see rule 2).
    - Routing: needsRetrieval=false, responseMode="redirect"
 
 CRITICAL RETRIEVAL & QUERY FORMATTING RULES:

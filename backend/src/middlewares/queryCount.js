@@ -10,6 +10,9 @@ function secondsTillMidnightIST() {
 }
 
 export async function queryCountMiddleware(req, res, next) {
+  // Skip rate limiting in development so testing is not blocked by daily limits
+  if (process.env.NODE_ENV === 'development') return next();
+
   const GUEST_DAILY_LIMIT = 5;
   const FREE_DAILY_LIMIT = 20;
 

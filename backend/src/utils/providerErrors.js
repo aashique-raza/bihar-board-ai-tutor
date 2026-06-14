@@ -23,7 +23,7 @@ export const classifyProviderError = (error) => {
   const code = error?.code;
   const message = String(error?.message || '').toLowerCase();
 
-  if (status === 429 || message.includes('rate limit') || message.includes('too many requests')) {
+  if (status === 429 || message.includes('rate limit') || message.includes('too many requests') || message.includes('quota') || message.includes('billing')) {
     return 'rate_limit';
   }
   if (status === 401 || status === 403 || message.includes('auth') || message.includes('api key')) {

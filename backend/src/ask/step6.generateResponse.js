@@ -40,18 +40,26 @@ const normalizeSections = (sections) => {
     .slice(0, 5);
 };
 
-// Creates a safe fallback response when LLM output cannot be parsed.
-// Used only for parse errors — provider is alive but output was malformed.
+// Returns context-appropriate fallback section content based on responseMode and status.
+// Called when LLM response has empty or malformed sections — must NOT be a generic
+// technical error for non-error modes (e.g. redirect should explain scope, not blame tech).
+const getFallbackSections = (responseMode, status) => {
+  if (responseMode === 'redirect' || status === 'out_of_scope') {
+    return [{ heading: '', content: 'Yeh topic Class 10 Science ke scope se bahar hai. Koi Science sawaal poochho — main madad karunga!' }];
+  }
+  if (responseMode === 'conversation') {
+    return [{ heading: '', content: 'Haan! Koi sawaal ho toh poochho ya koi topic choose karo — main yahan hun!' }];
+  }
+  // study_tutor mode or unknown — generic technical fallback
+  return [{ heading: '', content: 'Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.' }];
+};
+
+// Creates a safe fallback response when LLM output cannot be parsed (parse errors only).
 const createFallbackResponse = ({ responseMode }) => ({
   status: 'error',
   responseMode: responseMode || 'study_tutor',
   title: null,
-  sections: [
-    {
-      heading: '',
-      content: 'Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.',
-    },
-  ],
+  sections: getFallbackSections(responseMode, null),
   suggestedActions: [],
   memoryUpdate: {},
 });
@@ -115,15 +123,23 @@ export const generateResponse = async (
         status: 'answered',
         responseMode: 'conversation',
         title: null,
-        sections: [{ heading: '', content: 'Haan! Koi sawaal poochho ya koi topic shuru karein — main yahan hun!' }],
-        suggestedActions: [{ type: 'ask_question', label: 'Koi topic poochho' }],
+        sections: getFallbackSections('conversation', null),
+        suggestedActions: [],
         memoryUpdate: {},
       };
       return { ...safeConversation, answer: sectionsToAnswerText(safeConversation) };
     }
 
     // Normalize the sections array structure cleanly
-    const sections = normalizeSections(parsed.sections);
+    let sections = normalizeSections(parsed.sections);
+
+    // Rescue: LLM sometimes puts conversation response text in "title" instead of sections[0].content.
+    // This happens when the LLM misreads the JSON contract for conversation mode.
+    // If sections are empty but title has content, promote the title text into a section.
+    if (!sections.length && parsed.title && String(parsed.title).trim()) {
+      console.warn('[Step 6 Rescue] Empty sections but title has content — promoting title to section content');
+      sections = [{ heading: '', content: String(parsed.title).trim() }];
+    }
 
     // --- Intent status guard ---
     // If Step 4 marked this turn as conversational, force the status below so the
@@ -145,8 +161,8 @@ export const generateResponse = async (
     const normalized = {
       status: targetStatus,
       responseMode,
-      title: parsed.title ? String(parsed.title).trim() : null,
-      sections: sections.length ? sections : createFallbackResponse({ responseMode, message: question }).sections,
+      title: responseMode === 'conversation' ? null : (parsed.title ? String(parsed.title).trim() : null),
+      sections: sections.length ? sections : getFallbackSections(responseMode, parsed.status),
       suggestedActions: Array.isArray(parsed.suggestedActions) ? parsed.suggestedActions.slice(0, 4) : [],
       memoryUpdate: parsed.memoryUpdate && typeof parsed.memoryUpdate === 'object' ? parsed.memoryUpdate : {},
     };

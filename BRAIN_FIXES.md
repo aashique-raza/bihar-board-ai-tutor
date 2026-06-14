@@ -585,3 +585,5 @@ Note: Full end-to-end brain test (actual LLM calls) requires manual testing via 
 | 2026-06-14 | FIX-001 | Hybrid fix: tutorPrompt Response Mode Branching + step6 code guard | VERIFIED — "Hi Zuno!" → warm Hinglish, emotional → empathetic, study → RAG unaffected |
 | 2026-06-14 | FIX-002 | Anti-repetition rule added to tutorPrompt Core Identity section | VERIFIED — batched with FIX-001 |
 | 2026-06-14 | FIX-004 | CHOOSE_COURSE tutorPrompt rule + step6 intent pass in decision field | VERIFIED — "Chemistry padhni hai" → lists all 5 Chemistry chapters correctly |
+| 2026-06-14 | POST-001 | LLM provider migrated Groq → OpenAI GPT-4o mini. queryCountMiddleware bypassed in dev mode. | VERIFIED — all 7 intent types working with OpenAI |
+| 2026-06-14 | POST-002 | BUG A: Anti-repetition rule scoped to study_tutor mode only (tutorPrompt.js). BUG B: Decider GREETING expanded to cover meta-conversation messages + OUT_OF_CONTEXT explicit exclusion (deciderPrompt.js). BUG C: getFallbackSections() added to step6 — redirect/out_of_scope/conversation each get appropriate fallback text instead of generic technical error. | PENDING VERIFICATION |
