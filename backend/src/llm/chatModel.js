@@ -48,6 +48,7 @@ export const createChatModel = (overrides = {}) => {
       apiKey: getRequiredEnv('GROQ_API_KEY'),
       model: config.model,
       temperature: config.temperature,
+      maxRetries: 0, // Pipeline handles errors — LangChain retry hides rate limits for 60s
     });
   }
 
@@ -56,6 +57,7 @@ export const createChatModel = (overrides = {}) => {
       apiKey: getRequiredEnv('OPENAI_API_KEY'),
       model: config.model,
       temperature: config.temperature,
+      maxRetries: 0,
     });
   }
 
@@ -64,5 +66,6 @@ export const createChatModel = (overrides = {}) => {
     apiKey: getRequiredEnv('GOOGLE_API_KEY', 'GEMINI_API_KEY'),
     model: config.model,
     temperature: config.temperature,
+    maxRetries: 0,
   });
 };

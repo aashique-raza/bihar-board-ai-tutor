@@ -62,7 +62,7 @@ const createFallbackResponse = ({ responseMode }) => ({
 export const generateResponse = async (
   { question },
   { language, memory, history, lastTutorResponse, curriculumSummary, focusChapterPrompt },
-  { responseMode },
+  { responseMode, intent },
   { retrievedContext }
 ) => {
   // CHAPTER_COMPLETE: skip the LLM entirely and return a fixed completion message
@@ -95,7 +95,7 @@ export const generateResponse = async (
       message: question,
       answerLanguageInstruction: targetLanguageInstruction,
       responseMode,
-      decision: JSON.stringify({ responseMode }, null, 2),
+      decision: JSON.stringify({ responseMode, intent }, null, 2),
       memory: serializedMemory,
       history,
       lastTutorResponse,
@@ -106,6 +106,21 @@ export const generateResponse = async (
 
     // Parse the JSON from the LLM response safely using fence removal utility
     const parsed = parseJsonObject(rawResponse, 'Tutor response payload');
+
+    // Code guard: conversation mode should never return insufficient_context or out_of_scope.
+    // If the LLM ignored the prompt instruction and fired the empty-context rule, catch it here.
+    if (responseMode === 'conversation' && ['insufficient_context', 'out_of_scope'].includes(parsed.status)) {
+      console.warn('[Step 6 Guard] Conversation mode but LLM returned', parsed.status, '— overriding with safe fallback');
+      const safeConversation = {
+        status: 'answered',
+        responseMode: 'conversation',
+        title: null,
+        sections: [{ heading: '', content: 'Haan! Koi sawaal poochho ya koi topic shuru karein — main yahan hun!' }],
+        suggestedActions: [{ type: 'ask_question', label: 'Koi topic poochho' }],
+        memoryUpdate: {},
+      };
+      return { ...safeConversation, answer: sectionsToAnswerText(safeConversation) };
+    }
 
     // Normalize the sections array structure cleanly
     const sections = normalizeSections(parsed.sections);

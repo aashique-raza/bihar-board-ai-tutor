@@ -69,6 +69,7 @@ function ChatPage({ theme, toggleTheme }) {
   const chatEndRef = useRef(null);
   const controllerRef = useRef(null);
   const timeoutRef = useRef(null);
+  const wasTimeoutAbortRef = useRef(false);
 
   // Refs so async callbacks always read the latest state values
   const sessionIdRef = useRef(sessionId);
@@ -160,8 +161,12 @@ function ChatPage({ theme, toggleTheme }) {
 
     const controller = new AbortController();
     controllerRef.current = controller;
+    wasTimeoutAbortRef.current = false;
 
-    timeoutRef.current = setTimeout(() => controller.abort(), 60000);
+    timeoutRef.current = setTimeout(() => {
+      wasTimeoutAbortRef.current = true;
+      controller.abort();
+    }, 60000);
 
     try {
       const payload = await askTutor(
@@ -182,13 +187,20 @@ function ChatPage({ theme, toggleTheme }) {
       setMessages((prev) => [...prev, createAnswerMessage(payload)]);
     } catch (askError) {
       if (askError.name === 'AbortError' || askError.name === 'CanceledError') {
+        const answer = wasTimeoutAbortRef.current
+          ? 'Zuno thoda slow hai abhi — connection slow ho sakta hai ya server busy hai. Ek baar aur try karo!'
+          : 'Request cancel kar di. Koi aur sawaal poochho!';
         setMessages((prev) => [...prev, createAnswerMessage({
           status: 'cancelled',
-          answer: 'Request cancel kar di gayi.',
+          answer,
           sources: [],
         })]);
       } else {
-        setError(askError.message);
+        setMessages((prev) => [...prev, createAnswerMessage({
+          status: 'error',
+          answer: askError.message,
+          sources: [],
+        })]);
       }
     } finally {
       clearTimeout(timeoutRef.current);
