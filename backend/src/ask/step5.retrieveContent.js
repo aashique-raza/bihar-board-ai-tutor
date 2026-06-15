@@ -82,6 +82,48 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
     };
   }
 
+  // EXPLAIN_MORE: re-retrieve the topic the student wants re-explained.
+  // Uses decider's searchQuery (best quality — extracted from conversation context)
+  // with fallback to chatState.lastTopic (safety net if decider returned null).
+  // focusChapter is intentionally NOT passed — lastTopic may be from a different
+  // chapter than the student's current focus selection.
+  if (intent === 'EXPLAIN_MORE') {
+    const topicQuery = searchQuery || chatState?.lastTopic || null;
+
+    if (!topicQuery) {
+      console.log('[Step 5 EXPLAIN_MORE] No query available (searchQuery=null, lastTopic=null) — empty context, tutor will ask student to clarify topic.');
+      return {
+        retrieval: null, chunks: [], sources: [],
+        retrievedContext: 'NO_RETRIEVED_CONTEXT',
+        nextTopicSignal: null,
+      };
+    }
+
+    const querySource = searchQuery ? 'decider.searchQuery' : 'chatState.lastTopic';
+    console.log(`[Step 5 EXPLAIN_MORE] Re-retrieving via ${querySource}: "${topicQuery}"`);
+
+    const explainRetrieval = await retrieveRelevantChunks(topicQuery, getRetrieverOptions(null));
+    const explainChunks = explainRetrieval.results || [];
+
+    if (!explainChunks.length) {
+      console.log(`[Step 5 EXPLAIN_MORE] 0 chunks returned for "${topicQuery}" — empty context, tutor will ask student to clarify.`);
+      return {
+        retrieval: null, chunks: [], sources: [],
+        retrievedContext: 'NO_RETRIEVED_CONTEXT',
+        nextTopicSignal: null,
+      };
+    }
+
+    console.log(`[Step 5 EXPLAIN_MORE] ${explainChunks.length} chunks retrieved for re-explanation.`);
+    return {
+      retrieval: explainRetrieval,
+      chunks: explainChunks,
+      sources: formatSources(explainChunks),
+      retrievedContext: formatRetrievedContext(explainChunks),
+      nextTopicSignal: null,
+    };
+  }
+
   // Short-circuit routing check
   if (!needsRetrieval) {
     console.log('[Step 5 Bypassed] Skipping vector database lookups due to conversational context routing rule.');

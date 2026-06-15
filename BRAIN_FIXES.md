@@ -170,9 +170,9 @@ Anti-Repetition Rule (CRITICAL):
 ### FIX-003 — EXPLAIN_MORE: step5 must re-retrieve lastTopic content
 
 **Priority:** HIGH  
-**Type:** Code-only (step5.retrieveContent.js)  
+**Type:** Code + Prompt (4 files)  
 **Estimated effort:** 2–3 hours  
-**Status:** PENDING  
+**Status:** VERIFIED ✅ — 2026-06-15  
 **Depends on:** none — BUG-001 is FIXED (lastTopic is persisted in chatState), so `chatState.lastTopic` is available  
 **QA Report reference:** BUG-016  
 **PROBLEMS.md reference:** BUG-004 (marked FIXED, but the step5 gap was not resolved — see note below)
@@ -586,4 +586,5 @@ Note: Full end-to-end brain test (actual LLM calls) requires manual testing via 
 | 2026-06-14 | FIX-002 | Anti-repetition rule added to tutorPrompt Core Identity section | VERIFIED — batched with FIX-001 |
 | 2026-06-14 | FIX-004 | CHOOSE_COURSE tutorPrompt rule + step6 intent pass in decision field | VERIFIED — "Chemistry padhni hai" → lists all 5 Chemistry chapters correctly |
 | 2026-06-14 | POST-001 | LLM provider migrated Groq → OpenAI GPT-4o mini. queryCountMiddleware bypassed in dev mode. | VERIFIED — all 7 intent types working with OpenAI |
-| 2026-06-14 | POST-002 | BUG A: Anti-repetition rule scoped to study_tutor mode only (tutorPrompt.js). BUG B: Decider GREETING expanded to cover meta-conversation messages + OUT_OF_CONTEXT explicit exclusion (deciderPrompt.js). BUG C: getFallbackSections() added to step6 — redirect/out_of_scope/conversation each get appropriate fallback text instead of generic technical error. | PENDING VERIFICATION |
+| 2026-06-14 | POST-002 | BUG A: Anti-repetition rule scoped to study_tutor mode only (tutorPrompt.js). BUG B: Decider GREETING expanded to cover meta-conversation messages + OUT_OF_CONTEXT explicit exclusion (deciderPrompt.js). BUG C: getFallbackSections() added to step6 — redirect/out_of_scope/conversation each get appropriate fallback text instead of generic technical error. | VERIFIED ✅ — 2026-06-15. Temperature fix also applied: step6 tutor now uses temperature=0.3 (was 0) for pedagogical variation. |
+| 2026-06-15 | FIX-003 | EXPLAIN_MORE: 4-file fix. (1) deciderPrompt: searchQuery generated from lastTutorResponse context for EXPLAIN_MORE. (2) step5: EXPLAIN_MORE handler re-retrieves via decider.searchQuery → chatState.lastTopic fallback, focusChapter excluded. (3) step7: lastTopic/lastDoubtTopic guarded from LLM drift on EXPLAIN_MORE turns. (4) tutorPrompt: full pedagogical variation mandate for EXPLAIN_MORE — different structure/angle/analogy, facts grounded, empty-context asks student for topic name. | VERIFIED ✅ — 2026-06-15 |

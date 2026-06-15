@@ -109,6 +109,14 @@ export const saveAndRespond = async (
     memoryUpdate: response.memoryUpdate,
   });
 
+  // EXPLAIN_MORE guard: do not let the LLM's memoryUpdate drift lastTopic to a
+  // variant string (e.g. "Photosynthesis Re-explained") — that would corrupt the
+  // query used by future EXPLAIN_MORE re-retrievals on the same topic.
+  if (decision?.intent === 'EXPLAIN_MORE') {
+    delete stateUpdates.lastTopic;
+    delete stateUpdates.lastDoubtTopic;
+  }
+
   // If NEXT_STEP resolved a new topic, advance the pointer and record the completed one
   if (nextTopicSignal) {
     stateUpdates.currentTopicId = nextTopicSignal.topicId;
