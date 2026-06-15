@@ -5,7 +5,7 @@
  */
 
 import { addChatMessages } from '../services/chatHistory.service.js';
-import { updateChatSessionState } from '../services/chatSession.service.js';
+import { updateChatSession, updateChatSessionState } from '../services/chatSession.service.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
@@ -83,11 +83,14 @@ const buildSessionPayload = (sessionId, updatedSession) => {
   return {
     sessionId,
     status: chatState.status || 'active',
+    isLocked: chatState.status === 'exhausted', // single source of truth — no separate isLocked field
     learningMode: chatState.learningMode || 'idle',
     lastTopic: chatState.lastTopic || null,
     lastSubject: chatState.currentSubjectId || null,
     lastSection: chatState.currentSectionId || null,
     lastChapterId: chatState.currentChapterId || null,
+    sessionType: updatedSession?.sessionType || 'global',
+    messageCount: chatState.messageCount || 0,
   };
 };
 
@@ -149,8 +152,20 @@ export const saveAndRespond = async (
     stateUpdates.answerLanguage = language.answerLanguage;
   }
 
-  // Persist nested states cleanly using our updated session logic helper
-  const updatedSession = await updateChatSessionState(sessionId, removeUndefinedFields(stateUpdates), userId);
+  // sessionType derived from studyMode — set once on creation, immutable after.
+  const sessionType = studyMode === 'focus' ? 'focus' : 'global';
+
+  // Single atomic MongoDB op: chatState $set + messageCount $inc + totalTokensUsed $inc + $setOnInsert immutables.
+  // messageCount is checked AFTER $inc: if returned value === 1, this was the first turn → P2-T3 title generation.
+  const updatedSession = await updateChatSession(
+    sessionId,
+    {
+      chatStateSet: removeUndefinedFields(stateUpdates),
+      chatStateInc: { messageCount: 1 },
+      topLevelInc: {}, // P2-T4 will add: totalTokensUsed: tokenDelta
+    },
+    { userId, sessionType }
+  );
 
   // Step 7b: Assemble the standardized outer structural response contract
   const answerPayload = {

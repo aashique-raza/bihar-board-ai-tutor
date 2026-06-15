@@ -21,14 +21,16 @@ export const findChatSession = async (sessionId) => {
   return ChatSession.findOne({ sessionId });
 };
 
-export const getOrCreateChatSession = async (sessionId) => {
+export const getOrCreateChatSession = async (sessionId, { sessionType = 'global', userId = null } = {}) => {
   return ChatSession.findOneAndUpdate(
     { sessionId },
     {
       $setOnInsert: {
         sessionId,
-        mode: 'guest',
+        mode: userId ? 'logged_in' : 'guest',
         title: 'New Chat',
+        sessionType, // immutable after first write
+        userId,
       },
     },
     {
@@ -43,6 +45,61 @@ export const updateChatSessionLastMessageTime = async (sessionId) => {
     { sessionId },
     { lastMessageAt: new Date() },
     { returnDocument: 'after' }
+  );
+};
+
+/**
+ * Unified session update — handles chatState fields, top-level $inc, and
+ * $setOnInsert of immutable fields (sessionType, userId, mode) in one atomic op.
+ *
+ * @param {string} sessionId
+ * @param {object} ops
+ * @param {object} ops.chatStateSet    - Fields to $set inside chatState (dot-notation added internally)
+ * @param {object} ops.chatStateInc    - Fields to $inc inside chatState (e.g. { messageCount: 1 })
+ * @param {object} ops.topLevelInc     - Top-level fields to $inc (e.g. { totalTokensUsed: 450 })
+ * @param {object} meta
+ * @param {string|null} meta.userId
+ * @param {string} meta.sessionType    - 'focus' | 'global' — set once via $setOnInsert, never overwritten
+ */
+export const updateChatSession = async (
+  sessionId,
+  { chatStateSet = {}, chatStateInc = {}, topLevelInc = {} },
+  { userId = null, sessionType = 'global' } = {}
+) => {
+  const setFields = {};
+  const incFields = {};
+
+  for (const [key, value] of Object.entries(chatStateSet)) {
+    setFields[`chatState.${key}`] = value;
+  }
+
+  for (const [key, value] of Object.entries(chatStateInc)) {
+    incFields[`chatState.${key}`] = value;
+  }
+
+  for (const [key, value] of Object.entries(topLevelInc)) {
+    incFields[key] = value;
+  }
+
+  const update = {
+    $setOnInsert: {
+      userId,
+      mode: userId ? 'logged_in' : 'guest',
+      sessionType, // immutable — only applied on document creation
+    },
+  };
+
+  if (Object.keys(setFields).length > 0) update.$set = setFields;
+  if (Object.keys(incFields).length > 0) update.$inc = incFields;
+
+  return ChatSession.findOneAndUpdate(
+    { sessionId },
+    update,
+    {
+      returnDocument: 'after',
+      upsert: true,
+      setDefaultsOnInsert: true,
+    }
   );
 };
 

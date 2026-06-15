@@ -93,6 +93,26 @@ const chatSessionSchema = new mongoose.Schema(
         type: Date,
         default: null,
       },
+      // Incremented by 1 per conversation turn (student Q + tutor A = 1 turn).
+      // Used by P2-T3 to detect first turn for auto title generation.
+      // Checked atomically via $inc — race-condition safe across concurrent tabs.
+      messageCount: {
+        type: Number,
+        default: 0,
+      },
+    },
+    // Set once at session creation via $setOnInsert — never overwritten.
+    // Focus sessions remain Focus forever (SESSION_DESIGN.md constraint).
+    sessionType: {
+      type: String,
+      enum: ['focus', 'global'],
+      default: 'global',
+    },
+    // Accumulated across both LLM calls per turn (decider + tutor).
+    // Wired to actual counts in P2-T4. Defaults to 0 until then.
+    totalTokensUsed: {
+      type: Number,
+      default: 0,
     },
   },
   {
@@ -100,6 +120,10 @@ const chatSessionSchema = new mongoose.Schema(
     collection: 'chat_sessions',
   }
 );
+
+// Compound index for P2-T5 sessions list query: find by userId, sort by recency.
+// Without this, MongoDB does a full collection scan — O(n) at any scale.
+chatSessionSchema.index({ userId: 1, lastMessageAt: -1 });
 
 export const ChatSession =
   mongoose.models.ChatSession || mongoose.model('ChatSession', chatSessionSchema);
