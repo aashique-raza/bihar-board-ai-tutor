@@ -23,6 +23,17 @@ export const fetchStudyMap = async () => {
   }
 };
 
+export const fetchSessionHistory = async (sessionId) => {
+  try {
+    const { data } = await axiosInstance.get(
+      `/api/v1/sessions/${encodeURIComponent(sessionId)}/history`
+    );
+    return data.data;
+  } catch {
+    return null;
+  }
+};
+
 export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal) => {
   const body = { question, studyMode };
 

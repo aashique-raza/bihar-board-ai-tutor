@@ -255,12 +255,16 @@ export const verifyEmail = async (req, res, next) => {
  */
 export const logout = async (req, res, next) => {
   try {
-    const userId = req.user._id.toString();
-
-    try {
-      await redis.del(`refresh_token:${userId}`);
-    } catch (redisErr) {
-      console.error('[Logout] Redis DEL failed:', redisErr);
+    // Get userId from the refresh cookie itself — not from Bearer token.
+    // This way logout works even if the access token is expired.
+    const token = req.cookies?.refreshToken;
+    if (token) {
+      const decoded = verifyRefreshToken(token);
+      if (decoded?.userId) {
+        await redis.del(`refresh_token:${decoded.userId}`).catch((redisErr) => {
+          console.error('[Logout] Redis DEL failed:', redisErr);
+        });
+      }
     }
 
     res.clearCookie('refreshToken', {

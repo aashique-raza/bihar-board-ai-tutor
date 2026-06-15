@@ -1,7 +1,7 @@
 # SESSION_FIX_PLAN.md
 # Zuno Session — Complete Fix & Feature Implementation Plan
 # Created: 2026-06-15
-# Status: PLANNING COMPLETE — ready to implement
+# Status: PHASE 1 COMPLETE — Phase 2 next
 
 # HOW TO USE THIS FILE
 # --------------------
@@ -64,7 +64,7 @@
 ---
 
 ### P1-T1 — Session auto-expiry in localStorage
-**Status: TODO**
+**Status: DONE (revised design)**
 **Problem it fixes:** "hii" → "kal milte hain" — old session context bleeding into new day
 **File:** `frontend/src/utils/session.js`
 
@@ -76,10 +76,11 @@ export const getSavedSessionId = () => {
 };
 ```
 
-**New logic:**
-- Save sessionId WITH a timestamp: `{ id: "uuid", savedAt: Date.now() }`
-- On load: if savedAt is more than SESSION_MAX_AGE_MS → treat as expired → return ''
-- SESSION_MAX_AGE_MS = 8 hours (28800000ms) — student returns next day → fresh session
+**Revised logic (changed from plan after design discussion):**
+- Simple pointer — only stores the sessionId string, no timestamp, no time-based expiry
+- Sessions persist until token limit (15k) — not time-based
+- `clearSessionId()` called on logout and New Chat click
+- Reason: multiple long-lived sessions in sidebar, each session valid until token limit regardless of time
 
 **Exact change:**
 ```js
@@ -126,7 +127,7 @@ export const clearSessionId = () => {
 ---
 
 ### P1-T2 — "New Chat" button
-**Status: TODO**
+**Status: DONE**
 **Problem it fixes:** User cannot manually start a fresh session
 **Files:** `frontend/src/pages/ChatPage.jsx`, `frontend/src/components/Topbar.jsx`
 
@@ -176,7 +177,7 @@ const handleNewChat = useCallback(() => {
 ---
 
 ### P1-T3 — Backend API: GET /api/v1/session/history
-**Status: TODO**
+**Status: DONE (revised endpoint)**
 **Problem it fixes:** Frontend can't load previous messages on page refresh
 **Files (backend):**
 - `backend/src/controllers/session.controller.js` (NEW FILE)
@@ -190,11 +191,11 @@ Auth: optionalAuth (works for both guest and logged-in)
 Response: { success: true, data: { sessionId, messages: [...], sessionMeta: {...} } }
 ```
 
-**Why optionalAuth (not requireAuth):**
-- Guests also need to restore their chat on refresh
-- Guest sessions exist in DB (they're just not linked to a userId)
-- We don't verify ownership here because sessionId itself is the credential for guests
-- For logged-in users: we could verify userId match, but for Phase 1 keep it simple
+**Actual implementation (changed from plan):**
+- Endpoint: `GET /api/v1/sessions/:sessionId/history` (path param, not query)
+- Auth: `requireAuth` (logged-in users only — guests don't get history restore in Phase 1)
+- Ownership check added: `session.userId !== req.user.id` → 404 (prevents enumeration attacks)
+- Files: `backend/src/controllers/session.controller.js` (NEW), `backend/src/routes/session.routes.js` (NEW), `backend/src/app.js`
 
 **Controller logic:**
 ```js
@@ -243,7 +244,7 @@ export const getSessionHistory = async (req, res, next) => {
 ---
 
 ### P1-T4 — Frontend: Load chat history on page init
-**Status: TODO**
+**Status: DONE**
 **Problem it fixes:** Messages disappear on refresh
 **Files:** `frontend/src/api/tutorApi.js`, `frontend/src/pages/ChatPage.jsx`
 
@@ -303,13 +304,17 @@ const dbMessageToUiMessage = (dbMsg) => ({
 ---
 
 ## PHASE 1 COMPLETION CHECKLIST
-- [ ] P1-T1: localStorage expiry working (8h auto-reset)
-- [ ] P1-T2: "New Chat" button clears session, resets UI
-- [ ] P1-T3: GET /api/v1/session/history returns correct messages
-- [ ] P1-T4: Chat history restores on page refresh
-- [ ] REGRESSION: Ask question still works normally after Phase 1
-- [ ] REGRESSION: Focus mode still works after Phase 1
-- [ ] REGRESSION: Auth flow (login/register) unaffected
+- [x] P1-T1: localStorage simple pointer (no time expiry — sessions persist by token limit)
+- [x] P1-T2: "New Chat" button clears session, resets UI
+- [x] P1-T3: GET /api/v1/sessions/:sessionId/history returns correct messages (requireAuth + ownership)
+- [x] P1-T4: Chat history restores on page refresh
+- [x] FIX-005: userId saved to DB on every session (done alongside Phase 1)
+- [x] Logout bug fixed: requireAuth removed from logout route, cookie cleared correctly
+- [x] Auth race condition fix: history load waits for isAuthLoading = false
+- [x] Guest safety guard: history API not called for guests (prevents 401 loop)
+- [x] REGRESSION: Ask question works normally after Phase 1
+- [x] REGRESSION: Auth flow (login/logout) works correctly
+- [ ] REGRESSION: Focus mode — not explicitly tested after Phase 1
 
 ---
 
@@ -322,7 +327,7 @@ const dbMessageToUiMessage = (dbMsg) => ({
 ---
 
 ### P2-T1 — FIX-005: Wire userId through pipeline to DB
-**Status: TODO**
+**Status: DONE (completed during Phase 1)**
 **Why it must come BEFORE sidebar:** Sidebar shows sessions per user (userId filter).
 If userId is null in all documents, no session can be linked to a user.
 **Full fix details in:** BRAIN_FIX_HANDOFF.md → FIX-005 section
@@ -532,7 +537,7 @@ const sessions = await ChatSession.find({ userId })
 ---
 
 ## PHASE 2 COMPLETION CHECKLIST
-- [ ] P2-T1: userId saved correctly to DB for all logged-in users
+- [x] P2-T1: userId saved correctly to DB for all logged-in users
 - [ ] P2-T2: ChatSession schema has sessionType, totalTokensUsed, isLocked, messageCount
 - [ ] P2-T3: Session title auto-generated on first query
 - [ ] P2-T4: Token counting working, session locks at 15k
@@ -612,4 +617,4 @@ P2-T7 (lock behavior)        ← NEEDS P2-T4 + P2-T6
 
 | Date | Tasks Done | Blockers | Next |
 |------|-----------|----------|------|
-| — | — | — | Start P1-T1 |
+| 2026-06-15 | Phase 1 complete: session.js rewrite, New Chat button, history API (GET /sessions/:id/history), history load on refresh, userId in DB (FIX-005), logout fix, auth race condition guard, `payload.session.sessionId` bug fix | — | Phase 2: P2-T2 (schema) → P2-T3 (title) → P2-T4 (tokens) → P2-T5 (sessions list API) → P2-T6 (sidebar) → P2-T7 (lock UI) |

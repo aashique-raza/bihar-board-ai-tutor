@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
 import { clearCredentials } from '../store/slices/authSlice.js';
 import { logoutUser } from '../services/axios/authService.js';
+import { clearSessionId } from '../utils/session.js';
 
 
 export default function Topbar({
@@ -49,6 +50,7 @@ export default function Topbar({
     } catch {
       // Even if API call fails, clear local state and redirect
     }
+    clearSessionId();
     dispatch(clearCredentials());
     navigate('/login', { state: { toastSuccess: 'Logout ho gaya! Phir milenge.' } });
   };

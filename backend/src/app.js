@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import askRoutes from './routes/ask.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import healthRoutes from './routes/health.routes.js';
+import sessionRoutes from './routes/session.routes.js';
 import studyMapRoutes from './routes/studyMap.routes.js';
 import ApiError from './utils/ApiError.js';
 import { sendResponse } from './utils/sendResponse.js';
@@ -31,6 +32,7 @@ app.use('/health', healthRoutes);
 app.use('/api/v1/ask', askRoutes);
 app.use('/api/v1/study-map', studyMapRoutes);
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/sessions', sessionRoutes);
 
 app.use((req, _res, next) => {
   next(new ApiError(404, `Route not found: ${req.originalUrl}`));

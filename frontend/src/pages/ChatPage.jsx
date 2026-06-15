@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import { useLocation } from 'react-router-dom';
-import { askTutor, fetchStudyMap } from '../api/tutorApi.js';
+import { askTutor, fetchSessionHistory, fetchStudyMap } from '../api/tutorApi.js';
 import AskBar from '../components/AskBar.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import FocusModal from '../components/FocusModal.jsx';
@@ -11,6 +11,7 @@ import Topbar from '../components/Topbar.jsx';
 import { STUDY_MODES } from '../constants/studyModes.js';
 import { clearSessionId, getSavedSessionId, saveSessionId } from '../utils/session.js';
 import { findFirstChapter } from '../utils/studyMap.js';
+import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
 
 // --- Message factory helpers ---
@@ -48,6 +49,7 @@ const createFocusMessage = (chapter) => ({
 function ChatPage({ theme, toggleTheme }) {
   const location = useLocation();
   const { toast, showToast, hideToast } = useToast();
+  const { isLoggedIn, isLoading: isAuthLoading } = useAuth();
 
   useEffect(() => {
     if (location.state?.toastSuccess) {
@@ -59,7 +61,8 @@ function ChatPage({ theme, toggleTheme }) {
   const [studyMode, setStudyMode] = useState(STUDY_MODES.global);
   const [studyMap, setStudyMap] = useState(null);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
-  const [messages, setMessages] = useState([createWelcomeMessage()]);
+  const [messages, setMessages] = useState([]);
+  const [isHistoryLoading, setIsHistoryLoading] = useState(true);
   const [sessionId, setSessionId] = useState(() => getSavedSessionId());
   const [isStudyMapLoading, setIsStudyMapLoading] = useState(true);
   const [isFocusModalOpen, setIsFocusModalOpen] = useState(false);
@@ -87,6 +90,45 @@ function ChatPage({ theme, toggleTheme }) {
       clearTimeout(timeoutRef.current);
     };
   }, []);
+
+  // Load chat history from DB on mount — restores messages after page refresh
+  // Waits for auth to initialize before deciding (race condition guard)
+  useEffect(() => {
+    if (isAuthLoading) return;
+
+    const savedId = getSavedSessionId();
+
+    if (!savedId || !isLoggedIn) {
+      setMessages([createWelcomeMessage()]);
+      setIsHistoryLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+    fetchSessionHistory(savedId).then((result) => {
+      if (cancelled) return;
+      const dbMessages = result?.messages ?? [];
+      if (dbMessages.length === 0) {
+        setMessages([createWelcomeMessage()]);
+      } else {
+        setMessages(dbMessages.map((m) => ({
+          id: crypto.randomUUID(),
+          role: m.role === 'student' ? 'student' : 'zuno',
+          answer: m.text,
+          status: m.metadata?.status || 'answered',
+          sources: m.sources || [],
+          sections: m.metadata?.sections || [],
+          responseMode: m.metadata?.responseMode || null,
+        })));
+      }
+    }).catch(() => {
+      if (!cancelled) setMessages([createWelcomeMessage()]);
+    }).finally(() => {
+      if (!cancelled) setIsHistoryLoading(false);
+    });
+
+    return () => { cancelled = true; };
+  }, [isAuthLoading]);
 
   // Load study map on mount
   useEffect(() => {
@@ -150,9 +192,7 @@ function ChatPage({ theme, toggleTheme }) {
     controllerRef.current = null;
 
     clearSessionId();
-    const freshId = crypto.randomUUID();
-    setSessionId(freshId);
-    saveSessionId(freshId);
+    setSessionId('');
 
     setMessages([createWelcomeMessage()]);
     setStudyMode(STUDY_MODES.global);
@@ -196,9 +236,10 @@ function ChatPage({ theme, toggleTheme }) {
         controller.signal
       );
 
-      if (payload.sessionId && payload.sessionId !== sessionIdRef.current) {
-        setSessionId(payload.sessionId);
-        saveSessionId(payload.sessionId);
+      const backendSessionId = payload.session?.sessionId;
+      if (backendSessionId && backendSessionId !== sessionIdRef.current) {
+        setSessionId(backendSessionId);
+        saveSessionId(backendSessionId);
       }
 
       setMessages((prev) => [...prev, createAnswerMessage(payload)]);
@@ -269,7 +310,11 @@ function ChatPage({ theme, toggleTheme }) {
           flexDirection: 'column',
           gap: 0,
         }}>
-          {messages.map((message) => (
+          {isHistoryLoading ? (
+            <ChatMessage
+              message={{ id: 'loading', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
+            />
+          ) : messages.map((message) => (
             <ChatMessage
               key={message.id}
               message={message}
@@ -296,7 +341,7 @@ function ChatPage({ theme, toggleTheme }) {
         <Box sx={{ maxWidth: 'var(--chat-max-width)', mx: 'auto' }}>
           <StatusNotice error={error} />
           <AskBar
-            disabled={isAsking}
+            disabled={isAsking || isHistoryLoading}
             onAsk={handleAsk}
             onCancel={handleCancel}
             studyMode={studyMode}
