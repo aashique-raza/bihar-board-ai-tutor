@@ -9,7 +9,7 @@ import StatusNotice from '../components/StatusNotice.jsx';
 import Toast from '../components/Toast.jsx';
 import Topbar from '../components/Topbar.jsx';
 import { STUDY_MODES } from '../constants/studyModes.js';
-import { getSavedSessionId, saveSessionId } from '../utils/session.js';
+import { clearSessionId, getSavedSessionId, saveSessionId } from '../utils/session.js';
 import { findFirstChapter } from '../utils/studyMap.js';
 import { useToast } from '../hooks/useToast.js';
 
@@ -144,6 +144,23 @@ function ChatPage({ theme, toggleTheme }) {
     setError('');
   };
 
+  const handleNewChat = useCallback(() => {
+    controllerRef.current?.abort();
+    clearTimeout(timeoutRef.current);
+    controllerRef.current = null;
+
+    clearSessionId();
+    const freshId = crypto.randomUUID();
+    setSessionId(freshId);
+    saveSessionId(freshId);
+
+    setMessages([createWelcomeMessage()]);
+    setStudyMode(STUDY_MODES.global);
+    setSelectedChapterId(null);
+    setError('');
+    setIsAsking(false);
+  }, []);
+
   const handleAsk = useCallback(async (question, requestMode) => {
     const cleanQuestion = question.trim();
     const currentMode = requestMode ?? studyModeRef.current;
@@ -236,6 +253,7 @@ function ChatPage({ theme, toggleTheme }) {
         isFocusLoading={isStudyMapLoading}
         onOpenFocus={() => setIsFocusModalOpen(true)}
         onClearFocus={handleClearFocus}
+        onNewChat={handleNewChat}
       />
 
       {/* Chat area — scrollable */}

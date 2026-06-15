@@ -5,9 +5,10 @@ export const getSavedSessionId = () => {
 };
 
 export const saveSessionId = (sessionId) => {
-  if (!sessionId) {
-    return;
-  }
-
+  if (!sessionId) return;
   window.localStorage.setItem(SESSION_STORAGE_KEY, sessionId);
+};
+
+export const clearSessionId = () => {
+  window.localStorage.removeItem(SESSION_STORAGE_KEY);
 };

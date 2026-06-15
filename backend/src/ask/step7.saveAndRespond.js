@@ -100,7 +100,8 @@ export const saveAndRespond = async (
   { language },
   decision,
   { retrieval, sources, nextTopicSignal },
-  response
+  response,
+  userId = null
 ) => {
   console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
 
@@ -149,7 +150,7 @@ export const saveAndRespond = async (
   }
 
   // Persist nested states cleanly using our updated session logic helper
-  const updatedSession = await updateChatSessionState(sessionId, removeUndefinedFields(stateUpdates));
+  const updatedSession = await updateChatSessionState(sessionId, removeUndefinedFields(stateUpdates), userId);
 
   // Step 7b: Assemble the standardized outer structural response contract
   const answerPayload = {
@@ -193,7 +194,7 @@ export const saveAndRespond = async (
         sections: answerPayload.sections,
       },
     },
-  ]);
+  ], userId);
 
   console.log('[Step 7 Complete] Database sync finalized successfully. Releasing payload.');
   return answerPayload;

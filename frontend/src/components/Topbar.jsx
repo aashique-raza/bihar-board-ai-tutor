@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import AddCommentOutlined from '@mui/icons-material/AddCommentOutlined';
 import CloseRounded from '@mui/icons-material/CloseRounded';
 import DarkModeRounded from '@mui/icons-material/DarkModeRounded';
 import LightModeRounded from '@mui/icons-material/LightModeRounded';
@@ -21,6 +22,7 @@ export default function Topbar({
   isFocusLoading,
   onOpenFocus,
   onClearFocus,
+  onNewChat,
 }) {
   const { user, isLoggedIn, isLoading } = useAuth();
   const dispatch = useDispatch();
@@ -143,6 +145,7 @@ export default function Topbar({
           size="small"
           disabled={isFocusLoading}
           onClick={onOpenFocus}
+
           sx={{
             borderColor: 'var(--border-strong)',
             color: 'var(--text-secondary)',
@@ -161,6 +164,43 @@ export default function Topbar({
         >
           Focus
         </Button>
+
+        {/* New Chat button */}
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={onNewChat}
+          sx={{
+            borderColor: 'var(--border-strong)',
+            color: 'var(--text-secondary)',
+            borderRadius: 'var(--radius-full)',
+            fontSize: '0.8rem',
+            fontWeight: 600,
+            px: 1.5,
+            py: 0.5,
+            textTransform: 'none',
+            display: { xs: 'none', sm: 'inline-flex' },
+            '&:hover': {
+              borderColor: 'var(--primary)',
+              color: 'var(--primary)',
+              bgcolor: 'transparent',
+            },
+          }}
+        >
+          New Chat
+        </Button>
+        <IconButton
+          size="small"
+          onClick={onNewChat}
+          title="New Chat"
+          sx={{
+            display: { xs: 'inline-flex', sm: 'none' },
+            color: 'var(--text-muted)',
+            '&:hover': { color: 'var(--text-primary)' },
+          }}
+        >
+          <AddCommentOutlined sx={{ fontSize: '20px' }} />
+        </IconButton>
 
         {/* Auth slot */}
         {!isLoading && (

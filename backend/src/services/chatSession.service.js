@@ -51,7 +51,7 @@ export const updateChatSessionLastMessageTime = async (sessionId) => {
  * Uses MongoDB dot-notation ($set) so only the given fields change and the
  * other chatState fields are left untouched.
  */
-export const updateChatSessionState = async (sessionId, updates) => {
+export const updateChatSessionState = async (sessionId, updates, userId = null) => {
   const updateFields = {};
 
   // Turn { key: value } into { 'chatState.key': value } for a dot-notation $set
@@ -61,7 +61,13 @@ export const updateChatSessionState = async (sessionId, updates) => {
 
   return ChatSession.findOneAndUpdate(
     { sessionId },
-    { $set: updateFields },
+    {
+      $set: updateFields,
+      $setOnInsert: {
+        userId,
+        mode: userId ? 'logged_in' : 'guest',
+      },
+    },
     {
       returnDocument: 'after',
       upsert: true,

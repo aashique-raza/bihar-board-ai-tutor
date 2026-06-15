@@ -45,7 +45,7 @@ import { updateChatSessionState } from '../services/chatSession.service.js';
  * @param {object} body - Raw request body { question, studyMode, sessionId, chapterId }
  * @returns {object}    - The complete API response payload
  */
-export const askQuestion = async (body = {}) => {
+export const askQuestion = async (body = {}, { userId = null } = {}) => {
 
   // --- PRE-PIPELINE: Steps 1-3 ---
   // These steps handle input validation, DB session load, and context building.
@@ -73,7 +73,7 @@ export const askQuestion = async (body = {}) => {
     console.log('[DEBUG] intent:', decision.intent, 'needsRetrieval:', decision.needsRetrieval);
     const retrieval = await retrieveContent(decision, input, session);
     const response = await generateResponse(input, context, decision, retrieval);
-    return saveAndRespond(input, session, context, decision, retrieval, response);
+    return saveAndRespond(input, session, context, decision, retrieval, response, userId);
 
   } catch (error) {
 
@@ -95,7 +95,7 @@ export const askQuestion = async (body = {}) => {
       updateChatSessionState(session.sessionId, {
         consecutiveErrors: effectiveCount + 1,
         lastErrorAt: new Date(),
-      }).catch((e) => console.error('[Orchestrator] consecutiveErrors save failed:', e));
+      }, userId).catch((e) => console.error('[Orchestrator] consecutiveErrors save failed:', e));
 
       return buildProviderErrorResponse(message, input.question, input.studyMode);
     }
