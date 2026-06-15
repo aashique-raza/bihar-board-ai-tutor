@@ -538,7 +538,7 @@ const sessions = await ChatSession.find({ userId })
 
 ## PHASE 2 COMPLETION CHECKLIST
 - [x] P2-T1: userId saved correctly to DB for all logged-in users
-- [ ] P2-T2: ChatSession schema has sessionType, totalTokensUsed, isLocked, messageCount
+- [x] P2-T2: ChatSession schema has sessionType, totalTokensUsed, messageCount (isLocked dropped — chatState.status=exhausted is single source of truth)
 - [ ] P2-T3: Session title auto-generated on first query
 - [ ] P2-T4: Token counting working, session locks at 15k
 - [ ] P2-T5: GET /api/v1/sessions returns correct session list for logged-in user
