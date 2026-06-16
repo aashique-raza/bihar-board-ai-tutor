@@ -73,6 +73,28 @@ const createFallbackResponse = ({ responseMode }) => ({
   memoryUpdate: {},
 });
 
+// Curriculum list (~450 tokens) is only useful in specific turns.
+// Sending it on every turn is the single largest avoidable waste in the prompt.
+const needsCurriculum = (intent, responseMode, focusChapterPrompt, retrievedContext) => {
+  // Redirect and conversation modes never reference curriculum — short replies only
+  if (responseMode === 'redirect' || responseMode === 'conversation') return false;
+
+  // CHOOSE_COURSE: LLM is explicitly instructed to list chapters from this field
+  if (intent === 'CHOOSE_COURSE') return true;
+
+  // EXPLAIN_MORE: re-explains a specific topic already in retrieval context — chapter list is noise
+  if (intent === 'EXPLAIN_MORE') return false;
+
+  // Global mode: student has no active chapter — curriculum is the only reference LLM has
+  if (focusChapterPrompt === 'No focus chapter selected.') return true;
+
+  // Focus mode + retrieval failed: LLM needs curriculum to redirect student gracefully
+  if (retrievedContext === 'NO_RETRIEVED_CONTEXT') return true;
+
+  // Focus mode + content retrieved: student is in a chapter, chapter list is noise
+  return false;
+};
+
 /**
  * Step 6: Call the Tutor LLM to generate the student-facing answer.
  */
@@ -111,6 +133,10 @@ export const generateResponse = async (
       ? JSON.stringify(memory, null, 2)
       : String(memory || 'No active state records.');
 
+    const curriculumForPrompt = needsCurriculum(intent, responseMode, focusChapterPrompt, retrievedContext)
+      ? curriculumSummary
+      : 'Not needed for this response type.';
+
     const rawResponse = await getResponseChain().invoke(
       {
         message: question,
@@ -120,7 +146,7 @@ export const generateResponse = async (
         memory: serializedMemory,
         history,
         lastTutorResponse,
-        curriculumSummary,
+        curriculumSummary: curriculumForPrompt,
         focusChapter: focusChapterPrompt,
         retrievedContext,
       },
@@ -146,7 +172,7 @@ export const generateResponse = async (
         suggestedActions: [],
         memoryUpdate: {},
       };
-      return { ...safeConversation, answer: sectionsToAnswerText(safeConversation), tokenUsage: capturedTokens };
+      return { ...safeConversation, answer: sectionsToAnswerText(safeConversation), tokenUsage: capturedBreakdown.total };
     }
 
     // Normalize the sections array structure cleanly
