@@ -59,7 +59,7 @@ export const formatMemoryForPrompt = (chatState) => ({
   currentTopicId: chatState?.currentTopicId || null,
   learningMode: chatState?.learningMode || 'idle',
   pendingAction: chatState?.pendingAction || null,
-  completedTopicIds: chatState?.completedTopicIds || [],
+  completedTopicsCount: (chatState?.completedTopicIds || []).length,
   lastTopic: chatState?.lastTopic || null,
   lastDoubtTopic: chatState?.lastDoubtTopic || null,
   lastDoubtQuestion: chatState?.lastDoubtQuestion || null,

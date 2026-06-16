@@ -24,7 +24,7 @@ const buildFocusChapterPrompt = (focusChapter) => {
     chapterId: focusChapter.id,
     chapterNumber: focusChapter.number,
     chapterTitle: focusChapter.title,
-  }, null, 2);
+  });
 };
 
 /**
@@ -83,7 +83,7 @@ export const buildContext = async ({ question, focusChapter }, { chatState, rece
   console.log(`Semantic Hydration Map Output -> ${currentStudyContext}`);
 
   // 3. Serialize raw objects for prompt engines ingestion protocols
-  const memory = JSON.stringify(formatMemoryForPrompt(chatState), null, 2);
+  const memory = JSON.stringify(formatMemoryForPrompt(chatState));
   const history = formatRecentHistory(recentMessages);
   const lastTutorResponse = getLastTutorResponse(recentMessages);
   const curriculumSummary = formatStudyMapSummary(studyMap); // Isolated here (will be explicitly skipped from step 4 parameters)
