@@ -101,6 +101,13 @@ const chatSessionSchema = new mongoose.Schema(
         default: 0,
       },
     },
+    // Saved on the very first student turn — used as sidebar preview when title is still 'New Chat'.
+    // Never overwritten after first write (setFirstQuestionIfEmpty uses a null-filter guard).
+    firstQuestion: {
+      type: String,
+      default: null,
+    },
+
     // Set once at session creation via $setOnInsert — never overwritten.
     // Focus sessions remain Focus forever (SESSION_DESIGN.md constraint).
     sessionType: {

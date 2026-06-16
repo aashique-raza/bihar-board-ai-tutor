@@ -104,6 +104,18 @@ export const updateChatSession = async (
 };
 
 /**
+ * Saves the first student question as a sidebar preview fallback.
+ * { firstQuestion: null } filter = race-condition safe — only the first turn
+ * ever writes this; all subsequent calls are silent no-ops.
+ */
+export const setFirstQuestionIfEmpty = async (sessionId, question) => {
+  return ChatSession.updateOne(
+    { sessionId, firstQuestion: null },
+    { $set: { firstQuestion: String(question).slice(0, 60).trim() } }
+  );
+};
+
+/**
  * P2-T3: Set session title only if it is still the default 'New Chat'.
  * The { title: 'New Chat' } filter makes this race-condition safe across
  * concurrent tabs — only the first writer succeeds; subsequent calls no-op.
@@ -126,9 +138,21 @@ export const getSessionsByUser = async (userId, { limit = 20 } = {}) => {
     .sort({ lastMessageAt: -1, _id: -1 })
     .limit(limit)
     .select(
-      'sessionId title sessionType lastMessageAt totalTokensUsed chatState.status chatState.messageCount chatState.currentChapterId'
+      'sessionId title firstQuestion sessionType lastMessageAt totalTokensUsed chatState.status chatState.messageCount chatState.currentChapterId'
     )
     .lean();
+};
+
+export const deleteSessionById = async (sessionId) => {
+  return ChatSession.deleteOne({ sessionId });
+};
+
+export const renameSessionById = async (sessionId, title) => {
+  return ChatSession.findOneAndUpdate(
+    { sessionId },
+    { $set: { title: String(title).trim().slice(0, 100) } },
+    { returnDocument: 'after' }
+  );
 };
 
 /**

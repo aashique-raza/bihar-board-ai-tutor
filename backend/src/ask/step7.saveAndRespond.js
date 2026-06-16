@@ -5,7 +5,7 @@
  */
 
 import { addChatMessages } from '../services/chatHistory.service.js';
-import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault } from '../services/chatSession.service.js';
+import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
 import { env } from '../config/env.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
@@ -185,6 +185,12 @@ export const saveAndRespond = async (
     } catch {
       // Non-critical — session will be locked on next DB read anyway
     }
+  }
+
+  // Save first student question as sidebar preview — only fires on turn 1 (messageCount just became 1).
+  // setFirstQuestionIfEmpty is a no-op on all subsequent turns (null-filter guard).
+  if ((updatedSession?.chatState?.messageCount ?? 0) === 1) {
+    setFirstQuestionIfEmpty(sessionId, question).catch(() => {}); // non-critical, fire-and-forget
   }
 
   // P2-T3: Auto-title using the answer heading already computed by step6 — zero extra LLM cost.

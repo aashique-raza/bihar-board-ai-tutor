@@ -23,6 +23,27 @@ export const fetchStudyMap = async () => {
   }
 };
 
+export const deleteSession = async (sessionId) => {
+  await axiosInstance.delete(`/api/v1/sessions/${encodeURIComponent(sessionId)}`);
+};
+
+export const renameSession = async (sessionId, title) => {
+  const { data } = await axiosInstance.patch(
+    `/api/v1/sessions/${encodeURIComponent(sessionId)}/rename`,
+    { title }
+  );
+  return data.data;
+};
+
+export const fetchSessions = async () => {
+  try {
+    const { data } = await axiosInstance.get('/api/v1/sessions');
+    return data.data; // shape: { sessions: [...] }
+  } catch {
+    return { sessions: [] }; // silent fail — guest or network error
+  }
+};
+
 export const fetchSessionHistory = async (sessionId) => {
   try {
     const { data } = await axiosInstance.get(

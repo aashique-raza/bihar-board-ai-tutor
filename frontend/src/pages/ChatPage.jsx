@@ -13,6 +13,8 @@ import { clearSessionId, getSavedSessionId, saveSessionId } from '../utils/sessi
 import { findFirstChapter } from '../utils/studyMap.js';
 import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
+import useSessionList from '../hooks/useSessionList.js';
+import HistoryPanel from '../components/HistoryPanel.jsx';
 
 // --- Message factory helpers ---
 
@@ -36,6 +38,30 @@ const createAnswerMessage = (payload) => ({
   ...payload,
 });
 
+const createLockSystemMessage = () => ({
+  id: crypto.randomUUID(),
+  role: 'system',
+  answer: 'Is session ki limit reach ho gayi. Nayi chat shuru karo.',
+  sources: [],
+});
+
+const createCapNoticeMessage = () => ({
+  id: crypto.randomUUID(),
+  role: 'system',
+  answer: 'Purani 30 messages load ki gayi hain.',
+  sources: [],
+});
+
+const dbMessageToUiMessage = (m) => ({
+  id: crypto.randomUUID(),
+  role: m.role === 'student' ? 'student' : 'zuno',
+  answer: m.text,
+  status: m.metadata?.status || 'answered',
+  sources: m.sources || [],
+  sections: m.metadata?.sections || [],
+  responseMode: m.metadata?.responseMode || null,
+});
+
 const createFocusMessage = (chapter) => ({
   id: crypto.randomUUID(),
   role: 'zuno',
@@ -50,6 +76,8 @@ function ChatPage({ theme, toggleTheme }) {
   const location = useLocation();
   const { toast, showToast, hideToast } = useToast();
   const { isLoggedIn, isLoading: isAuthLoading } = useAuth();
+  const { sessions, isLoading: sessionsLoading, refresh, fetchOnce } =
+    useSessionList({ enabled: isLoggedIn });
 
   useEffect(() => {
     if (location.state?.toastSuccess) {
@@ -68,11 +96,13 @@ function ChatPage({ theme, toggleTheme }) {
   const [isFocusModalOpen, setIsFocusModalOpen] = useState(false);
   const [isAsking, setIsAsking] = useState(false);
   const [error, setError] = useState('');
+  const [isSessionLocked, setIsSessionLocked] = useState(false);
 
   const chatEndRef = useRef(null);
   const controllerRef = useRef(null);
   const timeoutRef = useRef(null);
   const wasTimeoutAbortRef = useRef(false);
+  const isSwitchingRef = useRef(false); // BUG-2 FIX: abort race guard
 
   // Refs so async callbacks always read the latest state values
   const sessionIdRef = useRef(sessionId);
@@ -108,19 +138,9 @@ function ChatPage({ theme, toggleTheme }) {
     fetchSessionHistory(savedId).then((result) => {
       if (cancelled) return;
       const dbMessages = result?.messages ?? [];
-      if (dbMessages.length === 0) {
-        setMessages([createWelcomeMessage()]);
-      } else {
-        setMessages(dbMessages.map((m) => ({
-          id: crypto.randomUUID(),
-          role: m.role === 'student' ? 'student' : 'zuno',
-          answer: m.text,
-          status: m.metadata?.status || 'answered',
-          sources: m.sources || [],
-          sections: m.metadata?.sections || [],
-          responseMode: m.metadata?.responseMode || null,
-        })));
-      }
+      const converted = dbMessages.map(dbMessageToUiMessage);
+      setMessages(converted.length > 0 ? converted : [createWelcomeMessage()]);
+      setIsSessionLocked(result?.sessionMeta?.isLocked === true);
     }).catch(() => {
       if (!cancelled) setMessages([createWelcomeMessage()]);
     }).finally(() => {
@@ -193,13 +213,17 @@ function ChatPage({ theme, toggleTheme }) {
 
     clearSessionId();
     setSessionId('');
+    setIsSessionLocked(false);
+    setIsHistoryLoading(false);    // BUG-3 FIX: prevent stuck loading if switch was in progress
+    isSwitchingRef.current = false; // BUG-2 FIX: release abort guard
 
     setMessages([createWelcomeMessage()]);
     setStudyMode(STUDY_MODES.global);
     setSelectedChapterId(null);
     setError('');
     setIsAsking(false);
-  }, []);
+    refresh();
+  }, [refresh]);
 
   const handleAsk = useCallback(async (question, requestMode) => {
     const cleanQuestion = question.trim();
@@ -242,8 +266,23 @@ function ChatPage({ theme, toggleTheme }) {
         saveSessionId(backendSessionId);
       }
 
-      setMessages((prev) => [...prev, createAnswerMessage(payload)]);
+      const isNowLocked = payload.session?.isLocked === true;
+      if (isNowLocked) {
+        setMessages((prev) => [
+          ...prev,
+          createAnswerMessage(payload),
+          createLockSystemMessage(),
+        ]);
+        setIsSessionLocked(true);
+      } else {
+        setMessages((prev) => [...prev, createAnswerMessage(payload)]);
+      }
+
+      refresh(); // reorder sidebar after every successful response
     } catch (askError) {
+      // BUG-2 FIX: session switch caused this abort — do not pollute new session
+      if (isSwitchingRef.current) return;
+
       if (askError.name === 'AbortError' || askError.name === 'CanceledError') {
         const answer = wasTimeoutAbortRef.current
           ? 'Zuno thoda slow hai abhi — connection slow ho sakta hai ya server busy hai. Ek baar aur try karo!'
@@ -276,6 +315,59 @@ function ChatPage({ theme, toggleTheme }) {
     await handleAsk(question, STUDY_MODES.global);
   };
 
+  const handleSessionSwitch = useCallback(async (session) => {
+    if (session.sessionId === sessionId) return; // already on this session
+
+    // BUG-2 FIX: signal handleAsk catch block — do not append cancel message
+    isSwitchingRef.current = true;
+
+    // Abort any in-flight request
+    controllerRef.current?.abort();
+    clearTimeout(timeoutRef.current);
+    controllerRef.current = null;
+
+    // Immediate UI reset
+    setIsSessionLocked(false);
+    setSessionId(session.sessionId);
+    saveSessionId(session.sessionId);
+    setStudyMode(session.sessionType === 'focus' ? STUDY_MODES.focus : STUDY_MODES.global);
+    setSelectedChapterId(session.sessionType === 'focus' ? (session.currentChapterId || null) : null);
+    setError('');
+    setIsAsking(false);
+
+    // BUG-3 FIX: show skeleton while fetching new session's history
+    setIsHistoryLoading(true);
+    setMessages([]);
+
+    try {
+      const result = await fetchSessionHistory(session.sessionId);
+
+      // Stale check: user may have switched again while fetch was in-flight
+      if (session.sessionId !== sessionIdRef.current) return;
+
+      const dbMessages = result?.messages ?? [];
+      const converted = dbMessages.map(dbMessageToUiMessage);
+      const displayMessages = converted.length > 0 ? converted : [createWelcomeMessage()];
+
+      // Show cap notice if history is at the 30-message limit
+      if (dbMessages.length === 30) {
+        displayMessages.unshift(createCapNoticeMessage());
+      }
+
+      setMessages(displayMessages);
+      setIsSessionLocked(result?.sessionMeta?.isLocked === true);
+    } catch {
+      if (session.sessionId !== sessionIdRef.current) return;
+      setMessages([createWelcomeMessage()]);
+      showToast('Session load nahi hui. Dobara try karo.', 'error'); // Missing-1 FIX
+    } finally {
+      if (session.sessionId === sessionIdRef.current) {
+        setIsHistoryLoading(false); // BUG-3 FIX
+      }
+      isSwitchingRef.current = false; // BUG-2 FIX: release abort guard
+    }
+  }, [sessionId, showToast]);
+
   return (
     <Box
       component="main"
@@ -295,6 +387,7 @@ function ChatPage({ theme, toggleTheme }) {
         onOpenFocus={() => setIsFocusModalOpen(true)}
         onClearFocus={handleClearFocus}
         onNewChat={handleNewChat}
+        isSessionLocked={isSessionLocked}
       />
 
       {/* Chat area — scrollable */}
@@ -342,6 +435,7 @@ function ChatPage({ theme, toggleTheme }) {
           <StatusNotice error={error} />
           <AskBar
             disabled={isAsking || isHistoryLoading}
+            isLocked={isSessionLocked}
             onAsk={handleAsk}
             onCancel={handleCancel}
             studyMode={studyMode}
@@ -356,6 +450,24 @@ function ChatPage({ theme, toggleTheme }) {
         studyMap={studyMap}
         onClose={() => setIsFocusModalOpen(false)}
         onSelectChapter={handleFocusChapterSelect}
+      />
+
+      <HistoryPanel
+        isLoggedIn={isLoggedIn}
+        isAuthLoading={isAuthLoading}
+        sessions={sessions}
+        isLoading={sessionsLoading}
+        activeSessionId={sessionId}
+        isSessionLocked={isSessionLocked}
+        onSessionSelect={handleSessionSwitch}
+        onNewChat={handleNewChat}
+        fetchOnce={fetchOnce}
+        onSessionDelete={(deletedId) => {
+          // If deleted session was active, start fresh
+          if (deletedId === sessionId) handleNewChat();
+          refresh();
+        }}
+        onSessionRename={() => refresh()}
       />
 
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />

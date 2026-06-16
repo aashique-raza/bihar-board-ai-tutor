@@ -59,6 +59,10 @@ export const getChatHistory = async (sessionId, limit = 50) => {
   return history ? history.messages : [];
 };
 
+export const deleteSessionHistory = async (sessionId) => {
+  return ChatHistory.deleteOne({ sessionId });
+};
+
 /**
  * Returns the most recent `limit` messages (default 14) for the Ask prompt context.
  */

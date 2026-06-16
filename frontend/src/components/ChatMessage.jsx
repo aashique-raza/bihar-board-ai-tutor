@@ -1,5 +1,8 @@
 import React from 'react';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import LockOutlined from '@mui/icons-material/LockOutlined';
 import SourceChips from './SourceChips.jsx';
 
 // Returns true if message has at least one section with heading or content
@@ -40,10 +43,28 @@ function ThinkingDots() {
 
 function ChatMessage({ message, onSwitchToGlobal }) {
   const isStudent = message.role === 'student';
+  const isSystem = message.role === 'system';
   const isFocusMiss = message.status === 'focus_context_not_found';
   const isThinking = message.status === 'thinking';
   const showSections = !isStudent && !isThinking && hasStructuredSections(message);
   const showSources = !isStudent && !isThinking && Array.isArray(message.sources) && message.sources.length > 0;
+
+  // System notice — centered muted row (lock, cap notices)
+  if (isSystem) {
+    return (
+      <Box sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 0.5,
+        py: 2,
+        color: 'var(--text-muted)',
+      }}>
+        <LockOutlined sx={{ fontSize: 14 }} />
+        <Typography variant="caption">{message.answer}</Typography>
+      </Box>
+    );
+  }
 
   // Student message — right-aligned bubble
   if (isStudent) {

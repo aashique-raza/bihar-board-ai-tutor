@@ -24,6 +24,7 @@ export default function Topbar({
   onOpenFocus,
   onClearFocus,
   onNewChat,
+  isSessionLocked,
 }) {
   const { user, isLoggedIn, isLoading } = useAuth();
   const dispatch = useDispatch();
@@ -145,7 +146,7 @@ export default function Topbar({
         <Button
           variant="outlined"
           size="small"
-          disabled={isFocusLoading}
+          disabled={isFocusLoading || isSessionLocked}
           onClick={onOpenFocus}
 
           sx={{
@@ -169,12 +170,13 @@ export default function Topbar({
 
         {/* New Chat button */}
         <Button
-          variant="outlined"
+          variant={isSessionLocked ? 'contained' : 'outlined'}
           size="small"
+          color={isSessionLocked ? 'primary' : 'inherit'}
           onClick={onNewChat}
           sx={{
             borderColor: 'var(--border-strong)',
-            color: 'var(--text-secondary)',
+            color: isSessionLocked ? undefined : 'var(--text-secondary)',
             borderRadius: 'var(--radius-full)',
             fontSize: '0.8rem',
             fontWeight: 600,
