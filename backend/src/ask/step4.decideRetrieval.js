@@ -4,11 +4,17 @@ import { stringParser } from '../llm/stringParser.js';
 import { deciderPrompt } from '../prompts/deciderPrompt.js';
 import { parseJsonObject } from '../utils/jsonParser.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
+import { logCallTokens } from '../utils/tokenLogger.js';
 
-// Extracts total token count from LangChain's handleLLMEnd callback output.
+// Extracts full token breakdown from LangChain's handleLLMEnd callback.
+// promptTokens = input, completionTokens = output, totalTokens = both.
 // Path is consistent across Groq, OpenAI, and Google GenAI providers.
-const extractTokenCount = (output) =>
-  output?.llmOutput?.tokenUsage?.totalTokens ?? 0;
+const extractTokenBreakdown = (output) => {
+  const usage = output?.llmOutput?.tokenUsage || {};
+  const input = usage.promptTokens ?? 0;
+  const out = usage.completionTokens ?? 0;
+  return { input, output: out, total: usage.totalTokens ?? (input + out) };
+};
 
 // Pre-defined set of accepted target intent structures
 const VALID_INTENTS = new Set([
@@ -102,25 +108,24 @@ const normalizeDecision = (decision, rawQuestion) => {
  * @param {string} context.currentStudyContext - True semantic hydrated textbook tracking indicator
  * @returns {Promise<{ intent: string, inScope: boolean, needsRetrieval: boolean, responseMode: string, searchQuery: string|null, reason: string }>}
  */
-export const decideRetrieval = async ({ question }, { history, lastTutorResponse, focusChapterPrompt, currentStudyContext }) => {
+export const decideRetrieval = async ({ question }, { history, focusChapterPrompt, currentStudyContext }) => {
   console.log('[Step 4] Running intent classifier...');
 
   // Declared outside try so catch block can read the value on parse errors
   // (LLM responded but output was malformed — tokens were still consumed)
-  let capturedTokens = 0;
+  let capturedBreakdown = { input: 0, output: 0, total: 0 };
 
   try {
     const rawDecision = await getDeciderChain().invoke(
       {
         message: question,
         currentStudyContext,
-        lastTutorResponse,
         history,
         focusChapter: focusChapterPrompt,
       },
       {
         callbacks: [{
-          handleLLMEnd: (output) => { capturedTokens = extractTokenCount(output); },
+          handleLLMEnd: (output) => { capturedBreakdown = extractTokenBreakdown(output); },
         }],
       }
     );
@@ -130,9 +135,13 @@ export const decideRetrieval = async ({ question }, { history, lastTutorResponse
     const parsed = parseJsonObject(rawDecision, 'Step 4 intent decision');
     const finalDecision = normalizeDecision(parsed, question);
 
-    console.log(`[Step 4] Intent: ${finalDecision.intent} | Needs RAG: ${finalDecision.needsRetrieval} | Tokens: ${capturedTokens}`);
+    // STEP-0: Log decider token breakdown.
+    logCallTokens('DECIDER', capturedBreakdown, {
+      intent: finalDecision.intent,
+      RAG: finalDecision.needsRetrieval ? 'YES' : 'NO',
+    });
 
-    return { ...finalDecision, tokenUsage: capturedTokens };
+    return { ...finalDecision, tokenUsage: capturedBreakdown.total, tokenBreakdown: capturedBreakdown };
 
   } catch (error) {
     // Reset singleton — prevents reusing a broken chain on next request
@@ -144,14 +153,16 @@ export const decideRetrieval = async ({ question }, { history, lastTutorResponse
     // Safe to continue pipeline with a default decision.
     if (errorType === 'parse_error') {
       console.error('[Step 4] JSON parse failed. Using safe default decision.', error.message);
+      logCallTokens('DECIDER', capturedBreakdown, { intent: 'PARSE_ERROR_FALLBACK' });
       return {
         intent: 'CONCEPT_QUESTION',
         inScope: true,
-        needsRetrieval: false, // safer — avoids unnecessary RAG call
+        needsRetrieval: false,
         responseMode: 'study_tutor',
         searchQuery: null,
         reason: 'Parse error fallback',
-        tokenUsage: capturedTokens,
+        tokenUsage: capturedBreakdown.total,
+        tokenBreakdown: capturedBreakdown,
       };
     }
 

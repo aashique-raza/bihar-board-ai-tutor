@@ -31,7 +31,7 @@ You must classify the user's input into exactly ONE of the following 7 fine-grai
 5. "EXPLAIN_MORE":
    - Criteria: Clarification or simplification requests on the topic just covered in the immediate history. Examples: "Nahi samajh aaya", "Thoda aur aasan kijiye", "Koi simple example do", "Dubara samjhao".
    - Routing: needsRetrieval=false, responseMode="study_tutor"
-   - SPECIAL RULE — searchQuery IS required for this intent: Analyze "Last Zuno Turn Response" and extract the core topic as a clean English/Hinglish keyword string (same translation rules apply — never Devanagari, translate Hindi concepts to English). Example: last response was about photosynthesis → searchQuery="photosynthesis process chlorophyll". If "Last Zuno Turn Response" is empty or truly ambiguous → searchQuery=null.
+   - SPECIAL RULE — searchQuery IS required for this intent: Look at the most recent "Zuno:" entry in Recent Turn Conversational Logs and extract the core topic as a clean English/Hinglish keyword string (same translation rules apply — never Devanagari, translate Hindi concepts to English). Example: last Zuno entry was about photosynthesis → searchQuery="photosynthesis process chlorophyll". If no recent Zuno entry exists in history or it is truly ambiguous → searchQuery=null.
 
 6. "CONCEPT_QUESTION":
    - Criteria: Genuine direct academic questions, definition inquiries, or core conceptual doubts regarding Class 10 Science subjects. Examples: "Prakash ka paravartan kya hai?", "Lenses ke kitne rules hote hain?", "Define photosynthesis".
@@ -46,7 +46,7 @@ CRITICAL RETRIEVAL & QUERY FORMATTING RULES:
 - Set needsRetrieval to true ONLY if the intent is CONCEPT_QUESTION. For everything else, it MUST be false.
 - If needsRetrieval is true, generate a concise, clean academic keyword string for searchQuery (e.g., "photosynthesis process", "refraction of light rules"). The searchQuery field MUST always be in English or Roman-script Hinglish — NEVER in Devanagari script. Reason: the vector store is indexed in Hinglish/English only. Devanagari searchQuery will cause retrieval failure. If the student asked in Hindi/Devanagari, translate the core concept to English for searchQuery. Examples: "प्रकाश संश्लेषण" → "photosynthesis", "अम्ल और क्षार" → "acid and base", "विद्युत धारा" → "electric current".
 - If needsRetrieval is false, searchQuery MUST be null — EXCEPTION: EXPLAIN_MORE intent must still generate a searchQuery (see rule 5 above).
-- Contextual Resolution: If the student uses relative terms ("this", "iska", "usko", "again"), evaluate the provided 'Recent history' and 'Last Zuno Response' to resolve references and output a complete search query.
+- Contextual Resolution: If the student uses relative terms ("this", "iska", "usko", "again"), evaluate the provided 'Recent Turn Conversational Logs' to resolve references and output a complete search query.
 
 Your output must be ONLY a valid JSON object matching the template configuration below, with no leading or trailing text, markdown fences, or extra strings.
 
@@ -67,9 +67,6 @@ Expected JSON format structure:
 
 Current Study Placement Context (Semantic Hydration):
 {currentStudyContext}
-
-Last Zuno Turn Response:
-{lastTutorResponse}
 
 Recent Turn Conversational Logs (History):
 {history}

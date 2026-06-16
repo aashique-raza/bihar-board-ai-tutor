@@ -7,6 +7,7 @@
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
 import { env } from '../config/env.js';
+import { logTurnSummary } from '../utils/tokenLogger.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
@@ -174,9 +175,18 @@ export const saveAndRespond = async (
   );
 
   // P2-T4: Check if this turn pushed the session over the token limit.
-  // Uses the post-$inc value from DB (definitive — handles concurrent tabs correctly).
-  // updateChatSessionState is idempotent — safe even if two concurrent requests both reach here.
   const newTotal = updatedSession?.totalTokensUsed ?? 0;
+  const turnNumber = updatedSession?.chatState?.messageCount ?? 1;
+
+  // STEP-0: Turn summary — shows decider + tutor breakdown and session health.
+  logTurnSummary({
+    sessionId,
+    turnNumber,
+    decider: decision?.tokenBreakdown ?? { input: 0, output: 0, total: decision?.tokenUsage ?? 0 },
+    tutor:   response?.tokenBreakdown ?? { input: 0, output: 0, total: response?.tokenUsage ?? 0 },
+    sessionTotal: newTotal,
+    sessionLimit: env.sessionTokenLimit,
+  });
   if (newTotal >= env.sessionTokenLimit) {
     try {
       await updateChatSessionState(sessionId, { status: 'exhausted' }, userId);

@@ -6,6 +6,7 @@ import {
   formatStudyMapSummary,
   getLastTutorResponse,
 } from './promptHelpers.js';
+import { logContextSizes } from '../utils/tokenLogger.js';
 
 /**
  * Focus mode constraints details mapping logic template generator.
@@ -67,7 +68,7 @@ const buildSemanticStudyContext = (chatState, studyMap) => {
  * @param {object} session - Session elements context maps forwarded from Step 2
  * @returns {Promise<{ language, memory, history, lastTutorResponse, curriculumSummary, focusChapterPrompt, currentStudyContext }>}
  */
-export const buildContext = async ({ question, focusChapter }, { chatState, recentMessages }) => {
+export const buildContext = async ({ question, focusChapter }, { chatState, recentMessages, sessionId }) => {
   console.log('step3.buildContext.js: Pre-processing contextual runtime serialization...');
 
   // Concurrent-safe curriculum initialization zone
@@ -88,6 +89,18 @@ export const buildContext = async ({ question, focusChapter }, { chatState, rece
   const curriculumSummary = formatStudyMapSummary(studyMap); // Isolated here (will be explicitly skipped from step 4 parameters)
   const focusChapterPrompt = buildFocusChapterPrompt(focusChapter);
 
+  // STEP-0: Log approximate token sizes of every dynamic context component.
+  // turnNumber = completed turns so far + 1 (messageCount increments after step7).
+  const turnNumber = (chatState?.messageCount ?? 0) + 1;
+  logContextSizes(sessionId, turnNumber, {
+    history,
+    lastTutorResponse,
+    curriculumSummary,
+    memory,
+    focusChapterPrompt,
+    currentStudyContext,
+  });
+
   return {
     language,
     memory,
@@ -95,6 +108,6 @@ export const buildContext = async ({ question, focusChapter }, { chatState, rece
     lastTutorResponse,
     curriculumSummary,
     focusChapterPrompt,
-    currentStudyContext, // Brand new field appended to give human-readable semantic clues to LLMs
+    currentStudyContext,
   };
 };

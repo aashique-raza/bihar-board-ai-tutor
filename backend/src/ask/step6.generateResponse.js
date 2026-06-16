@@ -12,11 +12,15 @@ import { parseJsonObject } from '../utils/jsonParser.js';
 import { getAnswerLanguageInstruction } from '../utils/languageDetector.js';
 import { sectionsToAnswerText } from './promptHelpers.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
+import { logCallTokens, approxTokens } from '../utils/tokenLogger.js';
 
-// Extracts total token count from LangChain's handleLLMEnd callback output.
-// Path is consistent across Groq, OpenAI, and Google GenAI providers.
-const extractTokenCount = (output) =>
-  output?.llmOutput?.tokenUsage?.totalTokens ?? 0;
+// Extracts full token breakdown from LangChain's handleLLMEnd callback.
+const extractTokenBreakdown = (output) => {
+  const usage = output?.llmOutput?.tokenUsage || {};
+  const input = usage.promptTokens ?? 0;
+  const out = usage.completionTokens ?? 0;
+  return { input, output: out, total: usage.totalTokens ?? (input + out) };
+};
 
 let responseChain = null;
 
@@ -97,7 +101,7 @@ export const generateResponse = async (
   console.log(`[Step 6 Execution] Invoking Tutor Generation Engine. Script Target: ${language.answerLanguage}`);
 
   // Declared outside try so catch block can read the value on parse errors
-  let capturedTokens = 0;
+  let capturedBreakdown = { input: 0, output: 0, total: 0 };
 
   try {
     const targetLanguageInstruction = getAnswerLanguageInstruction(language.answerLanguage);
@@ -122,7 +126,7 @@ export const generateResponse = async (
       },
       {
         callbacks: [{
-          handleLLMEnd: (output) => { capturedTokens = extractTokenCount(output); },
+          handleLLMEnd: (output) => { capturedBreakdown = extractTokenBreakdown(output); },
         }],
       }
     );
@@ -182,12 +186,20 @@ export const generateResponse = async (
       memoryUpdate: parsed.memoryUpdate && typeof parsed.memoryUpdate === 'object' ? parsed.memoryUpdate : {},
     };
 
-    console.log(`[Step 6 Success] Response successfully structured. Final Status: ${normalized.status} | Tokens: ${capturedTokens}`);
+    // STEP-0: Log tutor token breakdown + retrieved context size.
+    logCallTokens('TUTOR', capturedBreakdown, {
+      mode: responseMode,
+      status: normalized.status,
+      ctxTokens: approxTokens(retrievedContext),
+    });
+
+    console.log(`[Step 6 Success] Response structured. Status: ${normalized.status}`);
 
     return {
       ...normalized,
       answer: sectionsToAnswerText(normalized),
-      tokenUsage: capturedTokens,
+      tokenUsage: capturedBreakdown.total,
+      tokenBreakdown: capturedBreakdown,
     };
 
   } catch (error) {
@@ -197,12 +209,14 @@ export const generateResponse = async (
     // Return fallback and let pipeline continue to Step 7.
     if (errorType === 'parse_error') {
       console.error('[Step 6] Parse error. Returning fallback response.', error.message);
-      responseChain = null; // reset singleton
+      logCallTokens('TUTOR', capturedBreakdown, { mode: responseMode, status: 'PARSE_ERROR_FALLBACK' });
+      responseChain = null;
       const fallback = createFallbackResponse({ responseMode });
       return {
         ...fallback,
         answer: sectionsToAnswerText(fallback),
-        tokenUsage: capturedTokens,
+        tokenUsage: capturedBreakdown.total,
+        tokenBreakdown: capturedBreakdown,
       };
     }
 
