@@ -57,8 +57,12 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
     session = await loadSession(input);
     context = await buildContext(input, session);
   } catch (error) {
+    // Session-level blocks (exhausted, banned) surface as ApiError with a student-readable message.
+    // Pass them through directly — do NOT replace with the generic technical error.
+    if (error.statusCode === 429 || error.statusCode === 403) {
+      return buildProviderErrorResponse(error.message, body.question, body.studyMode);
+    }
     // DB down, invalid input, or StudyMap failure.
-    // We do not have session info so cannot track consecutiveErrors.
     console.error('[Orchestrator] Pre-pipeline failure:', error.message);
     return buildProviderErrorResponse(
       'Kuch technical dikkat aa gayi. Thodi der mein try karo.',
@@ -73,7 +77,8 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
     console.log('[DEBUG] intent:', decision.intent, 'needsRetrieval:', decision.needsRetrieval);
     const retrieval = await retrieveContent(decision, input, session);
     const response = await generateResponse(input, context, decision, retrieval);
-    return saveAndRespond(input, session, context, decision, retrieval, response, userId);
+    const tokenUsage = (decision.tokenUsage || 0) + (response.tokenUsage || 0);
+    return saveAndRespond(input, session, context, decision, retrieval, response, userId, tokenUsage);
 
   } catch (error) {
 

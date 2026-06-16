@@ -13,6 +13,11 @@ import { getAnswerLanguageInstruction } from '../utils/languageDetector.js';
 import { sectionsToAnswerText } from './promptHelpers.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 
+// Extracts total token count from LangChain's handleLLMEnd callback output.
+// Path is consistent across Groq, OpenAI, and Google GenAI providers.
+const extractTokenCount = (output) =>
+  output?.llmOutput?.tokenUsage?.totalTokens ?? 0;
+
 let responseChain = null;
 
 const getResponseChain = () => {
@@ -86,10 +91,13 @@ export const generateResponse = async (
       suggestedActions: [],
       memoryUpdate: {},
     };
-    return { ...chapterCompleteResponse, answer: sectionsToAnswerText(chapterCompleteResponse) };
+    return { ...chapterCompleteResponse, answer: sectionsToAnswerText(chapterCompleteResponse), tokenUsage: 0 };
   }
 
   console.log(`[Step 6 Execution] Invoking Tutor Generation Engine. Script Target: ${language.answerLanguage}`);
+
+  // Declared outside try so catch block can read the value on parse errors
+  let capturedTokens = 0;
 
   try {
     const targetLanguageInstruction = getAnswerLanguageInstruction(language.answerLanguage);
@@ -99,18 +107,25 @@ export const generateResponse = async (
       ? JSON.stringify(memory, null, 2)
       : String(memory || 'No active state records.');
 
-    const rawResponse = await getResponseChain().invoke({
-      message: question,
-      answerLanguageInstruction: targetLanguageInstruction,
-      responseMode,
-      decision: JSON.stringify({ responseMode, intent }, null, 2),
-      memory: serializedMemory,
-      history,
-      lastTutorResponse,
-      curriculumSummary,
-      focusChapter: focusChapterPrompt,
-      retrievedContext,
-    });
+    const rawResponse = await getResponseChain().invoke(
+      {
+        message: question,
+        answerLanguageInstruction: targetLanguageInstruction,
+        responseMode,
+        decision: JSON.stringify({ responseMode, intent }, null, 2),
+        memory: serializedMemory,
+        history,
+        lastTutorResponse,
+        curriculumSummary,
+        focusChapter: focusChapterPrompt,
+        retrievedContext,
+      },
+      {
+        callbacks: [{
+          handleLLMEnd: (output) => { capturedTokens = extractTokenCount(output); },
+        }],
+      }
+    );
 
     // Parse the JSON from the LLM response safely using fence removal utility
     const parsed = parseJsonObject(rawResponse, 'Tutor response payload');
@@ -127,7 +142,7 @@ export const generateResponse = async (
         suggestedActions: [],
         memoryUpdate: {},
       };
-      return { ...safeConversation, answer: sectionsToAnswerText(safeConversation) };
+      return { ...safeConversation, answer: sectionsToAnswerText(safeConversation), tokenUsage: capturedTokens };
     }
 
     // Normalize the sections array structure cleanly
@@ -167,11 +182,12 @@ export const generateResponse = async (
       memoryUpdate: parsed.memoryUpdate && typeof parsed.memoryUpdate === 'object' ? parsed.memoryUpdate : {},
     };
 
-    console.log(`[Step 6 Success] Response successfully structured. Final Status: ${normalized.status}`);
+    console.log(`[Step 6 Success] Response successfully structured. Final Status: ${normalized.status} | Tokens: ${capturedTokens}`);
 
     return {
       ...normalized,
       answer: sectionsToAnswerText(normalized),
+      tokenUsage: capturedTokens,
     };
 
   } catch (error) {
@@ -186,6 +202,7 @@ export const generateResponse = async (
       return {
         ...fallback,
         answer: sectionsToAnswerText(fallback),
+        tokenUsage: capturedTokens,
       };
     }
 

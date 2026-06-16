@@ -6,6 +6,7 @@
 
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault } from '../services/chatSession.service.js';
+import { env } from '../config/env.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
@@ -95,6 +96,7 @@ const buildSessionPayload = (sessionId, updatedSession) => {
     lastChapterId: chatState.currentChapterId || null,
     sessionType: updatedSession?.sessionType || 'global',
     messageCount: chatState.messageCount || 0,
+    totalTokensUsed: updatedSession?.totalTokensUsed ?? 0,
   };
 };
 
@@ -108,7 +110,8 @@ export const saveAndRespond = async (
   decision,
   { retrieval, sources, nextTopicSignal },
   response,
-  userId = null
+  userId = null,
+  tokenUsage = 0
 ) => {
   console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
 
@@ -165,10 +168,24 @@ export const saveAndRespond = async (
     {
       chatStateSet: removeUndefinedFields(stateUpdates),
       chatStateInc: { messageCount: 1 },
-      topLevelInc: {}, // P2-T4 will add: totalTokensUsed: tokenDelta
+      topLevelInc: { totalTokensUsed: tokenUsage },
     },
     { userId, sessionType }
   );
+
+  // P2-T4: Check if this turn pushed the session over the token limit.
+  // Uses the post-$inc value from DB (definitive — handles concurrent tabs correctly).
+  // updateChatSessionState is idempotent — safe even if two concurrent requests both reach here.
+  const newTotal = updatedSession?.totalTokensUsed ?? 0;
+  if (newTotal >= env.sessionTokenLimit) {
+    try {
+      await updateChatSessionState(sessionId, { status: 'exhausted' }, userId);
+      if (updatedSession.chatState) updatedSession.chatState.status = 'exhausted';
+      console.log(`[Step 7] Session locked — totalTokensUsed: ${newTotal} >= limit: ${env.sessionTokenLimit}`);
+    } catch {
+      // Non-critical — session will be locked on next DB read anyway
+    }
+  }
 
   // P2-T3: Auto-title using the answer heading already computed by step6 — zero extra LLM cost.
   // Only fires when: (a) session still has the default 'New Chat' title, (b) this is a real

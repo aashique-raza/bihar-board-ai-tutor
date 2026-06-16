@@ -19,6 +19,7 @@ export const env = {
   nodeEnv: process.env.NODE_ENV || 'development',
   port: toNumber(process.env.PORT, 5000),
   mongodbUri: process.env.MONGODB_URI || process.env.MONGO_URI || '',
+  sessionTokenLimit: toNumber(process.env.SESSION_TOKEN_LIMIT, 15000),
 };
 
 // ---------------------------------------------------------------------------

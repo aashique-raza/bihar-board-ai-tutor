@@ -5,6 +5,11 @@ import { deciderPrompt } from '../prompts/deciderPrompt.js';
 import { parseJsonObject } from '../utils/jsonParser.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 
+// Extracts total token count from LangChain's handleLLMEnd callback output.
+// Path is consistent across Groq, OpenAI, and Google GenAI providers.
+const extractTokenCount = (output) =>
+  output?.llmOutput?.tokenUsage?.totalTokens ?? 0;
+
 // Pre-defined set of accepted target intent structures
 const VALID_INTENTS = new Set([
   'UNSAFE_OR_ABUSIVE',
@@ -100,23 +105,34 @@ const normalizeDecision = (decision, rawQuestion) => {
 export const decideRetrieval = async ({ question }, { history, lastTutorResponse, focusChapterPrompt, currentStudyContext }) => {
   console.log('[Step 4] Running intent classifier...');
 
+  // Declared outside try so catch block can read the value on parse errors
+  // (LLM responded but output was malformed — tokens were still consumed)
+  let capturedTokens = 0;
+
   try {
-    const rawDecision = await getDeciderChain().invoke({
-      message: question,
-      currentStudyContext,
-      lastTutorResponse,
-      history,
-      focusChapter: focusChapterPrompt,
-    });
+    const rawDecision = await getDeciderChain().invoke(
+      {
+        message: question,
+        currentStudyContext,
+        lastTutorResponse,
+        history,
+        focusChapter: focusChapterPrompt,
+      },
+      {
+        callbacks: [{
+          handleLLMEnd: (output) => { capturedTokens = extractTokenCount(output); },
+        }],
+      }
+    );
 
     console.log('[Step 4] Response received. Parsing...');
 
     const parsed = parseJsonObject(rawDecision, 'Step 4 intent decision');
     const finalDecision = normalizeDecision(parsed, question);
 
-    console.log(`[Step 4] Intent: ${finalDecision.intent} | Needs RAG: ${finalDecision.needsRetrieval}`);
+    console.log(`[Step 4] Intent: ${finalDecision.intent} | Needs RAG: ${finalDecision.needsRetrieval} | Tokens: ${capturedTokens}`);
 
-    return finalDecision;
+    return { ...finalDecision, tokenUsage: capturedTokens };
 
   } catch (error) {
     // Reset singleton — prevents reusing a broken chain on next request
@@ -135,6 +151,7 @@ export const decideRetrieval = async ({ question }, { history, lastTutorResponse
         responseMode: 'study_tutor',
         searchQuery: null,
         reason: 'Parse error fallback',
+        tokenUsage: capturedTokens,
       };
     }
 

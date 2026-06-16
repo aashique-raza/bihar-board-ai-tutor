@@ -52,7 +52,7 @@ export const loadSession = async ({ requestedSessionId, studyMode, focusChapter 
     }
 
     if (chatState.status === 'exhausted') {
-      throw new ApiError(429, 'Babu, is room ke token ki limit poori ho gayi hai. Kripya fresh study conversation ke liye naya session shuru karein.');
+      throw new ApiError(429, 'Is session ki limit reach ho gayi hai. Nayi chat shuru karo — wahan se continue kar sakte ho.');
     }
 
     const lastActiveTime = dbSession.updatedAt ? new Date(dbSession.updatedAt).getTime() : Date.now();
