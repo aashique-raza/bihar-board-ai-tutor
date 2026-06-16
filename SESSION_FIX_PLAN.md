@@ -386,7 +386,7 @@ messageCount: {
 ---
 
 ### P2-T3 — Session title auto-generation on first query
-**Status: TODO**
+**Status: DONE**
 **Files:** `backend/src/ask/step7.saveAndRespond.js`, `backend/src/prompts/tutorPrompt.js`
 **Decision from SESSION_DESIGN.md:** "Generated inside Step 6/7 — NOT a separate API call. Zero extra cost."
 
@@ -539,7 +539,7 @@ const sessions = await ChatSession.find({ userId })
 ## PHASE 2 COMPLETION CHECKLIST
 - [x] P2-T1: userId saved correctly to DB for all logged-in users
 - [x] P2-T2: ChatSession schema has sessionType, totalTokensUsed, messageCount (isLocked dropped — chatState.status=exhausted is single source of truth)
-- [ ] P2-T3: Session title auto-generated on first query
+- [x] P2-T3: Session title auto-generated on first academic (study_tutor+answered) response — reuses response.title from step6, zero extra LLM cost, race-safe via { title: 'New Chat' } condition
 - [ ] P2-T4: Token counting working, session locks at 15k
 - [ ] P2-T5: GET /api/v1/sessions returns correct session list for logged-in user
 - [ ] P2-T6: Sidebar shows session list, session switching works
@@ -618,3 +618,4 @@ P2-T7 (lock behavior)        ← NEEDS P2-T4 + P2-T6
 | Date | Tasks Done | Blockers | Next |
 |------|-----------|----------|------|
 | 2026-06-15 | Phase 1 complete: session.js rewrite, New Chat button, history API (GET /sessions/:id/history), history load on refresh, userId in DB (FIX-005), logout fix, auth race condition guard, `payload.session.sessionId` bug fix | — | Phase 2: P2-T2 (schema) → P2-T3 (title) → P2-T4 (tokens) → P2-T5 (sessions list API) → P2-T6 (sidebar) → P2-T7 (lock UI) |
+| 2026-06-16 | P2-T3 complete: session auto-title using response.title from step6 — zero extra LLM call, SYSTEM_TITLES guard for 'Chapter Complete!', race-safe updateOne, title now included in buildSessionPayload | — | P2-T4 (token counting) → P2-T5 (sessions list API) → P2-T6 (sidebar) → P2-T7 (lock UI) |

@@ -5,11 +5,14 @@
  */
 
 import { addChatMessages } from '../services/chatHistory.service.js';
-import { updateChatSession, updateChatSessionState } from '../services/chatSession.service.js';
+import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault } from '../services/chatSession.service.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
 const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
+
+// Pipeline-generated titles that should never become a session label in the sidebar.
+const SYSTEM_TITLES = new Set(['Chapter Complete!']);
 
 // Allowed operational state properties inside our new ChatSession layout
 const ALLOWED_STATE_FIELDS = [
@@ -82,6 +85,7 @@ const buildSessionPayload = (sessionId, updatedSession) => {
   const chatState = updatedSession?.chatState || {};
   return {
     sessionId,
+    title: updatedSession?.title || 'New Chat',
     status: chatState.status || 'active',
     isLocked: chatState.status === 'exhausted', // single source of truth — no separate isLocked field
     learningMode: chatState.learningMode || 'idle',
@@ -156,7 +160,6 @@ export const saveAndRespond = async (
   const sessionType = studyMode === 'focus' ? 'focus' : 'global';
 
   // Single atomic MongoDB op: chatState $set + messageCount $inc + totalTokensUsed $inc + $setOnInsert immutables.
-  // messageCount is checked AFTER $inc: if returned value === 1, this was the first turn → P2-T3 title generation.
   const updatedSession = await updateChatSession(
     sessionId,
     {
@@ -166,6 +169,25 @@ export const saveAndRespond = async (
     },
     { userId, sessionType }
   );
+
+  // P2-T3: Auto-title using the answer heading already computed by step6 — zero extra LLM cost.
+  // Only fires when: (a) session still has the default 'New Chat' title, (b) this is a real
+  // study answer (study_tutor + answered), and (c) the title is not a system-generated label.
+  // The { title: 'New Chat' } condition inside setSessionTitleIfDefault makes this race-safe.
+  if (
+    updatedSession.title === 'New Chat' &&
+    response.responseMode === 'study_tutor' &&
+    response.status === 'answered' &&
+    response.title &&
+    !SYSTEM_TITLES.has(response.title)
+  ) {
+    try {
+      await setSessionTitleIfDefault(sessionId, response.title.trim());
+      updatedSession.title = response.title.trim(); // sync in-memory so buildSessionPayload sees it
+    } catch {
+      // Non-critical — title stays 'New Chat', main pipeline is unaffected
+    }
+  }
 
   // Step 7b: Assemble the standardized outer structural response contract
   const answerPayload = {

@@ -104,6 +104,19 @@ export const updateChatSession = async (
 };
 
 /**
+ * P2-T3: Set session title only if it is still the default 'New Chat'.
+ * The { title: 'New Chat' } filter makes this race-condition safe across
+ * concurrent tabs — only the first writer succeeds; subsequent calls no-op.
+ * Also protects user-renamed titles from being overwritten.
+ */
+export const setSessionTitleIfDefault = async (sessionId, title) => {
+  return ChatSession.updateOne(
+    { sessionId, title: 'New Chat' },
+    { $set: { title } }
+  );
+};
+
+/**
  * Updates fields inside the nested chatState object safely.
  * Uses MongoDB dot-notation ($set) so only the given fields change and the
  * other chatState fields are left untouched.
