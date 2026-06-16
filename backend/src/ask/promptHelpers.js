@@ -65,6 +65,17 @@ export const formatMemoryForPrompt = (chatState) => ({
   lastDoubtQuestion: chatState?.lastDoubtQuestion || null,
 });
 
+// Strips the [Context] header prepended by markdownChunker and returns only the
+// actual educational text after the [Content] marker.
+// Without this, every chunk sent to the LLM contains a duplicate metadata block
+// (Board/Class/Subject/Chapter/Topic) that is already present in the [Source N] header.
+const extractChunkContent = (chunk) => {
+  const raw = chunk.content || '';
+  const idx = raw.indexOf('[Content]');
+  if (idx !== -1) return raw.slice(idx + '[Content]'.length).trim();
+  return String(raw).replace(/\s+/g, ' ').trim();
+};
+
 /**
  * RAG nodes lists processing module block string assembler.
  */
@@ -75,7 +86,7 @@ export const formatRetrievedContext = (chunks = []) => {
 
   return chunks.map((chunk, index) => {
     const metadata = chunk.metadata || {};
-    const content = compactText(metadata.originalText || chunk.content);
+    const content = extractChunkContent(chunk);
 
     return `[Source ${index + 1}]
 Chapter: ${metadata.chapter_title || 'Unknown'}

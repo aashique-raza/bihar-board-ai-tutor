@@ -411,9 +411,9 @@ Both `deciderPrompt.js` and `tutorPrompt.js` have fully static system messages. 
 ## Status Tracker
 
 ```
-[ ] STEP-0  Instrumentation (logging)
+[x] STEP-0  Instrumentation (logging)
 [x] STEP-1  Remove lastTutorResponse from decider
-[ ] STEP-2  Fix RAG chunk double-wrapping
+[x] STEP-2  Fix RAG chunk double-wrapping
 [ ] STEP-3  Compact memory JSON + completedTopicIds → count
 [ ] STEP-4  Decider history window 14 → 6
 [ ] STEP-5  Conditional curriculumSummary
