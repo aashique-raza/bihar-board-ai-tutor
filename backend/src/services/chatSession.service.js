@@ -117,6 +117,21 @@ export const setSessionTitleIfDefault = async (sessionId, title) => {
 };
 
 /**
+ * P2-T5: Returns the most recent sessions for a logged-in user, for the sidebar.
+ * Excludes ghost sessions (lastMessageAt: null) — those were never actually used.
+ * Secondary sort on _id ensures stable order when two sessions share the same timestamp.
+ */
+export const getSessionsByUser = async (userId, { limit = 20 } = {}) => {
+  return ChatSession.find({ userId, lastMessageAt: { $ne: null } })
+    .sort({ lastMessageAt: -1, _id: -1 })
+    .limit(limit)
+    .select(
+      'sessionId title sessionType lastMessageAt totalTokensUsed chatState.status chatState.messageCount chatState.currentChapterId'
+    )
+    .lean();
+};
+
+/**
  * Updates fields inside the nested chatState object safely.
  * Uses MongoDB dot-notation ($set) so only the given fields change and the
  * other chatState fields are left untouched.
