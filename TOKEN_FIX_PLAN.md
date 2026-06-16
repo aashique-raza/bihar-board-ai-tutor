@@ -415,7 +415,7 @@ Both `deciderPrompt.js` and `tutorPrompt.js` have fully static system messages. 
 [x] STEP-1  Remove lastTutorResponse from decider
 [x] STEP-2  Fix RAG chunk double-wrapping
 [x] STEP-3  Compact memory JSON + completedTopicIds → count
-[ ] STEP-4  Decider history window 14 → 6
+[x] STEP-4  Decider history window 14 → 6
 [ ] STEP-5  Conditional curriculumSummary
 [ ] STEP-6  Set maxTokens on LLM calls
 [ ] STEP-7  Turn-based session limit (30 turns)
