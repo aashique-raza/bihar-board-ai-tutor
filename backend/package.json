@@ -22,7 +22,9 @@
     "test:study-map": "node scripts/test-study-map.js",
     "test:embedding-smoke": "node scripts/test-langchain-embedding-smoke.js",
     "test:vector-store": "node scripts/validate-vector-store.js",
-    "test:retrieval": "node scripts/test-vector-store-load-search.js"
+    "test:retrieval": "node scripts/test-vector-store-load-search.js",
+    "test:golden": "node scripts/run-golden-set.js",
+    "test:golden-save": "node scripts/run-golden-set.js --save-baseline"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

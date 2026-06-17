@@ -1,0 +1,409 @@
+[
+  {
+    "id": "G01",
+    "category": "GREETING",
+    "query": "Hi",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["aaj", "subject"],
+    "note": "Pure English greeting — simplest case"
+  },
+  {
+    "id": "G02",
+    "category": "GREETING",
+    "query": "Hello Zuno",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["aaj", "padh"],
+    "note": "Direct name greeting"
+  },
+  {
+    "id": "G03",
+    "category": "GREETING",
+    "query": "Pranam sir",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["aaj", "kya"],
+    "note": "Formal Hindi greeting"
+  },
+  {
+    "id": "G04",
+    "category": "GREETING",
+    "query": "Kya haal hai",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["aaj", "kya"],
+    "note": "Casual Hinglish greeting"
+  },
+  {
+    "id": "G05",
+    "category": "GREETING",
+    "query": "Good morning",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["aaj", "padh"],
+    "note": "English time greeting"
+  },
+
+  {
+    "id": "C01",
+    "category": "CONCEPT_QUESTION",
+    "query": "Photosynthesis kya hai?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["photosynthesis", "CO2", "sunlight"],
+    "note": "Classic Hinglish concept query"
+  },
+  {
+    "id": "C02",
+    "category": "CONCEPT_QUESTION",
+    "query": "What is photosynthesis?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["photosynthesis", "plant", "glucose"],
+    "note": "Pure English concept query"
+  },
+  {
+    "id": "C03",
+    "category": "CONCEPT_QUESTION",
+    "query": "Acid aur base mein kya fark hai?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["acid", "base"],
+    "note": "Chemistry Hinglish query"
+  },
+  {
+    "id": "C04",
+    "category": "CONCEPT_QUESTION",
+    "query": "Electric current kaise flow karta hai?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["current", "electron"],
+    "note": "Physics Hinglish query"
+  },
+  {
+    "id": "C05",
+    "category": "CONCEPT_QUESTION",
+    "query": "Refraction kya hota hai light ka?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["refraction", "light", "medium"],
+    "note": "Optics topic"
+  },
+  {
+    "id": "C06",
+    "category": "CONCEPT_QUESTION",
+    "query": "Ohm's law explain karo",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["current", "resistance"],
+    "note": "Named law query"
+  },
+  {
+    "id": "C07",
+    "category": "CONCEPT_QUESTION",
+    "query": "Cell membrane ka kya kaam hai?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["cell", "membrane"],
+    "note": "Biology Hinglish query"
+  },
+  {
+    "id": "C08",
+    "category": "CONCEPT_QUESTION",
+    "query": "Reproduction kya hai aur kitne types hain?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["reproduction", "sexual", "asexual"],
+    "note": "Multi-part concept query"
+  },
+  {
+    "id": "C09",
+    "category": "CONCEPT_QUESTION",
+    "query": "Lens aur mirror mein kya difference hai?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["lens", "mirror"],
+    "note": "Comparison concept query"
+  },
+  {
+    "id": "C10",
+    "category": "CONCEPT_QUESTION",
+    "query": "Respiration kaise hoti hai?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["respiration", "oxygen"],
+    "note": "Biology process query"
+  },
+
+  {
+    "id": "E01",
+    "category": "EXPLAIN_MORE",
+    "query": "Nahi samjha",
+    "studyMode": "global",
+    "expectedIntent": "EXPLAIN_MORE",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["dobara", "samjh"],
+    "note": "Pure Hinglish re-explain request"
+  },
+  {
+    "id": "E02",
+    "category": "EXPLAIN_MORE",
+    "query": "Aur explain karo",
+    "studyMode": "global",
+    "expectedIntent": "EXPLAIN_MORE",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Direct expand request"
+  },
+  {
+    "id": "E03",
+    "category": "EXPLAIN_MORE",
+    "query": "Dobara samjhao please",
+    "studyMode": "global",
+    "expectedIntent": "EXPLAIN_MORE",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Polite re-explain request"
+  },
+  {
+    "id": "E04",
+    "category": "EXPLAIN_MORE",
+    "query": "Zyada detail mein batao",
+    "studyMode": "global",
+    "expectedIntent": "EXPLAIN_MORE",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Request for more detail"
+  },
+  {
+    "id": "E05",
+    "category": "EXPLAIN_MORE",
+    "query": "I didn't understand, please explain again",
+    "studyMode": "global",
+    "expectedIntent": "EXPLAIN_MORE",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "English re-explain request"
+  },
+
+  {
+    "id": "N01",
+    "category": "NEXT_STEP",
+    "query": "Aage badho",
+    "studyMode": "focus",
+    "expectedIntent": "NEXT_STEP",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Classic next-step trigger"
+  },
+  {
+    "id": "N02",
+    "category": "NEXT_STEP",
+    "query": "Next topic kya hai?",
+    "studyMode": "focus",
+    "expectedIntent": "NEXT_STEP",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Explicit next topic query"
+  },
+  {
+    "id": "N03",
+    "category": "NEXT_STEP",
+    "query": "Aage kya padhna hai?",
+    "studyMode": "focus",
+    "expectedIntent": "NEXT_STEP",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Hinglish next step"
+  },
+  {
+    "id": "N04",
+    "category": "NEXT_STEP",
+    "query": "Chalte hain aage",
+    "studyMode": "focus",
+    "expectedIntent": "NEXT_STEP",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Casual next step"
+  },
+
+  {
+    "id": "CH01",
+    "category": "CHOOSE_COURSE",
+    "query": "Physics padhna hai mujhe",
+    "studyMode": "global",
+    "expectedIntent": "CHOOSE_COURSE",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["physics", "chapter"],
+    "note": "Subject selection query"
+  },
+  {
+    "id": "CH02",
+    "category": "CHOOSE_COURSE",
+    "query": "Chemistry start karna hai",
+    "studyMode": "global",
+    "expectedIntent": "CHOOSE_COURSE",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["chemistry"],
+    "note": "Subject start query"
+  },
+  {
+    "id": "CH03",
+    "category": "CHOOSE_COURSE",
+    "query": "Biology padhna chahta hoon",
+    "studyMode": "global",
+    "expectedIntent": "CHOOSE_COURSE",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["biology"],
+    "note": "Biology selection"
+  },
+  {
+    "id": "CH04",
+    "category": "CHOOSE_COURSE",
+    "query": "Mujhe science padhni hai",
+    "studyMode": "global",
+    "expectedIntent": "CHOOSE_COURSE",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["physics", "chemistry"],
+    "note": "Generic science selection"
+  },
+
+  {
+    "id": "O01",
+    "category": "OUT_OF_CONTEXT",
+    "query": "IPL ki team batao",
+    "studyMode": "global",
+    "expectedIntent": "OUT_OF_CONTEXT",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Sports query — clearly out of scope"
+  },
+  {
+    "id": "O02",
+    "category": "OUT_OF_CONTEXT",
+    "query": "Biryani kaise banate hain?",
+    "studyMode": "global",
+    "expectedIntent": "OUT_OF_CONTEXT",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Food query — out of scope"
+  },
+  {
+    "id": "O03",
+    "category": "OUT_OF_CONTEXT",
+    "query": "Bollywood mein kaun achha actor hai?",
+    "studyMode": "global",
+    "expectedIntent": "OUT_OF_CONTEXT",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Entertainment query"
+  },
+  {
+    "id": "O04",
+    "category": "OUT_OF_CONTEXT",
+    "query": "Maths ke questions solve karo",
+    "studyMode": "global",
+    "expectedIntent": "OUT_OF_CONTEXT",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Wrong subject (Maths not Science)"
+  },
+  {
+    "id": "O05",
+    "category": "OUT_OF_CONTEXT",
+    "query": "History mein Mughal Empire ke baare mein batao",
+    "studyMode": "global",
+    "expectedIntent": "OUT_OF_CONTEXT",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Wrong subject (History not Science)"
+  },
+
+  {
+    "id": "U01",
+    "category": "UNSAFE_OR_ABUSIVE",
+    "query": "Bakwaas band karo",
+    "studyMode": "global",
+    "expectedIntent": "UNSAFE_OR_ABUSIVE",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Mildly rude — boundary test"
+  },
+  {
+    "id": "U02",
+    "category": "UNSAFE_OR_ABUSIVE",
+    "query": "Stupid AI, kuch nahi aata tujhe",
+    "studyMode": "global",
+    "expectedIntent": "UNSAFE_OR_ABUSIVE",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Insult to AI — should catch"
+  },
+
+  {
+    "id": "BS01",
+    "category": "BLIND_SPOT_TEST",
+    "query": "Pranam sir, photosynthesis ke baare mein batao",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["photosynthesis"],
+    "note": "CRITICAL: Greeting + academic — must NOT be classified as GREETING. Tests Blind Spot 1."
+  },
+  {
+    "id": "BS02",
+    "category": "BLIND_SPOT_TEST",
+    "query": "Hello, atom kya hota hai?",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["atom"],
+    "note": "CRITICAL: English greeting + academic — must be CONCEPT"
+  },
+  {
+    "id": "BS03",
+    "category": "BLIND_SPOT_TEST",
+    "query": "Namaste, refraction explain karo please",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["refraction"],
+    "note": "CRITICAL: Namaste + academic — must be CONCEPT"
+  },
+  {
+    "id": "BS04",
+    "category": "BLIND_SPOT_TEST",
+    "query": "Iska kya matlab hai?",
+    "studyMode": "global",
+    "expectedIntent": "EXPLAIN_MORE",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": [],
+    "note": "Pronoun resolution — 'iska' without topic name"
+  },
+  {
+    "id": "BS05",
+    "category": "BLIND_SPOT_TEST",
+    "query": "Physics padhna hai mujhe aur pehle electricity samjhao",
+    "studyMode": "global",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["electricity", "current"],
+    "note": "Course select + concept both — should prefer academic intent"
+  }
+]
