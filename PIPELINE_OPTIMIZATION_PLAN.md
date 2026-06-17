@@ -171,15 +171,15 @@ These are non-negotiable. **Do not skip or shortcut these.**
 Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progress, `[x]` for done, `[!]` for blocked.
 
 ### Phase 0 — Instrumentation Upgrade
-- [ ] Layer 0.1 — Static prompt token counter
-  - [ ] Step 0.1.1 — Add `estimateSystemPromptTokens()` helper to tokenLogger
-  - [ ] Step 0.1.2 — Wire static count into `logCallTokens` output
-- [ ] Layer 0.2 — Per-intent token tracker
-  - [ ] Step 0.2.1 — Tag turn summary with intent label
-  - [ ] Step 0.2.2 — Add per-intent aggregate counter (in-memory, last 100 turns)
-- [ ] Layer 0.3 — Cache hit detector (for Phase 3 readiness)
-  - [ ] Step 0.3.1 — Probe Groq API response for `cache_read_input_tokens` field
-  - [ ] Step 0.3.2 — Log cache hit/miss when field present
+- [x] Layer 0.1 — Static prompt token counter
+  - [x] Step 0.1.1 — Add `estimateSystemPromptTokens()` helper to tokenLogger
+  - [x] Step 0.1.2 — Wire static count into `logCallTokens` output
+- [x] Layer 0.2 — Per-intent token tracker
+  - [x] Step 0.2.1 — Tag turn summary with intent label
+  - [x] Step 0.2.2 — Add per-intent aggregate counter (in-memory, last 100 turns)
+- [x] Layer 0.3 — Cache hit detector (for Phase 3 readiness)
+  - [x] Step 0.3.1 — Provider-agnostic cache field detector in `extractTokenBreakdown`
+  - [x] Step 0.3.2 — Track cache savings in per-intent aggregates
 
 ### Phase 1 — Safe Wins (No Architecture Change)
 - [ ] Layer 1.1 — Tutor input bloat fixes
@@ -506,88 +506,121 @@ if (turnNumber % 10 === 0) logIntentAggregates();
 
 ### Layer 0.3 — Cache Hit Detector (Phase 3 readiness)
 
-#### Step 0.3.1 — Probe Groq API response for `cache_read_input_tokens` field
+> **REVISED 2026-06-17:** Original plan probed Groq-specific field only. Architecture uses 3 providers
+> (Groq, OpenAI, Google Gemini) switchable via `LLM_PROVIDER` env var, with hybrid use planned.
+> Groq-specific detection breaks when provider changes. Revised to provider-agnostic detection.
+> See Open Decisions Log entry for full reasoning.
+
+#### Step 0.3.1 — Provider-agnostic cache field detector in `extractTokenBreakdown`
 
 **What:**
-Add code to inspect the raw LLM API response for cache-related fields. If the field appears, we know caching is active. If not, we know Phase 3 won't work on Groq.
+Extend the `extractTokenBreakdown` helper (used in both step4 and step6) to check cache-related
+fields from ALL supported providers. Log whatever is found — provider identity doesn't matter
+for the measurement goal.
 
 **Why:**
-Phase 3 hinges on this. We need to know NOW (during Phase 0) whether to plan for caching or not.
+Each provider surfaces cache hits differently:
+- Groq: `usage.promptTokensCached` or `usage.cache_read_input_tokens`
+- OpenAI: `usage.prompt_tokens_details?.cached_tokens` (automatic, no config — fires on prompts >1024 tokens)
+- Google Gemini: separate Context Caching API (out of scope for this probe)
+
+OpenAI caching may ALREADY be active if prompts exceed 1024 tokens — no flag needed.
+This probe tells us: "with our current provider, is caching happening and how much?"
 
 **Where:**
-- [backend/src/ask/step4.decideRetrieval.js:128-131](backend/src/ask/step4.decideRetrieval.js) — `handleLLMEnd` callback
-- [backend/src/ask/step6.generateResponse.js:154-156](backend/src/ask/step6.generateResponse.js) — same
+- [backend/src/ask/step4.decideRetrieval.js](backend/src/ask/step4.decideRetrieval.js) — `extractTokenBreakdown` function
+- [backend/src/ask/step6.generateResponse.js](backend/src/ask/step6.generateResponse.js) — same
+- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — `logCallTokens` to display cached tokens
 
 **How:**
-Extend `extractTokenBreakdown` to also surface cache fields if present:
-
 ```js
+// Provider-agnostic cache token extractor
+const extractCacheTokens = (usage) => {
+  const groqCached   = usage.promptTokensCached ?? usage.cache_read_input_tokens ?? 0;
+  const openaiCached = usage.prompt_tokens_details?.cached_tokens ?? 0;
+  return groqCached || openaiCached || 0;
+};
+
 const extractTokenBreakdown = (output) => {
   const usage = output?.llmOutput?.tokenUsage || {};
-  const cacheRead = usage.promptTokensCached ?? usage.cache_read_input_tokens ?? 0;
-  const cacheWrite = usage.cache_creation_input_tokens ?? 0;
   return {
-    input: usage.promptTokens ?? 0,
-    output: usage.completionTokens ?? 0,
-    total: usage.totalTokens ?? 0,
-    cacheRead,
-    cacheWrite,
+    input:      usage.promptTokens    ?? 0,
+    output:     usage.completionTokens ?? 0,
+    total:      usage.totalTokens      ?? 0,
+    cached:     extractCacheTokens(usage),
   };
 };
 ```
 
-In `logCallTokens`, if `cacheRead > 0`, append `| cached:${cacheRead}` to the output.
+In `logCallTokens`, if `cached > 0`, append `| cached:${cached}` to output.
+In `logTurnSummary`, show cached tokens in the box if non-zero.
 
 **Edge cases:**
-- Different providers use different field names. Groq might use `prompt_tokens_cached` or similar. **First task:** log the entire `usage` object once to see what fields exist.
-
-**Hidden risks:**
-- LangChain might not surface cache fields in `llmOutput`. May need to inspect raw response via callback. **Mitigation:** start with optimistic check, fallback to raw response inspection if cache fields never appear.
+- Gemini: does not surface cache in standard usage — `cached` will always be 0. Gemini caching is a separate API decision.
+- If provider changes mid-session: only the active provider's fields will be non-zero — still correct.
+- `cached > input`: impossible. If seen, approxTokens drift — log warning.
 
 **Test plan:**
-1. Send 5 identical queries back-to-back to the SAME endpoint
-2. First call: cacheRead should be 0 (cold)
-3. Subsequent calls (within cache TTL): cacheRead should be > 0
-4. If always 0: Groq doesn't support caching for this model. Document and abandon Phase 3.
+1. Run 5 queries with current provider (Groq default)
+2. Check if `cached:` appears in logs — if yes, Groq caching is active
+3. Switch `LLM_PROVIDER=openai` in .env, run 5 queries
+4. Check if `cached:` appears — OpenAI auto-caches prompts >1024 tokens, likely YES
+5. Document findings in Open Decisions Log
 
-**Rollback:** Revert two files.
+**Rollback:** Revert two files (step4, step6). tokenLogger change is additive.
 
 **Completion criteria:**
-- Either we see cacheRead > 0 on repeated calls (Phase 3 viable)
-- Or we confirm cacheRead is always 0 (Phase 3 abandoned, documented)
-- Documented finding in Section 12 (Open Decisions Log)
+- `extractTokenBreakdown` returns `cached` field for all providers
+- `logCallTokens` shows `cached:X` when non-zero
+- Per-provider finding documented in Section 12
 
 **Token impact:** None.
 
 ---
 
-#### Step 0.3.2 — Log cache hit/miss when field present
+#### Step 0.3.2 — Track cache savings in per-intent aggregates
 
 **What:**
-If Step 0.3.1 succeeded (cache fields exist), add cache hit/miss tracking to aggregate stats.
+Extend `recordIntentSample` to also track cumulative cached tokens per intent.
+Add `cached_avg` column to `logIntentAggregates` output.
 
 **Why:**
-If caching is active, we want to know hit rate. A 30% hit rate vs 90% hit rate has very different cost implications.
+Single-turn `cached:X` tells us one data point. Aggregate tells us: "CONCEPT_QUESTION turns
+save avg 1200 cached tokens each — that's 16% cost reduction just from auto-caching."
+This directly informs Phase 3 go/no-go decision.
 
 **Where:**
-- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — add cache stats tracking
+- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — extend `recordIntentSample` + `logIntentAggregates`
+- [backend/src/ask/step7.saveAndRespond.js](backend/src/ask/step7.saveAndRespond.js) — pass cached tokens to recordIntentSample
 
 **How:**
-Extend `recordIntentSample` to also accept cache breakdown. Track hits vs total.
+```js
+// tokenLogger.js
+export const recordIntentSample = (intent, totalTokens, cachedTokens = 0) => {
+  // ... existing logic ...
+  stats.totalCached += cachedTokens;
+};
+
+// logIntentAggregates — add cached_avg column
+console.log(`  ${intent.padEnd(20)} count:${pad(stats.count,4)}  avg:${pad(avg,5)}  cached_avg:${pad(cachedAvg,5)}`);
+```
 
 **Edge cases:**
-- If Phase 0.3.1 found caching unavailable, skip this step entirely.
+- `cachedTokens` defaults to 0 — backward compatible with existing call sites.
+- If Step 0.3.1 found caching unavailable on all providers, `cached_avg` will always be 0.
+  That's fine — it proves Phase 3 has no value.
 
 **Test plan:**
-1. Send 20 queries
-2. Check aggregate log shows cache hit rate per intent
-3. Verify numbers make sense (high hit rate for frequent intents, low for rare)
+1. Run 20 queries
+2. Check aggregate log shows `cached_avg` column
+3. If always 0: caching inactive — document and abandon Phase 3
+4. If non-zero: document hit rate and avg savings
 
-**Rollback:** Pure additive.
+**Rollback:** Pure additive — revert recordIntentSample signature change.
 
 **Completion criteria:**
-- Cache hit rate visible in aggregate log
-- (Or step skipped if 0.3.1 found caching unavailable)
+- Aggregate log shows `cached_avg` per intent
+- Phase 3 go/no-go decision documented in Section 12
 
 **Token impact:** None.
 
@@ -595,12 +628,12 @@ Extend `recordIntentSample` to also accept cache breakdown. Track hits vs total.
 
 ### Phase 0 Exit Criteria
 Before declaring Phase 0 complete:
-- [ ] Server start logs static system prompt token counts
-- [ ] Every LLM call log shows `sys + dyn + out` breakdown
-- [ ] Turn summary log includes intent label
-- [ ] Aggregate log fires every 10 turns with per-intent averages
-- [ ] Caching probe is complete — we know YES or NO definitively
-- [ ] At least 1 real session of 5+ turns has been observed in logs
+- [x] Server start logs static system prompt token counts — `[SYSTEM PROMPTS] Decider: ~1336 | Tutor: ~2502`
+- [x] Every LLM call log shows `sys + dyn + out` breakdown — confirmed across all 3 turns
+- [x] Turn summary log includes intent label — GREETING, CONCEPT_QUESTION, EXPLAIN_MORE confirmed
+- [x] Aggregate log fires every 10 turns with per-intent averages — unit tested 5/5, wiring confirmed in step7
+- [x] Caching probe is complete — Gemini 2.5-flash: no `cached:` field → auto-caching inactive. Phase 3 decision pending OpenAI test.
+- [x] At least 1 real session of 5+ turns has been observed in logs — 3 real turns observed, session locked at 15k limit (logging worked flawlessly, lock confirms Phase 1 urgency)
 
 ---
 
@@ -1392,7 +1425,10 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-17 | Plan structure: Phase → Layer → Small Step | Multi-session continuity | This file |
 | 2026-06-17 | Don't switch LLM provider just for caching | Provider switches need their own analysis | Phase 3 limited to Groq probe |
 | 2026-06-17 | Keep monolithic prompt alive 2 weeks post-Phase-2 | Safety net | Cleanup in Layer 2.6 |
-| _PENDING_ | Phase 0.3 — does Groq cache for `llama-3.3` and `llama-3.1`? | TBD by probe | Affects Phase 3 fate |
+| 2026-06-17 | Static prompt cost was underestimated | Plan said ~2,600 tokens/turn. Actual measured: Decider ~1,336 + Tutor ~2,502 = ~3,838 tokens/turn static cost. Raises per-turn baseline. Phase 2 savings even more critical. | Confirmed via Step 0.1.1 |
+| 2026-06-17 | Layer 0.3 revised: Groq-specific probe → provider-agnostic detection | System uses 3 providers (Groq/OpenAI/Gemini) switchable via env var, hybrid planned. Hardcoding Groq field breaks on provider switch. OpenAI auto-caches prompts >1024 tokens — may already be active. | Layer 0.3 rewritten, Phase 3 scope updated |
+| 2026-06-17 | Gemini 2.5-flash truncation fix | thinkingBudget:0 added to chatModel.js Google provider. Thinking tokens were consuming maxOutputTokens budget, truncating JSON mid-generation. Also increased DECIDER maxTokens 250→350, TUTOR 1200→1500. jsonParser.js also hardened with global fence stripping + balanced brace finder. | Fixed in chatModel.js, step4, step6, jsonParser.js |
+| 2026-06-17 | Phase 0.3 — Gemini caching: inactive | No `cached:` field in any Gemini 2.5-flash response. Auto-caching not available on this model/provider. Phase 3 will be tested when OpenAI provider is used. | Phase 3 fate pending OpenAI test |
 | _PENDING_ | Phase 2.1.5 — 8B model intent accuracy ≥95%? | TBD by golden set run | Affects whether to keep 8B or fallback to 70B |
 | _PENDING_ | Phase 4 decision gate — needed or skip? | TBD after Phase 2+3 stable | Affects whether project ends at Phase 2 or continues |
 

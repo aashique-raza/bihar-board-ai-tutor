@@ -14,12 +14,28 @@ import { sectionsToAnswerText } from './promptHelpers.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 import { logCallTokens, approxTokens } from '../utils/tokenLogger.js';
 
+// Provider-agnostic cache token extractor.
+// Groq: promptTokensCached or cache_read_input_tokens
+// OpenAI: prompt_tokens_details.cached_tokens (auto-active for prompts >1024 tokens)
+// Gemini: separate API — always 0 here
+const extractCacheTokens = (usage) => {
+  const groqCached   = usage.promptTokensCached ?? usage.cache_read_input_tokens ?? 0;
+  const openaiCached = usage.prompt_tokens_details?.cached_tokens ?? 0;
+  return groqCached || openaiCached || 0;
+};
+
 // Extracts full token breakdown from LangChain's handleLLMEnd callback.
+// Path is consistent across Groq, OpenAI, and Google GenAI providers.
 const extractTokenBreakdown = (output) => {
   const usage = output?.llmOutput?.tokenUsage || {};
   const input = usage.promptTokens ?? 0;
   const out = usage.completionTokens ?? 0;
-  return { input, output: out, total: usage.totalTokens ?? (input + out) };
+  return {
+    input,
+    output: out,
+    total: usage.totalTokens ?? (input + out),
+    cached: extractCacheTokens(usage),
+  };
 };
 
 let responseChain = null;
@@ -28,7 +44,7 @@ const getResponseChain = () => {
   if (!responseChain) {
     responseChain = RunnableSequence.from([
       tutorResponsePrompt,
-      createChatModel({ temperature: 0.3, maxTokens: 1200 }), // 1200 covers full science explanation; monitor logs and raise to 1400 if truncation seen
+      createChatModel({ temperature: 0.3, maxTokens: 1500 }), // 1500 covers full science explanation across all providers including Gemini
       stringParser,
     ]);
   }

@@ -10,9 +10,25 @@
  * Remove or silence this file after all TOKEN_FIX_PLAN steps are done.
  */
 
+import { deciderSystemText } from '../prompts/deciderPrompt.js';
+import { tutorSystemText } from '../prompts/tutorPrompt.js';
+
 export const approxTokens = (str) => Math.ceil(String(str ?? '').length / 4);
 
 const pad = (val, n) => String(val ?? 0).padStart(n);
+
+const SYSTEM_PROMPT_TOKENS = {
+  DECIDER: approxTokens(deciderSystemText),
+  TUTOR: approxTokens(tutorSystemText),
+};
+
+export const getSystemPromptTokens = (callName) => SYSTEM_PROMPT_TOKENS[callName] ?? 0;
+
+if (!SYSTEM_PROMPT_TOKENS.DECIDER || !SYSTEM_PROMPT_TOKENS.TUTOR) {
+  console.error('[SYSTEM PROMPTS] ERROR: Token count is 0 — check deciderSystemText / tutorSystemText exports');
+} else {
+  console.log(`[SYSTEM PROMPTS] Decider: ~${SYSTEM_PROMPT_TOKENS.DECIDER} tokens | Tutor: ~${SYSTEM_PROMPT_TOKENS.TUTOR} tokens`);
+}
 
 /**
  * Layer 1 — Log approximate sizes of every context component built in step3.
@@ -54,12 +70,45 @@ export const logContextSizes = (sessionId, turnNumber, components) => {
  * @param {object} meta       - extra key/value pairs to display (intent, responseMode, etc.)
  */
 export const logCallTokens = (callName, breakdown, meta = {}) => {
-  const { input = 0, output = 0, total = 0 } = breakdown;
+  const { input = 0, output = 0, total = 0, cached = 0 } = breakdown;
+  const sysTokens = getSystemPromptTokens(callName);
+  const dynInput = Math.max(0, input - sysTokens);
   const metaStr = Object.entries(meta).map(([k, v]) => `${k}:${v}`).join(' | ');
+  const cachedStr = cached > 0 ? `  |  cached:${pad(cached, 5)}` : '';
   console.log(
-    `[${callName.padEnd(7)}] in:${pad(input, 6)} + out:${pad(output, 5)} = ${pad(total, 6)} tokens` +
+    `[${callName.padEnd(7)}] sys:${pad(sysTokens, 5)} + dyn:${pad(dynInput, 5)} + out:${pad(output, 5)} = ${pad(total, 6)} tokens` +
+    cachedStr +
     (metaStr ? `  |  ${metaStr}` : '')
   );
+};
+
+/**
+ * Layer 2b — Per-intent aggregate tracker (in-memory, last 100 turns per intent).
+ * recordIntentSample: call once per turn after logTurnSummary.
+ * logIntentAggregates: call every N turns to print rolling averages.
+ */
+const intentStats = new Map();
+const MAX_SAMPLES = 100;
+
+export const recordIntentSample = (intent, totalTokens, cachedTokens = 0) => {
+  if (!intent || !Number.isFinite(totalTokens)) return;
+  const stats = intentStats.get(intent) || { count: 0, totalTokens: 0, totalCached: 0, samples: [] };
+  stats.count++;
+  stats.totalTokens += totalTokens;
+  stats.totalCached += (Number.isFinite(cachedTokens) ? cachedTokens : 0);
+  stats.samples.push(totalTokens);
+  if (stats.samples.length > MAX_SAMPLES) stats.samples.shift();
+  intentStats.set(intent, stats);
+};
+
+export const logIntentAggregates = () => {
+  console.log('\n[INTENT TOKEN AGGREGATES]');
+  for (const [intent, stats] of intentStats.entries()) {
+    const avg = Math.round(stats.totalTokens / stats.count);
+    const recentAvg = Math.round(stats.samples.reduce((a, b) => a + b, 0) / stats.samples.length);
+    const cachedAvg = Math.round(stats.totalCached / stats.count);
+    console.log(`  ${intent.padEnd(20)} count:${pad(stats.count, 4)}  alltime_avg:${pad(avg, 5)}  last100_avg:${pad(recentAvg, 5)}  cached_avg:${pad(cachedAvg, 5)}`);
+  }
 };
 
 /**
@@ -71,6 +120,7 @@ export const logCallTokens = (callName, breakdown, meta = {}) => {
 export const logTurnSummary = ({
   sessionId,
   turnNumber,
+  intent,
   decider,    // { input, output, total }
   tutor,      // { input, output, total }
   sessionTotal,
@@ -85,7 +135,7 @@ export const logTurnSummary = ({
 
   console.log(
     `\n╔═══════════════════════════════════════════════════════════╗\n` +
-    `║  TOKEN AUDIT  Session:...${shortId.padEnd(8)}  Turn: ${turnNumber}\n` +
+    `║  TOKEN AUDIT  Session:...${shortId.padEnd(8)}  Turn: ${turnNumber}  Intent: ${(intent ?? 'UNKNOWN').padEnd(18)}\n` +
     `╠═══════════════════════════════════════════════════════════╣\n` +
     `║  Decider : ${pad(decider?.total, 6)} tokens  (in:${pad(decider?.input, 6)}  out:${pad(decider?.output, 5)})\n` +
     `║  Tutor   : ${pad(tutor?.total, 6)} tokens  (in:${pad(tutor?.input, 6)}  out:${pad(tutor?.output, 5)})\n` +

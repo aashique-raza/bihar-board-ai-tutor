@@ -64,11 +64,15 @@ export const createChatModel = (overrides = {}) => {
   }
 
   // Default: Google Gemini — uses maxOutputTokens, NOT maxTokens (confirmed against @langchain/google-genai v2.1.30)
+  // thinkingBudget: 0 disables internal reasoning tokens on Gemini 2.5+ thinking models.
+  // Without this, thinking tokens consume maxOutputTokens budget, truncating actual JSON output.
+  // Safe to set on non-thinking models (gemini-2.0-flash etc.) — it is silently ignored.
   return new ChatGoogleGenerativeAI({
     apiKey: getRequiredEnv('GOOGLE_API_KEY', 'GEMINI_API_KEY'),
     model: config.model,
     temperature: config.temperature,
     maxRetries: 0,
+    thinkingConfig: { thinkingBudget: 0 },
     ...(config.maxTokens ? { maxOutputTokens: config.maxTokens } : {}),
   });
 };

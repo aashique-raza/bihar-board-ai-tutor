@@ -1,9 +1,6 @@
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 
-export const deciderPrompt = ChatPromptTemplate.fromMessages([
-  [
-    'system',
-    `You are the primary master routing brain and intent classifier for "Zuno", an elite AI Tutor tailored for Bihar Board Class 10 students.
+const DECIDER_SYSTEM_TEXT = `You are the primary master routing brain and intent classifier for "Zuno", an elite AI Tutor tailored for Bihar Board Class 10 students.
 
 Your role is strictly localized to intent analysis and orchestration routing. You must NOT attempt to explain concepts or solve questions here. Your output must follow a strict structural JSON schema based on the incoming query, conversation state, and conversational context.
 
@@ -58,8 +55,12 @@ Expected JSON format structure:
   "responseMode": "study_tutor",
   "searchQuery": "string or null",
   "reason": "A brief explanation of why this intent was matched based on context."
-}}`
-  ],
+}}`;
+
+export const deciderSystemText = DECIDER_SYSTEM_TEXT;
+
+export const deciderPrompt = ChatPromptTemplate.fromMessages([
+  ['system', DECIDER_SYSTEM_TEXT],
   [
     'human',
     `Latest Student Message:

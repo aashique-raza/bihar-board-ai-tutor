@@ -7,7 +7,7 @@
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
 import { env } from '../config/env.js';
-import { logTurnSummary } from '../utils/tokenLogger.js';
+import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../utils/tokenLogger.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
@@ -182,11 +182,15 @@ export const saveAndRespond = async (
   logTurnSummary({
     sessionId,
     turnNumber,
+    intent: decision?.intent ?? 'UNKNOWN',
     decider: decision?.tokenBreakdown ?? { input: 0, output: 0, total: decision?.tokenUsage ?? 0 },
     tutor:   response?.tokenBreakdown ?? { input: 0, output: 0, total: response?.tokenUsage ?? 0 },
     sessionTotal: newTotal,
     sessionLimit: env.sessionTokenLimit,
   });
+  const cachedTokens = (decision?.tokenBreakdown?.cached ?? 0) + (response?.tokenBreakdown?.cached ?? 0);
+  recordIntentSample(decision?.intent, tokenUsage, cachedTokens);
+  if (turnNumber % 10 === 0) logIntentAggregates();
   if (newTotal >= env.sessionTokenLimit) {
     try {
       await updateChatSessionState(sessionId, { status: 'exhausted' }, userId);
