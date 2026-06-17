@@ -87,11 +87,12 @@ export const formatRetrievedContext = (chunks = []) => {
   return chunks.map((chunk, index) => {
     const metadata = chunk.metadata || {};
     const content = extractChunkContent(chunk);
+    const headingPath = String(metadata.heading_path || '');
+    const leafHeading = (headingPath.split('>').pop() || 'Unknown').trim();
 
     return `[Source ${index + 1}]
 Chapter: ${metadata.chapter_title || 'Unknown'}
-Heading: ${metadata.heading_path || 'Unknown'}
-Chunk ID: ${metadata.chunk_id || chunk.id || 'Unknown'}
+Heading: ${leafHeading}
 Content:
 ${content}`;
   }).join('\n\n---\n\n');

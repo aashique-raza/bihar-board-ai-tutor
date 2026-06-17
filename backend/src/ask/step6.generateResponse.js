@@ -116,7 +116,7 @@ const needsCurriculum = (intent, responseMode, focusChapterPrompt, retrievedCont
  */
 export const generateResponse = async (
   { question },
-  { language, memory, history, lastTutorResponse, curriculumSummary, focusChapterPrompt },
+  { language, memory, history, curriculumSummary, focusChapterPrompt },
   { responseMode, intent },
   { retrievedContext }
 ) => {
@@ -158,10 +158,9 @@ export const generateResponse = async (
         message: question,
         answerLanguageInstruction: targetLanguageInstruction,
         responseMode,
-        decision: JSON.stringify({ responseMode, intent }, null, 2),
+        decision: JSON.stringify({ responseMode, intent }),
         memory: serializedMemory,
         history,
-        lastTutorResponse,
         curriculumSummary: curriculumForPrompt,
         focusChapter: focusChapterPrompt,
         retrievedContext,

@@ -15,16 +15,7 @@ const buildFocusChapterPrompt = (focusChapter) => {
   if (!focusChapter) {
     return 'No focus chapter selected.';
   }
-
-  return JSON.stringify({
-    subjectId: focusChapter.subjectId,
-    subjectTitle: focusChapter.subjectTitle,
-    sectionId: focusChapter.sectionId,
-    sectionTitle: focusChapter.sectionTitle,
-    chapterId: focusChapter.id,
-    chapterNumber: focusChapter.number,
-    chapterTitle: focusChapter.title,
-  });
+  return `${focusChapter.subjectTitle} > ${focusChapter.sectionTitle} > Ch ${focusChapter.number ?? '?'}: ${focusChapter.title}`;
 };
 
 /**

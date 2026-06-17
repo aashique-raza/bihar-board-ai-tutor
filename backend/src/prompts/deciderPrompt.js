@@ -66,14 +66,10 @@ export const deciderPrompt = ChatPromptTemplate.fromMessages([
     `Latest Student Message:
 {message}
 
-Current Study Placement Context (Semantic Hydration):
-{currentStudyContext}
+Student message language: {detectedLanguage}
 
 Recent Turn Conversational Logs (History):
 {history}
-
-Focus Mode Active Target Chapter Schema:
-{focusChapter}
 
 Return JSON representation block matching the structural constraint maps.`
   ]

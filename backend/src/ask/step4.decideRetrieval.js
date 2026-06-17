@@ -122,7 +122,7 @@ const normalizeDecision = (decision, rawQuestion) => {
  * @param {string} context.currentStudyContext - True semantic hydrated textbook tracking indicator
  * @returns {Promise<{ intent: string, inScope: boolean, needsRetrieval: boolean, responseMode: string, searchQuery: string|null, reason: string }>}
  */
-export const decideRetrieval = async ({ question }, { deciderHistory, focusChapterPrompt, currentStudyContext }) => {
+export const decideRetrieval = async ({ question }, { deciderHistory, language }) => {
   console.log('[Step 4] Running intent classifier...');
 
   // Declared outside try so catch block can read the value on parse errors
@@ -133,9 +133,8 @@ export const decideRetrieval = async ({ question }, { deciderHistory, focusChapt
     const rawDecision = await getDeciderChain().invoke(
       {
         message: question,
-        currentStudyContext,
+        detectedLanguage: language?.detectedLanguage ?? 'hinglish',
         history: deciderHistory,
-        focusChapter: focusChapterPrompt,
       },
       {
         callbacks: [{
