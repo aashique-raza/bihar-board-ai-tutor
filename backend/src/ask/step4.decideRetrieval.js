@@ -78,9 +78,9 @@ const normalizeDecision = (decision, rawQuestion) => {
     responseMode = 'redirect';
   }
 
-  // Strict retrieval lock rules integration block
-  // True structural RAG can only occur if the query is a genuine conceptual student question
-  const needsRetrieval = (intent === 'CONCEPT_QUESTION' && inScope) ? Boolean(decision.needsRetrieval) : false;
+  // needsRetrieval is fully deterministic — only CONCEPT_QUESTION triggers RAG.
+  // Not read from LLM output (lean prompt no longer returns this field).
+  const needsRetrieval = (intent === 'CONCEPT_QUESTION' && inScope);
 
   // The vector store is indexed in Hinglish/English, so a Devanagari searchQuery
   // would retrieve poorly. Detect it here and skip retrieval below if found.

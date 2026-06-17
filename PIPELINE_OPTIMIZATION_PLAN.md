@@ -199,9 +199,9 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
 - [x] Layer 2.0 — Pre-flight (do BEFORE touching code)
   - [x] Step 2.0.1 — Build golden test set: 30-50 queries with expected intents + expected response qualities
   - [x] Step 2.0.2 — Snapshot baseline: run test set through current pipeline, save outputs
-- [ ] Layer 2.1 — Decider redesign
-  - [ ] Step 2.1.1 — Write lean decider prompt (~300 tokens, intent-only)
-  - [ ] Step 2.1.2 — Add conservative bias rule + language hint
+- [x] Layer 2.1 — Decider redesign
+  - [x] Step 2.1.1 — Write lean decider prompt (~300 tokens, intent-only)
+  - [x] Step 2.1.2 — Add conservative bias rule + language hint
   - [ ] Step 2.1.3 — Switch decider model to `llama-3.1-8b-instant`
   - [ ] Step 2.1.4 — Move searchQuery generation: code-side for English/Hinglish, LLM-side for Devanagari/pronouns only
   - [ ] Step 2.1.5 — Run golden test set, validate ≥95% intent accuracy vs baseline
@@ -1433,6 +1433,7 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-17 | Gemini 2.5-flash truncation fix | thinkingBudget:0 added to chatModel.js Google provider. Thinking tokens were consuming maxOutputTokens budget, truncating JSON mid-generation. Also increased DECIDER maxTokens 250→350, TUTOR 1200→1500. jsonParser.js also hardened with global fence stripping + balanced brace finder. | Fixed in chatModel.js, step4, step6, jsonParser.js |
 | 2026-06-17 | Phase 0.3 — Gemini caching: inactive | No `cached:` field in any Gemini 2.5-flash response. Auto-caching not available on this model/provider. Phase 3 will be tested when OpenAI provider is used. | Phase 3 fate pending OpenAI test |
 | 2026-06-17 | Phase 2.0 baseline captured — 80% intent accuracy (32/40) | GREETING/CONCEPT/EXPLAIN_MORE/CHOOSE_COURSE/UNSAFE all 100%. OUT_OF_CONTEXT 60% (Maths/History confused with Science). NEXT_STEP 0% (rate-limited, not tested). BLIND_SPOT 60% (pronoun+mixed queries weak). Baseline saved: backend/test/golden-baseline-phase1.json | Phase 2.1 decider redesign must fix OUT_OF_CONTEXT + BLIND_SPOT edges |
+| 2026-06-17 | Step 2.1.1+2.1.2 complete — lean decider prompt live | New prompt: ~578 tokens (vs ~1,336 before) = ~758 tokens saved/turn on decider. All 4 intent tests passed. Blind spot test passed (greeting+science → CONCEPT_QUESTION). needsRetrieval made fully deterministic in normalizeDecision (no LLM dependency). OUT_OF_CONTEXT definition updated to include other Class 10 subjects (Maths, Hindi, etc.) as "currently unavailable" not "out of scope". Conservative bias rule working. | deciderPrompt.js + step4 line 83 updated |
 | _PENDING_ | Phase 2.1.5 — 8B model intent accuracy ≥95%? | TBD by golden set run | Affects whether to keep 8B or fallback to 70B |
 | _PENDING_ | Phase 4 decision gate — needed or skip? | TBD after Phase 2+3 stable | Affects whether project ends at Phase 2 or continues |
 
