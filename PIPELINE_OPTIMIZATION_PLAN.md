@@ -1,0 +1,1481 @@
+# Zuno Pipeline Optimization Plan — Token Blowup Root-Cause Fix
+
+> **Predecessor:** [TOKEN_FIX_PLAN.md](TOKEN_FIX_PLAN.md) — STEP 0-6 complete. STEP 7-8 superseded by this document.
+> **Created:** 2026-06-17
+> **Status:** Not started — awaiting Phase 0 kick-off
+> **Owner:** Farhan Raza (developer) + Claude (senior engineering advisor)
+
+---
+
+## 0. Read This First (Mandatory Before Any Step)
+
+This file is the **multi-session bridge** for fixing Zuno's token blowup problem. It exists because the problem is bigger than one session can finish. You will pick this file up across many sessions, work on one small step at a time, mark it done, move on.
+
+**Why this file exists:**
+- Session context windows are limited. Without this file, the next session starts cold.
+- The plan has been deeply analyzed across 4 long discussions. Re-deriving that analysis every session = wasted effort.
+- Status tracking here = single source of truth on what's done vs pending.
+
+**How to use this file in any session:**
+1. Read sections 1-4 (Context, Architecture Decision, Blind Spots, Status Tracker) to refresh.
+2. Look at the Status Tracker (section 5) to find the next incomplete small step.
+3. Open that step's section, read the full detail.
+4. Discuss with senior engineer (Claude) — clarify doubts, edge cases, etc.
+5. Implement that ONE small step. Test. Mark done in Status Tracker.
+6. Stop. Next session continues from the next step.
+
+**Full session protocol is in Section 13 at the bottom.**
+
+---
+
+## 1. Context Recap — What Problem We're Solving
+
+### The symptom (what the user sees)
+- Student sends 3-4 messages, session locks out with "token limit reached"
+- Even if we raise the limit to 100k, only 10-12 turns fit
+- Goal: ~30 quality learning turns per session at a reasonable token budget
+
+### Root cause (discovered across 4 deep-dive sessions)
+The Ask pipeline (`backend/src/ask/`) has **5 categories of token waste**:
+
+1. **Static prompt bloat** — Decider system prompt is ~900 tokens; Tutor is ~1700 tokens. Sent **every turn**.
+2. **Per-turn input bloat** — Duplicate fields (`lastTutorResponse` duplicates history content), dead-weight inputs (decider receives `focusChapter` JSON it doesn't use), bloated formats (pretty-printed JSON, redundant chunk IDs).
+3. **Architectural** — One monolithic tutor prompt handles 6 different intents (greeting, redirect, choose_course, explain_more, concept_question, next_step). Every turn pays for ALL intents' rules even when only one applies.
+4. **Measurement blindness** — Current logger shows dynamic context tokens but hides static system prompt cost (~2,600 tokens/turn). Without visibility, fixes can't be verified.
+5. **History compounding** — History grows ~200 tokens/turn. By turn 10, history alone is 60% of per-turn budget.
+
+### What was already tried (TOKEN_FIX_PLAN.md, steps 0-6)
+- ✅ STEP 0: Token logging instrumentation
+- ✅ STEP 1: Removed `lastTutorResponse` from **decider** (still duplicate in tutor — this plan fixes that)
+- ✅ STEP 2: Fixed RAG chunk double-wrapping ([Context] header strip)
+- ✅ STEP 3: Compacted memory JSON + completedTopicIds → count
+- ✅ STEP 4: Decider history window reduced 14 → 6 messages
+- ✅ STEP 5: Conditional curriculumSummary
+- ✅ STEP 6: Set maxTokens on LLM calls
+
+**Outcome:** Marginal improvement only. Per-turn still ~7,500 tokens. **Three turns still hit 15k window.**
+
+**Why marginal:** Steps 0-6 trimmed leaves while leaving the root architectural problem (monolithic prompt) untouched.
+
+### The user's key insight (which validates this plan)
+The user (Farhan) raised this as a senior product-engineering observation:
+> *"Decider sirf intent classify karta hai — usko curriculum/RAG/etc. nahi chahiye. Aur tutor — agar intent conversation hai, to RAG/curriculum/chapter content kyun de rahe hain? Sirf query + prompt + history kafi hai."*
+
+This intuition is architecturally correct. **Intent-specific dispatch** is the answer.
+
+---
+
+## 2. The Architecture Decision
+
+### What we're building (one paragraph)
+A 3-layer optimization on top of the existing 7-step Ask pipeline: **(a) instrument first** so we can verify impact, **(b) trim safe wins** with low-risk changes, **(c) refactor tutor into intent-specific specialized prompts** with code-side safety guards to prevent hallucination on misclassified intents. Optional layers for caching and history compression sit on top, gated by measured results.
+
+### Why this approach (and not alternatives)
+We explicitly rejected:
+- **Solution 1 alone (Smart Trim)** — Hits a ceiling. Won't reach target. Same trap as STEP 0-6.
+- **Pure rule-based intent classifier** — Already rejected in TOKEN_FIX_PLAN.md ("kills intelligence in Hinglish nuance"). Confirmed.
+- **Merge decider + tutor into one LLM call** — Circular dependency: tutor needs retrieved chunks, retrieval needs decider's searchQuery.
+- **Conversation summarization (3rd LLM call)** — Adds latency, race conditions, cost. Rejected in TOKEN_FIX_PLAN.md.
+- **Switching LLM provider just for caching** — Premature optimization. Decide after measuring.
+
+We chose the **layered hybrid** because:
+- Each phase is independently shippable
+- Each phase has measurable impact
+- Risks are amortized across phases (not big-bang)
+- Future-proof: new intents = new prompts, isolated additions
+- Defense layers protect against architectural-level failure modes (see Section 3)
+
+### Token budget targets (realistic, with proper measurement)
+
+| Phase complete | Per-turn avg | Turns @ 30k window | Notes |
+|----------------|--------------|---------------------|-------|
+| Today | ~5,500 | ~5 turns | After STEP 0-6 |
+| Phase 0 | ~5,500 | ~5 turns | Pure visibility, no behavior change |
+| Phase 1 | ~4,000 | ~7-8 turns | Safe trims, no architecture change |
+| Phase 2 | ~2,500-3,000 | ~10-12 turns | **Target hit** |
+| Phase 3 (if Groq supports caching) | ~1,800-2,200 | ~14-16 turns | Bonus, not promised |
+| Phase 4 (conditional) | ~1,500-1,800 | ~17-20 turns | Only if Phase 2+3 misses target |
+
+### What "future-proof" means in this plan
+- Adding a new intent (e.g., QUIZ, EXAM_MODE) = create new prompt file + register in intent handler map. No core pipeline changes.
+- Swapping LLM provider per intent = change one config entry. No prompt rewrites.
+- A/B testing prompt variations = swap one handler. No system-wide impact.
+
+---
+
+## 3. The 5 Blind Spots (Defense Layers Required)
+
+These are the failure modes that surfaced when we stress-tested the proposed architecture. **They are non-negotiable.** Skipping any one of these = product failure risk.
+
+### Blind Spot 1: Wrong-intent classification → Hallucination
+**Risk:** Decider misclassifies "Pranam sir, photosynthesis ke baare mein batao" as GREETING. Greeting prompt has no RAG context. LLM answers from general knowledge. **Violates core product rule** ("answer only from indexed content").
+
+**Defense:**
+- **Layer 1**: Decider system prompt has explicit conservative bias rule: "if message has BOTH greeting AND academic keyword, prefer CONCEPT_QUESTION"
+- **Layer 2**: Code-side override in `step5` dispatcher — academic keyword regex check; if mismatch with intent, promote to CONCEPT_QUESTION
+- **Layer 3**: Each intent prompt has anti-hallucination guard: "if user mentions academic topic but mode is conversation, redirect to study mode"
+- **Layer 4**: Production logging when override fires. If > 5% of turns trigger override, decider needs retraining.
+
+### Blind Spot 2: Existing code has hidden quality guards
+**Risk:** Current `step6.generateResponse.js` has 3 guards built over time:
+- Conversation mode safety override (line 165-176) — catches LLM returning wrong status
+- Title rescue (line 184-187) — promotes title to section content when LLM ignores schema
+- Status normalization (line 192-203) — forces correct status by intent
+
+**Defense:** When migrating to intent-specific prompts, **port ALL guards to per-intent logic**. Do NOT remove them assuming "intent router will never confuse modes."
+
+### Blind Spot 3: History compounds linearly — intent router doesn't fix it
+**Risk:** Turn 10 has ~2,000-token history. Intent router saves ~3,000 tokens elsewhere but history still dominates. We projected "13-15 turns" — actual could be ~10.
+
+**Defense:**
+- **Per-intent history windowing** — GREETING gets last 4 msgs, REDIRECT gets 0, CONCEPT gets last 6, NEXT_STEP gets last 2. Defined in intent handler config.
+- **Phase 4 (conditional)** — if per-intent windowing isn't enough, switch to compressed history representation (tutor messages replaced with `[Zuno explained X]` placeholders for old turns).
+
+### Blind Spot 4: Caching is uncertain — don't bet on it
+**Risk:** Earlier proposal counted on Groq prompt caching. Groq's caching availability for `llama-3.3-70b-versatile` and `llama-3.1-8b-instant` is unverified as of 2026-06-17.
+
+**Defense:**
+- Phase 3 is a **probe**, not a commitment. Test if `cache_read_input_tokens` appears in API response. If yes, enable. If no, abandon.
+- **No provider switch** purely for caching. Provider switches are separate decisions with their own cost/benefit analysis.
+
+### Blind Spot 5: Subtle bugs uncovered in code review
+**Bug A** — `tokenUsage` not counted on provider-error failures (step7 never reached). Latent under-counting.
+**Bug B** — Empty history string is "No previous messages in this session." (~10 tokens). Should be empty string with conditional template.
+**Bug C** — `INACTIVITY_THRESHOLD_MS` (step2:59-63) resets `learningMode` to idle but preserves `currentChapterId`. Inconsistent state.
+**Bug D** — Decider doesn't receive language hint. Devanagari classification accuracy on 8B model could suffer.
+
+**Defense:** Address each in appropriate phase (Phase 1 catches Bugs B, D; Phase 2 addresses A).
+
+---
+
+## 4. Critical Rules (Hard Stops)
+
+These are non-negotiable. **Do not skip or shortcut these.**
+
+| Rule | Why | When enforced |
+|------|-----|---------------|
+| Phase 0 (logger) MUST complete before Phase 1 | Without static prompt visibility, impact verification impossible | Always |
+| Defense Layer 2 (code-side intent override) MUST be in Phase 2 | Otherwise decider errors = hallucination = product rule violation | Phase 2 |
+| Feature flag MUST exist for Phase 2 | Big-bang switch is reckless; need toggleable rollback | Phase 2 |
+| Test set of 30-50 queries with expected intents BEFORE Phase 2 | Without baseline, can't validate intent accuracy | Phase 2 prep |
+| Monolithic `tutorPrompt.js` MUST stay alive 2 weeks post-Phase-2 | Production safety insurance | Phase 2 cleanup |
+| Caching is NOT promised in projections | Provider feature, may not work | Phase 3 |
+| One small step at a time. Test. Mark done. Then next. | Multi-session safety | Always |
+| Never touch RAG reranker without separate discussion | Quality regression risk, out of scope | Always |
+| Never touch tutor prompt persona/tone without separate discussion | Subtle, hard-won quality | Always |
+
+---
+
+## 5. Status Tracker (Single Source of Truth)
+
+Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progress, `[x]` for done, `[!]` for blocked.
+
+### Phase 0 — Instrumentation Upgrade
+- [ ] Layer 0.1 — Static prompt token counter
+  - [ ] Step 0.1.1 — Add `estimateSystemPromptTokens()` helper to tokenLogger
+  - [ ] Step 0.1.2 — Wire static count into `logCallTokens` output
+- [ ] Layer 0.2 — Per-intent token tracker
+  - [ ] Step 0.2.1 — Tag turn summary with intent label
+  - [ ] Step 0.2.2 — Add per-intent aggregate counter (in-memory, last 100 turns)
+- [ ] Layer 0.3 — Cache hit detector (for Phase 3 readiness)
+  - [ ] Step 0.3.1 — Probe Groq API response for `cache_read_input_tokens` field
+  - [ ] Step 0.3.2 — Log cache hit/miss when field present
+
+### Phase 1 — Safe Wins (No Architecture Change)
+- [ ] Layer 1.1 — Tutor input bloat fixes
+  - [ ] Step 1.1.1 — Remove `lastTutorResponse` duplicate from tutor invoke
+  - [ ] Step 1.1.2 — Remove `decision` JSON pretty-print bloat
+  - [ ] Step 1.1.3 — Convert `focusChapter` JSON → compact string
+- [ ] Layer 1.2 — Decider input bloat fixes
+  - [ ] Step 1.2.1 — Remove `currentStudyContext` from decider invoke
+  - [ ] Step 1.2.2 — Remove `focusChapter` from decider invoke
+  - [ ] Step 1.2.3 — Add language hint to decider input (Bug D fix)
+- [ ] Layer 1.3 — RAG context trimming
+  - [ ] Step 1.3.1 — Remove `Chunk ID` field from `formatRetrievedContext`
+  - [ ] Step 1.3.2 — Simplify `Heading` path to leaf-only
+
+### Phase 2 — Intent Router (Architectural Refactor)
+- [ ] Layer 2.0 — Pre-flight (do BEFORE touching code)
+  - [ ] Step 2.0.1 — Build golden test set: 30-50 queries with expected intents + expected response qualities
+  - [ ] Step 2.0.2 — Snapshot baseline: run test set through current pipeline, save outputs
+- [ ] Layer 2.1 — Decider redesign
+  - [ ] Step 2.1.1 — Write lean decider prompt (~300 tokens, intent-only)
+  - [ ] Step 2.1.2 — Add conservative bias rule + language hint
+  - [ ] Step 2.1.3 — Switch decider model to `llama-3.1-8b-instant`
+  - [ ] Step 2.1.4 — Move searchQuery generation: code-side for English/Hinglish, LLM-side for Devanagari/pronouns only
+  - [ ] Step 2.1.5 — Run golden test set, validate ≥95% intent accuracy vs baseline
+- [ ] Layer 2.2 — Code-side safety net (Blind Spot 1 defense)
+  - [ ] Step 2.2.1 — Build academic keyword regex (~50 common science terms)
+  - [ ] Step 2.2.2 — Implement intent override logic in `step5` dispatcher entry
+  - [ ] Step 2.2.3 — Add Devanagari detection + raw query fallback
+  - [ ] Step 2.2.4 — Production logging for override triggers
+- [ ] Layer 2.3 — Intent prompt files (the heart of refactor)
+  - [ ] Step 2.3.1 — Create `backend/src/prompts/intents/` folder + `corePersona.js` partial
+  - [ ] Step 2.3.2 — Write `greetingPrompt.js` (~200 tokens system) + port guards
+  - [ ] Step 2.3.3 — Write `redirectPrompt.js` (~150 tokens) + port guards
+  - [ ] Step 2.3.4 — Write `chooseCoursePrompt.js` (~250 tokens) + port guards
+  - [ ] Step 2.3.5 — Write `explainMorePrompt.js` (~400 tokens) + port variation mandate
+  - [ ] Step 2.3.6 — Write `conceptQuestionPrompt.js` (~450 tokens) + strict grounding
+  - [ ] Step 2.3.7 — Write `nextStepPrompt.js` (~350 tokens) + memoryUpdate rules
+- [ ] Layer 2.4 — Dispatch & integration
+  - [ ] Step 2.4.1 — Create `intentHandlers` data-driven config in `step6`
+  - [ ] Step 2.4.2 — Refactor `step6.generateResponse.js` to dispatch via map
+  - [ ] Step 2.4.3 — Implement per-intent history windowing in `step3.buildContext.js`
+  - [ ] Step 2.4.4 — Port ALL existing guards (conv safety, title rescue, status normalize) to per-intent logic
+- [ ] Layer 2.5 — Rollout safety
+  - [ ] Step 2.5.1 — Add `USE_INTENT_ROUTER` env flag (default false)
+  - [ ] Step 2.5.2 — Keep monolithic `tutorPrompt.js` alive as fallback path
+  - [ ] Step 2.5.3 — Run golden test set with flag ON, compare to baseline
+  - [ ] Step 2.5.4 — Production-soak for 48 hrs with flag ON
+- [ ] Layer 2.6 — Cleanup
+  - [ ] Step 2.6.1 — After 2 weeks production-stable, delete monolithic path
+  - [ ] Step 2.6.2 — Remove `USE_INTENT_ROUTER` flag
+
+### Phase 3 — Caching Probe (Conditional Bonus)
+- [ ] Layer 3.1 — Provider capability check
+  - [ ] Step 3.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
+  - [ ] Step 3.1.2 — If found: document the cache TTL, hit rate, savings. If not: abandon Phase 3.
+- [ ] Layer 3.2 — Enable caching (only if probe succeeded)
+  - [ ] Step 3.2.1 — Lock all system prompts (version stamp them)
+  - [ ] Step 3.2.2 — Enable caching flag in `ChatGroq` constructor (verify LangChain support or use direct SDK)
+  - [ ] Step 3.2.3 — Monitor cache hit rate for 1 week
+
+### Phase 4 — History Compression (Only If Needed)
+- [ ] Layer 4.1 — Decision gate
+  - [ ] Step 4.1.1 — Measure: after Phase 2+3 stable, is avg turn count ≥12 at 30k? If yes, SKIP Phase 4.
+- [ ] Layer 4.2 — Compressed history (if needed)
+  - [ ] Step 4.2.1 — Design compressed format (`Zuno [Topic: X]: brief summary`)
+  - [ ] Step 4.2.2 — Implement in `formatRecentHistory` with intent-aware switch (full for EXPLAIN_MORE, compressed elsewhere)
+  - [ ] Step 4.2.3 — Validate on golden test set
+
+---
+
+## 6. Phase 0 — Instrumentation Upgrade
+
+### Phase Goal
+Make the invisible visible. Today's logger shows dynamic context tokens but **hides** the largest cost: static system prompts (~2,600 tokens/turn). Without this fix, every subsequent phase's impact is unmeasurable.
+
+### Why This Must Be Phase 0 (not later)
+A senior engineering principle: **measure before you cut, measure after you cut.** Without proper measurement:
+- You can't prove Phase 1 worked
+- You can't prove Phase 2 hit target
+- You can't detect regressions
+- You can't make Phase 4 go/no-go decision
+
+### Total Estimated Effort: 1-2 hours
+
+---
+
+### Layer 0.1 — Static Prompt Token Counter
+
+#### Step 0.1.1 — Add `estimateSystemPromptTokens()` helper to tokenLogger
+
+**What:**
+A new function in [tokenLogger.js](backend/src/utils/tokenLogger.js) that returns the approximate token count of each system prompt (decider, tutor). Today the logger explicitly excludes these (`tokenLogger.js:43` says "Static system prompts ~2,600 tokens not included").
+
+**Why:**
+- Currently a comment claims "~2,600 tokens" — but no one verifies if that number is correct
+- Different LLM calls have different system prompts; need per-call accurate count
+- Phase 2 will split tutor into 6 prompts with different sizes — need to track each
+
+**Where (specific files):**
+- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — add helper
+- [backend/src/prompts/deciderPrompt.js](backend/src/prompts/deciderPrompt.js) — read static system message
+- [backend/src/prompts/tutorPrompt.js](backend/src/prompts/tutorPrompt.js) — read static system message
+
+**How (implementation sketch):**
+```js
+// In tokenLogger.js
+import { deciderPrompt } from '../prompts/deciderPrompt.js';
+import { tutorResponsePrompt } from '../prompts/tutorPrompt.js';
+
+// Extract the literal system message text from a ChatPromptTemplate.
+// Note: LangChain stores it in promptMessages[0].prompt.template
+const extractSystemPromptText = (chatPromptTemplate) => {
+  const sysMsg = chatPromptTemplate?.promptMessages?.[0];
+  return sysMsg?.prompt?.template ?? '';
+};
+
+// Cache the counts at module load (system prompts are static)
+const SYSTEM_PROMPT_TOKENS = {
+  DECIDER: approxTokens(extractSystemPromptText(deciderPrompt)),
+  TUTOR: approxTokens(extractSystemPromptText(tutorResponsePrompt)),
+};
+
+export const getSystemPromptTokens = (callName) => SYSTEM_PROMPT_TOKENS[callName] ?? 0;
+```
+
+**Edge cases:**
+- LangChain internal structure may differ — verify `promptMessages[0].prompt.template` is the right path. Run `console.log(JSON.stringify(deciderPrompt, null, 2))` once to confirm.
+- If template uses chained partials or runtime composition, static extraction may miss parts. For Phase 0, this is acceptable — our prompts are simple inline templates.
+- Phase 2 will introduce 6 new prompts. This helper should generalize: take any ChatPromptTemplate, return its system token count.
+
+**Hidden risks:**
+- If LangChain changes their internal API (`promptMessages[0].prompt.template`), this breaks. **Mitigation:** add a smoke test that fails loud at server start if system prompt extraction returns empty string for known prompts.
+
+**Test plan:**
+1. Add helper, call it at server start, log: `[SYSTEM PROMPTS] Decider: ~XXX tokens, Tutor: ~XXX tokens`
+2. Manually verify the numbers are reasonable (decider ~800-1000, tutor ~1500-1800)
+3. If `approxTokens()` returns 0 — extraction failed, debug LangChain template structure
+
+**Rollback:**
+Pure additive function. Just don't call it. Zero impact.
+
+**Completion criteria:**
+- Helper function exists and exports cleanly
+- Server start logs decider + tutor system prompt token counts
+- Numbers are non-zero and within expected range
+
+**Token impact:** None. Pure measurement.
+
+---
+
+#### Step 0.1.2 — Wire static count into `logCallTokens` output
+
+**What:**
+Modify `logCallTokens()` in [tokenLogger.js](backend/src/utils/tokenLogger.js) (line 56) to include system prompt cost in the breakdown printed after each LLM call.
+
+**Why:**
+Today the log shows `[DECIDER] in:1842 + out:98 = 1940 tokens`. The `1842` already INCLUDES the system prompt (provider counts it as input). But the developer reading logs has no way to know "of that 1842, 900 is the static prompt and 942 is the dynamic part." Breaking it down enables targeted optimization.
+
+**Where:**
+- [backend/src/utils/tokenLogger.js:56-63](backend/src/utils/tokenLogger.js) — modify `logCallTokens`
+
+**How:**
+```js
+export const logCallTokens = (callName, breakdown, meta = {}) => {
+  const { input = 0, output = 0, total = 0 } = breakdown;
+  const sysTokens = getSystemPromptTokens(callName);
+  const dynInput = Math.max(0, input - sysTokens);  // input minus system = dynamic part
+  const metaStr = Object.entries(meta).map(([k, v]) => `${k}:${v}`).join(' | ');
+  console.log(
+    `[${callName.padEnd(7)}] sys:${pad(sysTokens,5)} + dyn:${pad(dynInput,5)} + out:${pad(output,5)} = ${pad(total,6)}` +
+    (metaStr ? `  |  ${metaStr}` : '')
+  );
+};
+```
+
+**Edge cases:**
+- `input - sysTokens` could be negative if `approxTokens` overestimates system prompt. The `Math.max(0, ...)` guards against this.
+- If `approxTokens` is way off (>20% error), the breakdown misleads. Acceptable for relative tracking; not for billing.
+
+**Hidden risks:**
+- Token count from `approxTokens` is `chars/4` heuristic. Real tokenizer may differ by ±10%. Don't claim exact numbers in any communication based on these logs.
+
+**Test plan:**
+1. Send 5 test queries through the system
+2. Verify log output now shows `sys:XXX + dyn:YYY + out:ZZZ` for both DECIDER and TUTOR
+3. Confirm `sys + dyn ≈ input` (small drift acceptable due to approximation)
+
+**Rollback:**
+Revert one function. Zero behavior change.
+
+**Completion criteria:**
+- Logs show 3-part breakdown for every LLM call
+- Numbers are sensible (decider sys ~900, tutor sys ~1700)
+- No production failures
+
+**Token impact:** None.
+
+---
+
+### Layer 0.2 — Per-Intent Token Tracker
+
+#### Step 0.2.1 — Tag turn summary with intent label
+
+**What:**
+The `logTurnSummary` function in tokenLogger already prints decider + tutor cost. Add the classified intent label so you can answer: "What's the avg cost of a GREETING vs CONCEPT_QUESTION turn?"
+
+**Where:**
+- [backend/src/utils/tokenLogger.js:71-97](backend/src/utils/tokenLogger.js) — `logTurnSummary` function signature + output
+- [backend/src/ask/step7.saveAndRespond.js:182-189](backend/src/ask/step7.saveAndRespond.js) — caller passes `decision.intent`
+
+**How:**
+Add `intent` param to `logTurnSummary`. Print it in the box header.
+
+```js
+export const logTurnSummary = ({ sessionId, turnNumber, intent, decider, tutor, sessionTotal, sessionLimit }) => {
+  // ... existing code ...
+  console.log(
+    `\n╔═══════════════════════════════════════════════════════════╗\n` +
+    `║  TOKEN AUDIT  Session:...${shortId.padEnd(8)}  Turn: ${turnNumber}  Intent: ${(intent ?? '?').padEnd(18)}\n` +
+    // ... rest unchanged
+  );
+};
+```
+
+In `step7.saveAndRespond.js`, update the call site:
+```js
+logTurnSummary({
+  sessionId,
+  turnNumber,
+  intent: decision?.intent ?? 'UNKNOWN',  // ← add
+  decider: decision?.tokenBreakdown ?? { ... },
+  // ...
+});
+```
+
+**Edge cases:**
+- On parse-error fallback, `decision.intent` is set to 'CONCEPT_QUESTION' by `step4.decideRetrieval.js:160`. So intent label is always present.
+- On pre-pipeline error (DB, validation), turn never reaches step7, no log emitted. Acceptable — those aren't counted turns.
+
+**Hidden risks:** None — pure logging change.
+
+**Test plan:**
+1. Send 5 different queries (greeting, concept, redirect, etc.)
+2. Verify each turn's TOKEN AUDIT box shows the right intent label
+3. Confirm output is readable, not truncated
+
+**Rollback:** Revert two files.
+
+**Completion criteria:**
+- Intent label visible in turn summary
+- Works for all 7 intents
+
+**Token impact:** None.
+
+---
+
+#### Step 0.2.2 — Add per-intent aggregate counter (in-memory, last 100 turns)
+
+**What:**
+A simple in-memory rolling counter that tracks: "across the last 100 turns, average decider+tutor cost per intent." Print this every 10 turns or on demand.
+
+**Why:**
+Single-turn logs show one data point. Aggregate logs show **patterns**. After Phase 1, you want to see: "GREETING avg dropped from 3300 → 2150. CONCEPT avg dropped from 7500 → 4800." Without aggregates, you only have noisy single samples.
+
+**Where:**
+- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — add new module-level state + function
+
+**How:**
+```js
+const intentStats = new Map();  // intent → { count, totalTokens, samples: [last 100] }
+const MAX_SAMPLES = 100;
+
+export const recordIntentSample = (intent, totalTokens) => {
+  if (!intent || !Number.isFinite(totalTokens)) return;
+  const stats = intentStats.get(intent) || { count: 0, totalTokens: 0, samples: [] };
+  stats.count++;
+  stats.totalTokens += totalTokens;
+  stats.samples.push(totalTokens);
+  if (stats.samples.length > MAX_SAMPLES) stats.samples.shift();
+  intentStats.set(intent, stats);
+};
+
+export const logIntentAggregates = () => {
+  console.log('\n[INTENT TOKEN AGGREGATES]');
+  for (const [intent, stats] of intentStats.entries()) {
+    const avg = Math.round(stats.totalTokens / stats.count);
+    const recentAvg = stats.samples.length
+      ? Math.round(stats.samples.reduce((a,b)=>a+b, 0) / stats.samples.length)
+      : 0;
+    console.log(`  ${intent.padEnd(20)} count:${pad(stats.count,4)}  alltime_avg:${pad(avg,5)}  last100_avg:${pad(recentAvg,5)}`);
+  }
+};
+```
+
+Then in `step7.saveAndRespond.js`, after `logTurnSummary`, call:
+```js
+recordIntentSample(decision?.intent, turnTotal);
+if (turnNumber % 10 === 0) logIntentAggregates();
+```
+
+**Edge cases:**
+- In-memory state lost on server restart. For dev environment, acceptable. For production-grade tracking, persist to MongoDB later.
+- Stats grow per intent (max 7 entries). Memory bounded.
+
+**Hidden risks:**
+- Concurrent requests writing to the same Map — Node single-threaded JS event loop = safe for our use.
+- If process is long-running, in-memory only = lose history on restart. Acceptable for dev.
+
+**Test plan:**
+1. Send 30 mixed queries across intents
+2. Verify aggregate log appears every 10 turns
+3. Verify per-intent averages are reasonable
+
+**Rollback:** Pure additive. Remove the recording call.
+
+**Completion criteria:**
+- Aggregate log fires every 10 turns
+- Each intent gets its own row
+- Counts match number of turns sent for that intent
+
+**Token impact:** None.
+
+---
+
+### Layer 0.3 — Cache Hit Detector (Phase 3 readiness)
+
+#### Step 0.3.1 — Probe Groq API response for `cache_read_input_tokens` field
+
+**What:**
+Add code to inspect the raw LLM API response for cache-related fields. If the field appears, we know caching is active. If not, we know Phase 3 won't work on Groq.
+
+**Why:**
+Phase 3 hinges on this. We need to know NOW (during Phase 0) whether to plan for caching or not.
+
+**Where:**
+- [backend/src/ask/step4.decideRetrieval.js:128-131](backend/src/ask/step4.decideRetrieval.js) — `handleLLMEnd` callback
+- [backend/src/ask/step6.generateResponse.js:154-156](backend/src/ask/step6.generateResponse.js) — same
+
+**How:**
+Extend `extractTokenBreakdown` to also surface cache fields if present:
+
+```js
+const extractTokenBreakdown = (output) => {
+  const usage = output?.llmOutput?.tokenUsage || {};
+  const cacheRead = usage.promptTokensCached ?? usage.cache_read_input_tokens ?? 0;
+  const cacheWrite = usage.cache_creation_input_tokens ?? 0;
+  return {
+    input: usage.promptTokens ?? 0,
+    output: usage.completionTokens ?? 0,
+    total: usage.totalTokens ?? 0,
+    cacheRead,
+    cacheWrite,
+  };
+};
+```
+
+In `logCallTokens`, if `cacheRead > 0`, append `| cached:${cacheRead}` to the output.
+
+**Edge cases:**
+- Different providers use different field names. Groq might use `prompt_tokens_cached` or similar. **First task:** log the entire `usage` object once to see what fields exist.
+
+**Hidden risks:**
+- LangChain might not surface cache fields in `llmOutput`. May need to inspect raw response via callback. **Mitigation:** start with optimistic check, fallback to raw response inspection if cache fields never appear.
+
+**Test plan:**
+1. Send 5 identical queries back-to-back to the SAME endpoint
+2. First call: cacheRead should be 0 (cold)
+3. Subsequent calls (within cache TTL): cacheRead should be > 0
+4. If always 0: Groq doesn't support caching for this model. Document and abandon Phase 3.
+
+**Rollback:** Revert two files.
+
+**Completion criteria:**
+- Either we see cacheRead > 0 on repeated calls (Phase 3 viable)
+- Or we confirm cacheRead is always 0 (Phase 3 abandoned, documented)
+- Documented finding in Section 12 (Open Decisions Log)
+
+**Token impact:** None.
+
+---
+
+#### Step 0.3.2 — Log cache hit/miss when field present
+
+**What:**
+If Step 0.3.1 succeeded (cache fields exist), add cache hit/miss tracking to aggregate stats.
+
+**Why:**
+If caching is active, we want to know hit rate. A 30% hit rate vs 90% hit rate has very different cost implications.
+
+**Where:**
+- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — add cache stats tracking
+
+**How:**
+Extend `recordIntentSample` to also accept cache breakdown. Track hits vs total.
+
+**Edge cases:**
+- If Phase 0.3.1 found caching unavailable, skip this step entirely.
+
+**Test plan:**
+1. Send 20 queries
+2. Check aggregate log shows cache hit rate per intent
+3. Verify numbers make sense (high hit rate for frequent intents, low for rare)
+
+**Rollback:** Pure additive.
+
+**Completion criteria:**
+- Cache hit rate visible in aggregate log
+- (Or step skipped if 0.3.1 found caching unavailable)
+
+**Token impact:** None.
+
+---
+
+### Phase 0 Exit Criteria
+Before declaring Phase 0 complete:
+- [ ] Server start logs static system prompt token counts
+- [ ] Every LLM call log shows `sys + dyn + out` breakdown
+- [ ] Turn summary log includes intent label
+- [ ] Aggregate log fires every 10 turns with per-intent averages
+- [ ] Caching probe is complete — we know YES or NO definitively
+- [ ] At least 1 real session of 5+ turns has been observed in logs
+
+---
+
+## 7. Phase 1 — Safe Wins
+
+### Phase Goal
+Apply Solution-1 trims (low-risk, no architecture change). Each change is independently reversible. Combined target: ~30% reduction in per-turn tokens.
+
+### Total Estimated Effort: 3-4 hours
+
+### Why Phase 1 Before Phase 2
+- Builds momentum with measurable wins
+- Validates Phase 0's measurement infrastructure
+- Reduces Phase 2's surface area (less to migrate)
+- Each fix is independently revertable — low risk
+- Several Phase 1 fixes are bugs we noticed during analysis, not just optimizations
+
+---
+
+### Layer 1.1 — Tutor Input Bloat Fixes
+
+#### Step 1.1.1 — Remove `lastTutorResponse` duplicate from tutor invoke
+
+**What:**
+The `lastTutorResponse` field passed to tutor is **the same content** as the last "Zuno: ..." line in the `history` field. Sending both = same text twice = ~400 tokens wasted per turn.
+
+**Background:**
+TOKEN_FIX_PLAN STEP-1 removed this duplicate from the **decider** but left it in the **tutor**. Confirmed by re-reading `step6.generateResponse.js:148`.
+
+**Where:**
+- [backend/src/prompts/tutorPrompt.js:160-161](backend/src/prompts/tutorPrompt.js) — remove `{lastTutorResponse}` template variable
+- [backend/src/ask/step6.generateResponse.js:103](backend/src/ask/step6.generateResponse.js) — remove `lastTutorResponse` from function signature
+- [backend/src/ask/step6.generateResponse.js:148](backend/src/ask/step6.generateResponse.js) — remove from invoke call
+- [backend/src/ask/step3.buildContext.js:89,109](backend/src/ask/step3.buildContext.js) — stop computing it (or keep for now, just don't pass to step6)
+
+**How:**
+1. In `tutorPrompt.js`, remove the `Previous Turn Tracker:\n{lastTutorResponse}` block (lines 160-161)
+2. In the system prompt, update the "ANTI-REPETITION RULE" reference: change "The 'Previous Turn Tracker' shows your last response" to "Look at the most recent 'Zuno:' entry in the Recent Conversation Log"
+3. In `step6.generateResponse.js:103`, remove `lastTutorResponse` from destructured context param
+4. Line 148: remove `lastTutorResponse,` from invoke object
+5. In `step3.buildContext.js`, keep computing `lastTutorResponse` (it's still in the returned object for backward compat) but no harm — it's just unused. Optionally remove from return for cleanliness.
+
+**Edge cases:**
+- **Turn 1**: history is "No previous messages." — fine, no Zuno entry to reference.
+- **EXPLAIN_MORE intent**: the tutor needs to know last response to vary explanation. Now it must look in history. The system prompt update tells it where to look. Validated approach.
+- **Long history**: last Zuno entry might be many lines down. LLM still finds it (LLMs scan well).
+
+**Hidden risks:**
+- LLM might "miss" the last Zuno entry if it's deep in history (turn 7+). **Test specifically**: turn 7+ EXPLAIN_MORE — does it still vary correctly?
+- The system prompt change might subtly weaken variation rule. **Watch in test set**: do back-to-back same-topic queries produce different angles?
+
+**Test plan:**
+1. Single greeting turn: response should be normal
+2. CONCEPT_QUESTION + same topic again: tutor should vary explanation (anti-repetition still works)
+3. EXPLAIN_MORE after CONCEPT_QUESTION: should re-explain with different angle
+4. Token logs: confirm tutor input drops ~400 tokens compared to pre-fix baseline (turn 2+)
+
+**Rollback:**
+1. Re-add `lastTutorResponse` to tutorPrompt.js human message
+2. Re-add to step6 function signature
+3. Re-add to invoke object
+4. Revert system prompt change
+
+**Completion criteria:**
+- Tutor input tokens dropped ~400 on turn 2+
+- Anti-repetition behavior preserved (validated via test queries)
+- No regression in EXPLAIN_MORE quality
+
+**Token impact:** ~400 tokens/turn savings on turn 2+.
+
+---
+
+#### Step 1.1.2 — Remove `decision` JSON pretty-print bloat
+
+**What:**
+The `decision` field passed to tutor is:
+```js
+decision: JSON.stringify({ responseMode, intent }, null, 2)
+```
+This is **pretty-printed** (the `null, 2` adds newlines + indentation). Also: `responseMode` is already passed separately as its own parameter. The `intent` info adds little — tutor's behavior switches on `responseMode`, not raw intent.
+
+**Where:**
+- [backend/src/ask/step6.generateResponse.js:145](backend/src/ask/step6.generateResponse.js) — line with `decision: JSON.stringify(...)`
+- [backend/src/prompts/tutorPrompt.js:151-152](backend/src/prompts/tutorPrompt.js) — `{decision}` template variable
+
+**Decision (two options):**
+
+**Option A (recommended): Compact JSON only**
+- Change `JSON.stringify({...}, null, 2)` → `JSON.stringify({...})`
+- Saves ~20-30 tokens. Lower risk.
+
+**Option B: Remove entirely**
+- Drop the field from invoke + prompt template
+- Saves ~40-50 tokens. Slightly higher risk (in case any prompt branch references intent specifically).
+
+Pick Option A for Phase 1 (safe). Phase 2's intent router will remove this entirely anyway.
+
+**How (Option A):**
+```js
+// Before:
+decision: JSON.stringify({ responseMode, intent }, null, 2),
+
+// After:
+decision: JSON.stringify({ responseMode, intent }),
+```
+
+**Edge cases:** None — pure format change, content identical.
+
+**Hidden risks:**
+- LLM parsing of compact JSON vs pretty-printed: identical for modern LLMs. No quality impact.
+
+**Test plan:**
+1. Send 5 mixed queries
+2. Check tutor output is correct (intent-appropriate behavior unchanged)
+3. Token logs confirm ~30 tokens saved per turn
+
+**Rollback:** One-line revert.
+
+**Completion criteria:**
+- Tutor input tokens drop ~30 every turn
+- No behavior regression
+
+**Token impact:** ~30 tokens/turn.
+
+---
+
+#### Step 1.1.3 — Convert `focusChapter` JSON → compact string
+
+**What:**
+`buildFocusChapterPrompt` in [step3.buildContext.js:13-28](backend/src/ask/step3.buildContext.js) returns:
+```js
+JSON.stringify({
+  subjectId, subjectTitle, sectionId, sectionTitle,
+  chapterId, chapterNumber, chapterTitle,
+})
+```
+~70 tokens of JSON with IDs the tutor doesn't reference. Tutor only needs the human-readable path: "Science > Biology > Ch 1: Life Processes" (~15 tokens).
+
+**Where:**
+- [backend/src/ask/step3.buildContext.js:13-28](backend/src/ask/step3.buildContext.js) — `buildFocusChapterPrompt` function
+
+**How:**
+```js
+const buildFocusChapterPrompt = (focusChapter) => {
+  if (!focusChapter) {
+    return 'No focus chapter selected.';
+  }
+  return `${focusChapter.subjectTitle} > ${focusChapter.sectionTitle} > Ch ${focusChapter.number}: ${focusChapter.title}`;
+};
+```
+
+**Edge cases:**
+- `focusChapter.number` could be undefined for legacy data. Use `focusChapter.number ?? '?'`.
+- Special characters in chapter title: should already be clean since they come from curriculum index.
+
+**Hidden risks:**
+- Any prompt logic that parses focusChapter as JSON would break. Verify by grep: `grep -r "focusChapter" backend/src/prompts/` and `grep -r "focusChapterPrompt" backend/src/`. Confirm no JSON.parse calls on this field.
+- Frontend doesn't see this — it's internal to LLM prompts. Safe.
+
+**Test plan:**
+1. Focus mode session: open Biology Ch 1, send a question
+2. Tutor should answer with chapter context preserved
+3. Token logs confirm focusChapter slot dropped ~55 tokens
+
+**Rollback:** Revert function body.
+
+**Completion criteria:**
+- Tutor input tokens drop ~55 every turn (focus mode)
+- Chapter context still apparent in tutor responses
+
+**Token impact:** ~55 tokens/turn in focus mode.
+
+---
+
+### Layer 1.2 — Decider Input Bloat Fixes
+
+#### Step 1.2.1 — Remove `currentStudyContext` from decider invoke
+
+**What:**
+[step4.decideRetrieval.js:122](backend/src/ask/step4.decideRetrieval.js) passes `currentStudyContext` to the decider. This string ("Active Subject: Science > Biology...") is **dead weight** for intent classification — decider doesn't use chapter info to determine intent.
+
+**Where:**
+- [backend/src/prompts/deciderPrompt.js:67-68](backend/src/prompts/deciderPrompt.js) — `{currentStudyContext}` template variable
+- [backend/src/ask/step4.decideRetrieval.js:111](backend/src/ask/step4.decideRetrieval.js) — function signature
+- [backend/src/ask/step4.decideRetrieval.js:122](backend/src/ask/step4.decideRetrieval.js) — invoke object
+
+**How:**
+1. In `deciderPrompt.js`, remove the "Current Study Placement Context (Semantic Hydration):\n{currentStudyContext}\n" block from the human message
+2. In `step4.decideRetrieval.js:111`, remove `currentStudyContext` from destructured context
+3. In invoke object: remove `currentStudyContext,` line
+
+**Edge cases:**
+- **EXPLAIN_MORE intent**: needs reference resolution. Does it use studyContext? Check: no — deciderPrompt EXPLAIN_MORE special rule (line 34) tells it to look at history. studyContext is redundant.
+- **Devanagari translation**: decider translates Hindi topics to English for searchQuery. studyContext doesn't help here. Safe to remove.
+
+**Hidden risks:**
+- Pronoun resolution ("iska kya matlab?") — does decider use studyContext to resolve? Check deciderPrompt line 49: "If the student uses relative terms... evaluate the 'Recent Turn Conversational Logs'." History is the resolver, not studyContext. Safe.
+
+**Test plan:**
+1. Send "iska kya matlab" after a CONCEPT turn — decider should still classify as CONCEPT/EXPLAIN_MORE and generate sensible searchQuery
+2. Send Hindi topic ("प्रकाश संश्लेषण") — decider should translate via its own training, not via studyContext hint
+3. Token logs: decider input drops ~30 tokens
+
+**Rollback:** Revert three files.
+
+**Completion criteria:**
+- Decider input tokens drop ~30 every turn
+- All 7 intents still classified correctly on test set
+
+**Token impact:** ~30 tokens/turn.
+
+---
+
+#### Step 1.2.2 — Remove `focusChapter` from decider invoke
+
+**What:**
+Same logic as 1.2.1, but for `focusChapter`. Decider doesn't classify intent based on which chapter is active — classification is content-driven, not state-driven.
+
+**Where:**
+- [backend/src/prompts/deciderPrompt.js:74-75](backend/src/prompts/deciderPrompt.js) — `{focusChapter}` template variable in human message
+- [backend/src/ask/step4.decideRetrieval.js:111](backend/src/ask/step4.decideRetrieval.js) — destructured context
+- [backend/src/ask/step4.decideRetrieval.js:124](backend/src/ask/step4.decideRetrieval.js) — invoke object
+
+**How:**
+1. In deciderPrompt human message, remove "Focus Mode Active Target Chapter Schema:\n{focusChapter}"
+2. In step4 destructure: remove `focusChapterPrompt`
+3. In step4 invoke: remove `focusChapter: focusChapterPrompt,`
+
+**Edge cases:**
+- **CHOOSE_COURSE classification**: student says "physics padhna hai." Decider should classify regardless of currently-active chapter. Behavior unchanged.
+- **NEXT_STEP intent**: depends on current chapter. But decider doesn't generate searchQuery for NEXT_STEP (step5 handles it). Safe.
+
+**Hidden risks:**
+- If a future intent depends on focus chapter for classification, need to re-add. Not a current need.
+
+**Test plan:**
+1. In focus mode (Biology Ch 1), send "physics padhna hai" — should classify as CHOOSE_COURSE
+2. Send "aage badho" — should classify as NEXT_STEP regardless of chapter
+3. Token logs: decider input drops ~70 tokens
+
+**Rollback:** Revert three files.
+
+**Completion criteria:**
+- Decider input tokens drop ~70 every turn
+- CHOOSE_COURSE and NEXT_STEP classifications unaffected
+
+**Token impact:** ~70 tokens/turn.
+
+---
+
+#### Step 1.2.3 — Add language hint to decider input (Bug D fix)
+
+**What:**
+Per Blind Spot 5 Bug D: decider doesn't receive a language hint. For Devanagari input, the decider has to detect language from the message itself, which a smaller model (Phase 2 will use 8B) may handle worse than 70B.
+
+Add a language hint to help the decider, especially for Phase 2 when we switch to a smaller model.
+
+**Where:**
+- [backend/src/ask/step3.buildContext.js:78](backend/src/ask/step3.buildContext.js) — language is already detected here as `language.detectedLanguage`
+- [backend/src/ask/step4.decideRetrieval.js:111,121](backend/src/ask/step4.decideRetrieval.js) — pass language hint
+- [backend/src/prompts/deciderPrompt.js](backend/src/prompts/deciderPrompt.js) — add `{detectedLanguage}` template variable
+
+**How:**
+1. step3 already produces `language.detectedLanguage` (e.g., "hindi", "hinglish", "english")
+2. Pass it into decideRetrieval call (orchestrator or step4 signature)
+3. In deciderPrompt human message, add 1 line: `Student message language: {detectedLanguage}`
+4. In invoke: add `detectedLanguage: language.detectedLanguage` (or pass via context)
+
+**Edge cases:**
+- Mixed language ("Hello, photosynthesis kya hai?") — languageDetector handles this; output may be "hinglish". Tag as such.
+- Unknown language — fallback to "unknown" or "hinglish". Test.
+
+**Hidden risks:**
+- Adding the hint increases decider input by ~5 tokens. Net positive because it improves 8B accuracy on Devanagari in Phase 2.
+
+**Test plan:**
+1. Send Devanagari query, English query, Hinglish query
+2. Verify decider input shows correct language hint in logs
+3. Confirm intent classification accuracy still high
+
+**Rollback:** Revert three files. Add ~5 tokens back, no harm.
+
+**Completion criteria:**
+- Language hint visible in decider input
+- All three language modes classified correctly
+
+**Token impact:** -5 tokens/turn (slight increase, intentional). Net positive for Phase 2 accuracy.
+
+---
+
+### Layer 1.3 — RAG Context Trimming
+
+#### Step 1.3.1 — Remove `Chunk ID` field from `formatRetrievedContext`
+
+**What:**
+`formatRetrievedContext` in [promptHelpers.js:91-97](backend/src/ask/promptHelpers.js) adds a `Chunk ID: ${metadata.chunk_id || ...}` line to each RAG chunk. The LLM **never references chunk IDs** in its output. It's debugging metadata leaking into the prompt.
+
+**Where:**
+- [backend/src/ask/promptHelpers.js:91-97](backend/src/ask/promptHelpers.js) — remove the `Chunk ID:` line from the chunk template
+
+**How:**
+```js
+return `[Source ${index + 1}]
+Chapter: ${metadata.chapter_title || 'Unknown'}
+Heading: ${metadata.heading_path || 'Unknown'}
+Content:
+${content}`;
+```
+(Just delete the `Chunk ID:` line.)
+
+**Edge cases:**
+- Sources still returned to frontend via separate `formatSources` (sourceFormatter.js). Chunk IDs preserved there for debugging. Unaffected.
+
+**Hidden risks:**
+- None — chunk ID was purely cosmetic in the RAG prompt context.
+
+**Test plan:**
+1. Send a CONCEPT_QUESTION
+2. Verify tutor response is correct
+3. Check API response still has correct `sources` array with chunk IDs (frontend-facing)
+4. Token logs: tutor input drops ~50 tokens (10 per chunk × 5 chunks)
+
+**Rollback:** Re-add one line.
+
+**Completion criteria:**
+- Tutor input drops ~50 tokens on CONCEPT/EXPLAIN_MORE/NEXT_STEP turns
+- Sources array in API response unchanged
+
+**Token impact:** ~50 tokens/turn on RAG-active turns.
+
+---
+
+#### Step 1.3.2 — Simplify `Heading` path to leaf-only
+
+**What:**
+`metadata.heading_path` is currently the full hierarchy: `"Chapter 9 > Refraction of Light > Refractive Index"` — ~10 tokens. The tutor mostly needs the leaf ("Refractive Index"). Chapter title is already on a separate line (`Chapter:`).
+
+**Where:**
+- [backend/src/ask/promptHelpers.js:91-97](backend/src/ask/promptHelpers.js) — modify the Heading line
+
+**How:**
+```js
+const extractLeafHeading = (headingPath) => {
+  const parts = String(headingPath || '').split('>');
+  return (parts[parts.length - 1] || 'Unknown').trim();
+};
+
+// In the template:
+Heading: ${extractLeafHeading(metadata.heading_path)}
+```
+
+**Edge cases:**
+- `heading_path` undefined or empty: fallback to 'Unknown'.
+- Single-level heading (no `>`): leaf is the whole string. OK.
+
+**Hidden risks:**
+- LLM might use heading hierarchy for context. Watch quality on chapter-spanning queries (e.g., "tell me about Refraction in general" — does it use surface chunks correctly without breadcrumb context?). Chapter title is still on its own line, so the breadcrumb context isn't fully lost.
+
+**Test plan:**
+1. Run 5 CONCEPT queries
+2. Compare tutor response quality vs baseline
+3. Token logs: ~20 tokens saved per chunk (5 chunks × 20 = 100 tokens)
+
+**Rollback:** Re-use `metadata.heading_path` directly.
+
+**Completion criteria:**
+- Tutor input drops ~100 tokens on RAG-active turns
+- Response quality unaffected (validated on test set)
+
+**Token impact:** ~100 tokens/turn on RAG-active turns.
+
+---
+
+### Phase 1 Exit Criteria
+Before declaring Phase 1 complete:
+- [ ] All 9 steps marked done in Status Tracker
+- [ ] Aggregate logs show per-turn drop of ~1,000-1,500 tokens average
+- [ ] No regression: 5 representative queries still produce quality responses
+- [ ] No quality complaints from manual usage
+- [ ] Aggregate logs captured for at least 30 mixed turns
+
+**Estimated total savings after Phase 1:** ~1,200-1,500 tokens/turn average.
+
+---
+
+## 8. Phase 2 — Intent Router (The Architectural Refactor)
+
+### Phase Goal
+Replace the monolithic tutor prompt with intent-specific lean prompts. Each prompt receives ONLY the inputs it needs. This is the **single biggest token reduction** in the entire plan.
+
+### Total Estimated Effort: 12-15 hours, spread across 4-6 sessions
+
+### Why Phase 2 Is High-Stakes
+- It's the only phase that changes architecture
+- Defense layers are non-negotiable (Blind Spot 1)
+- Quality regression risk is real
+- All hidden guards from current tutor code must be preserved
+
+---
+
+### Layer 2.0 — Pre-Flight (Mandatory Before Any Code Change)
+
+#### Step 2.0.1 — Build golden test set: 30-50 queries with expected intents + expected response qualities
+
+**What:**
+A regression test suite of real-world queries that we can run before and after Phase 2 to validate accuracy and quality.
+
+**Why:**
+Without baseline comparison, "Phase 2 done" is an unverified claim. Senior engineering: **measure quality with hard evidence, not intuition.**
+
+**Where:**
+- New file: `backend/test/golden-queries.json`
+- New script: `backend/scripts/run-golden-set.js`
+
+**How:**
+Build JSON file structure:
+```json
+[
+  {
+    "id": "G01",
+    "query": "Hi",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["warm greeting", "no science content", "asks what to study"]
+  },
+  {
+    "id": "G02",
+    "query": "Pranam sir, photosynthesis ke baare mein batao",
+    "studyMode": "focus",
+    "chapterId": "bio_ch_01",
+    "expectedIntent": "CONCEPT_QUESTION",
+    "expectedResponseMode": "study_tutor",
+    "qualityChecks": ["mentions photosynthesis", "uses RAG content", "no hallucinated facts"]
+  },
+  // ... 30-50 total
+]
+```
+
+Cover all 7 intents. Include edge cases:
+- Pure Devanagari
+- Pure English
+- Hinglish
+- Greeting+academic mixed (Blind Spot 1 test)
+- Pronoun resolution ("iska kya matlab")
+- "Aage badho" (NEXT_STEP)
+- "Nahi samjha" (EXPLAIN_MORE)
+- Out-of-scope ("IPL ki team")
+- Abusive (UNSAFE)
+
+The script runs each query through `/api/v1/ask`, captures the response, evaluates:
+- Did `intent` match expected?
+- Did `responseMode` match?
+- Does response contain quality check phrases (heuristic — not perfect, but useful)?
+
+**Edge cases:**
+- New session per query to avoid state contamination
+- DB cleanup between runs
+
+**Hidden risks:**
+- 30-50 queries is a small sample. Production has more variety. **Mitigation:** monitor production after launch, add real failures to the golden set.
+
+**Test plan:**
+1. Run script against current pipeline, save baseline output
+2. Verify reasonable accuracy (≥90% on intent labels)
+3. If baseline accuracy is low, fix decider issues BEFORE Phase 2
+
+**Rollback:** N/A — pure addition.
+
+**Completion criteria:**
+- Golden set committed
+- Script runs cleanly
+- Baseline accuracy documented (in Section 12)
+
+**Token impact:** None.
+
+---
+
+#### Step 2.0.2 — Snapshot baseline: run test set through current pipeline, save outputs
+
+**What:**
+Execute the golden test set against the current (Phase 1 complete) pipeline. Save full output (responses, token counts, intents) to a baseline JSON.
+
+**Why:**
+After Phase 2, we re-run the same test set and **diff** to validate no regression. Without baseline file, the diff is impossible.
+
+**Where:**
+- New file: `backend/test/golden-baseline-phase1.json` (output of running golden set)
+
+**How:**
+The script from Step 2.0.1 supports `--save-baseline=path.json`. Run it once after Phase 1 complete.
+
+**Edge cases:**
+- LLM is non-deterministic. Re-run 3 times, save all 3. Phase 2 outputs that match ANY of the 3 baselines are acceptable.
+
+**Hidden risks:**
+- LLM output variance: a baseline that's "right" today might not match a "right" output tomorrow. Use intent labels and quality check phrases as the comparison criteria, not literal text match.
+
+**Test plan:**
+1. Run script with `--save-baseline`
+2. Inspect output JSON, verify structure
+3. Manually review 10 random samples for quality
+
+**Rollback:** N/A.
+
+**Completion criteria:**
+- Baseline file exists with 30-50 query results
+- Phase 1 token costs captured per intent
+
+**Token impact:** None. Runs cost real tokens (~150k for full set), but one-time.
+
+---
+
+### Layer 2.1 — Decider Redesign
+
+> NOTE: Steps 2.1.1 through 2.1.5 will be detailed in their own deep-dive session when we reach them. The current spec below is the high-level plan.
+
+#### Step 2.1.1 — Write lean decider prompt (~300 tokens, intent-only)
+- Condense 7 intent definitions to one-liner each
+- Remove redundant examples (LLM knows Hinglish)
+- Remove "Routing: ..." lines (deterministic in `normalizeDecision` code)
+- Add conservative bias rule (academic keyword → CONCEPT)
+- Output: just `{intent, reason}` — no searchQuery, responseMode, needsRetrieval (all derivable in code)
+
+#### Step 2.1.2 — Add conservative bias rule + language hint
+- Explicit rule in system prompt: "if uncertain between conversation and academic, choose academic"
+- Use language hint from Step 1.2.3
+
+#### Step 2.1.3 — Switch decider model to `llama-3.1-8b-instant`
+- One-line change in `createChatModel` call
+- Validate on golden test set
+
+#### Step 2.1.4 — Move searchQuery generation logic
+- Code-side: English/Hinglish queries → use raw question as searchQuery
+- Code-side: Devanagari → call a tiny dedicated translation utility (or rely on Gemini embedding's multilingual support — research needed)
+- LLM-side: only for explicit pronoun resolution cases (rare)
+
+#### Step 2.1.5 — Run golden test set, validate ≥95% intent accuracy
+- Hard gate before continuing
+- If accuracy drops below 95%, debug. Likely fix: tighten prompt, or revert to 70B for ambiguous cases.
+
+**Per-step deep dive will be done when this layer is started.**
+
+---
+
+### Layer 2.2 — Code-Side Safety Net (Blind Spot 1 Defense)
+
+#### Step 2.2.1 — Build academic keyword regex (~50 common science terms)
+
+**What:**
+A regex matching common Class 10 Science keywords (photosynthesis, electricity, refraction, acid, base, atom, etc.). If decider classifies as GREETING/REDIRECT but message contains a science keyword, promote to CONCEPT_QUESTION.
+
+**Where:**
+- New file: `backend/src/ask/intentSafetyNet.js`
+
+**How:**
+```js
+const ACADEMIC_KEYWORDS = [
+  // Physics
+  'electric', 'current', 'circuit', 'voltage', 'resistance', 'magnet', 'light',
+  'reflection', 'refraction', 'lens', 'mirror', 'force', 'energy', 'work',
+  // Chemistry
+  'atom', 'molecule', 'acid', 'base', 'salt', 'reaction', 'oxidation', 'reduction',
+  'metal', 'non-metal', 'periodic', 'element', 'compound',
+  // Biology
+  'cell', 'photosynthesis', 'respiration', 'reproduction', 'evolution', 'genetic',
+  'organism', 'heart', 'blood', 'nerve', 'hormone',
+  // Hinglish/Hindi common forms
+  'prakash', 'paravartan', 'amla', 'kshar', 'koshika', 'pradushan',
+];
+const ACADEMIC_REGEX = new RegExp(`\\b(${ACADEMIC_KEYWORDS.join('|')})\\b`, 'i');
+
+export const hasAcademicKeyword = (query) => ACADEMIC_REGEX.test(query);
+```
+
+**Edge cases:**
+- False positives: "light" appears in non-academic context ("light food", "feel light"). Acceptable cost — better to over-promote to CONCEPT (which has RAG fallback) than miss academic queries.
+- Hinglish variants: include common Roman-script Hindi terms for science topics.
+
+**Hidden risks:**
+- List maintenance burden. **Mitigation:** start with most common ~50 terms, expand based on production logs.
+
+**Test plan:**
+1. Unit test with 20 sample queries
+2. Verify all academic queries match, non-academic don't (allowing a few false positives)
+
+**Rollback:** Delete file.
+
+**Completion criteria:**
+- Helper file created
+- Unit tests pass
+- Token impact: ~5 lookup tokens per turn (negligible)
+
+**Token impact:** None.
+
+---
+
+#### Step 2.2.2 — Implement intent override logic in `step5` dispatcher entry
+
+**What:**
+After `step4` returns decision, before `step5` retrieves content, check: if intent is GREETING/REDIRECT but query has academic keyword, override.
+
+**Where:**
+- [backend/src/ask/askOrchestrator.js:76-78](backend/src/ask/askOrchestrator.js) — between decideRetrieval and retrieveContent
+
+**How:**
+```js
+const decision = await decideRetrieval(input, context);
+
+// Safety net: catch decider mis-classification of academic queries
+if (['GREETING', 'OUT_OF_CONTEXT'].includes(decision.intent) &&
+    hasAcademicKeyword(input.question)) {
+  console.warn(`[Safety Net] Promoting ${decision.intent} → CONCEPT_QUESTION due to academic keyword`);
+  decision.intent = 'CONCEPT_QUESTION';
+  decision.responseMode = 'study_tutor';
+  decision.needsRetrieval = true;
+  decision.searchQuery = input.question;  // raw query as searchQuery fallback
+  decision.inScope = true;
+  decision._overridden = true;  // for metrics
+}
+
+const retrieval = await retrieveContent(decision, input, session);
+```
+
+**Edge cases:**
+- UNSAFE_OR_ABUSIVE + academic keyword: do NOT override. Abuse takes precedence.
+- CHOOSE_COURSE + academic keyword (e.g., "chemistry padhna hai"): leave as CHOOSE_COURSE (decider is right).
+
+**Hidden risks:**
+- Over-aggressive promotion: every "light yaar mood nahi hai" gets promoted to CONCEPT. Annoying but recoverable (RAG returns NO_RETRIEVED_CONTEXT, tutor responds gracefully).
+
+**Test plan:**
+1. Send "Pranam sir, photosynthesis batao" — should be promoted to CONCEPT
+2. Send "Hi" — should stay GREETING
+3. Send "IPL ki team" — should stay OUT_OF_CONTEXT (no science keyword)
+4. Send "main thoda light feel kar raha hu" — false positive promotion, observe graceful fallback
+
+**Rollback:** Remove override block.
+
+**Completion criteria:**
+- Promotion fires on academic+greeting combos
+- Doesn't fire on pure greetings
+- Logs visible
+
+**Token impact:** When fires, adds ~1500 tokens (RAG runs). Acceptable cost for safety.
+
+---
+
+#### Step 2.2.3 — Add Devanagari detection + raw query fallback
+> Deep-dive when reached.
+
+#### Step 2.2.4 — Production logging for override triggers
+> Deep-dive when reached.
+
+---
+
+### Layer 2.3 — Intent Prompt Files (The Heart of Refactor)
+
+> NOTE: Each step here gets its own deep-dive session. Below is high-level scaffolding only.
+
+#### Step 2.3.1 — Create folder + `corePersona.js` partial
+- New folder: `backend/src/prompts/intents/`
+- `corePersona.js` exports shared persona rules (Babu/Beta frequency, analogy rule, language enforcement, anti-claim-physical-human rule)
+- ~80 tokens
+- All intent prompts import + interpolate via template composition
+
+#### Step 2.3.2 — Write `greetingPrompt.js`
+- ~200 tokens system
+- Inputs: query, history (last 4 messages), answerLanguageInstruction
+- Output schema: `{ status: 'answered', responseMode: 'conversation', title: null, sections: [...], suggestedActions: [], memoryUpdate: {} }`
+- Port: conversation mode safety override, title rescue logic
+- Anti-hallucination guard: "if message contains topic name, do NOT explain, redirect to study mode"
+
+#### Step 2.3.3 — Write `redirectPrompt.js`
+- ~150 tokens system
+- Inputs: query, answerLanguageInstruction
+- Output: out_of_scope status
+
+#### Step 2.3.4 — Write `chooseCoursePrompt.js`
+- ~250 tokens system
+- Inputs: query, curriculumSummary, focusChapter, answerLanguageInstruction
+- Lists chapters from curriculum
+
+#### Step 2.3.5 — Write `explainMorePrompt.js`
+- ~400 tokens system
+- Inputs: query, history (last 6), retrievedContext, last "Zuno:" line extracted from history, answerLanguageInstruction
+- Port: variation mandate, anti-repetition, "if retrievedContext empty, ask for clarification"
+
+#### Step 2.3.6 — Write `conceptQuestionPrompt.js`
+- ~450 tokens system
+- Inputs: query, history (last 6), retrievedContext, focusChapter, answerLanguageInstruction
+- Port: strict grounding rule
+
+#### Step 2.3.7 — Write `nextStepPrompt.js`
+- ~350 tokens system
+- Inputs: query, history (last 2), retrievedContext (next topic), memory (currentChapter/Topic), answerLanguageInstruction
+- Port: memoryUpdate rules, "teach as next lesson"
+
+---
+
+### Layer 2.4 — Dispatch & Integration
+> Deep-dive when reached. High-level: data-driven intent handler map in step6.
+
+### Layer 2.5 — Rollout Safety
+> Deep-dive when reached. Feature flag + 48hr soak.
+
+### Layer 2.6 — Cleanup
+> Deep-dive when reached.
+
+---
+
+## 9. Phase 3 — Caching Probe (Conditional)
+
+### Phase Goal
+If Phase 0.3 confirmed caching works on Groq, enable it. Otherwise abandon this phase.
+
+### Layer 3.1 — Provider Capability Check
+
+#### Step 3.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
+> Deep-dive when reached. Already partially done in Phase 0.3.
+
+#### Step 3.1.2 — Document finding
+- If found: detail TTL, hit rate, savings → proceed to Layer 3.2
+- If not: document in Open Decisions Log, abandon
+
+### Layer 3.2 — Enable Caching
+> Deep-dive when reached. Conditional on 3.1.
+
+---
+
+## 10. Phase 4 — History Compression (Only If Needed)
+
+### Decision Gate (Step 4.1.1)
+After Phase 2+3 stable, measure: is avg session turn count ≥12 at 30k window? If yes, **SKIP Phase 4 entirely.** Don't optimize past requirement.
+
+If no, proceed with Layer 4.2.
+
+> Detailed steps deferred until decision gate evaluated.
+
+---
+
+## 11. Cross-Cutting Concerns
+
+### Testing Rubric (applies to all phases)
+Every change must pass:
+1. **Functional test** — does the endpoint still respond?
+2. **Unit test** — for new helpers (academic regex, formatter changes, etc.)
+3. **Integration test** — golden set runs cleanly
+4. **Token measurement** — aggregated logs show expected reduction
+5. **Manual smoke** — 5 real queries by developer
+
+### Rollback Strategy
+| Phase | Rollback granularity |
+|-------|----------------------|
+| Phase 0 | Per-step (each is additive — remove call sites) |
+| Phase 1 | Per-step (each is a one-file revert) |
+| Phase 2 | Feature flag toggle OR full revert of intent router code |
+| Phase 3 | Disable caching flag |
+| Phase 4 | Switch history format back |
+
+### Feature Flag Approach (Phase 2 specifically)
+- `env.useIntentRouter: boolean` (default false initially, true after validation)
+- step6 checks flag, dispatches to either intent router OR monolithic tutor
+- Monolithic code path stays alive 2 weeks post-Phase-2 launch as safety
+- After 2 weeks stable, delete dead code
+
+### Code Quality Standards
+- New files: ESM modules, JSDoc on exports
+- Per-intent prompts: shared persona partial enforced via unit test
+- No new npm dependencies without justification
+- All changes must pass existing test scripts: `test:chunks`, `test:study-map`, `test:vector-store`, `test:chat-db-models`
+
+### What NOT to touch (out of scope)
+- RAG reranker logic ([backend/src/rag/reranker.js](backend/src/rag/reranker.js)) — separate concern, regression risk
+- Embeddings pipeline ([backend/src/rag/indexPipeline.js](backend/src/rag/indexPipeline.js)) — would require re-indexing
+- Tutor persona/tone — only structural prompt changes, not personality changes
+- Frontend (`frontend/`) — entire token problem is backend-side
+- MongoDB schemas (except minor field additions if required) — keep stable
+- Session/chat history models — these work, leave alone
+
+---
+
+## 12. Open Decisions Log
+
+Use this section to capture decisions made mid-implementation that future sessions need to know about.
+
+| Date | Decision | Reasoning | Outcome |
+|------|----------|-----------|---------|
+| 2026-06-17 | Plan structure: Phase → Layer → Small Step | Multi-session continuity | This file |
+| 2026-06-17 | Don't switch LLM provider just for caching | Provider switches need their own analysis | Phase 3 limited to Groq probe |
+| 2026-06-17 | Keep monolithic prompt alive 2 weeks post-Phase-2 | Safety net | Cleanup in Layer 2.6 |
+| _PENDING_ | Phase 0.3 — does Groq cache for `llama-3.3` and `llama-3.1`? | TBD by probe | Affects Phase 3 fate |
+| _PENDING_ | Phase 2.1.5 — 8B model intent accuracy ≥95%? | TBD by golden set run | Affects whether to keep 8B or fallback to 70B |
+| _PENDING_ | Phase 4 decision gate — needed or skip? | TBD after Phase 2+3 stable | Affects whether project ends at Phase 2 or continues |
+
+---
+
+## 13. How To Use This File (Session Protocol)
+
+This file is designed for **multi-session work**. Each session, follow this protocol exactly:
+
+### At Session Start
+
+1. **Read sections 0-4** in full. This restores context.
+2. **Read Section 5 (Status Tracker)**. Identify the next incomplete step (first `[ ]` you find, top-to-bottom).
+3. **Read that step's full detail** in the relevant Phase section. Note: edge cases, hidden risks, completion criteria.
+4. **Read Section 12 (Open Decisions Log)** for any decisions logged since the file was created.
+
+### During The Session
+
+1. **Discuss the step with the senior engineer (Claude)**:
+   - What does it do?
+   - What are the edge cases?
+   - Are there any hidden concerns?
+   - What's the exact implementation plan?
+2. **The senior engineer must answer all your questions** before any code is written. If you don't understand something, ask. If the engineer is uncertain, they must say so.
+3. **Implement the step**:
+   - Make file changes
+   - Run tests (the rubric in Section 11)
+   - Validate completion criteria
+4. **Mark the step done** in Section 5: change `[ ]` to `[x]`.
+5. **If decisions were made**, log them in Section 12.
+
+### At Session End
+
+1. **Confirm Status Tracker is updated**.
+2. **Commit the file changes** + the code changes together.
+3. **Note for next session**: any blockers, anything that should be done next.
+
+### Rules For The Senior Engineer (Claude)
+
+When this file is loaded in a new session, Claude MUST:
+- Treat the user as a junior developer learning the system
+- Explain things at appropriate detail (no jargon dumps)
+- Never skip steps in the order defined unless explicitly told
+- Refuse to implement code without first discussing the step
+- Stop implementation if a hidden risk surfaces — escalate to discussion
+- When the user has no opinion on a sub-decision, make the senior call and explain reasoning
+- Update this file as part of completing each step
+
+### Rules For The User (Junior Developer)
+
+- Don't skip ahead. Steps are ordered for safety.
+- Don't combine multiple steps in one session unless they're trivially related.
+- If a step seems "obvious," still discuss it — hidden risks often live in obvious steps.
+- If the senior engineer suggests something not in this file, push back: "Why isn't this in the plan?"
+- Mark steps done only after completion criteria are met.
+
+### What To Do If You Get Stuck
+
+- **Stuck on understanding**: ask the senior engineer to break it down further with examples
+- **Stuck on implementation**: explain what you tried and what happened
+- **Stuck on a decision**: list the options + tradeoffs, ask senior to recommend
+- **Stuck on time**: stop, mark current step `[~]` in-progress with a note, resume next session
+
+### When To Update This File
+
+- After every step completion (update Status Tracker)
+- When a decision is made (Open Decisions Log)
+- When you discover something the plan didn't account for (add to relevant phase as a note, discuss with senior)
+- When a step's detail proves wrong (correct it, log in decisions)
+
+### When NOT To Update This File
+
+- Don't add random thoughts/notes outside the structure
+- Don't change Phase ordering without senior engineer approval
+- Don't mark steps done without completion criteria met
+- Don't remove sections — append, never delete
+
+---
+
+## End Of Plan
+
+**Total scope:** ~50 small steps across 4 phases.
+**Estimated total effort:** 20-25 hours across 8-12 sessions.
+**Target outcome:** Per-turn cost from ~5,500 tokens to ~2,500 tokens. Session turn count from ~5 to ~12-15.
+
+**This file is the single source of truth. Trust it. Update it.**
