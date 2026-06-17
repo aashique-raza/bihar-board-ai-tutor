@@ -28,7 +28,7 @@ const getResponseChain = () => {
   if (!responseChain) {
     responseChain = RunnableSequence.from([
       tutorResponsePrompt,
-      createChatModel({ temperature: 0.3 }), // Tutor needs variation; decider (step4) stays at 0
+      createChatModel({ temperature: 0.3, maxTokens: 1200 }), // 1200 covers full science explanation; monitor logs and raise to 1400 if truncation seen
       stringParser,
     ]);
   }

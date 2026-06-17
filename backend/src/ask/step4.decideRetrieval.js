@@ -35,9 +35,9 @@ let deciderChain = null;
 const getDeciderChain = () => {
   if (!deciderChain) {
     deciderChain = RunnableSequence.from([
-      deciderPrompt,     // Hydrates multi-block metadata inputs into structure fields
-      createChatModel(), // Resolves the active model provider dynamically from env settings
-      stringParser,      // Clean serialization converter from AIMessage payload strings
+      deciderPrompt,
+      createChatModel({ maxTokens: 250 }), // JSON output is ~70–120 tokens; 250 is a hard ceiling with safe buffer
+      stringParser,
     ]);
   }
   return deciderChain;
