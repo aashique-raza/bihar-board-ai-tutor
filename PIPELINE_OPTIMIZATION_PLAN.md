@@ -2,7 +2,8 @@
 
 > **Predecessor:** [TOKEN_FIX_PLAN.md](TOKEN_FIX_PLAN.md) — STEP 0-6 complete. STEP 7-8 superseded by this document.
 > **Created:** 2026-06-17
-> **Status:** Not started — awaiting Phase 0 kick-off
+> **Status:** Phase 2.1 in progress — next step is 2.1.1 (lean decider prompt)
+> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ — baseline captured (80% accuracy)
 > **Owner:** Farhan Raza (developer) + Claude (senior engineering advisor)
 
 ---
@@ -182,20 +183,20 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
   - [x] Step 0.3.2 — Track cache savings in per-intent aggregates
 
 ### Phase 1 — Safe Wins (No Architecture Change)
-- [ ] Layer 1.1 — Tutor input bloat fixes
+- [x] Layer 1.1 — Tutor input bloat fixes
   - [x] Step 1.1.1 — Remove `lastTutorResponse` duplicate from tutor invoke
   - [x] Step 1.1.2 — Remove `decision` JSON pretty-print bloat
   - [x] Step 1.1.3 — Convert `focusChapter` JSON → compact string
-- [ ] Layer 1.2 — Decider input bloat fixes
+- [x] Layer 1.2 — Decider input bloat fixes
   - [x] Step 1.2.1 — Remove `currentStudyContext` from decider invoke
   - [x] Step 1.2.2 — Remove `focusChapter` from decider invoke
   - [x] Step 1.2.3 — Add language hint to decider input (Bug D fix)
-- [ ] Layer 1.3 — RAG context trimming
+- [x] Layer 1.3 — RAG context trimming
   - [x] Step 1.3.1 — Remove `Chunk ID` field from `formatRetrievedContext`
   - [x] Step 1.3.2 — Simplify `Heading` path to leaf-only
 
 ### Phase 2 — Intent Router (Architectural Refactor)
-- [ ] Layer 2.0 — Pre-flight (do BEFORE touching code)
+- [x] Layer 2.0 — Pre-flight (do BEFORE touching code)
   - [x] Step 2.0.1 — Build golden test set: 30-50 queries with expected intents + expected response qualities
   - [x] Step 2.0.2 — Snapshot baseline: run test set through current pipeline, save outputs
 - [ ] Layer 2.1 — Decider redesign
