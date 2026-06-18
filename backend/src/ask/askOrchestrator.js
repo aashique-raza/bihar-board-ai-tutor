@@ -27,6 +27,7 @@ import { validateInput } from './step1.validateInput.js';
 import { loadSession } from './step2.loadSession.js';
 import { buildContext } from './step3.buildContext.js';
 import { decideRetrieval } from './step4.decideRetrieval.js';
+import { probeAcademicSimilarity } from './intentSafetyNet.js';
 import { retrieveContent } from './step5.retrieveContent.js';
 import { generateResponse } from './step6.generateResponse.js';
 import { saveAndRespond } from './step7.saveAndRespond.js';
@@ -75,6 +76,29 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
   try {
     const decision = await decideRetrieval(input, context);
     console.log('[DEBUG] intent:', decision.intent, 'needsRetrieval:', decision.needsRetrieval);
+
+    // --- Layer 2.2: Academic Safety Net ---
+    // The 8B decider occasionally misclassifies academic queries as GREETING or
+    // OUT_OF_CONTEXT. This probe catches those cases by checking vector similarity.
+    // Fires ONLY for these two intents — EXPLAIN_MORE/NEXT_STEP have their own RAG
+    // paths in step5, and UNSAFE must never be promoted to academic.
+    // Override runs BEFORE Phase 3 cap check (future) so academic queries always go through.
+    const SAFETY_NET_TARGETS = new Set(['GREETING', 'OUT_OF_CONTEXT']);
+    if (SAFETY_NET_TARGETS.has(decision.intent)) {
+      const { score, fired } = await probeAcademicSimilarity(input.question);
+      if (fired) {
+        console.warn(
+          `[SafetyNet] ${decision.intent} → CONCEPT_QUESTION | score:${score.toFixed(3)} | query:"${input.question.slice(0, 60)}"`
+        );
+        decision.intent         = 'CONCEPT_QUESTION';
+        decision.inScope        = true;
+        decision.needsRetrieval = true;
+        decision.responseMode   = 'study_tutor';
+        decision.searchQuery    = input.question;
+        decision._overridden    = true;
+      }
+    }
+
     const retrieval = await retrieveContent(decision, input, session);
     const response = await generateResponse(input, context, decision, retrieval);
     const tokenUsage = (decision.tokenUsage || 0) + (response.tokenUsage || 0);

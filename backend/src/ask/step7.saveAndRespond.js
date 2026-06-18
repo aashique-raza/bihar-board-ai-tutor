@@ -182,14 +182,15 @@ export const saveAndRespond = async (
   logTurnSummary({
     sessionId,
     turnNumber,
-    intent: decision?.intent ?? 'UNKNOWN',
+    intent:     decision?.intent ?? 'UNKNOWN',
+    overridden: decision?._overridden ?? false,
     decider: decision?.tokenBreakdown ?? { input: 0, output: 0, total: decision?.tokenUsage ?? 0 },
     tutor:   response?.tokenBreakdown ?? { input: 0, output: 0, total: response?.tokenUsage ?? 0 },
     sessionTotal: newTotal,
     sessionLimit: env.sessionTokenLimit,
   });
   const cachedTokens = (decision?.tokenBreakdown?.cached ?? 0) + (response?.tokenBreakdown?.cached ?? 0);
-  recordIntentSample(decision?.intent, tokenUsage, cachedTokens);
+  recordIntentSample(decision?.intent, tokenUsage, cachedTokens, decision?._overridden ?? false);
   if (turnNumber % 10 === 0) logIntentAggregates();
   if (newTotal >= env.sessionTokenLimit) {
     try {

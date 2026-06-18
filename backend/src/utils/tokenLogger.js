@@ -90,12 +90,13 @@ export const logCallTokens = (callName, breakdown, meta = {}) => {
 const intentStats = new Map();
 const MAX_SAMPLES = 100;
 
-export const recordIntentSample = (intent, totalTokens, cachedTokens = 0) => {
+export const recordIntentSample = (intent, totalTokens, cachedTokens = 0, wasOverridden = false) => {
   if (!intent || !Number.isFinite(totalTokens)) return;
-  const stats = intentStats.get(intent) || { count: 0, totalTokens: 0, totalCached: 0, samples: [] };
+  const stats = intentStats.get(intent) || { count: 0, totalTokens: 0, totalCached: 0, overrideCount: 0, samples: [] };
   stats.count++;
   stats.totalTokens += totalTokens;
   stats.totalCached += (Number.isFinite(cachedTokens) ? cachedTokens : 0);
+  stats.overrideCount += wasOverridden ? 1 : 0;
   stats.samples.push(totalTokens);
   if (stats.samples.length > MAX_SAMPLES) stats.samples.shift();
   intentStats.set(intent, stats);
@@ -107,7 +108,14 @@ export const logIntentAggregates = () => {
     const avg = Math.round(stats.totalTokens / stats.count);
     const recentAvg = Math.round(stats.samples.reduce((a, b) => a + b, 0) / stats.samples.length);
     const cachedAvg = Math.round(stats.totalCached / stats.count);
-    console.log(`  ${intent.padEnd(20)} count:${pad(stats.count, 4)}  alltime_avg:${pad(avg, 5)}  last100_avg:${pad(recentAvg, 5)}  cached_avg:${pad(cachedAvg, 5)}`);
+    const overrideRate = stats.count > 0
+      ? ((stats.overrideCount / stats.count) * 100).toFixed(1)
+      : '0.0';
+    // override_rate > 5% = decider is frequently misclassifying this intent → prompt needs work
+    const overrideFlag = parseFloat(overrideRate) > 5 ? ' ⚠️' : '';
+    console.log(
+      `  ${intent.padEnd(20)} count:${pad(stats.count, 4)}  alltime_avg:${pad(avg, 5)}  last100_avg:${pad(recentAvg, 5)}  cached_avg:${pad(cachedAvg, 5)}  override_rate:${overrideRate}%${overrideFlag}`
+    );
   }
 };
 
@@ -121,8 +129,9 @@ export const logTurnSummary = ({
   sessionId,
   turnNumber,
   intent,
-  decider,    // { input, output, total }
-  tutor,      // { input, output, total }
+  overridden,  // true if SafetyNet upgraded the intent
+  decider,     // { input, output, total }
+  tutor,       // { input, output, total }
   sessionTotal,
   sessionLimit,
 }) => {
@@ -132,10 +141,11 @@ export const logTurnSummary = ({
   const flag = sessionTotal >= sessionLimit ? '🔴 OVER LIMIT'
     : pct >= 80 ? '🟡 WARNING'
     : '🟢 OK';
+  const intentLabel = `${(intent ?? 'UNKNOWN')}${overridden ? ' [SAFETY-NET]' : ''}`;
 
   console.log(
     `\n╔═══════════════════════════════════════════════════════════╗\n` +
-    `║  TOKEN AUDIT  Session:...${shortId.padEnd(8)}  Turn: ${turnNumber}  Intent: ${(intent ?? 'UNKNOWN').padEnd(18)}\n` +
+    `║  TOKEN AUDIT  Session:...${shortId.padEnd(8)}  Turn: ${turnNumber}  Intent: ${intentLabel.padEnd(30)}\n` +
     `╠═══════════════════════════════════════════════════════════╣\n` +
     `║  Decider : ${pad(decider?.total, 6)} tokens  (in:${pad(decider?.input, 6)}  out:${pad(decider?.output, 5)})\n` +
     `║  Tutor   : ${pad(tutor?.total, 6)} tokens  (in:${pad(tutor?.input, 6)}  out:${pad(tutor?.output, 5)})\n` +
