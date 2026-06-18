@@ -90,13 +90,14 @@ export const logCallTokens = (callName, breakdown, meta = {}) => {
 const intentStats = new Map();
 const MAX_SAMPLES = 100;
 
-export const recordIntentSample = (intent, totalTokens, cachedTokens = 0, wasOverridden = false) => {
+export const recordIntentSample = (intent, totalTokens, cachedTokens = 0, wasOverridden = false, wasDrift = false) => {
   if (!intent || !Number.isFinite(totalTokens)) return;
-  const stats = intentStats.get(intent) || { count: 0, totalTokens: 0, totalCached: 0, overrideCount: 0, samples: [] };
+  const stats = intentStats.get(intent) || { count: 0, totalTokens: 0, totalCached: 0, overrideCount: 0, driftTurnCount: 0, samples: [] };
   stats.count++;
   stats.totalTokens += totalTokens;
   stats.totalCached += (Number.isFinite(cachedTokens) ? cachedTokens : 0);
   stats.overrideCount += wasOverridden ? 1 : 0;
+  stats.driftTurnCount += wasDrift ? 1 : 0;
   stats.samples.push(totalTokens);
   if (stats.samples.length > MAX_SAMPLES) stats.samples.shift();
   intentStats.set(intent, stats);
@@ -113,8 +114,9 @@ export const logIntentAggregates = () => {
       : '0.0';
     // override_rate > 5% = decider is frequently misclassifying this intent → prompt needs work
     const overrideFlag = parseFloat(overrideRate) > 5 ? ' ⚠️' : '';
+    const driftStr = (stats.driftTurnCount ?? 0) > 0 ? `  drift_turns:${stats.driftTurnCount}` : '';
     console.log(
-      `  ${intent.padEnd(20)} count:${pad(stats.count, 4)}  alltime_avg:${pad(avg, 5)}  last100_avg:${pad(recentAvg, 5)}  cached_avg:${pad(cachedAvg, 5)}  override_rate:${overrideRate}%${overrideFlag}`
+      `  ${intent.padEnd(20)} count:${pad(stats.count, 4)}  alltime_avg:${pad(avg, 5)}  last100_avg:${pad(recentAvg, 5)}  cached_avg:${pad(cachedAvg, 5)}  override_rate:${overrideRate}%${overrideFlag}${driftStr}`
     );
   }
 };
@@ -134,6 +136,7 @@ export const logTurnSummary = ({
   tutor,       // { input, output, total }
   sessionTotal,
   sessionLimit,
+  driftSignal, // { tier, consecutiveNonAcademic, totalNonAcademic } — optional
 }) => {
   const shortId = String(sessionId ?? 'unknown').slice(-8);
   const turnTotal = (decider?.total ?? 0) + (tutor?.total ?? 0);
@@ -142,6 +145,9 @@ export const logTurnSummary = ({
     : pct >= 80 ? '🟡 WARNING'
     : '🟢 OK';
   const intentLabel = `${(intent ?? 'UNKNOWN')}${overridden ? ' [SAFETY-NET]' : ''}`;
+  const driftLine = (driftSignal?.tier ?? 0) > 0
+    ? `║  ⚠️  DRIFT   tier:${driftSignal.tier}  consec:${driftSignal.consecutiveNonAcademic}  total:${driftSignal.totalNonAcademic}\n`
+    : '';
 
   console.log(
     `\n╔═══════════════════════════════════════════════════════════╗\n` +
@@ -150,6 +156,7 @@ export const logTurnSummary = ({
     `║  Decider : ${pad(decider?.total, 6)} tokens  (in:${pad(decider?.input, 6)}  out:${pad(decider?.output, 5)})\n` +
     `║  Tutor   : ${pad(tutor?.total, 6)} tokens  (in:${pad(tutor?.input, 6)}  out:${pad(tutor?.output, 5)})\n` +
     `║  TURN    : ${pad(turnTotal, 6)} tokens\n` +
+    driftLine +
     `╠═══════════════════════════════════════════════════════════╣\n` +
     `║  SESSION : ${pad(sessionTotal, 6)} / ${sessionLimit}  (${pct}%)  ${flag}\n` +
     `╚═══════════════════════════════════════════════════════════╝\n`

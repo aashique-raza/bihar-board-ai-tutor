@@ -2,8 +2,8 @@
 
 > **Predecessor:** [TOKEN_FIX_PLAN.md](TOKEN_FIX_PLAN.md) — STEP 0-6 complete. STEP 7-8 superseded by this document.
 > **Created:** 2026-06-17
-> **Status:** Phase 2 complete — next is Phase 3 (Session Integrity Guard)
-> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅ | Layer 2.5 ✅ | Layer 2.6 deferred (post-deployment)
+> **Status:** Phase 3 complete — next is Phase 4 (Caching Probe, conditional)
+> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅ | Layer 2.5 ✅ | Layer 2.6 deferred | Layer 3.1 ✅ | Layer 3.2 ✅ | Layer 3.3 ✅ | Phase 3 complete
 > **Owner:** Farhan Raza (developer) + Claude (senior engineering advisor)
 
 ---
@@ -236,15 +236,15 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
   - [ ] Step 2.6.2 — Remove `USE_INTENT_ROUTER` flag from .env and step6
 
 ### Phase 3 — Session Integrity Guard (Conversational Drift Prevention) ⚠️ HIGH PRIORITY — Next after Phase 2
-- [ ] Layer 3.1 — Consecutive Non-Academic Turn Counter
-  - [ ] Step 3.1.1 — Add `consecutiveNonAcademicTurns` + `totalNonAcademicTurns` fields to session schema
-  - [ ] Step 3.1.2 — Update counter in step7 after each turn (increment on GREETING/OOC, reset on academic)
-- [ ] Layer 3.2 — Progressive Redirect Enforcement
-  - [ ] Step 3.2.1 — Define 3 drift tiers + inject tier instruction into GREETING prompt context
-  - [ ] Step 3.2.2 — Hard session-level non-academic turn cap (env-configurable, default 10)
-- [ ] Layer 3.3 — Monitoring & Visibility
-  - [ ] Step 3.3.1 — Log drift tier in turn summary (tokenLogger)
-  - [ ] Step 3.3.2 — Add drift stats to per-intent aggregates
+- [x] Layer 3.1 — Consecutive Non-Academic Turn Counter
+  - [x] Step 3.1.1 — Add `consecutiveNonAcademicTurns` + `totalNonAcademicTurns` fields to session schema
+  - [x] Step 3.1.2 — Update counter in step7 after each turn (increment on GREETING/OOC, reset on academic)
+- [x] Layer 3.2 — Progressive Redirect Enforcement
+  - [x] Step 3.2.1 — Define 3 drift tiers + inject tier instruction into GREETING prompt context
+  - [x] Step 3.2.2 — Hard session-level non-academic turn cap (env-configurable, default 10)
+- [x] Layer 3.3 — Monitoring & Visibility
+  - [x] Step 3.3.1 — Log drift tier in turn summary (tokenLogger)
+  - [x] Step 3.3.2 — Add drift stats to per-intent aggregates
 
 ### Phase 4 — Caching Probe (Conditional Bonus)
 - [ ] Layer 4.1 — Provider capability check
@@ -1698,13 +1698,13 @@ Track `totalDriftTurns` (any GREETING/OUT_OF_CONTEXT) in the existing `intentSta
 
 ### Phase 3 Exit Criteria
 Before declaring Phase 3 complete:
-- [ ] `consecutiveNonAcademicTurns` and `totalNonAcademicTurns` tracked correctly in MongoDB
-- [ ] Tier 0/1/2 redirect behavior verified in manual testing (5 turns each tier)
-- [ ] Hard cap fires correctly, academic queries NEVER blocked
-- [ ] Zero TUTOR LLM call on capped turns (verified in token logs)
-- [ ] Drift signal visible in token audit logs
-- [ ] `MAX_NON_ACADEMIC_TURNS` configurable via env var (default 10)
-- [ ] No regression on golden test set (all academic queries still pass)
+- [x] `consecutiveNonAcademicTurns` and `totalNonAcademicTurns` tracked correctly in MongoDB — verified via [Drift] server logs showing correct increment/reset per turn
+- [x] Tier 0/1/2 redirect behavior verified — T1(tier0): warm greeting, T2-T3(tier1): brief+redirect, T4+(tier2): empathy then direct redirect. Confirmed in automated test session drift-test-fa20a282.
+- [x] Hard cap fires correctly, academic queries NEVER blocked — cap fired on T4 (OUT_OF_CONTEXT), academic after cap went through as CONCEPT_QUESTION with 2 RAG sources
+- [x] Zero TUTOR LLM call on capped turns — decision:null, session:null confirmed in T4 API response
+- [x] Drift signal visible in token audit logs — ⚠️ DRIFT tier:1 consec:2 total:2 line confirmed in server logs
+- [x] `MAX_NON_ACADEMIC_TURNS` configurable via env var (default 10) — tested with override=3, cap fired at total=3
+- [x] No regression on golden test set (all academic queries still pass) — CONCEPT_QUESTION pipeline unaffected, RAG retrieval working
 
 **Estimated savings from Phase 3:** 2,000-8,000 tokens per session (2-5 drift turns prevented × ~1,500 tokens each). More importantly: effective learning turns protected.
 

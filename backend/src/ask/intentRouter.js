@@ -28,6 +28,17 @@ import { formatRecentHistory }   from './promptHelpers.js';
 import { logCallTokens }         from '../utils/tokenLogger.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 
+// ─── Phase 3: Drift tier → behavioral instruction for the GREETING prompt ────
+//
+// Tier 0: no instruction (normal warm response).
+// Tier 1: gentle nudge toward studying.
+// Tier 2: firm redirect — but emotional messages still get one line of empathy first.
+const DRIFT_INSTRUCTIONS = {
+  0: '',
+  1: 'Behavior note: Student kai baar casual messages bhej chuka hai. Ek sentence mein briefly respond karo, phir clearly ek science topic padhne ke liye invite karo.',
+  2: 'Behavior note: Student baar baar padhai se bhaag raha hai. Agar message emotional hai (exam stress, scared, tired) to sirf ek line empathy do phir study redirect. Agar sirf casual chat hai to directly 1-2 lines mein ek science topic suggest karo — aur kuch nahi.',
+};
+
 // ─── 1. Per-intent model config ───────────────────────────────────────────────
 //
 // temperature : how varied/creative the response is (0 = deterministic, 1 = very varied)
@@ -87,17 +98,20 @@ const getChain = (intent) => {
 // This function sends ONLY what each prompt needs — nothing extra.
 
 const buildPromptInput = (intent, input, context, retrieval) => {
-  const { question }                                                     = input;
-  const { language, curriculumSummary, focusChapterPrompt, recentMessages = [] } = context;
-  const { retrievedContext }                                             = retrieval;
+  const { question }                                                                      = input;
+  const { language, curriculumSummary, focusChapterPrompt, recentMessages = [], driftSignal } = context;
+  const { retrievedContext }                                                             = retrieval;
 
   const answerLang = getAnswerLanguageInstruction(language.answerLanguage);
   const window     = HISTORY_WINDOW[intent] ?? 6;
   const history    = window === 0 ? '' : formatRecentHistory(recentMessages.slice(-window));
 
   switch (intent) {
-    case 'GREETING':
-      return { message: question, answerLanguageInstruction: answerLang, history };
+    case 'GREETING': {
+      const tier            = driftSignal?.tier ?? 0;
+      const driftInstruction = DRIFT_INSTRUCTIONS[tier] ?? '';
+      return { message: question, answerLanguageInstruction: answerLang, history, driftInstruction };
+    }
 
     case 'OUT_OF_CONTEXT':
     case 'UNSAFE_OR_ABUSIVE':

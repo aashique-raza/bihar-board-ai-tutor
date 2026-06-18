@@ -16,6 +16,11 @@ const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
 // Pipeline-generated titles that should never become a session label in the sidebar.
 const SYSTEM_TITLES = new Set(['Chapter Complete!']);
 
+// Phase 3 — Session Integrity Guard.
+// UNSAFE_OR_ABUSIVE excluded from drift — abuse is tracked by its own abuseCount field.
+const ACADEMIC_INTENTS = new Set(['CONCEPT_QUESTION', 'EXPLAIN_MORE', 'NEXT_STEP', 'CHOOSE_COURSE']);
+const DRIFT_INTENTS    = new Set(['GREETING', 'OUT_OF_CONTEXT']);
+
 // Allowed operational state properties inside our new ChatSession layout
 const ALLOWED_STATE_FIELDS = [
   'status', 'learningMode', 'currentSubjectId', 'currentSectionId',
@@ -125,7 +130,7 @@ const buildSessionPayload = (sessionId, updatedSession) => {
 export const saveAndRespond = async (
   { question, studyMode, focusChapter },
   { sessionId, chatState },
-  { language },
+  { language, driftSignal },
   decision,
   { retrieval, sources, nextTopicSignal },
   response,
@@ -176,12 +181,28 @@ export const saveAndRespond = async (
   // sessionType derived from studyMode — set once on creation, immutable after.
   const sessionType = studyMode === 'focus' ? 'focus' : 'global';
 
+  // Phase 3 — Session Integrity Guard: update drift counters in the same atomic op.
+  // Academic turns reset the consecutive streak. Drift turns increment both counters.
+  // UNSAFE_OR_ABUSIVE is excluded — abuse is tracked by its own abuseCount field.
+  const intent = decision?.intent ?? 'CONCEPT_QUESTION';
+  const chatStateInc = { messageCount: 1 };
+  if (ACADEMIC_INTENTS.has(intent)) {
+    stateUpdates.consecutiveNonAcademicTurns = 0;
+    console.log(`[Drift] ${intent} → consecutive reset to 0`);
+  } else if (DRIFT_INTENTS.has(intent)) {
+    chatStateInc.consecutiveNonAcademicTurns = 1;
+    chatStateInc.totalNonAcademicTurns = 1;
+    const prevConsec = chatState.consecutiveNonAcademicTurns ?? 0;
+    const prevTotal  = chatState.totalNonAcademicTurns       ?? 0;
+    console.log(`[Drift] ${intent} → consecutive ${prevConsec} → ${prevConsec + 1} | total ${prevTotal} → ${prevTotal + 1}`);
+  }
+
   // Single atomic MongoDB op: chatState $set + messageCount $inc + totalTokensUsed $inc + $setOnInsert immutables.
   const updatedSession = await updateChatSession(
     sessionId,
     {
       chatStateSet: removeUndefinedFields(stateUpdates),
-      chatStateInc: { messageCount: 1 },
+      chatStateInc,
       topLevelInc: { totalTokensUsed: tokenUsage },
     },
     { userId, sessionType }
@@ -201,9 +222,10 @@ export const saveAndRespond = async (
     tutor:   response?.tokenBreakdown ?? { input: 0, output: 0, total: response?.tokenUsage ?? 0 },
     sessionTotal: newTotal,
     sessionLimit: env.sessionTokenLimit,
+    driftSignal,
   });
   const cachedTokens = (decision?.tokenBreakdown?.cached ?? 0) + (response?.tokenBreakdown?.cached ?? 0);
-  recordIntentSample(decision?.intent, tokenUsage, cachedTokens, decision?._overridden ?? false);
+  recordIntentSample(decision?.intent, tokenUsage, cachedTokens, decision?._overridden ?? false, DRIFT_INTENTS.has(intent));
   if (turnNumber % 10 === 0) logIntentAggregates();
   if (newTotal >= env.sessionTokenLimit) {
     try {

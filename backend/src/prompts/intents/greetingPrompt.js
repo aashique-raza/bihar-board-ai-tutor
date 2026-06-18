@@ -54,7 +54,8 @@ export const greetingPrompt = ChatPromptTemplate.fromMessages([
   ['system', GREETING_SYSTEM_TEXT],
   [
     'human',
-    `Student message: {message}
+    `{driftInstruction}
+Student message: {message}
 
 Answer language instruction: {answerLanguageInstruction}
 

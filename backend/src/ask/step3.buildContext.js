@@ -8,6 +8,14 @@ import {
 } from './promptHelpers.js';
 import { logContextSizes } from '../utils/tokenLogger.js';
 
+// Phase 3: Maps consecutive non-academic turn count to a drift tier (0/1/2).
+// Tier 0 (0-1): normal response. Tier 1 (2-3): gentle nudge. Tier 2 (4+): firm redirect.
+const getDriftTier = (n) => {
+  if (n <= 1) return 0;
+  if (n <= 3) return 1;
+  return 2;
+};
+
 /**
  * Focus mode constraints details mapping logic template generator.
  */
@@ -103,5 +111,10 @@ export const buildContext = async ({ question, focusChapter }, { chatState, rece
     focusChapterPrompt,
     currentStudyContext,
     recentMessages,   // passed through for intentRouter per-intent history windowing (Layer 2.4)
+    driftSignal: {
+      consecutiveNonAcademic: chatState.consecutiveNonAcademicTurns ?? 0,
+      totalNonAcademic:       chatState.totalNonAcademicTurns       ?? 0,
+      tier:                   getDriftTier(chatState.consecutiveNonAcademicTurns ?? 0),
+    },
   };
 };

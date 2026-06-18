@@ -93,6 +93,16 @@ const chatSessionSchema = new mongoose.Schema(
         type: Date,
         default: null,
       },
+      // Resets to 0 on any academic turn. Used for progressive redirect tiers (Phase 3).
+      consecutiveNonAcademicTurns: {
+        type: Number,
+        default: 0,
+      },
+      // Never resets. Used for hard session-level non-academic cap (Phase 3).
+      totalNonAcademicTurns: {
+        type: Number,
+        default: 0,
+      },
       // Incremented by 1 per conversation turn (student Q + tutor A = 1 turn).
       // Used by P2-T3 to detect first turn for auto title generation.
       // Checked atomically via $inc — race-condition safe across concurrent tabs.

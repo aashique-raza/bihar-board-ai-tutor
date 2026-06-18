@@ -40,6 +40,8 @@ export const loadSession = async ({ requestedSessionId, studyMode, focusChapter 
       answerLanguage: 'hinglish',
       sessionTopicsProgress: [],
       pendingAction: null,
+      consecutiveNonAcademicTurns: 0,
+      totalNonAcademicTurns: 0,
       isNewSession: true,
     };
   } else {
@@ -60,6 +62,9 @@ export const loadSession = async ({ requestedSessionId, studyMode, focusChapter 
       console.log(`[Step 2 Dormancy Triggers] User returned after inactivity gap. Resetting active behavior modes.`);
       chatState.learningMode = 'idle';
       chatState.pendingAction = null;
+      // Reset streak counter — student returned fresh, don't greet them with Tier 2 redirect.
+      // totalNonAcademicTurns intentionally NOT reset (session-lifetime metric for hard cap).
+      chatState.consecutiveNonAcademicTurns = 0;
     }
   }
 

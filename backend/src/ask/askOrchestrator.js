@@ -38,6 +38,7 @@ import {
   buildProviderErrorResponse,
 } from '../utils/providerErrors.js';
 import { updateChatSessionState } from '../services/chatSession.service.js';
+import { env } from '../config/env.js';
 
 /**
  * Main Ask API handler.
@@ -97,6 +98,37 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
         decision.searchQuery    = input.question;
         decision._overridden    = true;
       }
+    }
+
+    // --- Phase 3: Session Drift Cap (Step 3.2.2) ---
+    // Fires AFTER safety net so academic queries are never blocked.
+    // Skips step5/step6/step7 entirely — zero LLM tokens wasted on capped turns.
+    const DRIFT_CAP_INTENTS = new Set(['GREETING', 'OUT_OF_CONTEXT']);
+    if (
+      DRIFT_CAP_INTENTS.has(decision.intent) &&
+      (context.driftSignal?.totalNonAcademic ?? 0) >= env.maxNonAcademicTurns
+    ) {
+      console.warn(
+        `[DriftCap] Session ${session.sessionId} — total drift ${context.driftSignal.totalNonAcademic} >= max ${env.maxNonAcademicTurns}. Blocking ${decision.intent} turn.`
+      );
+      const capContent = 'Zuno sirf Science padhaane ke liye hai! Koi bhi topic chunao — Physics, Chemistry, ya Biology — aur hum shuru karte hain.';
+      return {
+        status:          'answered',
+        intent:          'conversation',
+        responseMode:    'conversation',
+        studyMode:       input.studyMode,
+        question:        input.question,
+        detectedLanguage: context.language?.detectedLanguage ?? 'hinglish',
+        answerLanguage:  context.language?.answerLanguage   ?? 'hinglish',
+        title:           null,
+        sections:        [{ heading: '', content: capContent }],
+        answer:          capContent,
+        sources:         [],
+        suggestedActions: [],
+        retrieval:       null,
+        decision:        null,
+        session:         null,
+      };
     }
 
     const retrieval = await retrieveContent(decision, input, session);

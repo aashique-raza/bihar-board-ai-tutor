@@ -21,6 +21,9 @@ export const env = {
   mongodbUri: process.env.MONGODB_URI || process.env.MONGO_URI || '',
   sessionTokenLimit: toNumber(process.env.SESSION_TOKEN_LIMIT, 15000),
   sessionsListLimit: toNumber(process.env.SESSIONS_LIST_LIMIT, 20),
+  // Phase 3: max casual/off-topic turns before hard block per session.
+  // Math.max(1,...) guards against 0 or negative values in .env.
+  maxNonAcademicTurns: Math.max(1, toNumber(process.env.MAX_NON_ACADEMIC_TURNS, 10)),
 };
 
 // ---------------------------------------------------------------------------
