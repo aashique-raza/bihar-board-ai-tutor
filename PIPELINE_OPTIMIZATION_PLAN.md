@@ -206,11 +206,11 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
   - [x] Step 2.1.3 — Switch decider model to `llama-3.1-8b-instant`
   - [~] Step 2.1.4 — Move searchQuery generation: code-side for English/Hinglish, LLM-side for Devanagari/pronouns only — DEFERRED: savings ~80-100 tokens vs real risk of RAG quality degradation on misspelled/broken queries. Semantic embeddings already handle minor misspellings. Revisit only if Phase 2.3 doesn't hit token target.
   - [x] Step 2.1.5 — Run golden test set, validate ≥95% intent accuracy vs baseline
-- [ ] Layer 2.2 — Code-side safety net (Blind Spot 1 defense)
-  - [ ] Step 2.2.1 — Build academic keyword regex (~50 common science terms)
-  - [ ] Step 2.2.2 — Implement intent override logic in `step5` dispatcher entry
-  - [ ] Step 2.2.3 — Add Devanagari detection + raw query fallback
-  - [ ] Step 2.2.4 — Production logging for override triggers
+- [x] Layer 2.2 — Code-side safety net (Blind Spot 1 defense)
+  - [x] Step 2.2.1 — Embedding similarity probe (intentSafetyNet.js) — keyword approach rejected, replaced with language-agnostic vector probe
+  - [x] Step 2.2.2 — Intent override logic in askOrchestrator.js — fires for GREETING/OUT_OF_CONTEXT only
+  - [x] Step 2.2.3 — Devanagari: no separate step needed — Gemini embeddings handle all languages natively, retriever already has Devanagari logic
+  - [x] Step 2.2.4 — Override logging in tokenLogger.js — override_rate% per intent, [SAFETY-NET] tag in turn summary
 - [ ] Layer 2.3 — Intent prompt files (the heart of refactor)
   - [ ] Step 2.3.1 — Create `backend/src/prompts/intents/` folder + `corePersona.js` partial
   - [ ] Step 2.3.2 — Write `greetingPrompt.js` (~200 tokens system) + port guards
@@ -1796,6 +1796,7 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-17 | Step 2.1.1+2.1.2 complete — lean decider prompt live | New prompt: ~578 tokens (vs ~1,336 before) = ~758 tokens saved/turn on decider. All 4 intent tests passed. Blind spot test passed (greeting+science → CONCEPT_QUESTION). needsRetrieval made fully deterministic in normalizeDecision (no LLM dependency). OUT_OF_CONTEXT definition updated to include other Class 10 subjects (Maths, Hindi, etc.) as "currently unavailable" not "out of scope". Conservative bias rule working. | deciderPrompt.js + step4 line 83 updated |
 | 2026-06-17 | Step 2.1.3 — Per-call model config implemented | Groq 429 rate limit issue on llama-3.3-70b-versatile made single-provider setup unreliable. Added DECIDER_PROVIDER/DECIDER_MODEL env vars + getDeciderConfig() in llm.config.js. Decider now runs on Groq llama-3.1-8b-instant (free tier, high rate limits), Tutor on OpenAI gpt-4o-mini. GREETING turn dropped from ~5,500 to 3,494 tokens (~36% reduction). Falls back to global LLM_PROVIDER if DECIDER_PROVIDER not set. | llm.config.js + step4.decideRetrieval.js updated |
 | 2026-06-18 | Step 2.1.5 — 8B model PASSED gate at 97.2% effective accuracy | 6/7 categories 100%. NEXT_STEP 0% is Groq rate limit during rapid test execution, not model failure (production pacing prevents this). BS05 "Physics padhna hai + electricity samjhao" stubborn edge case — CHOOSE_COURSE instead of CONCEPT_QUESTION. Accepted: Layer 2.2 safety net will catch academic keywords. Keeping llama-3.1-8b-instant on Groq for decider. | Layer 2.1 complete |
+| 2026-06-18 | Step 2.2 complete — embedding similarity probe replaces keyword regex | Keyword approach rejected (fragile, language-blind, not scalable). Embedding probe: probeAcademicSimilarity() in intentSafetyNet.js — top-1 vector similarity, fail-open, threshold via SAFETY_NET_SIMILARITY_THRESHOLD env var (default 0.65). Devanagari step removed — Gemini multilingual embeddings handle all languages natively. Override fires in askOrchestrator.js between step4 and step5. Logging: override_rate% per intent in aggregates, [SAFETY-NET] tag in turn summary. | Layer 2.2 done |
 | 2026-06-18 | Phase 3 added — Session Integrity Guard | Farhan identified that keyword-based guard (Layer 2.2 original plan) was fragile AND that the system has no defense against deliberate conversational drift (user chatting to waste tokens). Keyword approach rejected. Embedding similarity probe adopted for guard (language-agnostic, future-proof). Conversational drift elevated to its own Phase 3 (high priority) with session counter + progressive redirect + hard cap. Phases renumbered: old Phase 3 (Caching) → Phase 4, old Phase 4 (History) → Phase 5. | Phase 3 now jumps immediately after Phase 2 |
 | _PENDING_ | Phase 5 decision gate — needed or skip? | TBD after Phase 2+3+4 stable | Affects whether project ends at Phase 3 or continues |
 
