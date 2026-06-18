@@ -25,7 +25,7 @@ This file is the **multi-session bridge** for fixing Zuno's token blowup problem
 5. Implement that ONE small step. Test. Mark done in Status Tracker.
 6. Stop. Next session continues from the next step.
 
-**Full session protocol is in Section 13 at the bottom.**
+**Full session protocol is in Section 14 at the bottom.**
 
 ---
 
@@ -94,8 +94,9 @@ We chose the **layered hybrid** because:
 | Phase 0 | ~5,500 | ~5 turns | Pure visibility, no behavior change |
 | Phase 1 | ~4,000 | ~7-8 turns | Safe trims, no architecture change |
 | Phase 2 | ~2,500-3,000 | ~10-12 turns | **Target hit** |
-| Phase 3 (if Groq supports caching) | ~1,800-2,200 | ~14-16 turns | Bonus, not promised |
-| Phase 4 (conditional) | ~1,500-1,800 | ~17-20 turns | Only if Phase 2+3 misses target |
+| Phase 3 (Session Integrity) | ~2,500-3,000 | ~10-12 turns (but 2-5 fewer wasted turns) | Protects budget from drift exploitation |
+| Phase 4 (if Groq supports caching) | ~1,800-2,200 | ~14-16 turns | Bonus, not promised |
+| Phase 5 (conditional) | ~1,500-1,800 | ~17-20 turns | Only if Phase 2+3 misses target |
 
 ### What "future-proof" means in this plan
 - Adding a new intent (e.g., QUIZ, EXAM_MODE) = create new prompt file + register in intent handler map. No core pipeline changes.
@@ -232,22 +233,33 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
   - [ ] Step 2.6.1 — After 2 weeks production-stable, delete monolithic path
   - [ ] Step 2.6.2 — Remove `USE_INTENT_ROUTER` flag
 
-### Phase 3 — Caching Probe (Conditional Bonus)
-- [ ] Layer 3.1 — Provider capability check
-  - [ ] Step 3.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
-  - [ ] Step 3.1.2 — If found: document the cache TTL, hit rate, savings. If not: abandon Phase 3.
-- [ ] Layer 3.2 — Enable caching (only if probe succeeded)
-  - [ ] Step 3.2.1 — Lock all system prompts (version stamp them)
-  - [ ] Step 3.2.2 — Enable caching flag in `ChatGroq` constructor (verify LangChain support or use direct SDK)
-  - [ ] Step 3.2.3 — Monitor cache hit rate for 1 week
+### Phase 3 — Session Integrity Guard (Conversational Drift Prevention) ⚠️ HIGH PRIORITY — Next after Phase 2
+- [ ] Layer 3.1 — Consecutive Non-Academic Turn Counter
+  - [ ] Step 3.1.1 — Add `consecutiveNonAcademicTurns` + `totalNonAcademicTurns` fields to session schema
+  - [ ] Step 3.1.2 — Update counter in step7 after each turn (increment on GREETING/OOC, reset on academic)
+- [ ] Layer 3.2 — Progressive Redirect Enforcement
+  - [ ] Step 3.2.1 — Define 3 drift tiers + inject tier instruction into GREETING prompt context
+  - [ ] Step 3.2.2 — Hard session-level non-academic turn cap (env-configurable, default 10)
+- [ ] Layer 3.3 — Monitoring & Visibility
+  - [ ] Step 3.3.1 — Log drift tier in turn summary (tokenLogger)
+  - [ ] Step 3.3.2 — Add drift stats to per-intent aggregates
 
-### Phase 4 — History Compression (Only If Needed)
-- [ ] Layer 4.1 — Decision gate
-  - [ ] Step 4.1.1 — Measure: after Phase 2+3 stable, is avg turn count ≥12 at 30k? If yes, SKIP Phase 4.
-- [ ] Layer 4.2 — Compressed history (if needed)
-  - [ ] Step 4.2.1 — Design compressed format (`Zuno [Topic: X]: brief summary`)
-  - [ ] Step 4.2.2 — Implement in `formatRecentHistory` with intent-aware switch (full for EXPLAIN_MORE, compressed elsewhere)
-  - [ ] Step 4.2.3 — Validate on golden test set
+### Phase 4 — Caching Probe (Conditional Bonus)
+- [ ] Layer 4.1 — Provider capability check
+  - [ ] Step 4.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
+  - [ ] Step 4.1.2 — If found: document the cache TTL, hit rate, savings. If not: abandon Phase 4.
+- [ ] Layer 4.2 — Enable caching (only if probe succeeded)
+  - [ ] Step 4.2.1 — Lock all system prompts (version stamp them)
+  - [ ] Step 4.2.2 — Enable caching flag in `ChatGroq` constructor (verify LangChain support or use direct SDK)
+  - [ ] Step 4.2.3 — Monitor cache hit rate for 1 week
+
+### Phase 5 — History Compression (Only If Needed)
+- [ ] Layer 5.1 — Decision gate
+  - [ ] Step 5.1.1 — Measure: after Phase 2+3 stable, is avg turn count ≥12 at 30k? If yes, SKIP Phase 5.
+- [ ] Layer 5.2 — Compressed history (if needed)
+  - [ ] Step 5.2.1 — Design compressed format (`Zuno [Topic: X]: brief summary`)
+  - [ ] Step 5.2.2 — Implement in `formatRecentHistory` with intent-aware switch (full for EXPLAIN_MORE, compressed elsewhere)
+  - [ ] Step 5.2.3 — Validate on golden test set
 
 ---
 
@@ -1348,37 +1360,385 @@ const retrieval = await retrieveContent(decision, input, session);
 
 ---
 
-## 9. Phase 3 — Caching Probe (Conditional)
+## 9. Phase 3 — Session Integrity Guard (Conversational Drift Prevention)
+
+> ⚠️ **HIGH PRIORITY — Jump here immediately after Phase 2 completes.**
+
+### Phase Goal
+Prevent token budget from being drained by non-academic conversations. A student repeatedly sending personal stories, casual chat, or emotional messages burns through the session token limit without any educational value. This phase adds three layers of defense: a session-level drift counter, progressive redirect enforcement (gentle → firm), and a hard cap on non-academic engagement per session.
+
+### Why This Is A Separate Phase (Not Part of Phase 2)
+Phase 2 solves: "academic query misclassified as GREETING → hallucination risk"
+This phase solves: "genuine non-academic messages consuming token budget → session drained without learning"
+These are fundamentally different problems requiring different solutions. Mixing them would bloat Phase 2 and dilute focus.
+
+### Why This Is Higher Priority Than Caching (Phase 4)
+All token savings from Phase 1 and Phase 2 are partially negated if a student wastes 5 of 12 turns chatting. Example:
+- Phase 2 gives us ~12 turns per session
+- Student sends 5 drift turns → ~7 actual learning turns
+- We've saved tokens technically but delivered same poor learning experience
+- Phase 3 PROTECTS the gains of Phase 2
+
+### The Core Loophole
+Students (or deliberate exploiters) can send casual chat repeatedly. The system currently:
+1. Classifies as GREETING or OUT_OF_CONTEXT
+2. Runs full decider + tutor pipeline (~1,500-2,000 tokens/turn)
+3. Returns a warm but useless (for learning) response
+4. Repeats indefinitely
+
+There is no session-level memory of how many times this happened. Every turn is treated identically.
+
+### Total Estimated Effort: 4-6 hours across 2 sessions
+
+---
+
+### Layer 3.1 — Consecutive Non-Academic Turn Counter
+
+#### Step 3.1.1 — Add counter fields to session schema
+
+**What:**
+Add two fields to the `ChatSession` Mongoose schema:
+- `consecutiveNonAcademicTurns` — resets to 0 on any academic turn. Used for tier escalation.
+- `totalNonAcademicTurns` — never resets. Used for hard cap and monitoring.
+
+**Why:**
+Without these counters, every turn is stateless from a drift perspective. The system has no way to know "this is the 6th off-topic message in a row."
+
+**Where:**
+- [backend/src/models/chatSession.model.js](backend/src/models/chatSession.model.js) — add fields to schema
+- [backend/src/ask/step2.loadSession.js](backend/src/ask/step2.loadSession.js) — no change needed (Mongoose reads new fields automatically with defaults)
+- [backend/src/ask/step3.buildContext.js](backend/src/ask/step3.buildContext.js) — expose in returned context object
+
+**How:**
+```js
+// chatSession.model.js — add to schema:
+consecutiveNonAcademicTurns: { type: Number, default: 0 },
+totalNonAcademicTurns:       { type: Number, default: 0 },
+```
+
+In step3.buildContext.js, expose in returned context:
+```js
+driftSignal: {
+  consecutiveNonAcademic: session.consecutiveNonAcademicTurns ?? 0,
+  totalNonAcademic:        session.totalNonAcademicTurns       ?? 0,
+}
+```
+
+**Edge cases:**
+- Existing sessions in MongoDB: don't have these fields → `?? 0` fallback handles it cleanly.
+- CHOOSE_COURSE intent: student is choosing what to study = IS academic engagement → reset consecutive counter.
+- UNSAFE_OR_ABUSIVE: NOT academic, but don't increment non-academic counter either — abuse is a separate concern, handled separately.
+
+**Hidden risks:**
+- Schema migration: Mongoose default handles it automatically. No migration script needed.
+- If step7 crashes before saving: counter not updated for that turn. Acceptable — one missed increment is harmless.
+
+**Test plan:**
+1. Start new session → verify both fields are 0 in MongoDB
+2. Send 3 GREETINGs → verify `consecutiveNonAcademicTurns` = 3, `totalNonAcademicTurns` = 3
+3. Send a science question → verify `consecutiveNonAcademicTurns` resets to 0, `totalNonAcademicTurns` stays at 3
+4. Send 2 more GREETINGs → verify consecutive = 2, total = 5
+
+**Rollback:** Remove fields from schema. Mongoose ignores missing fields in existing documents. Remove from step3 context.
+
+**Completion criteria:**
+- Both fields in schema with correct defaults
+- Fields visible in returned context object
+- No regression in existing pipeline
+
+**Token impact:** None.
+
+---
+
+#### Step 3.1.2 — Update counter in step7 after each turn
+
+**What:**
+After intent is known and response is saved, update both counters in the session document.
+
+**Where:**
+- [backend/src/ask/step7.saveAndRespond.js](backend/src/ask/step7.saveAndRespond.js) — after session save, add counter update
+
+**How:**
+```js
+const ACADEMIC_INTENTS = new Set([
+  'CONCEPT_QUESTION', 'EXPLAIN_MORE', 'NEXT_STEP', 'CHOOSE_COURSE'
+]);
+const isAcademic = ACADEMIC_INTENTS.has(decision.intent);
+
+if (isAcademic) {
+  await ChatSession.findByIdAndUpdate(session._id, {
+    consecutiveNonAcademicTurns: 0,
+  });
+} else {
+  await ChatSession.findByIdAndUpdate(session._id, {
+    $inc: {
+      consecutiveNonAcademicTurns: 1,
+      totalNonAcademicTurns: 1,
+    }
+  });
+}
+```
+
+**Edge cases:**
+- UNSAFE intent: `$inc` will run (not in ACADEMIC_INTENTS). This is correct — abusive messages should count toward total non-academic.
+- Multiple rapid requests (unlikely but possible in tests): MongoDB atomic `$inc` handles concurrency correctly.
+- If counter update fails (DB error): log warning, do NOT fail the main request. Counter accuracy is a nice-to-have, not critical path.
+
+**Hidden risks:**
+- This adds one extra DB write per turn. Acceptable — same collection, same document, lightweight operation.
+
+**Test plan:**
+1. Send GREETING → DB: consecutive = 1, total = 1
+2. Send CONCEPT_QUESTION → DB: consecutive = 0, total = 1
+3. Send 5 GREETINGs → DB: consecutive = 5, total = 6
+
+**Rollback:** Remove the counter update block from step7.
+
+**Completion criteria:**
+- Counters update correctly in MongoDB after each turn
+- Academic turns reset consecutive, increment nothing
+- Non-academic turns increment both
+
+**Token impact:** None.
+
+---
+
+### Layer 3.2 — Progressive Redirect Enforcement
+
+#### Step 3.2.1 — Define 3 drift tiers + inject into GREETING prompt context
+
+**What:**
+Based on `consecutiveNonAcademicTurns`, compute a "drift tier" and inject an escalating redirect instruction into the GREETING/conversation prompt.
+
+```
+Tier 0 (consecutive 0-1): Normal response — friendly, brief, ask what to study
+Tier 1 (consecutive 2-3): Gentle nudge — "Kuch padhna hai? Main ready hun!"
+Tier 2 (consecutive 4+):  Firm redirect — very short response, no engagement, hard redirect
+```
+
+**Why:**
+One casual message deserves warmth. Five in a row deserves firmness. A flat response regardless of drift count rewards avoidance behavior.
+
+**Where:**
+- [backend/src/ask/step3.buildContext.js](backend/src/ask/step3.buildContext.js) — add `getDriftTier()` helper, expose tier in driftSignal
+- [backend/src/ask/step6.generateResponse.js](backend/src/ask/step6.generateResponse.js) — pass tier instruction into GREETING prompt invocation
+- This integrates with Phase 2.3.2 (greetingPrompt.js) — that prompt must accept a `{driftInstruction}` variable
+
+**How:**
+```js
+// step3.buildContext.js
+const getDriftTier = (n) => {
+  if (n <= 1) return 0;
+  if (n <= 3) return 1;
+  return 2;
+};
+
+// In context:
+driftSignal: {
+  consecutiveNonAcademic: session.consecutiveNonAcademicTurns ?? 0,
+  totalNonAcademic:       session.totalNonAcademicTurns       ?? 0,
+  tier: getDriftTier(session.consecutiveNonAcademicTurns ?? 0),
+}
+```
+
+```js
+// step6.generateResponse.js — GREETING invocation
+const DRIFT_INSTRUCTIONS = {
+  0: '',
+  1: 'Student ne kai baar non-study messages bheje hain. Gently lekin clearly study ki taraf redirect karo.',
+  2: 'Student studying avoid kar raha hai. BAHUT CHOTI response do (1-2 lines max). Off-topic content engage mat karo. Sirf science topic suggest karo.',
+};
+const driftInstruction = DRIFT_INSTRUCTIONS[context.driftSignal?.tier ?? 0];
+```
+
+**Edge cases:**
+- Tier 2 with genuine emotional message ("exam ka bahut darr lag raha hai"): this IS relevant to studying. Handle by softening the Tier 2 instruction: "briefly acknowledge in one line, then redirect to the topic they're anxious about."
+- Counter unavailable (step3 crash): default to tier 0 (safe — normal friendly response).
+
+**Hidden risks:**
+- Tier 2 feeling robotic or cold. Manual testing required — adjust instruction wording if feedback is negative.
+
+**Test plan:**
+1. Fresh session → send GREETING → warm normal response (Tier 0)
+2. Send 3 consecutive off-topic messages → verify Tier 1 message is notably more redirect-focused
+3. Send 5 consecutive → Tier 2 response should be very short (1-2 lines) and firm
+4. Send science question → Tier resets → next GREETING is warm again
+
+**Rollback:** Remove tier injection from step6. Remove getDriftTier from step3.
+
+**Completion criteria:**
+- 3 tiers produce noticeably different response styles
+- Tier 2 responses are visibly shorter and more redirect-focused
+- Tier resets correctly after any academic turn
+
+**Token impact:** Tier 2 saves ~200-400 tokens/turn (shorter response = less output tokens).
+
+---
+
+#### Step 3.2.2 — Hard session-level non-academic turn cap
+
+**What:**
+A hard limit: once `totalNonAcademicTurns` reaches `MAX_NON_ACADEMIC_TURNS` (env-configurable, default 10), non-academic turns are short-circuited. No tutor LLM call. Returns a fixed redirect message.
+
+**Why:**
+Progressive redirect is gentle and can be ignored by a determined student. The hard cap is the final defense — it removes the loophole entirely. After 10 off-topic turns, the token cost of continued engagement is not justified.
+
+**Where:**
+- [backend/src/ask/askOrchestrator.js](backend/src/ask/askOrchestrator.js) — add cap check after decider, before step6
+- [backend/src/config/env.js](backend/src/config/env.js) — add `MAX_NON_ACADEMIC_TURNS` env var
+
+**How:**
+```js
+// askOrchestrator.js — after step4 (decider), before step6 (tutor):
+const MAX_NON_ACADEMIC = parseInt(process.env.MAX_NON_ACADEMIC_TURNS ?? '10', 10);
+const NON_ACADEMIC_INTENTS = new Set(['GREETING', 'OUT_OF_CONTEXT']);
+
+if (
+  NON_ACADEMIC_INTENTS.has(decision.intent) &&
+  context.driftSignal.totalNonAcademic >= MAX_NON_ACADEMIC
+) {
+  console.warn(`[Drift Cap] Session ${session._id} hit non-academic cap (${MAX_NON_ACADEMIC}). Blocking.`);
+  return res.json({
+    status: 'answered',
+    responseMode: 'conversation',
+    title: null,
+    sections: [{
+      heading: null,
+      content: 'Zuno sirf Science padhaane ke liye hai! Koi bhi Science topic choose karo aur hum shuru karte hain. 📚'
+    }],
+    sources: [],
+    suggestedActions: [],
+  });
+}
+```
+
+**Edge cases:**
+- Academic queries after cap: cap only blocks GREETING/OUT_OF_CONTEXT. A student who finally asks a science question always gets through. ✅
+- UNSAFE after cap: UNSAFE_OR_ABUSIVE is not in `NON_ACADEMIC_INTENTS` — handled by its own path. ✅
+- Cap value in .env.example: document `MAX_NON_ACADEMIC_TURNS=10` as a configurable tuning knob.
+- Student creates new session to bypass cap: user-level tracking would require auth system (out of scope for MVP). Session-level cap is sufficient for now.
+
+**Hidden risks:**
+- Cap too low (e.g., 5): student might feel frustrated if they have a genuine emotional moment early. Start at 10, monitor.
+- Edge case: student sends 10 non-academic messages, then sends a mixed message (academic + social). Embedding probe (Layer 2.2) would upgrade that to CONCEPT_QUESTION, bypassing the cap correctly. ✅
+
+**Test plan:**
+1. Set `MAX_NON_ACADEMIC_TURNS=3` in .env for testing
+2. Send 3 non-academic messages → turn 4 non-academic should return cap message with NO tutor LLM call
+3. Verify token logs: no `[TUTOR]` entry on capped turn
+4. Send science question on turn 5 → works normally
+5. Reset `MAX_NON_ACADEMIC_TURNS=10` for production
+
+**Rollback:** Remove the cap check block from orchestrator. Counter still tracks harmlessly.
+
+**Completion criteria:**
+- Cap fires after `MAX_NON_ACADEMIC_TURNS` non-academic turns
+- Academic queries NEVER blocked by cap
+- Zero TUTOR LLM call on capped turns (verified in token logs)
+- `MAX_NON_ACADEMIC_TURNS` readable from env with default 10
+
+**Token impact:** When cap fires: saves ~1,500-2,000 tokens per blocked turn (entire tutor call avoided).
+
+---
+
+### Layer 3.3 — Monitoring & Visibility
+
+#### Step 3.3.1 — Log drift signal in turn summary
+
+**What:**
+Add drift tier and consecutive count to the existing token audit log box in `logTurnSummary`.
+
+**Where:**
+- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — `logTurnSummary` function
+
+**How:**
+```js
+// In logTurnSummary, add conditional drift line:
+if (driftSignal?.tier > 0) {
+  console.log(
+    `  ⚠️  DRIFT  tier:${driftSignal.tier}  consecutive:${driftSignal.consecutiveNonAcademic}  total:${driftSignal.totalNonAcademic}`
+  );
+}
+```
+
+**Edge cases:** None — purely additive logging, fires only when tier > 0.
+
+**Test plan:** Send 4 drift turns, verify tier escalation visible in logs.
+
+**Completion criteria:** Drift signal visible in logs when non-zero. Zero noise on normal academic turns.
+
+**Token impact:** None.
+
+---
+
+#### Step 3.3.2 — Add drift stats to per-intent aggregates
+
+**What:**
+In `logIntentAggregates`, add a footer line showing total drift turns seen across the tracked window.
+
+**Where:**
+- [backend/src/utils/tokenLogger.js](backend/src/utils/tokenLogger.js) — `logIntentAggregates` function
+
+**How:**
+Track `totalDriftTurns` (any GREETING/OUT_OF_CONTEXT) in the existing `intentStats` map. Print at aggregate log time:
+```
+[DRIFT SUMMARY] Non-academic turns: 12 / 47 total (25%) | Cap triggers: 2
+```
+
+**Completion criteria:**
+- Aggregate log shows drift percentage
+- Cap trigger count visible
+- Allows post-session analysis of drift rate
+
+**Token impact:** None.
+
+---
+
+### Phase 3 Exit Criteria
+Before declaring Phase 3 complete:
+- [ ] `consecutiveNonAcademicTurns` and `totalNonAcademicTurns` tracked correctly in MongoDB
+- [ ] Tier 0/1/2 redirect behavior verified in manual testing (5 turns each tier)
+- [ ] Hard cap fires correctly, academic queries NEVER blocked
+- [ ] Zero TUTOR LLM call on capped turns (verified in token logs)
+- [ ] Drift signal visible in token audit logs
+- [ ] `MAX_NON_ACADEMIC_TURNS` configurable via env var (default 10)
+- [ ] No regression on golden test set (all academic queries still pass)
+
+**Estimated savings from Phase 3:** 2,000-8,000 tokens per session (2-5 drift turns prevented × ~1,500 tokens each). More importantly: effective learning turns protected.
+
+---
+
+## 10. Phase 4 — Caching Probe (Conditional)
 
 ### Phase Goal
 If Phase 0.3 confirmed caching works on Groq, enable it. Otherwise abandon this phase.
 
-### Layer 3.1 — Provider Capability Check
+### Layer 4.1 — Provider Capability Check
 
-#### Step 3.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
+#### Step 4.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
 > Deep-dive when reached. Already partially done in Phase 0.3.
 
-#### Step 3.1.2 — Document finding
-- If found: detail TTL, hit rate, savings → proceed to Layer 3.2
+#### Step 4.1.2 — Document finding
+- If found: detail TTL, hit rate, savings → proceed to Layer 4.2
 - If not: document in Open Decisions Log, abandon
 
-### Layer 3.2 — Enable Caching
-> Deep-dive when reached. Conditional on 3.1.
+### Layer 4.2 — Enable Caching
+> Deep-dive when reached. Conditional on 4.1.
 
 ---
 
-## 10. Phase 4 — History Compression (Only If Needed)
+## 11. Phase 5 — History Compression (Only If Needed)
 
-### Decision Gate (Step 4.1.1)
-After Phase 2+3 stable, measure: is avg session turn count ≥12 at 30k window? If yes, **SKIP Phase 4 entirely.** Don't optimize past requirement.
+### Decision Gate (Step 5.1.1)
+After Phase 2+3+4 stable, measure: is avg session turn count ≥12 at 30k window? If yes, **SKIP Phase 5 entirely.** Don't optimize past requirement.
 
-If no, proceed with Layer 4.2.
+If no, proceed with Layer 5.2.
 
 > Detailed steps deferred until decision gate evaluated.
 
 ---
 
-## 11. Cross-Cutting Concerns
+## 12. Cross-Cutting Concerns
 
 ### Testing Rubric (applies to all phases)
 Every change must pass:
@@ -1419,7 +1779,7 @@ Every change must pass:
 
 ---
 
-## 12. Open Decisions Log
+## 13. Open Decisions Log
 
 Use this section to capture decisions made mid-implementation that future sessions need to know about.
 
@@ -1436,11 +1796,12 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-17 | Step 2.1.1+2.1.2 complete — lean decider prompt live | New prompt: ~578 tokens (vs ~1,336 before) = ~758 tokens saved/turn on decider. All 4 intent tests passed. Blind spot test passed (greeting+science → CONCEPT_QUESTION). needsRetrieval made fully deterministic in normalizeDecision (no LLM dependency). OUT_OF_CONTEXT definition updated to include other Class 10 subjects (Maths, Hindi, etc.) as "currently unavailable" not "out of scope". Conservative bias rule working. | deciderPrompt.js + step4 line 83 updated |
 | 2026-06-17 | Step 2.1.3 — Per-call model config implemented | Groq 429 rate limit issue on llama-3.3-70b-versatile made single-provider setup unreliable. Added DECIDER_PROVIDER/DECIDER_MODEL env vars + getDeciderConfig() in llm.config.js. Decider now runs on Groq llama-3.1-8b-instant (free tier, high rate limits), Tutor on OpenAI gpt-4o-mini. GREETING turn dropped from ~5,500 to 3,494 tokens (~36% reduction). Falls back to global LLM_PROVIDER if DECIDER_PROVIDER not set. | llm.config.js + step4.decideRetrieval.js updated |
 | 2026-06-18 | Step 2.1.5 — 8B model PASSED gate at 97.2% effective accuracy | 6/7 categories 100%. NEXT_STEP 0% is Groq rate limit during rapid test execution, not model failure (production pacing prevents this). BS05 "Physics padhna hai + electricity samjhao" stubborn edge case — CHOOSE_COURSE instead of CONCEPT_QUESTION. Accepted: Layer 2.2 safety net will catch academic keywords. Keeping llama-3.1-8b-instant on Groq for decider. | Layer 2.1 complete |
-| _PENDING_ | Phase 4 decision gate — needed or skip? | TBD after Phase 2+3 stable | Affects whether project ends at Phase 2 or continues |
+| 2026-06-18 | Phase 3 added — Session Integrity Guard | Farhan identified that keyword-based guard (Layer 2.2 original plan) was fragile AND that the system has no defense against deliberate conversational drift (user chatting to waste tokens). Keyword approach rejected. Embedding similarity probe adopted for guard (language-agnostic, future-proof). Conversational drift elevated to its own Phase 3 (high priority) with session counter + progressive redirect + hard cap. Phases renumbered: old Phase 3 (Caching) → Phase 4, old Phase 4 (History) → Phase 5. | Phase 3 now jumps immediately after Phase 2 |
+| _PENDING_ | Phase 5 decision gate — needed or skip? | TBD after Phase 2+3+4 stable | Affects whether project ends at Phase 3 or continues |
 
 ---
 
-## 13. How To Use This File (Session Protocol)
+## 14. How To Use This File (Session Protocol)
 
 This file is designed for **multi-session work**. Each session, follow this protocol exactly:
 
@@ -1516,8 +1877,8 @@ When this file is loaded in a new session, Claude MUST:
 
 ## End Of Plan
 
-**Total scope:** ~50 small steps across 4 phases.
-**Estimated total effort:** 20-25 hours across 8-12 sessions.
-**Target outcome:** Per-turn cost from ~5,500 tokens to ~2,500 tokens. Session turn count from ~5 to ~12-15.
+**Total scope:** ~60 small steps across 5 phases.
+**Estimated total effort:** 25-30 hours across 10-14 sessions.
+**Target outcome:** Per-turn cost from ~5,500 tokens to ~2,500 tokens. Session turn count from ~5 to ~12-15. Session integrity protected from drift exploitation.
 
 **This file is the single source of truth. Trust it. Update it.**
