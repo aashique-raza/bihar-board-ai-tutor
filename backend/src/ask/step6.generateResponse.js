@@ -13,6 +13,7 @@ import { getAnswerLanguageInstruction } from '../utils/languageDetector.js';
 import { sectionsToAnswerText } from './promptHelpers.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 import { logCallTokens, approxTokens } from '../utils/tokenLogger.js';
+import { routeToIntentHandler } from './intentRouter.js';
 
 // Provider-agnostic cache token extractor.
 // Groq: promptTokensCached or cache_read_input_tokens
@@ -114,12 +115,22 @@ const needsCurriculum = (intent, responseMode, focusChapterPrompt, retrievedCont
 /**
  * Step 6: Call the Tutor LLM to generate the student-facing answer.
  */
-export const generateResponse = async (
-  { question },
-  { language, memory, history, curriculumSummary, focusChapterPrompt },
-  { responseMode, intent },
-  { retrievedContext }
-) => {
+export const generateResponse = async (input, context, decision, retrieval) => {
+
+  // NEW PATH: Intent Router (Phase 2.3/2.4)
+  // Enable by setting USE_INTENT_ROUTER=true in backend/.env.
+  // Legacy path below stays active while this is false (default).
+  if (process.env.USE_INTENT_ROUTER === 'true') {
+    const result = await routeToIntentHandler(input, context, decision, retrieval);
+    return { ...result, answer: sectionsToAnswerText(result) };
+  }
+
+  // LEGACY PATH — destructure what the old code needs
+  const { question } = input;
+  const { language, memory, history, curriculumSummary, focusChapterPrompt } = context;
+  const { responseMode, intent } = decision;
+  const { retrievedContext } = retrieval;
+
   // CHAPTER_COMPLETE: skip the LLM entirely and return a fixed completion message
   if (retrievedContext === 'CHAPTER_COMPLETE') {
     const chapterCompleteResponse = {

@@ -2,8 +2,8 @@
 
 > **Predecessor:** [TOKEN_FIX_PLAN.md](TOKEN_FIX_PLAN.md) — STEP 0-6 complete. STEP 7-8 superseded by this document.
 > **Created:** 2026-06-17
-> **Status:** Phase 2.1 in progress — next step is 2.1.1 (lean decider prompt)
-> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ — baseline captured (80% accuracy)
+> **Status:** Layer 2.4 complete — next step is Layer 2.5.1 (USE_INTENT_ROUTER env flag)
+> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅
 > **Owner:** Farhan Raza (developer) + Claude (senior engineering advisor)
 
 ---
@@ -211,19 +211,21 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
   - [x] Step 2.2.2 — Intent override logic in askOrchestrator.js — fires for GREETING/OUT_OF_CONTEXT only
   - [x] Step 2.2.3 — Devanagari: no separate step needed — Gemini embeddings handle all languages natively, retriever already has Devanagari logic
   - [x] Step 2.2.4 — Override logging in tokenLogger.js — override_rate% per intent, [SAFETY-NET] tag in turn summary
-- [ ] Layer 2.3 — Intent prompt files (the heart of refactor)
-  - [ ] Step 2.3.1 — Create `backend/src/prompts/intents/` folder + `corePersona.js` partial
-  - [ ] Step 2.3.2 — Write `greetingPrompt.js` (~200 tokens system) + port guards
-  - [ ] Step 2.3.3 — Write `redirectPrompt.js` (~150 tokens) + port guards
-  - [ ] Step 2.3.4 — Write `chooseCoursePrompt.js` (~250 tokens) + port guards
-  - [ ] Step 2.3.5 — Write `explainMorePrompt.js` (~400 tokens) + port variation mandate
-  - [ ] Step 2.3.6 — Write `conceptQuestionPrompt.js` (~450 tokens) + strict grounding
-  - [ ] Step 2.3.7 — Write `nextStepPrompt.js` (~350 tokens) + memoryUpdate rules
-- [ ] Layer 2.4 — Dispatch & integration
-  - [ ] Step 2.4.1 — Create `intentHandlers` data-driven config in `step6`
-  - [ ] Step 2.4.2 — Refactor `step6.generateResponse.js` to dispatch via map
-  - [ ] Step 2.4.3 — Implement per-intent history windowing in `step3.buildContext.js`
-  - [ ] Step 2.4.4 — Port ALL existing guards (conv safety, title rescue, status normalize) to per-intent logic
+- [x] Layer 2.3 — Intent prompt files (the heart of refactor)
+  - [x] Step 2.3.1 — Create `backend/src/prompts/intents/` folder + `corePersona.js` partial — tone updated: Babu/Beta removed, action-based warmth added
+  - [x] Step 2.3.2 — Write `greetingPrompt.js` — corePersona + history(4) + 3 message types (greeting/emotional/meta-reaction)
+  - [x] Step 2.3.3 — Write `redirectPrompt.js` — no persona, no history, polite 1-2 sentence redirect
+  - [x] Step 2.3.3b — Write `unsafePrompt.js` — no persona, firm boundary-setting tone, separate from redirect
+  - [x] Step 2.3.4 — Write `chooseCoursePrompt.js` — corePersona + curriculum + history(4)
+  - [x] Step 2.3.5 — Write `explainMorePrompt.js` — corePersona + RAG + history(6) + variation mandate
+  - [x] Step 2.3.6 — Write `conceptQuestionPrompt.js` — corePersona + RAG + history(6) + strict grounding
+  - [x] Step 2.3.7 — Write `nextStepPrompt.js` — corePersona + RAG + history(2) + CHAPTER_COMPLETE handled in step6
+- [x] Layer 2.4 — Dispatch & integration
+  - [x] Step 2.4.1 — Created `intentRouter.js` in `ask/` (cleaner than in step6) — INTENT_CONFIG map + HISTORY_WINDOW + lazy chain cache
+  - [x] Step 2.4.2 — Refactored `step6.generateResponse.js` — full-object signature, flag check at top, legacy path untouched
+  - [x] Step 2.4.3 — Added `recentMessages` to `step3.buildContext.js` return object (1-line change)
+  - [x] Step 2.4.4 — All 3 guards ported: Guard2 (title rescue) + Guard1+3 (GREETING status firewall) inside `routeToIntentHandler()`
+  - [x] Step 2.4.5 — Added `INTENT_MEMORY_WHITELIST` + updated `sanitizeMemoryUpdate()` + removed old EXPLAIN_MORE guard in step7
 - [ ] Layer 2.5 — Rollout safety
   - [ ] Step 2.5.1 — Add `USE_INTENT_ROUTER` env flag (default false)
   - [ ] Step 2.5.2 — Keep monolithic `tutorPrompt.js` alive as fallback path
@@ -1799,6 +1801,7 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-18 | Step 2.2 complete — embedding similarity probe replaces keyword regex | Keyword approach rejected (fragile, language-blind, not scalable). Embedding probe: probeAcademicSimilarity() in intentSafetyNet.js — top-1 vector similarity, fail-open, threshold via SAFETY_NET_SIMILARITY_THRESHOLD env var (default 0.65). Devanagari step removed — Gemini multilingual embeddings handle all languages natively. Override fires in askOrchestrator.js between step4 and step5. Logging: override_rate% per intent in aggregates, [SAFETY-NET] tag in turn summary. | Layer 2.2 done |
 | 2026-06-18 | Phase 3 added — Session Integrity Guard | Farhan identified that keyword-based guard (Layer 2.2 original plan) was fragile AND that the system has no defense against deliberate conversational drift (user chatting to waste tokens). Keyword approach rejected. Embedding similarity probe adopted for guard (language-agnostic, future-proof). Conversational drift elevated to its own Phase 3 (high priority) with session counter + progressive redirect + hard cap. Phases renumbered: old Phase 3 (Caching) → Phase 4, old Phase 4 (History) → Phase 5. | Phase 3 now jumps immediately after Phase 2 |
 | _PENDING_ | Phase 5 decision gate — needed or skip? | TBD after Phase 2+3+4 stable | Affects whether project ends at Phase 3 or continues |
+| 2026-06-18 | C10: memoryUpdate protection — Option B chosen, Option C deferred to Phase 6 | **Option B (chosen):** Per-intent whitelist in `sanitizeMemoryUpdate()`. ~15 lines in step7. GREETING/REDIRECT/UNSAFE → whitelist=[]. Others → intent-specific allowed fields. Existing EXPLAIN_MORE guard (step7:127-130) is exactly this pattern — we're making it systematic. **Option C (deferred):** Remove memoryUpdate from ALL prompts entirely. State managed code-side only: lastTopic from response.title, currentTopicId from nextTopicSignal, etc. More reliable (zero LLM hallucination on state), saves ~50 tokens/turn (memoryUpdate JSON block removed from prompts). Deferred because it requires redesigning step6→step7 data flow — over-engineering for current phase. **Trigger to migrate to C:** Option B whitelist becomes hard to maintain OR token pressure returns after Phase 2+3+4+5. See Phase 6. | Step 2.4.5 |
 
 ---
 
@@ -1873,6 +1876,81 @@ When this file is loaded in a new session, Claude MUST:
 - Don't change Phase ordering without senior engineer approval
 - Don't mark steps done without completion criteria met
 - Don't remove sections — append, never delete
+
+---
+
+## 15. Phase 6 — Code-Side State Management (Future, Conditional)
+
+> ⏳ **DO NOT START** until Phase 2+3+4+5 are stable AND the decision gate below passes.
+
+### Decision Gate — START Phase 6 only if ONE of these is true:
+1. Option B whitelist in `sanitizeMemoryUpdate()` is becoming hard to maintain (too many intents, frequent field changes)
+2. Token pressure returns after Phase 2+3+4+5 and memoryUpdate JSON in prompts is a measurable cost
+3. A production bug surfaces where LLM memoryUpdate corrupted session state despite Option B
+
+If none of these are true — **skip Phase 6 entirely.**
+
+---
+
+### What is Phase 6 — The Core Idea
+
+**Today (Option B):** LLM generates `memoryUpdate` JSON in every response → step7 reads it → writes to MongoDB. We protect it with a whitelist.
+
+**Phase 6 (Option C):** Remove `memoryUpdate` from ALL intent prompts completely. State changes are computed **code-side** in step7, not by the LLM.
+
+```
+Intent prompt output (today):        Intent prompt output (Phase 6):
+{                                     {
+  "status": "answered",                 "status": "answered",
+  "title": "Photosynthesis",            "title": "Photosynthesis",
+  "sections": [...],                    "sections": [...],
+  "suggestedActions": [...],            "suggestedActions": []
+  "memoryUpdate": {              ←      // memoryUpdate GONE
+    "lastTopic": "Photosynthesis",
+    "learningMode": "lesson"
+  }
+}
+```
+
+Step7 derives state from what it already knows:
+- `lastTopic` → from `response.title` (already computed in step6, no LLM guess needed)
+- `currentTopicId` → from `nextTopicSignal` (already comes from step5, already done for NEXT_STEP)
+- `learningMode` → from `intent` directly (CONCEPT → "lesson", GREETING → keep current, REDIRECT → keep current)
+- GREETING/REDIRECT/UNSAFE → nothing changes (already whitelist=[] in Option B)
+
+---
+
+### Why Phase 6 Is Better Than Option B (Long Term)
+
+| Aspect | Option B (current) | Phase 6 (future) |
+|--------|-------------------|-----------------|
+| Reliability | LLM + whitelist guard | Code only — guaranteed |
+| Token cost | memoryUpdate JSON in every prompt | ~50 tokens saved/turn |
+| Hallucination risk | Low (whitelist stops damage) | Zero |
+| Auditability | Scattered across 7 prompt files | All in one place (step7) |
+| Maintenance | Whitelist must stay in sync | No whitelist needed |
+
+---
+
+### The Hard Case — CHOOSE_COURSE
+
+CHOOSE_COURSE is the only tricky intent. When a student says "Biology padhna hai", the LLM needs to tell us *which chapter was selected*. Today it returns this in memoryUpdate.
+
+In Phase 6, memoryUpdate is gone. Options:
+- **Option A:** Add a separate minimal `selection` field to CHOOSE_COURSE output only: `{ "chapterId": "bio_ch_01", "subjectId": "science" }` — not a full memoryUpdate, just the selection signal.
+- **Option B:** Step4 decider already extracts intent. Step6 could derive chapter from the LLM's response title + curriculum lookup. More complex.
+
+Recommended: Option A — minimal `selection` field for CHOOSE_COURSE only. Everything else removed.
+
+---
+
+### Estimated Effort: 8-10 hours, 1 dedicated session
+
+### Files affected:
+- All 7 intent prompt files — remove `memoryUpdate` from JSON schema
+- `step7.saveAndRespond.js` — replace `sanitizeMemoryUpdate()` with code-side state derivation
+- `step6.generateResponse.js` — pass `intent` + `response.title` to step7 explicitly
+- `chatSession.model.js` — no changes needed
 
 ---
 

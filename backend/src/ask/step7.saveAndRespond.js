@@ -25,13 +25,31 @@ const ALLOWED_STATE_FIELDS = [
   'consecutiveErrors', 'lastErrorAt'
 ];
 
+// When USE_INTENT_ROUTER=true, each intent only writes the fields it is
+// responsible for. Everything else is either set by step7 code directly,
+// or must never come from the LLM at all.
+const INTENT_MEMORY_WHITELIST = {
+  GREETING:          [],
+  OUT_OF_CONTEXT:    [],
+  UNSAFE_OR_ABUSIVE: [],
+  CHOOSE_COURSE:     ['currentSubjectId', 'currentSectionId', 'currentChapterId', 'learningMode'],
+  EXPLAIN_MORE:      ['lastDoubtTopic', 'lastDoubtQuestion'],     // NOT lastTopic — prevents drift
+  CONCEPT_QUESTION:  ['lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion', 'learningMode'],
+  NEXT_STEP:         ['lastTopic', 'learningMode'],               // currentTopicId managed by step7 code
+};
+
 /**
  * Sanitizes the LLM's memoryUpdate to match the new strict chatState machine.
+ * When intent is provided and in the whitelist, only the fields allowed for that
+ * intent are kept. Otherwise falls back to the broad ALLOWED_STATE_FIELDS list.
  */
-const sanitizeMemoryUpdate = ({ memoryUpdate }) => {
+const sanitizeMemoryUpdate = ({ memoryUpdate, intent }) => {
   const cleanUpdate = {};
+  const allowedFields = Object.hasOwn(INTENT_MEMORY_WHITELIST, intent)
+    ? INTENT_MEMORY_WHITELIST[intent]
+    : ALLOWED_STATE_FIELDS;
 
-  for (const field of ALLOWED_STATE_FIELDS) {
+  for (const field of allowedFields) {
     if (Object.hasOwn(memoryUpdate || {}, field)) {
       const cleanValue = memoryUpdate[field] === null
         ? null
@@ -116,18 +134,13 @@ export const saveAndRespond = async (
 ) => {
   console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
 
-  // Step 7a: Sanitize the state updates generated during the conversation turn
+  // Step 7a: Sanitize the state updates generated during the conversation turn.
+  // intent is passed so the per-intent whitelist (INTENT_MEMORY_WHITELIST) is used
+  // when USE_INTENT_ROUTER=true. Falls back to ALLOWED_STATE_FIELDS for legacy path.
   const stateUpdates = sanitizeMemoryUpdate({
     memoryUpdate: response.memoryUpdate,
+    intent: decision?.intent,
   });
-
-  // EXPLAIN_MORE guard: do not let the LLM's memoryUpdate drift lastTopic to a
-  // variant string (e.g. "Photosynthesis Re-explained") — that would corrupt the
-  // query used by future EXPLAIN_MORE re-retrievals on the same topic.
-  if (decision?.intent === 'EXPLAIN_MORE') {
-    delete stateUpdates.lastTopic;
-    delete stateUpdates.lastDoubtTopic;
-  }
 
   // If NEXT_STEP resolved a new topic, advance the pointer and record the completed one
   if (nextTopicSignal) {

@@ -102,5 +102,6 @@ export const buildContext = async ({ question, focusChapter }, { chatState, rece
     curriculumSummary,
     focusChapterPrompt,
     currentStudyContext,
+    recentMessages,   // passed through for intentRouter per-intent history windowing (Layer 2.4)
   };
 };
