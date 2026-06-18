@@ -1,5 +1,6 @@
 import { RunnableSequence } from '@langchain/core/runnables';
 import { createChatModel } from '../llm/chatModel.js';
+import { getDeciderConfig } from '../llm/llm.config.js';
 import { stringParser } from '../llm/stringParser.js';
 import { deciderPrompt } from '../prompts/deciderPrompt.js';
 import { parseJsonObject } from '../utils/jsonParser.js';
@@ -50,7 +51,7 @@ const getDeciderChain = () => {
   if (!deciderChain) {
     deciderChain = RunnableSequence.from([
       deciderPrompt,
-      createChatModel({ maxTokens: 350 }), // JSON output is ~70–120 tokens; 350 gives buffer for all providers including Gemini
+      createChatModel({ ...getDeciderConfig(), maxTokens: 350 }), // Decider uses DECIDER_PROVIDER/DECIDER_MODEL if set, else falls back to global LLM_PROVIDER/LLM_MODEL
       stringParser,
     ]);
   }

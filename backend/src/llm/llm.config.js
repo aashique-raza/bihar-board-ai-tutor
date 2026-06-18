@@ -43,3 +43,28 @@ export const getLlmConfig = () => {
     temperature: toNumber(process.env.LLM_TEMPERATURE, 0),
   };
 };
+
+/**
+ * Returns config specifically for the decider (intent classifier) LLM call.
+ * If DECIDER_PROVIDER / DECIDER_MODEL are set in .env, those are used.
+ * Otherwise falls back to the global LLM_PROVIDER / LLM_MODEL — no breaking change.
+ *
+ * This lets decider run on a smaller/cheaper model (e.g. Groq 8B) while
+ * the tutor uses a larger model (e.g. OpenAI gpt-4o-mini), independently.
+ */
+export const getDeciderConfig = () => {
+  const rawProvider = process.env.DECIDER_PROVIDER || process.env.LLM_PROVIDER || LLM_PROVIDERS.groq;
+  const provider = rawProvider.toLowerCase();
+
+  if (!Object.values(LLM_PROVIDERS).includes(provider)) {
+    throw new Error(
+      `Unsupported DECIDER_PROVIDER "${provider}". Use one of: groq, openai, google.`
+    );
+  }
+
+  return {
+    provider,
+    model: process.env.DECIDER_MODEL || DEFAULT_MODELS[provider],
+    temperature: toNumber(process.env.LLM_TEMPERATURE, 0),
+  };
+};
