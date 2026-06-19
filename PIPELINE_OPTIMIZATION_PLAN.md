@@ -2,8 +2,8 @@
 
 > **Predecessor:** [TOKEN_FIX_PLAN.md](TOKEN_FIX_PLAN.md) — STEP 0-6 complete. STEP 7-8 superseded by this document.
 > **Created:** 2026-06-17
-> **Status:** Phase 3 complete — next is Phase 4 (Caching Probe, conditional)
-> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅ | Layer 2.5 ✅ | Layer 2.6 deferred | Layer 3.1 ✅ | Layer 3.2 ✅ | Layer 3.3 ✅ | Phase 3 complete
+> **Status:** Phase 4 complete (abandoned — caching not viable) — next is Phase 5 Decision Gate
+> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅ | Layer 2.5 ✅ | Layer 2.6 deferred | Layer 3.1 ✅ | Layer 3.2 ✅ | Layer 3.3 ✅ | Phase 3 complete | Phase 4 abandoned ✅
 > **Owner:** Farhan Raza (developer) + Claude (senior engineering advisor)
 
 ---
@@ -246,14 +246,29 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
   - [x] Step 3.3.1 — Log drift tier in turn summary (tokenLogger)
   - [x] Step 3.3.2 — Add drift stats to per-intent aggregates
 
-### Phase 4 — Caching Probe (Conditional Bonus)
-- [ ] Layer 4.1 — Provider capability check
-  - [ ] Step 4.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
-  - [ ] Step 4.1.2 — If found: document the cache TTL, hit rate, savings. If not: abandon Phase 4.
-- [ ] Layer 4.2 — Enable caching (only if probe succeeded)
-  - [ ] Step 4.2.1 — Lock all system prompts (version stamp them)
-  - [ ] Step 4.2.2 — Enable caching flag in `ChatGroq` constructor (verify LangChain support or use direct SDK)
-  - [ ] Step 4.2.3 — Monitor cache hit rate for 1 week
+### Phase 4 — Caching Probe (Conditional Bonus) — ABANDONED ✅
+- [x] Layer 4.1 — Provider capability check
+  - [x] Step 4.1.1 — Send 5 identical Groq API calls, inspect for `cache_read_input_tokens` field
+        RESULT: cached_tokens = 0 on ALL 3 requests for both models. Raw usage object has no
+        `prompt_tokens_details` field at all. Groq caching NOT supported for llama-3.3-70b-versatile
+        or llama-3.1-8b-instant. Script: backend/scripts/test-groq-caching.js
+  - [x] Step 4.1.2 — Documented finding → ABANDON. Both Groq models fail. OpenAI tested separately (see below).
+        OpenAI probe result: `prompt_tokens_details.cached_tokens = 0` on all 5 requests.
+        Root cause: ALL Phase 2 intent-specific prompts are below 1024 token threshold.
+        Measured sizes: greeting~618, redirect~139, unsafe~149, chooseCourse~478,
+        explainMore~739, conceptQ~695, nextStep~601, decider~763. None >= 1024.
+        Script: backend/scripts/test-openai-caching.js
+- [~] Layer 4.2 — SKIPPED (conditional on 4.1 success — probe failed on all providers)
+  - [~] Step 4.2.1 — Skipped
+  - [~] Step 4.2.2 — Skipped
+  - [~] Step 4.2.3 — Skipped
+
+### Phase 4 Exit Criteria (ABANDONED path)
+- [x] Groq caching probe complete — NOT supported for our llama models
+- [x] OpenAI caching probe complete — prompts too short (<1024 tokens) due to Phase 2 lean design
+- [x] Root cause documented — Phase 2 lean prompts and OpenAI 1024-token threshold are architecturally incompatible
+- [x] "Best of both worlds" path identified and deferred — padding intent prompts to 1024 with useful curriculum content could enable caching (~11% additional savings). Deferred: not urgent, Phase 2 savings sufficient. Revisit post-deployment if token pressure returns.
+- [x] Decision logged in Section 13
 
 ### Phase 5 — History Compression (Only If Needed)
 - [ ] Layer 5.1 — Decision gate
@@ -1804,7 +1819,11 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-18 | Layer 2.6 deferred to post-deployment | Cleanup (delete monolithic path + remove flag) is safe to defer. Current state: flag=true, legacy path alive. No harm in keeping both paths until app is deployed and stable. | Layer 2.6 marked [~] deferred |
 | 2026-06-18 | Phase 2 complete — moving to Phase 3 next session | Intent router live and tested (4 rounds). Layer 2.5 done. Layer 2.6 deferred. Phase 3 (Session Integrity Guard) is next priority. | Next session starts at Phase 3, Layer 3.1, Step 3.1.1 |
 | 2026-06-18 | Phase 3 complete — all exit criteria verified via automated + manual testing | Automated: PowerShell HTTP test sequence (cap-test session). Manual: 7-query sequence covering Tier 0/1/2 behavior, academic-never-block, emotional empathy, consecutive reset, total lifetime counter. All 7 exit criteria passed. Committed + pushed to main (730afa6). | Next session: Phase 4 — Caching Probe |
-| _PENDING_ | Phase 5 decision gate — needed or skip? | TBD after Phase 2+3+4 stable | Affects whether project ends at Phase 3 or continues |
+| 2026-06-19 | Phase 4 ABANDONED — Groq caching not supported for llama models | Live test (test-groq-caching.js): cached_tokens=0 on all 3 requests for llama-3.3-70b-versatile AND llama-3.1-8b-instant. Groq caching only works on openai/gpt-oss-20b, gpt-oss-120b, gpt-oss-safeguard-20b (confirmed via official docs). Those models have much worse free-tier rate limits (1,000 RPD vs 14,400 RPD) and uncertain quality — switching not worth it. | Phase 4 Layer 4.1 done, Layer 4.2 skipped |
+| 2026-06-19 | Phase 4 ABANDONED — OpenAI caching not activating either | Live test (test-openai-caching.js): cached_tokens=0 on all 5 requests for gpt-4o-mini. Root cause: OpenAI requires >= 1024 token prefix to cache. ALL Phase 2 intent-specific prompts are below threshold (largest: explainMore ~739 tokens). Phase 2 lean design is architecturally incompatible with OpenAI's 1024-token caching floor. | OpenAI caching is impossible without padding prompts |
+| 2026-06-19 | Caching "best of both worlds" path identified but deferred | Padding intent prompts from ~600-739 to 1024 tokens with USEFUL curriculum content (chapter index, topic hierarchy) would enable OpenAI caching and save ~11% more tokens/session. Math: conceptQ padded 695→1024 (+329 tok turn 1), cached at 50% turns 2+ (-512 tok/turn). 12-turn session: saves ~2,500 tokens vs current. BUT: Phase 2 savings are already sufficient. Added complexity not justified now. Revisit post-deployment if token pressure returns. | Deferred — not blocking Phase 5 |
+| 2026-06-19 | Phase 4 complete (abandoned) — Phase 5 decision gate is next | Both Groq and OpenAI caching probes failed for our current setup. No code changes needed. Phase 4 declared done. Next fresh session starts Phase 5 Step 5.1.1: measure actual avg turn count per session, decide if history compression is needed. | Next session: Phase 5 |
+| _PENDING_ | Phase 5 decision gate — needed or skip? | TBD after measuring real session turn counts | Affects whether project ends at Phase 4 or continues |
 | 2026-06-18 | C10: memoryUpdate protection — Option B chosen, Option C deferred to Phase 6 | **Option B (chosen):** Per-intent whitelist in `sanitizeMemoryUpdate()`. ~15 lines in step7. GREETING/REDIRECT/UNSAFE → whitelist=[]. Others → intent-specific allowed fields. Existing EXPLAIN_MORE guard (step7:127-130) is exactly this pattern — we're making it systematic. **Option C (deferred):** Remove memoryUpdate from ALL prompts entirely. State managed code-side only: lastTopic from response.title, currentTopicId from nextTopicSignal, etc. More reliable (zero LLM hallucination on state), saves ~50 tokens/turn (memoryUpdate JSON block removed from prompts). Deferred because it requires redesigning step6→step7 data flow — over-engineering for current phase. **Trigger to migrate to C:** Option B whitelist becomes hard to maintain OR token pressure returns after Phase 2+3+4+5. See Phase 6. | Step 2.4.5 |
 
 ---
