@@ -119,11 +119,11 @@ Update this section as fixes complete. Use `[ ]` for pending, `[~]` for in-progr
 - [x] Fix 4.8 — Fix `<a role="button">` keyboard accessibility (add tabIndex + onKeyDown)
 
 ### Phase 5 — Backend Hardening
-- [ ] Fix 5.1 — Unify password validation (backend: add number + uppercase requirement)
-- [ ] Fix 5.2 — ResetPasswordPage: match RegisterPage's password validation rules
-- [ ] Fix 5.3 — Add missing AuthCallback error codes (`google_cancelled`, `account_disabled`)
-- [ ] Fix 5.4 — LoginPage: use user data from login response instead of extra `getMe()` call
-- [ ] Fix 5.5 — Add refresh token rotation in `refreshToken()` endpoint
+- [x] Fix 5.1 — Unify password validation (backend: add number + uppercase requirement)
+- [x] Fix 5.2 — ResetPasswordPage: match RegisterPage's password validation rules
+- [x] Fix 5.3 — Add missing AuthCallback error codes (`google_cancelled`, `account_disabled`)
+- [x] Fix 5.4 — LoginPage: use user data from login response instead of extra `getMe()` call
+- [x] Fix 5.5 — Add refresh token rotation in `refreshToken()` endpoint
 
 ### Phase 6 — Low Priority (Fix if time allows before deployment)
 - [ ] Fix 6.1 — `fetchSessions`: distinguish auth errors from real failures (stop silent swallow)

@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
-import { loginUser, getMe } from '../services/axios/authService';
+import { loginUser } from '../services/axios/authService';
 import { setCredentials } from '../store/slices/authSlice';
 import Toast from '../components/Toast';
 import { useToast } from '../hooks/useToast';
@@ -84,7 +84,7 @@ function LoginPage() {
     try {
       const data = await loginUser({ email: email.trim(), password });
       const accessToken = data.data?.accessToken || data.accessToken;
-      const user = await getMe(accessToken);
+      const user = data.data?.user;
       dispatch(setCredentials({ user, accessToken }));
       navigate('/', { state: { toastSuccess: 'Login ho gaya! Padhai shuru karo.' } });
     } catch (err) {

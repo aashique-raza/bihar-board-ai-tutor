@@ -8,6 +8,8 @@ import { getMe } from '../services/axios/authService.js';
 const ERROR_MESSAGES = {
   account_exists: 'Yeh email already registered hai. Please login karo.',
   google_failed: 'Google sign-in fail hua. Please dobara try karo.',
+  google_cancelled: 'Google sign-in cancel ho gaya. Dobara try karo.',
+  account_disabled: 'Aapka account disabled hai. Support se contact karo.',
 };
 
 // Handles the redirect back from Google OAuth.

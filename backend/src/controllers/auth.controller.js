@@ -39,6 +39,12 @@ export const register = async (req, res, next) => {
     if (password.length < 8) {
       throw new ApiError(400, 'Password kam se kam 8 characters ka hona chahiye.');
     }
+    if (!/\d/.test(password)) {
+      throw new ApiError(400, 'Password mein kam se kam ek number hona chahiye.');
+    }
+    if (!/[A-Z]/.test(password)) {
+      throw new ApiError(400, 'Password mein kam se kam ek uppercase letter hona chahiye.');
+    }
 
     // --- Check duplicate email ---
     // Note: We also catch the MongoDB unique index error below as a safety net
@@ -305,6 +311,16 @@ export const refreshToken = async (req, res) => {
     }
 
     const accessToken = generateAccessToken(userId);
+    const newRefreshToken = generateRefreshToken(userId);
+
+    await redis.set(`refresh_token:${userId}`, newRefreshToken, 'EX', REFRESH_TOKEN_REDIS_TTL);
+
+    res.cookie('refreshToken', newRefreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: REFRESH_TOKEN_COOKIE_MAX_AGE,
+    });
 
     return sendResponse(res, 200, { message: 'Token refreshed.', data: { accessToken } });
 
@@ -368,6 +384,12 @@ export const resetPassword = async (req, res) => {
 
     if (newPassword.length < 8) {
       return sendResponse(res, 400, { message: 'Password kam se kam 8 characters ka hona chahiye.' });
+    }
+    if (!/\d/.test(newPassword)) {
+      return sendResponse(res, 400, { message: 'Password mein kam se kam ek number hona chahiye.' });
+    }
+    if (!/[A-Z]/.test(newPassword)) {
+      return sendResponse(res, 400, { message: 'Password mein kam se kam ek uppercase letter hona chahiye.' });
     }
 
     const userId = await redis.get(`reset_password:${token}`);
