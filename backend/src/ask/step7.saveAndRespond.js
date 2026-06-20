@@ -132,7 +132,7 @@ export const saveAndRespond = async (
   { sessionId, chatState },
   { language, driftSignal },
   decision,
-  { retrieval, sources, nextTopicSignal },
+  { retrieval, sources, nextTopicSignal, lastRetrievalQuery },
   response,
   userId = null,
   tokenUsage = 0
@@ -157,6 +157,17 @@ export const saveAndRespond = async (
         chatState.currentTopicId,
       ];
     }
+  }
+
+  // Save the exact retrieval query used — code-controlled, never from LLM memoryUpdate.
+  // CONCEPT_QUESTION and NEXT_STEP are the only intents that retrieve content for teaching.
+  // Guard: sources.length > 0 ensures we only save queries that actually returned content.
+  if (
+    ['CONCEPT_QUESTION', 'NEXT_STEP'].includes(intent) &&
+    lastRetrievalQuery &&
+    sources?.length > 0
+  ) {
+    stateUpdates.lastRetrievalQuery = lastRetrievalQuery;
   }
 
   // Successful response — provider is working. Reset error tracking.

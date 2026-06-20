@@ -79,6 +79,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
       sources: formatSources(nextChunks),
       retrievedContext: formatRetrievedContext(nextChunks),
       nextTopicSignal: { topicId: result.topic.topicId, title: result.topic.title },
+      lastRetrievalQuery: topicSearchQuery,
     };
   }
 
@@ -88,7 +89,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
   // focusChapter is intentionally NOT passed — lastTopic may be from a different
   // chapter than the student's current focus selection.
   if (intent === 'EXPLAIN_MORE') {
-    const topicQuery = searchQuery || chatState?.lastTopic || null;
+    const topicQuery = chatState?.lastRetrievalQuery || chatState?.lastTopic || null;
 
     if (!topicQuery) {
       console.log('[Step 5 EXPLAIN_MORE] No query available (searchQuery=null, lastTopic=null) — empty context, tutor will ask student to clarify topic.');
@@ -99,7 +100,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
       };
     }
 
-    const querySource = searchQuery ? 'decider.searchQuery' : 'chatState.lastTopic';
+    const querySource = chatState?.lastRetrievalQuery ? 'chatState.lastRetrievalQuery' : 'chatState.lastTopic';
     console.log(`[Step 5 EXPLAIN_MORE] Re-retrieving via ${querySource}: "${topicQuery}"`);
 
     const explainRetrieval = await retrieveRelevantChunks(topicQuery, getRetrieverOptions(null));
@@ -157,5 +158,6 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
     chunks,
     sources,
     retrievedContext,
+    lastRetrievalQuery: searchQuery,
   };
 };

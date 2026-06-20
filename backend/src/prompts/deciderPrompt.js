@@ -36,7 +36,7 @@ SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - Generate clean English or Roman-script Hinglish keywords. Never Devanagari.
 - Translate Hindi: "प्रकाश संश्लेषण" → "photosynthesis", "विद्युत धारा" → "electric current", "अम्ल और क्षार" → "acid and base"
 - Pronouns ("iska", "usko", "this", "again"): resolve the topic from Recent Conversation Log.
-- EXPLAIN_MORE: extract core topic from the latest "Zuno:" entry in history.
+- EXPLAIN_MORE: searchQuery must be null. Re-retrieval is handled by the pipeline using saved session state.
 - All other intents: searchQuery must be null.
 
 Return ONLY this JSON, no extra text or markdown:
