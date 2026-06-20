@@ -39,8 +39,11 @@ export const fetchSessions = async () => {
   try {
     const { data } = await axiosInstance.get('/api/v1/sessions');
     return data.data; // shape: { sessions: [...] }
-  } catch {
-    return { sessions: [] }; // silent fail — guest or network error
+  } catch (err) {
+    if (err.response?.status !== 401) {
+      console.error('[fetchSessions]', err.message);
+    }
+    return { sessions: [] };
   }
 };
 
@@ -50,7 +53,10 @@ export const fetchSessionHistory = async (sessionId) => {
       `/api/v1/sessions/${encodeURIComponent(sessionId)}/history`
     );
     return data.data;
-  } catch {
+  } catch (err) {
+    if (err.response?.status !== 401) {
+      console.error('[fetchSessionHistory]', err.message);
+    }
     return null;
   }
 };

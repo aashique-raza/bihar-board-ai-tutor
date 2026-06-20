@@ -29,7 +29,12 @@ function AppInitializer() {
       try {
         const credentials = await tryRefresh();
         if (isMounted) dispatch(setCredentials(credentials));
-      } catch {
+      } catch (err) {
+        // 403 = account disabled — no point retrying
+        if (err.response?.status === 403) {
+          if (isMounted) dispatch(clearCredentials());
+          return;
+        }
         // Wait 500ms and retry once before giving up — handles brief network blips
         await new Promise((res) => setTimeout(res, 500));
         try {

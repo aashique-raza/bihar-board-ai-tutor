@@ -9,6 +9,7 @@ import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
 import { loginUser } from '../services/axios/authService';
 import { setCredentials } from '../store/slices/authSlice';
+import { clearSessionId } from '../utils/session';
 import Toast from '../components/Toast';
 import { useToast } from '../hooks/useToast';
 
@@ -85,6 +86,7 @@ function LoginPage() {
       const data = await loginUser({ email: email.trim(), password });
       const accessToken = data.data?.accessToken || data.accessToken;
       const user = data.data?.user;
+      clearSessionId();
       dispatch(setCredentials({ user, accessToken }));
       navigate('/', { state: { toastSuccess: 'Login ho gaya! Padhai shuru karo.' } });
     } catch (err) {

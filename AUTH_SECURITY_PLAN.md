@@ -126,11 +126,11 @@ Update this section as fixes complete. Use `[ ]` for pending, `[~]` for in-progr
 - [x] Fix 5.5 — Add refresh token rotation in `refreshToken()` endpoint
 
 ### Phase 6 — Low Priority (Fix if time allows before deployment)
-- [ ] Fix 6.1 — `fetchSessions`: distinguish auth errors from real failures (stop silent swallow)
-- [ ] Fix 6.2 — `fetchSessionHistory`: same as 6.1
-- [ ] Fix 6.3 — Clear old `sessionId` from localStorage on login (cross-user edge case)
-- [ ] Fix 6.4 — AppInitializer: don't retry on 403 (disabled account)
-- [ ] Fix 6.5 — Logout: also clear `zuno-guest-id` from localStorage
+- [x] Fix 6.1 — `fetchSessions`: distinguish auth errors from real failures (stop silent swallow)
+- [x] Fix 6.2 — `fetchSessionHistory`: same as 6.1
+- [x] Fix 6.3 — Clear old `sessionId` from localStorage on login (cross-user edge case)
+- [x] Fix 6.4 — AppInitializer: don't retry on 403 (disabled account)
+- [x] Fix 6.5 — Logout: also clear `zuno-guest-id` from localStorage
 - [ ] Fix 6.6 — UX-03: Theme toggle on auth pages (optional — cosmetic)
 
 ---

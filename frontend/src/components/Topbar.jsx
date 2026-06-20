@@ -52,6 +52,7 @@ export default function Topbar({
       // Even if API call fails, clear local state and redirect
     }
     clearSessionId();
+    localStorage.removeItem('zuno-guest-id');
     dispatch(clearCredentials());
     navigate('/login', { state: { toastSuccess: 'Logout ho gaya! Phir milenge.' } });
   };
