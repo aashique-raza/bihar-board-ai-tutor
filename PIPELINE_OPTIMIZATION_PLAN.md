@@ -2,7 +2,7 @@
 
 > **Predecessor:** [TOKEN_FIX_PLAN.md](TOKEN_FIX_PLAN.md) — STEP 0-6 complete. STEP 7-8 superseded by this document.
 > **Created:** 2026-06-17
-> **Status:** Phase 5 complete — history compression implemented | next: session limit increase + deployment
+> **Status:** Phase 5 complete + session limit raised to 35k | next: deployment (Stage 12)
 > **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅ | Layer 2.5 ✅ | Layer 2.6 deferred | Layer 3.1 ✅ | Layer 3.2 ✅ | Layer 3.3 ✅ | Phase 3 complete | Phase 4 abandoned ✅ | Phase 5 complete ✅
 > **Owner:** Farhan Raza (developer) + Claude (senior engineering advisor)
 
@@ -1842,6 +1842,7 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-19 | Phase 4 complete (abandoned) — Phase 5 decision gate is next | Both Groq and OpenAI caching probes failed for our current setup. No code changes needed. Phase 4 declared done. Next fresh session starts Phase 5 Step 5.1.1: measure actual avg turn count per session, decide if history compression is needed. | Next session: Phase 5 |
 | 2026-06-20 | Phase 5 triggered — 8 turns at 30k, not 12 | Decision gate measurement: avg 3,468 tokens/turn at 15k. Worst-case (CONCEPT+EXPLAIN_MORE) = 4 turns at 15k, ~8 turns at 30k. Target was ≥12. Phase 5 history compression triggered. | Implementation started same session |
 | 2026-06-20 | Phase 5 complete — compression working, savings real but modest | Post-implementation: avg dropped to 3,338/turn (−130/turn). T4 savings: −411 tokens. T5 savings: −250 tokens. Projected 30k: ~8-9 turns (was 8). Limited improvement because sessions currently cap at 15k. True benefit unlocks when session limit is raised. Golden test: 87.5% (97.2% excluding rate-limit skips). No regressions. | Phase 5 fully complete. Next: raise SESSION_TOKEN_LIMIT (deferred by user to next session) |
+| 2026-06-20 | SESSION_TOKEN_LIMIT raised 15k → 35k | User set SESSION_TOKEN_LIMIT=35000 in backend/.env. Projected impact: worst-case (CONCEPT+EXPLAIN_MORE) goes from 4 turns to ~9 turns (2.25× improvement). Real sessions with lighter queries: 10-11 turns. | Pipeline optimization complete — system ready for deployment |
 | 2026-06-18 | C10: memoryUpdate protection — Option B chosen, Option C deferred to Phase 6 | **Option B (chosen):** Per-intent whitelist in `sanitizeMemoryUpdate()`. ~15 lines in step7. GREETING/REDIRECT/UNSAFE → whitelist=[]. Others → intent-specific allowed fields. Existing EXPLAIN_MORE guard (step7:127-130) is exactly this pattern — we're making it systematic. **Option C (deferred):** Remove memoryUpdate from ALL prompts entirely. State managed code-side only: lastTopic from response.title, currentTopicId from nextTopicSignal, etc. More reliable (zero LLM hallucination on state), saves ~50 tokens/turn (memoryUpdate JSON block removed from prompts). Deferred because it requires redesigning step6→step7 data flow — over-engineering for current phase. **Trigger to migrate to C:** Option B whitelist becomes hard to maintain OR token pressure returns after Phase 2+3+4+5. See Phase 6. | Step 2.4.5 |
 
 ---
