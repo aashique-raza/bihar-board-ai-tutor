@@ -2,8 +2,8 @@
 
 > **Created:** 2026-06-20
 > **Replaces:** BRAIN_FIXES.md + BRAIN_FIX_HANDOFF.md (both deleted — stale, partially wrong)
-> **Status:** FIX-A through FIX-D VERIFIED | FIX-J VERIFIED | FIX-E next
-> **Last session:** FIX-A, B, C, D, J implemented and verified — FIX-E pending
+> **Status:** ALL FIXES VERIFIED (FIX-A through FIX-I + FIX-J) — no pending fixes
+> **Last session:** All 10 fixes implemented and verified — ready for deployment
 > **Codebase state:** Intent Router ACTIVE (USE_INTENT_ROUTER=true), Session limit 35k, Phases 0-5 complete
 
 ---
@@ -157,7 +157,7 @@ These fixes are not cosmetic. FIX-A (lastRetrievalQuery) directly determines whe
 ## 6. FIX-A — lastRetrievalQuery
 
 **Priority:** HIGH
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** ~2 hours
 **Files:** `chatSession.model.js`, `step7.saveAndRespond.js`, `step5.retrieveContent.js`, `deciderPrompt.js`
 
@@ -270,7 +270,7 @@ Tradeoff: Keeps two competing sources. More complex. Harder to debug. Not recomm
 ## 7. FIX-B — Unknown Intent Fallback
 
 **Priority:** HIGH
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** 5 minutes
 **Files:** `step4.decideRetrieval.js`
 
@@ -330,7 +330,7 @@ if (!VALID_INTENTS.has(decision.intent)) {
 ## 8. FIX-C — lastStudyResponse
 
 **Priority:** MEDIUM
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** ~1.5 hours
 **Files:** `chatSession.model.js`, `step7.saveAndRespond.js`, `step3.buildContext.js`, `explainMorePrompt.js`
 
@@ -447,7 +447,7 @@ wants re-explained. Do NOT use the same title, main headings, or primary content
 ## 9. FIX-D — DriftCap History Save
 
 **Priority:** MEDIUM
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** ~30 minutes
 **Files:** `askOrchestrator.js`
 
@@ -522,7 +522,7 @@ Import `addChatMessages` at top of `askOrchestrator.js` if not already imported.
 ## 10. FIX-E — Safety Net Raw Query Cleanup
 
 **Priority:** MEDIUM
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** ~20 minutes
 **Files:** `askOrchestrator.js`
 
@@ -586,7 +586,7 @@ if (fired) {
 ## 11. FIX-F — Session Exhausted Message
 
 **Priority:** LOW
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** 5 minutes
 **Files:** `step2.loadSession.js`
 
@@ -617,7 +617,7 @@ They think the app broke. This is a trust-breaking moment in the product experie
 ## 12. FIX-G — step1 Persona Mismatch
 
 **Priority:** LOW
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** 5 minutes
 **Files:** `step1.validateInput.js`
 
@@ -643,7 +643,7 @@ Persona was updated in prompts but input validation error text was not updated.
 ## 13. FIX-H — step6 Dead Code
 
 **Priority:** LOW
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** 5 minutes
 **Files:** `step6.generateResponse.js`
 
@@ -676,9 +676,9 @@ has its own guard in `routeToIntentHandler`. Still worth cleaning for correctnes
 ## 14. FIX-I — Cold-Start ChatState Initialization
 
 **Priority:** LOW
-**Status:** PENDING
+**Status:** VERIFIED
 **Effort:** 10 minutes
-**Files:** `step2.loadSession.js`
+**Files:** `step2.loadSession.js`, `chatSession.model.js`
 
 ---
 
