@@ -3,6 +3,8 @@ export const compactText = (value) =>
 
 /**
  * Formats DB chat logs into plain text conversation lines for the prompt.
+ * Used by: legacy step6 path, EXPLAIN_MORE intent (needs full Zuno responses
+ * for variation mandate), and as a fallback inside formatCompressedHistory.
  */
 export const formatRecentHistory = (messages = []) => {
   if (!messages.length) {
@@ -11,6 +13,51 @@ export const formatRecentHistory = (messages = []) => {
 
   return messages
     .map((message) => `${message.role === 'student' ? 'Student' : 'Zuno'}: ${compactText(message.text)}`)
+    .join('\n');
+};
+
+// Shrinks an older Zuno response to its first 30 words + word count.
+// The "Zuno [prev, ~Nw]:" prefix is visually distinct from "Zuno:" so
+// intent prompts' "check the most recent Zuno: entry" instruction
+// unambiguously targets the one full entry at the bottom of history.
+const compressZunoResponse = (text) => {
+  const words = text.split(/\s+/);
+  const preview = words.slice(0, 30).join(' ');
+  const suffix = words.length > 30 ? '...' : '';
+  return `Zuno [prev, ~${words.length}w]: ${preview}${suffix}`;
+};
+
+/**
+ * History formatter with token-efficient compression.
+ *
+ * The LAST Zuno entry is always kept full because:
+ *   - CONCEPT_QUESTION: anti-repetition rule checks "most recent Zuno: entry"
+ *   - GREETING: meta-reaction handling needs the exact previous reply
+ * All OLDER Zuno entries are compressed to first 30 words + word count.
+ * Student messages are NEVER compressed — they carry intent and are short.
+ *
+ * Use for:     GREETING, CHOOSE_COURSE, CONCEPT_QUESTION, NEXT_STEP, deciderHistory
+ * Do NOT use for: EXPLAIN_MORE (variation mandate requires full last response)
+ */
+export const formatCompressedHistory = (messages = []) => {
+  if (!messages.length) return 'No previous messages in this session.';
+
+  // Find the last Zuno message index — this one stays full
+  let lastZunoIdx = -1;
+  for (let i = messages.length - 1; i >= 0; i--) {
+    if (messages[i].role === 'tutor') { lastZunoIdx = i; break; }
+  }
+
+  // No Zuno message in window yet — nothing to compress, use full format
+  if (lastZunoIdx < 0) return formatRecentHistory(messages);
+
+  return messages
+    .map((msg, idx) => {
+      const text = compactText(msg.text);
+      if (msg.role === 'student') return `Student: ${text}`;  // never compress
+      if (idx === lastZunoIdx)    return `Zuno: ${text}`;     // last entry — full
+      return compressZunoResponse(text);                       // older entries — compressed
+    })
     .join('\n');
 };
 

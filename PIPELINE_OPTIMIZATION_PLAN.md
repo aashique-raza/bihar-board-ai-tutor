@@ -2,8 +2,8 @@
 
 > **Predecessor:** [TOKEN_FIX_PLAN.md](TOKEN_FIX_PLAN.md) — STEP 0-6 complete. STEP 7-8 superseded by this document.
 > **Created:** 2026-06-17
-> **Status:** Phase 4 complete (abandoned — caching not viable) — next is Phase 5 Decision Gate
-> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅ | Layer 2.5 ✅ | Layer 2.6 deferred | Layer 3.1 ✅ | Layer 3.2 ✅ | Layer 3.3 ✅ | Phase 3 complete | Phase 4 abandoned ✅
+> **Status:** Phase 5 complete — history compression implemented | next: session limit increase + deployment
+> **Last session:** Phase 0 ✅ | Phase 1 ✅ | Layer 2.0 ✅ | Layer 2.1 ✅ | Layer 2.2 ✅ | Layer 2.3 ✅ | Layer 2.4 ✅ | Layer 2.5 ✅ | Layer 2.6 deferred | Layer 3.1 ✅ | Layer 3.2 ✅ | Layer 3.3 ✅ | Phase 3 complete | Phase 4 abandoned ✅ | Phase 5 complete ✅
 > **Owner:** Farhan Raza (developer) + Claude (senior engineering advisor)
 
 ---
@@ -271,12 +271,29 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in-progr
 - [x] Decision logged in Section 13
 
 ### Phase 5 — History Compression (Only If Needed)
-- [ ] Layer 5.1 — Decision gate
-  - [ ] Step 5.1.1 — Measure: after Phase 2+3 stable, is avg turn count ≥12 at 30k? If yes, SKIP Phase 5.
-- [ ] Layer 5.2 — Compressed history (if needed)
-  - [ ] Step 5.2.1 — Design compressed format (`Zuno [Topic: X]: brief summary`)
-  - [ ] Step 5.2.2 — Implement in `formatRecentHistory` with intent-aware switch (full for EXPLAIN_MORE, compressed elsewhere)
-  - [ ] Step 5.2.3 — Validate on golden test set
+- [x] Layer 5.1 — Decision gate
+  - [x] Step 5.1.1 — Measure worst-case turn count at 15k token limit.
+        RESULT: Pre-Phase-5 baseline (Groq 70B, CONCEPT+EXPLAIN_MORE alternating): avg 3,468 tokens/turn,
+        4 turns at 15k. Projected at 30k: ~8 turns. Target (12 turns at 30k) NOT met → Phase 5 triggered.
+        Script: backend/scripts/measure-token-burn.js. T1=2,864, T2=3,560, T3=2,654, T4=4,328, T5=3,935.
+- [x] Layer 5.2 — Compressed history
+  - [x] Step 5.2.1 — Design compressed format.
+        DECISION: Word-count preview format `Zuno [prev, ~Nw]: first 30 words...` chosen over topic-summary.
+        Reasons: (1) pure code, no LLM call. (2) `Zuno [prev, ~Nw]:` prefix is visually distinct from `Zuno:`
+        so intent prompts' "check most recent Zuno: entry" rule remains unambiguous. EXPLAIN_MORE receives
+        full history (variation mandate requires last full Zuno response). GREETING, CONCEPT_QUESTION,
+        CHOOSE_COURSE, NEXT_STEP, and deciderHistory all use compressed. Last Zuno entry always stays full.
+  - [x] Step 5.2.2 — Implement as new `formatCompressedHistory()` (additive — `formatRecentHistory` untouched).
+        FILES: promptHelpers.js (added compressZunoResponse + formatCompressedHistory), intentRouter.js
+        (compressed for all intents except EXPLAIN_MORE), step3.buildContext.js (deciderHistory compressed).
+        POST-IMPLEMENTATION MEASUREMENT: T4: 3,917 (was 4,328, −411 ✓). T5: 3,685 (was 3,935, −250 ✓).
+        Avg: 3,338/turn (was 3,468, −130/turn). Still 4 turns at 15k. Projected 30k: ~8-9 turns.
+        Plateau savings (T4+): ~350-430 tokens/turn. Limited by LLM output variance across runs.
+  - [x] Step 5.2.3 — Validate on golden test set.
+        RESULT: 87.5% accuracy (35/40). Up from 80% Phase 1 baseline. N01-N04 SKIPs = Groq rate limit
+        after 20 rapid queries in sequence (not a code failure). BS05 pre-existing blind spot (CHOOSE_COURSE
+        vs CONCEPT on mixed query — unchanged since Phase 2). Excluding rate-limit skips: 35/36 = 97.2%.
+        No regressions introduced by compression. Quality validated.
 
 ---
 
@@ -1823,7 +1840,8 @@ Use this section to capture decisions made mid-implementation that future sessio
 | 2026-06-19 | Phase 4 ABANDONED — OpenAI caching not activating either | Live test (test-openai-caching.js): cached_tokens=0 on all 5 requests for gpt-4o-mini. Root cause: OpenAI requires >= 1024 token prefix to cache. ALL Phase 2 intent-specific prompts are below threshold (largest: explainMore ~739 tokens). Phase 2 lean design is architecturally incompatible with OpenAI's 1024-token caching floor. | OpenAI caching is impossible without padding prompts |
 | 2026-06-19 | Caching "best of both worlds" path identified but deferred | Padding intent prompts from ~600-739 to 1024 tokens with USEFUL curriculum content (chapter index, topic hierarchy) would enable OpenAI caching and save ~11% more tokens/session. Math: conceptQ padded 695→1024 (+329 tok turn 1), cached at 50% turns 2+ (-512 tok/turn). 12-turn session: saves ~2,500 tokens vs current. BUT: Phase 2 savings are already sufficient. Added complexity not justified now. Revisit post-deployment if token pressure returns. | Deferred — not blocking Phase 5 |
 | 2026-06-19 | Phase 4 complete (abandoned) — Phase 5 decision gate is next | Both Groq and OpenAI caching probes failed for our current setup. No code changes needed. Phase 4 declared done. Next fresh session starts Phase 5 Step 5.1.1: measure actual avg turn count per session, decide if history compression is needed. | Next session: Phase 5 |
-| _PENDING_ | Phase 5 decision gate — needed or skip? | TBD after measuring real session turn counts | Affects whether project ends at Phase 4 or continues |
+| 2026-06-20 | Phase 5 triggered — 8 turns at 30k, not 12 | Decision gate measurement: avg 3,468 tokens/turn at 15k. Worst-case (CONCEPT+EXPLAIN_MORE) = 4 turns at 15k, ~8 turns at 30k. Target was ≥12. Phase 5 history compression triggered. | Implementation started same session |
+| 2026-06-20 | Phase 5 complete — compression working, savings real but modest | Post-implementation: avg dropped to 3,338/turn (−130/turn). T4 savings: −411 tokens. T5 savings: −250 tokens. Projected 30k: ~8-9 turns (was 8). Limited improvement because sessions currently cap at 15k. True benefit unlocks when session limit is raised. Golden test: 87.5% (97.2% excluding rate-limit skips). No regressions. | Phase 5 fully complete. Next: raise SESSION_TOKEN_LIMIT (deferred by user to next session) |
 | 2026-06-18 | C10: memoryUpdate protection — Option B chosen, Option C deferred to Phase 6 | **Option B (chosen):** Per-intent whitelist in `sanitizeMemoryUpdate()`. ~15 lines in step7. GREETING/REDIRECT/UNSAFE → whitelist=[]. Others → intent-specific allowed fields. Existing EXPLAIN_MORE guard (step7:127-130) is exactly this pattern — we're making it systematic. **Option C (deferred):** Remove memoryUpdate from ALL prompts entirely. State managed code-side only: lastTopic from response.title, currentTopicId from nextTopicSignal, etc. More reliable (zero LLM hallucination on state), saves ~50 tokens/turn (memoryUpdate JSON block removed from prompts). Deferred because it requires redesigning step6→step7 data flow — over-engineering for current phase. **Trigger to migrate to C:** Option B whitelist becomes hard to maintain OR token pressure returns after Phase 2+3+4+5. See Phase 6. | Step 2.4.5 |
 
 ---

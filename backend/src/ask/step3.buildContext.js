@@ -3,6 +3,7 @@ import { getStudyMap } from '../services/studyMap.service.js';
 import {
   formatMemoryForPrompt,
   formatRecentHistory,
+  formatCompressedHistory,
   formatStudyMapSummary,
   getLastTutorResponse,
 } from './promptHelpers.js';
@@ -84,7 +85,9 @@ export const buildContext = async ({ question, focusChapter }, { chatState, rece
   // 3. Serialize raw objects for prompt engines ingestion protocols
   const memory = JSON.stringify(formatMemoryForPrompt(chatState));
   const history = formatRecentHistory(recentMessages);
-  const deciderHistory = formatRecentHistory(recentMessages.slice(-6));
+  // Phase 5: decider only needs topic context for pronoun resolution + EXPLAIN_MORE
+  // searchQuery — the last Zuno entry stays full, older entries are compressed.
+  const deciderHistory = formatCompressedHistory(recentMessages.slice(-6));
   const lastTutorResponse = getLastTutorResponse(recentMessages);
   const curriculumSummary = formatStudyMapSummary(studyMap); // Isolated here (will be explicitly skipped from step 4 parameters)
   const focusChapterPrompt = buildFocusChapterPrompt(focusChapter);

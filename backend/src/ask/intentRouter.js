@@ -24,7 +24,7 @@ import { createChatModel }       from '../llm/chatModel.js';
 import { stringParser }          from '../llm/stringParser.js';
 import { parseJsonObject }       from '../utils/jsonParser.js';
 import { getAnswerLanguageInstruction } from '../utils/languageDetector.js';
-import { formatRecentHistory }   from './promptHelpers.js';
+import { formatRecentHistory, formatCompressedHistory } from './promptHelpers.js';
 import { logCallTokens }         from '../utils/tokenLogger.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 
@@ -104,7 +104,14 @@ const buildPromptInput = (intent, input, context, retrieval) => {
 
   const answerLang = getAnswerLanguageInstruction(language.answerLanguage);
   const window     = HISTORY_WINDOW[intent] ?? 6;
-  const history    = window === 0 ? '' : formatRecentHistory(recentMessages.slice(-window));
+  // Phase 5: use compressed history for all intents except EXPLAIN_MORE.
+  // EXPLAIN_MORE needs the full last Zuno response for its variation mandate
+  // ("never open with the same sentence/headings as your last explanation").
+  const history    = window === 0
+    ? ''
+    : intent === 'EXPLAIN_MORE'
+      ? formatRecentHistory(recentMessages.slice(-window))
+      : formatCompressedHistory(recentMessages.slice(-window));
 
   switch (intent) {
     case 'GREETING': {
