@@ -20,6 +20,12 @@ function AppInitializer() {
     };
 
     const init = async () => {
+      // AuthCallback handles its own auth — skip silent refresh to avoid race condition
+      if (window.location.pathname === '/auth/callback') {
+        if (isMounted) dispatch(setLoading(false));
+        return;
+      }
+
       try {
         const credentials = await tryRefresh();
         if (isMounted) dispatch(setCredentials(credentials));

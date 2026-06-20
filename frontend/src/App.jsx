@@ -9,6 +9,7 @@ import AuthCallback from './pages/AuthCallback.jsx';
 import VerifyEmailPage from './pages/VerifyEmailPage.jsx';
 import ForgotPasswordPage from './pages/ForgotPasswordPage.jsx';
 import ResetPasswordPage from './pages/ResetPasswordPage.jsx';
+import GuestOnlyRoute from './components/GuestOnlyRoute.jsx';
 
 function App() {
   // Theme state lives here so all pages (Chat, Login, Register) share it
@@ -41,8 +42,8 @@ function App() {
       <Route path="/" element={<ChatPage theme={theme} toggleTheme={toggleTheme} />} />
 
       {/* Auth pages */}
-      <Route path="/login" element={<LoginPage theme={theme} toggleTheme={toggleTheme} />} />
-      <Route path="/register" element={<RegisterPage theme={theme} toggleTheme={toggleTheme} />} />
+      <Route path="/login" element={<GuestOnlyRoute><LoginPage theme={theme} toggleTheme={toggleTheme} /></GuestOnlyRoute>} />
+      <Route path="/register" element={<GuestOnlyRoute><RegisterPage theme={theme} toggleTheme={toggleTheme} /></GuestOnlyRoute>} />
 
       {/* Google OAuth callback — backend redirects here after OAuth */}
       <Route path="/auth/callback" element={<AuthCallback />} />

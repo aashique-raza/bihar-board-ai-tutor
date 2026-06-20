@@ -301,7 +301,7 @@ export default function Topbar({
               <Button
                 variant="outlined"
                 size="small"
-                onClick={() => { window.location.href = '/login'; }}
+                onClick={() => navigate('/login')}
                 sx={{
                   borderColor: 'var(--border-strong)',
                   color: 'var(--text-secondary)',

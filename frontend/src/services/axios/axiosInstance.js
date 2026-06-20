@@ -96,7 +96,7 @@ axiosInstance.interceptors.response.use(
     } catch (refreshError) {
       processQueue(refreshError, null);
       storeRef?.dispatch(clearCredentials());
-      window.location.href = '/login';
+      sessionStorage.setItem('zuno.authRedirect', 'Session expire ho gayi. Dobara login karo.');
       return Promise.reject(refreshError);
     } finally {
       isRefreshing = false;

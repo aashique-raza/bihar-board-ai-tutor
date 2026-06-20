@@ -103,10 +103,10 @@ Update this section as fixes complete. Use `[ ]` for pending, `[~]` for in-progr
 - [x] Fix 2.5 — Fix VerifyEmailPage useEffect dependency (`[showToast]` → `[]`)
 
 ### Phase 3 — Navigation & Route Guards
-- [ ] Fix 3.1 — Topbar Login: change `window.location.href` → `navigate('/login')`
-- [ ] Fix 3.2 — Axios interceptor: replace `window.location.href = '/login'` with SPA-safe redirect + "session expired" message
-- [ ] Fix 3.3 — Create `GuestOnlyRoute` component, wrap /login and /register
-- [ ] Fix 3.4 — Fix AppInitializer + AuthCallback race condition (skip refresh on /auth/callback)
+- [x] Fix 3.1 — Topbar Login: change `window.location.href` → `navigate('/login')`
+- [x] Fix 3.2 — Axios interceptor: replace `window.location.href = '/login'` with SPA-safe redirect + "session expired" message
+- [x] Fix 3.3 — Create `GuestOnlyRoute` component, wrap /login and /register
+- [x] Fix 3.4 — Fix AppInitializer + AuthCallback race condition (skip refresh on /auth/callback)
 
 ### Phase 4 — UX Polish
 - [ ] Fix 4.1 — Branded loading screen (replace plain "Loading..." text)

@@ -42,7 +42,11 @@ function LoginPage() {
   const { toast, showToast, hideToast } = useToast();
 
   useEffect(() => {
-    if (location.state?.toastError) {
+    const redirectMsg = sessionStorage.getItem('zuno.authRedirect');
+    if (redirectMsg) {
+      showToast(redirectMsg, 'error');
+      sessionStorage.removeItem('zuno.authRedirect');
+    } else if (location.state?.toastError) {
       showToast(location.state.toastError, 'error');
     } else if (location.state?.toastSuccess) {
       showToast(location.state.toastSuccess, 'success');
