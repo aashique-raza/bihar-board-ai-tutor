@@ -146,8 +146,8 @@ These fixes are not cosmetic. FIX-A (lastRetrievalQuery) directly determines whe
 | FIX-J | Greeting TYPE 4 — social closing awkward response | 1 | MEDIUM | VERIFIED |
 | FIX-E | Safety Net raw query cleanup | 1 | MEDIUM | VERIFIED |
 | FIX-F | Session exhausted message — student-friendly copy | 1 | LOW | VERIFIED |
-| FIX-G | step1 error messages — remove "babu" (persona mismatch) | 1 | LOW | PENDING |
-| FIX-H | step6 dead code — GREETING/GREETINGS on responseMode check | 1 | LOW | PENDING |
+| FIX-G | step1 error messages — remove "babu" (persona mismatch) | 1 | LOW | VERIFIED |
+| FIX-H | step6 dead code — GREETING/GREETINGS on responseMode check | 1 | LOW | VERIFIED |
 | FIX-I | Cold-start chatState — missing field initialization | 1 | LOW | PENDING |
 
 **Legend:** `PENDING` → `IN_PROGRESS` → `IMPLEMENTED` → `VERIFIED`
@@ -792,6 +792,8 @@ One sentence, no topic push, no history reference.
 | 2026-06-20 | FIX-J | Implemented: greetingPrompt.js — global instruction changed, TYPE 4 behavioral block added. | VERIFIED — "shukriya" → one warm sentence, no topic push |
 | 2026-06-20 | FIX-E | Implemented: askOrchestrator.js Safety Net block — filler word cleanup before searchQuery assignment. Guard: uses decider's searchQuery if available, else cleans raw question. | VERIFIED — defensive fix confirmed correct via code review; decider handled test query accurately so Safety Net did not fire |
 | 2026-06-20 | FIX-F | Implemented: step2.loadSession.js:57 — exhausted session message changed to student-friendly Hinglish. | VERIFIED — code review confirmed |
+| 2026-06-20 | FIX-G | Implemented: step1.validateInput.js lines 34, 39 — "babu" removed from empty question + length error messages. | VERIFIED — code review confirmed |
+| 2026-06-20 | FIX-H | Implemented: step6.generateResponse.js:221 — removed dead values 'GREETING' and 'GREETINGS' from responseMode check array, kept only 'CONVERSATION'. | VERIFIED — code review confirmed |
 
 ---
 

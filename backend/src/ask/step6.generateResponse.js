@@ -218,7 +218,7 @@ export const generateResponse = async (input, context, decision, retrieval) => {
     let targetStatus = parsed.status ? String(parsed.status).trim() : 'answered';
     const normalizedIntent = String(responseMode || '').toUpperCase();
 
-    if (['GREETING', 'CONVERSATION', 'GREETINGS'].includes(normalizedIntent)) {
+    if (['CONVERSATION'].includes(normalizedIntent)) {
       console.log(`[Step 6 Intent Firewall] Forcing status 'answered' for conversational intent: ${responseMode}`);
       targetStatus = 'answered';
     } else {
