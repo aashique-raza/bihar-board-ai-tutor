@@ -84,12 +84,13 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
   }
 
   // EXPLAIN_MORE: re-retrieve the topic the student wants re-explained.
-  // Uses decider's searchQuery (best quality — extracted from conversation context)
-  // with fallback to chatState.lastTopic (safety net if decider returned null).
+  // Prefer decider's searchQuery (freshly extracted from conversation context) over
+  // lastRetrievalQuery (stale — same query that produced the response student didn't understand).
+  // Fallback chain: searchQuery → lastRetrievalQuery → lastTopic.
   // focusChapter is intentionally NOT passed — lastTopic may be from a different
   // chapter than the student's current focus selection.
   if (intent === 'EXPLAIN_MORE') {
-    const topicQuery = chatState?.lastRetrievalQuery || chatState?.lastTopic || null;
+    const topicQuery = searchQuery || chatState?.lastRetrievalQuery || chatState?.lastTopic || null;
 
     if (!topicQuery) {
       console.log('[Step 5 EXPLAIN_MORE] No query available (searchQuery=null, lastTopic=null) — empty context, tutor will ask student to clarify topic.');

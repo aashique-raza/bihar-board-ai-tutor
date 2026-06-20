@@ -84,13 +84,21 @@ export const detectConversationLanguage = ({ question, recentMessages = [] }) =>
  * Builds the language instruction line that gets added to the LLM prompts.
  */
 export const getAnswerLanguageInstruction = (answerLanguage) => {
+  const hinglishInstruction =
+    'Write the final answer in simple Roman-script Hinglish for a Class 10 student. Follow these rules strictly:\n' +
+    '1. SOURCE TRANSLATION (CRITICAL): The retrieved study content is written in English. You MUST reformulate it into Hinglish — never copy English sentences from it verbatim.\n' +
+    '2. Sentence structure MUST follow Hindi word order. CORRECT: "light reflect hoti hai", "image banta hai", "process hota hai". WRONG: "light is reflected", "an image is formed", "the process occurs".\n' +
+    '3. Scientific and technical terms (e.g., retina, nucleus, photosynthesis, osmosis, refraction, lens, electron) may stay in English — that is correct Hinglish.\n' +
+    '4. Common English words must NOT appear as standalone section headings. WRONG headings: "Introduction", "Summary", "Explanation", "Note", "Example". CORRECT headings: "Parichay", "Kya hota hai", "Saaransh", "Dhyan do", "Misal".\n' +
+    '5. No Devanagari script anywhere in the response.';
+
   // 'english' is no longer returned by detectQuestionLanguage (it maps to 'hinglish'),
   // but we keep this branch as a safe fallback.
   if (answerLanguage === 'english') {
-    return 'Write the final answer in simple Hinglish for a Class 10 student. Use Roman script only, like "Nutrition ek process hai". Do not use Devanagari/Hindi script.';
+    return hinglishInstruction;
   }
   if (answerLanguage === 'hindi') {
     return 'Write the final answer in simple, warm, and clear Hindi using Devanagari script since the student asked in Devanagari. Keep the explanation engaging like a Bihar classroom teacher addressing their student.';
   }
-  return 'Write the final answer in simple Hinglish for a Class 10 student. Use Roman script only, like "Nutrition ek process hai". Do not use Devanagari/Hindi script.';
+  return hinglishInstruction;
 };
