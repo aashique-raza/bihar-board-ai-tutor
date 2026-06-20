@@ -7,6 +7,7 @@
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
 import { env } from '../config/env.js';
+import redis from '../config/redisClient.js';
 import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../utils/tokenLogger.js';
 
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
@@ -135,7 +136,8 @@ export const saveAndRespond = async (
   { retrieval, sources, nextTopicSignal, lastRetrievalQuery },
   response,
   userId = null,
-  tokenUsage = 0
+  tokenUsage = 0,
+  guestId = null
 ) => {
   console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
 
@@ -233,6 +235,20 @@ export const saveAndRespond = async (
     },
     { userId, sessionType }
   );
+
+  // Increment guest turn counter after confirmed DB write — non-critical, fail open.
+  if (guestId) {
+    try {
+      const key = `guest_turns:${guestId}`;
+      const newCount = await redis.incr(key);
+      if (newCount === 1) {
+        // First ever turn — set 30-day TTL so the counter self-expires
+        await redis.expire(key, 30 * 24 * 60 * 60);
+      }
+    } catch (err) {
+      console.error('[Step7] Guest counter increment failed (non-critical):', err.message);
+    }
+  }
 
   // P2-T4: Check if this turn pushed the session over the token limit.
   const newTotal = updatedSession?.totalTokensUsed ?? 0;

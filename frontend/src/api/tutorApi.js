@@ -86,6 +86,15 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
       abortError.name = 'AbortError';
       throw abortError;
     }
+    // Preserve GUEST_LIMIT_REACHED so ChatPage can open the modal instead of showing a generic error
+    if (
+      error.response?.status === 429 &&
+      error.response?.data?.error?.code === 'GUEST_LIMIT_REACHED'
+    ) {
+      const e = new Error(error.response.data.error.message);
+      e.code = 'GUEST_LIMIT_REACHED';
+      throw e;
+    }
     const message =
       error.response?.data?.error?.message ||
       error.response?.data?.message ||

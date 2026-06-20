@@ -47,7 +47,7 @@ import { env } from '../config/env.js';
  * @param {object} body - Raw request body { question, studyMode, sessionId, chapterId }
  * @returns {object}    - The complete API response payload
  */
-export const askQuestion = async (body = {}, { userId = null } = {}) => {
+export const askQuestion = async (body = {}, { userId = null, guestId = null } = {}) => {
 
   // --- PRE-PIPELINE: Steps 1-3 ---
   // These steps handle input validation, DB session load, and context building.
@@ -130,7 +130,7 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
       const capResponse  = { status: 'answered', responseMode: 'conversation', title: null, sections: [{ heading: '', content: capContent }], answer: capContent, suggestedActions: [], memoryUpdate: {}, tokenUsage: 0, tokenBreakdown: { input: 0, output: 0, total: 0, cached: 0 } };
 
       try {
-        return await saveAndRespond(input, session, context, capDecision, capRetrieval, capResponse, userId, decision.tokenUsage || 0);
+        return await saveAndRespond(input, session, context, capDecision, capRetrieval, capResponse, userId, decision.tokenUsage || 0, guestId);
       } catch {
         // DB failed — student still gets the cap message, session data stays stale
         return {
@@ -148,7 +148,7 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
     const retrieval = await retrieveContent(decision, input, session);
     const response = await generateResponse(input, context, decision, retrieval);
     const tokenUsage = (decision.tokenUsage || 0) + (response.tokenUsage || 0);
-    return saveAndRespond(input, session, context, decision, retrieval, response, userId, tokenUsage);
+    return saveAndRespond(input, session, context, decision, retrieval, response, userId, tokenUsage, guestId);
 
   } catch (error) {
 

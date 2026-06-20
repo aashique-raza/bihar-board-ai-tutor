@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setCredentials, setError } from '../store/slices/authSlice.js';
 import { getMe } from '../services/axios/authService.js';
+import { resetGuestTurnCount } from '../utils/guestLimit.js';
 
 // Friendly messages for known Google OAuth error codes
 const ERROR_MESSAGES = {
@@ -38,6 +39,7 @@ function AuthCallback() {
       if (tokenParam) {
         try {
           const user = await getMe(tokenParam);
+          resetGuestTurnCount();
           dispatch(setCredentials({ user, accessToken: tokenParam }));
           navigate('/', { replace: true, state: { toastSuccess: 'Google se login successful!' } });
         } catch {

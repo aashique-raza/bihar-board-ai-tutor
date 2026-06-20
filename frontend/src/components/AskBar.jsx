@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-function AskBar({ disabled, isLocked, onAsk, onCancel, studyMode }) {
+function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, onCancel, studyMode }) {
   const [question, setQuestion] = useState('');
   const [cancelCooling, setCancelCooling] = useState(false);
 
@@ -33,8 +33,33 @@ function AskBar({ disabled, isLocked, onAsk, onCancel, studyMode }) {
 
   return (
     <Box className="ask-area">
-      {/* Lock notice — shown when session is exhausted (BUG-1: separate from disabled) */}
-      {isLocked && (
+      {/* Guest limit banner — takes priority over session lock banner */}
+      {isGuestLimited ? (
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 0.5,
+          px: 1.5,
+          py: 0.75,
+          mb: 0.75,
+          borderRadius: 'var(--radius-md)',
+          bgcolor: 'var(--bg-surface)',
+          border: '1px solid var(--border)',
+        }}>
+          <LockOutlined sx={{ fontSize: 14, color: 'var(--text-muted)', flexShrink: 0 }} />
+          <Typography variant="caption" sx={{ color: 'var(--text-muted)', flex: 1 }}>
+            Guest limit ho gayi.{' '}
+            <Box
+              component="span"
+              onClick={onGuestLimitClick}
+              sx={{ color: 'primary.main', cursor: 'pointer', textDecoration: 'underline' }}
+            >
+              Login karo
+            </Box>
+            {' '}aur padhai jaari rakho!
+          </Typography>
+        </Box>
+      ) : isLocked ? (
         <Box sx={{
           display: 'flex',
           alignItems: 'center',
@@ -51,7 +76,7 @@ function AskBar({ disabled, isLocked, onAsk, onCancel, studyMode }) {
             Is session ki limit reach ho gayi. Nayi chat shuru karo.
           </Typography>
         </Box>
-      )}
+      ) : null}
 
       <Paper className="ask-bar" component="form" onSubmit={handleSubmit}>
         <label className="sr-only" htmlFor="question">
@@ -62,19 +87,20 @@ function AskBar({ disabled, isLocked, onAsk, onCancel, studyMode }) {
           id="question"
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
-          disabled={isLocked}
+          disabled={isLocked || isGuestLimited}
           placeholder={
-            isLocked
-              ? 'Nayi chat shuru karo'
-              : studyMode === 'focus'
-                ? 'Is chapter ka topic ya question likho...'
-                : 'Aaj kya padhna hai? Topic ya question likho...'
+            isGuestLimited
+              ? 'Login karke padhai jaari rakho!'
+              : isLocked
+                ? 'Nayi chat shuru karo'
+                : studyMode === 'focus'
+                  ? 'Is chapter ka topic ya question likho...'
+                  : 'Aaj kya padhna hai? Topic ya question likho...'
           }
           sx={{ color: 'text.primary', px: 1 }}
         />
-        {/* BUG-1 FIX: isLocked hides both buttons — session is over, no action possible.
-            disabled (in-flight request) shows cancel. Otherwise shows send. */}
-        {isLocked ? null : disabled ? (
+        {/* isLocked and isGuestLimited both hide all buttons — no action possible from input. */}
+        {isLocked || isGuestLimited ? null : disabled ? (
           <Tooltip title="Cancel">
             <span>
               <IconButton

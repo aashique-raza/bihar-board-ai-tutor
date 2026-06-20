@@ -11,6 +11,14 @@ import Topbar from '../components/Topbar.jsx';
 import { STUDY_MODES } from '../constants/studyModes.js';
 import { clearSessionId, getSavedSessionId, saveSessionId } from '../utils/session.js';
 import { findFirstChapter } from '../utils/studyMap.js';
+import {
+  getGuestTurnCount,
+  incrementGuestTurnCount,
+  isGuestLimitReached,
+  setGuestTurnCountToLimit,
+  GUEST_TURN_LIMIT,
+} from '../utils/guestLimit.js';
+import GuestLimitModal from '../components/GuestLimitModal.jsx';
 import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
 import useSessionList from '../hooks/useSessionList.js';
@@ -102,6 +110,8 @@ function ChatPage({ theme, toggleTheme }) {
   const [isAsking, setIsAsking] = useState(false);
   const [error, setError] = useState('');
   const [isSessionLocked, setIsSessionLocked] = useState(false);
+  const [isGuestLimited, setIsGuestLimited] = useState(false);
+  const [guestLimitModal, setGuestLimitModal] = useState({ open: false, trigger: 'turn_limit' });
 
   const chatEndRef = useRef(null);
   const controllerRef = useRef(null);
@@ -125,6 +135,13 @@ function ChatPage({ theme, toggleTheme }) {
       clearTimeout(timeoutRef.current);
     };
   }, []);
+
+  // On mount: if guest already hit the limit (e.g. came back after closing tab), lock AskBar immediately
+  useEffect(() => {
+    if (!isAuthLoading && !isLoggedIn && isGuestLimitReached()) {
+      setIsGuestLimited(true);
+    }
+  }, [isAuthLoading, isLoggedIn]);
 
   // Load chat history from DB on mount — restores messages after page refresh
   // Waits for auth to initialize before deciding (race condition guard)
@@ -212,6 +229,12 @@ function ChatPage({ theme, toggleTheme }) {
   };
 
   const handleNewChat = useCallback(() => {
+    // Guests who have had at least 1 turn must log in to start a new chat (history won't be saved otherwise)
+    if (!isLoggedIn && getGuestTurnCount() >= 1) {
+      setGuestLimitModal({ open: true, trigger: 'new_chat' });
+      return;
+    }
+
     controllerRef.current?.abort();
     clearTimeout(timeoutRef.current);
     controllerRef.current = null;
@@ -228,7 +251,7 @@ function ChatPage({ theme, toggleTheme }) {
     setError('');
     setIsAsking(false);
     refresh();
-  }, [refresh]);
+  }, [refresh, isLoggedIn]);
 
   const handleAsk = useCallback(async (question, requestMode) => {
     const cleanQuestion = question.trim();
@@ -238,6 +261,13 @@ function ChatPage({ theme, toggleTheme }) {
 
     if (currentMode === STUDY_MODES.focus && !selectedChapterIdRef.current) {
       setError('Focus mode ke liye pehle chapter select karo.');
+      return;
+    }
+
+    // Pre-flight guest limit check (frontend gate before API call)
+    if (!isLoggedIn && isGuestLimitReached()) {
+      setIsGuestLimited(true);
+      setGuestLimitModal({ open: true, trigger: 'turn_limit' });
       return;
     }
 
@@ -283,10 +313,27 @@ function ChatPage({ theme, toggleTheme }) {
         setMessages((prev) => [...prev, createAnswerMessage(payload)]);
       }
 
+      // Increment guest turn counter after a confirmed successful response
+      if (!isLoggedIn) {
+        const newCount = incrementGuestTurnCount();
+        if (newCount >= GUEST_TURN_LIMIT) {
+          setIsGuestLimited(true);
+          setGuestLimitModal({ open: true, trigger: 'turn_limit' });
+        }
+      }
+
       refresh(); // reorder sidebar after every successful response
     } catch (askError) {
       // BUG-2 FIX: session switch caused this abort — do not pollute new session
       if (isSwitchingRef.current) return;
+
+      // Backend safety net fired (e.g. localStorage was cleared) — sync frontend state
+      if (askError.code === 'GUEST_LIMIT_REACHED') {
+        setGuestTurnCountToLimit();
+        setIsGuestLimited(true);
+        setGuestLimitModal({ open: true, trigger: 'turn_limit' });
+        return;
+      }
 
       if (askError.name === 'AbortError' || askError.name === 'CanceledError') {
         const answer = wasTimeoutAbortRef.current
@@ -309,10 +356,24 @@ function ChatPage({ theme, toggleTheme }) {
       controllerRef.current = null;
       setIsAsking(false);
     }
-  }, []);
+  }, [isLoggedIn]);
 
   const handleCancel = useCallback(() => {
     controllerRef.current?.abort();
+  }, []);
+
+  const handleGuestLimitLogin = useCallback(() => {
+    setGuestLimitModal((m) => ({ ...m, open: false }));
+    navigate('/login');
+  }, [navigate]);
+
+  const handleGuestLimitRegister = useCallback(() => {
+    setGuestLimitModal((m) => ({ ...m, open: false }));
+    navigate('/register');
+  }, [navigate]);
+
+  const handleOpenGuestLimitModal = useCallback(() => {
+    setGuestLimitModal({ open: true, trigger: 'turn_limit' });
   }, []);
 
   const handleSwitchToGlobal = async (question) => {
@@ -441,6 +502,8 @@ function ChatPage({ theme, toggleTheme }) {
           <AskBar
             disabled={isAsking || isHistoryLoading}
             isLocked={isSessionLocked}
+            isGuestLimited={isGuestLimited}
+            onGuestLimitClick={handleOpenGuestLimitModal}
             onAsk={handleAsk}
             onCancel={handleCancel}
             studyMode={studyMode}
@@ -473,6 +536,14 @@ function ChatPage({ theme, toggleTheme }) {
           refresh();
         }}
         onSessionRename={() => refresh()}
+      />
+
+      <GuestLimitModal
+        open={guestLimitModal.open}
+        trigger={guestLimitModal.trigger}
+        onLogin={handleGuestLimitLogin}
+        onRegister={handleGuestLimitRegister}
+        onClose={() => setGuestLimitModal((m) => ({ ...m, open: false }))}
       />
 
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
