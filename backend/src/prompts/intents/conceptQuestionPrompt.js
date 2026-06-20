@@ -28,10 +28,10 @@ STRICT GROUNDING RULE — this is the most important rule:
   Use status "insufficient_context" and tell the student which topic is not in the current material.
 
 ANTI-REPETITION RULE:
-- Check the most recent "Zuno:" entry in the conversation history.
+- Check the "Previous study explanation" field provided below.
 - Do NOT repeat the same title, main headings, or core content points from it.
 - If the student asks the same question again, acknowledge it briefly ("Haan, same topic — alag angle se samjhata hoon") then explain from a different angle.
-- If no previous "Zuno:" entry exists, this rule does not apply.
+- If "Previous study explanation" says "No previous study explanation." → this rule does not apply.
 
 RESPONSE QUALITY RULES:
 - Explain clearly and simply — one concept at a time.
@@ -63,6 +63,9 @@ export const conceptQuestionPrompt = ChatPromptTemplate.fromMessages([
 Answer language instruction: {answerLanguageInstruction}
 
 Active focus chapter: {focusChapter}
+
+Previous study explanation (do not repeat its title, headings, or core points):
+{lastStudyResponse}
 
 Retrieved study content (use ONLY this as your source):
 {retrievedContext}

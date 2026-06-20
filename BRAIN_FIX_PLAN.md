@@ -141,7 +141,7 @@ These fixes are not cosmetic. FIX-A (lastRetrievalQuery) directly determines whe
 |----|-----|-------|----------|--------|
 | FIX-A | lastRetrievalQuery — EXPLAIN_MORE retrieval foundation | 4 | HIGH | IMPLEMENTED |
 | FIX-B | Unknown intent fallback CONCEPT_QUESTION → GREETING | 1 | HIGH | IMPLEMENTED |
-| FIX-C | lastStudyResponse — anti-repetition quality | 4 | MEDIUM | PENDING |
+| FIX-C | lastStudyResponse — anti-repetition quality | 6 | MEDIUM | IMPLEMENTED |
 | FIX-D | DriftCap early return — message not saved to history | 1 | MEDIUM | PENDING |
 | FIX-E | Safety Net raw query cleanup | 1 | MEDIUM | PENDING |
 | FIX-F | Session exhausted message — student-friendly copy | 1 | LOW | PENDING |

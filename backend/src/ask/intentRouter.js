@@ -99,7 +99,7 @@ const getChain = (intent) => {
 
 const buildPromptInput = (intent, input, context, retrieval) => {
   const { question }                                                                      = input;
-  const { language, curriculumSummary, focusChapterPrompt, recentMessages = [], driftSignal } = context;
+  const { language, curriculumSummary, focusChapterPrompt, recentMessages = [], driftSignal, lastStudyResponse } = context;
   const { retrievedContext }                                                             = retrieval;
 
   const answerLang = getAnswerLanguageInstruction(language.answerLanguage);
@@ -129,10 +129,10 @@ const buildPromptInput = (intent, input, context, retrieval) => {
       return { message: question, answerLanguageInstruction: answerLang, curriculumSummary, history };
 
     case 'EXPLAIN_MORE':
-      return { message: question, answerLanguageInstruction: answerLang, retrievedContext, history };
+      return { message: question, answerLanguageInstruction: answerLang, retrievedContext, history, lastStudyResponse: lastStudyResponse || 'No previous study explanation.' };
 
     case 'CONCEPT_QUESTION':
-      return { message: question, answerLanguageInstruction: answerLang, focusChapter: focusChapterPrompt, retrievedContext, history };
+      return { message: question, answerLanguageInstruction: answerLang, focusChapter: focusChapterPrompt, retrievedContext, history, lastStudyResponse: lastStudyResponse || 'No previous study explanation.' };
 
     case 'NEXT_STEP':
       return { message: question, answerLanguageInstruction: answerLang, retrievedContext, history };

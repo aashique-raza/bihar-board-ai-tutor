@@ -162,12 +162,27 @@ export const saveAndRespond = async (
   // Save the exact retrieval query used — code-controlled, never from LLM memoryUpdate.
   // CONCEPT_QUESTION and NEXT_STEP are the only intents that retrieve content for teaching.
   // Guard: sources.length > 0 ensures we only save queries that actually returned content.
+  const _intent = decision?.intent;
   if (
-    ['CONCEPT_QUESTION', 'NEXT_STEP'].includes(intent) &&
+    ['CONCEPT_QUESTION', 'NEXT_STEP'].includes(_intent) &&
     lastRetrievalQuery &&
     sources?.length > 0
   ) {
     stateUpdates.lastRetrievalQuery = lastRetrievalQuery;
+  }
+
+  // Save the last real study explanation — code-controlled, never from LLM memoryUpdate.
+  // Used by EXPLAIN_MORE (variation mandate) and CONCEPT_QUESTION (anti-repetition rule)
+  // so both prompts compare against the actual study explanation, not whatever Zuno last said.
+  // Guards: answered status + retrieved content used + non-empty answer text.
+  const isRealStudyAnswer = (
+    ['CONCEPT_QUESTION', 'EXPLAIN_MORE', 'NEXT_STEP'].includes(_intent) &&
+    response?.status === 'answered' &&
+    sources?.length > 0 &&
+    response?.answer?.trim()
+  );
+  if (isRealStudyAnswer) {
+    stateUpdates.lastStudyResponse = response.answer.trim().slice(0, 800);
   }
 
   // Successful response — provider is working. Reset error tracking.

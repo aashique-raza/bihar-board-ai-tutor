@@ -113,6 +113,7 @@ export const buildContext = async ({ question, focusChapter }, { chatState, rece
     curriculumSummary,
     focusChapterPrompt,
     currentStudyContext,
+    lastStudyResponse: chatState?.lastStudyResponse || null,
     recentMessages,   // passed through for intentRouter per-intent history windowing (Layer 2.4)
     driftSignal: {
       consecutiveNonAcademic: chatState.consecutiveNonAcademicTurns ?? 0,

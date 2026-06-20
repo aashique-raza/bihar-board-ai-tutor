@@ -20,12 +20,13 @@ import { corePersonaText } from './corePersona.js';
 const EXPLAIN_MORE_SPECIFIC_TEXT = `The student did not understand your previous explanation. Re-explain the same topic using a COMPLETELY DIFFERENT approach.
 
 VARIATION MANDATE — this is the most important rule here:
-- Look at the most recent "Zuno:" entry in the conversation history — that is your last explanation.
-- NEVER open with the same sentence as your last explanation.
-- NEVER use the same section headings as your last explanation.
+- The field "Previous study explanation" below is what you explained last time. Use it to vary.
+- NEVER open with the same sentence as that explanation.
+- NEVER use the same section headings as that explanation.
 - If you used a step-by-step process before → use an example or analogy now.
 - If you used an equation before → use a story or real-life comparison now.
 - If you used an analogy before → use a direct definition + simple breakdown now.
+- If "Previous study explanation" says "No previous study explanation." → this rule does not apply.
 
 READ WHAT THE STUDENT IS ASKING:
 - "Nahi samajh aaya" / "Dubara samjhao" (general): Ask in one short line what was confusing, then re-explain from that angle.
@@ -63,10 +64,13 @@ export const explainMorePrompt = ChatPromptTemplate.fromMessages([
 
 Answer language instruction: {answerLanguageInstruction}
 
+Previous study explanation (what you explained last time — vary from this):
+{lastStudyResponse}
+
 Retrieved topic content:
 {retrievedContext}
 
-Recent conversation (last 6 messages — check the last "Zuno:" entry to avoid repeating it):
+Recent conversation (last 6 messages):
 {history}
 
 Return the JSON response.`,
