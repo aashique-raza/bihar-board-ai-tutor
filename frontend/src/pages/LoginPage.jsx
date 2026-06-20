@@ -78,7 +78,6 @@ function LoginPage() {
     setLoading(true);
     try {
       const data = await loginUser({ email: email.trim(), password });
-      console.log('login response', data);
       const accessToken = data.data?.accessToken || data.accessToken;
       const user = await getMe(accessToken);
       dispatch(setCredentials({ user, accessToken }));

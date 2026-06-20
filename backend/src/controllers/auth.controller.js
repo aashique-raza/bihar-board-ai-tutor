@@ -520,6 +520,8 @@ export const googleCallback = async (req, res) => {
     });
 
     // 8. Redirect to frontend with access token
+    // TODO(security): access token exposed in URL — switch to one-time code exchange before scaling.
+    // Fix: backend generates short-lived code (Redis, 30s TTL), frontend POSTs /auth/exchange to get token.
     return res.redirect(`${FRONTEND_URL}/auth/callback?token=${accessToken}`);
 
   } catch (err) {

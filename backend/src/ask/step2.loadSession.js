@@ -11,7 +11,7 @@ import { getDefaultChatState } from '../models/chatSession.model.js';
 
 const INACTIVITY_THRESHOLD_MS = 15 * 60 * 1000; // 15 Mins
 
-export const loadSession = async ({ requestedSessionId, studyMode, focusChapter }) => {
+export const loadSession = async ({ requestedSessionId, userId, studyMode, focusChapter }) => {
   console.log('step2.loadSession.js: In-memory session parsing pipeline initiated...');
 
   const sessionId = requestedSessionId || randomUUID();
@@ -27,6 +27,13 @@ export const loadSession = async ({ requestedSessionId, studyMode, focusChapter 
   const recentMessages = Array.isArray(dbMessages) ? dbMessages : [];
 
   let chatState = null;
+
+  if (dbSession) {
+    const sessionOwner = dbSession.userId?.toString();
+    if (sessionOwner && sessionOwner !== userId) {
+      throw new ApiError(403, 'Yeh session aapka nahi hai.');
+    }
+  }
 
   if (!dbSession) {
     console.log('[Step 2 Cold Start] No active record found. Instantiating pristine virtual state parameters.');
