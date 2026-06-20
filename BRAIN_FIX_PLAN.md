@@ -140,7 +140,7 @@ These fixes are not cosmetic. FIX-A (lastRetrievalQuery) directly determines whe
 | ID | Fix | Files | Priority | Status |
 |----|-----|-------|----------|--------|
 | FIX-A | lastRetrievalQuery — EXPLAIN_MORE retrieval foundation | 4 | HIGH | IMPLEMENTED |
-| FIX-B | Unknown intent fallback CONCEPT_QUESTION → GREETING | 1 | HIGH | PENDING |
+| FIX-B | Unknown intent fallback CONCEPT_QUESTION → GREETING | 1 | HIGH | IMPLEMENTED |
 | FIX-C | lastStudyResponse — anti-repetition quality | 4 | MEDIUM | PENDING |
 | FIX-D | DriftCap early return — message not saved to history | 1 | MEDIUM | PENDING |
 | FIX-E | Safety Net raw query cleanup | 1 | MEDIUM | PENDING |

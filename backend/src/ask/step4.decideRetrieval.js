@@ -68,7 +68,9 @@ const getDeciderChain = () => {
  */
 const normalizeDecision = (decision, rawQuestion) => {
   // Validate and fall back on fine-grained intent maps
-  const intent = VALID_INTENTS.has(decision.intent) ? decision.intent : 'CONCEPT_QUESTION';
+  const isKnownIntent = VALID_INTENTS.has(decision.intent);
+  if (!isKnownIntent) console.warn(`[Step 4] Unknown intent "${decision.intent}" — falling back to GREETING`);
+  const intent = isKnownIntent ? decision.intent : 'GREETING';
 
   // Calculate deterministic contextual scoping tags
   const inScope = (intent !== 'OUT_OF_CONTEXT' && intent !== 'UNSAFE_OR_ABUSIVE');
