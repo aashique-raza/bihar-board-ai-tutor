@@ -54,7 +54,7 @@ export const loadSession = async ({ requestedSessionId, studyMode, focusChapter 
     }
 
     if (chatState.status === 'exhausted') {
-      throw new ApiError(429, 'Is session ki limit reach ho gayi hai. Nayi chat shuru karo — wahan se continue kar sakte ho.');
+      throw new ApiError(429, 'Hamari baat bahut lambi ho gayi! Ek nayi chat shuru karo — fresh start mein aur clearly padh sakte hain.');
     }
 
     const lastActiveTime = dbSession.updatedAt ? new Date(dbSession.updatedAt).getTime() : Date.now();
