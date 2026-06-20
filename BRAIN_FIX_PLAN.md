@@ -145,7 +145,7 @@ These fixes are not cosmetic. FIX-A (lastRetrievalQuery) directly determines whe
 | FIX-D | DriftCap early return — routed through step7 | 1 | MEDIUM | VERIFIED |
 | FIX-J | Greeting TYPE 4 — social closing awkward response | 1 | MEDIUM | VERIFIED |
 | FIX-E | Safety Net raw query cleanup | 1 | MEDIUM | VERIFIED |
-| FIX-F | Session exhausted message — student-friendly copy | 1 | LOW | PENDING |
+| FIX-F | Session exhausted message — student-friendly copy | 1 | LOW | VERIFIED |
 | FIX-G | step1 error messages — remove "babu" (persona mismatch) | 1 | LOW | PENDING |
 | FIX-H | step6 dead code — GREETING/GREETINGS on responseMode check | 1 | LOW | PENDING |
 | FIX-I | Cold-start chatState — missing field initialization | 1 | LOW | PENDING |
@@ -791,6 +791,7 @@ One sentence, no topic push, no history reference.
 | 2026-06-20 | FIX-D | Implemented: DriftCap block rewritten to route through step7 via synthetic capDecision/capRetrieval/capResponse objects. intent='DRIFT_CAP' — neutral, not in ACADEMIC_INTENTS or DRIFT_INTENTS. | VERIFIED — [Step 7 Complete] logged on DriftCap turns |
 | 2026-06-20 | FIX-J | Implemented: greetingPrompt.js — global instruction changed, TYPE 4 behavioral block added. | VERIFIED — "shukriya" → one warm sentence, no topic push |
 | 2026-06-20 | FIX-E | Implemented: askOrchestrator.js Safety Net block — filler word cleanup before searchQuery assignment. Guard: uses decider's searchQuery if available, else cleans raw question. | VERIFIED — defensive fix confirmed correct via code review; decider handled test query accurately so Safety Net did not fire |
+| 2026-06-20 | FIX-F | Implemented: step2.loadSession.js:57 — exhausted session message changed to student-friendly Hinglish. | VERIFIED — code review confirmed |
 
 ---
 

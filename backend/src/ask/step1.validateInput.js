@@ -31,12 +31,12 @@ export const validateInput = async (body = {}) => {
 
   // Guard 1: Empty text validation
   if (!question) {
-    throw new ApiError(400, 'Sawal khali nahi ho sakta, babu! Kripya kuch poochiye.');
+    throw new ApiError(400, 'Sawal khali nahi ho sakta! Kripya kuch poochiye.');
   }
 
   // Guard 2: Maximum Length Restriction (500 characters max limit)
   if (question.length > 500) {
-    throw new ApiError(400, 'Aapka sawal bahut bada hai, babu! Kripya apne sawal ko 500 characters se kam me likhein.');
+    throw new ApiError(400, 'Aapka sawal bahut bada hai! Kripya apne sawal ko 500 characters se kam me likhein.');
   }
 
   // Guard 3: Gibberish/Pure Emoji/Pure Symbol Verification
