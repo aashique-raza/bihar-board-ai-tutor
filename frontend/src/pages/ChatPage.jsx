@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { askTutor, fetchSessionHistory, fetchStudyMap } from '../api/tutorApi.js';
 import AskBar from '../components/AskBar.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
@@ -74,6 +74,7 @@ const createFocusMessage = (chapter) => ({
 
 function ChatPage({ theme, toggleTheme }) {
   const location = useLocation();
+  const navigate = useNavigate();
   const { toast, showToast, hideToast } = useToast();
   const { isLoggedIn, isLoading: isAuthLoading } = useAuth();
   const { sessions, isLoading: sessionsLoading, refresh, fetchOnce } =
@@ -82,7 +83,11 @@ function ChatPage({ theme, toggleTheme }) {
   useEffect(() => {
     if (location.state?.toastSuccess) {
       showToast(location.state.toastSuccess, 'success');
-      window.history.replaceState({}, '', location.pathname);
+    } else if (location.state?.toastError) {
+      showToast(location.state.toastError, 'error');
+    }
+    if (location.state) {
+      navigate(location.pathname, { replace: true, state: null });
     }
   }, []);
 

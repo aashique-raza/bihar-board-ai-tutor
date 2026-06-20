@@ -35,7 +35,7 @@ function VerifyEmailPage() {
         setStatus('error');
         showToast(msg, 'error');
       });
-  }, [showToast]);
+  }, []);
 
   return (
     <div className="auth-page">

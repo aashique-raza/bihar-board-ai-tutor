@@ -44,10 +44,11 @@ function LoginPage() {
   useEffect(() => {
     if (location.state?.toastError) {
       showToast(location.state.toastError, 'error');
-      window.history.replaceState({}, '', location.pathname);
     } else if (location.state?.toastSuccess) {
       showToast(location.state.toastSuccess, 'success');
-      window.history.replaceState({}, '', location.pathname);
+    }
+    if (location.state) {
+      navigate(location.pathname, { replace: true, state: null });
     }
   }, []);
 
@@ -81,8 +82,7 @@ function LoginPage() {
       const accessToken = data.data?.accessToken || data.accessToken;
       const user = await getMe(accessToken);
       dispatch(setCredentials({ user, accessToken }));
-      showToast('Logged in successfully', 'success');
-      navigate('/');
+      navigate('/', { state: { toastSuccess: 'Login ho gaya! Padhai shuru karo.' } });
     } catch (err) {
       showToast(err.message, 'error');
     } finally {

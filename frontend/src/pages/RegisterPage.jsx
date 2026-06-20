@@ -100,7 +100,6 @@ function RegisterPage() {
     setLoading(true);
     try {
       await registerUser({ name: name.trim(), email: email.trim(), password });
-      showToast('Verification email sent! Please check your inbox.', 'success');
       setSubmitted(true);
       showToast('Verification email sent! Please check your inbox.', 'success');
     } catch (err) {

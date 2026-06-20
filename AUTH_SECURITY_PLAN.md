@@ -96,11 +96,11 @@ Update this section as fixes complete. Use `[ ]` for pending, `[~]` for in-progr
 - [x] Fix 1.3 — Document Google OAuth token-in-URL as known tech debt
 
 ### Phase 2 — Toast Bugs (User's primary complaint)
-- [ ] Fix 2.1 — Replace `window.history.replaceState` with `navigate(path, { replace: true, state: null })` in ALL pages
-- [ ] Fix 2.2 — Remove duplicate `showToast()` in RegisterPage
-- [ ] Fix 2.3 — Fix login success toast (pass via navigate state, not local showToast)
-- [ ] Fix 2.4 — Add `toastError` handler to ChatPage (currently only reads `toastSuccess`)
-- [ ] Fix 2.5 — Fix VerifyEmailPage useEffect dependency (`[showToast]` → `[]`)
+- [x] Fix 2.1 — Replace `window.history.replaceState` with `navigate(path, { replace: true, state: null })` in ALL pages
+- [x] Fix 2.2 — Remove duplicate `showToast()` in RegisterPage
+- [x] Fix 2.3 — Fix login success toast (pass via navigate state, not local showToast)
+- [x] Fix 2.4 — Add `toastError` handler to ChatPage (currently only reads `toastSuccess`)
+- [x] Fix 2.5 — Fix VerifyEmailPage useEffect dependency (`[showToast]` → `[]`)
 
 ### Phase 3 — Navigation & Route Guards
 - [ ] Fix 3.1 — Topbar Login: change `window.location.href` → `navigate('/login')`
