@@ -34,7 +34,7 @@ function ForgotPasswordPage() {
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState('');
 
-  const isDisabled = !email.trim() || loading;
+  const isDisabled = !email.trim() || !!emailError || loading;
 
   function handleBlurEmail() {
     setEmailError(validateEmail(email));
@@ -71,7 +71,7 @@ function ForgotPasswordPage() {
             If this email is registered, you'll receive a password reset link shortly. Check your inbox.
           </p>
           <div className="auth-bottom-link">
-            <a role="button" onClick={() => navigate('/login')}>Back to login</a>
+            <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Back to login</a>
           </div>
         </div>
         <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
@@ -133,7 +133,7 @@ function ForgotPasswordPage() {
         </form>
 
         <div className="auth-bottom-link">
-          <a role="button" onClick={() => navigate('/login')}>Back to login</a>
+          <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Back to login</a>
         </div>
       </div>
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />

@@ -126,7 +126,7 @@ function RegisterPage() {
             The link is valid for 24 hours.
           </p>
           <div className="auth-bottom-link">
-            <a role="button" onClick={() => navigate('/login')}>Go to login →</a>
+            <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Go to login →</a>
           </div>
         </div>
         <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
@@ -150,6 +150,7 @@ function RegisterPage() {
             <div className="auth-field-wrap">
               <TextField
                 label="Full Name"
+                autoComplete="name"
                 value={name}
                 onChange={e => setName(e.target.value)}
                 onBlur={handleBlurName}
@@ -166,6 +167,7 @@ function RegisterPage() {
               <TextField
                 label="Email"
                 type="email"
+                autoComplete="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 onBlur={handleBlurEmail}
@@ -182,6 +184,7 @@ function RegisterPage() {
               <TextField
                 label="Password"
                 type={showPassword ? 'text' : 'password'}
+                autoComplete="new-password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 onBlur={handleBlurPassword}
@@ -254,6 +257,7 @@ function RegisterPage() {
         <Button
           variant="outlined"
           fullWidth
+          disabled={loading}
           onClick={() => {
             window.location.href = `${import.meta.env.VITE_API_BASE_URL}/api/v1/auth/google`;
           }}
@@ -278,7 +282,7 @@ function RegisterPage() {
 
         <div className="auth-bottom-link">
           Already have an account?{' '}
-          <a role="button" onClick={() => navigate('/login')}>Sign in</a>
+          <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Sign in</a>
         </div>
       </div>
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />

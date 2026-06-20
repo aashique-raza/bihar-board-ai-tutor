@@ -24,13 +24,14 @@ function App() {
       <div style={{
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         background: 'var(--bg-page)',
+        gap: '12px',
       }}>
-        <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-          Loading...
-        </div>
+        <div className="zuno-logo" style={{ width: 48, height: 48, fontSize: '1.5rem' }}>Z</div>
+        <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Loading...</div>
       </div>
     );
   }

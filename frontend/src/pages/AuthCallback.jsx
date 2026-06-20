@@ -53,8 +53,14 @@ function AuthCallback() {
   }, [dispatch, navigate]);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <p style={{ fontFamily: 'sans-serif', color: '#ccc' }}>{statusText}</p>
+    <div className="auth-page">
+      <div className="auth-card">
+        <div className="auth-logo-row">
+          <div className="zuno-logo">Z</div>
+          <span className="auth-logo-text">Zuno</span>
+        </div>
+        <p className="auth-subtext">{statusText}</p>
+      </div>
     </div>
   );
 }

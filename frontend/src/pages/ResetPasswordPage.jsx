@@ -62,7 +62,7 @@ function ResetPasswordPage() {
 
   useEffect(() => {
     if (!success) return;
-    const timer = setTimeout(() => navigate('/login'), 3000);
+    const timer = setTimeout(() => navigate('/login', { state: { toastSuccess: 'Password reset ho gaya! Ab login karo.' } }), 3000);
     return () => clearTimeout(timer);
   }, [success]);
 
@@ -171,6 +171,7 @@ function ResetPasswordPage() {
               <TextField
                 label="New Password"
                 type={showNewPassword ? 'text' : 'password'}
+                autoComplete="new-password"
                 value={newPassword}
                 onChange={e => setNewPassword(e.target.value)}
                 onBlur={handleBlurNew}
@@ -207,6 +208,7 @@ function ResetPasswordPage() {
               <TextField
                 label="Confirm Password"
                 type={showConfirmPassword ? 'text' : 'password'}
+                autoComplete="new-password"
                 value={confirmPassword}
                 onChange={e => setConfirmPassword(e.target.value)}
                 onBlur={handleBlurConfirm}

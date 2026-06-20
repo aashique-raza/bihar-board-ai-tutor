@@ -109,14 +109,14 @@ Update this section as fixes complete. Use `[ ]` for pending, `[~]` for in-progr
 - [x] Fix 3.4 — Fix AppInitializer + AuthCallback race condition (skip refresh on /auth/callback)
 
 ### Phase 4 — UX Polish
-- [ ] Fix 4.1 — Branded loading screen (replace plain "Loading..." text)
-- [ ] Fix 4.2 — ForgotPassword: add `|| !!emailError` to `isDisabled` check
-- [ ] Fix 4.3 — Add "session expired" message when redirected to login from axios interceptor
-- [ ] Fix 4.4 — Reset password success: pass toast to /login via navigate state
-- [ ] Fix 4.5 — AuthCallback: use auth-page styling instead of inline styles
-- [ ] Fix 4.6 — Add `autocomplete` attributes to all auth form fields
-- [ ] Fix 4.7 — Disable Google OAuth button during form submission (loading state)
-- [ ] Fix 4.8 — Fix `<a role="button">` keyboard accessibility (add tabIndex + onKeyDown)
+- [x] Fix 4.1 — Branded loading screen (replace plain "Loading..." text)
+- [x] Fix 4.2 — ForgotPassword: add `|| !!emailError` to `isDisabled` check
+- [x] Fix 4.3 — Add "session expired" message when redirected to login from axios interceptor
+- [x] Fix 4.4 — Reset password success: pass toast to /login via navigate state
+- [x] Fix 4.5 — AuthCallback: use auth-page styling instead of inline styles
+- [x] Fix 4.6 — Add `autocomplete` attributes to all auth form fields
+- [x] Fix 4.7 — Disable Google OAuth button during form submission (loading state)
+- [x] Fix 4.8 — Fix `<a role="button">` keyboard accessibility (add tabIndex + onKeyDown)
 
 ### Phase 5 — Backend Hardening
 - [ ] Fix 5.1 — Unify password validation (backend: add number + uppercase requirement)

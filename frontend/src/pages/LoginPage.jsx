@@ -111,6 +111,7 @@ function LoginPage() {
               <TextField
                 label="Email"
                 type="email"
+                autoComplete="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 onBlur={handleBlurEmail}
@@ -127,6 +128,7 @@ function LoginPage() {
               <TextField
                 label="Password"
                 type={showPassword ? 'text' : 'password'}
+                autoComplete="current-password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 onBlur={handleBlurPassword}
@@ -198,6 +200,7 @@ function LoginPage() {
         <Button
           variant="outlined"
           fullWidth
+          disabled={loading}
           onClick={() => {
             window.location.href = `${import.meta.env.VITE_API_BASE_URL}/api/v1/auth/google`;
           }}
@@ -222,7 +225,7 @@ function LoginPage() {
 
         <div className="auth-bottom-link">
           Don't have an account?{' '}
-          <a role="button" onClick={() => navigate('/register')}>Sign up</a>
+          <a role="button" tabIndex={0} onClick={() => navigate('/register')} onKeyDown={e => e.key === 'Enter' && navigate('/register')}>Sign up</a>
         </div>
       </div>
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
