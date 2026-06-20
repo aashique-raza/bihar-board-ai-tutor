@@ -91,9 +91,9 @@ This section documents EVERY auth-related navigation in the system — where the
 Update this section as fixes complete. Use `[ ]` for pending, `[~]` for in-progress, `[x]` for done, `[!]` for blocked.
 
 ### Phase 1 — Critical Security (MUST fix before deployment)
-- [ ] Fix 1.1 — Remove `console.log('login response', data)` token leak
-- [ ] Fix 1.2 — Add session ownership check in Ask pipeline (`step2.loadSession.js`)
-- [ ] Fix 1.3 — Document Google OAuth token-in-URL as known tech debt
+- [x] Fix 1.1 — Remove `console.log('login response', data)` token leak
+- [x] Fix 1.2 — Add session ownership check in Ask pipeline (`step2.loadSession.js`)
+- [x] Fix 1.3 — Document Google OAuth token-in-URL as known tech debt
 
 ### Phase 2 — Toast Bugs (User's primary complaint)
 - [ ] Fix 2.1 — Replace `window.history.replaceState` with `navigate(path, { replace: true, state: null })` in ALL pages
