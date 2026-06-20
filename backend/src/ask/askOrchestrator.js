@@ -95,8 +95,17 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
         decision.inScope        = true;
         decision.needsRetrieval = true;
         decision.responseMode   = 'study_tutor';
-        decision.searchQuery    = input.question;
         decision._overridden    = true;
+
+        // Use decider's searchQuery if available (edge case).
+        // Otherwise clean common Hinglish fillers from raw question before retrieval.
+        if (!decision.searchQuery) {
+          const cleaned = input.question
+            .replace(/\b(bhai|yaar|sir|madam|please|plz|kripya|zara|jaldi|arey|arre)\b/gi, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+          decision.searchQuery = cleaned || input.question;
+        }
       }
     }
 
