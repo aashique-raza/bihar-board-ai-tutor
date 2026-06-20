@@ -7,6 +7,7 @@ import { randomUUID } from 'node:crypto';
 import ApiError from '../utils/ApiError.js';
 import { findChatSession } from '../services/chatSession.service.js';
 import { getRecentChatHistory } from '../services/chatHistory.service.js';
+import { getDefaultChatState } from '../models/chatSession.model.js';
 
 const INACTIVITY_THRESHOLD_MS = 15 * 60 * 1000; // 15 Mins
 
@@ -30,18 +31,7 @@ export const loadSession = async ({ requestedSessionId, studyMode, focusChapter 
   if (!dbSession) {
     console.log('[Step 2 Cold Start] No active record found. Instantiating pristine virtual state parameters.');
     chatState = {
-      status: 'active',
-      learningMode: 'idle',
-      currentSubjectId: null,
-      currentSectionId: null,
-      currentChapterId: null,
-      currentTopicId: null,
-      abuseCount: 0,
-      answerLanguage: 'hinglish',
-      sessionTopicsProgress: [],
-      pendingAction: null,
-      consecutiveNonAcademicTurns: 0,
-      totalNonAcademicTurns: 0,
+      ...getDefaultChatState(),
       isNewSession: true,
     };
   } else {

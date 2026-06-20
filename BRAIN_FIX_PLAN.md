@@ -148,7 +148,7 @@ These fixes are not cosmetic. FIX-A (lastRetrievalQuery) directly determines whe
 | FIX-F | Session exhausted message — student-friendly copy | 1 | LOW | VERIFIED |
 | FIX-G | step1 error messages — remove "babu" (persona mismatch) | 1 | LOW | VERIFIED |
 | FIX-H | step6 dead code — GREETING/GREETINGS on responseMode check | 1 | LOW | VERIFIED |
-| FIX-I | Cold-start chatState — missing field initialization | 1 | LOW | PENDING |
+| FIX-I | Cold-start chatState — missing field initialization | 1 | LOW | VERIFIED |
 
 **Legend:** `PENDING` → `IN_PROGRESS` → `IMPLEMENTED` → `VERIFIED`
 
@@ -794,6 +794,7 @@ One sentence, no topic push, no history reference.
 | 2026-06-20 | FIX-F | Implemented: step2.loadSession.js:57 — exhausted session message changed to student-friendly Hinglish. | VERIFIED — code review confirmed |
 | 2026-06-20 | FIX-G | Implemented: step1.validateInput.js lines 34, 39 — "babu" removed from empty question + length error messages. | VERIFIED — code review confirmed |
 | 2026-06-20 | FIX-H | Implemented: step6.generateResponse.js:221 — removed dead values 'GREETING' and 'GREETINGS' from responseMode check array, kept only 'CONVERSATION'. | VERIFIED — code review confirmed |
+| 2026-06-20 | FIX-I | Implemented: chatSession.model.js — getDefaultChatState() exported, derives all defaults from schema via new ChatSession(). step2.loadSession.js cold-start block replaced with ...getDefaultChatState(). Truly single source of truth. | VERIFIED — code review confirmed |
 
 ---
 

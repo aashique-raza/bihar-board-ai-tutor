@@ -152,3 +152,13 @@ chatSessionSchema.index({ userId: 1, lastMessageAt: -1 });
 
 export const ChatSession =
   mongoose.models.ChatSession || mongoose.model('ChatSession', chatSessionSchema);
+
+/**
+ * Returns a plain JS object with all chatState fields set to their schema defaults.
+ * Derived directly from the schema — add a field with a default to the schema above
+ * and this function automatically includes it. No manual sync needed.
+ */
+export const getDefaultChatState = () => {
+  const doc = new ChatSession();
+  return doc.chatState.toObject();
+};
