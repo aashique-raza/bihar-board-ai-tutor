@@ -102,7 +102,10 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
 
     // --- Phase 3: Session Drift Cap (Step 3.2.2) ---
     // Fires AFTER safety net so academic queries are never blocked.
-    // Skips step5/step6/step7 entirely — zero LLM tokens wasted on capped turns.
+    // Skips step5/step6 (zero LLM tokens) but routes through step7 for full persistence:
+    // history saved, messageCount incremented, totalTokensUsed tracked, session payload returned.
+    // Uses 'DRIFT_CAP' intent — not in ACADEMIC_INTENTS or DRIFT_INTENTS — so drift counters
+    // are intentionally left unchanged (totalNonAcademicTurns stays at cap, not incremented).
     const DRIFT_CAP_INTENTS = new Set(['GREETING', 'OUT_OF_CONTEXT']);
     if (
       DRIFT_CAP_INTENTS.has(decision.intent) &&
@@ -112,23 +115,25 @@ export const askQuestion = async (body = {}, { userId = null } = {}) => {
         `[DriftCap] Session ${session.sessionId} — total drift ${context.driftSignal.totalNonAcademic} >= max ${env.maxNonAcademicTurns}. Blocking ${decision.intent} turn.`
       );
       const capContent = 'Zuno sirf Science padhaane ke liye hai! Koi bhi topic chunao — Physics, Chemistry, ya Biology — aur hum shuru karte hain.';
-      return {
-        status:          'answered',
-        intent:          'conversation',
-        responseMode:    'conversation',
-        studyMode:       input.studyMode,
-        question:        input.question,
-        detectedLanguage: context.language?.detectedLanguage ?? 'hinglish',
-        answerLanguage:  context.language?.answerLanguage   ?? 'hinglish',
-        title:           null,
-        sections:        [{ heading: '', content: capContent }],
-        answer:          capContent,
-        sources:         [],
-        suggestedActions: [],
-        retrieval:       null,
-        decision:        null,
-        session:         null,
-      };
+
+      const capDecision  = { ...decision, intent: 'DRIFT_CAP' };
+      const capRetrieval = { retrieval: null, chunks: [], sources: [], retrievedContext: 'NO_RETRIEVED_CONTEXT', nextTopicSignal: null, lastRetrievalQuery: null };
+      const capResponse  = { status: 'answered', responseMode: 'conversation', title: null, sections: [{ heading: '', content: capContent }], answer: capContent, suggestedActions: [], memoryUpdate: {}, tokenUsage: 0, tokenBreakdown: { input: 0, output: 0, total: 0, cached: 0 } };
+
+      try {
+        return await saveAndRespond(input, session, context, capDecision, capRetrieval, capResponse, userId, decision.tokenUsage || 0);
+      } catch {
+        // DB failed — student still gets the cap message, session data stays stale
+        return {
+          status: 'answered', intent: 'conversation', responseMode: 'conversation',
+          studyMode: input.studyMode, question: input.question,
+          detectedLanguage: context.language?.detectedLanguage ?? 'hinglish',
+          answerLanguage:   context.language?.answerLanguage   ?? 'hinglish',
+          title: null, sections: [{ heading: '', content: capContent }],
+          answer: capContent, sources: [], suggestedActions: [],
+          retrieval: null, decision: null, session: null,
+        };
+      }
     }
 
     const retrieval = await retrieveContent(decision, input, session);

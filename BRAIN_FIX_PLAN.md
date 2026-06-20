@@ -2,8 +2,8 @@
 
 > **Created:** 2026-06-20
 > **Replaces:** BRAIN_FIXES.md + BRAIN_FIX_HANDOFF.md (both deleted — stale, partially wrong)
-> **Status:** FIX-A through FIX-I identified | FIX-A next
-> **Last session:** Fresh audit complete — pipeline optimization context integrated
+> **Status:** FIX-A through FIX-D VERIFIED | FIX-J VERIFIED | FIX-E next
+> **Last session:** FIX-A, B, C, D, J implemented and verified — FIX-E pending
 > **Codebase state:** Intent Router ACTIVE (USE_INTENT_ROUTER=true), Session limit 35k, Phases 0-5 complete
 
 ---
@@ -139,10 +139,11 @@ These fixes are not cosmetic. FIX-A (lastRetrievalQuery) directly determines whe
 
 | ID | Fix | Files | Priority | Status |
 |----|-----|-------|----------|--------|
-| FIX-A | lastRetrievalQuery — EXPLAIN_MORE retrieval foundation | 4 | HIGH | IMPLEMENTED |
-| FIX-B | Unknown intent fallback CONCEPT_QUESTION → GREETING | 1 | HIGH | IMPLEMENTED |
-| FIX-C | lastStudyResponse — anti-repetition quality | 6 | MEDIUM | IMPLEMENTED |
-| FIX-D | DriftCap early return — message not saved to history | 1 | MEDIUM | PENDING |
+| FIX-A | lastRetrievalQuery — EXPLAIN_MORE retrieval foundation | 4 | HIGH | VERIFIED |
+| FIX-B | Unknown intent fallback CONCEPT_QUESTION → GREETING | 1 | HIGH | VERIFIED |
+| FIX-C | lastStudyResponse — anti-repetition quality | 6 | MEDIUM | VERIFIED |
+| FIX-D | DriftCap early return — routed through step7 | 1 | MEDIUM | VERIFIED |
+| FIX-J | Greeting TYPE 4 — social closing awkward response | 1 | MEDIUM | VERIFIED |
 | FIX-E | Safety Net raw query cleanup | 1 | MEDIUM | PENDING |
 | FIX-F | Session exhausted message — student-friendly copy | 1 | LOW | PENDING |
 | FIX-G | step1 error messages — remove "babu" (persona mismatch) | 1 | LOW | PENDING |
@@ -713,15 +714,86 @@ future debugging harder.
 
 ---
 
-## 15. Session Log
+## 15. FIX-J — Greeting TYPE 4 (Social Closing)
+
+**Priority:** MEDIUM
+**Status:** VERIFIED
+**Effort:** 5 minutes
+**Files:** `greetingPrompt.js`
+
+---
+
+### Core Problem
+
+**Product level:**
+Student says "Okay theek hai, shukriya" after a study explanation.
+Zuno responds: "Arre, ab thoda aur samajhne ki koshish karte hain! Photosynthesis ke bare mein abhi tak samajh aaya hai...?"
+Response is pushy, tone-deaf to the social closing signal, and re-references the previous topic unprompted.
+
+**Architecture level:**
+`greetingPrompt.js` handled only 3 TYPE cases: simple greeting, emotional, meta-reaction.
+"Shukriya" / "Okay theek hai" didn't match any TYPE → LLM defaulted to TYPE 1 (greeting)
+→ followed "ask what they want to study TODAY" rule → pulled topic from `{history}` → awkward.
+
+Additionally the global instruction said: "Then bring them back to studying." — this fired for ALL types,
+including what should have been a natural conversation close.
+
+**Two root causes:**
+1. Global "bring them back to studying" instruction — overrode everything
+2. No TYPE 4 for social closing — LLM had no matching case to route to
+
+---
+
+### Implementation (what was changed)
+
+`greetingPrompt.js`:
+
+**Change 1 — Global instruction:**
+```
+// BEFORE:
+"Respond warmly and briefly — 2-3 sentences maximum. Then bring them back to studying."
+
+// AFTER:
+"Respond warmly and briefly — 2-3 sentences maximum. Only invite to study if the student
+seems to be starting a conversation — not ending one."
+```
+
+**Change 2 — TYPE 4 added (behavioral, not keyword-based):**
+```
+TYPE 4 — Satisfied close / acknowledgment:
+- If the student's message reads like they are satisfied, saying thanks, or wrapping up
+  the conversation — respond with ONE warm sentence and stop.
+- Do NOT reference previous topics from history.
+- Do NOT push more studying.
+- Example: "Koi baat nahi! Jab bhi sawaal aaye, seedha poochh lena."
+- Example: "Bilkul yaar! Jab mann kare padho, main yahaan hoon."
+```
+
+Scalability note: TYPE 4 is behavioral (no keyword list) — works for "ty", "👍", "samajh gaya", new expressions without maintenance.
+
+---
+
+### Verification
+
+Tested: "Okay theek hai, shukriya" → Response: "Koi baat nahi! Jab bhi sawaal aaye, seedha poochh lena." ✅
+One sentence, no topic push, no history reference.
+
+---
+
+## 16. Session Log
 
 | Date | Fix | Action | Result |
 |------|-----|--------|--------|
 | 2026-06-20 | — | BRAIN_FIX_PLAN.md created. Old BRAIN_FIXES.md + BRAIN_FIX_HANDOFF.md deleted. Fresh audit done — FIX-A through FIX-I identified. | Ready to implement FIX-A |
+| 2026-06-20 | FIX-A | Implemented: lastRetrievalQuery saved in step5/step7, EXPLAIN_MORE uses chatState.lastRetrievalQuery. deciderPrompt updated. | VERIFIED — terminal showed chatState.lastRetrievalQuery used on EXPLAIN_MORE turns |
+| 2026-06-20 | FIX-B | Implemented: unknown intent fallback changed CONCEPT_QUESTION → GREETING in step4 normalizeDecision(). | VERIFIED — code review confirmed, parse-error catch block unchanged |
+| 2026-06-20 | FIX-C | Implemented: lastStudyResponse saved in step7, exposed in step3, passed to EXPLAIN_MORE + CONCEPT_QUESTION prompts. | VERIFIED — EXPLAIN_MORE showed different headings vs original explanation |
+| 2026-06-20 | FIX-D | Implemented: DriftCap block rewritten to route through step7 via synthetic capDecision/capRetrieval/capResponse objects. intent='DRIFT_CAP' — neutral, not in ACADEMIC_INTENTS or DRIFT_INTENTS. | VERIFIED — [Step 7 Complete] logged on DriftCap turns |
+| 2026-06-20 | FIX-J | Implemented: greetingPrompt.js — global instruction changed, TYPE 4 behavioral block added. | VERIFIED — "shukriya" → one warm sentence, no topic push |
 
 ---
 
-## 16. How To Use This File (Session Protocol)
+## 17. How To Use This File (Session Protocol)
 
 ### At Session Start
 1. Read Section 1 (Role) — activates the working contract for this session
