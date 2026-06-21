@@ -285,6 +285,9 @@ function ChatPage({ theme, toggleTheme }) {
     }, 60000);
 
     try {
+      let isFirstUpdate = true;
+      const tempMessageId = crypto.randomUUID();
+
       const payload = await askTutor(
         {
           question: cleanQuestion,
@@ -292,7 +295,25 @@ function ChatPage({ theme, toggleTheme }) {
           chapterId: selectedChapterIdRef.current,
           sessionId: sessionIdRef.current,
         },
-        controller.signal
+        controller.signal,
+        (partialData) => {
+          if (isFirstUpdate) {
+            setIsAsking(false); // hide thinking dots early
+            isFirstUpdate = false;
+            setMessages((prev) => [
+              ...prev,
+              { id: tempMessageId, role: 'zuno', ...partialData, status: partialData.status || 'answered' }
+            ]);
+          } else {
+            setMessages((prev) =>
+              prev.map((msg) =>
+                msg.id === tempMessageId
+                  ? { ...msg, ...partialData, status: partialData.status || 'answered' }
+                  : msg
+              )
+            );
+          }
+        }
       );
 
       const backendSessionId = payload.session?.sessionId;
@@ -302,15 +323,17 @@ function ChatPage({ theme, toggleTheme }) {
       }
 
       const isNowLocked = payload.session?.isLocked === true;
+      
+      setMessages((prev) => {
+        const withoutTemp = isFirstUpdate ? prev : prev.filter(m => m.id !== tempMessageId);
+        if (isNowLocked) {
+          return [...withoutTemp, createAnswerMessage(payload), createLockSystemMessage()];
+        }
+        return [...withoutTemp, createAnswerMessage(payload)];
+      });
+      
       if (isNowLocked) {
-        setMessages((prev) => [
-          ...prev,
-          createAnswerMessage(payload),
-          createLockSystemMessage(),
-        ]);
         setIsSessionLocked(true);
-      } else {
-        setMessages((prev) => [...prev, createAnswerMessage(payload)]);
       }
 
       // Increment guest turn counter after a confirmed successful response

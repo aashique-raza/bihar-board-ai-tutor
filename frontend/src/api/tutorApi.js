@@ -1,4 +1,6 @@
 import axiosInstance from '../services/axios/axiosInstance.js';
+import { store } from '../store/store.js';
+import { parse } from 'partial-json';
 
 const getGuestId = () => {
   const GUEST_ID_KEY = 'zuno-guest-id';
@@ -61,7 +63,7 @@ export const fetchSessionHistory = async (sessionId) => {
   }
 };
 
-export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal) => {
+export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal, onUpdate = null) => {
   const body = { question, studyMode };
 
   if (sessionId) {
@@ -72,21 +74,86 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
     body.chapterId = chapterId;
   }
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
+  const token = store.getState().auth?.accessToken;
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-Guest-Id': getGuestId(),
+  };
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
   try {
-    const { data } = await axiosInstance.post('/api/v1/ask', body, {
+    const response = await fetch(`${API_BASE_URL}/api/v1/ask`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
       signal,
-      headers: { 'X-Guest-Id': getGuestId() },
+      credentials: 'include',
     });
-    return data.data;
-  } catch (error) {
-    // Axios uses CanceledError / ERR_CANCELED when aborted via AbortController.
-    // App.jsx checks error.name === 'AbortError', so we re-throw with that name.
-    if (error.code === 'ERR_CANCELED' || error.name === 'CanceledError') {
-      const abortError = new Error('Request was cancelled');
-      abortError.name = 'AbortError';
-      throw abortError;
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      const error = new Error();
+      error.response = { status: response.status, data: errorData };
+      error.code = errorData.error?.code;
+      throw error;
     }
-    // Preserve GUEST_LIMIT_REACHED so ChatPage can open the modal instead of showing a generic error
+
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('text/event-stream')) {
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buffer = '';
+      let accumulatedText = '';
+      let finalPayload = null;
+      let lastUpdateTime = 0;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const dataStr = line.replace(/^data:\s*/, '').trim();
+          if (!dataStr) continue;
+
+          const dataObj = JSON.parse(dataStr);
+          
+          if (dataObj.event === 'end') {
+            finalPayload = dataObj.payload;
+            break;
+          }
+
+          if (dataObj.token) {
+            accumulatedText += dataObj.token;
+            const now = Date.now();
+            if (onUpdate && (now - lastUpdateTime > 33)) {
+              try {
+                const partialObj = parse(accumulatedText);
+                onUpdate(partialObj);
+              } catch (e) {
+                // Ignore transient parsing issues
+              }
+              lastUpdateTime = now;
+            }
+          }
+        }
+      }
+      return finalPayload;
+    } else {
+      const data = await response.json();
+      return data.data;
+    }
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      throw error;
+    }
     if (
       error.response?.status === 429 &&
       error.response?.data?.error?.code === 'GUEST_LIMIT_REACHED'

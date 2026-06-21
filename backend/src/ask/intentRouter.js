@@ -166,7 +166,7 @@ const extractTokenBreakdown = (output) => {
 
 // ─── 5. Main dispatch function ────────────────────────────────────────────────
 
-export const routeToIntentHandler = async (input, context, decision, retrieval) => {
+export const routeToIntentHandler = async (input, context, decision, retrieval, streamCallbacks = null) => {
   const { intent, responseMode } = decision;
 
   // CHAPTER_COMPLETE: step5 signals the chapter is finished.
@@ -196,9 +196,21 @@ export const routeToIntentHandler = async (input, context, decision, retrieval) 
     const chain       = getChain(intent);
     const promptInput = buildPromptInput(intent, input, context, retrieval);
 
-    const rawResponse = await chain.invoke(promptInput, {
+    if (streamCallbacks?.onStreamStart) {
+      streamCallbacks.onStreamStart();
+    }
+
+    let rawResponse = '';
+    const stream = await chain.stream(promptInput, {
       callbacks: [{ handleLLMEnd: (out) => { capturedBreakdown = extractTokenBreakdown(out); } }],
     });
+
+    for await (const chunk of stream) {
+      rawResponse += chunk;
+      if (streamCallbacks?.onToken) {
+        streamCallbacks.onToken(chunk);
+      }
+    }
 
     const parsed = parseJsonObject(rawResponse, `IntentRouter [${intent}]`);
 

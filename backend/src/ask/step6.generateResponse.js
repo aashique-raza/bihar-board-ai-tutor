@@ -115,13 +115,13 @@ const needsCurriculum = (intent, responseMode, focusChapterPrompt, retrievedCont
 /**
  * Step 6: Call the Tutor LLM to generate the student-facing answer.
  */
-export const generateResponse = async (input, context, decision, retrieval) => {
+export const generateResponse = async (input, context, decision, retrieval, streamCallbacks = null) => {
 
   // NEW PATH: Intent Router (Phase 2.3/2.4)
   // Enable by setting USE_INTENT_ROUTER=true in backend/.env.
   // Legacy path below stays active while this is false (default).
   if (process.env.USE_INTENT_ROUTER === 'true') {
-    const result = await routeToIntentHandler(input, context, decision, retrieval);
+    const result = await routeToIntentHandler(input, context, decision, retrieval, streamCallbacks);
     return { ...result, answer: sectionsToAnswerText(result) };
   }
 
