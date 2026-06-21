@@ -4,11 +4,12 @@
  * The RAG indexing pipeline — run via: npm run rag:index
  *
  * WHAT IT DOES (in order):
- *   1. Load all Markdown study files from the data directory
- *   2. Split each file into chunks using the markdown chunker
- *   3. Convert chunks to LangChain Document format with rich page content
- *   4. Embed all chunks using Google Gemini text-embedding-001
- *   5. Save the embedded vector store to storage/vector-store.json
+ *   1. Connects to MongoDB Atlas
+ *   2. Load all Markdown study files from the data directory
+ *   3. Split each file into chunks using the markdown chunker
+ *   4. Clear existing chunks in MongoDB
+ *   5. Batch generate embeddings using Google Gemini (to prevent API limits)
+ *   6. Insert chunks into MongoDB
  *
  * Run this script whenever study content changes.
  * This file is NOT part of the runtime server — it runs offline only.
@@ -20,7 +21,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { Document } from '@langchain/core/documents';
-import { MemoryVectorStore } from '@langchain/classic/vectorstores/memory';
 
 import {
   createDocumentEmbeddings,
@@ -29,7 +29,9 @@ import {
 } from './geminiEmbeddings.js';
 import { createMarkdownChunks } from './markdownChunker.js';
 import { loadMarkdownDocuments } from './markdownLoader.js';
-import { saveLangChainMemoryVectorStore } from './vectorStorePersistence.js';
+
+import { connectDB, disconnectDB } from '../db/mongooseClient.js';
+import { Chunk } from '../models/chunk.model.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,7 +39,6 @@ const __dirname = path.dirname(__filename);
 // src/rag/ → backend root (2 levels up)
 const backendRoot = path.resolve(__dirname, '..', '..');
 const baseDataDir = path.resolve(backendRoot, '..', 'data', 'class-10', 'science');
-const outputFilePath = path.resolve(backendRoot, 'storage', 'vector-store.json');
 
 const getMetadataValue = (metadata, key, fallback = 'Unknown') => {
   const value = metadata?.[key];
@@ -71,6 +72,9 @@ const runIndexPipeline = async () => {
   console.log('Starting RAG indexing pipeline...');
   console.log(`Source directory: ${baseDataDir}`);
 
+  // 1. Connect to MongoDB
+  await connectDB();
+
   const documents = await loadMarkdownDocuments(baseDataDir);
   console.log(`Documents loaded: ${documents.length}`);
 
@@ -81,22 +85,59 @@ const runIndexPipeline = async () => {
   console.log(`LangChain documents prepared: ${langChainDocuments.length}`);
   console.log(`Embedding provider: ${EMBEDDING_PROVIDER}`);
   console.log(`Embedding model: ${GEMINI_EMBEDDING_MODEL}`);
-  console.log('Vector store type: LangChain MemoryVectorStore');
 
+  // 2. Clear old chunks
+  console.log('Clearing old chunks from MongoDB...');
+  await Chunk.deleteMany({});
+  console.log('Old chunks deleted.');
+
+  // 3. Batch processing for embeddings
   const embeddings = createDocumentEmbeddings();
-  const vectorStore = await MemoryVectorStore.fromDocuments(langChainDocuments, embeddings);
+  const BATCH_SIZE = 25;
+  
+  console.log(`Starting batch embedding and insertion (Batch size: ${BATCH_SIZE})...`);
+  
+  for (let i = 0; i < langChainDocuments.length; i += BATCH_SIZE) {
+    const batch = langChainDocuments.slice(i, i + BATCH_SIZE);
+    console.log(`Processing batch ${Math.floor(i / BATCH_SIZE) + 1} of ${Math.ceil(langChainDocuments.length / BATCH_SIZE)}...`);
+    
+    const batchTexts = batch.map((doc) => doc.pageContent);
+    
+    try {
+      // Generate embeddings for the batch
+      const batchEmbeddings = await embeddings.embedDocuments(batchTexts);
+      
+      // Map to Mongoose documents
+      const chunksToInsert = batch.map((doc, idx) => ({
+        chunk_id: doc.metadata.chunk_id,
+        pageContent: doc.pageContent,
+        embedding: batchEmbeddings[idx],
+        metadata: doc.metadata,
+        chapterId: doc.metadata.chapter_id,
+      }));
+      
+      // Insert into MongoDB
+      await Chunk.insertMany(chunksToInsert, { ordered: false });
+      
+      if (i + BATCH_SIZE < langChainDocuments.length) {
+         console.log('Sleeping 5s to avoid rate limits...');
+         await new Promise(r => setTimeout(r, 5000));
+      }
+    } catch (err) {
+      console.error(`Error processing batch: ${err.message}`);
+      throw err;
+    }
+  }
 
-  await saveLangChainMemoryVectorStore(vectorStore, outputFilePath, {
-    provider: EMBEDDING_PROVIDER,
-    embeddingModel: GEMINI_EMBEDDING_MODEL,
-  });
-
-  console.log(`Output file: ${outputFilePath}`);
-  console.log(`Total vectors saved: ${vectorStore.memoryVectors.length}`);
+  console.log(`Total vectors saved to MongoDB: ${langChainDocuments.length}`);
   console.log('Indexing complete.');
+  
+  // 4. Disconnect gracefully
+  await disconnectDB();
 };
 
-runIndexPipeline().catch((error) => {
+runIndexPipeline().catch(async (error) => {
   console.error(`Indexing failed: ${error.message}`);
+  try { await disconnectDB(); } catch (e) {}
   process.exitCode = 1;
 });

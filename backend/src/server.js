@@ -1,7 +1,7 @@
 import app from './app.js';
 import { env, validateEnv } from './config/env.js';
 import { connectDB, disconnectDB } from './db/mongooseClient.js';
-import { loadRetrieverVectorStore } from './rag/retriever.js';
+import { Chunk } from './models/chunk.model.js';
 import { connectRedis } from './config/redisClient.js';
 import { connectMailer } from './auth/emailHelpers.js';
 
@@ -12,10 +12,10 @@ let server;
 try {
   await connectDB();
 
-  // Pre-warm vector store so the first student request is not slow.
-  // Failure here means RAG cannot work at all — hard exit is correct.
-  const { totalVectors, embeddingDimension } = await loadRetrieverVectorStore();
-  console.log(`[Zuno] Vector store pre-warmed: ${totalVectors} vectors (${embeddingDimension}-dim)`);
+  // Verify MongoDB has chunks available for vector search.
+  // If this throws, RAG cannot work at all — hard exit is correct.
+  const totalVectors = await Chunk.countDocuments();
+  console.log(`[Zuno] MongoDB vector chunks connected. Total chunks indexed: ${totalVectors}`);
 
   // connectMailer verifies the SMTP credentials are live.
   // In production this is fatal (broken email = broken registration).

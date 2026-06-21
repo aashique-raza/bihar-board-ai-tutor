@@ -3,32 +3,22 @@
  *
  * RAG retriever — Step 5 of the Ask pipeline.
  *
- * Loads the vector store, applies optional chapter-scoped filtering (Focus Mode),
+ * Uses MongoDB Atlas Vector Search ($vectorSearch) to retrieve similar chunks.
+ * Applies optional chapter-scoped filtering (Focus Mode),
  * runs similarity search, then applies keyword + intent reranking.
- *
- * Score note: @langchain/classic@1.0.32 MemoryVectorStore.similaritySearchWithScore()
- * returns cosine SIMILARITY (higher = better, range 0–1). Raw scores used directly.
- * Do NOT apply (1 - score) — that inverts scores and breaks retrieval. See BUG-H01.
- *
- * Package is pinned to exact version 1.0.32 in package.json.
- * memoryVectors is a public array property — do NOT add ^ to the version pin.
  */
 
 import path from 'node:path';
-import { MemoryVectorStore } from '@langchain/classic/vectorstores/memory';
 import { createQueryEmbeddings } from './geminiEmbeddings.js';
-import { loadLangChainMemoryVectorStore } from './vectorStoreLoader.js';
 import { rerankResults } from './reranker.js';
 import { retrieverConfig } from './retriever.config.js';
+import { Chunk } from '../models/chunk.model.js';
 
 // Rerank scoring thresholds tuned for Bihar Board Class 10
 const STRONG_VECTOR_SCORE_THRESHOLD = 0.7;
 const FINAL_SCORE_THRESHOLD = 0.65;
 const TERM_MATCH_VECTOR_SCORE_THRESHOLD = 0.62;
 const DEVANAGARI_PATTERN = /[\u0900-\u097F]/;
-
-// Global In-Memory Cache to prevent multiple allocations of chapter-scoped stores
-const CHAPTER_STORE_CACHE = new Map();
 
 const normalizeRetrieverOptions = ({ topK, minScore } = {}) => {
   const parsedTopK = Number(topK);
@@ -58,61 +48,6 @@ const passesFinalFilter = (result, query, options = {}) => {
   );
 };
 
-const matchesMetadataFilter = (metadata, filter = {}) =>
-  Object.entries(filter).every(([key, value]) => metadata?.[key] === value);
-
-/**
- * Creates or retrieves a cached scoped vector store (Focus Mode optimization)
- * Reduces CPU and garbage collection locks under multi-user traffic.
- */
-const getOrCreateScopedVectorStore = (loadedStore, embeddings, metadataFilter) => {
-  if (!metadataFilter || Object.keys(metadataFilter).length === 0) {
-    return { vectorStore: loadedStore.vectorStore, totalVectors: loadedStore.totalVectors };
-  }
-
-  // Create unique cache key string based on metadata filter values
-  const cacheKey = Object.entries(metadataFilter)
-    .sort((a, b) => a[0].localeCompare(b[0]))
-    .map(([k, v]) => `${k}:${v}`)
-    .join('|');
-
-  if (CHAPTER_STORE_CACHE.has(cacheKey)) {
-    console.log(`[Retriever Cache Hit] Serving scoped store from cache for key: ${cacheKey}`);
-    return CHAPTER_STORE_CACHE.get(cacheKey);
-  }
-
-  console.log(`[Retriever Cache Miss] Building new scoped in-memory store for key: ${cacheKey}`);
-  const scopedVectorStore = new MemoryVectorStore(embeddings);
-
-  // Extract matching memory vectors from the master loaded store.
-  // Depends on memoryVectors being a public array on @langchain/classic@1.0.32 MemoryVectorStore.
-  // Package is pinned to exact version — if this throws, check @langchain/classic changelog.
-  const allVectors = loadedStore.vectorStore.memoryVectors;
-  if (!Array.isArray(allVectors)) {
-    throw new Error(
-      '[retriever] MemoryVectorStore.memoryVectors is not a valid array. ' +
-      '@langchain/classic may have changed its internal API. ' +
-      'Package must stay pinned to 1.0.32 in package.json.'
-    );
-  }
-  scopedVectorStore.memoryVectors = allVectors.filter((vector) =>
-    matchesMetadataFilter(vector.metadata, metadataFilter)
-  );
-
-  const cachedData = {
-    vectorStore: scopedVectorStore,
-    totalVectors: scopedVectorStore.memoryVectors.length
-  };
-
-  CHAPTER_STORE_CACHE.set(cacheKey, cachedData);
-  return cachedData;
-};
-
-export const loadRetrieverVectorStore = async (
-  vectorStorePath = retrieverConfig.vectorStorePath,
-  embeddings = createQueryEmbeddings()
-) => loadLangChainMemoryVectorStore(vectorStorePath, embeddings);
-
 /**
  * Main retrieval function — called by Step 5 of the Ask API.
  */
@@ -125,36 +60,73 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
 
   const { topK, minScore } = normalizeRetrieverOptions(options);
   const candidateTopK = options.candidateTopK || Math.max(topK * 4, 20);
-  const vectorStorePath = options.vectorStorePath || retrieverConfig.vectorStorePath;
   const embeddings = options.embeddings || createQueryEmbeddings();
 
-  const loadedStore = await loadRetrieverVectorStore(vectorStorePath, embeddings);
+  // 1. Embed the user's query
+  const queryEmbedding = await embeddings.embedQuery(query);
 
-  // Using the new optimized, memoized scoped cache lookups
-  const scopedStore = getOrCreateScopedVectorStore(loadedStore, embeddings, options.metadataFilter);
+  // 2. Build pre-filter for Vector Search if metadataFilter is provided
+  let filter = undefined;
+  if (options.metadataFilter && Object.keys(options.metadataFilter).length > 0) {
+    filter = {};
+    for (const [key, value] of Object.entries(options.metadataFilter)) {
+      filter[`metadata.${key}`] = value;
+    }
+  }
 
-  const resultsWithScores =
-    scopedStore.totalVectors > 0
-      ? await scopedStore.vectorStore.similaritySearchWithScore(query, candidateTopK)
-      : [];
+  // 3. Build MongoDB Atlas $vectorSearch Aggregation Pipeline
+  const vectorSearchStage = {
+    index: "vector_index", // Name of the Atlas Vector Search Index
+    path: "embedding",
+    queryVector: queryEmbedding,
+    numCandidates: candidateTopK, // MUST be >= limit
+    limit: candidateTopK,
+  };
+
+  if (filter) {
+    vectorSearchStage.filter = filter;
+  }
+
+  const pipeline = [
+    {
+      $vectorSearch: vectorSearchStage
+    },
+    {
+      $project: {
+        _id: 0,
+        chunk_id: 1,
+        pageContent: 1,
+        metadata: 1,
+        score: { $meta: "vectorSearchScore" } // Cosine similarity
+      }
+    }
+  ];
+
+  // 4. Execute the pipeline
+  let resultsWithScores = [];
+  try {
+    resultsWithScores = await Chunk.aggregate(pipeline);
+  } catch (error) {
+    console.error('[Retriever] Vector Search Failed:', error.message);
+    throw new Error('Vector Search Failed. Ensure Atlas Vector Search Index "vector_index" is created.');
+  }
+
+  // 5. Format results
+  const candidates = resultsWithScores
+    .filter((doc) => doc.score >= minScore)
+    .map((document) => ({
+      id: document.chunk_id || document.metadata?.chunk_id,
+      content: document.pageContent,
+      metadata: document.metadata || {},
+      score: document.score,
+    }));
 
   const candidateCount = resultsWithScores.length;
 
-  // MemoryVectorStore.similaritySearchWithScore() returns cosine SIMILARITY
-  // (higher = better, range 0-1). Use raw score directly — no conversion needed.
-  const candidates = resultsWithScores
-    .filter(([, score]) => score >= minScore)
-    .map(([document, score]) => ({
-      id: document.id || document.metadata?.chunk_id,
-      content: document.pageContent,
-      metadata: document.metadata || {},
-      score,
-    }));
-
-  // Apply custom keyword + intent reranking
+  // 6. Apply custom keyword + intent reranking
   const rerankedResults = rerankResults(query, candidates);
 
-  // Apply final combined score filter
+  // 7. Apply final combined score filter
   const filteredResults = rerankedResults.filter((result) =>
     passesFinalFilter(result, query, options)
   );
@@ -165,9 +137,9 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
     question: query,
     topK,
     minScore,
-    vectorStorePath: path.resolve(vectorStorePath),
-    totalVectors: scopedStore.totalVectors,
-    embeddingDimension: loadedStore.embeddingDimension,
+    vectorStorePath: 'MongoDB Atlas Vector Search',
+    totalVectors: -1, // Cannot easily get total count without a separate query
+    embeddingDimension: 768,
     debug: {
       candidateCountBeforeRerank: candidateCount,
       countAfterMinScore: candidates.length,

@@ -17,9 +17,8 @@
  * Default threshold 0.65 matches the retriever's FINAL_SCORE_THRESHOLD (retriever.js line 26).
  */
 
-import { loadRetrieverVectorStore } from '../rag/retriever.js';
+import { Chunk } from '../models/chunk.model.js';
 import { createQueryEmbeddings } from '../rag/geminiEmbeddings.js';
-import { retrieverConfig } from '../rag/retriever.config.js';
 
 const getThreshold = () =>
   parseFloat(process.env.SAFETY_NET_SIMILARITY_THRESHOLD ?? '0.65');
@@ -35,11 +34,28 @@ const getThreshold = () =>
 export const probeAcademicSimilarity = async (query) => {
   try {
     const embeddings = createQueryEmbeddings();
-    const loaded = await loadRetrieverVectorStore(retrieverConfig.vectorStorePath, embeddings);
-
-    // top-1 only — we only need the highest similarity score, not full retrieval
-    const results = await loaded.vectorStore.similaritySearchWithScore(String(query || ''), 1);
-    const score = results?.[0]?.[1] ?? 0;
+    const queryEmbedding = await embeddings.embedQuery(String(query || ''));
+    
+    const pipeline = [
+      {
+        $vectorSearch: {
+          index: "vector_index",
+          path: "embedding",
+          queryVector: queryEmbedding,
+          numCandidates: 5,
+          limit: 1
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          score: { $meta: "vectorSearchScore" }
+        }
+      }
+    ];
+    
+    const results = await Chunk.aggregate(pipeline);
+    const score = results?.[0]?.score ?? 0;
     const threshold = getThreshold();
 
     return { score, fired: score >= threshold };
