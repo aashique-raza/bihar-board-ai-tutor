@@ -38,7 +38,7 @@ Update this section as steps complete. Use `[ ]` for pending, `[~]` for in progr
 
 ### 🔴 P0: Launch Blockers (Must Fix for Live)
 - [x] **P0.1 — No Streaming API:** Backend se full text aane tak 10-30s wait hota hai. (UX Disaster).
-- [ ] **P0.2 — Missing Rate Limiter & DDoS Protection:** Koi IP kitni bhi requests bhej sakta hai (Security/Cost vulnerability).
+- [x] **P0.2 — Missing Rate Limiter & DDoS Protection:** Koi IP kitni bhi requests bhej sakta hai (Security/Cost vulnerability).
 - [ ] **P0.3 — Missing Request Timeout:** Backend par LLM request hang hui toh node process hang ho jayega (Stability).
 - [ ] **P0.4 — Vector Store JSON Scalability:** 70MB+ JSON RAM mein load ho raha hai. Isko Production Vector DB (Pinecone/Mongo) par le jana hai.
 - [ ] **P0.5 — Deployment / CI-CD Pipeline:** Dockerfile aur cloud deploy setup nahi hai.

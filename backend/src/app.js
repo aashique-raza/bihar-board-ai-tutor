@@ -11,8 +11,11 @@ import studyMapRoutes from './routes/studyMap.routes.js';
 import ApiError from './utils/ApiError.js';
 import { sendResponse } from './utils/sendResponse.js';
 import { errorHandler } from './middlewares/error.middleware.js';
+import { globalApiLimiter } from './middlewares/rateLimiters.js';
 
 const app = express();
+
+app.set('trust proxy', 1);
 
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:5173',
@@ -29,6 +32,10 @@ app.get('/', (_req, res) => {
 });
 
 app.use('/health', healthRoutes);
+
+// Apply global rate limiter only to API routes
+app.use('/api', globalApiLimiter);
+
 app.use('/api/v1/ask', askRoutes);
 app.use('/api/v1/study-map', studyMapRoutes);
 app.use('/api/v1/auth', authRoutes);
