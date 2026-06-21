@@ -166,7 +166,7 @@ const extractTokenBreakdown = (output) => {
 
 // ─── 5. Main dispatch function ────────────────────────────────────────────────
 
-export const routeToIntentHandler = async (input, context, decision, retrieval, streamCallbacks = null) => {
+export const routeToIntentHandler = async (input, context, decision, retrieval, streamCallbacks = null, abortSignal = null) => {
   const { intent, responseMode } = decision;
 
   // CHAPTER_COMPLETE: step5 signals the chapter is finished.
@@ -202,6 +202,7 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
 
     let rawResponse = '';
     const stream = await chain.stream(promptInput, {
+      signal: abortSignal,
       callbacks: [{ handleLLMEnd: (out) => { capturedBreakdown = extractTokenBreakdown(out); } }],
     });
 
@@ -249,6 +250,10 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     intentChains.delete(intent); // reset chain so it's rebuilt fresh on next request
 
     const errorType = classifyProviderError(error);
+
+    if (error.name === 'AbortError' || error.message === 'Timeout') {
+      throw error;
+    }
 
     if (errorType === 'parse_error') {
       console.error(`[IntentRouter] Parse error for "${intent}":`, error.message);

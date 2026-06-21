@@ -115,13 +115,13 @@ const needsCurriculum = (intent, responseMode, focusChapterPrompt, retrievedCont
 /**
  * Step 6: Call the Tutor LLM to generate the student-facing answer.
  */
-export const generateResponse = async (input, context, decision, retrieval, streamCallbacks = null) => {
+export const generateResponse = async (input, context, decision, retrieval, streamCallbacks = null, abortSignal = null) => {
 
   // NEW PATH: Intent Router (Phase 2.3/2.4)
   // Enable by setting USE_INTENT_ROUTER=true in backend/.env.
   // Legacy path below stays active while this is false (default).
   if (process.env.USE_INTENT_ROUTER === 'true') {
-    const result = await routeToIntentHandler(input, context, decision, retrieval, streamCallbacks);
+    const result = await routeToIntentHandler(input, context, decision, retrieval, streamCallbacks, abortSignal);
     return { ...result, answer: sectionsToAnswerText(result) };
   }
 
@@ -177,6 +177,7 @@ export const generateResponse = async (input, context, decision, retrieval, stre
         retrievedContext,
       },
       {
+        signal: abortSignal,
         callbacks: [{
           handleLLMEnd: (output) => { capturedBreakdown = extractTokenBreakdown(output); },
         }],
@@ -256,6 +257,10 @@ export const generateResponse = async (input, context, decision, retrieval, stre
 
   } catch (error) {
     const errorType = classifyProviderError(error);
+
+    if (error.name === 'AbortError' || error.message === 'Timeout') {
+      throw error;
+    }
 
     // Parse error — provider is alive, just output was bad.
     // Return fallback and let pipeline continue to Step 7.

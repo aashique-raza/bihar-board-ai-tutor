@@ -125,7 +125,7 @@ const normalizeDecision = (decision, rawQuestion) => {
  * @param {string} context.currentStudyContext - True semantic hydrated textbook tracking indicator
  * @returns {Promise<{ intent: string, inScope: boolean, needsRetrieval: boolean, responseMode: string, searchQuery: string|null, reason: string }>}
  */
-export const decideRetrieval = async ({ question }, { deciderHistory, language }) => {
+export const decideRetrieval = async ({ question }, { deciderHistory, language }, abortSignal = null) => {
   console.log('[Step 4] Running intent classifier...');
 
   // Declared outside try so catch block can read the value on parse errors
@@ -140,6 +140,7 @@ export const decideRetrieval = async ({ question }, { deciderHistory, language }
         history: deciderHistory,
       },
       {
+        signal: abortSignal,
         callbacks: [{
           handleLLMEnd: (output) => { capturedBreakdown = extractTokenBreakdown(output); },
         }],
@@ -164,6 +165,10 @@ export const decideRetrieval = async ({ question }, { deciderHistory, language }
     deciderChain = null;
 
     const errorType = classifyProviderError(error);
+
+    if (error.name === 'AbortError' || error.message === 'Timeout') {
+      throw error;
+    }
 
     // Parse error means the provider responded but output was malformed.
     // Safe to continue pipeline with a default decision.

@@ -40,7 +40,14 @@ const buildTopicSearchQuery = (topic) => {
  * Step 5: Search the vector store for relevant content.
  * Bypasses immediately if Step 4 router evaluated needsRetrieval as false.
  */
-export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, { focusChapter }, { chatState }) => {
+export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, { focusChapter }, { chatState }, abortSignal = null) => {
+  if (abortSignal?.aborted) {
+    console.log(`[Step 5] Aborting vector search early due to AbortSignal`);
+    const error = new Error('AbortError');
+    error.name = 'AbortError';
+    throw error;
+  }
+
   console.log('[DEBUG step5] intent:', intent);
   console.log('[DEBUG step5] chatState.currentChapterId:', chatState?.currentChapterId);
   console.log('[DEBUG step5] chatState.currentTopicId:', chatState?.currentTopicId);

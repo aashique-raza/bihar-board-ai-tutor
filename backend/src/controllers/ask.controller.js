@@ -2,11 +2,27 @@ import { askQuestion } from '../ask/askOrchestrator.js';
 import { sendResponse } from '../utils/sendResponse.js';
 
 export const askQuestionController = async (req, res, next) => {
+  let streamStarted = false;
+  let timeoutId = null;
+  const abortController = new AbortController();
+
+  // Detect early client disconnect (browser closed/refreshed)
+  req.on('close', () => {
+    if (!res.writableEnded) {
+      console.log(`[Ask API] Client disconnected early. Aborting request...`);
+      abortController.abort(new Error('Client disconnected'));
+    }
+  });
+
   try {
     const userId = req.user?.id || null;
     const guestId = req.user ? null : (req.headers['x-guest-id'] || null);
 
-    let streamStarted = false;
+    // Set a hard 45-second timeout for the LLM pipeline
+    timeoutId = setTimeout(() => {
+      console.log(`[Ask API] Request hit 45s hard timeout. Aborting...`);
+      abortController.abort(new Error('Timeout'));
+    }, 60000);
     const streamCallbacks = {
       onStreamStart: () => {
         streamStarted = true;
@@ -30,7 +46,14 @@ export const askQuestionController = async (req, res, next) => {
       }
     };
 
-    const answerPayload = await askQuestion(req.body, { userId, guestId }, streamCallbacks);
+    const answerPayload = await askQuestion(
+      req.body, 
+      { userId, guestId }, 
+      streamCallbacks, 
+      abortController.signal
+    );
+
+    clearTimeout(timeoutId);
 
     if (streamStarted) {
       return;
@@ -41,6 +64,25 @@ export const askQuestionController = async (req, res, next) => {
       data: answerPayload,
     });
   } catch (error) {
+    if (timeoutId) clearTimeout(timeoutId);
+
+    // Handle our explicit AbortController errors
+    if (error.name === 'AbortError' || error.message === 'Client disconnected' || error.message === 'Timeout') {
+      const errorMsg = error.message === 'Timeout' 
+        ? 'Sorry, lagta hai network thoda slow hai. Mujhe answer laane mein zyada time lag gaya! Ek baar wapas poochho, main try karta hoon.' 
+        : 'Request cancel kar di gayi.';
+
+      if (streamStarted) {
+        // Safe closure if headers were already sent
+        res.write(`data: ${JSON.stringify({ event: 'end', payload: { status: 'cancelled', answer: errorMsg, sources: [] } })}\n\n`);
+        return res.end();
+      } else {
+        // Standard JSON response if headers weren't sent
+        if (error.message === 'Client disconnected') return res.end();
+        return sendResponse(res, 504, { message: errorMsg });
+      }
+    }
+
     return next(error);
   }
 };

@@ -47,7 +47,7 @@ import { env } from '../config/env.js';
  * @param {object} body - Raw request body { question, studyMode, sessionId, chapterId }
  * @returns {object}    - The complete API response payload
  */
-export const askQuestion = async (body = {}, { userId = null, guestId = null } = {}, streamCallbacks = null) => {
+export const askQuestion = async (body = {}, { userId = null, guestId = null } = {}, streamCallbacks = null, abortSignal = null) => {
 
   // --- PRE-PIPELINE: Steps 1-3 ---
   // These steps handle input validation, DB session load, and context building.
@@ -75,7 +75,7 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
 
   // --- MAIN PIPELINE: Steps 4-7 ---
   try {
-    const decision = await decideRetrieval(input, context);
+    const decision = await decideRetrieval(input, context, abortSignal);
     console.log('[DEBUG] intent:', decision.intent, 'needsRetrieval:', decision.needsRetrieval);
 
     // --- Layer 2.2: Academic Safety Net ---
@@ -145,8 +145,8 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
       }
     }
 
-    const retrieval = await retrieveContent(decision, input, session);
-    const response = await generateResponse(input, context, decision, retrieval, streamCallbacks);
+    const retrieval = await retrieveContent(decision, input, session, abortSignal);
+    const response = await generateResponse(input, context, decision, retrieval, streamCallbacks, abortSignal);
     const tokenUsage = (decision.tokenUsage || 0) + (response.tokenUsage || 0);
     const finalPayload = await saveAndRespond(input, session, context, decision, retrieval, response, userId, tokenUsage, guestId);
     
@@ -156,6 +156,11 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
     return finalPayload;
 
   } catch (error) {
+
+    // Bubble up aborts straight to the controller
+    if (error.name === 'AbortError' || error.message === 'Client disconnected' || error.message === 'Timeout') {
+      throw error;
+    }
 
     if (error instanceof ProviderUnavailableError) {
       // Calculate how many times this has happened recently
