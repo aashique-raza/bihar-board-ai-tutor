@@ -251,7 +251,7 @@ NEW scenario:
 
 ---
 
-### [ ] H-3 — Missing Helmet.js — Koi HTTP Security Headers Nahi
+### [x] H-3 — Missing Helmet.js — Koi HTTP Security Headers Nahi
 
 **File:** `backend/src/app.js`
 

@@ -1,6 +1,7 @@
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import express from 'express';
+import helmet from 'helmet';
 import morgan from 'morgan';
 
 import askRoutes from './routes/ask.routes.js';
@@ -17,6 +18,7 @@ const app = express();
 
 app.set('trust proxy', 1);
 
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:5173',
   credentials: true,
