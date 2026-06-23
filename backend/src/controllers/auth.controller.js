@@ -179,11 +179,13 @@ export const login = async (req, res, next) => {
     // --- Step 9: Set refresh token as HttpOnly cookie ---
     // HttpOnly: JS cannot read this cookie (XSS safe)
     // secure: only sent over HTTPS in production
-    // sameSite: strict — CSRF protection
+    // sameSite: 'none' in production (cross-domain frontend/backend) + Secure=true required by spec.
+    // sameSite: 'lax' in development (localhost, no real cross-site risk).
+    // CSRF is handled by CORS origin allowlist — not by sameSite alone.
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: REFRESH_TOKEN_COOKIE_MAX_AGE,
     });
 
@@ -277,7 +279,7 @@ export const logout = async (req, res, next) => {
     res.clearCookie('refreshToken', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       path: '/',
     });
 
@@ -319,7 +321,7 @@ export const refreshToken = async (req, res) => {
     res.cookie('refreshToken', newRefreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: REFRESH_TOKEN_COOKIE_MAX_AGE,
     });
 
@@ -538,7 +540,7 @@ export const googleCallback = async (req, res) => {
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: REFRESH_TOKEN_COOKIE_MAX_AGE,
     });
 

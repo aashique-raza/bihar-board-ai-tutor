@@ -112,7 +112,7 @@ Fixed:    backend → Redis.set("oauth_code:abc123", JWT, EX=30)
 
 ---
 
-### [ ] C-2 — Cookie `sameSite: 'strict'` — Cross-Domain Production Deployment Mein Token Refresh Completely Broken
+### [x] C-2 — Cookie `sameSite: 'strict'` — Cross-Domain Production Deployment Mein Token Refresh Completely Broken
 
 **Files:** `backend/src/controllers/auth.controller.js` (lines 185, 279, 321, 540 — ALL cookie sets)
 
