@@ -1,21 +1,32 @@
 /**
  * geminiEmbeddings.js
  *
- * Creates Google Gemini embedding instances for use in the indexing pipeline
- * and during query-time vector similarity search.
+ * Creates embedding instances for use in the indexing pipeline and at query time.
+ * Provider is controlled by the EMBEDDING_PROVIDER env var:
  *
- * - RETRIEVAL_DOCUMENT task type: used when embedding content chunks (indexing time)
- * - RETRIEVAL_QUERY task type: used when embedding the student's question (query time)
+ *   EMBEDDING_PROVIDER=google (default) → Gemini gemini-embedding-001 (3072 dims)
+ *   EMBEDDING_PROVIDER=openai           → OpenAI text-embedding-3-large (3072 dims)
  *
- * Uses sequential embedding (one document at a time) to avoid the Gemini API
- * batch endpoint's occasional empty-vector bug.
+ * Both providers output 3072-dimensional vectors — MongoDB Atlas Vector Search
+ * index does NOT need to be reconfigured when switching between them.
+ *
+ * IMPORTANT: indexing and retrieval must always use the same provider.
+ * If you switch EMBEDDING_PROVIDER, re-run: npm run rag:index
  */
 
 import { TaskType } from '@google/generative-ai';
 import { GoogleGenerativeAIEmbeddings } from '@langchain/google-genai';
+import { OpenAIEmbeddings } from '@langchain/openai';
 
-export const GEMINI_EMBEDDING_MODEL = 'gemini-embedding-001';
-export const EMBEDDING_PROVIDER = 'google-generative-ai-langchain';
+const PROVIDER = (process.env.EMBEDDING_PROVIDER || 'google').toLowerCase();
+
+export const GEMINI_EMBEDDING_MODEL =
+  PROVIDER === 'openai' ? 'text-embedding-3-large' : 'gemini-embedding-001';
+
+export const EMBEDDING_PROVIDER =
+  PROVIDER === 'openai' ? 'openai' : 'google-generative-ai-langchain';
+
+// ─── Google / Gemini path ────────────────────────────────────────────────────
 
 const MAX_BATCH_ATTEMPTS = 3;
 const RETRY_DELAY_MS = 1500;
@@ -106,7 +117,7 @@ const getGoogleApiKey = () => {
   return apiKey;
 };
 
-const createEmbeddings = (taskType) =>
+const createGoogleEmbeddings = (taskType) =>
   new SequentialGoogleGenerativeAIEmbeddings({
     apiKey: getGoogleApiKey(),
     modelName: GEMINI_EMBEDDING_MODEL,
@@ -115,10 +126,32 @@ const createEmbeddings = (taskType) =>
     maxRetries: 0,
   });
 
+// ─── OpenAI path ─────────────────────────────────────────────────────────────
+
+const createOpenAIEmbeddings = () => {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey || apiKey.trim().length < 10 || apiKey.includes('your_')) {
+    throw new Error('OPENAI_API_KEY is missing or invalid. Required when EMBEDDING_PROVIDER=openai.');
+  }
+  // text-embedding-3-large outputs 3072 dims by default — matches the existing
+  // MongoDB Atlas Vector Search index, so no Atlas reconfiguration is needed.
+  return new OpenAIEmbeddings({
+    apiKey,
+    model: 'text-embedding-3-large',
+    dimensions: 3072,
+  });
+};
+
+// ─── Public API (same interface regardless of provider) ──────────────────────
+
 /** Use this when embedding content chunks during indexing (npm run rag:index) */
 export const createDocumentEmbeddings = () =>
-  createEmbeddings(TaskType.RETRIEVAL_DOCUMENT);
+  PROVIDER === 'openai'
+    ? createOpenAIEmbeddings()
+    : createGoogleEmbeddings(TaskType.RETRIEVAL_DOCUMENT);
 
 /** Use this when embedding the student's search query at runtime */
 export const createQueryEmbeddings = () =>
-  createEmbeddings(TaskType.RETRIEVAL_QUERY);
+  PROVIDER === 'openai'
+    ? createOpenAIEmbeddings()
+    : createGoogleEmbeddings(TaskType.RETRIEVAL_QUERY);

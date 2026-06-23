@@ -1,0 +1,526 @@
+{
+  "_meta": {
+    "source": "Bihar School Examination Board (BSEB) official syllabus 2025-26",
+    "verified_against": "getmyuni, kollegeapply, careers360, shiksha",
+    "board": "Bihar Board",
+    "class": 10,
+    "exam_year": "2026",
+    "last_updated": "2026-06-21",
+    "accuracy_note": "Chapter-level marks are APPROXIMATE. BSEB does not officially publish exact per-chapter marks. Values based on model papers, past exam analysis, and coaching institute data.",
+    "verified_fields": ["subject-wise marks split (27/26/27)", "paper structures", "total marks", "passing criteria"],
+    "approximate_fields": ["chapter-level marks within each subject"]
+  },
+  "general_rules": {
+    "total_subjects": 6,
+    "total_marks": 500,
+    "english_in_division": false,
+    "note_english": "English marks are generally excluded from division calculation",
+    "passing_per_subject": 30,
+    "passing_aggregate": 150,
+    "passing_aggregate_out_of": 500,
+    "negative_marking": false,
+    "exam_duration_hours": 3,
+    "exam_duration_reading_minutes": 15,
+    "exam_mode": "Offline pen and paper",
+    "omr_sheet": "Used for Section A objective questions"
+  },
+  "division_system": {
+    "first_division": { "minimum": 300, "out_of": 500 },
+    "second_division": { "minimum": 225, "maximum": 299, "out_of": 500 },
+    "third_division": { "minimum": 150, "maximum": 224, "out_of": 500 },
+    "fail": { "below": 150 }
+  },
+  "paper_types": {
+    "type1_pure_theory": {
+      "applies_to": ["Mathematics", "Hindi", "English", "Sanskrit"],
+      "section_a": {
+        "name": "Section A — Objective MCQ (OMR-based)",
+        "total_questions_given": 100,
+        "questions_to_attempt": 50,
+        "marks_per_question": 1,
+        "total_marks": 50,
+        "important_rule": "If student answers more than 50, only the FIRST 50 answers are evaluated"
+      },
+      "section_b": {
+        "name": "Section B — Short Answer",
+        "total_questions_given": 30,
+        "questions_to_attempt": 15,
+        "marks_per_question": 2,
+        "total_marks": 30
+      },
+      "section_c": {
+        "name": "Section C — Long Answer",
+        "total_questions_given": 8,
+        "questions_to_attempt": 4,
+        "marks_per_question": 5,
+        "total_marks": 20
+      },
+      "grand_total": 100
+    },
+    "type2_theory_plus_practical": {
+      "applies_to": ["Science", "Social Science"],
+      "section_a": {
+        "name": "Section A — Objective MCQ (OMR-based)",
+        "total_questions_given": 80,
+        "questions_to_attempt": 40,
+        "marks_per_question": 1,
+        "total_marks": 40,
+        "important_rule": "If student attempts more than 40, only the FIRST 40 are evaluated"
+      },
+      "section_b": {
+        "name": "Section B — Short Answer",
+        "total_questions_given": 30,
+        "questions_to_attempt": 15,
+        "marks_per_question": 2,
+        "total_marks": 30
+      },
+      "section_c": {
+        "name": "Section C — Long Answer",
+        "total_questions_given": 8,
+        "questions_to_attempt": 4,
+        "marks_per_question": 5,
+        "total_marks": 20
+      },
+      "section_d": {
+        "name": "Section D — Internal Assessment (school-based, not in board exam hall)",
+        "total_marks": 20
+      },
+      "theory_total": 80,
+      "internal_total": 20,
+      "grand_total": 100,
+      "theory_passing": 33,
+      "note_theory_passing": "Minimum 33 marks out of 80 required in theory (for Science and Social Science)"
+    }
+  },
+  "subjects": {
+    "mathematics": {
+      "display_name": "Mathematics (Ganit)",
+      "total_marks": 100,
+      "theory_marks": 100,
+      "practical_marks": 0,
+      "passing_marks": 33,
+      "paper_type": "type1_pure_theory",
+      "exam_duration_minutes": 195,
+      "units": [
+        {
+          "unit_name": "Number System",
+          "chapters": ["Real Numbers (Ch 1)"],
+          "marks": 10,
+          "priority": "MEDIUM"
+        },
+        {
+          "unit_name": "Algebra",
+          "chapters": ["Polynomials (Ch 2)", "Pair of Linear Equations (Ch 3)", "Quadratic Equations (Ch 4)", "Arithmetic Progressions (Ch 5)"],
+          "marks": 20,
+          "priority": "HIGH"
+        },
+        {
+          "unit_name": "Trigonometry",
+          "chapters": ["Introduction to Trigonometry (Ch 8)", "Some Applications of Trigonometry — Heights and Distances (Ch 9)"],
+          "marks": 20,
+          "priority": "HIGH"
+        },
+        {
+          "unit_name": "Coordinate Geometry",
+          "chapters": ["Coordinate Geometry (Ch 7)"],
+          "marks": 10,
+          "priority": "MEDIUM"
+        },
+        {
+          "unit_name": "Geometry",
+          "chapters": ["Triangles (Ch 6)", "Circles (Ch 10)", "Constructions (Ch 11)"],
+          "marks": 20,
+          "priority": "HIGH"
+        },
+        {
+          "unit_name": "Mensuration",
+          "chapters": ["Areas Related to Circles (Ch 12)", "Surface Areas and Volumes (Ch 13)"],
+          "marks": 10,
+          "priority": "MEDIUM"
+        },
+        {
+          "unit_name": "Statistics and Probability",
+          "chapters": ["Statistics (Ch 14)", "Probability (Ch 15)"],
+          "marks": 10,
+          "priority": "MEDIUM"
+        }
+      ],
+      "key_focus": "Algebra + Trigonometry + Geometry = 60 marks combined — highest priority"
+    },
+    "science": {
+      "display_name": "Science (Vigyan)",
+      "total_marks": 100,
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "overall_passing": 30,
+      "theory_passing": 33,
+      "paper_type": "type2_theory_plus_practical",
+      "exam_duration_minutes": 195,
+      "internal_assessment_breakdown": {
+        "experiments_practicals": { "marks": 11 },
+        "project_file_record": { "marks": 6 },
+        "viva_voce": { "marks": 3 },
+        "total": 20
+      },
+      "bseb_official_units": [
+        { "unit": "Chemical Compounds", "subject_area": "Chemistry", "approx_marks": 25 },
+        { "unit": "The Living World", "subject_area": "Biology", "approx_marks": 20 },
+        { "unit": "Electricity and its Effects", "subject_area": "Physics", "approx_marks": 18 },
+        { "unit": "Light and Communication", "subject_area": "Physics", "approx_marks": 14 },
+        { "unit": "Natural Resources", "subject_area": "Biology and Environment", "approx_marks": 10 }
+      ],
+      "subjects_breakdown": {
+        "physics": {
+          "theory_marks": 27,
+          "percentage_of_theory": "33.75%",
+          "chapters": [
+            {
+              "chapter_no": 10,
+              "title": "Light: Reflection and Refraction",
+              "approx_marks": 8,
+              "priority": "HIGH",
+              "topics": [
+                "Laws of reflection",
+                "Spherical mirrors — concave and convex",
+                "Image formation by spherical mirrors",
+                "Mirror formula (1/f = 1/v + 1/u) and magnification",
+                "Refraction of light and Snell's law",
+                "Refractive index",
+                "Spherical lenses — concave and convex",
+                "Image formation by spherical lenses",
+                "Lens formula and power of a lens (P = 1/f)"
+              ],
+              "exam_tip": "Highest marks chapter in Physics. Ray diagram numericals asked every year. Mirror and lens formula must be memorized. Sign convention is critical."
+            },
+            {
+              "chapter_no": 11,
+              "title": "Human Eye and the Colourful World",
+              "approx_marks": 6,
+              "priority": "HIGH",
+              "topics": [
+                "Structure and working of the human eye",
+                "Power of accommodation",
+                "Defects of vision: myopia, hypermetropia, presbyopia",
+                "Correction of eye defects using lenses",
+                "Refraction through a glass prism",
+                "Dispersion of white light — spectrum",
+                "Atmospheric refraction (twinkling of stars, advance sunrise)",
+                "Scattering of light — Tyndall effect, blue sky, red sunset"
+              ],
+              "exam_tip": "Eye defect diagrams and their corrections are asked every year. Reason for blue sky and red sunset must be explained clearly."
+            },
+            {
+              "chapter_no": 12,
+              "title": "Electricity",
+              "approx_marks": 7,
+              "priority": "HIGH",
+              "topics": [
+                "Electric current and potential difference",
+                "Ohm's Law (V = IR)",
+                "Resistance and resistivity",
+                "Factors affecting resistance",
+                "Series combination of resistors",
+                "Parallel combination of resistors",
+                "Heating effect of electric current — Joule's Law",
+                "Electric power: P = VI = I²R = V²/R",
+                "Electric energy and units (kWh)"
+              ],
+              "exam_tip": "Ohm's Law numericals, series/parallel resistance problems are very common. Power formula P=VI=I²R=V²/R must be memorized. Electric energy billing problems also appear."
+            },
+            {
+              "chapter_no": 13,
+              "title": "Magnetic Effects of Electric Current",
+              "approx_marks": 6,
+              "priority": "HIGH",
+              "topics": [
+                "Magnetic field due to current-carrying straight wire",
+                "Right-hand thumb rule",
+                "Magnetic field due to circular loop",
+                "Solenoid and electromagnet",
+                "Force on current-carrying conductor in magnetic field (Fleming's Left Hand Rule)",
+                "Electric motor — working principle and diagram",
+                "Electromagnetic induction — Faraday's law",
+                "Electric generator (AC and DC) — working and diagram",
+                "Domestic electric circuits — earthing, fuse, MCB"
+              ],
+              "exam_tip": "Electric motor and generator diagrams are asked every year. Fleming rules (Left for motor, Right for generator) must be crystal clear."
+            },
+            {
+              "chapter_no": 14,
+              "title": "Sources of Energy",
+              "approx_marks": 3,
+              "priority": "LOW",
+              "topics": [
+                "Characteristics of a good fuel",
+                "Fossil fuels — coal, petroleum, natural gas",
+                "Thermal power plant",
+                "Hydroelectric power plant",
+                "Biomass and biogas",
+                "Wind energy",
+                "Solar energy — solar cells and solar panels",
+                "Tidal and wave energy",
+                "Nuclear fission and fusion — nuclear energy",
+                "Environmental consequences of energy use"
+              ],
+              "exam_tip": "Lowest marks Physics chapter. Advantages and disadvantages of renewable vs non-renewable sources sufficient. Nuclear energy concepts may appear in MCQ."
+            }
+          ]
+        },
+        "chemistry": {
+          "theory_marks": 26,
+          "percentage_of_theory": "32.5%",
+          "chapters": [
+            {
+              "chapter_no": 1,
+              "title": "Chemical Reactions and Equations",
+              "approx_marks": 6,
+              "priority": "HIGH",
+              "topics": [
+                "Chemical equations and balancing",
+                "Types of chemical reactions: combination, decomposition, displacement, double displacement",
+                "Oxidation and reduction (redox reactions)",
+                "Effects of oxidation in everyday life — corrosion, rancidity"
+              ],
+              "exam_tip": "Balancing chemical equations is very common. ALL 5 types of reactions must be memorized with one example each. Distinguish between oxidation and reduction clearly."
+            },
+            {
+              "chapter_no": 2,
+              "title": "Acids, Bases and Salts",
+              "approx_marks": 6,
+              "priority": "HIGH",
+              "topics": [
+                "Chemical properties of acids and bases",
+                "pH scale and pH indicators",
+                "Neutralization reaction",
+                "Salts: family, pH",
+                "Common salts: sodium chloride (NaCl), sodium hydroxide (NaOH), baking soda (NaHCO₃), washing soda (Na₂CO₃·10H₂O), bleaching powder (CaOCl₂), plaster of paris (CaSO₄·½H₂O)",
+                "Water of crystallization"
+              ],
+              "exam_tip": "Chemical formulas and uses of common salts are very frequently asked. pH of common substances. Difference between acids and bases based on indicators."
+            },
+            {
+              "chapter_no": 3,
+              "title": "Metals and Non-metals",
+              "approx_marks": 6,
+              "priority": "HIGH",
+              "topics": [
+                "Physical properties of metals and non-metals",
+                "Chemical properties of metals (reactions with oxygen, water, acids, other metal salts)",
+                "Reactivity series of metals",
+                "Extraction of metals from ores (least reactive, moderately reactive, highly reactive)",
+                "Refining of metals",
+                "Ionic bond formation",
+                "Corrosion and its prevention"
+              ],
+              "exam_tip": "Reactivity series order must be memorized (top to bottom: K, Na, Ca, Mg, Al, Zn, Fe, Pb, H, Cu, Hg, Ag, Au, Pt). Extraction of aluminium and iron are frequently asked."
+            },
+            {
+              "chapter_no": 4,
+              "title": "Carbon and its Compounds",
+              "approx_marks": 5,
+              "priority": "MEDIUM",
+              "topics": [
+                "Bonding in carbon — covalent bonding",
+                "Allotropes of carbon: diamond, graphite, fullerene",
+                "Saturated hydrocarbons (alkanes) and unsaturated hydrocarbons (alkenes, alkynes)",
+                "IUPAC nomenclature of carbon compounds",
+                "Chemical properties of carbon compounds: combustion, oxidation, addition, substitution",
+                "Ethanol: properties and uses",
+                "Ethanoic acid (acetic acid): properties and uses",
+                "Soaps and detergents: structure, micelle formation, difference"
+              ],
+              "exam_tip": "IUPAC naming of carbon compounds is frequently asked. Difference between soaps and detergents (micelle, hard water behavior) is very common in short answers."
+            },
+            {
+              "chapter_no": 5,
+              "title": "Periodic Classification of Elements",
+              "approx_marks": 3,
+              "priority": "LOW",
+              "topics": [
+                "Early attempts at classification: Dobereiner's Triads, Newlands' Law of Octaves",
+                "Mendeleev's Periodic Table — merits and limitations",
+                "Modern Periodic Table — periods and groups",
+                "Trends in modern periodic table: atomic size, metallic/non-metallic character, valency"
+              ],
+              "exam_tip": "Lowest marks Chemistry chapter. Compare Mendeleev vs Modern periodic table. Position of hydrogen controversy. Trends in periodic table."
+            }
+          ]
+        },
+        "biology": {
+          "theory_marks": 27,
+          "percentage_of_theory": "33.75%",
+          "chapters": [
+            {
+              "chapter_no": 6,
+              "title": "Life Processes",
+              "approx_marks": 8,
+              "priority": "HIGH",
+              "topics": [
+                "Nutrition: autotrophic (photosynthesis — equation, conditions, stomata) and heterotrophic (holozoic, parasitic, saprophytic, symbiotic)",
+                "Nutrition in humans — alimentary canal, digestive glands",
+                "Respiration: aerobic and anaerobic, cellular respiration, ATP",
+                "Respiration in plants vs humans",
+                "Transportation in plants: xylem (water), phloem (food), transpiration",
+                "Transportation in humans: heart structure, blood vessels, blood composition, lymph",
+                "Excretion in humans: kidneys, nephron, dialysis",
+                "Excretion in plants: stomata, diffusion"
+              ],
+              "exam_tip": "Highest marks Biology chapter. Photosynthesis equation, heart diagram, nephron diagram are asked every year. Know all 4 life processes in depth."
+            },
+            {
+              "chapter_no": 7,
+              "title": "Control and Coordination",
+              "approx_marks": 6,
+              "priority": "HIGH",
+              "topics": [
+                "Nervous system: neurons, types of neurons, synapse",
+                "Human brain: cerebrum, cerebellum, medulla oblongata",
+                "Reflex action and reflex arc — diagram",
+                "Involuntary vs voluntary actions",
+                "Plant hormones: auxin, gibberellin, cytokinin, abscisic acid",
+                "Tropic movements in plants: phototropism, geotropism, hydrotropism, chemotropism",
+                "Human endocrine system: pituitary, thyroid, adrenal, pancreas, gonads",
+                "Hormones: insulin, adrenalin, thyroxine, growth hormone",
+                "Difference between nervous and hormonal control"
+              ],
+              "exam_tip": "Reflex arc diagram and difference between nervous vs hormonal control are very frequently asked. Know all plant hormones and their functions."
+            },
+            {
+              "chapter_no": 8,
+              "title": "How do Organisms Reproduce?",
+              "approx_marks": 5,
+              "priority": "MEDIUM",
+              "topics": [
+                "Asexual reproduction: fission (binary and multiple), budding, spore formation, vegetative propagation, fragmentation, regeneration",
+                "Sexual reproduction in flowering plants: flower structure, pollination, fertilization, fruits and seeds",
+                "Reproduction in humans: male reproductive system, female reproductive system",
+                "Menstrual cycle",
+                "Fertilization and embryo development",
+                "Reproductive health and contraception"
+              ],
+              "exam_tip": "Human reproductive system diagrams come frequently. Difference between sexual and asexual reproduction. Pollination types."
+            },
+            {
+              "chapter_no": 9,
+              "title": "Heredity and Evolution",
+              "approx_marks": 3,
+              "priority": "MEDIUM",
+              "topics": [
+                "Heredity and variation",
+                "Mendel's experiments: monohybrid cross (3:1), dihybrid cross (9:3:3:1)",
+                "Dominant and recessive traits",
+                "Sex determination in humans (XX and XY)",
+                "Evolution: gradual change over generations",
+                "Charles Darwin's theory of natural selection",
+                "Speciation",
+                "Fossils as evidence of evolution",
+                "Acquired vs inherited traits"
+              ],
+              "exam_tip": "Monohybrid cross problems (Punnett square) may appear in short or long answer. Sex determination mechanism (XX/XY) is frequently asked."
+            },
+            {
+              "chapter_no": 15,
+              "title": "Our Environment",
+              "approx_marks": 3,
+              "priority": "LOW",
+              "topics": [
+                "Ecosystem: components (biotic and abiotic)",
+                "Food chains and food webs",
+                "Trophic levels and energy flow (10% law)",
+                "Biodegradable and non-biodegradable waste",
+                "Ozone layer: formation and depletion",
+                "Management of garbage"
+              ],
+              "exam_tip": "Definitions of ecosystem, food chain, trophic levels. Biodegradable vs non-biodegradable examples. Ozone depletion causes (CFCs)."
+            },
+            {
+              "chapter_no": 16,
+              "title": "Sustainable Management of Natural Resources",
+              "approx_marks": 2,
+              "priority": "LOW",
+              "topics": [
+                "Natural resources: forests, wildlife, water, coal, petroleum",
+                "Stakeholders in forest management",
+                "Chipko movement",
+                "Sustainable development",
+                "Water conservation methods: dams, watershed management, rainwater harvesting",
+                "Coal and petroleum conservation",
+                "The 3 Rs: Reduce, Reuse, Recycle"
+              ],
+              "exam_tip": "Lowest marks Biology chapter. Chipko movement and Khejri tree protection (Bishnoi community). Advantages and disadvantages of dams. 3 Rs definition."
+            }
+          ]
+        }
+      }
+    },
+    "social_science": {
+      "display_name": "Social Science (Samajik Vigyan)",
+      "total_marks": 100,
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "overall_passing": 30,
+      "theory_passing": 33,
+      "paper_type": "type2_theory_plus_practical",
+      "note": "Social Science is currently outside Zuno's teaching scope. Exam pattern info only.",
+      "subjects_breakdown": {
+        "history": { "marks": 20, "chapters": 5 },
+        "geography": { "marks": 20, "chapters": 7, "note": "Includes 5 marks map work" },
+        "political_science": { "marks": 17, "chapters": 5 },
+        "economics": { "marks": 17, "chapters": 5 },
+        "disaster_management": { "marks": 6, "chapters": 3 }
+      },
+      "internal_assessment": {
+        "pen_paper_tests": 10,
+        "portfolio_project": 5,
+        "viva_oral": 5,
+        "total": 20
+      }
+    },
+    "hindi": {
+      "display_name": "Hindi",
+      "total_marks": 100,
+      "theory_marks": 100,
+      "practical_marks": 0,
+      "passing_marks": 33,
+      "paper_type": "type1_pure_theory",
+      "note": "Hindi is currently outside Zuno's teaching scope. Exam pattern info only.",
+      "sections": {
+        "section_a_objective": { "marks": 50, "content": "Grammar MCQs + Textbook-based MCQs" },
+        "gadyansh_prose": { "marks": 10 },
+        "padyansh_poetry": { "marks": 8 },
+        "patra_lekhan": { "marks": 8 },
+        "nibandh_essay": { "marks": 8 },
+        "textbook_qa": { "marks": 16 }
+      }
+    },
+    "english": {
+      "display_name": "English",
+      "total_marks": 100,
+      "theory_marks": 100,
+      "practical_marks": 0,
+      "passing_marks": 33,
+      "paper_type": "type1_pure_theory",
+      "note": "English is currently outside Zuno's teaching scope. English marks excluded from division calculation.",
+      "sections": {
+        "section_a_objective": { "marks": 50, "content": "Grammar MCQs + Textbook MCQs" },
+        "reading_comprehension": { "marks": 10 },
+        "grammar_application": { "marks": 10 },
+        "letter_writing_composition": { "marks": 10 },
+        "textbook_qa_prose_poetry": { "marks": 20 }
+      }
+    },
+    "sanskrit_urdu": {
+      "display_name": "Sanskrit / Urdu (Language II)",
+      "total_marks": 100,
+      "theory_marks": 100,
+      "practical_marks": 0,
+      "passing_marks": 33,
+      "paper_type": "type1_pure_theory",
+      "note": "Sanskrit/Urdu is currently outside Zuno's teaching scope. Exam pattern info only.",
+      "sections": {
+        "section_a_objective": { "marks": 50, "content": "Grammar + Textbook MCQs" },
+        "section_b_subjective": { "marks": 50, "content": "Translation, Passages, Grammar, Composition" }
+      }
+    }
+  }
+}

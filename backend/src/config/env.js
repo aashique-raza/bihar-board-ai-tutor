@@ -72,10 +72,18 @@ export const validateEnv = () => {
     missing.push('MONGODB_URI');
   }
 
-  // Embeddings key — always required regardless of LLM provider
-  // geminiEmbeddings.js accepts either GOOGLE_API_KEY or GEMINI_API_KEY
-  if (!isRealKey(process.env.GEMINI_API_KEY) && !isRealKey(process.env.GOOGLE_API_KEY)) {
-    missing.push('GEMINI_API_KEY');
+  // Embeddings key — required key depends on EMBEDDING_PROVIDER
+  // EMBEDDING_PROVIDER=openai  → needs OPENAI_API_KEY
+  // EMBEDDING_PROVIDER=google (default) → needs GEMINI_API_KEY or GOOGLE_API_KEY
+  const embeddingProvider = (process.env.EMBEDDING_PROVIDER || 'google').toLowerCase();
+  if (embeddingProvider === 'openai') {
+    if (!isRealKey(process.env.OPENAI_API_KEY)) {
+      missing.push('OPENAI_API_KEY (required when EMBEDDING_PROVIDER=openai)');
+    }
+  } else {
+    if (!isRealKey(process.env.GEMINI_API_KEY) && !isRealKey(process.env.GOOGLE_API_KEY)) {
+      missing.push('GEMINI_API_KEY');
+    }
   }
 
   // LLM provider presence and validity

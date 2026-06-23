@@ -177,7 +177,7 @@ export const generateResponse = async (input, context, decision, retrieval, stre
         retrievedContext,
       },
       {
-        signal: abortSignal,
+        signal: abortSignal || undefined,
         callbacks: [{
           handleLLMEnd: (output) => { capturedBreakdown = extractTokenBreakdown(output); },
         }],

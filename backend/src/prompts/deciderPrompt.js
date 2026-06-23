@@ -18,12 +18,38 @@ INTENTS:
 
 5. CONCEPT_QUESTION — Direct academic question about Class 10 Science. ("Photosynthesis kya hai?", "Refraction define karo", "Acid aur base ka fark batao", "Ohm's law explain karo", "Electricity kya hai samjhao")
 
-6. OUT_OF_CONTEXT — Any topic Zuno cannot currently help with. This includes:
-   - Other Class 10 subjects: Maths, Hindi, English, Social Science, Urdu, Sanskrit (only Science is indexed right now)
-   - Non-school topics: sports, entertainment, current events, personal questions
-   Note: Do NOT classify as OUT_OF_CONTEXT if the student is reacting to Zuno's previous reply — that is GREETING.
+6. EXAM_INFO — Student asks about Bihar Board Class 10 exam structure, marks,
+   chapter importance for exam, passing criteria, or paper format.
 
-7. UNSAFE_OR_ABUSIVE — Swear words, vulgarity, local insults, inappropriate content, OR mild rudeness/insults directed at Zuno. ("Bakwaas band karo", "Stupid AI", "Kuch nahi aata tujhe", "Chup kar") → These are UNSAFE_OR_ABUSIVE, NOT OUT_OF_CONTEXT.
+   TRIGGERS — classify as EXAM_INFO when student asks ANY of these:
+   - Marks a subject carries: "Science kitne marks ka?", "Biology ke marks", "Maths ka paper kitna?"
+   - Chapter importance for exam: "Kaun sa chapter important hai?", "Konsa chapter zyada marks ka?"
+   - Passing criteria: "Pass karne ke liye kitne chahiye?", "Minimum marks kya hai?", "Passing marks?"
+   - Paper structure: "Section A mein kitne questions?", "MCQ kitne solve karne hain?"
+   - Internal assessment: "Internal assessment kya hota hai?", "School ke marks kitne?"
+   - Skip strategy: "Kaun sa chapter skip kar sakta hoon?", "Kya Electricity skip ho sakta?"
+   - Chapter weight: "Life Processes se kitne marks aate hain?", "Electricity important hai kya exam ke liye?"
+   - Overall exam info: "Exam ka pattern kya hai?", "Paper structure kya hai?"
+
+   DISAMBIGUATION (CRITICAL):
+   → "Light chapter ke marks?" = EXAM_INFO (asking about marks, not optics)
+   → "Light ka reflection samjhao" = CONCEPT_QUESTION (asking science concept)
+   → "Biology padhna hai" = CHOOSE_COURSE (wants to start studying, not asking marks)
+   → "Life Processes samjhao" = CONCEPT_QUESTION (asking about the concept)
+   → "Life Processes se kitne marks aate hain?" = EXAM_INFO (asking about exam marks)
+   → "Exam mein kya kya aata hai Science mein?" = EXAM_INFO (asking exam coverage)
+
+   searchQuery: MUST be null — Knowledge Service handles this, no vector search needed.
+
+7. OUT_OF_CONTEXT — Any topic Zuno cannot currently help with. This includes:
+   - Other Class 10 subjects CONTENT: Maths concepts, Hindi grammar, English essays, Social Science
+   - Non-school topics: sports, entertainment, current events, personal questions
+   Note: Do NOT classify as OUT_OF_CONTEXT if student is reacting to Zuno's previous reply.
+   Note: EXAM PATTERN questions about any subject (marks, paper structure) are EXAM_INFO, NOT OUT_OF_CONTEXT.
+
+8. UNSAFE_OR_ABUSIVE — Swear words, vulgarity, local insults, inappropriate content, OR mild
+   rudeness/insults directed at Zuno. ("Bakwaas band karo", "Stupid AI", "Kuch nahi aata tujhe")
+   → These are UNSAFE_OR_ABUSIVE, NOT OUT_OF_CONTEXT.
 
 CONSERVATIVE BIAS RULES (apply in order):
 1. Greeting + science keyword → CONCEPT_QUESTION, not GREETING.
@@ -31,6 +57,10 @@ CONSERVATIVE BIAS RULES (apply in order):
 2. "X explain karo" where X is a science topic → CONCEPT_QUESTION, not EXPLAIN_MORE.
 3. Course selection + specific concept in same message → CONCEPT_QUESTION, not CHOOSE_COURSE.
    Example: "Physics padhna hai aur pehle electricity samjhao" → CONCEPT_QUESTION.
+4. Questions about marks, passing criteria, paper structure, or chapter importance for exam
+   → EXAM_INFO. Do NOT classify as CONCEPT_QUESTION even if a science topic is mentioned.
+   Examples: "Biology kitne marks ka?" → EXAM_INFO (not CONCEPT_QUESTION)
+   "Life Processes skip kar sakta hoon?" → EXAM_INFO (not CONCEPT_QUESTION)
 
 SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - Generate clean English or Roman-script Hinglish keywords. Never Devanagari.

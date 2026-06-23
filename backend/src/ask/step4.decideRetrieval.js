@@ -39,6 +39,7 @@ const VALID_INTENTS = new Set([
   'NEXT_STEP',
   'EXPLAIN_MORE',
   'CONCEPT_QUESTION',
+  'EXAM_INFO',
   'OUT_OF_CONTEXT'
 ]);
 
@@ -140,7 +141,7 @@ export const decideRetrieval = async ({ question }, { deciderHistory, language }
         history: deciderHistory,
       },
       {
-        signal: abortSignal,
+        signal: abortSignal || undefined,
         callbacks: [{
           handleLLMEnd: (output) => { capturedBreakdown = extractTokenBreakdown(output); },
         }],

@@ -7,6 +7,7 @@ import { retrieveRelevantChunks } from '../rag/retriever.js';
 import { formatSources } from '../rag/sourceFormatter.js';
 import { formatRetrievedContext } from './promptHelpers.js';
 import { getNextTopic } from '../curriculum/nextTopicResolver.js';
+import { getExamContext } from '../knowledge/examKnowledgeService.js';
 
 /**
  * Builds retriever options with explicit boundaries.
@@ -130,6 +131,23 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
       sources: formatSources(explainChunks),
       retrievedContext: formatRetrievedContext(explainChunks),
       nextTopicSignal: null,
+    };
+  }
+
+  // EXAM_INFO: deterministic knowledge base lookup — bypasses vector search entirely.
+  // examKnowledgeService reads data/class-10/global/exam_patterns.json (not in vector store).
+  // Returns formatted context string injected into the tutor LLM as {retrievedContext}.
+  // Step 6 (tutor LLM) does not need to know this came from JSON, not vector search.
+  if (intent === 'EXAM_INFO') {
+    console.log('[Step 5 EXAM_INFO] Knowledge Service lookup — no vector search');
+    const examContext = getExamContext();
+    return {
+      retrieval: null,
+      chunks: [],
+      sources: [],
+      retrievedContext: examContext,
+      nextTopicSignal: null,
+      lastRetrievalQuery: null,
     };
   }
 
