@@ -171,7 +171,7 @@ sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
 
 ---
 
-### [ ] H-1 — Rate Limiters In-Memory Store — Multi-Instance Par DDoS Protection Bypass
+### [x] H-1 — Rate Limiters In-Memory Store — Multi-Instance Par DDoS Protection Bypass
 
 **File:** `backend/src/middlewares/rateLimiters.js`
 
