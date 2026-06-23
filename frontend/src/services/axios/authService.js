@@ -69,6 +69,19 @@ export const getMe = async (accessToken) => {
   }
 };
 
+// POST /api/v1/auth/exchange
+// Exchanges the one-time OAuth code (from Google callback URL) for an access token
+export const exchangeAuthCode = async (code) => {
+  try {
+    const { data } = await authAxios.post('/api/v1/auth/exchange', { code });
+    return data?.data?.accessToken;
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message || 'Login fail hua. Please dobara Google se login karo.'
+    );
+  }
+};
+
 // POST /api/v1/auth/verify-email
 // token: string from URL query param
 export const verifyEmailToken = async (token) => {

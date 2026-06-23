@@ -62,7 +62,7 @@ Yeh file AI Assistant ke liye ek Master Guide hai. Jab bhi user kisi problem par
 
 ---
 
-### [ ] C-1 — Google OAuth Access Token URL Mein Exposed Hai
+### [x] C-1 — Google OAuth Access Token URL Mein Exposed Hai
 
 **Files:** `backend/src/controllers/auth.controller.js:547` | `frontend/src/pages/AuthCallback.jsx:39`
 

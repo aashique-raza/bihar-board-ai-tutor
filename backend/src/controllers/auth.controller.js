@@ -14,6 +14,7 @@ const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 // TTL constants
 const VERIFY_EMAIL_TTL = 60 * 60 * 24; // 24 hours in seconds
 const RESET_PASSWORD_TTL = 60 * 15;    // 15 minutes in seconds
+const OAUTH_CODE_TTL = 30;             // 30 seconds — one-time Google OAuth exchange code
 
 /**
  * POST /api/v1/auth/register
@@ -541,13 +542,49 @@ export const googleCallback = async (req, res) => {
       maxAge: REFRESH_TOKEN_COOKIE_MAX_AGE,
     });
 
-    // 8. Redirect to frontend with access token
-    // TODO(security): access token exposed in URL — switch to one-time code exchange before scaling.
-    // Fix: backend generates short-lived code (Redis, 30s TTL), frontend POSTs /auth/exchange to get token.
-    return res.redirect(`${FRONTEND_URL}/auth/callback?token=${accessToken}`);
+    // 8. Generate one-time exchange code — token never goes in the URL.
+    // Frontend POSTs /auth/exchange with this code to receive the access token in JSON.
+    const oauthCode = crypto.randomBytes(32).toString('hex');
+    await redis.set(`oauth_code:${oauthCode}`, accessToken, 'EX', OAUTH_CODE_TTL);
+    console.log('[GoogleCallback] OAuth exchange code generated.');
+    return res.redirect(`${FRONTEND_URL}/auth/callback?code=${oauthCode}`);
 
   } catch (err) {
     console.error('[GoogleCallback] Error:', err);
     return res.redirect(`${FRONTEND_URL}/auth/callback?error=google_failed`);
+  }
+};
+
+/**
+ * POST /api/v1/auth/exchange
+ * Exchanges a one-time OAuth code (from Google callback URL) for the actual access token.
+ * Code is valid for 30 seconds and single-use — deleted from Redis on first successful exchange.
+ */
+export const exchangeOAuthCode = async (req, res, next) => {
+  try {
+    const { code } = req.body;
+
+    // Validate format before hitting Redis — must be exactly 64 hex chars
+    const CODE_REGEX = /^[0-9a-f]{64}$/;
+    if (!code || !CODE_REGEX.test(code)) {
+      return next(new ApiError(400, 'Invalid request.'));
+    }
+
+    // GET then DEL — safe across all Redis versions
+    const accessToken = await redis.get(`oauth_code:${code}`);
+    if (accessToken) {
+      await redis.del(`oauth_code:${code}`);
+    }
+
+    if (!accessToken) {
+      return next(new ApiError(400, 'Code expired ya invalid hai. Please dobara Google se login karo.'));
+    }
+
+    return sendResponse(res, 200, {
+      message: 'Token exchange successful.',
+      data: { accessToken },
+    });
+  } catch (err) {
+    next(err);
   }
 };

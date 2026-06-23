@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setCredentials, setError } from '../store/slices/authSlice.js';
-import { getMe } from '../services/axios/authService.js';
+import { getMe, exchangeAuthCode } from '../services/axios/authService.js';
 import { resetGuestTurnCount } from '../utils/guestLimit.js';
 
 // Friendly messages for known Google OAuth error codes
@@ -14,9 +14,9 @@ const ERROR_MESSAGES = {
 };
 
 // Handles the redirect back from Google OAuth.
-// Backend sends: /auth/callback?token=<accessToken>
+// Backend sends: /auth/callback?code=<one-time-exchange-code> (30s TTL, single-use)
 // Error case:    /auth/callback?error=account_exists | google_failed
-// react-router-dom is not installed — using window.location.href for navigation.
+// On success: POSTs /auth/exchange with the code to receive the access token in JSON.
 function AuthCallback() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ function AuthCallback() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const errorParam = params.get('error');
-    const tokenParam = params.get('token');
+    const codeParam = params.get('code');
 
     const handleCallback = async () => {
       if (errorParam) {
@@ -36,11 +36,14 @@ function AuthCallback() {
         return;
       }
 
-      if (tokenParam) {
+      if (codeParam) {
         try {
-          const user = await getMe(tokenParam);
+          // Step 1: Exchange one-time code for access token (token never was in the URL)
+          const accessToken = await exchangeAuthCode(codeParam);
+          // Step 2: Fetch user profile using the received token
+          const user = await getMe(accessToken);
           resetGuestTurnCount();
-          dispatch(setCredentials({ user, accessToken: tokenParam }));
+          dispatch(setCredentials({ user, accessToken }));
           navigate('/', { replace: true, state: { toastSuccess: 'Google se login successful!' } });
         } catch {
           setStatusText('Login mein error aaya. Please dobara try karo.');
@@ -49,7 +52,7 @@ function AuthCallback() {
         return;
       }
 
-      // Neither token nor error — unexpected state, send to login
+      // Neither code nor error — unexpected state, send to login
       navigate('/login');
     };
 
