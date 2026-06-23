@@ -20,6 +20,7 @@ import { chooseCoursePrompt }    from '../prompts/intents/chooseCoursePrompt.js'
 import { explainMorePrompt }     from '../prompts/intents/explainMorePrompt.js';
 import { conceptQuestionPrompt } from '../prompts/intents/conceptQuestionPrompt.js';
 import { nextStepPrompt }        from '../prompts/intents/nextStepPrompt.js';
+import { examInfoPrompt }        from '../prompts/intents/examInfoPrompt.js';
 import { createChatModel }       from '../llm/chatModel.js';
 import { stringParser }          from '../llm/stringParser.js';
 import { parseJsonObject }       from '../utils/jsonParser.js';
@@ -55,6 +56,7 @@ const INTENT_CONFIG = {
   CHOOSE_COURSE:     { prompt: chooseCoursePrompt,    temperature: 0.2, maxTokens: 600  },
   EXPLAIN_MORE:      { prompt: explainMorePrompt,     temperature: 0.3, maxTokens: 1500 },
   CONCEPT_QUESTION:  { prompt: conceptQuestionPrompt, temperature: 0,   maxTokens: 1500 },
+  EXAM_INFO:         { prompt: examInfoPrompt,        temperature: 0,   maxTokens: 600  },
   NEXT_STEP:         { prompt: nextStepPrompt,        temperature: 0.1, maxTokens: 1200 },
 };
 
@@ -70,6 +72,7 @@ const HISTORY_WINDOW = {
   CHOOSE_COURSE:     4,
   EXPLAIN_MORE:      6,
   CONCEPT_QUESTION:  6,
+  EXAM_INFO:         0,
   NEXT_STEP:         2,
 };
 
@@ -133,6 +136,9 @@ const buildPromptInput = (intent, input, context, retrieval) => {
 
     case 'CONCEPT_QUESTION':
       return { message: question, answerLanguageInstruction: answerLang, focusChapter: focusChapterPrompt, retrievedContext, history, lastStudyResponse: lastStudyResponse || 'No previous study explanation.' };
+
+    case 'EXAM_INFO':
+      return { message: question, answerLanguageInstruction: answerLang, retrievedContext };
 
     case 'NEXT_STEP':
       return { message: question, answerLanguageInstruction: answerLang, retrievedContext, history };
@@ -202,7 +208,7 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
 
     let rawResponse = '';
     const stream = await chain.stream(promptInput, {
-      signal: abortSignal,
+      signal: abortSignal || undefined,
       callbacks: [{ handleLLMEnd: (out) => { capturedBreakdown = extractTokenBreakdown(out); } }],
     });
 
