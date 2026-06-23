@@ -206,7 +206,7 @@ Ek Groq `llama-3.3-70b` call ~₹0.5-2 cost karta hai. 58 unthrottled calls/minu
 
 ---
 
-### [ ] H-2 — `askTutor` Raw Fetch — Access Token Expiry Pe Auto-Refresh Nahi Hota (Real Bug)
+### [x] H-2 — `askTutor` Raw Fetch — Access Token Expiry Pe Auto-Refresh Nahi Hota (Real Bug)
 
 **File:** `frontend/src/api/tutorApi.js:66`
 

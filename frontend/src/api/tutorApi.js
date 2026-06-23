@@ -1,6 +1,8 @@
 import axiosInstance from '../services/axios/axiosInstance.js';
 import { store } from '../store/store.js';
 import { parse } from 'partial-json';
+import { setCredentials, clearCredentials } from '../store/slices/authSlice.js';
+import { refreshAccessToken } from '../services/axios/authService.js';
 
 const getGuestId = () => {
   const GUEST_ID_KEY = 'zuno-guest-id';
@@ -63,6 +65,37 @@ export const fetchSessionHistory = async (sessionId) => {
   }
 };
 
+// Wraps fetch() with one silent token refresh on 401 — mirrors the axios interceptor pattern.
+// Only attempts refresh for logged-in users (accessToken present); guests are skipped.
+// retried flag prevents infinite refresh loops.
+const fetchWithTokenRefresh = async (url, options, retried = false) => {
+  const response = await fetch(url, options);
+
+  if (response.status === 401 && !retried && store.getState().auth?.accessToken) {
+    try {
+      const data = await refreshAccessToken();
+      const newToken = data?.data?.accessToken;
+      if (!newToken) throw new Error('No token in refresh response');
+
+      store.dispatch(
+        setCredentials({ user: store.getState().auth.user, accessToken: newToken })
+      );
+
+      const newOptions = {
+        ...options,
+        headers: { ...options.headers, Authorization: `Bearer ${newToken}` },
+      };
+      return fetchWithTokenRefresh(url, newOptions, true);
+    } catch {
+      sessionStorage.setItem('zuno.authRedirect', 'Session expire ho gayi. Dobara login karo.');
+      store.dispatch(clearCredentials());
+      return response; // return original 401 — caller handles the error display
+    }
+  }
+
+  return response;
+};
+
 export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal, onUpdate = null) => {
   const body = { question, studyMode };
 
@@ -85,7 +118,7 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
   }
 
   try {
-    const response = await fetch(`${API_BASE_URL}/api/v1/ask`, {
+    const response = await fetchWithTokenRefresh(`${API_BASE_URL}/api/v1/ask`, {
       method: 'POST',
       headers,
       body: JSON.stringify(body),
