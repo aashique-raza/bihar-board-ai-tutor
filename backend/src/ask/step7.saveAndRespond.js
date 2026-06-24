@@ -10,6 +10,8 @@ import { env } from '../config/env.js';
 import redis from '../config/redisClient.js';
 import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../utils/tokenLogger.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
 const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
@@ -139,7 +141,7 @@ export const saveAndRespond = async (
   tokenUsage = 0,
   guestId = null
 ) => {
-  console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
+  if (isDev) console.log(`[Step 7 Commiting] Writing updates atomically for Session ID: ${sessionId}`);
 
   // Step 7a: Sanitize the state updates generated during the conversation turn.
   // intent is passed so the per-intent whitelist (INTENT_MEMORY_WHITELIST) is used
@@ -216,13 +218,13 @@ export const saveAndRespond = async (
   const chatStateInc = { messageCount: 1 };
   if (ACADEMIC_INTENTS.has(intent)) {
     stateUpdates.consecutiveNonAcademicTurns = 0;
-    console.log(`[Drift] ${intent} → consecutive reset to 0`);
+    if (isDev) console.log(`[Drift] ${intent} → consecutive reset to 0`);
   } else if (DRIFT_INTENTS.has(intent)) {
     chatStateInc.consecutiveNonAcademicTurns = 1;
     chatStateInc.totalNonAcademicTurns = 1;
     const prevConsec = chatState.consecutiveNonAcademicTurns ?? 0;
     const prevTotal  = chatState.totalNonAcademicTurns       ?? 0;
-    console.log(`[Drift] ${intent} → consecutive ${prevConsec} → ${prevConsec + 1} | total ${prevTotal} → ${prevTotal + 1}`);
+    if (isDev) console.log(`[Drift] ${intent} → consecutive ${prevConsec} → ${prevConsec + 1} | total ${prevTotal} → ${prevTotal + 1}`);
   }
 
   // Single atomic MongoDB op: chatState $set + messageCount $inc + totalTokensUsed $inc + $setOnInsert immutables.
@@ -273,7 +275,7 @@ export const saveAndRespond = async (
     try {
       await updateChatSessionState(sessionId, { status: 'exhausted' }, userId);
       if (updatedSession.chatState) updatedSession.chatState.status = 'exhausted';
-      console.log(`[Step 7] Session locked — totalTokensUsed: ${newTotal} >= limit: ${env.sessionTokenLimit}`);
+      if (isDev) console.log(`[Step 7] Session locked — totalTokensUsed: ${newTotal} >= limit: ${env.sessionTokenLimit}`);
     } catch {
       // Non-critical — session will be locked on next DB read anyway
     }
@@ -348,6 +350,6 @@ export const saveAndRespond = async (
     },
   ], userId);
 
-  console.log('[Step 7 Complete] Database sync finalized successfully. Releasing payload.');
+  if (isDev) console.log('[Step 7 Complete] Database sync finalized successfully. Releasing payload.');
   return answerPayload;
 };

@@ -15,6 +15,8 @@ import { ProviderUnavailableError, classifyProviderError } from '../utils/provid
 import { logCallTokens, approxTokens } from '../utils/tokenLogger.js';
 import { routeToIntentHandler } from './intentRouter.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 // Provider-agnostic cache token extractor.
 // Groq: promptTokensCached or cache_read_input_tokens
 // OpenAI: prompt_tokens_details.cached_tokens (auto-active for prompts >1024 tokens)
@@ -147,7 +149,7 @@ export const generateResponse = async (input, context, decision, retrieval, stre
     return { ...chapterCompleteResponse, answer: sectionsToAnswerText(chapterCompleteResponse), tokenUsage: 0 };
   }
 
-  console.log(`[Step 6 Execution] Invoking Tutor Generation Engine. Script Target: ${language.answerLanguage}`);
+  if (isDev) console.log(`[Step 6 Execution] Invoking Tutor Generation Engine. Script Target: ${language.answerLanguage}`);
 
   // Declared outside try so catch block can read the value on parse errors
   let capturedBreakdown = { input: 0, output: 0, total: 0 };
@@ -220,7 +222,7 @@ export const generateResponse = async (input, context, decision, retrieval, stre
     const normalizedIntent = String(responseMode || '').toUpperCase();
 
     if (['CONVERSATION'].includes(normalizedIntent)) {
-      console.log(`[Step 6 Intent Firewall] Forcing status 'answered' for conversational intent: ${responseMode}`);
+      if (isDev) console.log(`[Step 6 Intent Firewall] Forcing status 'answered' for conversational intent: ${responseMode}`);
       targetStatus = 'answered';
     } else {
       // Academic questions standard normalization limits
@@ -246,7 +248,7 @@ export const generateResponse = async (input, context, decision, retrieval, stre
       ctxTokens: approxTokens(retrievedContext),
     });
 
-    console.log(`[Step 6 Success] Response structured. Status: ${normalized.status}`);
+    if (isDev) console.log(`[Step 6 Success] Response structured. Status: ${normalized.status}`);
 
     return {
       ...normalized,

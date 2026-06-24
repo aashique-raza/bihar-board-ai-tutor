@@ -9,7 +9,7 @@ export const askQuestionController = async (req, res, next) => {
   // Detect early client disconnect (browser closed/refreshed)
   req.on('close', () => {
     if (!res.writableEnded) {
-      console.log(`[Ask API] Client disconnected early. Aborting request...`);
+      console.warn(`[Ask API] Client disconnected early. Aborting request...`);
       abortController.abort(new Error('Client disconnected'));
     }
   });
@@ -20,7 +20,7 @@ export const askQuestionController = async (req, res, next) => {
 
     // Set a hard 45-second timeout for the LLM pipeline
     timeoutId = setTimeout(() => {
-      console.log(`[Ask API] Request hit 45s hard timeout. Aborting...`);
+      console.warn(`[Ask API] Request hit 45s hard timeout. Aborting...`);
       abortController.abort(new Error('Timeout'));
     }, 60000);
     const streamCallbacks = {

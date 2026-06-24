@@ -9,6 +9,8 @@ import { formatRetrievedContext } from './promptHelpers.js';
 import { getNextTopic } from '../curriculum/nextTopicResolver.js';
 import { getExamContext } from '../knowledge/examKnowledgeService.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 /**
  * Builds retriever options with explicit boundaries.
  */
@@ -43,16 +45,13 @@ const buildTopicSearchQuery = (topic) => {
  */
 export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, { focusChapter }, { chatState }, abortSignal = null) => {
   if (abortSignal?.aborted) {
-    console.log(`[Step 5] Aborting vector search early due to AbortSignal`);
+    if (isDev) console.log(`[Step 5] Aborting vector search early due to AbortSignal`);
     const error = new Error('AbortError');
     error.name = 'AbortError';
     throw error;
   }
 
-  console.log('[DEBUG step5] intent:', intent);
-  console.log('[DEBUG step5] chatState.currentChapterId:', chatState?.currentChapterId);
-  console.log('[DEBUG step5] chatState.currentTopicId:', chatState?.currentTopicId);
-  console.log(`[Step 5 Execution] Initiating Retrieval Decision Verification. Required: ${needsRetrieval}`);
+  if (isDev) console.log(`[Step 5 Execution] Initiating Retrieval Decision Verification. Required: ${needsRetrieval}`);
 
   // NEXT_STEP: resolve the next core topic first, then retrieve content for it
   if (intent === 'NEXT_STEP') {
@@ -76,7 +75,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
 
     // status === 'found': retrieve content for the resolved next topic
     const topicSearchQuery = buildTopicSearchQuery(result.topic);
-    console.log(`[Step 5 NEXT_STEP] Fetching content for next topic: "${result.topic.title}"`);
+    if (isDev) console.log(`[Step 5 NEXT_STEP] Fetching content for next topic: "${result.topic.title}"`);
 
     const nextRetrieval = await retrieveRelevantChunks(topicSearchQuery, getRetrieverOptions(focusChapter));
     const nextChunks = nextRetrieval.results || [];
@@ -101,7 +100,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
     const topicQuery = searchQuery || chatState?.lastRetrievalQuery || chatState?.lastTopic || null;
 
     if (!topicQuery) {
-      console.log('[Step 5 EXPLAIN_MORE] No query available (searchQuery=null, lastTopic=null) — empty context, tutor will ask student to clarify topic.');
+      if (isDev) console.log('[Step 5 EXPLAIN_MORE] No query available (searchQuery=null, lastTopic=null) — empty context, tutor will ask student to clarify topic.');
       return {
         retrieval: null, chunks: [], sources: [],
         retrievedContext: 'NO_RETRIEVED_CONTEXT',
@@ -110,13 +109,13 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
     }
 
     const querySource = chatState?.lastRetrievalQuery ? 'chatState.lastRetrievalQuery' : 'chatState.lastTopic';
-    console.log(`[Step 5 EXPLAIN_MORE] Re-retrieving via ${querySource}: "${topicQuery}"`);
+    if (isDev) console.log(`[Step 5 EXPLAIN_MORE] Re-retrieving via ${querySource}: "${topicQuery}"`);
 
     const explainRetrieval = await retrieveRelevantChunks(topicQuery, getRetrieverOptions(null));
     const explainChunks = explainRetrieval.results || [];
 
     if (!explainChunks.length) {
-      console.log(`[Step 5 EXPLAIN_MORE] 0 chunks returned for "${topicQuery}" — empty context, tutor will ask student to clarify.`);
+      if (isDev) console.log(`[Step 5 EXPLAIN_MORE] 0 chunks returned for "${topicQuery}" — empty context, tutor will ask student to clarify.`);
       return {
         retrieval: null, chunks: [], sources: [],
         retrievedContext: 'NO_RETRIEVED_CONTEXT',
@@ -124,7 +123,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
       };
     }
 
-    console.log(`[Step 5 EXPLAIN_MORE] ${explainChunks.length} chunks retrieved for re-explanation.`);
+    if (isDev) console.log(`[Step 5 EXPLAIN_MORE] ${explainChunks.length} chunks retrieved for re-explanation.`);
     return {
       retrieval: explainRetrieval,
       chunks: explainChunks,
@@ -139,7 +138,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
   // Returns formatted context string injected into the tutor LLM as {retrievedContext}.
   // Step 6 (tutor LLM) does not need to know this came from JSON, not vector search.
   if (intent === 'EXAM_INFO') {
-    console.log('[Step 5 EXAM_INFO] Knowledge Service lookup — no vector search');
+    if (isDev) console.log('[Step 5 EXAM_INFO] Knowledge Service lookup — no vector search');
     const examContext = getExamContext();
     return {
       retrieval: null,
@@ -153,7 +152,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
 
   // Short-circuit routing check
   if (!needsRetrieval) {
-    console.log('[Step 5 Bypassed] Skipping vector database lookups due to conversational context routing rule.');
+    if (isDev) console.log('[Step 5 Bypassed] Skipping vector database lookups due to conversational context routing rule.');
     return {
       retrieval: null,
       chunks: [],
@@ -162,7 +161,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
     };
   }
 
-  console.log(`[Step 5 DB Scan] Querying index vectors using computed target: "${searchQuery}"`);
+  if (isDev) console.log(`[Step 5 DB Scan] Querying index vectors using computed target: "${searchQuery}"`);
 
   const retrieval = await retrieveRelevantChunks(
     searchQuery,
@@ -177,7 +176,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
   // Format document boundaries into text sections for the subsequent Tutor prompt
   const retrievedContext = formatRetrievedContext(chunks);
 
-  console.log(`[Step 5 Complete] Successfully packaged ${chunks.length} ground truth chunks for text generation layer.`);
+  if (isDev) console.log(`[Step 5 Complete] Successfully packaged ${chunks.length} ground truth chunks for text generation layer.`);
 
   return {
     retrieval,

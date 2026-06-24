@@ -291,7 +291,7 @@ Student "Free Notes" button dekhta hai, click karta hai — actually Zuno ki "De
 
 ---
 
-### [ ] H-4 — Production Code Mein Debug `console.log` Statements
+### [x] H-4 — Production Code Mein Debug `console.log` Statements
 
 **Files:** `step5.retrieveContent.js:52-54`, `step3.buildContext.js`, `step4.decideRetrieval.js:130`, `step6.generateResponse.js:150`, `step7.saveAndRespond.js:142`, `intentRouter.js:251`, `ask.controller.js:12`
 

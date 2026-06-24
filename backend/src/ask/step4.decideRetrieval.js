@@ -7,6 +7,8 @@ import { parseJsonObject } from '../utils/jsonParser.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 import { logCallTokens } from '../utils/tokenLogger.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 // Provider-agnostic cache token extractor.
 // Groq: promptTokensCached or cache_read_input_tokens
 // OpenAI: prompt_tokens_details.cached_tokens (auto-active for prompts >1024 tokens)
@@ -127,7 +129,7 @@ const normalizeDecision = (decision, rawQuestion) => {
  * @returns {Promise<{ intent: string, inScope: boolean, needsRetrieval: boolean, responseMode: string, searchQuery: string|null, reason: string }>}
  */
 export const decideRetrieval = async ({ question }, { deciderHistory, language }, abortSignal = null) => {
-  console.log('[Step 4] Running intent classifier...');
+  if (isDev) console.log('[Step 4] Running intent classifier...');
 
   // Declared outside try so catch block can read the value on parse errors
   // (LLM responded but output was malformed — tokens were still consumed)
@@ -148,7 +150,7 @@ export const decideRetrieval = async ({ question }, { deciderHistory, language }
       }
     );
 
-    console.log('[Step 4] Response received. Parsing...');
+    if (isDev) console.log('[Step 4] Response received. Parsing...');
 
     const parsed = parseJsonObject(rawDecision, 'Step 4 intent decision');
     const finalDecision = normalizeDecision(parsed, question);

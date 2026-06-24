@@ -9,6 +9,8 @@ import {
 } from './promptHelpers.js';
 import { logContextSizes } from '../utils/tokenLogger.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 // Phase 3: Maps consecutive non-academic turn count to a drift tier (0/1/2).
 // Tier 0 (0-1): normal response. Tier 1 (2-3): gentle nudge. Tier 2 (4+): firm redirect.
 const getDriftTier = (n) => {
@@ -69,18 +71,18 @@ const buildSemanticStudyContext = (chatState, studyMap) => {
  * @returns {Promise<{ language, memory, history, lastTutorResponse, curriculumSummary, focusChapterPrompt, currentStudyContext }>}
  */
 export const buildContext = async ({ question, focusChapter }, { chatState, recentMessages, sessionId }) => {
-  console.log('step3.buildContext.js: Pre-processing contextual runtime serialization...');
+  if (isDev) console.log('step3.buildContext.js: Pre-processing contextual runtime serialization...');
 
   // Concurrent-safe curriculum initialization zone
   const studyMap = await getStudyMap();
 
   // 1. Evaluate user input script with languageDetector matrix
   const language = detectConversationLanguage({ question, recentMessages });
-  console.log(`Language Verification Matrix -> Target Response Script: ${language.answerLanguage}`);
+  if (isDev) console.log(`Language Verification Matrix -> Target Response Script: ${language.answerLanguage}`);
 
   // 2. Perform True Semantic Hydration for contextual stability
   const currentStudyContext = buildSemanticStudyContext(chatState, studyMap);
-  console.log(`Semantic Hydration Map Output -> ${currentStudyContext}`);
+  if (isDev) console.log(`Semantic Hydration Map Output -> ${currentStudyContext}`);
 
   // 3. Serialize raw objects for prompt engines ingestion protocols
   const memory = JSON.stringify(formatMemoryForPrompt(chatState));
