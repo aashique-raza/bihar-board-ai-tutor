@@ -10,6 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import App from './App.jsx';
 import AppInitializer from './components/AppInitializer.jsx';
+import ErrorBoundary from './components/ErrorBoundary.jsx';
 import { store, persistor } from './store/store.js';
 import { injectStore } from './services/axios/axiosInstance.js';
 import zunoTheme from './theme/zunoTheme.js';
@@ -28,7 +29,9 @@ createRoot(document.getElementById('root')).render(
               <CssBaseline />
               {/* Silently restores user session on page load — renders nothing */}
               <AppInitializer />
-              <App />
+              <ErrorBoundary>
+                <App />
+              </ErrorBoundary>
             </ThemeProvider>
           </PersistGate>
         </Provider>

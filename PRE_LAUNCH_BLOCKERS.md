@@ -403,7 +403,7 @@ if (sessionId && !UUID_REGEX.test(sessionId)) {
 
 ---
 
-### [ ] P2.4 — Frontend Error Boundaries Missing
+### [x] P2.4 — Frontend Error Boundaries Missing
 
 **Files:** `frontend/src/App.jsx`, `frontend/src/pages/ChatPage.jsx`
 

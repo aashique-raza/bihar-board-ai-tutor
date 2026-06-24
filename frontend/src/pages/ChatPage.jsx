@@ -23,6 +23,7 @@ import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
 import useSessionList from '../hooks/useSessionList.js';
 import HistoryPanel from '../components/HistoryPanel.jsx';
+import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
 // --- Message factory helpers ---
 
@@ -479,60 +480,63 @@ function ChatPage({ theme, toggleTheme }) {
         isSessionLocked={isSessionLocked}
       />
 
-      {/* Chat area — scrollable */}
-      <Box
-        component="section"
-        aria-live="polite"
-        sx={{ flex: 1, overflowY: 'auto', px: { xs: 2, sm: 3 }, py: 2 }}
-      >
-        <Box sx={{
-          maxWidth: 'var(--chat-max-width)',
-          mx: 'auto',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 0,
-        }}>
-          {isHistoryLoading ? (
-            <ChatMessage
-              message={{ id: 'loading', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
-            />
-          ) : messages.map((message) => (
-            <ChatMessage
-              key={message.id}
-              message={message}
-              onSwitchToGlobal={handleSwitchToGlobal}
-            />
-          ))}
-          {isAsking && (
-            <ChatMessage
-              message={{ id: 'thinking', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
-            />
-          )}
-          <div ref={chatEndRef} />
+      {/* key=sessionId: when session changes, ErrorBoundary remounts and clears any crashed state */}
+      <ErrorBoundary key={sessionId}>
+        {/* Chat area — scrollable */}
+        <Box
+          component="section"
+          aria-live="polite"
+          sx={{ flex: 1, overflowY: 'auto', px: { xs: 2, sm: 3 }, py: 2 }}
+        >
+          <Box sx={{
+            maxWidth: 'var(--chat-max-width)',
+            mx: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 0,
+          }}>
+            {isHistoryLoading ? (
+              <ChatMessage
+                message={{ id: 'loading', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
+              />
+            ) : messages.map((message) => (
+              <ChatMessage
+                key={message.id}
+                message={message}
+                onSwitchToGlobal={handleSwitchToGlobal}
+              />
+            ))}
+            {isAsking && (
+              <ChatMessage
+                message={{ id: 'thinking', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
+              />
+            )}
+            <div ref={chatEndRef} />
+          </Box>
         </Box>
-      </Box>
 
-      {/* Input zone — fixed at bottom */}
-      <Box sx={{
-        flexShrink: 0,
-        bgcolor: 'var(--bg-surface)',
-        borderTop: '1px solid var(--border)',
-        px: { xs: 2, sm: 3 },
-        py: 1.5,
-      }}>
-        <Box sx={{ maxWidth: 'var(--chat-max-width)', mx: 'auto' }}>
-          <StatusNotice error={error} />
-          <AskBar
-            disabled={isAsking || isHistoryLoading}
-            isLocked={isSessionLocked}
-            isGuestLimited={isGuestLimited}
-            onGuestLimitClick={handleOpenGuestLimitModal}
-            onAsk={handleAsk}
-            onCancel={handleCancel}
-            studyMode={studyMode}
-          />
+        {/* Input zone — fixed at bottom */}
+        <Box sx={{
+          flexShrink: 0,
+          bgcolor: 'var(--bg-surface)',
+          borderTop: '1px solid var(--border)',
+          px: { xs: 2, sm: 3 },
+          py: 1.5,
+        }}>
+          <Box sx={{ maxWidth: 'var(--chat-max-width)', mx: 'auto' }}>
+            <StatusNotice error={error} />
+            <AskBar
+              disabled={isAsking || isHistoryLoading}
+              isLocked={isSessionLocked}
+              isGuestLimited={isGuestLimited}
+              onGuestLimitClick={handleOpenGuestLimitModal}
+              onAsk={handleAsk}
+              onCancel={handleCancel}
+              studyMode={studyMode}
+            />
+          </Box>
         </Box>
-      </Box>
+      </ErrorBoundary>
 
       <FocusModal
         isOpen={isFocusModalOpen}
