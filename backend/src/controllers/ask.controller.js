@@ -18,9 +18,9 @@ export const askQuestionController = async (req, res, next) => {
     const userId = req.user?.id || null;
     const guestId = req.user ? null : (req.headers['x-guest-id'] || null);
 
-    // Set a hard 45-second timeout for the LLM pipeline
+    // Set a hard 60-second timeout for the LLM pipeline
     timeoutId = setTimeout(() => {
-      console.warn(`[Ask API] Request hit 45s hard timeout. Aborting...`);
+      console.warn(`[Ask API] Request hit 60s hard timeout. Aborting...`);
       abortController.abort(new Error('Timeout'));
     }, 60000);
     const streamCallbacks = {

@@ -44,6 +44,7 @@ const INTENT_MEMORY_WHITELIST = {
   EXPLAIN_MORE:      ['lastDoubtTopic', 'lastDoubtQuestion'],     // NOT lastTopic — prevents drift
   CONCEPT_QUESTION:  ['lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion', 'learningMode'],
   NEXT_STEP:         ['lastTopic', 'learningMode'],               // currentTopicId managed by step7 code
+  EXAM_INFO:         [],                                          // deterministic lookup — LLM writes nothing
 };
 
 /**

@@ -25,7 +25,7 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use(express.json());
-app.use(morgan('dev'));
+app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
 app.get('/', (_req, res) => {
   return sendResponse(res, 200, {

@@ -442,7 +442,7 @@ Recovery screen mein: "Kuch technical problem aayi. Page reload karo." + Reload 
 
 ---
 
-### [ ] L-1 — Timeout Comment Mismatch (45s Says, 60s Does)
+### [x] L-1 — Timeout Comment Mismatch (45s Says, 60s Does)
 
 **File:** `backend/src/controllers/ask.controller.js:21-25`
 
@@ -459,7 +459,7 @@ Comment aur implementation mein 15 second ka gap hai. Future developer timeout "
 
 ---
 
-### [ ] L-2 — EXAM_INFO Intent INTENT_MEMORY_WHITELIST Mein Missing
+### [x] L-2 — EXAM_INFO Intent INTENT_MEMORY_WHITELIST Mein Missing
 
 **File:** `backend/src/ask/step7.saveAndRespond.js:37-44`
 
@@ -484,7 +484,7 @@ Lekin agar future mein EXAM_INFO ke prompt mein memory tracking add ki (e.g., "s
 
 ---
 
-### [ ] L-3 — Morgan 'dev' Format Always — Production Pe Wrong
+### [x] L-3 — Morgan 'dev' Format Always — Production Pe Wrong
 
 **File:** `backend/src/app.js:26`
 
