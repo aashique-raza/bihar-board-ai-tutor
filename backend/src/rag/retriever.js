@@ -13,8 +13,20 @@ import { createQueryEmbeddings } from './geminiEmbeddings.js';
 import { rerankResults } from './reranker.js';
 import { retrieverConfig } from './retriever.config.js';
 import { Chunk } from '../models/chunk.model.js';
+import { embeddingCache } from '../cache/embeddingCache.js';
+import { retrievalCache } from '../cache/retrievalCache.js';
 
-// Rerank scoring thresholds tuned for Bihar Board Class 10
+// Singleton embedding instance — avoid creating a new object on every request
+let _queryEmbeddings = null;
+const getQueryEmbeddings = () => {
+  if (!_queryEmbeddings) _queryEmbeddings = createQueryEmbeddings();
+  return _queryEmbeddings;
+};
+
+// Rerank scoring thresholds (proven values from pre-Atlas MemoryVectorStore era).
+// Apply to BOTH OpenAI text-embedding-3-large and Gemini gemini-embedding-001 — both
+// produce cosine scores in 0.55-0.80 for relevant content when chunks are embedded
+// WITHOUT the [Context] preamble (see markdownChunker.metadata.originalText).
 const STRONG_VECTOR_SCORE_THRESHOLD = 0.7;
 const FINAL_SCORE_THRESHOLD = 0.65;
 const TERM_MATCH_VECTOR_SCORE_THRESHOLD = 0.62;
@@ -50,6 +62,8 @@ const passesFinalFilter = (result, query, options = {}) => {
 
 /**
  * Main retrieval function — called by Step 5 of the Ask API.
+ * Results are cached (L1 memory → L2 Redis) keyed on query + chapter filter + topK.
+ * Cache is invalidated automatically when npm run rag:index completes.
  */
 export const retrieveRelevantChunks = async (question, options = {}) => {
   const query = String(question || '').trim();
@@ -58,12 +72,22 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
     throw new Error('Question cannot be empty.');
   }
 
-  const { topK, minScore } = normalizeRetrieverOptions(options);
-  const candidateTopK = options.candidateTopK || Math.max(topK * 4, 20);
-  const embeddings = options.embeddings || createQueryEmbeddings();
+  // Wrap the full retrieval pipeline in the retrieval cache.
+  // On a cache hit, Atlas vector search + rerank are skipped entirely (~600-1000ms saved).
+  return retrievalCache.getOrFetch(query, options, () => _doRetrieve(query, options));
+};
 
-  // 1. Embed the user's query
-  const queryEmbedding = await embeddings.embedQuery(query);
+// Extracted so retrievalCache.getOrFetch can call it as fetchFn without recursion.
+const _doRetrieve = async (query, options) => {
+  const { topK, minScore } = normalizeRetrieverOptions(options);
+  const candidateTopK = options.candidateTopK || Math.max(topK * 10, 50);
+  const embeddings = options.embeddings || getQueryEmbeddings();
+
+  // 1. Embed the user's query (cached: L1 memory → L2 Redis → Gemini API)
+  const queryEmbedding = await embeddingCache.getOrFetch(
+    query,
+    () => embeddings.embedQuery(query)
+  );
 
   // 2. Build pre-filter for Vector Search if metadataFilter is provided
   let filter = undefined;
@@ -139,7 +163,7 @@ export const retrieveRelevantChunks = async (question, options = {}) => {
     minScore,
     vectorStorePath: 'MongoDB Atlas Vector Search',
     totalVectors: -1, // Cannot easily get total count without a separate query
-    embeddingDimension: 768,
+    embeddingDimension: 3072,
     debug: {
       candidateCountBeforeRerank: candidateCount,
       countAfterMinScore: candidates.length,

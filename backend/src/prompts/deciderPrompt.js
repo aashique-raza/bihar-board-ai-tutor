@@ -63,9 +63,13 @@ CONSERVATIVE BIAS RULES (apply in order):
    "Life Processes skip kar sakta hoon?" → EXAM_INFO (not CONCEPT_QUESTION)
 
 SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
-- Generate clean English or Roman-script Hinglish keywords. Never Devanagari.
-- Translate Hindi: "प्रकाश संश्लेषण" → "photosynthesis", "विद्युत धारा" → "electric current", "अम्ल और क्षार" → "acid and base"
-- Pronouns ("iska", "usko", "this", "again"): resolve the topic from Recent Conversation Log.
+- Generate a DESCRIPTIVE PHRASE or SENTENCE of 8-15 words that captures the topic AND what is being asked. NOT 2-3 keywords — the vector search needs semantic richness to find the right chapter.
+- Examples of GOOD searchQuery: "difference between acid and base properties reactions pH indicators", "how does photosynthesis work in leaves food production", "electric current and resistance Ohm law relationship", "refraction of light through glass lens prism bending"
+- Examples of BAD searchQuery (too short): "acid and base", "photosynthesis", "electric current", "refraction"
+- Write in English. Translate Hindi/Hinglish topic words to English. Never Devanagari.
+- Translate Hindi: "प्रकाश संश्लेषण" → "how does photosynthesis produce food in plants", "विद्युत धारा" → "what is electric current and how does it flow in a circuit", "अम्ल और क्षार" → "difference between acid and base properties chemical reactions"
+- Include the SUBJECT DOMAIN if obvious: acid-base → chemistry, photosynthesis → biology, light refraction → physics
+- Pronouns ("iska", "usko", "this", "again"): resolve the topic from Recent Conversation Log then generate a full phrase.
 - EXPLAIN_MORE: searchQuery must be null. Re-retrieval is handled by the pipeline using saved session state.
 - All other intents: searchQuery must be null.
 

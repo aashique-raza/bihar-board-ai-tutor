@@ -88,21 +88,37 @@ const normalizeDecision = (decision, rawQuestion) => {
   // Not read from LLM output (lean prompt no longer returns this field).
   const needsRetrieval = (intent === 'CONCEPT_QUESTION' && inScope);
 
-  // The vector store is indexed in Hinglish/English, so a Devanagari searchQuery
-  // would retrieve poorly. Detect it here and skip retrieval below if found.
   const DEVANAGARI_PATTERN = /[ऀ-ॿ]/;
   const rawSearchQuery = String(decision.searchQuery || '').trim();
-  const isDevanagari = DEVANAGARI_PATTERN.test(rawSearchQuery);
 
-  if (needsRetrieval && isDevanagari) {
-    // The LLM ignored the instruction and returned a Devanagari searchQuery.
-    // Skipping retrieval is better than a bad vector match.
-    console.warn('[Step 4] searchQuery contains Devanagari script — skipping retrieval to prevent bad vector match');
+  // SEARCH QUERY STRATEGY:
+  //
+  // WHY original question beats LLM-extracted keywords:
+  // Gemini gemini-embedding-001 cosine scores cluster tightly (~0.52) when the query
+  // is 2-3 short English keywords. The full student question (8-15 words of Roman
+  // Hinglish/English) produces a more anchored embedding that discriminates between
+  // chapters. E.g. "Acid aur base mein kya antar hota hai" beats "acid and base"
+  // because it carries relationship semantics ("antar" = difference) on top of topic.
+  //
+  // FALLBACK chain (in priority order):
+  //   1. Original question — if NOT pure Devanagari (Roman Hinglish/English is fine)
+  //   2. LLM-extracted searchQuery — if original is Devanagari but LLM translated it
+  //   3. null → no retrieval (pipeline returns insufficient_context gracefully)
+
+  let searchQuery = null;
+  if (needsRetrieval) {
+    const isOriginalDevanagari = DEVANAGARI_PATTERN.test(rawQuestion);
+    const isExtractedDevanagari = DEVANAGARI_PATTERN.test(rawSearchQuery);
+
+    if (!isOriginalDevanagari) {
+      searchQuery = rawQuestion.replace(/\s+/g, ' ').trim();
+    } else if (rawSearchQuery && !isExtractedDevanagari) {
+      console.warn('[Step 4] Original question is Devanagari — falling back to LLM-extracted English searchQuery');
+      searchQuery = rawSearchQuery.replace(/\s+/g, ' ').trim();
+    } else {
+      console.warn('[Step 4] Both original question and extracted searchQuery are Devanagari — skipping retrieval');
+    }
   }
-
-  const searchQuery = needsRetrieval && rawSearchQuery && !isDevanagari
-    ? rawSearchQuery.replace(/\s+/g, ' ').trim()
-    : null;
 
   return {
     intent,

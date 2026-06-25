@@ -32,6 +32,7 @@ import { loadMarkdownDocuments } from './markdownLoader.js';
 
 import { connectDB, disconnectDB } from '../db/mongooseClient.js';
 import { Chunk } from '../models/chunk.model.js';
+import { bumpRagVersion } from '../cache/retrievalCache.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -62,9 +63,12 @@ const createLangChainDocument = (chunk) =>
     id: chunk.id,
     pageContent: buildLangChainPageContent(chunk),
     metadata: {
-      ...chunk.metadata,
+      // Spread chunker metadata LAST so its `originalText` (clean text without [Context]
+      // preamble, populated in markdownChunker.createChunk) wins. The previous version
+      // overwrote it with `chunk.pageContent` (which carries the [Context]+[Content]
+      // preamble), defeating the purpose of having a separate clean field for embedding.
       chunk_id: chunk.id,
-      originalText: chunk.pageContent,
+      ...chunk.metadata,
     },
   });
 
@@ -147,7 +151,15 @@ const runIndexPipeline = async () => {
     const batchNum = Math.floor(i / BATCH_SIZE) + 1;
     console.log(`Embedding batch ${batchNum}/${totalBatches} (chunks ${i + 1}–${Math.min(i + BATCH_SIZE, langChainDocuments.length)})...`);
 
-    const batchTexts = batch.map((doc) => doc.pageContent);
+    // Embed metadata.originalText (clean content, no [Context] preamble — populated by
+    // markdownChunker.createChunk). doc.pageContent carries a duplicated metadata header
+    // (Board/Section/Chapter/Topic) that is near-identical across chunks of the same
+    // chapter — embedding that header inflates similarity floor and weakens discrimination
+    // between relevant and unrelated chapters. The full preamble version is still stored
+    // in MongoDB (in chunk.pageContent) so the tutor LLM gets rich context at retrieval.
+    // If originalText is missing for any reason, fall back to pageContent so indexing
+    // does not silently break (degraded discrimination, but functional).
+    const batchTexts = batch.map((doc) => doc.metadata.originalText || doc.pageContent);
     const batchEmbeddings = await embedBatchWithRetry(embeddings, batchTexts, batchNum);
 
     const batchChunks = batch.map((doc, idx) => ({
@@ -173,7 +185,10 @@ const runIndexPipeline = async () => {
 
   console.log(`\nIndexing complete. ${allChunksToInsert.length} vectors saved to MongoDB.`);
 
-  // 4. Disconnect gracefully
+  // 4. Bump retrieval cache version so running servers clear stale entries within 5 minutes
+  await bumpRagVersion();
+
+  // 5. Disconnect gracefully
   await disconnectDB();
 };
 

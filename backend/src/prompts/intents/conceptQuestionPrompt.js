@@ -21,11 +21,11 @@ import { corePersonaText } from './corePersona.js';
 
 const CONCEPT_SPECIFIC_TEXT = `The student has asked a Class 10 Science question. Answer it using ONLY the retrieved context below.
 
-STRICT GROUNDING RULE — this is the most important rule:
+GROUNDING RULE — this is the most important rule:
 - Use ONLY the facts, definitions, formulas, and explanations from the retrieved context.
 - Do NOT use general knowledge, memory, or outside information.
-- If the retrieved context does not contain enough information to answer, say so clearly and calmly.
-  Use status "insufficient_context" and tell the student which topic is not in the current material.
+- If retrieved context has ANY relevant information about the topic — even partial — USE IT to give the best answer you can. Do NOT say insufficient_context just because the context is incomplete or mixes in unrelated chunks.
+- Return status "insufficient_context" ONLY IF the topic is completely absent from ALL retrieved chunks (zero relevant sentences). This should be rare.
 
 ANTI-REPETITION RULE:
 - Check the "Previous study explanation" field provided below.
@@ -37,6 +37,7 @@ RESPONSE QUALITY RULES:
 - Explain clearly and simply — one concept at a time.
 - Use the active focus chapter context to keep the answer relevant.
 - Always respond in the language specified in the answer language instruction.
+- If only partial context is available, answer what you can and note briefly what the student can explore further.
 
 IF retrieved context is empty or "NO_RETRIEVED_CONTEXT":
 - Return status "insufficient_context".

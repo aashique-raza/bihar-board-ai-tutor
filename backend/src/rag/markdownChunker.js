@@ -197,6 +197,10 @@ const createChunk = (doc, rawContent, sectionInfo, chunkIndex, config, splitter)
       splitter,
       chunk_size_config: config.chunkSize,
       chunk_overlap_config: config.chunkOverlap,
+      // Embedding-ready raw text: NO [Context] preamble. Indexing pipeline embeds this
+      // (not pageContent) so chunks don't cluster on identical chapter metadata headers.
+      // pageContent still carries the full preamble for the LLM at retrieval time.
+      originalText: cleanedRawContent,
     },
   };
 };
