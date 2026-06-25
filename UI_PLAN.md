@@ -3,7 +3,7 @@
 **Created:** 2026-06-25
 **Owner:** Farhan Raza
 **Engineering partner:** Claude (acting as Senior Product Manager + Senior Software Engineer + Senior UI Engineer — 20+ years equivalent experience)
-**Status:** 🟡 ACTIVE — P7 ChatMessage DONE, P8 FocusModal next
+**Status:** 🟡 ACTIVE — P2 Brand Voice DONE, P8 FocusModal next
 **Previous plan:** Superseded. Steps A–E of the old plan are already shipped in code, but the design system they shipped on (Slate & Pearl / Indigo `#4F46E5`) is being re-evaluated as part of this v2 effort. We will NOT throw away working code — we will refactor design tokens and re-skin existing components. Logic stays.
 
 ---
@@ -192,7 +192,7 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 |-------|------|---------|-------------------|--------|
 | P0 | Master plan file (yeh file) | Docs | Methodology + role + scope | 🟢 IN PROGRESS |
 | P1 | **Design direction** (color, type, mood) | None yet | 3 directions with live preview widgets (light + dark) | ✅ DONE — Direction A locked |
-| P2 | **Tagline + brand voice** | None yet | Hinglish/English/mix, 5+ tagline options, tone guide | ⬜ PENDING-DISCUSSION |
+| P2 | **Tagline + brand voice** | `Topbar.jsx`, `AskBar.jsx`, `LoginPage.jsx`, `RegisterPage.jsx`, `ChatPage.jsx` | Direction C "Apni boli mein" — tagline, placeholders, auth copy, welcome message removed | ✅ DONE |
 | P3 | **Content strategy** | None yet | Welcome msg, placeholders, empty states, error copy, auth page copy, landing copy | ⬜ PENDING-DISCUSSION |
 | P4 | Design tokens implementation | `theme.css`, `zunoTheme.js` | How to migrate without breaking shipped UI | ✅ DONE — verified light + dark, build green |
 | P5 | Topbar + logo + brand moment | `Topbar.jsx`, `global.css` | Logo refresh, tagline placement | ✅ DONE — Option 2 (Action Forward), both modes verified |

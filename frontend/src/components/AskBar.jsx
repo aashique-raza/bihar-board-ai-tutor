@@ -102,8 +102,8 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
               : isLocked
                 ? 'Nayi chat shuru karo'
                 : studyMode === 'focus'
-                  ? 'Is chapter ka topic ya question likho...'
-                  : 'Aaj kya padhna hai? Topic ya question likho...'
+                  ? 'Is chapter se kya samajhna hai?'
+                  : 'Jaise bhi bolte ho — waise hi likho'
           }
           sx={{ color: 'text.primary', px: 1, alignSelf: 'flex-end' }}
         />

@@ -106,8 +106,8 @@ function LoginPage() {
           <span className="auth-logo-text">Zuno</span>
         </div>
 
-        <h2 className="auth-heading">Welcome back</h2>
-        <p className="auth-subtext">Sign in to your account</p>
+        <h2 className="auth-heading">Wapas aa gaye. Chalte hain.</h2>
+        <p className="auth-subtext">Class 10 ka sawaal pooch — seedha jawab milega, apni boli mein.</p>
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="auth-fields">

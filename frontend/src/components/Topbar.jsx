@@ -74,18 +74,31 @@ export default function Topbar({
       {/* Left: Logo + wordmark */}
       <Stack direction="row" spacing={1.25} alignItems="center">
         <Box className="zuno-logo">Z</Box>
-        <Typography
-          sx={{
-            fontFamily: 'var(--font-brand)',
-            fontWeight: 800,
-            fontSize: '1.05rem',
-            letterSpacing: '-0.4px',
-            color: 'var(--text-primary)',
-            lineHeight: 1,
-          }}
-        >
-          Zuno
-        </Typography>
+        <Box>
+          <Typography
+            sx={{
+              fontFamily: 'var(--font-brand)',
+              fontWeight: 800,
+              fontSize: '1.05rem',
+              letterSpacing: '-0.4px',
+              color: 'var(--text-primary)',
+              lineHeight: 1,
+            }}
+          >
+            Zuno
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: '0.67rem',
+              color: 'var(--text-muted)',
+              lineHeight: 1,
+              mt: '2px',
+              letterSpacing: '0.01em',
+            }}
+          >
+            apni boli mein
+          </Typography>
+        </Box>
       </Stack>
 
       {/* Right: chapter pill + nav buttons + theme toggle */}

@@ -27,13 +27,6 @@ import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
 // --- Message factory helpers ---
 
-const createWelcomeMessage = () => ({
-  id: 'welcome',
-  role: 'zuno',
-  status: 'intro',
-  answer: 'Main Zuno hoon, tumhara Class 10 personal tutor. Aaj jis topic par atke ho, wahi se start karte hain.',
-  sources: [],
-});
 
 const createQuestionMessage = (question) => ({
   id: crypto.randomUUID(),
@@ -152,7 +145,7 @@ function ChatPage({ theme, toggleTheme }) {
     const savedId = getSavedSessionId();
 
     if (!savedId || !isLoggedIn) {
-      setMessages([createWelcomeMessage()]);
+      setMessages([]);
       setIsHistoryLoading(false);
       return;
     }
@@ -162,12 +155,12 @@ function ChatPage({ theme, toggleTheme }) {
       if (cancelled) return;
       // result is null only on 401 (silent) — show welcome and keep sessionId as-is
       if (!result) {
-        setMessages([createWelcomeMessage()]);
+        setMessages([]);
         return;
       }
       const dbMessages = result?.messages ?? [];
       const converted = dbMessages.map(dbMessageToUiMessage);
-      setMessages(converted.length > 0 ? converted : [createWelcomeMessage()]);
+      setMessages(converted);
       setIsSessionLocked(result?.sessionMeta?.isLocked === true);
     }).catch((err) => {
       if (cancelled) return;
@@ -177,7 +170,7 @@ function ChatPage({ theme, toggleTheme }) {
         clearSessionId();
         setSessionId('');
       }
-      setMessages([createWelcomeMessage()]);
+      setMessages([]);
     }).finally(() => {
       if (!cancelled) setIsHistoryLoading(false);
     });
@@ -258,7 +251,7 @@ function ChatPage({ theme, toggleTheme }) {
     setIsHistoryLoading(false);    // BUG-3 FIX: prevent stuck loading if switch was in progress
     isSwitchingRef.current = false; // BUG-2 FIX: release abort guard
 
-    setMessages([createWelcomeMessage()]);
+    setMessages([]);
     setStudyMode(STUDY_MODES.global);
     setSelectedChapterId(null);
     setError('');
@@ -465,7 +458,7 @@ function ChatPage({ theme, toggleTheme }) {
 
       const dbMessages = result?.messages ?? [];
       const converted = dbMessages.map(dbMessageToUiMessage);
-      const displayMessages = converted.length > 0 ? converted : [createWelcomeMessage()];
+      const displayMessages = converted;
 
       // Show cap notice if history is at the 30-message limit
       if (dbMessages.length === 30) {
@@ -476,7 +469,7 @@ function ChatPage({ theme, toggleTheme }) {
       setIsSessionLocked(result?.sessionMeta?.isLocked === true);
     } catch {
       if (session.sessionId !== sessionIdRef.current) return;
-      setMessages([createWelcomeMessage()]);
+      setMessages([]);
       showToast('Session load nahi hui. Dobara try karo.', 'error'); // Missing-1 FIX
     } finally {
       if (session.sessionId === sessionIdRef.current) {

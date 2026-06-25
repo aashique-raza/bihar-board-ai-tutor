@@ -142,8 +142,8 @@ function RegisterPage() {
           <span className="auth-logo-text">Zuno</span>
         </div>
 
-        <h2 className="auth-heading">Create your account</h2>
-        <p className="auth-subtext">Your AI tutor for Bihar Board Class 10 Science</p>
+        <h2 className="auth-heading">Ruko mat. Pooch lo.</h2>
+        <p className="auth-subtext">Sawaal apni boli mein — jawab bhi apni boli mein.</p>
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="auth-fields">
