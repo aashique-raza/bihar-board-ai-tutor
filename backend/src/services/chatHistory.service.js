@@ -34,9 +34,8 @@ export const addChatMessages = async (sessionId, messages = [], userId = null) =
     {
       upsert: true,
       returnDocument: 'after',
-      lean: true
     }
-  );
+  ).lean();
 
   // Update the parent session's lastMessageAt timestamp
   await updateChatSessionLastMessageTime(sessionId);

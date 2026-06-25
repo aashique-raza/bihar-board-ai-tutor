@@ -29,6 +29,8 @@ import { formatRecentHistory, formatCompressedHistory } from './promptHelpers.js
 import { logCallTokens }         from '../utils/tokenLogger.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 // ─── Phase 3: Drift tier → behavioral instruction for the GREETING prompt ────
 //
 // Tier 0: no instruction (normal warm response).
@@ -248,7 +250,7 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     };
 
     logCallTokens('TUTOR', capturedBreakdown, { mode: responseMode, intent });
-    console.log(`[IntentRouter] ${intent} → status:${normalized.status}`);
+    if (isDev) console.log(`[IntentRouter] ${intent} → status:${normalized.status}`);
 
     return { ...normalized, tokenUsage: capturedBreakdown.total, tokenBreakdown: capturedBreakdown };
 

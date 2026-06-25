@@ -58,10 +58,18 @@ export const fetchSessionHistory = async (sessionId) => {
     );
     return data.data;
   } catch (err) {
-    if (err.response?.status !== 401) {
-      console.error('[fetchSessionHistory]', err.message);
-    }
-    return null;
+    // 401 is silent — axios interceptor handles token refresh / logout
+    if (err.response?.status === 401) return null;
+
+    // For all other errors, throw with the backend's machine-readable code attached.
+    // ChatPage uses this to distinguish a stale guest sessionId (SESSION_USER_MISMATCH)
+    // from a genuine network failure, so it only clears localStorage when appropriate.
+    const error = new Error(
+      err.response?.data?.error?.message || 'Session history load nahi hui.'
+    );
+    error.code = err.response?.data?.error?.code || null;
+    error.status = err.response?.status || 0;
+    throw error;
   }
 };
 

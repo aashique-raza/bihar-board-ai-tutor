@@ -160,12 +160,24 @@ function ChatPage({ theme, toggleTheme }) {
     let cancelled = false;
     fetchSessionHistory(savedId).then((result) => {
       if (cancelled) return;
+      // result is null only on 401 (silent) — show welcome and keep sessionId as-is
+      if (!result) {
+        setMessages([createWelcomeMessage()]);
+        return;
+      }
       const dbMessages = result?.messages ?? [];
       const converted = dbMessages.map(dbMessageToUiMessage);
       setMessages(converted.length > 0 ? converted : [createWelcomeMessage()]);
       setIsSessionLocked(result?.sessionMeta?.isLocked === true);
-    }).catch(() => {
-      if (!cancelled) setMessages([createWelcomeMessage()]);
+    }).catch((err) => {
+      if (cancelled) return;
+      // SESSION_USER_MISMATCH = logged-in user's localStorage has a stale guest sessionId.
+      // Clear it so the next question creates a fresh session instead of hitting a 403.
+      if (err.code === 'SESSION_USER_MISMATCH') {
+        clearSessionId();
+        setSessionId('');
+      }
+      setMessages([createWelcomeMessage()]);
     }).finally(() => {
       if (!cancelled) setIsHistoryLoading(false);
     });
@@ -363,17 +375,33 @@ function ChatPage({ theme, toggleTheme }) {
         const answer = wasTimeoutAbortRef.current
           ? 'Zuno thoda slow hai abhi — connection slow ho sakta hai ya server busy hai. Ek baar aur try karo!'
           : 'Request cancel kar di. Koi aur sawaal poochho!';
-        setMessages((prev) => [...prev, createAnswerMessage({
-          status: 'cancelled',
-          answer,
-          sources: [],
-        })]);
+
+        if (!isFirstUpdate) {
+          // Streaming had started — update the partial message in-place instead of appending.
+          // User keeps the partial content and sees it's incomplete.
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === tempMessageId
+                ? { ...m, status: 'cancelled', answer: m.answer || answer }
+                : m
+            )
+          );
+        } else {
+          setMessages((prev) => [...prev, createAnswerMessage({ status: 'cancelled', answer, sources: [] })]);
+        }
       } else {
-        setMessages((prev) => [...prev, createAnswerMessage({
-          status: 'error',
-          answer: askError.message,
-          sources: [],
-        })]);
+        if (!isFirstUpdate) {
+          // Streaming had started — mark partial message as errored, preserve what arrived.
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === tempMessageId
+                ? { ...m, status: 'error' }
+                : m
+            )
+          );
+        } else {
+          setMessages((prev) => [...prev, createAnswerMessage({ status: 'error', answer: askError.message, sources: [] })]);
+        }
       }
     } finally {
       clearTimeout(timeoutRef.current);

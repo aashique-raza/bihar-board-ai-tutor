@@ -330,11 +330,13 @@ if (process.env.NODE_ENV !== 'production') console.log('[DEBUG step5]...');
 
 ---
 
-### [ ] P2.1 — No Embedding API Caching — Double Gemini Call on Academic Queries
+### [x] P2.1 — No Embedding API Caching — Double Gemini Call on Academic Queries
 
-**Files:** `backend/src/rag/retriever.js:65` | `backend/src/ask/intentSafetyNet.js:37`
+**Files:** `backend/src/rag/retriever.js` | `backend/src/cache/embeddingCache.js` | `backend/src/cache/retrievalCache.js`
 
-**Core Problem:**
+**Status:** Complete. Two-layer cache (L1 in-memory Map + L2 Redis 30-day TTL) implemented in `src/cache/`. `retriever.js` wraps full pipeline in `retrievalCache.getOrFetch()`. `embeddingCache` covers embedding API calls.
+
+**Core Problem (archived):**
 Jab koi academic query safety net se guzarti hai (decider ne galti se GREETING classify kiya), pipeline yeh karta hai:
 
 ```
@@ -361,7 +363,7 @@ Redis already installed — sirf ek helper function banana hai.
 
 ---
 
-### [ ] P2.2 — `sessionId` UUID Validation Missing
+### [x] P2.2 — `sessionId` UUID Validation Missing
 
 **File:** `backend/src/ask/step1.validateInput.js`
 
@@ -504,29 +506,82 @@ app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
 ---
 
+## Session System Bugs — Found via Deep Audit (2026-06-25)
+
+---
+
+### [x] S-1 — Login Ke Baad Stale Guest SessionId → Pehla Message Fail
+
+**Files:** `session.controller.js` | `ApiError.js` | `error.middleware.js` | `tutorApi.js` | `ChatPage.jsx`
+
+**Problem:** Guest session use karta hai → localStorage mein `sessionId` save hoti hai → user login karta hai → history fetch hoti hai → backend 404 deta hai (guest session, `userId: null` ≠ logged-in userId) → frontend catch block `sessionId` clear nahi karta → user pehla question bhejta hai → backend 403 "Yeh session aapka nahi hai" → confusing error.
+
+**Fix:** `ApiError` mein optional `code` field add kiya. `getSessionHistory` mein `SESSION_USER_MISMATCH` code. `fetchSessionHistory` ab throw karta hai (null nahi). `ChatPage.jsx` catch block mein sirf is code pe `clearSessionId()` + `setSessionId('')`.
+
+---
+
+### [x] S-2 — Mid-Stream Error Pe Partial Message Leak
+
+**File:** `ChatPage.jsx`
+
+**Problem:** Streaming chalu hota hai → `tempMessageId` message UI mein add hota hai → mid-stream network error → catch block sirf new error message append karta tha, temp message nahi hatata → UI mein do messages dikhte: [partial frozen content] + [error].
+
+**Fix:** Catch block mein `!isFirstUpdate` check. Agar streaming shuru ho chuki thi → partial message in-place `status: 'error'` ya `'cancelled'` update. No duplicate message.
+
+---
+
+### [x] S-3 — Teen Guest Tracking Systems (Dead Code + Security Gap)
+
+**Files:** `guestRateLimit.js` | `queryCount.js`
+
+**Problem:**
+- `guest_turns:guestId` (lifetime, 30-day TTL) + `guest_query:guestId` (daily, midnight TTL) — dono limit = 5. Daily limit mathematically dead code tha (lifetime always fires first).
+- `guestRateLimit.js` mein `if (!guestId) return next()` — no guestId = unlimited access. UUID validation sirf `queryCount.js` mein thi.
+- `guestRateLimit.js` development mein skip nahi hota tha — 5 turns baad local testing block.
+
+**Fix:** `guestRateLimit.js` mein UUID validation add + dev skip. `queryCount.js` guest branch remove → `!req.user` pe `return next()` (function hang prevented). Single source of truth: sirf `guest_turns:guestId`.
+
+---
+
+### [x] S-4 — `lean: true` Invalid Mongoose Option
+
+**File:** `chatHistory.service.js`
+
+**Problem:** `findOneAndUpdate()` options mein `lean: true` pass kiya — Mongoose silently ignore karta hai, full Mongoose document return hota hai plain object ki jagah. Extra memory overhead.
+
+**Fix:** `lean: true` options se hata ke `.lean()` method chain kiya.
+
+---
+
 ## Complete Priority Execution Order
 
 ```
 DEPLOY SE PEHLE (NO EXCEPTIONS):
-  [ ] C-1  Google OAuth token URL mein exposed      auth.controller.js + AuthCallback.jsx
-  [ ] C-2  Cookie sameSite: strict cross-domain     auth.controller.js (4 places)
-  [ ] H-2  askTutor raw fetch bypass               tutorApi.js
-  [ ] H-3  Helmet.js missing                       app.js (2 lines + npm install)
-  [ ] H-4  Debug logs in production                multiple files
+  [x] C-1  Google OAuth token URL mein exposed      auth.controller.js + AuthCallback.jsx
+  [x] C-2  Cookie sameSite: strict cross-domain     auth.controller.js (4 places)
+  [x] H-2  askTutor raw fetch bypass               tutorApi.js
+  [x] H-3  Helmet.js missing                       app.js
+  [x] H-4  Debug logs in production                step1/2/intentRouter/askOrchestrator
 
 STRONGLY RECOMMENDED BEFORE LAUNCH:
-  [ ] H-1  Rate limiters in-memory store            rateLimiters.js + rate-limit-redis
-  [ ] P2.4 Frontend Error Boundaries               new ErrorBoundary.jsx
+  [x] H-1  Rate limiters in-memory store            rateLimiters.js + RedisStore
+  [x] P2.4 Frontend Error Boundaries               ErrorBoundary.jsx
 
 TECHNICAL DEBT (Post-Launch 30 Days):
-  [ ] P2.1 Embedding API Caching                   new embedCache.js + Redis
-  [ ] P2.2 sessionId UUID validation               step1.validateInput.js (3 lines)
-  [ ] P2.3 Helmet.js                               (same as H-3 above)
+  [x] P2.1 Embedding API Caching                   cache/embeddingCache.js + cache/retrievalCache.js
+  [x] P2.2 sessionId UUID validation               step1.validateInput.js
+  [x] P2.3 Helmet.js                               (same as H-3 — done)
 
-MINOR FIXES (Any time):
-  [ ] L-1  Timeout comment mismatch                ask.controller.js (1 line)
-  [ ] L-2  EXAM_INFO in whitelist                  step7.saveAndRespond.js (1 line)
-  [ ] L-3  Morgan format in prod                   app.js (1 line)
+MINOR FIXES:
+  [x] L-1  Timeout comment mismatch                ask.controller.js
+  [x] L-2  EXAM_INFO in whitelist                  step7.saveAndRespond.js
+  [x] L-3  Morgan format in prod                   app.js
+
+SESSION SYSTEM BUGS (Found via deep audit 2026-06-25):
+  [x] S-1  Login baad stale guest sessionId        session.controller.js + tutorApi.js + ChatPage.jsx
+  [x] S-2  Mid-stream error partial message leak   ChatPage.jsx
+  [x] S-3  Teen guest tracking systems             guestRateLimit.js + queryCount.js
+  [x] S-4  lean: true invalid option               chatHistory.service.js
 
 DEPLOYMENT (Final Step):
   [~] P0.5 Docker + CI/CD                          Dockerfile + railway.toml
@@ -536,8 +591,6 @@ DEPLOYMENT (Final Step):
 
 ## Active Task Workspace
 
-*Use this section to track notes for the currently active task.*
-
 **Current Active Task:** None — awaiting user direction.
 
-**Next Recommended:** Start with C-1 (OAuth token URL) — highest security risk, well-defined fix.
+**Last Completed:** Session system deep audit + all 4 bugs fixed (2026-06-25).

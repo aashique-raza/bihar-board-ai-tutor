@@ -2,10 +2,14 @@ import ApiError from '../utils/ApiError.js';
 import { findStudyMapChapter } from '../services/studyMap.service.js';
 
 const VALID_STUDY_MODES = ['global', 'focus'];
+const isDev = process.env.NODE_ENV !== 'production';
 
 // Question must contain at least one letter, number, or Devanagari character.
 // This filters out pure emojis, "?????", or blank/symbol-only input.
 const VALID_TEXT_PATTERN = /[a-zA-Z0-9\u0900-\u097F]/;
+
+// UUID v4 format: 8-4-4-4-12 hex chars separated by dashes
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /**
  * Collapses repeated spaces into one and trims the ends.
@@ -24,39 +28,41 @@ export const validateInput = async (body = {}) => {
   const studyMode = cleanText(body.studyMode);
   const requestedSessionId = cleanText(body.sessionId);
 
-  console.log('step1.validateInput.js: Validating incoming request data...');
-  console.log('Question:', question);
-  console.log('StudyMode:', studyMode);
-  console.log('SessionId:', requestedSessionId);
+  if (isDev) console.log(`[Step 1] Validating input — studyMode: ${studyMode}, sessionId: ${requestedSessionId}`);
 
-  // Guard 1: Empty text validation
+  // Guard 1: sessionId UUID format (only when provided — new sessions don't send one)
+  if (requestedSessionId && !UUID_REGEX.test(requestedSessionId)) {
+    throw new ApiError(400, 'Invalid session ID format.');
+  }
+
+  // Guard 2: Empty text validation
   if (!question) {
     throw new ApiError(400, 'Sawal khali nahi ho sakta! Kripya kuch poochiye.');
   }
 
-  // Guard 2: Maximum Length Restriction (500 characters max limit)
+  // Guard 3: Maximum Length Restriction (500 characters max limit)
   if (question.length > 500) {
     throw new ApiError(400, 'Aapka sawal bahut bada hai! Kripya apne sawal ko 500 characters se kam me likhein.');
   }
 
-  // Guard 3: Gibberish/Pure Emoji/Pure Symbol Verification
+  // Guard 4: Gibberish/Pure Emoji/Pure Symbol Verification
   if (!VALID_TEXT_PATTERN.test(question)) {
     throw new ApiError(400, 'Kripya padhai se juda koi sarthak sawal ya shabd likhiye. Sirf emojis ya symbols allowed nahi hain.');
   }
 
-  // Guard 4: Validate Study Modes
+  // Guard 5: Validate Study Modes
   if (!VALID_STUDY_MODES.includes(studyMode)) {
     throw new ApiError(400, 'studyMode galat hai. Yeh sirf "global" ya "focus" ho sakta hai.');
   }
 
-  // Guard 5: ChapterId logic mapping logic for Global Mode
+  // Guard 6: ChapterId not allowed in Global Mode
   if (studyMode === 'global' && body.chapterId) {
     throw new ApiError(400, 'Global Mode me chapterId bhejna allowed nahi hai.');
   }
 
   let focusChapter = null;
 
-  // Guard 6: Focus Mode dynamic validation
+  // Guard 7: Focus Mode dynamic validation
   if (studyMode === 'focus') {
     const chapterId = cleanText(body.chapterId);
 

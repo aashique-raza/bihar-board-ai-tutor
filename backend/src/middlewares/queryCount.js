@@ -13,54 +13,31 @@ export async function queryCountMiddleware(req, res, next) {
   // Skip rate limiting in development so testing is not blocked by daily limits
   if (process.env.NODE_ENV === 'development') return next();
 
-  const GUEST_DAILY_LIMIT = 5;
+  // Guests are handled entirely by guestRateLimit.js (lifetime counter, Redis guest_turns:guestId).
+  // The daily guest counter (guest_query:) was redundant — lifetime limit always fires first
+  // since both limits were 5. UUID validation also moved to guestRateLimit.js.
+  if (!req.user) return next();
+
   const FREE_DAILY_LIMIT = 20;
 
-  if (req.user !== null) {
-    // CASE A — Logged-in user
-    if (req.user.plan === 'pro') return next();
+  // Pro users have no daily cap
+  if (req.user.plan === 'pro') return next();
 
-    const userId = req.user._id.toString();
-    const key = `user_query:${userId}`;
+  const userId = req.user._id.toString();
+  const key = `user_query:${userId}`;
 
-    try {
-      const ttl = secondsTillMidnightIST();
-      await redis.set(key, 0, 'EX', ttl, 'NX');
-      const count = Number(await redis.incr(key));
+  try {
+    const ttl = secondsTillMidnightIST();
+    await redis.set(key, 0, 'EX', ttl, 'NX');
+    const count = Number(await redis.incr(key));
 
-      if (count > FREE_DAILY_LIMIT) {
-        return sendResponse(res, 429, { message: 'Aaj ki daily limit khatam ho gayi. Kal dobara aao!' });
-      }
-
-      return next();
-    } catch (err) {
-      console.error('[QueryCount] Redis error (logged-in):', err);
-      return next();
-    }
-  } else {
-    // CASE B — Guest user
-    const UUID_REGEX = /^[0-9a-f-]{36}$/i;
-    const guestId = req.headers['x-guest-id'];
-
-    if (!guestId || !UUID_REGEX.test(guestId.trim())) {
-      return sendResponse(res, 400, { message: 'Valid guest ID required.' });
+    if (count > FREE_DAILY_LIMIT) {
+      return sendResponse(res, 429, { message: 'Aaj ki daily limit khatam ho gayi. Kal dobara aao!' });
     }
 
-    const key = `guest_query:${guestId.trim()}`;
-
-    try {
-      const ttl = secondsTillMidnightIST();
-      await redis.set(key, 0, 'EX', ttl, 'NX');
-      const count = Number(await redis.incr(key));
-
-      if (count > GUEST_DAILY_LIMIT) {
-        return sendResponse(res, 429, { message: 'Guest limit khatam ho gayi. Login karo aur zyada questions poochho!' });
-      }
-
-      return next();
-    } catch (err) {
-      console.error('[QueryCount] Redis error (guest):', err);
-      return next();
-    }
+    return next();
+  } catch (err) {
+    console.error('[QueryCount] Redis error (logged-in):', err);
+    return next();
   }
 }

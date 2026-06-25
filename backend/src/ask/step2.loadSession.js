@@ -10,12 +10,11 @@ import { getRecentChatHistory } from '../services/chatHistory.service.js';
 import { getDefaultChatState } from '../models/chatSession.model.js';
 
 const INACTIVITY_THRESHOLD_MS = 15 * 60 * 1000; // 15 Mins
+const isDev = process.env.NODE_ENV !== 'production';
 
 export const loadSession = async ({ requestedSessionId, userId, studyMode, focusChapter }) => {
-  console.log('step2.loadSession.js: In-memory session parsing pipeline initiated...');
-
   const sessionId = requestedSessionId || randomUUID();
-  console.log(`Working Session ID: ${sessionId} (Is New Session Slot: ${!requestedSessionId})`);
+  if (isDev) console.log(`[Step 2] loadSession — sessionId: ${sessionId}, isNew: ${!requestedSessionId}`);
 
   // Parallel lookup directly hitting primary key indexe
   const [dbSession, dbMessages] = await Promise.all([
@@ -36,7 +35,7 @@ export const loadSession = async ({ requestedSessionId, userId, studyMode, focus
   }
 
   if (!dbSession) {
-    console.log('[Step 2 Cold Start] No active record found. Instantiating pristine virtual state parameters.');
+    if (isDev) console.log('[Step 2] Cold start — new session instantiated.');
     chatState = {
       ...getDefaultChatState(),
       isNewSession: true,
@@ -56,7 +55,7 @@ export const loadSession = async ({ requestedSessionId, userId, studyMode, focus
 
     const lastActiveTime = dbSession.updatedAt ? new Date(dbSession.updatedAt).getTime() : Date.now();
     if (Date.now() - lastActiveTime > INACTIVITY_THRESHOLD_MS) {
-      console.log(`[Step 2 Dormancy Triggers] User returned after inactivity gap. Resetting active behavior modes.`);
+      if (isDev) console.log('[Step 2] Inactivity gap detected — resetting learningMode to idle.');
       chatState.learningMode = 'idle';
       chatState.pendingAction = null;
       // Reset streak counter — student returned fresh, don't greet them with Tier 2 redirect.
@@ -66,7 +65,7 @@ export const loadSession = async ({ requestedSessionId, userId, studyMode, focus
   }
 
   if (studyMode === 'focus' && focusChapter) {
-    console.log(`Live Context Hydration: Syncing state with Focus Chapter -> ${focusChapter.id}`);
+    if (isDev) console.log(`[Step 2] Focus mode — syncing chapter: ${focusChapter.id}`);
     chatState.currentSubjectId = focusChapter.subjectId;
     chatState.currentSectionId = focusChapter.sectionId;
     chatState.currentChapterId = focusChapter.id;
@@ -75,7 +74,7 @@ export const loadSession = async ({ requestedSessionId, userId, studyMode, focus
       chatState.learningMode = 'lesson';
     }
   } else if (studyMode === 'global') {
-    console.log('[Step 2 Sandbox Override] Global exploration active. Capping tutor focus to idle.');
+    if (isDev) console.log('[Step 2] Global mode — resetting chapter/topic state to idle.');
     chatState.learningMode = 'idle';
     chatState.currentSubjectId = null;
     chatState.currentSectionId = null;

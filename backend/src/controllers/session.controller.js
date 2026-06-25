@@ -39,9 +39,8 @@ export const deleteSession = async (req, res, next) => {
     const userId = req.user.id;
 
     const session = await findChatSession(sessionId);
-    if (!session || session.userId !== userId) {
-      return next(new ApiError(404, 'Session not found.'));
-    }
+    if (!session) return next(new ApiError(404, 'Session not found.'));
+    if (session.userId !== userId) return next(new ApiError(404, 'Session not found.'));
 
     // Delete session and its history in parallel
     await Promise.all([
@@ -66,9 +65,8 @@ export const renameSession = async (req, res, next) => {
     }
 
     const session = await findChatSession(sessionId);
-    if (!session || session.userId !== userId) {
-      return next(new ApiError(404, 'Session not found.'));
-    }
+    if (!session) return next(new ApiError(404, 'Session not found.'));
+    if (session.userId !== userId) return next(new ApiError(404, 'Session not found.'));
 
     const updated = await renameSessionById(sessionId, title);
 
@@ -86,11 +84,12 @@ export const getSessionHistory = async (req, res, next) => {
     const { sessionId } = req.params;
     const userId = req.user.id;
 
-    // Ownership check — 404 for both "not found" and "not yours"
-    // (never reveal that a sessionId belongs to someone else)
     const session = await findChatSession(sessionId);
-    if (!session || session.userId !== userId) {
-      return next(new ApiError(404, 'Session not found.'));
+    if (!session) return next(new ApiError(404, 'Session not found.'));
+    // Same 404 HTTP status (never reveal a session exists but belongs to another user),
+    // but machine-readable code so the frontend can clear a stale guest sessionId on login.
+    if (session.userId !== userId) {
+      return next(new ApiError(404, 'Session not found.', 'SESSION_USER_MISMATCH'));
     }
 
     // Fetch messages only after ownership is verified

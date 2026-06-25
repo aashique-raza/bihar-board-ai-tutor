@@ -40,6 +40,8 @@ import {
 import { updateChatSessionState } from '../services/chatSession.service.js';
 import { env } from '../config/env.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 /**
  * Main Ask API handler.
  * Called by ask.controller.js → ask.routes.js → POST /api/v1/ask
@@ -76,7 +78,7 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
   // --- MAIN PIPELINE: Steps 4-7 ---
   try {
     const decision = await decideRetrieval(input, context, abortSignal);
-    console.log('[DEBUG] intent:', decision.intent, 'needsRetrieval:', decision.needsRetrieval);
+    if (isDev) console.log(`[Step 4→5] intent: ${decision.intent}, needsRetrieval: ${decision.needsRetrieval}`);
 
     // --- Layer 2.2: Academic Safety Net ---
     // The 8B decider occasionally misclassifies academic queries as GREETING or
