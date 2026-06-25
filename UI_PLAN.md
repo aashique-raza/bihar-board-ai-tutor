@@ -3,7 +3,7 @@
 **Created:** 2026-06-25
 **Owner:** Farhan Raza
 **Engineering partner:** Claude (acting as Senior Product Manager + Senior Software Engineer + Senior UI Engineer — 20+ years equivalent experience)
-**Status:** 🟡 ACTIVE — P6 AskBar multiline fix next
+**Status:** 🟡 ACTIVE — P7 ChatMessage DONE, P8 FocusModal next
 **Previous plan:** Superseded. Steps A–E of the old plan are already shipped in code, but the design system they shipped on (Slate & Pearl / Indigo `#4F46E5`) is being re-evaluated as part of this v2 effort. We will NOT throw away working code — we will refactor design tokens and re-skin existing components. Logic stays.
 
 ---
@@ -196,7 +196,8 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | P3 | **Content strategy** | None yet | Welcome msg, placeholders, empty states, error copy, auth page copy, landing copy | ⬜ PENDING-DISCUSSION |
 | P4 | Design tokens implementation | `theme.css`, `zunoTheme.js` | How to migrate without breaking shipped UI | ✅ DONE — verified light + dark, build green |
 | P5 | Topbar + logo + brand moment | `Topbar.jsx`, `global.css` | Logo refresh, tagline placement | ✅ DONE — Option 2 (Action Forward), both modes verified |
-| P6 | AskBar — multiline + polish | `AskBar.jsx`, CSS | Multiline strategy, max-height, mobile keyboard handling | ⬜ PENDING-DISCUSSION |
+| P6 | AskBar — multiline + polish | `AskBar.jsx`, CSS | Multiline strategy, max-height, mobile keyboard handling | ✅ DONE — multiline textarea, Enter sends, Shift+Enter newline |
+| P7 | ChatMessage redesign | `ChatMessage.jsx`, `global.css`, `theme.css` | Direction 2 Interchange — ghost bubble, prose flow, footnote source | ✅ DONE — source dedup, heading suppressed for single-section |
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, CSS | Bubble vs free-text, animations, sections styling | ⬜ PENDING-DISCUSSION |
 | P8 | FocusModal restyle | `FocusModal.jsx`, `global.css` | Light-mode fix, remove `!important`, layout rethink | ⬜ PENDING-DISCUSSION |
 | P9 | HistoryPanel rethink | `HistoryPanel.jsx` | FAB vs left-rail vs top-pinned — preview per device | ⬜ PENDING-DISCUSSION |
