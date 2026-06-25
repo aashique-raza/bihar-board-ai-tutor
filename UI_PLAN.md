@@ -3,7 +3,7 @@
 **Created:** 2026-06-25
 **Owner:** Farhan Raza
 **Engineering partner:** Claude (acting as Senior Product Manager + Senior Software Engineer + Senior UI Engineer — 20+ years equivalent experience)
-**Status:** 🟡 ACTIVE — P5 Topbar rebuild next
+**Status:** 🟡 ACTIVE — P6 AskBar multiline fix next
 **Previous plan:** Superseded. Steps A–E of the old plan are already shipped in code, but the design system they shipped on (Slate & Pearl / Indigo `#4F46E5`) is being re-evaluated as part of this v2 effort. We will NOT throw away working code — we will refactor design tokens and re-skin existing components. Logic stays.
 
 ---
@@ -195,7 +195,7 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | P2 | **Tagline + brand voice** | None yet | Hinglish/English/mix, 5+ tagline options, tone guide | ⬜ PENDING-DISCUSSION |
 | P3 | **Content strategy** | None yet | Welcome msg, placeholders, empty states, error copy, auth page copy, landing copy | ⬜ PENDING-DISCUSSION |
 | P4 | Design tokens implementation | `theme.css`, `zunoTheme.js` | How to migrate without breaking shipped UI | ✅ DONE — verified light + dark, build green |
-| P5 | Topbar + logo + brand moment | `Topbar.jsx`, `index.html` | Logo refresh, tagline placement | ⬜ PENDING |
+| P5 | Topbar + logo + brand moment | `Topbar.jsx`, `global.css` | Logo refresh, tagline placement | ✅ DONE — Option 2 (Action Forward), both modes verified |
 | P6 | AskBar — multiline + polish | `AskBar.jsx`, CSS | Multiline strategy, max-height, mobile keyboard handling | ⬜ PENDING-DISCUSSION |
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, CSS | Bubble vs free-text, animations, sections styling | ⬜ PENDING-DISCUSSION |
 | P8 | FocusModal restyle | `FocusModal.jsx`, `global.css` | Light-mode fix, remove `!important`, layout rethink | ⬜ PENDING-DISCUSSION |
