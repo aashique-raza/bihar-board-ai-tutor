@@ -37,6 +37,7 @@ const extractTokenBreakdown = (output) => {
 const VALID_INTENTS = new Set([
   'UNSAFE_OR_ABUSIVE',
   'GREETING',
+  'EMOTIONAL_SUPPORT',
   'CHOOSE_COURSE',
   'NEXT_STEP',
   'EXPLAIN_MORE',

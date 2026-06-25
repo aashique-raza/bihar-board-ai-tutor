@@ -38,6 +38,7 @@ const ALLOWED_STATE_FIELDS = [
 // or must never come from the LLM at all.
 const INTENT_MEMORY_WHITELIST = {
   GREETING:          [],
+  EMOTIONAL_SUPPORT: [],
   OUT_OF_CONTEXT:    [],
   UNSAFE_OR_ABUSIVE: [],
   CHOOSE_COURSE:     ['currentSubjectId', 'currentSectionId', 'currentChapterId', 'learningMode'],

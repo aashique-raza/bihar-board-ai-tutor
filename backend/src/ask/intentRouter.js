@@ -13,14 +13,15 @@
  */
 
 import { RunnableSequence }      from '@langchain/core/runnables';
-import { greetingPrompt }        from '../prompts/intents/greetingPrompt.js';
-import { redirectPrompt }        from '../prompts/intents/redirectPrompt.js';
-import { unsafePrompt }          from '../prompts/intents/unsafePrompt.js';
-import { chooseCoursePrompt }    from '../prompts/intents/chooseCoursePrompt.js';
-import { explainMorePrompt }     from '../prompts/intents/explainMorePrompt.js';
-import { conceptQuestionPrompt } from '../prompts/intents/conceptQuestionPrompt.js';
-import { nextStepPrompt }        from '../prompts/intents/nextStepPrompt.js';
-import { examInfoPrompt }        from '../prompts/intents/examInfoPrompt.js';
+import { greetingPrompt }          from '../prompts/intents/greetingPrompt.js';
+import { redirectPrompt }          from '../prompts/intents/redirectPrompt.js';
+import { unsafePrompt }            from '../prompts/intents/unsafePrompt.js';
+import { chooseCoursePrompt }      from '../prompts/intents/chooseCoursePrompt.js';
+import { explainMorePrompt }       from '../prompts/intents/explainMorePrompt.js';
+import { conceptQuestionPrompt }   from '../prompts/intents/conceptQuestionPrompt.js';
+import { nextStepPrompt }          from '../prompts/intents/nextStepPrompt.js';
+import { examInfoPrompt }          from '../prompts/intents/examInfoPrompt.js';
+import { emotionalSupportPrompt }  from '../prompts/intents/emotionalSupportPrompt.js';
 import { createChatModel }       from '../llm/chatModel.js';
 import { stringParser }          from '../llm/stringParser.js';
 import { parseJsonObject }       from '../utils/jsonParser.js';
@@ -52,14 +53,15 @@ const DRIFT_INSTRUCTIONS = {
 //   CONCEPT   → zero temp — factual, consistent answers from retrieved content
 
 const INTENT_CONFIG = {
-  GREETING:          { prompt: greetingPrompt,        temperature: 0.5, maxTokens: 300  },
-  OUT_OF_CONTEXT:    { prompt: redirectPrompt,        temperature: 0,   maxTokens: 100  },
-  UNSAFE_OR_ABUSIVE: { prompt: unsafePrompt,          temperature: 0,   maxTokens: 100  },
-  CHOOSE_COURSE:     { prompt: chooseCoursePrompt,    temperature: 0.2, maxTokens: 600  },
-  EXPLAIN_MORE:      { prompt: explainMorePrompt,     temperature: 0.3, maxTokens: 1500 },
-  CONCEPT_QUESTION:  { prompt: conceptQuestionPrompt, temperature: 0,   maxTokens: 1500 },
-  EXAM_INFO:         { prompt: examInfoPrompt,        temperature: 0,   maxTokens: 600  },
-  NEXT_STEP:         { prompt: nextStepPrompt,        temperature: 0.1, maxTokens: 1200 },
+  GREETING:          { prompt: greetingPrompt,          temperature: 0.5, maxTokens: 300  },
+  EMOTIONAL_SUPPORT: { prompt: emotionalSupportPrompt,  temperature: 0.5, maxTokens: 350  },
+  OUT_OF_CONTEXT:    { prompt: redirectPrompt,          temperature: 0,   maxTokens: 100  },
+  UNSAFE_OR_ABUSIVE: { prompt: unsafePrompt,            temperature: 0,   maxTokens: 100  },
+  CHOOSE_COURSE:     { prompt: chooseCoursePrompt,      temperature: 0.2, maxTokens: 600  },
+  EXPLAIN_MORE:      { prompt: explainMorePrompt,       temperature: 0.3, maxTokens: 1500 },
+  CONCEPT_QUESTION:  { prompt: conceptQuestionPrompt,   temperature: 0,   maxTokens: 1500 },
+  EXAM_INFO:         { prompt: examInfoPrompt,          temperature: 0,   maxTokens: 600  },
+  NEXT_STEP:         { prompt: nextStepPrompt,          temperature: 0.1, maxTokens: 1200 },
 };
 
 // ─── 2. Per-intent history window ────────────────────────────────────────────
@@ -69,6 +71,7 @@ const INTENT_CONFIG = {
 
 const HISTORY_WINDOW = {
   GREETING:          4,
+  EMOTIONAL_SUPPORT: 4,
   OUT_OF_CONTEXT:    0,
   UNSAFE_OR_ABUSIVE: 0,
   CHOOSE_COURSE:     4,
@@ -124,6 +127,9 @@ const buildPromptInput = (intent, input, context, retrieval) => {
       const driftInstruction = DRIFT_INSTRUCTIONS[tier] ?? '';
       return { message: question, answerLanguageInstruction: answerLang, history, driftInstruction };
     }
+
+    case 'EMOTIONAL_SUPPORT':
+      return { message: question, answerLanguageInstruction: answerLang, history };
 
     case 'OUT_OF_CONTEXT':
     case 'UNSAFE_OR_ABUSIVE':
@@ -231,10 +237,10 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
       sections = [{ heading: '', content: String(parsed.title).trim() }];
     }
 
-    // Guard 1+3: GREETING must always return status="answered".
-    // Prevents LLM from accidentally returning insufficient_context on casual messages.
+    // Guard 1+3: GREETING and EMOTIONAL_SUPPORT must always return status="answered".
+    // Prevents LLM from accidentally returning insufficient_context on non-academic messages.
     let status = String(parsed.status || 'answered').trim();
-    if (intent === 'GREETING') {
+    if (intent === 'GREETING' || intent === 'EMOTIONAL_SUPPORT') {
       status = 'answered';
     }
     const VALID_STATUSES = new Set(['answered', 'insufficient_context', 'needs_clarification', 'out_of_scope']);

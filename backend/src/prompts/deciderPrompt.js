@@ -41,13 +41,36 @@ INTENTS:
 
    searchQuery: MUST be null — Knowledge Service handles this, no vector search needed.
 
-7. OUT_OF_CONTEXT — Any topic Zuno cannot currently help with. This includes:
+7. EMOTIONAL_SUPPORT — Student expresses emotional distress, fear, anxiety, or social
+   pressure related to exams or studies. The KEY signal is emotional language — fear,
+   worry, shame, feeling overwhelmed — NOT a factual query.
+
+   TRIGGERS — classify as EMOTIONAL_SUPPORT when student expresses ANY of these:
+   - Failure fear: "fail ho gya to kya hoga", "agar fail hua to", "kya hoga agar fail ho jau"
+   - Social shame: "log kya kahnge", "ghar wale kya bolenge", "sab mujhe bura kahnge", "izzat chali jaayegi"
+   - Exam anxiety: "dar lag raha hai", "exam se ghabra raha hoon", "bahut tension hai", "nervous hoon"
+   - Overwhelm: "padhai se bhaagna chahta hoon", "bahut zyada pressure hai", "sab kuch khatam"
+   - Low motivation: "padhai bilkul achhi nahi lagti", "mann bilkul nahi lagta padhai ka"
+   - Meta-correction on emotional topic: Student explicitly says Zuno missed their emotional
+     concern ("tum kuch aur bol rhe ho", "main kuch aur bol rha tha") when prior messages were emotional.
+
+   DISAMBIGUATION (CRITICAL):
+   → "fail ho gya to kya hoga"               = EMOTIONAL_SUPPORT (fear/worry phrasing, not factual)
+   → "Pass karne ke liye kitne marks chahiye?" = EXAM_INFO (factual query, no emotional language)
+   → "log kya kahnge fail hone par"           = EMOTIONAL_SUPPORT (social shame)
+   → "dar hai, photosynthesis bhi nahi samjha" = CONCEPT_QUESTION (science question present — academic wins)
+   → "kya hoga agar fail ho jau"              = EMOTIONAL_SUPPORT (worry expression, not facts)
+   → "tum kuch aur bol rhe ho" after emotional exchange = EMOTIONAL_SUPPORT
+
+   searchQuery: MUST be null — no vector search needed for emotional support.
+
+8. OUT_OF_CONTEXT — Any topic Zuno cannot currently help with. This includes:
    - Other Class 10 subjects CONTENT: Maths concepts, Hindi grammar, English essays, Social Science
    - Non-school topics: sports, entertainment, current events, personal questions
    Note: Do NOT classify as OUT_OF_CONTEXT if student is reacting to Zuno's previous reply.
    Note: EXAM PATTERN questions about any subject (marks, paper structure) are EXAM_INFO, NOT OUT_OF_CONTEXT.
 
-8. UNSAFE_OR_ABUSIVE — Swear words, vulgarity, local insults, inappropriate content, OR mild
+9. UNSAFE_OR_ABUSIVE — Swear words, vulgarity, local insults, inappropriate content, OR mild
    rudeness/insults directed at Zuno. ("Bakwaas band karo", "Stupid AI", "Kuch nahi aata tujhe")
    → These are UNSAFE_OR_ABUSIVE, NOT OUT_OF_CONTEXT.
 
@@ -61,6 +84,11 @@ CONSERVATIVE BIAS RULES (apply in order):
    → EXAM_INFO. Do NOT classify as CONCEPT_QUESTION even if a science topic is mentioned.
    Examples: "Biology kitne marks ka?" → EXAM_INFO (not CONCEPT_QUESTION)
    "Life Processes skip kar sakta hoon?" → EXAM_INFO (not CONCEPT_QUESTION)
+5. Emotional language present (dar, scared, tension, log kya kahnge, fail hone ka darr,
+   ghabrana, overwhelmed, mann nahi lagta, padhai chhod deta hoon) + exam keywords
+   → EMOTIONAL_SUPPORT, NOT EXAM_INFO. Emotional phrasing overrides the EXAM_INFO trigger.
+   Examples: "fail ho gya to kya hoga" → EMOTIONAL_SUPPORT (not EXAM_INFO)
+   "log kya kahnge fail hone par" → EMOTIONAL_SUPPORT (not EXAM_INFO)
 
 SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - Generate a DESCRIPTIVE PHRASE or SENTENCE of 8-15 words that captures the topic AND what is being asked. NOT 2-3 keywords — the vector search needs semantic richness to find the right chapter.
