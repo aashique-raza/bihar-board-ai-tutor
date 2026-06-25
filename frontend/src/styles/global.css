@@ -63,6 +63,11 @@ body {
   color: #ffffff;
   font-size: 1rem;
   font-weight: 800;
+  font-family: var(--font-brand);
+}
+
+[data-theme="dark"] .zuno-logo {
+  color: #0A0A0A;
 }
 
 /* ── Focus chip (Topbar) ── */

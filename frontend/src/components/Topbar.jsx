@@ -32,7 +32,6 @@ export default function Topbar({
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
-  // Close menu when clicking outside
   useEffect(() => {
     if (!menuOpen) return;
     const handleClick = (e) => {
@@ -77,8 +76,10 @@ export default function Topbar({
         <Box className="zuno-logo">Z</Box>
         <Typography
           sx={{
-            fontWeight: 700,
-            fontSize: '1rem',
+            fontFamily: 'var(--font-brand)',
+            fontWeight: 800,
+            fontSize: '1.05rem',
+            letterSpacing: '-0.4px',
             color: 'var(--text-primary)',
             lineHeight: 1,
           }}
@@ -87,9 +88,10 @@ export default function Topbar({
         </Typography>
       </Stack>
 
-      {/* Right: chapter pill + focus button + theme toggle */}
+      {/* Right: chapter pill + nav buttons + theme toggle */}
       <Stack direction="row" spacing={1} alignItems="center">
-        {/* Chapter pill — hidden on mobile */}
+
+        {/* Chapter pill — shown when focus is set, hidden on mobile */}
         {selectedChapter && (
           <Stack
             direction="row"
@@ -107,7 +109,6 @@ export default function Topbar({
               overflow: 'hidden',
             }}
           >
-            {/* Dot */}
             <Box
               sx={{
                 width: 8,
@@ -117,7 +118,6 @@ export default function Topbar({
                 bgcolor: 'var(--primary)',
               }}
             />
-            {/* Title */}
             <Typography
               sx={{
                 fontSize: '0.8rem',
@@ -132,7 +132,6 @@ export default function Topbar({
             >
               {selectedChapter.title}
             </Typography>
-            {/* Clear */}
             <IconButton
               size="small"
               onClick={onClearFocus}
@@ -143,40 +142,57 @@ export default function Topbar({
           </Stack>
         )}
 
-        {/* Focus button */}
+        {/* Focus button — colored chip treatment */}
         <Button
-          variant="outlined"
           size="small"
           disabled={isFocusLoading || isSessionLocked}
           onClick={onOpenFocus}
-
+          startIcon={
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="6" y2="12"/>
+              <line x1="18" y1="12" x2="22" y2="12"/>
+            </svg>
+          }
           sx={{
-            borderColor: 'var(--border-strong)',
-            color: 'var(--text-secondary)',
+            bgcolor: 'var(--primary-tint)',
+            border: '1px solid var(--primary-border)',
+            color: 'var(--primary-label)',
             borderRadius: 'var(--radius-full)',
             fontSize: '0.8rem',
             fontWeight: 600,
             px: 1.5,
             py: 0.5,
             textTransform: 'none',
+            boxShadow: 'none',
             '&:hover': {
+              bgcolor: 'var(--primary-tint)',
               borderColor: 'var(--primary)',
-              color: 'var(--primary)',
-              bgcolor: 'transparent',
+              boxShadow: 'none',
+            },
+            '&.Mui-disabled': {
+              bgcolor: 'var(--primary-tint)',
+              borderColor: 'var(--primary-border)',
+              color: 'var(--primary-label)',
+              opacity: 0.5,
             },
           }}
         >
           Focus
         </Button>
 
-        {/* New Chat button */}
+        {/* New Chat — desktop: icon + text, mobile: icon only */}
         <Button
           variant={isSessionLocked ? 'contained' : 'outlined'}
           size="small"
           color={isSessionLocked ? 'primary' : 'inherit'}
           onClick={onNewChat}
+          startIcon={<AddCommentOutlined sx={{ fontSize: '15px !important' }} />}
           sx={{
-            borderColor: 'var(--border-strong)',
+            borderColor: 'var(--border)',
             color: isSessionLocked ? undefined : 'var(--text-secondary)',
             borderRadius: 'var(--radius-full)',
             fontSize: '0.8rem',
@@ -186,14 +202,15 @@ export default function Topbar({
             textTransform: 'none',
             display: { xs: 'none', sm: 'inline-flex' },
             '&:hover': {
-              borderColor: 'var(--primary)',
-              color: 'var(--primary)',
-              bgcolor: 'transparent',
+              borderColor: 'var(--border-strong)',
+              bgcolor: 'var(--bg-hover)',
             },
           }}
         >
           New Chat
         </Button>
+
+        {/* New Chat — mobile icon only */}
         <IconButton
           size="small"
           onClick={onNewChat}
@@ -211,9 +228,8 @@ export default function Topbar({
         {!isLoading && (
           <>
             {isLoggedIn && user ? (
-              /* Avatar with dropdown menu */
+              /* Avatar with dropdown */
               <Box ref={menuRef} sx={{ position: 'relative' }}>
-                {/* Avatar button */}
                 <Box
                   onClick={() => setMenuOpen((prev) => !prev)}
                   sx={{
@@ -224,9 +240,10 @@ export default function Topbar({
                     placeItems: 'center',
                     borderRadius: 'var(--radius-avatar)',
                     bgcolor: 'var(--primary)',
-                    color: '#ffffff',
-                    fontSize: '0.8rem',
-                    fontWeight: 700,
+                    color: 'var(--bg-page)',
+                    fontFamily: 'var(--font-brand)',
+                    fontSize: '0.85rem',
+                    fontWeight: 800,
                     userSelect: 'none',
                     cursor: 'pointer',
                     transition: 'opacity 0.15s ease',
@@ -236,7 +253,6 @@ export default function Topbar({
                   {user.name?.charAt(0)?.toUpperCase() || '?'}
                 </Box>
 
-                {/* Dropdown menu */}
                 {menuOpen && (
                   <Box
                     sx={{
@@ -252,7 +268,6 @@ export default function Topbar({
                       zIndex: 1000,
                     }}
                   >
-                    {/* User info section */}
                     <Box sx={{ px: 2, py: 1.5, borderBottom: '1px solid var(--border)' }}>
                       <Typography
                         sx={{
@@ -275,8 +290,6 @@ export default function Topbar({
                         {user.email}
                       </Typography>
                     </Box>
-
-                    {/* Logout button */}
                     <Box
                       onClick={handleLogout}
                       sx={{
@@ -298,24 +311,23 @@ export default function Topbar({
                 )}
               </Box>
             ) : (
-              /* Login button */
+              /* Login — filled primary CTA */
               <Button
-                variant="outlined"
                 size="small"
                 onClick={() => navigate('/login')}
                 sx={{
-                  borderColor: 'var(--border-strong)',
-                  color: 'var(--text-secondary)',
+                  bgcolor: 'var(--primary)',
+                  color: 'var(--bg-page)',
                   borderRadius: 'var(--radius-full)',
                   fontSize: '0.8rem',
-                  fontWeight: 600,
-                  px: 1.5,
+                  fontWeight: 700,
+                  px: 1.75,
                   py: 0.5,
                   textTransform: 'none',
+                  boxShadow: 'none',
                   '&:hover': {
-                    borderColor: 'var(--primary)',
-                    color: 'var(--primary)',
-                    bgcolor: 'transparent',
+                    bgcolor: 'var(--primary-hover)',
+                    boxShadow: 'none',
                   },
                 }}
               >
@@ -330,14 +342,22 @@ export default function Topbar({
           size="small"
           onClick={onToggleTheme}
           sx={{
+            border: '1px solid var(--border)',
+            borderRadius: 'var(--radius-md)',
             color: 'var(--text-muted)',
-            '&:hover': { color: 'var(--text-primary)' },
+            width: 28,
+            height: 28,
+            '&:hover': {
+              borderColor: 'var(--border-strong)',
+              color: 'var(--text-primary)',
+              bgcolor: 'var(--bg-hover)',
+            },
           }}
         >
           {theme === 'dark' ? (
-            <LightModeRounded sx={{ fontSize: '20px' }} />
+            <LightModeRounded sx={{ fontSize: '16px' }} />
           ) : (
-            <DarkModeRounded sx={{ fontSize: '20px' }} />
+            <DarkModeRounded sx={{ fontSize: '16px' }} />
           )}
         </IconButton>
       </Stack>

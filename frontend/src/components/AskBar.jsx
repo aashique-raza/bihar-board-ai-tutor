@@ -84,9 +84,17 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
         </label>
         <InputBase
           fullWidth
+          multiline
+          maxRows={4}
           id="question"
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+              event.preventDefault();
+              if (question.trim()) handleSubmit(event);
+            }
+          }}
           disabled={isLocked || isGuestLimited}
           placeholder={
             isGuestLimited
@@ -97,7 +105,7 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
                   ? 'Is chapter ka topic ya question likho...'
                   : 'Aaj kya padhna hai? Topic ya question likho...'
           }
-          sx={{ color: 'text.primary', px: 1 }}
+          sx={{ color: 'text.primary', px: 1, alignSelf: 'flex-end' }}
         />
         {/* isLocked and isGuestLimited both hide all buttons — no action possible from input. */}
         {isLocked || isGuestLimited ? null : disabled ? (
