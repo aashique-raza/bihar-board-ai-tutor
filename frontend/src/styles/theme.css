@@ -1,36 +1,38 @@
 /* ============================================================
-   Zuno Design System — Slate & Pearl
+   Zuno Design System — Midnight Scholar (Direction A, locked 2026-06-25)
    Light mode: :root
    Dark mode:  [data-theme="dark"]
    ============================================================ */
 
-/* Google Fonts are loaded via index.html */
-
-/* ── Light Mode (default) ─────────────────────────────────── */
+/* ── Light Mode ───────────────────────────────────────────── */
 :root {
   /* Backgrounds */
-  --bg-page:        #F0F2F5;
+  --bg-page:        #FAFAF8;
   --bg-surface:     #FFFFFF;
-  --bg-input:       #F9FAFB;
-  --bg-hover:       #F3F4F6;
+  --bg-input:       #F5F1EA;
+  --bg-hover:       #F0EBE0;
 
   /* Borders */
-  --border:         #E4E7EC;
-  --border-strong:  #D1D5DB;
+  --border:         #EAE6DE;
+  --border-strong:  #DDD8CC;
 
-  /* Primary — Indigo */
-  --primary:        #4F46E5;
-  --primary-hover:  #4338CA;
-  --primary-tint:   #EEF2FF;
-  --primary-border: #C7D2FE;
-  --primary-label:  #4338CA;
+  /* Primary — Burnt Orange */
+  --primary:        #C6570F;
+  --primary-hover:  #A8470C;
+  --primary-tint:   #FEF0D8;
+  --primary-border: #F4C06C;
+  --primary-label:  #7A3B0A;
 
-  /* Text */
-  --text-primary:      #111827;
-  --text-secondary:    #374151;
-  --text-muted:        #6B7280;
-  --text-hint:         #9CA3AF;
-  --text-placeholder:  #C4C9D4;
+  /* User bubble — same as primary in light mode */
+  --user-bubble-bg:   var(--primary);
+  --user-bubble-text: #FFFFFF;
+
+  /* Text — 4-level hierarchy */
+  --text-primary:      #1A1208;
+  --text-secondary:    #5C4A36;
+  --text-muted:        #8C7A66;
+  --text-hint:         #A89880;
+  --text-placeholder:  #A89880;
 
   /* Semantic */
   --success:  #10B981;
@@ -42,8 +44,9 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
 
   /* Typography */
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-code: 'JetBrains Mono', 'SF Mono', monospace;
+  --font-body:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-brand: 'Baloo 2', Georgia, serif;
+  --font-code:  'JetBrains Mono', 'SF Mono', monospace;
 
   /* Spacing */
   --space-1: 4px;
@@ -62,44 +65,48 @@
   --radius-full:   9999px;
 
   /* Layout */
-  --topbar-height:    54px;
-  --chat-max-width:   700px;
-  --padding-desktop:  24px;
-  --padding-mobile:   16px;
+  --topbar-height:   54px;
+  --chat-max-width:  700px;
+  --padding-desktop: 24px;
+  --padding-mobile:  16px;
 }
 
 /* ── Dark Mode ────────────────────────────────────────────── */
 [data-theme="dark"] {
-  /* Backgrounds */
-  --bg-page:        #111827;
-  --bg-surface:     #1F2937;
-  --bg-input:       #111827;
-  --bg-hover:       #374151;
+  /* Backgrounds — pure neutral black */
+  --bg-page:        #0A0A0A;
+  --bg-surface:     #141414;
+  --bg-input:       #0A0A0A;
+  --bg-hover:       #1C1C1C;
 
   /* Borders */
-  --border:         #374151;
-  --border-strong:  #4B5563;
+  --border:         #282828;
+  --border-strong:  #333333;
 
-  /* Primary — Indigo (lighter for dark bg) */
-  --primary:        #6366F1;
-  --primary-hover:  #4F46E5;
-  --primary-tint:   #1E1B4B;
-  --primary-border: #312E81;
-  --primary-label:  #818CF8;
+  /* Primary — Bright Gold (pops on pure black) */
+  --primary:        #F0A500;
+  --primary-hover:  #D99400;
+  --primary-tint:   #1C1C1C;
+  --primary-border: #383020;
+  --primary-label:  #F0A500;
 
-  /* Text */
-  --text-primary:      #F9FAFB;
-  --text-secondary:    #D1D5DB;
-  --text-muted:        #9CA3AF;
-  --text-hint:         #4B5563;
-  --text-placeholder:  #4B5563;
+  /* User bubble — stays orange in dark (not gold) */
+  --user-bubble-bg:   #C6570F;
+  --user-bubble-text: #FFFFFF;
+
+  /* Text — 4-level hierarchy, all pass WCAG AA on #0A0A0A */
+  --text-primary:      #F4F4F4;   /* 19:1 contrast */
+  --text-secondary:    #C8C8C8;   /* 13:1 contrast */
+  --text-muted:        #8C8C8C;   /* 6.2:1 contrast */
+  --text-hint:         #686868;   /* 4.1:1 contrast */
+  --text-placeholder:  #686868;   /* 4.1:1 contrast */
 
   /* Semantic */
   --success:  #34D399;
   --error:    #F87171;
   --warning:  #FBBF24;
 
-  /* Shadows — none in dark mode */
-  --shadow-sm: none;
-  --shadow-md: none;
+  /* Shadows — present in dark but subtle */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
 }

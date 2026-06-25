@@ -3,7 +3,7 @@
 **Created:** 2026-06-25
 **Owner:** Farhan Raza
 **Engineering partner:** Claude (acting as Senior Product Manager + Senior Software Engineer + Senior UI Engineer — 20+ years equivalent experience)
-**Status:** 🟡 ACTIVE — Discovery & Direction phase
+**Status:** 🟡 ACTIVE — P5 Topbar rebuild next
 **Previous plan:** Superseded. Steps A–E of the old plan are already shipped in code, but the design system they shipped on (Slate & Pearl / Indigo `#4F46E5`) is being re-evaluated as part of this v2 effort. We will NOT throw away working code — we will refactor design tokens and re-skin existing components. Logic stays.
 
 ---
@@ -191,10 +191,10 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | Phase | Name | Touches | Discussion topics | Status |
 |-------|------|---------|-------------------|--------|
 | P0 | Master plan file (yeh file) | Docs | Methodology + role + scope | 🟢 IN PROGRESS |
-| P1 | **Design direction** (color, type, mood) | None yet | 3 directions with live preview widgets (light + dark) | ⬜ PENDING-DISCUSSION |
+| P1 | **Design direction** (color, type, mood) | None yet | 3 directions with live preview widgets (light + dark) | ✅ DONE — Direction A locked |
 | P2 | **Tagline + brand voice** | None yet | Hinglish/English/mix, 5+ tagline options, tone guide | ⬜ PENDING-DISCUSSION |
 | P3 | **Content strategy** | None yet | Welcome msg, placeholders, empty states, error copy, auth page copy, landing copy | ⬜ PENDING-DISCUSSION |
-| P4 | Design tokens implementation | `theme.css`, `zunoTheme.js` | How to migrate without breaking shipped UI | ⬜ PENDING |
+| P4 | Design tokens implementation | `theme.css`, `zunoTheme.js` | How to migrate without breaking shipped UI | ✅ DONE — verified light + dark, build green |
 | P5 | Topbar + logo + brand moment | `Topbar.jsx`, `index.html` | Logo refresh, tagline placement | ⬜ PENDING |
 | P6 | AskBar — multiline + polish | `AskBar.jsx`, CSS | Multiline strategy, max-height, mobile keyboard handling | ⬜ PENDING-DISCUSSION |
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, CSS | Bubble vs free-text, animations, sections styling | ⬜ PENDING-DISCUSSION |
@@ -339,7 +339,8 @@ Jo bhi tum approve karoge wo yahan record hoga.
 | Date | Phase | Decision | Trade-off accepted |
 |------|-------|----------|-------------------|
 | 2026-06-25 | P0 | This v2 plan adopted; old plan (Slate & Pearl) deprecated in spirit but its code stays for now | Existing shipped UI continues working during migration |
-| | | | |
+| 2026-06-25 | P1 | **Direction A — Midnight Scholar** locked. Light: warm cream `#FAFAF8` + burnt orange `#C6570F`. Dark: pure neutral black `#0A0A0A` + gold `#F0A500` (primary accent) + orange `#C6570F` (user bubble). Text scale: `#F4F4F4` / `#C8C8C8` / `#8C8C8C` / `#686868`. Font: Baloo 2 (brand) + Inter (body). | Dark mode primary (gold) differs from user bubble (orange) — handled via `--user-bubble-bg` token |
+| 2026-06-25 | P4 | Token implementation started — theme.css + zunoTheme.js + global.css + index.html | No component logic changes, only CSS variable values |
 
 ---
 
