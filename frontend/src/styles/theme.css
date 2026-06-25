@@ -23,9 +23,10 @@
   --primary-border: #F4C06C;
   --primary-label:  #7A3B0A;
 
-  /* User bubble — same as primary in light mode */
-  --user-bubble-bg:   var(--primary);
-  --user-bubble-text: #FFFFFF;
+  /* User bubble — ghost tint, barely-there */
+  --user-bubble-bg:     rgba(198, 87, 15, 0.05);
+  --user-bubble-border: rgba(198, 87, 15, 0.18);
+  --user-bubble-text:   var(--text-primary);
 
   /* Text — 4-level hierarchy */
   --text-primary:      #1A1208;
@@ -90,9 +91,10 @@
   --primary-border: #383020;
   --primary-label:  #F0A500;
 
-  /* User bubble — stays orange in dark (not gold) */
-  --user-bubble-bg:   #C6570F;
-  --user-bubble-text: #FFFFFF;
+  /* User bubble — ghost tint, barely-there */
+  --user-bubble-bg:     rgba(240, 165, 0, 0.05);
+  --user-bubble-border: rgba(240, 165, 0, 0.15);
+  --user-bubble-text:   var(--text-primary);
 
   /* Text — 4-level hierarchy, all pass WCAG AA on #0A0A0A */
   --text-primary:      #F4F4F4;   /* 19:1 contrast */

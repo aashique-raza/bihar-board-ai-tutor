@@ -100,15 +100,16 @@ body {
   align-items: flex-start;
 }
 
-/* Student bubble — right-aligned */
+/* Student bubble — right-aligned, ghost tint */
 .student-bubble {
   max-width: 65%;
-  padding: 10px 14px;
+  padding: 9px 14px;
   background: var(--user-bubble-bg);
   color: var(--user-bubble-text);
-  border-radius: 12px 12px 3px 12px;
+  border: 1px solid var(--user-bubble-border);
+  border-radius: 14px 14px 3px 14px;
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.65;
   word-break: break-word;
 }
 
@@ -116,18 +117,40 @@ body {
   .student-bubble { max-width: 85%; }
 }
 
-/* Zuno message — no box, free text */
+/* Zuno message — full width, no left avatar */
 .zuno-message {
-  max-width: 80%;
+  width: 100%;
   min-width: 0;
-  flex: 1;
 }
 
-@media (max-width: 639px) {
-  .zuno-message { max-width: 100%; }
+/* Zuno header row — mini Z + label */
+.zuno-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
-/* ── Zuno avatar ── */
+.zuno-avatar-mini {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  font-family: var(--font-brand);
+  user-select: none;
+}
+
+[data-theme="dark"] .zuno-avatar-mini {
+  color: #0A0A0A;
+}
+
+/* ── Zuno avatar (kept for other uses) ── */
 .zuno-avatar {
   width: 30px;
   height: 30px;
@@ -143,16 +166,48 @@ body {
   user-select: none;
 }
 
-/* ── Message sections ── */
+/* ── Message kicker ── */
 .message-kicker {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   color: var(--text-muted);
-  margin-bottom: 6px;
 }
 
+/* ── Prose response (Direction 2 — Interchange) ── */
+.message-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prose-paragraph {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin: 0;
+  word-break: break-word;
+}
+
+.prose-lead {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Source footnote — right-aligned, single line */
+.source-footnote {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 0.7rem;
+  color: var(--text-hint);
+  letter-spacing: 0.01em;
+}
+
+/* Legacy section classes — kept for fallback */
 .message-sections {
   display: flex;
   flex-direction: column;
@@ -162,13 +217,12 @@ body {
 .section-block {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
 }
 
-/* Section heading — with left accent bar */
 .section-heading {
   border-left: 3px solid var(--primary);
-  border-radius: 2px;
+  border-radius: 0;
   padding-left: 8px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -176,7 +230,6 @@ body {
   line-height: 1.4;
 }
 
-/* Section body text */
 .section-content {
   font-size: 0.9rem;
   color: var(--text-secondary);

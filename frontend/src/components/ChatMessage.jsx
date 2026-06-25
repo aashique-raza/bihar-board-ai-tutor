@@ -3,34 +3,29 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import LockOutlined from '@mui/icons-material/LockOutlined';
-import SourceChips from './SourceChips.jsx';
 
-// Returns true if message has at least one section with heading or content
 const hasStructuredSections = (message) =>
   Array.isArray(message.sections) &&
   message.sections.some((s) => s?.heading || s?.content);
 
-// Renders AI response sections — each section has an optional heading with left bar + content
+// Prose rendering — heading becomes inline bold lead, content flows after
 function MessageSections({ sections }) {
+  const filtered = sections.filter((s) => s?.heading || s?.content);
+  const showHeadings = filtered.length > 1;
   return (
-    <div className="message-sections">
-      {sections
-        .filter((s) => s?.heading || s?.content)
-        .map((section, index) => (
-          <div className="section-block" key={`${section.heading || 'section'}-${index}`}>
-            {section.heading && (
-              <div className="section-heading">{section.heading}</div>
-            )}
-            {section.content && (
-              <div className="section-content">{section.content}</div>
-            )}
-          </div>
-        ))}
+    <div className="message-prose">
+      {filtered.map((section, index) => (
+        <p className="prose-paragraph" key={`${section.heading || 'section'}-${index}`}>
+          {showHeadings && section.heading && (
+            <strong className="prose-lead">{section.heading} — </strong>
+          )}
+          {section.content}
+        </p>
+      ))}
     </div>
   );
 }
 
-// Animated thinking dots — shown while Zuno is preparing a response
 function ThinkingDots() {
   return (
     <div className="thinking-indicator" aria-label="Zuno is preparing an answer">
@@ -38,6 +33,23 @@ function ThinkingDots() {
       <span />
       <span />
     </div>
+  );
+}
+
+function SourceFootnote({ sources }) {
+  const chapters = [...new Set(
+    sources
+      .map((src) => {
+        const raw = typeof src === 'string' ? src : (src.label || src.sourceTitle || '');
+        // Strip "Source N: " prefix, then take only the chapter name before " - "
+        return raw.replace(/^Source\s*\d+:\s*/i, '').split(' - ')[0].trim();
+      })
+      .filter(Boolean)
+  )].slice(0, 2);
+
+  if (!chapters.length) return null;
+  return (
+    <div className="source-footnote">— {chapters.join(' · ')}</div>
   );
 }
 
@@ -49,7 +61,6 @@ function ChatMessage({ message, onSwitchToGlobal }) {
   const showSections = !isStudent && !isThinking && hasStructuredSections(message);
   const showSources = !isStudent && !isThinking && Array.isArray(message.sources) && message.sources.length > 0;
 
-  // System notice — centered muted row (lock, cap notices)
   if (isSystem) {
     return (
       <Box sx={{
@@ -66,27 +77,24 @@ function ChatMessage({ message, onSwitchToGlobal }) {
     );
   }
 
-  // Student message — right-aligned bubble
+  // Student message — right-aligned ghost bubble
   if (isStudent) {
     return (
       <div className="message-row student-row">
-        <div className="student-bubble">
-          {message.answer}
-        </div>
+        <div className="student-bubble">{message.answer}</div>
       </div>
     );
   }
 
-  // Zuno message — free text layout with avatar on left
+  // Zuno message — inline mini avatar + flowing prose
   return (
     <div className="message-row zuno-row">
-      {/* Avatar — plain div with "Z", no MUI icon */}
-      <div className="zuno-avatar">Z</div>
-
-      {/* Message content */}
       <div className="zuno-message">
         {!isThinking && (
-          <div className="message-kicker">Zuno</div>
+          <div className="zuno-header">
+            <div className="zuno-avatar-mini">Z</div>
+            <span className="message-kicker">Zuno</span>
+          </div>
         )}
 
         {isThinking ? (
@@ -94,15 +102,11 @@ function ChatMessage({ message, onSwitchToGlobal }) {
         ) : showSections ? (
           <MessageSections sections={message.sections} />
         ) : (
-          <div className="section-content">{message.answer}</div>
+          <p className="prose-paragraph">{message.answer}</p>
         )}
 
-        {/* Source chips — shown below content */}
-        {showSources && (
-          <SourceChips sources={message.sources} />
-        )}
+        {showSources && <SourceFootnote sources={message.sources} />}
 
-        {/* Focus miss button */}
         {isFocusMiss && (
           <div style={{ marginTop: '12px' }}>
             <Button
