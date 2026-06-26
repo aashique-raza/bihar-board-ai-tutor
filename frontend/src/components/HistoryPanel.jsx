@@ -108,6 +108,15 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => !isRenaming && onSelect(session)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (!isRenaming && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          onSelect(session);
+        }
+      }}
+      aria-label={`Select session: ${displayTitle}`}
       sx={{
         px: 1.5, py: 1,
         cursor: isRenaming ? 'default' : 'pointer',
@@ -171,6 +180,7 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
         <Box ref={menuRef} sx={{ position: 'relative', flexShrink: 0 }}>
           <Tooltip title="Options" placement="top">
             <IconButton
+              aria-label="Session options"
               size="small"
               onClick={handleMenuToggle}
               sx={{
@@ -429,7 +439,7 @@ export default function HistoryPanel({
       <Stack direction="row" alignItems="center" spacing={0.5}>
         <Tooltip title="New Chat" placement="top">
           <IconButton
-            size="small"
+            aria-label="New chat"
             onClick={handleNewChat}
             sx={{ color: 'var(--text-muted)', '&:hover': { color: 'var(--primary)' } }}
           >
@@ -437,6 +447,7 @@ export default function HistoryPanel({
           </IconButton>
         </Tooltip>
         <IconButton
+          aria-label="Close history"
           size="small"
           onClick={handleClose}
           sx={{ color: 'var(--text-muted)', '&:hover': { color: 'var(--text-primary)' } }}

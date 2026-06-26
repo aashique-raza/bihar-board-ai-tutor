@@ -111,7 +111,7 @@ body {
 }
 
 @media (max-width: 639px) {
-  .student-bubble { max-width: 85%; }
+  .student-bubble { max-width: 90%; }
 }
 
 /* Zuno message — full width, no left avatar */

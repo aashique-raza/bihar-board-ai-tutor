@@ -112,6 +112,7 @@ function AskBar({ disabled, isHistoryLoading, isLocked, isGuestLimited, onGuestL
           <Tooltip title="Cancel">
             <span>
               <IconButton
+                aria-label="Cancel request"
                 color="error"
                 disabled={cancelCooling}
                 onClick={handleCancel}
@@ -129,6 +130,7 @@ function AskBar({ disabled, isHistoryLoading, isLocked, isGuestLimited, onGuestL
           <Tooltip title="Send">
             <span>
               <IconButton
+                aria-label="Send message"
                 color="primary"
                 disabled={!question.trim() || isHistoryLoading}
                 type="submit"

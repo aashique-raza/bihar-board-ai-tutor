@@ -517,7 +517,7 @@ function ChatPage({ theme, toggleTheme }) {
       <ErrorBoundary key={sessionId}>
         {/* Chat area — scrollable */}
         <Box
-          component="section"
+          component="main"
           aria-live="polite"
           sx={{ flex: 1, overflowY: 'auto', px: { xs: 2, sm: 3 }, py: 2 }}
         >

@@ -85,6 +85,7 @@ export default function Topbar({
           </Typography>
           <Typography
             sx={{
+              display: { xs: 'none', sm: 'block' },
               fontSize: '0.67rem',
               color: 'var(--text-muted)',
               lineHeight: 1,
@@ -107,8 +108,8 @@ export default function Topbar({
             alignItems="center"
             spacing={0.75}
             sx={{
-              display: { xs: 'none', sm: 'inline-flex' },
-              maxWidth: 220,
+              display: 'inline-flex',
+              maxWidth: { xs: 130, sm: 220 },
               px: '10px',
               pl: '8px',
               py: '4px',
@@ -132,7 +133,7 @@ export default function Topbar({
                 fontSize: '0.8rem',
                 fontWeight: 600,
                 color: 'var(--primary-label)',
-                maxWidth: 160,
+                maxWidth: { xs: 70, sm: 160 },
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -142,6 +143,7 @@ export default function Topbar({
               {selectedChapter.title}
             </Typography>
             <IconButton
+              aria-label="Clear focus"
               size="small"
               onClick={onClearFocus}
               sx={{ padding: '2px', color: 'var(--primary-label)' }}
@@ -151,7 +153,7 @@ export default function Topbar({
           </Stack>
         )}
 
-        {/* Focus button — colored chip treatment */}
+        {/* Focus button — desktop: text+icon, mobile: icon only */}
         <Button
           size="small"
           disabled={isFocusLoading || isSessionLocked}
@@ -167,6 +169,7 @@ export default function Topbar({
             </svg>
           }
           sx={{
+            display: { xs: 'none', sm: 'inline-flex' },
             bgcolor: 'var(--primary-tint)',
             border: '1px solid var(--primary-border)',
             color: 'var(--primary-label)',
@@ -192,6 +195,41 @@ export default function Topbar({
         >
           Focus
         </Button>
+
+        {/* Focus button — mobile icon only */}
+        <IconButton
+          size="small"
+          disabled={isFocusLoading || isSessionLocked}
+          onClick={onOpenFocus}
+          title="Focus Mode"
+          sx={{
+            display: { xs: 'inline-flex', sm: 'none' },
+            bgcolor: 'var(--primary-tint)',
+            border: '1px solid var(--primary-border)',
+            color: 'var(--primary-label)',
+            borderRadius: 'var(--radius-full)',
+            p: '5px',
+            '&:hover': {
+              bgcolor: 'var(--primary-tint)',
+              borderColor: 'var(--primary)',
+            },
+            '&.Mui-disabled': {
+              bgcolor: 'var(--primary-tint)',
+              borderColor: 'var(--primary-border)',
+              color: 'var(--primary-label)',
+              opacity: 0.5,
+            },
+          }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="6"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="6" y2="12"/>
+            <line x1="18" y1="12" x2="22" y2="12"/>
+          </svg>
+        </IconButton>
 
         {/* New Chat — desktop: icon + text, mobile: icon only */}
         <Button
@@ -221,6 +259,7 @@ export default function Topbar({
 
         {/* New Chat — mobile icon only */}
         <IconButton
+          aria-label="New chat"
           size="small"
           onClick={onNewChat}
           title="New Chat"
@@ -240,7 +279,16 @@ export default function Topbar({
               /* Avatar with dropdown */
               <Box ref={menuRef} sx={{ position: 'relative' }}>
                 <Box
+                  role="button"
+                  tabIndex={0}
+                  aria-label="User menu"
                   onClick={() => setMenuOpen((prev) => !prev)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setMenuOpen((prev) => !prev);
+                    }
+                  }}
                   sx={{
                     width: 30,
                     height: 30,
