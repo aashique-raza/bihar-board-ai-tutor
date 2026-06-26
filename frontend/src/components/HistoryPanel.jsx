@@ -116,8 +116,15 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
         border: isActive ? '1px solid var(--primary-border)' : '1px solid transparent',
         display: 'flex', alignItems: 'center', gap: 0.5,
         position: 'relative',
-        '&:hover': { bgcolor: isActive ? 'var(--primary-tint)' : 'var(--bg-hover)' },
-        transition: 'background 0.12s ease',
+        '&:active': { transform: isRenaming ? 'none' : 'scale(0.97)' },
+        '@media (hover: hover)': {
+          '&:hover': { 
+            bgcolor: isActive ? 'var(--primary-tint)' : 'var(--bg-hover)',
+            transform: isRenaming ? 'none' : 'translateY(-1px)',
+            boxShadow: isRenaming ? 'none' : 'var(--shadow-sm)'
+          }
+        },
+        transition: 'all 0.15s ease',
         minHeight: 44,
       }}
     >

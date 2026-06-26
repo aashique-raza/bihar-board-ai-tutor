@@ -164,7 +164,7 @@ function ChatPage({ theme, toggleTheme }) {
         return;
       }
       const dbMessages = result?.messages ?? [];
-      const converted = dbMessages.map(dbMessageToUiMessage);
+      const converted = dbMessages.map(dbMessageToUiMessage).map(msg => ({ ...msg, isNew: false }));
       setMessages(converted);
       setIsSessionLocked(result?.sessionMeta?.isLocked === true);
     }).catch((err) => {
@@ -237,7 +237,7 @@ function ChatPage({ theme, toggleTheme }) {
     setIsFocusModalOpen(false);
     setError('');
     if (nextChapter) {
-      setMessages((prev) => [...prev, createFocusMessage(nextChapter)]);
+      setMessages((prev) => [...prev, { ...createFocusMessage(nextChapter), isNew: true }]);
     }
   };
 
@@ -292,7 +292,7 @@ function ChatPage({ theme, toggleTheme }) {
 
     setError('');
     setIsAsking(true);
-    setMessages((prev) => [...prev, createQuestionMessage(cleanQuestion)]);
+    setMessages((prev) => [...prev, { ...createQuestionMessage(cleanQuestion), isNew: true }]);
 
     const controller = new AbortController();
     controllerRef.current = controller;
@@ -321,7 +321,7 @@ function ChatPage({ theme, toggleTheme }) {
             isFirstUpdate = false;
             setMessages((prev) => [
               ...prev,
-              { id: tempMessageId, role: 'zuno', ...partialData, status: partialData.status || 'answered' }
+              { id: tempMessageId, role: 'zuno', ...partialData, status: partialData.status || 'answered', isNew: true }
             ]);
           } else {
             setMessages((prev) =>
@@ -393,7 +393,7 @@ function ChatPage({ theme, toggleTheme }) {
             )
           );
         } else {
-          setMessages((prev) => [...prev, createAnswerMessage({ status: 'cancelled', answer, sources: [] })]);
+          setMessages((prev) => [...prev, { ...createAnswerMessage({ status: 'cancelled', answer, sources: [] }), isNew: true }]);
         }
       } else {
         if (!isFirstUpdate) {
@@ -406,7 +406,7 @@ function ChatPage({ theme, toggleTheme }) {
             )
           );
         } else {
-          setMessages((prev) => [...prev, createAnswerMessage({ status: 'error', answer: askError.message, sources: [] })]);
+          setMessages((prev) => [...prev, { ...createAnswerMessage({ status: 'error', answer: askError.message, sources: [] }), isNew: true }]);
         }
       }
     } finally {
@@ -470,8 +470,7 @@ function ChatPage({ theme, toggleTheme }) {
       if (session.sessionId !== sessionIdRef.current) return;
 
       const dbMessages = result?.messages ?? [];
-      const converted = dbMessages.map(dbMessageToUiMessage);
-      const displayMessages = converted;
+      const displayMessages = dbMessages.map(dbMessageToUiMessage).map(msg => ({ ...msg, isNew: false }));
 
       // Show cap notice if history is at the 30-message limit
       if (dbMessages.length === 30) {

@@ -28,10 +28,14 @@ function MessageSections({ sections }) {
 
 function ThinkingDots() {
   return (
-    <div className="thinking-indicator" aria-label="Zuno is preparing an answer">
-      <span />
-      <span />
-      <span />
+    <div className="thinking-wrapper">
+      <div className="zuno-avatar-mini" style={{ width: 22, height: 22, fontSize: '0.75rem', marginTop: 0 }}>Z</div>
+      <div className="thinking-indicator" aria-label="Zuno is preparing an answer">
+        <span />
+        <span />
+        <span />
+      </div>
+      <span className="thinking-phrase">Zuno soch raha hai...</span>
     </div>
   );
 }
@@ -63,7 +67,9 @@ function ChatMessage({ message, onSwitchToGlobal }) {
 
   if (isSystem) {
     return (
-      <Box sx={{
+      <Box 
+        className={message.isNew ? 'message-animate-in' : ''}
+        sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -77,10 +83,9 @@ function ChatMessage({ message, onSwitchToGlobal }) {
     );
   }
 
-  // Student message — right-aligned ghost bubble
   if (isStudent) {
     return (
-      <div className="message-row student-row">
+      <div className={`message-row student-row ${message.isNew ? 'message-animate-in' : ''}`}>
         <div className="student-bubble">{message.answer}</div>
       </div>
     );
@@ -88,7 +93,7 @@ function ChatMessage({ message, onSwitchToGlobal }) {
 
   // Zuno message — inline mini avatar + flowing prose
   return (
-    <div className="message-row zuno-row">
+    <div className={`message-row zuno-row ${message.isNew ? 'message-animate-in' : ''}`}>
       <div className="zuno-message">
         {!isThinking && (
           <div className="zuno-header">

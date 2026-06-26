@@ -254,12 +254,34 @@ body {
   text-overflow: ellipsis;
 }
 
-/* ── Thinking indicator ── */
+.thinking-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  background: var(--primary-tint);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-xl);
+  width: fit-content;
+  box-shadow: var(--shadow-sm);
+}
+
+.thinking-phrase {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-label);
+  animation: phrase-fade 2.5s ease-in-out infinite;
+}
+
+@keyframes phrase-fade {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
 .thinking-indicator {
   display: flex;
   gap: 5px;
   align-items: center;
-  padding: 4px 0;
 }
 
 .thinking-indicator span {
@@ -267,15 +289,15 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--text-muted);
-  animation: thinking-pulse 1.2s ease-in-out infinite;
+  background: var(--primary);
+  animation: thinking-pulse 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.thinking-indicator span:nth-child(2) { animation-delay: 0.2s; }
-.thinking-indicator span:nth-child(3) { animation-delay: 0.4s; }
+.thinking-indicator span:nth-child(2) { animation-delay: 0.15s; }
+.thinking-indicator span:nth-child(3) { animation-delay: 0.3s; }
 
 @keyframes thinking-pulse {
-  0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.3; }
   40%            { transform: scale(1);   opacity: 1;   }
 }
 
@@ -370,9 +392,15 @@ body {
 }
 
 
-.focus-item-btn.available:hover:not(:disabled) {
-  border-color: var(--primary);
-  background: var(--bg-hover);
+.focus-item-btn.available:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) {
+  .focus-item-btn.available:hover:not(:disabled) {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+  }
 }
 
 .focus-item-btn.selected {
@@ -927,11 +955,42 @@ body {
   font-family: var(--font-body);
   cursor: pointer;
   text-align: left;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
 }
 
-.chat-empty-chip:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  background: var(--primary-tint);
+.chat-empty-chip:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) {
+  .chat-empty-chip:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-tint);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* ── P13 Animations & Micro-interactions ── */
+
+@keyframes message-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-animate-in {
+  animation: message-pop-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Global focus-visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
