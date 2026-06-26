@@ -200,7 +200,7 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, `global.css`, `theme.css` | Direction 2 Interchange — ghost bubble, prose flow, footnote source | ✅ DONE — source dedup, heading suppressed for single-section |
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, CSS | Bubble vs free-text, animations, sections styling | ⬜ PENDING-DISCUSSION |
 | P8 | FocusModal restyle | `FocusModal.jsx`, `global.css` | Slide-based nav (Subject→Section→Chapter), back button, CSS animations, light mode clean | ✅ DONE |
-| P9 | HistoryPanel rethink | `HistoryPanel.jsx` | FAB vs left-rail vs top-pinned — preview per device | ⬜ PENDING-DISCUSSION |
+| P9 | HistoryPanel rethink | `HistoryPanel.jsx`, `SessionBar.jsx` (new), `ChatPage.jsx` | Session Bar (38px strip above AskBar) replaces FAB. Desktop panel anchored top-left. Search added. | ✅ DONE |
 | P10 | Auth pages re-skin | `LoginPage.jsx`, `RegisterPage.jsx`, etc. | Card design, content (P3 output), responsive | ⬜ PENDING |
 | P11 | Landing / first-run experience | New component | What does student see before first message? | ⬜ PENDING-DISCUSSION |
 | P12 | Empty states + error states polish | Multiple | Illustrations / SVGs, tone | ⬜ PENDING |
@@ -346,6 +346,7 @@ Jo bhi tum approve karoge wo yahan record hoga.
 | 2026-06-25 | P2 | **Brand voice** — Direction C "Apni boli mein". Topbar micro-tagline added, AskBar placeholders updated, Login/Register copy updated, welcome message removed. Zuno is for all of Class 10 (not just Science). | Welcome message removed permanently — first message from Zuno only appears after student asks |
 | 2026-06-26 | P8 | **FocusModal slide nav** — 3-step slide navigation (Subject → Section → Chapter), back button top-left, CSS keyframe animations (`focusSlideFromRight/Left`), available/unavailable/selected card states, 6-subject grid (Science available, rest "Jald aata hai"). | Dark mode deferred — too many MUI CSS variable conflicts between `[data-color-scheme]` and `[data-theme]` attributes. Will implement properly post-deployment. |
 | 2026-06-26 | HOTFIX | **Dark mode removed** — `useTheme.js` locked to light-only, `[data-theme="dark"]` CSS removed from `theme.css` + `global.css`, dark `colorScheme` removed from `zunoTheme.js`, theme toggle button removed from `Topbar.jsx`. | Root cause: MUI v9 `cssVariables: true` uses `[data-mui-color-scheme]` but our hook sets `[data-color-scheme]` — Paper background and CSS vars fought each other. Deferred to post-deployment. |
+| 2026-06-26 | P9 | **HistoryPanel — Session Bar** — FAB removed. New `SessionBar.jsx` (38px strip above AskBar): "Chats · N" button left, current session name center, "+ New" right. `HistoryPanel` now controlled (`isOpen`/`onClose`/`triggerRef` props). Desktop panel: `position: fixed; top: calc(--topbar-height + 8px); left: 16px` (no overlap with AskBar). Search input added in panel. Mobile: bottom sheet unchanged. | No layout restructure needed — Session Bar sits inside existing flex column. |
 
 ---
 
@@ -379,15 +380,16 @@ Cheezein jo aayegi baad mein, abhi note kar raha hoon:
 - P2: Brand voice — topbar tagline, placeholders, auth copy, welcome message removed
 - P8: FocusModal — 3-step slide navigation, back button, CSS animations
 - HOTFIX: Dark mode removed — light-only until post-deployment
+- P9: HistoryPanel — FAB removed, Session Bar added (38px strip: "Chats · count" + session name + "+ New"), desktop panel anchored top-left below topbar, search input added, mobile bottom sheet unchanged
 
-### 🎯 Next session — post-deployment (dark mode + remaining phases)
+### 🎯 Next session — remaining phases
 | Priority | Task |
 |----------|------|
-| 1 | **Dark mode re-implementation** — fix MUI `colorSchemeSelector: '[data-color-scheme]'` properly using `useColorScheme` hook from MUI instead of custom `useTheme.js` |
-| 2 | **P9 — HistoryPanel rethink** |
-| 3 | **P3 — Content strategy** (empty states, error copy) |
-| 4 | **P10 — Auth pages re-skin** |
-| 5 | **P12–P17 — Empty states, responsive sweep, a11y, final QA** |
+| 1 | **P3 — Content strategy** (empty states, error copy, "study map" error friendlier) |
+| 2 | **P10 — Auth pages re-skin** |
+| 3 | **P11 — Landing / first-run experience** |
+| 4 | **P12–P17 — Empty states, responsive sweep, a11y, final QA** |
+| 5 | **Dark mode re-implementation** — post-deployment, fix MUI `colorSchemeSelector` using `useColorScheme` hook |
 
 ### 🔖 Dark mode root cause note (for next session)
 MUI v9 `cssVariables: true` generates `--mui-palette-*` vars scoped to `[data-mui-color-scheme]`. Our custom `useTheme.js` sets `[data-theme]` and `[data-color-scheme]` but NOT `[data-mui-color-scheme]`. Fix: either (a) set `colorSchemeSelector: '[data-color-scheme]'` in `zunoTheme.js` AND replace `useTheme.js` with MUI's `useColorScheme` hook, or (b) move all MUI Paper/Dialog colors to `var(--*)` tokens with `!important` via `styleOverrides`.

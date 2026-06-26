@@ -1,9 +1,7 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import Badge from '@mui/material/Badge';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import Drawer from '@mui/material/Drawer';
-import Fab from '@mui/material/Fab';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import Skeleton from '@mui/material/Skeleton';
@@ -42,7 +40,6 @@ const groupByDate = (sessions) => {
   return groups;
 };
 
-// Today → relative time. Older → actual clock time (date context from group header).
 const formatTime = (dateStr) => {
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);
@@ -71,19 +68,15 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
     ? session.previewText
     : session.title;
 
-  // Close menu on outside click
   useEffect(() => {
     if (!menuOpen) return;
     const handler = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
+      if (menuRef.current && !menuRef.current.contains(e.target)) setMenuOpen(false);
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, [menuOpen]);
 
-  // Focus input when rename starts
   useEffect(() => {
     if (isRenaming) {
       setRenameValue(session.title === 'New Chat' ? '' : session.title);
@@ -91,16 +84,8 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
     }
   }, [isRenaming, session.title]);
 
-  const handleMenuToggle = (e) => {
-    e.stopPropagation();
-    setMenuOpen((prev) => !prev);
-  };
-
-  const handleRenameStart = (e) => {
-    e.stopPropagation();
-    setMenuOpen(false);
-    setIsRenaming(true);
-  };
+  const handleMenuToggle = (e) => { e.stopPropagation(); setMenuOpen((prev) => !prev); };
+  const handleRenameStart = (e) => { e.stopPropagation(); setMenuOpen(false); setIsRenaming(true); };
 
   const handleRenameSave = async () => {
     const trimmed = renameValue.trim();
@@ -114,11 +99,7 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
     if (e.key === 'Escape') { setIsRenaming(false); }
   };
 
-  const handleDelete = (e) => {
-    e.stopPropagation();
-    setMenuOpen(false);
-    onDelete(session.sessionId);
-  };
+  const handleDelete = (e) => { e.stopPropagation(); setMenuOpen(false); onDelete(session.sessionId); };
 
   return (
     <Box
@@ -126,27 +107,22 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => !isRenaming && onSelect(session)}
       sx={{
-        px: 1.5,
-        py: 1,
+        px: 1.5, py: 1,
         cursor: isRenaming ? 'default' : 'pointer',
         borderRadius: 'var(--radius-md)',
         bgcolor: isActive ? 'var(--primary-tint)' : 'transparent',
         border: isActive ? '1px solid var(--primary-border)' : '1px solid transparent',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 0.5,
+        display: 'flex', alignItems: 'center', gap: 0.5,
         position: 'relative',
         '&:hover': { bgcolor: isActive ? 'var(--primary-tint)' : 'var(--bg-hover)' },
         transition: 'background 0.12s ease',
         minHeight: 44,
       }}
     >
-      {/* Lock icon */}
       {session.isLocked && (
         <LockOutlined sx={{ fontSize: 12, color: 'var(--text-muted)', flexShrink: 0 }} />
       )}
 
-      {/* Title / Rename input */}
       <Box sx={{ flex: 1, minWidth: 0 }}>
         {isRenaming ? (
           <InputBase
@@ -158,15 +134,8 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
             onClick={(e) => e.stopPropagation()}
             placeholder="Chat ka naam likho..."
             sx={{
-              fontSize: '0.82rem',
-              color: 'var(--text-primary)',
-              width: '100%',
-              '& input': {
-                p: 0,
-                border: 'none',
-                outline: 'none',
-                bgcolor: 'transparent',
-              },
+              fontSize: '0.82rem', color: 'var(--text-primary)', width: '100%',
+              '& input': { p: 0, border: 'none', outline: 'none', bgcolor: 'transparent' },
             }}
           />
         ) : (
@@ -176,11 +145,8 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
               sx={{
                 color: isActive ? 'var(--primary-label)' : 'var(--text-primary)',
                 fontWeight: isActive ? 600 : 400,
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                fontSize: '0.82rem',
-                lineHeight: 1.4,
+                whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                fontSize: '0.82rem', lineHeight: 1.4,
               }}
             >
               {displayTitle}
@@ -192,7 +158,6 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
         )}
       </Box>
 
-      {/* Three-dot button — visible on hover or when menu is open */}
       {!isRenaming && (isHovered || menuOpen) && (
         <Box ref={menuRef} sx={{ position: 'relative', flexShrink: 0 }}>
           <Tooltip title="Options" placement="top">
@@ -200,8 +165,7 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
               size="small"
               onClick={handleMenuToggle}
               sx={{
-                color: 'var(--text-muted)',
-                p: '3px',
+                color: 'var(--text-muted)', p: '3px',
                 '&:hover': { color: 'var(--text-primary)', bgcolor: 'var(--bg-hover)' },
               }}
             >
@@ -209,35 +173,19 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
             </IconButton>
           </Tooltip>
 
-          {/* Dropdown menu */}
           {menuOpen && (
-            <Box
-              sx={{
-                position: 'absolute',
-                top: '100%',
-                right: 0,
-                mt: 0.5,
-                minWidth: 130,
-                bgcolor: 'var(--bg-surface)',
-                border: '1px solid var(--border)',
-                borderRadius: 'var(--radius-md)',
-                boxShadow: 'var(--shadow-md)',
-                zIndex: 1400,
-                overflow: 'hidden',
-              }}
-            >
+            <Box sx={{
+              position: 'absolute', top: '100%', right: 0, mt: 0.5,
+              minWidth: 130, bgcolor: 'var(--bg-surface)',
+              border: '1px solid var(--border)', borderRadius: 'var(--radius-md)',
+              boxShadow: 'var(--shadow-md)', zIndex: 1400, overflow: 'hidden',
+            }}>
               <Box
                 onClick={handleRenameStart}
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 1,
-                  px: 1.5,
-                  py: 1,
-                  fontSize: '0.8rem',
-                  color: 'var(--text-primary)',
-                  cursor: 'pointer',
-                  '&:hover': { bgcolor: 'var(--bg-hover)' },
+                  display: 'flex', alignItems: 'center', gap: 1,
+                  px: 1.5, py: 1, fontSize: '0.8rem', color: 'var(--text-primary)',
+                  cursor: 'pointer', '&:hover': { bgcolor: 'var(--bg-hover)' },
                 }}
               >
                 <DriveFileRenameOutlineRounded sx={{ fontSize: 15 }} />
@@ -246,15 +194,9 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
               <Box
                 onClick={handleDelete}
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 1,
-                  px: 1.5,
-                  py: 1,
-                  fontSize: '0.8rem',
-                  color: 'var(--error)',
-                  cursor: 'pointer',
-                  '&:hover': { bgcolor: 'var(--bg-hover)' },
+                  display: 'flex', alignItems: 'center', gap: 1,
+                  px: 1.5, py: 1, fontSize: '0.8rem', color: 'var(--error)',
+                  cursor: 'pointer', '&:hover': { bgcolor: 'var(--bg-hover)' },
                 }}
               >
                 <DeleteOutlineRounded sx={{ fontSize: 15 }} />
@@ -270,16 +212,7 @@ function SessionRow({ session, isActive, onSelect, onDelete, onRename }) {
 
 // --- Panel content ---
 
-function PanelContent({
-  isLoggedIn,
-  isAuthLoading,
-  sessions,
-  isLoading,
-  activeSessionId,
-  onSessionSelect,
-  onDelete,
-  onRename,
-}) {
+function PanelContent({ isLoggedIn, isAuthLoading, sessions, isLoading, activeSessionId, onSessionSelect, onDelete, onRename, searchQuery }) {
   if (isAuthLoading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', pt: 4 }}>
@@ -297,6 +230,16 @@ function PanelContent({
           <Skeleton key={i} variant="rounded" height={44} sx={{ borderRadius: 'var(--radius-md)' }} />
         ))}
       </Stack>
+    );
+  }
+
+  if (sessions.length === 0 && searchQuery) {
+    return (
+      <Box sx={{ px: 2, pt: 3, textAlign: 'center' }}>
+        <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block' }}>
+          "{searchQuery}" — koi chat nahi mila.
+        </Typography>
+      </Box>
     );
   }
 
@@ -324,19 +267,12 @@ function PanelContent({
         if (!group || group.length === 0) return null;
         return (
           <Box key={label}>
-            {/* Group header */}
             <Typography
               variant="caption"
               sx={{
-                px: 1.5,
-                pt: 1.5,
-                pb: 0.5,
-                display: 'block',
-                color: 'var(--text-muted)',
-                fontWeight: 700,
-                fontSize: '0.68rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
+                px: 1.5, pt: 1.5, pb: 0.5, display: 'block',
+                color: 'var(--text-muted)', fontWeight: 700, fontSize: '0.68rem',
+                textTransform: 'uppercase', letterSpacing: '0.08em',
               }}
             >
               {label}
@@ -358,9 +294,12 @@ function PanelContent({
   );
 }
 
-// --- Main HistoryPanel ---
+// --- Main HistoryPanel (controlled — isOpen + onClose from parent) ---
 
 export default function HistoryPanel({
+  isOpen,
+  onClose,
+  triggerRef,
   isLoggedIn,
   isAuthLoading,
   sessions,
@@ -372,36 +311,38 @@ export default function HistoryPanel({
   onSessionDelete,
   onSessionRename,
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   const [localSessions, setLocalSessions] = useState(sessions);
+  const [searchQuery, setSearchQuery] = useState('');
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const panelRef = useRef(null);
-  const fabRef = useRef(null);
 
-  // Keep localSessions in sync with prop (after refresh from parent)
+  // Sync local sessions with prop
   useEffect(() => { setLocalSessions(sessions); }, [sessions]);
 
-  // Click-outside close for desktop panel
+  // Fetch session list when panel opens
+  useEffect(() => {
+    if (isOpen) fetchOnce();
+  }, [isOpen, fetchOnce]);
+
+  // Clear search when panel closes
+  useEffect(() => {
+    if (!isOpen) setSearchQuery('');
+  }, [isOpen]);
+
+  // Click-outside to close desktop panel (exclude the trigger button in SessionBar)
   useEffect(() => {
     if (!isOpen || isMobile) return;
     const handler = (e) => {
       const clickedPanel = panelRef.current?.contains(e.target);
-      const clickedFab = fabRef.current?.contains(e.target);
-      if (!clickedPanel && !clickedFab) setIsOpen(false);
+      const clickedTrigger = triggerRef?.current?.contains(e.target);
+      if (!clickedPanel && !clickedTrigger) onClose();
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, [isOpen, isMobile]);
+  }, [isOpen, isMobile, onClose, triggerRef]);
 
-  const handleFabClick = useCallback(() => {
-    setIsOpen((prev) => {
-      if (!prev) fetchOnce();
-      return !prev;
-    });
-  }, [fetchOnce]);
-
-  const handleClose = () => setIsOpen(false);
+  const handleClose = () => onClose();
 
   const handleSessionSelect = (session) => {
     onSessionSelect(session);
@@ -413,7 +354,7 @@ export default function HistoryPanel({
     handleClose();
   };
 
-  // Optimistic delete — remove locally, call API, restore on failure
+  // Optimistic delete
   const handleDelete = useCallback(async (sessionId) => {
     const prev = localSessions;
     setLocalSessions((s) => s.filter((x) => x.sessionId !== sessionId));
@@ -421,11 +362,11 @@ export default function HistoryPanel({
       await apiDeleteSession(sessionId);
       onSessionDelete?.(sessionId);
     } catch {
-      setLocalSessions(prev); // restore on failure
+      setLocalSessions(prev);
     }
   }, [localSessions, onSessionDelete]);
 
-  // Optimistic rename — update locally, call API, sync on response
+  // Optimistic rename
   const handleRename = useCallback(async (sessionId, title) => {
     setLocalSessions((s) =>
       s.map((x) => x.sessionId === sessionId ? { ...x, title, previewText: null } : x)
@@ -438,23 +379,26 @@ export default function HistoryPanel({
     }
   }, [onSessionRename]);
 
-  const sessionCount = isLoggedIn ? localSessions.length : 0;
+  // Filter sessions by search query
+  const filteredSessions = useMemo(() => {
+    if (!searchQuery.trim()) return localSessions;
+    const q = searchQuery.toLowerCase();
+    return localSessions.filter((s) =>
+      (s.title || '').toLowerCase().includes(q) ||
+      (s.previewText || '').toLowerCase().includes(q)
+    );
+  }, [localSessions, searchQuery]);
 
+  // Panel header — shared between mobile and desktop
   const panelHeader = (
     <Box sx={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      px: 2,
-      py: 1.25,
-      borderBottom: '1px solid var(--border)',
-      flexShrink: 0,
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      px: 2, py: 1.25, borderBottom: '1px solid var(--border)', flexShrink: 0,
     }}>
       <Typography sx={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.85rem' }}>
         Chats
       </Typography>
       <Stack direction="row" alignItems="center" spacing={0.5}>
-        {/* New Chat shortcut in panel */}
         <Tooltip title="New Chat" placement="top">
           <IconButton
             size="small"
@@ -475,104 +419,127 @@ export default function HistoryPanel({
     </Box>
   );
 
+  // Search bar — shown only when logged in and sessions exist
+  const panelSearch = isLoggedIn && (
+    <Box sx={{ px: 1.5, pt: 1, pb: 0.5, flexShrink: 0 }}>
+      <Box sx={{
+        display: 'flex', alignItems: 'center', gap: 1,
+        px: 1.5, py: 0.75,
+        background: 'var(--bg-hover)',
+        border: '1px solid var(--border)',
+        borderRadius: 'var(--radius-md)',
+      }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true" style={{ flexShrink: 0, color: 'var(--text-muted)' }}>
+          <circle cx="11" cy="11" r="7" />
+          <line x1="16.5" y1="16.5" x2="21" y2="21" />
+        </svg>
+        <InputBase
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search karo..."
+          inputProps={{ 'aria-label': 'Search sessions' }}
+          sx={{
+            flex: 1, fontSize: '0.8rem', color: 'var(--text-primary)',
+            '& input::placeholder': { color: 'var(--text-muted)', opacity: 1 },
+          }}
+        />
+        {searchQuery && (
+          <Box
+            component="button"
+            onClick={() => setSearchQuery('')}
+            sx={{
+              background: 'none', border: 'none', cursor: 'pointer',
+              color: 'var(--text-muted)', fontSize: '0.8rem', lineHeight: 1, p: 0,
+              '&:hover': { color: 'var(--text-primary)' },
+            }}
+            aria-label="Clear search"
+          >
+            ✕
+          </Box>
+        )}
+      </Box>
+    </Box>
+  );
+
+  // Scrollable session list
   const panelBody = (
     <Box sx={{
-      flex: 1,
-      overflowY: 'auto',
-      // Thin custom scrollbar
+      flex: 1, overflowY: 'auto',
       '&::-webkit-scrollbar': { width: 4 },
       '&::-webkit-scrollbar-track': { bgcolor: 'transparent' },
       '&::-webkit-scrollbar-thumb': {
-        bgcolor: 'var(--border-strong)',
-        borderRadius: 4,
+        bgcolor: 'var(--border-strong)', borderRadius: 4,
         '&:hover': { bgcolor: 'var(--text-muted)' },
       },
     }}>
       <PanelContent
         isLoggedIn={isLoggedIn}
         isAuthLoading={isAuthLoading}
-        sessions={localSessions}
+        sessions={filteredSessions}
         isLoading={isLoading}
         activeSessionId={activeSessionId}
         onSessionSelect={handleSessionSelect}
         onDelete={handleDelete}
         onRename={handleRename}
+        searchQuery={searchQuery}
       />
     </Box>
   );
 
-  return (
-    <>
-      {/* FAB with session count badge */}
-      <Badge
-        badgeContent={sessionCount}
-        color="primary"
-        max={99}
-        sx={{ position: 'fixed', bottom: 128, right: 16, zIndex: 1200 }}
-      >
-        <Fab
-          ref={fabRef}
-          onClick={handleFabClick}
-          size="medium"
-          aria-label="Chat history"
-          sx={{
+  // Mobile — MUI bottom sheet drawer
+  if (isMobile) {
+    return (
+      <Drawer
+        anchor="bottom"
+        open={isOpen}
+        onClose={handleClose}
+        PaperProps={{
+          sx: {
+            borderTopLeftRadius: 'var(--radius-lg)',
+            borderTopRightRadius: 'var(--radius-lg)',
             bgcolor: 'var(--bg-surface)',
-            border: '1px solid var(--border)',
-            color: 'var(--text-secondary)',
-            boxShadow: 'var(--shadow-md)',
-            '&:hover': { bgcolor: 'var(--bg-hover)', color: 'var(--text-primary)' },
-          }}
-        >
-          <HistoryRounded />
-        </Fab>
-      </Badge>
+            maxHeight: '72vh',
+            display: 'flex',
+            flexDirection: 'column',
+          },
+        }}
+      >
+        {/* Drag handle */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', pt: 1 }}>
+          <Box sx={{ width: 32, height: 3, bgcolor: 'var(--border-strong)', borderRadius: '99px' }} />
+        </Box>
+        {panelHeader}
+        {panelSearch}
+        {panelBody}
+      </Drawer>
+    );
+  }
 
-      {/* Mobile — bottom sheet */}
-      {isMobile ? (
-        <Drawer
-          anchor="bottom"
-          open={isOpen}
-          onClose={handleClose}
-          PaperProps={{
-            sx: {
-              borderTopLeftRadius: 'var(--radius-lg)',
-              borderTopRightRadius: 'var(--radius-lg)',
-              bgcolor: 'var(--bg-surface)',
-              maxHeight: '72vh',
-              display: 'flex',
-              flexDirection: 'column',
-            },
-          }}
-        >
-          {panelHeader}
-          {panelBody}
-        </Drawer>
-      ) : (
-        /* Desktop — floating panel */
-        isOpen && (
-          <Box
-            ref={panelRef}
-            sx={{
-              position: 'fixed',
-              bottom: 188,
-              right: 16,
-              width: 300,
-              maxHeight: '62vh',
-              bgcolor: 'var(--bg-surface)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--radius-lg)',
-              boxShadow: 'var(--shadow-md)',
-              zIndex: 1200,
-              display: 'flex',
-              flexDirection: 'column',
-              overflow: 'hidden',
-            }}
-          >
-            {panelHeader}
-            {panelBody}
-          </Box>
-        )
-      )}
-    </>
+  // Desktop — fixed floating panel anchored below topbar, left side
+  if (!isOpen) return null;
+
+  return (
+    <Box
+      ref={panelRef}
+      sx={{
+        position: 'fixed',
+        top: 'calc(var(--topbar-height) + 8px)',
+        left: 16,
+        width: 288,
+        maxHeight: 'calc(100vh - var(--topbar-height) - 80px)',
+        bgcolor: 'var(--bg-surface)',
+        border: '1px solid var(--border)',
+        borderRadius: 'var(--radius-lg)',
+        boxShadow: 'var(--shadow-md)',
+        zIndex: 1200,
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+      }}
+    >
+      {panelHeader}
+      {panelSearch}
+      {panelBody}
+    </Box>
   );
 }

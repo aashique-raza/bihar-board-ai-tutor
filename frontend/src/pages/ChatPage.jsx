@@ -23,6 +23,7 @@ import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
 import useSessionList from '../hooks/useSessionList.js';
 import HistoryPanel from '../components/HistoryPanel.jsx';
+import SessionBar from '../components/SessionBar.jsx';
 import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
 // --- Message factory helpers ---
@@ -106,8 +107,10 @@ function ChatPage({ theme, toggleTheme }) {
   const [isSessionLocked, setIsSessionLocked] = useState(false);
   const [isGuestLimited, setIsGuestLimited] = useState(false);
   const [guestLimitModal, setGuestLimitModal] = useState({ open: false, trigger: 'turn_limit' });
+  const [historyOpen, setHistoryOpen] = useState(false);
 
   const chatEndRef = useRef(null);
+  const historyTriggerRef = useRef(null);
   const controllerRef = useRef(null);
   const timeoutRef = useRef(null);
   const wasTimeoutAbortRef = useRef(false);
@@ -192,6 +195,14 @@ function ChatPage({ theme, toggleTheme }) {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [messages, isAsking]);
+
+  // Current session title for SessionBar center label
+  const currentSessionTitle = useMemo(() => {
+    if (!sessionId || !sessions.length) return null;
+    const active = sessions.find((s) => s.sessionId === sessionId);
+    if (!active) return null;
+    return active.title === 'New Chat' && active.previewText ? active.previewText : active.title;
+  }, [sessions, sessionId]);
 
   // Derive full chapter object from selected chapter ID
   const selectedChapter = useMemo(() => {
@@ -536,11 +547,19 @@ function ChatPage({ theme, toggleTheme }) {
           </Box>
         </Box>
 
+        {/* Session bar — quick access to history + new chat */}
+        <SessionBar
+          sessionCount={isLoggedIn ? sessions.length : 0}
+          currentSessionTitle={currentSessionTitle}
+          triggerRef={historyTriggerRef}
+          onOpenHistory={() => setHistoryOpen(true)}
+          onNewChat={handleNewChat}
+        />
+
         {/* Input zone — fixed at bottom */}
         <Box sx={{
           flexShrink: 0,
           bgcolor: 'var(--bg-surface)',
-          borderTop: '1px solid var(--border)',
           px: { xs: 2, sm: 3 },
           py: 1.5,
         }}>
@@ -569,17 +588,18 @@ function ChatPage({ theme, toggleTheme }) {
       />
 
       <HistoryPanel
+        isOpen={historyOpen}
+        onClose={() => setHistoryOpen(false)}
+        triggerRef={historyTriggerRef}
         isLoggedIn={isLoggedIn}
         isAuthLoading={isAuthLoading}
         sessions={sessions}
         isLoading={sessionsLoading}
         activeSessionId={sessionId}
-        isSessionLocked={isSessionLocked}
         onSessionSelect={handleSessionSwitch}
         onNewChat={handleNewChat}
         fetchOnce={fetchOnce}
         onSessionDelete={(deletedId) => {
-          // If deleted session was active, start fresh
           if (deletedId === sessionId) handleNewChat();
           refresh();
         }}
