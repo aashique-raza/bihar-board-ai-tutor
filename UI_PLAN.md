@@ -193,7 +193,7 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | P0 | Master plan file (yeh file) | Docs | Methodology + role + scope | 🟢 IN PROGRESS |
 | P1 | **Design direction** (color, type, mood) | None yet | 3 directions with live preview widgets (light + dark) | ✅ DONE — Direction A locked |
 | P2 | **Tagline + brand voice** | `Topbar.jsx`, `AskBar.jsx`, `LoginPage.jsx`, `RegisterPage.jsx`, `ChatPage.jsx` | Direction C "Apni boli mein" — tagline, placeholders, auth copy, welcome message removed | ✅ DONE |
-| P3 | **Content strategy** | None yet | Welcome msg, placeholders, empty states, error copy, auth page copy, landing copy | ⬜ PENDING-DISCUSSION |
+| P3 | **Content strategy** | `AskBar.jsx`, `HistoryPanel.jsx`, `GuestLoginPrompt.jsx`, `ChatPage.jsx` | Guest limit banner, session lock banner, empty state, GuestLoginPrompt copy (factual fix), focus system msg, lock system msg | ✅ DONE |
 | P4 | Design tokens implementation | `theme.css`, `zunoTheme.js` | How to migrate without breaking shipped UI | ✅ DONE — verified light + dark, build green |
 | P5 | Topbar + logo + brand moment | `Topbar.jsx`, `global.css` | Logo refresh, tagline placement | ✅ DONE — Option 2 (Action Forward), both modes verified |
 | P6 | AskBar — multiline + polish | `AskBar.jsx`, CSS | Multiline strategy, max-height, mobile keyboard handling | ✅ DONE — multiline textarea, Enter sends, Shift+Enter newline |
@@ -385,7 +385,7 @@ Cheezein jo aayegi baad mein, abhi note kar raha hoon:
 ### 🎯 Next session — remaining phases
 | Priority | Task |
 |----------|------|
-| 1 | **P3 — Content strategy** (empty states, error copy, "study map" error friendlier) |
+| ~~1~~ | ~~**P3 — Content strategy**~~ ✅ DONE |
 | 2 | **P10 — Auth pages re-skin** |
 | 3 | **P11 — Landing / first-run experience** |
 | 4 | **P12–P17 — Empty states, responsive sweep, a11y, final QA** |

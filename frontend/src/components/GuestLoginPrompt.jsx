@@ -12,10 +12,10 @@ export default function GuestLoginPrompt() {
     <Box sx={{ p: 3, textAlign: 'center' }}>
       <LockOutlined sx={{ fontSize: 32, color: 'var(--text-muted)', mb: 1 }} />
       <Typography variant="body2" sx={{ color: 'var(--text-secondary)', mb: 0.5 }}>
-        Login karo to apni chats save ho jaayengi
+        Login karo, history save hogi.
       </Typography>
       <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block', mb: 2 }}>
-        Guest chats abhi save nahi hoti — yeh feature jald aa raha hai!
+        Guest mode mein chats nahi rehti. Free account mein sab yaad rahega.
       </Typography>
       <Button
         variant="contained"

@@ -248,10 +248,10 @@ function PanelContent({ isLoggedIn, isAuthLoading, sessions, isLoading, activeSe
       <Box sx={{ px: 2, pt: 4, textAlign: 'center' }}>
         <HistoryRounded sx={{ fontSize: 28, color: 'var(--text-muted)', mb: 1, opacity: 0.5 }} />
         <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block' }}>
-          Koi purani chat nahi hai.
+          Zuno taiyaar hai.
         </Typography>
         <Typography variant="caption" sx={{ color: 'var(--text-muted)' }}>
-          Pehla sawaal poochho!
+          Koi bhi sawaal poochho — seedha jawab milega.
         </Typography>
       </Box>
     );

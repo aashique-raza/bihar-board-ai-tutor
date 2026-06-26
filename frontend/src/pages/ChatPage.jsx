@@ -44,7 +44,7 @@ const createAnswerMessage = (payload) => ({
 const createLockSystemMessage = () => ({
   id: crypto.randomUUID(),
   role: 'system',
-  answer: 'Is session ki limit reach ho gayi. Nayi chat shuru karo.',
+  answer: 'Session yahan tak. Nayi chat mein aage badho.',
   sources: [],
 });
 
@@ -69,7 +69,7 @@ const createFocusMessage = (chapter) => ({
   id: crypto.randomUUID(),
   role: 'zuno',
   status: 'focus_selected',
-  answer: `Focus mode on hai. Ab hum ${chapter.subjectTitle} > ${chapter.sectionTitle} > ${chapter.title} par kaam karenge. Is chapter ka topic, concept, ya question likho.`,
+  answer: `Focus on. Ab hum "${chapter.title}" padhenge — jo bhi samajhna ho, seedha poochho.`,
   sources: [],
 });
 

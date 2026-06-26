@@ -48,7 +48,7 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
         }}>
           <LockOutlined sx={{ fontSize: 14, color: 'var(--text-muted)', flexShrink: 0 }} />
           <Typography variant="caption" sx={{ color: 'var(--text-muted)', flex: 1 }}>
-            Guest limit ho gayi.{' '}
+            5 turns ho gaye!{' '}
             <Box
               component="span"
               onClick={onGuestLimitClick}
@@ -56,7 +56,7 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
             >
               Login karo
             </Box>
-            {' '}aur padhai jaari rakho!
+            {' '}— free account mein koi limit nahi.
           </Typography>
         </Box>
       ) : isLocked ? (
@@ -73,7 +73,7 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
         }}>
           <LockOutlined sx={{ fontSize: 14, color: 'var(--text-muted)', flexShrink: 0 }} />
           <Typography variant="caption" sx={{ color: 'var(--text-muted)' }}>
-            Is session ki limit reach ho gayi. Nayi chat shuru karo.
+            Session bhar gaya. Nayi chat mein aage badho.
           </Typography>
         </Box>
       ) : null}
