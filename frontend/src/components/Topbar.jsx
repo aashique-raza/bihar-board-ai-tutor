@@ -5,8 +5,6 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import AddCommentOutlined from '@mui/icons-material/AddCommentOutlined';
 import CloseRounded from '@mui/icons-material/CloseRounded';
-import DarkModeRounded from '@mui/icons-material/DarkModeRounded';
-import LightModeRounded from '@mui/icons-material/LightModeRounded';
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -17,8 +15,6 @@ import { clearSessionId } from '../utils/session.js';
 
 
 export default function Topbar({
-  theme,
-  onToggleTheme,
   selectedChapter,
   isFocusLoading,
   onOpenFocus,
@@ -350,29 +346,6 @@ export default function Topbar({
           </>
         )}
 
-        {/* Theme toggle */}
-        <IconButton
-          size="small"
-          onClick={onToggleTheme}
-          sx={{
-            border: '1px solid var(--border)',
-            borderRadius: 'var(--radius-md)',
-            color: 'var(--text-muted)',
-            width: 28,
-            height: 28,
-            '&:hover': {
-              borderColor: 'var(--border-strong)',
-              color: 'var(--text-primary)',
-              bgcolor: 'var(--bg-hover)',
-            },
-          }}
-        >
-          {theme === 'dark' ? (
-            <LightModeRounded sx={{ fontSize: '16px' }} />
-          ) : (
-            <DarkModeRounded sx={{ fontSize: '16px' }} />
-          )}
-        </IconButton>
       </Stack>
     </Box>
   );

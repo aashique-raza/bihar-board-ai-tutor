@@ -66,9 +66,6 @@ body {
   font-family: var(--font-brand);
 }
 
-[data-theme="dark"] .zuno-logo {
-  color: #0A0A0A;
-}
 
 /* ── Focus chip (Topbar) ── */
 .focus-chip {
@@ -146,9 +143,6 @@ body {
   user-select: none;
 }
 
-[data-theme="dark"] .zuno-avatar-mini {
-  color: #0A0A0A;
-}
 
 /* ── Zuno avatar (kept for other uses) ── */
 .zuno-avatar {
@@ -315,110 +309,101 @@ body {
   line-height: 1.5;
 }
 
-/* ── FocusModal (preserved from TASK-022 — Step G will restyle) ── */
-.focus-dialog {
-  border: 1px solid rgba(151, 175, 215, 0.16);
-  border-radius: 24px !important;
-  background:
-    linear-gradient(180deg, rgba(17, 23, 35, 0.98), rgba(7, 11, 19, 0.98)),
-    #101826 !important;
-  background-image: none !important;
-  overflow: hidden;
-  position: relative;
-}
-
-.focus-modal-title {
-  position: relative;
-  padding: 24px 64px 22px 28px;
-  border-bottom: 1px solid rgba(151, 175, 215, 0.14);
-}
-
-.focus-close-button {
-  position: absolute !important;
-  top: 18px;
-  right: 18px;
-  border: 1px solid rgba(151, 175, 215, 0.16) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: #f4f7fb !important;
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease !important;
-}
-
-.focus-close-button:hover {
-  transform: translateY(-1px);
-  border-color: rgba(243, 182, 63, 0.38) !important;
-  background: rgba(243, 182, 63, 0.12) !important;
-}
-
-.modal-icon, .card-icon {
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-}
-
-.modal-icon {
-  width: 46px;
-  height: 46px;
-  background: rgba(243, 182, 63, 0.14);
-  color: #f3b63f;
-}
-
-.card-icon {
-  width: 42px;
-  height: 42px;
-  background: rgba(90, 183, 255, 0.12);
-  color: #5ab7ff;
-}
-
-.section-label {
-  margin-bottom: 10px !important;
-  color: #9aa8bb;
-  font-size: 0.8rem !important;
-  font-weight: 900 !important;
-  text-transform: uppercase;
-}
-
-.focus-grid {
-  display: grid;
+/* ── FocusModal (P8 — Direction 2 fresh, slide nav) ── */
+.focus-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
   gap: 12px;
+  flex-shrink: 0;
+  color: var(--text-primary);
 }
 
-.focus-grid.subjects,
-.focus-grid.sections {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.focus-section-label {
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted) !important;
+  margin-bottom: 10px !important;
 }
 
-.focus-grid.chapters {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Slide animation */
+@keyframes focusSlideFromRight {
+  from { transform: translateX(22px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
 }
 
-.focus-card, .chapter-card, .section-card {
-  border-color: rgba(151, 175, 215, 0.16) !important;
-  border-radius: 16px !important;
-  background: rgba(15, 23, 36, 0.86) !important;
-  background-image: none !important;
-  transition: transform 160ms ease, border-color 160ms ease !important;
+@keyframes focusSlideFromLeft {
+  from { transform: translateX(-22px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
 }
 
-.focus-card:hover, .chapter-card:hover, .section-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(90, 183, 255, 0.36) !important;
+.focus-slide {
+  padding: 20px;
+  color: var(--text-primary);
 }
 
-.focus-card.selected, .chapter-card.selected {
-  border-color: rgba(90, 183, 255, 0.55) !important;
-  background: rgba(90, 183, 255, 0.1) !important;
-  background-image: none !important;
+.focus-slide-forward {
+  animation: focusSlideFromRight 0.22s ease;
 }
 
-.selected-section {
-  border-color: rgba(90, 183, 255, 0.55) !important;
-  background: rgba(90, 183, 255, 0.1) !important;
-  background-image: none !important;
+.focus-slide-back {
+  animation: focusSlideFromLeft 0.22s ease;
 }
 
-.nav-active {
-  border: 1px solid rgba(90, 183, 255, 0.28) !important;
-  background: rgba(90, 183, 255, 0.1) !important;
+/* Item card button — subject / section / chapter */
+.focus-item-btn {
+  width: 100%;
+  text-align: left;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  display: block;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+
+.focus-item-btn.available:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--bg-hover);
+}
+
+.focus-item-btn.selected {
+  border: 1.5px solid var(--primary);
+  background: var(--primary-tint);
+}
+
+.focus-item-btn.unavailable,
+.focus-item-btn:disabled {
+  border: 1px dashed var(--border-strong);
+  background: var(--bg-page);
+  cursor: default;
+  opacity: 0.45;
+}
+
+/* Grids */
+.focus-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.focus-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 639px) {
+  .focus-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .focus-grid-2 { grid-template-columns: 1fr; }
 }
 
 /* ── Auth Pages ── */

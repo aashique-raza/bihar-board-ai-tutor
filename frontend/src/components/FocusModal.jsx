@@ -1,261 +1,247 @@
 import React, { useMemo, useState } from 'react';
-import CloseRounded from '@mui/icons-material/CloseRounded';
+import ArrowBackRounded from '@mui/icons-material/ArrowBackRounded';
 import AutoStoriesRounded from '@mui/icons-material/AutoStoriesRounded';
 import BiotechRounded from '@mui/icons-material/BiotechRounded';
 import BoltRounded from '@mui/icons-material/BoltRounded';
+import CloseRounded from '@mui/icons-material/CloseRounded';
 import FunctionsRounded from '@mui/icons-material/FunctionsRounded';
 import MenuBookRounded from '@mui/icons-material/MenuBookRounded';
 import PublicRounded from '@mui/icons-material/PublicRounded';
 import ScienceRounded from '@mui/icons-material/ScienceRounded';
-import SchoolRounded from '@mui/icons-material/SchoolRounded';
 import TranslateRounded from '@mui/icons-material/TranslateRounded';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import Chip from '@mui/material/Chip';
 import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 const baseSubjects = [
-  { id: 'hindi', title: 'Hindi', icon: TranslateRounded },
-  { id: 'english', title: 'English', icon: AutoStoriesRounded },
-  { id: 'math', title: 'Math', icon: FunctionsRounded },
-  { id: 'science', title: 'Science', icon: ScienceRounded },
-  { id: 'social-science', title: 'Social Science', icon: PublicRounded },
-  { id: 'sanskrit', title: 'Sanskrit', icon: MenuBookRounded },
+  { id: 'hindi',          title: 'Hindi',          icon: TranslateRounded },
+  { id: 'english',        title: 'English',         icon: AutoStoriesRounded },
+  { id: 'math',           title: 'Math',            icon: FunctionsRounded },
+  { id: 'science',        title: 'Science',         icon: ScienceRounded },
+  { id: 'social-science', title: 'Social Science',  icon: PublicRounded },
+  { id: 'sanskrit',       title: 'Sanskrit',        icon: MenuBookRounded },
 ];
 
 const sectionIcons = {
-  physics: BoltRounded,
+  physics:   BoltRounded,
   chemistry: ScienceRounded,
-  biology: BiotechRounded,
+  biology:   BiotechRounded,
 };
 
-function FocusModal({
-  isOpen,
-  isLoading,
-  selectedChapterId,
-  studyMap,
-  onClose,
-  onSelectChapter,
-}) {
+function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, onSelectChapter }) {
+  const [step, setStep]                   = useState(1);
+  const [animClass, setAnimClass]         = useState('focus-slide-forward');
   const [activeSubjectId, setActiveSubjectId] = useState('');
   const [activeSectionId, setActiveSectionId] = useState('');
 
-  // Determine which subjects are actually loaded in the study map
   const subjectsInMap = useMemo(() => {
     const subjects = studyMap?.focusStudy?.subjects || [];
-    return new Set(subjects.map((sub) => sub.id || sub.title?.toLowerCase()));
+    return new Set(subjects.map((s) => s.id || s.title?.toLowerCase()));
   }, [studyMap]);
 
-  // Enrich the subject list with dynamic availability
-  const enrichedSubjects = useMemo(() => {
-    return baseSubjects.map((sub) => ({
-      ...sub,
-      available: subjectsInMap.has(sub.id),
-    }));
-  }, [subjectsInMap]);
+  const enrichedSubjects = useMemo(() =>
+    baseSubjects.map((s) => ({ ...s, available: subjectsInMap.has(s.id) })),
+  [subjectsInMap]);
 
-  // Map of subject ID -> total chapters count
   const subjectChapterCounts = useMemo(() => {
     const counts = {};
-    const subjects = studyMap?.focusStudy?.subjects || [];
-    for (const subject of subjects) {
+    for (const subject of studyMap?.focusStudy?.subjects || []) {
       const total = (subject.sections || []).reduce(
-        (acc, sec) => acc + (sec.chapters?.length || 0),
-        0
+        (acc, sec) => acc + (sec.chapters?.length || 0), 0
       );
       counts[subject.id || subject.title?.toLowerCase()] = total;
     }
     return counts;
   }, [studyMap]);
 
-  // Find the selected subject dynamically
   const selectedSubject = useMemo(() => {
     const subjects = studyMap?.focusStudy?.subjects || [];
-    return subjects.find(
-      (sub) => sub.id === activeSubjectId || sub.title?.toLowerCase() === activeSubjectId
-    );
+    return subjects.find((s) => s.id === activeSubjectId || s.title?.toLowerCase() === activeSubjectId);
   }, [activeSubjectId, studyMap]);
 
-  const sections = selectedSubject?.sections || [];
-  const activeSection = sections.find((section) => section.id === activeSectionId);
+  const sections     = selectedSubject?.sections || [];
+  const activeSection = sections.find((s) => s.id === activeSectionId);
+
+  const go = (newStep, dir) => {
+    setAnimClass(dir === 'forward' ? 'focus-slide-forward' : 'focus-slide-back');
+    setStep(newStep);
+  };
+
+  const handleSubjectClick = (subject) => {
+    if (!subject.available || isLoading) return;
+    setActiveSubjectId(subject.id);
+    setActiveSectionId('');
+    go(2, 'forward');
+  };
+
+  const handleSectionClick = (section) => {
+    setActiveSectionId(section.id);
+    go(3, 'forward');
+  };
+
+  const handleBack = () => {
+    if (step === 3) { setActiveSectionId(''); go(2, 'back'); }
+    else if (step === 2) { setActiveSubjectId(''); go(1, 'back'); }
+  };
 
   const handleClose = () => {
+    setStep(1);
     setActiveSubjectId('');
     setActiveSectionId('');
     onClose();
   };
 
-  const handleSubjectClick = (subject) => {
-    if (!subject.available || isLoading) {
-      return;
-    }
+  const stepTitle = step === 1
+    ? 'Kya padhna hai aaj?'
+    : step === 2
+      ? `${selectedSubject?.title || ''} — section chunno`
+      : `${activeSection?.title || ''} — chapter chunno`;
 
-    setActiveSubjectId(subject.id);
-    setActiveSectionId('');
-  };
+  const stepLabel = step === 1 ? 'Subject chunno' : step === 2 ? 'Section chunno' : 'Chapter chunno';
 
   return (
     <Dialog
       fullWidth
-      maxWidth="lg"
+      maxWidth="md"
       open={isOpen}
       onClose={handleClose}
-      PaperProps={{ className: 'focus-dialog' }}
+      PaperProps={{
+        sx: {
+          backgroundImage: 'none',
+          border:          '1px solid var(--border)',
+          borderRadius:    'var(--radius-xl)',
+          overflow:        'hidden',
+        },
+      }}
     >
-      <DialogTitle component="div" sx={{ p: 0 }}>
-        <Box className="focus-modal-title">
-          <Stack direction="row" spacing={1.5} alignItems="center">
-            <Box className="modal-icon">
-              <SchoolRounded />
-            </Box>
-            <Box>
-              <Typography variant="overline" color="primary.main" sx={{ fontWeight: 950 }}>
-                Focus Mode
-              </Typography>
-              <Typography variant="h5" sx={{ fontWeight: 950 }}>
-                Select Your Study Path
-              </Typography>
-            </Box>
-          </Stack>
-          <IconButton
-            aria-label="Close focus selector"
-            className="focus-close-button"
-            onClick={handleClose}
-          >
-            <CloseRounded />
-          </IconButton>
+      {/* ── Header ── */}
+      <Box className="focus-modal-header">
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, minWidth: 0 }}>
+          {step > 1 && (
+            <IconButton
+              size="small"
+              onClick={handleBack}
+              aria-label="Go back"
+              sx={{
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--radius-md)',
+                color: 'var(--text-muted)',
+                width: 30, height: 30,
+                flexShrink: 0,
+                '&:hover': { borderColor: 'var(--border-strong)', color: 'var(--text-primary)', bgcolor: 'var(--bg-hover)' },
+              }}
+            >
+              <ArrowBackRounded sx={{ fontSize: 16 }} />
+            </IconButton>
+          )}
+          <Box sx={{ minWidth: 0 }}>
+            <Typography sx={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.07em', color: 'var(--primary)', lineHeight: 1, mb: '2px' }}>
+              Focus Mode
+            </Typography>
+            <Typography sx={{ fontSize: '1rem', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-.3px', lineHeight: 1.2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {stepTitle}
+            </Typography>
+          </Box>
         </Box>
-      </DialogTitle>
 
-      <DialogContent sx={{ p: 3 }}>
-        <Stack spacing={3}>
-          <Box>
-            <Typography className="section-label">Class 10 Subjects</Typography>
-            <Box className="focus-grid subjects">
+        <IconButton
+          size="small"
+          onClick={handleClose}
+          aria-label="Close focus selector"
+          sx={{
+            border: '1px solid var(--border)',
+            borderRadius: 'var(--radius-md)',
+            color: 'var(--text-muted)',
+            width: 30, height: 30,
+            flexShrink: 0,
+            '&:hover': { borderColor: 'var(--border-strong)', color: 'var(--text-primary)', bgcolor: 'var(--bg-hover)' },
+          }}
+        >
+          <CloseRounded sx={{ fontSize: 16 }} />
+        </IconButton>
+      </Box>
+
+      {/* ── Slide area ── */}
+      <Box sx={{ overflowX: 'hidden', overflowY: 'auto' }}>
+        <Box key={step} className={`focus-slide ${animClass}`}>
+
+          <Typography className="focus-section-label">{stepLabel}</Typography>
+
+          {/* Step 1 — Subjects */}
+          {step === 1 && (
+            <Box className="focus-grid-3">
               {enrichedSubjects.map((subject) => {
                 const Icon = subject.icon;
-                const isSelected = activeSubjectId === subject.id;
-
                 return (
-                  <Card
-                    className={`focus-card ${isSelected ? 'selected' : ''}`}
+                  <button
                     key={subject.id}
-                    variant="outlined"
+                    type="button"
+                    disabled={!subject.available || isLoading}
+                    className={`focus-item-btn ${subject.available ? 'available' : 'unavailable'}`}
+                    onClick={() => handleSubjectClick(subject)}
                   >
-                    <CardActionArea
-                      disabled={!subject.available || isLoading}
-                      onClick={() => handleSubjectClick(subject)}
-                      sx={{ height: '100%', p: 2 }}
-                    >
-                      <Stack spacing={1.25}>
-                        <Stack direction="row" alignItems="center" spacing={1.25}>
-                          <Box className="card-icon subject-icon">
-                            <Icon fontSize="small" />
-                          </Box>
-                          <Typography variant="h6" sx={{ fontWeight: 900, flex: 1 }}>
-                            {subject.title}
-                          </Typography>
-                        </Stack>
-                        <Chip
-                          color={subject.available ? 'primary' : 'default'}
-                          label={
-                            subject.available
-                              ? `${subjectChapterCounts[subject.id] || 0} chapters`
-                              : 'Coming soon'
-                          }
-                          size="small"
-                          sx={{ alignSelf: 'flex-start', fontWeight: 850 }}
-                        />
-                      </Stack>
-                    </CardActionArea>
-                  </Card>
+                    <Icon sx={{ fontSize: 20, color: subject.available ? 'var(--primary)' : 'var(--text-hint)', display: 'block', mb: 0.75 }} />
+                    <Typography component="span" sx={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.3 }}>
+                      {subject.title}
+                    </Typography>
+                    <Typography component="span" sx={{ display: 'block', fontSize: '0.7rem', color: subject.available ? 'var(--primary-label)' : 'var(--text-hint)', mt: 0.5 }}>
+                      {subject.available ? `${subjectChapterCounts[subject.id] || 0} chapters` : 'Jald aata hai'}
+                    </Typography>
+                  </button>
                 );
               })}
             </Box>
-          </Box>
-
-          {activeSubjectId && enrichedSubjects.find(s => s.id === activeSubjectId)?.available && (
-            <Box>
-              <Typography className="section-label">Sections</Typography>
-              <Box className="focus-grid sections">
-                {sections.map((section) => {
-                  const normalizedTitle = section.title?.toLowerCase();
-                  const SectionIcon = sectionIcons[normalizedTitle] || MenuBookRounded;
-
-                  return (
-                    <Card
-                      className={
-                        activeSectionId === section.id
-                          ? 'section-card selected-section'
-                          : 'section-card'
-                      }
-                      key={section.id}
-                      variant="outlined"
-                    >
-                      <CardActionArea
-                        onClick={() => setActiveSectionId(section.id)}
-                        sx={{ height: '100%', p: 2 }}
-                      >
-                        <Stack direction="row" alignItems="center" spacing={1.25}>
-                          <Box className="card-icon section-icon">
-                            <SectionIcon fontSize="small" />
-                          </Box>
-                          <Box>
-                            <Typography sx={{ fontWeight: 900 }}>{section.title}</Typography>
-                            <Typography color="text.secondary" variant="body2">
-                              {section.chapters?.length || 0} chapters
-                            </Typography>
-                          </Box>
-                        </Stack>
-                      </CardActionArea>
-                    </Card>
-                  );
-                })}
-              </Box>
-            </Box>
           )}
 
-          {activeSection && (
-            <Box>
-              <Typography className="section-label">
-                {activeSection.title} Chapters
-              </Typography>
-              <Box className="focus-grid chapters">
-                {activeSection.chapters.map((chapter) => (
-                  <Card
-                    className={selectedChapterId === chapter.id ? 'chapter-card selected' : 'chapter-card'}
-                    key={chapter.id}
-                    variant="outlined"
+          {/* Step 2 — Sections */}
+          {step === 2 && (
+            <Box className="focus-grid-3">
+              {sections.map((section) => {
+                const SectionIcon = sectionIcons[section.title?.toLowerCase()] || MenuBookRounded;
+                return (
+                  <button
+                    key={section.id}
+                    type="button"
+                    className="focus-item-btn available"
+                    onClick={() => handleSectionClick(section)}
                   >
-                    <CardActionArea
-                      onClick={() => onSelectChapter(chapter.id)}
-                      sx={{ height: '100%', p: 2 }}
-                    >
-                      <Stack spacing={1}>
-                        <Chip
-                          color="primary"
-                          label={`Chapter ${chapter.number}`}
-                          size="small"
-                          sx={{ alignSelf: 'flex-start', fontWeight: 900 }}
-                        />
-                        <Typography sx={{ fontWeight: 900 }}>
-                          {chapter.title}
-                        </Typography>
-                      </Stack>
-                    </CardActionArea>
-                  </Card>
-                ))}
-              </Box>
+                    <SectionIcon sx={{ fontSize: 20, color: 'var(--primary)', display: 'block', mb: 0.75 }} />
+                    <Typography component="span" sx={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.3 }}>
+                      {section.title}
+                    </Typography>
+                    <Typography component="span" sx={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', mt: 0.5 }}>
+                      {section.chapters?.length || 0} chapters
+                    </Typography>
+                  </button>
+                );
+              })}
             </Box>
           )}
-        </Stack>
-      </DialogContent>
+
+          {/* Step 3 — Chapters */}
+          {step === 3 && activeSection && (
+            <Box className="focus-grid-2">
+              {activeSection.chapters.map((chapter) => (
+                <button
+                  key={chapter.id}
+                  type="button"
+                  className={`focus-item-btn available ${selectedChapterId === chapter.id ? 'selected' : ''}`}
+                  onClick={() => onSelectChapter(chapter.id)}
+                >
+                  <Typography component="span" sx={{ display: 'block', fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: 'var(--text-muted)', mb: 0.5 }}>
+                    Ch {chapter.number}
+                  </Typography>
+                  <Typography component="span" sx={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.4 }}>
+                    {chapter.title}
+                  </Typography>
+                </button>
+              ))}
+            </Box>
+          )}
+
+        </Box>
+      </Box>
     </Dialog>
   );
 }

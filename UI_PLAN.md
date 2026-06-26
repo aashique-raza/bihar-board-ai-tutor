@@ -3,7 +3,7 @@
 **Created:** 2026-06-25
 **Owner:** Farhan Raza
 **Engineering partner:** Claude (acting as Senior Product Manager + Senior Software Engineer + Senior UI Engineer — 20+ years equivalent experience)
-**Status:** 🟡 ACTIVE — P2 Brand Voice DONE, P8 FocusModal next
+**Status:** 🟡 ACTIVE — P8 FocusModal DONE, dark mode removed (light-only until deployment)
 **Previous plan:** Superseded. Steps A–E of the old plan are already shipped in code, but the design system they shipped on (Slate & Pearl / Indigo `#4F46E5`) is being re-evaluated as part of this v2 effort. We will NOT throw away working code — we will refactor design tokens and re-skin existing components. Logic stays.
 
 ---
@@ -199,7 +199,7 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | P6 | AskBar — multiline + polish | `AskBar.jsx`, CSS | Multiline strategy, max-height, mobile keyboard handling | ✅ DONE — multiline textarea, Enter sends, Shift+Enter newline |
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, `global.css`, `theme.css` | Direction 2 Interchange — ghost bubble, prose flow, footnote source | ✅ DONE — source dedup, heading suppressed for single-section |
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, CSS | Bubble vs free-text, animations, sections styling | ⬜ PENDING-DISCUSSION |
-| P8 | FocusModal restyle | `FocusModal.jsx`, `global.css` | Light-mode fix, remove `!important`, layout rethink | ⬜ PENDING-DISCUSSION |
+| P8 | FocusModal restyle | `FocusModal.jsx`, `global.css` | Slide-based nav (Subject→Section→Chapter), back button, CSS animations, light mode clean | ✅ DONE |
 | P9 | HistoryPanel rethink | `HistoryPanel.jsx` | FAB vs left-rail vs top-pinned — preview per device | ⬜ PENDING-DISCUSSION |
 | P10 | Auth pages re-skin | `LoginPage.jsx`, `RegisterPage.jsx`, etc. | Card design, content (P3 output), responsive | ⬜ PENDING |
 | P11 | Landing / first-run experience | New component | What does student see before first message? | ⬜ PENDING-DISCUSSION |
@@ -342,6 +342,10 @@ Jo bhi tum approve karoge wo yahan record hoga.
 | 2026-06-25 | P0 | This v2 plan adopted; old plan (Slate & Pearl) deprecated in spirit but its code stays for now | Existing shipped UI continues working during migration |
 | 2026-06-25 | P1 | **Direction A — Midnight Scholar** locked. Light: warm cream `#FAFAF8` + burnt orange `#C6570F`. Dark: pure neutral black `#0A0A0A` + gold `#F0A500` (primary accent) + orange `#C6570F` (user bubble). Text scale: `#F4F4F4` / `#C8C8C8` / `#8C8C8C` / `#686868`. Font: Baloo 2 (brand) + Inter (body). | Dark mode primary (gold) differs from user bubble (orange) — handled via `--user-bubble-bg` token |
 | 2026-06-25 | P4 | Token implementation started — theme.css + zunoTheme.js + global.css + index.html | No component logic changes, only CSS variable values |
+| 2026-06-25 | P7 | **ChatMessage redesign** — Direction 2 "Interchange". Ghost student bubble (rgba tint + border), prose Zuno response (no section headings for single-section), source footnote (chapter-only dedup, strips "Source N:" prefix). | Source footnote visible only when sources present; single-section heading suppressed frontend-side |
+| 2026-06-25 | P2 | **Brand voice** — Direction C "Apni boli mein". Topbar micro-tagline added, AskBar placeholders updated, Login/Register copy updated, welcome message removed. Zuno is for all of Class 10 (not just Science). | Welcome message removed permanently — first message from Zuno only appears after student asks |
+| 2026-06-26 | P8 | **FocusModal slide nav** — 3-step slide navigation (Subject → Section → Chapter), back button top-left, CSS keyframe animations (`focusSlideFromRight/Left`), available/unavailable/selected card states, 6-subject grid (Science available, rest "Jald aata hai"). | Dark mode deferred — too many MUI CSS variable conflicts between `[data-color-scheme]` and `[data-theme]` attributes. Will implement properly post-deployment. |
+| 2026-06-26 | HOTFIX | **Dark mode removed** — `useTheme.js` locked to light-only, `[data-theme="dark"]` CSS removed from `theme.css` + `global.css`, dark `colorScheme` removed from `zunoTheme.js`, theme toggle button removed from `Topbar.jsx`. | Root cause: MUI v9 `cssVariables: true` uses `[data-mui-color-scheme]` but our hook sets `[data-color-scheme]` — Paper background and CSS vars fought each other. Deferred to post-deployment. |
 
 ---
 
@@ -368,16 +372,22 @@ Cheezein jo aayegi baad mein, abhi note kar raha hoon:
 
 ---
 
-## 11. Next immediate action
+## 11. Current status & next actions
 
-🎯 **Start P1 — Design direction discussion.**
+### ✅ Shipped this session (2026-06-26)
+- P7: ChatMessage — ghost bubble, prose layout, footnote source dedup
+- P2: Brand voice — topbar tagline, placeholders, auth copy, welcome message removed
+- P8: FocusModal — 3-step slide navigation, back button, CSS animations
+- HOTFIX: Dark mode removed — light-only until post-deployment
 
-When tum ready ho:
-1. Mai 3 directions ke **live preview widgets** (light + dark, side-by-side) banaunga
-2. Har direction ke saath palette, type, sample components dikhauunga
-3. Pros/cons/edge-cases samjhaunga
-4. Tum choose karoge ya remix maangoge
-5. Locked direction is file ke section 7.1 mein record hogi
-6. Tab P2 (tagline) ki taraf badhenge
+### 🎯 Next session — post-deployment (dark mode + remaining phases)
+| Priority | Task |
+|----------|------|
+| 1 | **Dark mode re-implementation** — fix MUI `colorSchemeSelector: '[data-color-scheme]'` properly using `useColorScheme` hook from MUI instead of custom `useTheme.js` |
+| 2 | **P9 — HistoryPanel rethink** |
+| 3 | **P3 — Content strategy** (empty states, error copy) |
+| 4 | **P10 — Auth pages re-skin** |
+| 5 | **P12–P17 — Empty states, responsive sweep, a11y, final QA** |
 
-**Tum bolo:** "P1 shuru karo" — mai previews bana ke laata hoon.
+### 🔖 Dark mode root cause note (for next session)
+MUI v9 `cssVariables: true` generates `--mui-palette-*` vars scoped to `[data-mui-color-scheme]`. Our custom `useTheme.js` sets `[data-theme]` and `[data-color-scheme]` but NOT `[data-mui-color-scheme]`. Fix: either (a) set `colorSchemeSelector: '[data-color-scheme]'` in `zunoTheme.js` AND replace `useTheme.js` with MUI's `useColorScheme` hook, or (b) move all MUI Paper/Dialog colors to `var(--*)` tokens with `!important` via `styleOverrides`.
