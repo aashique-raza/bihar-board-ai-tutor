@@ -6,6 +6,10 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
+import PersonOutlineRounded from '@mui/icons-material/PersonOutlineRounded';
+import MailOutlineRounded from '@mui/icons-material/MailOutlineRounded';
+import LockOutlined from '@mui/icons-material/LockOutlined';
+import ArrowForwardRounded from '@mui/icons-material/ArrowForwardRounded';
 import CheckCircleOutlineRounded from '@mui/icons-material/CheckCircleOutlineRounded';
 import { registerUser } from '../services/axios/authService';
 import Toast from '../components/Toast';
@@ -21,7 +25,31 @@ const FIELD_SX = {
   '& .MuiInputLabel-root': { color: 'var(--text-muted)' },
   '& .MuiInputLabel-root.Mui-focused': { color: 'var(--primary)' },
   '& .MuiInputBase-input': { color: 'var(--text-primary)' },
+  '& .MuiInputAdornment-root': { color: 'var(--text-muted)' },
 };
+
+const GOOGLE_G = (
+  <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/>
+    <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
+    <path d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/>
+    <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 6.293C4.672 4.166 6.656 3.58 9 3.58z" fill="#EA4335"/>
+  </svg>
+);
+
+const BrandPanel = () => (
+  <div className="auth-split-left">
+    <div className="auth-brand-z">Z</div>
+    <div className="auth-brand-name">Zuno</div>
+    <div className="auth-brand-tag">apni boli mein</div>
+    <ul className="auth-vp-list">
+      <li className="auth-vp-item"><div className="auth-vp-dot" />Bihar Board Class 10 syllabus</li>
+      <li className="auth-vp-item"><div className="auth-vp-dot" />Hinglish mein seedha jawab</li>
+      <li className="auth-vp-item"><div className="auth-vp-dot" />Focus mode — chapter-wise padhai</li>
+      <li className="auth-vp-item"><div className="auth-vp-dot" />Bilkul free</li>
+    </ul>
+  </div>
+);
 
 function getPasswordStrength(password) {
   const len = password.length;
@@ -113,20 +141,18 @@ function RegisterPage() {
     return (
       <div className="auth-page">
         <div className="auth-card">
-          <div className="auth-logo-row">
-            <div className="zuno-logo">Z</div>
-            <span className="auth-logo-text">Zuno</span>
-          </div>
-          <CheckCircleOutlineRounded
-            sx={{ fontSize: 48, color: 'var(--primary)', mb: 1 }}
-          />
-          <h2 className="auth-heading">Check your email</h2>
-          <p className="auth-subtext" style={{ whiteSpace: 'normal' }}>
-            We've sent a verification link to your email address.
-            The link is valid for 24 hours.
-          </p>
-          <div className="auth-bottom-link">
-            <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Go to login →</a>
+          <BrandPanel />
+          <div className="auth-split-right">
+            <div className="auth-success-body">
+              <CheckCircleOutlineRounded sx={{ fontSize: 48, color: 'var(--primary)', mb: 1.5 }} />
+              <h2 className="auth-heading" style={{ textAlign: 'center' }}>Check your email</h2>
+              <p className="auth-subtext" style={{ textAlign: 'center' }}>
+                We've sent a verification link to your email address. The link is valid for 24 hours.
+              </p>
+              <div className="auth-bottom-link">
+                <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Login pe jaao →</a>
+              </div>
+            </div>
           </div>
         </div>
         <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
@@ -137,153 +163,166 @@ function RegisterPage() {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <div className="auth-logo-row">
-          <div className="zuno-logo">Z</div>
-          <span className="auth-logo-text">Zuno</span>
-        </div>
 
-        <h2 className="auth-heading">Ruko mat. Pooch lo.</h2>
-        <p className="auth-subtext">Sawaal apni boli mein — jawab bhi apni boli mein.</p>
+        {/* Left — brand panel */}
+        <BrandPanel />
 
-        <form onSubmit={handleSubmit} noValidate>
-          <div className="auth-fields">
-            <div className="auth-field-wrap">
-              <TextField
-                label="Full Name"
-                autoComplete="name"
-                value={name}
-                onChange={e => setName(e.target.value)}
-                onBlur={handleBlurName}
-                error={!!errors.name}
-                fullWidth
-                variant="outlined"
-                size="small"
-                sx={FIELD_SX}
-              />
-              {errors.name && <span className="auth-field-error">{errors.name}</span>}
-            </div>
+        {/* Right — form panel */}
+        <div className="auth-split-right">
+          <h2 className="auth-heading">Ruko mat. Pooch lo.</h2>
+          <p className="auth-subtext">Sawaal apni boli mein — jawab bhi apni boli mein.</p>
 
-            <div className="auth-field-wrap">
-              <TextField
-                label="Email"
-                type="email"
-                autoComplete="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                onBlur={handleBlurEmail}
-                error={!!errors.email}
-                fullWidth
-                variant="outlined"
-                size="small"
-                sx={FIELD_SX}
-              />
-              {errors.email && <span className="auth-field-error">{errors.email}</span>}
-            </div>
+          <form onSubmit={handleSubmit} noValidate>
+            <div className="auth-fields">
+              <div className="auth-field-wrap">
+                <TextField
+                  label="Full Name"
+                  autoComplete="name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  onBlur={handleBlurName}
+                  error={!!errors.name}
+                  fullWidth
+                  variant="outlined"
+                  size="small"
+                  sx={FIELD_SX}
+                  slotProps={{
+                    input: {
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <PersonOutlineRounded sx={{ fontSize: 17 }} />
+                        </InputAdornment>
+                      ),
+                    },
+                  }}
+                />
+                {errors.name && <span className="auth-field-error">{errors.name}</span>}
+              </div>
 
-            <div className="auth-field-wrap">
-              <TextField
-                label="Password"
-                type={showPassword ? 'text' : 'password'}
-                autoComplete="new-password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                onBlur={handleBlurPassword}
-                error={!!errors.password}
-                fullWidth
-                variant="outlined"
-                size="small"
-                sx={FIELD_SX}
-                slotProps={{
-                  input: {
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={() => setShowPassword(v => !v)}
-                          edge="end"
-                          size="small"
-                          tabIndex={-1}
-                          aria-label={showPassword ? 'Hide password' : 'Show password'}
-                          sx={{ color: 'var(--text-muted)' }}
-                        >
-                          {showPassword
-                            ? <VisibilityOffRounded fontSize="small" />
-                            : <VisibilityRounded fontSize="small" />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  },
-                }}
-              />
-              {errors.password && <span className="auth-field-error">{errors.password}</span>}
-              {password && strength && (
-                <div className="auth-strength">
-                  <div className="password-strength-bar-track">
-                    <div
-                      className="password-strength-bar-fill"
-                      style={{ width: strength.width, backgroundColor: strength.color }}
-                    />
+              <div className="auth-field-wrap">
+                <TextField
+                  label="Email"
+                  type="email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  onBlur={handleBlurEmail}
+                  error={!!errors.email}
+                  fullWidth
+                  variant="outlined"
+                  size="small"
+                  sx={FIELD_SX}
+                  slotProps={{
+                    input: {
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <MailOutlineRounded sx={{ fontSize: 17 }} />
+                        </InputAdornment>
+                      ),
+                    },
+                  }}
+                />
+                {errors.email && <span className="auth-field-error">{errors.email}</span>}
+              </div>
+
+              <div className="auth-field-wrap">
+                <TextField
+                  label="Password"
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="new-password"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  onBlur={handleBlurPassword}
+                  error={!!errors.password}
+                  fullWidth
+                  variant="outlined"
+                  size="small"
+                  sx={FIELD_SX}
+                  slotProps={{
+                    input: {
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <LockOutlined sx={{ fontSize: 17 }} />
+                        </InputAdornment>
+                      ),
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            onClick={() => setShowPassword(v => !v)}
+                            edge="end"
+                            size="small"
+                            tabIndex={-1}
+                            aria-label={showPassword ? 'Hide password' : 'Show password'}
+                            sx={{ color: 'var(--text-muted)' }}
+                          >
+                            {showPassword
+                              ? <VisibilityOffRounded fontSize="small" />
+                              : <VisibilityRounded fontSize="small" />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    },
+                  }}
+                />
+                {errors.password && <span className="auth-field-error">{errors.password}</span>}
+                {password && strength && (
+                  <div className="auth-strength">
+                    <div className="password-strength-bar-track">
+                      <div
+                        className="password-strength-bar-fill"
+                        style={{ width: strength.width, backgroundColor: strength.color }}
+                      />
+                    </div>
+                    <span className="password-strength-label">{strength.label}</span>
                   </div>
-                  <span className="password-strength-label">{strength.label}</span>
-                </div>
-              )}
+                )}
+              </div>
             </div>
-          </div>
 
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            disabled={isDisabled}
-            sx={{
-              mt: '20px',
-              py: '10px',
-              backgroundColor: 'var(--primary)',
-              color: '#ffffff',
-              '&:hover': { backgroundColor: 'var(--primary-hover)', boxShadow: 'none' },
-              '&.Mui-disabled': { backgroundColor: 'var(--primary)', opacity: 0.5, color: '#ffffff' },
-              textTransform: 'none',
-              fontWeight: 600,
-              fontSize: '0.9rem',
-              borderRadius: 'var(--radius-md)',
-              boxShadow: 'none',
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              disabled={isDisabled}
+              endIcon={<ArrowForwardRounded sx={{ fontSize: '16px !important' }} />}
+              sx={{
+                mt: '20px',
+                py: '10px',
+                backgroundColor: 'var(--primary)',
+                color: '#ffffff',
+                '&:hover': { backgroundColor: 'var(--primary-hover)', boxShadow: 'none' },
+                '&.Mui-disabled': { backgroundColor: 'var(--primary)', opacity: 0.5, color: '#ffffff' },
+                textTransform: 'none',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                borderRadius: 'var(--radius-md)',
+                boxShadow: 'none',
+              }}
+            >
+              {loading ? 'Creating account...' : 'Create Account'}
+            </Button>
+          </form>
+
+          <div className="auth-divider">or</div>
+
+          <button
+            type="button"
+            className="btn-google"
+            disabled={loading}
+            onClick={() => {
+              window.location.href = `${import.meta.env.VITE_API_BASE_URL}/api/v1/auth/google`;
             }}
           >
-            {loading ? 'Creating account...' : 'Create Account'}
-          </Button>
-        </form>
+            {GOOGLE_G}
+            Continue with Google
+          </button>
 
-        <div className="auth-divider">or</div>
-
-        <Button
-          variant="outlined"
-          fullWidth
-          disabled={loading}
-          onClick={() => {
-            window.location.href = `${import.meta.env.VITE_API_BASE_URL}/api/v1/auth/google`;
-          }}
-          sx={{
-            py: '10px',
-            borderColor: 'var(--border)',
-            color: 'var(--text-secondary)',
-            '&:hover': {
-              borderColor: 'var(--border-strong)',
-              backgroundColor: 'var(--bg-hover)',
-              boxShadow: 'none',
-            },
-            textTransform: 'none',
-            fontWeight: 500,
-            fontSize: '0.9rem',
-            borderRadius: 'var(--radius-md)',
-            boxShadow: 'none',
-          }}
-        >
-          Continue with Google
-        </Button>
-
-        <div className="auth-bottom-link">
-          Already have an account?{' '}
-          <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Sign in</a>
+          <div className="auth-bottom-link">
+            Already have an account?{' '}
+            <a role="button" tabIndex={0} onClick={() => navigate('/login')} onKeyDown={e => e.key === 'Enter' && navigate('/login')}>Sign in</a>
+          </div>
         </div>
+
       </div>
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
     </div>

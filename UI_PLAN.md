@@ -201,7 +201,7 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | P7 | ChatMessage redesign | `ChatMessage.jsx`, CSS | Bubble vs free-text, animations, sections styling | ⬜ PENDING-DISCUSSION |
 | P8 | FocusModal restyle | `FocusModal.jsx`, `global.css` | Slide-based nav (Subject→Section→Chapter), back button, CSS animations, light mode clean | ✅ DONE |
 | P9 | HistoryPanel rethink | `HistoryPanel.jsx`, `SessionBar.jsx` (new), `ChatPage.jsx` | Session Bar (38px strip above AskBar) replaces FAB. Desktop panel anchored top-left. Search added. | ✅ DONE |
-| P10 | Auth pages re-skin | `LoginPage.jsx`, `RegisterPage.jsx`, etc. | Card design, content (P3 output), responsive | ⬜ PENDING |
+| P10 | Auth pages re-skin | `LoginPage.jsx`, `RegisterPage.jsx`, etc. | Card design, content (P3 output), responsive | ✅ DONE |
 | P11 | Landing / first-run experience | New component | What does student see before first message? | ⬜ PENDING-DISCUSSION |
 | P12 | Empty states + error states polish | Multiple | Illustrations / SVGs, tone | ⬜ PENDING |
 | P13 | Motion + micro-interactions | CSS + Framer Motion? | Discuss: add a motion lib or stay CSS-only | ⬜ PENDING-DISCUSSION |
@@ -386,7 +386,7 @@ Cheezein jo aayegi baad mein, abhi note kar raha hoon:
 | Priority | Task |
 |----------|------|
 | ~~1~~ | ~~**P3 — Content strategy**~~ ✅ DONE |
-| 2 | **P10 — Auth pages re-skin** |
+| ~~2~~ | ~~**P10 — Auth pages re-skin**~~ ✅ DONE |
 | 3 | **P11 — Landing / first-run experience** |
 | 4 | **P12–P17 — Empty states, responsive sweep, a11y, final QA** |
 | 5 | **Dark mode re-implementation** — post-deployment, fix MUI `colorSchemeSelector` using `useColorScheme` hook |
