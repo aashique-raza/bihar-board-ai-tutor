@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth.js';
 import { useTheme } from './hooks/useTheme.js';
 import ChatPage from './pages/ChatPage.jsx';
+import LandingPage from './pages/LandingPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import AuthCallback from './pages/AuthCallback.jsx';
@@ -39,8 +40,11 @@ function App() {
   // Once loading is done, render the correct page based on the URL
   return (
     <Routes>
+      {/* Landing page — public home, redirects logged-in users to /chat */}
+      <Route path="/" element={<LandingPage />} />
+
       {/* Main chat page — accessible to everyone (guest + logged in) */}
-      <Route path="/" element={<ChatPage theme={theme} toggleTheme={toggleTheme} />} />
+      <Route path="/chat" element={<ChatPage theme={theme} toggleTheme={toggleTheme} />} />
 
       {/* Auth pages */}
       <Route path="/login" element={<GuestOnlyRoute><LoginPage theme={theme} toggleTheme={toggleTheme} /></GuestOnlyRoute>} />

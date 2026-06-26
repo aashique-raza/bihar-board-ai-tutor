@@ -103,7 +103,7 @@ function LoginPage() {
       clearSessionId();
       resetGuestTurnCount();
       dispatch(setCredentials({ user, accessToken }));
-      navigate('/', { state: { toastSuccess: 'Login ho gaya! Padhai shuru karo.' } });
+      navigate('/chat', { state: { toastSuccess: 'Login ho gaya! Padhai shuru karo.' } });
     } catch (err) {
       showToast(err.message, 'error');
     } finally {

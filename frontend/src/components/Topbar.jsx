@@ -49,7 +49,7 @@ export default function Topbar({
     clearSessionId();
     localStorage.removeItem('zuno-guest-id');
     dispatch(clearCredentials());
-    navigate('/login', { state: { toastSuccess: 'Logout ho gaya! Phir milenge.' } });
+    navigate('/');
   };
 
   return (

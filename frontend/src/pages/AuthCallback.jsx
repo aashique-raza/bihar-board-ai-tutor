@@ -44,7 +44,7 @@ function AuthCallback() {
           const user = await getMe(accessToken);
           resetGuestTurnCount();
           dispatch(setCredentials({ user, accessToken }));
-          navigate('/', { replace: true, state: { toastSuccess: 'Google se login successful!' } });
+          navigate('/chat', { replace: true, state: { toastSuccess: 'Google se login successful!' } });
         } catch {
           setStatusText('Login mein error aaya. Please dobara try karo.');
           setTimeout(() => { navigate('/login', { state: { toastError: 'Login mein error aaya. Please dobara try karo.' } }); }, 2000);

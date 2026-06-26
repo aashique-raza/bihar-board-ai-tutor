@@ -531,6 +531,17 @@ function ChatPage({ theme, toggleTheme }) {
               <ChatMessage
                 message={{ id: 'loading', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
               />
+            ) : messages.length === 0 ? (
+              <div className="chat-empty-state">
+                <div className="chat-empty-z">Z</div>
+                <div className="chat-empty-title">Kya jaanna chahte ho?</div>
+                <div className="chat-empty-sub">Bihar Board Class 10 ka koi bhi sawaal poochho</div>
+                <div className="chat-empty-chips">
+                  <button className="chat-empty-chip" onClick={() => handleAsk('Newton ka pehla niyam kya hai?')}>⚡ Newton ka pehla niyam kya hai?</button>
+                  <button className="chat-empty-chip" onClick={() => handleAsk('Carbon dioxide kaise banta hai?')}>🧪 Carbon dioxide kaise banta hai?</button>
+                  <button className="chat-empty-chip" onClick={() => handleAsk('Photosynthesis kya hota hai?')}>🌿 Photosynthesis kya hota hai?</button>
+                </div>
+              </div>
             ) : messages.map((message) => (
               <ChatMessage
                 key={message.id}

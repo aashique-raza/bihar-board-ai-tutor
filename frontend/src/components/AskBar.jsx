@@ -146,7 +146,7 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
       </Paper>
       {/* Hint text — reminds student what Zuno can answer */}
       <div className="ask-hint">
-        Zuno sirf Bihar Board Class 10 Science syllabus se jawab deta hai
+        Zuno sirf Bihar Board Class 10  syllabus se jawab deta hai
       </div>
     </Box>
   );
