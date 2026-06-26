@@ -203,7 +203,7 @@ Har phase ka detailed plan us phase ke start hone se pehle is file mein add hoga
 | P9 | HistoryPanel rethink | `HistoryPanel.jsx`, `SessionBar.jsx` (new), `ChatPage.jsx` | Session Bar (38px strip above AskBar) replaces FAB. Desktop panel anchored top-left. Search added. | ✅ DONE |
 | P10 | Auth pages re-skin | `LoginPage.jsx`, `RegisterPage.jsx`, etc. | Card design, content (P3 output), responsive | ✅ DONE |
 | P11 | Landing / first-run experience | New component | What does student see before first message? | ✅ DONE |
-| P12 | Empty states + error states polish | Multiple | Illustrations / SVGs, tone | ⬜ PENDING |
+| P12 | Empty states + error states polish | `HistoryPanel.jsx`, `ChatPage.jsx`, `StatusNotice.jsx`, `global.css` | Illustrations / SVGs, tone | ✅ DONE |
 | P13 | Motion + micro-interactions | CSS + Framer Motion? | Discuss: add a motion lib or stay CSS-only | ⬜ PENDING-DISCUSSION |
 | P14 | Responsive sweep | All components | 360/414/768/1024/1280/1440/1920 audit | ⬜ PENDING |
 | P15 | Accessibility audit | All components | WCAG AA, keyboard nav, screen reader, focus rings | ⬜ PENDING |
@@ -347,6 +347,7 @@ Jo bhi tum approve karoge wo yahan record hoga.
 | 2026-06-26 | P8 | **FocusModal slide nav** — 3-step slide navigation (Subject → Section → Chapter), back button top-left, CSS keyframe animations (`focusSlideFromRight/Left`), available/unavailable/selected card states, 6-subject grid (Science available, rest "Jald aata hai"). | Dark mode deferred — too many MUI CSS variable conflicts between `[data-color-scheme]` and `[data-theme]` attributes. Will implement properly post-deployment. |
 | 2026-06-26 | HOTFIX | **Dark mode removed** — `useTheme.js` locked to light-only, `[data-theme="dark"]` CSS removed from `theme.css` + `global.css`, dark `colorScheme` removed from `zunoTheme.js`, theme toggle button removed from `Topbar.jsx`. | Root cause: MUI v9 `cssVariables: true` uses `[data-mui-color-scheme]` but our hook sets `[data-color-scheme]` — Paper background and CSS vars fought each other. Deferred to post-deployment. |
 | 2026-06-26 | P9 | **HistoryPanel — Session Bar** — FAB removed. New `SessionBar.jsx` (38px strip above AskBar): "Chats · N" button left, current session name center, "+ New" right. `HistoryPanel` now controlled (`isOpen`/`onClose`/`triggerRef` props). Desktop panel: `position: fixed; top: calc(--topbar-height + 8px); left: 16px` (no overlap with AskBar). Search input added in panel. Mobile: bottom sheet unchanged. | No layout restructure needed — Session Bar sits inside existing flex column. |
+| 2026-06-26 | P12 | **Empty & Error states polish** — Added friendly Hinglish error mapping in `StatusNotice.jsx`. Added `MenuBookRounded` and `SearchOffRounded` vibrant SVGs in `HistoryPanel.jsx` empty states. Added a custom gradient SVG and warmer copy in `ChatPage.jsx` first-run empty state. | Kept existing chips but updated text for empathy. Inline SVGs used instead of external assets for performance. |
 
 ---
 
@@ -381,6 +382,7 @@ Cheezein jo aayegi baad mein, abhi note kar raha hoon:
 - P8: FocusModal — 3-step slide navigation, back button, CSS animations
 - HOTFIX: Dark mode removed — light-only until post-deployment
 - P9: HistoryPanel — FAB removed, Session Bar added (38px strip: "Chats · count" + session name + "+ New"), desktop panel anchored top-left below topbar, search input added, mobile bottom sheet unchanged
+- P12: Empty & Error states — Added vibrant SVG icon & friendly Hinglish copy for zero-history, search-empty, and error states.
 
 ### 🎯 Next session — remaining phases
 | Priority | Task |
@@ -388,7 +390,7 @@ Cheezein jo aayegi baad mein, abhi note kar raha hoon:
 | ~~1~~ | ~~**P3 — Content strategy**~~ ✅ DONE |
 | ~~2~~ | ~~**P10 — Auth pages re-skin**~~ ✅ DONE |
 | ~~3~~ | ~~**P11 — Landing / first-run experience**~~ ✅ DONE |
-| 4 | **P12–P17 — Empty states, responsive sweep, a11y, final QA** |
+| 4 | **P13–P17 — Micro-interactions, responsive sweep, a11y, final QA** |
 | 5 | **Dark mode re-implementation** — post-deployment, fix MUI `colorSchemeSelector` using `useColorScheme` hook |
 
 ### 🔖 Dark mode root cause note (for next session)

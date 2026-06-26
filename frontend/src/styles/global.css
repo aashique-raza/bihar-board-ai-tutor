@@ -886,13 +886,15 @@ body {
   gap: 6px;
 }
 
-.chat-empty-z {
-  font-family: var(--font-brand);
-  font-size: 44px;
-  font-weight: 900;
-  color: var(--primary);
-  line-height: 1;
-  margin-bottom: 6px;
+.chat-empty-illustration {
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, rgba(198,87,15,0.05) 0%, rgba(240,165,0,0.15) 100%);
+  border-radius: 50%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(198,87,15,0.1);
 }
 
 .chat-empty-title {

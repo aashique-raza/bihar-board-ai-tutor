@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, onCancel, studyMode }) {
+function AskBar({ disabled, isHistoryLoading, isLocked, isGuestLimited, onGuestLimitClick, onAsk, onCancel, studyMode }) {
   const [question, setQuestion] = useState('');
   const [cancelCooling, setCancelCooling] = useState(false);
 
@@ -95,7 +95,7 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
               if (question.trim()) handleSubmit(event);
             }
           }}
-          disabled={isLocked || isGuestLimited}
+          disabled={isLocked || isGuestLimited || isHistoryLoading || disabled}
           placeholder={
             isGuestLimited
               ? 'Login karke padhai jaari rakho!'
@@ -130,7 +130,7 @@ function AskBar({ disabled, isLocked, isGuestLimited, onGuestLimitClick, onAsk, 
             <span>
               <IconButton
                 color="primary"
-                disabled={!question.trim()}
+                disabled={!question.trim() || isHistoryLoading}
                 type="submit"
                 sx={{
                   bgcolor: 'primary.main',

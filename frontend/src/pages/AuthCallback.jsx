@@ -61,12 +61,12 @@ function AuthCallback() {
 
   return (
     <div className="auth-page">
-      <div className="auth-card">
-        <div className="auth-logo-row">
+      <div className="auth-card" style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '60px 24px', gap: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div className="zuno-logo">Z</div>
-          <span className="auth-logo-text">Zuno</span>
+          <span className="auth-brand-name" style={{ marginBottom: 0 }}>Zuno</span>
         </div>
-        <p className="auth-subtext">{statusText}</p>
+        <p className="auth-subtext" style={{ margin: 0, textAlign: 'center' }}>{statusText}</p>
       </div>
     </div>
   );

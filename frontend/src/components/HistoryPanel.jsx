@@ -15,6 +15,8 @@ import DriveFileRenameOutlineRounded from '@mui/icons-material/DriveFileRenameOu
 import HistoryRounded from '@mui/icons-material/HistoryRounded';
 import LockOutlined from '@mui/icons-material/LockOutlined';
 import MoreVertRounded from '@mui/icons-material/MoreVertRounded';
+import SearchOffRounded from '@mui/icons-material/SearchOffRounded';
+import MenuBookRounded from '@mui/icons-material/MenuBookRounded';
 import { useTheme, useMediaQuery } from '@mui/material';
 import GuestLoginPrompt from './GuestLoginPrompt.jsx';
 import { deleteSession as apiDeleteSession, renameSession as apiRenameSession } from '../api/tutorApi.js';
@@ -235,9 +237,20 @@ function PanelContent({ isLoggedIn, isAuthLoading, sessions, isLoading, activeSe
 
   if (sessions.length === 0 && searchQuery) {
     return (
-      <Box sx={{ px: 2, pt: 3, textAlign: 'center' }}>
-        <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block' }}>
-          "{searchQuery}" — koi chat nahi mila.
+      <Box sx={{ px: 2, pt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <Box 
+          sx={{ 
+            width: 56, height: 56, borderRadius: '50%', 
+            bgcolor: 'var(--surface-sunken)', display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 
+          }}
+        >
+          <SearchOffRounded sx={{ fontSize: 28, color: 'var(--text-muted)' }} />
+        </Box>
+        <Typography variant="body2" sx={{ color: 'var(--text-secondary)', fontWeight: 500, mb: 0.5 }}>
+          "{searchQuery}"
+        </Typography>
+        <Typography variant="caption" sx={{ color: 'var(--text-muted)' }}>
+          Is naam se koi chat nahi mili.<br/>Kuch aur type karke dekhein?
         </Typography>
       </Box>
     );
@@ -245,13 +258,21 @@ function PanelContent({ isLoggedIn, isAuthLoading, sessions, isLoading, activeSe
 
   if (sessions.length === 0) {
     return (
-      <Box sx={{ px: 2, pt: 4, textAlign: 'center' }}>
-        <HistoryRounded sx={{ fontSize: 28, color: 'var(--text-muted)', mb: 1, opacity: 0.5 }} />
-        <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block' }}>
-          Zuno taiyaar hai.
+      <Box sx={{ px: 2, pt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <Box 
+          sx={{ 
+            width: 64, height: 64, borderRadius: '50%', 
+            background: 'linear-gradient(135deg, rgba(198,87,15,0.1) 0%, rgba(240,165,0,0.1) 100%)', 
+            display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 
+          }}
+        >
+          <MenuBookRounded sx={{ fontSize: 32, color: 'var(--primary-accent, #C6570F)' }} />
+        </Box>
+        <Typography variant="body2" sx={{ color: 'var(--text-primary)', fontWeight: 600, mb: 0.5 }}>
+          Zuno aapka intezaar kar raha hai!
         </Typography>
         <Typography variant="caption" sx={{ color: 'var(--text-muted)' }}>
-          Koi bhi sawaal poochho — seedha jawab milega.
+          Naya chat shuru karein aur apne <br/> doubts clear karein.
         </Typography>
       </Box>
     );
