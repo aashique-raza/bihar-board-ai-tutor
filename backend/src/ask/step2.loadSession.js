@@ -29,7 +29,9 @@ export const loadSession = async ({ requestedSessionId, userId, studyMode, focus
 
   if (dbSession) {
     const sessionOwner = dbSession.userId?.toString();
-    if (sessionOwner && sessionOwner !== userId) {
+    // Only block when BOTH sides are authenticated users and they don't match.
+    // If userId is null (guest / token expired), sessionId itself is the ownership proof.
+    if (sessionOwner && userId && sessionOwner !== userId) {
       throw new ApiError(403, 'Yeh session aapka nahi hai.');
     }
   }

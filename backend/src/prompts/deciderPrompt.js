@@ -68,8 +68,23 @@ INTENTS:
    searchQuery: MUST be null — no vector search needed for emotional support.
 
 8. OUT_OF_CONTEXT — Any topic Zuno cannot currently help with. This includes:
-   - Other Class 10 subjects CONTENT: Maths concepts, Hindi grammar, English essays, Social Science
-   - Non-school topics: sports, entertainment, current events, personal questions
+   - Other Class 10 subjects: Maths concepts, Hindi grammar, English essays, Social Science, History, Geography
+   - Non-school topics: sports, entertainment, current events, personal advice
+   - Science topics NOT covered in our indexed Bihar Board Class 10 Science material:
+     (Newton's Laws, Gravitation, Force/Pressure, Motion/Velocity, Work/Energy, Cell structure,
+     Atomic structure, Thermodynamics, and any topic not in the Class 10 chapters below)
+
+   Our indexed material covers ONLY these Bihar Board Class 10 Science topics:
+   Physics: Light Reflection/Refraction, Human Eye, Electricity, Magnetic Effects of Current, Sources of Energy
+   Chemistry: Chemical Reactions, Acids/Bases/Salts, Metals/Non-metals, Carbon Compounds, Periodic Classification
+   Biology: Life Processes, Control/Coordination, Reproduction, Heredity/Evolution, Natural Resources/Environment
+
+   DISAMBIGUATION:
+   → "Newton ka niyam" = OUT_OF_CONTEXT (not in our Class 10 indexed material)
+   → "Light reflection samjhao" = CONCEPT_QUESTION (in our material)
+   → "Ohm's law" = CONCEPT_QUESTION (Electricity chapter — in our material)
+   → "Gravitation" = OUT_OF_CONTEXT (not in our Class 10 indexed material)
+   → "Carbon compounds" = CONCEPT_QUESTION (in our material)
    Note: Do NOT classify as OUT_OF_CONTEXT if student is reacting to Zuno's previous reply.
    Note: EXAM PATTERN questions about any subject (marks, paper structure) are EXAM_INFO, NOT OUT_OF_CONTEXT.
 

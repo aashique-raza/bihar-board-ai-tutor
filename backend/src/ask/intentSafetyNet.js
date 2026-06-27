@@ -20,8 +20,12 @@
 import { Chunk } from '../models/chunk.model.js';
 import { createQueryEmbeddings } from '../rag/geminiEmbeddings.js';
 
+// 0.70 (raised from 0.65) — a topic like Newton's Laws scores ~0.665 against the Human Eye
+// chapter (Newton appears there in passing). At 0.65 the safety net falsely promoted
+// OUT_OF_CONTEXT → CONCEPT_QUESTION. Genuine Class 10 questions score 0.72+ against their
+// own chapter, so the net still catches real academic misclassifications.
 const getThreshold = () =>
-  parseFloat(process.env.SAFETY_NET_SIMILARITY_THRESHOLD ?? '0.65');
+  parseFloat(process.env.SAFETY_NET_SIMILARITY_THRESHOLD ?? '0.70');
 
 /**
  * Probes whether a query has relevant academic content in the indexed vector store.

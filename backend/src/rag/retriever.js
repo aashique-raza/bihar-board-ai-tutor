@@ -30,6 +30,11 @@ const getQueryEmbeddings = () => {
 const STRONG_VECTOR_SCORE_THRESHOLD = 0.7;
 const FINAL_SCORE_THRESHOLD = 0.65;
 const TERM_MATCH_VECTOR_SCORE_THRESHOLD = 0.62;
+// Content-only keyword matches (term found in chunk body but NOT in heading/chapter title)
+// are a weaker signal \u2014 a higher vector score is required to compensate.
+// E.g. "Newton" appears in the Human Eye chapter's body text but that chunk is about light,
+// not Newton's Laws. Raising the bar here prevents such cross-topic leaks.
+const CONTENT_ONLY_VECTOR_THRESHOLD = 0.70;
 const DEVANAGARI_PATTERN = /[\u0900-\u097F]/;
 
 const normalizeRetrieverOptions = ({ topK, minScore } = {}) => {
@@ -44,6 +49,17 @@ const normalizeRetrieverOptions = ({ topK, minScore } = {}) => {
 const hasMatchedTerms = (result) =>
   Array.isArray(result.rerankDebug?.matchedTerms) && result.rerankDebug.matchedTerms.length > 0;
 
+// True when at least one keyword matched in the chunk's heading or chapter title.
+// Heading/chapter matches are strong signals — the topic is directly about what was asked.
+// Content-only matches are weak — the word appeared in passing (e.g. "Newton" mentioned
+// in a Human Eye chunk while discussing prism experiments).
+const hasHeadingOrChapterTermMatch = (result) => {
+  const matchedTerms = result.rerankDebug?.matchedTerms || [];
+  return matchedTerms.some(
+    (match) => match.fields.includes('heading_path') || match.fields.includes('chapter_title')
+  );
+};
+
 const isStrongVectorFallback = (result) =>
   result.score >= STRONG_VECTOR_SCORE_THRESHOLD;
 
@@ -53,9 +69,17 @@ const passesFinalFilter = (result, query, options = {}) => {
   if (options.requireTermMatchForLatinQuery && !isDevanagariQuery(query) && !hasMatchedTerms(result)) {
     return false;
   }
+
+  // Heading/chapter keyword match → lower vector bar (0.62) — strong signal
+  // Content-only keyword match → higher vector bar (0.70) — weak signal, needs stronger vector confidence
+  const termMatchPass = hasMatchedTerms(result) && (
+    hasHeadingOrChapterTermMatch(result)
+      ? result.score >= TERM_MATCH_VECTOR_SCORE_THRESHOLD
+      : result.score >= CONTENT_ONLY_VECTOR_THRESHOLD
+  );
+
   return (
-    (result.finalScore >= FINAL_SCORE_THRESHOLD ||
-      (hasMatchedTerms(result) && result.score >= TERM_MATCH_VECTOR_SCORE_THRESHOLD)) &&
+    (result.finalScore >= FINAL_SCORE_THRESHOLD || termMatchPass) &&
     (hasMatchedTerms(result) || isStrongVectorFallback(result) || isDevanagariQuery(query))
   );
 };
