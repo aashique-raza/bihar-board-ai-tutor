@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 import LockOutlined from '@mui/icons-material/LockOutlined';
+import ContentCopyRounded from '@mui/icons-material/ContentCopyRounded';
+import CheckRounded from '@mui/icons-material/CheckRounded';
+import ShareRounded from '@mui/icons-material/ShareRounded';
 
 const hasStructuredSections = (message) =>
   Array.isArray(message.sections) &&
@@ -57,13 +62,76 @@ function SourceFootnote({ sources }) {
   );
 }
 
+const generateShareText = (msg) => {
+  let text = '';
+  if (hasStructuredSections(msg)) {
+    text = msg.sections
+      .filter((s) => s?.heading || s?.content)
+      .map((s) => {
+        if (s.heading) return `${s.heading} — ${s.content}`;
+        return s.content;
+      })
+      .join('\n\n');
+  } else {
+    text = msg.answer || '';
+  }
+
+  if (Array.isArray(msg.sources) && msg.sources.length > 0) {
+    const chapters = [...new Set(
+      msg.sources
+        .map((src) => {
+          const raw = typeof src === 'string' ? src : (src.label || src.sourceTitle || '');
+          return raw.replace(/^Source\s*\d+:\s*/i, '').split(' - ')[0].trim();
+        })
+        .filter(Boolean)
+    )].slice(0, 2);
+    
+    if (chapters.length > 0) {
+      text += `\n\nSources: ${chapters.join(' · ')}`;
+    }
+  }
+
+  text += '\n\n— Answered by Zuno AI';
+  return text;
+};
+
 function ChatMessage({ message, onSwitchToGlobal }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      const text = generateShareText(message);
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
+  const handleShare = async () => {
+    try {
+      const text = generateShareText(message);
+      if (navigator.share) {
+        await navigator.share({
+          title: 'Zuno AI Answer',
+          text: text,
+        });
+      }
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error('Failed to share: ', err);
+      }
+    }
+  };
+
   const isStudent = message.role === 'student';
   const isSystem = message.role === 'system';
   const isFocusMiss = message.status === 'focus_context_not_found';
   const isThinking = message.status === 'thinking';
   const showSections = !isStudent && !isThinking && hasStructuredSections(message);
   const showSources = !isStudent && !isThinking && Array.isArray(message.sources) && message.sources.length > 0;
+  const isAcademic = message.responseMode === 'study_tutor' || showSources;
 
   if (isSystem) {
     return (
@@ -111,6 +179,23 @@ function ChatMessage({ message, onSwitchToGlobal }) {
         )}
 
         {showSources && <SourceFootnote sources={message.sources} />}
+
+        {(isAcademic && !isThinking && !isStudent && !isSystem) && (
+          <div className="message-actions">
+            <Tooltip title={copied ? "Copied!" : "Copy"} placement="top">
+              <IconButton size="small" onClick={handleCopy} aria-label="Copy message">
+                {copied ? <CheckRounded fontSize="small" color="success" /> : <ContentCopyRounded fontSize="small" />}
+              </IconButton>
+            </Tooltip>
+            {typeof navigator !== 'undefined' && navigator.canShare && (
+              <Tooltip title="Share" placement="top">
+                <IconButton size="small" onClick={handleShare} aria-label="Share message">
+                  <ShareRounded fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            )}
+          </div>
+        )}
 
         {isFocusMiss && (
           <div style={{ marginTop: '12px' }}>

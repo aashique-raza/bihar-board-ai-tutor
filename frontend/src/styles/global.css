@@ -994,3 +994,22 @@ body {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+/* ── Message Actions (Copy/Share) ── */
+.message-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.message-actions .MuiIconButton-root {
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.message-actions .MuiIconButton-root:hover {
+  color: var(--primary);
+  background-color: rgba(var(--primary-rgb), 0.08);
+}
+
