@@ -123,6 +123,8 @@ const buildSessionPayload = (sessionId, updatedSession) => {
     lastSubject: chatState.currentSubjectId || null,
     lastSection: chatState.currentSectionId || null,
     lastChapterId: chatState.currentChapterId || null,
+    currentTopicId: chatState.currentTopicId || null,
+    completedTopicIds: chatState.completedTopicIds || [],
     sessionType: updatedSession?.sessionType || 'global',
     messageCount: chatState.messageCount || 0,
     totalTokensUsed: updatedSession?.totalTokensUsed ?? 0,

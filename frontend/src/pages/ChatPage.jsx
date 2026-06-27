@@ -232,12 +232,28 @@ function ChatPage({ theme, toggleTheme }) {
 
   const handleFocusChapterSelect = (chapterId) => {
     const nextChapter = findChapterById(chapterId);
+    
+    // Auto-start a new session if we are already in an active chat.
+    // This prevents a 'global' session from being illegally converted to a 'focus' session.
+    if (messages.length > 0) {
+      clearSessionId();
+      setSessionId('');
+      setIsSessionLocked(false);
+      setMessages([]);
+      setIsAsking(false);
+      refresh();
+    }
+    
     setSelectedChapterId(chapterId);
     setStudyMode(STUDY_MODES.focus);
     setIsFocusModalOpen(false);
     setError('');
+    
     if (nextChapter) {
-      setMessages((prev) => [...prev, { ...createFocusMessage(nextChapter), isNew: true }]);
+      // Small timeout ensures React processes the empty messages state first before appending the focus prompt
+      setTimeout(() => {
+        setMessages([{ ...createFocusMessage(nextChapter), isNew: true }]);
+      }, 0);
     }
   };
 
@@ -435,9 +451,21 @@ function ChatPage({ theme, toggleTheme }) {
   }, []);
 
   const handleSwitchToGlobal = async (question) => {
+    let q = question;
+    if (!q) {
+      const lastStudentMsg = [...messages].reverse().find(m => m.role === 'student');
+      if (lastStudentMsg) q = lastStudentMsg.answer;
+    }
+    if (!q) return;
+
     setStudyMode(STUDY_MODES.global);
-    await handleAsk(question, STUDY_MODES.global);
+    await handleAsk(q, STUDY_MODES.global);
   };
+
+  const handleSuggestedAction = useCallback((action) => {
+    // Send the exact label text provided by the LLM
+    handleAsk(action.label, studyModeRef.current);
+  }, [handleAsk]);
 
   const handleSessionSwitch = useCallback(async (session) => {
     if (session.sessionId === sessionId) return; // already on this session
@@ -454,8 +482,11 @@ function ChatPage({ theme, toggleTheme }) {
     setIsSessionLocked(false);
     setSessionId(session.sessionId);
     saveSessionId(session.sessionId);
+    // Optional: optimistic set if session object has them, otherwise we will set them after fetch
     setStudyMode(session.sessionType === 'focus' ? STUDY_MODES.focus : STUDY_MODES.global);
-    setSelectedChapterId(session.sessionType === 'focus' ? (session.currentChapterId || null) : null);
+    if (session.currentChapterId) {
+      setSelectedChapterId(session.currentChapterId);
+    }
     setError('');
     setIsAsking(false);
 
@@ -479,6 +510,15 @@ function ChatPage({ theme, toggleTheme }) {
 
       setMessages(displayMessages);
       setIsSessionLocked(result?.sessionMeta?.isLocked === true);
+      
+      if (result?.sessionMeta) {
+        setStudyMode(result.sessionMeta.sessionType === 'focus' ? STUDY_MODES.focus : STUDY_MODES.global);
+        if (result.sessionMeta.sessionType === 'focus' && result.sessionMeta.currentChapterId) {
+          setSelectedChapterId(result.sessionMeta.currentChapterId);
+        } else if (result.sessionMeta.sessionType === 'global') {
+          setSelectedChapterId(null);
+        }
+      }
     } catch {
       if (session.sessionId !== sessionIdRef.current) return;
       setMessages([]);
@@ -553,13 +593,25 @@ function ChatPage({ theme, toggleTheme }) {
                   <button className="chat-empty-chip" onClick={() => handleAsk('Photosynthesis kya hota hai?')}>🌿 Photosynthesis kya hota hai?</button>
                 </div>
               </div>
-            ) : messages.map((message) => (
-              <ChatMessage
-                key={message.id}
-                message={message}
-                onSwitchToGlobal={handleSwitchToGlobal}
-              />
-            ))}
+            ) : messages.map((message, index) => {
+              let question = message.question;
+              if (!question && message.role === 'zuno') {
+                for (let i = index - 1; i >= 0; i--) {
+                  if (messages[i].role === 'student') {
+                    question = messages[i].answer;
+                    break;
+                  }
+                }
+              }
+              return (
+                <ChatMessage
+                  key={message.id}
+                  message={{ ...message, question }}
+                  onSwitchToGlobal={handleSwitchToGlobal}
+                  onSuggestedAction={handleSuggestedAction}
+                />
+              );
+            })}
             {isAsking && (
               <ChatMessage
                 message={{ id: 'thinking', role: 'zuno', answer: '', status: 'thinking', sources: [] }}

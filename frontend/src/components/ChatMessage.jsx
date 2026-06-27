@@ -95,7 +95,7 @@ const generateShareText = (msg) => {
   return text;
 };
 
-function ChatMessage({ message, onSwitchToGlobal }) {
+function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -194,6 +194,20 @@ function ChatMessage({ message, onSwitchToGlobal }) {
                 </IconButton>
               </Tooltip>
             )}
+          </div>
+        )}
+
+        {Array.isArray(message.suggestedActions) && message.suggestedActions.length > 0 && !isThinking && !isStudent && !isSystem && (
+          <div className="suggested-actions">
+            {message.suggestedActions.map((action, i) => (
+              <button 
+                key={i} 
+                className="action-chip"
+                onClick={() => onSuggestedAction && onSuggestedAction(action)}
+              >
+                {action.label}
+              </button>
+            ))}
           </div>
         )}
 

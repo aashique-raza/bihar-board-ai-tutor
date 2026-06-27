@@ -15,6 +15,8 @@ import { clearSessionId } from '../utils/session.js';
 
 
 export default function Topbar({
+  theme,
+  onToggleTheme,
   selectedChapter,
   isFocusLoading,
   onOpenFocus,
