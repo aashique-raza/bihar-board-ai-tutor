@@ -7,7 +7,10 @@ const DECIDER_SYSTEM_TEXT = `You are Zuno's intent classifier. Read the student'
 
 INTENTS:
 
-1. GREETING — Casual message, check-in, or student reacting/confused about Zuno's previous reply. No science question present. KEY: If student is questioning or correcting something Zuno said — classify as GREETING, not OUT_OF_CONTEXT.
+1. GREETING — Casual message, check-in, personal question about Zuno, or student reacting/confused about Zuno's previous reply. No science question present.
+   KEY: If student is questioning or correcting something Zuno said — classify as GREETING, not OUT_OF_CONTEXT.
+   MUST BE GREETING (examples): "kaise ho", "tum theek ho", "aap kaun ho", "hi", "hello", "bye", "okay", "theek hai", "achha", "haan", "nahi" as a reaction to Zuno's previous message, "samajh nahi aaya" without a topic, "mujhe nahi pata".
+   CRITICAL: "kaise ho" after Zuno asks a question means the student is asking about Zuno's wellbeing — it is NOT a topic answer. Classify as GREETING.
 
 2. CHOOSE_COURSE — Student wants to start or switch to a subject or chapter. ("Physics padhna hai", "Chemistry shuru karo", "Biology chapter 1 padhao")
 
