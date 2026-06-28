@@ -104,6 +104,10 @@ export const getSessionHistory = async (req, res, next) => {
           title: session.title || 'New Chat',
           lastMessageAt: session.lastMessageAt,
           isLocked: session.chatState?.status === 'exhausted',
+          sessionType: session.sessionType || 'global',
+          currentChapterId: session.chatState?.currentChapterId || null,
+          currentTopicId: session.chatState?.currentTopicId || null,
+          completedTopicIds: session.chatState?.completedTopicIds || [],
         },
       },
     });

@@ -5,6 +5,7 @@ import { askTutor, fetchSessionHistory, fetchStudyMap } from '../api/tutorApi.js
 import AskBar from '../components/AskBar.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import FocusModal from '../components/FocusModal.jsx';
+import FocusProgressHeader from '../components/FocusProgressHeader.jsx';
 import StatusNotice from '../components/StatusNotice.jsx';
 import Toast from '../components/Toast.jsx';
 import Topbar from '../components/Topbar.jsx';
@@ -69,8 +70,12 @@ const createFocusMessage = (chapter) => ({
   id: crypto.randomUUID(),
   role: 'zuno',
   status: 'focus_selected',
-  answer: `Focus on. Ab hum "${chapter.title}" padhenge — jo bhi samajhna ho, seedha poochho.`,
+  answer: `Focus on. Ab hum "${chapter.title}" padhenge. Aap chaho toh main seedha chapter start karu, ya aap iska overview janna chahte ho?`,
   sources: [],
+  suggestedActions: [
+    { type: 'next_topic', label: 'Chapter shuru karein' },
+    { type: 'related_concept', label: 'Chapter overview batao' }
+  ]
 });
 
 // --- ChatPage component ---
@@ -97,13 +102,18 @@ function ChatPage({ theme, toggleTheme }) {
   }, []);
 
   const [studyMode, setStudyMode] = useState(STUDY_MODES.global);
-  const [studyMap, setStudyMap] = useState(null);
+  const [isFocusModalOpen, setIsFocusModalOpen] = useState(false);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
+  
+  // Focus Progress State
+  const [completedTopicIds, setCompletedTopicIds] = useState([]);
+  const [currentTopicId, setCurrentTopicId] = useState(null);
+  
+  const [studyMap, setStudyMap] = useState(null);
   const [messages, setMessages] = useState([]);
   const [isHistoryLoading, setIsHistoryLoading] = useState(true);
   const [sessionId, setSessionId] = useState(() => getSavedSessionId());
   const [isStudyMapLoading, setIsStudyMapLoading] = useState(true);
-  const [isFocusModalOpen, setIsFocusModalOpen] = useState(false);
   const [isAsking, setIsAsking] = useState(false);
   const [error, setError] = useState('');
   const [isSessionLocked, setIsSessionLocked] = useState(false);
@@ -241,6 +251,8 @@ function ChatPage({ theme, toggleTheme }) {
       setIsSessionLocked(false);
       setMessages([]);
       setIsAsking(false);
+      setCompletedTopicIds([]);
+      setCurrentTopicId(null);
       refresh();
     }
     
@@ -359,6 +371,16 @@ function ChatPage({ theme, toggleTheme }) {
 
       const isNowLocked = payload.session?.isLocked === true;
       
+      // Update Focus progress from response session payload
+      if (payload.session) {
+        if (payload.session.completedTopicIds) {
+          setCompletedTopicIds(payload.session.completedTopicIds);
+        }
+        if (payload.session.currentTopicId) {
+          setCurrentTopicId(payload.session.currentTopicId);
+        }
+      }
+
       setMessages((prev) => {
         const withoutTemp = isFirstUpdate ? prev : prev.filter(m => m.id !== tempMessageId);
         if (isNowLocked) {
@@ -515,8 +537,12 @@ function ChatPage({ theme, toggleTheme }) {
         setStudyMode(result.sessionMeta.sessionType === 'focus' ? STUDY_MODES.focus : STUDY_MODES.global);
         if (result.sessionMeta.sessionType === 'focus' && result.sessionMeta.currentChapterId) {
           setSelectedChapterId(result.sessionMeta.currentChapterId);
+          setCompletedTopicIds(result.sessionMeta.completedTopicIds || []);
+          setCurrentTopicId(result.sessionMeta.currentTopicId || null);
         } else if (result.sessionMeta.sessionType === 'global') {
           setSelectedChapterId(null);
+          setCompletedTopicIds([]);
+          setCurrentTopicId(null);
         }
       }
     } catch {
@@ -552,6 +578,14 @@ function ChatPage({ theme, toggleTheme }) {
         onNewChat={handleNewChat}
         isSessionLocked={isSessionLocked}
       />
+
+      {studyMode === STUDY_MODES.focus && selectedChapterId && (
+        <FocusProgressHeader 
+          chapterId={selectedChapterId} 
+          currentTopicId={currentTopicId} 
+          completedTopicIds={completedTopicIds} 
+        />
+      )}
 
       {/* key=sessionId: when session changes, ErrorBoundary remounts and clears any crashed state */}
       <ErrorBoundary key={sessionId}>

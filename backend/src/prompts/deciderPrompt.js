@@ -107,6 +107,7 @@ CONSERVATIVE BIAS RULES (apply in order):
    → EMOTIONAL_SUPPORT, NOT EXAM_INFO. Emotional phrasing overrides the EXAM_INFO trigger.
    Examples: "fail ho gya to kya hoga" → EMOTIONAL_SUPPORT (not EXAM_INFO)
    "log kya kahnge fail hone par" → EMOTIONAL_SUPPORT (not EXAM_INFO)
+6. If the student explicitly says "Chapter shuru karein", classify as NEXT_STEP, NOT CHOOSE_COURSE.
 
 SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - Generate a DESCRIPTIVE PHRASE or SENTENCE of 8-15 words that captures the topic AND what is being asked. NOT 2-3 keywords — the vector search needs semantic richness to find the right chapter.

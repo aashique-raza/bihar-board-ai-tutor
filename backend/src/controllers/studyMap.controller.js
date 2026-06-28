@@ -1,5 +1,7 @@
 import { getStudyMap } from '../services/studyMap.service.js';
 import { sendResponse } from '../utils/sendResponse.js';
+import { loadCurriculumIndex } from '../curriculum/curriculumIndexLoader.js';
+import { getChapterCoreTopics } from '../curriculum/topicResolver.js';
 
 export const getStudyMapController = async (_req, res, next) => {
   try {
@@ -38,29 +40,18 @@ export const getChapterTopicsController = async (req, res, next) => {
       });
     }
 
-    // Now, we need the topics. The studyMap doesn't currently store topics directly.
-    // We should get it from curriculum/curriculumBrain.js which indexes everything.
-    const { getCurriculumIndex } = await import('../curriculum/curriculumBrain.js');
-    const index = await getCurriculumIndex();
-    
-    // The index has `chapters` which is a Map or Object keyed by chapter ID
-    const chapterData = index.chapters.get(chapterId);
-    
-    if (!chapterData || !chapterData.topics) {
-       return sendResponse(res, 404, {
-        message: 'Topics for this chapter not found.',
-      });
-    }
+    const index = await loadCurriculumIndex();
+    const topics = getChapterCoreTopics(index, chapterId);
 
-    // Return the topics array directly
     return sendResponse(res, 200, {
       message: 'Chapter topics fetched successfully.',
       data: {
         chapterId,
-        topics: chapterData.topics.map(t => ({
+        topics: topics.map((t) => ({
           topicId: t.topicId,
-          title: t.title
-        }))
+          title: t.title,
+          order: t.order,
+        })),
       },
     });
   } catch (error) {

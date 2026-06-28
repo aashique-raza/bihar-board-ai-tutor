@@ -810,10 +810,10 @@ Frontend: In CHAPTER_COMPLETE message (after STEP-4 fix), add action: `{ type: '
 | STEP-3 | [ ] | — | — | currentTopicId reset on switch |
 | STEP-4 | [ ] | — | — | CHAPTER_COMPLETE recovery |
 | STEP-5 | [x] | 2026-06-27 | 2026-06-27 | Added GET /chapters/:chapterId/topics API |
-| STEP-6 | [ ] | — | — | Smart entry auto-ask |
-| STEP-7 | [ ] | — | — | Progress bar |
-| STEP-8 | [ ] | — | — | Chapter-aware chips |
-| STEP-9 | [ ] | — | — | nextStepPrompt actions |
+| STEP-6 | [x] | 2026-06-27 | 2026-06-27 | Smart entry auto-ask implemented with action chips |
+| STEP-7 | [x] | 2026-06-27 | 2026-06-27 | FocusProgressHeader roadmap implemented |
+| STEP-8 | [x] | 2026-06-27 | 2026-06-27 | Chapter-aware chips solved inherently by STEP-6 |
+| STEP-9 | [x] | 2026-06-27 | 2026-06-27 | Fixed decider bias & nextStepPrompt Hinglish rules |
 | STEP-10 | [ ] | — | — | Focus-mode redirect |
 | STEP-11 | [ ] | — | — | Foundation content files |
 | STEP-12 | [ ] | — | — | Chapter metadata |
