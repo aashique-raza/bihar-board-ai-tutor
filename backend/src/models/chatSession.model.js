@@ -126,6 +126,24 @@ const chatSessionSchema = new mongoose.Schema(
       default: null,
     },
 
+    // Foreign key to chapter_progress (set on first focus-mode /ask, never changes).
+    // Allows fast lookup: "which chapter_progress doc belongs to this session?"
+    chapterProgressId: {
+      type:    mongoose.Schema.Types.ObjectId,
+      default: null,
+      index:   true,
+    },
+
+    // Snapshot of focus chapter data — avoids joining chapter_progress on session list queries.
+    // Set once on first focus-mode /ask via $setOnInsert.
+    focusChapterSnapshot: {
+      chapterId:     { type: String, default: null },
+      chapterTitle:  { type: String, default: null },
+      hinglishTitle: { type: String, default: null },
+      subjectId:     { type: String, default: null },
+      sectionId:     { type: String, default: null },
+    },
+
     // Set once at session creation via $setOnInsert — never overwritten.
     // Focus sessions remain Focus forever (SESSION_DESIGN.md constraint).
     sessionType: {

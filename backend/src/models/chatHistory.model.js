@@ -24,6 +24,18 @@ const messageItemSchema = new mongoose.Schema({
     type: Object,
     default: {},
   },
+  // Action chips shown below this tutor message.
+  // Persisted so chips are restored correctly on page refresh.
+  suggestedActions: {
+    type: [
+      {
+        type:  { type: String, maxlength: 60 },
+        label: { type: String, maxlength: 80 },
+        _id:   false,
+      },
+    ],
+    default: [],
+  },
   createdAt: {
     type: Date,
     default: Date.now,

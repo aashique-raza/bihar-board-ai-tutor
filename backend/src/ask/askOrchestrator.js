@@ -58,7 +58,7 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
 
   try {
     input = await validateInput(body);
-    session = await loadSession({ ...input, userId });
+    session = await loadSession({ ...input, userId, guestId });
     context = await buildContext(input, session);
   } catch (error) {
     // Session-level blocks (exhausted, banned) surface as ApiError with a student-readable message.

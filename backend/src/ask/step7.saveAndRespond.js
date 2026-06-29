@@ -6,6 +6,8 @@
 
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
+import { upsertChapterProgress, markChapterComplete, logStudyEvent } from '../services/chapterProgress.service.js';
+import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 import { env } from '../config/env.js';
 import redis from '../config/redisClient.js';
 import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../utils/tokenLogger.js';
@@ -197,14 +199,21 @@ export const saveAndRespond = async (
   stateUpdates.consecutiveErrors = 0;
   stateUpdates.lastErrorAt = null;
 
-  // STB-008: Force sync DB state on global mode — do not rely on LLM memoryUpdate.
-  // LLM never returns chapter fields on global turns, so DB would retain stale 'lesson' values.
+  // STB-008: Force sync chapter fields — never rely on LLM memoryUpdate for these.
+  // LLM prompts don't know/return chapter IDs, so we always write them from chatState
+  // (which step2 correctly sets from the request's focusChapter data).
   if (studyMode === 'global') {
     stateUpdates.learningMode = 'idle';
     stateUpdates.currentSubjectId = null;
     stateUpdates.currentSectionId = null;
     stateUpdates.currentChapterId = null;
     stateUpdates.currentTopicId = null;
+  } else if (studyMode === 'focus') {
+    // Force-persist the chapter context so session restore after refresh works.
+    // Symmetric to the global-mode clear above.
+    stateUpdates.currentSubjectId = chatState.currentSubjectId || null;
+    stateUpdates.currentSectionId = chatState.currentSectionId || null;
+    stateUpdates.currentChapterId = chatState.currentChapterId || null;
   }
 
   // Automatically update dynamic tracking metrics on user interaction
@@ -241,6 +250,49 @@ export const saveAndRespond = async (
     },
     { userId, sessionType }
   );
+
+  // ─── Cross-session chapter progress write ────────────────────────────────
+  // Must run AFTER updateChatSession so stateUpdates (especially currentTopicId
+  // and completedTopicIds) are already resolved and ready to mirror into chapter_progress.
+  let chapterProgressDoc = null;
+  if (studyMode === 'focus' && chatState.currentChapterId) {
+    const chapterId  = chatState.currentChapterId;
+    const isComplete = retrieval?.retrievedContext === 'CHAPTER_COMPLETE';
+
+    if (isComplete) {
+      // CHAPTER COMPLETE — synchronous (critical milestone, must not be lost)
+      chapterProgressDoc = await markChapterComplete(userId, guestId, chapterId).catch((err) => {
+        console.error('[Step7] markChapterComplete failed (non-critical):', err.message);
+        return null;
+      });
+      logStudyEvent(userId, guestId, sessionId, chapterId, 'chapter_completed');
+    } else {
+      // Regular focus turn — upsert progress (synchronous for data consistency)
+      const completedNow = stateUpdates.completedTopicIds || chatState.completedTopicIds || [];
+      const chapterTitle = focusChapter?.title || null;
+      chapterProgressDoc = await upsertChapterProgress(userId, guestId, chapterId, {
+        currentTopicId:    stateUpdates.currentTopicId ?? chatState.currentTopicId,
+        completedTopicIds: completedNow,
+        primarySessionId:  sessionId,
+        linkedSessionId:   sessionId,
+        subjectId:         chatState.currentSubjectId,
+        sectionId:         chatState.currentSectionId,
+        chapterTitle,
+      }).catch((err) => {
+        console.error('[Step7] upsertChapterProgress failed (non-critical):', err.message);
+        return null;
+      });
+
+      // Log topic_completed event when NEXT_STEP advances to a new topic
+      if (nextTopicSignal) {
+        logStudyEvent(userId, guestId, sessionId, chapterId, 'topic_completed', {
+          topicId:     chatState.currentTopicId, // the one just completed
+          nextTopicId: nextTopicSignal.topicId,
+        });
+      }
+      // Log doubt events for CONCEPT_QUESTION turns (fire-and-forget, already in service)
+    }
+  }
 
   // Increment guest turn counter after confirmed DB write — non-critical, fail open.
   if (guestId) {
@@ -329,6 +381,16 @@ export const saveAndRespond = async (
       : null,
     decision,
     session: buildSessionPayload(sessionId, updatedSession),
+    // Cross-session chapter progress snapshot — frontend uses this to update
+    // FocusProgressHeader without a separate API call.
+    chapterProgress: chapterProgressDoc ? {
+      progressPercent:   chapterProgressDoc.progressPercent,
+      currentTopicId:    chapterProgressDoc.currentTopicId,
+      completedTopicIds: chapterProgressDoc.completedTopicIds,
+      totalCoreTopics:   chapterProgressDoc.totalCoreTopics,
+      status:            chapterProgressDoc.status,
+      isChapterComplete: chapterProgressDoc.status === 'completed',
+    } : null,
   };
 
   // Step 7c: Append historical text prose into the isolated history bank log
@@ -346,6 +408,7 @@ export const saveAndRespond = async (
       text: answerPayload.answer,
       action: answerPayload.intent,
       sources,
+      suggestedActions: answerPayload.suggestedActions || [],
       metadata: {
         status: answerPayload.status,
         responseMode: answerPayload.responseMode,

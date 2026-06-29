@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -45,15 +46,18 @@ function ThinkingDots() {
   );
 }
 
+const extractChapterName = (src) => {
+  // Prefer chapterTitle field directly (avoids " - " truncation bug in label parsing)
+  const english = (typeof src === 'object' && src?.chapterTitle)
+    ? src.chapterTitle
+    : (typeof src === 'string' ? src : (src?.label || src?.sourceTitle || ''))
+        .replace(/^Source\s*\d+:\s*/i, '').split(' - ')[0].trim();
+  return CHAPTER_HINGLISH[english] || english;
+};
+
 function SourceFootnote({ sources }) {
   const chapters = [...new Set(
-    sources
-      .map((src) => {
-        const raw = typeof src === 'string' ? src : (src.label || src.sourceTitle || '');
-        // Strip "Source N: " prefix, then take only the chapter name before " - "
-        return raw.replace(/^Source\s*\d+:\s*/i, '').split(' - ')[0].trim();
-      })
-      .filter(Boolean)
+    sources.map(extractChapterName).filter(Boolean)
   )].slice(0, 2);
 
   if (!chapters.length) return null;
@@ -78,12 +82,7 @@ const generateShareText = (msg) => {
 
   if (Array.isArray(msg.sources) && msg.sources.length > 0) {
     const chapters = [...new Set(
-      msg.sources
-        .map((src) => {
-          const raw = typeof src === 'string' ? src : (src.label || src.sourceTitle || '');
-          return raw.replace(/^Source\s*\d+:\s*/i, '').split(' - ')[0].trim();
-        })
-        .filter(Boolean)
+      msg.sources.map(extractChapterName).filter(Boolean)
     )].slice(0, 2);
     
     if (chapters.length > 0) {

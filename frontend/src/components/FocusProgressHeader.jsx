@@ -48,7 +48,7 @@ export default function FocusProgressHeader({ chapterId, currentTopicId, complet
 
           return (
             <Typography key={t.topicId} variant="caption" sx={{ color: isCurrent ? '#fff' : 'rgba(255,255,255,0.7)' }}>
-              {icon} {i + 1}. {t.title}
+              {icon} {t.title}
             </Typography>
           );
         })}
@@ -72,7 +72,9 @@ export default function FocusProgressHeader({ chapterId, currentTopicId, complet
     >
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: 'var(--chat-max-width)', mx: 'auto', width: '100%' }}>
         <Typography sx={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>
-          Topic {displayIndex} of {totalTopics}: <Box component="span" sx={{ color: 'var(--primary)' }}>{currentTopic?.title || 'Chapter Complete'}</Box>
+          Topic{' '}
+          <Box component="span" sx={{ color: 'var(--primary)' }}>{displayIndex}</Box>
+          {' '}of {totalTopics}
         </Typography>
         
         <Tooltip title={tooltipContent} placement="bottom-end" arrow>

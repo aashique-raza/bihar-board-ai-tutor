@@ -177,6 +177,15 @@ function ChatPage({ theme, toggleTheme }) {
       const converted = dbMessages.map(dbMessageToUiMessage).map(msg => ({ ...msg, isNew: false }));
       setMessages(converted);
       setIsSessionLocked(result?.sessionMeta?.isLocked === true);
+
+      // Restore focus mode state from session meta (fixes refresh-loss bug)
+      const meta = result?.sessionMeta;
+      if (meta?.sessionType === 'focus' && meta.currentChapterId) {
+        setStudyMode(STUDY_MODES.focus);
+        setSelectedChapterId(meta.currentChapterId);
+        setCompletedTopicIds(meta.completedTopicIds || []);
+        setCurrentTopicId(meta.currentTopicId ?? null);
+      }
     }).catch((err) => {
       if (cancelled) return;
       // SESSION_USER_MISMATCH = logged-in user's localStorage has a stale guest sessionId.
@@ -373,11 +382,11 @@ function ChatPage({ theme, toggleTheme }) {
       
       // Update Focus progress from response session payload
       if (payload.session) {
-        if (payload.session.completedTopicIds) {
-          setCompletedTopicIds(payload.session.completedTopicIds);
+        if ('completedTopicIds' in payload.session) {
+          setCompletedTopicIds(payload.session.completedTopicIds ?? []);
         }
-        if (payload.session.currentTopicId) {
-          setCurrentTopicId(payload.session.currentTopicId);
+        if ('currentTopicId' in payload.session) {
+          setCurrentTopicId(payload.session.currentTopicId ?? null);
         }
       }
 
@@ -485,9 +494,19 @@ function ChatPage({ theme, toggleTheme }) {
   };
 
   const handleSuggestedAction = useCallback((action) => {
-    // Send the exact label text provided by the LLM
-    handleAsk(action.label, studyModeRef.current);
-  }, [handleAsk]);
+    if (controllerRef.current) return; // block if request already in-flight
+
+    switch (action.type) {
+      case 'switch_chapter':
+        setIsFocusModalOpen(true);
+        break;
+      case 'global_mode':
+        handleClearFocus();
+        break;
+      default:
+        handleAsk(action.label, studyModeRef.current);
+    }
+  }, [handleAsk, handleClearFocus]);
 
   const handleSessionSwitch = useCallback(async (session) => {
     if (session.sessionId === sessionId) return; // already on this session

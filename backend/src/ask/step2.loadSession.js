@@ -8,11 +8,12 @@ import ApiError from '../utils/ApiError.js';
 import { findChatSession } from '../services/chatSession.service.js';
 import { getRecentChatHistory } from '../services/chatHistory.service.js';
 import { getDefaultChatState } from '../models/chatSession.model.js';
+import { getChapterProgress } from '../services/chapterProgress.service.js';
 
 const INACTIVITY_THRESHOLD_MS = 15 * 60 * 1000; // 15 Mins
 const isDev = process.env.NODE_ENV !== 'production';
 
-export const loadSession = async ({ requestedSessionId, userId, studyMode, focusChapter }) => {
+export const loadSession = async ({ requestedSessionId, userId, guestId, studyMode, focusChapter }) => {
   const sessionId = requestedSessionId || randomUUID();
   if (isDev) console.log(`[Step 2] loadSession — sessionId: ${sessionId}, isNew: ${!requestedSessionId}`);
 
@@ -66,11 +67,37 @@ export const loadSession = async ({ requestedSessionId, userId, studyMode, focus
     }
   }
 
+  // ─── Cross-session chapter progress sync ─────────────────────────────────
+  // On a brand-new session (chatState.isNewSession), check if the student has
+  // prior progress on this chapter from older sessions. If so, restore
+  // currentTopicId and completedTopicIds into chatState so the pipeline
+  // (especially step5 nextTopicResolver) resumes from where they left off.
+  let chapterProgress = null;
+  if (studyMode === 'focus' && focusChapter?.id) {
+    chapterProgress = await getChapterProgress(userId, guestId, focusChapter.id);
+
+    if (chapterProgress && chatState.isNewSession) {
+      chatState.currentTopicId    = chapterProgress.currentTopicId;
+      chatState.completedTopicIds = chapterProgress.completedTopicIds || [];
+      if (isDev) console.log(
+        `[Step 2] Cross-session sync — currentTopicId: ${chapterProgress.currentTopicId}, ` +
+        `completedTopicIds: ${(chapterProgress.completedTopicIds || []).length} topics`
+      );
+    }
+  }
+
   if (studyMode === 'focus' && focusChapter) {
     if (isDev) console.log(`[Step 2] Focus mode — syncing chapter: ${focusChapter.id}`);
+
+    const isChapterSwitch = chatState.currentChapterId !== focusChapter.id;
+
     chatState.currentSubjectId = focusChapter.subjectId;
     chatState.currentSectionId = focusChapter.sectionId;
     chatState.currentChapterId = focusChapter.id;
+
+    if (isChapterSwitch) {
+      chatState.currentTopicId = null;
+    }
 
     if (chatState.learningMode === 'idle') {
       chatState.learningMode = 'lesson';
@@ -88,5 +115,6 @@ export const loadSession = async ({ requestedSessionId, userId, studyMode, focus
     sessionId,
     chatState,
     recentMessages,
+    chapterProgress, // null for global mode or first-time chapter
   };
 };
