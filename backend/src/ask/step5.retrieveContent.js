@@ -170,6 +170,39 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
 
   const chunks = retrieval.results || [];
 
+  // OUT-OF-FOCUS FALLBACK — CONCEPT_QUESTION only.
+  // Focus retrieval returned 0 chunks, but the topic may exist in a different chapter.
+  // Run a global search (no metadataFilter) to confirm before saying "not in material".
+  if (intent === 'CONCEPT_QUESTION' && focusChapter && chunks.length === 0) {
+    if (isDev) console.log(`[Step 5 OOF] Focus retrieval returned 0 — running global fallback for: "${searchQuery}"`);
+
+    const globalRetrieval = await retrieveRelevantChunks(searchQuery, { topK: 3 });
+    const globalChunks = globalRetrieval.results || [];
+
+    if (globalChunks.length > 0) {
+      if (isDev) console.log(`[Step 5 OOF] Global fallback found ${globalChunks.length} chunk(s) — topic exists outside focus chapter.`);
+      return {
+        retrieval: globalRetrieval,
+        chunks: globalChunks,
+        sources: formatSources(globalChunks),
+        retrievedContext: formatRetrievedContext(globalChunks),
+        isOutOfFocusAnswer: true,
+        outOfFocusChapter: {
+          section:   globalChunks[0]?.metadata?.section   || null,
+          chapterNo: globalChunks[0]?.metadata?.chapter_no || null,
+        },
+        lastRetrievalQuery: searchQuery,
+      };
+    }
+
+    if (isDev) console.log(`[Step 5 OOF] Global fallback also returned 0 — topic not in material.`);
+    return {
+      retrieval: null, chunks: [], sources: [],
+      retrievedContext: 'NO_RETRIEVED_CONTEXT',
+      lastRetrievalQuery: searchQuery,
+    };
+  }
+
   // Format candidate chunks into structural objects for user consumption
   const sources = formatSources(chunks);
 

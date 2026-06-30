@@ -807,14 +807,14 @@ Frontend: In CHAPTER_COMPLETE message (after STEP-4 fix), add action: `{ type: '
 |------|--------|-------------|-----------|-------|
 | STEP-1 | [x] | 2026-06-27 | 2026-06-27 | suggestedActions render added to ChatMessage.jsx & ChatPage.jsx |
 | STEP-2 | [x] | 2026-06-27 | 2026-06-27 | completedTopicIds and currentTopicId added in step7 session payload |
-| STEP-3 | [ ] | — | — | currentTopicId reset on switch |
-| STEP-4 | [ ] | — | — | CHAPTER_COMPLETE recovery |
+| STEP-3 | [x] | — | 2026-06-30 | currentTopicId reset on chapter switch + cross-session progress sync already in step2 |
+| STEP-4 | [x] | — | 2026-06-30 | suggestedActions added (switch_chapter + global_mode) + frontend handlers wired; manual-type loop is P4 gap (STEP-16) |
 | STEP-5 | [x] | 2026-06-27 | 2026-06-27 | Added GET /chapters/:chapterId/topics API |
 | STEP-6 | [x] | 2026-06-27 | 2026-06-27 | Smart entry auto-ask implemented with action chips |
 | STEP-7 | [x] | 2026-06-27 | 2026-06-27 | FocusProgressHeader roadmap implemented |
 | STEP-8 | [x] | 2026-06-27 | 2026-06-27 | Chapter-aware chips solved inherently by STEP-6 |
 | STEP-9 | [x] | 2026-06-27 | 2026-06-27 | Fixed decider bias & nextStepPrompt Hinglish rules |
-| STEP-10 | [ ] | — | — | Focus-mode redirect |
+| STEP-10 | [x] | — | 2026-06-30 | Global fallback in step5 + deterministic redirect in intentRouter (no LLM, CHAPTER_COMPLETE pattern) |
 | STEP-11 | [ ] | — | — | Foundation content files |
 | STEP-12 | [ ] | — | — | Chapter metadata |
 | STEP-13 | [ ] | — | — | State machine (post-launch) |

@@ -201,6 +201,23 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     };
   }
 
+  // OUT-OF-FOCUS REDIRECT: topic found globally but not in student's focus chapter.
+  // Deterministic response — no LLM call needed (same pattern as CHAPTER_COMPLETE above).
+  if (retrieval.isOutOfFocusAnswer && intent === 'CONCEPT_QUESTION') {
+    const chapterTitle = input.focusChapter?.title || 'current chapter';
+    if (isDev) console.log(`[IntentRouter] Out-of-focus answer detected for focus chapter: "${chapterTitle}"`);
+    return {
+      status:           'answered',
+      responseMode:     'study_tutor',
+      title:            'Yeh topic doosre chapter mein hai',
+      sections:         [{ heading: '', content: `"${chapterTitle}" chapter mein yeh topic nahi milaa. Poore Science material mein search karne ke liye Global Mode use karo — wahan milega!` }],
+      suggestedActions: [{ type: 'global_mode', label: 'Poore Science mein dhundho' }],
+      memoryUpdate:     {},
+      tokenUsage:       0,
+      tokenBreakdown:   { input: 0, output: 0, total: 0, cached: 0 },
+    };
+  }
+
   // Guard: unknown intent — should never happen (normalizeDecision in step4 guards this)
   if (!INTENT_CONFIG[intent]) {
     console.warn(`[IntentRouter] Unknown intent "${intent}" — falling back to CONCEPT_QUESTION`);
