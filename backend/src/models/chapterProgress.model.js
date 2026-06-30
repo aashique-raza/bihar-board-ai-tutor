@@ -69,9 +69,16 @@ const chapterProgressSchema = new mongoose.Schema(
 // ─── Indexes ─────────────────────────────────────────────────────────────────
 
 // PRIMARY: one document per logged-in user + chapter (unique enforced at DB level)
+// partialFilterExpression ensures this index ONLY covers docs where userId is a
+// real ObjectId. Guest docs (no userId field) are never indexed here, so different
+// guests on the same chapter never cause dup-key conflicts.
 chapterProgressSchema.index(
   { userId: 1, chapterId: 1 },
-  { unique: true, sparse: true, name: 'user_chapter_unique' }
+  {
+    unique: true,
+    name: 'user_chapter_unique',
+    partialFilterExpression: { userId: { $type: 'objectId' } },
+  }
 );
 
 // GUEST path: same uniqueness for guest users (guestId replaces userId)

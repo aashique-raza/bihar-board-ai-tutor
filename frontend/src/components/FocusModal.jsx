@@ -13,6 +13,8 @@ import Box from '@mui/material/Box';
 import Dialog from '@mui/material/Dialog';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import { useChapterProgress } from '../hooks/useChapterProgress.js';
+import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 
 const baseSubjects = [
   { id: 'hindi',          title: 'Hindi',          icon: TranslateRounded },
@@ -34,6 +36,21 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
   const [animClass, setAnimClass]         = useState('focus-slide-forward');
   const [activeSubjectId, setActiveSubjectId] = useState('');
   const [activeSectionId, setActiveSectionId] = useState('');
+
+  const { inProgressChapters } = useChapterProgress();
+
+  // Build chapterId → English title lookup from the study map
+  const chapterTitleMap = useMemo(() => {
+    const map = {};
+    for (const subject of studyMap?.focusStudy?.subjects || []) {
+      for (const section of subject.sections || []) {
+        for (const chapter of section.chapters || []) {
+          map[chapter.id] = chapter.title;
+        }
+      }
+    }
+    return map;
+  }, [studyMap]);
 
   const subjectsInMap = useMemo(() => {
     const subjects = studyMap?.focusStudy?.subjects || [];
@@ -167,6 +184,43 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
         <Box key={step} className={`focus-slide ${animClass}`}>
 
           <Typography className="focus-section-label">{stepLabel}</Typography>
+
+          {/* Step 1 — Continue Karo (in-progress chapters) */}
+          {step === 1 && inProgressChapters.length > 0 && (
+            <Box sx={{ mb: 2 }}>
+              <Typography className="focus-section-label" sx={{ mb: 1 }}>
+                Jahan Chhoda Tha
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                {inProgressChapters.map((cp) => {
+                  const englishTitle = chapterTitleMap[cp.chapterId];
+                  if (!englishTitle) return null;
+                  const hinglishTitle = CHAPTER_HINGLISH[englishTitle] || englishTitle;
+                  const pct = Math.round(cp.progressPercent ?? 0);
+                  return (
+                    <button
+                      key={cp.chapterId}
+                      type="button"
+                      className="focus-item-btn available"
+                      onClick={() => onSelectChapter(cp.chapterId)}
+                      style={{ textAlign: 'left', flex: '1 1 180px', maxWidth: 260 }}
+                    >
+                      <Typography component="span" sx={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.4, mb: 0.75 }}>
+                        {hinglishTitle}
+                      </Typography>
+                      {/* Mini progress bar */}
+                      <Box sx={{ width: '100%', height: 3, bgcolor: 'var(--border)', borderRadius: 2, overflow: 'hidden', mb: 0.5 }}>
+                        <Box sx={{ height: '100%', bgcolor: 'var(--primary)', width: `${pct}%`, borderRadius: 2 }} />
+                      </Box>
+                      <Typography component="span" sx={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
+                        {pct}% complete
+                      </Typography>
+                    </button>
+                  );
+                })}
+              </Box>
+            </Box>
+          )}
 
           {/* Step 1 — Subjects */}
           {step === 1 && (

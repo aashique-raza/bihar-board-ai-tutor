@@ -76,12 +76,17 @@ export default function FocusProgressHeader({ chapterId, currentTopicId, complet
           <Box component="span" sx={{ color: 'var(--primary)' }}>{displayIndex}</Box>
           {' '}of {totalTopics}
         </Typography>
-        
-        <Tooltip title={tooltipContent} placement="bottom-end" arrow>
-          <IconButton size="small" sx={{ color: 'var(--text-muted)' }}>
-            <InfoOutlinedIcon sx={{ fontSize: 18 }} />
-          </IconButton>
-        </Tooltip>
+
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Typography sx={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--primary)' }}>
+            {Math.round(progressPercent)}%
+          </Typography>
+          <Tooltip title={tooltipContent} placement="bottom-end" arrow>
+            <IconButton size="small" sx={{ color: 'var(--text-muted)' }}>
+              <InfoOutlinedIcon sx={{ fontSize: 18 }} />
+            </IconButton>
+          </Tooltip>
+        </Box>
       </Box>
 
       {/* Thin Progress Bar */}

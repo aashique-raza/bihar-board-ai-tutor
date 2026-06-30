@@ -175,8 +175,12 @@ export const upsertChapterProgress = async (userId, guestId, chapterId, updates 
     {
       $set: setFields,
       $setOnInsert: {
-        userId:    userId  || null,
-        guestId:   guestId || null,
+        // Only set userId when it's a real value — never store null explicitly.
+        // The sparse index on { userId, chapterId } skips documents where userId
+        // is ABSENT; storing null makes the field exist and triggers dup-key conflicts
+        // across different guest users who all share userId=null.
+        ...(userId ? { userId } : {}),
+        ...(guestId ? { guestId } : {}),
         chapterId,
         startedAt: new Date(),
         status:    'in_progress',

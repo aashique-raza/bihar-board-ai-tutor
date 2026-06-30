@@ -12,6 +12,7 @@ import { useAuth } from '../hooks/useAuth.js';
 import { clearCredentials } from '../store/slices/authSlice.js';
 import { logoutUser } from '../services/axios/authService.js';
 import { clearSessionId } from '../utils/session.js';
+import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 
 
 export default function Topbar({
@@ -142,7 +143,7 @@ export default function Topbar({
                 lineHeight: 1.3,
               }}
             >
-              {selectedChapter.title}
+              {CHAPTER_HINGLISH[selectedChapter.title] || selectedChapter.title}
             </Typography>
             <IconButton
               aria-label="Clear focus"

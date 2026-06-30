@@ -15,7 +15,7 @@ const createRateLimitResponse = (message) => ({
 // Without unique prefixes, all three limiters would share counters — wrong behavior.
 const createRedisStore = (prefix) =>
   new RedisStore({
-    sendCommand: (command, ...args) => redis.call(command, ...args),
+    sendCommand: async (command, ...args) => redis.call(command, ...args),
     prefix,
   });
 
@@ -26,6 +26,7 @@ export const globalApiLimiter = rateLimit({
   max: 150,
   standardHeaders: true,
   legacyHeaders: false,
+  passOnStoreError: true,
   store: createRedisStore('rl_global:'),
   handler: (req, res) => {
     res.status(429).json(
@@ -41,6 +42,7 @@ export const askApiLimiter = rateLimit({
   max: 30,
   standardHeaders: true,
   legacyHeaders: false,
+  passOnStoreError: true,
   store: createRedisStore('rl_ask:'),
   handler: (req, res) => {
     res.status(429).json(
@@ -56,6 +58,7 @@ export const authApiLimiter = rateLimit({
   max: 20,
   standardHeaders: true,
   legacyHeaders: false,
+  passOnStoreError: true,
   store: createRedisStore('rl_auth:'),
   handler: (req, res) => {
     res.status(429).json(

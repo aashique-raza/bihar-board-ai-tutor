@@ -36,11 +36,23 @@ const retryRequest = (originalRequest, token) => {
   return axiosInstance(originalRequest);
 };
 
-// Attach Bearer token to outgoing requests if we have one in the store
+const getGuestId = () => {
+  let id = localStorage.getItem('zuno-guest-id');
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem('zuno-guest-id', id);
+  }
+  return id;
+};
+
+// Attach Bearer token to outgoing requests if we have one in the store.
+// Also attach X-Guest-Id so unauthenticated users' chapter progress is tracked.
 axiosInstance.interceptors.request.use((config) => {
   const token = storeRef?.getState().auth.accessToken;
   if (token) {
     config.headers['Authorization'] = `Bearer ${token}`;
+  } else {
+    config.headers['X-Guest-Id'] = getGuestId();
   }
   return config;
 });

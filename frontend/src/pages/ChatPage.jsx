@@ -390,6 +390,14 @@ function ChatPage({ theme, toggleTheme }) {
         }
       }
 
+      // Bust the useChapterProgress hook cache so FocusModal shows fresh data next open
+      if (payload.chapterProgress?.chapterId || selectedChapterIdRef.current) {
+        const updatedChapterId = payload.chapterProgress?.chapterId ?? selectedChapterIdRef.current;
+        window.dispatchEvent(
+          new CustomEvent('chapter-progress-updated', { detail: { chapterId: updatedChapterId } })
+        );
+      }
+
       setMessages((prev) => {
         const withoutTemp = isFirstUpdate ? prev : prev.filter(m => m.id !== tempMessageId);
         if (isNowLocked) {
@@ -626,26 +634,50 @@ function ChatPage({ theme, toggleTheme }) {
                 message={{ id: 'loading', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
               />
             ) : messages.length === 0 ? (
-              <div className="chat-empty-state">
-                <div className="chat-empty-illustration">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z" fill="url(#zuno-grad)"/>
-                    <defs>
-                      <linearGradient id="zuno-grad" x1="1" y1="3" x2="23" y2="21" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="var(--primary-accent, #F0A500)"/>
-                        <stop offset="1" stopColor="#C6570F"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
+              studyMode === STUDY_MODES.focus && selectedChapterId && selectedChapter ? (
+                <div className="chat-empty-state">
+                  <div className="chat-empty-illustration">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="9" stroke="url(#focus-grad)" strokeWidth="2.2"/>
+                      <circle cx="12" cy="12" r="4" fill="url(#focus-grad)"/>
+                      <defs>
+                        <linearGradient id="focus-grad" x1="1" y1="3" x2="23" y2="21" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="var(--primary-accent, #F0A500)"/>
+                          <stop offset="1" stopColor="#C6570F"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div className="chat-empty-title">Focus Mode: {selectedChapter.title}</div>
+                  <div className="chat-empty-sub">Pehla sawaal poochho ya chapter seedha start karo!</div>
+                  <div className="chat-empty-chips">
+                    <button className="chat-empty-chip" onClick={() => handleAsk('Chapter shuru karein', STUDY_MODES.focus)}>▶ Chapter shuru karein</button>
+                    <button className="chat-empty-chip" onClick={() => handleAsk('Is chapter ka overview batao', STUDY_MODES.focus)}>📖 Overview batao</button>
+                    <button className="chat-empty-chip" onClick={() => handleAsk('Koi important question poochho is chapter se', STUDY_MODES.focus)}>❓ Exam question dikhao</button>
+                  </div>
                 </div>
-                <div className="chat-empty-title">Zuno: Aapka AI Tutor</div>
-                <div className="chat-empty-sub">Bina dare sawaal poochho. Hum milkar exam fodenge!</div>
-                <div className="chat-empty-chips">
-                  <button className="chat-empty-chip" onClick={() => handleAsk('Newton ka pehla niyam kya hai?')}>⚡ Newton ka pehla niyam kya hai?</button>
-                  <button className="chat-empty-chip" onClick={() => handleAsk('Carbon dioxide kaise banta hai?')}>🧪 Carbon dioxide kaise banta hai?</button>
-                  <button className="chat-empty-chip" onClick={() => handleAsk('Photosynthesis kya hota hai?')}>🌿 Photosynthesis kya hota hai?</button>
+              ) : (
+                <div className="chat-empty-state">
+                  <div className="chat-empty-illustration">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z" fill="url(#zuno-grad)"/>
+                      <defs>
+                        <linearGradient id="zuno-grad" x1="1" y1="3" x2="23" y2="21" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="var(--primary-accent, #F0A500)"/>
+                          <stop offset="1" stopColor="#C6570F"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div className="chat-empty-title">Zuno: Aapka AI Tutor</div>
+                  <div className="chat-empty-sub">Bina dare sawaal poochho. Hum milkar exam fodenge!</div>
+                  <div className="chat-empty-chips">
+                    <button className="chat-empty-chip" onClick={() => handleAsk('Newton ka pehla niyam kya hai?')}>⚡ Newton ka pehla niyam kya hai?</button>
+                    <button className="chat-empty-chip" onClick={() => handleAsk('Carbon dioxide kaise banta hai?')}>🧪 Carbon dioxide kaise banta hai?</button>
+                    <button className="chat-empty-chip" onClick={() => handleAsk('Photosynthesis kya hota hai?')}>🌿 Photosynthesis kya hota hai?</button>
+                  </div>
                 </div>
-              </div>
+              )
             ) : messages.map((message, index) => {
               let question = message.question;
               if (!question && message.role === 'zuno') {

@@ -73,6 +73,53 @@ export const fetchSessionHistory = async (sessionId) => {
   }
 };
 
+// ─── Chapter Progress API ──────────────────────────────────────────────────
+// All three functions use axiosInstance so auth token + X-Guest-Id are sent
+// automatically via the request interceptor.
+
+export const fetchChapterProgress = async (chapterId) => {
+  try {
+    const { data } = await axiosInstance.get(
+      `/api/v1/chapter-progress/${encodeURIComponent(chapterId)}`
+    );
+    return data.data;
+  } catch (err) {
+    if (err.response?.status === 404) return null;
+    throw new Error(
+      err.response?.data?.error?.message || 'Chapter progress load nahi hui.'
+    );
+  }
+};
+
+export const listChapterProgress = async ({ status, limit = 10 } = {}) => {
+  try {
+    const params = new URLSearchParams();
+    if (status) params.set('status', status);
+    if (limit)  params.set('limit', String(limit));
+    const { data } = await axiosInstance.get(`/api/v1/chapter-progress?${params}`);
+    return data.data;
+  } catch (err) {
+    throw new Error(
+      err.response?.data?.error?.message || 'Chapter progress list load nahi hui.'
+    );
+  }
+};
+
+export const chapterProgressAction = async (chapterId, action, topicId = null) => {
+  try {
+    const { data } = await axiosInstance.post(
+      `/api/v1/chapter-progress/${encodeURIComponent(chapterId)}/action`,
+      { action, ...(topicId && { topicId }) }
+    );
+    return data.data;
+  } catch (err) {
+    throw new Error(
+      err.response?.data?.error?.message || 'Chapter action fail ho gayi.'
+    );
+  }
+};
+
+// ─── Streaming Ask API ─────────────────────────────────────────────────────
 // Wraps fetch() with one silent token refresh on 401 — mirrors the axios interceptor pattern.
 // Only attempts refresh for logged-in users (accessToken present); guests are skipped.
 // retried flag prevents infinite refresh loops.
