@@ -67,37 +67,34 @@ export const loadSession = async ({ requestedSessionId, userId, guestId, studyMo
     }
   }
 
-  // ─── Cross-session chapter progress sync ─────────────────────────────────
-  // On a brand-new session (chatState.isNewSession), check if the student has
-  // prior progress on this chapter from older sessions. If so, restore
-  // currentTopicId and completedTopicIds into chatState so the pipeline
-  // (especially step5 nextTopicResolver) resumes from where they left off.
+  // ─── Cross-session chapter progress (single source of truth) ─────────────
+  // ChapterProgress (not chatState) owns currentTopicId/completedTopicIds now.
+  // Loaded fresh on every focus turn (Redis-cached, 60s TTL — cheap) so step5's
+  // NEXT_STEP resolver and step7's engagement writes always see the latest
+  // cross-session state, regardless of whether this is a new or existing session.
+  // Read failure is non-fatal: gracefully degrade to null (treated as "not started
+  // yet" by getNextTopic) rather than failing the whole turn — self-healing on the
+  // next successful read/write since the underlying Mongo document is untouched.
   let chapterProgress = null;
   if (studyMode === 'focus' && focusChapter?.id) {
-    chapterProgress = await getChapterProgress(userId, guestId, focusChapter.id);
-
-    if (chapterProgress && chatState.isNewSession) {
-      chatState.currentTopicId    = chapterProgress.currentTopicId;
-      chatState.completedTopicIds = chapterProgress.completedTopicIds || [];
+    try {
+      chapterProgress = await getChapterProgress(userId, guestId, focusChapter.id);
       if (isDev) console.log(
-        `[Step 2] Cross-session sync — currentTopicId: ${chapterProgress.currentTopicId}, ` +
-        `completedTopicIds: ${(chapterProgress.completedTopicIds || []).length} topics`
+        `[Step 2] ChapterProgress loaded — currentTopicId: ${chapterProgress?.currentTopicId ?? 'none'}, ` +
+        `completedTopicIds: ${(chapterProgress?.completedTopicIds || []).length} topics`
       );
+    } catch (err) {
+      console.error('[Step 2] getChapterProgress failed (non-fatal, continuing with null):', err.message);
+      chapterProgress = null;
     }
   }
 
   if (studyMode === 'focus' && focusChapter) {
     if (isDev) console.log(`[Step 2] Focus mode — syncing chapter: ${focusChapter.id}`);
 
-    const isChapterSwitch = chatState.currentChapterId !== focusChapter.id;
-
     chatState.currentSubjectId = focusChapter.subjectId;
     chatState.currentSectionId = focusChapter.sectionId;
     chatState.currentChapterId = focusChapter.id;
-
-    if (isChapterSwitch) {
-      chatState.currentTopicId = null;
-    }
 
     if (chatState.learningMode === 'idle') {
       chatState.learningMode = 'lesson';
@@ -108,7 +105,6 @@ export const loadSession = async ({ requestedSessionId, userId, guestId, studyMo
     chatState.currentSubjectId = null;
     chatState.currentSectionId = null;
     chatState.currentChapterId = null;
-    chatState.currentTopicId = null;
   }
 
   return {

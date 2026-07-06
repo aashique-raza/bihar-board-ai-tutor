@@ -49,10 +49,6 @@ const chatSessionSchema = new mongoose.Schema(
         type: String,
         default: null, // Chapter in focus
       },
-      currentTopicId: {
-        type: String,
-        default: null, // Topic the student is on right now
-      },
       abuseCount: {
         type: Number,
         default: 0, // Count of abusive/spam messages in this session
@@ -64,10 +60,6 @@ const chatSessionSchema = new mongoose.Schema(
       sessionTopicsProgress: {
         type: [String],
         default: [], // Topics touched this session (used for summaries)
-      },
-      completedTopicIds: {
-        type: [String],
-        default: [],
       },
       pendingAction: {
         type: mongoose.Schema.Types.Mixed,

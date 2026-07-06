@@ -1,5 +1,6 @@
 import { getChatHistory, deleteSessionHistory } from '../services/chatHistory.service.js';
 import { findChatSession, getSessionsByUser, deleteSessionById, renameSessionById } from '../services/chatSession.service.js';
+import { getChapterProgress } from '../services/chapterProgress.service.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import ApiError from '../utils/ApiError.js';
 import { env } from '../config/env.js';
@@ -95,6 +96,22 @@ export const getSessionHistory = async (req, res, next) => {
     // Fetch messages only after ownership is verified
     const rawMessages = await getChatHistory(sessionId, 30);
 
+    // ChapterProgress is the single source of truth for topic progress (not chatState) —
+    // see FOCUS_MODE_PROGRESS_FIX_PLAN.md. Look it up only when this session is on a chapter.
+    const currentChapterId = session.chatState?.currentChapterId || null;
+    let currentTopicId = null;
+    let completedTopicIds = [];
+
+    if (currentChapterId && session.sessionType === 'focus') {
+      try {
+        const progress = await getChapterProgress(userId, null, currentChapterId);
+        currentTopicId = progress?.currentTopicId || null;
+        completedTopicIds = progress?.completedTopicIds || [];
+      } catch (err) {
+        console.error('[getSessionHistory] getChapterProgress failed (non-fatal):', err.message);
+      }
+    }
+
     return sendResponse(res, 200, {
       message: 'Session history fetched successfully.',
       data: {
@@ -105,9 +122,9 @@ export const getSessionHistory = async (req, res, next) => {
           lastMessageAt: session.lastMessageAt,
           isLocked: session.chatState?.status === 'exhausted',
           sessionType: session.sessionType || 'global',
-          currentChapterId: session.chatState?.currentChapterId || null,
-          currentTopicId: session.chatState?.currentTopicId || null,
-          completedTopicIds: session.chatState?.completedTopicIds || [],
+          currentChapterId,
+          currentTopicId,
+          completedTopicIds,
         },
       },
     });

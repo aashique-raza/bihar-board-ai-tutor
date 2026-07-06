@@ -43,7 +43,7 @@ const buildTopicSearchQuery = (topic) => {
  * Step 5: Search the vector store for relevant content.
  * Bypasses immediately if Step 4 router evaluated needsRetrieval as false.
  */
-export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, { focusChapter }, { chatState }, abortSignal = null) => {
+export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, { focusChapter }, { chatState, chapterProgress }, abortSignal = null) => {
   if (abortSignal?.aborted) {
     if (isDev) console.log(`[Step 5] Aborting vector search early due to AbortSignal`);
     const error = new Error('AbortError');
@@ -54,8 +54,11 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
   if (isDev) console.log(`[Step 5 Execution] Initiating Retrieval Decision Verification. Required: ${needsRetrieval}`);
 
   // NEXT_STEP: resolve the next core topic first, then retrieve content for it
+  // currentTopicId now comes from ChapterProgress (single source of truth for topic
+  // progress) rather than chatState — see FOCUS_MODE_PROGRESS_FIX_PLAN.md.
   if (intent === 'NEXT_STEP') {
-    const result = await getNextTopic(chatState.currentChapterId, chatState.currentTopicId);
+    const currentTopicId = chapterProgress?.currentTopicId ?? null;
+    const result = await getNextTopic(chatState.currentChapterId, currentTopicId);
 
     if (result.status === 'no_chapter') {
       return {

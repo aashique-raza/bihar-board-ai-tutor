@@ -14,6 +14,29 @@ import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../util
 
 const isDev = process.env.NODE_ENV !== 'production';
 
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Shared hardening wrapper for ChapterProgress writes (the single source of truth for
+ * topic progress — see FOCUS_MODE_PROGRESS_FIX_PLAN.md). A silent failure here would mean
+ * the student's advance is recorded nowhere, so: one retry after a short delay, and a
+ * distinctly visible error log (not a silent swallow) if it still fails.
+ */
+const withRetry = async (fn, label) => {
+  try {
+    return await fn();
+  } catch (err) {
+    console.error(`[Step7] ${label} failed, retrying once:`, err.message);
+    await wait(200);
+    try {
+      return await fn();
+    } catch (err2) {
+      console.error(`[Step7 CRITICAL] ${label} failed after retry — write lost for this turn:`, err2.message);
+      return null;
+    }
+  }
+};
+
 const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 
 const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
@@ -29,8 +52,8 @@ const DRIFT_INTENTS    = new Set(['GREETING', 'OUT_OF_CONTEXT']);
 // Allowed operational state properties inside our new ChatSession layout
 const ALLOWED_STATE_FIELDS = [
   'status', 'learningMode', 'currentSubjectId', 'currentSectionId',
-  'currentChapterId', 'currentTopicId', 'abuseCount', 'answerLanguage',
-  'sessionTopicsProgress', 'completedTopicIds', 'pendingAction',
+  'currentChapterId', 'abuseCount', 'answerLanguage',
+  'sessionTopicsProgress', 'pendingAction',
   'lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion',
   'consecutiveErrors', 'lastErrorAt'
 ];
@@ -125,8 +148,8 @@ const buildSessionPayload = (sessionId, updatedSession) => {
     lastSubject: chatState.currentSubjectId || null,
     lastSection: chatState.currentSectionId || null,
     lastChapterId: chatState.currentChapterId || null,
-    currentTopicId: chatState.currentTopicId || null,
-    completedTopicIds: chatState.completedTopicIds || [],
+    // currentTopicId/completedTopicIds intentionally NOT here — ChapterProgress
+    // is the single source of truth for topic progress now; see payload.chapterProgress.
     sessionType: updatedSession?.sessionType || 'global',
     messageCount: chatState.messageCount || 0,
     totalTokensUsed: updatedSession?.totalTokensUsed ?? 0,
@@ -138,7 +161,7 @@ const buildSessionPayload = (sessionId, updatedSession) => {
  */
 export const saveAndRespond = async (
   { question, studyMode, focusChapter },
-  { sessionId, chatState },
+  { sessionId, chatState, chapterProgress },
   { language, driftSignal },
   decision,
   { retrieval, sources, nextTopicSignal, lastRetrievalQuery },
@@ -157,17 +180,8 @@ export const saveAndRespond = async (
     intent: decision?.intent,
   });
 
-  // If NEXT_STEP resolved a new topic, advance the pointer and record the completed one
-  if (nextTopicSignal) {
-    stateUpdates.currentTopicId = nextTopicSignal.topicId;
-
-    if (chatState?.currentTopicId) {
-      stateUpdates.completedTopicIds = [
-        ...(chatState.completedTopicIds || []),
-        chatState.currentTopicId,
-      ];
-    }
-  }
+  // Note: NEXT_STEP topic advance is no longer written to chatState/stateUpdates —
+  // ChapterProgress (below) is the single source of truth for currentTopicId/completedTopicIds.
 
   // Save the exact retrieval query used — code-controlled, never from LLM memoryUpdate.
   // CONCEPT_QUESTION and NEXT_STEP are the only intents that retrieve content for teaching.
@@ -207,7 +221,6 @@ export const saveAndRespond = async (
     stateUpdates.currentSubjectId = null;
     stateUpdates.currentSectionId = null;
     stateUpdates.currentChapterId = null;
-    stateUpdates.currentTopicId = null;
   } else if (studyMode === 'focus') {
     // Force-persist the chapter context so session restore after refresh works.
     // Symmetric to the global-mode clear above.
@@ -251,42 +264,56 @@ export const saveAndRespond = async (
     { userId, sessionType }
   );
 
-  // ─── Cross-session chapter progress write ────────────────────────────────
-  // Must run AFTER updateChatSession so stateUpdates (especially currentTopicId
-  // and completedTopicIds) are already resolved and ready to mirror into chapter_progress.
+  // ─── Cross-session chapter progress write (single source of truth) ──────
+  // ChapterProgress owns currentTopicId/completedTopicIds — chatState no longer
+  // carries these fields at all. The prior state comes from `chapterProgress`
+  // (loaded fresh in step2), and nextTopicSignal (from step5) tells us whether
+  // NEXT_STEP advanced the pointer this turn. Both writes are hardened with a
+  // bounded retry — see withRetry() — because a silent failure here now means
+  // the advance is recorded nowhere (no chatState backup copy anymore).
   let chapterProgressDoc = null;
   if (studyMode === 'focus' && chatState.currentChapterId) {
     const chapterId  = chatState.currentChapterId;
     const isComplete = retrieval?.retrievedContext === 'CHAPTER_COMPLETE';
 
     if (isComplete) {
-      // CHAPTER COMPLETE — synchronous (critical milestone, must not be lost)
-      chapterProgressDoc = await markChapterComplete(userId, guestId, chapterId).catch((err) => {
-        console.error('[Step7] markChapterComplete failed (non-critical):', err.message);
-        return null;
-      });
+      // CHAPTER COMPLETE — critical milestone, must not be lost silently
+      chapterProgressDoc = await withRetry(
+        () => markChapterComplete(userId, guestId, chapterId),
+        'markChapterComplete'
+      );
       logStudyEvent(userId, guestId, sessionId, chapterId, 'chapter_completed');
     } else {
-      // Regular focus turn — upsert progress (synchronous for data consistency)
-      const completedNow = stateUpdates.completedTopicIds || chatState.completedTopicIds || [];
+      // Regular focus turn — upsert progress
+      const priorCurrentTopicId = chapterProgress?.currentTopicId ?? null;
+      const priorCompleted      = chapterProgress?.completedTopicIds ?? [];
+
+      // If NEXT_STEP resolved a new topic this turn, advance the pointer and
+      // record the topic just finished. $addToSet in upsertChapterProgress is
+      // idempotent, so a retry replaying the same payload is always safe.
+      const newCurrentTopicId = nextTopicSignal ? nextTopicSignal.topicId : priorCurrentTopicId;
+      const newlyCompleted = (nextTopicSignal && priorCurrentTopicId)
+        ? [...priorCompleted, priorCurrentTopicId]
+        : priorCompleted;
+
       const chapterTitle = focusChapter?.title || null;
-      chapterProgressDoc = await upsertChapterProgress(userId, guestId, chapterId, {
-        currentTopicId:    stateUpdates.currentTopicId ?? chatState.currentTopicId,
-        completedTopicIds: completedNow,
-        primarySessionId:  sessionId,
-        linkedSessionId:   sessionId,
-        subjectId:         chatState.currentSubjectId,
-        sectionId:         chatState.currentSectionId,
-        chapterTitle,
-      }).catch((err) => {
-        console.error('[Step7] upsertChapterProgress failed (non-critical):', err.message);
-        return null;
-      });
+      chapterProgressDoc = await withRetry(
+        () => upsertChapterProgress(userId, guestId, chapterId, {
+          currentTopicId:    newCurrentTopicId,
+          completedTopicIds: newlyCompleted,
+          primarySessionId:  sessionId,
+          linkedSessionId:   sessionId,
+          subjectId:         chatState.currentSubjectId,
+          sectionId:         chatState.currentSectionId,
+          chapterTitle,
+        }),
+        'upsertChapterProgress'
+      );
 
       // Log topic_completed event when NEXT_STEP advances to a new topic
       if (nextTopicSignal) {
         logStudyEvent(userId, guestId, sessionId, chapterId, 'topic_completed', {
-          topicId:     chatState.currentTopicId, // the one just completed
+          topicId:     priorCurrentTopicId, // the one just completed
           nextTopicId: nextTopicSignal.topicId,
         });
       }
