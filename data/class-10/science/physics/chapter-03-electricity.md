@@ -1454,3 +1454,60 @@ nichrome heating element
 copper wire
 aluminium wire
 ```
+
+---
+
+## Bihar Board Exam Focus — Electricity
+
+Electricity carries approximately 6 to 7 marks in the Bihar Board Class 10 Science theory paper. It is one of the most numerical-heavy chapters in Physics.
+
+Topics that appear in exam almost every year: Ohm's law, series and parallel combinations of resistors, Joule's heating effect, electric power, and the commercial unit of electrical energy.
+
+Question types typically seen: define and state (1 mark), short numerical problems (2 marks), longer numericals involving circuits (3 marks), draw circuit diagrams, write differences between series and parallel circuits.
+
+Numericals are almost guaranteed — students must practise calculating equivalent resistance, current, voltage, power, and heat generated using the formulas.
+
+Common mistake students make: using the wrong formula for parallel resistance. Remember: for parallel, it is 1/Rp = 1/R1 + 1/R2 — not Rp = R1 + R2.
+
+---
+
+## Key Formulas — Electricity
+
+```
+Electric current:           I = Q / t
+Ohm's law:                  V = I × R
+Resistance:                 R = ρ × L / A
+Series resistance:          Rs = R1 + R2 + R3
+Parallel resistance:        1/Rp = 1/R1 + 1/R2 + 1/R3
+Joule's heating law:        H = I² × R × t
+Electric power:             P = V × I = I² × R = V² / R
+Electrical energy:          E = P × t  (in joules, or kWh for commercial unit)
+1 kWh = 3,600,000 J = 3.6 × 10⁶ J
+```
+
+Key definitions:
+- Ohm's law: At constant temperature, current through a conductor is directly proportional to the voltage across it.
+- Resistance: Opposition offered by a conductor to the flow of electric current. SI unit: ohm (Ω).
+- Resistivity: Resistance of a conductor of unit length and unit cross-sectional area. SI unit: ohm-metre (Ωm).
+- Electric power: Rate at which electrical energy is consumed. SI unit: watt (W). 1 watt = 1 joule per second.
+- 1 kilowatt hour: Energy consumed by a device of 1000 W power running for 1 hour.
+
+---
+
+## Important Questions — Bihar Board Pattern
+
+1. State Ohm's law. Write its mathematical expression and SI unit of resistance. (2 marks)
+
+2. Two resistors of 3 ohm and 6 ohm are connected in parallel. Calculate the equivalent resistance. (2 marks)
+
+3. A bulb of resistance 100 ohm is connected to a 220 V supply. Calculate the current through it and the power consumed. (3 marks)
+
+4. Write two differences between series combination and parallel combination of resistors. (2 marks)
+
+5. What is electric fuse? Why is it connected in series in a circuit? Name the material used to make fuse wire. (3 marks)
+
+6. A wire of length 1 metre and cross-sectional area 0.5 mm² has resistivity 2 × 10⁻⁶ ohm-metre. Calculate its resistance. (2 marks)
+
+7. What is the heating effect of electric current? Write Joule's law of heating and state its three factors. (3 marks)
+
+8. Calculate the electrical energy consumed by a 500 W heater used for 4 hours. Express answer in kWh and joules. (2 marks)

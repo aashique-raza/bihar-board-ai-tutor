@@ -20,8 +20,26 @@ const app = express();
 app.set('trust proxy', 1);
 
 app.use(helmet({ contentSecurityPolicy: false }));
+
+// FRONTEND_URL supports a comma-separated list so staging/prod/local dev
+// origins can all be whitelisted without loosening this to a wildcard.
+const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173')
+  .split(',')
+  .map((url) => url.trim())
+  .filter(Boolean);
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // No Origin header = same-origin or non-browser client (curl, server-to-server) — allow.
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    // Logged so a frontend/backend origin mismatch (e.g. Vite auto-picking a
+    // different port) is diagnosable from server logs instead of surfacing
+    // only as a generic frontend error.
+    console.error(`[CORS] Blocked request from unlisted origin: ${origin}. Allowed: ${allowedOrigins.join(', ')}`);
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
 }));
 app.use(cookieParser());

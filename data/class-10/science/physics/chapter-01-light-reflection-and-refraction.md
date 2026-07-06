@@ -1535,3 +1535,60 @@ dioptre
 Bihar Board Class 10 Science Physics
 Light Reflection and Refraction
 ```
+
+---
+
+## Bihar Board Exam Focus — Light Reflection and Refraction
+
+Light is the highest-marks chapter in Physics, carrying approximately 8 marks in the Bihar Board theory paper.
+
+Topics that appear almost every year: laws of reflection, mirror formula and numericals, types of mirrors and their uses, Snell's law of refraction, lens formula and numericals, power of a lens.
+
+Question types: state laws (1-2 marks), solve mirror or lens numericals (2-3 marks), draw ray diagrams for image formation (3-4 marks), write uses of concave and convex mirrors.
+
+Ray diagrams are very important — concave mirror with object beyond C, between F and C, and convex mirror diagrams are frequently asked. Students must practise drawing these with correct labels.
+
+Common mistake: sign convention errors. New Cartesian Sign Convention must be followed. Distances measured from pole (mirror) or optical centre (lens). Students often mix up mirror formula with lens formula.
+
+---
+
+## Key Formulas — Light
+
+```
+Mirror formula:            1/v + 1/u = 1/f
+Mirror magnification:      m = -v/u = h'/h
+Focal length and radius:   f = R/2
+
+Snell's law:               n1 × sin i = n2 × sin r
+Refractive index:          n = sin i / sin r
+
+Lens formula:              1/v - 1/u = 1/f
+Lens magnification:        m = v/u
+Power of lens:             P = 1/f   (f in metres, P in dioptre D)
+Combined power:            P = P1 + P2
+```
+
+Key definitions:
+- Focal length: Distance between pole or optical centre and the principal focus.
+- Power of a lens: Reciprocal of focal length in metres. SI unit is dioptre (D). Convex lens has positive power, concave lens has negative power.
+- Refractive index: Ratio of speed of light in vacuum to speed of light in the medium.
+
+---
+
+## Important Questions — Bihar Board Pattern
+
+1. State the two laws of reflection of light. (2 marks)
+
+2. An object is placed 15 cm in front of a concave mirror of focal length 10 cm. Find the image distance using the mirror formula. (2 marks)
+
+3. Draw a ray diagram for the image formed when an object is placed between the focus and the pole of a concave mirror. State the nature, position, and size of the image. (3 marks)
+
+4. State Snell's law of refraction. Define the refractive index of a medium. (2 marks)
+
+5. A convex lens has focal length 25 cm. Calculate its power. (1 mark)
+
+6. An object 5 cm tall is placed 20 cm from a convex lens of focal length 10 cm. Find the image distance and the size of the image. (3 marks)
+
+7. Write two uses each of concave mirror and convex mirror in daily life. (2 marks)
+
+8. What is the difference between a real image and a virtual image? (2 marks)

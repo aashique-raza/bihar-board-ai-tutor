@@ -815,8 +815,8 @@ Frontend: In CHAPTER_COMPLETE message (after STEP-4 fix), add action: `{ type: '
 | STEP-8 | [x] | 2026-06-27 | 2026-06-27 | Chapter-aware chips solved inherently by STEP-6 |
 | STEP-9 | [x] | 2026-06-27 | 2026-06-27 | Fixed decider bias & nextStepPrompt Hinglish rules |
 | STEP-10 | [x] | — | 2026-06-30 | Global fallback in step5 + deterministic redirect in intentRouter (no LLM, CHAPTER_COMPLETE pattern) |
-| STEP-11 | [ ] | — | — | Foundation content files |
-| STEP-12 | [ ] | — | — | Chapter metadata |
+| STEP-11 | [x] | — | 2026-06-30 | Replaced with prompt updates: corePersona (capabilities) + redirectPrompt (study tips warmth). No new intents, no RAG files. |
+| STEP-12 | [x] | — | 2026-06-30 | Added Exam Focus + Key Formulas + Important Questions to top 5 chapters. Run npm run rag:index to apply. |
 | STEP-13 | [ ] | — | — | State machine (post-launch) |
 | STEP-14 | [ ] | — | — | FocusModal progress |
 | STEP-15 | [ ] | — | — | FocusModal hardcoded subjects |

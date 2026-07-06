@@ -1019,3 +1019,74 @@ Oils and fatty foods are flushed with nitrogen to prevent oxidation. Nitrogen is
 ## 14. Keywords
 
 chemical reaction, chemical equation, word equation, skeletal equation, balanced equation, reactant, product, law of conservation of mass, state symbols, combination reaction, decomposition reaction, thermal decomposition, electrolytic decomposition, photolytic decomposition, exothermic reaction, endothermic reaction, displacement reaction, double displacement reaction, precipitation reaction, precipitate, oxidation, reduction, redox reaction, corrosion, rusting, rancidity, magnesium oxide, calcium oxide, calcium hydroxide, calcium carbonate, ferrous sulphate, lead nitrate, silver chloride, copper sulphate, barium sulphate
+
+---
+
+## Bihar Board Exam Focus — Chemical Reactions and Equations
+
+Chemical Reactions and Equations carries approximately 6 marks in the Bihar Board theory paper.
+
+Topics that appear almost every year: balancing chemical equations, types of reactions (combination, decomposition, displacement, double displacement), oxidation and reduction, exothermic and endothermic reactions.
+
+Question types: balance a given chemical equation (2 marks), identify the type of reaction from an equation (1 mark), define a term with example (2 marks), write the chemical equation for a given reaction (2 marks), write differences between oxidation and reduction (2 marks).
+
+Balancing equations is extremely important — students must practise balancing several equations before the exam.
+
+Common mistakes: not balancing equations correctly, confusing oxidation with reduction. Remember: OIL RIG — Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons).
+
+---
+
+## Key Reactions and Definitions — Chemical Reactions
+
+Important chemical equations:
+```
+Combination (Magnesium burning):
+2Mg + O₂ → 2MgO
+
+Decomposition (Ferrous sulphate):
+2FeSO₄ → Fe₂O₃ + SO₂ + SO₃
+
+Displacement (Zinc + Copper sulphate):
+Zn + CuSO₄ → ZnSO₄ + Cu
+
+Double displacement (Precipitation):
+Na₂SO₄ + BaCl₂ → BaSO₄↓ + 2NaCl
+
+Respiration (exothermic):
+C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy
+
+Corrosion of iron (rusting):
+4Fe + 3O₂ + xH₂O → 2Fe₂O₃·xH₂O
+```
+
+Key definitions:
+- Chemical reaction: Process in which reactants are converted into products with different properties.
+- Combination reaction: Two or more substances combine to form a single product.
+- Decomposition reaction: Single reactant breaks down into two or more products.
+- Displacement reaction: More reactive element displaces less reactive element from its salt solution.
+- Exothermic reaction: Reaction that releases heat energy to the surroundings.
+- Endothermic reaction: Reaction that absorbs heat energy from the surroundings.
+- Oxidation: Gain of oxygen or loss of hydrogen or loss of electrons.
+- Reduction: Loss of oxygen or gain of hydrogen or gain of electrons.
+- Corrosion: Slow destruction of metals by reaction with moisture and oxygen in the environment.
+- Rancidity: Oxidation of fats and oils in food causing bad smell and taste.
+
+---
+
+## Important Questions — Bihar Board Pattern
+
+1. Balance the following chemical equation: Fe + H₂O → Fe₃O₄ + H₂ (2 marks)
+
+2. Define combination reaction. Give one example with a balanced chemical equation. (2 marks)
+
+3. What is a displacement reaction? Write one example with equation. Why does zinc displace copper from copper sulphate solution? (3 marks)
+
+4. Write the difference between exothermic and endothermic reactions. Give one example of each. (3 marks)
+
+5. Define oxidation and reduction. Give one example of a redox reaction with equation. (3 marks)
+
+6. What is corrosion? Write two methods to prevent corrosion of iron. (2 marks)
+
+7. What is rancidity? Write two ways to prevent rancidity of food. (2 marks)
+
+8. Identify the type of reaction: 2H₂O → 2H₂ + O₂. Name the method used to bring about this reaction. (2 marks)

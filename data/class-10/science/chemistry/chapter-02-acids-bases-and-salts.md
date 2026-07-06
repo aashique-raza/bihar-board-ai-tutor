@@ -1296,3 +1296,70 @@ Baking soda:
 ## 25. Keywords
 
 acid, base, alkali, salt, litmus, turmeric, methyl orange, phenolphthalein, olfactory indicator, onion indicator, vanilla essence, clove oil, acidic solution, basic solution, neutral solution, hydrogen ion, hydronium ion, hydroxide ion, neutralisation, metal carbonate, metal hydrogen carbonate, carbon dioxide, lime water, calcium carbonate, calcium hydrogen carbonate, pH scale, acid rain, antacid, tooth decay, methanoic acid, sodium chloride, rock salt, chlor-alkali process, sodium hydroxide, chlorine, hydrogen, bleaching powder, calcium oxychloride, baking soda, sodium hydrogen carbonate, washing soda, sodium carbonate decahydrate, water of crystallisation, copper sulphate, gypsum, plaster of Paris
+
+---
+
+## Bihar Board Exam Focus — Acids, Bases and Salts
+
+Acids, Bases and Salts carries approximately 6 marks in the Bihar Board theory paper.
+
+Topics that appear almost every year: properties of acids and bases, pH scale, neutralisation reaction, important salts (baking soda, washing soda, bleaching powder, plaster of Paris) and their uses, indicators and their colour changes.
+
+Question types: write properties and uses of a named salt (2-3 marks), define acid or base with example (2 marks), explain the pH scale (2 marks), write the neutralisation reaction (2 marks), identify indicator colour changes (1 mark).
+
+Common mistake: students confuse baking soda (NaHCO₃) with washing soda (Na₂CO₃·10H₂O). Baking soda is used in cooking and as antacid. Washing soda is used in cleaning and removing hardness of water. Do not mix these up.
+
+---
+
+## Key Definitions and Reactions — Acids, Bases and Salts
+
+```
+Neutralisation:
+Acid + Base → Salt + Water
+HCl + NaOH → NaCl + H₂O
+
+Acid with metal carbonate:
+Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂↑
+
+Acid with metal hydrogen carbonate:
+NaHCO₃ + HCl → NaCl + H₂O + CO₂↑
+
+Chlor-alkali process (electrolysis of brine):
+2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂
+```
+
+pH scale (0 to 14):
+- pH less than 7 → acidic
+- pH equal to 7 → neutral
+- pH greater than 7 → basic or alkaline
+
+Indicator colours:
+- Litmus: red in acid, blue in base
+- Methyl orange: red in acid, yellow in base
+- Phenolphthalein: colourless in acid, pink in base
+
+Important salts:
+- Baking soda: NaHCO₃ — used in cooking (releases CO₂), as antacid for acidity
+- Washing soda: Na₂CO₃·10H₂O — used in cleaning, removing permanent hardness of water
+- Bleaching powder: CaOCl₂ — used for disinfecting water, bleaching cloth and paper
+- Plaster of Paris: CaSO₄·½H₂O — used in making casts for fractured bones, making moulds
+
+---
+
+## Important Questions — Bihar Board Pattern
+
+1. What is the pH scale? What does pH less than 7 indicate? Give one example. (2 marks)
+
+2. Write the chemical name and formula of baking soda. State two uses of baking soda. (2 marks)
+
+3. Write two differences between washing soda and baking soda. Give one use of each. (3 marks)
+
+4. What happens when an acid reacts with a metal carbonate? Write the chemical equation for the reaction of hydrochloric acid with sodium carbonate. (2 marks)
+
+5. What are indicators? Name two chemical indicators and state the colour they show in acid and in base. (3 marks)
+
+6. What is neutralisation? Write one example with balanced equation. (2 marks)
+
+7. What is bleaching powder? Write its chemical formula and two uses. (2 marks)
+
+8. What is the chlor-alkali process? Name the three products and write one use of each product. (3 marks)

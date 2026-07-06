@@ -8,6 +8,11 @@ const __dirname = path.dirname(__filename);
 const backendRoot = path.resolve(__dirname, '..', '..');
 const scienceContentDir = path.resolve(backendRoot, '..', 'data', 'class-10', 'science');
 
+// Foundation/orientation content (e.g. science-overview.md) uses this section so
+// it stays retrievable by RAG but never appears as a selectable chapter in FocusModal —
+// a student shouldn't be able to pick "Meta" as if it were a real subject section.
+const NON_BROWSABLE_SECTIONS = ['Meta'];
+
 const SUBJECT_ORDER = ['Hindi', 'English', 'Math', 'Science', 'Social Science', 'Sanskrit'];
 const SECTION_ORDER = [
   'Physics', 'Chemistry', 'Biology',
@@ -105,6 +110,8 @@ const buildStudyMapFromDocuments = (documents) => {
 
   for (const doc of documents) {
     const metadata = doc.metadata;
+    if (NON_BROWSABLE_SECTIONS.includes(metadata.section)) continue;
+
     const subject = getOrCreateSubject(subjectsById, metadata.subject);
     const section = getOrCreateSection(subject.sectionsById, metadata.section);
 

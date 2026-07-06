@@ -1272,3 +1272,63 @@ Plants remove waste in different ways. Oxygen from photosynthesis is released th
 ## Keywords
 
 Life processes, nutrition, autotrophic nutrition, heterotrophic nutrition, photosynthesis, chlorophyll, stomata, guard cells, carbon dioxide, oxygen, starch, enzymes, salivary amylase, digestion, alimentary canal, oesophagus, stomach, hydrochloric acid, pepsin, mucus, bile, liver, pancreas, trypsin, lipase, small intestine, villi, absorption, respiration, aerobic respiration, anaerobic respiration, pyruvate, ethanol, lactic acid, mitochondria, ATP, alveoli, haemoglobin, breathing, transportation, blood, plasma, red blood cells, platelets, heart, atrium, ventricle, arteries, veins, capillaries, double circulation, blood pressure, lymph, xylem, phloem, transpiration, transpiration pull, translocation, excretion, kidney, nephron, glomerulus, Bowman's capsule, urine, dialysis, artificial kidney, plant excretion.
+
+---
+
+## Bihar Board Exam Focus — Life Processes
+
+Life Processes carries approximately 8 marks in the Bihar Board theory paper, making it the highest-marks Biology chapter.
+
+Topics that appear almost every year: photosynthesis (equation and process), aerobic vs anaerobic respiration, human digestive system, double circulation, excretion in humans (kidneys and nephrons).
+
+Question types: write the chemical equation for photosynthesis or respiration (2 marks), explain a process with diagram (3-4 marks), write differences between two processes (2 marks), one-word or one-line answers (1 mark each).
+
+Diagrams frequently asked: human heart showing four chambers, nephron structure showing filtration and reabsorption, alimentary canal showing organs of digestion.
+
+Common mistake: students confuse breathing with respiration. Breathing is the physical movement of air in and out of lungs. Respiration is the chemical process inside cells where glucose is broken down to release energy.
+
+---
+
+## Key Equations and Definitions — Life Processes
+
+```
+Photosynthesis:
+6CO₂ + 6H₂O + sunlight (chlorophyll) → C₆H₁₂O₆ + 6O₂
+
+Aerobic respiration:
+C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy (ATP)
+
+Anaerobic respiration in yeast:
+C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + Energy
+
+Anaerobic respiration in muscles:
+C₆H₁₂O₆ → 2C₃H₆O₃ (lactic acid) + Energy
+```
+
+Key definitions:
+- Photosynthesis: Process by which green plants use sunlight, water, and carbon dioxide to make glucose and oxygen. Occurs in chloroplasts.
+- Aerobic respiration: Breakdown of glucose in the presence of oxygen to produce energy, carbon dioxide, and water.
+- Anaerobic respiration: Breakdown of glucose without oxygen, producing less energy. Produces ethanol in yeast, lactic acid in muscles.
+- Double circulation: Blood passes through the heart twice for one complete circuit of the body. Ensures oxygenated and deoxygenated blood do not mix.
+- Excretion: Removal of metabolic waste products from the body. Main organ in humans is kidney.
+- Nephron: Functional unit of the kidney. Filters blood and produces urine through filtration, reabsorption, and secretion.
+
+---
+
+## Important Questions — Bihar Board Pattern
+
+1. What is photosynthesis? Write the chemical equation for photosynthesis. Name the raw materials and products. (3 marks)
+
+2. Write two differences between aerobic and anaerobic respiration. Give one example of each. (3 marks)
+
+3. Describe the process of digestion in the small intestine. Name two enzymes involved. (3 marks)
+
+4. What is double circulation? Why is it important for humans? (2 marks)
+
+5. Draw a labelled diagram of the human heart showing the four chambers and the direction of blood flow. (3 marks)
+
+6. How is urine formed in the human kidney? Describe the role of the nephron. (3 marks)
+
+7. How do plants get rid of their waste products? Name any two methods. (2 marks)
+
+8. What is the difference between breathing and cellular respiration? (2 marks)
