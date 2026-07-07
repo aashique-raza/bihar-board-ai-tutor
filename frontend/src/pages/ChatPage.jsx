@@ -579,13 +579,23 @@ function ChatPage({ theme, toggleTheme }) {
         handleClearFocus();
         break;
 
-      // These two come from buildRecommendation() on the backend. The label shown to
-      // the student varies by progress state ("Shuru karo", "Haan wahan se chalein"),
-      // but we always send this same proven-safe canonical phrase as the actual
-      // question — decouples display copy from decider-intent routing so a future
-      // wording change can never silently misclassify the request.
+      // These come from buildRecommendation() on the backend. The label shown to the
+      // student varies by progress state, but we always send this same proven-safe
+      // canonical phrase as the actual question — decouples display copy from
+      // decider-intent routing so a future wording change can never silently
+      // misclassify the request.
+      // 'next_step' = genuinely starting the chapter (not_started/revising states) —
+      // "Chapter shuru karein" is accurate here.
       case 'next_step':
         handleAsk('Chapter shuru karein', studyModeRef.current);
+        break;
+      // 'continue_step' = resuming mid-chapter (in_progress state). Must NOT reuse
+      // "Chapter shuru karein" — the backend advances correctly either way (NEXT_STEP
+      // always reads chapterProgress.currentTopicId regardless of phrasing), but the
+      // student's own message would misleadingly read "start the chapter" when they
+      // clicked "continue". "Aage badhao" is decider-safe (its first NEXT_STEP example).
+      case 'continue_step':
+        handleAsk('Aage badhao', studyModeRef.current);
         break;
       case 'chapter_overview':
         handleAsk('Chapter overview batao', studyModeRef.current);

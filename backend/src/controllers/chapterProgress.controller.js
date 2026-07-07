@@ -79,7 +79,12 @@ const buildRecommendation = (progress, topics) => {
     action:  'resume',
     message: `Wapas aaye! ${topicLabel} tak pahuche the — wahan se chalein?`,
     chips: [
-      { type: 'next_step',    label: 'Haan, wahan se chalein'            },
+      // NOT 'next_step' — that type means "genuinely start the chapter" (used by
+      // not_started/revising) and maps to the canonical phrase "Chapter shuru karein"
+      // on the frontend. Reusing it here made the student's own message literally say
+      // "start the chapter" when they meant "continue" — confusing even though the
+      // backend advanced correctly. 'continue_step' maps to "Aage badhao" instead.
+      { type: 'continue_step', label: 'Haan, wahan se chalein'            },
       { type: 'restart_topic', label: `Topic 1 se fresh shuru`           },
       { type: 'roadmap',      label: `Roadmap dikhao (${completedCount}/${progress.totalCoreTopics || '?'} done)` },
     ],
