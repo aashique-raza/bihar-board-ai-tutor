@@ -9,7 +9,6 @@ import {
   getChapterProgress,
   listUserChapterProgress,
   resetChapterProgress,
-  markChapterRevising,
 } from '../services/chapterProgress.service.js';
 import { loadCurriculumIndex }  from '../curriculum/curriculumIndexLoader.js';
 import { getChapterCoreTopics } from '../curriculum/topicResolver.js';
@@ -55,12 +54,18 @@ const buildRecommendation = (progress, topics) => {
   }
 
   if (progress.status === 'revising') {
+    // A revision reset always clears currentTopicId to null (see resetChapterProgress),
+    // so this state is reached only right after "Revision karo" — there is never a
+    // partial revision position to resume. Same shape as not_started, distinct wording.
+    const firstTopic = topics[0];
     return {
-      action:  'resume',
-      message: 'Revision mode — kahan se shuru karein?',
+      action:  'start',
+      message: firstTopic
+        ? `Revision shuru! Pehla topic hai '${firstTopic.title}'.`
+        : 'Revision shuru karte hain!',
       chips: [
-        { type: 'next_step',   label: 'Wahan se chalein'    },
-        { type: 'next_step',   label: 'Topic 1 se fresh'    },
+        { type: 'next_step',       label: 'Shuru karo'       },
+        { type: 'chapter_overview', label: 'Pehle overview do' },
       ],
     };
   }
@@ -75,7 +80,7 @@ const buildRecommendation = (progress, topics) => {
     message: `Wapas aaye! ${topicLabel} tak pahuche the — wahan se chalein?`,
     chips: [
       { type: 'next_step',    label: 'Haan, wahan se chalein'            },
-      { type: 'next_step',    label: `Topic 1 se fresh shuru`            },
+      { type: 'restart_topic', label: `Topic 1 se fresh shuru`           },
       { type: 'roadmap',      label: `Roadmap dikhao (${completedCount}/${progress.totalCoreTopics || '?'} done)` },
     ],
   };
@@ -191,11 +196,13 @@ export const listChapterProgressController = async (req, res, next) => {
 
 // ─── POST /api/v1/chapter-progress/:chapterId/action ─────────────────────────
 
+const ALLOWED_RESET_STATUSES = new Set(['in_progress', 'revising']);
+
 export const chapterActionController = async (req, res, next) => {
   try {
     const { userId, guestId } = extractIdentity(req);
     const { chapterId } = req.params;
-    const { action }    = req.body;
+    const { action, status } = req.body;
 
     if (!chapterId) return next(new ApiError(400, 'chapterId is required.'));
     if (!action)    return next(new ApiError(400, 'action is required.'));
@@ -203,16 +210,17 @@ export const chapterActionController = async (req, res, next) => {
     let updatedDoc;
 
     switch (action) {
-      case 'reset':
-        updatedDoc = await resetChapterProgress(userId, guestId, chapterId);
+      case 'reset': {
+        // status defaults to 'in_progress' (plain restart). Pass status: 'revising'
+        // for the "revise a completed chapter" flow — resetChapterProgress never
+        // touches completedAt, so the original completion timestamp survives.
+        const resetStatus = ALLOWED_RESET_STATUSES.has(status) ? status : 'in_progress';
+        updatedDoc = await resetChapterProgress(userId, guestId, chapterId, { status: resetStatus });
         break;
-
-      case 'mark_revising':
-        updatedDoc = await markChapterRevising(userId, guestId, chapterId);
-        break;
+      }
 
       default:
-        return next(new ApiError(400, `Unknown action: '${action}'. Allowed: reset, mark_revising`));
+        return next(new ApiError(400, `Unknown action: '${action}'. Allowed: reset`));
     }
 
     if (!updatedDoc) {

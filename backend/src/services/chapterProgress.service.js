@@ -223,40 +223,29 @@ export const markChapterComplete = async (userId, guestId, chapterId) => {
 };
 
 /**
- * Reset chapter progress — "start over" action.
- * Called from chapterProgress.controller POST /:chapterId/action { action: 'reset' }.
+ * Reset chapter progress — clears the topic pointer and completed list so the
+ * student starts fresh from topic 1.
+ * Called from chapterProgress.controller POST /:chapterId/action { action: 'reset', status? }.
+ *
+ * `status` defaults to 'in_progress' (mid-chapter restart, discarding partial progress).
+ * Pass status: 'revising' for the "revise a completed chapter" flow — note completedAt
+ * is intentionally NEVER touched here, so a chapter's original completion timestamp
+ * survives a later revision reset.
  */
-export const resetChapterProgress = async (userId, guestId, chapterId) => {
+export const resetChapterProgress = async (userId, guestId, chapterId, { status = 'in_progress' } = {}) => {
   if (!chapterId) return null;
 
   const doc = await ChapterProgress.findOneAndUpdate(
     buildFilter(userId, guestId, chapterId),
     {
       $set: {
-        status:            'in_progress',
+        status,
         currentTopicId:    null,
         completedTopicIds: [],
         progressPercent:   0,
-        completedAt:       null,
         lastStudiedAt:     new Date(),
       },
     },
-    { returnDocument: 'after', new: true }
-  );
-
-  await invalidateCache(userId, guestId, chapterId);
-  return doc;
-};
-
-/**
- * Mark chapter as "revising" — student chose to re-study a completed chapter.
- */
-export const markChapterRevising = async (userId, guestId, chapterId) => {
-  if (!chapterId) return null;
-
-  const doc = await ChapterProgress.findOneAndUpdate(
-    buildFilter(userId, guestId, chapterId),
-    { $set: { status: 'revising', lastStudiedAt: new Date() } },
     { returnDocument: 'after', new: true }
   );
 

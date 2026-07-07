@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { askTutor, fetchSessionHistory, fetchStudyMap } from '../api/tutorApi.js';
+import { askTutor, fetchSessionHistory, fetchStudyMap, fetchChapterProgress, chapterProgressAction } from '../api/tutorApi.js';
 import AskBar from '../components/AskBar.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import FocusModal from '../components/FocusModal.jsx';
@@ -12,6 +12,7 @@ import Topbar from '../components/Topbar.jsx';
 import { STUDY_MODES } from '../constants/studyModes.js';
 import { clearSessionId, getSavedSessionId, saveSessionId } from '../utils/session.js';
 import { findFirstChapter } from '../utils/studyMap.js';
+import { useChapterTopics } from '../hooks/useChapterTopics.js';
 import {
   getGuestTurnCount,
   incrementGuestTurnCount,
@@ -78,6 +79,37 @@ const createFocusMessage = (chapter) => ({
   ]
 });
 
+// Builds a "roadmap" message purely from already-loaded client state — no backend/LLM
+// call. Shows a small window around the student's current position (mirrors the
+// windowing FocusProgressHeader's tooltip already uses) rather than the full topic
+// list, since some chapters have 40+ core topics.
+const buildRoadmapMessage = (topics, currentTopicId, completedTopicIds) => {
+  if (!Array.isArray(topics) || topics.length === 0) {
+    return {
+      id: crypto.randomUUID(),
+      role: 'zuno',
+      sections: [{ heading: '', content: 'Roadmap abhi load nahi ho paayi. Thodi der mein try karo.' }],
+      sources: [],
+    };
+  }
+
+  const currentIndex = topics.findIndex((t) => t.topicId === currentTopicId);
+  const anchor = currentIndex === -1 ? 0 : currentIndex;
+  const windowTopics = topics.slice(Math.max(0, anchor - 2), Math.min(topics.length, anchor + 4));
+
+  const sections = [
+    { heading: '', content: `${completedTopicIds.length} / ${topics.length} topics complete` },
+    ...windowTopics.map((t) => {
+      const isDone = completedTopicIds.includes(t.topicId);
+      const isCurrent = t.topicId === currentTopicId;
+      const icon = isDone ? '✅' : isCurrent ? '🟢' : '🔒';
+      return { heading: '', content: `${icon} ${t.title}` };
+    }),
+  ];
+
+  return { id: crypto.randomUUID(), role: 'zuno', sections, sources: [] };
+};
+
 // --- ChatPage component ---
 
 function ChatPage({ theme, toggleTheme }) {
@@ -108,7 +140,10 @@ function ChatPage({ theme, toggleTheme }) {
   // Focus Progress State
   const [completedTopicIds, setCompletedTopicIds] = useState([]);
   const [currentTopicId, setCurrentTopicId] = useState(null);
-  
+
+  // Loaded for the "roadmap" suggested action — built purely client-side, no LLM call.
+  const { topics: chapterTopics } = useChapterTopics(selectedChapterId);
+
   const [studyMap, setStudyMap] = useState(null);
   const [messages, setMessages] = useState([]);
   const [isHistoryLoading, setIsHistoryLoading] = useState(true);
@@ -249,9 +284,9 @@ function ChatPage({ theme, toggleTheme }) {
     return null;
   };
 
-  const handleFocusChapterSelect = (chapterId) => {
+  const handleFocusChapterSelect = async (chapterId) => {
     const nextChapter = findChapterById(chapterId);
-    
+
     // Auto-start a new session if we are already in an active chat.
     // This prevents a 'global' session from being illegally converted to a 'focus' session.
     if (messages.length > 0) {
@@ -264,18 +299,51 @@ function ChatPage({ theme, toggleTheme }) {
       setCurrentTopicId(null);
       refresh();
     }
-    
+
     setSelectedChapterId(chapterId);
     setStudyMode(STUDY_MODES.focus);
     setIsFocusModalOpen(false);
     setError('');
-    
-    if (nextChapter) {
-      // Small timeout ensures React processes the empty messages state first before appending the focus prompt
-      setTimeout(() => {
-        setMessages([{ ...createFocusMessage(nextChapter), isNew: true }]);
-      }, 0);
+
+    if (!nextChapter) return;
+
+    // Fetch real cross-session progress so the welcome message + chips reflect where
+    // the student actually left off, instead of always showing the generic "start"
+    // text regardless of progress. Falls back to the static message on any failure.
+    let progressData = null;
+    try {
+      progressData = await fetchChapterProgress(chapterId);
+    } catch {
+      progressData = null;
     }
+
+    // Staleness guard: the student may have picked a different chapter, or left focus
+    // mode entirely, while this fetch was in flight — don't apply a stale result.
+    if (selectedChapterIdRef.current !== chapterId || studyModeRef.current !== STUDY_MODES.focus) {
+      return;
+    }
+
+    // Sync the actual progress pointers too — not just the welcome text. Without this,
+    // the header and the "roadmap" action would keep showing the pre-fetch [] /null
+    // state (everything locked, 0%) until the next ask() response corrected it.
+    if (progressData?.progress) {
+      setCompletedTopicIds(progressData.progress.completedTopicIds || []);
+      setCurrentTopicId(progressData.progress.currentTopicId || null);
+    }
+
+    const recommendation = progressData?.recommendation;
+    const focusMessage = recommendation
+      ? {
+          id: crypto.randomUUID(),
+          role: 'zuno',
+          status: 'focus_selected',
+          answer: recommendation.message,
+          sources: [],
+          suggestedActions: recommendation.chips || [],
+        }
+      : createFocusMessage(nextChapter);
+
+    setMessages([{ ...focusMessage, isNew: true }]);
   };
 
   const handleClearFocus = () => {
@@ -380,14 +448,12 @@ function ChatPage({ theme, toggleTheme }) {
 
       const isNowLocked = payload.session?.isLocked === true;
       
-      // Update Focus progress from response session payload
-      if (payload.session) {
-        if ('completedTopicIds' in payload.session) {
-          setCompletedTopicIds(payload.session.completedTopicIds ?? []);
-        }
-        if ('currentTopicId' in payload.session) {
-          setCurrentTopicId(payload.session.currentTopicId ?? null);
-        }
+      // Update Focus progress from the response's chapterProgress payload —
+      // ChapterProgress is the single source of truth for topic progress now,
+      // not session.completedTopicIds/currentTopicId (removed in the BUG-1 fix).
+      if (payload.chapterProgress) {
+        setCompletedTopicIds(payload.chapterProgress.completedTopicIds ?? []);
+        setCurrentTopicId(payload.chapterProgress.currentTopicId ?? null);
       }
 
       // Bust the useChapterProgress hook cache so FocusModal shows fresh data next open
@@ -501,20 +567,58 @@ function ChatPage({ theme, toggleTheme }) {
     await handleAsk(q, STUDY_MODES.global);
   };
 
-  const handleSuggestedAction = useCallback((action) => {
+  const handleSuggestedAction = useCallback(async (action) => {
     if (controllerRef.current) return; // block if request already in-flight
 
     switch (action.type) {
       case 'switch_chapter':
         setIsFocusModalOpen(true);
         break;
+
       case 'global_mode':
         handleClearFocus();
         break;
+
+      // These two come from buildRecommendation() on the backend. The label shown to
+      // the student varies by progress state ("Shuru karo", "Haan wahan se chalein"),
+      // but we always send this same proven-safe canonical phrase as the actual
+      // question — decouples display copy from decider-intent routing so a future
+      // wording change can never silently misclassify the request.
+      case 'next_step':
+        handleAsk('Chapter shuru karein', studyModeRef.current);
+        break;
+      case 'chapter_overview':
+        handleAsk('Chapter overview batao', studyModeRef.current);
+        break;
+
+      // Discards progress and starts over — needs a backend reset BEFORE asking,
+      // otherwise NEXT_STEP would resolve from the old (unreset) topic pointer.
+      case 'restart_topic':
+      case 'revise_chapter': {
+        const chapterId = selectedChapterIdRef.current;
+        if (!chapterId) return;
+        const resetStatus = action.type === 'revise_chapter' ? 'revising' : 'in_progress';
+        try {
+          await chapterProgressAction(chapterId, 'reset', { status: resetStatus });
+          window.dispatchEvent(new CustomEvent('chapter-progress-updated', { detail: { chapterId } }));
+          handleAsk('Chapter shuru karein', studyModeRef.current);
+        } catch {
+          showToast('Progress reset nahi hua. Dobara try karo.', 'error');
+        }
+        break;
+      }
+
+      // Pure frontend — built from already-loaded topics/progress, no backend/LLM call.
+      case 'roadmap': {
+        const roadmapMessage = buildRoadmapMessage(chapterTopics, currentTopicId, completedTopicIds);
+        setMessages((prev) => [...prev, { ...roadmapMessage, isNew: true }]);
+        break;
+      }
+
       default:
         handleAsk(action.label, studyModeRef.current);
     }
-  }, [handleAsk, handleClearFocus]);
+  }, [handleAsk, handleClearFocus, showToast, chapterTopics, currentTopicId, completedTopicIds]);
 
   const handleSessionSwitch = useCallback(async (session) => {
     if (session.sessionId === sessionId) return; // already on this session

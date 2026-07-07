@@ -392,6 +392,34 @@ This endpoint (`GET /api/v1/chapter-progress/:chapterId`) is fully built and wor
 
 ---
 
+### BUG-2 — IMPLEMENTATION + VERIFICATION NOTES (2026-07-07)
+
+**Rethought and redesigned before implementing** (per Farhan's request to re-verify the first draft) — found and fixed 3 real problems before writing code:
+1. Decider-prompt phrase coverage gap (recommendation labels like "Haan, wahan se chalein" would likely misclassify as GREETING) — solved by decoupling display label from a fixed, already-proven-safe canonical question sent to the backend. No decider/prompt changes needed at all.
+2. `buildRecommendation()`'s "revising" branch modeled a scenario ("continue a partial revision") that can never actually occur once reset always nulls `currentTopicId` — simplified to match `not_started`'s shape with distinct wording.
+3. Neither existing backend function matched the decided "revise" semantics exactly — generalized `resetChapterProgress()` (added `status` param, stopped nulling `completedAt`) instead of adding a duplicate function; removed the now-dead `markChapterRevising()`.
+Also caught: two recommendation chips shared the same `next_step` type despite needing different handling (plain continue vs. reset-then-restart) — gave the restart chip its own type, `restart_topic`.
+
+**Files changed:**
+- `backend/src/services/chapterProgress.service.js` — `resetChapterProgress()` generalized (status param, completedAt never touched); `markChapterRevising()` removed.
+- `backend/src/controllers/chapterProgress.controller.js` — action controller passes `status` through (validated against an allowlist); `mark_revising` case removed; `buildRecommendation()`'s revising branch simplified; in_progress branch's 2nd chip changed to `restart_topic` type.
+- `frontend/src/api/tutorApi.js` — `chapterProgressAction()` generalized to accept arbitrary extra body fields.
+- `frontend/src/pages/ChatPage.jsx` — `handleFocusChapterSelect()` now async: fetches `GET /chapter-progress/:chapterId`, builds the welcome message from `recommendation.message`/`chips` (falls back to the old static message on fetch failure), staleness-guarded against rapid chapter/mode switching. `handleSuggestedAction()` gained `next_step`/`chapter_overview` (canonical-phrase ask), `restart_topic`/`revise_chapter` (reset-then-ask), `roadmap` (pure client-side message, no backend/LLM call) cases. Also fixed a carry-over bug from BUG-1: the ask-response handler was still reading `payload.session.completedTopicIds/currentTopicId` (removed in BUG-1) instead of `payload.chapterProgress.*` — this was silently keeping the progress header frozen even after BUG-1 shipped.
+
+**Verified (2026-07-07), end-to-end against the running app:**
+1. `npm run build` (frontend) — clean. Backend files syntax-checked — clean.
+2. Fresh chapter (never studied): entry message correctly read *"Chalo shuru karte hain! Pehla topic hai '1. What Are Life Processes?'."* with chips "Shuru karo"/"Pehle overview do" — not the old generic static text.
+3. Clicking "Shuru karo" sent the canonical "Chapter shuru karein" as the actual question (confirmed in the student message bubble) regardless of the chip's own label — decider never saw the display copy.
+4. Returning to an in-progress chapter: entry message correctly read *"Wapas aaye! '2. Nutrition' tak pahuche the — wahan se chalein?"* with `next_step`/`restart_topic`/`roadmap` chips, and the progress header showed the correct topic/% **immediately on chapter selection**, before any ask.
+5. "Roadmap dikhao" — confirmed **zero network calls** to `/ask`; rendered a windowed topic list (✅ done / 🟢 current / 🔒 locked) built purely from already-loaded client state. Caught and fixed a bug here: initially showed everything locked because `handleFocusChapterSelect` wasn't syncing `completedTopicIds`/`currentTopicId` local state from the fetched progress (only used it for the message) — fixed, re-verified correct icons after the fix.
+6. "Topic 1 se fresh shuru" (`restart_topic`) — confirmed via MongoDB: `currentTopicId`/`completedTopicIds`/`progressPercent` reset, `status` stayed `'in_progress'`, then correctly re-taught topic 1.
+7. `revise_chapter` flow — verified directly via API calls (simulating a completed chapter rather than grinding through 30 real topics): reset-with-`status=revising` correctly set `status: 'revising'`, cleared `currentTopicId`/`completedTopicIds`/`progressPercent`, and **preserved the original `completedAt` timestamp** exactly as decided. Follow-up `GET` correctly returned the simplified revising recommendation ("Revision shuru! Pehla topic hai...").
+8. Test data cleanup: synthetic guestId's `chapter_progress` doc and a session accidentally polluted by a test mistake (wrong localStorage key) were deleted; confirmed Farhan's own real progress data (`Control and Coordination: 2%`, `Electricity: 0%`) was untouched throughout.
+
+**Not yet done:** BUG-3 (topic granularity — chapters ranging 11 to 59 core topics) is the next item in this file.
+
+---
+
 ## SECONDARY ISSUES (real, but not core-breaking — fix after the above)
 
 ### ISSUE-1 `[ ]` `completedTopicIds` only grows via NEXT_STEP intent
@@ -411,7 +439,7 @@ If a student asks concept questions/doubts instead of tapping "aage badhao", no 
 |------|--------|---------------|------------|-------|
 | ARCHITECTURE DECISION | `[x]` | 2026-07-06 | 2026-07-06 | ChapterProgress = single source of truth; chatState fields removed; fresh revision reset (completedAt preserved) |
 | BUG-1 (resume wiped) | `[x]` | 2026-07-06 | 2026-07-06 | Implemented + verified end-to-end (see notes below) |
-| BUG-2 (frontend zeroing) | `[~]` | 2026-07-06 | — | Scope expanded to wire buildRecommendation() into focus-entry message + chips (absorbs ISSUE-3) |
+| BUG-2 (frontend zeroing) | `[x]` | 2026-07-06 | 2026-07-07 | Implemented + verified end-to-end (see notes below). Absorbed ISSUE-3. |
 | BUG-3 (topic granularity) | `[ ]` | — | — | Content/index rework — own sub-discussion |
 | ISSUE-1 (completedTopicIds gaps) | `[ ]` | — | — | After core bugs |
 | ISSUE-2 (header fallback guesswork) | `[ ]` | — | — | After core bugs |

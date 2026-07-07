@@ -105,11 +105,11 @@ export const listChapterProgress = async ({ status, limit = 10 } = {}) => {
   }
 };
 
-export const chapterProgressAction = async (chapterId, action, topicId = null) => {
+export const chapterProgressAction = async (chapterId, action, extra = {}) => {
   try {
     const { data } = await axiosInstance.post(
       `/api/v1/chapter-progress/${encodeURIComponent(chapterId)}/action`,
-      { action, ...(topicId && { topicId }) }
+      { action, ...extra }
     );
     return data.data;
   } catch (err) {
