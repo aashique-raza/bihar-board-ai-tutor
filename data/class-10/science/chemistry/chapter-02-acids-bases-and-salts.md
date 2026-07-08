@@ -140,7 +140,7 @@ In basic medium, the smell of some olfactory indicators may disappear or change.
 
 ## 3. Chemical Properties of Acids and Bases
 
-## 3.1 Reaction of Acids with Metals
+### 3.1 Reaction of Acids with Metals
 
 Acids react with many metals to form salt and hydrogen gas.
 
@@ -176,7 +176,7 @@ When granulated zinc is added to dilute acid:
 
 ---
 
-## 3.2 Reaction of Bases with Metals
+### 3.2 Reaction of Bases with Metals
 
 Some bases react with metals to form salt and hydrogen gas.
 
@@ -194,7 +194,7 @@ Not all metals react with bases.
 
 ---
 
-## 3.3 Reaction of Acids with Metal Carbonates and Metal Hydrogen Carbonates
+### 3.3 Reaction of Acids with Metal Carbonates and Metal Hydrogen Carbonates
 
 Acids react with metal carbonates and metal hydrogen carbonates to form salt, carbon dioxide and water.
 
@@ -246,7 +246,7 @@ Important examples of calcium carbonate:
 
 ---
 
-## 3.4 Reaction of Acids and Bases: Neutralisation
+### 3.4 Reaction of Acids and Bases: Neutralisation
 
 When an acid reacts with a base, salt and water are formed. This reaction is called **neutralisation reaction**.
 
@@ -277,7 +277,7 @@ Activity idea:
 
 ---
 
-## 3.5 Reaction of Metallic Oxides with Acids
+### 3.5 Reaction of Metallic Oxides with Acids
 
 Metallic oxides react with acids to form salt and water.
 
@@ -304,7 +304,7 @@ Metallic oxides are basic in nature because they react with acids to give salt a
 
 ---
 
-## 3.6 Reaction of Non-Metallic Oxides with Bases
+### 3.6 Reaction of Non-Metallic Oxides with Bases
 
 Non-metallic oxides react with bases to form salt and water.
 
@@ -322,7 +322,7 @@ Non-metallic oxides are acidic in nature because they react with bases to give s
 
 ## 4. What Do All Acids and Bases Have in Common?
 
-## 4.1 Acids Produce Hydrogen Ions in Water
+### 4.1 Acids Produce Hydrogen Ions in Water
 
 All acids show acidic behaviour because they produce hydrogen ions in water.
 
@@ -342,7 +342,7 @@ Important point:
 
 Acids show acidic properties only in the presence of water.
 
-## 4.2 Bases Produce Hydroxide Ions in Water
+### 4.2 Bases Produce Hydroxide Ions in Water
 
 Bases show basic behaviour because they produce hydroxide ions in water.
 
@@ -387,7 +387,7 @@ Moist blue litmus turns red in HCl gas because water helps HCl produce `H+` or `
 
 ---
 
-## 6. Dilution of Acids and Bases
+### 5.1 Dilution of Acids and Bases
 
 Dilution means mixing an acid or base with water to decrease the concentration of ions per unit volume.
 
@@ -477,7 +477,7 @@ Example:
 
 ## 8. Importance of pH in Daily Life
 
-## 8.1 pH in Living Organisms
+### 8.1 pH in Living Organisms
 
 The human body works properly in a narrow pH range of about `7.0` to `7.8`.
 
@@ -492,7 +492,7 @@ Effect:
 - Acid rain lowers the pH of river water.
 - Aquatic life becomes difficult in such water.
 
-## 8.2 pH of Soil
+### 8.2 pH of Soil
 
 Plants need a specific soil pH for healthy growth.
 
@@ -504,7 +504,7 @@ If soil is too acidic, farmers may add:
 
 These substances neutralise excess acidity in soil.
 
-## 8.3 pH in the Digestive System
+### 8.3 pH in the Digestive System
 
 The stomach produces hydrochloric acid, which helps in digestion.
 
@@ -520,7 +520,7 @@ Magnesium hydroxide, Mg(OH)2
 
 Milk of magnesia is commonly used as an antacid.
 
-## 8.4 pH and Tooth Decay
+### 8.4 pH and Tooth Decay
 
 Tooth decay starts when the pH of the mouth falls below about `5.5`.
 
@@ -537,7 +537,7 @@ Prevention:
 - Clean mouth after eating.
 - Use basic toothpaste to neutralise excess acid.
 
-## 8.5 Self-Defence by Animals and Plants
+### 8.5 Self-Defence by Animals and Plants
 
 Bee sting and nettle leaves release acids that cause pain and irritation.
 
@@ -569,7 +569,7 @@ A weak base like baking soda can neutralise the acid and reduce pain.
 
 ---
 
-## 10. Salts
+### 9.1 Salts
 
 A salt is an ionic compound formed when an acid reacts with a base, metal, metal carbonate or metal hydrogen carbonate.
 
@@ -585,7 +585,7 @@ Examples:
 | Sodium carbonate | `Na2CO3` |
 | Sodium hydrogen carbonate | `NaHCO3` |
 
-## 10.1 Salt Families
+#### 9.1.1 Salt Families
 
 Salts having the same positive ion or same negative ion belong to the same family.
 
@@ -594,7 +594,7 @@ Examples:
 - `NaCl` and `Na2SO4` belong to the sodium salt family because both contain `Na+`.
 - `NaCl` and `KCl` belong to the chloride salt family because both contain `Cl-`.
 
-## 10.2 pH of Salts
+#### 9.1.2 pH of Salts
 
 The pH of a salt depends on the acid and base from which it is formed.
 
@@ -673,7 +673,7 @@ Products formed:
 
 ---
 
-## 13. Bleaching Powder
+### 12.1 Bleaching Powder
 
 Bleaching powder is commonly represented as `CaOCl2`.
 
@@ -806,7 +806,7 @@ CaSO4.2H2O
 
 ---
 
-## 17. Plaster of Paris
+### 16.1 Plaster of Paris
 
 Plaster of Paris is calcium sulphate hemihydrate.
 

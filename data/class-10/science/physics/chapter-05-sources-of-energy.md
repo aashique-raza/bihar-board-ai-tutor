@@ -52,7 +52,7 @@ A good source of energy should have these properties:
 
 ---
 
-## Good Fuel
+### Good Fuel
 
 A good fuel should:
 
@@ -254,7 +254,7 @@ Biomass comes from plants and animals. If plants are grown again and waste is co
 
 ---
 
-## Wood and Charcoal
+### Wood and Charcoal
 
 Wood has been used as fuel for a long time.
 
@@ -415,7 +415,7 @@ Solar constant ≈ 1.4 kW/m²
 
 ---
 
-## Solar Cooker
+### Solar Cooker
 
 A solar cooker uses sunlight to cook food.
 
@@ -458,7 +458,7 @@ A concave mirror is most suitable because it focuses sunlight at one region and 
 
 ---
 
-## Solar Water Heater
+### Solar Water Heater
 
 A solar water heater uses solar energy to heat water.
 
@@ -476,7 +476,7 @@ It is less useful on cloudy days or at night.
 
 ---
 
-## Solar Cell
+### Solar Cell
 
 A solar cell converts solar energy directly into electrical energy.
 
@@ -555,7 +555,7 @@ The rise and fall of sea water can be used to generate electricity.
 
 ---
 
-## Wave Energy
+### Wave Energy
 
 Wave energy is the kinetic energy of ocean waves.
 
@@ -575,7 +575,7 @@ Wave energy can be trapped using special devices to rotate turbines and generate
 
 ---
 
-## Ocean Thermal Energy
+### Ocean Thermal Energy
 
 Ocean thermal energy is obtained from the temperature difference between warm surface water and cold deep water of the ocean.
 
@@ -641,7 +641,7 @@ The chapter mainly discusses **nuclear fission**.
 
 ---
 
-## Nuclear Fission
+### Nuclear Fission
 
 Nuclear fission is the process in which the nucleus of a heavy atom, such as uranium, plutonium, or thorium, is split into lighter nuclei by bombarding it with low-energy neutrons.
 
@@ -704,7 +704,7 @@ Where:
 
 ---
 
-## Nuclear Fusion
+### Nuclear Fusion
 
 Nuclear fusion is the process in which two light nuclei combine to form a heavier nucleus and release a large amount of energy.
 
@@ -788,7 +788,7 @@ Biomass is renewable only if plants are replanted and waste is managed sustainab
 
 ---
 
-## Non-Renewable Sources
+### Non-Renewable Sources
 
 Non-renewable sources cannot be replenished in a short time.
 
@@ -801,7 +801,7 @@ Examples:
 
 ---
 
-## Exhaustible Sources
+### Exhaustible Sources
 
 Exhaustible sources can get depleted after continuous use.
 
@@ -814,7 +814,7 @@ Examples:
 
 ---
 
-## Inexhaustible Sources
+### Inexhaustible Sources
 
 Inexhaustible sources are available in such huge amounts that they are unlikely to run out in practical human time scales.
 

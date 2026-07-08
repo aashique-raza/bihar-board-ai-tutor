@@ -72,7 +72,7 @@ There are two main types of nutrition:
 
 ---
 
-## 3. Autotrophic Nutrition
+### 2.1 Autotrophic Nutrition
 
 Autotrophic nutrition is the mode of nutrition in which organisms prepare their own food from simple inorganic substances.
 
@@ -113,7 +113,7 @@ These steps may not happen immediately one after another. In desert plants, carb
 
 ---
 
-## 4. Raw Materials Required for Photosynthesis
+### 2.2 Raw Materials Required for Photosynthesis
 
 Photosynthesis requires:
 
@@ -143,7 +143,7 @@ Each stoma is controlled by guard cells. When guard cells swell, the pore opens.
 
 ---
 
-## 5. Activities Related to Photosynthesis
+### 2.3 Activities Related to Photosynthesis
 
 ### Activity: Chlorophyll Is Necessary for Photosynthesis
 
@@ -196,7 +196,7 @@ Heterotrophs use complex food materials prepared by autotrophs. These complex su
 
 ---
 
-## 7. Nutrition in Amoeba
+### 6.1 Nutrition in Amoeba
 
 Amoeba is a unicellular organism.
 
@@ -237,9 +237,9 @@ Associated glands:
 
 ---
 
-## 9. Human Digestive System
+### 8.1 Human Digestive System
 
-### 9.1 Mouth
+#### 8.1.1 Mouth
 
 Digestion begins in the mouth.
 
@@ -256,13 +256,13 @@ Important enzyme:
 Salivary amylase: starch → sugar
 ```
 
-### 9.2 Oesophagus
+#### 8.1.2 Oesophagus
 
 The oesophagus carries food from the mouth to the stomach.
 
 Food moves through the alimentary canal by rhythmic contraction and relaxation of muscles. This movement is called peristalsis.
 
-### 9.3 Stomach
+#### 8.1.3 Stomach
 
 The stomach is a muscular organ that stores and mixes food with gastric juice.
 
@@ -282,7 +282,7 @@ Functions:
 
 Hydrochloric acid also helps kill many harmful microbes present in food.
 
-### 9.4 Small Intestine
+#### 8.1.4 Small Intestine
 
 The small intestine is the main site for complete digestion and absorption of food.
 
@@ -299,7 +299,7 @@ Functions:
 - Digestion of fats
 - Absorption of digested food
 
-### 9.5 Liver and Bile
+#### 8.1.5 Liver and Bile
 
 The liver secretes bile juice. Bile is stored in the gall bladder.
 
@@ -311,7 +311,7 @@ Functions of bile:
 
 Breaking fat into tiny droplets is called emulsification.
 
-### 9.6 Pancreas
+#### 8.1.6 Pancreas
 
 The pancreas secretes pancreatic juice.
 
@@ -322,7 +322,7 @@ Important pancreatic enzymes:
 | Trypsin | Digests proteins |
 | Lipase | Digests emulsified fats |
 
-### 9.7 Intestinal Juice
+#### 8.1.7 Intestinal Juice
 
 The glands in the wall of the small intestine secrete intestinal juice.
 
@@ -334,7 +334,7 @@ Complex carbohydrates → Glucose
 Fats → Fatty acids + Glycerol
 ```
 
-### 9.8 Villi
+#### 8.1.8 Villi
 
 The inner lining of the small intestine has many finger-like projections called villi.
 
@@ -344,7 +344,7 @@ Functions of villi:
 - Absorb digested food.
 - Pass absorbed food into blood vessels.
 
-### 9.9 Large Intestine
+#### 8.1.9 Large Intestine
 
 The large intestine absorbs water from undigested food.
 
@@ -374,9 +374,9 @@ After this, pyruvate can follow different pathways depending on the presence or 
 
 ---
 
-## 11. Pathways of Glucose Breakdown
+### 10.1 Pathways of Glucose Breakdown
 
-### 11.1 Anaerobic Respiration in Yeast
+#### 10.1.1 Anaerobic Respiration in Yeast
 
 In the absence of oxygen, pyruvate is converted into ethanol and carbon dioxide.
 
@@ -386,7 +386,7 @@ Glucose → Pyruvate → Ethanol + Carbon dioxide + Energy
 
 This process occurs in yeast during fermentation.
 
-### 11.2 Anaerobic Respiration in Muscles
+#### 10.1.2 Anaerobic Respiration in Muscles
 
 When oxygen is insufficient in muscle cells, pyruvate is converted into lactic acid.
 
@@ -396,7 +396,7 @@ Glucose → Pyruvate → Lactic acid + Energy
 
 Accumulation of lactic acid in muscles can cause cramps.
 
-### 11.3 Aerobic Respiration
+#### 10.1.3 Aerobic Respiration
 
 In the presence of oxygen, pyruvate is broken down completely into carbon dioxide and water.
 
@@ -410,7 +410,7 @@ Aerobic respiration releases much more energy than anaerobic respiration.
 
 ---
 
-## 12. ATP
+### 10.2 ATP
 
 ATP stands for adenosine triphosphate.
 
@@ -449,7 +449,7 @@ At night:
 
 ---
 
-## 14. Respiration in Aquatic and Terrestrial Animals
+### 13.1 Respiration in Aquatic and Terrestrial Animals
 
 Aquatic animals use oxygen dissolved in water.
 
@@ -529,7 +529,7 @@ Important points:
 
 ---
 
-## 17. Transportation
+### 16.1 Transportation
 
 Transportation is the movement of substances from one part of the body to another.
 
@@ -547,7 +547,7 @@ In humans, transport occurs through the circulatory system.
 
 ---
 
-## 18. Human Circulatory System
+### 16.2 Human Circulatory System
 
 Main components:
 
@@ -555,7 +555,7 @@ Main components:
 - Blood
 - Blood vessels
 
-### 18.1 Blood
+#### 16.2.1 Blood
 
 Blood is a fluid connective tissue.
 
@@ -568,7 +568,7 @@ Main components:
 | White blood cells | Help in defense |
 | Platelets | Help in blood clotting |
 
-### 18.2 Heart
+#### 16.2.2 Heart
 
 The human heart is a muscular pumping organ about the size of a fist.
 
@@ -581,7 +581,7 @@ It has four chambers:
 
 The heart keeps oxygenated and deoxygenated blood separate.
 
-### 18.3 Flow of Blood Through the Heart
+#### 16.2.3 Flow of Blood Through the Heart
 
 1. Oxygenated blood from the lungs enters the left atrium.
 2. Left atrium contracts and sends blood to the left ventricle.
@@ -592,7 +592,7 @@ The heart keeps oxygenated and deoxygenated blood separate.
 
 Valves prevent the backward flow of blood.
 
-### 18.4 Double Circulation
+#### 16.2.4 Double Circulation
 
 In humans, blood passes through the heart twice in one complete cycle.
 
@@ -645,7 +645,7 @@ Features:
 
 ---
 
-## 20. Blood Pressure
+### 19.1 Blood Pressure
 
 Blood pressure is the force exerted by blood against the walls of blood vessels.
 
@@ -664,7 +664,7 @@ High blood pressure is also called hypertension. It may damage arteries and caus
 
 ---
 
-## 21. Platelets and Blood Clotting
+### 19.2 Platelets and Blood Clotting
 
 Platelets help prevent blood loss.
 
@@ -695,7 +695,7 @@ Functions:
 
 ---
 
-## 23. Transportation in Plants
+### 22.1 Transportation in Plants
 
 Plants need transport systems because roots absorb water and minerals, while leaves prepare food.
 
@@ -708,7 +708,7 @@ Main transport tissues:
 
 ---
 
-## 24. Transport of Water and Minerals in Plants
+### 22.2 Transport of Water and Minerals in Plants
 
 Xylem transports water and minerals.
 
@@ -735,7 +735,7 @@ During the day, when stomata are open, transpiration pull is the major force for
 
 ---
 
-## 25. Translocation of Food in Plants
+### 22.3 Translocation of Food in Plants
 
 Transport of soluble products of photosynthesis is called translocation.
 
@@ -791,7 +791,7 @@ Multicellular organisms use specialized organs for excretion.
 
 ---
 
-## 27. Excretion in Humans
+### 26.1 Excretion in Humans
 
 The human excretory system includes:
 
@@ -821,7 +821,7 @@ Nitrogenous wastes such as urea and uric acid are removed from blood in the kidn
 
 ---
 
-## 28. Nephron
+### 26.2 Nephron
 
 Nephron is the basic filtration unit of the kidney.
 
@@ -842,11 +842,11 @@ Urine formation involves:
 2. Selective reabsorption
 3. Collection of urine
 
-### 28.1 Filtration
+#### 26.2.1 Filtration
 
 Blood enters the glomerulus. Small molecules such as glucose, amino acids, salts, urea, and water are filtered into Bowman's capsule.
 
-### 28.2 Selective Reabsorption
+#### 26.2.2 Selective Reabsorption
 
 As the filtrate passes through the tubule, useful substances are reabsorbed into blood.
 
@@ -862,7 +862,7 @@ The amount of water reabsorbed depends on:
 - How much excess water is present in the body.
 - How much dissolved waste has to be excreted.
 
-### 28.3 Urine Storage and Removal
+#### 26.2.3 Urine Storage and Removal
 
 Urine from each kidney enters the ureter and reaches the urinary bladder.
 
@@ -872,7 +872,7 @@ Urination is under nervous control because the bladder is muscular.
 
 ---
 
-## 29. Artificial Kidney / Dialysis
+### 26.3 Artificial Kidney / Dialysis
 
 Kidneys are vital organs. If kidneys fail, wastes accumulate in the body and may cause death.
 
@@ -892,7 +892,7 @@ Difference from normal kidney:
 
 ---
 
-## 30. Excretion in Plants
+### 26.4 Excretion in Plants
 
 Plants use different methods for excretion.
 

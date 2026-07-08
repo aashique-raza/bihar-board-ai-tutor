@@ -47,9 +47,9 @@ After studying this chapter, a student should be able to:
 
 ---
 
-# 1. Physical Properties of Metals and Non-metals
+## 1. Physical Properties of Metals and Non-metals
 
-## 1.1 Metals
+### 1.1 Metals
 
 Metals generally show the following physical properties:
 
@@ -73,7 +73,7 @@ Metals generally show the following physical properties:
 
 ---
 
-## 1.2 Exceptions in Metals
+### 1.2 Exceptions in Metals
 
 Some metals do not follow the usual properties of metals.
 
@@ -87,7 +87,7 @@ Some metals do not follow the usual properties of metals.
 
 ---
 
-## 1.3 Non-metals
+### 1.3 Non-metals
 
 Non-metals generally show properties opposite to metals.
 
@@ -123,7 +123,7 @@ Non-metals generally show properties opposite to metals.
 
 ---
 
-## 1.4 Physical Difference Between Metals and Non-metals
+### 1.4 Physical Difference Between Metals and Non-metals
 
 | Property | Metals | Non-metals |
 |---|---|---|
@@ -138,9 +138,9 @@ Non-metals generally show properties opposite to metals.
 
 ---
 
-# 2. Chemical Properties of Metals
+## 2. Chemical Properties of Metals
 
-## 2.1 Reaction of Metals with Oxygen
+### 2.1 Reaction of Metals with Oxygen
 
 Most metals react with oxygen to form metal oxides.
 
@@ -174,7 +174,7 @@ Metal oxide + Acid → Salt + Water
 
 ---
 
-## 2.2 Amphoteric Oxides
+### 2.2 Amphoteric Oxides
 
 Some metal oxides react with both acids and bases to form salt and water. Such oxides are called amphoteric oxides.
 
@@ -199,7 +199,7 @@ Here sodium aluminate, NaAlO2, is formed.
 
 ---
 
-## 2.3 Metal Oxides Soluble in Water
+### 2.3 Metal Oxides Soluble in Water
 
 Some metal oxides dissolve in water to form alkalis.
 
@@ -217,7 +217,7 @@ K2O(s) + H2O(l) → 2KOH(aq)
 
 ---
 
-## 2.4 Reactivity of Metals with Oxygen
+### 2.4 Reactivity of Metals with Oxygen
 
 Different metals react with oxygen at different rates.
 
@@ -232,7 +232,7 @@ Different metals react with oxygen at different rates.
 
 ---
 
-# 3. Reaction of Metals with Water
+## 3. Reaction of Metals with Water
 
 Metals react with water to form metal oxide or metal hydroxide and hydrogen gas.
 
@@ -245,7 +245,7 @@ Not all metals react with water in the same way.
 
 ---
 
-## 3.1 Potassium and Sodium with Water
+### 3.1 Potassium and Sodium with Water
 
 Potassium and sodium react violently with cold water. The reaction is highly exothermic and the hydrogen gas produced may catch fire.
 
@@ -263,7 +263,7 @@ Sodium reacts vigorously with oxygen and moisture present in air. To prevent acc
 
 ---
 
-## 3.2 Calcium with Water
+### 3.2 Calcium with Water
 
 Calcium reacts with cold water less violently than sodium and potassium.
 
@@ -275,7 +275,7 @@ Calcium starts floating because bubbles of hydrogen gas stick to its surface.
 
 ---
 
-## 3.3 Magnesium with Water
+### 3.3 Magnesium with Water
 
 Magnesium does not react with cold water. It reacts with hot water to form magnesium hydroxide and hydrogen gas.
 
@@ -287,7 +287,7 @@ Magnesium may also start floating because hydrogen gas bubbles stick to its surf
 
 ---
 
-## 3.4 Aluminium, Zinc and Iron with Water
+### 3.4 Aluminium, Zinc and Iron with Water
 
 Aluminium, zinc and iron do not react with cold or hot water. They react with steam to form metal oxides and hydrogen gas.
 
@@ -305,13 +305,13 @@ Aluminium, zinc and iron do not react with cold or hot water. They react with st
 
 ---
 
-## 3.5 Metals that Do Not React with Water
+### 3.5 Metals that Do Not React with Water
 
 Lead, copper, silver and gold do not react with water.
 
 ---
 
-# 4. Reaction of Metals with Dilute Acids
+## 4. Reaction of Metals with Dilute Acids
 
 Metals generally react with dilute acids to produce salt and hydrogen gas.
 
@@ -339,13 +339,13 @@ Fe + H2SO4 → FeSO4 + H2
 
 ---
 
-## 4.1 Test for Hydrogen Gas
+### 4.1 Test for Hydrogen Gas
 
 Hydrogen gas burns with a pop sound when a burning candle or matchstick is brought near it.
 
 ---
 
-## 4.2 Reactivity Order with Dilute HCl
+### 4.2 Reactivity Order with Dilute HCl
 
 The rate of bubbles and heat produced shows the reactivity of metals.
 
@@ -357,7 +357,7 @@ Copper does not react with dilute hydrochloric acid under normal conditions beca
 
 ---
 
-## 4.3 Metals with Nitric Acid
+### 4.3 Metals with Nitric Acid
 
 Metals generally do not produce hydrogen gas with nitric acid.
 
@@ -371,7 +371,7 @@ Magnesium and manganese react with very dilute nitric acid to produce hydrogen g
 
 ---
 
-# 5. Reaction of Metals with Salt Solutions
+## 5. Reaction of Metals with Salt Solutions
 
 A more reactive metal displaces a less reactive metal from its salt solution.
 
@@ -408,11 +408,11 @@ Cu + FeSO4 → No reaction
 
 ---
 
-# 6. Activity Series of Metals
+## 6. Activity Series of Metals
 
 The activity series is a list of metals arranged in decreasing order of reactivity.
 
-## Activity Series
+### Activity Series
 
 ```text
 K    Potassium       Most reactive
@@ -430,7 +430,7 @@ Ag   Silver
 Au   Gold            Least reactive
 ```
 
-## Use of Activity Series
+### Use of Activity Series
 
 1. Metals above hydrogen can displace hydrogen from dilute acids.
 2. Metals below hydrogen cannot usually displace hydrogen from dilute acids.
@@ -439,7 +439,7 @@ Au   Gold            Least reactive
 
 ---
 
-# 7. How Metals and Non-metals React
+## 7. How Metals and Non-metals React
 
 Metals tend to lose electrons and form positive ions.
 
@@ -457,7 +457,7 @@ The electrostatic attraction between oppositely charged ions forms an ionic bond
 
 ---
 
-## 7.1 Formation of Sodium Chloride
+### 7.1 Formation of Sodium Chloride
 
 Sodium has one electron in its outermost shell.
 
@@ -481,7 +481,7 @@ Sodium chloride is not made of individual NaCl molecules. It exists as an ionic 
 
 ---
 
-## 7.2 Formation of Magnesium Chloride
+### 7.2 Formation of Magnesium Chloride
 
 Magnesium has two electrons in its outermost shell.
 
@@ -507,11 +507,11 @@ Ions present in magnesium chloride:
 
 ---
 
-# 8. Ionic Compounds
+### 7.3 Ionic Compounds
 
 Compounds formed by transfer of electrons from a metal to a non-metal are called ionic compounds or electrovalent compounds.
 
-## 8.1 Properties of Ionic Compounds
+#### 7.3.1 Properties of Ionic Compounds
 
 | Property | Explanation |
 |---|---|
@@ -535,11 +535,11 @@ Compounds formed by transfer of electrons from a metal to a non-metal are called
 
 ---
 
-# 9. Occurrence of Metals
+## 9. Occurrence of Metals
 
 The Earth's crust is the main source of metals. Some salts are also found in sea water.
 
-## Important Terms
+### Important Terms
 
 ### Mineral
 
@@ -555,11 +555,11 @@ Impurities such as soil, sand and other unwanted materials present in an ore are
 
 ---
 
-# 10. Extraction of Metals
+## 10. Extraction of Metals
 
 Metals are extracted from their ores according to their reactivity.
 
-## 10.1 Metals of Low Reactivity
+### 10.1 Metals of Low Reactivity
 
 Metals placed low in the activity series are less reactive. They may occur in free state or can be obtained easily from their compounds.
 
@@ -600,7 +600,7 @@ Copper can be obtained from copper sulphide by heating in air.
 
 ---
 
-## 10.2 Metals of Medium Reactivity
+### 10.2 Metals of Medium Reactivity
 
 Metals in the middle of the activity series are found mainly as sulphides or carbonates.
 
@@ -614,7 +614,7 @@ It is easier to obtain a metal from its oxide than from its sulphide or carbonat
 
 ---
 
-## 10.3 Roasting
+### 10.3 Roasting
 
 Roasting is the process of heating sulphide ore strongly in the presence of excess air to convert it into metal oxide.
 
@@ -626,7 +626,7 @@ Roasting is the process of heating sulphide ore strongly in the presence of exce
 
 ---
 
-## 10.4 Calcination
+### 10.4 Calcination
 
 Calcination is the process of heating carbonate ore strongly in limited air to convert it into metal oxide.
 
@@ -638,7 +638,7 @@ ZnCO3(s) → ZnO(s) + CO2(g)
 
 ---
 
-## 10.5 Reduction of Metal Oxides
+### 10.5 Reduction of Metal Oxides
 
 After conversion into oxide, the metal oxide is reduced to metal using reducing agents such as carbon.
 
@@ -652,7 +652,7 @@ This is a reduction process because zinc oxide loses oxygen.
 
 ---
 
-## 10.6 Displacement Method for Extraction
+### 10.6 Displacement Method for Extraction
 
 Highly reactive metals such as aluminium can displace less reactive metals from their oxides.
 
@@ -664,7 +664,7 @@ Highly reactive metals such as aluminium can displace less reactive metals from 
 
 ---
 
-## 10.7 Thermite Reaction
+### 10.7 Thermite Reaction
 
 The reaction between iron(III) oxide and aluminium is called the thermite reaction.
 
@@ -676,7 +676,7 @@ This reaction produces a very high amount of heat. The molten iron formed is use
 
 ---
 
-## 10.8 Metals of High Reactivity
+### 10.8 Metals of High Reactivity
 
 Highly reactive metals are placed at the top of the activity series.
 
@@ -705,11 +705,11 @@ At anode:
 
 ---
 
-# 11. Refining of Metals
+## 11. Refining of Metals
 
 Metals obtained after extraction usually contain impurities. The process of removing impurities from metals is called refining.
 
-## 11.1 Electrolytic Refining
+### 11.1 Electrolytic Refining
 
 Electrolytic refining is a common method used to purify metals such as copper, zinc, tin, nickel, silver and gold.
 
@@ -729,11 +729,11 @@ When electric current is passed:
 
 ---
 
-# 12. Corrosion
+## 12. Corrosion
 
 Corrosion is the slow destruction of metals due to reaction with substances present in the environment such as air, moisture, acids or gases.
 
-## Examples
+### Examples
 
 | Metal | Corrosion effect |
 |---|---|
@@ -743,7 +743,7 @@ Corrosion is the slow destruction of metals due to reaction with substances pres
 
 ---
 
-## 12.1 Rusting of Iron
+### 12.1 Rusting of Iron
 
 Rusting of iron requires both air and water.
 
@@ -760,11 +760,11 @@ Iron rusts only when both oxygen/air and water/moisture are present.
 
 ---
 
-# 13. Prevention of Corrosion
+### 12.2 Prevention of Corrosion
 
 Iron can be protected from rusting by preventing contact with air and moisture.
 
-## Common Methods
+#### 12.2.1 Common Methods
 
 1. Painting
 2. Oiling
@@ -776,7 +776,7 @@ Iron can be protected from rusting by preventing contact with air and moisture.
 
 ---
 
-## 13.1 Galvanisation
+#### 12.2.2 Galvanisation
 
 Galvanisation is the process of coating iron or steel with a thin layer of zinc to protect it from rusting.
 
@@ -784,7 +784,7 @@ Even if the zinc coating is scratched, iron remains protected because zinc is mo
 
 ---
 
-## 13.2 Anodising
+#### 12.2.3 Anodising
 
 Anodising is the process of forming a thick oxide layer on aluminium.
 
@@ -792,13 +792,13 @@ Aluminium naturally forms a thin oxide layer when exposed to air. This layer pro
 
 ---
 
-# 14. Alloys
+## 14. Alloys
 
 An alloy is a homogeneous mixture of two or more metals, or a metal and a non-metal.
 
 Alloying is done to improve the properties of metals.
 
-## Examples of Alloys
+### Examples of Alloys
 
 | Alloy | Composition | Use |
 |---|---|---|

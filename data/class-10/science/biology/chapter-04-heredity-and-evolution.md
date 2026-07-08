@@ -74,7 +74,7 @@ Evolution over many generations
 
 ---
 
-## 2. Accumulation of Variations During Reproduction
+### 1.1 Accumulation of Variations During Reproduction
 
 Every generation receives:
 
@@ -101,7 +101,7 @@ If one bacterium divides into two bacteria, the two offspring are almost identic
 
 ---
 
-## 3. Importance of Variation
+### 1.2 Importance of Variation
 
 Variation is useful for the survival of a species.
 
@@ -121,7 +121,7 @@ Variation is more important for the survival of a species than for the survival 
 
 ---
 
-## 4. Heredity
+### 1.3 Heredity
 
 Heredity is the transfer of traits from parents to offspring.
 
@@ -142,7 +142,7 @@ In humans, a child receives genetic material from both parents. Therefore, trait
 
 ---
 
-## 5. Inherited Traits
+### 1.4 Inherited Traits
 
 Inherited traits are traits passed from parents to offspring through genes.
 
@@ -162,7 +162,7 @@ If a person develops strong muscles by exercise, the children will not automatic
 
 ---
 
-## 6. Ear Lobe Example
+### 1.5 Ear Lobe Example
 
 In humans, ear lobes may be of two types:
 
@@ -200,7 +200,7 @@ His experiments showed that traits are inherited according to definite rules.
 
 ---
 
-## 8. Mendel's Monohybrid Cross
+### 7.1 Mendel's Monohybrid Cross
 
 A monohybrid cross studies the inheritance of one pair of contrasting traits.
 
@@ -238,7 +238,7 @@ This showed that the dwarf trait was present in the F1 generation but was hidden
 
 ---
 
-## 9. Dominant and Recessive Traits
+### 7.2 Dominant and Recessive Traits
 
 A dominant trait is a trait that appears in the offspring even when only one copy of the gene is present.
 
@@ -270,7 +270,7 @@ Only `tt` plants are dwarf.
 
 ---
 
-## 10. Genotype and Phenotype
+### 7.3 Genotype and Phenotype
 
 Genotype means the genetic constitution of an organism.
 
@@ -295,7 +295,7 @@ Thus, the same visible trait may come from different genetic combinations.
 
 ---
 
-## 11. F1 and F2 Generations
+### 7.4 F1 and F2 Generations
 
 F1 generation means the first filial generation obtained from parental cross.
 
@@ -348,7 +348,7 @@ This proved that different traits are inherited independently.
 
 ---
 
-## 13. Independent Inheritance of Traits
+### 12.1 Independent Inheritance of Traits
 
 Mendel's dihybrid cross showed that different traits are inherited independently.
 
@@ -407,7 +407,7 @@ If the gene produces a less efficient enzyme, less hormone may be produced and t
 
 ---
 
-## 15. Chromosomes and Heredity
+### 14.1 Chromosomes and Heredity
 
 Chromosomes are thread-like structures present in the nucleus.
 
@@ -438,7 +438,7 @@ This maintains chromosome number from generation to generation.
 
 ---
 
-## 16. Sex Determination
+### 14.2 Sex Determination
 
 Sex determination means the process by which the sex of an offspring is decided.
 
@@ -450,7 +450,7 @@ In humans, sex is determined genetically by sex chromosomes.
 
 ---
 
-## 17. Sex Determination in Humans
+### 14.3 Sex Determination in Humans
 
 Humans have 23 pairs of chromosomes.
 
@@ -517,13 +517,13 @@ Evolution does not happen in a single individual. It happens in populations over
 
 ---
 
-## 19. Beetle Population Example
+### 18.1 Beetle Population Example
 
 The textbook explains evolution using a population of beetles living in green bushes.
 
 Suppose most beetles are red, and crows eat beetles.
 
-### Case 1: Green Beetle Variation
+#### 18.1.1 Case 1: Green Beetle Variation
 
 A green beetle appears due to variation.
 
@@ -535,7 +535,7 @@ Over generations, the number of green beetles increases.
 
 This is natural selection.
 
-### Case 2: Blue Beetle Variation and Accident
+#### 18.1.2 Case 2: Blue Beetle Variation and Accident
 
 A blue beetle appears due to variation.
 
@@ -547,7 +547,7 @@ Then the blue beetle population increases by chance.
 
 This is genetic drift.
 
-### Case 3: Starvation and Body Weight
+#### 18.1.3 Case 3: Starvation and Body Weight
 
 If plant disease reduces available leaves, beetles may become undernourished and lose body weight.
 
@@ -559,7 +559,7 @@ This is an acquired trait, not an inherited trait.
 
 ---
 
-## 20. Natural Selection
+### 18.2 Natural Selection
 
 Natural selection is the process in which nature selects organisms with useful variations.
 
@@ -581,7 +581,7 @@ A trait useful in one environment may not be useful in another environment.
 
 ---
 
-## 21. Genetic Drift
+### 18.3 Genetic Drift
 
 Genetic drift is a change in gene frequency in a small population due to chance events.
 
@@ -610,7 +610,7 @@ Acquired traits are generally not inherited because they do not change the DNA o
 
 ---
 
-## 23. Inherited Traits
+### 22.1 Inherited Traits
 
 Inherited traits are traits passed from parents to offspring through genes.
 
@@ -627,7 +627,7 @@ Only inherited traits can directly contribute to evolution.
 
 ---
 
-## 24. Difference Between Acquired and Inherited Traits
+### 22.2 Difference Between Acquired and Inherited Traits
 
 | Acquired Traits | Inherited Traits |
 |---|---|
@@ -655,7 +655,7 @@ According to this idea:
 
 ---
 
-## 26. Miller and Urey Experiment
+### 25.1 Miller and Urey Experiment
 
 Stanley L. Miller and Harold C. Urey performed an experiment in 1953 to test the possibility of chemical origin of life.
 
@@ -702,7 +702,7 @@ Main factors causing speciation:
 
 ---
 
-## 28. Geographical Isolation
+### 27.1 Geographical Isolation
 
 Geographical isolation occurs when a population is separated by physical barriers.
 
@@ -724,7 +724,7 @@ Then they become separate species.
 
 ---
 
-## 29. Gene Flow
+### 27.2 Gene Flow
 
 Gene flow is the movement of genes from one population to another through breeding.
 
@@ -736,7 +736,7 @@ If gene flow stops because of geographical isolation, populations may become dif
 
 ---
 
-## 30. Reproductive Isolation
+### 27.3 Reproductive Isolation
 
 Reproductive isolation occurs when members of two populations can no longer reproduce with each other.
 
@@ -777,7 +777,7 @@ More recent common ancestor
 
 ---
 
-## 32. Characteristics Used in Classification
+### 31.1 Characteristics Used in Classification
 
 A characteristic is a visible or functional feature of an organism.
 
@@ -799,7 +799,7 @@ Presence of a nucleus is more basic than body colour.
 
 ---
 
-## 33. Common Ancestor
+### 31.2 Common Ancestor
 
 A common ancestor is an earlier organism from which two or more groups evolved.
 
@@ -813,7 +813,7 @@ Species that share fewer characteristics may have a distant common ancestor.
 
 ---
 
-## 34. Homologous Organs
+### 31.3 Homologous Organs
 
 Homologous organs have the same basic structure and origin but perform different functions.
 
@@ -839,7 +839,7 @@ They provide evidence for evolution.
 
 ---
 
-## 35. Analogous Organs
+### 31.4 Analogous Organs
 
 Analogous organs perform similar functions but have different basic structure and origin.
 
@@ -877,7 +877,7 @@ They provide evidence that many organisms existed in the past but are now extinc
 
 ---
 
-## 37. Formation of Fossils
+### 36.1 Formation of Fossils
 
 Usually, after death, the body of an organism decomposes.
 
@@ -905,19 +905,19 @@ Fossil forms
 
 ---
 
-## 38. Fossil Dating
+### 36.2 Fossil Dating
 
 Fossil dating means determining the age of fossils.
 
 Two broad methods are discussed:
 
-### 1. Relative Dating
+#### 36.2.1 Relative Dating
 
 Fossils found in deeper layers of rocks are usually older than fossils found in upper layers.
 
 This is because lower layers were formed earlier.
 
-### 2. Isotope Dating
+#### 36.2.2 Isotope Dating
 
 The age of fossils can be estimated by comparing the ratio of different isotopes of certain elements present in the fossil or surrounding rock.
 
@@ -943,7 +943,7 @@ This explains how complex organs like eyes can evolve step by step.
 
 ---
 
-## 40. Evolution of Eye
+### 39.1 Evolution of Eye
 
 The eye is a complex organ, but it likely evolved gradually.
 
@@ -959,7 +959,7 @@ The eye has evolved independently in different groups such as insects, octopus, 
 
 ---
 
-## 41. Evolution of Feathers
+### 39.2 Evolution of Feathers
 
 Feathers may not have originally evolved for flight.
 
@@ -1000,7 +1000,7 @@ This shows that very different-looking plants can develop from a common ancestor
 
 ---
 
-## 43. Molecular Phylogeny
+### 42.1 Molecular Phylogeny
 
 Molecular phylogeny studies evolutionary relationships by comparing DNA or protein sequences of different organisms.
 
@@ -1014,7 +1014,7 @@ Molecular studies often support classification based on visible characteristics.
 
 ---
 
-## 44. Evolution Is Not Equal to Progress
+### 42.2 Evolution Is Not Equal to Progress
 
 Evolution should not be understood as a ladder of progress from lower to higher organisms.
 
@@ -1032,7 +1032,7 @@ Humans are only one species among many species produced by evolution.
 
 ---
 
-## 45. Human Evolution
+### 42.3 Human Evolution
 
 Human evolution is studied using:
 

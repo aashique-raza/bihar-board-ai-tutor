@@ -38,7 +38,7 @@ Human activities affect the environment directly or indirectly. Waste disposal, 
 
 ---
 
-## 2. Waste in the Environment
+### 1.1 Waste in the Environment
 
 In daily life, humans produce many kinds of waste materials such as:
 
@@ -80,7 +80,7 @@ Microorganisms produce specific enzymes that break down specific types of substa
 
 ---
 
-## 4. Non-Biodegradable Substances
+### 3.1 Non-Biodegradable Substances
 
 Non-biodegradable substances are materials that cannot be broken down by biological processes.
 
@@ -134,7 +134,7 @@ A forest, pond, and lake are natural ecosystems. A garden, crop field, and aquar
 
 ---
 
-## 6. Components of an Ecosystem
+### 5.1 Components of an Ecosystem
 
 An ecosystem has two major components:
 
@@ -143,7 +143,7 @@ An ecosystem has two major components:
 
 ---
 
-## 7. Biotic Components
+### 5.2 Biotic Components
 
 Biotic components are the living components of an ecosystem.
 
@@ -164,7 +164,7 @@ Biotic components are divided into three main groups:
 
 ---
 
-## 8. Abiotic Components
+### 5.3 Abiotic Components
 
 Abiotic components are the non-living physical and chemical components of an ecosystem.
 
@@ -314,7 +314,7 @@ Phytoplankton → Zooplankton → Small Fish → Large Fish
 
 ---
 
-## 13. Trophic Levels
+### 12.1 Trophic Levels
 
 Each step of a food chain is called a trophic level.
 
@@ -344,7 +344,7 @@ Tertiary consumers
 
 ---
 
-## 14. Food Web
+### 12.2 Food Web
 
 In nature, most organisms are part of more than one food chain.
 
@@ -380,7 +380,7 @@ Energy does not return from consumers back to the Sun or from herbivores back to
 
 ---
 
-## 16. Ten Percent Law
+### 15.1 Ten Percent Law
 
 Only about 10% of the energy available at one trophic level is transferred to the next trophic level.
 
@@ -399,7 +399,7 @@ Because energy decreases at each trophic level, food chains usually have only th
 
 ---
 
-## 17. Why Food Chains Are Usually Short
+### 15.2 Why Food Chains Are Usually Short
 
 Food chains are usually limited to three or four trophic levels because a large amount of energy is lost at every step.
 
@@ -496,7 +496,7 @@ Ultraviolet radiation can cause:
 
 ---
 
-## 21. Formation of Ozone
+### 20.1 Formation of Ozone
 
 Ozone is formed in the upper atmosphere by the action of ultraviolet radiation on oxygen molecules.
 
@@ -509,7 +509,7 @@ High-energy ultraviolet radiation splits oxygen molecules into oxygen atoms. The
 
 ---
 
-## 22. Ozone Layer Depletion
+### 20.2 Ozone Layer Depletion
 
 Ozone layer depletion means reduction in the amount of ozone in the upper atmosphere.
 
@@ -570,7 +570,7 @@ Non-biodegradable waste can be managed by:
 
 ---
 
-## 24. Disposable Items and Environmental Impact
+### 23.1 Disposable Items and Environmental Impact
 
 Disposable items such as plastic cups, paper cups, plastic bags, and packaging materials increase waste.
 
@@ -592,7 +592,7 @@ Examples of environment-friendly choices:
 
 ---
 
-## 25. Electronic Waste
+### 23.2 Electronic Waste
 
 Electronic waste includes discarded electronic items such as:
 

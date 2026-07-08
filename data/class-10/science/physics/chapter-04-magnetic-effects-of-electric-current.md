@@ -129,7 +129,7 @@ His discovery proved that electric current produces a magnetic field.
 
 ---
 
-## 2. Magnetic Field and Field Lines
+### 1.1 Magnetic Field and Field Lines
 
 A magnet influences the space around it. This region is called the magnetic field.
 
@@ -164,7 +164,7 @@ The direction and pattern of the magnetic field depend on:
 
 ---
 
-## 4. Magnetic Field Around a Straight Current-Carrying Wire
+### 3.1 Magnetic Field Around a Straight Current-Carrying Wire
 
 When current flows through a straight conductor, magnetic field lines around it are concentric circles.
 
@@ -182,7 +182,7 @@ The direction of magnetic field around a straight current-carrying wire is given
 
 ---
 
-## 5. Right-Hand Thumb Rule
+### 3.2 Right-Hand Thumb Rule
 
 Hold the current-carrying conductor in your right hand such that your thumb points in the direction of current.
 
@@ -211,7 +211,7 @@ At the centre of the loop, the field lines become nearly straight and perpendicu
 
 ---
 
-## 7. Magnetic Field Due to a Solenoid
+### 6.1 Magnetic Field Due to a Solenoid
 
 A solenoid is a long coil of many turns of insulated copper wire.
 
@@ -269,7 +269,7 @@ If the direction of magnetic field is reversed, the direction of force also reve
 
 ---
 
-## 10. Fleming’s Left-Hand Rule
+### 9.1 Fleming’s Left-Hand Rule
 
 Fleming’s Left-Hand Rule gives the direction of force on a current-carrying conductor placed in a magnetic field.
 
@@ -366,7 +366,7 @@ A changing magnetic field produces an induced current in a conductor.
 
 ---
 
-## 13. Galvanometer
+### 12.1 Galvanometer
 
 A galvanometer is a device used to detect the presence and direction of small electric current in a circuit.
 
@@ -378,7 +378,7 @@ If current flows in the opposite direction, the pointer deflects to the other si
 
 ---
 
-## 14. Induced Current Using Two Coils
+### 12.2 Induced Current Using Two Coils
 
 If two coils are placed near each other and current in one coil changes, current is induced in the second coil.
 
@@ -406,7 +406,7 @@ This rule is used in electric generators.
 
 ---
 
-## 16. Electric Generator
+### 15.1 Electric Generator
 
 An electric generator converts mechanical energy into electrical energy.
 
@@ -507,7 +507,7 @@ In India, the potential difference between live wire and neutral wire is about `
 
 ---
 
-## 19. Why Appliances Are Connected in Parallel
+### 18.1 Why Appliances Are Connected in Parallel
 
 Domestic appliances are connected in parallel because:
 
@@ -532,7 +532,7 @@ This keeps the appliance body at earth potential and prevents electric shock.
 
 ---
 
-## 21. Fuse
+### 20.1 Fuse
 
 A fuse protects circuits and appliances from excessive current.
 
@@ -544,7 +544,7 @@ This prevents damage due to overloading or short circuit.
 
 ---
 
-## 22. Short Circuit and Overloading
+### 20.2 Short Circuit and Overloading
 
 ### Short Circuit
 
@@ -905,7 +905,7 @@ Answer hint: It provides a low-resistance path for leakage current and protects 
 
 ---
 
-## Quick Revision Table
+### 20.3 Quick Revision Table
 
 | Topic | Key Point |
 |---|---|

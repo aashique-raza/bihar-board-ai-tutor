@@ -83,7 +83,7 @@ Control and coordination help organisms:
 
 ---
 
-## 2. Control and Coordination in Animals
+### 1.1 Control and Coordination in Animals
 
 In animals, control and coordination are mainly carried out by the nervous system and the endocrine system.
 
@@ -100,7 +100,7 @@ Animal coordination involves:
 
 ---
 
-## 3. Animal Nervous System
+### 1.2 Animal Nervous System
 
 The nervous system is made of nerve cells called neurons.
 
@@ -156,7 +156,7 @@ The nerve ending passes the message to the next neuron, muscle cell, or gland.
 
 ---
 
-## 5. Transmission of Nerve Impulse
+### 4.5 Transmission of Nerve Impulse
 
 A nerve impulse travels in this order:
 
@@ -184,7 +184,7 @@ These chemicals cross the gap called synapse and start a similar electrical impu
 
 ---
 
-## 6. Synapse
+### 4.6 Synapse
 
 A synapse is the small gap between two neurons.
 
@@ -204,7 +204,7 @@ Synapse helps in one-way transmission of nerve impulses.
 
 ---
 
-## 7. Nerve-Muscle Junction
+### 4.7 Nerve-Muscle Junction
 
 A nerve impulse can also be passed from a neuron to a muscle cell.
 
@@ -244,7 +244,7 @@ Reflex action is useful because waiting for the brain to think and decide may ta
 
 ---
 
-## 9. Reflex Arc
+### 8.1 Reflex Arc
 
 The path followed by nerve impulses during a reflex action is called a reflex arc.
 
@@ -294,7 +294,7 @@ Reflex arcs are mostly formed in the spinal cord, although the information also 
 
 ---
 
-## 10. Why Reflex Arc Is Important
+### 8.2 Why Reflex Arc Is Important
 
 Reflex arc is important because:
 
@@ -361,7 +361,7 @@ The brain has three main regions:
 
 ---
 
-## 13. Forebrain
+### 12.1 Forebrain
 
 The forebrain is the main thinking part of the brain.
 
@@ -386,7 +386,7 @@ The forebrain also has association areas where sensory information is interprete
 
 ---
 
-## 14. Midbrain
+### 12.2 Midbrain
 
 The midbrain controls some involuntary actions and acts as a connection between different parts of the brain.
 
@@ -394,7 +394,7 @@ It is involved in responses related to sight and sound.
 
 ---
 
-## 15. Hindbrain
+### 12.3 Hindbrain
 
 The hindbrain includes:
 
@@ -402,7 +402,7 @@ The hindbrain includes:
 - Pons
 - Medulla
 
-### 15.1 Cerebellum
+#### 12.3.1 Cerebellum
 
 The cerebellum controls:
 
@@ -418,11 +418,11 @@ Examples of activities controlled with the help of cerebellum:
 - Picking up a pencil
 - Maintaining body posture
 
-### 15.2 Pons
+#### 12.3.2 Pons
 
 Pons helps in the regulation of breathing and acts as a bridge between different parts of the brain.
 
-### 15.3 Medulla
+#### 12.3.3 Medulla
 
 Medulla controls involuntary actions such as:
 
@@ -451,7 +451,7 @@ These actions are decided by the brain and carried out by muscles.
 
 ---
 
-## 17. Involuntary Actions
+### 16.1 Involuntary Actions
 
 Involuntary actions are actions that are not under conscious control.
 
@@ -469,7 +469,7 @@ Many involuntary actions are controlled by the midbrain and hindbrain.
 
 ---
 
-## 18. Difference Between Reflex Action and Voluntary Action
+### 16.2 Difference Between Reflex Action and Voluntary Action
 
 | Point | Reflex Action | Voluntary Action |
 |---|---|---|
@@ -481,7 +481,7 @@ Many involuntary actions are controlled by the midbrain and hindbrain.
 
 ---
 
-## 19. Difference Between Reflex Action and Involuntary Action
+### 16.3 Difference Between Reflex Action and Involuntary Action
 
 | Point | Reflex Action | Involuntary Action |
 |---|---|---|
@@ -492,7 +492,7 @@ Many involuntary actions are controlled by the midbrain and hindbrain.
 
 ---
 
-## 20. Protection of Brain and Spinal Cord
+### 16.4 Protection of Brain and Spinal Cord
 
 The brain and spinal cord are soft and delicate organs.
 
@@ -539,7 +539,7 @@ Examples:
 
 ---
 
-## 22. Immediate Response to Stimulus in Plants
+### 21.1 Immediate Response to Stimulus in Plants
 
 Some plant movements are not related to growth.
 
@@ -574,7 +574,7 @@ Such movements are called tropic movements.
 
 ---
 
-## 24. Tropic Movements
+### 23.1 Tropic Movements
 
 Tropic movement is a directional growth movement of a plant part in response to a stimulus.
 
@@ -592,7 +592,7 @@ Types of tropic movement:
 
 ---
 
-## 25. Phototropism
+### 23.2 Phototropism
 
 Phototropism is the movement of a plant part in response to light.
 
@@ -617,7 +617,7 @@ Shoot bends towards light
 
 ---
 
-## 26. Geotropism / Gravitropism
+### 23.3 Geotropism / Gravitropism
 
 Geotropism is the growth movement of plant parts in response to gravity.
 
@@ -630,7 +630,7 @@ This helps roots go into the soil and shoots grow upwards.
 
 ---
 
-## 27. Hydrotropism
+### 23.4 Hydrotropism
 
 Hydrotropism is the movement of plant parts in response to water.
 
@@ -640,7 +640,7 @@ Example:
 
 ---
 
-## 28. Chemotropism
+### 23.5 Chemotropism
 
 Chemotropism is the movement of plant parts in response to chemicals.
 
@@ -652,7 +652,7 @@ The ovule releases chemical substances that guide the pollen tube.
 
 ---
 
-## 29. Thigmotropism
+### 23.6 Thigmotropism
 
 Thigmotropism is the movement of plant parts in response to touch.
 
@@ -677,7 +677,7 @@ Important plant hormones:
 
 ---
 
-## 31. Auxin
+### 30.1 Auxin
 
 Auxin is produced at the tip of the shoot.
 
@@ -692,7 +692,7 @@ In phototropism, auxin moves to the shaded side of the shoot and causes faster g
 
 ---
 
-## 32. Gibberellin
+### 30.2 Gibberellin
 
 Gibberellin helps in stem growth.
 
@@ -703,7 +703,7 @@ Functions:
 
 ---
 
-## 33. Cytokinin
+### 30.3 Cytokinin
 
 Cytokinin promotes cell division.
 
@@ -722,7 +722,7 @@ Functions:
 
 ---
 
-## 34. Abscisic Acid
+### 30.4 Abscisic Acid
 
 Abscisic acid is a growth-inhibiting hormone.
 
@@ -756,7 +756,7 @@ Characteristics of hormones:
 
 ---
 
-## 36. Endocrine Glands
+### 35.1 Endocrine Glands
 
 Endocrine glands are ductless glands.
 
@@ -813,7 +813,7 @@ Body is ready for fight or flight
 
 ---
 
-## 38. Thyroxine
+### 37.1 Thyroxine
 
 Thyroxine is secreted by the thyroid gland.
 
@@ -835,7 +835,7 @@ Important point:
 
 ---
 
-## 39. Growth Hormone
+### 37.2 Growth Hormone
 
 Growth hormone is secreted by the pituitary gland.
 
@@ -849,17 +849,17 @@ Excess growth hormone may cause abnormal increase in height.
 
 ---
 
-## 40. Sex Hormones
+### 37.3 Sex Hormones
 
 Sex hormones control changes during puberty and reproductive functions.
 
-### Testosterone
+#### 37.3.1 Testosterone
 
 Testosterone is secreted in males by testes.
 
 It controls male secondary sexual characters.
 
-### Estrogen
+#### 37.3.2 Estrogen
 
 Estrogen is secreted in females by ovaries.
 
@@ -867,7 +867,7 @@ It controls female secondary sexual characters.
 
 ---
 
-## 41. Insulin
+### 37.4 Insulin
 
 Insulin is secreted by the pancreas.
 
@@ -907,7 +907,7 @@ Feedback mechanism prevents too much or too little hormone secretion.
 
 ---
 
-## 43. Nervous Coordination vs Hormonal Coordination
+### 42.1 Nervous Coordination vs Hormonal Coordination
 
 | Point | Nervous Coordination | Hormonal Coordination |
 |---|---|---|

@@ -35,15 +35,15 @@ The chapter connects earlier learning about refraction, lenses, and scattering w
 
 ---
 
-# 1. Human Eye
+## 1. Human Eye
 
-## 1.1 Importance of the Human Eye
+### 1.1 Importance of the Human Eye
 
 The human eye is one of the most important sense organs. It allows us to see objects, colours, shape, distance, and movement.
 
 The eye uses light reflected from objects. This light enters the eye and forms an image on the retina.
 
-## 1.2 Structure of the Human Eye
+### 1.2 Structure of the Human Eye
 
 The human eye is almost spherical in shape. Its diameter is about **2.3 cm**.
 
@@ -60,7 +60,7 @@ The human eye is almost spherical in shape. Its diameter is about **2.3 cm**.
 | Optic nerve | Carries electrical signals from retina to brain. |
 | Vitreous humour | Transparent jelly-like fluid inside the eye. |
 
-## 1.3 Working of the Human Eye
+### 1.3 Working of the Human Eye
 
 1. Light enters the eye through the cornea.
 2. The pupil controls the amount of light entering the eye.
@@ -71,7 +71,7 @@ The human eye is almost spherical in shape. Its diameter is about **2.3 cm**.
 7. The optic nerve carries these signals to the brain.
 8. The brain interprets the signals and we see the object upright.
 
-## 1.4 Role of Pupil and Iris
+### 1.4 Role of Pupil and Iris
 
 The pupil works like an adjustable aperture.
 
@@ -80,7 +80,7 @@ The pupil works like an adjustable aperture.
 
 This controls how much light enters the eye.
 
-## 1.5 Why Do We Have Two Eyes?
+### 1.5 Why Do We Have Two Eyes?
 
 Having two eyes gives many advantages:
 
@@ -94,13 +94,13 @@ A single eye gives a flatter view, while two eyes allow us to judge how near or 
 
 ---
 
-# 2. Power of Accommodation
+## 2. Power of Accommodation
 
-## 2.1 Meaning
+### 2.1 Meaning
 
 The ability of the eye lens to adjust its focal length to see nearby and distant objects clearly is called **power of accommodation**.
 
-## 2.2 How Accommodation Happens
+### 2.2 How Accommodation Happens
 
 The eye lens is flexible. Its curvature changes with the help of ciliary muscles.
 
@@ -118,7 +118,7 @@ The eye lens is flexible. Its curvature changes with the help of ciliary muscles
 - Focal length decreases.
 - Nearby object is focused clearly on the retina.
 
-## 2.3 Near Point
+### 2.3 Near Point
 
 The minimum distance at which an object can be seen clearly without strain is called the **near point** or **least distance of distinct vision**.
 
@@ -128,7 +128,7 @@ For a normal adult human eye:
 Near point = 25 cm
 ```
 
-## 2.4 Far Point
+### 2.4 Far Point
 
 The farthest point up to which the eye can see objects clearly is called the **far point**.
 
@@ -144,7 +144,7 @@ So a normal eye can see clearly from:
 25 cm to infinity
 ```
 
-## 2.5 Cataract
+### 2.5 Cataract
 
 Sometimes, especially in old age, the crystalline lens becomes cloudy or milky. This condition is called **cataract**.
 
@@ -159,7 +159,7 @@ Treatment:
 
 ---
 
-# 3. Defects of Vision and Their Correction
+## 3. Defects of Vision and Their Correction
 
 The eye may lose its ability to focus light properly on the retina. Such problems are called **defects of vision** or **refractive defects**.
 
@@ -171,7 +171,7 @@ The three common defects are:
 
 ---
 
-## 3.1 Myopia: Near-Sightedness
+### 3.1 Myopia: Near-Sightedness
 
 ### Meaning
 
@@ -200,7 +200,7 @@ Myopia correction = Concave lens
 
 ---
 
-## 3.2 Hypermetropia: Far-Sightedness
+### 3.2 Hypermetropia: Far-Sightedness
 
 ### Meaning
 
@@ -229,7 +229,7 @@ Hypermetropia correction = Convex lens
 
 ---
 
-## 3.3 Presbyopia
+### 3.3 Presbyopia
 
 ### Meaning
 
@@ -265,9 +265,9 @@ Modern correction may also use contact lenses or surgery.
 
 ---
 
-# 4. Refraction of Light Through a Prism
+## 4. Refraction of Light Through a Prism
 
-## 4.1 Prism
+### 4.1 Prism
 
 A prism is a transparent optical object with two triangular bases and three rectangular side faces.
 
@@ -278,7 +278,7 @@ A triangular glass prism has:
 - Refracting faces inclined to each other.
 - Angle between two refracting faces called the **angle of prism**.
 
-## 4.2 Refraction Through Prism
+### 4.2 Refraction Through Prism
 
 When light passes through a glass prism:
 
@@ -288,7 +288,7 @@ When light passes through a glass prism:
 
 The angle between the incident ray's original direction and the emergent ray is called the **angle of deviation**.
 
-## 4.3 Terms Related to Prism
+### 4.3 Terms Related to Prism
 
 | Term | Meaning |
 |---|---|
@@ -303,15 +303,15 @@ The angle between the incident ray's original direction and the emergent ray is 
 
 ---
 
-# 5. Dispersion of White Light
+## 5. Dispersion of White Light
 
-## 5.1 Meaning
+### 5.1 Meaning
 
 The splitting of white light into its component colours is called **dispersion of light**.
 
 When white light passes through a glass prism, it splits into seven colours.
 
-## 5.2 Spectrum
+### 5.2 Spectrum
 
 The band of coloured components of light is called a **spectrum**.
 
@@ -327,7 +327,7 @@ Shortcut:
 VIBGYOR
 ```
 
-## 5.3 Order of Colours
+### 5.3 Order of Colours
 
 | Order | Colour |
 |---|---|
@@ -339,7 +339,7 @@ VIBGYOR
 | 6 | Orange |
 | 7 | Red |
 
-## 5.4 Why Does Dispersion Occur?
+### 5.4 Why Does Dispersion Occur?
 
 White light contains different colours. Each colour bends by a different amount when passing through a prism.
 
@@ -348,7 +348,7 @@ White light contains different colours. Each colour bends by a different amount 
 
 This difference in bending separates white light into its component colours.
 
-## 5.5 Newton's Experiment
+### 5.5 Newton's Experiment
 
 Newton was the first to obtain the spectrum of sunlight using a glass prism.
 
@@ -358,15 +358,15 @@ This proved that sunlight is made of seven colours.
 
 ---
 
-# 6. Rainbow
+## 6. Rainbow
 
-## 6.1 Meaning
+### 6.1 Meaning
 
 A rainbow is a natural spectrum seen in the sky after rain.
 
 It is formed due to sunlight interacting with tiny water droplets in the atmosphere.
 
-## 6.2 Formation of Rainbow
+### 6.2 Formation of Rainbow
 
 A rainbow is formed due to:
 
@@ -377,7 +377,7 @@ A rainbow is formed due to:
 
 Water droplets act like tiny prisms.
 
-## 6.3 Direction of Rainbow
+### 6.3 Direction of Rainbow
 
 A rainbow is always formed in the direction opposite to the Sun.
 
@@ -388,15 +388,15 @@ To see a rainbow:
 
 ---
 
-# 7. Atmospheric Refraction
+## 7. Atmospheric Refraction
 
-## 7.1 Meaning
+### 7.1 Meaning
 
 The refraction of light by the Earth's atmosphere is called **atmospheric refraction**.
 
 The atmosphere consists of layers of air with different densities and refractive indices. Because of this, light bends gradually while passing through the atmosphere.
 
-## 7.2 Twinkling of Stars
+### 7.2 Twinkling of Stars
 
 Stars twinkle due to atmospheric refraction.
 
@@ -409,7 +409,7 @@ Stars twinkle due to atmospheric refraction.
 - The apparent position and brightness of the star fluctuate.
 - This makes the star appear to twinkle.
 
-## 7.3 Why Planets Do Not Twinkle
+### 7.3 Why Planets Do Not Twinkle
 
 Planets are much closer to Earth than stars. They appear as extended sources of light, not point sources.
 
@@ -417,7 +417,7 @@ Light from different points of a planet undergoes atmospheric refraction, but th
 
 Therefore, planets generally do not twinkle.
 
-## 7.4 Advance Sunrise and Delayed Sunset
+### 7.4 Advance Sunrise and Delayed Sunset
 
 Due to atmospheric refraction:
 
@@ -426,15 +426,15 @@ Due to atmospheric refraction:
 
 So the day appears about **4 minutes longer**.
 
-## 7.5 Flattening of the Sun Near Horizon
+### 7.5 Flattening of the Sun Near Horizon
 
 At sunrise and sunset, atmospheric refraction makes the Sun's disc appear slightly flattened.
 
 ---
 
-# 8. Scattering of Light
+## 8. Scattering of Light
 
-## 8.1 Meaning
+### 8.1 Meaning
 
 Scattering of light occurs when light interacts with small particles and gets redirected in different directions.
 
@@ -444,7 +444,7 @@ Scattering explains many natural phenomena, such as:
 - Red colour of the Sun at sunrise and sunset.
 - Visibility of light beams in fog, smoke, or dust.
 
-## 8.2 Tyndall Effect
+### 8.2 Tyndall Effect
 
 The scattering of light by colloidal particles is called the **Tyndall effect**.
 
@@ -455,7 +455,7 @@ Examples:
 - Headlight beams visible in fog.
 - Light path visible in a colloidal solution.
 
-## 8.3 Colour of Scattered Light
+### 8.3 Colour of Scattered Light
 
 The colour of scattered light depends on the size of scattering particles.
 
@@ -467,7 +467,7 @@ The colour of scattered light depends on the size of scattering particles.
 
 ---
 
-# 9. Why Is the Sky Blue?
+## 9. Why Is the Sky Blue?
 
 The sky appears blue due to scattering of sunlight by tiny air molecules and fine particles in the atmosphere.
 
@@ -481,7 +481,7 @@ This is why astronauts see the sky as black from space.
 
 ---
 
-# 10. Why Does the Sun Appear Red During Sunrise and Sunset?
+### 9.1 Why Does the Sun Appear Red During Sunrise and Sunset?
 
 During sunrise and sunset, sunlight travels a longer distance through the atmosphere before reaching our eyes.
 
@@ -495,7 +495,7 @@ At noon, sunlight travels a shorter path through the atmosphere. Less blue light
 
 ---
 
-# 11. Why Are Danger Signals Red?
+### 9.2 Why Are Danger Signals Red?
 
 Danger signals are red because red light has a longer wavelength and is scattered the least by fog, smoke, or dust.
 

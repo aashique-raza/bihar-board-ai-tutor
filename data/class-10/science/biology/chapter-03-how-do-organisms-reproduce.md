@@ -63,7 +63,7 @@ If organisms did not reproduce, their species would disappear after the death of
 
 ---
 
-## 2. Do Organisms Create Exact Copies of Themselves?
+### 1.1 Do Organisms Create Exact Copies of Themselves?
 
 Organisms usually produce offspring that look similar to themselves.
 
@@ -93,7 +93,7 @@ During reproduction, DNA is copied and passed to the next generation.
 
 ---
 
-## 3. DNA Copying in Reproduction
+### 1.2 DNA Copying in Reproduction
 
 The basic event in reproduction is DNA copying.
 
@@ -127,7 +127,7 @@ These small changes produce variations.
 
 ---
 
-## 4. Variation
+### 1.3 Variation
 
 Variation means differences among individuals of the same species.
 
@@ -147,7 +147,7 @@ Some variations may be useful for survival.
 
 ---
 
-## 5. Importance of Variation
+### 1.4 Importance of Variation
 
 Variation is important for the survival of species.
 
@@ -171,14 +171,14 @@ Variation is more important for the survival of a species than for the survival 
 
 ---
 
-## 6. Types of Reproduction
+### 1.5 Types of Reproduction
 
 There are two main types of reproduction:
 
 1. Asexual reproduction
 2. Sexual reproduction
 
-### 6.1 Asexual Reproduction
+#### 1.5.1 Asexual Reproduction
 
 Asexual reproduction is the type of reproduction in which only one parent is involved.
 
@@ -199,7 +199,7 @@ Main methods of asexual reproduction:
 - Vegetative propagation
 - Spore formation
 
-### 6.2 Sexual Reproduction
+#### 1.5.2 Sexual Reproduction
 
 Sexual reproduction is the type of reproduction in which two parents usually participate and male and female gametes fuse.
 
@@ -221,7 +221,7 @@ In many unicellular organisms, one cell divides to form two or more daughter cel
 
 ---
 
-## 8. Fission
+### 7.1 Fission
 
 Fission is a method of asexual reproduction in which a unicellular organism divides into two or more new individuals.
 
@@ -232,7 +232,7 @@ There are two main types:
 
 ---
 
-## 9. Binary Fission
+### 7.2 Binary Fission
 
 Binary fission is a method of asexual reproduction in which one organism divides into two daughter organisms.
 
@@ -254,7 +254,7 @@ Cytoplasm divides
 Two daughter cells form
 ```
 
-### 9.1 Binary Fission in Amoeba
+#### 7.2.1 Binary Fission in Amoeba
 
 In Amoeba, binary fission can occur in any plane because Amoeba has an irregular shape.
 
@@ -265,7 +265,7 @@ Steps:
 3. Cytoplasm divides.
 4. Two daughter Amoebae are formed.
 
-### 9.2 Binary Fission in Leishmania
+#### 7.2.2 Binary Fission in Leishmania
 
 Leishmania has a definite body organisation and a whip-like structure at one end.
 
@@ -277,7 +277,7 @@ Important point:
 
 ---
 
-## 10. Multiple Fission
+### 7.3 Multiple Fission
 
 Multiple fission is a method of asexual reproduction in which one organism divides into many daughter organisms at the same time.
 
@@ -318,7 +318,7 @@ Important point:
 
 ---
 
-## 12. Fragmentation
+### 11.1 Fragmentation
 
 Fragmentation is a method of asexual reproduction in which the body of a simple multicellular organism breaks into fragments, and each fragment develops into a new organism.
 
@@ -346,7 +346,7 @@ Fragmentation is possible in simple multicellular organisms because their body o
 
 ---
 
-## 13. Why Fragmentation Does Not Work in Complex Organisms
+### 11.2 Why Fragmentation Does Not Work in Complex Organisms
 
 Complex multicellular organisms are not just random groups of cells.
 
@@ -371,7 +371,7 @@ Complex organisms need more specialised methods of reproduction.
 
 ---
 
-## 14. Regeneration
+### 11.3 Regeneration
 
 Regeneration is the ability of an organism to regrow lost body parts.
 
@@ -405,7 +405,7 @@ Reason:
 
 ---
 
-## 15. Budding in Hydra
+### 11.4 Budding in Hydra
 
 Hydra reproduces by budding.
 
@@ -460,7 +460,7 @@ Examples:
 
 ---
 
-## 17. Vegetative Propagation in Potato
+### 16.1 Vegetative Propagation in Potato
 
 Potato has small depressions called eyes.
 
@@ -474,7 +474,7 @@ Important point:
 
 ---
 
-## 18. Vegetative Propagation in Bryophyllum
+### 16.2 Vegetative Propagation in Bryophyllum
 
 Bryophyllum leaves have buds on their margins.
 
@@ -486,7 +486,7 @@ Important point:
 
 ---
 
-## 19. Advantages of Vegetative Propagation
+### 16.3 Advantages of Vegetative Propagation
 
 Vegetative propagation is useful because:
 
@@ -508,7 +508,7 @@ Examples of plants grown by vegetative propagation:
 
 ---
 
-## 20. Artificial Methods of Vegetative Propagation
+### 16.4 Artificial Methods of Vegetative Propagation
 
 Common artificial methods are:
 
@@ -517,7 +517,7 @@ Common artificial methods are:
 - Grafting
 - Tissue culture
 
-### 20.1 Cutting
+#### 16.4.1 Cutting
 
 A part of stem, root, or leaf is cut and planted in soil. It grows into a new plant.
 
@@ -526,15 +526,15 @@ Example:
 - Rose
 - Sugarcane
 
-### 20.2 Layering
+#### 16.4.2 Layering
 
 A branch is bent and covered with soil. Roots develop from the covered part. Later, it is separated and grown as a new plant.
 
-### 20.3 Grafting
+#### 16.4.3 Grafting
 
 Parts of two plants are joined so that they grow as one plant.
 
-### 20.4 Tissue Culture
+#### 16.4.4 Tissue Culture
 
 Tissue culture is a technique in which new plants are grown from plant cells or tissues in an artificial nutrient medium.
 
@@ -598,7 +598,7 @@ New Rhizopus
 
 ---
 
-## 22. Asexual Reproduction Summary Table
+### 21.1 Asexual Reproduction Summary Table
 
 | Method | Organism / Example | Main Feature |
 |---|---|---|
@@ -639,7 +639,7 @@ Sexual reproduction produces greater variation than asexual reproduction.
 
 ---
 
-## 24. Why Sexual Reproduction Is Important
+### 23.1 Why Sexual Reproduction Is Important
 
 Sexual reproduction is important because it creates new combinations of variations.
 
@@ -656,7 +656,7 @@ Advantages:
 
 ---
 
-## 25. Gametes
+### 23.2 Gametes
 
 Gametes are specialised reproductive cells.
 
@@ -673,13 +673,13 @@ If chromosome number were not halved in gametes, it would double in every genera
 
 ---
 
-## 26. Male and Female Gametes
+### 23.3 Male and Female Gametes
 
 In simple organisms, male and female gametes may look similar.
 
 In complex organisms, gametes are specialised.
 
-### 26.1 Male Gamete
+#### 23.3.1 Male Gamete
 
 The male gamete is usually:
 
@@ -692,7 +692,7 @@ Example:
 - Sperm in animals
 - Male gamete inside pollen grain in flowering plants
 
-### 26.2 Female Gamete
+#### 23.3.2 Female Gamete
 
 The female gamete is usually:
 
@@ -722,21 +722,21 @@ Stamen and carpel are the reproductive parts.
 
 ---
 
-## 28. Parts of a Flower
+### 27.1 Parts of a Flower
 
-### 28.1 Sepals
+#### 27.1.1 Sepals
 
 Sepals are the outer green parts of a flower.
 
 They protect the flower in the bud stage.
 
-### 28.2 Petals
+#### 27.1.2 Petals
 
 Petals are usually colourful.
 
 They help attract insects and other pollinators.
 
-### 28.3 Stamen
+#### 27.1.3 Stamen
 
 Stamen is the male reproductive part of a flower.
 
@@ -749,7 +749,7 @@ The anther produces pollen grains.
 
 Pollen grains contain male gametes.
 
-### 28.4 Carpel / Pistil
+#### 27.1.4 Carpel / Pistil
 
 Carpel is the female reproductive part of a flower.
 
@@ -765,9 +765,9 @@ Each ovule contains an egg cell.
 
 ---
 
-## 29. Unisexual and Bisexual Flowers
+### 27.2 Unisexual and Bisexual Flowers
 
-### 29.1 Unisexual Flower
+#### 27.2.1 Unisexual Flower
 
 A flower that contains either stamen or carpel is called a unisexual flower.
 
@@ -776,7 +776,7 @@ Examples:
 - Papaya
 - Watermelon
 
-### 29.2 Bisexual Flower
+#### 27.2.2 Bisexual Flower
 
 A flower that contains both stamen and carpel is called a bisexual flower.
 
@@ -787,7 +787,7 @@ Examples:
 
 ---
 
-## 30. Pollination
+### 27.3 Pollination
 
 Pollination is the transfer of pollen grains from the anther to the stigma.
 
@@ -796,11 +796,11 @@ There are two types:
 1. Self-pollination
 2. Cross-pollination
 
-### 30.1 Self-Pollination
+#### 27.3.1 Self-Pollination
 
 Self-pollination occurs when pollen grains are transferred from the anther to the stigma of the same flower or another flower of the same plant.
 
-### 30.2 Cross-Pollination
+#### 27.3.2 Cross-Pollination
 
 Cross-pollination occurs when pollen grains are transferred from the anther of one flower to the stigma of another flower of the same species on a different plant.
 
@@ -817,7 +817,7 @@ Important point:
 
 ---
 
-## 31. Fertilisation in Flowering Plants
+### 27.4 Fertilisation in Flowering Plants
 
 After pollen grains reach the stigma, the male gamete must reach the female gamete inside the ovule.
 
@@ -851,7 +851,7 @@ Zygote
 
 ---
 
-## 32. Formation of Seed and Fruit
+### 27.5 Formation of Seed and Fruit
 
 After fertilisation:
 
@@ -871,7 +871,7 @@ Important transformations:
 
 ---
 
-## 33. Seed Germination
+### 27.6 Seed Germination
 
 A seed contains an embryo or future plant.
 
@@ -908,7 +908,7 @@ The zygote develops into an embryo and later into a baby.
 
 ---
 
-## 35. Puberty
+### 34.1 Puberty
 
 Puberty is the stage at which the reproductive system becomes functional and the body becomes sexually mature.
 
@@ -918,7 +918,7 @@ Puberty does not occur at exactly the same age in all individuals.
 
 ---
 
-## 36. Common Changes During Puberty
+### 34.2 Common Changes During Puberty
 
 Common changes in boys and girls:
 
@@ -932,7 +932,7 @@ Common changes in boys and girls:
 
 ---
 
-## 37. Changes in Girls During Puberty
+### 34.3 Changes in Girls During Puberty
 
 Changes in girls include:
 
@@ -945,7 +945,7 @@ Changes in girls include:
 
 ---
 
-## 38. Changes in Boys During Puberty
+### 34.4 Changes in Boys During Puberty
 
 Changes in boys include:
 
@@ -971,7 +971,7 @@ The human male reproductive system includes:
 
 ---
 
-## 40. Testes
+### 39.1 Testes
 
 Testes are the male reproductive organs that produce sperms.
 
@@ -991,7 +991,7 @@ Functions of testes:
 
 ---
 
-## 41. Sperm
+### 39.2 Sperm
 
 Sperm is the male gamete.
 
@@ -1004,7 +1004,7 @@ Features:
 
 ---
 
-## 42. Vas Deferens / Sperm Duct
+### 39.3 Vas Deferens / Sperm Duct
 
 The vas deferens carries sperms from testes towards the urethra.
 
@@ -1012,7 +1012,7 @@ It joins with the tube coming from the urinary bladder.
 
 ---
 
-## 43. Seminal Vesicles and Prostate Gland
+### 39.4 Seminal Vesicles and Prostate Gland
 
 Seminal vesicles and prostate gland add fluid secretions to sperms.
 
@@ -1026,7 +1026,7 @@ The mixture of sperms and gland secretions is called semen.
 
 ---
 
-## 44. Urethra and Penis
+### 39.5 Urethra and Penis
 
 The urethra is a common passage for urine and semen.
 
@@ -1046,7 +1046,7 @@ The human female reproductive system includes:
 
 ---
 
-## 46. Ovaries
+### 45.1 Ovaries
 
 Ovaries are the female reproductive organs that produce ova or egg cells.
 
@@ -1060,7 +1060,7 @@ Usually, one egg is released every month by one of the ovaries.
 
 ---
 
-## 47. Oviduct / Fallopian Tube
+### 45.2 Oviduct / Fallopian Tube
 
 The oviduct carries the egg from the ovary to the uterus.
 
@@ -1068,7 +1068,7 @@ Fertilisation usually occurs in the oviduct.
 
 ---
 
-## 48. Uterus
+### 45.3 Uterus
 
 The uterus is a muscular, elastic organ where the embryo develops.
 
@@ -1078,7 +1078,7 @@ The inner lining of the uterus becomes thick and rich in blood supply to nourish
 
 ---
 
-## 49. Cervix and Vagina
+### 45.4 Cervix and Vagina
 
 The cervix is the narrow opening of the uterus.
 
@@ -1116,7 +1116,7 @@ Embryo develops
 
 ---
 
-## 51. Pregnancy and Embryo Development
+### 50.1 Pregnancy and Embryo Development
 
 After fertilisation:
 
@@ -1131,7 +1131,7 @@ The birth occurs due to rhythmic contractions of uterine muscles.
 
 ---
 
-## 52. Placenta
+### 50.2 Placenta
 
 The placenta is a special tissue that connects the developing embryo with the mother's blood supply.
 
@@ -1151,7 +1151,7 @@ Important point:
 
 ---
 
-## 53. Menstruation
+### 50.3 Menstruation
 
 If the egg is not fertilised, it survives for about one day.
 
@@ -1188,7 +1188,7 @@ Reproductive health requires:
 
 ---
 
-## 55. Sexually Transmitted Diseases
+### 54.1 Sexually Transmitted Diseases
 
 Some diseases can spread through sexual contact.
 
@@ -1207,7 +1207,7 @@ A condom can reduce the risk of many sexually transmitted diseases because it ac
 
 ---
 
-## 56. Contraception
+### 54.2 Contraception
 
 Contraception means methods used to prevent pregnancy.
 
@@ -1220,7 +1220,7 @@ Main types of contraceptive methods:
 
 ---
 
-## 57. Barrier Methods
+### 54.3 Barrier Methods
 
 Barrier methods prevent sperms from reaching the egg.
 
@@ -1233,7 +1233,7 @@ Condoms also help reduce the spread of many sexually transmitted diseases.
 
 ---
 
-## 58. Hormonal Methods
+### 54.4 Hormonal Methods
 
 Hormonal methods change the hormone balance in the female body.
 
@@ -1247,7 +1247,7 @@ Possible issue:
 
 ---
 
-## 59. Intrauterine Devices
+### 54.5 Intrauterine Devices
 
 Intrauterine devices are placed in the uterus to prevent pregnancy.
 
@@ -1262,7 +1262,7 @@ Possible issue:
 
 ---
 
-## 60. Surgical Methods
+### 54.6 Surgical Methods
 
 Surgical methods block the transport of gametes.
 
@@ -1283,7 +1283,7 @@ Important point:
 
 ---
 
-## 61. Sex Ratio and Legal Protection
+### 54.7 Sex Ratio and Legal Protection
 
 The sex ratio means the number of females compared to males in a population.
 

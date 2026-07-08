@@ -117,7 +117,7 @@ There are two major types:
 
 # Part 1: Reflection of Light
 
-## Laws of Reflection
+### Laws of Reflection
 
 Reflection follows two laws:
 
@@ -133,7 +133,7 @@ These laws apply to plane mirrors as well as spherical mirrors.
 
 ---
 
-## Image Formed by a Plane Mirror
+### Image Formed by a Plane Mirror
 
 A plane mirror always forms an image with these properties:
 
@@ -154,7 +154,7 @@ In lateral inversion, the left side of the object appears as the right side in t
 
 # Part 2: Spherical Mirrors
 
-## Types of Spherical Mirrors
+### Types of Spherical Mirrors
 
 ### Concave Mirror
 
@@ -232,7 +232,7 @@ f = R / 2
 
 ---
 
-## Image Formation by a Concave Mirror
+### Image Formation by a Concave Mirror
 
 | Object Position | Image Position | Image Size | Nature of Image |
 |---|---|---|---|
@@ -252,7 +252,7 @@ When object is between pole and focus, image becomes virtual, erect, and enlarge
 
 ---
 
-## Image Formation by a Convex Mirror
+### Image Formation by a Convex Mirror
 
 | Object Position | Image Position | Image Size | Nature of Image |
 |---|---|---|---|
@@ -267,7 +267,7 @@ Convex mirror always forms virtual, erect, and diminished image.
 
 ---
 
-## Ray Rules for Spherical Mirrors
+### Ray Rules for Spherical Mirrors
 
 ### Rule 1
 
@@ -304,7 +304,7 @@ A ray incident at the pole:
 
 ---
 
-## Uses of Concave Mirrors
+### Uses of Concave Mirrors
 
 Concave mirrors are used in:
 
@@ -326,7 +326,7 @@ Concave mirrors can:
 
 ---
 
-## Uses of Convex Mirrors
+### Uses of Convex Mirrors
 
 Convex mirrors are used as rear-view mirrors in vehicles.
 
@@ -389,7 +389,7 @@ This formula is valid for both concave and convex mirrors.
 
 ---
 
-## Magnification by Spherical Mirrors
+### Magnification by Spherical Mirrors
 
 Magnification tells how many times the image is enlarged or diminished compared to the object.
 
@@ -421,7 +421,7 @@ m = h' / h = -v / u
 
 # Part 4: Refraction of Light
 
-## What is Refraction?
+### What is Refraction?
 
 Refraction is the change in direction of light when it passes obliquely from one transparent medium to another.
 
@@ -433,7 +433,7 @@ Light travels with different speeds in different media.
 
 ---
 
-## Everyday Examples of Refraction
+### Everyday Examples of Refraction
 
 ```txt
 1. A pencil partly dipped in water appears bent.
@@ -445,7 +445,7 @@ Light travels with different speeds in different media.
 
 ---
 
-## Refraction Through a Rectangular Glass Slab
+### Refraction Through a Rectangular Glass Slab
 
 When a light ray passes through a rectangular glass slab:
 
@@ -462,7 +462,7 @@ The bending at the first surface and the second surface is equal and opposite. S
 
 ---
 
-## Laws of Refraction
+### Laws of Refraction
 
 ### First Law
 
@@ -487,7 +487,7 @@ This constant is called the **refractive index of the second medium with respect
 
 ---
 
-## Bending of Light in Different Media
+### Bending of Light in Different Media
 
 ### From Rarer Medium to Denser Medium
 
@@ -523,7 +523,7 @@ Water → Air
 
 ---
 
-## Refractive Index
+### Refractive Index
 
 Refractive index compares the speed of light in different media.
 
@@ -585,7 +585,7 @@ even though its mass density is lower than water.
 
 ---
 
-## Refractive Indices of Some Media
+### Refractive Indices of Some Media
 
 | Medium | Refractive Index |
 |---|---:|
@@ -624,13 +624,13 @@ Speed of light in diamond = speed of light in vacuum / 2.42
 
 # Part 5: Spherical Lenses
 
-## What is a Lens?
+### What is a Lens?
 
 A lens is a transparent medium bounded by two surfaces, at least one of which is spherical.
 
 ---
 
-## Types of Spherical Lenses
+### Types of Spherical Lenses
 
 ### Convex Lens
 
@@ -714,7 +714,7 @@ The effective diameter of the circular outline of a lens is called aperture.
 
 ---
 
-## Image Formation by a Convex Lens
+### Image Formation by a Convex Lens
 
 | Object Position | Image Position | Image Size | Nature of Image |
 |---|---|---|---|
@@ -734,7 +734,7 @@ When object is between F1 and O, image becomes virtual, erect, and enlarged.
 
 ---
 
-## Image Formation by a Concave Lens
+### Image Formation by a Concave Lens
 
 | Object Position | Image Position | Image Size | Nature of Image |
 |---|---|---|---|
@@ -749,7 +749,7 @@ Concave lens always forms virtual, erect, and diminished image.
 
 ---
 
-## Ray Rules for Lenses
+### Ray Rules for Lenses
 
 ### Rule 1
 
@@ -824,7 +824,7 @@ This formula is valid for both convex and concave lenses.
 
 ---
 
-## Magnification by Lenses
+### Magnification by Lenses
 
 Magnification by a lens is:
 
@@ -856,7 +856,7 @@ v  = image distance
 
 ---
 
-## Power of a Lens
+### Power of a Lens
 
 Power of a lens is the degree of convergence or divergence of light rays.
 
@@ -1195,7 +1195,7 @@ For a concave mirror, use any two of these rays:
 4. Ray incident at P → reflects with angle i = angle r.
 ```
 
-## Convex Mirror Ray Diagram
+### Convex Mirror Ray Diagram
 
 For a convex mirror:
 
@@ -1205,7 +1205,7 @@ For a convex mirror:
 3. Ray incident at P → reflects with angle i = angle r.
 ```
 
-## Convex Lens Ray Diagram
+### Convex Lens Ray Diagram
 
 For a convex lens:
 
@@ -1215,7 +1215,7 @@ For a convex lens:
 3. Ray through optical centre → passes undeviated.
 ```
 
-## Concave Lens Ray Diagram
+### Concave Lens Ray Diagram
 
 For a concave lens:
 
@@ -1240,7 +1240,7 @@ Both can converge light, but:
 | Focal length is negative by sign convention | Focal length is positive by sign convention |
 | Used in headlights, shaving mirrors | Used in magnifying glass, cameras, spectacles |
 
-## Convex Mirror vs Concave Lens
+### Convex Mirror vs Concave Lens
 
 Both diverge light, but:
 
@@ -1251,7 +1251,7 @@ Both diverge light, but:
 | Focal length positive | Focal length negative |
 | Used as rear-view mirror | Used in spectacles for myopia |
 
-## Real Image vs Virtual Image
+### Real Image vs Virtual Image
 
 | Real Image | Virtual Image |
 |---|---|
