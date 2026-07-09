@@ -16,15 +16,26 @@ import Typography from '@mui/material/Typography';
 import { useChapterProgress } from '../hooks/useChapterProgress.js';
 import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 
-const baseSubjects = [
-  { id: 'hindi',          title: 'Hindi',          icon: TranslateRounded },
-  { id: 'english',        title: 'English',         icon: AutoStoriesRounded },
-  { id: 'math',           title: 'Math',            icon: FunctionsRounded },
-  { id: 'science',        title: 'Science',         icon: ScienceRounded },
-  { id: 'social-science', title: 'Social Science',  icon: PublicRounded },
-  { id: 'sanskrit',       title: 'Sanskrit',        icon: MenuBookRounded },
-];
+// Icon + placeholder-title config for subjects, keyed by id. This is a lookup,
+// NOT the render source — the render list is the union of this config and
+// studyMap.focusStudy.subjects (see enrichedSubjects below). That union is the
+// STEP-15 fix: previously this array WAS the render source, so a subject present
+// in studyMap but missing here would silently never appear in the modal at all.
+const SUBJECT_META = {
+  hindi:            { title: 'Hindi',          icon: TranslateRounded },
+  english:          { title: 'English',        icon: AutoStoriesRounded },
+  math:             { title: 'Math',           icon: FunctionsRounded },
+  science:          { title: 'Science',        icon: ScienceRounded },
+  'social-science': { title: 'Social Science', icon: PublicRounded },
+  sanskrit:         { title: 'Sanskrit',       icon: MenuBookRounded },
+};
+const SUBJECT_META_ORDER = Object.keys(SUBJECT_META);
+const DEFAULT_SUBJECT_ICON = MenuBookRounded; // used if studyMap has a subject not in SUBJECT_META
 
+// Unlike SUBJECT_META above, this is safe as-is: it's used as a lookup-with-fallback
+// over `sections`, which always comes from real studyMap data (never the iteration
+// source itself), so a new section never becomes invisible — worst case it gets the
+// generic MenuBookRounded fallback icon.
 const sectionIcons = {
   physics:   BoltRounded,
   chemistry: ScienceRounded,
@@ -52,14 +63,33 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
     return map;
   }, [studyMap]);
 
-  const subjectsInMap = useMemo(() => {
-    const subjects = studyMap?.focusStudy?.subjects || [];
-    return new Set(subjects.map((s) => s.id || s.title?.toLowerCase()));
-  }, [studyMap]);
+  // Union of SUBJECT_META (known/placeholder subjects) and studyMap's real subjects —
+  // guarantees a subject with real content always renders, even if nobody added it
+  // to SUBJECT_META yet (falls back to its live title + DEFAULT_SUBJECT_ICON).
+  const enrichedSubjects = useMemo(() => {
+    const liveById = new Map((studyMap?.focusStudy?.subjects || []).map((s) => [s.id, s]));
+    const allIds = [...new Set([...SUBJECT_META_ORDER, ...liveById.keys()])];
 
-  const enrichedSubjects = useMemo(() =>
-    baseSubjects.map((s) => ({ ...s, available: subjectsInMap.has(s.id) })),
-  [subjectsInMap]);
+    return allIds
+      .map((id) => {
+        const meta = SUBJECT_META[id];
+        const live = liveById.get(id);
+        return {
+          id,
+          title: live?.title || meta?.title || id,
+          icon:  meta?.icon || DEFAULT_SUBJECT_ICON,
+          available: !!live,
+        };
+      })
+      .sort((a, b) => {
+        const ai = SUBJECT_META_ORDER.indexOf(a.id);
+        const bi = SUBJECT_META_ORDER.indexOf(b.id);
+        if (ai !== -1 || bi !== -1) {
+          return (ai === -1 ? Number.MAX_SAFE_INTEGER : ai) - (bi === -1 ? Number.MAX_SAFE_INTEGER : bi);
+        }
+        return a.title.localeCompare(b.title);
+      });
+  }, [studyMap]);
 
   const subjectChapterCounts = useMemo(() => {
     const counts = {};

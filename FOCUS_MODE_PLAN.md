@@ -174,6 +174,30 @@ Same root cause as BUG-2 (`buildRecommendation()`'s chips were computed but neve
 
 ---
 
+### Phase D — STEP-15: FocusModal's hardcoded subjects list — DONE 2026-07-09
+
+**Re-verified against live code first (not assumed from the old plan description), then traced DB → backend → frontend end-to-end before proposing a fix** — this surfaced a bigger picture than the original one-line description ("hardcoded array needs manual update"):
+
+- **The real bug (frontend):** `enrichedSubjects` in `FocusModal.jsx` was built by `.map()`-ing over `baseSubjects` (a hardcoded 6-entry array) — the backend's real `studyMap.focusStudy.subjects` was only consulted afterward, to mark availability. This meant a subject present in the backend's study map but *missing* from `baseSubjects` would never render at all — not just show as "unavailable", but be structurally invisible, no matter what the backend said.
+- **`sectionIcons` in the same file looks like the identical pattern but isn't** — it's used as a lookup-with-fallback *over real backend section data* (`sections.map(...)`, not `sectionIcons.map(...)`), so a new section always renders, worst case with a generic icon. Confirmed via code read, not assumed — left untouched, only documented with a clarifying comment so it isn't mistaken for the same bug class later.
+- **Backend-side check requested explicitly by Farhan before implementing** ("dono mein hai kya check karo") surfaced two real, separate findings that do **not** block or belong in this fix:
+  1. `data/class-10/science` is hardcoded as the only content directory in **7+ backend files** (`rag/indexPipeline.js`, `curriculum/curriculumIndexStore.js`, `services/studyMap.service.js`, plus 4 inspector/test scripts) — meaning launching a genuinely new subject (Hindi/Math content) is a full content-pipeline expansion, not a small config edit anywhere. Logged as new open work below, not built now (no Hindi/Math content exists yet — building this today would be speculative).
+  2. `SUBJECT_ORDER` (the 6-subject ordering array) is independently duplicated in **2 backend files** (`services/studyMap.service.js` and `curriculum/curriculumIndexBuilder.js`) with no shared source — consistent today, no automated guarantee against future drift. Logged as new open work below.
+  - Also noticed in passing (not part of STEP-15, same duplication *pattern* though): `CHAPTER_HINGLISH` exists as two independently-maintained copies, one in `backend/src/constants/chapterHinglish.js` and one in `frontend/src/constants/chapterHinglish.js`, both carrying a "must be kept in sync" comment. Logged as its own open item — out of scope here, but the same underlying pattern.
+
+**Decision (after discussion, before implementing):** keep the "Jald aata hai" placeholder tiles (product wants roadmap visibility, not just available subjects); a small manual config step (icon assignment) for a genuinely new subject launch is acceptable — but the fix must guarantee no subject silently becomes invisible even if that manual step is forgotten.
+
+**Fix — Option A (chosen over a dev-only console-warning patch, which was rejected: it doesn't fix production, only alerts during dev):** `baseSubjects` renamed to `SUBJECT_META`, repurposed as a pure icon/title lookup, not the render source. The actual render list is now the **union** of `SUBJECT_META`'s keys and `studyMap.focusStudy.subjects`' real ids — any subject with real content always renders (using its live title + a `DEFAULT_SUBJECT_ICON` fallback if not yet in `SUBJECT_META`); any `SUBJECT_META` entry without live content still renders as a "Jald aata hai" placeholder, exactly as before.
+
+**Files changed:** `frontend/src/components/FocusModal.jsx` — `baseSubjects` → `SUBJECT_META` (+ `SUBJECT_META_ORDER`, `DEFAULT_SUBJECT_ICON`); `subjectsInMap` removed (folded into the new `enrichedSubjects` union logic); clarifying comment added above `sectionIcons` explaining why it didn't need the same fix.
+
+**Verified (2026-07-09):**
+1. `npm run build` — clean.
+2. Live browser regression check (guest mode): FocusModal showed the exact same 6 subjects, same order, same labels/chapter-counts as before the fix ("Hindi/English/Math/Social Science/Sanskrit — Jald aata hai", "Science — 16 chapters") — plus "Jahan Chhoda Tha" (Electricity, 8%) still rendering correctly. No visual regression.
+3. Logic-level test of the exact bug scenario: simulated a `studyMap` subject (`geography`) not present in `SUBJECT_META` — confirmed the **old** logic (`baseSubjects.map()`) could never surface it (`oldWay_geographyVisible: false`) while the **new** logic correctly renders it with a live title + fallback icon (`newWay_geographyVisible: true`).
+
+---
+
 ## SUPERSEDED DECISIONS (so nobody re-reads the archived design doc and gets confused)
 
 `FOCUS_MODE_DB_ARCHITECTURE.md`'s "Open Decisions" section (§14) made two calls that were **deliberately overridden** once the deeper Phase C audit happened:
@@ -188,12 +212,14 @@ Same root cause as BUG-2 (`buildRecommendation()`'s chips were computed but neve
 
 | Item | Origin | Priority | Notes |
 |---|---|---|---|
-| STEP-15 — FocusModal's hardcoded subjects list (`Hindi`/`English`/`Math` shown as "Coming Soon" via a hardcoded array, not driven by `studyMap`) | Old Master Plan | Small tech-debt | ~1 hour effort. Not deploy-blocking. |
 | STEP-13 — Real `learningMode` state machine (`'doubt'`/`'quiz'` modes exist in schema, never actually used) | Old Master Plan | Post-launch feature | ~1 week effort, needs a new decider intent + prompt work. Deliberately deferred. |
 | `user_study_stats` collection (streak tracking, subject-level dashboards) | DB Architecture Phase 6 | Deferred by design | Build only when a specific feature needs it — explicit instruction in the original design doc, still correct. |
 | Chapter-Complete Quiz (verify real comprehension before/after NEXT_STEP, surface weak topics) | Raised during ISSUE-1 discussion, 2026-07-09 | Future feature, not a bug | Materially bigger scope — needs question generation/bank per chapter, scoring logic, new UI flow, and a "pass" threshold decision for an already-`completed` chapter. Needs its own deep-discussion phase when picked up. |
+| Multi-subject content pipeline — `data/class-10/science` is hardcoded as the only content directory in 7+ backend files | Found during STEP-15's backend trace, 2026-07-09 | Not deploy-blocking, currently irrelevant | Real gap, but only matters once Hindi/Math/etc. content actually gets written — building this today would be speculative (no content exists to test it against). Revisit when the first non-Science subject is ready to launch. |
+| `SUBJECT_ORDER` duplicated in 2 backend files (`studyMap.service.js`, `curriculumIndexBuilder.js`), no shared source | Found during STEP-15's backend trace, 2026-07-09 | Small cleanup | Consistent today, no automated guarantee against future drift. Low priority, do whenever convenient. |
+| `CHAPTER_HINGLISH` duplicated between `backend/src/constants/chapterHinglish.js` and `frontend/src/constants/chapterHinglish.js`, manually kept in sync by comment convention only | Noticed in passing during STEP-15, 2026-07-09 | Small cleanup, same pattern as above | Not a bug today (both copies match), but same "two systems that could drift" risk shape as everything else in this file. Low priority. |
 
-**Nothing in this list is deploy-blocking.** All 3 confirmed bugs, both secondary issues, and the architecture decision that unified the two progress systems are done and verified. The remaining items are scoped enhancements for a later session.
+**Nothing in this list is deploy-blocking.** All 3 confirmed bugs, both secondary issues, the architecture decision that unified the two progress systems, and STEP-15 are done and verified. The remaining items are scoped enhancements or low-priority cleanups for a later session.
 
 ---
 
@@ -211,12 +237,15 @@ Same root cause as BUG-2 (`buildRecommendation()`'s chips were computed but neve
 | ISSUE-1 (engagement stat, doubt-count not blended into progress) | `[x]` | 2026-07-09 | 2026-07-09 | — |
 | ISSUE-2 (header fallback guesswork → real status field) | `[x]` | 2026-07-09 | 2026-07-09 | — |
 | ISSUE-3 (unused revise/reset UI) | `[x]` | 2026-07-06 | 2026-07-07 | Absorbed into BUG-2 |
-| STEP-15 (FocusModal hardcoded subjects) | `[ ]` | — | — | — |
+| STEP-15 (FocusModal hardcoded subjects) | `[x]` | 2026-07-09 | 2026-07-09 | Union-with-fallback fix in `FocusModal.jsx`. See Phase D above. |
 | STEP-13 (learningMode state machine) | `[ ]` | — | — | — |
 | Chapter-Complete Quiz | `[ ]` | — | — | Parked, not scoped yet |
+| Multi-subject content pipeline (7+ hardcoded paths) | `[ ]` | — | — | Found during STEP-15 trace. Deferred — no non-Science content exists yet. |
+| `SUBJECT_ORDER` duplicated in 2 backend files | `[ ]` | — | — | Found during STEP-15 trace. Low priority. |
+| `CHAPTER_HINGLISH` duplicated frontend/backend | `[ ]` | — | — | Noticed during STEP-15 trace. Low priority. |
 
 ---
 
 ## NEXT ACTION
 
-All core Focus Mode progress-tracking work is done and verified. Nothing is deploy-blocking. When resuming work on this area, pick from "Open / Remaining Work" above — STEP-15 is the smallest, most self-contained next step if you want quick cleanup; STEP-13 and the Quiz idea both need their own deep-discussion phase before any code is touched, per this file's working rules.
+STEP-15 is now done. Remaining open items: STEP-13 (learningMode state machine) and the Chapter-Complete Quiz both need their own deep-discussion phase before any code is touched. The 3 items found during STEP-15's backend trace (multi-subject content pipeline, `SUBJECT_ORDER` duplication, `CHAPTER_HINGLISH` duplication) are low-priority/deferred cleanups — none are deploy-blocking, pick up whenever convenient.
