@@ -105,6 +105,9 @@ export const getSessionHistory = async (req, res, next) => {
     // page refresh from the same already-fetched ChapterProgress doc.
     let totalDoubtsAsked = 0;
     let totalExplainMoreCount = 0;
+    // ISSUE-2 (FOCUS_MODE_PROGRESS_FIX_PLAN.md): real ChapterProgress.status, so the
+    // frontend header never has to guess chapter-complete from array lengths.
+    let chapterStatus = null;
 
     if (currentChapterId && session.sessionType === 'focus') {
       try {
@@ -113,6 +116,7 @@ export const getSessionHistory = async (req, res, next) => {
         completedTopicIds = progress?.completedTopicIds || [];
         totalDoubtsAsked = progress?.totalDoubtsAsked || 0;
         totalExplainMoreCount = progress?.totalExplainMoreCount || 0;
+        chapterStatus = progress?.status || null;
       } catch (err) {
         console.error('[getSessionHistory] getChapterProgress failed (non-fatal):', err.message);
       }
@@ -133,6 +137,7 @@ export const getSessionHistory = async (req, res, next) => {
           completedTopicIds,
           totalDoubtsAsked,
           totalExplainMoreCount,
+          chapterStatus,
         },
       },
     });

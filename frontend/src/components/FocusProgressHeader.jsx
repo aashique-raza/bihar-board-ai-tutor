@@ -6,7 +6,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import Tooltip from '@mui/material/Tooltip';
 import { useChapterTopics } from '../hooks/useChapterTopics.js';
 
-export default function FocusProgressHeader({ chapterId, currentTopicId, completedTopicIds, engagementCount = 0 }) {
+export default function FocusProgressHeader({ chapterId, currentTopicId, completedTopicIds, engagementCount = 0, status = null }) {
   const { topics, isLoading } = useChapterTopics(chapterId);
 
   if (!chapterId || isLoading || topics.length === 0) {
@@ -16,14 +16,13 @@ export default function FocusProgressHeader({ chapterId, currentTopicId, complet
   // Calculate progress
   const totalTopics = topics.length;
   let currentIndex = topics.findIndex(t => t.topicId === currentTopicId);
-  
+
+  // ISSUE-2 (FOCUS_MODE_PROGRESS_FIX_PLAN.md): currentTopicId can legitimately not be
+  // found in `topics` (fresh chapter select before progress loads, or a restructured
+  // chapter's old topicId). Use the real ChapterProgress.status instead of guessing
+  // from completedTopicIds.length, which used to misreport "chapter complete".
   if (currentIndex === -1) {
-    if (completedTopicIds.length === 0) {
-      currentIndex = 0; // Not started yet, but chapter is active
-    } else {
-      // If we have completed topics but current isn't found, maybe chapter is complete
-      currentIndex = totalTopics;
-    }
+    currentIndex = status === 'completed' ? totalTopics : 0;
   }
 
   const currentTopic = topics[currentIndex];

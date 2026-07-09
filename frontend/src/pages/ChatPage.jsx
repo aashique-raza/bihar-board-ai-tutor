@@ -144,6 +144,9 @@ function ChatPage({ theme, toggleTheme }) {
   // doubt/explain-more turns the student has had in this chapter. Deliberately never
   // blended into completedTopicIds/progressPercent — see the plan file for reasoning.
   const [engagementCount, setEngagementCount] = useState(0);
+  // ISSUE-2 (FOCUS_MODE_PROGRESS_FIX_PLAN.md): real ChapterProgress.status, so
+  // FocusProgressHeader never has to guess chapter-complete from array lengths.
+  const [chapterStatus, setChapterStatus] = useState(null);
 
   // Loaded for the "roadmap" suggested action — built purely client-side, no LLM call.
   const { topics: chapterTopics } = useChapterTopics(selectedChapterId);
@@ -225,6 +228,7 @@ function ChatPage({ theme, toggleTheme }) {
         setCompletedTopicIds(meta.completedTopicIds || []);
         setCurrentTopicId(meta.currentTopicId ?? null);
         setEngagementCount((meta.totalDoubtsAsked || 0) + (meta.totalExplainMoreCount || 0));
+        setChapterStatus(meta.chapterStatus ?? null);
       }
     }).catch((err) => {
       if (cancelled) return;
@@ -303,6 +307,7 @@ function ChatPage({ theme, toggleTheme }) {
       setCompletedTopicIds([]);
       setCurrentTopicId(null);
       setEngagementCount(0);
+      setChapterStatus(null);
       refresh();
     }
 
@@ -338,6 +343,7 @@ function ChatPage({ theme, toggleTheme }) {
       setEngagementCount(
         (progressData.progress.totalDoubtsAsked || 0) + (progressData.progress.totalExplainMoreCount || 0)
       );
+      setChapterStatus(progressData.progress.status || null);
     }
 
     const recommendation = progressData?.recommendation;
@@ -466,6 +472,7 @@ function ChatPage({ theme, toggleTheme }) {
         setEngagementCount(
           (payload.chapterProgress.totalDoubtsAsked ?? 0) + (payload.chapterProgress.totalExplainMoreCount ?? 0)
         );
+        setChapterStatus(payload.chapterProgress.status ?? null);
       }
 
       // Bust the useChapterProgress hook cache so FocusModal shows fresh data next open
@@ -695,11 +702,13 @@ function ChatPage({ theme, toggleTheme }) {
           setEngagementCount(
             (result.sessionMeta.totalDoubtsAsked || 0) + (result.sessionMeta.totalExplainMoreCount || 0)
           );
+          setChapterStatus(result.sessionMeta.chapterStatus ?? null);
         } else if (result.sessionMeta.sessionType === 'global') {
           setSelectedChapterId(null);
           setCompletedTopicIds([]);
           setCurrentTopicId(null);
           setEngagementCount(0);
+          setChapterStatus(null);
         }
       }
     } catch {
@@ -742,6 +751,7 @@ function ChatPage({ theme, toggleTheme }) {
           currentTopicId={currentTopicId}
           completedTopicIds={completedTopicIds}
           engagementCount={engagementCount}
+          status={chapterStatus}
         />
       )}
 

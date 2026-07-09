@@ -530,8 +530,24 @@ Verified end-to-end against the running app with a synthetic guestId, direct `/a
 
 Raised by Farhan during ISSUE-1 discussion (2026-07-09): the system currently has no way to verify a student actually *understood* a topic before NEXT_STEP advances past it — it trusts the student's own "aage badhao" signal at face value (see ISSUE-1 notes above). A dedicated fix for that is a short quiz triggered at chapter-complete (or possibly per-milestone, post-BUG-3): a small set of questions scored automatically, used to (a) confirm the chapter is genuinely understood, not just clicked-through, and (b) surface specific weak topics back to the student (and potentially to a future teacher/parent view). Explicitly out of scope for ISSUE-1 — this is a materially bigger feature (needs question generation/bank per chapter, scoring logic, a new UI flow, and a decision on what a "pass" threshold means for a chapter already marked `completed`). Parking here so it isn't lost; needs its own deep-discussion phase when picked up.
 
-### ISSUE-2 `[ ]` `FocusProgressHeader`'s `currentIndex` fallback is guesswork
+### ISSUE-2 `[x]` `FocusProgressHeader`'s `currentIndex` fallback is guesswork
 `frontend/src/components/FocusProgressHeader.jsx` lines 20–27: if `currentTopicId` isn't found in the topics list (which will happen constantly given BUG-1), it falls back to either "index 0" or "chapter complete" based purely on whether `completedTopicIds` is empty — not an actual signal of chapter completion state. Should read the real `status` field from `ChapterProgress` instead of inferring it.
+
+**IMPLEMENTED + VERIFIED (2026-07-09):** Chose Option A (discussed) — a new `chapterStatus` state var in `ChatPage.jsx`, synced at the same 5 places `completedTopicIds`/`currentTopicId`/`engagementCount` already are, plus the 2 reset branches — same pattern ISSUE-1 already established, not a new architecture. Rejected consolidating all progress fields into one state object (Option B, too large a blast radius for 10+ already-stable call-sites for a single missing field) and rejected a "safer guess" patch (Option C, still guessing, doesn't fix root cause).
+
+Found during the file-level trace (not assumed) that 3 of 4 backend responses already carried `status` (`ChapterProgress` doc from `getChapterProgressController`, and `step7.saveAndRespond.js`'s `chapterProgress.status` in the live `/ask` payload) — but `session.controller.js`'s `getSessionHistory()` `sessionMeta` object did not expose it at all, despite already doing a `getChapterProgress()` lookup for the sibling fields. Added one field (`chapterStatus`) to that lookup and response — no new query, no logic change, purely exposing existing data.
+
+**Files changed:**
+- `backend/src/controllers/session.controller.js` — `sessionMeta` now includes `chapterStatus` (from the same already-fetched `ChapterProgress` doc used for `currentTopicId`/`completedTopicIds`).
+- `frontend/src/pages/ChatPage.jsx` — new `chapterStatus` state; synced in all 5 places progress is already synced (session-restore, chapter-switch-reset, fresh-progress-fetch, live `/ask` response, session-switch) plus the global-session reset branch; passed to `FocusProgressHeader` as `status`.
+- `frontend/src/components/FocusProgressHeader.jsx` — `status` prop added; guess-logic (`completedTopicIds.length === 0 ? 0 : totalTopics`) replaced with `status === 'completed' ? totalTopics : 0` — a real fact instead of an inference.
+
+**Verified (2026-07-09):**
+1. `npm run build` (frontend) — clean. `node --check` on the edited backend file — clean.
+2. Live browser test (guest mode, real UI, Electricity chapter — fresh, no prior progress): header correctly showed "Topic 1 of 13 · 0%" on chapter entry; after "Shuru karo" it stayed "Topic 1 of 13 · 0%" (topic taught, not yet completed — correct); after "Aage badhein" it correctly advanced to "Topic 2 of 13 · 8%" — confirms wiring the new `status` prop through did not regress the normal (found) path.
+3. Confirmed via network tab: `GET /chapter-progress/:chapterId` and the `/ask` SSE response both carry `chapterProgress.status`; no console errors introduced (only pre-existing, unrelated MUI prop-casing warnings from `alignItems`/`PaperProps`).
+4. Logic-level check of the exact bug scenario (`currentTopicId` not found in `topics`, which the live UI test can't easily force): with `status: 'in_progress'` (or `null`), the new logic correctly resolves to index 0 — the old code would have wrongly resolved to "chapter complete" (`totalTopics`) any time `completedTopicIds` was non-empty, regardless of actual status. With `status: 'completed'`, correctly resolves to `totalTopics`.
+5. Dev servers stopped after verification (backend + frontend processes killed).
 
 ### ISSUE-3 `[ ]` `reset-chapter` / "revise" backend actions exist but are unreachable from the UI
 `chapterProgress.controller.js` has working `reset` and `mark_revising` actions (POST `/api/v1/chapter-progress/:chapterId/action`) and `buildRecommendation()` already generates the right chips text for a completed/revising chapter — but nothing in the frontend calls this endpoint or renders `recommendation.chips`. This is finished backend work sitting unused; once the architecture decision is made, wiring this up may become the actual fix for "restart a completed chapter" (previously STEP-16 in the old plan).
@@ -547,7 +563,7 @@ Raised by Farhan during ISSUE-1 discussion (2026-07-09): the system currently ha
 | BUG-2 (frontend zeroing) | `[x]` | 2026-07-06 | 2026-07-07 | Implemented + verified end-to-end (see notes below). Absorbed ISSUE-3. |
 | BUG-3 (topic granularity) | `[x]` | 2026-07-08 | 2026-07-09 | 11 chapters restructured (H2/H3 heading regroup, no prose changes), `rag:index` re-embedded, 3 stale progress docs reset. See notes below. |
 | ISSUE-1 (completedTopicIds gaps) | `[x]` | 2026-07-09 | 2026-07-09 | Separate "engagement" stat added (totalDoubtsAsked/totalExplainMoreCount), never blended into progressPercent. See notes above. |
-| ISSUE-2 (header fallback guesswork) | `[ ]` | — | — | After core bugs |
+| ISSUE-2 (header fallback guesswork) | `[x]` | 2026-07-09 | 2026-07-09 | New `chapterStatus` synced same as sibling fields; guess-logic replaced with real `status` check. See notes above. |
 | ISSUE-3 (unused reset/revise UI) | `[~]` | 2026-07-06 | — | Folded into BUG-2's fix — same root gap (buildRecommendation unused by frontend) |
 
 ---
@@ -564,4 +580,4 @@ Raised by Farhan during ISSUE-1 discussion (2026-07-09): the system currently ha
 
 ## NEXT ACTION
 
-Architecture Decision, BUG-1, BUG-2, BUG-3, and ISSUE-1 are all DONE and verified. Next open item is **ISSUE-2** (`FocusProgressHeader`'s fallback guesswork when `currentTopicId` isn't found in the topics list). The chapter-complete quiz IDEA remains parked for whenever it's picked up. Open ISSUE-2's deep-discussion phase when ready.
+Architecture Decision, BUG-1, BUG-2, BUG-3, ISSUE-1, and ISSUE-2 are all DONE and verified. All items in this file's original scope are now complete. The chapter-complete quiz IDEA remains parked for whenever it's picked up as its own, separately-scoped feature.
