@@ -101,12 +101,18 @@ export const getSessionHistory = async (req, res, next) => {
     const currentChapterId = session.chatState?.currentChapterId || null;
     let currentTopicId = null;
     let completedTopicIds = [];
+    // ISSUE-1 (FOCUS_MODE_PROGRESS_FIX_PLAN.md): separate engagement stat, restored on
+    // page refresh from the same already-fetched ChapterProgress doc.
+    let totalDoubtsAsked = 0;
+    let totalExplainMoreCount = 0;
 
     if (currentChapterId && session.sessionType === 'focus') {
       try {
         const progress = await getChapterProgress(userId, null, currentChapterId);
         currentTopicId = progress?.currentTopicId || null;
         completedTopicIds = progress?.completedTopicIds || [];
+        totalDoubtsAsked = progress?.totalDoubtsAsked || 0;
+        totalExplainMoreCount = progress?.totalExplainMoreCount || 0;
       } catch (err) {
         console.error('[getSessionHistory] getChapterProgress failed (non-fatal):', err.message);
       }
@@ -125,6 +131,8 @@ export const getSessionHistory = async (req, res, next) => {
           currentChapterId,
           currentTopicId,
           completedTopicIds,
+          totalDoubtsAsked,
+          totalExplainMoreCount,
         },
       },
     });

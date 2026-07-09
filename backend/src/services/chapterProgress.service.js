@@ -18,6 +18,17 @@ import { getChapterCoreTopics } from '../curriculum/topicResolver.js';
 const isDev = process.env.NODE_ENV !== 'production';
 const CACHE_TTL_SEC = 60; // invalidated on every write; 60s max staleness
 
+// Which intents count as "engagement" beyond just NEXT_STEP, and which ChapterProgress
+// counter each one increments. Single source of truth — add a new intent here only,
+// never inline the mapping at the call site. See FOCUS_MODE_PROGRESS_FIX_PLAN.md ISSUE-1:
+// this is deliberately kept separate from completedTopicIds/progressPercent (NEXT_STEP-only)
+// so a student who asks doubts without tapping "aage badhao" still gets visible credit,
+// without the two systems ever blending into one ambiguous number.
+const ENGAGEMENT_INTENT_FIELDS = {
+  CONCEPT_QUESTION: 'totalDoubtsAsked',
+  EXPLAIN_MORE:     'totalExplainMoreCount',
+};
+
 // ─── Cache key builders ──────────────────────────────────────────────────────
 
 const scopeKey      = (userId, guestId) => userId || guestId || 'anon';
@@ -170,6 +181,12 @@ export const upsertChapterProgress = async (userId, guestId, chapterId, updates 
     };
   }
 
+  // Engagement counter — separate from completedTopicIds/progressPercent (NEXT_STEP-only).
+  // See ENGAGEMENT_INTENT_FIELDS above.
+  const incFields = { totalMessagesExchanged: 1 };
+  const engagementField = ENGAGEMENT_INTENT_FIELDS[updates.intent];
+  if (engagementField) incFields[engagementField] = 1;
+
   const doc = await ChapterProgress.findOneAndUpdate(
     filter,
     {
@@ -185,7 +202,7 @@ export const upsertChapterProgress = async (userId, guestId, chapterId, updates 
         startedAt: new Date(),
         status:    'in_progress',
       },
-      $inc: { totalMessagesExchanged: 1 },
+      $inc: incFields,
       ...arrayUpdates,
     },
     { upsert: true, returnDocument: 'after', new: true }

@@ -140,6 +140,10 @@ function ChatPage({ theme, toggleTheme }) {
   // Focus Progress State
   const [completedTopicIds, setCompletedTopicIds] = useState([]);
   const [currentTopicId, setCurrentTopicId] = useState(null);
+  // ISSUE-1 (FOCUS_MODE_PROGRESS_FIX_PLAN.md): separate "engagement" stat — how many
+  // doubt/explain-more turns the student has had in this chapter. Deliberately never
+  // blended into completedTopicIds/progressPercent — see the plan file for reasoning.
+  const [engagementCount, setEngagementCount] = useState(0);
 
   // Loaded for the "roadmap" suggested action — built purely client-side, no LLM call.
   const { topics: chapterTopics } = useChapterTopics(selectedChapterId);
@@ -220,6 +224,7 @@ function ChatPage({ theme, toggleTheme }) {
         setSelectedChapterId(meta.currentChapterId);
         setCompletedTopicIds(meta.completedTopicIds || []);
         setCurrentTopicId(meta.currentTopicId ?? null);
+        setEngagementCount((meta.totalDoubtsAsked || 0) + (meta.totalExplainMoreCount || 0));
       }
     }).catch((err) => {
       if (cancelled) return;
@@ -297,6 +302,7 @@ function ChatPage({ theme, toggleTheme }) {
       setIsAsking(false);
       setCompletedTopicIds([]);
       setCurrentTopicId(null);
+      setEngagementCount(0);
       refresh();
     }
 
@@ -329,6 +335,9 @@ function ChatPage({ theme, toggleTheme }) {
     if (progressData?.progress) {
       setCompletedTopicIds(progressData.progress.completedTopicIds || []);
       setCurrentTopicId(progressData.progress.currentTopicId || null);
+      setEngagementCount(
+        (progressData.progress.totalDoubtsAsked || 0) + (progressData.progress.totalExplainMoreCount || 0)
+      );
     }
 
     const recommendation = progressData?.recommendation;
@@ -454,6 +463,9 @@ function ChatPage({ theme, toggleTheme }) {
       if (payload.chapterProgress) {
         setCompletedTopicIds(payload.chapterProgress.completedTopicIds ?? []);
         setCurrentTopicId(payload.chapterProgress.currentTopicId ?? null);
+        setEngagementCount(
+          (payload.chapterProgress.totalDoubtsAsked ?? 0) + (payload.chapterProgress.totalExplainMoreCount ?? 0)
+        );
       }
 
       // Bust the useChapterProgress hook cache so FocusModal shows fresh data next open
@@ -680,10 +692,14 @@ function ChatPage({ theme, toggleTheme }) {
           setSelectedChapterId(result.sessionMeta.currentChapterId);
           setCompletedTopicIds(result.sessionMeta.completedTopicIds || []);
           setCurrentTopicId(result.sessionMeta.currentTopicId || null);
+          setEngagementCount(
+            (result.sessionMeta.totalDoubtsAsked || 0) + (result.sessionMeta.totalExplainMoreCount || 0)
+          );
         } else if (result.sessionMeta.sessionType === 'global') {
           setSelectedChapterId(null);
           setCompletedTopicIds([]);
           setCurrentTopicId(null);
+          setEngagementCount(0);
         }
       }
     } catch {
@@ -721,10 +737,11 @@ function ChatPage({ theme, toggleTheme }) {
       />
 
       {studyMode === STUDY_MODES.focus && selectedChapterId && (
-        <FocusProgressHeader 
-          chapterId={selectedChapterId} 
-          currentTopicId={currentTopicId} 
-          completedTopicIds={completedTopicIds} 
+        <FocusProgressHeader
+          chapterId={selectedChapterId}
+          currentTopicId={currentTopicId}
+          completedTopicIds={completedTopicIds}
+          engagementCount={engagementCount}
         />
       )}
 

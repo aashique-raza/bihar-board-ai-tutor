@@ -6,7 +6,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import Tooltip from '@mui/material/Tooltip';
 import { useChapterTopics } from '../hooks/useChapterTopics.js';
 
-export default function FocusProgressHeader({ chapterId, currentTopicId, completedTopicIds }) {
+export default function FocusProgressHeader({ chapterId, currentTopicId, completedTopicIds, engagementCount = 0 }) {
   const { topics, isLoading } = useChapterTopics(chapterId);
 
   if (!chapterId || isLoading || topics.length === 0) {
@@ -100,6 +100,17 @@ export default function FocusProgressHeader({ chapterId, currentTopicId, complet
           }}
         />
       </Box>
+
+      {/* ISSUE-1: separate "engagement" stat — how much the student has asked/explored in
+          this chapter, distinct from topic-completion %. Never blended into progressPercent
+          above; only shown once it's non-zero so a fresh chapter stays uncluttered. */}
+      {engagementCount > 0 && (
+        <Box sx={{ maxWidth: 'var(--chat-max-width)', mx: 'auto', width: '100%' }}>
+          <Typography sx={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+            💬 {engagementCount} sawaal poochhe is chapter me
+          </Typography>
+        </Box>
+      )}
     </Box>
   );
 }

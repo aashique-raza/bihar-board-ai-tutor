@@ -469,8 +469,66 @@ Also caught: two recommendation chips shared the same `next_step` type despite n
 
 ## SECONDARY ISSUES (real, but not core-breaking — fix after the above)
 
-### ISSUE-1 `[ ]` `completedTopicIds` only grows via NEXT_STEP intent
+### ISSUE-1 `[x]` `completedTopicIds` only grows via NEXT_STEP intent
 If a student asks concept questions/doubts instead of tapping "aage badhao", no topic is ever marked complete, so the bar can under-represent real learning. Was flagged as a known limitation in the old plan (STEP-7) but becomes much more visible once BUG-3's granularity is fixed (large jumps in %, then long flat stretches).
+
+**Discussed in depth 2026-07-09 — decision reached, not yet implemented (pending final go-ahead):**
+
+Explicitly decided **NOT** to let `progressPercent`/`completedTopicIds` be influenced by doubt-count or auto-advance on N doubts — rejected because (a) it would let a student who asks tangential/unrelated questions get auto-marked "complete" without understanding the topic, the opposite failure mode of what we're fixing, and (b) it would require touching the resolver/completion logic that BUG-1/BUG-2/BUG-3 just spent significant effort stabilizing and verifying — unacceptable regression risk for a "nice to have" stat. Also explicitly confirmed: `NEXT_STEP` advancing on the student's own explicit signal (chip-click or free-typed equivalent — both go through the same LLM decider, verified in `deciderPrompt.js` and `ChatPage.jsx`'s `handleSuggestedAction`, no chip-exclusive code path exists) is something we must simply trust — the system has no way to verify genuine comprehension at topic-advance time, and building that is a separate, much bigger feature (see the new IDEA below).
+
+**Decided approach:** keep `progressPercent` exactly as-is (NEXT_STEP-driven only, unambiguous, matches what the resolver actually walks) and *add a second, separate, honest "engagement" stat* — reusing `totalDoubtsAsked` / `totalExplainMoreCount` schema fields on `ChapterProgress` that already existed but were never written anywhere (verified via grep — only `totalMessagesExchanged` was ever incremented). Never blend the two numbers.
+
+**Full touch-point list (verified by reading each file, not assumed):**
+```
+backend/src/ask/step7.saveAndRespond.js          — pass `intent` into the upsertChapterProgress()
+                                                    call (~line 300); add totalDoubtsAsked/
+                                                    totalExplainMoreCount to the chapterProgress
+                                                    response payload (~line 413-420)
+backend/src/services/chapterProgress.service.js  — small ENGAGEMENT_INTENT_FIELDS map
+                                                    (CONCEPT_QUESTION→totalDoubtsAsked,
+                                                    EXPLAIN_MORE→totalExplainMoreCount), extend
+                                                    the existing $inc (~line 188)
+backend/src/controllers/session.controller.js    — sessionMeta already does a getChapterProgress()
+                                                    lookup for currentTopicId/completedTopicIds
+                                                    (~line 102-113) — add the same 2 new fields
+                                                    from the same already-fetched doc
+frontend/src/pages/ChatPage.jsx                  — new state var (e.g. engagementCount), synced
+                                                    in ALL 5 places completedTopicIds/currentTopicId
+                                                    are already synced (session-restore ~221,
+                                                    chapter-switch-reset ~298, fresh-progress-fetch
+                                                    ~330, live /ask response ~455, session-switch
+                                                    ~681) — chosen for consistency over a
+                                                    "live-updates-only" lighter version, since the
+                                                    lighter version would show a stale/zero count
+                                                    on page refresh until the next message
+frontend/src/components/FocusProgressHeader.jsx  — new prop, one small caption line
+                                                    (e.g. "💬 14 sawaal poochhe")
+```
+
+**Known accepted edge cases (low severity, same category as existing accepted risks in this file):**
+1. Decider parse-error fallback (`step4.decideRetrieval.js` line ~199) deliberately defaults to `intent: 'CONCEPT_QUESTION'` on LLM JSON parse failure — a rare fallback turn could be counted as a "doubt" when the classifier just failed. Rare, low-stakes, informational field only.
+2. `withRetry()`'s retry-on-failure could double-`$inc` the counter in the rare case a write actually succeeded but the retry fired anyway (same pre-existing class of risk `totalMessagesExchanged` already has).
+
+**IMPLEMENTED + VERIFIED (2026-07-09):**
+
+Implemented exactly the touch-point list above, no deviations. Discovered during setup that the manually-running dev backend (port 5001) and frontend (port 5173) were plain `node`/`vite` processes started outside nodemon's watch, not picking up any edits — restarted both through the managed preview tooling so changes actually took effect; also hit and fixed an unrelated pre-existing CORS gap (preview's dynamic port not in the backend's allowlist — same known issue noted in BUG-1's verification log) by binding the frontend preview to the exact expected port 5173 instead.
+
+Verified end-to-end against the running app with a synthetic guestId, direct `/ask` API calls to control exactly which intent fires each turn:
+1. NEXT_STEP turn ("Chapter shuru karein"): `chapterProgress.totalDoubtsAsked: 0, totalExplainMoreCount: 0` — confirmed a plain lesson-advance turn touches neither counter.
+2. CONCEPT_QUESTION turn ("Ammeter kaise kaam karta hai..."): decider correctly classified `CONCEPT_QUESTION`; `totalDoubtsAsked` → `1`, `progressPercent`/`completedTopicIds` **unchanged** — confirmed zero blending.
+3. Another NEXT_STEP turn ("Aage badhao"): `progressPercent` advanced 0% → 8%, `completedTopicIds` gained the topic — `totalDoubtsAsked` **stayed at 1**, untouched by the advance.
+4. EXPLAIN_MORE turn ("Nahi samjha, aur simple example do"): decider correctly classified `EXPLAIN_MORE`; `totalExplainMoreCount` → `1`, `totalDoubtsAsked` stayed at `1`, progress fields unchanged.
+5. Confirmed directly in MongoDB (`chapter_progress` collection) that the raw document matches every payload value above exactly — `totalMessagesExchanged: 4` (one per turn), `totalDoubtsAsked: 1`, `totalExplainMoreCount: 1`.
+6. Live browser check (guest mode, real UI, not just API): selected Electricity chapter, asked a genuine doubt question, and the header correctly rendered **"💬 1 sawaal poochhe is chapter me"** directly under the progress bar, while "Topic 1 of 13 · 0%" stayed exactly as it was — screenshotted as visual proof.
+7. Test data cleaned up (all synthetic guestId `chapter_progress` docs deleted; Farhan's own real userId progress data was never touched — the cleanup query filtered on `guestId` existing, not on chapterId, so it couldn't have matched a real logged-in user's doc).
+
+**Not yet done:** ISSUE-2 (`FocusProgressHeader`'s guesswork fallback) is next in this file. The IDEA below (chapter-complete quiz) remains parked for a future session.
+
+---
+
+### IDEA (not a bug, future work) `[ ]` Chapter-complete quiz — verify real comprehension, surface weak areas
+
+Raised by Farhan during ISSUE-1 discussion (2026-07-09): the system currently has no way to verify a student actually *understood* a topic before NEXT_STEP advances past it — it trusts the student's own "aage badhao" signal at face value (see ISSUE-1 notes above). A dedicated fix for that is a short quiz triggered at chapter-complete (or possibly per-milestone, post-BUG-3): a small set of questions scored automatically, used to (a) confirm the chapter is genuinely understood, not just clicked-through, and (b) surface specific weak topics back to the student (and potentially to a future teacher/parent view). Explicitly out of scope for ISSUE-1 — this is a materially bigger feature (needs question generation/bank per chapter, scoring logic, a new UI flow, and a decision on what a "pass" threshold means for a chapter already marked `completed`). Parking here so it isn't lost; needs its own deep-discussion phase when picked up.
 
 ### ISSUE-2 `[ ]` `FocusProgressHeader`'s `currentIndex` fallback is guesswork
 `frontend/src/components/FocusProgressHeader.jsx` lines 20–27: if `currentTopicId` isn't found in the topics list (which will happen constantly given BUG-1), it falls back to either "index 0" or "chapter complete" based purely on whether `completedTopicIds` is empty — not an actual signal of chapter completion state. Should read the real `status` field from `ChapterProgress` instead of inferring it.
@@ -488,7 +546,7 @@ If a student asks concept questions/doubts instead of tapping "aage badhao", no 
 | BUG-1 (resume wiped) | `[x]` | 2026-07-06 | 2026-07-06 | Implemented + verified end-to-end (see notes below) |
 | BUG-2 (frontend zeroing) | `[x]` | 2026-07-06 | 2026-07-07 | Implemented + verified end-to-end (see notes below). Absorbed ISSUE-3. |
 | BUG-3 (topic granularity) | `[x]` | 2026-07-08 | 2026-07-09 | 11 chapters restructured (H2/H3 heading regroup, no prose changes), `rag:index` re-embedded, 3 stale progress docs reset. See notes below. |
-| ISSUE-1 (completedTopicIds gaps) | `[ ]` | — | — | After core bugs |
+| ISSUE-1 (completedTopicIds gaps) | `[x]` | 2026-07-09 | 2026-07-09 | Separate "engagement" stat added (totalDoubtsAsked/totalExplainMoreCount), never blended into progressPercent. See notes above. |
 | ISSUE-2 (header fallback guesswork) | `[ ]` | — | — | After core bugs |
 | ISSUE-3 (unused reset/revise UI) | `[~]` | 2026-07-06 | — | Folded into BUG-2's fix — same root gap (buildRecommendation unused by frontend) |
 
@@ -506,4 +564,4 @@ If a student asks concept questions/doubts instead of tapping "aage badhao", no 
 
 ## NEXT ACTION
 
-Architecture Decision, BUG-1, BUG-2, and BUG-3 are all DONE and verified. Next open items are **ISSUE-1** (`completedTopicIds` only grows via NEXT_STEP intent, not concept-question turns) and **ISSUE-2** (`FocusProgressHeader`'s fallback guesswork when `currentTopicId` isn't found in the topics list). Pick one and open its deep-discussion phase when ready.
+Architecture Decision, BUG-1, BUG-2, BUG-3, and ISSUE-1 are all DONE and verified. Next open item is **ISSUE-2** (`FocusProgressHeader`'s fallback guesswork when `currentTopicId` isn't found in the topics list). The chapter-complete quiz IDEA remains parked for whenever it's picked up. Open ISSUE-2's deep-discussion phase when ready.

@@ -306,6 +306,9 @@ export const saveAndRespond = async (
           subjectId:         chatState.currentSubjectId,
           sectionId:         chatState.currentSectionId,
           chapterTitle,
+          // ISSUE-1 (FOCUS_MODE_PROGRESS_FIX_PLAN.md): separate "engagement" counter,
+          // never blended into completedTopicIds/progressPercent above.
+          intent,
         }),
         'upsertChapterProgress'
       );
@@ -417,6 +420,9 @@ export const saveAndRespond = async (
       totalCoreTopics:   chapterProgressDoc.totalCoreTopics,
       status:            chapterProgressDoc.status,
       isChapterComplete: chapterProgressDoc.status === 'completed',
+      // ISSUE-1: separate engagement stat — never blended into progressPercent above.
+      totalDoubtsAsked:      chapterProgressDoc.totalDoubtsAsked || 0,
+      totalExplainMoreCount: chapterProgressDoc.totalExplainMoreCount || 0,
     } : null,
   };
 
