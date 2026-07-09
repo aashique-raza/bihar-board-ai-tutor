@@ -14,6 +14,8 @@
  *   formatSources(chunks) → array of source objects
  */
 
+import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
+
 const cleanText = (text) => String(text || '').replace(/\s+/g, ' ').trim();
 
 const normalizeForComparison = (text) =>
@@ -82,6 +84,7 @@ export const formatSources = (chunks) =>
       sourceTitle: createSourceLabel({ chapterTitle, topicTitle }),
       chapter_title: chapterTitle,
       chapterTitle,
+      hinglishTitle: CHAPTER_HINGLISH[chapterTitle] || chapterTitle,
       topicTitle,
       section: metadata.section || 'Unknown',
       sectionTitle: metadata.section || 'Unknown',

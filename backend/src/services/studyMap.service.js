@@ -2,6 +2,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { loadMarkdownDocuments } from '../rag/markdownLoader.js';
+import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
+import { SUBJECT_ORDER, SECTION_ORDER } from '../constants/subjectOrder.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,13 +14,6 @@ const scienceContentDir = path.resolve(backendRoot, '..', 'data', 'class-10', 's
 // it stays retrievable by RAG but never appears as a selectable chapter in FocusModal —
 // a student shouldn't be able to pick "Meta" as if it were a real subject section.
 const NON_BROWSABLE_SECTIONS = ['Meta'];
-
-const SUBJECT_ORDER = ['Hindi', 'English', 'Math', 'Science', 'Social Science', 'Sanskrit'];
-const SECTION_ORDER = [
-  'Physics', 'Chemistry', 'Biology',
-  'History', 'Geography', 'Civics', 'Economics',
-  'Grammar', 'Prose', 'Poetry', 'Non-Fiction', 'Algebra', 'Geometry', 'Trigonometry', 'Statistics'
-];
 
 let cachedStudyMap = null;
 
@@ -60,6 +55,7 @@ const createChapterItem = (doc) => {
     id: createChapterId(metadata),
     number: metadata.chapter_no,
     title: metadata.chapter_title,
+    hinglishTitle: CHAPTER_HINGLISH[metadata.chapter_title] || metadata.chapter_title,
     originalScienceChapterNumber: metadata.original_science_chapter_no,
   };
 };

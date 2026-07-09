@@ -8,16 +8,10 @@
  */
 
 import { Document } from '@langchain/core/documents';
+import { SUBJECT_ORDER, SECTION_ORDER } from '../constants/subjectOrder.js';
 
 const HEADING_PATTERN = /^(#{1,6})\s+(.+?)\s*$/;
 const IMPORTANT_HEADING_LEVELS = new Set([1, 2, 3, 4]);
-
-const SUBJECT_ORDER = ['Hindi', 'English', 'Math', 'Science', 'Social Science', 'Sanskrit'];
-const SECTION_ORDER = [
-  'Physics', 'Chemistry', 'Biology',
-  'History', 'Geography', 'Civics', 'Economics',
-  'Grammar', 'Prose', 'Poetry', 'Non-Fiction', 'Algebra', 'Geometry', 'Trigonometry', 'Statistics'
-];
 
 const normalizeIdPart = (value) =>
   String(value || '').trim().toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');

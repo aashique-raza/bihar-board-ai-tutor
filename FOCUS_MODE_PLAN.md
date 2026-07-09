@@ -198,6 +198,37 @@ Same root cause as BUG-2 (`buildRecommendation()`'s chips were computed but neve
 
 ---
 
+### Phase E — `SUBJECT_ORDER` + `CHAPTER_HINGLISH` duplication cleanup — DONE 2026-07-09
+
+Both items were found during STEP-15's backend trace and initially logged as deferred, low-priority cleanup. **Revisited on Farhan's explicit pushback** ("you keep recommending the easy option, not the future-proof one — the app isn't deployed yet, this is the cheapest time to do it right") — the first pass on `CHAPTER_HINGLISH` had judged a real single-source fix as "disproportionate" without actually tracing the API surface first. A full re-trace found that judgment was wrong.
+
+**`SUBJECT_ORDER`/`SECTION_ORDER` (2 backend files, same runtime — straightforward):** Extracted to a new shared file, `backend/src/constants/subjectOrder.js`. `studyMap.service.js` and `curriculumIndexBuilder.js` both import from it now instead of maintaining independent copies. Zero behavior change, zero remaining duplication.
+
+**`CHAPTER_HINGLISH` (backend + frontend, different runtimes — re-traced, not assumed):** The full API surface trace found the real fix was much smaller than first estimated:
+- `listChapterProgressController` **already returned `hinglishTitle`** — the frontend (`FocusModal.jsx`) was simply not using it, doing its own redundant lookup instead.
+- `studyMap.service.js` (chapter objects, consumed by `Topbar.jsx` and `FocusModal.jsx`) had no `hinglishTitle` field — one line added to `createChapterItem()`.
+- `sourceFormatter.js` (`/ask` response sources, consumed by `ChatMessage.jsx`'s source footnote) had no `hinglishTitle` field — one line added.
+
+With those 2 small backend additions (both reusing the existing single `backend/src/constants/chapterHinglish.js` map — no new lookups), every frontend consumer could read `hinglishTitle` directly off already-fetched data. **`frontend/src/constants/chapterHinglish.js` was deleted entirely** — true single source of truth, not a sync-check band-aid on top of two copies.
+
+**Files changed:**
+- New: `backend/src/constants/subjectOrder.js`
+- `backend/src/services/studyMap.service.js` — imports `SUBJECT_ORDER`/`SECTION_ORDER` from the new shared file; `createChapterItem()` now includes `hinglishTitle`
+- `backend/src/curriculum/curriculumIndexBuilder.js` — imports `SUBJECT_ORDER`/`SECTION_ORDER` from the new shared file
+- `backend/src/rag/sourceFormatter.js` — source objects now include `hinglishTitle`
+- `frontend/src/components/FocusModal.jsx` — uses `cp.hinglishTitle` directly (kept `chapterTitleMap` only for its existing-chapter validity check); `CHAPTER_HINGLISH` import removed
+- `frontend/src/components/Topbar.jsx` — uses `selectedChapter.hinglishTitle`; `CHAPTER_HINGLISH` import removed
+- `frontend/src/components/ChatMessage.jsx` — `extractChapterName()` prefers `src.hinglishTitle`, falls back to the existing English-parsing logic only for sources without a structured `chapterTitle` (defensive, not expected to trigger given current backend behavior); `CHAPTER_HINGLISH` import removed
+- Deleted: `frontend/src/constants/chapterHinglish.js`
+
+**Verified (2026-07-09):**
+1. `npm run build` (frontend) — clean. `node --check` on all 4 edited backend files — clean.
+2. `npm run test:study-map` — unaffected (1 subject, 16 chapters, correct section breakdown). `npm run test:curriculum-resolvers` — unaffected (same pass output as before).
+3. Live browser test (guest mode, Electricity chapter with existing 8% progress): FocusModal's "Jahan Chhoda Tha" card correctly showed "Bijli 8% complete" via `cp.hinglishTitle`; after selecting the chapter, Topbar correctly showed "Bijli" via `selectedChapter.hinglishTitle`; after an `/ask` turn, the message's source footnote correctly showed "— Bijli" via `source.hinglishTitle` — all 3 consumers confirmed working from the single backend source, zero frontend lookup table.
+4. Confirmed via grep: zero remaining references to `CHAPTER_HINGLISH`/`chapterHinglish` in `frontend/src` other than 2 explanatory code comments.
+
+---
+
 ## SUPERSEDED DECISIONS (so nobody re-reads the archived design doc and gets confused)
 
 `FOCUS_MODE_DB_ARCHITECTURE.md`'s "Open Decisions" section (§14) made two calls that were **deliberately overridden** once the deeper Phase C audit happened:
@@ -216,10 +247,8 @@ Same root cause as BUG-2 (`buildRecommendation()`'s chips were computed but neve
 | `user_study_stats` collection (streak tracking, subject-level dashboards) | DB Architecture Phase 6 | Deferred by design | Build only when a specific feature needs it — explicit instruction in the original design doc, still correct. |
 | Chapter-Complete Quiz (verify real comprehension before/after NEXT_STEP, surface weak topics) | Raised during ISSUE-1 discussion, 2026-07-09 | Future feature, not a bug | Materially bigger scope — needs question generation/bank per chapter, scoring logic, new UI flow, and a "pass" threshold decision for an already-`completed` chapter. Needs its own deep-discussion phase when picked up. |
 | Multi-subject content pipeline — `data/class-10/science` is hardcoded as the only content directory in 7+ backend files | Found during STEP-15's backend trace, 2026-07-09 | Not deploy-blocking, currently irrelevant | Real gap, but only matters once Hindi/Math/etc. content actually gets written — building this today would be speculative (no content exists to test it against). Revisit when the first non-Science subject is ready to launch. |
-| `SUBJECT_ORDER` duplicated in 2 backend files (`studyMap.service.js`, `curriculumIndexBuilder.js`), no shared source | Found during STEP-15's backend trace, 2026-07-09 | Small cleanup | Consistent today, no automated guarantee against future drift. Low priority, do whenever convenient. |
-| `CHAPTER_HINGLISH` duplicated between `backend/src/constants/chapterHinglish.js` and `frontend/src/constants/chapterHinglish.js`, manually kept in sync by comment convention only | Noticed in passing during STEP-15, 2026-07-09 | Small cleanup, same pattern as above | Not a bug today (both copies match), but same "two systems that could drift" risk shape as everything else in this file. Low priority. |
 
-**Nothing in this list is deploy-blocking.** All 3 confirmed bugs, both secondary issues, the architecture decision that unified the two progress systems, and STEP-15 are done and verified. The remaining items are scoped enhancements or low-priority cleanups for a later session.
+**Nothing in this list is deploy-blocking.** All 3 confirmed bugs, both secondary issues, the architecture decision that unified the two progress systems, STEP-15, and the `SUBJECT_ORDER`/`CHAPTER_HINGLISH` duplication cleanups are done and verified. The remaining items are scoped enhancements for a later session.
 
 ---
 
@@ -241,11 +270,10 @@ Same root cause as BUG-2 (`buildRecommendation()`'s chips were computed but neve
 | STEP-13 (learningMode state machine) | `[ ]` | — | — | — |
 | Chapter-Complete Quiz | `[ ]` | — | — | Parked, not scoped yet |
 | Multi-subject content pipeline (7+ hardcoded paths) | `[ ]` | — | — | Found during STEP-15 trace. Deferred — no non-Science content exists yet. |
-| `SUBJECT_ORDER` duplicated in 2 backend files | `[ ]` | — | — | Found during STEP-15 trace. Low priority. |
-| `CHAPTER_HINGLISH` duplicated frontend/backend | `[ ]` | — | — | Noticed during STEP-15 trace. Low priority. |
+| `SUBJECT_ORDER`/`CHAPTER_HINGLISH` duplication cleanup | `[x]` | 2026-07-09 | 2026-07-09 | Both fully eliminated — single source of truth in both cases. See Phase E above. |
 
 ---
 
 ## NEXT ACTION
 
-STEP-15 is now done. Remaining open items: STEP-13 (learningMode state machine) and the Chapter-Complete Quiz both need their own deep-discussion phase before any code is touched. The 3 items found during STEP-15's backend trace (multi-subject content pipeline, `SUBJECT_ORDER` duplication, `CHAPTER_HINGLISH` duplication) are low-priority/deferred cleanups — none are deploy-blocking, pick up whenever convenient.
+STEP-15 and the `SUBJECT_ORDER`/`CHAPTER_HINGLISH` duplication cleanup are done. Remaining open items: STEP-13 (learningMode state machine) and the Chapter-Complete Quiz both need their own deep-discussion phase before any code is touched. The multi-subject content pipeline gap (7+ hardcoded paths) is deferred — no non-Science content exists yet to justify building it. Nothing left is deploy-blocking.

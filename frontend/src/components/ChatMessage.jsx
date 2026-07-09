@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -47,12 +46,17 @@ function ThinkingDots() {
 }
 
 const extractChapterName = (src) => {
-  // Prefer chapterTitle field directly (avoids " - " truncation bug in label parsing)
+  // Prefer the backend-computed hinglishTitle directly (sourceFormatter.js derives
+  // it from the single CHAPTER_HINGLISH source of truth — no frontend lookup needed).
+  if (typeof src === 'object' && src?.hinglishTitle) return src.hinglishTitle;
+
+  // Fallback path for sources without a structured chapterTitle/hinglishTitle
+  // (defensive — current backend always includes both, but kept for safety).
   const english = (typeof src === 'object' && src?.chapterTitle)
     ? src.chapterTitle
     : (typeof src === 'string' ? src : (src?.label || src?.sourceTitle || ''))
         .replace(/^Source\s*\d+:\s*/i, '').split(' - ')[0].trim();
-  return CHAPTER_HINGLISH[english] || english;
+  return english;
 };
 
 function SourceFootnote({ sources }) {

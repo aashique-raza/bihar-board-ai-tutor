@@ -14,7 +14,6 @@ import Dialog from '@mui/material/Dialog';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { useChapterProgress } from '../hooks/useChapterProgress.js';
-import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 
 // Icon + placeholder-title config for subjects, keyed by id. This is a lookup,
 // NOT the render source — the render list is the union of this config and
@@ -223,9 +222,13 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
               </Typography>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                 {inProgressChapters.map((cp) => {
-                  const englishTitle = chapterTitleMap[cp.chapterId];
-                  if (!englishTitle) return null;
-                  const hinglishTitle = CHAPTER_HINGLISH[englishTitle] || englishTitle;
+                  // Only show chapters that still exist in the current curriculum
+                  // (a chapter_progress doc can outlive a removed/renamed chapter).
+                  if (!chapterTitleMap[cp.chapterId]) return null;
+                  // hinglishTitle comes straight from the backend (listChapterProgressController
+                  // already computes it from the single CHAPTER_HINGLISH source of truth) —
+                  // no frontend lookup needed.
+                  const hinglishTitle = cp.hinglishTitle || chapterTitleMap[cp.chapterId];
                   const pct = Math.round(cp.progressPercent ?? 0);
                   return (
                     <button
