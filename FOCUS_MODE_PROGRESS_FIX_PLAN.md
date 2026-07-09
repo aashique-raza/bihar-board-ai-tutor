@@ -235,7 +235,7 @@ const handleFocusChapterSelect = (chapterId) => {
 
 ---
 
-### BUG-3 `[ ]` Topic granularity is unusably fine — chapters have 11 to 59 "core" topics
+### BUG-3 `[x]` Topic granularity is unusably fine — chapters have 11 to 59 "core" topics
 
 **Severity: CRITICAL for product experience — makes the whole progress bar/roadmap feature feel broken even when the plumbing is correct.**
 
@@ -273,6 +273,51 @@ const handleFocusChapterSelect = (chapterId) => {
 - (c) Hybrid: pick one canonical grouping level ("core" but tightened) and use it for both teaching pace and progress display, accepting we may need to touch the source markdown/index-builder logic.
 
 This will need its own focused sub-discussion when we reach it — likely the most content-heavy step in this file.
+
+---
+
+### BUG-3 — IMPLEMENTATION + VERIFICATION NOTES (2026-07-08/09)
+
+**Decision made after deep discussion (chose option (a)/(c) hybrid, rejected a separate display-only grouping layer):**
+
+Investigated the actual root cause before choosing a fix: `markdownChunker.js`'s section-merge logic *already* silently merges small adjacent headings into one physical embedding chunk (e.g. "Testes"/"Sperm"/"Vas Deferens" were already being merged into a neighboring chunk during embedding) — while `curriculumIndexBuilder.js`'s `role` tagging treated each of those same headings as an independent "core" topic. **These two pipelines already disagreed with each other on the same markdown file** — a third instance of the "two systems, no shared truth" anti-pattern (after `chatState` vs `ChapterProgress` in BUG-1). A bolt-on `milestones.json` overlay (the originally-considered "separate display-grouping layer") would have created a *fourth* disagreeing system, so it was rejected in favor of fixing the actual source of truth: the markdown heading hierarchy itself.
+
+Also found and rejected as unnecessary: `EMBEDDING_PROVIDER=openai` (not Gemini as CLAUDE.md states — docs are stale) makes full re-embedding cheap and fast (~10-15 min), removing the original cost concern against touching source content.
+
+**Fix:** Restructured heading levels (and only heading levels/number-prefixes — zero prose/content changes) across the 11 worst-offending chapters so genuinely major concepts stay `##` (H2, `role: core`, walked by `nextTopicResolver`) and their sub-details nest under them as `###`/`####` (`role: subtopic`, folded into the parent's chunk instead of counted separately). Built a small reusable script, `backend/scripts/apply-heading-restructure.js`, that applies a JSON list of exact heading-line replacements to one file, verifying every "from" line matches exactly once and the total heading count is unchanged before writing (aborts with no partial writes on any mismatch) — used instead of one-off manual edits given the scale (11 files, ~300 heading-line changes total).
+
+**Files changed (content, not code):**
+```
+data/class-10/science/biology/chapter-03-how-do-organisms-reproduce.md      59 → 12 core topics
+data/class-10/science/biology/chapter-04-heredity-and-evolution.md         45 → 12
+data/class-10/science/biology/chapter-02-control-and-coordination.md       42 → 12
+data/class-10/science/physics/chapter-01-light-reflection-and-refraction.md 37 → 9
+data/class-10/science/chemistry/chapter-03-metals-and-non-metals.md        37 → 13
+data/class-10/science/physics/chapter-02-human-eye-and-colourful-world.md  33 → 10
+data/class-10/science/chemistry/chapter-02-acids-bases-and-salts.md        32 → 13
+data/class-10/science/biology/chapter-01-life-processes.md                 30 → 11
+data/class-10/science/physics/chapter-05-sources-of-energy.md              25 → 13
+data/class-10/science/physics/chapter-06-our-environment.md                25 → 12
+data/class-10/science/physics/chapter-04-magnetic-effects-of-electric-current.md 24 → 12
+```
+Chapters left untouched (already reasonable): Electricity (13), Chemical Reactions and Equations (15), Periodic Classification of Elements (16), Carbon and Its Compounds (20), Management of Natural Resources (11).
+
+**New file:** `backend/scripts/apply-heading-restructure.js` (reusable for any future re-grouping work — the per-chapter JSON specs used to drive it were scratch files, deleted after each chapter was verified).
+
+**No code changes** — `curriculumIndexBuilder.js`, `nextTopicResolver.js`, `markdownChunker.js` all worked correctly once given correctly-nested input; this was a pure content fix, exactly per the "prefer fixing the real source of truth over patching around it" working-style rule at the top of this file.
+
+**Verified (2026-07-08/09):**
+1. `npm run curriculum:build` after each chapter — confirmed exact designed core-topic count and correct titles/order for all 11 chapters.
+2. `test:curriculum-resolvers`, `test:next-topic-resolver` — pass (dynamic assertions, unaffected).
+3. `test:chunks` — same 3 failures as *before* any change (confirmed via `git stash` on the original files) — a pre-existing `curriculum:build`-unrelated chapter-count mismatch (16 vs 17, from an already-existing "meta/Science Introduction" chapter) and a pre-existing lazy-vs-normal chunker count mismatch. Neither caused by this work.
+4. `npm run rag:index` (full re-embed, OpenAI `text-embedding-3-large`, 628 chunks) — ran clean; confirmed live in MongoDB (`chunks` collection) that content previously mis-grouped under a neighboring heading (e.g. "Testes"/"Sperm"/"Vas Deferens" were silently merged into the "Changes in Boys During Puberty" chunk before this fix) now correctly appears under `heading_path: "... > 39. Male Reproductive System > ..."`.
+5. Reset 3 `chapter_progress` documents whose stored `currentTopicId` no longer resolves to the same concept after restructuring (topicIds are order-based, so numbering shifted): Life Processes (userId `6a301eb...`, was 7%), Control and Coordination (same user, was 7%; and one guest doc, was 2%) — cleared to `currentTopicId: null, completedTopicIds: [], progressPercent: 0` so next visit starts clean rather than pointing at the wrong topic. Chapters not restructured (Electricity, Chemical Reactions) were left untouched — confirmed no `chapter_progress` docs referenced any other restructured chapter.
+
+**Side effects discovered and accepted as correct, not bugs:**
+- A handful of chapters (Metals and Non-metals, Human Eye, Sources of Energy, Our Environment, Magnetic Effects) use `# N. Title` (H1) as their main structure with unlabelled `role: chapter` status — meaning some of their sub-topics (e.g. Human Eye's "9. Why Is the Sky Blue?", "10. ...Sunset?", "11. ...Danger Signals Red?") had **zero** core children and were **never reachable by NEXT_STEP at all** before this fix. Restructuring these chapters' H1 sections into H2 anchors fixed this invisible-content gap as a natural side effect, not a separate bug hunt.
+- One cosmetic-only, non-blocking gap noted but not fixed (out of scope for BUG-3): `markdownChunker.js`'s section-merge logic keeps only the *first* heading's `heading_path` when merging several small adjacent sections into one chunk — meaning a merged chunk's displayed context path can undercount how many original headings it actually covers. Does not affect `role` classification or NEXT_STEP correctness (verified); worth a look if `[Context]` header precision for the tutor LLM ever becomes a problem.
+
+**Not yet done:** ISSUE-1 (`completedTopicIds` only grows via NEXT_STEP) and ISSUE-2 (`FocusProgressHeader`'s guesswork fallback) are next in this file.
 
 ---
 
@@ -442,7 +487,7 @@ If a student asks concept questions/doubts instead of tapping "aage badhao", no 
 | ARCHITECTURE DECISION | `[x]` | 2026-07-06 | 2026-07-06 | ChapterProgress = single source of truth; chatState fields removed; fresh revision reset (completedAt preserved) |
 | BUG-1 (resume wiped) | `[x]` | 2026-07-06 | 2026-07-06 | Implemented + verified end-to-end (see notes below) |
 | BUG-2 (frontend zeroing) | `[x]` | 2026-07-06 | 2026-07-07 | Implemented + verified end-to-end (see notes below). Absorbed ISSUE-3. |
-| BUG-3 (topic granularity) | `[ ]` | — | — | Content/index rework — own sub-discussion |
+| BUG-3 (topic granularity) | `[x]` | 2026-07-08 | 2026-07-09 | 11 chapters restructured (H2/H3 heading regroup, no prose changes), `rag:index` re-embedded, 3 stale progress docs reset. See notes below. |
 | ISSUE-1 (completedTopicIds gaps) | `[ ]` | — | — | After core bugs |
 | ISSUE-2 (header fallback guesswork) | `[ ]` | — | — | After core bugs |
 | ISSUE-3 (unused reset/revise UI) | `[~]` | 2026-07-06 | — | Folded into BUG-2's fix — same root gap (buildRecommendation unused by frontend) |
@@ -461,4 +506,4 @@ If a student asks concept questions/doubts instead of tapping "aage badhao", no 
 
 ## NEXT ACTION
 
-Start with the **Architecture Decision** (top of this file) — nothing else can be correctly fixed until that's settled. When ready, say so and we'll open the deep-discussion phase for it.
+Architecture Decision, BUG-1, BUG-2, and BUG-3 are all DONE and verified. Next open items are **ISSUE-1** (`completedTopicIds` only grows via NEXT_STEP intent, not concept-question turns) and **ISSUE-2** (`FocusProgressHeader`'s fallback guesswork when `currentTopicId` isn't found in the topics list). Pick one and open its deep-discussion phase when ready.
