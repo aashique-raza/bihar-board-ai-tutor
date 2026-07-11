@@ -616,6 +616,14 @@ function ChatPage({ theme, toggleTheme }) {
       case 'continue_step':
         handleAsk('Aage badhao', studyModeRef.current);
         break;
+      // Backend-guaranteed advance chip (see sanitizeSuggestedActions in
+      // step7.saveAndRespond.js) — always injected for CONCEPT_QUESTION/
+      // EXPLAIN_MORE/EXAM_INFO/mid-chapter NEXT_STEP turns in Focus Mode, so
+      // it must route the same decider-safe way as 'continue_step', not fall
+      // through to the generic label-as-question default.
+      case 'next_topic':
+        handleAsk('Aage badhao', studyModeRef.current);
+        break;
       case 'chapter_overview':
         handleAsk('Chapter overview batao', studyModeRef.current);
         break;

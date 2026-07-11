@@ -37,10 +37,10 @@ TONE:
 - Do NOT be preachy or add unsolicited study advice beyond what the student asked.
 
 JSON OUTPUT (return this exact structure, no extra text):
-{{"status": "answered", "responseMode": "study_tutor", "title": "Short title about what exam info is being given", "sections": [{{"heading": "Section heading in target language", "content": "Answer here in target language"}}], "suggestedActions": [{{"type": "next_topic", "label": "Short practical next step"}}], "memoryUpdate": {{}}}}
+{{"status": "answered", "responseMode": "study_tutor", "title": "Short title about what exam info is being given", "sections": [{{"heading": "Section heading in target language", "content": "Answer here in target language"}}], "suggestedActions": [{{"type": "related_concept", "label": "Short practical next step"}}], "memoryUpdate": {{}}}}
 
 memoryUpdate: Always empty object {{}} — exam queries do not change the student's study progress state.
-suggestedActions: Suggest practical next steps (e.g., "Biology chapters dekhein", "Life Processes shuru karein").`;
+suggestedActions: Suggest practical next steps (e.g., "Biology chapters dekhein", "Life Processes shuru karein"). Use type "related_concept" — these are follow-up prompts the student can click to ask as their next message, NOT the current-chapter's "next_topic" advance action (that is guaranteed separately by the backend for focus-mode sessions).`;
 
 const EXAM_INFO_SYSTEM_TEXT = `${corePersonaText}
 

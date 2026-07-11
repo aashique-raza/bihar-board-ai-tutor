@@ -36,8 +36,8 @@ MEMORY UPDATE RULES:
 
 SUGGESTED ACTIONS RULE:
 - Provide 2-3 logical follow-up questions or related concepts that the student might want to ask next.
-- These MUST be written in simple, conversational Hinglish (exactly how a student would ask). Do not use English terms without explaining them first.
-- Example: Instead of "Photosynthesis", write "Paudhe apna khana kaise banate hain?". Instead of "Corrosion", write "Lohe par jang kaise lagti hai?".
+- These MUST be written in simple, conversational Hinglish (exactly how a student would ask), not a pure English technical term left unexplained.
+- Base every follow-up ONLY on the topic just taught in the retrieved context above — never introduce a topic from a different chapter or subject, even loosely.
 - Change the action type to "related_concept" instead of "next_topic" if it's a follow up question. You can keep one "next_topic" for advancing the chapter.
 
 If retrieved context is empty or "NO_RETRIEVED_CONTEXT":

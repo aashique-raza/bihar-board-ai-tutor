@@ -68,8 +68,8 @@ IF retrieved context is empty or "NO_RETRIEVED_CONTEXT":
 
 SUGGESTED ACTIONS RULE:
 - Provide 2-3 logical follow-up questions or related concepts that the student might want to ask next.
-- These MUST be written in simple, conversational Hinglish (exactly how a student would ask it).
-- NEVER use pure English terms alone. (e.g. WRONG: "Autotrophic Nutrition". RIGHT: "Paudhe apna khana kaise banate hain?").
+- These MUST be written in simple, conversational Hinglish (exactly how a student would ask it), not a pure English technical term.
+- Base every suggestion ONLY on the topic/chapter actually covered in the retrieved context above — never introduce a topic from a different chapter or subject, even loosely.
 - Set the "type" field to "related_concept".
 
 JSON OUTPUT (return this exact structure, no extra text):

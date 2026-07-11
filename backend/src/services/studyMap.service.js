@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { loadMarkdownDocuments } from '../rag/markdownLoader.js';
 import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 import { SUBJECT_ORDER, SECTION_ORDER } from '../constants/subjectOrder.js';
+import { slugify } from '../utils/slugify.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,14 +17,6 @@ const scienceContentDir = path.resolve(backendRoot, '..', 'data', 'class-10', 's
 const NON_BROWSABLE_SECTIONS = ['Meta'];
 
 let cachedStudyMap = null;
-
-const slugify = (value) =>
-  String(value || '')
-    .trim()
-    .toLowerCase()
-    .replace(/&/g, ' and ')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
 
 const byConfiguredOrder = (order, getValue) => (left, right) => {
   const leftIndex = order.indexOf(getValue(left));

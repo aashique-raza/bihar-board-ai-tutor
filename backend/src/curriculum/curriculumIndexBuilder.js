@@ -9,12 +9,10 @@
 
 import { Document } from '@langchain/core/documents';
 import { SUBJECT_ORDER, SECTION_ORDER } from '../constants/subjectOrder.js';
+import { slugify } from '../utils/slugify.js';
 
 const HEADING_PATTERN = /^(#{1,6})\s+(.+?)\s*$/;
 const IMPORTANT_HEADING_LEVELS = new Set([1, 2, 3, 4]);
-
-const normalizeIdPart = (value) =>
-  String(value || '').trim().toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
 const byConfiguredOrder = (order, getValue) => (left, right) => {
   const leftIndex = order.indexOf(getValue(left));
@@ -30,8 +28,8 @@ const getOrCreate = (map, key, createValue) => {
   return map.get(key);
 };
 
-const createSubjectId = (subject) => normalizeIdPart(subject);
-const createSectionId = (section) => normalizeIdPart(section);
+const createSubjectId = (subject) => slugify(subject);
+const createSectionId = (section) => slugify(section);
 const createChapterId = (metadata) =>
   [createSubjectId(metadata.subject), createSectionId(metadata.section), `chapter-${String(metadata.chapter_no).padStart(2, '0')}`].join('.');
 const createTopicId = (chapterId, topicIndex) => `${chapterId}.topic-${String(topicIndex).padStart(2, '0')}`;

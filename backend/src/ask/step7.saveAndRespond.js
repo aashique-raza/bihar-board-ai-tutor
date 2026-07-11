@@ -118,19 +118,45 @@ const removeUndefinedFields = (data) => {
   return cleanData;
 };
 
+// Intents that must never leave the student without a way to advance the
+// current focus chapter — LLM-authored chips for these intents are never
+// guaranteed to include a "next_topic" action (proven: CONCEPT_QUESTION's
+// related_concept follow-ups never do), so it's injected here, in code,
+// instead of trusted to prompt compliance. See FOCUS_MODE_PLAN.md.
+const GUARANTEED_NEXT_TOPIC_INTENTS = new Set(['CONCEPT_QUESTION', 'EXPLAIN_MORE', 'EXAM_INFO']);
+const DEFAULT_NEXT_TOPIC_ACTION = { type: 'next_topic', label: 'Aage badhein' };
+
 /**
- * Sanitizes action labels for interface cards rendering.
+ * Sanitizes action labels for interface cards rendering, and — in Focus Mode —
+ * guarantees a "next_topic" chip is present for intents where the LLM's own
+ * suggestions can otherwise leave the student with no way to advance the
+ * chapter (the "loop trap" bug). NEXT_STEP only gets the guarantee when
+ * nextTopicSignal is truthy — CHAPTER_COMPLETE/no_chapter responses also
+ * carry intent 'NEXT_STEP' but must NOT get an "Aage badhein" chip (there is
+ * no next topic in that state).
  */
-const sanitizeSuggestedActions = (actions) => {
-  if (!Array.isArray(actions)) return [];
-  return actions
-    .filter((action) => action && typeof action === 'object')
-    .map((action) => ({
-      type: cleanText(action.type).slice(0, 60),
-      label: cleanText(action.label).slice(0, 80),
-    }))
-    .filter((action) => action.type && action.label)
-    .slice(0, 4);
+const sanitizeSuggestedActions = (actions, { intent, studyMode, nextTopicSignal } = {}) => {
+  const cleaned = Array.isArray(actions)
+    ? actions
+        .filter((action) => action && typeof action === 'object')
+        .map((action) => ({
+          type: cleanText(action.type).slice(0, 60),
+          label: cleanText(action.label).slice(0, 80),
+        }))
+        .filter((action) => action.type && action.label)
+    : [];
+
+  const needsGuarantee =
+    studyMode === 'focus' &&
+    (GUARANTEED_NEXT_TOPIC_INTENTS.has(intent) || (intent === 'NEXT_STEP' && Boolean(nextTopicSignal)));
+
+  const hasNextTopic = cleaned.some((action) => action.type === 'next_topic');
+
+  const withGuarantee = (needsGuarantee && !hasNextTopic)
+    ? [DEFAULT_NEXT_TOPIC_ACTION, ...cleaned] // prepend — must survive the slice(0, 4) cap below
+    : cleaned;
+
+  return withGuarantee.slice(0, 4);
 };
 
 /**
@@ -164,7 +190,7 @@ export const saveAndRespond = async (
   { sessionId, chatState, chapterProgress },
   { language, driftSignal },
   decision,
-  { retrieval, sources, nextTopicSignal, lastRetrievalQuery },
+  { retrieval, sources, nextTopicSignal, lastRetrievalQuery, isOutOfFocusAnswer },
   response,
   userId = null,
   tokenUsage = 0,
@@ -186,11 +212,16 @@ export const saveAndRespond = async (
   // Save the exact retrieval query used — code-controlled, never from LLM memoryUpdate.
   // CONCEPT_QUESTION and NEXT_STEP are the only intents that retrieve content for teaching.
   // Guard: sources.length > 0 ensures we only save queries that actually returned content.
+  // !isOutOfFocusAnswer excludes the out-of-focus redirect case — that turn found sources
+  // globally but never taught the student anything (it declined with "yeh doosre chapter
+  // mein hai"), so its query must not be remembered as "the last thing genuinely explained"
+  // — otherwise a later EXPLAIN_MORE would reuse it and could teach the wrong chapter.
   const _intent = decision?.intent;
   if (
     ['CONCEPT_QUESTION', 'NEXT_STEP'].includes(_intent) &&
     lastRetrievalQuery &&
-    sources?.length > 0
+    sources?.length > 0 &&
+    !isOutOfFocusAnswer
   ) {
     stateUpdates.lastRetrievalQuery = lastRetrievalQuery;
   }
@@ -198,12 +229,14 @@ export const saveAndRespond = async (
   // Save the last real study explanation — code-controlled, never from LLM memoryUpdate.
   // Used by EXPLAIN_MORE (variation mandate) and CONCEPT_QUESTION (anti-repetition rule)
   // so both prompts compare against the actual study explanation, not whatever Zuno last said.
-  // Guards: answered status + retrieved content used + non-empty answer text.
+  // Guards: answered status + retrieved content used + non-empty answer text + not an
+  // out-of-focus redirect (see lastRetrievalQuery guard above — same reasoning).
   const isRealStudyAnswer = (
     ['CONCEPT_QUESTION', 'EXPLAIN_MORE', 'NEXT_STEP'].includes(_intent) &&
     response?.status === 'answered' &&
     sources?.length > 0 &&
-    response?.answer?.trim()
+    response?.answer?.trim() &&
+    !isOutOfFocusAnswer
   );
   if (isRealStudyAnswer) {
     stateUpdates.lastStudyResponse = response.answer.trim().slice(0, 800);
@@ -405,7 +438,7 @@ export const saveAndRespond = async (
     sections: response.sections,
     answer: response.answer,
     sources,
-    suggestedActions: sanitizeSuggestedActions(response.suggestedActions),
+    suggestedActions: sanitizeSuggestedActions(response.suggestedActions, { intent: _intent, studyMode, nextTopicSignal }),
     retrieval: retrieval
       ? { question: retrieval.question, returnedCount: retrieval.debug?.returnedCount || 0 }
       : null,

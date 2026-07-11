@@ -46,11 +46,23 @@ export const getNextTopic = async (chapterId, currentTopicId) => {
   // Step 6: Find where the student currently is in the list
   const currentIndex = coreTopics.findIndex((topic) => topic.topicId === currentTopicId);
 
+  // Step 6b: currentTopicId doesn't resolve in the current topic list — e.g. after a
+  // curriculum restructure changed topic IDs (this happened once already, see BUG-3 in
+  // FOCUS_MODE_PLAN.md). This is a lost pointer, not a genuinely finished chapter — treating
+  // it as chapter_complete would falsely tell the student they're done. Self-heal by
+  // resyncing to topic 1 instead, and log it so a silent resync is never invisible.
+  if (currentIndex === -1) {
+    console.warn(
+      `[nextTopicResolver] currentTopicId "${currentTopicId}" not found in chapter "${chapterId}" — resyncing to topic 1 (likely a stale pointer from a content restructure).`
+    );
+    return { status: 'found', topic: coreTopics[0] };
+  }
+
   // Step 7: currentTopicId was found and a next topic exists — return it
-  if (currentIndex !== -1 && currentIndex < coreTopics.length - 1) {
+  if (currentIndex < coreTopics.length - 1) {
     return { status: 'found', topic: coreTopics[currentIndex + 1] };
   }
 
-  // Step 8: currentTopicId not found in list, or it was the last topic
+  // Step 8: currentTopicId was found and it was the last topic — genuinely done
   return { status: 'chapter_complete' };
 };

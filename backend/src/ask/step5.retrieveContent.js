@@ -30,8 +30,15 @@ const buildTopicSearchQuery = (topic) => {
   // Instead, build a natural question-style query from the topic title
   // This scores much higher against content chunks in the vector store
 
+  // Strips leading numbering in both "4. " and decimal sub-numbering "4.1 "/"4.10 "
+  // forms. The old pattern (/^\d+\.\s*/) only matched whole-number prefixes — for
+  // "4.1 Combination Reaction" it consumed just "4." and left a stray "1 " behind,
+  // degrading retrieval specificity enough that several sibling sub-topics (e.g.
+  // this chapter's 8 "4.1"–"4.8" reaction types) all matched the same generic
+  // "types of reactions" chunk instead of their own — producing near-identical
+  // NEXT_STEP answers for genuinely different, correctly-advancing topics.
   const title = topic.title
-    .replace(/^\d+\.\s*/, '')  // remove leading "1. " numbering
+    .replace(/^\d+(\.\d+)*\.?\s*/, '')
     .trim();
 
   // Use chapter context + topic title as semantic query
@@ -94,11 +101,15 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
   }
 
   // EXPLAIN_MORE: re-retrieve the topic the student wants re-explained.
-  // Prefer decider's searchQuery (freshly extracted from conversation context) over
-  // lastRetrievalQuery (stale — same query that produced the response student didn't understand).
-  // Fallback chain: searchQuery → lastRetrievalQuery → lastTopic.
-  // focusChapter is intentionally NOT passed — lastTopic may be from a different
-  // chapter than the student's current focus selection.
+  // By design (see deciderPrompt.js), the decider ALWAYS returns searchQuery=null for
+  // this intent — EXPLAIN_MORE means "re-explain what you just told me", so it
+  // deliberately reuses saved session state (lastRetrievalQuery → lastTopic) instead
+  // of extracting a fresh query. That design is sound; the bug was that this reused
+  // state was never scoped to the focus chapter, so it could retrieve (and teach)
+  // content from a completely different chapter with no warning. Passing focusChapter
+  // here closes that gap the same way CONCEPT_QUESTION/NEXT_STEP already are scoped —
+  // and if the reused query genuinely isn't from this chapter, the 0-chunks branch
+  // below already asks the student to clarify instead of guessing globally.
   if (intent === 'EXPLAIN_MORE') {
     const topicQuery = searchQuery || chatState?.lastRetrievalQuery || chatState?.lastTopic || null;
 
@@ -114,7 +125,7 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
     const querySource = chatState?.lastRetrievalQuery ? 'chatState.lastRetrievalQuery' : 'chatState.lastTopic';
     if (isDev) console.log(`[Step 5 EXPLAIN_MORE] Re-retrieving via ${querySource}: "${topicQuery}"`);
 
-    const explainRetrieval = await retrieveRelevantChunks(topicQuery, getRetrieverOptions(null));
+    const explainRetrieval = await retrieveRelevantChunks(topicQuery, getRetrieverOptions(focusChapter));
     const explainChunks = explainRetrieval.results || [];
 
     if (!explainChunks.length) {
