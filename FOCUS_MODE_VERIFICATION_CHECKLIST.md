@@ -33,6 +33,11 @@ These surfaced from direct code tracing during this audit — not copied from an
 4. **`chapterProgress.controller.js:190` hardcodes `16`** as the total chapter count for the `notStartedCount` summary tile. **NOTE ONLY — not fixing now.** Correct today; would only drift the moment a chapter is added/removed, which isn't planned (multi-subject content pipeline is separately deferred). Fixing this now would be speculative work against CLAUDE.md's own "do not overbuild" rule.
 5. **Stale comment**: `backend/src/constants/chapterHinglish.js:2` still says "must be kept in sync with frontend/src/constants/chapterHinglish.js" — that frontend file was deleted in Phase E. **NOTE ONLY — trivial, cosmetic, fix opportunistically if that file is touched for another reason.**
 
+**Found while building/running the v1 verification script (2026-07-11), NOT from static code reading — this class of bug only surfaces when the script actually runs against real data:**
+
+6. **SEVERE, ✅ FIXED (2026-07-11) — `chapterProgress.model.js`'s `guest_chapter_unique` index silently broke progress-saving for logged-in users.** Root cause: the `guestId` schema field has `default: null`, and Mongoose's `findOneAndUpdate(upsert: true)` applies schema defaults to newly-inserted documents by default — so **every** new `ChapterProgress` document, including logged-in users' (who never touch `guestId` in code), got `guestId: null` written explicitly. The index was declared with `sparse: true`, which only excludes documents where a field is truly *absent* — not documents where it's present with value `null`. Result: the **second different logged-in user to start any chapter someone else had already started** hit a real `E11000 duplicate key` error, and — after `withRetry()`'s one retry also failed identically — that turn's progress write was silently lost (confirmed live: reproduced the exact collision, then confirmed the fix resolves it, via `backend/src/db` direct queries, not assumed). This directly threatens the "logged-in user progress must reliably save" priority. Fix: `guest_chapter_unique` now uses `partialFilterExpression: { guestId: { $type: 'string' } }` — the same type-checking pattern `user_chapter_unique` already used (which is *why* the userId index never had this bug). A one-time migration (`backend/scripts/fix-guest-chapter-index.js`) dropped and rebuilt the live index; confirmed via `ChapterProgress.collection.indexes()` before/after.
+7. **Operational note, not a bug**: the Groq account tier in use has a **6000 TPM (tokens-per-minute) limit**, and a single real turn (decider + tutor) uses ~2500-3800 tokens — so even 2 real turns landing in the same 60s window can trip `rate_limit` → `provider_error`, independent of request-COUNT-based delays. `verify-focus-mode.js` retries once on `provider_error` and paces calls accordingly. If a future run still shows sporadic `provider_error` results, re-run just the failed scenario in isolation before concluding it's a real regression — this is exactly what happened during this pass (2 apparent Section C failures were retry-exhaustion artifacts, not real bugs, confirmed by re-running each in isolation with a longer gap).
+
 ---
 
 ## Stale-doc corrections (things two existing docs got wrong, now corrected)
@@ -49,39 +54,40 @@ These surfaced from direct code tracing during this audit — not copied from an
 
 ### A. Session lifecycle & resume
 
-- [ ] Fresh chapter (never studied) selected → welcome message says "Chalo shuru karte hain!" style text, chips = `next_step` (Shuru karo) + `chapter_overview`
-- [ ] Chapter with `status: in_progress` selected → welcome message says "Wapas aaye!... tak pahuche the", chips = `continue_step` + `restart_topic` + `roadmap`; progress header shows correct topic/% **immediately on selection**, before any `/ask` call
-- [ ] Chapter with `status: completed` selected → welcome message offers revise/switch, chips = `revise_chapter` + `switch_chapter`
-- [ ] Chapter with `status: revising` selected → behaves like fresh-start (chips = `next_step` + `chapter_overview`), since a revision reset always nulls `currentTopicId`
-- [ ] New session (simulating "New Chat" + reselect same chapter) resumes from the correct topic, not topic 1 — **BUG-1 regression guard**
-- [ ] Logged-in user refreshes mid-chapter → messages AND focus state (topic/%%/status) both fully restored from `GET /sessions/:id/history`
+- [x] **Verified 2026-07-11** (live, `verify-focus-mode.js`) — Fresh chapter (never studied) selected → recommendation is "start" with `next_step` + `chapter_overview` chips
+- [x] **Verified 2026-07-11** — Chapter with `status: in_progress` selected → recommendation is "resume" with `continue_step` + `restart_topic` + `roadmap` chips
+- [x] **Verified 2026-07-11** — Chapter with `status: completed` selected → recommendation offers `revise_chapter` + `switch_chapter`
+- [x] **Verified 2026-07-11** — Chapter with `status: revising` selected → behaves like fresh-start (`next_step` + `chapter_overview`)
+- [x] **Verified 2026-07-11** — New session (simulating "New Chat" + reselect same chapter) resumes from the correct topic, not topic 1 — **BUG-1 regression guard, confirmed passing**
+- [ ] Logged-in user refreshes mid-chapter → messages AND focus state (topic/%%/status) both fully restored from `GET /sessions/:id/history` — **not yet covered by the script (frontend-restore flow, needs a browser check, not just an API check)**
 - ~~Guest refreshes mid-chapter~~ — **out of scope, accepted** (see New Finding #2). Guest Focus Mode UX is explicitly deprioritized right now; not tested as part of this checklist.
 - [ ] Switching between two different sessions (HistoryPanel) that are each on a different focus chapter → no state bleed between them (topic/%/chips of session A never leak into session B)
 
 ### B. Topic advancement (NEXT_STEP)
 
-- [ ] "Aage badhao" from a fresh chapter → teaches topic 1
-- [ ] Repeated "Aage badhao" through a chapter with decimal sub-numbered topics (e.g. Chemical Reactions' "4.1"–"4.8") → each topic's taught content is genuinely distinct, not a repeat — **BUG-6 regression guard, never live-verified end-to-end** (plan file explicitly flags this as the one unfinished verification from Phase H, blocked by an environment issue at the time)
-- [ ] NEXT_STEP on the final topic → `CHAPTER_COMPLETE` message, chips are exactly `[switch_chapter, global_mode]`, **no** `next_topic` chip, `ChapterProgress.status` → `completed`, `progressPercent` → 100, `completedAt` set
-- [ ] `completedTopicIds` grows by exactly one per real NEXT_STEP advance, never duplicates, never skips
-- [ ] A chapter whose `currentTopicId` doesn't resolve in the current curriculum index → resyncs to topic 1 with a logged warning, does **not** mislabel as chapter_complete — **✅ fixed 2026-07-10 (New Finding #1), standalone-verified; add to the v1 script as a direct regression guard.**
+- [x] **Verified 2026-07-11** — "Aage badhao" from a fresh chapter → teaches topic 1
+- [ ] **STILL PENDING — highest-priority remaining item.** Repeated "Aage badhao" through a chapter with decimal sub-numbered topics (e.g. Chemical Reactions' "4.1"–"4.8") → each topic's taught content is genuinely distinct, not a repeat — **BUG-6 regression guard, never live-verified end-to-end.** `verify-focus-mode.js --full` covers this (asserts on the deterministic `chapterProgress.currentTopicId` sequence, not fragile text-diffing) but has not been run yet this session.
+- [ ] **Covered by `--full`, not yet run.** NEXT_STEP on the final topic → `CHAPTER_COMPLETE` message, chips are exactly `[switch_chapter, global_mode]`, **no** `next_topic` chip, `ChapterProgress.status` → `completed`, `progressPercent` → 100, `completedAt` set
+- [ ] **Covered by `--full`, not yet run.** `completedTopicIds` grows by exactly one per real NEXT_STEP advance, never duplicates, never skips
+- [x] **Verified 2026-07-11** (via real `/ask` HTTP call, not just the standalone unit test) — A chapter whose `currentTopicId` doesn't resolve in the current curriculum index → resyncs to topic 1 with a logged warning, does **not** mislabel as chapter_complete — **fixed 2026-07-10 (New Finding #1)**
 
 ### C. Suggested-action chip guarantees (BUG-5 class)
 
-- [ ] `CONCEPT_QUESTION` response always includes an injected `next_topic` ("Aage badhein") chip, in addition to the LLM's own `related_concept` chips
-- [ ] `EXPLAIN_MORE` response always includes the injected `next_topic` chip (prompt itself never emits any chip)
-- [ ] `EXAM_INFO` response includes both the injected `next_topic` chip AND its own chip correctly typed `related_concept` (not colliding)
-- [ ] `NEXT_STEP` (real mid-chapter advance) response includes `next_topic`
-- [ ] `NEXT_STEP` reaching `CHAPTER_COMPLETE` does **not** get a spurious `next_topic` chip
+- [x] **Verified 2026-07-11** — `CONCEPT_QUESTION` response always includes an injected `next_topic` ("Aage badhein") chip, in addition to the LLM's own `related_concept` chips
+- [x] **Verified 2026-07-11** — `EXPLAIN_MORE` response always includes the injected `next_topic` chip (prompt itself never emits any chip)
+- [x] **Verified 2026-07-11** — `EXAM_INFO` response includes both the injected `next_topic` chip AND its own chip correctly typed `related_concept` (not colliding)
+- [x] **Verified 2026-07-11** — `NEXT_STEP` (real mid-chapter advance) response includes `next_topic`
+- [ ] **Covered by `--full`, not yet run** (only reachable via the full chapter-drain). `NEXT_STEP` reaching `CHAPTER_COMPLETE` does **not** get a spurious `next_topic` chip
 - [ ] Every chip `type` emitted anywhere has a matching `case` in `ChatPage.jsx`'s `handleSuggestedAction`: `switch_chapter`, `global_mode`, `next_step`, `continue_step`, `next_topic`, `chapter_overview`, `restart_topic`, `revise_chapter`, `roadmap`, and the `related_concept`/default fallback (sends label as-is)
 - [ ] Clicking a chip never sends a mislabeled question — specifically `continue_step` sends "Aage badhao" (not "Chapter shuru karein"), matching what actually happens (resume, not restart)
 - [ ] "Roadmap" chip renders the current topic window client-side with zero network/LLM calls
 
 ### D. Cross-chapter isolation (BUG-4 class)
 
-- [ ] A `CONCEPT_QUESTION` whose topic exists only in a *different* chapter than the one selected → out-of-focus redirect message ("yeh topic doosre chapter mein hai... Global Mode use karo"), sourced from the real other-chapter content but **not taught directly**
-- [ ] Immediately after that redirect, `EXPLAIN_MORE` ("samajh nahi aaya") in the **same session** → must return `needs_clarification` ("Kaunsa topic tha?"), must **not** teach the other chapter's content — **the exact BUG-4 reproduction case**
-- [ ] A genuine on-chapter `CONCEPT_QUESTION` followed by `EXPLAIN_MORE` in the same session → correctly re-explains the *same* chapter's content, confirming the chapter-scoping fix doesn't break the normal path
+- [x] **Verified 2026-07-11** (live, via `verify-focus-mode.js`) — A `CONCEPT_QUESTION` whose topic exists only in a *different* chapter than the one selected → out-of-focus redirect message ("yeh topic doosre chapter mein hai... Global Mode use karo"), sourced from the real other-chapter content but **not taught directly**.
+  **New finding (2026-07-11), noted-only, not fixing now:** the redirect's trigger condition (`chunks.length === 0` in `step5.retrieveContent.js`) is not robust against a *weakly/irrelevantly* matching focus-chapter chunk. Live-reproduced: asking a Biology question while focused on "Light - Reflection and Refraction" retrieved 1 unrelated Physics chunk (a lens-comparison snippet) instead of 0, so the deterministic redirect never fired. In this specific case the tutor LLM itself correctly recognized the mismatch and returned `insufficient_context` without teaching the wrong content — no actual leak occurred — but this safety came from the LLM's own judgment, not a code guarantee, unlike the rest of this project's established "never trust the LLM for behavior-critical output" pattern (see BUG-5). Decided (Farhan, 2026-07-11): accept as-is for now, do not harden the retrieval trigger in this pass — revisit only if a real leak is ever observed with this exact shape (weak same-chapter false-positive chunk).
+- [x] **Verified 2026-07-11** — Immediately after that redirect, `EXPLAIN_MORE` ("samajh nahi aaya") in the **same session** → must return `needs_clarification` ("Kaunsa topic tha?"), must **not** teach the other chapter's content — **the exact BUG-4 reproduction case**. (Depends on the redirect actually firing — see the noted-only finding above; when it does fire, this guard is confirmed correct.)
+- [x] **Verified 2026-07-11** — A genuine on-chapter `CONCEPT_QUESTION` followed by `EXPLAIN_MORE` in the same session → correctly re-explains the *same* chapter's content, confirming the chapter-scoping fix doesn't break the normal path.
 
 ### E. Engagement stats (ISSUE-1)
 

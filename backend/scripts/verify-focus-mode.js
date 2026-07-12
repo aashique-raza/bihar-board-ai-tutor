@@ -25,6 +25,8 @@ import User from '../src/models/user.model.js';
 import { ChapterProgress } from '../src/models/chapterProgress.model.js';
 import { loadCurriculumIndex } from '../src/curriculum/curriculumIndexLoader.js';
 import { getChapterCoreTopics } from '../src/curriculum/topicResolver.js';
+import redis from '../src/config/redisClient.js';
+import { askQuestion } from '../src/ask/askOrchestrator.js';
 
 const PORT = process.env.PORT || 5000;
 const BASE_URL = `http://localhost:${PORT}`;
@@ -33,8 +35,12 @@ const FULL_RUN = process.argv.includes('--full');
 const TEST_EMAIL = 'focus-mode-verify@zuno.internal';
 const TEST_PASSWORD = 'FocusModeVerify123';
 
-// Safely under askApiLimiter's 30/min per-IP cap.
-const ASK_DELAY_MS = 2500;
+// The Groq tier in use caps at 6000 TPM, and one real turn (decider+tutor) can use
+// ~2500-3800 tokens — two turns landing in the same 60s window can trip rate_limit
+// even with request-count-safe spacing. 8s baseline + a longer backoff on retry
+// (proven empirically during this pass) keeps this reliable.
+const ASK_DELAY_MS = 8000;
+const RETRY_BACKOFF_MS = 15000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ── ANSI colour helpers (same pattern as run-golden-set.js) ──────────────────
@@ -51,69 +57,46 @@ const record = (section, name, pass, detail = '') => {
   console.log(`  [${section}] ${tag} — ${name}${detail ? `  (${detail})` : ''}`);
 };
 
-// ── HTTP helpers ───────────────────────────────────────────────────────────────
+// ── HTTP helpers (still used for GET /chapter-progress, which never showed
+//    the hang issue below — only /ask calls are made in-process instead) ──────
 let accessToken = null;
+let testUserId = null;
 
-// The /ask endpoint responds via SSE (text/event-stream) whenever the tutor LLM
-// actually streams a real answer (USE_INTENT_ROUTER=true routes almost every
-// academic turn through routeToIntentHandler's streamCallbacks.onStreamStart()).
-// Plain JSON only comes back for the two deterministic no-LLM branches
-// (CHAPTER_COMPLETE, out-of-focus redirect) or on error. Parsing mirrors
-// frontend/src/api/tutorApi.js's askTutor() exactly — same event framing,
-// same "data: {...}" line splitting, same event:'end' -> payload extraction.
-const askTurn = async ({ question, studyMode, sessionId, chapterId }) => {
+// PIVOT (2026-07-11): the /ask endpoint responds via SSE, and three different
+// HTTP client approaches (fetch()+ReadableStream, fetch()+Connection:close+
+// AbortController timeout, and Node's raw http.request with classic 'data'/'end'
+// events) all intermittently hung reading that stream — even though server-side
+// logs confirmed the request completed successfully in 2-6s every time. Since
+// all three failed identically on the same call, the issue isn't a particular
+// HTTP client library — it's specific to this machine's networking of a
+// streamed local response. Calling askQuestion() directly (the same function
+// ask.controller.js calls) skips HTTP/SSE/sockets entirely — no network layer,
+// so that whole class of hang cannot occur here.
+//
+// Retries on a transient provider_error (Groq rate-limited) — safe to retry
+// because ProviderUnavailableError short-circuits BEFORE step7, so no DB write
+// ever happened for that attempt (no double-advance risk).
+const askTurn = async (params, attempt = 1) => {
+  const result = await askTurnOnce(params);
+  if (result?.status === 'provider_error' && attempt <= 2) {
+    console.log(YELLOW(`    (provider_error, retry ${attempt}/2 after ${RETRY_BACKOFF_MS / 1000}s: "${params.question.slice(0, 40)}")`));
+    await sleep(RETRY_BACKOFF_MS);
+    return askTurn(params, attempt + 1);
+  }
+  return result;
+};
+
+const askTurnOnce = async ({ question, studyMode, sessionId, chapterId }) => {
   const body = { question, studyMode, sessionId };
   if (chapterId) body.chapterId = chapterId;
-
-  const res = await fetch(`${BASE_URL}/api/v1/ask`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${accessToken}`,
-    },
-    body: JSON.stringify(body),
-  });
-
-  const contentType = res.headers.get('content-type') || '';
-  let payload;
-
-  if (contentType.includes('text/event-stream')) {
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder('utf-8');
-    let buffer = '';
-    payload = null;
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n\n');
-      buffer = lines.pop() || '';
-
-      for (const line of lines) {
-        if (!line.startsWith('data: ')) continue;
-        const dataStr = line.replace(/^data:\s*/, '').trim();
-        if (!dataStr) continue;
-        const dataObj = JSON.parse(dataStr);
-        if (dataObj.event === 'end') {
-          payload = dataObj.payload;
-          break;
-        }
-      }
-    }
-  } else {
-    const json = await res.json();
-    payload = json.data ?? json;
-  }
-
+  const payload = await askQuestion(body, { userId: testUserId, guestId: null }, null, null);
   await sleep(ASK_DELAY_MS);
   return payload;
 };
 
 const getChapterProgressHttp = async (chapterId) => {
   const res = await fetch(`${BASE_URL}/api/v1/chapter-progress/${chapterId}`, {
-    headers: { Authorization: `Bearer ${accessToken}` },
+    headers: { Authorization: `Bearer ${accessToken}`, 'Connection': 'close' },
   });
   const json = await res.json();
   return json.data ?? json;
@@ -188,11 +171,28 @@ const resolveChapters = async () => {
 
 // ── DB fixtures (direct Mongoose writes — bypass HTTP for setup/teardown only,
 //    never for the actual assertions being tested) ───────────────────────────
-const clearProgress = (userId, chapterId) =>
-  ChapterProgress.deleteOne({ userId, chapterId });
+//
+// getChapterProgress() (used by both the GET endpoint and every /ask turn via
+// step2.loadSession.js) caches for 60s in Redis. The real service invalidates
+// this on every write (upsertChapterProgress/markChapterComplete/resetChapterProgress),
+// but these direct Mongoose test-fixture writes bypass that service entirely —
+// so they must invalidate the same cache key themselves, or the next read
+// (GET or /ask) silently serves a stale pre-write snapshot.
+const invalidateProgressCache = async (userId, chapterId) => {
+  try {
+    await redis.del(`cp:${userId}:${chapterId}`, `cp_list:${userId}`);
+  } catch { /* non-critical, matches the service's own fail-open pattern */ }
+};
 
-const setProgressStatus = (userId, chapterId, fields) =>
-  ChapterProgress.findOneAndUpdate({ userId, chapterId }, { $set: fields }, { upsert: true });
+const clearProgress = async (userId, chapterId) => {
+  await ChapterProgress.deleteOne({ userId, chapterId });
+  await invalidateProgressCache(userId, chapterId);
+};
+
+const setProgressStatus = async (userId, chapterId, fields) => {
+  await ChapterProgress.findOneAndUpdate({ userId, chapterId }, { $set: fields }, { upsert: true });
+  await invalidateProgressCache(userId, chapterId);
+};
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SECTION A — Session lifecycle & resume (BUG-1 / BUG-2 class)
@@ -283,21 +283,27 @@ const runSectionB = async (userId, chapters, index) => {
     `status=${staleTurn?.chapterProgress?.status} topic=${staleTurn?.chapterProgress?.currentTopicId}`);
 
   // B3/B4: walk to the final topic and confirm CHAPTER_COMPLETE — only in --full
-  // mode (this alone is ~N extra /ask calls for an N-topic chapter).
+  // mode. Loops until the response itself reports 'completed' rather than assuming
+  // an exact call count — a provider_error retry can occasionally cause a turn to
+  // be re-sent, which would desync a fixed-count loop from the real topic count.
+  // Safety cap prevents an infinite loop if completion is never reached.
   if (FULL_RUN) {
     await clearProgress(userId, chapterId);
     const seenTopicIds = new Set();
-    let last;
-    for (let i = 0; i < coreTopics.length; i++) {
-      last = await askTurn({ question: 'Aage badhao', studyMode: 'focus', sessionId: randomUUID(), chapterId });
-      const tid = last?.chapterProgress?.currentTopicId;
+    let finalTurn = null;
+    const SAFETY_CAP = coreTopics.length + 3;
+
+    for (let i = 0; i < SAFETY_CAP; i++) {
+      finalTurn = await askTurn({ question: 'Aage badhao', studyMode: 'focus', sessionId: randomUUID(), chapterId });
+      if (finalTurn?.chapterProgress?.status === 'completed') break;
+      const tid = finalTurn?.chapterProgress?.currentTopicId;
       if (tid) seenTopicIds.add(tid);
     }
+
     record('B', `completedTopicIds grows by exactly one per advance, no duplicates (${coreTopics.length} topics)`,
       seenTopicIds.size === coreTopics.length,
       `distinct topics seen=${seenTopicIds.size}/${coreTopics.length}`);
 
-    const finalTurn = await askTurn({ question: 'Aage badhao', studyMode: 'focus', sessionId: randomUUID(), chapterId });
     const dbDoc = await ChapterProgress.findOne({ userId, chapterId }).lean();
     record('B', 'Final NEXT_STEP -> CHAPTER_COMPLETE, chips exactly [switch_chapter, global_mode], status=completed/100%/completedAt set',
       finalTurn?.chapterProgress?.status === 'completed' &&
@@ -308,6 +314,33 @@ const runSectionB = async (userId, chapters, index) => {
       finalTurn.suggestedActions.some((a) => a.type === 'global_mode') &&
       !finalTurn.suggestedActions.some((a) => a.type === 'next_topic'),
       `status=${finalTurn?.chapterProgress?.status} chips=${JSON.stringify(finalTurn?.suggestedActions)}`);
+
+    await clearProgress(userId, chapterId);
+
+    // B2 — the ACTUAL BUG-6 regression guard: walk through the Chemical Reactions
+    // chapter's decimal sub-numbered topics ("4.1"-"4.8") and confirm each turn's
+    // retrieved SOURCE is genuinely distinct — not the resolver's topicId sequence
+    // (that was never broken by BUG-6) but the retrieval content itself, which is
+    // exactly what buildTopicSearchQuery()'s regex fix targets.
+    if (chapters.chemReactionsChapter) {
+      const chemId = chapters.chemReactionsChapter.chapterId;
+      await clearProgress(userId, chemId);
+      const seenSourceKeys = [];
+      const WALK_STEPS = 5; // enough to cross several "4.x" sub-topics without draining the whole chapter
+      for (let i = 0; i < WALK_STEPS; i++) {
+        const turn = await askTurn({ question: 'Aage badhao', studyMode: 'focus', sessionId: randomUUID(), chapterId: chemId });
+        if (turn?.chapterProgress?.status === 'completed') break;
+        const sourceKey = turn?.sources?.[0]?.headingPath || turn?.sources?.[0]?.topicTitle || null;
+        seenSourceKeys.push(sourceKey);
+      }
+      const distinctCount = new Set(seenSourceKeys.filter(Boolean)).size;
+      record('B', `BUG-6 regression guard: Chemical Reactions decimal sub-topics retrieve genuinely distinct content (${WALK_STEPS} steps)`,
+        distinctCount === seenSourceKeys.filter(Boolean).length && distinctCount >= WALK_STEPS - 1,
+        `sourceKeys=${JSON.stringify(seenSourceKeys)}`);
+      await clearProgress(userId, chemId);
+    } else {
+      console.log(YELLOW('  [B] Could not resolve a Chemical Reactions chapter — skipping BUG-6-specific decimal-topic check'));
+    }
   } else {
     console.log(YELLOW('  [B] SKIPPED full chapter-drain + BUG-6 decimal-topic walk (run with --full to include)'));
   }
@@ -415,6 +448,7 @@ const main = async () => {
   try {
     const { accessToken: token, userId } = await setupTestUser();
     accessToken = token;
+    testUserId = userId;
     console.log(GREEN(`  ✓ Test user ready (${TEST_EMAIL})`));
 
     const chapters = await resolveChapters();

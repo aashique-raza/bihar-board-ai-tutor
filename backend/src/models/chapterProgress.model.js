@@ -81,10 +81,24 @@ chapterProgressSchema.index(
   }
 );
 
-// GUEST path: same uniqueness for guest users (guestId replaces userId)
+// GUEST path: same uniqueness for guest users (guestId replaces userId).
+// Uses a type-checking partialFilterExpression (matching user_chapter_unique above),
+// NOT `sparse: true` — sparse only excludes documents where the field is truly
+// ABSENT, not documents where it's explicitly stored as `null`. Mongoose's
+// findOneAndUpdate(upsert:true) applies schema defaults (guestId's default is
+// `null`) to every newly-inserted document, including logged-in users' documents
+// that never touch guestId in code — so a plain sparse index let every first-time
+// logged-in-user-per-chapter document collide on { guestId: null, chapterId }.
+// Confirmed live (2026-07-10/11): a second logged-in user starting a chapter
+// already started by another user got a real E11000 duplicate key error and
+// silently lost that turn's progress write.
 chapterProgressSchema.index(
   { guestId: 1, chapterId: 1 },
-  { unique: true, sparse: true, name: 'guest_chapter_unique' }
+  {
+    unique: true,
+    name: 'guest_chapter_unique',
+    partialFilterExpression: { guestId: { $type: 'string' } },
+  }
 );
 
 // LIST path: FocusModal "Continue" section — user's chapters by recency + status
