@@ -1,6 +1,6 @@
 # Deterministic Topic→Chunk Linking — Full Audit & Implementation Plan
 
-**Status:** DESIGNED, NOT YET APPROVED FOR IMPLEMENTATION. No product code has been changed. Two throwaway investigation scripts were run against real content (never touched the DB, never touched git-tracked files) and deleted after use.
+**Status:** ✅ IMPLEMENTED, BACKFILLED, VERIFIED. See "Part 6 — Implementation Verified" at the bottom for the full closing evidence (2026-07-21). The Option D fix from `ROLE_CLASSIFICATION_AUDIT.md` was folded into the same implementation, not done as a separate pass.
 
 **Written:** 2026-07-12, after the NEXT_STEP duplicate-content bug was root-caused (see `FOCUS_MODE_PLAN.md`, chapter-01 Light retrieval collision) and before any fix was implemented, per explicit instruction: audit everything first, then present one final plan with reasoning, not another round of "confident but wrong."
 
@@ -137,4 +137,17 @@ A new script (name TBD, e.g. `backend/scripts/verify-topic-chunk-coverage.js`) t
 
 ---
 
-Waiting for explicit go-ahead before touching any code, per this project's standing working-style contract.
+## Part 6 — Implementation Verified (2026-07-21, closing this plan out)
+
+**Code found already written when this session resumed (after a 9-day gap) — not committed, not run, not tested.** Verified line-by-line against this plan before trusting it: `markdownChunker.js` (topic_ids linking, Part 4 step 1 — and already includes the Option D climb-past-non-core-ancestor logic from `ROLE_CLASSIFICATION_AUDIT.md`, done together not separately), `step5.retrieveContent.js` (deterministic NEXT_STEP fetch, step 4), `retriever.js` (`retrieveChunksByTopicId()`, step 5), plus both new scripts (steps 2 and 3) — all matched the plan faithfully.
+
+**What was actually run and confirmed, in order:**
+1. `node scripts/verify-topic-chunk-coverage.js` (read-only, run first specifically to check whether a prior backfill had already happened, since neither the plan doc nor commit history recorded it) — **PASSED**, 211 core topics across 17 chapters, zero unresolved. Confirmed a backfill had run before this session (real `topic_ids` data existed).
+2. `node scripts/backfill-chunk-topic-ids.js` re-run anyway (to pick up an uncommitted manual content edit to `chapter-01-chemical-reactions-and-equations.md` made in a prior session) — **629/629 chunks updated, 0 drift** (every live chunk_id matched a freshly-computed one 1:1).
+3. `verify-topic-chunk-coverage.js` re-run — same result, **PASSED**. Note: the specific 2 chemistry topics the manual `.md` edit targeted (`topic-17`/`topic-42`) are still in the 61-topic "no exclusive content" warning list — the added sentences were too short to survive size-based chunk merging, so that specific manual edit did not achieve its intent. Not a failure (still resolves via merge-bleed, same as before), just a loose end — noted, not chased further.
+4. **Live browser test** (Farhan, real Focus Mode session, "Periodic Classification of Elements" — not one of the two originally-scoped chapters, but one that was in the warning list): topics 1 through ~7 progressed correctly with distinct content — **except** `topic-16` ("Mendeleev's Periodic Table"), which showed a real, visible partial repeat — the next turn re-stated the same Mendeleev basics (63 elements, atomic mass cards, periodic law) before adding genuinely new content (Groups/Periods, Elements ki Sahi Placement). **This is a live, reproduced instance of exactly the "no exclusive content" warning the script had already flagged for this topic** — confirms the warning list is a real predictor of user-visible risk, not just a theoretical metric.
+5. **Decision (Farhan, 2026-07-21):** accept this as-is for now, same as the original Part 4/5 scope decision — the 61-topic merge-bleed list (including `topic-16`) is a known, documented, pre-existing limitation, not a regression introduced by this fix. Not launch-blocking.
+6. **Not done:** live re-test of the Light chapter or the Chemical Reactions chapter specifically (the two chapters originally scoped for step 6's live-verification, and where the two headline bugs — the severe Option D case and BUG-6 — were first observed). Indirect evidence only: the Light chapter's severe case (`topic-14`, "Part 2: Spherical Mirrors") no longer appears in the coverage script's warning list, which it did before Option D existed — consistent with the fix working, but not confirmed by an actual live conversation in this session. **Explicitly accepted as an open, un-verified gap, not silently assumed fixed.**
+7. Code committed: `6d9fb57` ("importanta bug fix in focus mode"). Working tree clean. Not yet pushed to `origin/main`.
+
+**Net result:** the deterministic topic-linking fix (this doc) + the Option D nested-revision-heading fix (`ROLE_CLASSIFICATION_AUDIT.md`) are both live in the codebase, backfilled into the database, and pass the automated safety net. One real chapter was live-verified with one accepted, pre-existing, documented exception. The two originally-headline-bug chapters were not re-tested live this session — flagged above, not hidden.

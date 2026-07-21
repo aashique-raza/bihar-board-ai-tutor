@@ -1,6 +1,8 @@
 # Deep Audit — "Revision-keyword poisons nested teaching content" bug
 
-**Status:** AUDIT COMPLETE, NOT IMPLEMENTED. Every number below is from a throwaway script run against the real 16-chapter content + live MongoDB — no assumptions. Scripts deleted after use.
+**Status:** ✅ OPTION D IMPLEMENTED AND VERIFIED (2026-07-21). Folded directly into `resolveTopicIdsForConstituents()` in `markdownChunker.js` as part of the same commit as `RETRIEVAL_TOPIC_LINKING_PLAN.md`'s fix, not a separate pass. See that file's "Part 6 — Implementation Verified" for the closing evidence: the severe Light-chapter case (`topic-14`, "Part 2: Spherical Mirrors") no longer appears in `verify-topic-chunk-coverage.js`'s warning list, consistent with the fix working — though not confirmed by a live conversation this session (flagged as an open gap there, not hidden here).
+
+Every number below is from a throwaway script run against the real 16-chapter content + live MongoDB — no assumptions. Scripts deleted after use.
 
 **Written:** 2026-07-12, after live browser testing (Farhan) surfaced repeated/overlapping content on turns 1–3 of the Light chapter, following the deterministic topic→chunk linking fix (`RETRIEVAL_TOPIC_LINKING_PLAN.md`).
 
