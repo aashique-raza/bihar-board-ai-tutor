@@ -20,6 +20,7 @@ import path from 'node:path';
 import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
 
 import { loadMarkdownDocuments, loadMarkdownDocumentsLazy } from './markdownLoader.js';
+import { buildCurriculumIndex } from '../curriculum/curriculumIndexBuilder.js';
 
 export const DEFAULT_CHUNK_CONFIG = {
   chunkSize: 1200,
@@ -126,6 +127,12 @@ const parseHeadingSections = (doc) => {
     : [{ headingPath: doc.metadata.chapter_title, headingLevel: 1, text: doc.pageContent.trim() }];
 };
 
+// Tracks every original section headingPath absorbed into each merged output —
+// not just the first (which is all `headingPath` alone preserves). Needed because
+// mergeSmallSections greedily merges consecutive small sections purely by character
+// count, with no awareness of curriculum topic boundaries — a merged chunk can span
+// more than one topic, and resolveTopicIdsForConstituents() below needs the full
+// list to link the chunk to every topic it actually contains, not just the first.
 const mergeSmallSections = (sections, config) => {
   const mergedSections = [];
   let buffer = null;
@@ -137,20 +144,69 @@ const mergeSmallSections = (sections, config) => {
 
   for (const section of sections) {
     const sectionLength = section.text.length;
-    if (sectionLength > config.chunkSize) { flushBuffer(); mergedSections.push(section); continue; }
-    if (!buffer) { buffer = { ...section }; continue; }
+    if (sectionLength > config.chunkSize) {
+      flushBuffer();
+      mergedSections.push({ ...section, constituentHeadingPaths: [section.headingPath] });
+      continue;
+    }
+    if (!buffer) { buffer = { ...section, constituentHeadingPaths: [section.headingPath] }; continue; }
     const mergedText = `${buffer.text}\n\n${section.text}`.trim();
     if (mergedText.length <= config.chunkSize) {
-      buffer = { ...buffer, text: mergedText, headingLevel: Math.min(buffer.headingLevel || section.headingLevel, section.headingLevel) };
+      buffer = {
+        ...buffer,
+        text: mergedText,
+        headingLevel: Math.min(buffer.headingLevel || section.headingLevel, section.headingLevel),
+        constituentHeadingPaths: [...buffer.constituentHeadingPaths, section.headingPath],
+      };
       continue;
     }
     flushBuffer();
-    buffer = { ...section };
+    buffer = { ...section, constituentHeadingPaths: [section.headingPath] };
     if (buffer.text.length >= config.minChunkSize) flushBuffer();
   }
 
   flushBuffer();
   return mergedSections;
+};
+
+// Given a chunk's constituent heading-section paths and the curriculum's topic list
+// for the same chapter, finds every "core" (NEXT_STEP-teachable) topic the chunk's
+// text actually belongs to — walking up each constituent's heading-path prefix chain
+// until a topic tagged role:'core' is found (matching how subtopics fold under their
+// parent for teaching purposes). Deliberately does NOT stop at a revision/practice/
+// reference ancestor — getTopicRole() classifies by keyword match on the FULL heading
+// path, so a heading like "Important Terms Related to Spherical Mirrors" nested inside
+// an active "Part 2: Spherical Mirrors" section gets tagged 'revision' even though its
+// own subtree (Ray Rules, Image Formation, Uses) is real teaching content — excluding
+// it starved that core topic of its own material (see ROLE_CLASSIFICATION_AUDIT.md).
+// Climbing past it to find the enclosing 'core' ancestor fixes that without touching
+// role classification itself — chapter-level appendices (no core ancestor exists above
+// them at all) are unaffected and still resolve to no topic, exactly as before.
+// Returns a deduplicated array — usually one topicId, sometimes more (verified: 87
+// chunks across the current 16 chapters genuinely span 2+ core topics due to
+// size-based merging — see RETRIEVAL_TOPIC_LINKING_PLAN.md).
+const resolveTopicIdsForConstituents = (constituentHeadingPaths, chapterTopics) => {
+  const topicByHeadingPath = new Map(chapterTopics.map((topic) => [topic.headingPath, topic]));
+
+  const owningCoreTopicId = (headingPath) => {
+    const parts = headingPath.split(' > ');
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const prefix = parts.slice(0, i + 1).join(' > ');
+      const topic = topicByHeadingPath.get(prefix);
+      if (topic && topic.role === 'core') return topic.topicId;
+    }
+    return null;
+  };
+
+  const ids = constituentHeadingPaths.map(owningCoreTopicId).filter(Boolean);
+  return [...new Set(ids)];
+};
+
+// Builds this document's curriculum topic list once per document (cheap, pure JS,
+// no I/O) so createChunk() can link each chunk to the topic(s) it belongs to.
+const getChapterTopicsForDoc = (doc) => {
+  const curriculumIndex = buildCurriculumIndex([doc]);
+  return curriculumIndex.subjects[0]?.sections[0]?.chapters[0]?.topics || [];
 };
 
 const detectContentType = (headingPath, rawContent) => {
@@ -167,11 +223,13 @@ const detectContentType = (headingPath, rawContent) => {
   return [...matchedTypes][0] || 'concept';
 };
 
-const createChunk = (doc, rawContent, sectionInfo, chunkIndex, config, splitter) => {
+const createChunk = (doc, rawContent, sectionInfo, chunkIndex, config, splitter, chapterTopics) => {
   const cleanedRawContent = rawContent.trim();
   const headingPath = sectionInfo.headingPath || doc.metadata.chapter_title;
   const pageContent = `${createContextHeader(doc, headingPath)}${cleanedRawContent}`;
   const chunkId = makeChunkId(doc.metadata, chunkIndex);
+  const constituentHeadingPaths = sectionInfo.constituentHeadingPaths || [headingPath];
+  const topicIds = resolveTopicIdsForConstituents(constituentHeadingPaths, chapterTopics || []);
 
   return {
     id: chunkId,
@@ -197,6 +255,13 @@ const createChunk = (doc, rawContent, sectionInfo, chunkIndex, config, splitter)
       splitter,
       chunk_size_config: config.chunkSize,
       chunk_overlap_config: config.chunkOverlap,
+      // Every "core" (NEXT_STEP-teachable) topicId this chunk's text actually belongs
+      // to — usually one, sometimes more (see resolveTopicIdsForConstituents above).
+      // Empty array for chunks with no owning core topic (practice/reference/revision
+      // content, e.g. "Exercise Questions"). Lets NEXT_STEP retrieval fetch a topic's
+      // content by an exact, deterministic membership check instead of guessing via
+      // semantic search — see RETRIEVAL_TOPIC_LINKING_PLAN.md.
+      topic_ids: topicIds,
       // Embedding-ready raw text: NO [Context] preamble. Indexing pipeline embeds this
       // (not pageContent) so chunks don't cluster on identical chapter metadata headers.
       // pageContent still carries the full preamble for the LLM at retrieval time.
@@ -220,6 +285,7 @@ const splitSection = async (section, config) => {
 };
 
 const createChunksForDocument = async (doc, config) => {
+  const chapterTopics = getChapterTopicsForDoc(doc);
   const sections = mergeSmallSections(parseHeadingSections(doc), config);
   const chunks = [];
   let chunkIndex = 1;
@@ -228,7 +294,7 @@ const createChunksForDocument = async (doc, config) => {
     const splitSections = await splitSection(section, config);
     for (const split of splitSections) {
       if (!isMeaningfulRawContent(split.text)) continue;
-      chunks.push(createChunk(doc, split.text, section, chunkIndex, config, split.splitter));
+      chunks.push(createChunk(doc, split.text, section, chunkIndex, config, split.splitter, chapterTopics));
       chunkIndex += 1;
     }
   }

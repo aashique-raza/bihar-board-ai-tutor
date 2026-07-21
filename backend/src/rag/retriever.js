@@ -85,6 +85,34 @@ const passesFinalFilter = (result, query, options = {}) => {
 };
 
 /**
+ * Deterministic chunk lookup for NEXT_STEP — the topic to teach is already known
+ * with 100% certainty (resolved by getNextTopic()/ChapterProgress), so this fetches
+ * every chunk linked to that exact topicId via metadata.topic_ids (set at index time
+ * by markdownChunker.js) instead of guessing via semantic search. No embedding call,
+ * no $vectorSearch, no reranking or score thresholds — those exist to handle
+ * uncertainty, and there is none here. See RETRIEVAL_TOPIC_LINKING_PLAN.md.
+ *
+ * chapterMetadataFilter (e.g. { subject, section, chapter_no }) is included as a
+ * defense-in-depth scope even though topic_ids are already globally unique — matches
+ * this codebase's established layered-safety pattern (see BUG-4's hard DB-level filter).
+ */
+export const retrieveChunksByTopicId = async (topicId, chapterMetadataFilter = {}) => {
+  const query = { 'metadata.topic_ids': topicId };
+  for (const [key, value] of Object.entries(chapterMetadataFilter || {})) {
+    query[`metadata.${key}`] = value;
+  }
+
+  const docs = await Chunk.find(query).lean();
+
+  return docs.map((document) => ({
+    id: document.metadata?.chunk_id,
+    content: document.pageContent,
+    metadata: document.metadata || {},
+    score: 1, // deterministic membership match, not a similarity score
+  }));
+};
+
+/**
  * Main retrieval function — called by Step 5 of the Ask API.
  * Results are cached (L1 memory → L2 Redis) keyed on query + chapter filter + topK.
  * Cache is invalidated automatically when npm run rag:index completes.

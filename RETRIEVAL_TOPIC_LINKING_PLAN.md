@@ -68,6 +68,12 @@ The test data itself was cleaned up immediately after (confirmed `topic_ids` rem
 
 **Why this is good news despite being a blocker:** it fails loudly with a clear error, not silently — if this had been discovered only after full implementation, every `NEXT_STEP` call would have errored out in production the moment the new filter code shipped. Finding it now, before writing the retrieval code, converts an unknown risk into a known, actionable prerequisite.
 
+**RESOLVED (2026-07-12, same session).** Farhan added `{ "path": "metadata.topic_ids", "type": "filter" }` to the live `vector_index` definition via Atlas Console. Re-tested immediately after with the identical probe:
+- First attempt: filter query for the exact tagged marker returned 0 results (Atlas Search syncs asynchronously from the underlying collection — brief indexing lag after a write, expected behavior, not a bug).
+- Second attempt (seconds later): filter for the tagged marker → exactly 1 result, the correct chunk, score 1.0. Filter for a marker that exists nowhere → 0 results (proves the filter genuinely restricts, not silently ignored). No filter → 10 broader baseline results.
+
+**The array-field filter mechanism is now confirmed working end-to-end against the real Atlas cluster.** The one hard external prerequisite is satisfied. Test data cleaned up after each run; index field addition is additive and did not affect `subject`/`section`/`chapter_no` filters or existing retrieval.
+
 ### Q8: What about `CONCEPT_QUESTION` and `EXPLAIN_MORE` — does this fix change their behavior at all?
 
 **No, by design — and this is a deliberate scope boundary, not an oversight.** `CONCEPT_QUESTION` has no resolved topic ID to link against (the student's free-text question is the only input) — it keeps using semantic search exactly as today. `EXPLAIN_MORE` reuses `lastRetrievalQuery`/`lastTopic`, which also isn't always a clean topic ID. Both are already scoped to the focus chapter (via BUG-4's fix) and are untouched by this change. The separate, harder disambiguation problem for these two intents is documented on its own in [`CONCEPT_QUESTION_DISAMBIGUATION.md`](CONCEPT_QUESTION_DISAMBIGUATION.md) and is explicitly not part of this fix.
@@ -103,7 +109,7 @@ A new script (name TBD, e.g. `backend/scripts/verify-topic-chunk-coverage.js`) t
 
 ## Part 4 — Implementation plan (only starts after explicit go-ahead)
 
-0. **PREREQUISITE, blocks everything else — Atlas Console action (manual, outside this codebase).** Add `metadata.topic_ids` as a filterable field (string type) to the `vector_index` Atlas Search index definition. Confirmed live (Q7b above) that the current code-level filter mechanism errors without this. Nothing in Part 4 below can be verified end-to-end until this is done.
+0. ~~PREREQUISITE — Atlas Console action.~~ **DONE (2026-07-12).** `metadata.topic_ids` added as a filterable field to the `vector_index` Atlas Search index. Live-retested and confirmed working (Q7b above).
 1. **`backend/src/rag/markdownChunker.js`** — modify `mergeSmallSections()` to track every constituent section's `headingPath` per output chunk (not just the first), matching the instrumented logic already verified in the audit above. Add a `resolveTopicIds(constituentHeadingPaths, curriculumChapter)` step in `createChunk()` that maps each constituent to its owning core topic (walking up the heading-path prefix chain, same logic verified in the audit script) and stores the deduplicated result as `metadata.topic_ids`. Requires the chunker to have access to that chapter's already-built curriculum topics at chunk-creation time (new dependency: `curriculumIndexBuilder.js` → `markdownChunker.js`, one direction, no cycle).
 2. **`backend/scripts/backfill-chunk-topic-ids.js`** (new, one-time migration, same pattern as `fix-guest-chapter-index.js`) — for every existing `Chunk` document in MongoDB, recompute and write `metadata.topic_ids` without touching `embedding`, `pageContent`, or any other field. Calls `bumpRagVersion()` afterward (existing helper, already used by `indexPipeline.js`) to invalidate any stale cached retrieval results.
 3. **`backend/scripts/verify-topic-chunk-coverage.js`** (new, Part 3 above) — run once immediately after the backfill to confirm zero unresolved core topics across all 16 chapters, before this is considered done.

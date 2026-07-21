@@ -231,6 +231,8 @@ Observations:
 
 ## 4. Types of Chemical Reactions
 
+Chemical reactions can be classified into several types based on how the reactants change into products.
+
 ## 4.1 Combination Reaction
 
 A combination reaction is a reaction in which two or more reactants combine to form a single product.
@@ -575,6 +577,8 @@ In this reaction:
 ---
 
 ## 5. Effects of Oxidation Reactions in Daily Life
+
+Oxidation reactions happen around us all the time and can slowly damage or spoil everyday materials.
 
 ## 5.1 Corrosion
 

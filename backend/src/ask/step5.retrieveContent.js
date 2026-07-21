@@ -3,7 +3,7 @@
  * * PRODUCTION-GRADE ORCHESTRATOR COMPONENT
  */
 
-import { retrieveRelevantChunks } from '../rag/retriever.js';
+import { retrieveRelevantChunks, retrieveChunksByTopicId } from '../rag/retriever.js';
 import { formatSources } from '../rag/sourceFormatter.js';
 import { formatRetrievedContext } from './promptHelpers.js';
 import { getNextTopic } from '../curriculum/nextTopicResolver.js';
@@ -23,27 +23,6 @@ const getRetrieverOptions = (focusChapter) => {
     metadataFilter: focusChapter.metadataFilter, // Scopes to e.g. { subject: 'Science', section: 'Biology', chapter_no: 1 }
     requireTermMatchForLatinQuery: true,          // Restricts loose embedding drifts
   };
-};
-
-const buildTopicSearchQuery = (topic) => {
-  // ragHints[0] is a structural heading title — embeds poorly as semantic query
-  // Instead, build a natural question-style query from the topic title
-  // This scores much higher against content chunks in the vector store
-
-  // Strips leading numbering in both "4. " and decimal sub-numbering "4.1 "/"4.10 "
-  // forms. The old pattern (/^\d+\.\s*/) only matched whole-number prefixes — for
-  // "4.1 Combination Reaction" it consumed just "4." and left a stray "1 " behind,
-  // degrading retrieval specificity enough that several sibling sub-topics (e.g.
-  // this chapter's 8 "4.1"–"4.8" reaction types) all matched the same generic
-  // "types of reactions" chunk instead of their own — producing near-identical
-  // NEXT_STEP answers for genuinely different, correctly-advancing topics.
-  const title = topic.title
-    .replace(/^\d+(\.\d+)*\.?\s*/, '')
-    .trim();
-
-  // Use chapter context + topic title as semantic query
-  // e.g. "Electricity Electric Current and Electric Circuit"
-  return `${topic.chapterTitle} ${title}`;
 };
 
 /**
@@ -83,20 +62,42 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
       };
     }
 
-    // status === 'found': retrieve content for the resolved next topic
-    const topicSearchQuery = buildTopicSearchQuery(result.topic);
-    if (isDev) console.log(`[Step 5 NEXT_STEP] Fetching content for next topic: "${result.topic.title}"`);
+    // status === 'found': the exact topic is already known with 100% certainty
+    // (resolved above by getNextTopic()) — fetch its linked chunks directly by
+    // topic_ids membership instead of guessing via semantic search. Replaces the
+    // old buildTopicSearchQuery()+retrieveRelevantChunks() approach, which could
+    // retrieve a completely unrelated chunk when a chapter had overlapping wording
+    // between a short overview section and the topic actually being taught (root
+    // cause + fix design: see RETRIEVAL_TOPIC_LINKING_PLAN.md).
+    if (isDev) console.log(`[Step 5 NEXT_STEP] Fetching linked chunks for topic: "${result.topic.title}" (${result.topic.topicId})`);
 
-    const nextRetrieval = await retrieveRelevantChunks(topicSearchQuery, getRetrieverOptions(focusChapter));
-    const nextChunks = nextRetrieval.results || [];
+    const nextChunks = await retrieveChunksByTopicId(result.topic.topicId, focusChapter?.metadataFilter);
+    // Kept for chatState continuity (EXPLAIN_MORE's fallback chain reads
+    // chatState.lastRetrievalQuery) — no longer used as an actual search query.
+    const lastRetrievalQuery = `${result.topic.chapterTitle} ${result.topic.title}`;
+
+    if (nextChunks.length === 0) {
+      // Should be unreachable if verify-topic-chunk-coverage.js passed after the
+      // last content/index update — but never silently teach nothing if it happens.
+      if (isDev) console.error(`[Step 5 NEXT_STEP] 0 chunks linked to topic ${result.topic.topicId} — coverage gap, see verify-topic-chunk-coverage.js`);
+      return {
+        retrieval: null, chunks: [], sources: [],
+        retrievedContext: 'NO_RETRIEVED_CONTEXT',
+        nextTopicSignal: { topicId: result.topic.topicId, title: result.topic.title },
+        lastRetrievalQuery,
+      };
+    }
 
     return {
-      retrieval: nextRetrieval,
+      // Minimal shape preserved for step7.saveAndRespond.js's debug summary
+      // (retrieval.question / retrieval.debug.returnedCount) — this is now a
+      // deterministic lookup, not a scored search, so there is no real "question".
+      retrieval: { question: lastRetrievalQuery, debug: { returnedCount: nextChunks.length } },
       chunks: nextChunks,
       sources: formatSources(nextChunks),
       retrievedContext: formatRetrievedContext(nextChunks),
       nextTopicSignal: { topicId: result.topic.topicId, title: result.topic.title },
-      lastRetrievalQuery: topicSearchQuery,
+      lastRetrievalQuery,
     };
   }
 
