@@ -7,7 +7,7 @@ import { retrieveRelevantChunks, retrieveChunksByTopicId } from '../rag/retrieve
 import { formatSources } from '../rag/sourceFormatter.js';
 import { formatRetrievedContext } from './promptHelpers.js';
 import { getNextTopic } from '../curriculum/nextTopicResolver.js';
-import { getExamContext } from '../knowledge/examKnowledgeService.js';
+import { getExamContext, resolveExamEntity, formatEntityFact } from '../knowledge/examKnowledgeService.js';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -29,7 +29,7 @@ const getRetrieverOptions = (focusChapter) => {
  * Step 5: Search the vector store for relevant content.
  * Bypasses immediately if Step 4 router evaluated needsRetrieval as false.
  */
-export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, { focusChapter }, { chatState, chapterProgress }, abortSignal = null) => {
+export const retrieveContent = async ({ needsRetrieval, searchQuery, intent, examEntity }, { focusChapter }, { chatState, chapterProgress }, abortSignal = null) => {
   if (abortSignal?.aborted) {
     if (isDev) console.log(`[Step 5] Aborting vector search early due to AbortSignal`);
     const error = new Error('AbortError');
@@ -155,11 +155,23 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent }, {
   if (intent === 'EXAM_INFO') {
     if (isDev) console.log('[Step 5 EXAM_INFO] Knowledge Service lookup — no vector search');
     const examContext = getExamContext();
+
+    // If the decider identified a specific subject/branch/chapter/unit, resolve its exact
+    // marks + parent-paper relationship in code and prepend it as a fixed fact block — the
+    // tutor LLM's job becomes "repeat this number", not "compose it from the full data
+    // dump below". Unresolved/absent entity falls back to the full dump exactly as before
+    // (safe — this is the same behavior EXAM_INFO already had for general questions).
+    const resolvedEntity = examEntity ? resolveExamEntity(examEntity) : null;
+    if (isDev && examEntity) console.log(`[Step 5 EXAM_INFO] examEntity="${examEntity}" → ${resolvedEntity ? `resolved (${resolvedEntity.level}, ${resolvedEntity.ownMarks} marks)` : 'unresolved, falling back to full context'}`);
+    const retrievedContext = resolvedEntity
+      ? `${formatEntityFact(resolvedEntity)}\n\n${examContext}`
+      : examContext;
+
     return {
       retrieval: null,
       chunks: [],
       sources: [],
-      retrievedContext: examContext,
+      retrievedContext,
       nextTopicSignal: null,
       lastRetrievalQuery: null,
     };

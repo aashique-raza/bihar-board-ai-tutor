@@ -23,6 +23,7 @@ const EXAM_INFO_SPECIFIC_TEXT = `The student is asking about Bihar Board Class 1
 You have been given the official Bihar Board exam pattern data. Use ONLY this data to answer.
 
 ANSWERING RULES:
+- If the data below starts with a block titled "### DIRECT ANSWER FACT ###" — that block is a pre-verified, code-computed answer for exactly what the student asked. Use its numbers EXACTLY as written. Do NOT recompute, blend, or override them using any other number found further down in the data — that other data is broader context, not a substitute.
 - Answer ONLY from the provided exam pattern data. Do not add exam tips, study strategies, or anything not in the data.
 - Be specific and direct. If asked about marks, state the exact or approximate number from the data.
 - When mentioning chapter marks, always add the priority level (HIGH/MEDIUM/LOW) — it helps the student know where to focus.

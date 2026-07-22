@@ -121,12 +121,18 @@ const normalizeDecision = (decision, rawQuestion) => {
     }
   }
 
+  // examEntity is only meaningful for EXAM_INFO — the specific subject/branch/chapter/unit
+  // the decider identified, used by step5 to fetch a code-computed exact fact instead of
+  // letting the tutor LLM compose the number itself (see examKnowledgeService.js).
+  const examEntity = intent === 'EXAM_INFO' ? (String(decision.examEntity || '').trim() || null) : null;
+
   return {
     intent,
     inScope,
     needsRetrieval,
     responseMode,
     searchQuery,
+    examEntity,
     reason: String(decision.reason || 'Processed via structural normalizer normalization parameters.').trim()
   };
 };

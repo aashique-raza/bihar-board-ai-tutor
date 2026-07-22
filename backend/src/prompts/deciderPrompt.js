@@ -44,6 +44,20 @@ INTENTS:
 
    searchQuery: MUST be null — Knowledge Service handles this, no vector search needed.
 
+   examEntity: Identify the ONE specific subject/branch/chapter/unit the student is asking
+   about, written in canonical English (e.g. "Physics", "History", "Algebra", "Life
+   Processes"). Use null when the question is general/overview with no single named thing
+   ("passing marks kya hai", "exam ka pattern kya hai") OR when it names two or more
+   different things at once ("Physics aur Chemistry dono kitne marks ke?").
+   Examples:
+   "Physics kitne marks ka?" → examEntity: "Physics"
+   "History ke kitne chapters hain?" → examEntity: "History"
+   "Life Processes se kitne marks aate hain?" → examEntity: "Life Processes"
+   "Algebra kitna important hai?" → examEntity: "Algebra"
+   "Science ka pattern kya hai?" → examEntity: "Science" (naming the whole subject is still a valid single entity)
+   "Pass karne ke liye kitne marks chahiye?" → examEntity: null
+   "Physics aur Chemistry dono kitne marks ke?" → examEntity: null (two things — let the general context answer both)
+
 7. EMOTIONAL_SUPPORT — Student expresses emotional distress, fear, anxiety, or social
    pressure related to exams or studies. The KEY signal is emotional language — fear,
    worry, shame, feeling overwhelmed — NOT a factual query.
@@ -120,8 +134,10 @@ SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - EXPLAIN_MORE: searchQuery must be null. Re-retrieval is handled by the pipeline using saved session state.
 - All other intents: searchQuery must be null.
 
+examEntity: null for every intent EXCEPT EXAM_INFO (see rules under EXAM_INFO above).
+
 Return ONLY this JSON, no extra text or markdown:
-{{"intent": "CONCEPT_QUESTION", "searchQuery": "string or null", "reason": "one sentence why"}}`;
+{{"intent": "CONCEPT_QUESTION", "searchQuery": "string or null", "examEntity": "string or null", "reason": "one sentence why"}}`;
 
 export const deciderSystemText = DECIDER_SYSTEM_TEXT;
 

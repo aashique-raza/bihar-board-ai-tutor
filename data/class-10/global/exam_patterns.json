@@ -1,14 +1,14 @@
 {
   "_meta": {
-    "source": "Bihar School Examination Board (BSEB) official syllabus 2025-26",
-    "verified_against": "getmyuni, kollegeapply, careers360, shiksha",
+    "source": "Official BSEB Class 10 syllabus PDFs (Science, Social Science, Mathematics) cross-checked against the original secondary-source compilation",
+    "verified_against": "Official BSEB syllabus PDFs (Science.pdf, Social Science.pdf, Maths.pdf) provided 2026-07-21; getmyuni, kollegeapply, careers360, shiksha used only for fields the official PDFs did not cover",
     "board": "Bihar Board",
     "class": 10,
     "exam_year": "2026",
-    "last_updated": "2026-06-21",
-    "accuracy_note": "Chapter-level marks are APPROXIMATE. BSEB does not officially publish exact per-chapter marks. Values based on model papers, past exam analysis, and coaching institute data.",
-    "verified_fields": ["subject-wise marks split (27/26/27)", "paper structures", "total marks", "passing criteria"],
-    "approximate_fields": ["chapter-level marks within each subject"]
+    "last_updated": "2026-07-21",
+    "accuracy_note": "Subject-wise theory marks (Science: Physics/Chemistry/Biology, Social Science: History/Geography/Political Science/Economics/Disaster Management) and the Mathematics unit split are now OFFICIAL, confirmed against BSEB syllabus PDFs. Chapter-level marks within each subject, the Science unit-wise weightage table (bseb_official_units), and Hindi/English/Sanskrit section breakdowns remain APPROXIMATE — not officially published, unchanged from the prior secondary-source estimate.",
+    "verified_fields": ["Science subject-wise split (Physics 27 / Chemistry 27 / Biology 26)", "Science practical breakdown (Experiments 11 / Viva 3 / Record 6)", "Social Science subject-wise split (History 20 / Geography 20 / Political Science 18 / Economics 16 / Disaster Management 6)", "Mathematics unit-wise split (10/20/20/10/20/10/10)", "paper structures", "total marks", "passing criteria"],
+    "approximate_fields": ["chapter-level marks within each subject", "Science bseb_official_units weightage table", "Hindi/English/Sanskrit internal section breakdowns"]
   },
   "general_rules": {
     "total_subjects": 6,
@@ -267,8 +267,8 @@
           ]
         },
         "chemistry": {
-          "theory_marks": 26,
-          "percentage_of_theory": "32.5%",
+          "theory_marks": 27,
+          "percentage_of_theory": "33.75%",
           "chapters": [
             {
               "chapter_no": 1,
@@ -347,8 +347,8 @@
           ]
         },
         "biology": {
-          "theory_marks": 27,
-          "percentage_of_theory": "33.75%",
+          "theory_marks": 26,
+          "percentage_of_theory": "32.5%",
           "chapters": [
             {
               "chapter_no": 6,
@@ -465,8 +465,8 @@
       "subjects_breakdown": {
         "history": { "marks": 20, "chapters": 5 },
         "geography": { "marks": 20, "chapters": 7, "note": "Includes 5 marks map work" },
-        "political_science": { "marks": 17, "chapters": 5 },
-        "economics": { "marks": 17, "chapters": 5 },
+        "political_science": { "marks": 18, "chapters": 5 },
+        "economics": { "marks": 16, "chapters": 5 },
         "disaster_management": { "marks": 6, "chapters": 3 }
       },
       "internal_assessment": {
