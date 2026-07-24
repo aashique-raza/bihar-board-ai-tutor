@@ -7,8 +7,6 @@ export const CHAPTER_HINGLISH = {
   'Electricity':                          'Bijli',
   'Magnetic Effects of Electric Current': 'Vidyut Dhara ke Chumbakiya Prabhav',
   'Sources of Energy':                    'Urja ke Srot',
-  'Our Environment':                      'Hamara Parayavaran',
-  'Management of Natural Resources':      'Prakritik Sansadhanon ka Prabandhan',
   // Chemistry
   'Chemical Reactions and Equations':     'Rasayanik Abhikriyaen aur Samikaran',
   'Acids, Bases and Salts':               'Aml, Kshaar aur Lavan',
@@ -20,4 +18,6 @@ export const CHAPTER_HINGLISH = {
   'Control and Coordination':             'Niyantran aur Samanvay',
   'How Do Organisms Reproduce?':          'Jeev Prajanann Kaise Karte Hain?',
   'Heredity and Evolution':               'Anuvanshikta aur Vikas',
+  'Our Environment':                      'Hamara Parayavaran',
+  'Management of Natural Resources':      'Prakritik Sansadhanon ka Prabandhan',
 };

@@ -26,11 +26,20 @@ const REQUIRED_METADATA_FIELDS = [
   'chapter_title', 'language', 'source_type',
 ];
 
-// Valid chapter ranges per section folder
+// Valid chapter ranges per section folder.
+// Chemistry and Physics map chapter_no -> original_science_chapter_no linearly
+// (originalStart + chapterNo - 1), because their folder-chapters are a single
+// contiguous block of the original 16-chapter NCERT sequence.
+// Biology is NOT contiguous: its first 4 folder-chapters are original chapters
+// 6-9, but "Our Environment" / "Management of Natural Resources" are original
+// chapters 15-16 (original chapters 10-14 belong to Physics, in between) — a
+// linear formula cannot express that gap, so biology uses an explicit map
+// instead. originalStart/originalEnd are kept as the outer min/max for the
+// loose range sanity-check below; originalMap drives the exact per-chapter check.
 const SECTION_RULES = {
   chemistry: { section: 'Chemistry', chapterStart: 1, chapterEnd: 5, originalStart: 1, originalEnd: 5 },
-  biology:   { section: 'Biology',   chapterStart: 1, chapterEnd: 4, originalStart: 6, originalEnd: 9 },
-  physics:   { section: 'Physics',   chapterStart: 1, chapterEnd: 7, originalStart: 10, originalEnd: 16 },
+  biology:   { section: 'Biology',   chapterStart: 1, chapterEnd: 6, originalStart: 6, originalEnd: 16, originalMap: { 1: 6, 2: 7, 3: 8, 4: 9, 5: 15, 6: 16 } },
+  physics:   { section: 'Physics',   chapterStart: 1, chapterEnd: 5, originalStart: 10, originalEnd: 14 },
 };
 
 export const normalizePath = (filePath) => filePath.replaceAll(path.sep, '/');
@@ -87,7 +96,8 @@ const getSectionFolder = (sourcePath) => path.basename(path.dirname(sourcePath))
 
 const getExpectedOriginalChapterNo = (folderSection, chapterNo) => {
   const rule = SECTION_RULES[folderSection];
-  return rule ? rule.originalStart + chapterNo - 1 : undefined;
+  if (!rule) return undefined;
+  return rule.originalMap ? rule.originalMap[chapterNo] : rule.originalStart + chapterNo - 1;
 };
 
 const createStableId = (metadata) =>

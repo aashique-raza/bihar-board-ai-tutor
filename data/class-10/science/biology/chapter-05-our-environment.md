@@ -2,8 +2,8 @@
 board: Bihar Board
 class: 10
 subject: Science
-section: Physics
-chapter_no: 6
+section: Biology
+chapter_no: 5
 original_science_chapter_no: 15
 chapter_title: Our Environment
 language: English
