@@ -18,7 +18,7 @@
 // Short common words that don't carry meaning — excluded from keyword matching
 const WEAK_QUERY_TERMS = new Set([
   'kya', 'hai', 'ka', 'ki', 'ke', 'ko', 'me', 'mein',
-  'in', 'of', 'and', 'explain', 'karo', 'what', 'is',
+  'in', 'of', 'and', 'explain', 'karo', 'what', 'is', 'are',
   'the', 'function', 'define', 'human', 'humans', 'beings',
   'hota', 'hoti', 'hote',
 ]);
@@ -42,6 +42,21 @@ const normalizeText = (text) => String(text || '').toLowerCase();
 
 const includesAny = (text, terms) =>
   terms.some((term) => text.includes(term));
+
+// Word-tokenizes text (Unicode-aware — works for Devanagari as well as Latin script,
+// unlike a \b regex boundary which only recognizes [A-Za-z0-9_] as "word" characters).
+// Used anywhere a query term (arbitrary user input) is checked against chunk text —
+// raw substring checks there let a short real word (e.g. "are") false-match inside an
+// unrelated longer word (e.g. "compare"), pulling in wrong-chapter content. Fixed-vocabulary
+// checks (e.g. matching against a hardcoded ['overview','summary'] list) keep using
+// includesAny() above — that list is developer-curated, not arbitrary user input, so the
+// same false-substring risk doesn't apply there.
+const tokenize = (text) => new Set(String(text || '').match(/[\p{L}\p{N}]+/gu) || []);
+
+const tokenIncludesAny = (text, terms) => {
+  const tokens = tokenize(text);
+  return terms.some((term) => tokens.has(term));
+};
 
 // Expands related query terms (e.g. "digestion" also matches "digestive")
 const expandQueryTerm = (term) => {
@@ -106,18 +121,21 @@ const hasRelatedBroadHeading = (queryTerms, headingPath) => {
   }
   if (queryTerms.includes('nutrition')) return headingPath.includes('nutrition');
   if (queryTerms.includes('blood')) return includesAny(headingPath, ['blood', 'circulation', 'circulatory', 'transport']);
-  return includesAny(headingPath, queryTerms);
+  return tokenIncludesAny(headingPath, queryTerms);
 };
 
-const scoreTermMatch = (term, { headingPath, chapterTitle, content }) => {
+// Matches on whole-word token membership, not substring — a query term only counts as
+// "found in the heading" if it appears as an actual word there, not merely as letters
+// hiding inside a longer, unrelated word (see tokenize() above for why this can't just
+// be a \b regex).
+const scoreTermMatch = (term, { leafHeadingTokens, headingPathTokens, chapterTitleTokens, contentTokens }) => {
   let boost = 0;
   const matchedFields = [];
-  const leafHeading = normalizeText(getLeafHeading(headingPath));
 
-  if (leafHeading.includes(term)) { boost += HEADING_TERM_BOOST; matchedFields.push('heading_path'); }
-  else if (headingPath.includes(term)) { boost += PARENT_HEADING_TERM_BOOST; matchedFields.push('heading_path'); }
-  if (chapterTitle.includes(term)) { boost += CHAPTER_TERM_BOOST; matchedFields.push('chapter_title'); }
-  if (content.includes(term)) { boost += CONTENT_TERM_BOOST; matchedFields.push('content'); }
+  if (leafHeadingTokens.has(term)) { boost += HEADING_TERM_BOOST; matchedFields.push('heading_path'); }
+  else if (headingPathTokens.has(term)) { boost += PARENT_HEADING_TERM_BOOST; matchedFields.push('heading_path'); }
+  if (chapterTitleTokens.has(term)) { boost += CHAPTER_TERM_BOOST; matchedFields.push('chapter_title'); }
+  if (contentTokens.has(term)) { boost += CONTENT_TERM_BOOST; matchedFields.push('content'); }
 
   return { boost, matchedFields };
 };
@@ -129,12 +147,18 @@ const calculateKeywordSignals = (queryTerms, result) => {
     chapterTitle: normalizeText(metadata.chapter_title),
     content: normalizeText(`${result.content} ${metadata.originalText || ''}`),
   };
+  const tokenFields = {
+    leafHeadingTokens: tokenize(getLeafHeading(searchableFields.headingPath)),
+    headingPathTokens: tokenize(searchableFields.headingPath),
+    chapterTitleTokens: tokenize(searchableFields.chapterTitle),
+    contentTokens: tokenize(searchableFields.content),
+  };
 
   let keywordBoost = 0;
   const matchedTerms = [];
 
   for (const term of queryTerms) {
-    const termMatch = scoreTermMatch(term, searchableFields);
+    const termMatch = scoreTermMatch(term, tokenFields);
     if (termMatch.boost > 0) {
       keywordBoost += termMatch.boost;
       matchedTerms.push({ term, fields: termMatch.matchedFields });
@@ -170,7 +194,7 @@ const calculateFunctionBoost = (intent, queryTerms, matchedTerms, searchableFiel
   let boost = 0;
   if (hasQueryTermInHeading && includesAny(headingPath, ['function', 'role', 'importance'])) boost += DIRECT_FUNCTION_INTENT_BOOST;
   if (hasAnyQueryTermMatch && includesAny(headingPath, ['transport', 'circulation', 'blood'])) boost += DIRECT_FUNCTION_INTENT_BOOST;
-  if (hasQueryTermInHeading && includesAny(headingPath, queryTerms)) boost += RELATED_FUNCTION_INTENT_BOOST;
+  if (hasQueryTermInHeading && tokenIncludesAny(headingPath, queryTerms)) boost += RELATED_FUNCTION_INTENT_BOOST;
   return boost;
 };
 

@@ -3,7 +3,7 @@
  * * PRODUCTION-GRADE ORCHESTRATOR COMPONENT
  */
 
-import { retrieveRelevantChunks, retrieveChunksByTopicId } from '../rag/retriever.js';
+import { retrieveRelevantChunks, retrieveChunksByTopicId, hasHeadingOrChapterTermMatch } from '../rag/retriever.js';
 import { formatSources } from '../rag/sourceFormatter.js';
 import { formatRetrievedContext } from './promptHelpers.js';
 import { getNextTopic } from '../curriculum/nextTopicResolver.js';
@@ -198,15 +198,29 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent, exa
   const chunks = retrieval.results || [];
 
   // OUT-OF-FOCUS FALLBACK — CONCEPT_QUESTION only.
-  // Focus retrieval returned 0 chunks, but the topic may exist in a different chapter.
-  // Run a global search (no metadataFilter) to confirm before saying "not in material".
-  if (intent === 'CONCEPT_QUESTION' && focusChapter && chunks.length === 0) {
-    if (isDev) console.log(`[Step 5 OOF] Focus retrieval returned 0 — running global fallback for: "${searchQuery}"`);
+  // Triggers when the focus-scoped search found nothing (0 chunks), OR when everything it
+  // found only matched weakly — content-only keyword hits, no heading/chapter-title match.
+  // A weak in-focus result is not strong evidence the topic actually belongs to this
+  // chapter: real case that surfaced this — a Biology "Life Processes" question, asked
+  // while focused on the Light chapter, weakly matched 1 unrelated Light chunk (a
+  // reranker keyword false-positive — see reranker.js's tokenize() comment), so the old
+  // chunks.length === 0 check never fired and the wrong-chapter chunk was silently taught.
+  const hasOnlyWeakMatches = chunks.length > 0 && chunks.every((chunk) => !hasHeadingOrChapterTermMatch(chunk));
+
+  if (intent === 'CONCEPT_QUESTION' && focusChapter && (chunks.length === 0 || hasOnlyWeakMatches)) {
+    if (isDev) console.log(`[Step 5 OOF] Focus retrieval ${chunks.length === 0 ? 'returned 0' : 'found only weak content-only matches'} — running global fallback for: "${searchQuery}"`);
 
     const globalRetrieval = await retrieveRelevantChunks(searchQuery, { topK: 3 });
     const globalChunks = globalRetrieval.results || [];
+    const globalHasStrongMatch = globalChunks.some((chunk) => hasHeadingOrChapterTermMatch(chunk));
 
-    if (globalChunks.length > 0) {
+    // A weak-but-present in-focus result only gets overridden if the global search found
+    // something CONFIDENTLY stronger elsewhere (a heading/chapter-title match) — a
+    // weak-vs-weak tie keeps the original in-focus answer, since the student's question
+    // may simply be phrased differently than any heading in their own chapter (not proof
+    // it belongs elsewhere). The original chunks.length === 0 case is unchanged: any
+    // global match at all (weak or strong) still redirects, exactly as before.
+    if (globalChunks.length > 0 && (chunks.length === 0 || globalHasStrongMatch)) {
       if (isDev) console.log(`[Step 5 OOF] Global fallback found ${globalChunks.length} chunk(s) — topic exists outside focus chapter.`);
       return {
         retrieval: globalRetrieval,
@@ -222,12 +236,17 @@ export const retrieveContent = async ({ needsRetrieval, searchQuery, intent, exa
       };
     }
 
-    if (isDev) console.log(`[Step 5 OOF] Global fallback also returned 0 — topic not in material.`);
-    return {
-      retrieval: null, chunks: [], sources: [],
-      retrievedContext: 'NO_RETRIEVED_CONTEXT',
-      lastRetrievalQuery: searchQuery,
-    };
+    if (chunks.length === 0) {
+      if (isDev) console.log(`[Step 5 OOF] Global fallback also returned 0 — topic not in material.`);
+      return {
+        retrieval: null, chunks: [], sources: [],
+        retrievedContext: 'NO_RETRIEVED_CONTEXT',
+        lastRetrievalQuery: searchQuery,
+      };
+    }
+
+    // Weak-vs-weak tie: fall through and keep the original in-focus chunks below.
+    if (isDev) console.log(`[Step 5 OOF] Global fallback found nothing confidently stronger — keeping weak in-focus match.`);
   }
 
   // Format candidate chunks into structural objects for user consumption

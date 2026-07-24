@@ -53,7 +53,7 @@ const hasMatchedTerms = (result) =>
 // Heading/chapter matches are strong signals — the topic is directly about what was asked.
 // Content-only matches are weak — the word appeared in passing (e.g. "Newton" mentioned
 // in a Human Eye chunk while discussing prism experiments).
-const hasHeadingOrChapterTermMatch = (result) => {
+export const hasHeadingOrChapterTermMatch = (result) => {
   const matchedTerms = result.rerankDebug?.matchedTerms || [];
   return matchedTerms.some(
     (match) => match.fields.includes('heading_path') || match.fields.includes('chapter_title')
