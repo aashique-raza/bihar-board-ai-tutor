@@ -27,7 +27,7 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 ## SECTION A — Session lifecycle & mode transitions
 
-### A1 🟡 `chatState.lastTopic` / `lastDoubtTopic` / `lastDoubtQuestion` are NOT cleared on global-mode turns
+### A1 🟢 [v3 downgraded, no fix needed] `chatState.lastTopic` / `lastDoubtTopic` / `lastDoubtQuestion` are NOT cleared on global-mode turns
 
 **Evidence:** [step7.saveAndRespond.js:252-256](backend/src/ask/step7.saveAndRespond.js#L252) only nulls `learningMode`, `currentSubjectId`, `currentSectionId`, `currentChapterId` for global-mode turns. `lastTopic` / `lastDoubtTopic` / `lastDoubtQuestion` are untouched. Symmetric read in [step2.loadSession.js:102-108](backend/src/ask/step2.loadSession.js#L102) also only touches those same 4 fields.
 
@@ -39,6 +39,15 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 - Also: [step7.saveAndRespond.js:173](backend/src/ask/step7.saveAndRespond.js#L173) — `buildSessionPayload` returns `lastTopic` in the frontend session payload. In a corrupted-state session (see A2), the frontend can see stale `lastTopic` even though there's no chapter.
 
 **Why medium:** it's the same "orphan state field" pattern that motivated Focus Mode's BUG-1 fix (removing redundant progress fields from `chatState`). No user-observable harm confirmed, but the shape is identical to a previously-real class of bug.
+
+**[v3 deep audit, 2026-07-25 — downgraded to low, no fix]:** The v2 note above (`formatMemoryForPrompt` puts `lastTopic` in a memory blob that reaches the LLM) was written against the **legacy** `step6.generateResponse.js` code path. Traced every consumer of `context.memory` against the actual live path (confirmed `USE_INTENT_ROUTER=true` in `backend/.env:74`):
+
+1. **LLM prompt (live path)** — [intentRouter.js:108-157](backend/src/ask/intentRouter.js#L108) `buildPromptInput()` never includes `memory`/`context.memory` in ANY intent's prompt input (checked all 9 intents). The `memory` variable is only read by the legacy `step6.js:132` path, which is dead code under the current `.env` config. **`lastTopic` never reaches the LLM.**
+2. **Semantic study context** — [step3.buildContext.js:37-38](backend/src/ask/step3.buildContext.js#L37) — `buildSemanticStudyContext` early-returns to a fixed string whenever `!chatState.currentChapterId`, which is always true in global mode (that field is wiped by the same code block this finding is about). So `lastTopic` never reaches this string either.
+3. **EXPLAIN_MORE retrieval fallback** — [step5.retrieveContent.js:115](backend/src/ask/step5.retrieveContent.js#L115) can read `chatState.lastTopic` as a last-resort search query. But this only uses the *current session's* value — and per C3's resolution, the A2 fix means a cross-mode session transition always starts a brand-new session with `getDefaultChatState()`, so a stale focus-mode `lastTopic` can never survive into a different-mode session. Same-session global `lastTopic` is not stale, it's correct.
+4. **Frontend** — grep-verified zero references to `lastTopic`/`lastDoubtTopic`/`lastDoubtQuestion` anywhere in `frontend/src/`. The field is returned in the session payload but never read or displayed.
+
+**Conclusion:** unlike C2 (an intentional design tradeoff) or C3/E2/F1/F2 (dissolved by the A2 fix), A1's underlying assumption — that this field reaches the LLM or the user — was already false under the current architecture before this audit. The `USE_INTENT_ROUTER=true` refactor (an unrelated, earlier change) made `memory` structurally unreachable from any prompt. The stale value sits in MongoDB but is read by nothing. Reclassified 🟡 → 🟢, no code change planned.
 
 ### A2 🔴 [x] FIXED 2026-07-25 — `sessionType` is immutable but `studyMode` is per-request — cross-mode divergence is real (**BIDIRECTIONAL** [v2])
 
@@ -85,7 +94,7 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 ## SECTION B — Intent classification & routing (mode-blindness)
 
-### B1 🟡 Decider has no mode awareness — `NEXT_STEP` classification fires in global mode too
+### B1 🟡 [x] FIXED 2026-07-25 — Decider has no mode awareness — `NEXT_STEP` classification fires in global mode too
 
 **Evidence:**
 - [deciderPrompt.js](backend/src/prompts/deciderPrompt.js) accepts only `{message}`, `{detectedLanguage}`, `{history}` (line 148-156). Nothing about `studyMode` or `focusChapter`.
@@ -98,11 +107,17 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 **Why medium:** the response text says *"Chapter summary dekha jaye"* — but in global mode there IS no chapter. Student sees advice that doesn't apply to their state. Prompt was written under the implicit assumption that NEXT_STEP only fires in focus mode. Won't crash, but reads wrong.
 
-### B2 🟡 `nextStepPrompt.js` is written assuming a chapter is always active
+**FIX (2026-07-25):** [intentRouter.js:221-240](backend/src/ask/intentRouter.js#L221) — added a deterministic short-circuit, keyed on `(retrieval.retrievedContext === 'NO_RETRIEVED_CONTEXT' && intent === 'NEXT_STEP')`, same pattern as the existing `CHAPTER_COMPLETE` and `OUT_OF_FOCUS` short-circuits. Bypasses the LLM (and therefore `nextStepPrompt.js`'s focus-only fallback text) entirely and returns a fixed message: *"Abhi koi chapter select nahi hai, isliye 'agla topic' dikha nahi sakte. Pehle ek chapter chuno..."* with `switch_chapter` / `global_mode` chips. Boundary-tested: the same phrasing in Focus Mode (real chapter active) does NOT hit this branch — `getNextTopic()` only returns `no_chapter` when `currentChapterId` is null, which can't happen in a valid focus session.
+
+**Verified:** `verify-global-mode.js` Section A (4/4) + `verify-focus-mode.js` boundary regression, both passing.
+
+### B2 🟡 [x] FIXED 2026-07-25 — `nextStepPrompt.js` is written assuming a chapter is always active
 
 **Evidence:** [nextStepPrompt.js:23-26](backend/src/prompts/intents/nextStepPrompt.js#L23) — *"The student wants to move to the next topic. The retrieved context below contains that topic's content. Your job: teach this content naturally as a fresh lesson."* — the "this content" language implies content will always be present. The NO_RETRIEVED_CONTEXT branch at line 43-46 is a bolted-on defensive case with focus-only phrasing.
 
 **Why medium:** same root cause as B1. Same shape of fix.
+
+**FIX:** same as B1 — the intentRouter.js short-circuit bypasses this prompt entirely for the no-chapter case, so `nextStepPrompt.js`'s focus-only assumption is now moot for that path. The prompt file itself is unchanged (still fine for its actual use case: NEXT_STEP with a real chapter).
 
 ### B3 🟢 `chooseCoursePrompt`, `explainMorePrompt`, `examInfoPrompt` are mode-independent
 
@@ -120,18 +135,25 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 **Why low:** correct by design — global mode is defined as "search everything."
 
-### C2 🟡 Out-of-focus safety net is FOCUS-ONLY — global mode has fewer quality gates
+### C2 🟢 [v3 downgraded, no fix needed] Out-of-focus safety net is FOCUS-ONLY — global mode has fewer quality gates
 
-**Evidence:** [step5.retrieveContent.js:203-210](backend/src/ask/step5.retrieveContent.js#L203) — the whole OUT-OF-FOCUS fallback + weak-match check is guarded by `intent === 'CONCEPT_QUESTION' && focusChapter && (...)`. In global mode, `focusChapter` is null → this entire branch never runs.
+**Evidence:** [step5.retrieveContent.js:203-210](backend/src/ask/step5.retrieveContent.js#L203) — the whole OUT-OF-FOCUS fallback + weak-match check is guarded by `intent === 'CONCEPT_QUESTION' && focusChapter && (...)`. In global mode, `focusChapter` is null → this entire branch never runs. This part is correct by design — there is no "wrong chapter" concept in global mode to redirect away from.
 
-**[v2 new — important addition]:** Global retrieval is **materially less strict than focus retrieval**, not just missing the OOF branch:
+**[v2 new]:** Global retrieval was flagged as **materially less strict than focus retrieval**:
 - [step5.retrieveContent.js:17-26](backend/src/ask/step5.retrieveContent.js#L17) — `getRetrieverOptions(null)` returns `{}` (empty). It does NOT set `requireTermMatchForLatinQuery: true` (only the focus branch does, line 24).
 - [retriever.js:68-85](backend/src/rag/retriever.js#L68) — `passesFinalFilter` — the term-match gate is guarded by `options.requireTermMatchForLatinQuery`. When missing (undefined), the whole term-match check is skipped, meaning Latin-script queries without keyword matches can pass through in global mode where they'd be filtered out in focus.
-- **Net effect:** the exact substring-match / weak-match class of bug we fixed on 2026-07-24 in focus mode is more likely (not less) to surface in global mode's retrieval. It just wouldn't manifest as "cross-chapter leak" — it would manifest as "confidently-worded answer from a weakly-matched chunk."
 
-**Why medium (not low):** structural gap, not confirmed defect (I haven't reproduced a bad answer in global mode yet). But given the retrieval is LESS strict, the risk is real. Would upgrade if a reproduction lands.
+**[v3 deep audit, 2026-07-25 — downgraded to low, no fix]:**
 
-### C3 🟡 `chatState.lastRetrievalQuery` can bleed from focus → global via EXPLAIN_MORE
+1. **The original threat (cross-chapter substring leak) is already closed for BOTH modes.** The 2026-07-24 fix (commit `2d5c0c9`) had two parts: (a) `reranker.js`'s `tokenize()` word-boundary fix, and (b) the focus-only OOF weak-match fallback. Part (a) runs inside `rerankResults()`, which is called identically for both modes ([retriever.js:203](backend/src/rag/retriever.js#L203)) — it is NOT gated by `focusChapter`. So the actual bug that motivated this finding (`"are"` false-matching inside `"compare"`) cannot recur in either mode anymore. The v2 note above ("more likely to surface in global mode") was written before tracing that part (a) is mode-independent — it is now stale.
+
+2. **The narrow remaining gap** (a Latin-script query with zero keyword overlap but a 0.7+ vector score passing through in global mode) is real but adding the flag would make things *worse*, not safer: Focus Mode's `requireTermMatchForLatinQuery` gate is only safe *because* Focus Mode has the out-of-focus fallback to catch what it rejects (point 1's guard above). Global Mode has no equivalent fallback — a rejected chunk there has nowhere to go but straight to `insufficient_context`. Traced concretely: a Hinglish query like *"jeev ko urja kaise milti hai?"* against an English-worded "energy in organisms" chunk would vector-match correctly (~0.72) but share zero keyword tokens — adding the flag would turn a correct answer into a false "not found in our material," which directly violates the CLAUDE.md core rule from the other direction (refusing to answer when the answer *was* available).
+
+3. **No reproduction found** — searched for a concrete bad-answer case in global mode; none surfaced.
+
+**Conclusion:** the risk this finding was tracking is already mitigated (part 1), and the one gap that remains open is a deliberate, favorable tradeoff for a mode with no fallback mechanism (part 2), not an oversight. Reclassified 🟡 → 🟢, no code change planned.
+
+### C3 🟢 [v3 dissolved by A2 fix] `chatState.lastRetrievalQuery` can bleed from focus → global via EXPLAIN_MORE
 
 **Evidence:**
 - [step7.saveAndRespond.js:220-227](backend/src/ask/step7.saveAndRespond.js#L220) — `lastRetrievalQuery` is written on `CONCEPT_QUESTION`/`NEXT_STEP` turns whenever `sources.length > 0 && !isOutOfFocusAnswer`. No mode gating.
@@ -140,6 +162,8 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 **What could happen:** Session had a focus-mode CONCEPT_QUESTION about Reflection ("Reflection ka law kya hai?") — this got saved as `lastRetrievalQuery`. Student switches to global (per A2). Says "aur samjhao". Decider → EXPLAIN_MORE. Step5 re-retrieves "Reflection ka law kya hai?" globally, teaches from whatever comes back. Not necessarily wrong — Reflection is a real Light-chapter topic that would still match — but the source-of-truth chain is muddled: student never asked about Reflection in this new global-mode turn context.
 
 **Why medium:** narrow trigger (requires focus→global transition per A2 first), and the wrong-outcome is subtle. Would benefit from clearing `lastRetrievalQuery` on studyMode change, symmetric to the chapter-fields clear at step7:252.
+
+**[v3, 2026-07-25] Dissolved as a side-effect of the A2 fix.** [step2.loadSession.js's mode-mismatch guard](backend/src/ask/step2.loadSession.js#L56) now calls `loadSession({ requestedSessionId: null, ... })` whenever the incoming `studyMode` doesn't match the DB session's `sessionType`. This returns a *brand-new* session via `getDefaultChatState()` — no fields, including `lastRetrievalQuery`, carry over from the old session. C3's entire precondition ("focus-mode session continues into global mode on the *same* sessionId, carrying `lastRetrievalQuery` forward") can no longer occur — any focus→global mismatch on the same sessionId is now routed to a session with clean default state before this bleed could happen. Reclassified 🟡 → 🟢, no separate fix needed.
 
 ---
 
@@ -173,27 +197,33 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 **Fix: same as A2** — this was always the same root cause, just cross-referenced separately. See A2 for the full fix + companion-bug writeup + verification.
 
-### E2 🟡 `session.controller.js`'s sessionMeta assumes clean sessionType invariants
+### E2 🟢 [v3 downgraded] `session.controller.js`'s sessionMeta assumes clean sessionType invariants
 
 **Evidence:** [session.controller.js:112](backend/src/controllers/session.controller.js#L112) — `if (currentChapterId && session.sessionType === 'focus')` — degrades cleanly to nulls if either is missing. No error. But downstream frontend can't tell the difference between "clean global session" and "corrupted focus session viewed post-transition" or "corrupted global session with orphan ChapterProgress data."
 
 **Why medium:** graceful degradation but info-loss. Downstream of E1.
 
+**[v3, 2026-07-25] Downgraded — root cause closed going forward.** This finding described a *symptom* of E1/A2 (a session that already has mismatched `sessionType`/`currentChapterId`). The A2 fix ([step2.loadSession.js:56](backend/src/ask/step2.loadSession.js#L56)) prevents any *new* corrupted session from being created — every mode-mismatched turn now gets a fresh, clean session instead of writing inconsistent state into an existing one. Remaining risk is limited to sessions created *before* 2026-07-25 that may already carry stale invariants — a data question, not a code defect. No code fix needed here; if old corrupted rows are a concern, that's a one-time DB cleanup/migration, not a pipeline change.
+
 ---
 
 ## SECTION F — Frontend flow
 
-### F1 🟡 `handleClearFocus` reuses the existing session
+### F1 🟢 [v3 downgraded] `handleClearFocus` reuses the existing session
 
 **Evidence:** [ChatPage.jsx:364-368](frontend/src/pages/ChatPage.jsx#L364) — sets local mode + clears chapter selection. Does not clear `sessionId` or call `handleNewChat`. This is the frontend-side entry point for the A2 / E1 corruption path (focus → global direction).
 
 **Why medium:** partly a design decision (letting the student "continue chatting freely" in the same conversation is arguably good UX), but combined with the backend accepting mode-mismatched turns, it becomes a corruption source. Fix belongs either here (start a new session on mode change) or at the backend (reject or normalize mode-mismatched turns).
 
-### F2 🟡 Session-restore logic can silently downgrade sessionType to display mode
+**[v3, 2026-07-25] Downgraded — backend-side fix already neutralizes the corruption risk.** The A2 fix was made at the backend ([step2.loadSession.js](backend/src/ask/step2.loadSession.js#L56)), so it doesn't matter that the frontend still sends the old `sessionId` — the backend detects the mismatch and silently starts a fresh session instead of writing corrupted state. What remains is purely a **frontend UX question**, not a bug: after `handleClearFocus`, the student keeps seeing their old focus-mode messages on screen while the backend has quietly moved them to a new session underneath. That's a display-continuity nuance worth a product decision someday, not a stability risk today. Reclassified 🟡 → 🟢.
+
+### F2 🟢 [v3 downgraded] Session-restore logic can silently downgrade sessionType to display mode
 
 **Evidence:** [ChatPage.jsx:225-227](frontend/src/pages/ChatPage.jsx#L225) — only sets focus mode if BOTH `sessionType === 'focus'` AND `meta.currentChapterId` are truthy. Fails silently to global otherwise.
 
 **Why medium:** downstream of E1. Same fix scope.
+
+**[v3, 2026-07-25] Downgraded — same reasoning as E2.** This only fires for a session that already has an inconsistent `sessionType`/`currentChapterId` pairing, which the A2 fix now prevents from being created going forward. No code fix needed; only a concern for pre-2026-07-25 legacy rows, if any exist.
 
 ### F3 🟢 [v2 correction] `handleSwitchToGlobal` / "Search globally" button is dead code
 
@@ -207,11 +237,15 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 ## SECTION G — Testing infrastructure
 
-### G1 🟡 No automated verify script for Global Mode
+### G1 🟡 [x] FIXED 2026-07-25 No automated verify script for Global Mode
 
 **Evidence:** Only `backend/scripts/verify-focus-mode.js` exists. There is no `verify-global-mode.js` — no equivalent regression net for the global path.
 
 **Why medium:** none of the fixes in this file can be safely worked on without one, since the shared 9-file pipeline means a global fix could silently break focus (and vice versa). We already have `verify-focus-mode.js` as the focus-side tripwire; a symmetric global-side script is the missing half.
+
+**FIX (2026-07-25):** `backend/scripts/verify-global-mode.js` (new) — 10 tests across 4 sections: Section A pins the B1/B2 fix (deterministic message + chip set + clean DB state + a Focus Mode boundary check); Section B+C confirm global retrieval reaches all subjects with no sticky chapter filter and that Focus-only `next_topic` chips never leak into Global responses; Section D confirms mode-independent intents (CHOOSE_COURSE, EXAM_INFO) still work normally in Global Mode. Deliberately does NOT duplicate cross-mode switching tests — that's `verify-session-mode-guard.js`'s job.
+
+**Verified:** 10/10 PASS on first run.
 
 ### G2 🟢 `run-golden-set.js` is broken for both modes, not just global
 
@@ -231,17 +265,28 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 ---
 
-## Findings summary — count by risk
+## Findings summary — count by risk (v3, 2026-07-25)
 
 | Risk | Count | IDs |
 |---|---|---|
 | 🔴 High | 2 (both **FIXED** 2026-07-25) | A2, E1 (same root cause) |
-| 🟡 Medium | 9 | A1, B1, B2, C2, C3, D1, E2, F1, F2, G1 |
-| 🟢 Low | 6 | A3, A4, B3, C1, D2, F3 (v2 correction), G2 |
+| 🟡 Medium — FIXED | 3 | B1, B2, G1 |
+| 🟡 Medium — open | 0 | — |
+| 🟢 Low (incl. v3 downgrades) | 12 | A1 (v3), A3, A4, B3, C1, C2 (v3), C3 (v3), D2, E2 (v3), F1 (v3), F2 (v3), F3 |
+| 🟡 Medium — fragility, no fix planned | 1 | D1 |
 
-**Next priority, in order (per the discussion in "Recommended next step" below):** B1/B2 (prompt-only fix, low risk) → G1 (build `verify-global-mode.js`) → remaining 🟡s.
+**What actually happened, in order:**
+1. **A2/E1** (🔴🔴, same root cause) — fixed: mode-mismatch guard in `step2.loadSession.js`, plus a companion `updateChatSessionState()` bug found during verification.
+2. **B1/B2** (🟡) — fixed: deterministic `intentRouter.js` short-circuit for NEXT_STEP with no chapter.
+3. **G1** (🟡) — fixed: `verify-global-mode.js` built, 10/10 passing.
+4. **C2** (🟡→🟢) — deep-audited, downgraded. The dangerous part (cross-chapter substring leak) was already closed for both modes by the 2026-07-24 reranker fix; the remaining gap is a deliberate favorable tradeoff, not an oversight.
+5. **C3, E2, F1, F2** (all 🟡→🟢) — re-evaluated after the A2 fix landed. All four described *consequences* of cross-mode session corruption, which A2 now prevents from occurring at all going forward. No separate code changes needed.
+6. **A1** (🟡→🟢) — deep-audited. The v2 concern (stale `lastTopic` reaching the LLM via a `memory` JSON blob) was traced against the *live* `USE_INTENT_ROUTER=true` code path, not the legacy one it was originally checked against — `intentRouter.js`'s `buildPromptInput()` never passes `memory` to any of the 9 intent prompts, and the frontend has zero references to these fields. The stale data sits in MongoDB but is read by nothing. No code change needed.
 
-**The two 🔴s are the same root cause manifesting in two places** — cross-mode session-state corruption, which the v2 pass confirmed is BIDIRECTIONAL (focus → global via `handleClearFocus`, global → focus via `handleFocusChapterSelect` when no messages yet). Address that one thing, and E1/A2/E2/F2 (and possibly B1/B2 too, if solved via a new-session-on-mode-change approach) all resolve together.
+**Every finding in this checklist is now either fixed, or was audited and found to require no fix.** Nothing is deploy-blocking. D1 remains a documented fragility (works in practice, no fix planned unless it causes an observed issue).
+7. **D1** — still a documented fragility (prompt reads oddly with no focus chapter) but works in practice; no fix planned unless it causes an observed issue.
+
+**Remaining open item: A1.** Everything else in this file is either fixed, or was re-evaluated and found to already be resolved as a structural consequence of the A2 fix.
 
 ---
 
