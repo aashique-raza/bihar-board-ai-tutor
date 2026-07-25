@@ -159,8 +159,19 @@ export const renameSessionById = async (sessionId, title) => {
  * Updates fields inside the nested chatState object safely.
  * Uses MongoDB dot-notation ($set) so only the given fields change and the
  * other chatState fields are left untouched.
+ *
+ * Deliberately NOT an upsert: this function only ever tracks metadata
+ * (provider-error counts, the "exhausted" flag) on a session that has
+ * already gone through a real, successful turn. If no session exists yet
+ * for this sessionId, there's nothing meaningful to update — session
+ * *creation* is exclusively updateChatSession()'s job (via step7), because
+ * that function is the only one that derives sessionType correctly from the
+ * request's actual studyMode. Upserting here used to silently create a
+ * session with sessionType defaulted to 'global' by the Mongoose schema
+ * whenever a provider error hit on a session's very first turn — permanently
+ * mislabeling a focus-mode session (see GLOBAL_MODE_VERIFICATION_CHECKLIST.md).
  */
-export const updateChatSessionState = async (sessionId, updates, userId = null) => {
+export const updateChatSessionState = async (sessionId, updates) => {
   const updateFields = {};
 
   // Turn { key: value } into { 'chatState.key': value } for a dot-notation $set
@@ -170,17 +181,7 @@ export const updateChatSessionState = async (sessionId, updates, userId = null) 
 
   return ChatSession.findOneAndUpdate(
     { sessionId },
-    {
-      $set: updateFields,
-      $setOnInsert: {
-        userId,
-        mode: userId ? 'logged_in' : 'guest',
-      },
-    },
-    {
-      returnDocument: 'after',
-      upsert: true,
-      setDefaultsOnInsert: true,
-    }
+    { $set: updateFields },
+    { returnDocument: 'after' }
   );
 };

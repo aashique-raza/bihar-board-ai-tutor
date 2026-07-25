@@ -218,6 +218,27 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     };
   }
 
+  // NO CHAPTER SELECTED: NEXT_STEP fired but there's no active chapter (Global Mode).
+  // Deterministic response — no LLM call needed (same pattern as CHAPTER_COMPLETE above).
+  // getNextTopic() returns 'no_chapter' status only when chatState.currentChapterId is
+  // null, which never happens in a valid Focus Mode session — so this is safe to key
+  // purely off the (retrievedContext, intent) pair without checking studyMode directly.
+  if (retrieval.retrievedContext === 'NO_RETRIEVED_CONTEXT' && intent === 'NEXT_STEP') {
+    return {
+      status:           'answered',
+      responseMode:     'study_tutor',
+      title:            null,
+      sections:         [{ heading: '', content: 'Abhi koi chapter select nahi hai, isliye "agla topic" dikha nahi sakte. Pehle ek chapter chuno, phir hum step by step aage badhenge!' }],
+      suggestedActions: [
+        { type: 'switch_chapter', label: 'Chapter chunein' },
+        { type: 'global_mode',    label: 'Koi bhi sawaal poochho' },
+      ],
+      memoryUpdate:     {},
+      tokenUsage:       0,
+      tokenBreakdown:   { input: 0, output: 0, total: 0, cached: 0 },
+    };
+  }
+
   // Guard: unknown intent — should never happen (normalizeDecision in step4 guards this)
   if (!INTENT_CONFIG[intent]) {
     console.warn(`[IntentRouter] Unknown intent "${intent}" — falling back to CONCEPT_QUESTION`);
