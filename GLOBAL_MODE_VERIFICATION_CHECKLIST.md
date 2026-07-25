@@ -40,7 +40,7 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 **Why medium:** it's the same "orphan state field" pattern that motivated Focus Mode's BUG-1 fix (removing redundant progress fields from `chatState`). No user-observable harm confirmed, but the shape is identical to a previously-real class of bug.
 
-### A2 🔴 `sessionType` is immutable but `studyMode` is per-request — cross-mode divergence is real (**BIDIRECTIONAL** [v2])
+### A2 🔴 [x] FIXED 2026-07-25 — `sessionType` is immutable but `studyMode` is per-request — cross-mode divergence is real (**BIDIRECTIONAL** [v2])
 
 **Evidence:**
 - `sessionType` is set once via `$setOnInsert` — [chatSession.service.js:88](backend/src/services/chatSession.service.js#L88) with explicit comment *"immutable — only applied on document creation"*. Confirmed no code path anywhere writes `sessionType` outside `$setOnInsert` (grep verified).
@@ -62,6 +62,12 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 - **Frontend session-restore**: [ChatPage.jsx:225-227](frontend/src/pages/ChatPage.jsx#L225) sets focus mode ONLY when `sessionType === 'focus' AND meta.currentChapterId`. A `sessionType: 'global'` session with chapter data restores as global mode → chapter selection silently lost even though the underlying ChapterProgress row still exists.
 
 **Why high:** normal-user-reachable via direct clicks (both directions). Silent. Produces self-inconsistent DB rows.
+
+**FIX (2026-07-25):** `step2.loadSession.js` — added a mode-mismatch guard. When a loaded session's `sessionType` doesn't match the incoming `studyMode`, the request is treated exactly like no session was requested at all (recurses into the same function with `requestedSessionId: null`), reusing the already-proven cold-start path instead of duplicating it. The original session is never touched. Frontend already syncs to whatever `sessionId` a response returns ([ChatPage.jsx:458-462](frontend/src/pages/ChatPage.jsx#L458)), confirmed by reading the code before relying on it — no frontend changes were needed.
+
+**A companion bug found DURING verification, not before:** the first regression run against this fix showed 13/14 on `verify-focus-mode.js` (down from clean 14/14). Root-caused (not assumed) to a second, independent, pre-existing defect: `updateChatSessionState()` (used to track `consecutiveErrors`/`lastErrorAt` after a provider error, e.g. a Groq rate limit) had `upsert: true` without ever specifying `sessionType`. If a provider error hit on a session's very first turn — before `step7` ever successfully created the session with the correct `sessionType` — this function would silently create a session document itself, leaving `sessionType` on the Mongoose schema default (`'global'`), permanently mislabeling what may have been a focus-mode session. This bug pre-dates today's work and existed independently, but the new mode-mismatch guard made its consequences directly visible (a real conversation's session would silently split into a new one) rather than the mislabeled field just sitting unused. **Fixed the same day**: removed `upsert`/`$setOnInsert`/`setDefaultsOnInsert` from `updateChatSessionState()` — session *creation* is now exclusively `updateChatSession()`'s job (called only from `step7`, which always derives `sessionType` correctly). Verified safe via a full audit of every `ChatSession` create/upsert call site in the codebase (4 found total — 2 are dead code, never imported anywhere; the other 2 are `updateChatSession()`, already correct, and this one).
+
+**Verified:** dedicated script `backend/scripts/verify-session-mode-guard.js` (new) — 15/15, including a direct pin ("`updateChatSessionState()` does NOT create a session for a non-existent sessionId"). `verify-focus-mode.js` — back to clean 14/14 after the companion fix (was 13/14 with only the first fix applied).
 
 ### A3 🟢 No UI indicator for "you are in Global Mode"
 
@@ -159,11 +165,13 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 *(E1/E2 are the same root cause as A2 — grouped separately for cross-referencing. If A2 is addressed, these dissolve.)*
 
-### E1 🔴 Cross-mode transitions inside a single session silently corrupt DB state
+### E1 🔴 [x] FIXED 2026-07-25 — Cross-mode transitions inside a single session silently corrupt DB state
 
 **Evidence:** Same as A2. Both directions confirmed reachable via UI (see A2 for full walkthroughs).
 
 **Why high:** normal-user-reachable; silent; produces self-inconsistent DB rows.
+
+**Fix: same as A2** — this was always the same root cause, just cross-referenced separately. See A2 for the full fix + companion-bug writeup + verification.
 
 ### E2 🟡 `session.controller.js`'s sessionMeta assumes clean sessionType invariants
 
@@ -219,6 +227,7 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 - **No global-only files exist** in `backend/src/`. Global is definitionally "everything except focus-specific branches."
 - **`focusStudy` is the only study block in the study map** ([studyMap.service.js:126](backend/src/services/studyMap.service.js#L126)) — no `globalStudy` equivalent. This matches the "global is the default, not a special mode" implementation reality.
 - **[v2 note] `sessionType` is truly immutable**: grep-verified that no code path outside `$setOnInsert` writes to it (only writes: chatSession.service.js:32 and :88, both inside `$setOnInsert` blocks). This is by design, but combined with the per-request `studyMode`, it's the root of E1's whole family of bugs.
+- **[2026-07-25 note] `createChatSession()` and `getOrCreateChatSession()` are dead code** — found during the A2/E1 fix's audit of every `ChatSession` create/upsert path. Neither is imported anywhere in `backend/src`. Not fixed (not reachable, zero risk), but worth deleting in a future cleanup pass so a later developer doesn't mistake them for the live session-creation path (that's `updateChatSession()`, called only from `step7.saveAndRespond.js`).
 
 ---
 
@@ -226,9 +235,11 @@ Full trace of the 7-step Ask pipeline + `intentRouter.js` + relevant prompts + f
 
 | Risk | Count | IDs |
 |---|---|---|
-| 🔴 High | 2 | A2, E1 (same root cause) |
+| 🔴 High | 2 (both **FIXED** 2026-07-25) | A2, E1 (same root cause) |
 | 🟡 Medium | 9 | A1, B1, B2, C2, C3, D1, E2, F1, F2, G1 |
 | 🟢 Low | 6 | A3, A4, B3, C1, D2, F3 (v2 correction), G2 |
+
+**Next priority, in order (per the discussion in "Recommended next step" below):** B1/B2 (prompt-only fix, low risk) → G1 (build `verify-global-mode.js`) → remaining 🟡s.
 
 **The two 🔴s are the same root cause manifesting in two places** — cross-mode session-state corruption, which the v2 pass confirmed is BIDIRECTIONAL (focus → global via `handleClearFocus`, global → focus via `handleFocusChapterSelect` when no messages yet). Address that one thing, and E1/A2/E2/F2 (and possibly B1/B2 too, if solved via a new-session-on-mode-change approach) all resolve together.
 

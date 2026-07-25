@@ -35,6 +35,26 @@ export const loadSession = async ({ requestedSessionId, userId, guestId, studyMo
     if (sessionOwner && userId && sessionOwner !== userId) {
       throw new ApiError(403, 'Yeh session aapka nahi hai.');
     }
+
+    // Mode-mismatch guard — sessionType is immutable once a session is created
+    // (set once via $setOnInsert, see chatSession.service.js), but studyMode
+    // arrives fresh on every request. Reusing a session whose sessionType
+    // doesn't match the incoming studyMode would corrupt it (chapter fields
+    // get wiped/populated inconsistently with sessionType — see
+    // GLOBAL_MODE_VERIFICATION_CHECKLIST.md A2/E1 for the two confirmed UI
+    // paths this happens through). Rather than patch every place a mismatch
+    // could originate (today's UI buttons, or any future client), enforce the
+    // invariant here structurally: a mismatch is treated exactly like no
+    // session was requested at all, reusing the already-proven cold-start path
+    // below instead of duplicating its logic. The old session is never
+    // touched — it's simply not reused.
+    if (dbSession.sessionType && dbSession.sessionType !== studyMode) {
+      if (isDev) console.warn(
+        `[Step 2] Mode mismatch — session ${sessionId} is sessionType="${dbSession.sessionType}" ` +
+        `but request is studyMode="${studyMode}". Starting a fresh session instead.`
+      );
+      return loadSession({ requestedSessionId: null, userId, guestId, studyMode, focusChapter });
+    }
   }
 
   if (!dbSession) {
