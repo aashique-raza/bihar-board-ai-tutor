@@ -25,7 +25,7 @@ import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
 import useSessionList from '../hooks/useSessionList.js';
 import HistoryPanel from '../components/HistoryPanel.jsx';
-import SessionBar from '../components/SessionBar.jsx';
+import Sidebar from '../components/Sidebar.jsx';
 import ErrorBoundary from '../components/ErrorBoundary.jsx';
 
 // --- Message factory helpers ---
@@ -165,7 +165,6 @@ function ChatPage({ theme, toggleTheme }) {
   const [historyOpen, setHistoryOpen] = useState(false);
 
   const chatEndRef = useRef(null);
-  const historyTriggerRef = useRef(null);
   const controllerRef = useRef(null);
   const timeoutRef = useRef(null);
   const wasTimeoutAbortRef = useRef(false);
@@ -261,14 +260,6 @@ function ChatPage({ theme, toggleTheme }) {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [messages, isAsking]);
-
-  // Current session title for SessionBar center label
-  const currentSessionTitle = useMemo(() => {
-    if (!sessionId || !sessions.length) return null;
-    const active = sessions.find((s) => s.sessionId === sessionId);
-    if (!active) return null;
-    return active.title === 'New Chat' && active.previewText ? active.previewText : active.title;
-  }, [sessions, sessionId]);
 
   // Derive full chapter object from selected chapter ID
   const selectedChapter = useMemo(() => {
@@ -734,15 +725,41 @@ function ChatPage({ theme, toggleTheme }) {
 
   return (
     <Box
-      component="main"
       sx={{
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         height: '100vh',
         bgcolor: 'var(--bg-page)',
         overflow: 'hidden',
       }}
     >
+      <Sidebar
+        isLoggedIn={isLoggedIn}
+        isAuthLoading={isAuthLoading}
+        sessions={sessions}
+        isSessionsLoading={sessionsLoading}
+        fetchOnce={fetchOnce}
+        activeSessionId={sessionId}
+        onSessionSelect={handleSessionSwitch}
+        onNewChat={handleNewChat}
+        onSessionDelete={(deletedId) => {
+          if (deletedId === sessionId) handleNewChat();
+          refresh();
+        }}
+        onSessionRename={() => refresh()}
+      />
+
+      <Box
+        component="main"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100vh',
+          minWidth: 0,
+          flex: 1,
+          overflow: 'hidden',
+        }}
+      >
       <Topbar
         theme={theme}
         onToggleTheme={toggleTheme}
@@ -751,6 +768,7 @@ function ChatPage({ theme, toggleTheme }) {
         onOpenFocus={() => setIsFocusModalOpen(true)}
         onClearFocus={handleClearFocus}
         onNewChat={handleNewChat}
+        onOpenHistory={() => setHistoryOpen(true)}
         isSessionLocked={isSessionLocked}
       />
 
@@ -856,15 +874,6 @@ function ChatPage({ theme, toggleTheme }) {
           </Box>
         </Box>
 
-        {/* Session bar — quick access to history + new chat */}
-        <SessionBar
-          sessionCount={isLoggedIn ? sessions.length : 0}
-          currentSessionTitle={currentSessionTitle}
-          triggerRef={historyTriggerRef}
-          onOpenHistory={() => setHistoryOpen(true)}
-          onNewChat={handleNewChat}
-        />
-
         {/* Input zone — fixed at bottom */}
         <Box sx={{
           flexShrink: 0,
@@ -887,6 +896,7 @@ function ChatPage({ theme, toggleTheme }) {
           </Box>
         </Box>
       </ErrorBoundary>
+      </Box>
 
       <FocusModal
         isOpen={isFocusModalOpen}
@@ -900,7 +910,6 @@ function ChatPage({ theme, toggleTheme }) {
       <HistoryPanel
         isOpen={historyOpen}
         onClose={() => setHistoryOpen(false)}
-        triggerRef={historyTriggerRef}
         isLoggedIn={isLoggedIn}
         isAuthLoading={isAuthLoading}
         sessions={sessions}

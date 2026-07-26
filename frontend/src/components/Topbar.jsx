@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import AddCommentOutlined from '@mui/icons-material/AddCommentOutlined';
 import CloseRounded from '@mui/icons-material/CloseRounded';
+import MenuRounded from '@mui/icons-material/MenuRounded';
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +23,7 @@ export default function Topbar({
   onOpenFocus,
   onClearFocus,
   onNewChat,
+  onOpenHistory,
   isSessionLocked,
 }) {
   const { user, isLoggedIn, isLoading } = useAuth();
@@ -69,8 +71,20 @@ export default function Topbar({
         gap: 2,
       }}
     >
-      {/* Left: Logo + wordmark */}
-      <Stack direction="row" spacing={1.25} alignItems="center">
+      {/* Left: hamburger (mobile only — desktop uses the persistent Sidebar) + Logo + wordmark */}
+      <Stack direction="row" spacing={1} alignItems="center">
+        <IconButton
+          aria-label="Chat history"
+          size="small"
+          onClick={onOpenHistory}
+          sx={{
+            display: { xs: 'inline-flex', sm: 'none' },
+            color: 'var(--text-muted)',
+            '&:hover': { color: 'var(--text-primary)' },
+          }}
+        >
+          <MenuRounded sx={{ fontSize: 20 }} />
+        </IconButton>
         <Box className="zuno-logo">Z</Box>
         <Box>
           <Typography
@@ -233,33 +247,7 @@ export default function Topbar({
           </svg>
         </IconButton>
 
-        {/* New Chat — desktop: icon + text, mobile: icon only */}
-        <Button
-          variant={isSessionLocked ? 'contained' : 'outlined'}
-          size="small"
-          color={isSessionLocked ? 'primary' : 'inherit'}
-          onClick={onNewChat}
-          startIcon={<AddCommentOutlined sx={{ fontSize: '15px !important' }} />}
-          sx={{
-            borderColor: 'var(--border)',
-            color: isSessionLocked ? undefined : 'var(--text-secondary)',
-            borderRadius: 'var(--radius-full)',
-            fontSize: '0.8rem',
-            fontWeight: 600,
-            px: 1.5,
-            py: 0.5,
-            textTransform: 'none',
-            display: { xs: 'none', sm: 'inline-flex' },
-            '&:hover': {
-              borderColor: 'var(--border-strong)',
-              bgcolor: 'var(--bg-hover)',
-            },
-          }}
-        >
-          New Chat
-        </Button>
-
-        {/* New Chat — mobile icon only */}
+        {/* New Chat — mobile only (desktop uses the persistent Sidebar's "Naya chat" button) */}
         <IconButton
           aria-label="New chat"
           size="small"
@@ -267,7 +255,7 @@ export default function Topbar({
           title="New Chat"
           sx={{
             display: { xs: 'inline-flex', sm: 'none' },
-            color: 'var(--text-muted)',
+            color: isSessionLocked ? 'var(--primary)' : 'var(--text-muted)',
             '&:hover': { color: 'var(--text-primary)' },
           }}
         >
