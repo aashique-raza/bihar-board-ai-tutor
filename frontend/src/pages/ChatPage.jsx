@@ -5,7 +5,6 @@ import { askTutor, fetchSessionHistory, fetchStudyMap, fetchChapterProgress, cha
 import AskBar from '../components/AskBar.jsx';
 import ChatMessage from '../components/ChatMessage.jsx';
 import FocusModal from '../components/FocusModal.jsx';
-import FocusProgressHeader from '../components/FocusProgressHeader.jsx';
 import StatusNotice from '../components/StatusNotice.jsx';
 import Toast from '../components/Toast.jsx';
 import Topbar from '../components/Topbar.jsx';
@@ -770,17 +769,12 @@ function ChatPage({ theme, toggleTheme }) {
         onNewChat={handleNewChat}
         onOpenHistory={() => setHistoryOpen(true)}
         isSessionLocked={isSessionLocked}
+        focusTopics={studyMode === STUDY_MODES.focus ? chapterTopics : []}
+        currentTopicId={currentTopicId}
+        completedTopicIds={completedTopicIds}
+        engagementCount={engagementCount}
+        chapterStatus={chapterStatus}
       />
-
-      {studyMode === STUDY_MODES.focus && selectedChapterId && (
-        <FocusProgressHeader
-          chapterId={selectedChapterId}
-          currentTopicId={currentTopicId}
-          completedTopicIds={completedTopicIds}
-          engagementCount={engagementCount}
-          status={chapterStatus}
-        />
-      )}
 
       {/* key=sessionId: when session changes, ErrorBoundary remounts and clears any crashed state */}
       <ErrorBoundary key={sessionId}>

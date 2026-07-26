@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
+import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import AddCommentOutlined from '@mui/icons-material/AddCommentOutlined';
 import CloseRounded from '@mui/icons-material/CloseRounded';
@@ -25,12 +26,57 @@ export default function Topbar({
   onNewChat,
   onOpenHistory,
   isSessionLocked,
+  focusTopics,
+  currentTopicId,
+  completedTopicIds,
+  engagementCount = 0,
+  chapterStatus,
 }) {
   const { user, isLoggedIn, isLoading } = useAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+
+  // Focus mode progress — collapsed into the chapter pill (was a separate
+  // FocusProgressHeader bar). Only meaningful once topics have loaded.
+  const totalTopics = focusTopics?.length || 0;
+  let currentTopicIndex = totalTopics > 0 ? focusTopics.findIndex((t) => t.topicId === currentTopicId) : -1;
+  if (currentTopicIndex === -1 && totalTopics > 0) {
+    currentTopicIndex = chapterStatus === 'completed' ? totalTopics : 0;
+  }
+  const displayTopicIndex = totalTopics > 0 ? Math.min(currentTopicIndex + 1, totalTopics) : 0;
+  const progressPercent = totalTopics > 0
+    ? Math.max(0, Math.min(100, ((completedTopicIds?.length || 0) / totalTopics) * 100))
+    : 0;
+
+  const progressTooltip = totalTopics > 0 ? (
+    <Box sx={{ p: 0.5 }}>
+      <Typography variant="body2" sx={{ fontWeight: 600, mb: 1, color: '#fff' }}>
+        Topic {displayTopicIndex} of {totalTopics}
+      </Typography>
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+        {focusTopics.map((t, i) => {
+          const isDone = completedTopicIds?.includes(t.topicId);
+          const isCurrent = t.topicId === currentTopicId;
+          let icon = '🔒';
+          if (isDone) icon = '✅';
+          else if (isCurrent) icon = '🟢';
+          else if (i === currentTopicIndex && !isCurrent) icon = '🟢';
+          return (
+            <Typography key={t.topicId} variant="caption" sx={{ color: isCurrent ? '#fff' : 'rgba(255,255,255,0.7)' }}>
+              {icon} {t.title}
+            </Typography>
+          );
+        })}
+      </Box>
+      {engagementCount > 0 && (
+        <Typography variant="caption" sx={{ display: 'block', mt: 1, color: 'rgba(255,255,255,0.75)' }}>
+          💬 {engagementCount} sawaal poochhe is chapter me
+        </Typography>
+      )}
+    </Box>
+  ) : '';
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -60,6 +106,7 @@ export default function Topbar({
     <Box
       component="header"
       sx={{
+        position: 'relative',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -117,15 +164,17 @@ export default function Topbar({
       {/* Right: chapter pill + nav buttons + theme toggle */}
       <Stack direction="row" spacing={1} alignItems="center">
 
-        {/* Chapter pill — shown when focus is set, hidden on mobile */}
+        {/* Chapter pill — shown when focus is set, hidden on mobile. Hover shows the
+            topic roadmap (was a separate FocusProgressHeader bar under the topbar). */}
         {selectedChapter && (
+          <Tooltip title={progressTooltip} placement="bottom-end" arrow disableHoverListener={totalTopics === 0}>
           <Stack
             direction="row"
             alignItems="center"
             spacing={0.75}
             sx={{
               display: 'inline-flex',
-              maxWidth: { xs: 130, sm: 220 },
+              maxWidth: { xs: 150, sm: 260 },
               px: '10px',
               pl: '8px',
               py: '4px',
@@ -158,6 +207,11 @@ export default function Topbar({
             >
               {selectedChapter.hinglishTitle || selectedChapter.title}
             </Typography>
+            {totalTopics > 0 && (
+              <Typography sx={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--primary)', flexShrink: 0 }}>
+                {Math.round(progressPercent)}%
+              </Typography>
+            )}
             <IconButton
               aria-label="Clear focus"
               size="small"
@@ -167,6 +221,7 @@ export default function Topbar({
               <CloseRounded sx={{ fontSize: '14px' }} />
             </IconButton>
           </Stack>
+          </Tooltip>
         )}
 
         {/* Focus button — desktop: text+icon, mobile: icon only */}
@@ -385,6 +440,13 @@ export default function Topbar({
         )}
 
       </Stack>
+
+      {/* Thin focus-progress line — replaces the old separate FocusProgressHeader bar */}
+      {selectedChapter && totalTopics > 0 && (
+        <Box sx={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: '2px', bgcolor: 'var(--border)', overflow: 'hidden' }}>
+          <Box sx={{ height: '100%', width: `${progressPercent}%`, bgcolor: 'var(--primary)', transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }} />
+        </Box>
+      )}
     </Box>
   );
 }
