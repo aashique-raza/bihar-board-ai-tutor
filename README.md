@@ -160,6 +160,10 @@ Current backend status:
 - PDF/OCR pipeline.
 - Production vector database.
 
-Authentication is now in progress (Redis, user model, JWT helpers, auth middleware,
-and email register + verification are implemented). See `AUTH_PLAN.md` for the full
-plan and current status.
+Authentication is fully built and security-stabilized (JWT access/refresh tokens,
+Redis session whitelist, bcrypt, email register + verification, Google OAuth,
+guest-to-user progress migration). See
+[`docs/archive/auth/AUTH_SECURITY_PLAN.md`](docs/archive/auth/AUTH_SECURITY_PLAN.md)
+for the full audit and current status, and
+[`docs/archive/auth/AUTH_PLAN.md`](docs/archive/auth/AUTH_PLAN.md) for the original
+architecture design.
