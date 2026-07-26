@@ -1399,13 +1399,21 @@ The original Fix 1.3 (2026-06-20) explicitly deferred the proper fix ("documenti
 
 #### NEW-3 🟡 MEDIUM — `env.js` does not validate auth-critical secrets at startup
 
-**Evidence:** [env.js:67-129](backend/src/config/env.js#L67) — `validateEnv()` checks `MONGODB_URI`, the embedding provider key, `LLM_PROVIDER`, `EMAIL_HOST/USER/PASS`, and `FRONTEND_URL`. It does **not** check `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, or that Redis is reachable.
+**Evidence:** [env.js:67-129](backend/src/config/env.js#L67) — `validateEnv()` checks `MONGODB_URI`, the embedding provider key, `LLM_PROVIDER`, `EMAIL_HOST/USER/PASS`, and `FRONTEND_URL`. It does **not** check `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`.
 
-**What could happen:** if `JWT_ACCESS_SECRET` is missing or empty in a deployment's `.env` (a realistic mistake when copying `.env.example` to a new hosting provider), the server starts up successfully, passes health checks, and looks fine — until the first `login()` or `register()` call, where `jwt.sign(payload, undefined, ...)` throws. The failure is discovered by the first real user, not at deploy time.
+**Correction to this finding's original claim about Redis:** the original write-up said Redis reachability also isn't checked. Re-verified 2026-07-26 against [server.js:33-44](backend/src/server.js#L33) — this is **stale/incorrect**. `connectRedis()` runs at startup independently of `validateEnv()`, calls a real `.ping()`, and `process.exit(1)`s on failure in production. Redis was never actually a gap — no change needed there.
 
-**Why medium, not critical:** this fails loudly (a thrown error, caught by the route's try/catch, surfaces as a 500) rather than silently issuing insecure tokens — so it's a slow-discovery operational gap, not a silent security hole.
+**What could happen — two genuinely different failure modes, verified by running the actual code, not assumed:**
+- **JWT_ACCESS_SECRET / JWT_REFRESH_SECRET missing:** confirmed `jwt.sign(payload, undefined, ...)` throws synchronously (`"secretOrPrivateKey must have a value"`). This happens inside `generateAccessToken()`/`generateRefreshToken()`, which every caller (`login`, `register`, `googleCallback`, `refreshToken`) invokes inside its own `try/catch` — so it surfaces as a 500, logged server-side, on the very first request. Loud and fast.
+- **GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET missing — the more dangerous case:** confirmed via a live test that `new OAuth2Client(undefined, undefined, undefined).generateAuthUrl(...)` does **not** throw — it silently returns a URL with `client_id=` empty. `googleAuth()` redirects the student straight to that broken URL; Google itself shows "Error 401: invalid_client" on Google's own domain. **No server-side log line is ever produced** — this is the one failure mode here with zero backend visibility. `GOOGLE_CALLBACK_URL` (used in the same `OAuth2Client` calls, and missing from `.env.example` entirely until this fix) shares the same silent-failure risk.
 
-**Fix:** add to `validateEnv()`'s checklist: `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` (same `isRealKey()` helper already used for provider keys).
+**Why medium, not critical:** the JWT case fails loudly (thrown error → 500 → server log). The Google case is genuinely silent server-side, but it only breaks one specific login path (Google OAuth — email/password login is unaffected), and is easy to catch pre-launch by testing that one button.
+
+**Fix implemented 2026-07-26:** Added presence checks (not `isRealKey()`) for `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_CALLBACK_URL` to `validateEnv()`, using the same pattern already used for `EMAIL_HOST`/`EMAIL_USER`/`EMAIL_PASS` (`!value || !value.trim()`).
+
+**Why not `isRealKey()` (the originally-proposed fix):** tested against the actual `.env` before implementing — `JWT_REFRESH_SECRET` is currently only 9 characters. `isRealKey()`'s `length > 10` threshold (tuned for catching forgotten API-key placeholders) would have rejected this legitimate, currently-working secret and **blocked the dev server from starting** as a side effect of this "safety" fix. Presence-only checks avoid this; a separate **non-blocking warning** (`console.warn`, not `missing.push`) was added for `JWT_ACCESS_SECRET`/`JWT_REFRESH_SECRET` under 32 characters, so the current short secrets are flagged for rotation before a real production deploy without breaking anything today.
+
+**Verified:** ran `validateEnv()` against the real `.env` — passes cleanly, both JWT vars print the length warning as expected, server startup is unaffected. Separately simulated `GOOGLE_CLIENT_ID` missing (deleted from `process.env` after module load, so `env.js`'s own `dotenv.config()` couldn't silently refill it) — confirmed it correctly logs the missing-var list and calls `process.exit(1)`. Also added the previously-undocumented `GOOGLE_CALLBACK_URL` to `.env.example`.
 
 #### NEW-4 🟡 MEDIUM (product correctness, not security) — No guest-to-user data migration on login/register
 
@@ -1425,9 +1433,35 @@ The original Fix 1.3 (2026-06-20) explicitly deferred the proper fix ("documenti
 
 **Verified** via an isolated script against the real MongoDB connection (synthetic guest/user docs, not real user data): (1) no-conflict chapter transfers cleanly, (2) guest-ahead-of-user conflict — guest's progress wins and is copied onto the surviving doc, (3) user-ahead-of-guest conflict — user's own progress is correctly preserved (not overwritten by the less-advanced guest doc), (4) engagement counters sum correctly in both conflict cases, (5) study events reassign correctly, (6) exactly one document survives per chapter in every case — no duplicate-key errors from `user_chapter_unique`/`guest_chapter_unique`. All 10 assertions passed. Live UI verification (real register → login → claim) was not possible in this environment (registration requires real-email verification), so the HTTP layer (route wiring, `requireAuth`, request/response shape) was verified by static review + syntax checks only, not an end-to-end browser test.
 
-### 13.5 — Not re-verified in this pass (scope note, not a finding)
+### 13.5 — Full re-verification pass (2026-07-26)
 
-The ~25 remaining Phase 2/4/6 toast, accessibility, and cosmetic findings (Fix 2.2, 2.4, 2.5, 4.2–4.8, 6.1–6.5) and the Session System Bugs in `PRE_LAUNCH_BLOCKERS.md` (S-2, S-4) and its P2.1/P2.4/L-1/L-2 items were **not individually re-verified against live code** in this pass — the sample checked in 13.1 (LoginPage's toast handling) was correct, but NEW-2 shows the sample is not 100% representative. These should get a full re-verification pass before being trusted, using the same method as this section (read the actual file, don't trust the checkbox) — flagged here rather than silently assumed fixed.
+All ~25 items flagged as "not individually re-verified" have now been checked one by one against live code (read the actual file, not the checkbox):
+
+| Item | File checked | Result |
+|---|---|---|
+| Fix 2.2 (duplicate toast) | RegisterPage.jsx:130-134 | ✅ Correct — single `showToast` call |
+| Fix 2.4 (ChatPage toastError) | ChatPage.jsx:123-135 | ✅ Correct — handles both toastSuccess and toastError |
+| Fix 2.5 (VerifyEmailPage deps) | VerifyEmailPage.jsx:38 | ✅ Correct — `[]` dependency array |
+| Fix 4.2 (ForgotPassword isDisabled) | ForgotPasswordPage.jsx:37 | ✅ Correct — includes `!!emailError` |
+| Fix 4.3 (session-expired toast) | LoginPage.jsx:60-63 | ✅ Correct — reads `sessionStorage.zuno.authRedirect` |
+| Fix 4.4 (reset-password toast) | ResetPasswordPage.jsx:67 | ✅ Correct — `navigate` with `toastSuccess` state |
+| Fix 4.5 (AuthCallback styling) | AuthCallback.jsx:69-76 | ✅ Correct — uses `auth-page`/`auth-card` classes |
+| Fix 4.6 (autocomplete attrs) | LoginPage/RegisterPage/ResetPasswordPage | ✅ Correct — all fields have `autoComplete` |
+| Fix 4.7 (Google button disabled) | LoginPage.jsx:252, RegisterPage.jsx:311 | ✅ Correct — `disabled={loading}` on both |
+| Fix 4.8 (keyboard accessibility) | LoginPage/RegisterPage/ForgotPasswordPage (5 links) | ✅ Correct — all have `tabIndex={0}` + `onKeyDown` |
+| Fix 6.1 (fetchSessions logging) | tutorApi.js:42-52 | ✅ Correct — logs non-401 errors |
+| Fix 6.2 (fetchSessionHistory logging) | tutorApi.js:54-65 | ✅ Correct — equivalent (throws with error code) |
+| Fix 6.3 (clear sessionId on login) | LoginPage.jsx:109 | ✅ Correct — `clearSessionId()` called |
+| Fix 6.4 (AppInitializer skip retry on 403) | AppInitializer.jsx:33-37 | ✅ Correct — returns early on 403 |
+| Fix 6.5 (clear guest ID on logout) | Topbar.jsx:52 | ✅ Correct — `localStorage.removeItem('zuno-guest-id')` |
+| P2.1 (embedding/retrieval cache) | retriever.js:16-17, 129, 139 | ✅ Correct — both caches wired in |
+| P2.4 (Error Boundary) | main.jsx:32-34 | ✅ Correct — wraps `<App />` at root (better placement than the plan's own suggestion) |
+| L-1 (timeout comment) | ask.controller.js:21-24 | ✅ Correct — comment says "60-second", code is 60000ms |
+| L-2 (EXAM_INFO in whitelist) | step7.saveAndRespond.js:73 | ✅ Correct — present |
+| S-2 (mid-stream error leak) | ChatPage.jsx:428-550 | ✅ Correct — `!isFirstUpdate` check, in-place status update |
+| S-4 (`lean: true` → `.lean()`) | chatHistory.service.js:38 | ✅ Correct — `.lean()` chained, no `lean: true` option anywhere |
+
+**Result: 21/21 checked, all correct. Zero new findings.** Unlike the earlier sample (where 2 of a handful checked turned out to be falsely marked done), this full pass found the tracker fully reliable for every remaining item. Combined with 13.1-13.4, every fix in this plan has now been individually verified against live code at least once.
 
 ### 13.6 — Priority ranking for what's actually open
 
@@ -1436,7 +1470,7 @@ The ~25 remaining Phase 2/4/6 toast, accessibility, and cosmetic findings (Fix 2
 | 1 | ~~NEW-1 — session ownership check incomplete~~ | 🔴 Critical | **✅ Fixed 2026-07-25** — same severity class as the already-fixed C-1/C-2; unauthenticated session hijack via leaked/shared sessionId; narrow one-line fix already specified by this plan itself |
 | 2 | ~~NEW-2 — ChatPage toast replaceState~~ | 🟠 High | **✅ Fixed 2026-07-25** — reproduces the exact bug that motivated this entire plan, on the highest-traffic post-auth page; one-line fix, pattern already proven correct on LoginPage |
 | 3 | ~~NEW-4 — guest-to-user data orphaning~~ | 🟡 Medium | **✅ Fixed 2026-07-25 (partial by design)** — ChapterProgress + StudyEvents now claimed on login/OAuth; ChatSession/ChatHistory deliberately out of scope (no `guestId` field on those models — would need a schema change) |
-| 4 | NEW-3 — env.js missing secret validation | 🟡 Medium | Real gap but fails loudly and fast in practice; lowest urgency of the four. **Still open.** |
+| 4 | ~~NEW-3 — env.js missing secret validation~~ | 🟡 Medium | **✅ Fixed 2026-07-26** — presence checks added for JWT/Google secrets; Redis claim in the original write-up was stale (already handled elsewhere) — corrected, not fixed (nothing to fix) |
 | 5 | Section 13.5 scope gap | — | Not a finding — a to-do to re-verify ~25 lower-severity items before fully trusting this plan's tracker again |
 
 ---

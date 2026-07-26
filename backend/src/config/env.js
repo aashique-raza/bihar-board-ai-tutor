@@ -119,12 +119,54 @@ export const validateEnv = () => {
     missing.push('FRONTEND_URL');
   }
 
-  if (missing.length === 0) return;
+  // JWT — required for issuing/verifying access + refresh tokens (login, register,
+  // Google OAuth, refresh all sign tokens with these). Presence only, not isRealKey():
+  // isRealKey()'s length>10 threshold is tuned for API-key placeholders and would
+  // reject legitimate short secrets — a separate weak-secret warning below covers that.
+  if (!process.env.JWT_ACCESS_SECRET || !process.env.JWT_ACCESS_SECRET.trim()) {
+    missing.push('JWT_ACCESS_SECRET');
+  }
+  if (!process.env.JWT_REFRESH_SECRET || !process.env.JWT_REFRESH_SECRET.trim()) {
+    missing.push('JWT_REFRESH_SECRET');
+  }
 
-  console.error(
-    '\n[Zuno] ❌ Server startup failed — missing required environment variables:\n\n' +
-      missing.map((k) => `  * ${k}`).join('\n') +
-      '\n\nFix these in backend/.env and restart.\n'
-  );
-  process.exit(1);
+  // Google OAuth — required for the "Continue with Google" flow. If missing, the
+  // failure is silent (no thrown error — google-auth-library happily builds a URL
+  // with an empty client_id), so this is the one auth flow that fails without ever
+  // producing a server-side log line. Must be caught here instead.
+  if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_ID.trim()) {
+    missing.push('GOOGLE_CLIENT_ID');
+  }
+  if (!process.env.GOOGLE_CLIENT_SECRET || !process.env.GOOGLE_CLIENT_SECRET.trim()) {
+    missing.push('GOOGLE_CLIENT_SECRET');
+  }
+  if (!process.env.GOOGLE_CALLBACK_URL || !process.env.GOOGLE_CALLBACK_URL.trim()) {
+    missing.push('GOOGLE_CALLBACK_URL');
+  }
+
+  if (missing.length > 0) {
+    console.error(
+      '\n[Zuno] ❌ Server startup failed — missing required environment variables:\n\n' +
+        missing.map((k) => `  * ${k}`).join('\n') +
+        '\n\nFix these in backend/.env and restart.\n'
+    );
+    process.exit(1);
+  }
+
+  // Weak-secret warning — non-blocking. A short JWT secret still works (server
+  // starts, tokens sign/verify fine), it's just easier to brute-force. Warn instead
+  // of failing so an existing short-but-functional secret doesn't suddenly block startup.
+  const MIN_JWT_SECRET_LENGTH = 32;
+  if (process.env.JWT_ACCESS_SECRET.trim().length < MIN_JWT_SECRET_LENGTH) {
+    console.warn(
+      `[Zuno] ⚠️  JWT_ACCESS_SECRET is only ${process.env.JWT_ACCESS_SECRET.trim().length} characters — ` +
+        `recommend at least ${MIN_JWT_SECRET_LENGTH} random characters for production.`
+    );
+  }
+  if (process.env.JWT_REFRESH_SECRET.trim().length < MIN_JWT_SECRET_LENGTH) {
+    console.warn(
+      `[Zuno] ⚠️  JWT_REFRESH_SECRET is only ${process.env.JWT_REFRESH_SECRET.trim().length} characters — ` +
+        `recommend at least ${MIN_JWT_SECRET_LENGTH} random characters for production.`
+    );
+  }
 };
