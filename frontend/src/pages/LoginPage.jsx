@@ -10,7 +10,7 @@ import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
 import MailOutlineRounded from '@mui/icons-material/MailOutlineRounded';
 import LockOutlined from '@mui/icons-material/LockOutlined';
 import ArrowForwardRounded from '@mui/icons-material/ArrowForwardRounded';
-import { loginUser } from '../services/axios/authService';
+import { loginUser, claimGuestProgress } from '../services/axios/authService';
 import { setCredentials } from '../store/slices/authSlice';
 import { clearSessionId } from '../utils/session';
 import { resetGuestTurnCount } from '../utils/guestLimit';
@@ -100,6 +100,13 @@ function LoginPage() {
       const data = await loginUser({ email: email.trim(), password });
       const accessToken = data.data?.accessToken || data.accessToken;
       const user = data.data?.user;
+
+      const guestId = localStorage.getItem('zuno-guest-id');
+      if (guestId) {
+        await claimGuestProgress(accessToken, guestId);
+        localStorage.removeItem('zuno-guest-id');
+      }
+
       clearSessionId();
       resetGuestTurnCount();
       dispatch(setCredentials({ user, accessToken }));

@@ -1415,7 +1415,15 @@ The original Fix 1.3 (2026-06-20) explicitly deferred the proper fix ("documenti
 
 **Why this belongs in an auth audit even though it's not a security bug:** it's a direct, predictable consequence of how the auth system stores identity, and it will be the most common "why is Zuno broken" support complaint post-launch — every guest who converts loses everything.
 
-**Not fixed. No existing document tracks this. Recommend scoping a fix (or an explicit "known limitation, guest progress does not carry over" decision) before launch.**
+**✅ FIXED 2026-07-25 (partial, by design)** — Implemented a "claim" flow rather than a full merge:
+
+- New `claimGuestData(userId, guestId)` in [chapterProgress.service.js](backend/src/services/chapterProgress.service.js) — for each guest `ChapterProgress` doc: if the user has no doc for that chapter, reassign it (`guestId → null`, `userId` set); if both exist, the more-advanced one (by `completedTopicIds` count) wins, engagement counters (`totalTimeSpentSec`, `totalMessagesExchanged`, `totalDoubtsAsked`, `totalExplainMoreCount`) are summed onto the survivor, and the loser is deleted — so the `user_chapter_unique` index is never violated. `study_events` are reassigned via a plain `updateMany` (no uniqueness constraint there, no conflict possible).
+- New endpoint `POST /api/v1/auth/claim-guest-progress` ([auth.controller.js](backend/src/controllers/auth.controller.js), `requireAuth`-gated) — validates `guestId` as a UUID (same regex as `guestRateLimit.js`), calls `claimGuestData(req.user.id, guestId)`. An invalid/missing `guestId` is a silent no-op, never an error — this can't block login.
+- Frontend: [LoginPage.jsx](frontend/src/pages/LoginPage.jsx) and [AuthCallback.jsx](frontend/src/pages/AuthCallback.jsx) (Google OAuth) now read `zuno-guest-id` from `localStorage` right after receiving the access token, call `claimGuestProgress()` (new function in [authService.js](frontend/src/services/axios/authService.js)), then clear the key. `claimGuestProgress()` swallows its own errors — a network failure during claim degrades to "guest progress not carried over," never a broken login.
+
+**Deliberately NOT in scope:** `ChatSession`/`ChatHistory` (chat sessions and messages) are NOT transferred — those models have no `guestId` field at all (unlike `ChapterProgress`/`StudyEvent`), so migrating them would require a schema change plus backfill, a materially bigger and riskier change. This was a conscious scope cut: chapter progress (what a student has actually learned) is the highest-value data to preserve; chat history loss is an acceptable "fresh start" trade-off for now. Flagged here as a deliberate limitation, not an oversight — a future iteration could add `guestId` to those two models and extend `claimGuestData` the same way, without touching anything built here.
+
+**Verified** via an isolated script against the real MongoDB connection (synthetic guest/user docs, not real user data): (1) no-conflict chapter transfers cleanly, (2) guest-ahead-of-user conflict — guest's progress wins and is copied onto the surviving doc, (3) user-ahead-of-guest conflict — user's own progress is correctly preserved (not overwritten by the less-advanced guest doc), (4) engagement counters sum correctly in both conflict cases, (5) study events reassign correctly, (6) exactly one document survives per chapter in every case — no duplicate-key errors from `user_chapter_unique`/`guest_chapter_unique`. All 10 assertions passed. Live UI verification (real register → login → claim) was not possible in this environment (registration requires real-email verification), so the HTTP layer (route wiring, `requireAuth`, request/response shape) was verified by static review + syntax checks only, not an end-to-end browser test.
 
 ### 13.5 — Not re-verified in this pass (scope note, not a finding)
 
@@ -1425,10 +1433,10 @@ The ~25 remaining Phase 2/4/6 toast, accessibility, and cosmetic findings (Fix 2
 
 | # | Finding | Severity | Why this rank |
 |---|---|---|---|
-| 1 | NEW-1 — session ownership check incomplete | 🔴 Critical | Same severity class as the already-fixed C-1/C-2; unauthenticated session hijack via leaked/shared sessionId; narrow one-line fix already specified by this plan itself |
-| 2 | NEW-2 — ChatPage toast replaceState | 🟠 High | Reproduces the exact bug that motivated this entire plan, on the highest-traffic post-auth page; one-line fix, pattern already proven correct on LoginPage |
-| 3 | NEW-4 — guest-to-user data orphaning | 🟡 Medium | Not a security hole, but a predictable, high-frequency bad user experience with no existing tracking; needs a scoping discussion (fix vs. documented limitation), not just a quick patch |
-| 4 | NEW-3 — env.js missing secret validation | 🟡 Medium | Real gap but fails loudly and fast in practice; lowest urgency of the four |
+| 1 | ~~NEW-1 — session ownership check incomplete~~ | 🔴 Critical | **✅ Fixed 2026-07-25** — same severity class as the already-fixed C-1/C-2; unauthenticated session hijack via leaked/shared sessionId; narrow one-line fix already specified by this plan itself |
+| 2 | ~~NEW-2 — ChatPage toast replaceState~~ | 🟠 High | **✅ Fixed 2026-07-25** — reproduces the exact bug that motivated this entire plan, on the highest-traffic post-auth page; one-line fix, pattern already proven correct on LoginPage |
+| 3 | ~~NEW-4 — guest-to-user data orphaning~~ | 🟡 Medium | **✅ Fixed 2026-07-25 (partial by design)** — ChapterProgress + StudyEvents now claimed on login/OAuth; ChatSession/ChatHistory deliberately out of scope (no `guestId` field on those models — would need a schema change) |
+| 4 | NEW-3 — env.js missing secret validation | 🟡 Medium | Real gap but fails loudly and fast in practice; lowest urgency of the four. **Still open.** |
 | 5 | Section 13.5 scope gap | — | Not a finding — a to-do to re-verify ~25 lower-severity items before fully trusting this plan's tracker again |
 
 ---

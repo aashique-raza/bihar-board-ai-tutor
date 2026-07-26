@@ -82,6 +82,23 @@ export const exchangeAuthCode = async (code) => {
   }
 };
 
+// POST /api/v1/auth/claim-guest-progress
+// Transfers a guest's chapter progress onto the now-authenticated user.
+// Best-effort — never throws, so a failure here can't block the login flow.
+export const claimGuestProgress = async (accessToken, guestId) => {
+  try {
+    const { data } = await authAxios.post(
+      '/api/v1/auth/claim-guest-progress',
+      { guestId },
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+    return data?.data || null;
+  } catch (error) {
+    console.error('[claimGuestProgress] failed (non-critical):', error.message);
+    return null;
+  }
+};
+
 // POST /api/v1/auth/verify-email
 // token: string from URL query param
 export const verifyEmailToken = async (token) => {

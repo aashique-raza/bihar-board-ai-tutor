@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setCredentials, setError } from '../store/slices/authSlice.js';
-import { getMe, exchangeAuthCode } from '../services/axios/authService.js';
+import { getMe, exchangeAuthCode, claimGuestProgress } from '../services/axios/authService.js';
 import { resetGuestTurnCount } from '../utils/guestLimit.js';
 
 // Friendly messages for known Google OAuth error codes
@@ -42,6 +42,13 @@ function AuthCallback() {
           const accessToken = await exchangeAuthCode(codeParam);
           // Step 2: Fetch user profile using the received token
           const user = await getMe(accessToken);
+
+          const guestId = localStorage.getItem('zuno-guest-id');
+          if (guestId) {
+            await claimGuestProgress(accessToken, guestId);
+            localStorage.removeItem('zuno-guest-id');
+          }
+
           resetGuestTurnCount();
           dispatch(setCredentials({ user, accessToken }));
           navigate('/chat', { replace: true, state: { toastSuccess: 'Google se login successful!' } });

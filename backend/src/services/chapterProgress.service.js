@@ -272,6 +272,74 @@ export const resetChapterProgress = async (userId, guestId, chapterId, { status 
 
 // ─── EVENTS ──────────────────────────────────────────────────────────────────
 
+// ─── GUEST → USER CLAIM (post-login) ────────────────────────────────────────
+
+/**
+ * Transfers a guest's chapter_progress + study_events into a newly-logged-in
+ * user's identity. Called once, right after login/register/OAuth success.
+ *
+ * Per chapter, if the user has no existing progress there, the guest doc is
+ * simply reassigned. If both exist (user studied this chapter before as a
+ * guest on a different device, or already has an account with progress),
+ * the more-advanced one (by completedTopicIds count) wins — its fields
+ * overwrite the surviving doc, engagement counters are summed, and the
+ * loser is deleted. This mirrors the same "one doc per owner per chapter"
+ * invariant the unique indexes already enforce, so no index conflict is
+ * possible at any step.
+ */
+export const claimGuestData = async (userId, guestId) => {
+  if (!userId || !guestId) return { chaptersTransferred: 0, chaptersMerged: 0 };
+
+  const guestDocs = await ChapterProgress.find({ guestId }).lean();
+  let chaptersTransferred = 0;
+  let chaptersMerged = 0;
+
+  for (const guestDoc of guestDocs) {
+    const existing = await ChapterProgress.findOne({ userId, chapterId: guestDoc.chapterId }).lean();
+
+    if (!existing) {
+      // No conflict — this chapter has no userId doc yet, just reassign ownership.
+      await ChapterProgress.updateOne(
+        { _id: guestDoc._id },
+        { $set: { userId, guestId: null } }
+      );
+      chaptersTransferred++;
+    } else {
+      // Conflict — keep whichever side is further along, sum engagement counters,
+      // then delete the loser so only one doc per (userId, chapterId) remains.
+      const guestIsFurther = (guestDoc.completedTopicIds?.length || 0) > (existing.completedTopicIds?.length || 0);
+      const winner = guestIsFurther ? guestDoc : existing;
+
+      await ChapterProgress.updateOne(
+        { _id: existing._id },
+        {
+          $set: {
+            status:            winner.status,
+            currentTopicId:    winner.currentTopicId,
+            completedTopicIds: winner.completedTopicIds,
+            progressPercent:   winner.progressPercent,
+            lastStudiedAt:     new Date(),
+          },
+          $inc: {
+            totalTimeSpentSec:      guestDoc.totalTimeSpentSec      || 0,
+            totalMessagesExchanged: guestDoc.totalMessagesExchanged || 0,
+            totalDoubtsAsked:       guestDoc.totalDoubtsAsked       || 0,
+            totalExplainMoreCount: guestDoc.totalExplainMoreCount || 0,
+          },
+        }
+      );
+      await ChapterProgress.deleteOne({ _id: guestDoc._id });
+      chaptersMerged++;
+    }
+
+    await invalidateCache(userId, guestId, guestDoc.chapterId);
+  }
+
+  await StudyEvent.updateMany({ guestId }, { $set: { userId, guestId: null } });
+
+  return { chaptersTransferred, chaptersMerged };
+};
+
 /**
  * Append a study event to the study_events collection.
  * ALWAYS fire-and-forget — never await this in the hot path.

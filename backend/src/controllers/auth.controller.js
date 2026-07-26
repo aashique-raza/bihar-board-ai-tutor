@@ -7,6 +7,7 @@ import ApiError from '../utils/ApiError.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import { sendVerificationEmail, sendPasswordResetEmail } from '../auth/emailHelpers.js';
 import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from '../auth/tokenHelpers.js';
+import { claimGuestData } from '../services/chapterProgress.service.js';
 
 // Simple email format check — not too strict, just catches obvious mistakes
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -585,6 +586,40 @@ export const exchangeOAuthCode = async (req, res, next) => {
     return sendResponse(res, 200, {
       message: 'Token exchange successful.',
       data: { accessToken },
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+// Same UUID format guestRateLimit.js validates on the way in.
+const GUEST_ID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/**
+ * POST /api/v1/auth/claim-guest-progress
+ * Called once, right after login/register/OAuth success, with the guestId
+ * that was sitting in the browser's localStorage. Transfers that guest's
+ * chapter_progress + study_events onto the now-authenticated user so a
+ * student who studied as a guest doesn't lose progress on signing up.
+ * Never blocks or fails the login flow — an invalid/missing guestId is a
+ * harmless no-op, not an error.
+ */
+export const claimGuestProgress = async (req, res, next) => {
+  try {
+    const { guestId } = req.body;
+
+    if (!guestId || !GUEST_ID_REGEX.test(String(guestId).trim())) {
+      return sendResponse(res, 200, {
+        message: 'No valid guestId — nothing to claim.',
+        data: { chaptersTransferred: 0, chaptersMerged: 0 },
+      });
+    }
+
+    const result = await claimGuestData(req.user.id, guestId.trim());
+
+    return sendResponse(res, 200, {
+      message: 'Guest progress claimed.',
+      data: result,
     });
   } catch (err) {
     next(err);

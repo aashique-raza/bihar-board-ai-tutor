@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { register, verifyEmail, login, logout, refreshToken, forgotPassword, resetPassword, googleAuth, googleCallback, getMe, exchangeOAuthCode } from '../controllers/auth.controller.js';
+import { register, verifyEmail, login, logout, refreshToken, forgotPassword, resetPassword, googleAuth, googleCallback, getMe, exchangeOAuthCode, claimGuestProgress } from '../controllers/auth.controller.js';
 import { requireAuth } from '../auth/authMiddleware.js';
 import { authApiLimiter, globalApiLimiter } from '../middlewares/rateLimiters.js';
 
@@ -16,5 +16,6 @@ router.get('/me', requireAuth, getMe);
 router.get('/google', googleAuth);
 router.get('/google/callback', googleCallback);
 router.post('/exchange', globalApiLimiter, exchangeOAuthCode);
+router.post('/claim-guest-progress', requireAuth, claimGuestProgress);
 
 export default router;
