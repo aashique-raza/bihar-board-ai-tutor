@@ -92,11 +92,11 @@ Update this section as fixes complete. Use `[ ]` for pending, `[~]` for in-progr
 
 ### Phase 1 — Critical Security (MUST fix before deployment)
 - [x] Fix 1.1 — Remove `console.log('login response', data)` token leak
-- [x] Fix 1.2 — Add session ownership check in Ask pipeline (`step2.loadSession.js`)
-- [x] Fix 1.3 — Document Google OAuth token-in-URL as known tech debt
+- [x] Fix 1.2 — Add session ownership check in Ask pipeline (`step2.loadSession.js`) — **✅ 2026-07-25: re-fixed for real — the corrected check (without `&& userId`) is now applied. See Section 13.2, NEW-1.**
+- [x] Fix 1.3 — Document Google OAuth token-in-URL as known tech debt — **✅ 2026-07-25: superseded — fixed for real via code-exchange flow, not just documented. See Section 13.3.**
 
 ### Phase 2 — Toast Bugs (User's primary complaint)
-- [x] Fix 2.1 — Replace `window.history.replaceState` with `navigate(path, { replace: true, state: null })` in ALL pages
+- [x] Fix 2.1 — Replace `window.history.replaceState` with `navigate(path, { replace: true, state: null })` in ALL pages — **✅ 2026-07-25: ChatPage.jsx re-fixed to match LoginPage.jsx's correct pattern. See Section 13.2, NEW-2.**
 - [x] Fix 2.2 — Remove duplicate `showToast()` in RegisterPage
 - [x] Fix 2.3 — Fix login success toast (pass via navigate state, not local showToast)
 - [x] Fix 2.4 — Add `toastError` handler to ChatPage (currently only reads `toastSuccess`)
@@ -1296,10 +1296,147 @@ Both receive `theme` and `toggleTheme` props from App.jsx but don't render a tog
 
 ---
 
+## 13. Verification Pass — 2026-07-25 (Precautionary Pre-Deployment Audit)
+
+> **Trigger:** Farhan: *"mujhe aisa lg rha hai ki auth part me bhi problem hai"* — a precautionary full audit, not a response to a specific observed bug. Explicit instruction: read every existing auth-related file first, verify this plan's own tracker against real code (don't trust checkboxes blindly), and fold any new findings into THIS file rather than starting a new one.
+>
+> **Why this pass exists:** This plan's Status Tracker (Section 3) shows 34/35 items as `[x]` done. Spot-checking a sample against the live code found the tracker is **not fully reliable** — some fixes are exactly as documented, at least one is unfixed despite its checkbox, and one is fixed *better* than documented. This section records what was actually verified, not what was claimed.
+>
+> **Cross-referenced sources** (per Farhan's instruction to include every prior auth file): this document (`AUTH_SECURITY_PLAN.md`), `AUTH_PLAN.md` (architecture reference), and `PRE_LAUNCH_BLOCKERS.md` (a separate, later — 2026-06-23 — audit pass covering 4 additional auth-relevant findings: C-1, C-2, H-2, S-1, plus adjacent infra items H-1/H-3/P2.2/L-3 that touch the auth request path).
+
+### 13.1 — Confirmed correctly fixed (verified against live code, not just the tracker)
+
+These were spot-checked directly against current source and match their documented fix exactly. Listed so a future session doesn't re-audit them from scratch.
+
+| Finding | File:Line checked | What was verified |
+|---|---|---|
+| Fix 1.1 (console.log leak) | `LoginPage.jsx` | No `console.log` anywhere in the file. |
+| Fix 5.5 (refresh token rotation) | `auth.controller.js:316-326` | `refreshToken()` generates and stores a NEW refresh token on every call, matches plan exactly. |
+| Fix 5.1 / 5.2 (password validation) | `auth.controller.js:40-48, 388-396` | Both `register()` and `resetPassword()` enforce 8+ chars, 1 number, 1 uppercase — identical rules, backend-enforced regardless of frontend. |
+| Fix 3.2 (SPA-safe redirect on refresh failure) | `axiosInstance.js:108-115` | Uses `sessionStorage.setItem('zuno.authRedirect', ...)` + `clearCredentials()` dispatch — no `window.location.href` hard redirect. |
+| Fix 3.3 (GuestOnlyRoute) | `App.jsx:55-56` | `/login` and `/register` both wrapped in `<GuestOnlyRoute>`. |
+| Fix 4.1 (branded loading screen) | `App.jsx:24-37` | Matches the plan's proposed code exactly. |
+| C-1 (OAuth token in URL) | `auth.controller.js:547-552`, `exchangeOAuthCode()` (:565-592) | **Fixed with the real solution**, not just documented as tech debt — see 13.3 below, this supersedes the older Fix 1.3 entry. |
+| C-2 (cookie `sameSite: strict` cross-domain) | `auth.controller.js:185-190, 279-284, 321-326, 540-545` | All 4 cookie-set locations use `sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'` — matches the proposed fix exactly. |
+| H-1 (rate limiters in-memory) | `rateLimiters.js:16-20` | All 3 limiters use `RedisStore` with distinct key prefixes (`rl_global:`, `rl_ask:`, `rl_auth:`). |
+| H-2 (askTutor raw fetch, no auto-refresh) | `tutorApi.js:126-152` | `fetchWithTokenRefresh()` wraps the SSE fetch call with a silent-refresh-and-retry, mirrors the axios interceptor pattern. |
+| H-3 (Helmet.js missing) | `app.js:22` | `app.use(helmet({ contentSecurityPolicy: false }))` present. |
+| L-3 (morgan format) | `app.js:47` | `morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev')`. |
+| P2.2 (sessionId UUID validation) | `step1.validateInput.js:12, 34` | UUID v4 regex check present, rejects malformed sessionId with 400. |
+| S-3 (guest UUID validation + dev skip) | `guestRateLimit.js:5, 12, 18` | UUID regex enforced, `NODE_ENV === 'development'` skip present. |
+| CORS scoping | `app.js:26-44` | Explicit origin allowlist function, not a wide-open `cors()` — the "no origin restriction" note in `ANALYSIS.md` is stale (predates this). |
+
+### 13.2 — NOT actually fixed despite `[x]` in the tracker (real, open findings)
+
+#### NEW-1 🔴 CRITICAL — Session ownership check still has the exact hole this plan's own Fix 1.2 analysis warned about
+
+**Evidence:** [step2.loadSession.js:32-37](backend/src/ask/step2.loadSession.js#L32):
+```js
+const sessionOwner = dbSession.userId?.toString();
+if (sessionOwner && userId && sessionOwner !== userId) {
+  throw new ApiError(403, 'Yeh session aapka nahi hai.');
+}
+```
+This is the **original, uncorrected** check from Fix 1.2's first draft — not the "corrected check" the same fix section explicitly derived (`if (sessionOwner && sessionOwner !== userId)`, i.e. without the `&& userId` guard). The code has an inline comment defending this as intentional (*"If userId is null (guest / token expired), sessionId itself is the ownership proof"*), but that directly contradicts this plan's own risk analysis for this exact line, and the hole it described was never closed.
+
+**Concrete attack scenario:** `ask.routes.js` uses `optionalAuth` (not `requireAuth`) — an unauthenticated request is allowed through with `req.user = null` → `userId = null`. If an attacker (or the next person on a shared/cyber-café computer, per C-1's own threat model) obtains a logged-in student's `sessionId` — e.g. it's still sitting in `localStorage` on a shared computer after the student walks away without explicitly logging out — they can send `/api/v1/ask` with that `sessionId` and **no auth token at all**. `sessionOwner` is truthy (the session has a real owner), but `userId` is `null` → `sessionOwner && userId && ...` short-circuits to `false` → **the check never fires** → the unauthenticated request reads and continues writing into that student's real chat history.
+
+This is arguably *easier* to exploit than the case the plan's test plan actually covers ("Login as User B → send User A's sessionId → expect 403") — that scenario **is** correctly blocked (both sides authenticated, mismatch caught). The gap is specifically the **unauthenticated-attacker-with-a-known-sessionId** case, which the plan identified in its own prose but never implemented the fix for.
+
+**Why this matters more than a typical medium finding:** it's the same threat model (shared/cyber-café computers) that justified fixing C-1 as Critical, applied to a different credential (sessionId instead of JWT), and it's currently open.
+
+**Fix:** exactly what this plan already specified — remove the `&& userId` guard:
+```js
+if (sessionOwner && sessionOwner !== userId) {
+  throw new ApiError(403, 'Yeh session aapka nahi hai.');
+}
+```
+This still leaves guest sessions (`sessionOwner` null) fully open to anyone, which is correct — the fix only closes the "session has a real owner, requester presents no credential" gap.
+
+**✅ FIXED 2026-07-25** — `step2.loadSession.js:32-37` now uses the corrected check (`if (sessionOwner && sessionOwner !== userId)`), matching this plan's own analysis. Verified: guest-with-known-sessionId can no longer bypass ownership on an owned session; guest-owns-guest-session and owner-owns-own-session paths unaffected (traced all 5 owner/requester combinations, no regression).
+
+---
+
+#### NEW-2 🟠 HIGH — `ChatPage.jsx` still uses the pre-Fix-2.1 `window.history.replaceState` pattern — the ORIGINAL toast-on-refresh bug may still reproduce on the most-visited post-login page
+
+**Evidence:** [ChatPage.jsx:123-134](frontend/src/pages/ChatPage.jsx#L123):
+```js
+useEffect(() => {
+  if (location.state?.toastSuccess) {
+    showToast(location.state.toastSuccess, 'success');
+  } else if (location.state?.toastError) {
+    showToast(location.state.toastError, 'error');
+  }
+  
+  if (location.state) {
+    // Clear React Router state from browser history to prevent toast on F5 refresh
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+}, []);
+```
+The toast-detection logic (success + error) matches what Fix 2.1's "AFTER" sample described — but the actual state-clearing line was never migrated to `navigate(location.pathname, { replace: true, state: null })`. `navigate` is already imported and in scope two lines above (`const navigate = useNavigate();`, line 117) — the fix was simply never applied here, even though `LoginPage.jsx` (verified in 13.1) got the correct version.
+
+**Why this is worse than a typical missed toast fix:** ChatPage is the landing page for almost every successful auth flow in the redirect map (Section 2, rows 1, 3, 4, 5, 6) — email login, logout, Google OAuth success/error. This is the exact bug that was the **user's original, named complaint** that triggered this entire plan (*"toast hr refresh krne pe bhi message dikh rha hai"*) — per this plan's own root-cause explanation (Fix 2.1), raw `replaceState` wipes React Router's internal `key`/`idx` tracking, which can let a stale toast reappear on refresh depending on browser history behavior.
+
+**Fix:** apply Fix 2.1's already-specified pattern here (it was written for this exact file/location, just never applied):
+```js
+if (location.state) {
+  navigate(location.pathname, { replace: true, state: null });
+}
+```
+
+**✅ FIXED 2026-07-25** — `ChatPage.jsx:130-133` now uses `navigate(location.pathname, { replace: true, state: null })`, matching the proven `LoginPage.jsx` pattern. Verified: no `useEffect` in `ChatPage.jsx` depends on `location`, so the extra re-render this causes has no cascading side-effects. Live UI verification via register/login flow was not possible in this environment (registration requires real-email verification), so this was confirmed via static analysis + console-error check only.
+
+### 13.3 — Findings that were fixed BETTER than documented (tracker understates progress)
+
+#### Fix 1.3 (OAuth token-in-URL) — superseded by a real fix, not just documented as tech debt
+
+The original Fix 1.3 (2026-06-20) explicitly deferred the proper fix ("documenting for now... not fixing now"). By 2026-06-23, `PRE_LAUNCH_BLOCKERS.md`'s C-1 shows the *actual* code-exchange flow was built: `googleCallback()` now generates a one-time `oauth_code` (32 bytes hex, 30s Redis TTL), redirects with `?code=` instead of `?token=`, and a new `POST /api/v1/auth/exchange` endpoint (`exchangeOAuthCode`, [auth.controller.js:565-592](backend/src/controllers/auth.controller.js#L565)) trades the code for the real access token via a JSON POST body — never in a URL. Verified this endpoint is real, has format validation (`/^[0-9a-f]{64}$/`) and is single-use (`redis.del` immediately after a successful `get`).
+
+**Action:** update Fix 1.3's status — it's fully fixed, not deferred. The "Document Google OAuth token-in-URL as known tech debt" framing in Section 5 is stale.
+
+### 13.4 — New findings, not present in any prior auth document
+
+#### NEW-3 🟡 MEDIUM — `env.js` does not validate auth-critical secrets at startup
+
+**Evidence:** [env.js:67-129](backend/src/config/env.js#L67) — `validateEnv()` checks `MONGODB_URI`, the embedding provider key, `LLM_PROVIDER`, `EMAIL_HOST/USER/PASS`, and `FRONTEND_URL`. It does **not** check `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, or that Redis is reachable.
+
+**What could happen:** if `JWT_ACCESS_SECRET` is missing or empty in a deployment's `.env` (a realistic mistake when copying `.env.example` to a new hosting provider), the server starts up successfully, passes health checks, and looks fine — until the first `login()` or `register()` call, where `jwt.sign(payload, undefined, ...)` throws. The failure is discovered by the first real user, not at deploy time.
+
+**Why medium, not critical:** this fails loudly (a thrown error, caught by the route's try/catch, surfaces as a 500) rather than silently issuing insecure tokens — so it's a slow-discovery operational gap, not a silent security hole.
+
+**Fix:** add to `validateEnv()`'s checklist: `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` (same `isRealKey()` helper already used for provider keys).
+
+#### NEW-4 🟡 MEDIUM (product correctness, not security) — No guest-to-user data migration on login/register
+
+**Evidence:** [chapterProgress.service.js:34-55](backend/src/services/chapterProgress.service.js#L34) — every lookup/write is keyed by `userId ? {userId, chapterId} : {guestId, chapterId}` — completely separate namespaces, confirmed no merge/link code exists anywhere (grepped for `convert`, `migrate.*guest`, `mergeGuest`, `claimGuest` — no matches in auth or ask code). `ChatSession` behaves the same way (`userId` field, separate from any guest key).
+
+**What could happen:** a student uses Zuno as a guest, makes real progress (chapter completion, chat history), then registers or logs in — which the app actively encourages (`GuestLoginPrompt.jsx`, `GuestLimitModal.jsx`). After login, their guest-scoped `ChapterProgress`/`ChatSession` rows still exist in MongoDB (nothing is deleted), but are permanently unreachable from the UI, because the UI now queries by `userId`, not the old `guestId`. From the student's point of view, all their progress silently vanished the moment they did the thing the app told them to do.
+
+**Why this belongs in an auth audit even though it's not a security bug:** it's a direct, predictable consequence of how the auth system stores identity, and it will be the most common "why is Zuno broken" support complaint post-launch — every guest who converts loses everything.
+
+**Not fixed. No existing document tracks this. Recommend scoping a fix (or an explicit "known limitation, guest progress does not carry over" decision) before launch.**
+
+### 13.5 — Not re-verified in this pass (scope note, not a finding)
+
+The ~25 remaining Phase 2/4/6 toast, accessibility, and cosmetic findings (Fix 2.2, 2.4, 2.5, 4.2–4.8, 6.1–6.5) and the Session System Bugs in `PRE_LAUNCH_BLOCKERS.md` (S-2, S-4) and its P2.1/P2.4/L-1/L-2 items were **not individually re-verified against live code** in this pass — the sample checked in 13.1 (LoginPage's toast handling) was correct, but NEW-2 shows the sample is not 100% representative. These should get a full re-verification pass before being trusted, using the same method as this section (read the actual file, don't trust the checkbox) — flagged here rather than silently assumed fixed.
+
+### 13.6 — Priority ranking for what's actually open
+
+| # | Finding | Severity | Why this rank |
+|---|---|---|---|
+| 1 | NEW-1 — session ownership check incomplete | 🔴 Critical | Same severity class as the already-fixed C-1/C-2; unauthenticated session hijack via leaked/shared sessionId; narrow one-line fix already specified by this plan itself |
+| 2 | NEW-2 — ChatPage toast replaceState | 🟠 High | Reproduces the exact bug that motivated this entire plan, on the highest-traffic post-auth page; one-line fix, pattern already proven correct on LoginPage |
+| 3 | NEW-4 — guest-to-user data orphaning | 🟡 Medium | Not a security hole, but a predictable, high-frequency bad user experience with no existing tracking; needs a scoping discussion (fix vs. documented limitation), not just a quick patch |
+| 4 | NEW-3 — env.js missing secret validation | 🟡 Medium | Real gap but fails loudly and fast in practice; lowest urgency of the four |
+| 5 | Section 13.5 scope gap | — | Not a finding — a to-do to re-verify ~25 lower-severity items before fully trusting this plan's tracker again |
+
+---
+
 ## End Of Plan
 
-**Total scope:** 35 findings across 6 phases.
-**Estimated total effort:** 5-6 hours across 2-3 sessions.
+**Original scope:** 35 findings across 6 phases (2026-06-20).
+**2026-07-25 verification pass:** cross-referenced against `PRE_LAUNCH_BLOCKERS.md` and live code. Result: most fixes hold up; 2 findings (NEW-1, NEW-2) are open despite being marked done; 1 finding (Fix 1.3) is fixed better than documented; 2 new findings (NEW-3, NEW-4) discovered; ~25 low-severity items not re-verified (see 13.5).
 **Target outcome:** Zero critical security issues, zero toast bugs, clean navigation flows, polished auth UX.
 
-**This file is the single source of truth. Trust it. Update it.**
+**This file is the single source of truth. Trust it, but verify it against live code before relying on a checkbox — this pass is proof the tracker alone is not enough.**

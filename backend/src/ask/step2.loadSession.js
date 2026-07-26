@@ -30,9 +30,10 @@ export const loadSession = async ({ requestedSessionId, userId, guestId, studyMo
 
   if (dbSession) {
     const sessionOwner = dbSession.userId?.toString();
-    // Only block when BOTH sides are authenticated users and they don't match.
-    // If userId is null (guest / token expired), sessionId itself is the ownership proof.
-    if (sessionOwner && userId && sessionOwner !== userId) {
+    // If the session has a real owner, the requester must present that same
+    // userId. A missing/guest requester (userId null) does NOT bypass this —
+    // only a genuinely ownerless (guest) session skips the check.
+    if (sessionOwner && sessionOwner !== userId) {
       throw new ApiError(403, 'Yeh session aapka nahi hai.');
     }
 

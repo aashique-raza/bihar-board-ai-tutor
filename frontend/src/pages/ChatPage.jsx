@@ -128,8 +128,9 @@ function ChatPage({ theme, toggleTheme }) {
     }
     
     if (location.state) {
-      // Clear React Router state from browser history to prevent toast on F5 refresh
-      window.history.replaceState({}, document.title, window.location.pathname);
+      // Clear via React Router (not raw window.history) so its internal state
+      // is actually cleared too, not just the browser history entry.
+      navigate(location.pathname, { replace: true, state: null });
     }
   }, []);
 
