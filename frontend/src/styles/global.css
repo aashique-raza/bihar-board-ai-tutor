@@ -85,7 +85,7 @@ body {
   display: flex;
   gap: 10px;
   width: 100%;
-  padding: 2px 0;
+  padding: 6px 0;
 }
 
 .student-row {
@@ -95,6 +95,7 @@ body {
 .zuno-row {
   justify-content: flex-start;
   align-items: flex-start;
+  margin-top: 10px;
 }
 
 /* Student bubble — right-aligned, subtle neutral surface */
