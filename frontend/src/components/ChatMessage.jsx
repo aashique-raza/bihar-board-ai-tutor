@@ -98,7 +98,7 @@ const generateShareText = (msg) => {
   return text;
 };
 
-function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction }) {
+function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction, showHeader = true }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -166,7 +166,7 @@ function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction }) {
   return (
     <div className={`message-row zuno-row ${message.isNew ? 'message-animate-in' : ''}`}>
       <div className="zuno-message">
-        {!isThinking && (
+        {!isThinking && showHeader && (
           <div className="zuno-header">
             <div className="zuno-avatar-mini">Z</div>
             <span className="message-kicker">Zuno</span>

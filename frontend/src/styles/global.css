@@ -106,8 +106,8 @@ body {
   color: var(--user-bubble-text);
   border-radius: 10px;
   box-shadow: var(--shadow-sm);
-  font-size: 0.9rem;
-  line-height: 1.65;
+  font-size: 0.85rem;
+  line-height: 1.6;
   word-break: break-word;
 }
 
@@ -178,9 +178,9 @@ body {
 }
 
 .prose-paragraph {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  line-height: 1.85;
+  line-height: 1.7;
   margin: 0;
   word-break: break-word;
 }

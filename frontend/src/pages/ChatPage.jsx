@@ -850,12 +850,17 @@ function ChatPage({ theme, toggleTheme }) {
                   }
                 }
               }
+              // Avatar + "Zuno" label only on the first message of a consecutive
+              // Zuno run — a follow-up message (e.g. the roadmap chip) right after
+              // a response doesn't need to re-announce who's speaking.
+              const showHeader = index === 0 || messages[index - 1].role !== 'zuno';
               return (
                 <ChatMessage
                   key={message.id}
                   message={{ ...message, question }}
                   onSwitchToGlobal={handleSwitchToGlobal}
                   onSuggestedAction={handleSuggestedAction}
+                  showHeader={showHeader}
                 />
               );
             })}
