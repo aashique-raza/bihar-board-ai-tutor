@@ -23,9 +23,8 @@
   --primary-border: #F4C06C;
   --primary-label:  #7A3B0A;
 
-  /* User bubble — ghost tint, barely-there */
-  --user-bubble-bg:     rgba(198, 87, 15, 0.05);
-  --user-bubble-border: rgba(198, 87, 15, 0.18);
+  /* User bubble — subtle neutral surface, no color tint */
+  --user-bubble-bg:     var(--bg-surface);
   --user-bubble-text:   var(--text-primary);
 
   /* Text — 4-level hierarchy */
