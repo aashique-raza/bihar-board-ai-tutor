@@ -129,8 +129,13 @@ const discoverMarkdownFiles = async function* (dir) {
 
   for (const entry of sortedEntries) {
     const entryPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) { yield* discoverMarkdownFiles(entryPath); continue; }
-    if (entry.isFile() && shouldLoadMarkdownFile(entryPath)) yield entryPath;
+    // On some filesystems (e.g. OneDrive-synced folders on Windows), readdir's
+    // Dirent type bits can come back unresolved for a given entry, so isDirectory()
+    // AND isFile() both report false even for an ordinary file — silently dropping
+    // it from discovery. Fall back to a real stat() to resolve the true type.
+    const isDirectory = entry.isDirectory() || (!entry.isFile() && (await fs.stat(entryPath)).isDirectory());
+    if (isDirectory) { yield* discoverMarkdownFiles(entryPath); continue; }
+    if (shouldLoadMarkdownFile(entryPath)) yield entryPath;
   }
 };
 

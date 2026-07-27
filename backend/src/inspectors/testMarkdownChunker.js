@@ -67,9 +67,9 @@ await runTest('Test 2: @langchain/textsplitters package is available.', async ()
   assert(typeof RecursiveCharacterTextSplitter === 'function', 'RecursiveCharacterTextSplitter import is not a function.');
 });
 
-await runTest('Test 3: Loader returns exactly 16 documents.', async () => {
+await runTest('Test 3: Loader returns exactly 17 documents.', async () => {
   documents = await loadMarkdownDocuments(baseDataDir);
-  assert(documents.length === 16, `Expected 16 documents, received ${documents.length}.`);
+  assert(documents.length === 17, `Expected 17 documents, received ${documents.length}.`);
 });
 
 await runTest('Test 4: Chunker returns non-empty chunk array.', async () => {
@@ -125,9 +125,9 @@ await runTest('Test 13: No chunk exceeds 2500 characters.', async () => {
   assert(huge.length === 0, `${huge.length} chunks exceed 2500 characters.`);
 });
 
-await runTest('Test 14: Chunks cover all 16 chapters.', async () => {
+await runTest('Test 14: Chunks cover all 17 chapters.', async () => {
   const keys = new Set(chunks.map((c) => `${c.metadata.section}-${c.metadata.chapter_no}`));
-  assert(keys.size === 16, `Expected 16 section/chapter groups, received ${keys.size}.`);
+  assert(keys.size === 17, `Expected 17 section/chapter groups, received ${keys.size}.`);
 });
 
 await runTest('Test 15: Normal and lazy chunking return same chunk count.', async () => {
