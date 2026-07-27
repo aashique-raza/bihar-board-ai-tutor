@@ -17,19 +17,6 @@ try {
   const totalVectors = await Chunk.countDocuments();
   console.log(`[Zuno] MongoDB vector chunks connected. Total chunks indexed: ${totalVectors}`);
 
-  // connectMailer verifies the SMTP credentials are live.
-  // In production this is fatal (broken email = broken registration).
-  // In development we warn and continue so the API still works without email config.
-  try {
-    await connectMailer();
-  } catch (err) {
-    if (process.env.NODE_ENV === 'production') {
-      throw err; // re-throw so the outer catch exits the process
-    }
-    console.warn('[Mailer] SMTP connection failed — email features will not work:', err.message);
-    console.warn('[Mailer] Set EMAIL_HOST, EMAIL_USER, EMAIL_PASS in .env to fix this.');
-  }
-
   // Redis is required for auth (tokens, sessions). Fatal in production.
   // In development, warn and continue so non-auth features still work.
   try {
@@ -43,8 +30,14 @@ try {
     console.warn('[Redis] Check REDIS_URL in .env and verify your Upstash instance is active.');
   }
 
+  // Bind server port immediately so cloud providers (Render/Railway) detect open port without delay.
   server = app.listen(env.port, () => {
     console.log(`Server running on port ${env.port}`);
+  });
+
+  // Verify SMTP in background without blocking port binding.
+  connectMailer().catch((err) => {
+    console.warn('[Mailer] SMTP connection verification failed:', err.message);
   });
 } catch (error) {
   console.error(`Failed to start server: ${error.message}`);
