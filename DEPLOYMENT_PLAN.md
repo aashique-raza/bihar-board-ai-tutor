@@ -343,16 +343,14 @@ commands) removes the daily limit if needed later.
 
 ---
 
-## Phase 4 — Deploy Backend to Railway
+## Phase 4 — Deploy Backend to Render
 
-**Status:** `[ ]` Not started
+**Status:** `[x]` Completed
 
-**What:** Connect GitHub repo to Railway, configure it to deploy the `backend/`
-folder, add all environment variables, deploy.
+**What:** Connect GitHub repo to Render, configure it to deploy the `backend/`
+folder, add all environment variables, deploy, and set up UptimeRobot keep-alive monitor.
 
-**Result:** A public URL like `https://zuno-backend-production.up.railway.app`
-
-**Estimated time:** 30-45 minutes (first-time setup)
+**Result:** Live Public URL: `https://zuno-backend-85ea.onrender.com` (Kept always-awake 24/7 via UptimeRobot 5-min ping on `/health`).
 **Difficulty:** Medium
 
 ### Steps
