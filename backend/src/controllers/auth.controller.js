@@ -470,7 +470,9 @@ export const getMe = async (req, res) => {
  * issues tokens, and redirects to the frontend with the access token.
  */
 export const googleCallback = async (req, res) => {
-  const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+  // FRONTEND_URL might be a comma-separated list. We take the first one for the redirect.
+  // E.g. "https://bihar-board-ai-tutor.vercel.app,http://localhost:5173" -> "https://bihar-board-ai-tutor.vercel.app"
+  const FRONTEND_URL = (process.env.FRONTEND_URL || 'http://localhost:5173').split(',')[0].trim();
 
   try {
     // 1. Check code exists
