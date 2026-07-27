@@ -594,3 +594,13 @@ DEPLOYMENT (Final Step):
 **Current Active Task:** None — awaiting user direction.
 
 **Last Completed:** Session system deep audit + all 4 bugs fixed (2026-06-25).
+ 
+ # #   P 1 :   B L O C K E R      S w i t c h   E m a i l   P r o v i d e r   f r o m   N o d e m a i l e r ( S M T P )   t o   R e s e n d   A P I  
+  
+ * * S t a t u s : * *   \ [   ] \   p e n d i n g  
+ * * C o n t e x t : * *   R e n d e r   b l o c k s   o u t b o u n d   S M T P   p o r t s   ( 5 8 7 ,   4 6 5 )   o n   f r e e   t i e r .   A s   a   r e s u l t ,   e m a i l   v e r i f i c a t i o n   i s   c u r r e n t l y   b y p a s s e d   i n   \  u t h . c o n t r o l l e r . j s \ .   W e   m u s t   m i g r a t e   t o   a n   A P I - b a s e d   p r o v i d e r   l i k e   R e s e n d   b e f o r e   r e a l   u s e r s   s i g n   u p .  
+ * * A c t i o n   R e q u i r e d : * *  
+ -   G e t   a   c u s t o m   d o m a i n   v e r i f i e d   i n   R e s e n d .  
+ -   R e p l a c e   n o d e m a i l e r   c o d e   i n   \ e m a i l H e l p e r s . j s \   w i t h   R e s e n d   S D K .  
+ -   R e - e n a b l e   e m a i l   v e r i f i c a t i o n   i n   \  u t h . c o n t r o l l e r . j s \ .  
+ 
