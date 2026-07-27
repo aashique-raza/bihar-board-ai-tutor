@@ -422,7 +422,7 @@ folder, add all environment variables, deploy, and set up UptimeRobot keep-alive
 
 ## Phase 5 — Deploy Frontend to Vercel
 
-**Status:** `[ ]` Not started
+**Status:** `[x]` Completed
 
 **What:** Deploy the React/Vite frontend to Vercel.
 
@@ -471,7 +471,7 @@ This ensures direct URL access (e.g. `/login`, `/chat`) works instead of showing
 
 ## Phase 6 — Connect Frontend ↔ Backend (CORS + Cookies)
 
-**Status:** `[ ]` Not started
+**Status:** `[x]` Complete
 
 **What:** Verify the frontend and backend can actually talk to each other across
 domains — API calls work, cookies are set/read correctly, auth flow completes.
@@ -507,7 +507,7 @@ secure, CORS), but it needs a real test — not just "should work."
 
 ## Phase 7 — Google OAuth Production Config
 
-**Status:** `[ ]` Not started
+**Status:** `[x]` Complete
 
 **What:** Add the production redirect URI to Google Cloud Console.
 
