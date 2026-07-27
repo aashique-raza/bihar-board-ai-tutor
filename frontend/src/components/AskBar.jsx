@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-function AskBar({ disabled, isHistoryLoading, isLocked, isGuestLimited, onGuestLimitClick, onAsk, onCancel, studyMode }) {
+function AskBar({ disabled, isHistoryLoading, isLocked, isGuestLimited, onGuestLimitClick, onAsk, onCancel, studyMode, showHint = true }) {
   const [question, setQuestion] = useState('');
   const [cancelCooling, setCancelCooling] = useState(false);
 
@@ -146,10 +146,13 @@ function AskBar({ disabled, isHistoryLoading, isLocked, isGuestLimited, onGuestL
           </Tooltip>
         )}
       </Paper>
-      {/* Hint text — reminds student what Zuno can answer */}
-      <div className="ask-hint">
-        Zuno sirf Bihar Board Class 10  syllabus se jawab deta hai
-      </div>
+      {/* Hint text — only shown on the empty state; once a conversation is
+          active the student already knows what Zuno answers from. */}
+      {showHint && (
+        <div className="ask-hint">
+          Zuno sirf Bihar Board Class 10  syllabus se jawab deta hai
+        </div>
+      )}
     </Box>
   );
 }

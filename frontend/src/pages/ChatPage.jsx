@@ -749,7 +749,6 @@ function ChatPage({ theme, toggleTheme }) {
       />
 
       <Box
-        component="main"
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -891,6 +890,7 @@ function ChatPage({ theme, toggleTheme }) {
               onAsk={handleAsk}
               onCancel={handleCancel}
               studyMode={studyMode}
+              showHint={messages.length === 0}
             />
           </Box>
         </Box>
