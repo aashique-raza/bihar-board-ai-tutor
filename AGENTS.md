@@ -63,3 +63,12 @@ At the end of each task, report:
 - Commands to run.
 - What was verified.
 - The next recommended step.
+
+## Deployment & Execution Protocol (User Rule)
+
+- Work on **ONE Phase per session**.
+- Before executing any Phase, **explain the Phase in simple Hinglish first** (What & Why).
+- Wait for the user to confirm they fully understand the concept.
+- Once confirmed, give execution instructions **STRICTLY ONE STEP AT A TIME**. Never dump multiple steps at once.
+- Wait for user confirmation, screenshot, or output after each step before giving the next step.
+
