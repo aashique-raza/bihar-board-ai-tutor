@@ -110,7 +110,7 @@ const buildPromptInput = (intent, input, context, retrieval) => {
   const { language, curriculumSummary, focusChapterPrompt, recentMessages = [], driftSignal, lastStudyResponse } = context;
   const { retrievedContext }                                                             = retrieval;
 
-  const answerLang = getAnswerLanguageInstruction(language.answerLanguage);
+  const answerLang = getAnswerLanguageInstruction(language.answerLanguage, intent);
   const window     = HISTORY_WINDOW[intent] ?? 6;
   // Phase 5: use compressed history for all intents except EXPLAIN_MORE.
   // EXPLAIN_MORE needs the full last Zuno response for its variation mandate
@@ -189,7 +189,7 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     return {
       status:           'answered',
       responseMode:     'study_tutor',
-      title:            'Chapter Complete!',
+      title:            'Adhyaay poora hua!',
       sections:         [{ heading: '', content: 'Iss chapter ke saare topics cover ho gaye! Bahut badhiya padha tumne. Aage kya karna chahte ho — agla chapter shuru karein ya koi bhi sawaal poochho?' }],
       suggestedActions: [
         { type: 'switch_chapter', label: 'Agla chapter chunein' },
@@ -204,7 +204,7 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
   // OUT-OF-FOCUS REDIRECT: topic found globally but not in student's focus chapter.
   // Deterministic response — no LLM call needed (same pattern as CHAPTER_COMPLETE above).
   if (retrieval.isOutOfFocusAnswer && intent === 'CONCEPT_QUESTION') {
-    const chapterTitle = input.focusChapter?.title || 'current chapter';
+    const chapterTitle = input.focusChapter?.hinglishTitle || input.focusChapter?.title || 'is chapter';
     if (isDev) console.log(`[IntentRouter] Out-of-focus answer detected for focus chapter: "${chapterTitle}"`);
     return {
       status:           'answered',

@@ -78,7 +78,7 @@ After every phase:
 
 After ALL Day 1 frontmatter + loader/chunker changes:
 - [ ] Run `npm run curriculum:build` (cheap, rebuilds curriculum-index.json — no API calls)
-- [ ] Run `npm run rag:index` (rebuilds vector-store.json with new chunk metadata — calls Gemini API, has real cost/time; content text is unchanged so this is a metadata-only refresh, but the pipeline has no partial-update mode)
+- [ ] Run `npm run rag:index` (re-embeds and re-inserts all chunks into the MongoDB `Chunk` collection with the new hinglish metadata fields — calls Gemini API, has real cost/time; content text is unchanged so this is a metadata-only refresh, but the pipeline has no partial-update mode: `indexPipeline.js` does `Chunk.deleteMany({})` then `insertMany`)
 
 ---
 
@@ -195,7 +195,7 @@ source_path: doc.metadata.source_path,
 
 **Risk**: Zero — additive metadata field, `REQUIRED_CHUNK_METADATA` list doesn't need updating (these are optional extras, not required-for-validity fields).
 
-**Note**: This means `npm run rag:index` must be re-run after 3.0+3.1+3.2 land, so `vector-store.json` chunks actually carry these new fields (see Pre-Flight Checklist).
+**Note**: This means `npm run rag:index` must be re-run after 3.0+3.1+3.2 land, so the `Chunk` documents in MongoDB actually carry these new fields (see Pre-Flight Checklist). Retrieval is served from the MongoDB `Chunk` collection via Atlas `$vectorSearch` (`retriever.js`) — `backend/storage/vector-store.json` is a leftover from the pre-Atlas `MemoryVectorStore` era and is not read by any code path anymore.
 
 ---
 
@@ -1012,10 +1012,11 @@ For each Category A response, count:
 cd frontend && npm run build              # Must pass
 cd backend
 npm run curriculum:build                  # Rebuild curriculum-index.json (needed after 3.0+3.3)
-npm run rag:index                         # Rebuild vector-store.json (needed after 3.0+3.2 — calls Gemini API)
+npm run rag:index                         # Re-index Chunk collection in MongoDB with new hinglish fields (needed after 3.0+3.2 — calls Gemini API)
 npm run test:chunks                       # RAG chunker sanity
 npm run test:study-map                    # Study map (verifies hinglishTitle populates)
-npm run test:vector-store                 # Vector store integrity
+# npm run test:vector-store is STALE — validates backend/storage/vector-store.json,
+# a file nothing writes to since the Atlas Mongo migration. Do not rely on it; skip it.
 npm run test:curriculum-resolvers         # Curriculum lookups
 npm run test:chat-db-models               # DB schema
 ```
@@ -1130,7 +1131,7 @@ npm run test:chat-db-models               # DB schema
 
 ### Rebuild required after content/backend changes
 - `backend/storage/curriculum-index.json` — via `npm run curriculum:build`
-- `backend/storage/vector-store.json` — via `npm run rag:index` (metadata refresh, no content/embedding quality change)
+- MongoDB `Chunk` collection — via `npm run rag:index` (metadata refresh, no content/embedding quality change). `backend/storage/vector-store.json` is dead/unused, not part of the active pipeline.
 
 ### No changes needed
 - `frontend/src/components/ChatMessage.jsx` — already uses hinglishTitle
@@ -1146,6 +1147,6 @@ If anything breaks after deploying:
 2. **LLM output broken** → set `USE_INTENT_ROUTER` to opposite value temporarily (falls back to other path), OR revert `getAnswerLanguageInstruction` to previous single-arg signature.
 3. **Server fails to start after 3.0/3.1** → means a frontmatter file is missing one of the 3 new fields; the error message names the exact file and field — add the missing line, restart.
 4. **Study map / curriculum-index API breaks** → git revert `studyMap.service.js` / `curriculumIndexBuilder.js` changes; frontend fallbacks (`|| chapter.title`) handle a missing `hinglishTitle` gracefully.
-5. **Nuclear option** → git revert all commits in the branch; re-run `npm run curriculum:build` and `npm run rag:index` once more to regenerate the pre-change JSON artifacts. No DB schema changes anywhere.
+5. **Nuclear option** → git revert all commits in the branch; re-run `npm run curriculum:build` (regenerates `curriculum-index.json`) and `npm run rag:index` (re-indexes the MongoDB `Chunk` collection) once more to roll the derived data back to pre-change state. No DB schema changes anywhere.
 
 All changes are backward-compatible and rollback-safe. No irreversible operations.

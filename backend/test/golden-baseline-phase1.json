@@ -1,11 +1,11 @@
 {
-  "runAt": "2026-06-17T14:30:03.269Z",
+  "runAt": "2026-07-28T12:21:35.998Z",
   "phase": "post-phase1-baseline",
   "totalQueries": 40,
-  "passed": 23,
-  "warned": 9,
-  "failed": 8,
-  "intentAccuracy": "80.0%",
+  "passed": 22,
+  "warned": 13,
+  "failed": 5,
+  "intentAccuracy": "87.5%",
   "results": [
     {
       "id": "G01",
@@ -15,16 +15,16 @@
       "expectedIntent": "GREETING",
       "expectedResponseMode": "conversation",
       "note": "Pure English greeting — simplest case",
-      "timestamp": "2026-06-17T14:20:40.893Z",
+      "timestamp": "2026-07-28T12:14:08.391Z",
       "actualIntent": "GREETING",
       "actualResponseMode": "conversation",
       "intentMatch": true,
       "qualityPassed": false,
       "qualityFailed": [
-        "science"
+        "subject"
       ],
-      "answerSnippet": "Haan yaar! Kya haal chaal? Aaj kya padhna chahte ho?",
-      "tokenUsage": 1358,
+      "answerSnippet": "Haan yaar! Kya haal hai? Aaj tumhe Physics, Chemistry, ya Biology mein kya dekhna hai?",
+      "tokenUsage": 2812,
       "outcome": "WARN"
     },
     {
@@ -35,17 +35,16 @@
       "expectedIntent": "GREETING",
       "expectedResponseMode": "conversation",
       "note": "Direct name greeting",
-      "timestamp": "2026-06-17T14:20:51.740Z",
+      "timestamp": "2026-07-28T12:14:18.913Z",
       "actualIntent": "GREETING",
       "actualResponseMode": "conversation",
       "intentMatch": true,
       "qualityPassed": false,
       "qualityFailed": [
-        "padhna",
-        "help"
+        "padh"
       ],
-      "answerSnippet": "Haan yaar! Kaise ho? Aaj kya padhai karne ka mann hai?",
-      "tokenUsage": 1360,
+      "answerSnippet": "Haan yaar! Kya haal hai! Aaj tumhe Physics, Chemistry, ya Biology mein kya dekhna hai?",
+      "tokenUsage": 2817,
       "outcome": "WARN"
     },
     {
@@ -56,17 +55,15 @@
       "expectedIntent": "GREETING",
       "expectedResponseMode": "conversation",
       "note": "Formal Hindi greeting",
-      "timestamp": "2026-06-17T14:21:02.800Z",
+      "timestamp": "2026-07-28T12:14:29.268Z",
       "actualIntent": "GREETING",
       "actualResponseMode": "conversation",
       "intentMatch": true,
-      "qualityPassed": false,
-      "qualityFailed": [
-        "padhna"
-      ],
-      "answerSnippet": "Pranam! Kaise ho? Aaj kya padhai karne ka mann hai?",
-      "tokenUsage": 1369,
-      "outcome": "WARN"
+      "qualityPassed": true,
+      "qualityFailed": [],
+      "answerSnippet": "Pranam! Kya haal hai! Aaj tumhe Physics, Chemistry, ya Biology mein kya dekhna hai?",
+      "tokenUsage": 2818,
+      "outcome": "PASS"
     },
     {
       "id": "G04",
@@ -76,17 +73,15 @@
       "expectedIntent": "GREETING",
       "expectedResponseMode": "conversation",
       "note": "Casual Hinglish greeting",
-      "timestamp": "2026-06-17T14:21:15.093Z",
+      "timestamp": "2026-07-28T12:14:39.861Z",
       "actualIntent": "GREETING",
       "actualResponseMode": "conversation",
       "intentMatch": true,
-      "qualityPassed": false,
-      "qualityFailed": [
-        "padhna"
-      ],
-      "answerSnippet": "Haan bhai! Sab theek hai, tumhara kya haal hai? Aaj kya padhai karne ka mann hai?",
-      "tokenUsage": 1368,
-      "outcome": "WARN"
+      "qualityPassed": true,
+      "qualityFailed": [],
+      "answerSnippet": "Main bilkul theek hoon! Tum batao — aaj Physics, Chemistry, ya Biology mein kya dekhna hai?",
+      "tokenUsage": 2818,
+      "outcome": "PASS"
     },
     {
       "id": "G05",
@@ -96,17 +91,16 @@
       "expectedIntent": "GREETING",
       "expectedResponseMode": "conversation",
       "note": "English time greeting",
-      "timestamp": "2026-06-17T14:21:28.213Z",
+      "timestamp": "2026-07-28T12:14:49.619Z",
       "actualIntent": "GREETING",
       "actualResponseMode": "conversation",
       "intentMatch": true,
       "qualityPassed": false,
       "qualityFailed": [
-        "padhna",
-        "science"
+        "padh"
       ],
-      "answerSnippet": "Good morning! Aaj kya padhai karne ka mann hai?",
-      "tokenUsage": 1371,
+      "answerSnippet": "Good morning! Kya haal hai? Aaj Physics, Chemistry, ya Biology mein kya dekhna hai?",
+      "tokenUsage": 2811,
       "outcome": "WARN"
     },
     {
@@ -117,14 +111,14 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Classic Hinglish concept query",
-      "timestamp": "2026-06-17T14:21:46.330Z",
+      "timestamp": "2026-07-28T12:15:04.993Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Photosynthesis Kya Hai\n\nPhotosynthesis ka Process\nPhotosynthesis ek process hai jisme green plants carbon dioxide aur water ko sunlight aur chlorophyl",
-      "tokenUsage": 1380,
+      "answerSnippet": "Prakash Sanshleshan Kya Hai\n\nKya Hai Ye\nPrakash sanshleshan (photosynthesis) ek aisi prakriya hai jisme paudhe CO2 aur paani ko sunlight aur haritlav ",
+      "tokenUsage": 2835,
       "outcome": "PASS"
     },
     {
@@ -135,15 +129,17 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Pure English concept query",
-      "timestamp": "2026-06-17T14:22:04.149Z",
+      "timestamp": "2026-07-28T12:15:18.927Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
-      "qualityPassed": true,
-      "qualityFailed": [],
-      "answerSnippet": "Photosynthesis Kya Hai?\n\nPhotosynthesis ka Process\nPhotosynthesis ek process hai jisme green plants carbon dioxide aur paani ko sunlight aur chlorophy",
-      "tokenUsage": 1378,
-      "outcome": "PASS"
+      "qualityPassed": false,
+      "qualityFailed": [
+        "plant"
+      ],
+      "answerSnippet": "Prakash Sanshleshan\n\nKya hai ye\nPrakash sanshleshan (photosynthesis) ek aisi prakriya hai jisme paudhe CO2 aur paani ko sunlight aur haritlav (chlorop",
+      "tokenUsage": 2837,
+      "outcome": "WARN"
     },
     {
       "id": "C03",
@@ -153,14 +149,14 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Chemistry Hinglish query",
-      "timestamp": "2026-06-17T14:22:23.679Z",
+      "timestamp": "2026-07-28T12:15:30.593Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Acid aur Base ke Beech Fark\n\nAcid aur Base kya hote hain?\nAcid ek aisi substance hai jo paani mein `H+` ya `H3O+` ions produce karti hai. Dusri taraf,",
-      "tokenUsage": 1386,
+      "answerSnippet": "Aml aur Kshaar ka Fark\n\nKya hai Aml aur Kshaar?\nAml (acid) wo padarth hote hain jo paani mein `H+` ya `H3O+` ions utpadan karte hain. Dusri taraf, Ksh",
+      "tokenUsage": 2839,
       "outcome": "PASS"
     },
     {
@@ -171,16 +167,16 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Physics Hinglish query",
-      "timestamp": "2026-06-17T14:22:44.606Z",
+      "timestamp": "2026-07-28T12:15:43.812Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": false,
       "qualityFailed": [
-        "circuit"
+        "electron"
       ],
-      "answerSnippet": "Electric Current Ka Flow\n\nElectric Current Kya Hai?\nElectric current ek flow hai jo electric charge ko conductor ke through move karta hai. Iska direc",
-      "tokenUsage": 1382,
+      "answerSnippet": "Vidyut Dhara Ka Flow\n\nKya hota hai\nJab vidyut dhara (electric current) ek metallic conductor se guzarata hai, tab yeh ek magnetic kshetra (magnetic fi",
+      "tokenUsage": 2838,
       "outcome": "WARN"
     },
     {
@@ -191,15 +187,18 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Optics topic",
-      "timestamp": "2026-06-17T14:23:10.100Z",
+      "timestamp": "2026-07-28T12:16:04.238Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
-      "qualityPassed": true,
-      "qualityFailed": [],
-      "answerSnippet": "Refraction kya hota hai?\n\nRefraction ki paribhasha\nRefraction ek process hai jisme light ka direction tab badalta hai jab wo ek transparent medium se ",
-      "tokenUsage": 1387,
-      "outcome": "PASS"
+      "qualityPassed": false,
+      "qualityFailed": [
+        "light",
+        "medium"
+      ],
+      "answerSnippet": "Apvartan Kya Hai\n\nKya hota hai\nApvartan (refraction ek aisi prakriya hai jismein prakash ek partransparent madhyam se doosre partransparent madhyam me",
+      "tokenUsage": 2843,
+      "outcome": "WARN"
     },
     {
       "id": "C06",
@@ -209,16 +208,16 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Named law query",
-      "timestamp": "2026-06-17T14:23:31.052Z",
+      "timestamp": "2026-07-28T12:16:17.837Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": false,
       "qualityFailed": [
-        "voltage"
+        "current"
       ],
-      "answerSnippet": "Ohm's Law\n\nSamajhne ka Tarika\nOhm's law kehta hai ki ek metallic conductor ke ends ke beech potential difference (V) current (I) ke saath directly pro",
-      "tokenUsage": 1384,
+      "answerSnippet": "Ohm's Law\n\nKya hai Ohm's Law\nSochke dekho — jab tum ek paani ka pipe kholte ho, toh paani ka flow us pipe ki diameter par depend karta hai. Waise hi, ",
+      "tokenUsage": 2840,
       "outcome": "WARN"
     },
     {
@@ -229,15 +228,18 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Biology Hinglish query",
-      "timestamp": "2026-06-17T14:23:48.184Z",
+      "timestamp": "2026-07-28T12:16:28.686Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
-      "qualityPassed": true,
-      "qualityFailed": [],
-      "answerSnippet": "Cell Membrane Ka Kaam\n\nCell Membrane Ke Functions\nCell membrane ek protective layer hai jo cell ko bahar ke environment se alag rakhti hai. Iska main ",
-      "tokenUsage": 1385,
-      "outcome": "PASS"
+      "qualityPassed": false,
+      "qualityFailed": [
+        "cell",
+        "membrane"
+      ],
+      "answerSnippet": "Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.",
+      "tokenUsage": 2841,
+      "outcome": "WARN"
     },
     {
       "id": "C08",
@@ -247,14 +249,14 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Multi-part concept query",
-      "timestamp": "2026-06-17T14:24:06.514Z",
+      "timestamp": "2026-07-28T12:16:44.042Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Reproduction ke Types\n\nReproduction kya hai?\nReproduction ek process hai jisse naye organisms bante hain. Isse species ki continuity bani rehti hai. D",
-      "tokenUsage": 1385,
+      "answerSnippet": "Prajanann Kya Hai\n\nKya Hai Ye\nPrajanann (reproduction) ek prakriya hai jisse naye vyakti ya organisms bante hain. Iske do pramukh prakar hain: 1. Asex",
+      "tokenUsage": 2846,
       "outcome": "PASS"
     },
     {
@@ -265,14 +267,14 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Comparison concept query",
-      "timestamp": "2026-06-17T14:24:26.260Z",
+      "timestamp": "2026-07-28T12:16:57.476Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Lens aur Mirror ka Difference\n\nLens aur Mirror ka Comparison\nLens aur mirror dono light ko manipulate karte hain, lekin alag tareeke se. Mirror reflec",
-      "tokenUsage": 1388,
+      "answerSnippet": "Lens aur Mirror ka Antara\n\nKya hai ye\nSochke dekho — jab tumhe kisi cheez ka pratibimb dekhna hota hai, toh tum darpan (mirror) ka istemal karte ho. L",
+      "tokenUsage": 2839,
       "outcome": "PASS"
     },
     {
@@ -283,14 +285,14 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Biology process query",
-      "timestamp": "2026-06-17T14:24:43.939Z",
+      "timestamp": "2026-07-28T12:17:11.720Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Respiration ka Process\n\nRespiration Kya Hai?\nRespiration ek process hai jisme food ko cells ke andar breakdown karke energy release hoti hai. Ye energ",
-      "tokenUsage": 1383,
+      "answerSnippet": "Shwasan Kya Hai\n\nKya Hai Ye\nShwasan (respiration) ek aisi prakriya hai jisme khana sharir ke andar todkar urja (energy) release ki jaati hai. Ye prakr",
+      "tokenUsage": 2836,
       "outcome": "PASS"
     },
     {
@@ -301,17 +303,17 @@
       "expectedIntent": "EXPLAIN_MORE",
       "expectedResponseMode": "study_tutor",
       "note": "Pure Hinglish re-explain request",
-      "timestamp": "2026-06-17T14:24:55.871Z",
+      "timestamp": "2026-07-28T12:17:21.118Z",
       "actualIntent": "EXPLAIN_MORE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": false,
       "qualityFailed": [
-        "samjho",
-        "baar"
+        "dobara",
+        "samjh"
       ],
-      "answerSnippet": "Haan, dobara samjhata hoon! Kaunsa topic tha? Naam batao toh main retrieve karke clearly samjhata hoon.",
-      "tokenUsage": 1391,
+      "answerSnippet": "Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.",
+      "tokenUsage": 2823,
       "outcome": "WARN"
     },
     {
@@ -322,14 +324,14 @@
       "expectedIntent": "EXPLAIN_MORE",
       "expectedResponseMode": "study_tutor",
       "note": "Direct expand request",
-      "timestamp": "2026-06-17T14:25:07.544Z",
+      "timestamp": "2026-07-28T12:17:30.076Z",
       "actualIntent": "EXPLAIN_MORE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Haan, dobara samjhata hoon! Kaunsa topic tha? Naam batao toh main retrieve karke clearly samjhata hoon.",
-      "tokenUsage": 1367,
+      "answerSnippet": "Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.",
+      "tokenUsage": 2821,
       "outcome": "PASS"
     },
     {
@@ -340,14 +342,14 @@
       "expectedIntent": "EXPLAIN_MORE",
       "expectedResponseMode": "study_tutor",
       "note": "Polite re-explain request",
-      "timestamp": "2026-06-17T14:25:20.105Z",
+      "timestamp": "2026-07-28T12:17:41.913Z",
       "actualIntent": "EXPLAIN_MORE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Haan, dobara samjhata hoon! Kaunsa topic tha? Naam batao toh main retrieve karke clearly samjhata hoon.",
-      "tokenUsage": 1390,
+      "answerSnippet": "Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.",
+      "tokenUsage": 2828,
       "outcome": "PASS"
     },
     {
@@ -358,14 +360,14 @@
       "expectedIntent": "EXPLAIN_MORE",
       "expectedResponseMode": "study_tutor",
       "note": "Request for more detail",
-      "timestamp": "2026-06-17T14:25:33.209Z",
+      "timestamp": "2026-07-28T12:17:50.912Z",
       "actualIntent": "EXPLAIN_MORE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Haan, dobara samjhata hoon! Kaunsa topic tha? Naam batao toh main retrieve karke clearly samjhata hoon.",
-      "tokenUsage": 1374,
+      "answerSnippet": "Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.",
+      "tokenUsage": 2825,
       "outcome": "PASS"
     },
     {
@@ -376,14 +378,14 @@
       "expectedIntent": "EXPLAIN_MORE",
       "expectedResponseMode": "study_tutor",
       "note": "English re-explain request",
-      "timestamp": "2026-06-17T14:25:48.091Z",
+      "timestamp": "2026-07-28T12:18:00.143Z",
       "actualIntent": "EXPLAIN_MORE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Haan, dobara samjhata hoon! Kaunsa topic tha? Naam batao toh main retrieve karke clearly samjhata hoon.",
-      "tokenUsage": 1376,
+      "answerSnippet": "Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.",
+      "tokenUsage": 2826,
       "outcome": "PASS"
     },
     {
@@ -394,7 +396,7 @@
       "expectedIntent": "NEXT_STEP",
       "expectedResponseMode": "study_tutor",
       "note": "Classic next-step trigger",
-      "timestamp": "2026-06-17T14:25:53.123Z",
+      "timestamp": "2026-07-28T12:18:05.306Z",
       "outcome": "SKIP",
       "actualIntent": "PROVIDER_ERROR",
       "error": "Kuch technical dikkat aa gayi. Thodi der mein try karo."
@@ -407,7 +409,7 @@
       "expectedIntent": "NEXT_STEP",
       "expectedResponseMode": "study_tutor",
       "note": "Explicit next topic query",
-      "timestamp": "2026-06-17T14:25:58.152Z",
+      "timestamp": "2026-07-28T12:18:10.464Z",
       "outcome": "SKIP",
       "actualIntent": "PROVIDER_ERROR",
       "error": "Kuch technical dikkat aa gayi. Thodi der mein try karo."
@@ -420,7 +422,7 @@
       "expectedIntent": "NEXT_STEP",
       "expectedResponseMode": "study_tutor",
       "note": "Hinglish next step",
-      "timestamp": "2026-06-17T14:26:03.172Z",
+      "timestamp": "2026-07-28T12:18:15.704Z",
       "outcome": "SKIP",
       "actualIntent": "PROVIDER_ERROR",
       "error": "Kuch technical dikkat aa gayi. Thodi der mein try karo."
@@ -433,7 +435,7 @@
       "expectedIntent": "NEXT_STEP",
       "expectedResponseMode": "study_tutor",
       "note": "Casual next step",
-      "timestamp": "2026-06-17T14:26:08.187Z",
+      "timestamp": "2026-07-28T12:18:20.921Z",
       "outcome": "SKIP",
       "actualIntent": "PROVIDER_ERROR",
       "error": "Kuch technical dikkat aa gayi. Thodi der mein try karo."
@@ -446,14 +448,14 @@
       "expectedIntent": "CHOOSE_COURSE",
       "expectedResponseMode": "conversation",
       "note": "Subject selection query",
-      "timestamp": "2026-06-17T14:26:24.756Z",
+      "timestamp": "2026-07-28T12:18:31.187Z",
       "actualIntent": "CHOOSE_COURSE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Physics ke Chapters\n\nPhysics ke Topics\nPhysics mein padhne ke liye yeh chapters hain: 1. Light - Reflection and Refraction; 2. Human Eye and Colourful",
-      "tokenUsage": 1377,
+      "answerSnippet": "Chapter Selection\n\nPhysics mein padhte hain! Hamare paas yeh chapters hain: 1. Prakash — Paravartan aur Apvartan; 2. Maanav Netra aur Rangeen Duniya; ",
+      "tokenUsage": 2824,
       "outcome": "PASS"
     },
     {
@@ -464,15 +466,17 @@
       "expectedIntent": "CHOOSE_COURSE",
       "expectedResponseMode": "conversation",
       "note": "Subject start query",
-      "timestamp": "2026-06-17T14:26:40.122Z",
+      "timestamp": "2026-07-28T12:18:42.558Z",
       "actualIntent": "CHOOSE_COURSE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
-      "qualityPassed": true,
-      "qualityFailed": [],
-      "answerSnippet": "Chemistry ke Chapters\n\nChemistry ke Topics\nChemistry mein padhne ke liye yeh chapters hain: 1. Chemical Reactions and Equations; 2. Acids, Bases and S",
-      "tokenUsage": 1367,
-      "outcome": "PASS"
+      "qualityPassed": false,
+      "qualityFailed": [
+        "chemistry"
+      ],
+      "answerSnippet": "Chapter Selection\n\nRasayan Vigyan mein padhte hain! Hamare paas yeh chapters hain: 1. Rasayanik Abhikriyaen aur Samikaran; 2. Aml, Kshaar aur Lavan; 3",
+      "tokenUsage": 2821,
+      "outcome": "WARN"
     },
     {
       "id": "CH03",
@@ -482,15 +486,17 @@
       "expectedIntent": "CHOOSE_COURSE",
       "expectedResponseMode": "conversation",
       "note": "Biology selection",
-      "timestamp": "2026-06-17T14:26:57.206Z",
+      "timestamp": "2026-07-28T12:18:53.957Z",
       "actualIntent": "CHOOSE_COURSE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
-      "qualityPassed": true,
-      "qualityFailed": [],
-      "answerSnippet": "Biology ke Chapters\n\nBiology ke Topics\nBiology mein padhne ke liye yeh chapters hain: 1. Life Processes; 2. Control and Coordination; 3. How Do Organi",
-      "tokenUsage": 1367,
-      "outcome": "PASS"
+      "qualityPassed": false,
+      "qualityFailed": [
+        "biology"
+      ],
+      "answerSnippet": "Chapter Selection\n\nJeev Vigyan mein padhte hain! Hamare paas yeh chapters hain: 1. Jeevan Prakriyaen; 2. Niyantran aur Samanvay; 3. Jeev Prajanann Kai",
+      "tokenUsage": 2822,
+      "outcome": "WARN"
     },
     {
       "id": "CH04",
@@ -500,16 +506,17 @@
       "expectedIntent": "CHOOSE_COURSE",
       "expectedResponseMode": "conversation",
       "note": "Generic science selection",
-      "timestamp": "2026-06-17T14:27:13.811Z",
+      "timestamp": "2026-07-28T12:19:07.855Z",
       "actualIntent": "CHOOSE_COURSE",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": false,
       "qualityFailed": [
-        "subject"
+        "physics",
+        "chemistry"
       ],
-      "answerSnippet": "Science padhne ka mauka\n\nScience ke chapters\nScience mein humare paas yeh chapters hain: Physics (Light - Reflection and Refraction, Human Eye and Col",
-      "tokenUsage": 1376,
+      "answerSnippet": "Chapter Selection\n\nVigyan mein padhne ke liye hamare paas yeh chapters hain: 1. Prakash — Paravartan aur Apvartan; 2. Maanav Netra aur Rangeen Duniya;",
+      "tokenUsage": 2823,
       "outcome": "WARN"
     },
     {
@@ -520,14 +527,14 @@
       "expectedIntent": "OUT_OF_CONTEXT",
       "expectedResponseMode": "redirect",
       "note": "Sports query — clearly out of scope",
-      "timestamp": "2026-06-17T14:27:25.487Z",
+      "timestamp": "2026-07-28T12:19:21.190Z",
       "actualIntent": "OUT_OF_CONTEXT",
       "actualResponseMode": "redirect",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Yeh Zuno ke scope se bahar hai. Class 10 Science ka koi sawaal poochho!",
-      "tokenUsage": 1367,
+      "answerSnippet": "Yaar, ye topic Zuno ki scope mein nahi aata. Class 10 mein Physics, Chemistry, ya Biology ka koi sawaal ho toh poochho!",
+      "tokenUsage": 2827,
       "outcome": "PASS"
     },
     {
@@ -538,14 +545,14 @@
       "expectedIntent": "OUT_OF_CONTEXT",
       "expectedResponseMode": "redirect",
       "note": "Food query — out of scope",
-      "timestamp": "2026-06-17T14:27:37.716Z",
+      "timestamp": "2026-07-28T12:19:32.515Z",
       "actualIntent": "OUT_OF_CONTEXT",
       "actualResponseMode": "redirect",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Yeh Zuno ke scope se bahar hai. Class 10 Science ka koi sawaal poochho!",
-      "tokenUsage": 1381,
+      "answerSnippet": "Yaar, ye topic Zuno ki scope mein nahi aata. Class 10 mein Physics, Chemistry, ya Biology ka koi sawaal ho toh poochho!",
+      "tokenUsage": 2832,
       "outcome": "PASS"
     },
     {
@@ -556,14 +563,14 @@
       "expectedIntent": "OUT_OF_CONTEXT",
       "expectedResponseMode": "redirect",
       "note": "Entertainment query",
-      "timestamp": "2026-06-17T14:27:50.294Z",
+      "timestamp": "2026-07-28T12:19:43.605Z",
       "actualIntent": "OUT_OF_CONTEXT",
       "actualResponseMode": "redirect",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Yeh Zuno ke scope se bahar hai. Class 10 Science ka koi sawaal poochho!",
-      "tokenUsage": 1379,
+      "answerSnippet": "Yaar, ye topic Zuno ki scope mein nahi aata. Class 10 mein Physics, Chemistry, ya Biology ka koi sawaal ho toh poochho!",
+      "tokenUsage": 2831,
       "outcome": "PASS"
     },
     {
@@ -574,15 +581,15 @@
       "expectedIntent": "OUT_OF_CONTEXT",
       "expectedResponseMode": "redirect",
       "note": "Wrong subject (Maths not Science)",
-      "timestamp": "2026-06-17T14:28:01.617Z",
-      "actualIntent": "CHOOSE_COURSE",
-      "actualResponseMode": "study_tutor",
-      "intentMatch": false,
+      "timestamp": "2026-07-28T12:19:55.534Z",
+      "actualIntent": "OUT_OF_CONTEXT",
+      "actualResponseMode": "redirect",
+      "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Yeh Zuno ke scope se bahar hai. Class 10 Science ka koi sawaal poochho!",
-      "tokenUsage": 1374,
-      "outcome": "FAIL"
+      "answerSnippet": "Yaar, ye topic Zuno ki scope mein nahi aata. Class 10 mein Physics, Chemistry, ya Biology ka koi sawaal ho toh poochho!",
+      "tokenUsage": 2832,
+      "outcome": "PASS"
     },
     {
       "id": "O05",
@@ -592,15 +599,15 @@
       "expectedIntent": "OUT_OF_CONTEXT",
       "expectedResponseMode": "redirect",
       "note": "Wrong subject (History not Science)",
-      "timestamp": "2026-06-17T14:28:14.548Z",
-      "actualIntent": "CONCEPT_QUESTION",
-      "actualResponseMode": "study_tutor",
-      "intentMatch": false,
+      "timestamp": "2026-07-28T12:20:06.488Z",
+      "actualIntent": "OUT_OF_CONTEXT",
+      "actualResponseMode": "redirect",
+      "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Haan, Mughal Empire ke baare mein padhne ke liye mujhe context nahi mila. Lekin agar tumhe kisi aur topic ka sawaal hai, toh pooch sakte ho!",
-      "tokenUsage": 1390,
-      "outcome": "FAIL"
+      "answerSnippet": "Yaar, ye topic Zuno ki scope mein nahi aata. Class 10 mein Physics, Chemistry, ya Biology ka koi sawaal ho toh poochho!",
+      "tokenUsage": 2830,
+      "outcome": "PASS"
     },
     {
       "id": "U01",
@@ -610,14 +617,14 @@
       "expectedIntent": "UNSAFE_OR_ABUSIVE",
       "expectedResponseMode": "redirect",
       "note": "Mildly rude — boundary test",
-      "timestamp": "2026-06-17T14:28:25.891Z",
+      "timestamp": "2026-07-28T12:20:16.573Z",
       "actualIntent": "UNSAFE_OR_ABUSIVE",
       "actualResponseMode": "redirect",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Yeh Zuno ke scope se bahar hai. Class 10 Science ka koi sawaal poochho!",
-      "tokenUsage": 1380,
+      "answerSnippet": "Aapko samajhna hoga ki yeh jagah seekhne ke liye hai. Kya aapke paas koi Science ka sawaal hai?",
+      "tokenUsage": 2823,
       "outcome": "PASS"
     },
     {
@@ -628,14 +635,14 @@
       "expectedIntent": "UNSAFE_OR_ABUSIVE",
       "expectedResponseMode": "redirect",
       "note": "Insult to AI — should catch",
-      "timestamp": "2026-06-17T14:28:41.553Z",
+      "timestamp": "2026-07-28T12:20:25.938Z",
       "actualIntent": "UNSAFE_OR_ABUSIVE",
       "actualResponseMode": "redirect",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Yeh Zuno ke scope se bahar hai. Class 10 Science ka koi sawaal poochho!",
-      "tokenUsage": 1383,
+      "answerSnippet": "Aapko samajhna hoga ki yeh tarika sahi nahi hai. Agar aapke paas koi Science ka sawaal hai, toh pooch sakte hain.",
+      "tokenUsage": 2829,
       "outcome": "PASS"
     },
     {
@@ -646,14 +653,14 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "CRITICAL: Greeting + academic — must NOT be classified as GREETING. Tests Blind Spot 1.",
-      "timestamp": "2026-06-17T14:28:59.169Z",
+      "timestamp": "2026-07-28T12:20:40.068Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Photosynthesis Kya Hai?\n\nPhotosynthesis ke Main Events\nPhotosynthesis ek process hai jisme green plants carbon dioxide aur water ko sunlight aur chlor",
-      "tokenUsage": 1385,
+      "answerSnippet": "Prakash Sanshleshan\n\nKya hai ye\nSochke dekho — tum din mein khana khate ho energy ke liye. Paudhon ko koi khilata nahi, toh wo apna khana KHUD banate ",
+      "tokenUsage": 2847,
       "outcome": "PASS"
     },
     {
@@ -664,15 +671,17 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "CRITICAL: English greeting + academic — must be CONCEPT",
-      "timestamp": "2026-06-17T14:29:14.634Z",
+      "timestamp": "2026-07-28T12:20:51.440Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
-      "qualityPassed": true,
-      "qualityFailed": [],
-      "answerSnippet": "Atom Kya Hota Hai\n\nAtom Ki Paribhasha\nAtom ek chhoti si particle hai jo kisi bhi element ka basic unit hota hai. Iska nucleus hota hai, jisme protons ",
-      "tokenUsage": 1382,
-      "outcome": "PASS"
+      "qualityPassed": false,
+      "qualityFailed": [
+        "atom"
+      ],
+      "answerSnippet": "Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.",
+      "tokenUsage": 2834,
+      "outcome": "WARN"
     },
     {
       "id": "BS03",
@@ -682,14 +691,14 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "CRITICAL: Namaste + academic — must be CONCEPT",
-      "timestamp": "2026-06-17T14:29:31.232Z",
+      "timestamp": "2026-07-28T12:21:03.713Z",
       "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
       "intentMatch": true,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Refraction Kya Hai?\n\nRefraction Ka Matlab\nRefraction ka matlab hai light ka direction badalna jab wo ek transparent medium se doosre medium mein jaata",
-      "tokenUsage": 1382,
+      "answerSnippet": "Apvartan Kya Hai\n\nKya hota hai\nApvartan (refraction) tab hota hai jab prakash ek partransparent madhyam se doosre partransparent madhyam mein obliquel",
+      "tokenUsage": 2841,
       "outcome": "PASS"
     },
     {
@@ -700,14 +709,14 @@
       "expectedIntent": "EXPLAIN_MORE",
       "expectedResponseMode": "study_tutor",
       "note": "Pronoun resolution — 'iska' without topic name",
-      "timestamp": "2026-06-17T14:29:42.999Z",
+      "timestamp": "2026-07-28T12:21:16.059Z",
       "actualIntent": "GREETING",
       "actualResponseMode": "conversation",
       "intentMatch": false,
       "qualityPassed": true,
       "qualityFailed": [],
-      "answerSnippet": "Haan yaar! Kya padhai ya kisi aur topic ke baare mein baat karna chahte ho? Aaj kya seekhna hai?",
-      "tokenUsage": 1373,
+      "answerSnippet": "Kya hota hai\nYeh shabd ya vaakya ka matlab samajhna zaroori hai. Agar aap thoda aur context ya details de sakte ho, toh main behtar tareeke se samjha ",
+      "tokenUsage": 2820,
       "outcome": "FAIL"
     },
     {
@@ -718,17 +727,15 @@
       "expectedIntent": "CONCEPT_QUESTION",
       "expectedResponseMode": "study_tutor",
       "note": "Course select + concept both — should prefer academic intent",
-      "timestamp": "2026-06-17T14:29:58.263Z",
-      "actualIntent": "CHOOSE_COURSE",
+      "timestamp": "2026-07-28T12:21:30.938Z",
+      "actualIntent": "CONCEPT_QUESTION",
       "actualResponseMode": "study_tutor",
-      "intentMatch": false,
-      "qualityPassed": false,
-      "qualityFailed": [
-        "current"
-      ],
-      "answerSnippet": "Electricity\n\nElectricity kya hai?\nElectricity ek form hai energy ki jo chaaron taraf hoti hai. Ye electrons ke movement se banti hai. Jab electrons ki",
-      "tokenUsage": 1386,
-      "outcome": "FAIL"
+      "intentMatch": true,
+      "qualityPassed": true,
+      "qualityFailed": [],
+      "answerSnippet": "Electricity ka Parichay\n\nKya hota hai Electricity?\nElectricity aaj ke samay mein ek zaroori urja ka roop hai jo gharon, schoolon, aspatalon, aur udhyo",
+      "tokenUsage": 2844,
+      "outcome": "PASS"
     }
   ]
 }

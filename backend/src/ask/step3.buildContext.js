@@ -26,7 +26,10 @@ const buildFocusChapterPrompt = (focusChapter) => {
   if (!focusChapter) {
     return 'No focus chapter selected.';
   }
-  return `${focusChapter.subjectTitle} > ${focusChapter.sectionTitle} > Ch ${focusChapter.number ?? '?'}: ${focusChapter.title}`;
+  const subjectName = focusChapter.subjectHinglishTitle || focusChapter.subjectTitle;
+  const sectionName = focusChapter.sectionHinglishTitle || focusChapter.sectionTitle;
+  const chapterName = focusChapter.hinglishTitle || focusChapter.title;
+  return `${subjectName} > ${sectionName} > Adhyaay ${focusChapter.number ?? '?'}: ${chapterName}`;
 };
 
 /**
@@ -47,9 +50,9 @@ const buildSemanticStudyContext = (chatState, studyMap) => {
     for (const sec of subj.sections || []) {
       const ch = (sec.chapters || []).find((c) => c.id === chatState.currentChapterId);
       if (ch) {
-        foundSubject = subj.title;
-        foundSection = sec.title;
-        foundChapter = ch.title;
+        foundSubject = subj.hinglishTitle || subj.title;
+        foundSection = sec.hinglishTitle || sec.title;
+        foundChapter = ch.hinglishTitle || ch.title;
         break;
       }
     }

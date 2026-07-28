@@ -40,6 +40,36 @@ const RED    = (s) => `\x1b[31m${s}\x1b[0m`;
 const CYAN   = (s) => `\x1b[36m${s}\x1b[0m`;
 const BOLD   = (s) => `\x1b[1m${s}\x1b[0m`;
 
+// ── SSE parsing helper ─────────────────────────────────────────────────────────
+// /api/v1/ask streams as text/event-stream for most intents (ask.controller.js
+// writes `data: {"token": "..."}\n\n` chunks, then `data: {"event":"end","payload":...}\n\n`).
+// Only a few deterministic paths (that never call streamCallbacks.onStreamStart)
+// still return plain JSON. Golden set must handle both.
+const parseSSEStream = async (res) => {
+  const decoder = new TextDecoder();
+  let buffer = '';
+
+  for await (const chunk of res.body) {
+    buffer += decoder.decode(chunk, { stream: true });
+
+    let sepIndex;
+    while ((sepIndex = buffer.indexOf('\n\n')) !== -1) {
+      const rawEvent = buffer.slice(0, sepIndex).trim();
+      buffer = buffer.slice(sepIndex + 2);
+
+      if (!rawEvent.startsWith('data:')) continue;
+
+      const parsed = JSON.parse(rawEvent.slice('data:'.length).trim());
+      if (parsed.event === 'end') {
+        return parsed.payload;
+      }
+      // token chunks are ignored — golden set only needs the final payload
+    }
+  }
+
+  throw new Error('SSE stream ended without an "end" event');
+};
+
 // ── HTTP helper ───────────────────────────────────────────────────────────────
 const askQuestion = async (query) => {
   const body = {
@@ -66,6 +96,13 @@ const askQuestion = async (query) => {
       const text = await res.text();
       return { error: `HTTP ${res.status}: ${text.slice(0, 200)}` };
     }
+
+    const contentType = res.headers.get('content-type') || '';
+    if (contentType.includes('text/event-stream')) {
+      const payload = await parseSSEStream(res);
+      return { data: payload };
+    }
+
     return await res.json();
   } catch (err) {
     clearTimeout(timeout);

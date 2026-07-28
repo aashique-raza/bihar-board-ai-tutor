@@ -85,14 +85,16 @@ export const formatStudyMapSummary = (studyMap) => {
   }
 
   return subjects.map((subject) => {
+    const subjectLabel = subject.hinglishTitle || subject.title;
     const sections = (subject.sections || []).map((section) => {
+      const sectionLabel = section.hinglishTitle || section.title;
       const chapters = (section.chapters || [])
-        .map((chapter) => `${chapter.number}. ${chapter.title}`)
+        .map((chapter) => `${chapter.number}. ${chapter.hinglishTitle || chapter.title}`)
         .join('; ');
-      return `${section.title}: ${chapters}`;
+      return `${sectionLabel}: ${chapters}`;
     });
 
-    return `${subject.title}\n${sections.join('\n')}`;
+    return `${subjectLabel}\n${sections.join('\n')}`;
   }).join('\n\n');
 };
 
