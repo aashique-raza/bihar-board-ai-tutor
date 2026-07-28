@@ -2,7 +2,7 @@
 
 > **Created:** 2026-07-27
 > **Goal:** Take Zuno from `localhost` to a live, public URL students can actually use.
-> **Status:** Not started — Phase 1 is next.
+> **Status:** Live and verified. Zuno is deployed and working end-to-end. Only Phase 10 (optional custom domain) remains.
 
 ---
 
@@ -540,7 +540,14 @@ work once deployed.
 
 ## Phase 8 — CI/CD Pipeline (GitHub Actions)
 
-**Status:** `[ ]` Not started
+**Status:** `[x]` Completed
+
+**Result:** `.github/workflows/ci.yml` runs `test:chunks`, `test:study-map`,
+`curriculum:build` + `test:curriculum-resolvers`, and the frontend `npm run build`
+on every push/PR to `main`. First run (`#1`, commit `928bf31`) passed green in 28s.
+`test:vector-store` was intentionally dropped — the RAG architecture has migrated
+to MongoDB Atlas Vector Search, so the JSON file it validated is no longer part of
+the runtime path.
 
 **What:** Set up automated testing and deployment via GitHub Actions so that every
 push to `main` is automatically tested and deployed.
@@ -694,7 +701,24 @@ This prevents merging a PR unless all CI tests pass.
 
 ## Phase 9 — End-to-End Smoke Test on Production
 
-**Status:** `[ ]` Not started
+**Status:** `[x]` Completed
+
+**Result:** Guest chat, guest limit banner, login redirect, Focus Mode (study-map
++ chapter-scoped retrieval), and off-topic redirect verified directly against the
+live backend/frontend. Registration, Google OAuth, and session persistence
+verified manually by Farhan — all working.
+
+**Critical bug found and fixed during this phase:** Guest/global chat was
+returning `insufficient_context` for every question (`retrieval.returnedCount: 0`)
+even for basic curriculum topics. Root cause: the MongoDB Atlas Vector Search
+Index (`vector_index`) required by `retriever.js`'s `$vectorSearch` stage had
+never been created on the `zuno_prod` cluster — it existed on the dev database
+only. The 629 chunk documents were present in `zuno_prod.chunks`, but with no
+matching Search Index, `$vectorSearch` matched nothing. Fixed by creating an
+identical `vector_index` (vector field on `embedding`, 3072 dims, cosine +
+metadata filter fields for `subject`/`section`/`chapter_no`/`topic_ids`) on
+`zuno_prod.chunks` via Atlas UI. Confirmed fixed: retrieval now returns correctly
+ranked sources for both global and Focus Mode questions.
 
 **What:** On the real live URLs, manually test every golden path.
 
@@ -797,5 +821,7 @@ gap — this file fills that gap.
 
 ## Active Task Workspace
 
-**Current Phase:** Phase 1, not yet started.
-**Last Updated:** 2026-07-27
+**Current Phase:** Deployment is functionally complete. Phases 2-9 done; Phase 1's
+checklist items were already true in code before deployment. Phase 10 (custom
+domain) remains optional/deferred until Farhan wants it.
+**Last Updated:** 2026-07-28
