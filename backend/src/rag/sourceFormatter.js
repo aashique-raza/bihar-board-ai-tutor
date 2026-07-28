@@ -14,8 +14,6 @@
  *   formatSources(chunks) → array of source objects
  */
 
-import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
-
 const cleanText = (text) => String(text || '').replace(/\s+/g, ' ').trim();
 
 const normalizeForComparison = (text) =>
@@ -64,6 +62,7 @@ export const formatSources = (chunks) =>
   chunks.reduce((sources, chunk) => {
     const metadata = chunk.metadata || {};
     const chapterTitle = metadata.chapter_title || 'Unknown';
+    const hinglishTitle = metadata.hinglish_title || chapterTitle;
     const headingPath = metadata.heading_path || 'Unknown';
     const topicTitle = cleanTopicTitle(headingPath, chapterTitle);
     const chunkId = metadata.chunk_id || chunk.id || 'Unknown';
@@ -84,7 +83,7 @@ export const formatSources = (chunks) =>
       sourceTitle: createSourceLabel({ chapterTitle, topicTitle }),
       chapter_title: chapterTitle,
       chapterTitle,
-      hinglishTitle: CHAPTER_HINGLISH[chapterTitle] || chapterTitle,
+      hinglishTitle,
       topicTitle,
       section: metadata.section || 'Unknown',
       sectionTitle: metadata.section || 'Unknown',

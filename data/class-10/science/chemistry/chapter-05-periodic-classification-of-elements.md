@@ -6,6 +6,9 @@ section: Chemistry
 chapter_no: 5
 original_science_chapter_no: 5
 chapter_title: Periodic Classification of Elements
+hinglish_title: "Tattvon ki Avart Sarni"
+hinglish_section: "Rasayan Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

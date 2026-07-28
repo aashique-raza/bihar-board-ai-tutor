@@ -70,7 +70,7 @@ const createFocusMessage = (chapter) => ({
   id: crypto.randomUUID(),
   role: 'zuno',
   status: 'focus_selected',
-  answer: `Focus on. Ab hum "${chapter.title}" padhenge. Aap chaho toh main seedha chapter start karu, ya aap iska overview janna chahte ho?`,
+  answer: `Ab hum "${chapter.hinglishTitle || chapter.title}" padhenge. Chaho toh main seedha chapter start karu, ya iska overview janna chahte ho?`,
   sources: [],
   suggestedActions: [
     { type: 'next_topic', label: 'Chapter shuru karein' },
@@ -809,7 +809,7 @@ function ChatPage({ theme, toggleTheme }) {
                       </defs>
                     </svg>
                   </div>
-                  <div className="chat-empty-title">Focus Mode: {selectedChapter.title}</div>
+                  <div className="chat-empty-title">Focus Mode: {selectedChapter.hinglishTitle || selectedChapter.title}</div>
                   <div className="chat-empty-sub">Pehla sawaal poochho ya chapter seedha start karo!</div>
                   <div className="chat-empty-chips">
                     <button className="chat-empty-chip" onClick={() => handleAsk('Chapter shuru karein', STUDY_MODES.focus)}>▶ Chapter shuru karein</button>

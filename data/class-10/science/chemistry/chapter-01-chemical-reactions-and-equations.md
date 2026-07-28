@@ -6,6 +6,9 @@ section: Chemistry
 chapter_no: 1
 original_science_chapter_no: 1
 chapter_title: Chemical Reactions and Equations
+hinglish_title: "Rasayanik Abhikriyaen aur Samikaran"
+hinglish_section: "Rasayan Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_language: Hindi
 source_type: cleaned_markdown

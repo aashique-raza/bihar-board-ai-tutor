@@ -14,7 +14,6 @@ import { loadCurriculumIndex }  from '../curriculum/curriculumIndexLoader.js';
 import { getChapterCoreTopics } from '../curriculum/topicResolver.js';
 import { sendResponse }         from '../utils/sendResponse.js';
 import ApiError                 from '../utils/ApiError.js';
-import { CHAPTER_HINGLISH }     from '../constants/chapterHinglish.js';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -112,9 +111,9 @@ export const getChapterProgressController = async (req, res, next) => {
       return next(new ApiError(404, `Chapter '${chapterId}' not found in curriculum.`));
     }
 
-    // Attach Hinglish title to each topic if available (from chapter-level map)
+    // Attach Hinglish title to each topic if available (from chapter frontmatter)
     const chapterTitle = topics[0]?.chapterTitle || progress?.chapterTitle || null;
-    const hinglishTitle = CHAPTER_HINGLISH[chapterTitle] || chapterTitle;
+    const hinglishTitle = topics[0]?.chapterHinglishTitle || chapterTitle;
 
     const recommendation = buildRecommendation(progress, topics);
 
@@ -162,7 +161,7 @@ export const listChapterProgressController = async (req, res, next) => {
     const chapters = docs.map((doc) => {
       const topics       = getChapterCoreTopics(curriculumIndex, doc.chapterId);
       const totalCount   = doc.totalCoreTopics || topics.length;
-      const hinglishTitle = CHAPTER_HINGLISH[doc.chapterTitle] || doc.chapterTitle;
+      const hinglishTitle = topics[0]?.chapterHinglishTitle || doc.chapterTitle;
 
       // Resolve current topic title for the "continue" card subtitle
       const currentTopic = topics.find((t) => t.topicId === doc.currentTopicId);

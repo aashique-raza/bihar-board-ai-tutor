@@ -6,6 +6,9 @@ section: Chemistry
 chapter_no: 4
 original_science_chapter_no: 4
 chapter_title: Carbon and Its Compounds
+hinglish_title: "Carbon aur uske Yaugik"
+hinglish_section: "Rasayan Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 source_note: Cleaned and structured from the provided Bihar Board Class 10 Science Chapter 4 PDF for RAG indexing.

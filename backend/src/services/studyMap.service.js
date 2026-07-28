@@ -2,7 +2,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { loadMarkdownDocuments } from '../rag/markdownLoader.js';
-import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 import { SUBJECT_ORDER, SECTION_ORDER } from '../constants/subjectOrder.js';
 import { slugify } from '../utils/slugify.js';
 
@@ -48,7 +47,7 @@ const createChapterItem = (doc) => {
     id: createChapterId(metadata),
     number: metadata.chapter_no,
     title: metadata.chapter_title,
-    hinglishTitle: CHAPTER_HINGLISH[metadata.chapter_title] || metadata.chapter_title,
+    hinglishTitle: metadata.hinglish_title || metadata.chapter_title,
     originalScienceChapterNumber: metadata.original_science_chapter_no,
   };
 };
@@ -57,8 +56,10 @@ const createChapterLookupItem = ({ subject, section, chapter }) => ({
   ...chapter,
   subjectId: subject.id,
   subjectTitle: subject.title,
+  subjectHinglishTitle: subject.hinglishTitle,
   sectionId: section.id,
   sectionTitle: section.title,
+  sectionHinglishTitle: section.hinglishTitle,
   metadataFilter: {
     subject: subject.title,
     section: section.title,
@@ -66,13 +67,14 @@ const createChapterLookupItem = ({ subject, section, chapter }) => ({
   },
 });
 
-const getOrCreateSection = (sectionsById, sectionTitle) => {
+const getOrCreateSection = (sectionsById, sectionTitle, sectionHinglishTitle) => {
   const id = createSectionId(sectionTitle);
 
   if (!sectionsById.has(id)) {
     sectionsById.set(id, {
       id,
       title: sectionTitle,
+      hinglishTitle: sectionHinglishTitle || sectionTitle,
       chapters: [],
     });
   }
@@ -80,13 +82,14 @@ const getOrCreateSection = (sectionsById, sectionTitle) => {
   return sectionsById.get(id);
 };
 
-const getOrCreateSubject = (subjectsById, subjectTitle) => {
+const getOrCreateSubject = (subjectsById, subjectTitle, subjectHinglishTitle) => {
   const id = createSubjectId(subjectTitle);
 
   if (!subjectsById.has(id)) {
     subjectsById.set(id, {
       id,
       title: subjectTitle,
+      hinglishTitle: subjectHinglishTitle || subjectTitle,
       sectionsById: new Map(),
     });
   }
@@ -101,8 +104,8 @@ const buildStudyMapFromDocuments = (documents) => {
     const metadata = doc.metadata;
     if (NON_BROWSABLE_SECTIONS.includes(metadata.section)) continue;
 
-    const subject = getOrCreateSubject(subjectsById, metadata.subject);
-    const section = getOrCreateSection(subject.sectionsById, metadata.section);
+    const subject = getOrCreateSubject(subjectsById, metadata.subject, metadata.hinglish_subject);
+    const section = getOrCreateSection(subject.sectionsById, metadata.section, metadata.hinglish_section);
 
     section.chapters.push(createChapterItem(doc));
   }
@@ -112,6 +115,7 @@ const buildStudyMapFromDocuments = (documents) => {
     .map((subject) => ({
       id: subject.id,
       title: subject.title,
+      hinglishTitle: subject.hinglishTitle,
       sections: [...subject.sectionsById.values()]
         .sort(byConfiguredOrder(SECTION_ORDER, (section) => section.title))
         .map((section) => ({

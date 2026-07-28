@@ -6,6 +6,9 @@ section: Biology
 chapter_no: 1
 original_science_chapter_no: 6
 chapter_title: Life Processes
+hinglish_title: "Jeevan Prakriyaen"
+hinglish_section: "Jeev Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

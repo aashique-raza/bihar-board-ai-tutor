@@ -53,9 +53,10 @@ export default function Topbar({
   const progressTooltip = totalTopics > 0 ? (
     <Box sx={{ p: 0.5 }}>
       <Typography variant="body2" sx={{ fontWeight: 600, mb: 1, color: '#fff' }}>
-        Topic {displayTopicIndex} of {totalTopics}
+        Topic {displayTopicIndex} / {totalTopics}
       </Typography>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+        {/* TODO: Add topic-level Hinglish titles once chapter/section coverage is verified in production */}
         {focusTopics.map((t, i) => {
           const isDone = completedTopicIds?.includes(t.topicId);
           const isCurrent = t.topicId === currentTopicId;

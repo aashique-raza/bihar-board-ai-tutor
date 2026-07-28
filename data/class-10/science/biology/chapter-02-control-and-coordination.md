@@ -6,6 +6,9 @@ section: Biology
 chapter_no: 2
 original_science_chapter_no: 7
 chapter_title: Control and Coordination
+hinglish_title: "Niyantran aur Samanvay"
+hinglish_section: "Jeev Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

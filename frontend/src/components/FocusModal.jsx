@@ -21,12 +21,12 @@ import { useChapterProgress } from '../hooks/useChapterProgress.js';
 // STEP-15 fix: previously this array WAS the render source, so a subject present
 // in studyMap but missing here would silently never appear in the modal at all.
 const SUBJECT_META = {
-  hindi:            { title: 'Hindi',          icon: TranslateRounded },
-  english:          { title: 'English',        icon: AutoStoriesRounded },
-  math:             { title: 'Math',           icon: FunctionsRounded },
-  science:          { title: 'Science',        icon: ScienceRounded },
-  'social-science': { title: 'Social Science', icon: PublicRounded },
-  sanskrit:         { title: 'Sanskrit',       icon: MenuBookRounded },
+  hindi:            { title: 'Hindi',                     icon: TranslateRounded },
+  english:          { title: 'English',                   icon: AutoStoriesRounded },
+  math:             { title: 'Ganit (Math)',               icon: FunctionsRounded },
+  science:          { title: 'Vigyan (Science)',           icon: ScienceRounded },
+  'social-science': { title: 'Samajik Vigyan (Soc. Sci)', icon: PublicRounded },
+  sanskrit:         { title: 'Sanskrit',                  icon: MenuBookRounded },
 };
 const SUBJECT_META_ORDER = Object.keys(SUBJECT_META);
 const DEFAULT_SUBJECT_ICON = MenuBookRounded; // used if studyMap has a subject not in SUBJECT_META
@@ -75,7 +75,7 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
         const live = liveById.get(id);
         return {
           id,
-          title: live?.title || meta?.title || id,
+          title: live?.hinglishTitle || live?.title || meta?.title || id,
           icon:  meta?.icon || DEFAULT_SUBJECT_ICON,
           available: !!live,
         };
@@ -141,10 +141,10 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
   const stepTitle = step === 1
     ? 'Kya padhna hai aaj?'
     : step === 2
-      ? `${selectedSubject?.title || ''} — section chunno`
-      : `${activeSection?.title || ''} — chapter chunno`;
+      ? `${selectedSubject?.hinglishTitle || selectedSubject?.title || ''} — bhaag chunno`
+      : `${activeSection?.hinglishTitle || activeSection?.title || ''} — adhyaay chunno`;
 
-  const stepLabel = step === 1 ? 'Subject chunno' : step === 2 ? 'Section chunno' : 'Chapter chunno';
+  const stepLabel = step === 1 ? 'Vishay chunno' : step === 2 ? 'Bhaag chunno' : 'Adhyaay chunno';
 
   return (
     <Dialog
@@ -226,7 +226,7 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
                   // (a chapter_progress doc can outlive a removed/renamed chapter).
                   if (!chapterTitleMap[cp.chapterId]) return null;
                   // hinglishTitle comes straight from the backend (listChapterProgressController
-                  // already computes it from the single CHAPTER_HINGLISH source of truth) —
+                  // already computes it from the chapter's frontmatter hinglish_title) —
                   // no frontend lookup needed.
                   const hinglishTitle = cp.hinglishTitle || chapterTitleMap[cp.chapterId];
                   const pct = Math.round(cp.progressPercent ?? 0);
@@ -246,7 +246,7 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
                         <Box sx={{ height: '100%', bgcolor: 'var(--primary)', width: `${pct}%`, borderRadius: 2 }} />
                       </Box>
                       <Typography component="span" sx={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
-                        {pct}% complete
+                        {pct}% ho gaya
                       </Typography>
                     </button>
                   );
@@ -273,7 +273,7 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
                       {subject.title}
                     </Typography>
                     <Typography component="span" sx={{ display: 'block', fontSize: '0.7rem', color: subject.available ? 'var(--primary-label)' : 'var(--text-hint)', mt: 0.5 }}>
-                      {subject.available ? `${subjectChapterCounts[subject.id] || 0} chapters` : 'Jald aata hai'}
+                      {subject.available ? `${subjectChapterCounts[subject.id] || 0} adhyaay` : 'Jald aata hai'}
                     </Typography>
                   </button>
                 );
@@ -295,10 +295,10 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
                   >
                     <SectionIcon sx={{ fontSize: 20, color: 'var(--primary)', display: 'block', mb: 0.75 }} />
                     <Typography component="span" sx={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.3 }}>
-                      {section.title}
+                      {section.hinglishTitle || section.title}
                     </Typography>
                     <Typography component="span" sx={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-muted)', mt: 0.5 }}>
-                      {section.chapters?.length || 0} chapters
+                      {section.chapters?.length || 0} adhyaay
                     </Typography>
                   </button>
                 );
@@ -317,10 +317,10 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
                   onClick={() => onSelectChapter(chapter.id)}
                 >
                   <Typography component="span" sx={{ display: 'block', fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: 'var(--text-muted)', mb: 0.5 }}>
-                    Ch {chapter.number}
+                    Adhyaay {chapter.number}
                   </Typography>
                   <Typography component="span" sx={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.4 }}>
-                    {chapter.title}
+                    {chapter.hinglishTitle || chapter.title}
                   </Typography>
                 </button>
               ))}

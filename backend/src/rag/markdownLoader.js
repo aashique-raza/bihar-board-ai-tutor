@@ -23,7 +23,8 @@ import { TextLoader } from '@langchain/classic/document_loaders/fs/text';
 const REQUIRED_METADATA_FIELDS = [
   'board', 'class', 'subject', 'section',
   'chapter_no', 'original_science_chapter_no',
-  'chapter_title', 'language', 'source_type',
+  'chapter_title', 'hinglish_title', 'hinglish_section', 'hinglish_subject',
+  'language', 'source_type',
 ];
 
 // Valid chapter ranges per section folder.

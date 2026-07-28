@@ -6,6 +6,9 @@ section: Biology
 chapter_no: 4
 original_science_chapter_no: 9
 chapter_title: Heredity and Evolution
+hinglish_title: "Anuvanshikta aur Vikas"
+hinglish_section: "Jeev Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

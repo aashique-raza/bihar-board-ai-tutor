@@ -6,6 +6,9 @@ section: Meta
 chapter_no: 0
 original_science_chapter_no: 0
 chapter_title: Science Introduction and Overview
+hinglish_title: "Vigyan ka Parichay"
+hinglish_section: "Parichay"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

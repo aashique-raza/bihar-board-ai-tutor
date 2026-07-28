@@ -6,6 +6,9 @@ section: Chemistry
 chapter_no: 2
 original_science_chapter_no: 2
 chapter_title: Acids, Bases and Salts
+hinglish_title: "Aml, Kshaar aur Lavan"
+hinglish_section: "Rasayan Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_language: Hindi
 source_type: cleaned_markdown

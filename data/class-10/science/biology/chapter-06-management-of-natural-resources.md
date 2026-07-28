@@ -6,6 +6,9 @@ section: Biology
 chapter_no: 6
 original_science_chapter_no: 16
 chapter_title: Management of Natural Resources
+hinglish_title: "Prakritik Sansadhanon ka Prabandhan"
+hinglish_section: "Jeev Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

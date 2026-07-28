@@ -6,6 +6,9 @@ section: Physics
 chapter_no: 2
 original_science_chapter_no: 11
 chapter_title: Human Eye and Colourful World
+hinglish_title: "Maanav Netra aur Rangeen Duniya"
+hinglish_section: "Bhautik Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

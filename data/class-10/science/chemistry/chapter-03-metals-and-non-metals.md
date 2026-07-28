@@ -6,6 +6,9 @@ section: Chemistry
 chapter_no: 3
 original_science_chapter_no: 3
 chapter_title: Metals and Non-metals
+hinglish_title: "Dhatu aur Adhatu"
+hinglish_section: "Rasayan Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

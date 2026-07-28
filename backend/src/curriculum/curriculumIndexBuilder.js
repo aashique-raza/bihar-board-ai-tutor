@@ -90,7 +90,8 @@ const createChapter = (doc) => {
   }));
   return {
     chapterId, number: metadata.chapter_no, originalScienceChapterNumber: metadata.original_science_chapter_no,
-    title: metadata.chapter_title, sourcePath: metadata.source_path, fileName: metadata.file_name,
+    title: metadata.chapter_title, hinglishTitle: metadata.hinglish_title,
+    sourcePath: metadata.source_path, fileName: metadata.file_name,
     topicCount: topics.length, coreTopicCount: topics.filter((topic) => topic.role === 'core').length, topics,
   };
 };

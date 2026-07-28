@@ -7,7 +7,6 @@
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
 import { upsertChapterProgress, markChapterComplete, logStudyEvent } from '../services/chapterProgress.service.js';
-import { CHAPTER_HINGLISH } from '../constants/chapterHinglish.js';
 import { env } from '../config/env.js';
 import redis from '../config/redisClient.js';
 import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../utils/tokenLogger.js';

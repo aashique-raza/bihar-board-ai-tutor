@@ -48,7 +48,7 @@ function AskBar({ disabled, isHistoryLoading, isLocked, isGuestLimited, onGuestL
         }}>
           <LockOutlined sx={{ fontSize: 14, color: 'var(--text-muted)', flexShrink: 0 }} />
           <Typography variant="caption" sx={{ color: 'var(--text-muted)', flex: 1 }}>
-            5 turns ho gaye!{' '}
+            5 baar ho gaya!{' '}
             <Box
               component="span"
               onClick={onGuestLimitClick}

@@ -28,6 +28,7 @@ const flattenTopics = (curriculumIndex, chapterId = null) => {
         for (const topic of chapter.topics || []) {
           topics.push({
             ...topic, chapterId: chapter.chapterId, chapterNumber: chapter.number, chapterTitle: chapter.title,
+            chapterHinglishTitle: chapter.hinglishTitle,
             subjectId: subject.subjectId, subjectTitle: subject.title, sectionId: section.sectionId, sectionTitle: section.title,
           });
         }
@@ -64,7 +65,8 @@ const createTopicMatch = ({ topic, normalizedText, chapterScoped }) => {
 const toPublicTopic = (topic) => ({
   topicId: topic.topicId, title: topic.title, order: topic.order, role: topic.role,
   headingPath: topic.headingPath, chapterId: topic.chapterId, chapterNumber: topic.chapterNumber,
-  chapterTitle: topic.chapterTitle, subjectId: topic.subjectId, subjectTitle: topic.subjectTitle,
+  chapterTitle: topic.chapterTitle, chapterHinglishTitle: topic.chapterHinglishTitle,
+  subjectId: topic.subjectId, subjectTitle: topic.subjectTitle,
   sectionId: topic.sectionId, sectionTitle: topic.sectionTitle, sourcePath: topic.sourcePath, ragHints: topic.ragHints || [],
 });
 

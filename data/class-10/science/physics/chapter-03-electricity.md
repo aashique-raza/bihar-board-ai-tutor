@@ -6,6 +6,9 @@ section: Physics
 chapter_no: 3
 original_science_chapter_no: 12
 chapter_title: Electricity
+hinglish_title: "Bijli"
+hinglish_section: "Bhautik Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

@@ -6,6 +6,9 @@ section: Biology
 chapter_no: 3
 original_science_chapter_no: 8
 chapter_title: How Do Organisms Reproduce?
+hinglish_title: "Jeev Prajanann Kaise Karte Hain?"
+hinglish_section: "Jeev Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

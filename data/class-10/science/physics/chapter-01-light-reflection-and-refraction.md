@@ -6,6 +6,9 @@ section: Physics
 chapter_no: 1
 original_science_chapter_no: 10
 chapter_title: Light - Reflection and Refraction
+hinglish_title: "Prakash — Paravartan aur Apvartan"
+hinglish_section: "Bhautik Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

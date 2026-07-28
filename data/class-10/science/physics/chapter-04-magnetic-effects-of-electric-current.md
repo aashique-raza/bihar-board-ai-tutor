@@ -6,6 +6,9 @@ section: Physics
 chapter_no: 4
 original_science_chapter_no: 13
 chapter_title: Magnetic Effects of Electric Current
+hinglish_title: "Vidyut Dhara ke Chumbakiya Prabhav"
+hinglish_section: "Bhautik Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

@@ -6,6 +6,9 @@ section: Biology
 chapter_no: 5
 original_science_chapter_no: 15
 chapter_title: Our Environment
+hinglish_title: "Hamara Parayavaran"
+hinglish_section: "Jeev Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---

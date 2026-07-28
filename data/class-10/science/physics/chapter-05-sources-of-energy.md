@@ -6,6 +6,9 @@ section: Physics
 chapter_no: 5
 original_science_chapter_no: 14
 chapter_title: Sources of Energy
+hinglish_title: "Urja ke Srot"
+hinglish_section: "Bhautik Vigyan"
+hinglish_subject: "Vigyan"
 language: English
 source_type: cleaned_markdown
 ---
