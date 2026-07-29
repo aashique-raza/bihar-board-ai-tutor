@@ -28,13 +28,10 @@ The old deterministic planner/router/executor runtime path has been removed.
 
 ## Current Active Task
 
-No active implementation task.
-
-Next recommended task:
-Add curated foundation/orientation Markdown content, then run live QA for the LLM-first Ask flow
+Status, active work, and pending items are **not tracked in this file** — see `PRE_LAUNCH_BLOCKERS.md`'s "Active Task Workspace" section and whatever plan file is newest in the repo root (e.g. `HINGLISH_QUERY_FIX_PLAN.md`). This section previously said "no active task" long after work had moved on — duplicating live status here is what caused that.
 
 Known performance backlog:
-TASK-020: Performance Known Issues Backlog
+TASK-020: Performance Known Issues Backlog (still backlog — not yet started)
 
 ## Completed Tasks
 
@@ -464,6 +461,31 @@ Verified:
 QA:
 - Added `docs/qa-report-2026-05-21.md` with detailed findings, possible solutions, and tradeoffs.
 
+### TASK-024: History Panel + Session Lock
+
+Status: DONE (verified against code 2026-07-29 — the task spec file itself still says "READY TO IMPLEMENT" and needs its own header updated separately)
+
+Task file:
+tasks/TASK-024-history-panel-session-lock.md
+
+Completed:
+- Session History Panel — `HistoryPanel.jsx` component, `useSessionList.js` hook, date-grouped session list for logged-in users.
+- Session Lock UI — `AskBar.jsx` shows a lock banner and disables input via `isLocked`; `Topbar.jsx` disables the Focus button via `isSessionLocked`.
+
+### TASK-025: Exam Knowledge Layer + Science Overview
+
+Status: DONE (verified against code 2026-07-29 — the task spec file itself still says "READY TO IMPLEMENT" and needs its own header updated separately)
+
+Task file:
+tasks/TASK-025-exam-knowledge-and-overview-layer.md
+
+Completed:
+- `EXAM_INFO` intent added to the decider (`step4.decideRetrieval.js`), with `examEntity` extraction.
+- `backend/src/knowledge/examKnowledgeService.js` — deterministic knowledge-base lookup (`getExamContext`, `resolveExamEntity`, `formatEntityFact`), bypassing vector search entirely for exam-pattern questions.
+- Wired into `step5.retrieveContent.js` for `EXAM_INFO` intent.
+
+Known remaining gap (not part of this task): general "Science kya hai?" / orientation-style overview content is still missing — tracked as `Content-1` in `PRE_LAUNCH_BLOCKERS.md`.
+
 ## Staged Project Roadmap
 
 ### Stage 0: Documentation and Project Control
@@ -564,90 +586,76 @@ Completed:
 
 ### Stage 9: Evaluation and Quality Testing
 
-Status: PARTIAL
+Status: ONGOING (not a one-time PARTIAL — this stage doesn't fully "finish", see below)
 
 Completed:
 - Manual API and frontend tests found important tutor-flow gaps.
-- Initial router/session improvements were tested.
-- Lesson-flow regression test covers lesson start/continue, grounded sources, and old placeholder regression.
-- Conversation regression test now covers greeting, subject-only study intent, chapter follow-up lesson start, next topic, metadata chapter count, grounded doubt answer, side-doubt state stability, Biology chapter-number follow-up, Focus Mode out-of-chapter refusal, follow-up doubt context, ambiguous chapter clarification, subject change during lesson, out-of-scope during lesson, and tough chapter guardrail.
+- Lesson-flow and conversation regression tests (see TASK-018/019 above).
+- Golden-set regression harness added (`npm run test:golden`, `scripts/run-golden-set.js`) — actively maintained, see `HINGLISH_QUERY_FIX_PLAN.md` for the latest round of fixes against it.
 - Polish issues from real chat testing are tracked in `docs/polish-notes.md`.
 
 Remaining work:
-- Track planner/action failures.
-- Improve answer quality, source display, and tone after the core Tutor Engine path is stable.
+- Continue expanding golden-set coverage as new query patterns are found.
+- Improve answer quality, source display, and tone — ongoing, not a fixed backlog.
 - Improve API latency later; details are tracked in TASK-020.
 
 ### Stage 10: LLM-first Tutor Engine
 
-Status: ACTIVE
+Status: DONE (core flow) — one known content gap remains
 
 Completed:
 - Curriculum Brain from curated Markdown.
 - Chapter/topic resolver.
 - DB-backed tutor state.
 - LLM-first Ask flow.
-- Scope/retrieval decider.
+- Scope/retrieval decider, including `EXAM_INFO` intent (TASK-025).
 - Strong tutor response prompt.
 - Structured response sections.
 - Old deterministic planner/router/executor runtime removed.
+- Exam knowledge layer (TASK-025) and history panel/session lock (TASK-024).
 
-Expected work:
-- Add curated foundation/orientation Markdown content.
-- Rebuild RAG index after foundation content is added.
-- Live prompt QA for Hinglish consistency, non-repetition, and grounded broad answers.
+Remaining:
+- Curated foundation/orientation Markdown content (e.g. "Science kya hai?") — tracked as `Content-1` in `PRE_LAUNCH_BLOCKERS.md`, not yet done.
 - Performance optimization later; known issues are tracked in TASK-020.
-- More LLM-first conversation regression coverage after the response contract stabilizes.
 
-### Stage 11: Minimal Frontend Demo
+### Stage 11: Frontend
 
-Status: PARTIAL
+Status: SUBSTANTIALLY DONE — no longer "minimal"
 
 Completed:
-- Zuno React frontend exists.
-- Ask question box exists.
-- Global/Focus mode exists.
-- Chapter selector exists.
-- Answer and sources display exists.
-- Browser session handling exists through `localStorage` session id.
-- Premium dark personal tutor UI foundation exists.
-- Material UI frontend component foundation exists.
-- Sidebar foundation exists for future History, Tracking, Quiz, and Account features.
-- Focus Mode now opens a subject/section/chapter selection modal.
-- Chat panel auto-scrolls without scrolling the whole page.
-- Student-facing source chips are hidden in the chat UI.
+- Full auth flow: login, register, forgot/reset password, verify email, Google OAuth callback (React Router, `react-oauth/google`).
+- Redux Toolkit store with `redux-persist` for auth state.
+- Zuno React frontend with premium dark UI (Material UI).
+- Global/Focus mode with subject/section/chapter selection modal.
+- Session History Panel + Session Lock UI (TASK-024).
+- Lesson state display and topic-progress tracking (`currentTopicId`, roadmap messages) wired through `ChapterProgress` — sessions resume where the student left off.
+- Guest limit modal, guest login prompt, guest-to-user progress migration.
+- Error boundaries, toast notifications.
+- Chat auto-scroll, source chips hidden from student-facing UI.
 
 Remaining work:
-- Add lesson state display.
-- Add continue lesson action.
-- Render structured Tutor Engine actions.
-- Add more mobile and browser visual QA polish.
+- Render structured Tutor Engine actions more richly (if/when the response contract expands).
+- More mobile and browser visual QA polish.
 
-### Stage 12: Deployment Demo
+### Stage 12: Deployment
 
-Status: NOT STARTED
+Status: LIVE — deployed and verified (see `DEPLOYMENT_PLAN.md`)
 
-Expected work:
-- Frontend deployment.
-- Backend deployment.
-- Env setup.
-- Basic usage limit.
-- README update.
+Remaining:
+- Custom domain setup (last item in `DEPLOYMENT_PLAN.md`).
 
 ## Development Rules
 
 - Work on only one task at a time.
-- Do not overbuild.
-- Do not add auth, database, admin panel, quiz, frontend, analytics, or chat history unless explicitly asked.
+- Do not overbuild — no admin panel, quiz, or analytics unless explicitly asked. (Auth, database, frontend, and chat history are all fully built — treat them as existing subsystems to respect, not things to avoid adding.)
 - Keep backend separate from content preparation.
 - Keep curated content in data folders.
 - Do not commit raw PDFs unless explicitly approved.
 - Retrieval must stay grounded in indexed source content.
+- Never work directly on `main` — it's live/deployed. Always create a new branch first, even for tiny changes; merge only when explicitly told to.
 
 ## Next Task Rule
 
-The next recommended implementation task is curated foundation/orientation Markdown content for broad student questions and study-support situations.
+See "Current Active Task" above for where to find live status — this section previously named a specific next task that had long since been superseded, which is exactly the kind of thing that goes stale here.
 
-The next backend polish tasks are live prompt QA, answer quality/tone improvements, and performance work later from TASK-020.
-
-Do not return to large manual intent/router rules as the primary solution. Keep the current LLM-first flow and solve broad knowledge gaps through curated Markdown content plus prompt refinement.
+One durable rule that's still current: do not return to large manual intent/router rules as the primary solution. Keep the LLM-first flow and solve knowledge gaps through curated Markdown content plus prompt refinement.
