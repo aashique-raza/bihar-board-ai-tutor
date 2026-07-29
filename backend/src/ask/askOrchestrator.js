@@ -39,6 +39,7 @@ import {
 } from '../utils/providerErrors.js';
 import { updateChatSessionState } from '../services/chatSession.service.js';
 import { env } from '../config/env.js';
+import ApiError from '../utils/ApiError.js';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -61,12 +62,13 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
     session = await loadSession({ ...input, userId, guestId });
     context = await buildContext(input, session);
   } catch (error) {
-    // Session-level blocks (exhausted, banned) surface as ApiError with a student-readable message.
-    // Pass them through directly — do NOT replace with the generic technical error.
-    if (error.statusCode === 429 || error.statusCode === 403) {
+    // Any client-facing validation/session error (400/403/404/429) already carries
+    // a safe, curated Hinglish message from step1/step2 — show it as-is instead of
+    // masking it with the generic fallback below.
+    if (error instanceof ApiError && error.statusCode < 500) {
       return buildProviderErrorResponse(error.message, body.question, body.studyMode);
     }
-    // DB down, invalid input, or StudyMap failure.
+    // Truly unknown/unexpected errors (DB down, code bug) — never leak internals.
     console.error('[Orchestrator] Pre-pipeline failure:', error.message);
     return buildProviderErrorResponse(
       'Kuch technical dikkat aa gayi. Thodi der mein try karo.',
