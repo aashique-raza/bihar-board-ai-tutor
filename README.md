@@ -14,9 +14,8 @@ Completed:
 
 - Curated Science Markdown loader.
 - RAG chunker.
-- LangChain-based Gemini embeddings.
-- LangChain MemoryVectorStore retrieval.
-- Local JSON vector-store persistence.
+- LangChain-based embeddings — OpenAI `text-embedding-3-large` primary, Gemini `gemini-embedding-001` as query-time fallback only (see `CLAUDE.md` for details).
+- MongoDB Atlas Vector Search (`$vectorSearch`) retrieval — replaced the earlier local JSON `MemoryVectorStore` approach.
 - Lightweight reranking and final retrieval filtering.
 - Grounded LLM answer generation.
 - Simple Hinglish answers with source attribution.
@@ -28,15 +27,14 @@ Completed:
 - Optional RAG retrieval only when study content is needed.
 - Main tutor response LLM with a strong tutoring system prompt.
 - Flexible structured response sections for frontend rendering.
-- Zuno React frontend foundation.
+- Zuno React frontend (React Router + Redux Toolkit), not just a foundation.
 - MongoDB-backed compact memory and chat history.
+- Full auth system, Redis caching, and production deployment (see below and `CLAUDE.md`).
 
 Not included yet:
 
-- Production vector DB.
-- Production deployment.
-- Formal evaluation question set.
-- Live QA pass for the new LLM-first Ask flow.
+- Formal evaluation question set beyond the current golden-set regression tests (`npm run test:golden`).
+- Curated foundation/orientation content (see `PRE_LAUNCH_BLOCKERS.md`).
 - Frontend lesson-specific UI polish.
 
 ## Initial Scope
@@ -45,7 +43,7 @@ Not included yet:
 - Current curated content includes 16 Science chapter Markdown files across Physics, Chemistry, and Biology.
 - Backend RAG pipeline first.
 - Source content stored locally as clean text files first.
-- Local vector store or JSON-based persisted store first.
+- Started with a local JSON-persisted vector store; since migrated to MongoDB Atlas Vector Search for production.
 - Ask API is implemented for question answering and lesson flow.
 
 ## Architecture Summary
@@ -57,7 +55,7 @@ Study Content
 -> Chunker
 -> Metadata Builder
 -> Embedding Generator
--> Local Vector Store
+-> MongoDB Atlas Vector Store
 -> Retriever
 -> Grounded Prompt Builder
 -> LLM Answer Generator
@@ -99,17 +97,13 @@ docs/tutor-engine-langchain-architecture.md
 
 Run commands from the `backend/` folder.
 
-Create or refresh the local vector store:
+Create or refresh the vector index:
 
 ```bash
 npm run rag:index
 ```
 
-This command loads the curated Science documents, chunks them, creates LangChain documents, generates Gemini embeddings, builds a LangChain `MemoryVectorStore`, and saves it to:
-
-```text
-backend/storage/vector-store.json
-```
+This command loads the curated Science documents, chunks them, creates LangChain documents, generates embeddings (OpenAI primary, Gemini fallback — see `CLAUDE.md`), and writes them into the `Chunk` collection in MongoDB Atlas, which has a Vector Search index (`vector_index`) configured on the `embedding` field.
 
 Retrieve relevant chunks for a question (retriever smoke test):
 
@@ -123,7 +117,7 @@ Run a full grounded-answer smoke test:
 npm run rag:test-answer
 ```
 
-These commands load the saved vectors from `vector-store.json`. They do not re-embed all chunks; they embed only the query and print the retrieved chunks (with scores and metadata) and, for `rag:test-answer`, the generated Hinglish answer.
+These commands query MongoDB Atlas directly via `$vectorSearch` — there is no local JSON vector file anymore. They do not re-embed all chunks; they embed only the query and print the retrieved chunks (with scores and metadata) and, for `rag:test-answer`, the generated Hinglish answer.
 
 ## First Milestone
 
@@ -142,7 +136,7 @@ Current backend status:
 
 - Steps 1-8 are implemented for local backend testing.
 - The active curated dataset contains 16 Science chapters.
-- The local vector store has been generated at `backend/storage/vector-store.json`.
+- The vector index is generated directly into MongoDB Atlas (`Chunk` collection) via `npm run rag:index`.
 - The Ask API is available at `POST /api/v1/ask`.
 - The Study Map API is available at `GET /api/v1/study-map`.
 - MongoDB-backed session/history/state is implemented.
@@ -158,7 +152,8 @@ Current backend status:
 - Analytics.
 - Quiz system.
 - PDF/OCR pipeline.
-- Production vector database.
+
+MongoDB Atlas Vector Search is the production vector database — see "Current Status" above.
 
 Authentication is fully built and security-stabilized (JWT access/refresh tokens,
 Redis session whitelist, bcrypt, email register + verification, Google OAuth,
