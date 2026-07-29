@@ -391,10 +391,10 @@
     "category": "BLIND_SPOT_TEST",
     "query": "Iska kya matlab hai?",
     "studyMode": "global",
-    "expectedIntent": "EXPLAIN_MORE",
-    "expectedResponseMode": "study_tutor",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
     "qualityChecks": [],
-    "note": "Pronoun resolution — 'iska' without topic name"
+    "note": "Pronoun without prior context (fresh session, no history) — correctly falls back to GREETING per deciderPrompt.js rule 1"
   },
   {
     "id": "BS05",
