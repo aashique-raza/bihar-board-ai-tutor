@@ -83,17 +83,20 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
     if (isDev) console.log(`[Step 4→5] intent: ${decision.intent}, needsRetrieval: ${decision.needsRetrieval}`);
 
     // --- Layer 2.2: Academic Safety Net ---
-    // The 8B decider occasionally misclassifies academic queries as GREETING or
-    // OUT_OF_CONTEXT. This probe catches those cases by checking vector similarity.
-    // Fires ONLY for these two intents — EXPLAIN_MORE/NEXT_STEP have their own RAG
-    // paths in step5, and UNSAFE must never be promoted to academic.
-    // Override runs BEFORE Phase 3 cap check (future) so academic queries always go through.
+    // Runs ONLY when the decider produced an English translation. That is the gate:
+    //   englishQuery != null  → "this is a real-world question" → worth probing
+    //   englishQuery == null  → greeting / emotional / explicitly-excluded → nothing to probe
+    // This is what keeps "Hello Zuno" a greeting: it probes 0.7355 on its raw text (above the
+    // 0.70 threshold) and used to be wrongly promoted to CONCEPT_QUESTION. With no English
+    // query, the probe never runs.
+    // Probing English also makes the net actually work: raw Hinglish scores 0.59-0.69 and never
+    // fires; the same questions in English score 0.71-0.85 and always do.
     const SAFETY_NET_TARGETS = new Set(['GREETING', 'OUT_OF_CONTEXT']);
-    if (SAFETY_NET_TARGETS.has(decision.intent)) {
-      const { score, fired } = await probeAcademicSimilarity(input.question);
+    if (SAFETY_NET_TARGETS.has(decision.intent) && decision.englishQuery) {
+      const { score, fired } = await probeAcademicSimilarity(decision.englishQuery);
       if (fired) {
         console.warn(
-          `[SafetyNet] ${decision.intent} → CONCEPT_QUESTION | score:${score.toFixed(3)} | query:"${input.question.slice(0, 60)}"`
+          `[SafetyNet] ${decision.intent} → CONCEPT_QUESTION | score:${score.toFixed(3)} | english:"${decision.englishQuery.slice(0, 60)}"`
         );
         decision.intent         = 'CONCEPT_QUESTION';
         decision.inScope        = true;
@@ -101,15 +104,8 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
         decision.responseMode   = 'study_tutor';
         decision._overridden    = true;
 
-        // Use decider's searchQuery if available (edge case).
-        // Otherwise clean common Hinglish fillers from raw question before retrieval.
-        if (!decision.searchQuery) {
-          const cleaned = input.question
-            .replace(/\b(bhai|yaar|sir|madam|please|plz|kripya|zara|jaldi|arey|arre)\b/gi, '')
-            .replace(/\s+/g, ' ')
-            .trim();
-          decision.searchQuery = cleaned || input.question;
-        }
+        // Retrieval must use the English query — the raw question retrieves 0 chunks.
+        decision.searchQuery = decision.englishQuery;
       }
     }
 

@@ -20,10 +20,11 @@
 import { Chunk } from '../models/chunk.model.js';
 import { createQueryEmbeddings } from '../rag/geminiEmbeddings.js';
 
-// 0.70 (raised from 0.65) — a topic like Newton's Laws scores ~0.665 against the Human Eye
-// chapter (Newton appears there in passing). At 0.65 the safety net falsely promoted
-// OUT_OF_CONTEXT → CONCEPT_QUESTION. Genuine Class 10 questions score 0.72+ against their
-// own chapter, so the net still catches real academic misclassifications.
+// 0.70. The probe now receives the decider's ENGLISH translation (see askOrchestrator.js), not the
+// student's raw Hinglish. Measured separation with English queries: genuine Class 10 questions
+// score 0.71-0.85, out-of-scope topics score <= 0.66 (e.g. Newton's laws 0.657). Raw Hinglish used
+// to score 0.59-0.69 and never fired at all, which is the bug this gating fixed.
+// Do NOT lower this to 0.65: "Maths ke questions solve karo" scores 0.683 and would falsely fire.
 const getThreshold = () =>
   parseFloat(process.env.SAFETY_NET_SIMILARITY_THRESHOLD ?? '0.70');
 
