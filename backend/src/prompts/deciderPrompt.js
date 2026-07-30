@@ -122,6 +122,30 @@ CONSERVATIVE BIAS RULES (apply in order):
    Examples: "fail ho gya to kya hoga" → EMOTIONAL_SUPPORT (not EXAM_INFO)
    "log kya kahnge fail hone par" → EMOTIONAL_SUPPORT (not EXAM_INFO)
 6. If the student explicitly says "Chapter shuru karein", classify as NEXT_STEP, NOT CHOOSE_COURSE.
+7. HINGLISH SCIENCE RULE (CRITICAL — prevents false OUT_OF_CONTEXT):
+   A Hinglish/Hindi question that DESCRIBES a natural process in everyday words — with no English
+   scientific term in it — is still a CONCEPT_QUESTION. Do not reject it just because it does not
+   name a textbook topic. Translate it into an English searchQuery instead.
+   Examples (all CONCEPT_QUESTION):
+   - "paudhe apna khana kaise banate hain" -> searchQuery: "how do plants make their own food photosynthesis in leaves"
+   - "saans lene mein kya hota hai"        -> searchQuery: "what happens during breathing respiration in humans"
+   - "khana kaise pachta hai"              -> searchQuery: "how is food digested in the human digestive system"
+   - "aankh mein cheezein kaise dikhti hain" -> searchQuery: "how does the human eye see and form images on the retina"
+   - "loha mein jung kaise lagti hai"      -> searchQuery: "how does rusting corrosion of iron happen chemical reaction"
+   - "bijli kaise banti hai"               -> searchQuery: "how is electricity generated and how current flows"
+8. SCOPE PHILOSOPHY: when a message describes a real-world natural phenomenon in everyday words and
+   you are UNSURE whether it is in the indexed chapters, prefer CONCEPT_QUESTION and let retrieval
+   verify scope. A wrong OUT_OF_CONTEXT gives the student a false rejection.
+   HARD LIMIT — rule 7 and this rule NEVER apply to the topics below. They are always
+   OUT_OF_CONTEXT with searchQuery null, even though they are science topics, and even when asked
+   in everyday Hinglish:
+     Newton's Laws, Gravitation, Force, Pressure, Motion, Velocity, Work,
+     Cell structure / cell organelles / parts of a cell / cell diagram,
+     Atomic structure, Thermodynamics.
+   Counter-examples (memorise these):
+   - "cell ki structure batao"      -> OUT_OF_CONTEXT, searchQuery null
+   - "cell ke parts kya hote hain"  -> OUT_OF_CONTEXT, searchQuery null
+   - "gravitation kya hai"          -> OUT_OF_CONTEXT, searchQuery null
 
 SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - Generate a DESCRIPTIVE PHRASE or SENTENCE of 8-15 words that captures the topic AND what is being asked. NOT 2-3 keywords — the vector search needs semantic richness to find the right chapter.
@@ -132,7 +156,15 @@ SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - Include the SUBJECT DOMAIN if obvious: acid-base → chemistry, photosynthesis → biology, light refraction → physics
 - Pronouns ("iska", "usko", "this", "again"): resolve the topic from Recent Conversation Log then generate a full phrase.
 - EXPLAIN_MORE: searchQuery must be null. Re-retrieval is handled by the pipeline using saved session state.
-- All other intents: searchQuery must be null.
+- OUT_OF_CONTEXT: searchQuery is an ENGLISH TRANSLATION, not a scope judgement. Set it whenever the
+  message asks about the natural or physical world — living things, the human body, substances,
+  materials, natural phenomena, or physical/biological/chemical processes — EVEN IF you classified
+  the message OUT_OF_CONTEXT because you were unsure whether it is in our material.
+  EXCEPTION — searchQuery MUST be null when the message is an EXPLICITLY EXCLUDED topic (listed in
+  rule 8 above) or is clearly not about the natural world (sports, films, maths sums, history,
+  cooking recipes, personal chit-chat). There, null means "I am confident this is out of scope".
+- All other intents (GREETING, EMOTIONAL_SUPPORT, UNSAFE_OR_ABUSIVE, CHOOSE_COURSE, NEXT_STEP,
+  EXAM_INFO): searchQuery must be null.
 
 examEntity: null for every intent EXCEPT EXAM_INFO (see rules under EXAM_INFO above).
 
