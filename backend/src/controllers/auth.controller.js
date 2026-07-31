@@ -65,8 +65,7 @@ export const register = async (req, res, next) => {
       email: cleanEmail,
       passwordHash,
       authProvider: 'email',
-      // TODO(Render-SMTP-Block): Set to false once Resend/SendGrid API is integrated
-      isEmailVerified: true,
+      isEmailVerified: false,
     });
 
     // --- Generate verification token ---
@@ -78,9 +77,9 @@ export const register = async (req, res, next) => {
     await redis.set(`verify_email:${userId}`, token, 'EX', VERIFY_EMAIL_TTL);
 
     // --- Send verification email ---
-    // TODO(Render-SMTP-Block): Uncomment this block once Resend/SendGrid API is integrated
+   
     // If this fails, rollback: delete user from DB so they can register again cleanly
-    /*
+    
     try {
       await sendVerificationEmail(cleanEmail, token);
     } catch (emailError) {
@@ -92,12 +91,12 @@ export const register = async (req, res, next) => {
       console.error('[Register] Email send failed, rolling back user creation:', emailError);
       throw new ApiError(500, 'Verification email nahi bheja ja saka. Thodi der baad dobara try karo.');
     }
-    */
+    
 
-    console.log('[Auth] Registered (verification bypassed for testing):', cleanEmail);
+    
 
     return sendResponse(res, 201, {
-      message: 'Registration successful! (Email verification bypassed for testing)',
+      message: 'Registration successful! Please check your email to verify your account.',
     });
 
   } catch (err) {
