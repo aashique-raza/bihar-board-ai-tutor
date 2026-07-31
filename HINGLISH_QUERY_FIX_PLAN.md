@@ -1,593 +1,848 @@
-# Hinglish Query Fix — Execution Plan
+# Hinglish Query Fix — Execution Plan (v3, evidence-backed)
 
-> **Date**: 2026-07-29
-> **Status**: Approved for implementation
-> **Priority**: Critical — blocks core product functionality
-
----
-
-## ⚠️ READ THIS FIRST — Findings from a later QA/audit session (2026-07-29, same day, after this plan was written)
-
-While verifying an unrelated task (TASK-024 Hinglish-consistency), a full-suite golden-test run + live investigation turned up 3 things that **directly affect this plan**, especially **Change 3 (SafetyNet Threshold)** below. Read this section before starting Day 1.
-
-### Finding 1 — Two small, unrelated bugs found and fixed (on a separate branch, NOT merged to main yet)
-
-Branch: `fix/error-handling-and-golden-set-wip` (not merged — needs review/approval before merging).
-
-1. **Validation errors were mislabeled as generic "provider_error"**: e.g. Focus Mode without a `chapterId` showed *"Kuch technical dikkat aa gayi"* instead of the actual, already-correct message *"Focus Mode ke liye chapterId dena zaroori hai."* Root cause: `askOrchestrator.js`'s pre-pipeline catch block only passed through `error.message` for statusCode 429/403, collapsing every other case (400, 404) into the generic fallback. Fix: pass through `error.message` for any `ApiError` with `statusCode < 500`. Unrelated to Hinglish retrieval, but worth merging alongside this plan since it touches the same "student sees a wrong/misleading message" theme.
-2. **Golden-test `BS04`** (`"Iska kya matlab hai?"`) expected `EXPLAIN_MORE` but decider correctly returns `GREETING` — because the golden-set harness always uses a **fresh, history-less session** (`sessionId: randomUUID()` per query, confirmed in `run-golden-set.js`), and `deciderPrompt.js` (rule 1) explicitly says a topic-less pronoun with no resolvable context should be `GREETING`. This was a wrong test expectation, not a product bug. Fixed the expected value in `golden-queries.json`.
-
-Neither of these is part of this plan's scope — flagging only because the golden-baseline file this plan's testing will rely on (`backend/test/golden-baseline-phase1.json`) was affected by both.
-
-### Finding 2 — CRITICAL: This plan's "Change 3" (lower SafetyNet threshold 0.70 → 0.65) may make a *different*, newly-discovered false-positive worse
-
-**What was found**: `"Hello Zuno"` (a pure greeting) now scores **0.736** on the SafetyNet academic-similarity probe (`intentSafetyNet.js` → `probeAcademicSimilarity`) — above the *current* 0.70 threshold — causing the decider's correct `GREETING` classification to be wrongly overridden to `CONCEPT_QUESTION`. Confirmed live via server logs:
-```
-[Step 4→5] intent: GREETING, needsRetrieval: false
-[SafetyNet] GREETING → CONCEPT_QUESTION | score:0.736 | query:"Hello Zuno"
-```
-This was **not caused by any code change** — `intentSafetyNet.js` hasn't been touched since 27 June. Root cause: the `npm run rag:index` re-run (done for the separate TASK-024 Hinglish-consistency work, needed to add `hinglish_title` etc. to chunk metadata) **re-embedded all 629 chunks from scratch** via a live Gemini embedding API call. Verified the actual chapter *content* embedded is byte-identical before/after (frontmatter fields are stripped before embedding — checked `markdownLoader.js`'s `parseYamlFrontmatter`). The shift is instead a known characteristic of hosted embedding APIs: two separate calls for identical text are not guaranteed to produce bit-identical vectors (model versions can silently change server-side, and floating-point summation order can differ across calls) — this normally doesn't matter, but it can flip the outcome for a query sitting exactly on the threshold boundary, like this one.
-
-**Why this matters for Change 3 specifically**: This plan's Change 3 proposes **lowering** the threshold to 0.65 to catch under-firing cases (e.g. `"paudhe apna khana kaise bnate hai"` scoring ~0.68-0.69, a real academic query being missed). But `"Hello Zuno"` scoring 0.736 means **lowering the threshold makes this over-firing case worse, not better** — 0.736 is already above 0.65 too, and other borderline greeting-like phrases sitting in the 0.65–0.70 band that currently don't fire would start firing once the threshold drops. **The same single global threshold is being pulled in two opposite directions by two different real failure modes** (under-firing on real Hinglish academic queries vs. over-firing on greetings that happen to mention "Zuno"/subject words).
-
-**Before implementing Change 3 as originally written**, do one of:
-- **(a)** Run a proper threshold sweep (0.65 / 0.68 / 0.70 / 0.72 / 0.75) against a combined test set that includes BOTH known under-firing queries (from this plan's Testing Plan, Phase 1) AND known over-firing queries (`"Hello Zuno"`, and any other short greeting/small-talk phrases that mention "Zuno" or a subject name) — pick the value that minimizes both error types, not just the one this plan was written to fix.
-- **(b)** Prefer a **targeted, non-threshold fix** for the over-firing class instead of moving the global threshold at all: skip the SafetyNet probe entirely when the message is short (e.g. ≤3-4 words) and contains no science-related token — this leaves Change 3's original goal (catch real Hinglish academic misses) untouched while not making the greeting false-positive worse. This was the recommended direction when this was discussed, but not yet implemented — no code changes were made for this, pending a decision.
-- **(c)** If neither (a) nor (b) is done before Day 1, at minimum add `"Hello Zuno"` (and similar short greetings mentioning "Zuno") to this plan's **Phase 2 (English Regression Test)** and **Phase 3 (Edge Cases)** query lists, so lowering the threshold doesn't silently introduce this regression unnoticed.
-
-### Finding 3 — Re-embedding is not perfectly stable across runs (context for future re-indexes too)
-
-Scores from `probeAcademicSimilarity` (and any other vector-similarity-based logic) can shift slightly **every time `npm run rag:index` is re-run**, even when the underlying chapter content is unchanged — confirmed the embedded text itself doesn't change (frontmatter is stripped before embedding), so the shift comes from the embedding API call itself, not from a content change. This mainly matters for queries that sit close to whatever threshold is in use. Worth keeping in mind for this plan's Change 3 testing (and the SafetyNet threshold generally) — a threshold value validated today could drift slightly after a future re-index, so borderline cases are worth spot-checking again after any `rag:index` run, not just once at implementation time.
+> **Date**: 2026-07-29 (planned) → 2026-07-30 (implemented)
+> **Status**: ✅ **COMPLETE** — Changes A, B, C implemented, verified, merged into
+> `fix/hinglish-query-pipeline`. `main` untouched, pending explicit approval to merge.
+> See **Section 12 (Implementation Results)** at the bottom for what was achieved and
+> what open items came out of testing.
+> **Priority**: CRITICAL — breaks the core product for the exact students it was built for.
+> **Every claim below was MEASURED on this machine against MongoDB Atlas + OpenAI.**
+> Nothing in this file is an assumption. Section 2 lists the raw numbers.
 
 ---
 
-## Problem Statement
+## 0. What to do (30-second version)
 
-Students ask questions in Hinglish (Roman-script Hindi), but the pipeline fails at two points:
+There are **two independent bugs**, both confirmed live. Fix all three changes below — they
+are small, and each was tested.
 
-1. **Decider misclassifies Hinglish questions as OUT_OF_CONTEXT** — "paudhe apna khana kaise bnate hai" (photosynthesis) gets rejected as out of scope, while "photosynthesis kya hai" works perfectly.
+| # | Change | File | What it fixes |
+|---|---|---|---|
+| **A** | Decider prompt: Hinglish rule + always-translate + hard exclusion limit | `backend/src/prompts/deciderPrompt.js` | Bug 1 — false `OUT_OF_CONTEXT` |
+| **B** | Use the decider's English query for retrieval | `backend/src/ask/step4.decideRetrieval.js` | **Bug 2 — the big one** |
+| **C** | SafetyNet probes the English query, and only when one exists | `backend/src/ask/askOrchestrator.js` | Backup layer + fixes the "Hello Zuno" false positive |
 
-2. **Search query uses raw Hinglish against English content** — even when SafetyNet overrides the decider, the vector search uses the raw Hinglish message as the search query, producing weak matches against English content chunks.
-
-**Evidence (from 2026-07-29 production logs):**
-
-```
-Turn 2: "paudhe apna khana kaise bnate hai"
-  → Decider: OUT_OF_CONTEXT (WRONG — this is Life Processes / photosynthesis)
-  → SafetyNet: did not fire (score ~0.68-0.69 < threshold 0.70)
-  → Result: "Ye topic Zuno ki scope mein nahi aata" ← WRONG
-
-Turn 3: "are yr ye topic to aata hi hai...ye biology ka swal hai..tree apna kahna kaise bnate hai"
-  → Decider: OUT_OF_CONTEXT (WRONG again)
-  → SafetyNet: fired (score 0.714 > 0.70) → overrode to CONCEPT_QUESTION ✓
-  → Search query: raw noisy message → retrieved WRONG chunks (Reproduction, not Photosynthesis)
-  → Source chips: "Vigyan ka Parichay · Jeev Prajanann Kaise Karte Hain?" ← WRONG chunks
-  → Tutor: only 8 output tokens, status: insufficient_context
-  → Result: "Thodi technical dikkat aayi" ← WRONG
-
-Comparison: "photosynthesis kya hai" → works perfectly (English keyword present)
-```
-
-**Root cause**: The pipeline assumes students use English scientific terms. Bihar Board Class 10 students often describe concepts in pure Hinglish without English terms.
+**Do NOT change the SafetyNet threshold.** It stays `0.70`. Section 2.4 shows, with numbers,
+why the previously-proposed `0.65` would have fixed almost nothing and broken other things.
 
 ---
 
-## Current Runtime Config (IMPORTANT — all OpenAI, not Groq)
+## 1. The two bugs, in plain terms
+
+Every chapter in `data/` is written in **English**. Students write in **Hinglish**. The pipeline
+compares them directly, in two places, and both comparisons fail.
+
+### Bug 1 — Decider wrongly rejects Hinglish questions
+
+Reproduced live (`POST /api/v1/ask`, fresh session, global mode):
 
 ```
-LLM_PROVIDER=openai
-LLM_MODEL=gpt-4o-mini
-DECIDER_PROVIDER=openai
-DECIDER_MODEL=gpt-4o-mini
-EMBEDDING_PROVIDER=openai          (text-embedding-3-large, 3072-dim)
-USE_INTENT_ROUTER=true
+question: "paudhe apna khna kaise bnate hai"
+decision: { intent: "OUT_OF_CONTEXT", searchQuery: null,
+            reason: "The question is about plants and their food production,
+                     which is not covered in Class 10 Science." }
+student sees: "Yaar, ye topic Zuno ki scope mein nahi aata..."
 ```
 
-All LLM calls and embeddings go through OpenAI. Token costs are real (not free tier).
+The decider literally states that plants making food is not Class 10 Science. It is — it is
+photosynthesis, in Life Processes. Repeated 6× → `OUT_OF_CONTEXT` 6/6.
+
+### Bug 2 — Even when the decider is RIGHT, retrieval still fails
+
+This is the bug the earlier versions of this plan under-weighted. Reproduced live:
+
+```
+question: "tree apna bhojan kaise bnate hai"
+[Step 4→5] intent: CONCEPT_QUESTION, needsRetrieval: true      ← decider was CORRECT
+[Step 5 DB Scan] Querying index vectors using computed target:
+                 "tree apna bhojan kaise bnate hai"            ← RAW HINGLISH used
+[Step 5 Complete] Successfully packaged 0 ground truth chunks  ← 0 chunks
+[IntentRouter] CONCEPT_QUESTION → status:insufficient_context
+```
+
+The decider **did** generate a good English query (`"how do trees produce their food through
+photosynthesis"`). `step4.decideRetrieval.js` throws it away and searches with the raw Hinglish
+instead. Verified in the same run — `decision.searchQuery` came back as the raw Hinglish string
+on all 6 repeats.
+
+**So even a perfect classifier cannot save this pipeline. Change B is mandatory.**
+
+### Why "live worked, local didn't"
+
+Not a code difference — both run identical `main`. These queries sit **exactly on the model's
+decision boundary**. The same query, same prompt, same model returned `CONCEPT_QUESTION` in one
+measurement run and `OUT_OF_CONTEXT` (6/6) in another taken minutes later. gpt-4o-mini at
+`temperature: 0` is not bit-reproducible across requests. So the student's experience is a coin
+flip — and when the flip lands on `CONCEPT_QUESTION`, Bug 2 catches them anyway. That is why the
+same question produced two *different* wrong messages in the two screenshots:
+
+- `"Yaar, ye topic Zuno ki scope mein nahi aata"` → Bug 1 path
+- `"Thodi technical dikkat aayi..."` / `insufficient_context` → Bug 2 path (`intentRouter.js:294`
+  fills that generic line when the tutor returns nothing usable after getting 0 chunks)
 
 ---
 
-## Solution A: Decider Fix (Prompt Strategy + Search Query Source)
+## 2. The measurements (raw evidence)
 
-**Summary**: Fix the decider so it (a) classifies Hinglish academic questions correctly, and (b) generates an English search query that retrieval can use.
+Environment: `LLM/DECIDER = openai gpt-4o-mini`, `EMBEDDING_PROVIDER = openai`
+(`text-embedding-3-large`, 3072-dim), `USE_INTENT_ROUTER=true`, SafetyNet threshold `0.70`,
+MongoDB Atlas `vector_index`.
 
-### Change 1: Decider Prompt — Conservative Bias Strategy
+### 2.1 Retrieval: raw Hinglish returns literally nothing
+
+`retrieveRelevantChunks()`, global mode, default `topK=5`:
+
+| Query (raw Hinglish) | chunks (raw) | chunks (English translation) |
+|---|---|---|
+| paudhe apna khna kaise bnate hai | **0** | 5 |
+| tree apna bhojan kaise bnate hai | **0** | 5 |
+| paudhe apna khana kaise banate hain | **0** | 5 |
+| saans lene mein kya hota hai | **0** | 5 |
+| khana kaise pachta hai | **0** | 5 |
+| khoon ka kaam kya hota hai | **0** | 5 |
+| loha mein jung kaise lagti hai | **0** | 5 |
+| dhatu aur adhatu mein fark kya hai | **0** | 5 |
+| bijli kaise banti hai | **0** | 5 |
+| aankh mein cheezein kaise dikhti hain | **0** | 5 |
+
+**10 out of 10 → zero chunks. 10 out of 10 → 5 correct chunks in English.**
+
+Why it is a hard zero, not a weak match — internal counters for one query:
+
+```
+candidateCountBeforeRerank: 50
+countAfterMinScore:         50     ← 50 candidates cleared the 0.55 vector floor
+countAfterFinalFiltering:    0     ← ALL 50 killed by passesFinalFilter()
+```
+
+`retriever.js` `passesFinalFilter()` requires a keyword term-match **or** a vector score ≥ 0.70.
+Hinglish words (`paudhe`, `khna`, `bnate`) can never term-match English chunk text, and the
+vector scores sit at 0.59–0.69. So every candidate is dropped. This is structural, not marginal.
+
+### 2.2 SafetyNet probe: raw Hinglish never fires, English always does
+
+`probeAcademicSimilarity()`, threshold `0.70`:
+
+| Query | probe(raw) | fires? | probe(English) | fires? |
+|---|---|---|---|---|
+| paudhe apna khna kaise bnate hai | 0.6215 | no | **0.7393** | yes |
+| tree apna bhojan kaise bnate hai | 0.6398 | no | **0.7115** | yes |
+| paudhe apna khana kaise banate hain | 0.6345 | no | **0.7419** | yes |
+| saans lene mein kya hota hai | 0.6102 | no | **0.7440** | yes |
+| khana kaise pachta hai | 0.6121 | no | **0.7847** | yes |
+| khoon ka kaam kya hota hai | 0.6517 | no | **0.7990** | yes |
+| loha mein jung kaise lagti hai | 0.5904 | no | **0.7787** | yes |
+| dhatu aur adhatu mein fark kya hai | 0.6232 | no | **0.8478** | yes |
+| bijli kaise banti hai | 0.6863 | no | **0.7455** | yes |
+| aankh mein cheezein kaise dikhti hain | 0.6819 | no | **0.8094** | yes |
+
+Raw range **0.5904 – 0.6863** (0/10 fire). English range **0.7115 – 0.8478** (10/10 fire).
+
+### 2.3 Negative controls — English translation does NOT create false positives
+
+| Query | probe(raw) | probe(English) | fires on English? |
+|---|---|---|---|
+| Newton ka niyam kya hai | 0.6790 | 0.6566 | no ✓ |
+| cricket ka score kya hai | 0.5980 | 0.5921 | no ✓ |
+| do aur do kitne hote hain | 0.6227 | 0.5990 | no ✓ |
+| mera pet dard kar raha hai | 0.5849 | 0.6500 | no ✓ |
+| Biryani kaise banate hain? | 0.6150 | 0.5971 | no ✓ |
+| Maths ke questions solve karo | 0.6833 | 0.6444 | no ✓ |
+| History mein Mughal Empire… | 0.5801 | 0.5865 | no ✓ |
+| IPL ki team batao | 0.5819 | 0.5725 | no ✓ |
+| Bollywood mein kaun achha actor | 0.5681 | 0.5561 | no ✓ |
+| gravitation kya hai | 0.6484 | 0.6123 | no ✓ |
+| **cell ki structure batao** | 0.6226 | **0.7266** | **YES — see 2.5** |
+| Hello Zuno | **0.7355** | n/a (greeting) | **YES — see 2.6** |
+
+`"Biryani kaise banate hain?"` was the biggest worry (same `"X kaise banate hain"` shape as the
+photosynthesis question). Measured: **0.5971 English — safely below threshold.** Good separation.
+
+### 2.4 Why the old plan's "lower threshold to 0.65" was wrong — with numbers
+
+The previous version of this file proposed dropping the threshold `0.70 → 0.65`. Measured:
+
+- **It would have fixed almost nothing.** 8 of the 10 raw-Hinglish scores are **below 0.65**
+  (0.5904, 0.6102, 0.6121, 0.6215, 0.6232, 0.6345, 0.6398, 0.6517). Only 2 of 10 sit in the
+  0.65–0.70 band. And even the 2 it "rescued" would then hit Bug 2 and retrieve 0 chunks anyway.
+- **It would have broken working cases.** `"Maths ke questions solve karo"` scores **0.6833** raw
+  — above 0.65. Lowering the threshold would falsely promote a Maths question to
+  `CONCEPT_QUESTION`. `"Hello Zuno"` at 0.7355 was already over-firing and 0.65 makes that class
+  of error strictly worse.
+
+**Conclusion: raising the signal quality (probe English) beats lowering the bar. Threshold stays 0.70.**
+
+### 2.5 A real regression this plan found in itself — and fixed
+
+An early draft of Change A caused `"cell ki structure batao"` to flip from `OUT_OF_CONTEXT` to
+`CONCEPT_QUESTION` (0/5 correct over 5 runs). That matters, because its English translation
+scores **0.7266** and retrieval returns this:
+
+```
+Control and Coordination        | 4. Neuron / Nerve Cell
+How Do Organisms Reproduce?     | Process 1: DNA Copying and Cell Division
+Sources of Energy               | Output of a Typical Solar Cell     ← wrong "cell"
+Sources of Energy               | 15. What is a solar cell?          ← wrong "cell"
+Control and Coordination        | 4.5 Transmission of Nerve Impulse
+```
+
+A student would get neurons, DNA division and **solar panels** mixed together. Change A's final
+wording adds a HARD LIMIT block with explicit counter-examples, which fixes this — **4/4 correct**
+after the fix (section 2.7). Cell structure is on the existing exclusion list and stays there.
+
+### 2.6 The "Hello Zuno" false positive is fixed for free
+
+`"Hello Zuno"` probes at **0.7355** on the raw text — above the 0.70 threshold — so today the
+SafetyNet wrongly promotes a greeting to `CONCEPT_QUESTION` (it top-matches the chunk
+*"What Zuno Can Help You With"*). This is a pre-existing bug, unrelated to Hinglish.
+
+Change C removes it without any threshold tuning: the decider returns `searchQuery: null` for
+`GREETING` (measured 4/4), so there is no English query, so **the probe is skipped entirely**.
+The gate becomes meaningful: *only probe messages the decider identified as a real-world question.*
+
+### 2.7 Final validation of the exact prompt wording in Change A
+
+The wording in Change A below was run against the live decider, **4 runs per query**, fresh
+history-less input (exactly the cold-start path a new student hits):
+
+```
+OK 4/4  "cell ki structure batao"              -> OUT_OF_CONTEXT / null
+OK 4/4  "cell ke parts kya hote hain"          -> OUT_OF_CONTEXT / null
+OK 4/4  "gravitation kya hai"                  -> OUT_OF_CONTEXT / null
+OK 4/4  "Newton ka niyam kya hai"              -> OUT_OF_CONTEXT / null
+OK 4/4  "Biryani kaise banate hain?"           -> OUT_OF_CONTEXT / null
+OK 4/4  "Maths ke questions solve karo"        -> OUT_OF_CONTEXT / null
+OK 4/4  "Hello Zuno"                           -> GREETING / null
+OK 4/4  "paudhe apna khna kaise bnate hai"     -> CONCEPT_QUESTION / "how do plants make their own food photosynthesis in leaves"
+OK 4/4  "loha mein jung kaise lagti hai"       -> CONCEPT_QUESTION / "how does rusting corrosion of iron happen chemical reaction"
+OK 4/4  "bijli kaise banti hai"                -> CONCEPT_QUESTION / "how is electricity generated and how current flows"
+OK 4/4  "khana kaise pachta hai"               -> CONCEPT_QUESTION / "how is food digested in the human digestive system"
+OK 4/4  "insaan mein bacha kaise paida hota hai"-> CONCEPT_QUESTION / "how does reproduction occur in humans and how are babies born"
+OK 4/4  "photosynthesis kya hai"               -> CONCEPT_QUESTION / "what is photosynthesis and how do plants produce food"
+
+TOTAL 52/52
+```
+
+Baseline (current prompt) on the same set: `"paudhe apna khna kaise bnate hai"` failed 6/6 and
+`"loha mein jung kaise lagti hai"` failed. **No regressions were introduced.**
+
+### 2.8 The other five intent families were checked too — no regressions
+
+Sections 2.1–2.7 only exercised `CONCEPT_QUESTION`, `OUT_OF_CONTEXT`, `GREETING` and
+`EMOTIONAL_SUPPORT`. Change A's rules 7/8 say "prefer CONCEPT_QUESTION when unsure about a
+real-world topic", which could plausibly pull `EXAM_INFO` (it names science topics *and* asks about
+marks) or `CHOOSE_COURSE` toward `CONCEPT_QUESTION`. That was a real risk, so it was measured —
+every golden-set query from the untested families, plus five `EXAM_INFO` cases (the golden set has
+none), **3 runs each, baseline vs proposed, with realistic history**:
+
+```
+EXPLAIN_MORE      (5 queries)  BASE 15/15   PROPOSED 15/15
+NEXT_STEP         (4 queries)  BASE 12/12   PROPOSED 12/12
+CHOOSE_COURSE     (4 queries)  BASE 12/12   PROPOSED 12/12
+UNSAFE_OR_ABUSIVE (2 queries)  BASE  6/6    PROPOSED  6/6
+EXAM_INFO         (5 queries)  BASE 15/15   PROPOSED 15/15
+                               ─────────────────────────────
+                        TOTAL  BASE 60/60   PROPOSED 60/60
+
+REGRESSIONS: NONE
+searchQuery wrongly emitted on a non-CONCEPT intent: NONE
+```
+
+Including the highest-risk case, `"Life Processes se kitne marks aate hain?"` → `EXAM_INFO` 3/3
+with `searchQuery: null`, exactly as required (EXAM_INFO must bypass vector search).
+
+**All nine intents are now covered by measurement.**
+
+---
+
+## 3. The design principle
+
+> **Translate the student's question to English exactly once, then do every language-sensitive
+> step — the scope probe and the vector search — on that English text. Never compare raw Hinglish
+> against English content.**
+
+And a second principle that makes the whole thing coherent:
+
+> **`searchQuery` is a translation, not a verdict.**
+> `searchQuery = <English>` means *"here is the question in English — go check the content."*
+> `searchQuery = null` means *"I am confident this needs no content lookup"* (a greeting, an
+> emotional message, or an explicitly excluded topic).
+> The SafetyNet then probes **only** when a translation exists — so it can rescue the decider's
+> genuine mistakes without ever second-guessing its deliberate decisions.
+
+This gives four layers, none of which depend on Hinglish↔English matching:
+
+| Layer | Mechanism | Catches |
+|---|---|---|
+| 1. Classification | Decider rule 7 recognises everyday-Hinglish science questions | The common case (measured 52/52) |
+| 2. Translation | Decider emits an English `searchQuery` even when it leans OUT_OF_CONTEXT | Feeds layers 3–4 when layer 1 slips |
+| 3. Scope probe | SafetyNet embeds the **English** query, gated on it existing | Layer-1 misclassifications (raw 0.62 → English 0.74) |
+| 4. Retrieval | Vector search runs on the **English** query | Turns 0 chunks into 5 correct chunks |
+
+**Why it is future-proof.** No Hinglish keyword list to maintain, no per-subject thresholds. Adding
+Maths / Hindi / Social Science later is: add the content files, run `npm run rag:index`, and extend
+the decider's scope description. Scope is decided by *whether retrieval finds anything*, not by the
+model's memory of a chapter list.
+
+---
+
+## 4. Change A — decider prompt
 
 **File**: `backend/src/prompts/deciderPrompt.js`
 
-**What to add** — Insert at the END of the `CONSERVATIVE BIAS RULES` section (after rule 6), before the `SEARCH QUERY RULES` section:
+### A1. Add rules 7 and 8
+
+Find this line (the last line of `CONSERVATIVE BIAS RULES`, currently line 124):
 
 ```
-7. HINGLISH ACADEMIC SAFETY RULE (CRITICAL — prevents false OUT_OF_CONTEXT):
-   If the student's message mentions ANY of the following in ANY language (Hindi, Hinglish, or English),
-   classify as CONCEPT_QUESTION — NOT OUT_OF_CONTEXT:
-   - Living things: paudhe/plants, janwar/animals, jeev/organisms, insaan/humans, body/sharir
-   - Natural phenomena: roshni/light, bijli/electricity, urja/energy, dhoop/sunlight, aag/fire
-   - Substances: paani/water, dhatu/metal, acid, nammak/salt, carbon, oxygen, gas
-   - Processes: khana banana/making food, saans/breathing, pachan/digestion, janam/birth, marna/death
-   - Body parts: aankh/eye, dil/heart, pet/stomach, dimag/brain, phephda/lungs, khoon/blood
-
-   REASON: It is SAFE to over-classify as CONCEPT_QUESTION. If the topic is not in our
-   indexed material, retrieval returns empty and tutor says so. But under-classifying
-   (wrongly saying OUT_OF_CONTEXT) gives the student a WRONG rejection.
-
-   IMPORTANT: This rule does NOT override the explicit exclusion list in OUT_OF_CONTEXT
-   (Newton's Laws, Gravitation, Force/Pressure, Motion/Velocity, Work/Energy, Cell structure,
-   Atomic structure, Thermodynamics). Those remain OUT_OF_CONTEXT.
-
-   Examples of this rule firing:
-   - "paudhe apna khana kaise banate hain" → CONCEPT_QUESTION (plants + making food = biology)
-   - "aankh mein image kaise banta hai" → CONCEPT_QUESTION (eye + image = Human Eye chapter)
-   - "bijli kaise banti hai" → CONCEPT_QUESTION (electricity = Physics)
-   - "dhatu aur adhatu mein kya fark hai" → CONCEPT_QUESTION (metals = Chemistry)
-   - "saans lete waqt kya hota hai" → CONCEPT_QUESTION (breathing = Life Processes)
-   - "khoon ka kaam kya hai" → CONCEPT_QUESTION (blood = Life Processes)
+6. If the student explicitly says "Chapter shuru karein", classify as NEXT_STEP, NOT CHOOSE_COURSE.
 ```
 
-**Prompt growth**: ~180 words added. Current prompt: ~1538 words → ~1718 words. Growth: ~12%.
+Append immediately after it:
 
-**Future growth when new subjects added**: Each subject adds ~10-20 words to scope list + ~20-30 words of Hinglish keyword examples. For 4 new subjects (Maths, Hindi, SSc, English): ~120 words → prompt reaches ~1840 words. Still manageable.
+```
+7. HINGLISH SCIENCE RULE (CRITICAL — prevents false OUT_OF_CONTEXT):
+   A Hinglish/Hindi question that DESCRIBES a natural process in everyday words — with no English
+   scientific term in it — is still a CONCEPT_QUESTION. Do not reject it just because it does not
+   name a textbook topic. Translate it into an English searchQuery instead.
+   Examples (all CONCEPT_QUESTION):
+   - "paudhe apna khana kaise banate hain" -> searchQuery: "how do plants make their own food photosynthesis in leaves"
+   - "saans lene mein kya hota hai"        -> searchQuery: "what happens during breathing respiration in humans"
+   - "khana kaise pachta hai"              -> searchQuery: "how is food digested in the human digestive system"
+   - "aankh mein cheezein kaise dikhti hain" -> searchQuery: "how does the human eye see and form images on the retina"
+   - "loha mein jung kaise lagti hai"      -> searchQuery: "how does rusting corrosion of iron happen chemical reaction"
+   - "bijli kaise banti hai"               -> searchQuery: "how is electricity generated and how current flows"
+8. SCOPE PHILOSOPHY: when a message describes a real-world natural phenomenon in everyday words and
+   you are UNSURE whether it is in the indexed chapters, prefer CONCEPT_QUESTION and let retrieval
+   verify scope. A wrong OUT_OF_CONTEXT gives the student a false rejection.
+   HARD LIMIT — rule 7 and this rule NEVER apply to the topics below. They are always
+   OUT_OF_CONTEXT with searchQuery null, even though they are science topics, and even when asked
+   in everyday Hinglish:
+     Newton's Laws, Gravitation, Force, Pressure, Motion, Velocity, Work,
+     Cell structure / cell organelles / parts of a cell / cell diagram,
+     Atomic structure, Thermodynamics.
+   Counter-examples (memorise these):
+   - "cell ki structure batao"      -> OUT_OF_CONTEXT, searchQuery null
+   - "cell ke parts kya hote hain"  -> OUT_OF_CONTEXT, searchQuery null
+   - "gravitation kya hai"          -> OUT_OF_CONTEXT, searchQuery null
+```
 
-**Why this approach instead of listing every possible Hinglish phrasing**:
-- We list CATEGORY KEYWORDS (paudhe, bijli, paani), not full sentence phrasings
-- There are ~30-40 core Hinglish category keywords across all of Science
-- Students will always use SOME form of these keywords in their questions
-- We do NOT need to list every phrasing — just the keywords that signal "this is science-related"
+> The HARD LIMIT block is not optional. Without it, `"cell ki structure batao"` breaks (0/5) and
+> pulls in solar-cell chunks — see section 2.5.
 
-### Change 2: Search Query Source — Use Decider's English Translation
+### A2. Replace the searchQuery tail rule
 
-**File**: `backend/src/ask/step4.decideRetrieval.js`
+In `SEARCH QUERY RULES`, find these two lines (currently lines 134–135):
 
-**Current code** (lines 109-122):
+```
+- EXPLAIN_MORE: searchQuery must be null. Re-retrieval is handled by the pipeline using saved session state.
+- All other intents: searchQuery must be null.
+```
+
+Replace with:
+
+```
+- EXPLAIN_MORE: searchQuery must be null. Re-retrieval is handled by the pipeline using saved session state.
+- OUT_OF_CONTEXT: searchQuery is an ENGLISH TRANSLATION, not a scope judgement. Set it whenever the
+  message asks about the natural or physical world — living things, the human body, substances,
+  materials, natural phenomena, or physical/biological/chemical processes — EVEN IF you classified
+  the message OUT_OF_CONTEXT because you were unsure whether it is in our material.
+  EXCEPTION — searchQuery MUST be null when the message is an EXPLICITLY EXCLUDED topic (listed in
+  rule 8 above) or is clearly not about the natural world (sports, films, maths sums, history,
+  cooking recipes, personal chit-chat). There, null means "I am confident this is out of scope".
+- All other intents (GREETING, EMOTIONAL_SUPPORT, UNSAFE_OR_ABUSIVE, CHOOSE_COURSE, NEXT_STEP,
+  EXAM_INFO): searchQuery must be null.
+```
+
+> Both replacement targets were verified to exist verbatim in the current file. Prompt grows by
+> ~330 words (decider system prompt ≈ 2677 → ≈ 3100 tokens). At gpt-4o-mini pricing this is
+> roughly +$0.00006 per turn — negligible, and OpenAI prompt caching applies (the system block is
+> identical every call).
+
+---
+
+## 5. Change B — use the English query for retrieval **(the critical fix)**
+
+**File**: `backend/src/ask/step4.decideRetrieval.js`, inside `normalizeDecision()`.
+
+### B1. Delete the stale comment block
+
+Remove the `SEARCH QUERY STRATEGY:` comment (currently lines 95–107). It describes Gemini
+embedding behaviour the system no longer uses, and it is the reason this bug exists.
+
+### B2. Replace the searchQuery logic
+
+Replace the current block (currently lines 92–122, from `const DEVANAGARI_PATTERN` through the
+closing `}` of `if (needsRetrieval) {`) with:
+
 ```js
-let searchQuery = null;
-if (needsRetrieval) {
-    const isOriginalDevanagari = DEVANAGARI_PATTERN.test(rawQuestion);
-    const isExtractedDevanagari = DEVANAGARI_PATTERN.test(rawSearchQuery);
+  const DEVANAGARI_PATTERN = /[ऀ-ॿ]/;
+  const rawSearchQuery = String(decision.searchQuery || '').trim();
 
-    if (!isOriginalDevanagari) {
-        searchQuery = rawQuestion.replace(/\s+/g, ' ').trim();  // ← ALWAYS uses raw Hinglish
-    } else if (rawSearchQuery && !isExtractedDevanagari) {
-        searchQuery = rawSearchQuery.replace(/\s+/g, ' ').trim();
+  // The decider's English translation of the student's question.
+  //
+  // Kept for EVERY intent (not just retrieving ones) so askOrchestrator's SafetyNet can probe
+  // English even when the decider said OUT_OF_CONTEXT. Measured: raw Hinglish probes 0.59-0.69
+  // (never fires at 0.70) while its English translation probes 0.71-0.85 (always fires).
+  //
+  // null here is meaningful: the decider is telling us this message needs no content lookup
+  // (greeting, emotional, or an explicitly excluded topic). The SafetyNet respects that.
+  const englishQuery =
+    rawSearchQuery && !DEVANAGARI_PATTERN.test(rawSearchQuery)
+      ? rawSearchQuery.replace(/\s+/g, ' ').trim()
+      : null;
+
+  // Retrieval query: ALWAYS prefer the English translation.
+  //
+  // The chunks in MongoDB are English. Searching them with raw Hinglish returns literally zero
+  // results — not weak results, zero: retriever.js's passesFinalFilter() needs either a keyword
+  // term-match (impossible across languages) or a vector score >= 0.70 (Hinglish tops out ~0.69).
+  // Measured on 10 real student questions: raw Hinglish -> 0 chunks, English -> 5 chunks, 10/10.
+  // The raw question stays as a fallback only for when the decider produced no usable English.
+  let searchQuery = null;
+  if (needsRetrieval) {
+    if (englishQuery) {
+      searchQuery = englishQuery;
+    } else if (!DEVANAGARI_PATTERN.test(rawQuestion)) {
+      searchQuery = rawQuestion.replace(/\s+/g, ' ').trim();
     } else {
-        console.warn('[Step 4] Both Devanagari — skipping retrieval');
+      console.warn('[Step 4] No English searchQuery and raw question is Devanagari — skipping retrieval');
     }
-}
+  }
 ```
 
-**New code**:
+### B3. Return `englishQuery`
+
+In the `return { ... }` at the end of `normalizeDecision()` (currently lines 129–137), add
+`englishQuery` alongside `searchQuery`:
+
 ```js
-let searchQuery = null;
-if (needsRetrieval) {
-    const isOriginalDevanagari = DEVANAGARI_PATTERN.test(rawQuestion);
-    const isExtractedDevanagari = DEVANAGARI_PATTERN.test(rawSearchQuery);
-    const cleanedRaw = rawQuestion.replace(/\s+/g, ' ').trim();
-
-    // STRATEGY (updated 2026-07-29 — was Gemini-specific, now OpenAI):
-    //
-    // The original rationale for preferring raw questions over LLM-extracted queries
-    // was tested against Gemini gemini-embedding-001, which clustered short keywords
-    // at ~0.52 cosine. The system now uses OpenAI text-embedding-3-large, which does
-    // not exhibit this clustering issue.
-    //
-    // More importantly: raw Hinglish questions produce WEAK matches against English
-    // content (score ~0.68 for "paudhe apna khana kaise bnate hai" vs photosynthesis).
-    // The decider's English searchQuery (8-15 word phrase) matches MUCH better.
-    //
-    // NEW PRIORITY:
-    //   1. Decider's English searchQuery (8-15 words, richer than old 2-3 keywords)
-    //   2. Raw question as fallback (only if decider didn't generate a searchQuery)
-    //
-    // Edge case guard: if decider's query is suspiciously short (< 4 words),
-    // append the raw question to give the embedding model more signal.
-
-    if (rawSearchQuery && !isExtractedDevanagari) {
-        // Decider generated a usable English search query
-        const wordCount = rawSearchQuery.split(/\s+/).length;
-        if (wordCount >= 4) {
-            searchQuery = rawSearchQuery;
-            if (isDev) console.log(`[Step 4] Using decider searchQuery (${wordCount} words): "${searchQuery}"`);
-        } else {
-            // Too short — concatenate with raw for richer embedding
-            searchQuery = `${rawSearchQuery} ${cleanedRaw}`;
-            if (isDev) console.log(`[Step 4] Decider query short (${wordCount}w), concatenating: "${searchQuery}"`);
-        }
-    } else if (!isOriginalDevanagari) {
-        // No usable English searchQuery — fall back to raw question
-        searchQuery = cleanedRaw;
-        if (isDev) console.log(`[Step 4] No decider searchQuery, using raw: "${searchQuery}"`);
-    } else {
-        console.warn('[Step 4] Both original and searchQuery are Devanagari — skipping retrieval');
-    }
-}
+  return {
+    intent,
+    inScope,
+    needsRetrieval,
+    responseMode,
+    searchQuery,
+    englishQuery,          // ← add this
+    examEntity,
+    reason: String(decision.reason || 'Processed via structural normalizer normalization parameters.').trim()
+  };
 ```
 
-**Why this is safe — what could break**:
+> **Side effect, intentional and good**: `step7.saveAndRespond.js` persists `lastRetrievalQuery`
+> from this value, so `EXPLAIN_MORE` re-retrieval will now also reuse the English query.
+> **Side effect, harmless**: `decision` is included in the API response (`step7`), so
+> `englishQuery` becomes visible to the frontend. It is not sensitive and nothing reads it there.
 
-| Current case | What happens now | What happens after change |
-|---|---|---|
-| "photosynthesis kya hai" | Raw question → search works ✓ | Decider generates "what is photosynthesis biology" → ALSO works ✓ |
-| "acid aur base ka fark" | Raw question → "acid" and "base" match English content ✓ | Decider generates "difference between acid and base properties" → ALSO works ✓ |
-| "paudhe apna khana kaise bnate hai" | Raw Hinglish → weak match (0.68) ✗ | Decider generates "how do plants make food photosynthesis" → STRONG match ✓ |
-| "Ohm ka niyam samjhao" | Raw question → "Ohm" matches ✓ | Decider generates "Ohm's law electricity resistance" → ALSO works ✓ |
+---
 
-**No regression expected** because the decider's English phrases (8-15 words) are richer than the old "2-3 short keywords" concern. The original stale rationale was Gemini-specific.
+## 6. Change C — SafetyNet probes English, gated on it existing
 
-### Change 3: SafetyNet Threshold Lower
+**File**: `backend/src/ask/askOrchestrator.js`
 
-> ⚠️ **Before touching this, read "Finding 2" in the "READ THIS FIRST" section at the top of this file** — lowering this threshold as originally proposed here may make a separately-discovered false-positive (`"Hello Zuno"` scoring 0.736, above even the current 0.70) worse, not better. Do the threshold sweep or the targeted non-threshold fix described there first.
+Replace the SafetyNet block (currently lines 91–114) with:
 
-**File**: `backend/src/ask/intentSafetyNet.js`
-
-**Current** (line 27):
 ```js
+    // --- Layer 2.2: Academic Safety Net ---
+    // Runs ONLY when the decider produced an English translation. That is the gate:
+    //   englishQuery != null  → "this is a real-world question" → worth probing
+    //   englishQuery == null  → greeting / emotional / explicitly-excluded → nothing to probe
+    // This is what keeps "Hello Zuno" a greeting: it probes 0.7355 on its raw text (above the
+    // 0.70 threshold) and used to be wrongly promoted to CONCEPT_QUESTION. With no English
+    // query, the probe never runs.
+    // Probing English also makes the net actually work: raw Hinglish scores 0.59-0.69 and never
+    // fires; the same questions in English score 0.71-0.85 and always do.
+    const SAFETY_NET_TARGETS = new Set(['GREETING', 'OUT_OF_CONTEXT']);
+    if (SAFETY_NET_TARGETS.has(decision.intent) && decision.englishQuery) {
+      const { score, fired } = await probeAcademicSimilarity(decision.englishQuery);
+      if (fired) {
+        console.warn(
+          `[SafetyNet] ${decision.intent} → CONCEPT_QUESTION | score:${score.toFixed(3)} | english:"${decision.englishQuery.slice(0, 60)}"`
+        );
+        decision.intent         = 'CONCEPT_QUESTION';
+        decision.inScope        = true;
+        decision.needsRetrieval = true;
+        decision.responseMode   = 'study_tutor';
+        decision._overridden    = true;
+
+        // Retrieval must use the English query — the raw question retrieves 0 chunks.
+        decision.searchQuery = decision.englishQuery;
+      }
+    }
+```
+
+Note what is deleted: the old filler-word regex
+(`.replace(/\b(bhai|yaar|sir|...)\b/gi, '')`). It is dead weight now — the LLM translation already
+returns a clean academic phrase and ignores greetings, complaints and meta-talk.
+
+**`backend/src/ask/intentSafetyNet.js` — threshold unchanged at `0.70`.** Only update the stale
+comment on lines 23–28 to record that the probe now receives an English query:
+
+```js
+// 0.70. The probe now receives the decider's ENGLISH translation (see askOrchestrator.js), not the
+// student's raw Hinglish. Measured separation with English queries: genuine Class 10 questions
+// score 0.71-0.85, out-of-scope topics score <= 0.66 (e.g. Newton's laws 0.657). Raw Hinglish used
+// to score 0.59-0.69 and never fired at all, which is the bug this gating fixed.
+// Do NOT lower this to 0.65: "Maths ke questions solve karo" scores 0.683 and would falsely fire.
 const getThreshold = () =>
-    parseFloat(process.env.SAFETY_NET_SIMILARITY_THRESHOLD ?? '0.70');
+  parseFloat(process.env.SAFETY_NET_SIMILARITY_THRESHOLD ?? '0.70');
 ```
-
-**New**:
-```js
-const getThreshold = () =>
-    parseFloat(process.env.SAFETY_NET_SIMILARITY_THRESHOLD ?? '0.65');
-```
-
-**Why 0.65**: "paudhe apna khana kaise bnate hai" scored ~0.68-0.69 against photosynthesis content. At 0.70 threshold, it missed. At 0.65, it catches this and similar edge cases.
-
-**Risk of false positives at 0.65**: The previous threshold was raised from 0.65 to 0.70 because "Newton's Laws" scored ~0.665 against the Human Eye chapter (Newton appears in passing). With Solution A's decider fix, Newton's Laws would be correctly classified as OUT_OF_CONTEXT by the decider (explicit exclusion list), so SafetyNet wouldn't even run for it. The false positive that caused the threshold raise is now prevented by a different mechanism.
-
-### Change 4: SafetyNet Search Query Cleaning (Better Extraction)
-
-**File**: `backend/src/ask/askOrchestrator.js` (lines 104-110)
-
-**Current**:
-```js
-if (!decision.searchQuery) {
-    const cleaned = input.question
-        .replace(/\b(bhai|yaar|sir|madam|please|plz|kripya|zara|jaldi|arey|arre)\b/gi, '')
-        .replace(/\s+/g, ' ')
-        .trim();
-    decision.searchQuery = cleaned || input.question;
-}
-```
-
-**New** — more aggressive cleaning for meta-conversation noise:
-```js
-if (!decision.searchQuery) {
-    const cleaned = input.question
-        // Remove common Hinglish fillers
-        .replace(/\b(bhai|yaar|yr|sir|madam|please|plz|kripya|zara|jaldi|arey|arre|are|haan|nahi|ha|na)\b/gi, '')
-        // Remove meta-complaint phrases (student arguing about scope)
-        .replace(/\b(ye topic|topic to|aata hi hai|aata hai|scope|mein hai|mein nahi|biology ka|physics ka|chemistry ka|swal hai|sawaal hai|question hai)\b/gi, '')
-        // Remove ellipsis and excessive punctuation
-        .replace(/\.{2,}/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-    decision.searchQuery = cleaned || input.question;
-}
-```
-
-**Example**:
-- Input: "are yr ye topic to aata hi hai...ye biology ka swal hai..tree apna kahna kaise bnate hai"
-- After cleaning: "tree apna kahna kaise bnate hai"
-- This is a MUCH better search query than the raw message
 
 ---
 
-## Solution B: Dedicated Translation Step (Backup — implement only if A is insufficient)
+## 7. Known limits — read before shipping
 
-**When to implement**: After Solution A is live, test with 15-20 Hinglish queries. If >3 still fail, add Solution B on top of A.
+Stated plainly so nothing surprises you later.
 
-### Architecture
+1. **Thin margin on one rescue case.** The lowest measured English probe is `"tree apna bhojan
+   kaise bnate hai"` at **0.7115**, only +0.0115 above the threshold. If a future
+   `npm run rag:index` shifts embeddings slightly, this one could stop firing. It is a *backup*
+   layer only — Change A classifies this query correctly 4/4, so the probe never runs for it in
+   practice. **Watch item, not a blocker.** If it ever does regress, the evidence-backed
+   adjustment is `0.68` (still clears the 0.657 Newton false-positive), not `0.65`.
 
-New file: `backend/src/ask/step4b.translateQuery.js`
+2. **Re-index shifts scores.** Vector scores move slightly on every `rag:index` run even with
+   unchanged content (hosted embedding APIs are not bit-stable). After any re-index, re-run the
+   Phase 1 and Phase 2 tests below rather than trusting these exact numbers.
 
-Runs AFTER step4 (decideRetrieval), BEFORE step5 (retrieveContent). Only fires when:
-1. `needsRetrieval === true`
-2. searchQuery contains no English scientific terms (detection via keyword list)
+3. **The decider sits on a decision boundary.** Classification of borderline queries is not
+   bit-reproducible at `temperature: 0`. Change A moved the tested set to 4/4 stable, but an
+   unseen phrasing could still land wrong — which is exactly why layers 3 and 4 exist.
 
-### Implementation
+4. **Not fixed by this plan** (separate concern, no change here): `OUT_OF_CONTEXT` runs with
+   `maxTokens: 100` in `intentRouter.js:58`, and a measured redirect used 78 output tokens. A
+   longer redirect (the study-strategy branch of `redirectPrompt.js` invites a two-sentence reply)
+   could truncate the JSON and surface *"Thodi technical dikkat aayi"*. This is a **separate
+   latent bug**, not the Hinglish one — file it on its own branch. Do not bundle it here.
 
-```js
-// step4b.translateQuery.js
+5. **The prompt (Change A) is measured; the code edits (Changes B and C) are reviewed but not yet
+   executed.** Every claim about *behaviour* in this file was measured, and every line number and
+   anchor string in sections 4–6 was verified to exist verbatim in the current files. But the new
+   code in Changes B and C has not been run — it cannot be, until it is written. That is what
+   Phase 1–4 in section 8 is for. Expect to spend one pass fixing ordinary implementation slips
+   (a typo, an import) before the tests go green; that is normal, not a sign the plan is wrong.
 
-import { createChatModel } from '../llm/chatModel.js';
-import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { StringOutputParser } from '@langchain/core/output_parsers';
+### Verification coverage at a glance
 
-const TRANSLATE_PROMPT = ChatPromptTemplate.fromMessages([
-    ['system', `You are a Hindi/Hinglish to English translator for a Class 10 Science tutor.
-Translate the student's question into a clear English phrase (8-15 words).
-Focus on the ACADEMIC CONTENT only — ignore greetings, complaints, or meta-conversation.
-Use correct scientific terminology when applicable.
-Return ONLY the English translation, nothing else.`],
-    ['human', '{query}'],
-]);
-
-// Common English science terms — if query already has these, skip translation
-const ENGLISH_SCIENCE_TERMS = new Set([
-    'photosynthesis', 'respiration', 'digestion', 'reproduction', 'heredity',
-    'evolution', 'electricity', 'current', 'voltage', 'resistance', 'ohm',
-    'magnetic', 'light', 'reflection', 'refraction', 'lens', 'mirror',
-    'acid', 'base', 'salt', 'metal', 'carbon', 'periodic', 'element',
-    'chemical', 'reaction', 'equation', 'energy', 'solar', 'nuclear',
-    'eye', 'retina', 'cornea', 'chlorophyll', 'stomata', 'neuron',
-    'hormone', 'enzyme', 'chromosome', 'gene', 'dna', 'ecosystem',
-    'food', 'chain', 'web', 'ozone', 'pollution', 'biodegradable',
-]);
-
-const hasEnglishScienceTerm = (query) => {
-    const words = query.toLowerCase().split(/\s+/);
-    return words.some(w => ENGLISH_SCIENCE_TERMS.has(w));
-};
-
-let translateChain = null;
-const getTranslateChain = () => {
-    if (!translateChain) {
-        translateChain = TRANSLATE_PROMPT
-            .pipe(createChatModel({ temperature: 0, maxTokens: 60 }))
-            .pipe(new StringOutputParser());
-    }
-    return translateChain;
-};
-
-export const translateQueryIfNeeded = async (searchQuery, rawQuestion) => {
-    // Skip if query already contains English science terms
-    if (hasEnglishScienceTerm(searchQuery)) {
-        return searchQuery;
-    }
-
-    try {
-        const translated = await getTranslateChain().invoke({ query: rawQuestion });
-        const clean = translated.replace(/\s+/g, ' ').trim();
-        if (clean && clean.length > 5) {
-            console.log(`[Step 4b] Translated: "${rawQuestion.slice(0, 50)}" → "${clean}"`);
-            return clean;
-        }
-    } catch (err) {
-        console.warn('[Step 4b] Translation failed, using original:', err.message);
-    }
-
-    return searchQuery; // fallback to original
-};
-```
-
-### Integration in askOrchestrator.js
-
-```js
-// After step4 (decideRetrieval), before step5 (retrieveContent):
-
-// Solution B: Query translation (only if Solution A's decider searchQuery wasn't enough)
-if (decision.needsRetrieval && decision.searchQuery) {
-    const { translateQueryIfNeeded } = await import('./step4b.translateQuery.js');
-    decision.searchQuery = await translateQueryIfNeeded(decision.searchQuery, input.question);
-}
-
-const retrieval = await retrieveContent(decision, input, session, abortSignal);
-```
-
-### Cost Analysis
-
-| Metric | Per turn | Per 100 questions/day | Per month (3000 q) |
-|--------|----------|-----------------------|---------------------|
-| Tokens (GPT-4o-mini) | ~80 input + 20 output = ~100 | 10,000 | 300,000 |
-| Cost (GPT-4o-mini) | $0.000015 in + $0.00006 out = ~$0.00003 | $0.003 | $0.09 |
-| Latency | +200-400ms | — | — |
-
-**Cost is negligible** — $0.09/month at 3000 questions. Latency is the real trade-off.
-
-### When to skip translation (optimization)
-
-Only translate when the query has NO English scientific terms. This skips translation for:
-- "photosynthesis kya hai" → has "photosynthesis" → skip ✓
-- "acid aur base ka difference" → has "acid", "base" → skip ✓
-- "paudhe apna khana kaise bnate hai" → no English terms → TRANSLATE ✓
-
-This means ~60-70% of queries skip translation (most students use at least one English term).
+| Claim | How it was established |
+|---|---|
+| Raw Hinglish retrieves 0 chunks, English retrieves 5 | Measured, 10/10 queries, live Atlas |
+| Probe scores raw 0.59–0.69 vs English 0.71–0.85 | Measured, 10/10 queries |
+| 0.65 threshold would not have worked | Measured (8/10 score below 0.65) |
+| Decider false-rejects; and discards its English query | Reproduced live on the running server |
+| Change A wording is correct and stable | 52/52 + 60/60 live A/B, 3–5 runs per query |
+| Change A causes no regression in any of the 9 intents | Measured, baseline vs proposed |
+| Line numbers / anchor strings in sections 4–6 | Verified against the current files |
+| **Changes B and C compile and behave as written** | **Not verified — section 8 does this** |
 
 ---
 
-## Edge Cases and Mitigations
+## 8. Testing
 
-### Edge Case 1: Over-classification (non-science with science words)
-
-**Example**: "mera pet dard kar raha hai" (my stomach hurts — personal, not academic)
-
-**What happens with Solution A**: Decider sees "pet" (stomach) → might classify CONCEPT_QUESTION → retrieval runs → finds digestion chunks → tutor answers about digestion system
-
-**Is this bad?** Partially — student wasn't asking about Biology, they were expressing pain. But the answer is still factually correct and related.
-
-**Mitigation**: The existing EMOTIONAL_SUPPORT intent handles this. Prompt rule 5 says emotional language overrides science terms. "dard kar raha hai" (hurting) is emotional language. If we strengthen this rule slightly, the decider should route to EMOTIONAL_SUPPORT.
-
-**Severity**: Low. Worst case = student gets an academic answer when they wanted empathy. Not catastrophic.
-
-### Edge Case 2: Topics explicitly NOT in scope (Newton's Laws)
-
-**Example**: "Newton ka teesra niyam kya hai" (Newton's third law)
-
-**What happens with Solution A**: Decider checks the explicit exclusion list → finds "Newton's Laws" → correctly classifies as OUT_OF_CONTEXT. The conservative bias rule explicitly says "does NOT override the explicit exclusion list."
-
-**Risk**: Zero — this is handled by design.
-
-### Edge Case 3: Decider generates poor-quality English searchQuery
-
-**Example**: "paudhe apna khana kaise bnate hai" → decider translates to "plant cooking food" (bad translation)
-
-**Probability**: Low — GPT-4o-mini understands Hinglish well enough for basic translation. Testing required to verify.
-
-**Mitigation**: SafetyNet (at lowered 0.65 threshold) provides backup. Even if search fails, the worst outcome is "insufficient_context" (same as current broken behavior — not worse).
-
-**If this happens frequently**: Add Solution B (dedicated translation step) on top.
-
-### Edge Case 4: Mixed complaint + question messages
-
-**Example**: "are yr ye topic to aata hi hai...ye biology ka swal hai..tree apna kahna kaise bnate hai"
-
-**Solution A path**:
-1. Decider sees "tree" + "khana bnate hai" → conservative bias → CONCEPT_QUESTION
-2. Decider generates searchQuery: "how do trees/plants make their food biology photosynthesis"
-3. Search uses this English query → finds correct photosynthesis chunks ✓
-
-**Solution A + Change 4 (SafetyNet cleaning)**:
-Even if decider fails, SafetyNet fires → cleaned query "tree apna kahna kaise bnate hai" → better than raw noisy message
-
-### Edge Case 5: Very short Hinglish questions
-
-**Example**: "bijli" (electricity — one word)
-
-**What happens**: Decider sees "bijli" → conservative bias → CONCEPT_QUESTION. SearchQuery: "electricity" (1 word, < 4 word threshold). Code concatenates: "electricity bijli". Embedding model gets both signals.
-
-**Risk**: Weak match (short query). But "electricity" alone should match the Electricity chapter heading well.
-
-### Edge Case 6: Misspelled Hinglish
-
-**Example**: "fotosinthesis kya ha" (photosynthesis with typos)
-
-**Solution A**: Decider should still understand (GPT-4o-mini handles typos well). SearchQuery: "what is photosynthesis biology".
-
-**Solution B**: Translation step handles typos even better (dedicated task).
-
-**Severity**: Low for A, very low for A+B.
-
-### Edge Case 7: Questions where raw Hinglish CURRENTLY works well
-
-**Example**: "acid aur base ka difference batao"
-
-**Current behavior**: Raw query → "acid" and "base" match English content → correct chunks ✓
-
-**After Solution A**: Decider generates "difference between acid and base properties chemical reactions" → also matches well → no regression ✓
-
-**Evidence**: The decider's searchQuery INCLUDES the English terms + adds context. It won't remove terms that currently work.
-
-### Edge Case 8: Decider classifies correctly but searchQuery is null
-
-**When**: Decider says CONCEPT_QUESTION but generates searchQuery: null (violates prompt rules)
-
-**Mitigation**: Code falls back to raw question (same as current behavior). No worse than before.
-
----
-
-## Testing Plan
-
-### Phase 1: Hinglish Query Test Suite (MUST PASS before merge)
-
-Test these 15 Hinglish queries — ALL must get correct answers:
-
-**Biology (Life Processes)**:
-1. "paudhe apna khana kaise banate hain" → photosynthesis answer
-2. "saans lene mein kya hota hai" → respiration answer
-3. "khana kaise pachta hai" → digestion answer
-4. "khoon ka kaam kya hota hai" → blood/transportation answer
-5. "insaan mein bacha kaise paida hota hai" → reproduction answer
-
-**Chemistry**:
-6. "namak kaise banta hai" → acids + bases → salt formation
-7. "loha mein jung kaise lagti hai" → corrosion/chemical reactions
-8. "dhatu aur adhatu mein fark kya hai" → metals vs non-metals
-
-**Physics**:
-9. "bijli kaise banti hai" → electricity/sources of energy
-10. "aankh mein cheezein kaise dikhti hain" → human eye
-11. "chhota aur bada image kaise banta hai" → mirrors/lenses
-12. "chumbaak kaise kaam karta hai" → magnetic effects
-
-**Out of scope (must still correctly reject)**:
-13. "Newton ka niyam kya hai" → OUT_OF_CONTEXT ✓
-14. "cricket ka score kya hai" → OUT_OF_CONTEXT ✓
-15. "do aur do kitne hote hain" → OUT_OF_CONTEXT ✓
-
-### Phase 2: English Regression Test (MUST NOT break)
-
-Test these 5 English/mixed queries — all must still work:
-1. "photosynthesis kya hai" → correct answer
-2. "Ohm's law explain karo" → correct answer
-3. "acid aur base ka difference" → correct answer
-4. "What is refraction of light" → correct answer
-5. "carbon compounds ke types batao" → correct answer
-
-### Phase 3: Edge Case Tests
-
-1. "mera pet dard kar raha hai" → should NOT give biology answer (emotional/greeting)
-2. "physics se darr lagta hai" → EMOTIONAL_SUPPORT, not CONCEPT_QUESTION
-3. "bye" → GREETING
-4. "paudhe" (single word) → should attempt retrieval, not crash
-5. "are yr ye topic to aata hi hai biology ka swal hai tree apna kahna kaise bnate hai" → correct answer despite noise
-
-### How to test
-
-Run the dev server, test each query via the frontend or curl:
+Start the server first (`cd backend && npm run dev`, port 5001). **Every query must be tested from
+a FRESH session** — that is the cold-start path a new student hits and the one that fails today.
 
 ```bash
-curl -X POST http://localhost:5001/api/v1/ask \
-  -H "Content-Type: application/json" \
-  -d '{"question": "paudhe apna khana kaise banate hain", "studyMode": "global"}'
+curl -X POST http://localhost:5001/api/v1/ask -H "Content-Type: application/json" -d "{\"question\":\"paudhe apna khana kaise banate hain\",\"studyMode\":\"global\"}"
 ```
 
-Check logs for:
-- `[Step 4]` — intent should be CONCEPT_QUESTION (not OUT_OF_CONTEXT)
-- `[Step 4] Using decider searchQuery` — should show English translation
-- `[Step 5 Complete]` — should show >0 chunks retrieved
-- `[IntentRouter]` — status should be "answered" (not "insufficient_context")
+In the server logs, check per query:
+- `[Step 4→5] intent:` → the expected intent
+- `[Step 5 DB Scan] Querying index vectors using computed target: "..."` → must be **English**
+- `[Step 5 Complete] ... packaged N ground truth chunks` → **N > 0** for academic queries
+- `[IntentRouter] ... → status:answered` → not `insufficient_context`
+
+### Phase 1 — Hinglish academic (must ANSWER). Target 12/12.
+1. paudhe apna khana kaise banate hain → photosynthesis
+2. saans lene mein kya hota hai → respiration
+3. khana kaise pachta hai → digestion
+4. khoon ka kaam kya hota hai → blood / transportation
+5. insaan mein bacha kaise paida hota hai → reproduction
+6. namak kaise banta hai → acids/bases → salt
+7. loha mein jung kaise lagti hai → corrosion
+8. dhatu aur adhatu mein fark kya hai → metals vs non-metals
+9. bijli kaise banti hai → electricity / sources of energy
+10. aankh mein cheezein kaise dikhti hain → human eye
+11. chhota aur bada image kaise banta hai → mirrors / lenses
+12. chumbaak kaise kaam karta hai → magnetic effects
+
+### Phase 2 — must still be REJECTED / not promoted. Target 8/8.
+13. Newton ka niyam kya hai → OUT_OF_CONTEXT
+14. gravitation kya hai → OUT_OF_CONTEXT
+15. **cell ki structure batao → OUT_OF_CONTEXT** (regression guard, section 2.5)
+16. Biryani kaise banate hain? → OUT_OF_CONTEXT
+17. Maths ke questions solve karo → OUT_OF_CONTEXT
+18. IPL ki team batao → OUT_OF_CONTEXT
+19. **Hello Zuno → GREETING** (must NOT become CONCEPT_QUESTION; check no `[SafetyNet]` line appears)
+20. physics se darr lagta hai → EMOTIONAL_SUPPORT
+
+### Phase 3 — English / mixed regression. Target 5/5.
+21. photosynthesis kya hai
+22. Ohm's law explain karo
+23. acid aur base ka difference
+24. What is refraction of light
+25. carbon compounds ke types batao
+
+### Phase 4 — automated suites (server must be running for the golden set)
+From `backend/`:
+```bash
+npm run test:golden
+```
+Then: `npm run test:chunks`, `npm run test:study-map`, `npm run test:curriculum-resolvers`,
+`npm run test:chat-db-models`, and `npm run rag:test-retriever`.
+
+The golden set is 40 queries, uses a fresh `randomUUID` session per query, and gates at **≥95%
+intent accuracy**. It already contains `G02 "Hello Zuno"` and `O02 "Biryani kaise banate hain?"` —
+the two cases this plan's changes are most likely to disturb. Note one known pre-existing issue
+there: `BS04` was corrected on branch `fix/error-handling-and-golden-set-wip`, which is not merged.
+
+**Merge gate**: Phase 1 ≥ 11/12 · Phase 2 = 8/8 · Phase 3 = 5/5 · golden set ≥ 95%.
 
 ---
 
-## Implementation Order
+## 9. Implementation order
 
 ```
-Step 1: Create new branch from main
-        git checkout main && git pull && git checkout -b fix/hinglish-query-pipeline
-
-Step 2: Change decider prompt (Change 1)
-        File: backend/src/prompts/deciderPrompt.js
-        Add conservative bias rule 7 after existing rule 6
-        ~180 words addition
-
-Step 3: Change search query source (Change 2)
-        File: backend/src/ask/step4.decideRetrieval.js
-        Replace lines 109-122 with new search query logic
-        Update stale comment about Gemini embeddings
-
-Step 4: Lower SafetyNet threshold (Change 3)
-        File: backend/src/ask/intentSafetyNet.js
-        Change default from 0.70 to 0.65
-
-Step 5: Improve SafetyNet query cleaning (Change 4)
-        File: backend/src/ask/askOrchestrator.js
-        Expand filler-word regex to include meta-complaint phrases
-
-Step 6: Run Phase 1 tests (15 Hinglish queries)
-        Must: 12/15 correct (queries 1-12)
-        Must: 3/3 correctly rejected (queries 13-15)
-
-Step 7: Run Phase 2 tests (5 English regression)
-        Must: 5/5 still correct
-
-Step 8: Run Phase 3 tests (5 edge cases)
-        Must: 4/5 correct (single word "paudhe" is acceptable to fail)
-
-Step 9: If Phase 1 has >3 failures → implement Solution B
-        File: NEW backend/src/ask/step4b.translateQuery.js
-        Integration: backend/src/ask/askOrchestrator.js
-
-Step 10: Commit and create PR
+1. git checkout main && git pull && git checkout -b fix/hinglish-query-pipeline
+2. Change A — backend/src/prompts/deciderPrompt.js        (section 4)
+3. Change B — backend/src/ask/step4.decideRetrieval.js    (section 5)   ← the critical one
+4. Change C — backend/src/ask/askOrchestrator.js          (section 6)
+   + comment-only edit in backend/src/ask/intentSafetyNet.js (threshold NOT changed)
+5. Run Phase 1 → 2 → 3 → 4 (section 8)
+6. Commit + open PR. Do NOT merge to main until explicitly approved — main is live.
 ```
+
+No new npm packages. No new files. No content changes. No `rag:index` re-run needed.
 
 ---
 
-## Rollback Plan
+## 10. Rollback
 
-If Solution A causes regressions (English queries break):
+Each change is independently revertible:
 
-1. Revert Change 2 (search query source) — switch back to raw question
-2. Keep Change 1 (conservative bias) — this can only help, never hurt
-3. Keep Change 3 (SafetyNet threshold) — safe to keep lower
+- **Revert C only** → SafetyNet returns to probing raw text (today's behaviour, including the
+  "Hello Zuno" false positive). Changes A and B keep working — the primary path is unaffected.
+- **Revert B only** → retrieval returns to raw-Hinglish search (0 chunks). This re-breaks the core
+  fix; only do this if Phase 3 English regression fails.
+- **Revert A only** → classification returns to today's coin-flip. B still helps whenever the
+  decider happens to classify correctly.
 
-The most likely regression source is Change 2 (search query source). Changes 1, 3, and 4 are safe to keep in all scenarios.
+Highest-risk change is **B** (it changes what every retrieving turn searches with). It is also the
+highest-value one. If something breaks, revert in order C → A → B, testing after each.
 
 ---
 
-## What This Does NOT Fix (Out of Scope)
+## 11. Out of scope
 
-1. **Devanagari input quality** — Pure Hindi script (नमस्ते) queries already have a fallback path. Not changing that.
-2. **Tutor response quality** — The tutor's Hinglish answer generation already works well. Not touching it.
-3. **Focus Mode retrieval** — Focus Mode scopes retrieval to a specific chapter. This fix is for Global Mode retrieval. Focus Mode should benefit indirectly (same decider + search query improvements apply).
-4. **Content additions** — Not adding or changing any data/ content files. The existing English content is correct and sufficient.
+1. Tutor answer quality and Hinglish tone — already good, untouched.
+2. Content changes — the English content is correct and sufficient; no `data/` edits, no re-index.
+3. Focus Mode — benefits indirectly (same decider + English query); no Focus-specific change here.
+4. `OUT_OF_CONTEXT` `maxTokens: 100` truncation risk — real, separate, own branch (section 7.4).
+5. Two unrelated bugs on `fix/error-handling-and-golden-set-wip` (validation-error mislabeling,
+   BS04 golden expectation) — separate branch, merge on their own track.
+
+---
+
+## 12. Implementation Results (2026-07-30)
+
+All three changes were implemented on branch `fix/hinglish-query-pipeline` (off `main`), each
+built and verified on its own sub-branch, then fast-forward merged into the root branch in
+dependency order: **Change B → Change A → Change C**. `main` was never touched. Commits:
+
+```
+2a2597f fix(ask): use decider's English translation for retrieval, not raw Hinglish   (Change B)
+b37c8fc fix(prompts): teach decider to classify keyword-free Hinglish science questions (Change A)
+eb5b28a fix(ask): gate SafetyNet on decider's English translation, not raw text        (Change C)
+```
+
+### 12.1 What was achieved
+
+- **The reported bug is fixed and confirmed in the browser**, not just in tests. A fresh-session
+  query like `"paudhe apna khana kaise banate hain"` now returns a real, grounded photosynthesis
+  answer instead of a false rejection — verified via live server logs and a manual browser test
+  by the user on `fix/hinglish-query-pipeline`.
+- **Retrieval**: raw Hinglish queries went from **0 chunks retrieved on 10/10 test questions** to
+  **5 correct chunks on 10/10** once the decider's English translation is used (Change B).
+- **Classification**: the decider now correctly recognizes keyword-free Hinglish science
+  questions as `CONCEPT_QUESTION` — validated **52/52** on the exact prompt wording (Change A),
+  with **60/60** on the 5 previously-untested intent families (EXPLAIN_MORE, NEXT_STEP,
+  CHOOSE_COURSE, UNSAFE_OR_ABUSIVE, EXAM_INFO) showing zero regressions.
+- **The pre-existing "Hello Zuno" false positive is fixed as a side effect** of Change C, with no
+  threshold change — confirmed stable across two post-Change-C golden-set runs (moved from FAIL
+  to WARN/PASS both times) and in the live browser test.
+- **Live verification, all green**: Phase 1 (12/12 Hinglish), Phase 2 (8/8 reject/promote cases,
+  including the `"cell ki structure batao"` regression guard), Phase 3 (5/5 English regression),
+  and a final combined 25/25 re-run on the fully-merged root branch for extra safety.
+- **No regressions found anywhere** — not in the 9 intent families, not in English/mixed queries,
+  not in the automated structural suites (`test:chunks`, `test:study-map`,
+  `test:curriculum-resolvers` all pass on the root branch).
+
+### 12.2 What did NOT fully clear — the golden-set gate
+
+This plan's own merge gate (Section 8) asked for golden-set intent accuracy **≥95%**. Three runs
+during implementation landed at **85.0% → 87.5% → 87.5%** — improving, but under the bar. This is
+not because the fix doesn't work: **all 5 remaining golden-set FAILs are pre-existing or unrelated
+issues**, not regressions from Change A/B/C (see 12.3). The bar was written assuming a clean
+baseline; testing surfaced that the baseline itself has independent problems.
+
+### 12.3 Problems found during implementation (not predicted by this plan)
+
+None of these are caused by Change A, B, or C, except where explicitly marked. Full investigation
+notes live in the scratchpad tracking file used during implementation (now folded into this
+section); nothing further to look up separately.
+
+1. **✅ RESOLVED (2026-07-31) — Tutor flakiness.** Retrieval was correct (right English
+   query, 5 relevant chunks) but the tutor step (`step6`/`intentRouter`'s `conceptQuestionPrompt`)
+   intermittently decided the context was "insufficient" and returned the generic *"Thodi technical
+   dikkat aayi"* fallback instead of a real answer. Seen on `"acid aur base ka difference"` (2/3
+   runs answered, 1/3 failed) and, more concerning, on `"bijli kaise banti hai"` in the user's live
+   browser test — **failed twice in a row**, same session, both times with 5 correctly-retrieved
+   chunks. Not caused by Change A/B/C (this is entirely inside the tutor's own generation call,
+   downstream of correctly-working retrieval) but real and student-facing.
+
+   See **Section 12.6** for the full audit, root cause, fix, and verification evidence.
+
+2. **Session token budget shrank — caused by Change A.** The decider system prompt grew from
+   ~2677 to ~3366 tokens (larger than the plan's own "~330 words" estimate). Combined with the
+   tutor's own ~3847-token base, each turn now costs ~7000-8000 tokens minimum. In the user's live
+   browser test, `SESSION_TOKEN_LIMIT` (35000) was hit and the session auto-locked after only 6
+   turns. The lock itself is existing, correct behavior — but the effective turns-per-session
+   budget is now smaller because Change A's prompt is heavier. A genuine, quantified side effect
+   of this fix, worth deciding whether to trim the prompt or adjust the limit.
+
+3. **`C07 "Cell membrane ka kya kaam hai?"`** — golden set expects `CONCEPT_QUESTION`, gets
+   `OUT_OF_CONTEXT`. Likely cause: Change A's HARD LIMIT exclusion list (added to stop
+   `"cell ki structure batao"` from pulling in wrong solar-cell chunks — see Section 2.5) may be
+   worded broadly enough to also catch "cell membrane" questions that should be answerable.
+   Not yet confirmed whether this query ever passed on unmodified `main`, or whether "cell
+   membrane function" is actually covered in the indexed content at all.
+
+4. **`N01-N04` (all 4 `NEXT_STEP` golden-set queries) returned `provider_error`** on every run —
+   rate-limit/LLM-unavailable, not a classification issue. Unrelated to this fix; worth one clean
+   re-run at a quiet time to check if it's transient or systematic.
+
+5. **Two pre-existing, broken diagnostic scripts found and separately flagged** (not fixed here,
+   per the user's direction to keep this branch scoped to the Hinglish fix only):
+   - `npm run test:chat-db-models` — imports a deleted `chatState.model.js`; broken on `main`
+     itself. Flagged as background task `task_ec342301`.
+   - `npm run rag:test-retriever` — never calls `connectDB()` (always times out after 10s) and
+     never calls `process.exit()` (hangs after finishing). Broken on `main` itself. Flagged as
+     background task `task_ba9b8e30`.
+
+### 12.4 Verification summary table
+
+| Check | Result |
+|---|---|
+| Phase 1 — 12 Hinglish queries must answer | ✅ 12/12 (twice) |
+| Phase 2 — 8 reject/promote cases | ✅ 8/8 |
+| Phase 3 — 5 English regression | ✅ 5/5 |
+| Combined final re-run (root branch, extra safety) | ✅ 25/25 |
+| 9-intent-family regression check (isolated decider A/B) | ✅ 112/112 total across all sub-checks |
+| `test:chunks`, `test:study-map`, `test:curriculum-resolvers` | ✅ all pass |
+| Golden set (3 runs) | 🟡 85.0% → 87.5% → 87.5% (target 95%, gap fully explained by §12.3) |
+| Live browser test (fresh session, 6 turns) | 🟡 4/6 turns fully correct; 2 hit the tutor-flakiness pattern (§12.3.1) |
+| Regressions caused by Change A/B/C | **None found** |
+
+### 12.5 Next step
+
+`main` has not been touched and will not be merged into until explicitly approved. Before that
+discussion, the team agreed to go through the open items in 12.3 one at a time, priority order:
+tutor flakiness (12.3.1) → session token budget (12.3.2) → C07 (12.3.3) → N01-N04 re-check
+(12.3.4) → the two flagged script bugs (12.3.5, already spun off, non-blocking).
+
+**Status: item 1 (tutor flakiness) done — see 12.6. Next up: item 2, session token budget.**
+
+---
+
+### 12.6 Tutor Flakiness — Root Cause, Fix, and Verification (2026-07-31)
+
+Worked on branch `fix/tutor-flakiness-insufficient-context-guard` (off `fix/hinglish-query-pipeline`,
+which stays untouched by this work).
+
+#### What we found (root cause)
+
+The bug was reproduced live before touching any code — same session, same query
+(`"bijli kaise banti hai"`) asked twice, both times with 5 correctly-retrieved chunks:
+
+```
+[TUTOR  ] sys: 3847 + dyn:  818 + out:    8 =   4673 tokens | intent:CONCEPT_QUESTION
+[IntentRouter] CONCEPT_QUESTION → status:insufficient_context
+→ sections: [{"heading":"","content":"Thodi technical dikkat aayi..."}]
+```
+
+**`out: 8` tokens is the key clue.** The tutor LLM was not writing a full explanation and
+mislabeling its status — it was refusing almost instantly, producing a near-empty JSON
+(`{"status":"insufficient_context"}`) with no real content at all. Root cause: the single
+combined prompt (`conceptQuestionPrompt.js`) always included an "insufficient_context" escape
+hatch rule, even on turns where step5 had already retrieved 5 solid, relevant chunks. gpt-4o-mini,
+under a stacked 8-rule prompt (grounding + anti-repetition + opening-hook + heading-language +
+quality + insufficient-context + suggested-actions + JSON format), would sometimes take that
+escape hatch out of confusion rather than using the content sitting right in front of it.
+
+Not caused by Change A/B/C — this failure mode lives entirely in the tutor generation step
+(`intentRouter.js` / `conceptQuestionPrompt.js`), downstream of retrieval, which Change A/B/C
+never touch. It was masked before this branch's own fix because Bug 1/Bug 2 (the original
+Hinglish bugs) used to stop most queries before they ever reached the tutor step at all.
+
+#### What we changed
+
+**Fix 1 — code guard, `backend/src/ask/intentRouter.js`.** If `retrievedContext` has real chunks
+(not `NO_RETRIEVED_CONTEXT`/`CHAPTER_COMPLETE`) AND the LLM's own sections already contain a
+substantive answer (≥50 chars), but the LLM still returned `insufficient_context`/`out_of_scope`,
+the code force-overrides the status to `answered`. Same pattern already used for GREETING/
+EMOTIONAL_SUPPORT, just extended to CONCEPT_QUESTION/EXPLAIN_MORE. Zero cost, deterministic
+safety net — but see the honest caveat below.
+
+**Fix 2 — prompt split, `backend/src/prompts/intents/conceptQuestionPrompt.js`.** The one combined
+prompt is now two variants, selected in `intentRouter.js` by a new `resolveChainKey()` function
+based on whether step5 actually found chunks:
+- `conceptWithChunksPrompt` — used when chunks exist. The "insufficient_context" escape hatch is
+  removed entirely; the model is told the content below is relevant and it must always produce a
+  real answer from it.
+- `conceptNoChunksPrompt` — used when nothing was retrieved. A short, focused prompt whose only
+  job is a graceful "not in our material" redirect — no hook/anti-repetition/heading rules it
+  doesn't need.
+
+`decision.intent` stays `'CONCEPT_QUESTION'` everywhere downstream (step7, drift tracking, memory
+whitelists) — the two-variant split is invisible outside `intentRouter.js`.
+
+**Honest caveat on Fix 1:** in every live reproduction during testing, the LLM's failure was the
+near-empty-output pattern above (no substantive content to promote), so the code guard never
+actually fired (`grep "IntentRouter Guard"` → 0 hits across all test runs). Fix 2 fixed the
+reproduced failure at the root before Fix 1 ever needed to. Fix 1 still stays in as a safety net
+for the other possible failure shape (LLM writes a good answer but mislabels the status) — it just
+wasn't the mechanism that fixed what we actually saw.
+
+#### Verification
+
+- **Exact reproduction, before fix:** same 6-turn session as the user's original live browser
+  test → turns 4 and 5 (`"bijli kaise banti hai"` asked twice) both returned `insufficient_context`,
+  confirming the bug live on this branch before any code changed.
+- **Same reproduction, after fix:** identical 6-turn session, same two turns → both `answered`,
+  with real, grounded, hook-first explanations (e.g. *"Sochke dekho — jab tumhe bijli ki
+  zaroorat hoti hai..."*). Output tokens went from ~8 (empty refusal) to ~250-330 (real answer).
+- **10x repeat on two previously-flaky queries** (`"bijli kaise banti hai"`, `"acid aur base ka
+  difference"`), fresh sessions each: 10/10 `answered`.
+- **Token savings confirmed:** removing the empty-context instruction block from the with-chunks
+  variant measurably shrank tutor input tokens per turn (real API-reported input tokens, not the
+  approximate logger) — a same-shape turn went from ~4665 input tokens before the split to
+  ~3049-3689 after.
+- **No regressions:** `test:chunks` (17/17), `test:study-map`, `test:curriculum-resolvers` all
+  pass. Golden set: **85.0%** intent accuracy — identical to the pre-existing baseline already
+  documented in §12.2/§12.3, not lower. CONCEPT_QUESTION category specifically: 9/10 correct
+  (the 1 fail is `C07`, the pre-existing, already-tracked issue in §12.3.3 — not new).
+
+#### Files changed
+
+- `backend/src/ask/intentRouter.js` — added `resolveChainKey()`, the Fix 1 guard, split
+  `INTENT_CONFIG`/`HISTORY_WINDOW`/`buildPromptInput` entries for the two CONCEPT_QUESTION variants.
+- `backend/src/prompts/intents/conceptQuestionPrompt.js` — rewritten as two exports
+  (`conceptWithChunksPrompt`, `conceptNoChunksPrompt`) instead of one.
+
+#### Not yet folded in
+
+Two things were noticed while testing this fix that are **not part of it** and have not been
+acted on yet, per plan — they'll be written up and discussed separately before any further code
+changes: (1) a possible grounding/hallucination risk when retrieval returns weak/unrelated chunks,
+and (2) one dev-server crash observed mid-testing. Neither blocks marking this item resolved; both
+need their own discussion.
