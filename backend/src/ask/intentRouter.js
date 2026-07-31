@@ -18,7 +18,7 @@ import { redirectPrompt }          from '../prompts/intents/redirectPrompt.js';
 import { unsafePrompt }            from '../prompts/intents/unsafePrompt.js';
 import { chooseCoursePrompt }      from '../prompts/intents/chooseCoursePrompt.js';
 import { explainMorePrompt }       from '../prompts/intents/explainMorePrompt.js';
-import { conceptQuestionPrompt }   from '../prompts/intents/conceptQuestionPrompt.js';
+import { conceptWithChunksPrompt, conceptNoChunksPrompt } from '../prompts/intents/conceptQuestionPrompt.js';
 import { nextStepPrompt }          from '../prompts/intents/nextStepPrompt.js';
 import { examInfoPrompt }          from '../prompts/intents/examInfoPrompt.js';
 import { emotionalSupportPrompt }  from '../prompts/intents/emotionalSupportPrompt.js';
@@ -51,17 +51,23 @@ const DRIFT_INSTRUCTIONS = {
 //   GREETING  → high temp (0.5) so responses feel varied, not robotic
 //   REDIRECT  → zero temp, tiny budget — it's always the same 1-line response
 //   CONCEPT   → zero temp — factual, consistent answers from retrieved content
+//
+// CONCEPT_QUESTION is split into two dispatch keys (CONCEPT_QUESTION_WITH_CHUNKS /
+// CONCEPT_QUESTION_NO_CHUNKS) resolved by resolveChainKey() below — see that function's
+// comment for why. decision.intent stays 'CONCEPT_QUESTION' everywhere else; only
+// getChain/buildPromptInput/HISTORY_WINDOW lookups use the resolved key.
 
 const INTENT_CONFIG = {
-  GREETING:          { prompt: greetingPrompt,          temperature: 0.5, maxTokens: 300  },
-  EMOTIONAL_SUPPORT: { prompt: emotionalSupportPrompt,  temperature: 0.5, maxTokens: 350  },
-  OUT_OF_CONTEXT:    { prompt: redirectPrompt,          temperature: 0,   maxTokens: 100  },
-  UNSAFE_OR_ABUSIVE: { prompt: unsafePrompt,            temperature: 0,   maxTokens: 100  },
-  CHOOSE_COURSE:     { prompt: chooseCoursePrompt,      temperature: 0.2, maxTokens: 600  },
-  EXPLAIN_MORE:      { prompt: explainMorePrompt,       temperature: 0.3, maxTokens: 1500 },
-  CONCEPT_QUESTION:  { prompt: conceptQuestionPrompt,   temperature: 0,   maxTokens: 1500 },
-  EXAM_INFO:         { prompt: examInfoPrompt,          temperature: 0,   maxTokens: 600  },
-  NEXT_STEP:         { prompt: nextStepPrompt,          temperature: 0.1, maxTokens: 1200 },
+  GREETING:                     { prompt: greetingPrompt,          temperature: 0.5, maxTokens: 300  },
+  EMOTIONAL_SUPPORT:            { prompt: emotionalSupportPrompt,  temperature: 0.5, maxTokens: 350  },
+  OUT_OF_CONTEXT:               { prompt: redirectPrompt,          temperature: 0,   maxTokens: 100  },
+  UNSAFE_OR_ABUSIVE:            { prompt: unsafePrompt,            temperature: 0,   maxTokens: 100  },
+  CHOOSE_COURSE:                { prompt: chooseCoursePrompt,      temperature: 0.2, maxTokens: 600  },
+  EXPLAIN_MORE:                 { prompt: explainMorePrompt,       temperature: 0.3, maxTokens: 1500 },
+  CONCEPT_QUESTION_WITH_CHUNKS: { prompt: conceptWithChunksPrompt, temperature: 0,   maxTokens: 1500 },
+  CONCEPT_QUESTION_NO_CHUNKS:   { prompt: conceptNoChunksPrompt,   temperature: 0,   maxTokens: 300  },
+  EXAM_INFO:                    { prompt: examInfoPrompt,          temperature: 0,   maxTokens: 600  },
+  NEXT_STEP:                    { prompt: nextStepPrompt,          temperature: 0.1, maxTokens: 1200 },
 };
 
 // ─── 2. Per-intent history window ────────────────────────────────────────────
@@ -70,15 +76,18 @@ const INTENT_CONFIG = {
 // Sending less history = fewer tokens per turn.
 
 const HISTORY_WINDOW = {
-  GREETING:          4,
-  EMOTIONAL_SUPPORT: 4,
-  OUT_OF_CONTEXT:    0,
-  UNSAFE_OR_ABUSIVE: 0,
-  CHOOSE_COURSE:     4,
-  EXPLAIN_MORE:      6,
-  CONCEPT_QUESTION:  6,
-  EXAM_INFO:         0,
-  NEXT_STEP:         2,
+  GREETING:                     4,
+  EMOTIONAL_SUPPORT:            4,
+  OUT_OF_CONTEXT:               0,
+  UNSAFE_OR_ABUSIVE:            0,
+  CHOOSE_COURSE:                4,
+  EXPLAIN_MORE:                 6,
+  CONCEPT_QUESTION_WITH_CHUNKS: 6,
+  // No-chunks redirect doesn't reference history at all — 0 saves tokens, matches
+  // the OUT_OF_CONTEXT/EXAM_INFO precedent for short, non-explanatory responses.
+  CONCEPT_QUESTION_NO_CHUNKS:   0,
+  EXAM_INFO:                    0,
+  NEXT_STEP:                    2,
 };
 
 // ─── 3. Lazy chain cache ──────────────────────────────────────────────────────
@@ -142,8 +151,13 @@ const buildPromptInput = (intent, input, context, retrieval) => {
     case 'EXPLAIN_MORE':
       return { message: question, answerLanguageInstruction: answerLang, retrievedContext, history, lastStudyResponse: lastStudyResponse || 'No previous study explanation.' };
 
-    case 'CONCEPT_QUESTION':
+    case 'CONCEPT_QUESTION_WITH_CHUNKS':
       return { message: question, answerLanguageInstruction: answerLang, focusChapter: focusChapterPrompt, retrievedContext, history, lastStudyResponse: lastStudyResponse || 'No previous study explanation.' };
+
+    case 'CONCEPT_QUESTION_NO_CHUNKS':
+      // Minimal input — matches OUT_OF_CONTEXT/UNSAFE_OR_ABUSIVE pattern. No retrievedContext,
+      // no history, no focusChapter: the prompt's only job is a short, honest redirect.
+      return { message: question, answerLanguageInstruction: answerLang };
 
     case 'EXAM_INFO':
       return { message: question, answerLanguageInstruction: answerLang, retrievedContext };
@@ -178,10 +192,23 @@ const extractTokenBreakdown = (output) => {
   return { input: inputTok, output: outTok, total: usage.totalTokens ?? (inputTok + outTok), cached };
 };
 
+// Resolves CONCEPT_QUESTION to one of two prompt/config variants depending on whether
+// step5 actually retrieved usable content. Every other intent passes through unchanged.
+// decision.intent, logging, drift tracking, and step7's whitelists all keep seeing plain
+// 'CONCEPT_QUESTION' — this resolved key exists ONLY to pick the prompt/chain/history-window.
+const resolveChainKey = (intent, retrievedContext) => {
+  if (intent !== 'CONCEPT_QUESTION') return intent;
+  const hasChunks = Boolean(retrievedContext)
+    && retrievedContext !== 'NO_RETRIEVED_CONTEXT'
+    && retrievedContext !== 'CHAPTER_COMPLETE';
+  return hasChunks ? 'CONCEPT_QUESTION_WITH_CHUNKS' : 'CONCEPT_QUESTION_NO_CHUNKS';
+};
+
 // ─── 5. Main dispatch function ────────────────────────────────────────────────
 
 export const routeToIntentHandler = async (input, context, decision, retrieval, streamCallbacks = null, abortSignal = null) => {
   const { intent, responseMode } = decision;
+  const chainKey = resolveChainKey(intent, retrieval.retrievedContext);
 
   // CHAPTER_COMPLETE: step5 signals the chapter is finished.
   // No LLM call needed — return a fixed completion message directly.
@@ -240,7 +267,7 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
   }
 
   // Guard: unknown intent — should never happen (normalizeDecision in step4 guards this)
-  if (!INTENT_CONFIG[intent]) {
+  if (!INTENT_CONFIG[chainKey]) {
     console.warn(`[IntentRouter] Unknown intent "${intent}" — falling back to CONCEPT_QUESTION`);
     return routeToIntentHandler(input, context, { ...decision, intent: 'CONCEPT_QUESTION' }, retrieval);
   }
@@ -248,8 +275,8 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
   let capturedBreakdown = { input: 0, output: 0, total: 0, cached: 0 };
 
   try {
-    const chain       = getChain(intent);
-    const promptInput = buildPromptInput(intent, input, context, retrieval);
+    const chain       = getChain(chainKey);
+    const promptInput = buildPromptInput(chainKey, input, context, retrieval);
 
     if (streamCallbacks?.onStreamStart) {
       streamCallbacks.onStreamStart();
@@ -268,7 +295,7 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
       }
     }
 
-    const parsed = parseJsonObject(rawResponse, `IntentRouter [${intent}]`);
+    const parsed = parseJsonObject(rawResponse, `IntentRouter [${chainKey}]`);
 
     // Guard 2: Title rescue — universal.
     // LLM sometimes puts the response text in "title" instead of sections[0].content.
@@ -284,6 +311,31 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     if (intent === 'GREETING' || intent === 'EMOTIONAL_SUPPORT') {
       status = 'answered';
     }
+
+    // Guard 4: Retrieved-content override (tutor flakiness fix).
+    // CONCEPT_QUESTION/EXPLAIN_MORE sometimes say "insufficient_context" even though step5
+    // already retrieved real, quality-checked chunks (past the reranker + out-of-focus
+    // fallback) and the LLM itself produced a substantive answer. That is model confusion,
+    // not a genuine content gap — a genuine gap already short-circuits earlier via
+    // retrievedContext === 'NO_RETRIEVED_CONTEXT' (see step5/intentRouter CHAPTER_COMPLETE
+    // and out-of-focus branches), which this guard deliberately excludes.
+    const RETRIEVAL_BACKED_INTENTS = new Set(['CONCEPT_QUESTION', 'EXPLAIN_MORE']);
+    const hasRealRetrievedContent =
+      Boolean(retrieval.retrievedContext) &&
+      retrieval.retrievedContext !== 'NO_RETRIEVED_CONTEXT' &&
+      retrieval.retrievedContext !== 'CHAPTER_COMPLETE';
+    const hasSubstantiveAnswer = sections.some((s) => s.content.length >= 50);
+
+    if (
+      RETRIEVAL_BACKED_INTENTS.has(intent) &&
+      hasRealRetrievedContent &&
+      hasSubstantiveAnswer &&
+      ['insufficient_context', 'out_of_scope'].includes(status)
+    ) {
+      console.warn(`[IntentRouter Guard] ${intent} returned "${status}" despite retrieved content — overriding to "answered"`);
+      status = 'answered';
+    }
+
     const VALID_STATUSES = new Set(['answered', 'insufficient_context', 'needs_clarification', 'out_of_scope']);
     if (!VALID_STATUSES.has(status)) status = 'answered';
 
@@ -297,12 +349,13 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     };
 
     logCallTokens('TUTOR', capturedBreakdown, { mode: responseMode, intent });
-    if (isDev) console.log(`[IntentRouter] ${intent} → status:${normalized.status}`);
+    const chainLabel = chainKey !== intent ? ` (${chainKey})` : '';
+    if (isDev) console.log(`[IntentRouter] ${intent}${chainLabel} → status:${normalized.status}`);
 
     return { ...normalized, tokenUsage: capturedBreakdown.total, tokenBreakdown: capturedBreakdown };
 
   } catch (error) {
-    intentChains.delete(intent); // reset chain so it's rebuilt fresh on next request
+    intentChains.delete(chainKey); // reset chain so it's rebuilt fresh on next request
 
     const errorType = classifyProviderError(error);
 
