@@ -457,6 +457,33 @@ body {
   overflow: hidden;
 }
 
+.auth-card-single {
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  width: 100%;
+  padding: 36px 32px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.auth-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.auth-logo-text {
+  font-family: var(--font-brand);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
 /* Left brand panel */
 .auth-split-left {
   background: var(--primary-tint);
@@ -675,7 +702,8 @@ body {
     align-items: flex-start;
   }
 
-  .auth-card {
+  .auth-card,
+  .auth-card-single {
     flex-direction: column;
     border: none;
     box-shadow: none;

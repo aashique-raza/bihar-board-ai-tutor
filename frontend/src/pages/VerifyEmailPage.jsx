@@ -39,7 +39,7 @@ function VerifyEmailPage() {
 
   return (
     <div className="auth-page">
-      <div className="auth-card">
+      <div className="auth-card-single">
         <div className="auth-logo-row">
           <div className="zuno-logo">Z</div>
           <span className="auth-logo-text">Zuno</span>

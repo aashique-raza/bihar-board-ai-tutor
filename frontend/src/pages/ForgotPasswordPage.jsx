@@ -36,6 +36,14 @@ function ForgotPasswordPage() {
 
   const isDisabled = !email.trim() || !!emailError || loading;
 
+  function handleEmailChange(e) {
+    const val = e.target.value;
+    setEmail(val);
+    if (emailError) {
+      setEmailError(validateEmail(val));
+    }
+  }
+
   function handleBlurEmail() {
     setEmailError(validateEmail(email));
   }
@@ -60,7 +68,7 @@ function ForgotPasswordPage() {
   if (submitted) {
     return (
       <div className="auth-page">
-        <div className="auth-card">
+        <div className="auth-card-single">
           <div className="auth-logo-row">
             <div className="zuno-logo">Z</div>
             <span className="auth-logo-text">Zuno</span>
@@ -81,7 +89,7 @@ function ForgotPasswordPage() {
 
   return (
     <div className="auth-page">
-      <div className="auth-card">
+      <div className="auth-card-single">
         <div className="auth-logo-row">
           <div className="zuno-logo">Z</div>
           <span className="auth-logo-text">Zuno</span>
@@ -97,7 +105,7 @@ function ForgotPasswordPage() {
                 label="Email"
                 type="email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={handleEmailChange}
                 onBlur={handleBlurEmail}
                 error={!!emailError}
                 fullWidth

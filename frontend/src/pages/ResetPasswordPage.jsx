@@ -68,11 +68,46 @@ function ResetPasswordPage() {
     return () => clearTimeout(timer);
   }, [success]);
 
-  function handleBlurNew() {
-    setErrors(e => ({ ...e, newPassword: validateNewPassword(newPassword) }));
+  function handleNewPasswordChange(e) {
+    const val = e.target.value;
+    setNewPassword(val);
+    setErrors(prev => {
+      const updated = { ...prev };
+      if (prev.newPassword) {
+        updated.newPassword = validateNewPassword(val);
+      }
+      if (confirmPassword || prev.confirmPassword) {
+        updated.confirmPassword = validateConfirmPassword(val, confirmPassword);
+      }
+      return updated;
+    });
   }
+
+  function handleConfirmPasswordChange(e) {
+    const val = e.target.value;
+    setConfirmPassword(val);
+    setErrors(prev => {
+      const updated = { ...prev };
+      if (prev.confirmPassword || confirmPassword) {
+        updated.confirmPassword = validateConfirmPassword(newPassword, val);
+      }
+      return updated;
+    });
+  }
+
+  function handleBlurNew() {
+    setErrors(prev => ({
+      ...prev,
+      newPassword: validateNewPassword(newPassword),
+      ...(confirmPassword ? { confirmPassword: validateConfirmPassword(newPassword, confirmPassword) } : {})
+    }));
+  }
+
   function handleBlurConfirm() {
-    setErrors(e => ({ ...e, confirmPassword: validateConfirmPassword(newPassword, confirmPassword) }));
+    setErrors(prev => ({
+      ...prev,
+      confirmPassword: validateConfirmPassword(newPassword, confirmPassword)
+    }));
   }
 
   async function handleSubmit(e) {
@@ -87,7 +122,11 @@ function ResetPasswordPage() {
       await resetPasswordRequest(token, newPassword);
       setSuccess(true);
     } catch (err) {
-      showToast(err.message, 'error');
+      const msg = err.message || '';
+      if (msg.toLowerCase().includes('expired') || msg.toLowerCase().includes('invalid')) {
+        setTokenMissing(true);
+      }
+      showToast(msg || 'Password reset failed. Please try again.', 'error');
     } finally {
       setLoading(false);
     }
@@ -100,7 +139,7 @@ function ResetPasswordPage() {
   if (tokenMissing) {
     return (
       <div className="auth-page">
-        <div className="auth-card">
+        <div className="auth-card-single">
           <div className="auth-logo-row">
             <div className="zuno-logo">Z</div>
             <span className="auth-logo-text">Zuno</span>
@@ -140,7 +179,7 @@ function ResetPasswordPage() {
   if (success) {
     return (
       <div className="auth-page">
-        <div className="auth-card">
+        <div className="auth-card-single">
           <div className="auth-logo-row">
             <div className="zuno-logo">Z</div>
             <span className="auth-logo-text">Zuno</span>
@@ -156,7 +195,7 @@ function ResetPasswordPage() {
 
   return (
     <div className="auth-page">
-      <div className="auth-card">
+      <div className="auth-card-single">
         <div className="auth-logo-row">
           <div className="zuno-logo">Z</div>
           <span className="auth-logo-text">Zuno</span>
@@ -175,7 +214,7 @@ function ResetPasswordPage() {
                 type={showNewPassword ? 'text' : 'password'}
                 autoComplete="new-password"
                 value={newPassword}
-                onChange={e => setNewPassword(e.target.value)}
+                onChange={handleNewPasswordChange}
                 onBlur={handleBlurNew}
                 error={!!errors.newPassword}
                 fullWidth
@@ -212,7 +251,7 @@ function ResetPasswordPage() {
                 type={showConfirmPassword ? 'text' : 'password'}
                 autoComplete="new-password"
                 value={confirmPassword}
-                onChange={e => setConfirmPassword(e.target.value)}
+                onChange={handleConfirmPasswordChange}
                 onBlur={handleBlurConfirm}
                 error={!!errors.confirmPassword}
                 fullWidth
