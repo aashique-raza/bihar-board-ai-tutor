@@ -151,7 +151,7 @@ const fetchWithTokenRefresh = async (url, options, retried = false) => {
   return response;
 };
 
-export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal, onUpdate = null) => {
+export const askTutor = async ({ question, studyMode, chapterId, sessionId }, signal, onUpdate = null, onStage = null) => {
   const body = { question, studyMode };
 
   if (sessionId) {
@@ -212,10 +212,15 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
           if (!dataStr) continue;
 
           const dataObj = JSON.parse(dataStr);
-          
+
           if (dataObj.event === 'end') {
             finalPayload = dataObj.payload;
             break;
+          }
+
+          if (dataObj.event === 'stage') {
+            if (onStage) onStage(dataObj.stage);
+            continue;
           }
 
           if (dataObj.token) {

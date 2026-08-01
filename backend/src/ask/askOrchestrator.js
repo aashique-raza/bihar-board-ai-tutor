@@ -79,6 +79,7 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
 
   // --- MAIN PIPELINE: Steps 4-7 ---
   try {
+    streamCallbacks?.onStage?.('deciding');
     const decision = await decideRetrieval(input, context, abortSignal);
     if (isDev) console.log(`[Step 4→5] intent: ${decision.intent}, needsRetrieval: ${decision.needsRetrieval}`);
 
@@ -133,11 +134,16 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
       const capRetrieval = { retrieval: null, chunks: [], sources: [], retrievedContext: 'NO_RETRIEVED_CONTEXT', nextTopicSignal: null, lastRetrievalQuery: null };
       const capResponse  = { status: 'answered', responseMode: 'conversation', title: null, sections: [{ heading: '', content: capContent }], answer: capContent, suggestedActions: [], memoryUpdate: {}, tokenUsage: 0, tokenBreakdown: { input: 0, output: 0, total: 0, cached: 0 } };
 
+      // SSE may already be open (onStage('deciding') above lazily opens it) — if so,
+      // this response must go out as the 'end' event, not a plain return, or the
+      // controller's `if (streamStarted) return;` will swallow it silently.
       try {
-        return await saveAndRespond(input, session, context, capDecision, capRetrieval, capResponse, userId, decision.tokenUsage || 0, guestId);
+        const capPayload = await saveAndRespond(input, session, context, capDecision, capRetrieval, capResponse, userId, decision.tokenUsage || 0, guestId);
+        streamCallbacks?.onComplete?.(capPayload);
+        return capPayload;
       } catch {
         // DB failed — student still gets the cap message, session data stays stale
-        return {
+        const capFallback = {
           status: 'answered', intent: 'conversation', responseMode: 'conversation',
           studyMode: input.studyMode, question: input.question,
           detectedLanguage: context.language?.detectedLanguage ?? 'hinglish',
@@ -146,10 +152,27 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
           answer: capContent, sources: [], suggestedActions: [],
           retrieval: null, decision: null, session: null,
         };
+        streamCallbacks?.onComplete?.(capFallback);
+        return capFallback;
       }
     }
 
+    // "searching" only fires for intents that actually fetch teaching content —
+    // EXAM_INFO does a JSON lookup (not a search) and GREETING/EMOTIONAL_SUPPORT/etc
+    // skip Step 5 entirely, so showing a "searching" phrase for those would be dishonest.
+    const CONTENT_FETCHING_INTENTS = new Set(['CONCEPT_QUESTION', 'NEXT_STEP', 'EXPLAIN_MORE']);
+    if (CONTENT_FETCHING_INTENTS.has(decision.intent)) {
+      streamCallbacks?.onStage?.('searching');
+    }
+
     const retrieval = await retrieveContent(decision, input, session, abortSignal);
+
+    // CHAPTER_COMPLETE skips the Step 6 LLM call entirely (fixed message) — don't
+    // show a "generating" phrase for a call that never happens.
+    if (retrieval.retrievedContext !== 'CHAPTER_COMPLETE') {
+      streamCallbacks?.onStage?.('generating');
+    }
+
     const response = await generateResponse(input, context, decision, retrieval, streamCallbacks, abortSignal);
     const tokenUsage = (decision.tokenUsage || 0) + (response.tokenUsage || 0);
     const finalPayload = await saveAndRespond(input, session, context, decision, retrieval, response, userId, tokenUsage, guestId);
@@ -186,15 +209,21 @@ export const askQuestion = async (body = {}, { userId = null, guestId = null } =
         lastErrorAt: new Date(),
       }, userId).catch((e) => console.error('[Orchestrator] consecutiveErrors save failed:', e));
 
-      return buildProviderErrorResponse(message, input.question, input.studyMode);
+      // SSE may already be open (onStage('deciding') opens it lazily) — route through
+      // the 'end' event in that case, same reasoning as the drift cap block above.
+      const providerErrorPayload = buildProviderErrorResponse(message, input.question, input.studyMode);
+      streamCallbacks?.onComplete?.(providerErrorPayload);
+      return providerErrorPayload;
     }
 
     // Unexpected error (e.g. Step 7 MongoDB failure) — log only, do not increment error count
     console.error('[Orchestrator] Unexpected pipeline error:', error.message);
-    return buildProviderErrorResponse(
+    const unexpectedErrorPayload = buildProviderErrorResponse(
       'Kuch technical dikkat aa gayi. Thodi der mein try karo.',
       input.question,
       input.studyMode
     );
+    streamCallbacks?.onComplete?.(unexpectedErrorPayload);
+    return unexpectedErrorPayload;
   }
 };

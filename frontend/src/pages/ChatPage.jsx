@@ -157,6 +157,7 @@ function ChatPage({ theme, toggleTheme }) {
   const [sessionId, setSessionId] = useState(() => getSavedSessionId());
   const [isStudyMapLoading, setIsStudyMapLoading] = useState(true);
   const [isAsking, setIsAsking] = useState(false);
+  const [thinkingStage, setThinkingStage] = useState(null);
   const [error, setError] = useState('');
   const [isSessionLocked, setIsSessionLocked] = useState(false);
   const [isGuestLimited, setIsGuestLimited] = useState(false);
@@ -403,6 +404,7 @@ function ChatPage({ theme, toggleTheme }) {
 
     setError('');
     setIsAsking(true);
+    setThinkingStage(null);
     setMessages((prev) => [...prev, { ...createQuestionMessage(cleanQuestion), isNew: true }]);
 
     const controller = new AbortController();
@@ -443,7 +445,8 @@ function ChatPage({ theme, toggleTheme }) {
               )
             );
           }
-        }
+        },
+        (stage) => setThinkingStage(stage)
       );
 
       const backendSessionId = payload.session?.sessionId;
@@ -544,6 +547,7 @@ function ChatPage({ theme, toggleTheme }) {
       clearTimeout(timeoutRef.current);
       controllerRef.current = null;
       setIsAsking(false);
+      setThinkingStage(null);
     }
   }, [isLoggedIn]);
 
@@ -865,7 +869,7 @@ function ChatPage({ theme, toggleTheme }) {
             })}
             {isAsking && (
               <ChatMessage
-                message={{ id: 'thinking', role: 'zuno', answer: '', status: 'thinking', sources: [] }}
+                message={{ id: 'thinking', role: 'zuno', answer: '', status: 'thinking', stage: thinkingStage, sources: [] }}
               />
             )}
             <div ref={chatEndRef} />

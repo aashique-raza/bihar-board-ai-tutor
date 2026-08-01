@@ -23,15 +23,26 @@ export const askQuestionController = async (req, res, next) => {
       console.warn(`[Ask API] Request hit 60s hard timeout. Aborting...`);
       abortController.abort(new Error('Timeout'));
     }, 60000);
+    // Opens the SSE pipe on first use — safe to call more than once (e.g. once
+    // from an early onStage() during Step 4/5, and again from Step 6's own
+    // onStreamStart() call) since the streamStarted guard makes it a no-op
+    // after the first call.
+    const openStream = () => {
+      if (streamStarted) return;
+      streamStarted = true;
+      res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive'
+      });
+      res.flushHeaders();
+    };
+
     const streamCallbacks = {
-      onStreamStart: () => {
-        streamStarted = true;
-        res.writeHead(200, {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive'
-        });
-        res.flushHeaders();
+      onStreamStart: openStream,
+      onStage: (stage) => {
+        openStream();
+        res.write(`data: ${JSON.stringify({ event: 'stage', stage })}\n\n`);
       },
       onToken: (chunk) => {
         if (streamStarted) {

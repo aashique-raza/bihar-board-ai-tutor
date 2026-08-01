@@ -31,7 +31,17 @@ function MessageSections({ sections }) {
   );
 }
 
-function ThinkingDots() {
+// Mirrors the real backend pipeline stage (see askOrchestrator.js) so the phrase
+// shown is always honest about what's actually happening — never a fake/generic
+// progress claim.
+const STAGE_PHRASES = {
+  deciding: 'Sawaal samajh raha hai...',
+  searching: 'Kitaab mein dhoondh raha hai...',
+  generating: 'Answer likh raha hai...',
+};
+
+function ThinkingDots({ stage }) {
+  const phrase = STAGE_PHRASES[stage] || 'Zuno soch raha hai...';
   return (
     <div className="thinking-wrapper">
       <div className="zuno-avatar-mini" style={{ width: 22, height: 22, fontSize: '0.75rem', marginTop: 0 }}>Z</div>
@@ -40,7 +50,8 @@ function ThinkingDots() {
         <span />
         <span />
       </div>
-      <span className="thinking-phrase">Zuno soch raha hai...</span>
+      {/* key={stage} remounts the span on stage change, replaying the fade-in animation */}
+      <span className="thinking-phrase" key={stage || 'default'}>{phrase}</span>
     </div>
   );
 }
@@ -174,7 +185,7 @@ function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction, showHeader 
         )}
 
         {isThinking ? (
-          <ThinkingDots />
+          <ThinkingDots stage={message.stage} />
         ) : showSections ? (
           <MessageSections sections={message.sections} />
         ) : (
