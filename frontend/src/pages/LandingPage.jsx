@@ -1,17 +1,13 @@
 import React from 'react';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BoltRounded from '@mui/icons-material/BoltRounded';
 import LoginRounded from '@mui/icons-material/LoginRounded';
 import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import ArrowForwardRounded from '@mui/icons-material/ArrowForwardRounded';
 import ChevronRightRounded from '@mui/icons-material/ChevronRightRounded';
-import { useAuth } from '../hooks/useAuth.js';
 
 function LandingPage() {
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuth();
-
-  if (isLoggedIn) return <Navigate to="/chat" replace />;
 
   return (
     <div className="landing-page">

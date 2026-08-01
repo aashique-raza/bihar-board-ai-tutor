@@ -117,6 +117,12 @@ const DUMMY_HASH = '$2b$12$KIXBnNGSPXV5zxNWEJZRPOqQmIJdZZqXP5kVXEzpAFgOYF0qOdVVa
 const REFRESH_TOKEN_COOKIE_MAX_AGE = 7 * 24 * 60 * 60 * 1000; // milliseconds (for cookie)
 const REFRESH_TOKEN_REDIS_TTL = 7 * 24 * 60 * 60;             // seconds (for Redis EX)
 
+// Grace window for the immediately-previous refresh token after rotation —
+// absorbs the race when multiple tabs/requests refresh near-simultaneously
+// (e.g. several tabs restored at once). Cleared immediately on logout/password
+// reset so it never outlives an explicit invalidation.
+const REFRESH_TOKEN_GRACE_TTL = 20; // seconds
+
 /**
  * POST /api/v1/auth/login
  * Authenticate a user with email and password.
@@ -274,7 +280,12 @@ export const logout = async (req, res, next) => {
     if (token) {
       const decoded = verifyRefreshToken(token);
       if (decoded?.userId) {
-        await redis.del(`refresh_token:${decoded.userId}`).catch((redisErr) => {
+        // Clear both the active token and the rotation grace slot — logout
+        // must be a hard, immediate invalidation with no leftover window.
+        await Promise.all([
+          redis.del(`refresh_token:${decoded.userId}`),
+          redis.del(`refresh_token_prev:${decoded.userId}`),
+        ]).catch((redisErr) => {
           console.error('[Logout] Redis DEL failed:', redisErr);
         });
       }
@@ -310,16 +321,34 @@ export const refreshToken = async (req, res) => {
 
     const userId = decoded.userId;
     const storedToken = await redis.get(`refresh_token:${userId}`);
-    if (!storedToken) {
-      return sendResponse(res, 401, { message: 'Session expired. Please login again.' });
+
+    let isValid = storedToken === token;
+
+    // Not the current token — check the short-lived grace slot before
+    // rejecting. Covers multiple tabs/requests refreshing near-simultaneously
+    // (e.g. several tabs restored at once): the one that loses the rotation
+    // race still holds the immediately-previous token, which is still
+    // accepted for a few seconds instead of silently logging that tab out.
+    if (!isValid) {
+      const prevToken = await redis.get(`refresh_token_prev:${userId}`);
+      isValid = prevToken === token;
     }
-    if (storedToken !== token) {
+
+    if (!isValid) {
+      if (!storedToken) {
+        return sendResponse(res, 401, { message: 'Session expired. Please login again.' });
+      }
       return sendResponse(res, 401, { message: 'Invalid session.' });
     }
 
     const accessToken = generateAccessToken(userId);
     const newRefreshToken = generateRefreshToken(userId);
 
+    // Demote the current token into the grace slot before replacing it —
+    // whichever token was valid a moment ago stays acceptable briefly.
+    if (storedToken) {
+      await redis.set(`refresh_token_prev:${userId}`, storedToken, 'EX', REFRESH_TOKEN_GRACE_TTL);
+    }
     await redis.set(`refresh_token:${userId}`, newRefreshToken, 'EX', REFRESH_TOKEN_REDIS_TTL);
 
     res.cookie('refreshToken', newRefreshToken, {
@@ -410,7 +439,10 @@ export const resetPassword = async (req, res) => {
     await User.findByIdAndUpdate(userId, { passwordHash });
 
     await redis.del(`reset_password:${token}`);
+    // Password change must kill every session immediately — clear both the
+    // active token and the rotation grace slot, no leftover window.
     await redis.del(`refresh_token:${userId}`);
+    await redis.del(`refresh_token_prev:${userId}`);
 
     return sendResponse(res, 200, { message: 'Password reset successful. Please login again.' });
 

@@ -47,7 +47,7 @@ function App() {
     <Suspense fallback={LoadingFallback}>
       <Routes>
         {/* Landing page — public home, redirects logged-in users to /chat */}
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<GuestOnlyRoute><LandingPage /></GuestOnlyRoute>} />
 
         {/* Main chat page — accessible to everyone (guest + logged in) */}
         <Route path="/chat" element={<ChatPage theme={theme} toggleTheme={toggleTheme} />} />

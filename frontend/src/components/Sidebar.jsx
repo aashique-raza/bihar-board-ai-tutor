@@ -7,8 +7,10 @@ import Typography from '@mui/material/Typography';
 import AddRounded from '@mui/icons-material/AddRounded';
 import ChevronLeftRounded from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRounded from '@mui/icons-material/ChevronRightRounded';
+import { useAuth } from '../hooks/useAuth.js';
 import { useSidebarCollapsed } from '../hooks/useSidebarCollapsed.js';
 import { SessionListBody } from './SessionList.jsx';
+import AccountMenu from './AccountMenu.jsx';
 import { deleteSession as apiDeleteSession, renameSession as apiRenameSession } from '../api/tutorApi.js';
 
 const RAIL_WIDTH = 56;
@@ -26,6 +28,7 @@ export default function Sidebar({
   onSessionDelete,
   onSessionRename,
 }) {
+  const { user } = useAuth();
   const [collapsed, setCollapsed] = useSidebarCollapsed();
   const [localSessions, setLocalSessions] = useState(sessions);
   const [searchQuery, setSearchQuery] = useState('');
@@ -140,7 +143,8 @@ export default function Sidebar({
           </>
         )}
 
-        <Box sx={{ mt: 'auto', display: 'flex', justifyContent: 'center', pb: 1.25, pt: 1 }}>
+        <Box sx={{ mt: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1, pb: 1.25, pt: 1 }}>
+          {isLoggedIn && user && <AccountMenu user={user} compact />}
           <Tooltip title="Sidebar kholo" placement="right">
             <IconButton
               aria-label="Expand sidebar"
@@ -250,6 +254,8 @@ export default function Sidebar({
           searchQuery={searchQuery}
         />
       </Box>
+
+      {isLoggedIn && user && <AccountMenu user={user} />}
     </Box>
   );
 }
