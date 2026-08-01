@@ -9,6 +9,7 @@ import { SupportRequest } from '../models/supportRequest.model.js';
 import { SUPPORT_CATEGORIES } from '../constants/supportCategories.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import ApiError from '../utils/ApiError.js';
+import { sendSupportNotificationEmail } from '../auth/emailHelpers.js';
 
 const extractIdentity = (req) => ({
   userId:  req.user?.id || null,
@@ -16,6 +17,8 @@ const extractIdentity = (req) => ({
 });
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MIN_SUBJECT_LENGTH = 3;
+const MIN_DESCRIPTION_LENGTH = 15;
 
 // ─── POST /api/v1/support ─────────────────────────────────────────────────────
 
@@ -27,11 +30,11 @@ export const submitSupportRequest = async (req, res, next) => {
     if (!category || !SUPPORT_CATEGORIES.includes(category)) {
       return next(new ApiError(400, `category is required and must be one of: ${SUPPORT_CATEGORIES.join(', ')}`));
     }
-    if (!subject || !subject.trim()) {
-      return next(new ApiError(400, 'subject is required.'));
+    if (!subject || subject.trim().length < MIN_SUBJECT_LENGTH) {
+      return next(new ApiError(400, `subject must be at least ${MIN_SUBJECT_LENGTH} characters.`));
     }
-    if (!description || !description.trim()) {
-      return next(new ApiError(400, 'description is required.'));
+    if (!description || description.trim().length < MIN_DESCRIPTION_LENGTH) {
+      return next(new ApiError(400, `description must be at least ${MIN_DESCRIPTION_LENGTH} characters.`));
     }
 
     // Logged-in users' email comes from their account, never from the body —
@@ -49,6 +52,12 @@ export const submitSupportRequest = async (req, res, next) => {
       userId,
       guestId,
       sessionId: sessionId || null,
+    });
+
+    // Fire-and-forget — the ticket is already saved, so a notification failure
+    // (Brevo/SMTP down) must not fail the student's submission.
+    sendSupportNotificationEmail(doc).catch((err) => {
+      console.error('[Support] Notification email failed:', err.message);
     });
 
     return sendResponse(res, 201, {

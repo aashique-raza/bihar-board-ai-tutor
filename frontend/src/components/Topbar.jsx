@@ -6,6 +6,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import AddCommentOutlined from '@mui/icons-material/AddCommentOutlined';
 import CloseRounded from '@mui/icons-material/CloseRounded';
+import HelpOutlineRounded from '@mui/icons-material/HelpOutlineRounded';
 import MenuRounded from '@mui/icons-material/MenuRounded';
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -392,6 +393,25 @@ export default function Topbar({
                       >
                         {user.email}
                       </Typography>
+                    </Box>
+                    <Box
+                      onClick={() => { setMenuOpen(false); navigate('/support'); }}
+                      sx={{
+                        px: 2,
+                        py: 1.25,
+                        fontSize: '0.875rem',
+                        color: 'var(--text-primary)',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        borderBottom: '1px solid var(--border)',
+                        '&:hover': { bgcolor: 'var(--bg-hover)' },
+                        transition: 'background 0.15s ease',
+                      }}
+                    >
+                      <HelpOutlineRounded sx={{ fontSize: 18 }} />
+                      Support
                     </Box>
                     <Box
                       onClick={handleLogout}

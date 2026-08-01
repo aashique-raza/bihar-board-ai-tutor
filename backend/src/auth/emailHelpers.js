@@ -206,3 +206,69 @@ export const sendPasswordResetEmail = async (to, token) => {
     `,
   });
 };
+
+const SUPPORT_NOTIFICATION_EMAIL = 'farhan@learnzuno.in';
+
+const SUPPORT_CATEGORY_LABELS = {
+  bug: 'Bug / Problem',
+  wrong_answer: 'Wrong Answer',
+  feedback: 'Suggestion / Feedback',
+  other: 'Other',
+};
+
+/**
+ * Notify the team inbox when a student submits a support request.
+ * Reply-To is set to the student's email so replying from the inbox goes
+ * straight to them, not back to the notification address.
+ * @param {object} supportRequest - the saved SupportRequest mongoose doc
+ */
+export const sendSupportNotificationEmail = async (supportRequest) => {
+  const { category, subject, description, email, userId, guestId, sessionId, createdAt } = supportRequest;
+  const categoryLabel = SUPPORT_CATEGORY_LABELS[category] || category;
+  const identity = userId ? `Logged-in user (${userId})` : `Guest (${guestId || 'unknown'})`;
+
+  const htmlBody = `
+    <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto;">
+      <h2 style="color: #1a1a1a;">New Support Request — ${categoryLabel}</h2>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Description:</strong><br/>${description.replace(/\n/g, '<br/>')}</p>
+      <hr style="border:none; border-top:1px solid #eee; margin:16px 0;" />
+      <p style="color:#666; font-size:13px; margin:4px 0;"><strong>From:</strong> ${email}</p>
+      <p style="color:#666; font-size:13px; margin:4px 0;"><strong>Identity:</strong> ${identity}</p>
+      ${sessionId ? `<p style="color:#666; font-size:13px; margin:4px 0;"><strong>Session:</strong> ${sessionId}</p>` : ''}
+      <p style="color:#666; font-size:13px; margin:4px 0;"><strong>Submitted:</strong> ${new Date(createdAt).toLocaleString('en-IN')}</p>
+    </div>
+  `;
+
+  if (process.env.BREVO_API_KEY) {
+    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': process.env.BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        sender: { name: 'Zuno Support', email: process.env.EMAIL_USER || 'farhan@learnzuno.in' },
+        to: [{ email: SUPPORT_NOTIFICATION_EMAIL }],
+        replyTo: { email },
+        subject: `[Zuno Support] ${categoryLabel}: ${subject}`,
+        htmlContent: htmlBody,
+      }),
+    });
+
+    if (!response.ok) {
+      const errData = await response.json().catch(() => ({}));
+      throw new Error(errData.message || 'Support notification email failed via Brevo.');
+    }
+    return;
+  }
+
+  await getTransporter().sendMail({
+    from: process.env.EMAIL_FROM || '"Zuno" <farhan@learnzuno.in>',
+    to: SUPPORT_NOTIFICATION_EMAIL,
+    replyTo: email,
+    subject: `[Zuno Support] ${categoryLabel}: ${subject}`,
+    html: htmlBody,
+  });
+};

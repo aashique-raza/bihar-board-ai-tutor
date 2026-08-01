@@ -13,6 +13,7 @@ const AuthCallback = lazy(() => import('./pages/AuthCallback.jsx'));
 const VerifyEmailPage = lazy(() => import('./pages/VerifyEmailPage.jsx'));
 const ForgotPasswordPage = lazy(() => import('./pages/ForgotPasswordPage.jsx'));
 const ResetPasswordPage = lazy(() => import('./pages/ResetPasswordPage.jsx'));
+const SupportPage = lazy(() => import('./pages/SupportPage.jsx'));
 
 function App() {
   // Theme state lives here so all pages (Chat, Login, Register) share it
@@ -50,6 +51,9 @@ function App() {
 
         {/* Main chat page — accessible to everyone (guest + logged in) */}
         <Route path="/chat" element={<ChatPage theme={theme} toggleTheme={toggleTheme} />} />
+
+        {/* Support page — accessible to everyone (guest + logged in) */}
+        <Route path="/support" element={<SupportPage />} />
 
         {/* Auth pages */}
         <Route path="/login" element={<GuestOnlyRoute><LoginPage theme={theme} toggleTheme={toggleTheme} /></GuestOnlyRoute>} />
