@@ -6,6 +6,7 @@ import ErrorOutlineRounded from '@mui/icons-material/ErrorOutlineRounded';
 import { verifyEmailToken } from '../services/axios/authService';
 import Toast from '../components/Toast';
 import { useToast } from '../hooks/useToast';
+import ZunoMark from '../components/ZunoMark.jsx';
 
 function VerifyEmailPage() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function VerifyEmailPage() {
     <div className="auth-page">
       <div className="auth-card-single">
         <div className="auth-logo-row">
-          <div className="zuno-logo">Z</div>
+          <ZunoMark />
           <span className="auth-logo-text">Zuno</span>
         </div>
 

@@ -11,6 +11,7 @@ import ErrorOutlineRounded from '@mui/icons-material/ErrorOutlineRounded';
 import { resetPasswordRequest } from '../services/axios/authService';
 import Toast from '../components/Toast';
 import { useToast } from '../hooks/useToast';
+import ZunoMark from '../components/ZunoMark.jsx';
 
 const FIELD_SX = {
   '& .MuiOutlinedInput-root': {
@@ -141,7 +142,7 @@ function ResetPasswordPage() {
       <div className="auth-page">
         <div className="auth-card-single">
           <div className="auth-logo-row">
-            <div className="zuno-logo">Z</div>
+            <ZunoMark />
             <span className="auth-logo-text">Zuno</span>
           </div>
           <ErrorOutlineRounded sx={{ fontSize: 48, color: 'var(--error)', mb: 1 }} />
@@ -181,7 +182,7 @@ function ResetPasswordPage() {
       <div className="auth-page">
         <div className="auth-card-single">
           <div className="auth-logo-row">
-            <div className="zuno-logo">Z</div>
+            <ZunoMark />
             <span className="auth-logo-text">Zuno</span>
           </div>
           <CheckCircleOutlineRounded sx={{ fontSize: 48, color: 'var(--primary)', mb: 1 }} />
@@ -197,7 +198,7 @@ function ResetPasswordPage() {
     <div className="auth-page">
       <div className="auth-card-single">
         <div className="auth-logo-row">
-          <div className="zuno-logo">Z</div>
+          <ZunoMark />
           <span className="auth-logo-text">Zuno</span>
         </div>
 

@@ -18,6 +18,7 @@ import { useToast } from '../hooks/useToast.js';
 import { getSavedSessionId } from '../utils/session.js';
 import { submitSupportRequest, SUPPORT_CATEGORIES } from '../api/supportApi.js';
 import Toast from '../components/Toast.jsx';
+import ZunoMark from '../components/ZunoMark.jsx';
 
 const CATEGORY_ICONS = {
   bug: BugReportOutlined,
@@ -78,7 +79,7 @@ function SupportHeader({ onBack }) {
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <Box className="zuno-logo">Z</Box>
+        <ZunoMark />
         <Typography sx={{ fontFamily: 'var(--font-brand)', fontWeight: 800, fontSize: '1.05rem', color: 'var(--text-primary)' }}>
           Zuno
         </Typography>

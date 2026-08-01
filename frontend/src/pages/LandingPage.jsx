@@ -5,6 +5,7 @@ import LoginRounded from '@mui/icons-material/LoginRounded';
 import VisibilityRounded from '@mui/icons-material/VisibilityRounded';
 import ArrowForwardRounded from '@mui/icons-material/ArrowForwardRounded';
 import ChevronRightRounded from '@mui/icons-material/ChevronRightRounded';
+import ZunoMark from '../components/ZunoMark.jsx';
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function LandingPage() {
     <div className="landing-page">
       <div className="landing-card">
 
-        <div className="landing-brand-z">Z</div>
+        <div className="landing-brand-mark"><ZunoMark size={96} /></div>
         <div className="landing-brand-name">Zuno</div>
         <div className="landing-brand-tag">apni boli mein</div>
 

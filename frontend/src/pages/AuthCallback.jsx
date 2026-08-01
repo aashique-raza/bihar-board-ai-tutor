@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { setCredentials, setError } from '../store/slices/authSlice.js';
 import { getMe, exchangeAuthCode, claimGuestProgress } from '../services/axios/authService.js';
 import { resetGuestTurnCount } from '../utils/guestLimit.js';
+import ZunoMark from '../components/ZunoMark.jsx';
 
 // Friendly messages for known Google OAuth error codes
 const ERROR_MESSAGES = {
@@ -70,7 +71,7 @@ function AuthCallback() {
     <div className="auth-page">
       <div className="auth-card-single" style={{ alignItems: 'center', textAlign: 'center' }}>
         <div className="auth-logo-row">
-          <div className="zuno-logo">Z</div>
+          <ZunoMark />
           <span className="auth-logo-text">Zuno</span>
         </div>
         <p className="auth-subtext" style={{ margin: 0 }}>{statusText}</p>

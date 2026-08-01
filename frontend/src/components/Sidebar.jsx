@@ -11,6 +11,7 @@ import { useAuth } from '../hooks/useAuth.js';
 import { useSidebarCollapsed } from '../hooks/useSidebarCollapsed.js';
 import { SessionListBody } from './SessionList.jsx';
 import AccountMenu from './AccountMenu.jsx';
+import ZunoMark from './ZunoMark.jsx';
 import { deleteSession as apiDeleteSession, renameSession as apiRenameSession } from '../api/tutorApi.js';
 
 const RAIL_WIDTH = 56;
@@ -91,7 +92,7 @@ export default function Sidebar({
     return (
       <Box component="nav" aria-label="Chat history" sx={containerSx}>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 1.25, pb: 1, gap: 1 }}>
-          <Box className="zuno-logo" sx={{ width: 28, height: 28, fontSize: '0.8rem' }}>Z</Box>
+          <ZunoMark size={28} />
           <Tooltip title="Naya chat" placement="right">
             <IconButton
               aria-label="New chat"
@@ -169,7 +170,7 @@ export default function Sidebar({
     <Box component="nav" aria-label="Chat history" sx={containerSx}>
       {/* Header */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 1.5, py: 1.25, borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
-        <Box className="zuno-logo" sx={{ width: 24, height: 24, fontSize: '0.7rem' }}>Z</Box>
+        <ZunoMark size={24} />
         <Typography sx={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-primary)' }}>Zuno</Typography>
         <Tooltip title="Sidebar band karo" placement="right">
           <IconButton

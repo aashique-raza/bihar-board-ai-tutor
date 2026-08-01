@@ -51,21 +51,6 @@ body {
   background: var(--bg-surface);
 }
 
-/* ── Logo mark — new theme-aware version ── */
-.zuno-logo {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: var(--radius-lg);
-  background: var(--primary);
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 800;
-  font-family: var(--font-brand);
-}
-
 
 /* ── Focus chip (Topbar) ── */
 .focus-chip {
@@ -761,13 +746,8 @@ body {
   text-align: center;
 }
 
-.landing-brand-z {
-  font-family: var(--font-brand);
-  font-size: 72px;
-  font-weight: 900;
-  color: var(--primary);
-  line-height: 1;
-  margin-bottom: 4px;
+.landing-brand-mark {
+  margin-bottom: 12px;
 }
 
 .landing-brand-name {

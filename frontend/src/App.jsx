@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth.js';
 import { useTheme } from './hooks/useTheme.js';
 import GuestOnlyRoute from './components/GuestOnlyRoute.jsx';
+import ZunoMark from './components/ZunoMark.jsx';
 
 // Lazy loaded pages for code splitting
 const ChatPage = lazy(() => import('./pages/ChatPage.jsx'));
@@ -32,7 +33,7 @@ function App() {
       background: 'var(--bg-page)',
       gap: '12px',
     }}>
-      <div className="zuno-logo" style={{ width: 48, height: 48, fontSize: '1.5rem' }}>Z</div>
+      <ZunoMark size={48} />
       <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Loading...</div>
     </div>
   );

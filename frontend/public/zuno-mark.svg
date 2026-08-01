@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Zuno">
+  <rect x="4" y="4" width="92" height="92" rx="26" fill="#C6570F" />
+  <text x="50" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="58" fill="#FFFFFF">Z</text>
+  <circle cx="35" cy="47" r="11" fill="none" stroke="#1A1208" stroke-width="4" />
+  <circle cx="65" cy="47" r="11" fill="none" stroke="#1A1208" stroke-width="4" />
+  <line x1="46" y1="47" x2="54" y2="47" stroke="#1A1208" stroke-width="4" />
+  <path d="M78 14 L81.5 21 L89 23.5 L81.5 26 L78 33 L74.5 26 L67 23.5 L74.5 21 Z" fill="#FCE7CF" />
+</svg>

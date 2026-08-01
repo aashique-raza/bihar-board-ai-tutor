@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
 import AccountSheet from './AccountSheet.jsx';
+import ZunoMark from './ZunoMark.jsx';
 
 
 export default function Topbar({
@@ -104,7 +105,7 @@ export default function Topbar({
         >
           <MenuRounded sx={{ fontSize: 20 }} />
         </IconButton>
-        <Box className="zuno-logo">Z</Box>
+        <ZunoMark />
         <Box>
           <Typography
             sx={{
