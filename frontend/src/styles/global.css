@@ -1070,3 +1070,37 @@ body {
     transform: translateY(-1px);
   }
 }
+
+.scroll-to-bottom-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  animation: pill-fade-in 0.2s ease-out;
+  z-index: 2;
+}
+
+@media (hover: hover) {
+  .scroll-to-bottom-pill:hover {
+    background: var(--primary);
+    color: #ffffff;
+  }
+}
+
+@keyframes pill-fade-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

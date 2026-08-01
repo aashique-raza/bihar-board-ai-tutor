@@ -109,7 +109,7 @@ const generateShareText = (msg) => {
   return text;
 };
 
-function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction, showHeader = true }) {
+function ChatMessage({ message, question, onSwitchToGlobal, onSuggestedAction, showHeader = true }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -230,7 +230,7 @@ function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction, showHeader 
             <Button
               variant="outlined"
               size="small"
-              onClick={() => onSwitchToGlobal(message.question)}
+              onClick={() => onSwitchToGlobal(question)}
               sx={{
                 borderColor: 'var(--border-strong)',
                 color: 'var(--text-secondary)',
@@ -254,4 +254,4 @@ function ChatMessage({ message, onSwitchToGlobal, onSuggestedAction, showHeader 
   );
 }
 
-export default ChatMessage;
+export default React.memo(ChatMessage);

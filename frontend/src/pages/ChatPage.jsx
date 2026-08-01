@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { askTutor, fetchSessionHistory, fetchStudyMap, fetchChapterProgress, chapterProgressAction } from '../api/tutorApi.js';
@@ -158,6 +158,8 @@ function ChatPage({ theme, toggleTheme }) {
   const [isStudyMapLoading, setIsStudyMapLoading] = useState(true);
   const [isAsking, setIsAsking] = useState(false);
   const [thinkingStage, setThinkingStage] = useState(null);
+  const [userScrolledUp, setUserScrolledUp] = useState(false);
+  const [hasNewResponse, setHasNewResponse] = useState(false);
   const [error, setError] = useState('');
   const [isSessionLocked, setIsSessionLocked] = useState(false);
   const [isGuestLimited, setIsGuestLimited] = useState(false);
@@ -165,6 +167,8 @@ function ChatPage({ theme, toggleTheme }) {
   const [historyOpen, setHistoryOpen] = useState(false);
 
   const chatEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
+  const shouldAutoScrollRef = useRef(true);
   const controllerRef = useRef(null);
   const timeoutRef = useRef(null);
   const wasTimeoutAbortRef = useRef(false);
@@ -256,9 +260,14 @@ function ChatPage({ theme, toggleTheme }) {
     return () => { isMounted = false; };
   }, []);
 
-  // Auto-scroll to latest message
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  // Auto-scroll to latest message — useLayoutEffect (not useEffect) so the scroll
+  // position is corrected in the same frame as the DOM update, before the browser
+  // paints. useEffect runs after paint, which shows one frame of the pre-scroll
+  // position and then snaps on the next frame — a visible micro-jitter during
+  // rapid streaming updates.
+  useLayoutEffect(() => {
+    if (!shouldAutoScrollRef.current || !chatContainerRef.current) return;
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
   }, [messages, isAsking]);
 
   // Derive full chapter object from selected chapter ID
@@ -372,6 +381,9 @@ function ChatPage({ theme, toggleTheme }) {
 
     clearSessionId();
     setSessionId('');
+    shouldAutoScrollRef.current = true;
+    setUserScrolledUp(false);
+    setHasNewResponse(false);
     setIsSessionLocked(false);
     setIsHistoryLoading(false);    // BUG-3 FIX: prevent stuck loading if switch was in progress
     isSwitchingRef.current = false; // BUG-2 FIX: release abort guard
@@ -431,6 +443,7 @@ function ChatPage({ theme, toggleTheme }) {
         (partialData) => {
           if (isFirstUpdate) {
             setIsAsking(false); // hide thinking dots early
+            setHasNewResponse(true); // real content has started — safe to show the "scroll down" pill now
             isFirstUpdate = false;
             setMessages((prev) => [
               ...prev,
@@ -555,6 +568,20 @@ function ChatPage({ theme, toggleTheme }) {
     controllerRef.current?.abort();
   }, []);
 
+  const handleScroll = useCallback((e) => {
+    const { scrollHeight, scrollTop, clientHeight } = e.currentTarget;
+    const distanceFromBottom = scrollHeight - scrollTop - clientHeight;
+
+    if (distanceFromBottom > 100) {
+      shouldAutoScrollRef.current = false;
+      setUserScrolledUp(true);
+    } else if (distanceFromBottom <= 30) {
+      shouldAutoScrollRef.current = true;
+      setUserScrolledUp(false);
+      setHasNewResponse(false); // user is back at the bottom — they've seen it
+    }
+  }, []);
+
   const handleGuestLimitLogin = useCallback(() => {
     setGuestLimitModal((m) => ({ ...m, open: false }));
     navigate('/login');
@@ -569,7 +596,7 @@ function ChatPage({ theme, toggleTheme }) {
     setGuestLimitModal({ open: true, trigger: 'turn_limit' });
   }, []);
 
-  const handleSwitchToGlobal = async (question) => {
+  const handleSwitchToGlobal = useCallback(async (question) => {
     let q = question;
     if (!q) {
       const lastStudentMsg = [...messages].reverse().find(m => m.role === 'student');
@@ -579,7 +606,7 @@ function ChatPage({ theme, toggleTheme }) {
 
     setStudyMode(STUDY_MODES.global);
     await handleAsk(q, STUDY_MODES.global);
-  };
+  }, [messages, handleAsk]);
 
   const handleSuggestedAction = useCallback(async (action) => {
     if (controllerRef.current) return; // block if request already in-flight
@@ -667,6 +694,9 @@ function ChatPage({ theme, toggleTheme }) {
     setIsSessionLocked(false);
     setSessionId(session.sessionId);
     saveSessionId(session.sessionId);
+    shouldAutoScrollRef.current = true;
+    setUserScrolledUp(false);
+    setHasNewResponse(false);
     // Optional: optimistic set if session object has them, otherwise we will set them after fetch
     setStudyMode(session.sessionType === 'focus' ? STUDY_MODES.focus : STUDY_MODES.global);
     if (session.currentChapterId) {
@@ -784,8 +814,10 @@ function ChatPage({ theme, toggleTheme }) {
         {/* Chat area — scrollable */}
         <Box
           component="main"
+          ref={chatContainerRef}
+          onScroll={handleScroll}
           aria-live="polite"
-          sx={{ flex: 1, overflowY: 'auto', px: { xs: 2, sm: 3 }, py: 2 }}
+          sx={{ flex: 1, overflowY: 'auto', px: { xs: 2, sm: 3 }, py: 2, position: 'relative' }}
         >
           <Box sx={{
             maxWidth: 'var(--chat-max-width)',
@@ -860,7 +892,8 @@ function ChatPage({ theme, toggleTheme }) {
               return (
                 <ChatMessage
                   key={message.id}
-                  message={{ ...message, question }}
+                  message={message}
+                  question={question}
                   onSwitchToGlobal={handleSwitchToGlobal}
                   onSuggestedAction={handleSuggestedAction}
                   showHeader={showHeader}
@@ -873,6 +906,19 @@ function ChatPage({ theme, toggleTheme }) {
               />
             )}
             <div ref={chatEndRef} />
+            {userScrolledUp && hasNewResponse && (
+              <button
+                className="scroll-to-bottom-pill"
+                onClick={() => {
+                  shouldAutoScrollRef.current = true;
+                  setUserScrolledUp(false);
+                  setHasNewResponse(false);
+                  chatContainerRef.current?.scrollTo({ top: chatContainerRef.current.scrollHeight, behavior: 'smooth' });
+                }}
+              >
+                ↓ New answer
+              </button>
+            )}
           </Box>
         </Box>
 
