@@ -92,32 +92,34 @@ const normalizeDecision = (decision, rawQuestion) => {
   const DEVANAGARI_PATTERN = /[ऀ-ॿ]/;
   const rawSearchQuery = String(decision.searchQuery || '').trim();
 
-  // SEARCH QUERY STRATEGY:
+  // The decider's English translation of the student's question.
   //
-  // WHY original question beats LLM-extracted keywords:
-  // Gemini gemini-embedding-001 cosine scores cluster tightly (~0.52) when the query
-  // is 2-3 short English keywords. The full student question (8-15 words of Roman
-  // Hinglish/English) produces a more anchored embedding that discriminates between
-  // chapters. E.g. "Acid aur base mein kya antar hota hai" beats "acid and base"
-  // because it carries relationship semantics ("antar" = difference) on top of topic.
+  // Kept for EVERY intent (not just retrieving ones) so askOrchestrator's SafetyNet can probe
+  // English even when the decider said OUT_OF_CONTEXT. Measured: raw Hinglish probes 0.59-0.69
+  // (never fires at 0.70) while its English translation probes 0.71-0.85 (always fires).
   //
-  // FALLBACK chain (in priority order):
-  //   1. Original question — if NOT pure Devanagari (Roman Hinglish/English is fine)
-  //   2. LLM-extracted searchQuery — if original is Devanagari but LLM translated it
-  //   3. null → no retrieval (pipeline returns insufficient_context gracefully)
+  // null here is meaningful: the decider is telling us this message needs no content lookup
+  // (greeting, emotional, or an explicitly excluded topic). The SafetyNet respects that.
+  const englishQuery =
+    rawSearchQuery && !DEVANAGARI_PATTERN.test(rawSearchQuery)
+      ? rawSearchQuery.replace(/\s+/g, ' ').trim()
+      : null;
 
+  // Retrieval query: ALWAYS prefer the English translation.
+  //
+  // The chunks in MongoDB are English. Searching them with raw Hinglish returns literally zero
+  // results — not weak results, zero: retriever.js's passesFinalFilter() needs either a keyword
+  // term-match (impossible across languages) or a vector score >= 0.70 (Hinglish tops out ~0.69).
+  // Measured on 10 real student questions: raw Hinglish -> 0 chunks, English -> 5 chunks, 10/10.
+  // The raw question stays as a fallback only for when the decider produced no usable English.
   let searchQuery = null;
   if (needsRetrieval) {
-    const isOriginalDevanagari = DEVANAGARI_PATTERN.test(rawQuestion);
-    const isExtractedDevanagari = DEVANAGARI_PATTERN.test(rawSearchQuery);
-
-    if (!isOriginalDevanagari) {
+    if (englishQuery) {
+      searchQuery = englishQuery;
+    } else if (!DEVANAGARI_PATTERN.test(rawQuestion)) {
       searchQuery = rawQuestion.replace(/\s+/g, ' ').trim();
-    } else if (rawSearchQuery && !isExtractedDevanagari) {
-      console.warn('[Step 4] Original question is Devanagari — falling back to LLM-extracted English searchQuery');
-      searchQuery = rawSearchQuery.replace(/\s+/g, ' ').trim();
     } else {
-      console.warn('[Step 4] Both original question and extracted searchQuery are Devanagari — skipping retrieval');
+      console.warn('[Step 4] No English searchQuery and raw question is Devanagari — skipping retrieval');
     }
   }
 
@@ -132,6 +134,7 @@ const normalizeDecision = (decision, rawQuestion) => {
     needsRetrieval,
     responseMode,
     searchQuery,
+    englishQuery,          // decider's English translation — used by SafetyNet even when intent is OUT_OF_CONTEXT
     examEntity,
     reason: String(decision.reason || 'Processed via structural normalizer normalization parameters.').trim()
   };
