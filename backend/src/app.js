@@ -10,6 +10,7 @@ import chapterProgressRoutes from './routes/chapterProgress.routes.js';
 import healthRoutes          from './routes/health.routes.js';
 import sessionRoutes         from './routes/session.routes.js';
 import studyMapRoutes        from './routes/studyMap.routes.js';
+import supportRoutes         from './routes/support.routes.js';
 import ApiError from './utils/ApiError.js';
 import { sendResponse } from './utils/sendResponse.js';
 import { errorHandler } from './middlewares/error.middleware.js';
@@ -62,6 +63,7 @@ app.use('/api/v1/study-map',       studyMapRoutes);
 app.use('/api/v1/auth',            authRoutes);
 app.use('/api/v1/sessions',        sessionRoutes);
 app.use('/api/v1/chapter-progress', chapterProgressRoutes);
+app.use('/api/v1/support',          supportRoutes);
 
 app.use((req, _res, next) => {
   next(new ApiError(404, `Route not found: ${req.originalUrl}`));

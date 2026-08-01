@@ -1,4 +1,4 @@
-import rateLimit from 'express-rate-limit';
+import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { RedisStore } from 'rate-limit-redis';
 import redis from '../config/redisClient.js';
 
@@ -63,6 +63,24 @@ export const authApiLimiter = rateLimit({
   handler: (req, res) => {
     res.status(429).json(
       createRateLimitResponse('Security karan se account access temporarily block kiya gaya hai. 1 ghante baad try karein.')
+    );
+  },
+});
+
+// 4. Support Submission Limiter (Protects the support form from spam)
+// Logged-in users get a higher ceiling (keyed by userId) than guests (keyed by IP).
+// Max 5/day for logged-in users, 3/day for guests.
+export const supportApiLimiter = rateLimit({
+  windowMs: 24 * 60 * 60 * 1000,
+  max: (req) => (req.user ? 5 : 3),
+  keyGenerator: (req) => (req.user ? `user_${req.user.id}` : ipKeyGenerator(req.ip)),
+  standardHeaders: true,
+  legacyHeaders: false,
+  passOnStoreError: true,
+  store: createRedisStore('rl_support:'),
+  handler: (req, res) => {
+    res.status(429).json(
+      createRateLimitResponse('Aap bahut zyada support requests bhej chuke hain aaj. Kal try karein.')
     );
   },
 });
