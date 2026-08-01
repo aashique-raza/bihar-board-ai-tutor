@@ -6,18 +6,21 @@ export default function useSessionList({ enabled }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const hasFetchedRef = useRef(false);
+  const hasLoadedOnceRef = useRef(false); // true after the first successful fetch — later refreshes (e.g. after every answer) update data silently, no skeleton flash
 
   const refresh = useCallback(async () => {
     if (!enabled) return;
-    setIsLoading(true);
+    const isInitialLoad = !hasLoadedOnceRef.current;
+    if (isInitialLoad) setIsLoading(true);
     setError(null);
     try {
       const result = await fetchSessions();
       setSessions(result?.sessions ?? []);
+      hasLoadedOnceRef.current = true;
     } catch {
       setError('Sessions load nahi hui.');
     } finally {
-      setIsLoading(false);
+      if (isInitialLoad) setIsLoading(false);
     }
   }, [enabled]);
 
