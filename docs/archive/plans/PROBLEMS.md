@@ -1,5 +1,12 @@
 # PROBLEMS.md — Bihar Board AI Tutor (Zuno)
 
+> **ARCHIVED — 2026-08-02.** This is a frozen point-in-time audit from 2026-06-03. Most
+> items below were fixed and re-verified afterward in `PRE_LAUNCH_BLOCKERS.md` (the live
+> tracker), but this file's own `PENDING`/`FIXED` markers were never updated to match —
+> e.g. SEC-002/SEC-003/SEC-004 show `PENDING` here while the equivalent items are `[x]
+> DONE` in `PRE_LAUNCH_BLOCKERS.md`. Treat every status marker below as unreliable.
+> For current status, always check `PRE_LAUNCH_BLOCKERS.md` and `TASKS.md`, never this file.
+
 **Generated:** 2026-06-03  
 **Auditor:** Claude Sonnet 4.6 (deep read-only pass — all entries verified against actual code)  
 **Base:** Goes beyond ANALYSIS.md — every item confirmed by reading the relevant source lines.
