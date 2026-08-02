@@ -1,6 +1,6 @@
 # TASK-025: Exam Knowledge Layer + Science Overview
 
-**Status:** READY TO IMPLEMENT — Phase-by-phase  
+**Status:** DONE — verified against code 2026-07-29 (see TASKS.md)  
 **Priority:** HIGH (blocks core tutor usability for exam-prep questions)  
 **Estimated Phases:** 6 implementation phases + 1 testing phase  
 **Author:** Architecture finalized after deep comparison with alternate proposals  

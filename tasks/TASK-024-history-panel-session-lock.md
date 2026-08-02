@@ -1,6 +1,6 @@
 # TASK-024 — History Panel + Session Lock (P2-T6)
 
-## Status: READY TO IMPLEMENT
+## Status: DONE — verified against code 2026-07-29 (see TASKS.md)
 
 ## Audit: 2026-06-16
 Bugs 1–6 have been identified and corrected below before implementation.

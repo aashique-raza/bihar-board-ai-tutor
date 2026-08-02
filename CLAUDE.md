@@ -65,7 +65,7 @@ bihar-board-ai-tutor/
 │   ├── tutor-engine-langchain-architecture.md
 │   ├── api-explanations/
 │   └── archive/
-│       ├── plans/                  Completed plan docs (BRAIN_FIX, PIPELINE_OPTIMIZATION, TOKEN_FIX, UI_REDESIGN_AUDIT, SESSION_FIX)
+│       ├── plans/                  Completed plan docs (BRAIN_FIX, PIPELINE_OPTIMIZATION, TOKEN_FIX, UI_REDESIGN_AUDIT, SESSION_FIX, PROBLEMS — frozen 2026-06-03 audit, superseded by PRE_LAUNCH_BLOCKERS.md)
 │       ├── auth/, focus-mode/, global-mode/, hinglish-consistency/   Completed feature plans/verification checklists
 ├── data/
 │   └── class-10/science/            16 curated Markdown chapters (RAG source content)
