@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2016-a",
+  "sourceFile": "2016 a.pdf",
+  "sourceMd5": "ae32f359c025c5571e3118a6d6f88e40",
+  "pdfPages": 8,
+  "printedPages": 16,
+  "printedPagesPerPdfPage": 2,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "printedPages": [1, 2], "status": "done", "contains": "cover + instructions + Group A header", "confidence": "high" },
+    { "pdfPage": 2, "printedPages": [3, 4], "status": "done", "contains": "Q1-Q13", "confidence": "high" },
+    { "pdfPage": 3, "printedPages": [5, 6], "status": "done", "contains": "Q14-Q24", "confidence": "high" },
+    { "pdfPage": 4, "printedPages": [7, 8], "status": "done", "contains": "Q25-Q30 (with OR alternatives)", "confidence": "high" },
+    { "pdfPage": 5, "printedPages": [9, 10], "status": "done", "contains": "Group B header + Q31(i)-(ii)", "confidence": "high" },
+    { "pdfPage": 6, "printedPages": [11, 12], "status": "done", "contains": "Q31(iii)-(vii)", "confidence": "high" },
+    { "pdfPage": 7, "printedPages": [13, 14], "status": "done", "contains": "Q31(viii)-(xiii)", "confidence": "high" },
+    { "pdfPage": 8, "printedPages": [15, 16], "status": "done", "contains": "Q31(xiv)-(xx)", "confidence": "high" }
+  ],
+  "notes": [
+    "1 PDF page = 2 printed pages, side by side. Left half is the odd printed page, right half is the even one.",
+    "A question's Hindi can end on the left half while its English begins on the right half (e.g. Q28). Stage C must join the whole paper before segmenting.",
+    "Handwritten pen marks appear next to MCQ options. They are NOT an answer key — ~45% of the ones checked are wrong. See QUIZ_DATA_PIPELINE.md F3.",
+    "Watermark 'BiharPaper.com' present on some pages — this is a downloaded copy, not a board-issued answer key."
+  ]
+}

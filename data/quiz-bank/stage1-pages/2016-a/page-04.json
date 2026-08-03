@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2016-a",
+  "pdfPage": 4,
+  "printedPages": [7, 8],
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Q25-Q30 (Group A, 3-5 marks; Q28/Q29/Q30 carry OR alternatives)",
+  "raw": {
+    "hi": "25. संयोजी इलेक्ट्रॉन क्या है ? सोडियम परमाणु में स्थित संयोजी इलेक्ट्रॉन की संख्या लिखें।   3\n26. रक्त और लसिका में अन्तर लिखें।   3\n27. नर तथा मादा जनन हार्मोनों के नाम एवं कार्य लिखें।   3\n28. दृष्टि दोष क्या है ? यह कितने प्रकार के होते हैं ? इनका निवारण कैसे किया जाता है ?   5\n    अथवा\n    प्रतिरोध क्या है ? किसी कुण्डली का प्रतिरोध आमीटर और वोल्टमीटर की सहायता से ज्ञात करने के लिए प्रयोग का वर्णन करें।\n29. ऊर्जा संकट क्या है ? इसके समाधान का उल्लेख करें।   5\n    अथवा\n    मेंडेलीफ के आवर्त सारणी और आधुनिक आवर्त सारणी में क्या अन्तर है ?\n30. प्रायोगिक विवरण द्वारा बताएँ कि प्रकाश संश्लेषण की क्रिया में ऑक्सीजन गैस मुक्त होती है।   5",
+    "en": "25. What is valence electron ? Write number of the valence electron in sodium.   3\n26. Write the difference between blood and lymph.   3\n27. Write the names and functions of male and female sex hormones.   3\n28. What is vision defect ? Name its types. How can they be removed ?   5\n    OR\n    What is resistance ? How is the resistance of a coil calculated practically with the help of ammeter and voltmeter ?\n29. What is energy crisis ? Describe its remedy.   5\n    OR\n    What are the differences between Mendeleef's periodic table and Modern periodic table ?\n30. Describe the experiment which shows that oxygen gas is released during the process of photosynthesis.   5"
+  },
+  "textLayer": null,
+  "notes": [
+    "IMPORTANT page-break finding: Q28's Hindi ends on the left half (printed page 7) but its English begins at the top of the right half (printed page 8). A single question spans the spread. Stage C must join the full paper before segmenting.",
+    "Q28, Q29 have 'अथवा / OR' alternatives — each alternative becomes its own question record linked by variantOf (see A17).",
+    "Q30 appears to have no OR alternative on this page."
+  ]
+}

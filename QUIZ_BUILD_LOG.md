@@ -7,14 +7,43 @@
 
 ---
 
+## ▶️ AGLI SESSION MEIN YE BOLNA
+
+```
+Quiz pipeline continue karo
+```
+
+Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthayega,
+`QUIZ_DATA_PIPELINE.md` se us stage ka spec padhega, aur wahi se shuru karega.
+
+---
+
 ## 📍 ABHI KAHAN HAIN
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 0** — Prerequisite: chapter completion ko actually fire karana |
-| **Status** | ✅ **Phase 0 DONE** — code written, verified, ready to commit |
-| **Branch** | `quiz` |
-| **Last session** | 2026-08-02 — Phase 0 complete |
+| **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
+| **Sub-stage** | **Stage P (Pilot)** — paper `2016-a` ko poora A→G chala rahe hain |
+| **Status** | 🟡 Stage B (pages) ✅ · Stage C (blocks) ✅ · Stage D–G baaki |
+| **Branch** | `quiz-phase0.5-bulk` |
+| **Last session** | 2026-08-03 — pilot ka Stage C (question blocks) |
+
+> ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
+> `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
+
+### 📌 Phase 0.5 — ye kyun bana (2026-08-03)
+
+Quiz ka data 2016–2026 ke asli Bihar Board PYQ papers se banega — teen language mein
+(Hindi / English / Hinglish), verified answers ke saath, aur repeat-detection ke saath
+("ye question 3 baar aa chuka hai").
+
+Pehle ye kaam chat ke through ho raha tha (PDF → Antigravity → copy-paste → verify).
+Wo tareeka **fail** ho gaya: 3 baar galat saal/shift label aaya, 2 baar duplicate paper aaya,
+aur answers galat aaye. Us session ka saara data **discard** kar diya gaya.
+
+Naya tareeka: saare PDF repo ke andar (`data/quiz-bank/pdfs/`), script + vision se extraction,
+stage-wise immutable output, aur har answer ka confidence level. Poora design
+`QUIZ_DATA_PIPELINE.md` mein hai.
 
 ### ✅ Baseline (established 2026-08-02, before any Phase 0 code)
 
@@ -102,6 +131,38 @@
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-03 — Pilot Stage C: question blocks
+- **Bana:** `backend/scripts/quiz-bank/buildBlocks.js` + `npm run quiz:blocks` → output
+  `data/quiz-bank/stage2-blocks/2016-a.json`. Backend `src/` ka koi file touch nahi hua.
+- **Result:** `2016-a` se **52 block** — Group A 30 + Group B 20 + 2 OR-alternative.
+  Marks: A 60/60, B 20/20 (declared se exact match). **Flagged block: 0.** Dobara chalane pe
+  byte-identical file (P5 ✅).
+- **Do trap handle hue:** (1) cover page ke instructions bhi `1.`–`5.` numbered hain — isliye
+  kaatna "ग्रुप - A" header ke baad hi shuru hota hai aur number ekdum agla hona chahiye;
+  (2) option (c) ke andar hi "(a) और (b) दोनों" likha hota hai — option markers aage badhte hue
+  dhoondhe jate hain taaki wo option toote nahi.
+- **Ek purani galti sudhri:** pilot findings mein likha tha "Q28, Q29, Q30 teeno ke paas OR hai".
+  Asal mein sirf **Q28 aur Q29**. Marks total 60 exact match hone se confirm hua.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression nahi.
+- **Agla:** Stage D pilot — 52 block ko schema mein daalna + Hinglish banana (pilot sawaal #5).
+
+### 2026-08-03 — Phase 0.5 shuru: data pipeline design + pilot ka page-reading
+- **Purana kaam discard:** chat-based extraction (Antigravity se JSON copy-paste) fail ho gaya —
+  3 baar galat year/shift, 2 baar duplicate paper, aur galat answers. Us din ke 7 papers delete.
+  Naya branch `quiz-phase0.5-bulk` banaya Phase 0 ke upar se.
+- **21 PDFs repo mein aaye** (`data/quiz-bank/pdfs/`), survey script bana
+  (`backend/scripts/quiz-bank/surveyPdfs.js`). **3 hard findings:** (F1) `2017 a` aur `2017 b`
+  bilkul same file hain → asal mein **20 unique papers**; (F2) kisi bhi paper se Unicode Hindi
+  nahi milti → saare papers page-image se padhne padenge; (F3) papers pe jo answer-nishaan hain
+  wo **pen se lage hain aur ~45% galat hain** — purana "Ampere vs Ohm" bug isi wajah se tha.
+- **`QUIZ_DATA_PIPELINE.md` bani** — 9 principles, poora schema, ID strategy, 7 stages (A–G),
+  4 confidence levels, dedup rules, exit criteria. Audit mein 18 gaps mile aur fix hue.
+  `CLAUDE.md` mein pointer add — ye file blueprint se **pehle** padhi jayegi.
+- **Stage P (Pilot) add hua** — pehle ek paper poora A→G, phir baaki 19. Pilot paper `2016-a`
+  ka page-reading ✅ done: 8 PDF page → 50 questions, Hindi+English dono saaf.
+  Bada finding: 1 PDF page = 2 printed page, isliye kaam aadha (~190 page reads, 382 nahi).
+- **Agla:** pilot ka Stage C+D — 50 questions ko structure + 3 language mein daalna.
 
 ### 2026-08-02 — Phase 0 complete
 - **Kya hua:** `step7.saveAndRespond.js` mein 2-line fix — `retrievedContext` ab sahi jagah se padha jata hai, `isComplete` check kaam karta hai.

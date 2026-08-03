@@ -278,8 +278,14 @@ applies. Do not improvise a different approach.**
    Parking Lot triage rule, the baseline-test rule, STOP conditions, and the banned-behaviour
    list. Follow it exactly.
 
-Spec itself is `QUIZ_SYSTEM_BLUEPRINT.md` (audited 2026-08-02 — corrections are inline as
-`[AUDIT]` blocks, with a summary in its §18). Read only the section for the current phase, not
+3. **`QUIZ_DATA_PIPELINE.md`** — **the question-bank data foundation, and it comes BEFORE the
+   blueprint.** All 2016–2026 PYQ papers are being turned into a verified, deduplicated,
+   trilingual (Hindi / English / Hinglish) question bank. Until that pipeline's exit criteria
+   (its §12) are ticked, `QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 does not start. If the request
+   touches question data, extraction, answers, or repeat-detection, this file is the spec.
+
+Spec for the *feature* is `QUIZ_SYSTEM_BLUEPRINT.md` (audited 2026-08-02 — corrections are inline
+as `[AUDIT]` blocks, with a summary in its §18). Read only the section for the current phase, not
 the whole file.
 
 **The non-negotiables (full detail in the protocol):**
