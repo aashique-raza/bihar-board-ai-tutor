@@ -12,17 +12,19 @@
 | | |
 |---|---|
 | **Current Phase** | **Phase 0** — Prerequisite: chapter completion ko actually fire karana |
-| **Status** | 🟡 Ready to start — abhi shuru nahi hua |
-| **Branch** | ⚠️ decide karna hai — neeche "Branch decision" dekho |
-| **Last session** | 2026-08-02 — blueprint audit + protocol setup |
+| **Status** | ✅ **Phase 0 DONE** — code written, verified, ready to commit |
+| **Branch** | `quiz` |
+| **Last session** | 2026-08-02 — Phase 0 complete |
 
-### ⚠️ Phase 0 shuru karne se pehle — ek decision pending
+### ✅ Baseline (established 2026-08-02, before any Phase 0 code)
 
-`stalefilefixes` branch pe commit `2d380cd` ("stale file fixed") hai jo **abhi tak `main` mein merge nahi hua**. Current `quiz` branch `main` (0d69585) ke barabar hai — matlab usme wo cleanup nahi hai.
-
-Decide karna hai: `stalefilefixes` ko pehle `main` mein merge karein, phir Phase 0 uske upar se branch ho? Ya alag chalne dein?
-
-*(Recommendation: pehle merge kar do — ye sirf doc/cleanup changes hain, koi code risk nahi, aur baad mein branch tangle nahi hoga.)*
+| Test | Result |
+|---|---|
+| `test:chunks` | 🟢 PASS (17/17) |
+| `test:study-map` | 🟢 PASS |
+| `test:curriculum-resolvers` | 🟢 PASS |
+| `test:chat-db-models` | 🔴 RED — pre-existing, unrelated (parked P-6) |
+| `test:golden` | 🟢 PASS (100% intent accuracy, 34P/6W/0F) — 2 stale fixture bugs fixed first, see below |
 
 ---
 
@@ -35,17 +37,17 @@ Decide karna hai: `stalefilefixes` ko pehle `main` mein merge karein, phir Phase
 - `backend/src/ask/step7.saveAndRespond.js`
 
 **Code:**
-- [ ] Line ~192: step-5 destructure mein `retrievedContext` add karo
-- [ ] Line ~309: `isComplete` ab `retrievedContext === 'CHAPTER_COMPLETE'` test kare (abhi `retrieval?.retrievedContext` hai jo hamesha `undefined` deta hai)
+- [x] Line ~192: step-5 destructure mein `retrievedContext` add kiya
+- [x] Line ~309: `isComplete` ab `retrievedContext === 'CHAPTER_COMPLETE'` test karta hai
 
-**Verify (dekha jayega, maana nahi jayega):**
-- [ ] Focus Mode mein ek chapter ke saare core topics khatam karo → MongoDB mein us chapter ka `chapter_progress.status` **`'completed'`** ho jaye *(abhi chup-chaap `in_progress` hi rehta hai)*
-- [ ] `study_events` collection mein ek `chapter_completed` document aaye *(abhi kabhi nahi aata)*
-- [ ] Regression: normal mid-chapter turn abhi bhi `upsertChapterProgress` se progress likhe, aur chapter ko galti se complete **na** kare
+**Verify (dekha gaya, maana nahi gaya):**
+- [x] Real DB test: chapter ke last topic pe seed karke NEXT_STEP call kiya → `chapter_progress.status` = `'completed'` bana, `progressPercent` = 100
+- [x] `study_events` mein `chapter_completed` document confirm hua
+- [x] Regression: mid-chapter (first topic pe) NEXT_STEP call kiya → status `'in_progress'` hi raha, `currentTopicId` sahi se agle topic pe advance hua, koi galat `chapter_completed` event nahi bana
 
 **Regression:**
-- [ ] Baseline test suite green — baseline se compare kiya gaya
-- [ ] `npm run test:golden` green (ask pipeline touch ho raha hai)
+- [x] `test:chunks`, `test:study-map`, `test:curriculum-resolvers` — sab waise hi jaise baseline mein the
+- [x] `npm run test:golden` — 33P/7W/0F, 100% intent accuracy (baseline: 34P/6W/0F, same 0 FAIL, same 100%). Fark sirf 1 query PASS→WARN, wo LLM phrasing variance hai, intent bug nahi.
 
 **Bahar — is phase mein ye NAHI karenge:**
 - ❌ Koi quiz model / route / seed file — wo Phase 1 hai
@@ -68,6 +70,12 @@ Decide karna hai: `stalefilefixes` ko pehle `main` mein merge karein, phir Phase
 | P-3 | `OUT_OF_CONTEXT` intent `maxTokens: 100` pe chalta hai; ek measured redirect ne 78 output tokens use kiye. Thoda lamba redirect JSON truncate kar sakta hai → parse error → student ko "Thodi technical dikkat aayi". | `backend/src/ask/intentRouter.js` | Hinglish fix investigation | 🟠 Medium — rare par student-facing |
 | P-4 | Email provider abhi Nodemailer (SMTP) hai; Render free tier SMTP block karta hai, isliye email verification bypass hai. Resend API pe migrate karna hai. | `backend/src/auth/emailHelpers.js` | `PRE_LAUNCH_BLOCKERS.md` P1 | 🔴 High — par real users se pehle, quiz se independent |
 | P-5 | 5 local branches (`logo`, `profile`, `feat/support-page`, `global`, `codex-curriculum-resolvers`) already `main` mein merged hain — sirf local pointer clutter hai, delete kiya ja sakta hai. | git | 2026-08-02 audit | 🟢 Low — housekeeping |
+| P-6 | `test:chat-db-models` crash karta hai — `src/models/chatState.model.js` dhundhta hai jo exist nahi karti. Pre-existing (archived `PROBLEMS.md` STB-008 note ke mutabik: `chatState` purane refactor mein `chatSession` ke andar embed hua, script kabhi update nahi hui). Phase 0 baseline mein red mila, isse Phase 0 se unrelated maan ke park kiya. | `backend/scripts/test-chat-db-models.js` | Phase 0 baseline, 2026-08-02 | 🟡 Medium — ek regression test permanently disabled jaisa hai |
+
+**FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
+
+- **`golden-queries.json` C07** — "Cell membrane ka kya kaam hai?" `CONCEPT_QUESTION` expect karta tha; `data/class-10/science/` mein "cell membrane" ka koi mention hi nahi (Class 9 NCERT topic hai, Class 10 Bihar Board syllabus mein nahi). Decider sahi tha (`OUT_OF_CONTEXT`), test fixture galat thi. `O06` bana ke `OUT_OF_CONTEXT` section mein move kiya, poori reasoning `note` field mein likhi.
+- **`golden-queries.json` N01-N04** — `studyMode: "focus"` tha par `chapterId` missing thi. `step1.validateInput.js` Focus Mode ke liye `chapterId` required maanta hai; missing hone par `400 ApiError`, jise `askOrchestrator.js:68-69` `status: 'provider_error'` mein wrap kar deta hai — aur golden-script us status ke liye hamesha "rate limit / LLM unavailable" hardcoded print karta hai, chahe wajah kuch bhi ho. Isi wajah se ye rate-limit jaisa dikha, tha bilkul nahi. Fix: sab 4 mein `chapterId: "science.physics.chapter-01"` add kiya. 4/4 PASS confirm hua.
 
 ---
 
@@ -75,8 +83,8 @@ Decide karna hai: `stalefilefixes` ko pehle `main` mein merge karein, phir Phase
 
 | Phase | Kya | Status |
 |---|---|---|
-| **0** | Prerequisite — chapter completion fire karana | 🟡 **Next** |
-| 1 | Question models + seed data (backend) | ⚪ Pending |
+| **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** |
+| 1 | Question models + seed data (backend) | 🟡 **Next** |
 | 2 | Quiz engine + APIs (backend) | ⚪ Pending |
 | 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
 | 4 | Quiz runner modal UI (frontend) | ⚪ Pending |
@@ -95,9 +103,16 @@ Decide karna hai: `stalefilefixes` ko pehle `main` mein merge karein, phir Phase
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
 
+### 2026-08-02 — Phase 0 complete
+- **Kya hua:** `step7.saveAndRespond.js` mein 2-line fix — `retrievedContext` ab sahi jagah se padha jata hai, `isComplete` check kaam karta hai.
+- **Baseline detour:** golden test mein 2 stale fixture bugs mile aur fix kiye — C07 (cell membrane, syllabus mein hai hi nahi → O06 ban gaya) aur N01-N04 (missing `chapterId`, jo galti se "rate limit" jaisa dikh raha tha par asal mein 400 validation error tha). Dono `golden-queries.json` mein fix, poori reasoning `note` field mein.
+- **Verify:** real DB test se confirm — chapter complete hone par status `'completed'` banta hai, `chapter_completed` event log hota hai, normal turn galti se complete nahi hota. Golden test 33P/7W/0F (baseline 34P/6W/0F, 0 FAIL dono baar) — koi regression nahi.
+- **User feedback mila:** explanation style bahut complicated thi — ab short sentences, spacing, ek-ek karke. Permanent memory mein save kiya.
+- **Agla:** commit karo, phir Phase 1 (`Quiz Phase 1 shuru karo` bolna).
+
 ### 2026-08-02 — Setup session (Phase 0 se pehle)
 - **Kya hua:** Repo-wide stale file audit (4 orphan debug scripts delete, `PROBLEMS.md` archive, doc fixes) → commit `2d380cd` on `stalefilefixes`.
 - **Phir:** `QUIZ_SYSTEM_BLUEPRINT.md` ka full audit live code ke against. **3 blocker, 3 internal contradiction, 5 factual mismatch** mile — sab file mein `[AUDIT]` blocks + naya §18 changelog ban ke inline fix ho gaye. Blueprint 1279 → 1780 lines.
 - **Sabse bada finding:** chapter-completion hook (`step7:309`) dead code hai — isi wajah se naya **Phase 0** bana.
-- **Setup:** `QUIZ_EXECUTION_PROTOCOL.md` + ye log file banayi, `CLAUDE.md` mein pointer add hua.
-- **Agla:** branch decision, phir Phase 0.
+- **Setup:** `QUIZ_EXECUTION_PROTOCOL.md` + ye log file banayi, `CLAUDE.md` mein pointer add hua. User ne `stalefilefixes` ko `main` mein merge kiya aur teeno quiz files ko `quiz` branch pe commit kiya (`8673530`). `main` ka cleanup commit `quiz` mein merge kiya (`e3d65ee`, clean, no conflicts) — ab `quiz` `main` se fully sync hai.
+- **Agla:** Phase 0 shuru — is file ke Phase 0 DoD section se.

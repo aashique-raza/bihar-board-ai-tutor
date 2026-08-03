@@ -189,7 +189,7 @@ export const saveAndRespond = async (
   { sessionId, chatState, chapterProgress },
   { language, driftSignal },
   decision,
-  { retrieval, sources, nextTopicSignal, lastRetrievalQuery, isOutOfFocusAnswer },
+  { retrieval, retrievedContext, sources, nextTopicSignal, lastRetrievalQuery, isOutOfFocusAnswer },
   response,
   userId = null,
   tokenUsage = 0,
@@ -306,7 +306,7 @@ export const saveAndRespond = async (
   let chapterProgressDoc = null;
   if (studyMode === 'focus' && chatState.currentChapterId) {
     const chapterId  = chatState.currentChapterId;
-    const isComplete = retrieval?.retrievedContext === 'CHAPTER_COMPLETE';
+    const isComplete = retrievedContext === 'CHAPTER_COMPLETE';
 
     if (isComplete) {
       // CHAPTER COMPLETE — critical milestone, must not be lost silently
