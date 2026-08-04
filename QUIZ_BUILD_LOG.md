@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk, baaki 19 papers) — IN PROGRESS.** 5/19 done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d` (`2017-b` skipped — exact duplicate of `2017-a`, MD5-confirmed). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B shuru — batch 2 (`2017-a`, `2017-c`, `2017-d`) done, 14 papers baaki. |
+| **Sub-stage** | **Stage B (bulk, baaki 12 papers) — IN PROGRESS.** 6/18 usable done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a` (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B shuru — batch 3 (`2018-a` done, `2019-a` excluded) done, 12 papers baaki. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — Stage B batch 2: `2017-a` + `2017-c` + `2017-d` page-reading (27 PDF pages) |
+| **Last session** | 2026-08-04 — Stage B batch 3: `2018-a` page-reading (16 PDF pages) + `2019-a` found invalid (F4) and excluded |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -136,6 +136,26 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Stage B bulk batch 3: `2018-a` done, `2019-a` excluded (F4)
+- **Bana:** `data/quiz-bank/stage1-pages/2018-a/` — manifest + 16 page files (16 PDF pages,
+  200 DPI vision-read). Backend `src/` ka koi file touch nahi hua.
+- **Bada finding (F4, naya STOP):** `2019 a.pdf` khola to andar asli Bihar Board exam paper
+  nahi mila — ek third-party **"Bihar Hints & Solution — CBSE Xth Board Examination-2018-19"**
+  guide-book nikla: sirf English, MCQ answers pehle se asterisk se marked, header "CBSE" (Bihar
+  Board se alag board). Mid-batch rukkar user ko dikhaya, do options diye (skip vs. alag tareeke
+  se rakho) — user ne **skip** confirm kiya. `2019-a` ab `2017-b` jaisa permanently excluded,
+  `stage1-pages/` mein iska folder kabhi nahi banega. `QUIZ_DATA_PIPELINE.md` §3.1 mein F4 likha
+  gaya. **Usable unique paper count 20 se 19 ho gaya.**
+- **2018-a mein 2 chhote data-quality note:** do jagah question-number ka leading digit page-top
+  margin pe cropped mila (Q4, Q22/Q23) — text/options poori tarah saaf the, sirf numeral clip
+  hua tha, sequence se number confirm kiya. Ek page (Q26-29) scan skewed/rotated tha par saaf
+  padhne layak. Do chhoti Hindi/English wording mismatch bhi mili (Q10(i), Q29-D) — jaisi dikhi
+  waisi transcribe ki, sudhari nahi.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression
+  nahi.
+- **Agla:** Stage B batch 4 — agle 2-3 papers, list ab `2018-b, 2019-b, 2020-a, ...` se shuru
+  (12 papers baaki).
 
 ### 2026-08-04 — Stage B bulk batch 2: `2017-a` + `2017-c` + `2017-d`
 - **Bana:** `data/quiz-bank/stage1-pages/2017-a/`, `2017-c/`, `2017-d/` — manifest + page files

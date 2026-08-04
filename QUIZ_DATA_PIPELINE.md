@@ -138,6 +138,20 @@ Aur repeat-count hi hamara headline feature hai. Feature apne hi data se galat h
 
 ---
 
+#### 🔴 F4 — `2019 a.pdf` asli exam paper hai hi nahi (Stage B batch 3, 2026-08-04)
+
+Stage B mein khola to andar ek pura alag cheez nikli: **"Bihar Hints & Solution — CBSE Xth
+Board Examination-2018-19"** naam ka third-party guide-book — sirf English, har MCQ ka sahi
+option pehle se asterisk (\*) se marked, header pe "CBSE" likha hai (Bihar Board CBSE se
+alag board hai). Ye humare baaki 19 papers jaisa scanned board-paper photocopy nahi hai.
+
+**Matlab humare paas ab 20 nahi, 19 usable unique papers hain.** `2019-a` ko `2017-b` jaisa
+treat kiya — permanently excluded, `stage1-pages/` mein iska folder kabhi nahi banega. User ne
+2026-08-04 ko confirm kiya (option: skip, kyunki pipeline ka core principle hi verified real
+exam text hai, aur ye document us tarah verify nahi ho sakta).
+
+---
+
 #### 🔴 F2 — Kisi bhi paper se saaf Hindi (Unicode) nahi milti
 
 Test kiya saare 7 text-papers pe. Unicode Devanagari count: **sab mein 0**.

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2018-a",
+  "sourceFile": "2018 a.pdf",
+  "sourceMd5": "a39e1a02c731b04ece669232ab1f2f1a",
+  "pdfPages": 16,
+  "printedPages": 16,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "status": "done", "contains": "cover page — instructions, marks/time/questions header", "confidence": "high" },
+    { "pdfPage": 2, "status": "done", "contains": "Section A objective MCQ Q1-3", "confidence": "high" },
+    { "pdfPage": 3, "status": "done", "contains": "Section A MCQ Q4-7 (Q4's number clipped at page top)", "confidence": "medium" },
+    { "pdfPage": 4, "status": "done", "contains": "Section A MCQ Q8-12", "confidence": "high" },
+    { "pdfPage": 5, "status": "done", "contains": "Section A MCQ Q13-17", "confidence": "high" },
+    { "pdfPage": 6, "status": "done", "contains": "Section A MCQ Q18-21", "confidence": "high" },
+    { "pdfPage": 7, "status": "done", "contains": "Section A MCQ Q22-25 (Q22, Q23 numbers clipped at page top)", "confidence": "medium" },
+    { "pdfPage": 8, "status": "done", "contains": "Section A MCQ Q26-29 (whole page skewed/rotated scan, still legible)", "confidence": "high" },
+    { "pdfPage": 9, "status": "done", "contains": "Section A MCQ Q30-33", "confidence": "high" },
+    { "pdfPage": 10, "status": "done", "contains": "Section A MCQ Q34-38", "confidence": "high" },
+    { "pdfPage": 11, "status": "done", "contains": "Section A MCQ Q39-40 (end) + Section B header + Physics short-answer Q1-2", "confidence": "high" },
+    { "pdfPage": 12, "status": "done", "contains": "Physics short-answer Q3-6 + long-answer Q7(a)(b)(c) + OR start", "confidence": "high" },
+    { "pdfPage": 13, "status": "done", "contains": "Physics Q7-OR (a)(b)(c) + Chemistry header + short-answer Q8-10", "confidence": "high" },
+    { "pdfPage": 14, "status": "done", "contains": "Chemistry short-answer Q11-13 + long-answer Q14(a)(b) + OR start", "confidence": "high" },
+    { "pdfPage": 15, "status": "done", "contains": "Chemistry Q14-OR (a)(b) + Biology header + short-answer Q15-19", "confidence": "high" },
+    { "pdfPage": 16, "status": "done", "contains": "Biology short-answer Q20 + long-answer Q21 + OR — end of paper", "confidence": "high" }
+  ],
+  "notes": [
+    "1 PDF page = 1 printed page for this paper (footer prints 'Page N of 16'), unlike some bilingual papers in this set where 1 PDF page held 2 printed pages.",
+    "Fully bilingual (Hindi block then English block per question), same overall shape as 2017-a. Watermark 'BiharPaper.com' appears on a few pages — third-party source mark, excluded from raw transcription.",
+    "No printed answer key anywhere in this paper (confirmed after reading all 16 pages) — same situation as the pilot paper 2016-a; Stage E will need the textbook/RAG route for all MCQs here.",
+    "Two question numbers (Q4 on page 3, Q22 and Q23 on page 7) have their leading digit cropped at the top page margin where the page break falls mid-question — inferred from sequence, all option text fully legible, marked confidence 'medium' for those specific pages.",
+    "Two minor Hindi/English wording mismatches spotted (Q10(i) 'सोडा' vs 'Sodium', Q29 option D 'इनमें से सभी'/all vs 'None of these') — printed-paper inconsistencies, transcribed as-is per page, not corrected (Stage B scope)."
+  ]
+}
