@@ -23,7 +23,8 @@
     "test:embedding-smoke": "node scripts/test-langchain-embedding-smoke.js",
     "test:golden": "node scripts/run-golden-set.js",
     "test:golden-save": "node scripts/run-golden-set.js --save-baseline",
-    "quiz:blocks": "node scripts/quiz-bank/buildBlocks.js"
+    "quiz:blocks": "node scripts/quiz-bank/buildBlocks.js",
+    "quiz:questions": "node scripts/quiz-bank/buildQuestions.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

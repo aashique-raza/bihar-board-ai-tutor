@@ -1,7 +1,7 @@
 # Stage P — Pilot Findings
 
 > **Pilot paper:** `2016-a` (`2016 a.pdf`)
-> **Status:** 🟢 **Stage B (page reading) + Stage C (blocks) DONE** — 8/8 page padhe, 52 block bane. Stage D–G baaki.
+> **Status:** 🟢 **Stage B + C + D DONE** — 8/8 page padhe, 52 block bane, 52/52 teeno language mein. Stage E–G baaki.
 > **Spec:** `QUIZ_DATA_PIPELINE.md` §7 Stage P
 
 ---
@@ -105,9 +105,47 @@ Page boundary ko sirf ek marker samjho, deewar nahi.
 Har line yaad rakhti hai wo kaunse PDF page se aayi, isliye `provenance.pdfPages` phir bhi sahi bharta hai.
 Q28 aur Q31(v) — dono spread ke aar-paar toote the — dono sahi bane.
 
-### ⏳ 5. Hinglish quality?
+### 🟡 5. Hinglish quality?
 
-Abhi test nahi hua — Stage D pilot mein aayega.
+**Theek hai — par pehli koshish mein nahi. Rules tight karne pade.**
+
+Hinglish kisi paper mein hoti nahi, isliye banani padti hai. Tareeka:
+LLM (`gpt-4o-mini`, temperature 0) **Hindi se** banata hai, English sirf technical term aur
+number confirm karne ke liye. `scienceGlossary.js` seedha prompt mein jata hai (§8 ka rule).
+
+**Pehle version (prompt v1) ke 10 sample mein 3 asli galtiyan mili:**
+
+| Kya hua | Example |
+|---|---|
+| Hindi shabd ki jagah English ghus gaya | "पादप हार्मोन का उदाहरण है" → "**Misal of** phytohormone hai" |
+| Word order ulta ho gaya | "विद्युत बल्ब पर 100 W - 220 V अंकित है" → "100 W - 220 V **par** vidyut bulb **par** ankit hai" |
+| Technical term phonetic likh diya | "बाईफोकल" → "baifokal" (sahi: **Bifocal**) |
+| Bina wajah full stop | "काल्पनिक" → "Kalpanik**.**" |
+
+**prompt v2 mein 4 naye rule** — Hindi shabd Roman mein hi rahega (English equivalent nahi),
+word order nahi badlega, scientific term English spelling mein (`en` se copy), aur
+capitalisation `en` se match.
+
+**Full stop wala rule code mein gaya, prompt mein nahi.** Wo source se decidable hai:
+Hindi mein `।`/`?` nahi tha to Hinglish mein `.` nahi aayega. LLM se maangne se accha machine
+khud lagaye — 100% sahi, aur re-run pe muft.
+
+**v2 ka result — 120/120 string clean:**
+
+| Check | Result |
+|---|---|
+| Devanagari leak | 0 |
+| Bina wajah full stop | 0 |
+| Teeno language poori | **52/52** |
+| Dobara sample check (wahi 10) | sab saaf |
+
+**Sabak:** Hinglish ke rules ek baar mein nahi bante. Pilot ne 1 paper pe pakda —
+20 paper pe pakadta to 20× kharcha hota. Yahi P9 ka poora point hai.
+
+**Cache:** har translation `stage3-questions/_hinglish-cache.json` mein save hoti hai,
+key mein **prompt version** bhi hai. Matlab rule badla → sab dobara banega; rule wahi hai →
+0 LLM call, byte-identical file (P5 ✅). Repeat question dobara translate nahi honge —
+isi wajah se baaki 19 papers sasta padenge (P1).
 
 ### 🔴 6. Answer key mila?
 
@@ -149,6 +187,19 @@ F3 ki wajah se. Nishaan hai ye record ho — par answer ki tarah nahi.
 **(c) Group B ka structure**
 Poore Group B ke 20 MCQ ek hi question number (Q31) ke sub-part hain.
 `sourceId` `2016-a:B:31-xiv` jaisa banega — schema ye already support karta hai ✅
+
+**Stage D ke baad — schema ne poora paper jhel liya, ek badlav ke saath:**
+
+`blockers[]` §5.2 mein 3 example ke saath likha tha. Asli list mein 9 nikle:
+`missing-hindi`, `missing-english`, `missing-hinglish`, `options-incomplete`,
+`options-language-incomplete`, `subjective`, `diagram-required`, `marks-missing`,
+`answer-missing`. Ye field ka **shape** nahi badalta, sirf uske values ki poori list hai —
+isliye `schemaVersion` 1 hi rahega.
+
+`usableInQuiz` Stage D ke baad **har question pe `false`** hai, aur hona bhi chahiye —
+kyunki abhi kisi ka answer nahi hai (`answer-missing`). Stage E hi wo blocker hatayegi.
+Subjective 32 questions pe `subjective` blocker permanent rahega — quiz MCQ ka hai.
+Matlab is paper se quiz ke liye **20 MCQ** hi candidate hain.
 
 ### ⏳ 8. Chapter mapping kitna sahi?
 
@@ -215,7 +266,7 @@ wahi 30+20 structure.
 
 - [x] Stage B pilot — 8/8 page padhe
 - [x] Stage C pilot — 52 block bane, marks match, 0 flag
-- [ ] Stage D pilot — 3 language, Hinglish quality
+- [x] Stage D pilot — 52/52 teeno language, prompt v2 ke baad 0 violation
 - [ ] Stage E pilot — answers textbook route se (key nahi hai)
 - [ ] Stage F pilot — chapter mapping
 - [ ] Sawaal 5, 8 ke jawab bharo

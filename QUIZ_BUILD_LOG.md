@@ -24,9 +24,9 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
 | **Sub-stage** | **Stage P (Pilot)** — paper `2016-a` ko poora A→G chala rahe hain |
-| **Status** | 🟡 Stage B (pages) ✅ · Stage C (blocks) ✅ · Stage D–G baaki |
+| **Status** | 🟡 Stage B (pages) ✅ · C (blocks) ✅ · D (3 language) ✅ · Stage E–G baaki |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-03 — pilot ka Stage C (question blocks) |
+| **Last session** | 2026-08-03 — pilot ka Stage D (Hinglish + schema) |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -131,6 +131,22 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-03 — Pilot Stage D: structure + 3 languages
+- **Bana:** `backend/scripts/quiz-bank/buildQuestions.js` + `npm run quiz:questions` → output
+  `data/quiz-bank/stage3-questions/2016-a.json` (§5.2 schema) aur `_hinglish-cache.json`.
+  Backend `src/` ka koi file touch nahi hua.
+- **Result:** 52/52 question mein Hindi + English + **Hinglish** teeno. 120 unique string,
+  10 LLM call. Dobara chalane pe **0 call, byte-identical** file (P5 ✅).
+- **QC ne 3 asli galti pakdi** (prompt v1): "Misal **of** phytohormone hai" (English ghusa),
+  word order ulta, "baifokal" (technical term phonetic). Prompt v2 mein 4 naye rule daale,
+  poora regenerate kiya → 120/120 clean. Full stop wala rule **code mein** gaya (source se
+  decidable hai), prompt mein nahi. Cache key mein prompt version hai, isliye rule badalte hi
+  sab apne aap dobara banta hai.
+- **`usableInQuiz` abhi 52/52 pe `false`** — sahi hai, kyunki answer Stage E se aayega.
+  Is paper se quiz ke liye 20 MCQ hi candidate hain (32 subjective permanently bahar).
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression nahi.
+- **Agla:** Stage E pilot — 20 MCQ ke answers, textbook route se (printed key hai hi nahi, F3).
 
 ### 2026-08-03 — Pilot Stage C: question blocks
 - **Bana:** `backend/scripts/quiz-bank/buildBlocks.js` + `npm run quiz:blocks` → output
