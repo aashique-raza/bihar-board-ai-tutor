@@ -24,9 +24,9 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
 | **Sub-stage** | **Stage P (Pilot)** — paper `2016-a` ko poora A→G chala rahe hain |
-| **Status** | 🟡 Stage B (pages) ✅ · C (blocks) ✅ · D (3 language) ✅ · E (answers) ✅ · Stage F–G baaki |
+| **Status** | 🟡 Stage B (pages) ✅ · C (blocks) ✅ · D (3 language) ✅ · E (answers) ✅ · F (dedup+chapter) ✅ · Stage G baaki |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — pilot ka Stage E (textbook-verified answers) |
+| **Last session** | 2026-08-04 — pilot ka Stage F (dedup solo + chapter mapping) |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -133,6 +133,32 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Pilot Stage F: dedup (solo) + chapter mapping
+- **Bana:** `backend/scripts/quiz-bank/buildBank.js` + `npm run quiz:bank` → output
+  `data/quiz-bank/bank/{questions,clusters,id-ledger}.json`. Backend `src/` ka koi file
+  touch nahi hua.
+- **Chapter mapping 52/52 (100%)** — exit criteria ka target 85% se bahut upar. Tareeka fuzzy
+  title-match nahi, ek fixed formula hai: question text embed karo, sabse najdeeki chunk ka
+  already-validated `section` + `chapter_no` metadata seedha `chapterId` bana deta hai
+  (`Physics` + `1` → `science.physics.chapter-01`). Spot-check kiya (31-ii near-sightedness
+  → Human Eye chapter, sahi).
+- **Dedup (A8/A9) chala, jaisa expect tha 0 mila** — solo paper hai, isliye asli duplicate ho
+  hi nahi sakta. **0 exact-match merge, 0 near-dup cluster proposed**, 52 questions → 52
+  canonical entries. Code path (fingerprint, `id-ledger.json` permanent ID assignment,
+  `clusters.json`) test ho gaya — asli test 19 baaki papers ke saath hoga.
+- **Ek real bug pakda aur fix kiya isi session mein** (Parking Lot nahi gaya — apna hi naya
+  code tha): `stage4-answers` ke paper object mein `year` field hai hi nahi, sirf `paperId`.
+  Fix: year `paperId` se parse hota hai (P3 ka extension). Isके bina `appearances[].year` aur
+  `years[]` hamesha `null` deta — repeat-detection feature (headline feature) khud khaali
+  rehta.
+- **P5 confirm hua:** dobara chalane pe 0 embedding call (52/52 cache hit), byte-identical file.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression
+  nahi.
+- **Pilot ke saare 8 sawaal ab bhar chuke** (`reports/pilot-findings.md`) — sirf **Stage G**
+  (review + health report) baaki hai Pilot poora karne ke liye.
+- **Agla:** Stage G pilot — review queue + `reports/health.json`. Isके baad Pilot DoD (§7 Stage
+  P) tick hoga aur user "haan, aage badho" bolega tab baaki 19 papers pe Stage B shuru hoga.
 
 ### 2026-08-04 — Pilot Stage E: textbook-verified answers
 - **Bana:** `backend/scripts/quiz-bank/buildAnswers.js` + `npm run quiz:answers` → output

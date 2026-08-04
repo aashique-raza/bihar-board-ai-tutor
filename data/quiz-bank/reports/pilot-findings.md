@@ -1,7 +1,7 @@
 # Stage P — Pilot Findings
 
 > **Pilot paper:** `2016-a` (`2016 a.pdf`)
-> **Status:** 🟢 **Stage B + C + D + E DONE** — 8/8 page padhe, 52 block bane, 52/52 teeno language mein, **20/20 MCQ resolved** (15 textbook L3 + 5 human L4). Stage F–G baaki.
+> **Status:** 🟢 **Stage B + C + D + E + F DONE** — 8/8 page padhe, 52 block bane, 52/52 teeno language mein, **20/20 MCQ resolved** (15 textbook L3 + 5 human L4), **52/52 chapter-mapped**. Stage G baaki.
 > **Spec:** `QUIZ_DATA_PIPELINE.md` §7 Stage P
 
 ---
@@ -218,9 +218,37 @@ kyunki abhi kisi ka answer nahi hai (`answer-missing`). Stage E hi wo blocker ha
 Subjective 32 questions pe `subjective` blocker permanent rahega — quiz MCQ ka hai.
 Matlab is paper se quiz ke liye **20 MCQ** hi candidate hain.
 
-### ⏳ 8. Chapter mapping kitna sahi?
+### ✅ 8. Chapter mapping kitna sahi?
 
-Abhi test nahi hua — Stage F pilot mein aayega.
+**52/52 mapped (100%)** — exit criteria (§12) ka target 85% tha, ye usse bahut upar hai.
+
+**Tareeka:** RAG guess (fuzzy title match) nahi — ek fixed formula. Har question ka `text.en`
+embed hota hai, sabse najdeeki chunk ka `section` + `chapter_no` metadata (already validated
+`markdownLoader.js` mein) seedha `chapterId` ban jaata hai — jaise `Physics` + `1` →
+`science.physics.chapter-01`. Koi title-string matching nahi, isliye galat spelling ya alag
+naming se bhi nahi bhatakta.
+
+| Metric | Value |
+|---|---|
+| Mapped | 52 / 52 |
+| Unmapped | 0 |
+| Confidence range (vector score) | 0.68 – 0.85 |
+| Chapters touched | 11 (Physics ×3, Chemistry ×5, Biology ×3 — poore paper mein saare 3 subject) |
+
+**Ek spot-check:** 31(ii) "near-sightedness lens" question → `science.physics.chapter-02`
+("Human Eye and Colourful World") — sahi hai. Ye wahi question hai jiska answer Stage E mein
+pehli baar galat aaya tha (§3.1 F3) — is baar sirf chapter classify karna tha, answer nahi,
+alag concern.
+
+**Dedup (A8/A9) bhi isi stage mein chala:** solo paper hone ki wajah se, jaisa expect tha,
+**0 exact-match merge aur 0 near-duplicate cluster** mile — 52 questions, 52 canonical entries.
+Code path/schema (fingerprint, `id-ledger.json`, `clusters.json`) test ho gaya, bas asli
+duplicate milne ka mauka abhi nahi tha (wo 19 baaki papers ke saath aayega).
+
+**Ek real bug mila aur fix hua isi stage mein:** `stage4-answers` ke paper object mein `year`
+field hai hi nahi (sirf `paperId`). Fix: `year` `paperId` se hi nikala jaata hai (P3 rule ka
+extension — `parseYearFromPaperId()`), warna repeat-detection feature (`appearances[].year`,
+`years[]`) hamesha `null` deta.
 
 ---
 
@@ -285,6 +313,7 @@ wahi 30+20 structure.
 - [x] Stage C pilot — 52 block bane, marks match, 0 flag
 - [x] Stage D pilot — 52/52 teeno language, prompt v2 ke baad 0 violation
 - [x] Stage E pilot — 20 MCQ mein se 16 textbook-verified (L3), 8/8 known-answer cross-check match
-- [ ] Stage F pilot — chapter mapping
-- [ ] Sawaal 5 (Hinglish quality) ✅ bhara hua hai; Sawaal 8 (chapter mapping) Stage F mein aayega
+- [x] Stage F pilot — dedup (solo, 0 merge/cluster as expected) + chapter mapping (52/52, 100%)
+- [x] Saare 8 sawaalon ke jawab bhar chuke (sawaal 5 Hinglish, sawaal 8 chapter mapping dono done)
 - [x] `QUIZ_DATA_PIPELINE.md` §11 ka estimate update ho chuka (Stage B: 6-10 → 4-7)
+- [ ] Stage G pilot — review + final health report (Pilot ka aakhri stage)
