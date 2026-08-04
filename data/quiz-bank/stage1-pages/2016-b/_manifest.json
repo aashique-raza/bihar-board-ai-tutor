@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2016-b",
+  "sourceFile": "2016 b.pdf",
+  "sourceMd5": "28ef6d8798334a71f634f7b5a728f3c0",
+  "pdfPages": 8,
+  "printedPages": 8,
+  "printedPagesPerPdfPage": 1,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "printedPages": [1], "status": "done", "contains": "header + Group A instructions + Q1-Q30 (with OR alternatives at Q28-30)", "confidence": "high" },
+    { "pdfPage": 2, "printedPages": [2], "status": "done", "contains": "Q30 OR-alternative + Group B header + instructions + Q31(i)-(x)", "confidence": "high" },
+    { "pdfPage": 3, "printedPages": [3], "status": "done", "contains": "Q31(xi)-(xx) + answer key header + Group A answers 1-5", "confidence": "high" },
+    { "pdfPage": 4, "printedPages": [4], "status": "done", "contains": "Group A answers 6-22 (up to start of Q22 explanation)", "confidence": "high" },
+    { "pdfPage": 5, "printedPages": [5], "status": "done", "contains": "prism diagram + Q22-26(i) answers", "confidence": "high" },
+    { "pdfPage": 6, "printedPages": [6], "status": "done", "contains": "Q27-28 answers with 2 circuit diagrams (DC dynamo, electric motor)", "confidence": "high" },
+    { "pdfPage": 7, "printedPages": [7], "status": "done", "contains": "Q28 continued + Q29 answer (ore concentration methods + soap/detergent table start)", "confidence": "high" },
+    { "pdfPage": 8, "printedPages": [8], "status": "done", "contains": "soap/detergent table continued + Q30 diagrams (brain, nephron) + Group B answer key Q31(i)-(xx)", "confidence": "high" }
+  ],
+  "notes": [
+    "Different layout from 2016-a (pilot): 1 PDF page = 1 printed page here (not 2 side by side). No English text anywhere on this paper — Hindi only, except section labels (GROUP-A, GROUP-B) and formulas/chemical equations which use Latin letters.",
+    "This paper HAS a printed answer key ('उत्तरमाला' section, pages 3-8) — unlike 2016-a which had none. This is a real printed/typeset answer scheme, not handwritten pen marks.",
+    "IMPORTANT: the printed answer key itself contains at least one wrong answer — Q16 asks for the S.I. unit of resistance, printed answer is 'एम्पीयर' (Ampere), correct answer is Ohm. Recorded as-is per Stage B rule (write what is seen, do not correct). Flagged for Stage E conflict detection.",
+    "'BiharPaper.com' style watermark/formatting not visible on this copy, but structure (guide-book style with full worked answers including diagrams) suggests this is also a downloaded study copy, not a board-issued paper — consistent with pilot's F3 finding.",
+    "Q28, Q29, Q30 each have an OR ('अथवा') alternative — both the question and its OR alternative's answer are present in the answer key.",
+    "Q30 and its OR-alternative both require diagrams (human brain, human nephron) — will be marked diagram.required: true in Stage D, so excluded from usableInQuiz regardless of section."
+  ]
+}

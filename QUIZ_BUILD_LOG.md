@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage P (Pilot) — COMPLETE.** Paper `2016-a` poora A→G ho chuka. |
-| **Status** | 🟢 Stage B✅ C✅ D✅ E✅ F✅ G✅ — **Pilot DoD ticked.** Agla: user "haan, aage badho" bole to Stage B baaki 19 papers pe. |
+| **Sub-stage** | **Stage B (bulk, baaki 19 papers) — IN PROGRESS.** 2/19 done: `2016-b`, `2016-c`. |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B shuru — batch 1 (`2016-b`, `2016-c`) done, 17 papers baaki. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — pilot ka Stage G (review queue + health report) |
+| **Last session** | 2026-08-04 — Stage B batch 1: `2016-b` + `2016-c` page-reading (16 PDF pages) |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -102,6 +102,7 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-6 | `test:chat-db-models` crash karta hai — `src/models/chatState.model.js` dhundhta hai jo exist nahi karti. Pre-existing (archived `PROBLEMS.md` STB-008 note ke mutabik: `chatState` purane refactor mein `chatSession` ke andar embed hua, script kabhi update nahi hui). Phase 0 baseline mein red mila, isse Phase 0 se unrelated maan ke park kiya. | `backend/scripts/test-chat-db-models.js` | Phase 0 baseline, 2026-08-02 | 🟡 Medium — ek regression test permanently disabled jaisa hai |
 | P-7 | `npm run rag:test-retriever` khud fail hota hai — script kabhi `connectDB()` call hi nahi karta, isliye Mongo se connect hue bina seedha `Chunk.aggregate()` chala deta hai aur 10s buffering timeout pe fail hota hai. RAG khud theek hai (Stage E session mein seedha `retrieveRelevantChunks()` connect karke test kiya — kaam karta hai) — sirf ye ek test script broken hai. | `backend/scripts/test-retriever.js` | Stage E baseline check, 2026-08-04 | 🟡 Medium — RAG debug karne ka documented tareeka hi kaam nahi karta |
 | P-8 | Stage B (page reading) ke notes mein handwritten-mark observations already hain (jaise "Handwritten mark seen on (ii) next to 'Convex' — WRONG") — par Stage D/E in notes ko question ke `flags[]` mein propagate nahi karte. Har MCQ pe `flags: []` khaali hai. Ek future Stage G review ke liye useful cross-check hoga agar ye pull-forward ho jaye. | `backend/scripts/quiz-bank/buildBlocks.js`, `buildQuestions.js` | Stage E session, 2026-08-04 | 🟢 Low — nice-to-have, kisi phase ka DoD nahi rokta |
+| P-9 | `2016-a` ke pilot manifest mein `sourceMd5` field **galat hai** — usme `2016-c.pdf` ka hash likha hai, `2016-a.pdf` ka nahi. Content sahi hai (aaj `2016 a.pdf` dobara render karke pilot ke stored page-01 se match kiya, exact match) — sirf ek field ki typo/copy-paste galti hai, koi content mix-up nahi. Fix: field value ko `9b856dfc5d535dac2e44dc44ebaa0798` se replace karna hai. | `data/quiz-bank/stage1-pages/2016-a/_manifest.json` | Stage B batch 1 session, 2026-08-04 | 🟢 Low — cosmetic, content par koi asar nahi |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -133,6 +134,24 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Stage B bulk batch 1: `2016-b` + `2016-c`
+- **Bana:** `data/quiz-bank/stage1-pages/2016-b/` aur `2016-c/` — manifest + 8 page files har paper
+  ke liye (16 PDF pages total), PyMuPDF se 200 DPI PNG render karke vision se padha. Backend
+  `src/` ka koi file touch nahi hua.
+- **Bada finding:** dono papers mein **printed answer key hai** (pilot wale `2016-a` mein nahi thi).
+  Par `2016-b` ka key Group A+B dono cover karta hai, `2016-c` ka key sirf Group A (Q1-29) tak —
+  Q30 aur poora Group B (20 MCQ) us paper mein answer-key-less hai, Stage E ko textbook/repeat route
+  leni hogi in dono ke liye.
+- **Data-quality signal:** "resistance ka SI unit = Ampere" (sahi: Ohm) ki wahi galti **teesri baar**
+  mili — pehle pilot mein pen-mark, ab dono naye papers ke printed key mein bhi. Confirms Stage E ka
+  textbook cross-check printed key pe bhi zaroori hai, sirf pen-marks pe nahi.
+- **Parking Lot mein P-9 gaya:** pilot ke `2016-a` manifest mein `sourceMd5` field galat nikla (asal
+  mein `2016-c.pdf` ka hash likha tha) — content verify kiya, sirf field-level typo hai, koi content
+  mix-up nahi. Chhota fix hai, is session mein nahi kiya (blocker nahi tha).
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression nahi.
+- **Agla:** Stage B batch 2 — agle 2-3 papers (`2017-a`, `2017-c`, `2017-d`; `2017-b` skip hoga,
+  `2017-a` ka exact duplicate hai — F1 finding, MD5 verify kiya).
 
 ### 2026-08-04 — Pilot Stage G: review queue + final health (Pilot COMPLETE)
 - **Bana:** `backend/scripts/quiz-bank/buildReview.js` + `npm run quiz:review` → output

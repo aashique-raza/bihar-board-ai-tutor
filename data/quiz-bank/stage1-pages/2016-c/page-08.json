@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2016-c",
+  "pdfPage": 8,
+  "printedPages": [8],
+  "readBy": "vision",
+  "confidence": "medium",
+  "contains": "Q29 first-part answer conclusion + Q29 OR-alternative (Mendeleev vs modern periodic table comparison table) — document ends here",
+  "raw": {
+    "hi": "करना चाहिए जिसका भंडारण असीमित हो, जैसे सौर ऊर्जा, पवन ऊर्जा, बायोगैस इत्यादि का अधिक से अधिक उपयोग करना चाहिए।\n\nअथवा,\n[Table: दो स्तम्भ]\nमेंडलीफ की आवर्त सारणी | आधुनिक आवर्त सारणी\n(i) इसमें तत्वों को परमाणु भार के बढ़ते क्रम में सजाया गया है। | (i) इसमें तत्वों को परमाणु संख्या के बढ़ते क्रम में सजाया गया है।\n(ii) मेंडलीफ के आवर्त सारणी में विभिन्न तत्वों के गुण धर्मों में समानता एवं भिन्नता के लिए कोई मापदण्ड नहीं है। | (ii) आधुनिक आवर्त सारणी में तत्वों को उनके इलेक्ट्रॉनिक विन्यास के आधार पर सजाया गया है।\n(iii) मेंडलीफ की आवर्त सारणी से रासायनिक आवर्तता की कोई स्पष्ट व्याख्या करने में सफल नहीं है। | (iii) आधुनिक आवर्त सारणी रासायनिक आवर्तता की स्पष्ट व्याख्या करता है।\n(iv) इस आवर्त सारणी में कई प्रकार की अनियमितताएँ जैसे समस्थानिकों का स्थान, कुछ तत्वों के परमाणु द्रव्यमान में गलत क्रम। | (iv) मोसले के आधुनिक आवर्त सारणी में इन सभी त्रुटियों को दूर किया गया है।\n(v) मेंडलीफ की आवर्त सारणी में ऐसा कोई स्पष्ट वर्गीकरण नहीं है। | (v) आधुनिक आवर्त सारणी में तत्वों का स्पष्ट वर्गीकरण जैसे सामान्य तत्व, संक्रमण तत्व एवं उत्कृष्ट गैसों को अलग-अलग रखा गया है।\n(vi) इसके द्वारा स्पष्ट एवं सरल रूप से तत्वों को समझने एवं व्यवस्थित करने में कठिन होती है। | (vi) इसके द्वारा स्पष्ट एवं सरल रूप से तत्वों को समझने एवं व्यवस्थित करने में आसानी होती है।",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "First line reconstructed by joining with page 7's cut-off sentence: '...ईंधन के लिए वैसे ऊर्जा स्रोत का इस्तेमाल करना चाहिए जिसका भंडारण असीमित हो...' — the actual scanned line at the very top of this page was partially cut/overlapping in the source scan (some characters obscured), reconstructed via context from the sentence continuation. Confidence 'medium' for this page specifically because of that top line; the table below is clearly legible (high confidence).",
+    "DOCUMENT ENDS HERE. No further pages in this PDF (confirmed 8 pages via PyMuPDF and matches survey.json). Q30's answer and the entire Group B (Q31 i-xx) answer key are absent from this source — see paper-level manifest note.",
+    "This table content is near-identical in structure/wording to a standard NCERT-style comparison of Mendeleev's vs the modern periodic table — a strong repeat-detection candidate once other papers are processed."
+  ]
+}

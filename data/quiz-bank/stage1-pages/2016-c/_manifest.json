@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2016-c",
+  "sourceFile": "2016 c.pdf",
+  "sourceMd5": "ae32f359c025c5571e3118a6d6f88e40",
+  "pdfPages": 8,
+  "printedPages": 8,
+  "printedPagesPerPdfPage": 1,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "printedPages": [1], "status": "done", "contains": "header + Group A instructions + Q1-Q29 (5-mark Q28,29 have OR)", "confidence": "high" },
+    { "pdfPage": 2, "printedPages": [2], "status": "done", "contains": "Q30 (no OR) + Group B header + instructions + Q31(i)-(xi)", "confidence": "high" },
+    { "pdfPage": 3, "printedPages": [3], "status": "done", "contains": "Q31(xii)-(xx) + answer key header + Group A answers 1-5", "confidence": "high" },
+    { "pdfPage": 4, "printedPages": [4], "status": "done", "contains": "Group A answers 6-22 (with reflection law diagram)", "confidence": "high" },
+    { "pdfPage": 5, "printedPages": [5], "status": "done", "contains": "Q23 (resistor combination, 2 circuit diagrams) + Q24-26 answers", "confidence": "high" },
+    { "pdfPage": 6, "printedPages": [6], "status": "done", "contains": "lymph explanation + Q27 answer (hormone table) + start of Q28", "confidence": "high" },
+    { "pdfPage": 7, "printedPages": [7], "status": "done", "contains": "Q28 continued (ammeter/voltmeter, 2 circuit diagrams) + Q29 first part (energy crisis)", "confidence": "high" },
+    { "pdfPage": 8, "printedPages": [8], "status": "done", "contains": "Q29 OR-alternative (Mendeleev vs modern periodic table comparison table) — document ends here", "confidence": "high" }
+  ],
+  "notes": [
+    "Header on page 1 reads 'विज्ञान-2016(A) (द्वितीय पाली)' = 'Science 2016(A) SECOND shift' — different from 2016-b's 'प्रथम पाली' (first shift) header. Both are internal labels only; per P3 the filename ('2016-c') is identity, not this label. Content is entirely different from both 2016-a and 2016-b (confirmed by reading all questions) — this is a genuinely distinct paper, not a duplicate.",
+    "IMPORTANT — sourceMd5 cross-check: this file's hash (ae32f359...) is the SAME value that was recorded as 'sourceMd5' in stage1-pages/2016-a/_manifest.json from the pilot session. Verified this is a manifest data-entry bug, not a real file mix-up: re-rendered current 2016-a.pdf page 1 today and its content (Sl. Code 811, same instructions) exactly matches what the pilot already transcribed for 2016-a. So 2016-a's stored pilot content is correct; only its manifest's sourceMd5 field value is wrong (should be 9b856dfc5d535dac2e44dc44ebaa0798, currently shows this file's hash instead). Parked — not a blocker, does not affect any question content. Fix: correct the one field value in stage1-pages/2016-a/_manifest.json.",
+    "'Scanned by CamScanner' watermark visible on page 2 — another downloaded/re-scanned study copy, not board-issued, consistent with pilot's F3 finding pattern (unofficial source).",
+    "This paper HAS a printed answer key ('उत्तरमाला') but it is INCOMPLETE — it covers Group A answers 1-29 only. Q30's answer and the entire Group B (Q31 i-xx MCQ) answer key are NOT present anywhere in this 8-page document. Confirmed the PDF genuinely has only 8 pages (matches survey.json and PyMuPDF page count) — this is not a missed page on my part, the source document itself stops after Q29's answer. Group B (20 MCQs, the highest-value objective content) will need Stage E's other two routes (repeat-question match or textbook verification) since no printed key exists for it here.",
+    "Group A answer 4 (page 3) is 'एम्पीयर' (Ampere) for the question asking SI unit of resistance — WRONG (correct: Ohm). This is the THIRD independent occurrence of this exact error across the 3 papers read so far (pilot 2016-a pen-mark, 2016-b printed key, now 2016-c printed key). Strong signal this specific mistake is systemic across these guide-book sources, not a one-off. Recorded as printed, flagged for Stage E.",
+    "Group A answer 2 (page 3) shows working 'I = P/V = 100/200 = 5/11 एम्पीयर' — the intermediate '100/200' looks like a print typo (the question states 220V, and 100/220 does equal 5/11 exactly; 100/200 does not). Final answer 5/11 A is numerically correct for the actual question. Transcribed exactly as printed, flagged as likely OCR-adjacent print artifact, not a real answer error.",
+    "Q28's answer includes an OR-alternative structure embedded WITHIN the answer text itself ('अथवा, किसी पदार्थ का वह गुण...') covering resistance/ammeter/voltmeter — this mirrors Q28's own OR in the question (दृष्टि दोष OR प्रतिरोध/एमीटर/वोल्टमीटर प्रयोग)."
+  ]
+}

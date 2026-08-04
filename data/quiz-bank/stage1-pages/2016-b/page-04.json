@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2016-b",
+  "pdfPage": 4,
+  "printedPages": [4],
+  "readBy": "vision",
+  "confidence": "medium",
+  "contains": "Group A answers 6-22 (up to start of Q22 explanation)",
+  "raw": {
+    "hi": "6. वर्ग-IV\n7. 11\n8. 7\n9. आवर्त\n10. ड्यूरेलियम\n11. कुटपादों के द्वारा।\n12. ट्रैकिया।\n13. माइटोकॉण्ड्रूया।\n14. स्फैग्मोमैनोमीटर।\n15. मेंडल को।\n16. एम्पीयर।\n17. दृष्टि दोष— स्वस्थ आँख के स्पष्ट दृष्टि की न्यूनतम दूरी 25 cm है तथा अधिकतम दूरी अनन्त है। जब किसी कारणवश 25 cm की दूरी पर स्थित या अनन्त दूरी पर स्थित वस्तु को आँख द्वारा देखे जाने पर स्पष्ट नहीं दिखाई पड़ती है तो उस स्थिति में कहा जाता है कि आँख में किसी प्रकार का दोष उत्पन्न है।\nदृष्टि दोष— तीन प्रकार के होते हैं—\n(i) निकट दृष्टि दोष, (ii) दूर दृष्टि दोष तथा (iii) जरा दृष्टि दोष।\n18. यौगिकों की ऐसी श्रृंखला जिसमें कार्बन श्रृंखला में स्थित हाइड्रोजन को एक ही प्रकार का प्रकार्यक समूह प्रतिस्थापित करता है उसे समजातीय या सजातीय श्रेणी कहते हैं। इसके क्रमागत सदस्यों में CH2 का अंतर होता है। जैसे एल्केन का सामान्य सूत्र CnH2n+2 होता है। यहाँ CH4 तथा C2H6 में CH2 का अंतर है।\n19. खनिज— वैसे पदार्थ जिसमें मुक्तावस्था या संयुक्तावस्था में पायी जानेवाली धातुओं के साथ कुछ अशुद्धि उपस्थित रहती है, उसे खनिज कहते हैं।\nअयस्क— वे खनिज जिनसे आसानी से और कम खर्च में धातु निष्काषित की जा सकती है, उसे अयस्क कहते हैं।\n20. आयोडीन की कमी से घेंघा रोग उत्पन्न होता है।\nमनुष्य के आहार में संतुलित रूप से अम्ल, भस्म, आयरन, आयोडीन, सोडियम क्लोराइड इत्यादि की आवश्यक मात्रा जरूरी है। लेकिन आवश्यकता से कम आयोडीन मिलने पर मनुष्य में घेंघा रोग उत्पन्न हो जाता है। जिसे गलकंठ भी कहते हैं। साधारण नमक में KIO3 या KI की थोड़ी सी मात्रा मिलाकर नमक को आयोडीन युक्त किया जाता है।\n21. पौधों में गैसों का आदान प्रदान विसरण की क्रिया के द्वारा होता है। वायुमंडल के ऑक्सीजन के पौधों में प्रवेश करने के कई स्थान है। सामान्य रूप से पत्तियों के रंध्रों पुराने वृक्षों के तनों की कड़ी त्वचा पर स्थित वातरंध्रों एवं अंतरकोशिकीय स्थानों द्वारा ऑक्सीजन युक्त वायुमंडल से पौधों में प्रवेश करती है। पौधे जड़ों के द्वारा ऑक्सीजन ग्रहण कर कार्बन डाइऑक्साइड बाहर निकालते हैं।\n22. जब कोई श्वेत प्रकाश किसी प्रिज्म से होकर गुजरती है तो वह सात रंगों में विभक्त हो जाती है। इस घटना को वर्ण विक्षेपण कहते हैं।",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Q16 answer 'एम्पीयर' (Ampere) is WRONG — Q16 asked for SI unit of resistance, correct answer is Ohm ('ओम'). Recorded exactly as printed per Stage B rule (do not correct). Flag for Stage E: this is the same error class as the pilot's F3 finding, but here it is in a PRINTED key, not a handwritten mark — strong evidence Stage E must not blindly trust printed-key source either.",
+    "Q13 answer glyph at 200-400 DPI reads ambiguously — closest reading is 'माइटोकॉण्ड्रूया', printed with a slightly unusual conjunct. Standard/intended word is almost certainly 'माइटोकॉन्ड्रिया' (mitochondria), matching Q13's question ('कोशिका में पावर हाऊस किसे कहते हैं?'). Transcribed as literally read; Stage D should normalize to standard spelling via glossary, not treat this as a different word.",
+    "Confidence set to 'medium' for this page specifically because of the Q13 glyph ambiguity — all other answers on this page are clearly legible (high confidence)."
+  ]
+}

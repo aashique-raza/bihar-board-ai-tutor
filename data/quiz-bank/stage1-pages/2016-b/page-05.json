@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2016-b",
+  "pdfPage": 5,
+  "printedPages": [5],
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "prism diagram + Q22-26(i) answers",
+  "raw": {
+    "hi": "[Diagram: white light entering a triangular prism, splitting into 7 rays labelled R, O, Y, G, B, V (visible spectrum) — VIBGYOR order as drawn: R, O, Y, G, B, V]\n\nजब श्वेत प्रकाश को प्रिज्म से गुजारते हैं तथा उससे निकलने वाली प्रकाश की किरण को पर्दे पर प्राप्त करते हैं तो सात रंगों की एक पट्टी मिलती है जिसे स्पेक्ट्रम कहते हैं।\n\n23. प्रकाश का अपवर्तन— प्रकाश की किरणों के एक पारदर्शी माध्यम से दूसरे पारदर्शी माध्यम में जाने पर उसकी दिशा में परिवर्तन हो जाता है प्रकाश की इसी दिशा के मुड़ने की प्रक्रिया को प्रकाश का अपवर्तन कहते हैं।\nप्रकाश के अपवर्तन के दो नियम हैं—\n(i) आपतित किरण, परावर्तित किरण तथा आपतन बिन्दु पर डाला गया अभिलंब तीनों एक समतल में होते हैं।\n(ii) आपतन के कोण की ज्या sin i तथा परावर्तन कोण की ज्या sin r का अनुपात नियतांक होता है।\nअर्थात् sin i / sin r = एक नियतांक।\n\n24. चांदी, सोना एवं प्लैटिनम का उपयोग आभूषण बनाने में किया जाता है क्योंकि इसमें निम्नलिखित गुण धर्म पाए जाते हैं। जैसे—\n(i) तन्यता, (ii) आघातवर्ध्यता, (iii) जंग के प्रति सुरक्षित इत्यादि।\n\n25. उदासीनीकरण— जब कोई अम्ल क्षार से अभिक्रिया करती है तो अम्लीय तथा क्षारीय दोनों प्रकृति के बीच उदासीनता कायम हो जाती है इसी को उदासीनीकरण कहते हैं। इसके परिणामस्वरूप लवण का निर्माण होता है। जैसे—\nHCl + NaOH → NaCl + H2O\nअम्ल   क्षार    लवण    जल\nH2SO4 + 2KOH → K2SO4 + 2H2O\nअम्ल    क्षार     लवण      जल\n\n26. पित्त— यह गाढ़ा हरे रंग का क्षारीय द्रव है। मनुष्य के पाचन में यह निम्न प्रकार से सहायक होता है।\n(i) पित्त अमाशय से ग्रहणी में सर्वप्रथम अम्लीय काइम में प्रवेश करता है। पित्त अत्यधिक क्षारीय होने के कारण काइम की अम्लीयता समाप्त कर उसे क्षारीय बना देता है। जिससे अग्न्याशयिक रसों का सफल क्रियान्वयन होता है।\n(ii) पित्त के लवणों जैसे—सोडियम ग्लाइकोलेट तथा सोडियम टॉरीकोलेट भोजन के जटिल वसा का विखंडन तथा पायसीकरण कर देते हैं जिससे विभिन्न प्रकार के लाइपेज की क्रिया सफल ढंग से होता है। पित्त रस में अनेक प्रकार के एन्जाइम पाये जाते हैं जो भोजन के पाचन में अहम भूमिका निभाता है।",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Q23 law (i) as printed says 'परावर्तित किरण' (reflected ray) — for a law of REFRACTION this should say 'अपवर्तित किरण' (refracted ray). Likely a print error in the source guide (reflection-law wording reused for refraction). Transcribed exactly as printed; flag for Stage E textbook cross-check.",
+    "Diagram present for the spectrum/prism illustration — not required to answer Q22 itself (question is answerable in text), so this alone does not force diagram.required for Q22.",
+    "Q25 chemical equations use plain text subscripts (H2SO4 not H₂SO₄) per pipeline formatting convention."
+  ]
+}
