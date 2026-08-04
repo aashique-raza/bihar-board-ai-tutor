@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-a",
+  "page": 5,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Chemistry Q10 (match-the-column, 5 marks, with OR alternative) + Biology section header + Q1-Q2",
+  "raw": {
+    "hi": "दीर्घउत्तरीय प्रश्न\n\n10. स्तम्भ (i) तथा स्तम्भ (ii) का मिलान करें— 5\nस्तम्भ (i)              स्तम्भ (ii)\n(i) बेकिंग सोडा          CaSO4. 2H2O\n(ii) धोने का सोडा        CuSO4. 5H2O\n(iii) ग्लौबर लवण         NaHCO3\n(iv) नीला थोथा           Na2CO3, 10H2O\n(v) जिप्सम              Na2SO4, 10H2O\n\nOR / अथवा\nरासायनिक गुणों के आधार पर धातु और अधातु में अन्तर स्पष्ट करें। 5\n\nजीव विज्ञान / BIOLOGY\nभाग - अ / GROUP - A\n\n1. विटामिन A की कमी से होने वाले रोग का नाम लिखो। 1\n2. ऑक्सीजन की उपस्थिति में होने वाले श्वसन क्रिया को क्या कहते हैं ? 1\n\n[204]                          Page 5 of 12                    [Turn over",
+    "en": "Long-answer questions\n\n10. Match the following column (i) to (ii) 5\nColumn (i)              Column (ii)\n(i) Baking soda          CaSO4. 2H2O\n(ii) Washing soda        CuSO4. 5H2O\n(iii) Glauber's salt     NaHCO3\n(iv) Blue vitriol        Na2CO3, 10H2O\n(v) Gypsum               Na2SO4, 10H2O\n\nOR\nDistinguish between Metal & Non - metal on the basis of Chemical Properties. 5\n\nBIOLOGY\nGROUP - A\n\n1. Write name of disease which occurs due to deficiency of vitamin A. 1\n2. Write the name of respiration which occurs in presence of oxygen. 1"
+  },
+  "textLayer": null,
+  "notes": [
+    "Q10 is a match-the-column question (5 columns each side) — printed pairing in the source appears scrambled/mismatched vs real chemistry (e.g. baking soda paired with CaSO4.2H2O, which is actually gypsum's formula) — recorded exactly as printed per Stage B rule (do not correct); Stage E will need to determine the true correct pairing since this is the question itself, not an answer.",
+    "Chemistry Group A ends at Q10 (10 questions, mirrors Physics' 10). Biology Group A begins fresh at Q1, same per-subject renumbering pattern as page 3.",
+    "'दीर्घउत्तरीय प्रश्न' (Long-answer questions) sub-header appears before Q10, same pattern as page 4's short-answer sub-header — likely a formatting label per mark-tier, not a new section boundary."
+  ]
+}

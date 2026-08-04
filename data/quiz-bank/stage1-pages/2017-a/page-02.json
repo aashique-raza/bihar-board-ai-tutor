@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-a",
+  "page": 2,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Group A (Marks:60) instructions + Physics section header + Q1-Q6 (bilingual, Hindi+English per question)",
+  "raw": {
+    "hi": "भाग - अ (अंक : 60)\nGROUP - A (Marks : 60)\n\nनिर्देश :\n1. 1 अंक वाले प्रश्नों के उत्तर एक शब्द या एक वाक्य में दें।\n2. 2 अंक वाले प्रश्नों के उत्तर लगभग 50 शब्दों में, 3 अंक वाले प्रश्नों के उत्तर 75 शब्दों में एवं 5 अंक वाले प्रश्नों के उत्तर लगभग 150 शब्दों में दें।\n\nभौतिक शास्त्र / PHYSICS\nभाग - अ / GROUP - A\n\n1. मोटर गाड़ी चालक के सामने कौन सा दर्पण लगा रहता है ? 1\n2. प्रकाश के अपवर्तन के कितने नियम हैं ? 1\n3. विद्युत ऊर्जा का व्यावसायिक मात्रक क्या है ? 1\n4. AIDS (एडस) का पूरा नाम लिखें। 1\n5. किस लेंस को अपसारी लेंस कहते हैं ? 1\n6. आवर्धन किसे कहते हैं ? वर्णन करें। 2\n\n[204]                          Page 2 of 12",
+    "en": "GROUP - A (Marks : 60)\nInstructions:\n1. Answer in one word or in one sentence the questions of 1 mark.\n2. Answer in about 50 words the questions of 2 marks, answer in about 75 words the questions of 3 marks and answer in about 150 words the questions of 5 marks.\n\nPHYSICS\nGROUP - A\n\n1. Which type of mirror is used in front of driver? 1\n2. How many Laws of refraction of light are there? 1\n3. What is commercial unit of electrical energy? 1\n4. Write full form of AIDS. 1\n5. Which lens is known as diverging lens? 1\n6. What is magnification? Explain it. 2"
+  },
+  "textLayer": null,
+  "notes": [
+    "This paper prints Hindi and English for every question, line by line (question text bilingual, not just instructions) — better source than 2016 series for language cross-check.",
+    "Group A is split by subject with headers: Physics first (seen here), presumably Chemistry/Biology follow on later pages.",
+    "Handwritten pencil check-marks/slashes visible next to question numbers 1-6 (looks like a student's own tick marks, not answer indicators) — recorded as observed, not interpreted."
+  ]
+}

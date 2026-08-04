@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-a",
+  "page": 6,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Biology Q3-Q10 (Q10 has OR alternative requiring a diagram)",
+  "raw": {
+    "hi": "3. मानव में दो उत्सर्जी पदार्थों का नाम लिखे। 1\n4. परितंत्र में अपघटकों की भूमिका बतायें। 1\n5. अमीबा में गति किस भाग से होती है ? 1\n6. परिसंचरण तंत्र से आप क्या समझते हैं ? 2\n7. विषमपोषी पोषण से आप क्या समझते हो ? 2\n8. मुकुलन क्या है ? 3\n9. उत्पादक से आप क्या समझते हैं ? 3\n10. रक्त क्या है ? इसके घटकों का वर्णन करें। 5\n\nOR / अथवा\nपुष्प के अनुदैर्ध्य काट का नामांकित चित्र बनायें। 5\n\n[204]                          Page 6 of 12",
+    "en": "3. Write two excretory substances of human being. 1\n4. Describe the role of decomposers in ecosystem. 1\n5. Write locomotory organ of Amoeba. 1\n6. What do you understand by circulatory system? 2\n7. What do you understand by heterotrophic nutrition? 2\n8. What is buddling? 3\n9. What do you understand by producer? 3\n10. What is blood? Describe components of blood. 5\n\nOR\nDraw diagram of longitudinal section of flower. 5"
+  },
+  "textLayer": null,
+  "notes": [
+    "A watermark 'http://www.bsebstudy.com' is printed inline within Q8's Hindi line — confirms this is a downloaded guide-book copy, not a board-issued scan (consistent with prior papers' F3 finding). Recorded as seen, excluded from the clean question text extraction judgment call deferred to Stage C.",
+    "Biology Group A ends at Q10 (10 questions, same pattern as Physics/Chemistry — 3 subjects x 10 = 30 total for Group A, consistent with 'Marks: 60' from page 2 given the 1/1/1/2/2/3/3/5 mark ladder... verification at Stage C).",
+    "Q10's OR alternative requires a hand-drawn diagram (flower longitudinal section) — will be flagged diagram.required: true at Stage D, excluded from usableInQuiz."
+  ]
+}

@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk, baaki 19 papers) — IN PROGRESS.** 2/19 done: `2016-b`, `2016-c`. |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B shuru — batch 1 (`2016-b`, `2016-c`) done, 17 papers baaki. |
+| **Sub-stage** | **Stage B (bulk, baaki 19 papers) — IN PROGRESS.** 5/19 done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d` (`2017-b` skipped — exact duplicate of `2017-a`, MD5-confirmed). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B shuru — batch 2 (`2017-a`, `2017-c`, `2017-d`) done, 14 papers baaki. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — Stage B batch 1: `2016-b` + `2016-c` page-reading (16 PDF pages) |
+| **Last session** | 2026-08-04 — Stage B batch 2: `2017-a` + `2017-c` + `2017-d` page-reading (27 PDF pages) |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -103,6 +103,8 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-7 | `npm run rag:test-retriever` khud fail hota hai — script kabhi `connectDB()` call hi nahi karta, isliye Mongo se connect hue bina seedha `Chunk.aggregate()` chala deta hai aur 10s buffering timeout pe fail hota hai. RAG khud theek hai (Stage E session mein seedha `retrieveRelevantChunks()` connect karke test kiya — kaam karta hai) — sirf ye ek test script broken hai. | `backend/scripts/test-retriever.js` | Stage E baseline check, 2026-08-04 | 🟡 Medium — RAG debug karne ka documented tareeka hi kaam nahi karta |
 | P-8 | Stage B (page reading) ke notes mein handwritten-mark observations already hain (jaise "Handwritten mark seen on (ii) next to 'Convex' — WRONG") — par Stage D/E in notes ko question ke `flags[]` mein propagate nahi karte. Har MCQ pe `flags: []` khaali hai. Ek future Stage G review ke liye useful cross-check hoga agar ye pull-forward ho jaye. | `backend/scripts/quiz-bank/buildBlocks.js`, `buildQuestions.js` | Stage E session, 2026-08-04 | 🟢 Low — nice-to-have, kisi phase ka DoD nahi rokta |
 | P-9 | `2016-a` ke pilot manifest mein `sourceMd5` field **galat hai** — usme `2016-c.pdf` ka hash likha hai, `2016-a.pdf` ka nahi. Content sahi hai (aaj `2016 a.pdf` dobara render karke pilot ke stored page-01 se match kiya, exact match) — sirf ek field ki typo/copy-paste galti hai, koi content mix-up nahi. Fix: field value ko `9b856dfc5d535dac2e44dc44ebaa0798` se replace karna hai. | `data/quiz-bank/stage1-pages/2016-a/_manifest.json` | Stage B batch 1 session, 2026-08-04 | 🟢 Low — cosmetic, content par koi asar nahi |
+| P-10 | Answer key ke andar **"देखें <year> ... का उत्तर" (cross-reference) answers** — `2017-c` aur `2017-d` dono mein mila (3 alag questions total: 2017-c Physics Q9-Q10, 2017-d Physics Q7+Q10-main, Biology Q10-OR). Ye guide-book key kabhi-kabhi asli jawab likhne ke bajaye kisi **doosre paper/shift** ka reference de deta hai (jaise "2014(A) द्वितीय पाली Q7") jo hamare 21-PDF set mein confirm nahi hai. Stage E jab is tarah ka answer text dekhe to usse "unanswered" treat kare, RAG/textbook route le — parse karne ki koshish na kare. | `data/quiz-bank/stage1-pages/2017-c/`, `2017-d/` (page-05, page-08 wagaira) | Stage B batch 2 session, 2026-08-04 | 🟡 Medium — Stage E ka logic isse aware hona chahiye, warna galat parse ho sakta hai |
+| P-11 | `2017-a` aur `2017-d` — **do alag PDF files (confirmed distinct MD5) ka poora question set (50/50) word-for-word identical hai**, Group A aur Group B dono. `2017-a` ke paas answer key nahi hai, `2017-d` ke paas hai — matlab Stage F dedup jab in dono ko link karega, `2017-d` ki key `2017-a` ke sawaalon ka bhi jawab de degi. Ye blocker nahi hai (Stage F apne aap handle karega dedup logic se), sirf ek note hai ki ye link zaroor bane. | `data/quiz-bank/stage1-pages/2017-a/`, `2017-d/` manifests | Stage B batch 2 session, 2026-08-04 | 🟢 Low — Stage F ke design ka hi hissa hai, sirf yaad rakhna hai |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -134,6 +136,26 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Stage B bulk batch 2: `2017-a` + `2017-c` + `2017-d`
+- **Bana:** `data/quiz-bank/stage1-pages/2017-a/`, `2017-c/`, `2017-d/` — manifest + page files
+  (27 PDF pages total: 12+7+8), PyMuPDF se 200 DPI PNG render karke vision se padha. `2017-b`
+  MD5-verify karke skip kiya (F1 se confirm, `2017-a` ka exact duplicate). Backend `src/` ka
+  koi file touch nahi hua.
+- **Bada finding (dedup):** `2017-a` aur `2017-d` — do **alag PDF files** (MD5 confirm distinct)
+  ka **poora 50-question set word-for-word identical** hai. `2017-a` ke paas answer key nahi,
+  `2017-d` ke paas hai — Stage F link banayega to `2017-d` ki key dono papers ke liye kaam
+  karegi. Parking Lot P-11.
+- **Naya failure pattern (2x confirm hua):** `2017-c` aur `2017-d` dono ke answer key mein kuch
+  jawab asli text nahi, balki **"देखें <year> ... का उत्तर"** (kisi doosre paper/shift ka
+  reference) hain, jo hamare 21-PDF set mein confirm nahi hain. Stage E ko in 3 sawaalon ko
+  unanswered treat karna hoga. Parking Lot P-10.
+- **Format diversity:** `2017-a` bilingual (Hindi+English har line), `2017-c`/`2017-d` Hindi-only
+  guide-book style with per-subject Group A/B numbering restart — teeno alag layout se pipeline
+  ka Stage B approach (raw hi/en capture, jo dikha wahi likho) sab pe kaam kiya.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression
+  nahi.
+- **Agla:** Stage B batch 3 — agle 2-3 papers (`2018-a`, `2018-b`, aur ek aur).
 
 ### 2026-08-04 — Stage B bulk batch 1: `2016-b` + `2016-c`
 - **Bana:** `data/quiz-bank/stage1-pages/2016-b/` aur `2016-c/` — manifest + 8 page files har paper

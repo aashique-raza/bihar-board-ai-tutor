@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-c",
+  "page": 5,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Physics answers 9-10 (cross-reference, NOT literal answers) + Chemistry answers 1-8 (partial, diagrams)",
+  "raw": {
+    "hi": "9. देखें 2014(A) द्वितीय पाली, प्रश्न सं॰-7 का उत्तर।\n10. देखें 2013(A) प्रश्न सं॰-30 का उत्तर।\nअथवा, देखें 2016(A) द्वितीय पाली, प्रश्न सं॰-28 का उत्तर एवं सचित्र वर्णन के लिए देखें 2012(A) प्रश्न सं॰-18 का उत्तर।\n\nरसायन शास्त्र\n\n1. पेड़ पौधों तथा जानवरों से प्राप्त खाद्य सामग्रियों में वसा और तेल उपस्थित होते हैं जो वायुमंडल में मौजूद ऑक्सीजन से अभिक्रिया करके एक यौगिक बनाता है। जिसका स्वाद अप्रिय होता है। इसी प्रक्रिया द्वारा खाद्य सामग्रियों में विकृतगंधिता उत्पन्न होती है।\n2. आवर्तफलन\n3. दो या तीन हीरा ग्रेफाईट एवं फुलेरीन, (मुख्य रूप से दो अपरूप हीरा एवं ग्रेफाइट)।\n4. Na2CO3 · 10H2O\n5. 3Fe + 4H2O → Fe3O4 + 4H2\n\nलघु उत्तरीय प्रश्नोत्तर\n\n6. समजातीय श्रेणी वैसे यौगिकों की श्रेणी होती है जिसके सभी सदस्यों को किसी सामान्य सूत्र से व्यक्त किया जाता है, तथा किसी भी दो क्रमागत सदस्यों के अणुसूत्रों में –CH2– का अंतर होता है। इस श्रेणी के सभी यौगिकों में एक ही क्रियाशील समूह रहने के कारण उनके रासायनिक गुणों में समानता पाई जाती है।\nउदाहरण— ऐल्केन श्रेणी के सदस्यों को सामान्य सूत्र CnH2n+2 से व्यक्त किया जाता है। इस श्रेणी के सदस्य मेथेन (CH4), एथेन (C2H6), प्रोपेन (C3H8) आदि हैं इनके अणुसूत्रों से स्पष्ट है कि प्रत्येक सदस्य अपने से पहले आए हुए सदस्य से –CH2– अधिक है। अत:, ऐल्केन श्रेणी एक समजातीय श्रेणी है।\n7. जो धातुएँ कठोर सतह से टकराकर आवाज उत्पन्न करती है उन्हें ध्वानिक या सोनोरस कहते हैं।\n8. वैसे रासायनिक यौगिक जो कार्बन तथा हाइड्रोजन के संयोग से बने होते हैं उसे हाइड्रोकार्बन कहते हैं। हाइड्रोकार्बन दो प्रकार के होते हैं—\n(i) संतृप्त हाइड्रोकार्बन— जब कार्बन-कार्बन के बीच एक बन्धन होता है तो उसे संतृप्त हाइड्रोकार्बन कहते हैं। जैसे—मेथेन [structural diagram: central C bonded to 4 H atoms, one above, one below, one left, one right], एथेन [structural diagram: two C atoms singly bonded, each C bonded to H atoms: H-C-C-H with 2 H on top, 2 H on bottom]\n(ii) असंतृप्त हाइड्रोकार्बन— जब कार्बन-कार्बन के बीच द्विबंधन या त्रिबंधन पाया जाता है तो उसे असंतृप्त हाइड्रोकार्बन कहते हैं। जैसे— एथीलिन [structural diagram: C=C double bond, 2 H on each C], एथाइन [H-C≡C-H triple bond]",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "MAJOR FINDING for Stage E: Physics answers 9 and 10 are NOT literal answer text — they are cross-references to OTHER exam papers' answer keys ('देखें 2014(A) द्वितीय पाली, प्रश्न सं॰-7 का उत्तर' = 'see 2014(A) 2nd shift, Q7's answer'; similarly Q10 refers to 2013(A) Q30, and its OR alternative refers to 2016(A) 2nd-shift Q28 plus 2012(A) Q18 for the diagram). These referenced papers/shifts are NOT confirmed to be in our 21-PDF set (we have 2016-a/b/c but not '2016 2nd shift' specifically, and none of 2012/2013/2014 at all). Stage E cannot resolve these two answers from this key — must fall back to textbook/RAG route for Physics Q9 and Q10, same as an unverified/no-key paper.",
+    "This is a new failure pattern not seen in 2016-b/c or the pilot — a printed key that exists but is itself indirect/non-self-contained for some questions. Worth a Parking Lot note if it recurs in future papers (may need a 'answer key references external paper' flag in schema).",
+    "Chemistry structural-formula answers (methane, ethane, ethylene, ethyne diagrams) transcribed as text descriptions of the bond diagrams, not redrawn — consistent with page 3's Q5 approach."
+  ]
+}

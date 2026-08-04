@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-d",
+  "sourceFile": "2017 d.pdf",
+  "sourceMd5": "ec01a3c500728eb6ba8ef1dbca8dac6d",
+  "pdfPages": 8,
+  "printedPages": 8,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "status": "done", "contains": "header + Group A (60 marks) + Physics Q1-7", "confidence": "high" },
+    { "pdfPage": 2, "status": "done", "contains": "Physics Q8-10 (OR) + Chemistry Q1-10 (match-column, OR) + Biology Q1-8", "confidence": "high" },
+    { "pdfPage": 3, "status": "done", "contains": "Biology Q9-10 (OR, diagram) + Group B header + Physics MCQ Q1-7 + Chemistry MCQ Q1-2", "confidence": "high" },
+    { "pdfPage": 4, "status": "done", "contains": "Chemistry MCQ Q3-7 (end) + Biology MCQ Q1-6 (end)", "confidence": "high" },
+    { "pdfPage": 5, "status": "done", "contains": "ANSWER KEY starts — Physics answers 1-10 (Q7, Q10-main are cross-references)", "confidence": "high" },
+    { "pdfPage": 6, "status": "done", "contains": "Physics Q10-OR answer (conductor defs) + Chemistry answers 1-9 (partial)", "confidence": "high" },
+    { "pdfPage": 7, "status": "done", "contains": "Chemistry Q10 answer (match-column) + OR (metal/non-metal table) + Biology answers 1-8 (partial)", "confidence": "high" },
+    { "pdfPage": 8, "status": "done", "contains": "Biology answers 8-10 (Q10-OR cross-ref) + Group B MCQ answer key all 3 subjects — end of paper", "confidence": "high" }
+  ],
+  "notes": [
+    "Internal header prints 'विज्ञान-2017(A) (द्वितीय पाली)' = '2017(A) SECOND shift' — different internal shift label from 2017-c's 'प्रथम पाली' (first shift). Per P3, filename ('2017 d.pdf') remains the trusted paperId.",
+    "MAJOR DEDUP FINDING for Stage F: this paper's ENTIRE question set (all 30 Group A + all 20 Group B MCQ, same order, same options, same OR-alternatives) is word-for-word IDENTICAL to 2017-a's question set. Confirmed these are two distinct PDF files (different MD5: 2017-a=da3083..., 2017-d=ec01a3...; different page counts 12 vs 8) — not a duplicate file like 2017-b, but the same underlying paper content reused/reprinted for what look like two different shifts. Stage F should cluster/link these as the same canonical questions across 2 paper appearances, which is the intended repeat-detection behavior.",
+    "IMPORTANT: 2017-d HAS a printed answer key; 2017-a has NONE. Once Stage F links the two as duplicate-content, 2017-d's key becomes the answer source for both papers' shared questions.",
+    "RECURRING CROSS-REFERENCE PATTERN (3rd+ occurrence across this batch, also seen in 2017-c): several of this paper's longest/5-mark answers are not real text but pointers to OTHER exam papers/shifts not in our 21-PDF set ('देखें 2015 द्वितीय पाली Q10-OR', 'देखें 2012(A) Q30', 'देखें 2014(A) प्रथम पाली Q28'). These 3 questions (Physics Q7, Physics Q10-main, Biology Q10-OR) must be treated as unanswered by this key — Stage E needs the textbook/RAG route for them specifically, even though this paper otherwise 'has' a key.",
+    "One likely print typo in the Q10 match-column answer: gypsum (जिप्सम) paired with 'CuSO4·2H2O' but the chemically correct formula is CaSO4·2H2O (Cu vs Ca) — recorded as printed, flagged for Stage E, not corrected here.",
+    "Group B MCQ answer key is complete for all 3 subjects (20/20) — best MCQ coverage of the batch so far."
+  ]
+}

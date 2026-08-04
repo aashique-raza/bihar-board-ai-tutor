@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-d",
+  "page": 7,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Chemistry Q10 answer (match-column pairs, expanded) + OR (metal vs non-metal comparison table) + Biology answers 1-8 (partial)",
+  "raw": {
+    "hi": "10. (i) NaHCO3\n(ii) Na2CO3 · 10H2O\n(iii) Na2SO4 · 10H2O\n(iv) CuSO4 · 5H2O\n(v) CuSO4 · 2H2O\n\nअथवा, रासायनिक गुणों के आधार पर धातु तथा अधातु में अंतर\n\nधातु | अधातु\n(1) धातुओं के परमाणु धनायन बनाते हैं। जैसे–K+ Na+ Mg2+ इत्यादि | (1) अधातुओं के परमाणु ऋणआयन बनाते है। जैसे–Cl-, S2-, Br-\n(2) धातुओं के ऑक्साइड भास्मिक होते है। जैसे–Na2O+H2O→2NaOH | (2) अधातुओं के ऑक्साइड अम्लीय होते है। जैसे–CO2+H2O→H2CO3\n(3) धातुएँ तनु अम्लों से अभिक्रिया करके H2 गैस मुक्त करते हैं। जैसे–Zn+H2SO4→ZnSO4+H2(g) | (3) अधातुएँ तनु अम्लों से अभिक्रिया नहीं करते हैं।\n(4) धातुएँ सामान्यतः H2 के साथ अभिक्रिया नहीं करती है। अपवाद, Li, Na, Ca | (4) अधातुएँ हाइड्रोजन से अभिक्रिया करके हाइड्राइड बनाती है। जैसे–NH3, PH3, H2S\n(5) धातुएँ अवकारक होती है। | (5) अधातुएँ ऑक्सीकारक होती है। अपवाद– कार्बन\n\nजीव विज्ञान\n\n1. रतौंधी\n2. वायवीय या ऑक्सी श्वसन\n3. (i) मूत्र, (ii) पसीना एवं मल\n4. पारितंत्र में अपघटक सड़े गले पदार्थों को अपघटित कर अपने भोजन के रूप में ग्रहण करते हैं।\n5. पदाभ के द्वारा\n6. परिसंचरण तंत्र का कार्य मनुष्य में ऑक्सीजन, कार्बन डाइऑक्साइड, भोजन तथा उत्सर्जी उत्पाद सरीखे पदार्थों का वहन करना है।\nपरिसंचरण तंत्र में हृदय तथा रूधिर वाहिकाएँ होती है।\n7. भोजन के स्वरूप एवं उपलब्धता के आधार पर पोषण की विधि भिन्न-भिन्न होती है इसके अलावे यह जीव के भोजन ग्रहण करने के ढंग (तरीका) पर भी निर्भर करता है। जीवों के द्वारा भोजन ग्रहण करना और उसके उपयोग की अनेक युक्तियाँ है। कुछ जीव भोज्य पदार्थों का विघटन शरीर के बाहर ही कर देते है और तब उसका अशोषण करते है जैसे–फफूँदी, यीस्ट इत्यादि अन्य जीव सम्पूर्ण भोज्य पदार्थ का अंतर्ग्रहण करते है इसी को विषम पोषी पोषण करते है।\n8. मुकुलनः–कुछ प्राणी अपनी पुनर्जनन के लिए कोशिकाओं का उपयोग करते है। जैसे हाइड्रा में कोशिकाओं के नियमित विभाजन के कारण एक स्थान पर उभार विकसित हो जाता...(continues)",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Chemistry Q10 primary-branch answer (match-column: baking soda/washing soda/Glauber's salt/blue vitriol/gypsum) gives full formulas rather than a compact letter-code, unlike 2017-c's different match-column question. Cross-checking against the question's own list order from page 2 (i)बेकिंग सोडा (ii)धोने का सोडा (iii)ग्लौबर लवण (iv)नीला थोथा (v)जिप्सम against this answer list (i)NaHCO3 (ii)Na2CO3·10H2O (iii)Na2SO4·10H2O (iv)CuSO4·5H2O (v)CuSO4·2H2O — LIKELY PRINT ERROR at (v): gypsum's real formula is CaSO4·2H2O (calcium sulfate), not CuSO4·2H2O (copper sulfate, which would duplicate (iv)'s cation). Recorded exactly as printed per Stage B rule (do not correct); flagged for Stage E as a likely answer-key typo (Cu vs Ca), not corrected here.",
+    "Metal vs Non-metal comparison table (OR branch) captured as paired rows rather than a literal two-column table layout.",
+    "Biology Q8's answer text is cut off mid-sentence at page bottom, continues on page 8 (final page)."
+  ]
+}

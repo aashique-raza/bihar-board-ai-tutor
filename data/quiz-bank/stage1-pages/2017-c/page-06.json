@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-c",
+  "page": 6,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Chemistry answers 9-10 (essay + match-column key) + Biology answers 1-9 (partial, Q9 continues)",
+  "raw": {
+    "hi": "9. (a) स्टील—Fe-73%, Ni-18%, C-1%. बर्तन बनाने में।\n(b) पीतल (Brass)—Cu(80%) Zn(20%), बर्तन, नालियाँ एवं कारतूस बनाने में।\n(c) काँसा या ब्रोंज (Bronze), मूर्तियाँ, सिक्का, जहाज एवं मशीनों के निर्माण में।\n\nदीर्घ उत्तरीय प्रश्नोत्तर\n\n10. प्रकृति में कार्बनिक यौगिकों की अत्यधिक संख्या के कारण हैं-\nकार्बनिक यौगिकों का हमारे दैनिक जीवन में बहुत बड़ा महत्व है। सुबह से लेकर शाम तक जिन वस्तुओं का इस्तेमाल हम करते हैं वे सभी पदार्थ कार्बनिक यौगिक से बने होते हैं। हमारे भोजन, कार्बोहाइड्रेट, प्रोटीन, वसा, विटामिन, कपड़ा, कागज, चमड़ा, साबुन रंग प्लैस्टीक के समान बच्चों का खिलौना इत्यादि से सभी कार्बनिक यौगिकों के बने होते हैं। इसके अलावा कृत्रिम रेशा वस्त्र (रेयॉन, नाइलॉन, डेक्रॉन टेटीलीन) इत्यादि बनाने में इसके अलावा कीटानु शाशक D.D.T. गेमेक्सीन इत्यादि के रूप भी इसका उपयोग होता है। रोग से मुक्त होने के लिए अनेक प्रकार की औषधियाँ जैसे सल्फा ड्रग्स, पेनीसिलिन क्लोरोमाइसीटीन टेरामाइसीन एस्पीट्रीन इत्यादि के निर्माण में इसके अलावे विस्फोटक पदार्थ बनाने में भी कार्बनिक यौगिकों का इस्तेमाल किया जाता है। दरअसल यदि पृथ्वी पर से कार्बनिक यौगिकों को हटा दिए जाए तो चन्द्रमा की तरह पृथ्वी भी जीव विहीन हो जाएगी।\n\nअथवा, (i)(b), (ii)(c), (iii)(d), (iv)(e), (v)(a)\n\nजीव विज्ञान\n\n1. कोशिका\n2. चार (4) कोष्ठक में\n3. W.B.C.\n4. एडेनोसिन ट्राई फॉस्फेट\n5. विसरण के द्वारा रंध्रों से।\n6. सजीव के प्रमुख चार लक्षण इस प्रकार हैं-\n(i) प्रजनन, (ii) गति, (iii) वृद्धि, (iv) श्वसन\n7. कोशिका के चार कोशिकांग निम्नलिखित है-\n(i) केन्द्रक, (ii) माइटोकॉण्ड्रिया, (iii) गॉल्जी उपकरण, (iv) लाइसोसोम\n8. मानव में लक्षणों की वंशागति के नियम इस बात पर आधारित है कि माता एवं पिता दोनों ही समान मात्रा में आनुवंशिक पदार्थ को संतति (शिशु) में स्थानान्तरित करते हैं। अर्थात् प्रत्येक लक्षण माता पिता के डी॰एन॰ए॰ से प्रभावित होता है। डी॰एन॰ए॰ जीन वाहक होते हैं। इस कारण से हम अपने माता-पिता के समान होते हैं।\n9. जनन दो प्रकार के होते हैं\n(i) लैंगिक जनन,\n(ii) अलैंगिक जनन।\n(i) लैंगिक जनन- जब संतानों की उत्पत्ति नर और मादा दोनों मिलकर करते हैं तो इस प्रकार के जनन को लैंगिक जनन कहते हैं। जैसे-घोड़ा, गाय, कुत्ता, मनुष्य इत्यादि।\n(ii) अलैंगिक जनन- जब संतानों की उत्पत्ति केवल एकल जनक द्वारा होती है अर्थात् उ...(continues next page)",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Chemistry Q10's OR (match-column) answer is given as a compact key: (i)(b), (ii)(c), (iii)(d), (iv)(e), (v)(a) — cross-referenced against the question printed on page 2 for Stage E to expand into full pairs.",
+    "IMPORTANT DATA-QUALITY FLAG for Stage E: the printed answer key's match-column pairing (i)-(b), (ii)-(c), (iii)-(d), (iv)-(e), (v)-(a) does NOT look chemically correct against the question's column (ii) values from page 2 — e.g. (i) 'blue litmus turns red' should pair with 'acidic' (b), which the key DOES say ((i)(b)) — that one is right. But (ii) 'milk turning sour' should pair with 'lactic acid' (c) — key says (ii)(c), also right. Spot check looks OK on first pass; full verification deferred to Stage E as designed, not corrected here.",
+    "Biology answers 1-9 continue; Q9's answer text is cut off mid-sentence at page bottom, continues on page 7."
+  ]
+}

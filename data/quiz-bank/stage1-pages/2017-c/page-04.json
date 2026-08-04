@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-c",
+  "page": 4,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Biology MCQ Q1-6 (end of Group B) + ANSWER KEY starts (उत्तरमाला) — Group A Physics answers 1-8",
+  "raw": {
+    "hi": "जीव विज्ञान\n\n1. निम्नलिखित में नर युग्मक कौन है ? 1\n(a) शुक्राणु   (b) अंडाणु\n(c) योनि     (d) फैलोपिअन नलिका\n\n2. जिबरेलिन है:- 1\n(a) हार्मोन   (b) वसा   (c) एन्जाइम   (d) कार्बोहाइड्रेट\n\n3. पादक में फ्लोएम उत्तरदायी है- 1\n(a) जल संवहन        (b) भोजन संवहन\n(c) एमिनोअम्ल संवहन  (d) ऑक्सीजन का वहन\n\n4. पत्तियों का मुरझाना किस हार्मोन के कारण होता है ? 1\n(a) ऑक्सिन   (b) जिबरेलिन\n(c) साइटोकाइनिन (d) एबसिसिक अम्ल\n\n5. दो तंत्रिका कोशिका के मध्य खाली स्थान को कहते हैं- 1\n(a) द्रुमिका   (b) सिनेप्स   (c) ऐक्सॉन   (d) आवेग\n\n6. अलैंगिक जनन मुकुलन द्वारा होता है:- 1\n(a) अमीबा   (b) यीस्ट\n(c) प्लाजमोडियम (d) मलेरिया परजीवी\n\nउत्तरमाला\n\nभाग-अ\n\nभौतिक शास्त्र\n\n1. 3000 ओम लगभग।    2. 25 cm\n3. द्रवित पेट्रोलियम गैस एक ईंधन है जिसका उपयोग खाना बनाने में होता है।\n4. कूलॉम (C)\n5. डाइऑप्टर (D)\n6. यदि किसी चालक के ताप में परिवर्तन न हो, तो उसमें प्रवाहित विद्युत-धारा उसके सिरों के बीच आरोपित विभवांतर के समानुपाती होती है। अर्थात् I ∝ V या I = V/R जहाँ R नियतांक है।\n7. विद्युत फ्यूज—बिजली के उपकरणों तथा मकानों में बिजली की धारा ले जाने के लिए जो परिपथ बनाया जाता है उसमें काँच की नली या चीनी मिट्टी या एक तरह के प्लैस्टिक के उपकरण होते हैं जिन्हें फ्यूज कहा जाता है। यह जस्ता या लेड (सीसा) और टीन की मिश्र धातु का बना होता है।\n8. अवतल दर्पण तथा उत्तल दर्पण में निम्नलिखित अन्तर है—\nअवतल दर्पण: (a) इसमें परावर्तक सतह धँसी होती है। (b) उभरे भाग पर पॉलिश किया रहता है। (c) वास्तविक एवं काल्पनिक दोनों प्रतिबिम्ब बनते हैं।\nउत्तल दर्पण: (a) इसमें परावर्तक सतह उभरी होती है। (b) धँसे भाग पर पॉलिश किया रहता है। (c) हमेशा काल्पनिक प्रतिबिम्ब बनते हैं।",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "IMPORTANT: this paper HAS a printed answer key ('उत्तरमाला') — unlike 2017-a. Starts on this page with Group A Physics answers 1-8 (worked/explanatory answers, not just option letters, since Group A is subjective).",
+    "Biology Group B MCQ ends at Q6 (6 questions) — Physics 7 + Chemistry 7 + Biology 6 = 20, same as 2017-a's Group B split.",
+    "Answer 6 (Ohm's law) is stated correctly here (I ∝ V, I=V/R) — no 'Ampere' style error seen on this page, will keep checking through Stage E cross-reference regardless.",
+    "Answer 8 is a two-column comparison table (concave vs convex mirror) — captured as paired lists rather than a literal ASCII table."
+  ]
+}

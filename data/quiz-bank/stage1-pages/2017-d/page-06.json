@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-d",
+  "page": 6,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Physics Q10-OR answer (conductor definitions, continued) + Chemistry answers 1-9 (partial, Q9 continues)",
+  "raw": {
+    "hi": "अचालक:– वैसा पदार्थ जिससे होकर उष्मा या विद्युत धारा प्रवाहित नहीं होती है उसे अचालक कहते है। जैसे– रबर, प्लास्टीक इत्यादि\nअर्द्धचालक– वैसा पदार्थ जिससे होकर विद्युत धारा पूर्ण रूप से प्रवाहित नहीं होती है उसे कुचालक पदार्थ कहते है। जैसे– Ge, जर्मेनियम\nअतिचालक– वैसा पदार्थ जिससे होकर विद्युत धारा शीघ्र ही एवं आसानी से प्रवाहित हो जाता है उसे अतिचालक पदार्थ कहते है।\nजैसे– चाँदी (Ag)\n\nरसायन शास्त्र\n\n1. लोहे एवं इस्पात को जंग लगने से बचाने के लिए इस पर जस्ते की एक परत चढ़ा दी जाती है इसी प्रक्रिया को यशद लेपन कहते है।\n2. CaSO4 · 1/2 H2O\n3. 6CO2 + 12H2O → C6H12O6 + 6H2O + 6O2\n4. ब्रोमीन    5. 20\n6. प्रतिस्थापन अभिक्रियाएँ वैसी रासायनिक अभिक्रियाएँ हैं जिनमें अभिकारक के परमाणु अथवा समूह यौगिकों के परमाणु अथवा समूह को विस्थापित कर उनका स्थान ग्रहण करते हैं।\nउदाहरण के लिए, Fe उत्प्रेरक की उपस्थिति में बेंजीन के हाइड्रोजन परमाणु का क्लोरीन परमाणु द्वारा प्रतिस्थापन\nC6H6 + Cl2 --Fe--> C6H5Cl + HCl\nबेंजीन  क्लोरीन    क्लोरोबेंजीन  हाइड्रोजन क्लोराइड\n7. उत्प्रेरक– वह रासायनिक पदार्थ जो अभिक्रिया में बिना भाग लिए किसी रासायनिक अभिक्रिया की गति को बढ़ा या घटा देता है। उसे उत्प्रेरक कहते हैं।\nजैसे– Ni, Fe, Mo इत्यादि उत्प्रेरक का कार्य करते है।\n8. वनस्पति तेलों को (Ni) निकेल उत्प्रेरक की उपस्थिति में हाइड्रोजन से अभिक्रिया कराने पर डालडा प्राप्त होता है जिसे वनस्पती घी भी कहते है। इसी प्रक्रिया को हाइड्रोजनीकरण कहते हैं। वृहत पैमाने पर डालडा निर्माण हेतु उद्योगों में हाइड्रोजनीकरण प्रक्रिया का उपयोग किया जाता है।\n9. मेण्डलीफ की आवर्त सारणी की निम्नलिखित विसंगतियाँ हैं-\n(i) आवर्त सारणी में हाइड्रोजन का स्थान दोषपूर्ण है क्योंकि हाइड्रोजन को क्षार धातु के साथ वर्ग IA में तथा हैलोजन तत्वों के साथ वर्ग VIIB में भी रखा गया है।\n(ii) बहुत-से तत्वों के गुणों में भिन्नता होते हुए भी सारणी के एक ही वर्ग में रखे गए हैं। जैसे– Cu, Ag एवं Au को क्षार धातुओं Li, Na, K आदि के साथ एक ही वर्ग में रखा गया है।\n(iii) समस्थानिकों के लिए कोई स्थान सुरक्षित नहीं है।",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Chemistry answer 3's equation (6CO2 + 12H2O → C6H12O6 + 6H2O + 6O2) is the unreduced form of the standard photosynthesis equation — atom count checked (C6 H24 O24 both sides), it balances correctly; it just hasn't been simplified by canceling 6H2O from both sides down to 6CO2+6H2O→C6H12O6+6O2. Not a data-quality issue.",
+    "Chemistry answer 4 ('ब्रोमीन' / Bromine) answers Q4 ('a non-metal found in liquid state at normal temperature') — correct chemistry (bromine is indeed the liquid non-metal), consistent with expected answer.",
+    "Chemistry answer 5 ('20') correctly answers Q5 (atomic number of calcium = 20) — another correctness spot-check passed.",
+    "This key gives full worked text for Chemistry Q1-9 (no cross-references here, unlike the Physics section) — good coverage for Stage E."
+  ]
+}

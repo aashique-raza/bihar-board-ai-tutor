@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-c",
+  "page": 2,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Chemistry Q10 (essay, OR=match-column 5x5) + Biology Q1-10 + Group B (20 marks) header + Physics MCQ Q1-4",
+  "raw": {
+    "hi": "दीर्घ उत्तरीय प्रश्न\n10. प्रकृति में कार्बनिक यौगिकों की अत्यधिक संख्या का क्या कारण है ? उल्लेख करें। 5\nअथवा, स्तंभ (i) तथा स्तंभ (ii) का मिलान करें:- 5x1=5\nस्तंभ (i)                                    स्तंभ (ii)\n(i) नीले लिटमस का लाल रंग में परिवर्तन        (a) उदासीन\n(ii) दूध का खट्टापन होना                     (b) अम्लीय\n(iii) अम्लीय विलय में फीनॉलफ्थेलिन बदलता है    (c) लैक्टिक अम्ल\n(iv) क्षारीय विलयन में मिथाईल ऑरेन्ज बदलता है  (d) रंगहीन\n(v) विलयन का pH 7 है                        (e) पीला\n\nजीव विज्ञान\n\n1. सजीव की जीवित इकाई क्या है ? 1\n2. मानव हृदय कितने कोष्ठकों में विभक्त है ? 1\n3. डेंगू रोगी में रक्त के किस घटक की कमी हो जाती है ? 1\n4. A.T.P. का पूरा नाम लिखें। 1\n5. पौधों में गैस का विनिमय किसके द्वारा होता है ? 1\n6. सजीव के मुख्य चार लक्षण लिखें। 2\n7. कोशिका के चार कोशिकांग का नाम लिखें। 2\n8. हम अपने माता-पिता के समान क्यों होते हैं ? 3\n9. जनन कितने प्रकार का होता है ? 3\n10. पुष्पी पौधों में निषेचन क्रिया का सचित्र वर्णन करें। 5\n\nभाग-ब, (20 अंक)\n\nभौतिकी शास्त्र\n\nM.C.Q.\n\n1. विद्युत धारा उत्पन्न करने की युक्ति को कहते हैं :- 1\n(a) जनित्र   (b) गैल्वेनोमीटर\n(c) ऐमीटर   (d) इनमें से कोई नहीं\n\n2. ऊर्जा का S.I. मात्रक होता है :- 1\n(a) कैलोरी   (b) जूल\n(c) ताप     (d) इनमें से कोई नहीं\n\n3. निम्न में से किसका अर्थ जल होता है ? 1\n(a) पेट्रो    (b) टरबो\n(c) नाइट्रो   (d) हाइड्रो\n\n4. निर्वात में प्रकाश की चाल क्या होती है ? 1\n(a) 3×10^8 m/sec   (b) 3×10^8 cm/sec\n(c) 3×10^8 km/sec  (d) इनमें से कोई नहीं",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Chemistry Group A ends at Q10 — Q10 has an OR alternative that is itself a 5-part match-the-column question (5x1=5 marks notation visible). Column pairing printed as-is (scrambled — that's the question design, student must match correctly).",
+    "Biology Group A Q1-10, standard pattern matching Physics/Chemistry above.",
+    "Group A running total across this paper: Physics 10 + Chemistry 10 + Biology 10 = 30 questions — same per-subject-block structure as 2017-a, but here numbering is NOT reset in the printed numbers actually — wait, checked: Physics/Chemistry/Biology each independently run 1-10 like 2017-a. Confirmed same restart pattern.",
+    "Group B (20 marks) begins on this same PDF page — 'भाग-ब' header + Physics MCQ Q1-4 fit here, confirming this paper's extreme density (whole paper likely fits in far fewer PDF pages than printed-page-equivalent count of other papers)."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-a",
+  "sourceFile": "2017 a.pdf",
+  "sourceMd5": "da3083d551861c6c26281103147ad2a5",
+  "pdfPages": 12,
+  "printedPages": 12,
+  "printedPagesPerPdfPage": 1,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "printedPages": [1], "status": "done", "contains": "cover page — title, roll no box, instructions for candidate (bilingual)", "confidence": "high" },
+    { "pdfPage": 2, "printedPages": [2], "status": "done", "contains": "Group A instructions + Physics section header + Q1-Q6", "confidence": "high" },
+    { "pdfPage": 3, "printedPages": [3], "status": "done", "contains": "Physics Q7-Q10 (OR alt) + Chemistry section header + Q1-Q2", "confidence": "high" },
+    { "pdfPage": 4, "printedPages": [4], "status": "done", "contains": "Chemistry Q3-Q9", "confidence": "high" },
+    { "pdfPage": 5, "printedPages": [5], "status": "done", "contains": "Chemistry Q10 (match-column, OR alt) + Biology section header + Q1-Q2", "confidence": "high" },
+    { "pdfPage": 6, "printedPages": [6], "status": "done", "contains": "Biology Q3-Q10 (OR alt, diagram required)", "confidence": "high" },
+    { "pdfPage": 7, "printedPages": [7], "status": "done", "contains": "Group B (MCQ) instructions + Physics MCQ Q1-Q2", "confidence": "high" },
+    { "pdfPage": 8, "printedPages": [8], "status": "done", "contains": "Physics MCQ Q3-Q6", "confidence": "high" },
+    { "pdfPage": 9, "printedPages": [9], "status": "done", "contains": "Physics MCQ Q7 (end) + Chemistry Group B header + MCQ Q1-Q3", "confidence": "high" },
+    { "pdfPage": 10, "printedPages": [10], "status": "done", "contains": "Chemistry MCQ Q4-Q6", "confidence": "high" },
+    { "pdfPage": 11, "printedPages": [11], "status": "done", "contains": "Chemistry MCQ Q7 (end) + Biology Group B header + MCQ Q1-Q2", "confidence": "high" },
+    { "pdfPage": 12, "printedPages": [12], "status": "done", "contains": "Biology MCQ Q3-Q6 (end of paper, no answer key)", "confidence": "high" }
+  ],
+  "notes": [
+    "Different format from all prior papers (2016-a/b/c): 'SCB - SCIENCE' cover, Sl. Code 204, 50 questions, Full Marks 90, bilingual line-by-line (Hindi then English for every question, not just instructions).",
+    "Group A (60 marks) is split into 3 per-subject blocks (Physics/Chemistry/Biology), EACH restarting its own Q1-Q10 numbering — not one running Q1-30 like the 2016 series. Same restart pattern in Group B (Physics Q1-7, Chemistry Q1-7, Biology Q1-6 = 20 MCQ).",
+    "Two 5-mark questions in Group A have an OR ('अथवा') alternative that itself requires a hand-drawn diagram (Biology Q10-OR: flower L.S.). These will be diagram.required:true and excluded from usableInQuiz at Stage D, same as the 2016-b nephron/brain case.",
+    "Chemistry Q10 (Group A) is a match-the-column question (5 columns each side) — a question type not seen in the 2016 series. Recorded as printed; Stage E will need to determine correct pairing since column order is intentionally scrambled (that's the question itself).",
+    "Page 6 (Biology Q8) has an inline watermark 'http://www.bsebstudy.com' printed within the question text — confirms this is a downloaded guide-book copy, consistent with prior papers' F3 finding (not board-issued).",
+    "No printed answer key anywhere in this 12-page paper (confirmed page 1-12) — unlike 2016-b/c which had printed keys. Stage E will need the textbook/RAG route for this paper, same as pilot 2016-a.",
+    "Handwritten pencil tick/slash marks next to several question numbers throughout (e.g. Q1, Q3-5, Q8-10 on various pages) — look like a student's own annotation of which questions they answered, not an answer key. Recorded as observed only, per Stage B rule."
+  ]
+}

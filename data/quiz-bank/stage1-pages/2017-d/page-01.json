@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-d",
+  "page": 1,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "header + Group A (60 marks) + Physics Q1-7",
+  "raw": {
+    "hi": "विज्ञान-2017(A) (द्वितीय पाली)\nTime : 3 Hrs. 15 Minutes]                    [Full Marks : 80\nपरीक्षार्थियों के लिए निर्देश : देखें 2015 (प्रथम पाली)\n\nभाग-अ, (60 अंक)\n\nभौतिक शास्त्र\n\n1. मोटर गाड़ी चालक के सामने कौन-सा दर्पण लगा रहता है ? 1\n2. प्रकाश के अपवर्तन के कितने नियम हैं ? 1\n3. विद्युत ऊर्जा का व्यवसायिक मात्रक क्या है ? 1\n4. AIDS (एडस) का पूरा नाम लिखें। 1\n5. किस लेंस को अपसारी लेंस कहते हैं ? 1\n6. आवर्धन किसे कहते हैं ? वर्णन करें। 2\n7. अवतल दर्पण में फोकस दूरी (f) और वक्रता त्रिज्या में क्या संबंध है ? 2\n\nPTO...",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Internal header prints 'विज्ञान-2017(A) (द्वितीय पाली)' = '2017(A) SECOND shift' — different internal shift label than 2017-c's 'प्रथम पाली' (first shift), even though both are 'A' series internally. Per P3, filename ('2017 d.pdf') remains the trusted paperId; noting the internal label only.",
+    "STRIKING FINDING: Physics Q1-7 here are WORD-FOR-WORD IDENTICAL to 2017-a's Physics Q1-7 (same questions, same order, same marks: मोटर गाड़ी दर्पण, प्रकाश अपवर्तन नियम, विद्युत ऊर्जा मात्रक, AIDS, अपसारी लेंस, आवर्धन, अवतल दर्पण फोकस-वक्रता संबंध). This is a genuine repeat-across-papers case (both files have different MD5/page-count, confirmed NOT duplicate files) — exactly the kind of signal the repeat-detection/dedup feature (Stage F) is meant to catch. Recorded as-is; Stage F will link these as the same canonical question appearing in 2 papers.",
+    "Much lower text density than 2017-c despite similar 'guide-book' visual style — this page only holds 7 questions vs 2017-c's ~19 on page 1."
+  ]
+}

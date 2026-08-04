@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-c",
+  "page": 3,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Physics MCQ Q5-7 (end) + Chemistry MCQ header + Q1-7 (end)",
+  "raw": {
+    "hi": "5. परावर्तन के नियम से निर्धारित होता है:- 1\n(a) आपतन कोण = परावर्तन कोण\n(b) परावर्तन कोण = अपवर्तन कोण\n(c) आपतन कोण = विचलन कोण\n(d) इनमें से कोई नहीं\n\n6. लेंस में मुख्य फोकस की संख्या कितनी होती है ? 1\n(a) दो   (b) एक\n(c) तीन  (d) इनमें से कोई नहीं\n\n7. ताप बढ़ने से चालक का प्रतिरोध :- 1\n(a) बढ़ता है      (b) घटता है\n(c) बढ़ता-घटता नहीं है (d) इनमें से कोई नहीं\n\nरसायन शास्त्र\n\nM.C.Q.\n\n1. शाक-सब्जियों का विघटित होकर कम्पोस्ट बनना किस प्रकार की अभिक्रिया है ? 1\n(a) अवक्षेपण   (b) ऊष्माक्षेपी\n(c) ऊष्माशोषी  (d) संयोजन\n\n2. उपचयन वह प्रक्रिया है जिसमें:- 1\n(a) ऑक्सीजन का योग   (b) हाइड्रोजन का वियोग\n(c) इलेक्ट्रॉन का त्याग  (d) सभी\n\n3. विद्युत अपघटन में इलेक्ट्रॉन मुक्त होता है:- 1\n(a) एनोड पर    (b) कैथोड पर\n(c) दोनों पर    (d) इनमें कोई नहीं\n\n4. सक्रियता श्रेणी में सबसे अधिक क्रियाशील धातु है:- 1\n(a) Au   (b) Na\n(c) Hg   (d) Cu\n\n5. ऐल्डिहाइड श्रेणी के सदस्यों का क्रियाशील समूह है :- 1\n(a) -OH\n(b) -C(=O)- [carbonyl group, C double-bonded to O, drawn vertically]\n(c) H-C(=O)- [aldehyde group, H and C=O drawn vertically, terminal =O]\n(d) -C(=O)-OH [carboxyl group, C double-bonded to O and single-bonded to OH]\n\n6. एल्काईन श्रेणी के सदस्यों का सामान्य सूत्र होता है :- 1\n(a) CnH2n     (b) CnH2n+2\n(c) CnH2n-2   (d) CnHn\n\n7. 1 Pm (पीकोमीटर) बराबर होता है:- 1\n(a) 10^-12 m  (b) 10^-10 m\n(c) 10^12 m   (d) 10^-6 m",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Physics Group B MCQ ends at Q7 (7 questions) — same subject-question-count pattern as 2017-a (Physics 7, likely Chemistry 7, Biology to be confirmed).",
+    "Chemistry Q5's four options are organic functional-group structural formulas (drawn with vertical bond lines, e.g. H-C(=O)- for aldehyde), not plain text — transcribed as a text description of each structure since Stage B captures 'what is seen', exact structural diagram redraw is out of scope for this stage.",
+    "Chemistry Q7's topic (picometer conversion, 10^-12 m) is physics/units content appearing under a Chemistry MCQ header — recorded as printed, the paper's own subject boundary, not corrected."
+  ]
+}

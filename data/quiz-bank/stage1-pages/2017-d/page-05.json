@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-d",
+  "page": 5,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "ANSWER KEY starts (उत्तरमाला) — Group A Physics answers 1-10 (Q7, Q10 are cross-references)",
+  "raw": {
+    "hi": "उत्तरमाला\n\nभाग-अ\n\nभौतिक विज्ञान\n\n1. उत्तल\n2. दो\n3. किलोवाट घंटा KWH\n4. acquired immune deficiency syndrome\n5. अवतल\n6. प्रतिबिंब की ऊँचाई और वस्तु की ऊँचाई के अनुपात को आवर्धन कहा जाता है। इसे m के द्वारा सूचित किया जाता है।\nयदि वस्तु की ऊँचाई को h तथा प्रतिबिंब की ऊँचाई को h' से सूचित किया जाए तो\nलेंस का आवर्धन m = प्रतिबिंब की ऊँचाई / वस्तु की ऊँचाई\nया m = h'/h\nया m = v/u\n7. देखें 2015 द्वितीय पाली प्रश्न सं॰-10 अथवा का उत्तर।\n8. प्रति एकांक समय (t) में प्रवाहित धारा (I) के परिमाण के गुणनफल को विद्युत आवेश (Q) कहते है। विद्युत आवेश दो प्रकार के होते है–(i) धनात्मक आवेश तथा ऋणात्मक आवेश, जब कोई तत्व इलेक्ट्रॉन का त्याग करता है। तो उस पर धन आवेश (+) तथा जब इलेक्ट्रॉन का ग्रहण करता है तो उस पर ऋण आवेश उत्पन्न होता है। जैसे–सोडियम Na इलेक्ट्रॉन का त्याग करके Na+ तथा Cl एक इलेक्ट्रॉन का ग्रहण कर Cl- आवेश उत्पन्न करता है।\n9. दिष्ट धारा–एक ही दिशा में विद्युत धारा के स्थायी प्रवाह को दिष्ट धारा (d.c) कहते है। इसकी दिशा हमेशा एक ही ओर होती है।\nप्रत्यावर्ती धारा–प्रत्यावर्ती धारा की दिशा एक निश्चित समय के बाद बदलती रहती है इसका मान शून्य एवं एक उच्च मान के बीच बदलता रहता है।\n10. देखें 2012 (A) प्रश्न सं॰ 30 का उत्तर।\nअथवा, चालक–वैसा पदार्थ जिससे होकर विद्युत धारा प्रवाहित हो सकती है, उसे चालक कहते है जैसे– लोहा (Fe)",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "This paper (2017-d) DOES have a printed answer key, unlike 2017-a which had none — even though their questions are word-for-word identical (see prior pages' notes). This means once Stage F links 2017-a and 2017-d as duplicate-content papers, 2017-d's key can supply verified answers for 2017-a's matching questions too.",
+    "SAME CROSS-REFERENCE PATTERN AS 2017-c (2nd confirmed occurrence): Q7's answer is 'देखें 2015 द्वितीय पाली प्रश्न सं॰-10 अथवा का उत्तर' (see 2015 2nd-shift Q10-OR) and Q10's OR-branch answer is 'देखें 2012(A) प्रश्न सं॰ 30 का उत्तर' (see 2012(A) Q30) — neither resolvable from papers in our 21-PDF set. This confirms the pattern is systemic to this guide-book source, not a one-off — worth a Parking Lot item recommending Stage E treat any 'देखें <year> ... का उत्तर' answer as automatically unresolved/needs-RAG-route rather than attempting to parse it as a real answer.",
+    "Q10's main branch (blood generator/matching-columns... actually here Q10 is Physics 'विद्युत जेनरेटर' OR 'चालक/अचालक') answer for the main branch is ALSO a cross-reference, only the OR-alternative ('चालक' definition) has real text."
+  ]
+}

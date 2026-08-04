@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-c",
+  "page": 7,
+  "readBy": "vision",
+  "confidence": "high",
+  "contains": "Biology answer 9 (continued) + answer 10 (labeled flower diagram) + Group B MCQ answer key, all 3 subjects (option letters only) — end of paper",
+  "raw": {
+    "hi": "...नर और मादा एक साथ मिलकर भाग नहीं लेते हैं तो इस प्रकार के जनन को अलैंगिक जनन कहते हैं। जैसे-इष्ट, अमीबा, पैरामिशियम इत्यादि।\n\n10. पुंकेसर पुष्प का नर जननांग है तथा स्त्रीकेसर मादा जननांक है। आधार पर का फुला हुआ भाग अंडाशय है, मध्य में लंबा भाग वर्तिका है तथा शीर्ष भाग वर्तिकाग्र है जो प्रायः चिपचिपा होता है। अंडाशय में विजांड होते हैं तथा एक अंड कोशिका होती है। परागण द्वारा उत्पादित नर युग्मक अंडाशय की अंडकोशिका से संलयित हो जाता है। जननकोशिकाओं के इस युग्मन अथवा निषेचन से युग्मनज बनता है जिससे नये पौधे का विकास होता है।\n[labeled diagram of a flower's reproductive parts — स्त्रीकेसर (pistil) bracket covering वर्तिकाग्र (stigma), वर्तिका (style), अंडाशय (ovary); पराग-कोश (anther) and वृन्त/तंतु (filament) labeled on पुंकेसर (stamen) side; दल/पंखुड़ी (petal) and बाह्यदल (sepal) also labeled]\n\nभाग-ब\n\nभौतिक शास्त्र\n1. (a), 2. (a), 3. (b), 4. (a), 5. (a), 6. (a), 7. (a)\n\nरसायनशास्त्र\n1. (b), 2. (d), 3. (b), 4. (b), 5. (c), 6. (c)\n\nजीव विज्ञान\n1. (a), 2. (a), 3. (b), 4. (d), 5. (b), 6. (b)",
+    "en": null
+  },
+  "textLayer": null,
+  "notes": [
+    "Last page of paper. Group B MCQ answer key for Physics gives only 7 answers (1-7) but Chemistry Group B MCQ had 7 questions per page 3 — this key only lists 6 for Chemistry (1-6), missing Q7 (the picometer question). Recorded as printed; the key itself appears to be missing Chemistry Q7's answer — flag for Stage E/F (answer-conflict / missing-answer review queue item).",
+    "Biology Q10's diagram is a genuine labeled flower anatomy diagram (pistil/stamen parts) — described in words per Stage B scope, not redrawn; this pairs with Biology Group A Q10 from page 2 ('पुष्पी पौधों में निषेचन क्रिया का सचित्र वर्णन करें').",
+    "Confirms Group B totals: Physics 7 + Chemistry 7 + Biology 6 = 20 MCQ answers with only 19 actually given (Chemistry Q7 missing) — 100% of MCQ answers are simple option-letters here, easiest Stage E case for the MCQ portion, except that one gap."
+  ]
+}

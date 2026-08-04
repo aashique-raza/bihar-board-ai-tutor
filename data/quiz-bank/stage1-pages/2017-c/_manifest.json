@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2017-c",
+  "sourceFile": "2017 c.pdf",
+  "sourceMd5": "bce2f42fe645a454fbf0bf860e08baec",
+  "pdfPages": 7,
+  "printedPages": 7,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "status": "done", "contains": "header + Group A (60 marks) + Physics Q1-10 (OR) + Chemistry Q1-9 (partial)", "confidence": "high" },
+    { "pdfPage": 2, "status": "done", "contains": "Chemistry Q10 (essay, OR=match-column) + Biology Q1-10 + Group B header + Physics MCQ Q1-4", "confidence": "high" },
+    { "pdfPage": 3, "status": "done", "contains": "Physics MCQ Q5-7 (end) + Chemistry MCQ Q1-7 (end)", "confidence": "high" },
+    { "pdfPage": 4, "status": "done", "contains": "Biology MCQ Q1-6 (end) + ANSWER KEY starts — Group A Physics answers 1-8", "confidence": "high" },
+    { "pdfPage": 5, "status": "done", "contains": "Physics answers 9-10 (cross-reference to other papers, NOT literal) + Chemistry answers 1-8 (partial)", "confidence": "high" },
+    { "pdfPage": 6, "status": "done", "contains": "Chemistry answers 9-10 (essay + match-column key) + Biology answers 1-9 (partial)", "confidence": "high" },
+    { "pdfPage": 7, "status": "done", "contains": "Biology answer 9-10 (labeled flower diagram) + Group B MCQ answer key all 3 subjects — end of paper", "confidence": "high" }
+  ],
+  "notes": [
+    "Extremely dense guide-book layout, Hindi-only (no English), no bilingual columns unlike 2017-a — entire Group A (30 questions across 3 subjects) fits on just 2 PDF pages, vs 2017-a's 5 pages for the same content. Slight scan skew/rotation throughout.",
+    "Internal header prints 'विज्ञान-2017(A) (प्रथम पाली)' on page 1 — per P3 convention filename ('2017 c.pdf') is the trusted identity; internal label just noted (same situation as 2016-b page-01).",
+    "Same per-subject Group A/B restart-numbering pattern as 2017-a and 2016 series: Group A Physics/Chemistry/Biology each Q1-10 (30 total, 60 marks); Group B Physics/Chemistry Q1-7, Biology Q1-6 (20 MCQ, 20 marks).",
+    "HAS a printed answer key covering ALL of Group A (subjective, worked answers) AND Group B (MCQ, option letters) — the most complete key seen so far in this batch.",
+    "MAJOR FINDING for Stage E: Physics Group A answers 9 and 10 are NOT literal text — they are cross-references to OTHER exam papers/shifts not confirmed to be in our 21-PDF set ('देखें 2014(A) द्वितीय पाली Q7', 'देखें 2013(A) Q30', OR-alt 'देखें 2016(A) द्वितीय पाली Q28' + 'देखें 2012(A) Q18' for the diagram). Stage E must treat these two as if unanswered (textbook/RAG route), not parse them as answers.",
+    "Group B MCQ answer key is INCOMPLETE: Chemistry lists only 6 answers (1-6) but Chemistry Group B had 7 questions (page 3) — Q7 (picometer conversion) has no key answer. Flag for Stage E/Stage G review queue as a missing-answer gap, not a conflict.",
+    "Chemistry Group A Q10's OR alternative is a 5-item match-the-column question; its answer key gives compact pairs (i)(b),(ii)(c),(iii)(d),(iv)(e),(v)(a) — spot-checked (i) and (ii) against the question's column values and both look chemically plausible; full verification deferred to Stage E as designed.",
+    "Two structural-chemistry MCQs (methane/ethane/ethylene/ethyne bond diagrams, aldehyde/carboxyl functional groups) have answer options that are hand-drawn structural formulas, not plain text — transcribed as text descriptions of the bond structure, not redrawn, consistent with Stage B scope (capture what's seen, no image generation).",
+    "Group A Biology Q10's OR is absent (no OR for this question in this paper, unlike 2017-a); its answer includes a genuine labeled flower-anatomy diagram — described in words, not redrawn."
+  ]
+}
