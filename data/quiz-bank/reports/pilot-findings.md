@@ -1,7 +1,7 @@
 # Stage P — Pilot Findings
 
 > **Pilot paper:** `2016-a` (`2016 a.pdf`)
-> **Status:** 🟢 **Stage B + C + D + E + F DONE** — 8/8 page padhe, 52 block bane, 52/52 teeno language mein, **20/20 MCQ resolved** (15 textbook L3 + 5 human L4), **52/52 chapter-mapped**. Stage G baaki.
+> **Status:** 🟢 **Stage B–G sab DONE** — 8/8 page padhe, 52 block bane, 52/52 teeno language mein, **20/20 MCQ resolved** (15 textbook L3 + 5 human L4), **52/52 chapter-mapped**, review queue **0 open items**. **Pilot complete.**
 > **Spec:** `QUIZ_DATA_PIPELINE.md` §7 Stage P
 
 ---
@@ -250,6 +250,41 @@ field hai hi nahi (sirf `paperId`). Fix: `year` `paperId` se hi nikala jaata hai
 extension — `parseYearFromPaperId()`), warna repeat-detection feature (`appearances[].year`,
 `years[]`) hamesha `null` deta.
 
+### ✅ Stage G — review queue + final health
+
+**Bana:** `backend/scripts/quiz-bank/buildReview.js` + `npm run quiz:review` → output
+`data/quiz-bank/review/queue.json` + `data/quiz-bank/reports/health.json`. Backend `src/`
+ka koi file touch nahi hua.
+
+**Result — queue 0 open items.** Ye is solo-paper pilot ke liye **expected hai, bug nahi**:
+0 answer conflict (koi doosra source hai hi nahi is paper ke liye compare karne ko),
+0 near-duplicate cluster (solo paper), 0 low-OCR page (saari 8 page `high` confidence),
+0 chapter-unmapped (52/52 mapped), 0 marks-mismatch (Stage C mein hi 60/60 aur 20/20 match ho
+chuka tha). Asli test tab hoga jab 20 papers ek saath is script se guzrenge.
+
+**Health numbers (`reports/health.json`):**
+
+| Metric | Value |
+|---|---|
+| Objective questions | 20 |
+| Language-complete (hi+en+hinglish) | 100% |
+| L3 ya upar | 100% (15 L3 + 5 L4) |
+| Usable in quiz | 20/52 (38.5% — 32 subjective permanently excluded) |
+| Chapter mapped | 52/52 (100%) |
+
+**Logic verify hui without touching real data:** synthetic fixture se saare 6 category
+(answer-conflict, language-missing, near-duplicate, low-ocr-confidence, chapter-unmapped,
+marks-mismatch) banwaye aur confirm kiya ki (a) sab detect hote hain, (b) `review/resolved.json`
+mein matching decision aane par wahi item hamesha ke liye gayab ho jata hai (P4), (c) partial
+resolve sirf uska apna item hataata hai, baaki chhod deta hai.
+
+**P5 confirm hua:** dobara chalane pe `queue.json` byte-identical. `health.json` mein sirf
+`generatedAt` badalta hai — wo iske report hone ki wajah se allowed hai (`reports/survey.json`
+jaisa), pipeline stage-data ki tarah nahi.
+
+**Note:** `health.json` ke numbers is single-paper pilot ke hain, `QUIZ_DATA_PIPELINE.md` §12 ka
+exit criteria nahi — wo saare 20 papers ke baad check hoga.
+
 ---
 
 ## Paper ka asli structure
@@ -316,4 +351,6 @@ wahi 30+20 structure.
 - [x] Stage F pilot — dedup (solo, 0 merge/cluster as expected) + chapter mapping (52/52, 100%)
 - [x] Saare 8 sawaalon ke jawab bhar chuke (sawaal 5 Hinglish, sawaal 8 chapter mapping dono done)
 - [x] `QUIZ_DATA_PIPELINE.md` §11 ka estimate update ho chuka (Stage B: 6-10 → 4-7)
-- [ ] Stage G pilot — review + final health report (Pilot ka aakhri stage)
+- [x] Stage G pilot — review queue (0 open items, expected for solo paper) + health report
+
+**Pilot poora ho gaya.** Agla: user "haan, aage badho" bole to Stage B baaki 19 papers pe shuru.

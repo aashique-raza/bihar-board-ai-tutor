@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage P (Pilot)** — paper `2016-a` ko poora A→G chala rahe hain |
-| **Status** | 🟡 Stage B (pages) ✅ · C (blocks) ✅ · D (3 language) ✅ · E (answers) ✅ · F (dedup+chapter) ✅ · Stage G baaki |
+| **Sub-stage** | **Stage P (Pilot) — COMPLETE.** Paper `2016-a` poora A→G ho chuka. |
+| **Status** | 🟢 Stage B✅ C✅ D✅ E✅ F✅ G✅ — **Pilot DoD ticked.** Agla: user "haan, aage badho" bole to Stage B baaki 19 papers pe. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — pilot ka Stage F (dedup solo + chapter mapping) |
+| **Last session** | 2026-08-04 — pilot ka Stage G (review queue + health report) |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -133,6 +133,27 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Pilot Stage G: review queue + final health (Pilot COMPLETE)
+- **Bana:** `backend/scripts/quiz-bank/buildReview.js` + `npm run quiz:review` → output
+  `data/quiz-bank/review/queue.json` + `data/quiz-bank/reports/health.json`. Backend `src/` ka
+  koi file touch nahi hua.
+- **Result: queue 0 open items** — expected for a solo-paper pilot (0 conflicts to compare
+  against, 0 near-dup clusters, 0 low-OCR pages, 52/52 mapped, marks already matched at Stage C).
+  Health: 20 objective questions, **100% language-complete, 100% L3+**, 20/52 usable in quiz
+  (32 subjective permanently excluded), 52/52 chapter-mapped.
+- **Logic verified with a synthetic fixture** (not touching real data) since the real bank has
+  no queue-worthy issues to exercise the code against: all 6 categories (answer-conflict,
+  language-missing, near-duplicate, low-ocr-confidence, chapter-unmapped, marks-mismatch) fire
+  correctly, and a matching `review/resolved.json` decision makes an item disappear permanently
+  (P4) — confirmed both full-resolve and partial-resolve cases.
+- **P5 confirm hua:** `queue.json` byte-identical on re-run. `health.json` only `generatedAt`
+  changes — allowed, it's a `reports/` file (same convention as `reports/survey.json`), not
+  pipeline stage-data.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression nahi.
+- **Pilot (Stage P) ka DoD poora tick ho gaya** — `reports/pilot-findings.md` mein confirm.
+- **Agla:** user "haan, aage badho" bole to Stage B baaki 19 papers pe shuru (naya session,
+  Rule 1 — ek session = ek phase/stage).
 
 ### 2026-08-04 — Pilot Stage F: dedup (solo) + chapter mapping
 - **Bana:** `backend/scripts/quiz-bank/buildBank.js` + `npm run quiz:bank` → output
