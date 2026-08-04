@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk, baaki 12 papers) — IN PROGRESS.** 6/18 usable done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a` (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B shuru — batch 3 (`2018-a` done, `2019-a` excluded) done, 12 papers baaki. |
+| **Sub-stage** | **Stage B (bulk, baaki 9 papers) — IN PROGRESS.** 9/18 usable done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a` (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — batch 4 (`2018-b`, `2019-b`, `2020-a`) done, 9 papers baaki. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — Stage B batch 3: `2018-a` page-reading (16 PDF pages) + `2019-a` found invalid (F4) and excluded |
+| **Last session** | 2026-08-04 — Stage B batch 4: `2018-b` (naya finding F5 — retyped Word doc, not a scan), `2019-b` (page-order swap + 2 illegible-Hindi questions), `2020-a` (48-question Section-A structure) |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -136,6 +136,30 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Stage B bulk batch 4: `2018-b` (F5), `2019-b`, `2020-a`
+- **Bana:** `data/quiz-bank/stage1-pages/2018-b/`, `2019-b/`, `2020-a/` — manifest + 56 page
+  files total (20+16+20 PDF pages). Backend `src/` ka koi file touch nahi hua.
+- **Naya finding F5 (`QUIZ_DATA_PIPELINE.md` §3.1 mein likha gaya):** `2018-b` asli scan nahi
+  nikla — ek Word mein retype kiya hua document tha (poora English-only, har sawaal ke baad
+  inline "Ans:", Word autocorrect artifacts, ek sawaal ka option/answer hi gayab). User se
+  poochha, decision: **exclude nahi karna** — sawaal rakhna hai (genuine Class-10 content lagta
+  hai) par iske "Ans:" ko kabhi answer-source nahi maanna (F3 wala hi rule, naya trigger).
+  Content 20/20 page-reading se aa gaya, isके liye actual native text-layer use kiya (F2 ka
+  "muft L3-jaisa bharosa" wala case) — vision se cross-check karke confirm kiya match hai.
+- **`2019-b` mein do naye issue:** (1) is PDF ka internal page order printed footer numbers se
+  match nahi karta — PDF page 9 aur 12 aapas mein swapped hain (baaki sab sahi order mein),
+  manifest mein poora remap likha Stage C ke liye. (2) Q12-14 aur Q17-18 ka Hindi stem/options
+  scan mein genuinely blurred hai (400-500 DPI pe dobara render karke bhi confirm kiya) —
+  English se transcribe kiya, Hindi "illegible" mark kiya, guess nahi kiya.
+- **`2020-a` mein structural difference:** Section-A mein 40 nahi, **48 objective questions**
+  hain, candidate koi 40 chunta hai — Stage C/D ko fixed-40 assumption nahi lagani. Ye paper
+  ek asli attempted answer-copy jaisa lagta hai (check/cross-out marks har MCQ pe), kuch jagah
+  Hindi aur English side pe **alag-alag option marked** hain — F3 rule (marks kabhi source nahi)
+  ko hi aur confirm karta hai.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression
+  nahi.
+- **Agla:** Stage B batch 5 — agle 2-3 papers (`2020-b, 2021, 2022, ...` se, 9 papers baaki).
 
 ### 2026-08-04 — Stage B bulk batch 3: `2018-a` done, `2019-a` excluded (F4)
 - **Bana:** `data/quiz-bank/stage1-pages/2018-a/` — manifest + 16 page files (16 PDF pages,

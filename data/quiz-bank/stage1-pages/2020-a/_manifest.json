@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2020-a",
+  "sourceFile": "2020 a.pdf",
+  "sourceMd5": "d5c38f31ab6ad937d87d2820236fce09",
+  "pdfPages": 20,
+  "printedPages": 20,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "status": "done", "contains": "cover page — instructions 1-4, subject subtitle '(Optional Compulsory)'", "confidence": "high" },
+    { "pdfPage": 2, "status": "done", "contains": "instructions 5-7, Section A/B structure (48 offered, answer any 40)", "confidence": "high" },
+    { "pdfPage": 3, "status": "done", "contains": "Section A header + MCQ Q1-3", "confidence": "high" },
+    { "pdfPage": 4, "status": "done", "contains": "Section A MCQ Q4-6", "confidence": "high" },
+    { "pdfPage": 5, "status": "done", "contains": "Section A MCQ Q7-10", "confidence": "high" },
+    { "pdfPage": 6, "status": "done", "contains": "Section A MCQ Q11-14", "confidence": "high" },
+    { "pdfPage": 7, "status": "done", "contains": "Section A MCQ Q15-18", "confidence": "high" },
+    { "pdfPage": 8, "status": "done", "contains": "Section A MCQ Q19-22(partial)", "confidence": "high" },
+    { "pdfPage": 9, "status": "done", "contains": "Section A MCQ Q22(cont)-25", "confidence": "high" },
+    { "pdfPage": 10, "status": "done", "contains": "Section A MCQ Q26-29", "confidence": "high" },
+    { "pdfPage": 11, "status": "done", "contains": "Section A MCQ Q30-33", "confidence": "high" },
+    { "pdfPage": 12, "status": "done", "contains": "Section A MCQ Q34-37", "confidence": "high" },
+    { "pdfPage": 13, "status": "done", "contains": "Section A MCQ Q38-41", "confidence": "high" },
+    { "pdfPage": 14, "status": "done", "contains": "Section A MCQ Q42-44", "confidence": "high" },
+    { "pdfPage": 15, "status": "done", "contains": "Section A MCQ Q45-48, end of Section A", "confidence": "high" },
+    { "pdfPage": 16, "status": "done", "contains": "Section B header, Physics short-answer Q1-8", "confidence": "high" },
+    { "pdfPage": 17, "status": "done", "contains": "Physics long-answer Q9-10 + Chemistry header + short-answer Q11", "confidence": "high" },
+    { "pdfPage": 18, "status": "done", "contains": "Chemistry short-answer Q12-17 + long-answer Q18", "confidence": "high" },
+    { "pdfPage": 19, "status": "done", "contains": "Chemistry Q19 (match column) + Biology header + short-answer Q20-21", "confidence": "high" },
+    { "pdfPage": 20, "status": "done", "contains": "Biology short-answer Q22-26 + long-answer Q27-28, end of paper", "confidence": "high" }
+  ],
+  "notes": [
+    "Structural difference from every other paper in this bank: Section A offers 48 objective questions, candidate answers any 40 (first 40 answered count if more are attempted). All 48 are genuine questions and belong in the bank — Stage C/D must not assume a fixed Q1-40 like other papers.",
+    "This appears to be a genuinely attempted answer copy, not a blank paper — nearly every MCQ has a checkmark/cross-out pen mark next to one option (different mark style from the pilot's pen-dots, same underlying phenomenon). Several questions have CONFLICTING marks between the Hindi and English sides of the same question (e.g. page 5 Q10: 'A' marked on Hindi side, 'D' marked on English side; page 7 Q15 and Q18 similarly conflict; page 10 Q29 has both a cross and a dot). Per the established F3 rule, handwritten marks are never treated as an answer source under any circumstance — this paper's conflicting marks are additional confirmation of why that rule exists, not a reason to reconsider it.",
+    "No printed answer key anywhere in this 20-page paper (confirmed after reading all pages) — same as pilot paper 2016-a, 2018-a, 2019-b; Stage E will need the textbook/RAG route for all objective questions.",
+    "Genuine scanned board paper (bilingual, SI Code 212 letterhead, Set Code C) — not an F5-type case like 2018-b."
+  ]
+}

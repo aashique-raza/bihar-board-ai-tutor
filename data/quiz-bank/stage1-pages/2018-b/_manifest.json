@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2018-b",
+  "sourceFile": "2018 b.pdf",
+  "sourceMd5": "115390174edf8005449b9fecb577b634",
+  "pdfPages": 20,
+  "printedPages": 20,
+  "renderDpi": 200,
+  "readBy": "both",
+  "pages": [
+    { "pdfPage": 1, "status": "done", "contains": "cover page — instructions, marks/time/questions header + Section A MCQ Q1", "confidence": "high" },
+    { "pdfPage": 2, "status": "done", "contains": "Section A MCQ Q2-7", "confidence": "high" },
+    { "pdfPage": 3, "status": "done", "contains": "Section A MCQ Q8-13 (Q11 missing its answer/options C-D and 'Ans:' line — printed as-is)", "confidence": "high" },
+    { "pdfPage": 4, "status": "done", "contains": "Section A MCQ Q14-19", "confidence": "high" },
+    { "pdfPage": 5, "status": "done", "contains": "Section A MCQ Q20-24 (Q21 options are an image, not text)", "confidence": "high" },
+    { "pdfPage": 6, "status": "done", "contains": "Section A MCQ Q25-31(partial)", "confidence": "high" },
+    { "pdfPage": 7, "status": "done", "contains": "Section A MCQ Q31(cont)-37(partial)", "confidence": "high" },
+    { "pdfPage": 8, "status": "done", "contains": "Section A MCQ Q37(cont)-40 (end) + Section B header + Physics short-answer Q1", "confidence": "high" },
+    { "pdfPage": 9, "status": "done", "contains": "Physics short-answer Q1(cont, incl. unnumbered ray-diagram sub-question) + Q2", "confidence": "high" },
+    { "pdfPage": 10, "status": "done", "contains": "Physics short-answer Q4(a)(b) + Q5 + Q6 + long-answer header", "confidence": "high" },
+    { "pdfPage": 11, "status": "done", "contains": "Physics long-answer Q7(a)(b)(c)", "confidence": "high" },
+    { "pdfPage": 12, "status": "done", "contains": "Physics Q7-OR (a)(b)(c) + Chemistry header", "confidence": "high" },
+    { "pdfPage": 13, "status": "done", "contains": "Chemistry short-answer Q1/Q9/Q10", "confidence": "high" },
+    { "pdfPage": 14, "status": "done", "contains": "Chemistry short-answer Q11-13 + Biology header + instructions + Q14 start", "confidence": "high" },
+    { "pdfPage": 15, "status": "done", "contains": "Biology Q14 structures (cont) + Q14-OR combination reaction", "confidence": "high" },
+    { "pdfPage": 16, "status": "done", "contains": "Biology Q14-OR (cont) + Q15 + Q16", "confidence": "high" },
+    { "pdfPage": 17, "status": "done", "contains": "neuron diagram + Biology Q17-19", "confidence": "high" },
+    { "pdfPage": 18, "status": "done", "contains": "Biology Q19(cont) + Q20 (long-answer, forest/wildlife) + Q21 (long-essay) start", "confidence": "high" },
+    { "pdfPage": 19, "status": "done", "contains": "Biology Q21(cont) + Q21-OR (male reproductive system diagram)", "confidence": "high" },
+    { "pdfPage": 20, "status": "done", "contains": "Biology Q21-OR (cont, end of paper)", "confidence": "high" }
+  ],
+  "notes": [
+    "F5 (new hard finding, same family as F3/F4): this paper is NOT a scanned board-paper photocopy like every other paper done so far in Stage B. It is a native-text, Word-authored PDF (matches survey.json route 'script') — fully English (zero Hindi/Devanagari anywhere in 20 pages), every question followed inline by 'Ans: ...', autocorrect artifacts ('(C)' typed as '©' throughout, meaning MS Word's autocorrect fired — confirms Word origin), a missing question number/options (Q11's options C/D and its answer are simply absent on page 3, jumps straight to Q12), and a duplicated paragraph in Q20's answer. No Bihar Board letterhead, no SI code, no OMR/board signature anywhere.",
+    "User decision (2026-08-04): KEEP the questions (content reads as genuine Class 10 Science topics, matches curriculum), but treat every inline 'Ans:' line as UNVERIFIED — same rule as F3's handwritten-mark pen-ticks. Stage D/E must never set answer.source to 'printed-key' for this paper; these 40 objective answers go through textbook/repeat-question verification only, same as papers with no printed key.",
+    "Because this is a native-text PDF (not a scan), raw.en for every page here is the actual embedded text layer (extracted via PyMuPDF get_text), cross-checked visually page-by-page against the rendered image — confirmed identical, so readBy is 'both' for every page, not just 'vision'. This is the highest-confidence extraction method available (F2's 'free L3' case), it just doesn't apply to the answer field per the F5 rule above.",
+    "Diagram-only content (circuit diagrams, ray diagrams, structural formulas, neuron diagram, reproductive system diagram, V-I graph, Q21's functional-group picture) is NOT present in the text layer — each such page has a per-page note describing what the image shows, transcribed from the vision read.",
+    "Section B numbering resets per subject and is inconsistently applied by the document's author (Physics short-answer starts at 1, Chemistry short-answer restarts at 1 but the printed numbers then jump to 9/10/11 mid-section, Biology long-answer jumps 20→21 without a clean restart) — transcribed exactly as printed per Stage B rule, Stage C will need to re-derive a clean sourceId sequence from position, not from the printed numbers alone."
+  ]
+}

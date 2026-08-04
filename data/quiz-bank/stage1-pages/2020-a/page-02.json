@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2020-a",
+  "page": 2,
+  "readBy": "vision",
+  "raw": {
+    "hi": "5. खण्ड-अ में 48 वस्तुनिष्ठ प्रश्न हैं। इनमें से किन्हीं 40 प्रश्नों का उत्तर देना है। प्रत्येक के लिए 1 अंक निर्धारित है। यदि कोई परीक्षार्थी 40 से अधिक प्रश्नों का उत्तर देता है तो प्रथम 40 प्रश्नों के उत्तर का ही मूल्यांकन होगा। इनका उत्तर उपलब्ध कराये गये OMR उत्तर-पत्रक में दिए गए सही वृत को नीले/काले बॉल पेन से भरें। किसी भी प्रकार के व्हाइटनर/तरल पदार्थ/ब्लेड/नाखून आदि का OMR उत्तर-पत्रक में प्रयोग करना मना है, अन्यथा परीक्षा परिणाम अमान्य होगा।\n6. खण्ड-ब में 28 लघु उत्तरीय प्रश्न हैं। इनमें 8 प्रश्न भौतिक शास्त्र के, 7 प्रश्न रसायन शास्त्र के एवं 7 प्रश्न जीव विज्ञान के हैं। प्रत्येक विषय (भौतिक शास्त्र, रसायन शास्त्र एवं जीव विज्ञान) से चार-चार प्रश्नों का उत्तर देना है। प्रत्येक के लिए 2 अंक निर्धारित है। इनके अतिरिक्त, इस खण्ड में 6 दीर्घ उत्तरीय प्रश्न दिये गए हैं, जिनमें से 2 प्रश्न भौतिक शास्त्र के, 2 प्रश्न रसायन शास्त्र के एवं 2 प्रश्न जीव विज्ञान के हैं। भौतिक शास्त्र के दीर्घ उत्तरीय प्रश्न के लिए 6 अंक, रसायन शास्त्र एवं जीव विज्ञान के लिए 5 अंक निर्धारित है। प्रत्येक विषय (भौतिक शास्त्र, रसायन शास्त्र एवं जीव विज्ञान) से एक-एक प्रश्न का उत्तर देना अनिवार्य है।\n7. किसी प्रकार के इलेक्ट्रॉनिक उपकरण का प्रयोग पूर्णतया वर्जित है।",
+    "en": "5. In Section-A, there are 48 objective type questions, out of which any 40 questions are to be answered. Each question carries 1 mark. If a candidate answers more than 40 questions, then answers of first 40 questions will be evaluated only. Darken the circle with blue/black ball pen against the correct option on OMR Answer Sheet provided to you. Do not use whitener/liquid/blade/nail etc. on OMR Answer Sheet; otherwise the result will be invalid.\n6. In Section-B, there are 28 short answer type questions. Out of these, eight questions are from Physics, seven questions are from Chemistry and seven questions are from Biology. Four questions are to be answered from each subject (Physics, Chemistry and Biology). Each question carries 2 marks. Apart from these, there are 6 Long Answer type questions in which two questions each from Physics, Chemistry and Biology are there. Long Answer type questions from Physics carries 6 marks each, and from Chemistry and Biology carries 5 marks each. Answer of one question each from Physics, Chemistry and Biology is compulsory.\n7. Use of any electronic appliances is strictly prohibited."
+  },
+  "textLayer": "",
+  "confidence": "high",
+  "notes": [
+    "Section-A structure differs from the fixed-40 papers seen so far: 48 objective questions are offered, candidate answers any 40, and if more than 40 are attempted only the first 40 count. Stage C/D must model 'usableInQuiz' selection accordingly — all 48 are real questions, not just 40."
+  ]
+}

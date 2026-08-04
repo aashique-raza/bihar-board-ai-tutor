@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2019-b",
+  "sourceFile": "2019 b.pdf",
+  "sourceMd5": "1b5de181c01d69b54d3a26d8a5ff53cb",
+  "pdfPages": 16,
+  "printedPages": 16,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "status": "done", "contains": "cover page — instructions 1-5 (printed page 1)", "confidence": "high" },
+    { "pdfPage": 2, "status": "done", "contains": "instructions 6-7, Section B structure explanation (printed page 2)", "confidence": "medium" },
+    { "pdfPage": 3, "status": "done", "contains": "Section A header + MCQ Q1-3 (printed page 3)", "confidence": "high" },
+    { "pdfPage": 4, "status": "done", "contains": "Section A MCQ Q4-7 (printed page 4)", "confidence": "high" },
+    { "pdfPage": 5, "status": "done", "contains": "Section A MCQ Q8-11 (printed page 5)", "confidence": "high" },
+    { "pdfPage": 6, "status": "done", "contains": "Section A MCQ Q12-16 — Q12-14 Hindi illegible, source blur (printed page 6)", "confidence": "low" },
+    { "pdfPage": 7, "status": "done", "contains": "Section A MCQ Q17-19 — Q17-18 Hindi illegible, source blur (printed page 7)", "confidence": "low" },
+    { "pdfPage": 8, "status": "done", "contains": "Section A MCQ Q20(dup of Q19 stem)-25 (printed page 8)", "confidence": "high" },
+    { "pdfPage": 9, "status": "done", "contains": "Section B header, Physics short-answer Q1-5 — PRINTED PAGE 12 (see pageOrderNote)", "confidence": "high" },
+    { "pdfPage": 10, "status": "done", "contains": "Section A MCQ Q31-35 (printed page 10)", "confidence": "high" },
+    { "pdfPage": 11, "status": "done", "contains": "Section A MCQ Q36-40, end of Section A (printed page 11)", "confidence": "high" },
+    { "pdfPage": 12, "status": "done", "contains": "Section A MCQ Q26-30 — PRINTED PAGE 9 (see pageOrderNote)", "confidence": "high" },
+    { "pdfPage": 13, "status": "done", "contains": "Physics short-answer Q6-8 + long-answer Q9-10 (printed page 13)", "confidence": "high" },
+    { "pdfPage": 14, "status": "done", "contains": "Chemistry short-answer Q11-17 (printed page 14)", "confidence": "high" },
+    { "pdfPage": 15, "status": "done", "contains": "Chemistry long-answer Q18-19 (printed page 15)", "confidence": "high" },
+    { "pdfPage": 16, "status": "done", "contains": "Biology short-answer Q20-26 + long-answer Q27-28, end of paper (printed page 16)", "confidence": "high" }
+  ],
+  "pageOrderNote": "This PDF's internal page order does NOT match the paper's own printed footer numbers ('Page N of 16'). PDF pages 9 and 12 are swapped relative to the printed sequence — PDF page 9 carries printed footer 'Page 12 of 16' (Section B start), and PDF page 12 carries printed footer 'Page 9 of 16' (Q26-30). Every other PDF page matches its printed number exactly (checked all 16). Confirmed by reading footer text on every page, not assumed. The correct READING ORDER by printed page is: PDF 1,2,3,4,5,6,7,8,12,10,11,9,13,14,15,16. Stage C MUST use this order (or the printed footer numbers, which are reliable here) to reconstruct question sequence — using raw PDF page order would put Section B's physics short-answer block in the middle of the Section A MCQs.",
+  "notes": [
+    "Genuine scanned board paper (bilingual, SI Code 212 letterhead, Set Code D) — not a case like F5 (2018-b). No printed answer key anywhere in the 16 pages (confirmed after reading all pages), same as pilot paper 2016-a and 2018-a — Stage E will need textbook/RAG route for all objective questions.",
+    "Handwritten dot marks (•) appear next to one option per MCQ throughout Section A, same phenomenon as F3 (2016-a pen-ticks) — per the established F3 rule these are never treated as an answer source, only recorded as a flag on the affected questions.",
+    "Q12, Q13, Q14 (page 6) and Q17, Q18 (page 7): the Hindi question stem/options are genuinely too blurred to transcribe in the source scan — tried re-rendering at 400/500 DPI with cropping, confirmed it is a source-scan defect, not a rendering resolution problem. English text on the same questions is clear and was used; Hindi is marked illegible rather than guessed, per Stage B rule ('nahi dikh raha to confidence low + note, guess mat karo').",
+    "Q20 (page 8) repeats Q19's question stem verbatim ('The spinal cord originates from') instead of a new question — a genuine duplication printed in the source paper itself, transcribed as-is. Flagging for Stage C/D to decide how to handle (likely: not usable as a distinct question, or needs the real Q20 sourced from another year's repeat if this is a known repeat question).",
+    "Page 2's right margin has a few stray character fragments bleeding in from an adjacent page/column in the scan — excluded from transcription as a scan artifact, not this paper's content.",
+    "Page 13, Q6: the printed Hindi asks for 'Lenz ke dahine haath ka niyam' (Lenz's right-hand rule) while the printed English on the same line says \"State Fleming's left-hand rule\" — a genuine Hindi/English mismatch in the source paper (different rule AND different hand), transcribed exactly as printed on each side, not reconciled."
+  ]
+}

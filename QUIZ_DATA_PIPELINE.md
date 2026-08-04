@@ -235,6 +235,35 @@ bina independent verification ke.
 
 ---
 
+#### 🟡 F5 — `2018-b` asli scan nahi hai, ek retyped Word document hai (Stage B batch 4, 2026-08-04)
+
+`2018 b.pdf` baaki 6 papers jaisa scanned board-paper nahi nikla. Ye kisi ne Word mein khud
+type kiya hua document hai (survey.json isse pehle se `route: "script"` mark kiya tha — text
+layer mila tha):
+
+- Poore 20 pages mein **Hindi kahin nahi** (baaki sab genuine papers bilingual hain)
+- **Har sawaal ke turant baad "Ans: ..." print hua hai** — asli board paper mein aisa nahi hota
+- Word ka autocorrect fire hua hai — "(C)" har jagah "©" ban gaya hai, poore document mein
+- Ek sawaal (Q11) ke option C/D aur uska answer hi gayab hai, seedha agle sawaal pe jump ho gaya
+- Koi Bihar Board letterhead, SI code, ya OMR/board signature kahin nahi
+
+**F1/F4 se fark:** F1 (`2017-b`) exact duplicate tha, F4 (`2019-a`) galat board (CBSE) ka content
+tha — dono **poore paper** ko bekaar banate hain. Ye alag hai: sawaal genuine Class-10-syllabus
+content lagte hain, sirf **source primary scan nahi hai** aur answers **verify nahi hain**.
+
+**User decision (2026-08-04):** paper exclude nahi hoga. Sawaal liye jayenge (extra 40 objective
+mil jate hain bank mein) — par iske "Ans:" ko kabhi `answer.source: "printed-key"` nahi maana
+jayega. Yahi F3 ka rule hai (handwritten-mark bhi kabhi source nahi bana), bas trigger alag hai
+(pen-mark ki jagah typed-inline-guess). Stage E in 40 answers ko textbook/repeat route se hi
+verify karega, jaise koi printed key hi nahi ho.
+
+**Chhupa hua faayda:** kyunki ye native-text PDF hai (scan nahi), iska text layer khud hi
+sabse saaf transcription hai — PyMuPDF se seedha nikala, phir vision se page-by-page cross-check
+kiya (match confirm hua). Isliye `readBy: "both"` har page pe, F2 ke "muft L3-jaisa bharosa" wale
+tareeke se — bas answer field is bharose se bahar hai (upar wala rule).
+
+---
+
 ### 3.2 Plan mein jo 18 kamiyan mili aur unka fix
 
 | # | Kami | Fix |
