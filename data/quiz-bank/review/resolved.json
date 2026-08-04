@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "decisions": [
+    {
+      "target": "2016-a:B:31-i",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Textbook states the properties as a list, not one quotable sentence, so the automated check left it unverified. Human-confirmed: plane mirror image is always virtual, erect, and same size as the object.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-04"
+    },
+    {
+      "target": "2016-a:B:31-xiii",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "This fact (CO2 is ~0.03% of atmosphere) is not present anywhere in data/class-10/science/ — automated check correctly found no evidence. Human-confirmed from outside the curated textbook content.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-04"
+    },
+    {
+      "target": "2016-a:B:31-xviii",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Textbook states CO2, water, sunlight and chlorophyll are all required for photosynthesis, but split across a sentence and a table — no single quotable line. Human-confirmed: all of these.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-04"
+    },
+    {
+      "target": "2016-a:B:31-xix",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "This fact (liver is the largest gland in the human body) is not present anywhere in data/class-10/science/ — automated check correctly found no evidence. Human-confirmed from outside the curated textbook content.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-04"
+    },
+    {
+      "target": "2016-a:B:31-xvi",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Textbook states the female reproductive system as a list (ovaries, oviducts, uterus, cervix, vagina) — no single quotable sentence naming what is excluded, so the automated check couldn't ground a quote (LLM's phrasing of this varied call to call). Already hand-verified in reports/pilot-findings.md §3.1 F3: vas deferens is part of the male reproductive system, so it is correctly excluded from the female one.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-04"
+    }
+  ]
+}

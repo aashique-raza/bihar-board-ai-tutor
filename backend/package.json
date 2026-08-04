@@ -24,7 +24,8 @@
     "test:golden": "node scripts/run-golden-set.js",
     "test:golden-save": "node scripts/run-golden-set.js --save-baseline",
     "quiz:blocks": "node scripts/quiz-bank/buildBlocks.js",
-    "quiz:questions": "node scripts/quiz-bank/buildQuestions.js"
+    "quiz:questions": "node scripts/quiz-bank/buildQuestions.js",
+    "quiz:answers": "node scripts/quiz-bank/buildAnswers.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

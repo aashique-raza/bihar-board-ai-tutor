@@ -1,7 +1,7 @@
 # Stage P — Pilot Findings
 
 > **Pilot paper:** `2016-a` (`2016 a.pdf`)
-> **Status:** 🟢 **Stage B + C + D DONE** — 8/8 page padhe, 52 block bane, 52/52 teeno language mein. Stage E–G baaki.
+> **Status:** 🟢 **Stage B + C + D + E DONE** — 8/8 page padhe, 52 block bane, 52/52 teeno language mein, **20/20 MCQ resolved** (15 textbook L3 + 5 human L4). Stage F–G baaki.
 > **Spec:** `QUIZ_DATA_PIPELINE.md` §7 Stage P
 
 ---
@@ -173,6 +173,23 @@ Page pe `BiharPaper.com` watermark bhi hai.
 **Asar:** is paper ke answers **textbook verification** aur **repeat-match** se aayenge.
 Page ke nishaano se bilkul nahi.
 
+> ✅ **Update (Stage E, 2026-08-04):** textbook verification chala di gayi
+> (`backend/scripts/quiz-bank/buildAnswers.js`) — har MCQ ka RAG se `data/class-10/science/`
+> ke against verify hua, repeat-match abhi possible nahi tha (ek hi paper hai). **20 mein se
+> 16 verified (L3).** ऊपर wale table ke 8 non-ambiguous jawab (haath se verify kiye hue) sab
+> **8/8 match hue** automated verification se.
+>
+> Pehle try mein khud ek galti pakdi gayi: 31(ii) ka jawab "Convex" aaya (galat — sahi Concave),
+> kyunki sabse saaf textbook sentence retrieval ke top-5 se bahar tha, aur jo mila (ek 2-column
+> table) LLM ne galat column se jod diya. Fix: `topK` badhaya + LLM ke "quote" ko code khud
+> excerpt mein dhoondh ke confirm karta hai (paraphrase pe bharosa nahi). Dobara chalane pe
+> 31(ii) sahi (Concave) aaya, aur 2 aur sawaal jo pehle galat-confidently "verified" the wo ab
+> honestly "unverified" hain (evidence paraphrase tha, quote nahi). Poori detail:
+> `QUIZ_BUILD_LOG.md` 2026-08-04 session entry.
+>
+> **Isi galti ne khud pipeline ke apne rule ko justify kar diya:** RAG + LLM bhi confidently
+> galat ho sakta hai, bilkul pen-mark jaisa — isliye verify karna zaroori tha, sirf trust karna nahi.
+
 ### 🟡 7. Schema mein koi field kam pad raha?
 
 **Teen cheezein mili jo §5 schema mein nahi thi:**
@@ -267,7 +284,7 @@ wahi 30+20 structure.
 - [x] Stage B pilot — 8/8 page padhe
 - [x] Stage C pilot — 52 block bane, marks match, 0 flag
 - [x] Stage D pilot — 52/52 teeno language, prompt v2 ke baad 0 violation
-- [ ] Stage E pilot — answers textbook route se (key nahi hai)
+- [x] Stage E pilot — 20 MCQ mein se 16 textbook-verified (L3), 8/8 known-answer cross-check match
 - [ ] Stage F pilot — chapter mapping
-- [ ] Sawaal 5, 8 ke jawab bharo
-- [ ] `QUIZ_DATA_PIPELINE.md` §11 ka estimate update karo (Stage B: 6-10 → 4-7)
+- [ ] Sawaal 5 (Hinglish quality) ✅ bhara hua hai; Sawaal 8 (chapter mapping) Stage F mein aayega
+- [x] `QUIZ_DATA_PIPELINE.md` §11 ka estimate update ho chuka (Stage B: 6-10 → 4-7)

@@ -24,9 +24,9 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
 | **Sub-stage** | **Stage P (Pilot)** — paper `2016-a` ko poora A→G chala rahe hain |
-| **Status** | 🟡 Stage B (pages) ✅ · C (blocks) ✅ · D (3 language) ✅ · Stage E–G baaki |
+| **Status** | 🟡 Stage B (pages) ✅ · C (blocks) ✅ · D (3 language) ✅ · E (answers) ✅ · Stage F–G baaki |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-03 — pilot ka Stage D (Hinglish + schema) |
+| **Last session** | 2026-08-04 — pilot ka Stage E (textbook-verified answers) |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -100,6 +100,8 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-4 | Email provider abhi Nodemailer (SMTP) hai; Render free tier SMTP block karta hai, isliye email verification bypass hai. Resend API pe migrate karna hai. | `backend/src/auth/emailHelpers.js` | `PRE_LAUNCH_BLOCKERS.md` P1 | 🔴 High — par real users se pehle, quiz se independent |
 | P-5 | 5 local branches (`logo`, `profile`, `feat/support-page`, `global`, `codex-curriculum-resolvers`) already `main` mein merged hain — sirf local pointer clutter hai, delete kiya ja sakta hai. | git | 2026-08-02 audit | 🟢 Low — housekeeping |
 | P-6 | `test:chat-db-models` crash karta hai — `src/models/chatState.model.js` dhundhta hai jo exist nahi karti. Pre-existing (archived `PROBLEMS.md` STB-008 note ke mutabik: `chatState` purane refactor mein `chatSession` ke andar embed hua, script kabhi update nahi hui). Phase 0 baseline mein red mila, isse Phase 0 se unrelated maan ke park kiya. | `backend/scripts/test-chat-db-models.js` | Phase 0 baseline, 2026-08-02 | 🟡 Medium — ek regression test permanently disabled jaisa hai |
+| P-7 | `npm run rag:test-retriever` khud fail hota hai — script kabhi `connectDB()` call hi nahi karta, isliye Mongo se connect hue bina seedha `Chunk.aggregate()` chala deta hai aur 10s buffering timeout pe fail hota hai. RAG khud theek hai (Stage E session mein seedha `retrieveRelevantChunks()` connect karke test kiya — kaam karta hai) — sirf ye ek test script broken hai. | `backend/scripts/test-retriever.js` | Stage E baseline check, 2026-08-04 | 🟡 Medium — RAG debug karne ka documented tareeka hi kaam nahi karta |
+| P-8 | Stage B (page reading) ke notes mein handwritten-mark observations already hain (jaise "Handwritten mark seen on (ii) next to 'Convex' — WRONG") — par Stage D/E in notes ko question ke `flags[]` mein propagate nahi karte. Har MCQ pe `flags: []` khaali hai. Ek future Stage G review ke liye useful cross-check hoga agar ye pull-forward ho jaye. | `backend/scripts/quiz-bank/buildBlocks.js`, `buildQuestions.js` | Stage E session, 2026-08-04 | 🟢 Low — nice-to-have, kisi phase ka DoD nahi rokta |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -131,6 +133,47 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Pilot Stage E: textbook-verified answers
+- **Bana:** `backend/scripts/quiz-bank/buildAnswers.js` + `npm run quiz:answers` → output
+  `data/quiz-bank/stage4-answers/2016-a.json`. Is paper mein printed key nahi hai (F3) aur
+  abhi sirf ek hi paper process hua hai (repeat-match ke liye doosra saal nahi hai), isliye
+  har MCQ ka answer Zuno ke apne RAG retriever se `data/class-10/science/` ke against
+  textbook-verify hua — schema (§9) ke mutabik akela textbook-verification bhi seedha L3 deta hai.
+- **Pehle run mein ek real galti pakdi gayi:** 20 mein se 18 verified hue, par 31-ii
+  (near-sightedness lens) ka jawab **"Convex" aaya — jo galat hai (sahi: Concave)**. Root cause:
+  retrieved 5 chunks sab textbook-correct the, par sabse saaf sentence ("Myopia is corrected by
+  using a concave lens") rank 8 pe tha, top-5 se bahar — jo mila usme ek 2-column comparison
+  table tha jise LLM ne galat column se jod diya, confidently.
+- **Fix (do part):** (1) `topK` 5 se badha ke 8 kiya — saaf sentence ab range mein aata hai.
+  (2) Prompt ko "verbatim quote" require karne wala banaya, **aur code khud check karta hai**
+  ki quote excerpt mein sach mein mojood hai ya nahi (LLM ke paraphrase pe bharosa nahi kiya) —
+  isi check ne 31-ii ka galat jawab pehle hi pakad liya hota. PROMPT_VERSION v2.
+- **Result (dobara run):** 20 mein se **16 verified (L3)**, 4 unverified — 31-ii ab **sahi
+  (Concave)** aata hai. Maine pehle se haath se verify kiye hue 8 sawaalon (pilot-findings.md
+  F3 table) se cross-check kiya: **8/8 match, 0 galat.** 2 sawaal (31-i, 31-xviii) v1 mein
+  "verified" the par v2 ke strict check mein "unverified" ban gaye — dono mein evidence ek
+  paraphrase tha, ek asli quote nahi (safe trade-off, galat jawab nahi, sirf conservative).
+- **P5 confirm hua:** dobara chalane pe 0 LLM call (20/20 cache hit), byte-identical file.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression
+  nahi (koi `src/` file touch hi nahi hui).
+- **2 naye Parking Lot items:** P-7 (`rag:test-retriever` khud broken, missing `connectDB()`)
+  aur P-8 (handwritten-mark notes `flags[]` mein propagate nahi hote) — dono real, dono kisi
+  DoD ko rokte nahi.
+- **Human-review mechanism ban gaya:** user ne baaki 4 unverified sawaalon ka jawab khud
+  research karke diya (mirror=virtual, CO2=0.03%, autotrophic=all, largest gland=liver). Seedha
+  output file mein likhna galat hota (P2 ke मुताबिक har re-run poori file dobara banata hai —
+  uska research mit jaata). Isliye pipeline ka already-designed mechanism ab wire kiya:
+  `data/quiz-bank/review/resolved.json` (§10) — script isko load karta hai, jo sourceId isme
+  ho uska jawab **kabhi automation se overwrite nahi hota**, LLM/RAG call bhi skip ho jaata hai.
+  `source: "human"`, confidence `L4`. **Final: 20/20 resolved** (15 textbook L3 + 5 human L4) —
+  5wan (31-xvi) bhi add hua, jawab pilot-findings.md mein pehle se hi haath-verify tha (F3
+  table), user ne confirm kiya.
+- **Ek chhoti si LLM-variance note:** cache khaali karke dobara chalane pe (16 se 15 verified)
+  — ek sawaal jo pehle exact-quote se pass hua tha, dusri baar LLM ne thoda alag paraphrase
+  diya jo grounding-check fail ho gaya. Galat jawab kabhi nahi bana, sirf ek extra "unverified"
+  ban gaya. Cache intact hone par output bilkul stable hai (0 LLM call, same result).
+- **Agla:** Stage F pilot — dedup (solo, sirf ek paper) + chapter mapping.
 
 ### 2026-08-03 — Pilot Stage D: structure + 3 languages
 - **Bana:** `backend/scripts/quiz-bank/buildQuestions.js` + `npm run quiz:questions` → output
