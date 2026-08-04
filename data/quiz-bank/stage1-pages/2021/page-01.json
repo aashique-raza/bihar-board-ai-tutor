@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2021",
+  "page": 1,
+  "readBy": "both",
+  "raw": {
+    "hi": "SECONDARY SCHOOL EXAMINATION - 2021 (ANNUAL)\nSCIENCE (Optional Compulsory)\nविज्ञान (ऐच्छिक अनिवार्य)\nकुल प्रश्नों की संख्या - 80+24+6=110\nसमय : 2 घंटे 45 मिनट   पूर्णांक : 80\n\nसामान्य निर्देश : General Instructions :-\n1. परीक्षार्थी यथासंभव अपने शब्दों में ही उत्तर दें।\n2. दाहिनी ओर हाशियें पर दिये हुए अंक पूर्णांक निर्दिष्ट करते हैं।\n3. इस प्रश्न पत्र को ध्यानपूर्वक पढ़ने के लिए परीक्षार्थियों को 15 मिनट का अतिरिक्त समय दिया गया है।\n4. यह प्रश्न-पत्र दो खण्डों में है, खण्ड-अ एवं खण्ड-ब।\n5. खण्ड-अ में 80 वस्तुनिष्ठ प्रश्न हैं। इनमें से किन्हीं 40 प्रश्नों का उत्तर देना है। प्रत्येक प्रश्न के लिए 1 अंक निर्धारित है। यदि कोई परीक्षार्थी 40 से अधिक प्रश्नों का उत्तर देता है तो प्रथम 40 प्रश्नों के उत्तर का ही मूल्यांकन होगा। इनका उत्तर उपलब्ध कराये गए OMR उत्तर-पत्रक में दिए गये सही वृत्त को नीले/काले...\n\n[Page 1]",
+    "en": "SECONDARY SCHOOL EXAMINATION - 2021 (ANNUAL)\nSCIENCE (Optional Compulsory)\nTotal No. of Questions - 80+24+6=110\nTime : 2 Hrs. 45 Minutes   Full Marks : 80\n\nGeneral Instructions :-\n1. Candidates are required to give their answer in their own words as far as practicable.\n2. Figures in the right hand margin indicate full marks.\n3. 15 minutes of extra time have been allotted to the candidates for reading the questions carefully.\n4. This question paper is divided into two sections - Section-A and Section-B.\n5. In Section-A there are 80 objective questions. Any 40 of these are to be answered. Each question carries 1 mark. If a candidate answers more than 40 questions, then answers of first 40 questions will be evaluated only. Answer has to be marked on the OMR answer-sheet provided, on the correct circle, with blue/black...\n\n[Page 1]"
+  },
+  "textLayer": "SECONDARY SCHOOL EXAMINATION - 2021 (ANNUAL); SCIENCE (Optional Compulsory); Total No. of Questions; Time: 2 Hrs 45 Minutes; Full Marks: 80; General Instructions. Hindi portions are in a legacy non-Unicode font (glyphs render as garbled Latin, e.g. 'ijh{kkFkhZ' for 'परीक्षार्थी') - confirms F2 finding, English is clean and usable for cross-check, Hindi text layer is NOT usable.",
+  "confidence": "high",
+  "notes": [
+    "This is a native-text/digital PDF (clean printed font, not a scanned photocopy) - similar situation to 2018-b (F5) but this one IS the genuine board paper layout (proper header, subject code area absent though - no watermark or 'Ans:' pattern seen yet).",
+    "Declared totals: 80+24+6=110 total questions, full marks 80 - a bigger paper than 2020-b (which was 48+28=76). Section-A has 80 MCQs this year (candidate answers any 40), not 48.",
+    "Text layer cross-checked for this page: English matches vision reading exactly. Hindi in text layer is legacy-font-encoded (unreadable garbage when copy-pasted, e.g. 'ijh{kkFkhZ') confirming F2 - vision reading remains the only reliable Hindi source."
+  ]
+}

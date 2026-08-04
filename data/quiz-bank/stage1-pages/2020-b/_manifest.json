@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2020-b",
+  "sourceFile": "2020 b.pdf",
+  "sourceMd5": "7ce1e14d604a9abd6fd03589186c33ee",
+  "pdfPages": 20,
+  "printedPages": 20,
+  "renderDpi": 200,
+  "readBy": "vision",
+  "pages": [
+    { "pdfPage": 1, "status": "done", "contains": "cover page — subject code, instructions 1-4, declared totals (48+28=76 questions, full marks 80)", "confidence": "high" },
+    { "pdfPage": 2, "status": "done", "contains": "instructions 5-7, Section A/B structure declared", "confidence": "high" },
+    { "pdfPage": 3, "status": "done", "contains": "Section A header + MCQ Q1-3", "confidence": "high" },
+    { "pdfPage": 4, "status": "done", "contains": "Section A MCQ Q4-7", "confidence": "high" },
+    { "pdfPage": 5, "status": "done", "contains": "Section A MCQ Q8-10", "confidence": "high" },
+    { "pdfPage": 6, "status": "done", "contains": "Section A MCQ Q11-14", "confidence": "high" },
+    { "pdfPage": 7, "status": "done", "contains": "Section A MCQ Q15-18", "confidence": "high" },
+    { "pdfPage": 8, "status": "done", "contains": "Section A MCQ Q19-22(partial)", "confidence": "high" },
+    { "pdfPage": 9, "status": "done", "contains": "Section A MCQ Q22(cont)-25", "confidence": "high" },
+    { "pdfPage": 10, "status": "done", "contains": "Section A MCQ Q26-29", "confidence": "high" },
+    { "pdfPage": 11, "status": "done", "contains": "Section A MCQ Q30-33", "confidence": "high" },
+    { "pdfPage": 12, "status": "done", "contains": "Section A MCQ Q34-37", "confidence": "high" },
+    { "pdfPage": 13, "status": "done", "contains": "Section A MCQ Q38-41(partial)", "confidence": "high" },
+    { "pdfPage": 14, "status": "done", "contains": "Section A MCQ Q41(cont)-44", "confidence": "high" },
+    { "pdfPage": 15, "status": "done", "contains": "Section A MCQ Q45-48 (end of Section A)", "confidence": "high" },
+    { "pdfPage": 16, "status": "done", "contains": "Section B header + Physics short-answer Q1-6", "confidence": "high" },
+    { "pdfPage": 17, "status": "done", "contains": "Physics short-answer Q7-8 + Physics long-answer Q9-10 + Chemistry header Q11(partial)", "confidence": "high" },
+    { "pdfPage": 18, "status": "done", "contains": "Chemistry short-answer Q12-17", "confidence": "high" },
+    { "pdfPage": 19, "status": "done", "contains": "Chemistry long-answer Q18-19 + Biology header short-answer Q20-22", "confidence": "high" },
+    { "pdfPage": 20, "status": "done", "contains": "Biology short-answer Q23-26 + Biology long-answer Q27-28 (end of paper)", "confidence": "high" }
+  ]
+}

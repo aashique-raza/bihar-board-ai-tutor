@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk, baaki 9 papers) — IN PROGRESS.** 9/18 usable done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a` (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — batch 4 (`2018-b`, `2019-b`, `2020-a`) done, 9 papers baaki. |
+| **Sub-stage** | **Stage B (bulk, baaki 7 papers) — IN PROGRESS.** 11/18 usable done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021` (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — batch 5 (`2020-b`, `2021`) done, 7 papers baaki (`2022, 2023-a, 2023-b, 2024-a, 2024-b, 2025, 2026`). |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — Stage B batch 4: `2018-b` (naya finding F5 — retyped Word doc, not a scan), `2019-b` (page-order swap + 2 illegible-Hindi questions), `2020-a` (48-question Section-A structure) |
+| **Last session** | 2026-08-04 — Stage B batch 5: `2020-b` (48+28 structure, no printed key, pen-marks again inconsistent — F3 re-confirmed multiple times incl. two-mark conflicts), `2021` (80+24+6 structure — biggest paper yet, native-text/legacy-font PDF like F2's routing, no printed key, two GK-flavored questions noted for Stage E/F review). |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -136,6 +136,27 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-04 — Stage B bulk batch 5: `2020-b`, `2021` (bada paper, 2022 deferred)
+- **Bana:** `data/quiz-bank/stage1-pages/2020-b/`, `2021/` — manifest + 55 page files total
+  (20+35 PDF pages), PyMuPDF se 200 DPI PNG render karke vision se padha; `2021` ka text-layer
+  bhi extract karke cross-check kiya (route "both"). Backend `src/` ka koi file touch nahi hua.
+- **Batch size flag hua (STOP condition #4):** planned batch (`2020-b`+`2021`+`2022` = 88 PDF
+  pages) pichle sabse bade batch (56 pages) se 57% zyada nikla. User ko batao, user ne `2022`
+  ko agli session mein bhejne ka decide kiya — is session mein sirf 55 pages (`2020-b` + `2021`).
+- **`2020-b`:** 48+28=76 structure (jaisa 2016-2018 ke papers), koi printed answer key nahi
+  (2016-a/2020-a jaisa). Pen-marks bahut jagah **conflicting/galat** mile — Q10 aur Q23 dono mein
+  ek hi sawaal pe do alag options pe checkmark, F3 rule ko aur confirm karta hai.
+- **`2021` — sabse bada paper ab tak:** 80+24+6=110 declared (Section-A akela 80 MCQ hai, 48 nahi).
+  Native-text PDF (F5 jaisa "clean printed", scan nahi) — koi handwritten mark nahi, koi answer
+  bhi nahi (khaali question paper hai, kisi ne attempt nahi kiya). Text layer legacy-font mein hai
+  (F2 confirm), sirf English cross-check ke liye usable. **Koi printed answer key nahi.**
+- **2 sawaal general-knowledge flavor ke note kiye** (Q39 Tehri dam location, Q64 Ganga Action
+  Plan year) — Class-10 Science textbook content nahi, Stage E/F ko flag karna hoga (out-of-syllabus
+  ho sakta hai chapter-mapping ke liye).
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression
+  nahi.
+- **Agla:** Stage B batch 6 — `2022` (33 pages) se shuru, phir `2023-a, 2023-b, ...` (7 papers baaki).
 
 ### 2026-08-04 — Stage B bulk batch 4: `2018-b` (F5), `2019-b`, `2020-a`
 - **Bana:** `data/quiz-bank/stage1-pages/2018-b/`, `2019-b/`, `2020-a/` — manifest + 56 page
