@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2025",
+  "page": 15,
+  "readBy": "vision",
+  "raw": {
+    "hi": "35. (contd) (C) 8 (D) 10.5\n36. जस्ता का अयस्क है-\n(A) बॉक्साइट (B) सोडियम क्लोराइड (C) सिनेवार (D) जिंक ब्लेंड\n37. धातु जो सिर्फ अम्लराज मे घुलता है, वह है-\n(A) Fe (B) Cu (C) Au (D) Al\n38. निम्नलिखित में कौन आयनिक यौगिक नहीं है?\n(A) CaCl₂ (B) CO₂ (B) KCl (D) HCN [note: option-C printed as '(B)' in source, likely a print error]\n39. हीलियम गैस है-\n(A) सक्रिय (B) अक्रिय (C) उदासीन (D) इनमें से कोई नहीं",
+    "en": "35. (contd) (C) 8 (D) 10.5\n36. An ore of Zinc is-\n(A) Bauxite (B) Sodium chloride (C) Cinnabar (D) Zinc blende\n37. The metal which dissolves only in aqua regia is-\n(A) Fe (B) Cu (C) Au (D) Al\n38. Which of the following is not an ionic compound?\n(A) CaCl2 (B) CO2 (C) KCl (D) HCN\n39. Helium gas is-\n(A) Active (B) Inert (C) Neutral (D) None of these"
+  },
+  "textLayer": null,
+  "confidence": "high",
+  "notes": ["Q38 Hindi block: the third option is printed with label '(B)' again instead of '(C)' in the source PDF (KCl) — a paper printing typo. The English block below correctly labels it (C). Recorded exactly as printed; Stage C+ should use the English block's correct A-D labeling for this question."]
+}

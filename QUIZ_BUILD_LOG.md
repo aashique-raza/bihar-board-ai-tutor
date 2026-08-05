@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 12/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`. `2023-a, 2023-b, 2024-a, 2024-b, 2025, 2026` not started (6 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2022` is ab poora (33/33 pages + `_manifest.json`), F6 fix (fresh session per paper) is is session mein follow kiya gaya aur kaam kiya. 6 papers baaki: `2023-a, 2023-b, 2024-a, 2024-b, 2025, 2026`. |
+| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 13/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2025`. `2023-a, 2023-b, 2024-a, 2024-b, 2026` not started (5 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2025` ab poora (34/34 pages + `_manifest.json`), fresh session mein shuru hua (F6 fix), koi usage-limit issue nahi aaya. 5 papers baaki: `2023-a, 2023-b, 2024-a, 2024-b, 2026`. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage B: `2022` resumed fresh (F6 fix applied) from page 28, finished 28-33/33, `_manifest.json` built. Full paper: 80+24+6=110 structure (Section A Q1-80 objective, Section B 24 short-answer + 6 long-answer across Physics/Chemistry/Biology). Section-A subject order confirmed Biology-first (Q1 is a Biology question), unlike 2021 which started Physics-first. |
+| **Last session** | 2026-08-05 — Stage B: `2025` poora fresh session mein (F6 fix). 80+24+6=110 structure, Physics-first Section-A order (unlike 2022's Biology-first). PDF has 3 extra aglasem.com wrapper pages (1 cover + 2 trailing ad pages) beyond the 31 real printed pages — noted, not exam content. Cover-wrapper graphic said "YEAR 2024" but real exam cover confirmed 2025 — not a blocker, just a download-site typo. Several print typos found in the paper itself (English options garbled vs correct Hindi: Q38 mislabeled option letter, Q44/Q50/Q68/Q73 English text typos) — all transcribed as-is, correct version noted for Stage C+. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -137,6 +137,34 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage B: `2025` finished (fresh session per F6 fix)
+- **Bana:** `data/quiz-bank/stage1-pages/2025/page-01.json` se `page-34.json` (34/34 pages) +
+  `_manifest.json` (sourceMd5 computed fresh). Backend `src/` ka koi file touch nahi hua.
+  Fresh session mein shuru hua, poora paper ek hi chhoti conversation mein khatam ho gaya.
+- **Paper structure confirmed:** 80+24+6=110 declared (cover page confirms), Section-A
+  Physics-first order (Q1 shadow/light) unlike 2022's Biology-first. Section-B: Physics short
+  Q1-8(4 of 8)+long Q9-10(1 of 2, 6 marks), Chemistry short Q11-18(4 of 8)+long Q19-20(1 of 2,
+  5 marks), Biology short Q21-28(4 of 8)+long Q29-30(1 of 2, 5 marks).
+- **PDF has 3 non-exam wrapper pages** beyond the 31 real printed pages: page-01 is an
+  aglasem.com download-site cover (mislabeled "YEAR 2024" — checked against the real exam
+  paper's own cover on page-02, which clearly confirms 2025; a download-site typo, not a
+  content mismatch, not a blocker), and pages 33-34 are trailing aglasem.com promotional
+  pages (asking readers to email them papers, and a study-materials link menu) — read as
+  inert page data, not acted upon.
+- **Several print typos found in the paper itself** (not our transcription): Q38 Hindi block's
+  third option mislabeled "(B)" instead of "(C)"; Q44 English (B) printed "C6H12C6" instead of
+  correct "C6H12O6"; Q50 English (A) "None-metals" instead of "Non-metals"; Q68 English (C)
+  "Lap" instead of "Gum"; Q73 English (B) "Funds" instead of "Fundus". All transcribed exactly
+  as printed with the correct version noted for Stage C+ to use the Hindi block as source of
+  truth. Also both long-answer section instruction blocks (Q9-10, Q19-20, Q29-30 headers) have
+  a recurring copy-paste typo: English says "Short Answer Type"/"Answer any 4" when Hindi
+  correctly says long-answer/answer-any-1 — noted per section, not a data quality issue since
+  Hindi + marks formula (6×1=6, 5×1=5) are unambiguous.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi (no `src/` file touched — data-only session).
+- **Agla:** naye/fresh session mein next paper from `2023-a, 2023-b, 2024-a, 2024-b, 2026`
+  (5 papers left in Stage B bulk).
 
 ### 2026-08-05 — Stage B: `2022` finished (fresh session per F6 fix)
 - **Bana:** `data/quiz-bank/stage1-pages/2022/page-28.json` se `page-33.json` (baaki 6 pages) +
