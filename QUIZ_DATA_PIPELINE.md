@@ -264,6 +264,41 @@ tareeke se — bas answer field is bharose se bahar hai (upar wala rule).
 
 ---
 
+#### 🔴 F6 — Ek hi lambi conversation mein bahut saare pages padhna token-usage ko explode kar deta hai (Stage B batch 6, 2026-08-05)
+
+Batch 5 (`2020-b`+`2021`, 55 pages) aur batch 6 (`2022`+`2025` ka attempt) **ek hi continuous
+conversation** mein hue — session ka koi restart nahi hua beech mein. Batch 5 khatam hote-hote
+already **70% token quota** use ho chuka tha. Batch 6 shuru karte hi (`2022` ke 27 pages padhte
+hue) baaki 30% bhi khatam ho gaya, aur **usage-limit error** aaya. 5-ghante quota-reset ke baad
+dobara try kiya — is baar **aur bhi tezi se** (sirf kuch minute mein) 100% khatam ho gaya, kaam
+poora hone se pehle hi.
+
+**Root cause:** har Stage B page-read ek **vision image** (200 DPI PNG) load karta hai context
+mein — ye ek image hi kaafi tokens (~1500-2000+) leti hai. Conversation jitni lambi hoti jaati
+hai, har naya reply model ko **poori purani history dobara process karni padti hai** — sirf naya
+page nahi, balki ab tak ke saare purane images + unke JSON transcriptions bhi. Isliye cost linear
+nahi, **snowball** ki tarah badhta hai: page 1 sasta, page 50 mehnga, page 80+ itna mehnga ki
+2-3 pages mein hi bacha hua quota khatam ho jaata hai.
+
+**Ye ek data-quality issue nahi hai** — jitne pages padhe gaye unki JSON files disk pe safe hain
+(Write tool har page ke baad turant save karta hai), koi kaam nahi khoya. Sirf **session ka size**
+galat tha.
+
+**Fix — batching rule badla:**
+
+> Har naya Stage B **paper fresh session/conversation mein shuru hoga**, purani conversation ke
+> upar continue nahi karenge — chahe kitna hi token quota bacha kyun na dikhe. Ek session mein
+> ek naya paper poora karna hai (1 paper ≈ 20-40 pages), do papers ek session mein tabhi jab
+> dono chhote hon (jaise 2016-b + 2016-c, 8+8 pages). §11 ka purana "2-3 papers per session"
+> estimate paper-count pe based tha, conversation-length pe nahi — real constraint image-token
+> accumulation hai, isliye guidance ab **"1 fresh session = 1 naya paper"** hai jab tak paper
+> chhota (≤20 pages) na ho.
+
+Parking Lot mein nahi gaya kyunki ye Stage B ke tareeke ko seedha badalta hai — turant yahan
+likha gaya taaki agla session isi rule se chale.
+
+---
+
 ### 3.2 Plan mein jo 18 kamiyan mili aur unka fix
 
 | # | Kami | Fix |

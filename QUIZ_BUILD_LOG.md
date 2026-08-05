@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk, baaki 7 papers) — IN PROGRESS.** 11/18 usable done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021` (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — batch 5 (`2020-b`, `2021`) done, 7 papers baaki (`2022, 2023-a, 2023-b, 2024-a, 2024-b, 2025, 2026`). |
+| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 12/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`. `2023-a, 2023-b, 2024-a, 2024-b, 2025, 2026` not started (6 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2022` is ab poora (33/33 pages + `_manifest.json`), F6 fix (fresh session per paper) is is session mein follow kiya gaya aur kaam kiya. 6 papers baaki: `2023-a, 2023-b, 2024-a, 2024-b, 2025, 2026`. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-04 — Stage B batch 5: `2020-b` (48+28 structure, no printed key, pen-marks again inconsistent — F3 re-confirmed multiple times incl. two-mark conflicts), `2021` (80+24+6 structure — biggest paper yet, native-text/legacy-font PDF like F2's routing, no printed key, two GK-flavored questions noted for Stage E/F review). |
+| **Last session** | 2026-08-05 — Stage B: `2022` resumed fresh (F6 fix applied) from page 28, finished 28-33/33, `_manifest.json` built. Full paper: 80+24+6=110 structure (Section A Q1-80 objective, Section B 24 short-answer + 6 long-answer across Physics/Chemistry/Biology). Section-A subject order confirmed Biology-first (Q1 is a Biology question), unlike 2021 which started Physics-first. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -105,6 +105,7 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-9 | `2016-a` ke pilot manifest mein `sourceMd5` field **galat hai** — usme `2016-c.pdf` ka hash likha hai, `2016-a.pdf` ka nahi. Content sahi hai (aaj `2016 a.pdf` dobara render karke pilot ke stored page-01 se match kiya, exact match) — sirf ek field ki typo/copy-paste galti hai, koi content mix-up nahi. Fix: field value ko `9b856dfc5d535dac2e44dc44ebaa0798` se replace karna hai. | `data/quiz-bank/stage1-pages/2016-a/_manifest.json` | Stage B batch 1 session, 2026-08-04 | 🟢 Low — cosmetic, content par koi asar nahi |
 | P-10 | Answer key ke andar **"देखें <year> ... का उत्तर" (cross-reference) answers** — `2017-c` aur `2017-d` dono mein mila (3 alag questions total: 2017-c Physics Q9-Q10, 2017-d Physics Q7+Q10-main, Biology Q10-OR). Ye guide-book key kabhi-kabhi asli jawab likhne ke bajaye kisi **doosre paper/shift** ka reference de deta hai (jaise "2014(A) द्वितीय पाली Q7") jo hamare 21-PDF set mein confirm nahi hai. Stage E jab is tarah ka answer text dekhe to usse "unanswered" treat kare, RAG/textbook route le — parse karne ki koshish na kare. | `data/quiz-bank/stage1-pages/2017-c/`, `2017-d/` (page-05, page-08 wagaira) | Stage B batch 2 session, 2026-08-04 | 🟡 Medium — Stage E ka logic isse aware hona chahiye, warna galat parse ho sakta hai |
 | P-11 | `2017-a` aur `2017-d` — **do alag PDF files (confirmed distinct MD5) ka poora question set (50/50) word-for-word identical hai**, Group A aur Group B dono. `2017-a` ke paas answer key nahi hai, `2017-d` ke paas hai — matlab Stage F dedup jab in dono ko link karega, `2017-d` ki key `2017-a` ke sawaalon ka bhi jawab de degi. Ye blocker nahi hai (Stage F apne aap handle karega dedup logic se), sirf ek note hai ki ye link zaroor bane. | `data/quiz-bank/stage1-pages/2017-a/`, `2017-d/` manifests | Stage B batch 2 session, 2026-08-04 | 🟢 Low — Stage F ke design ka hi hissa hai, sirf yaad rakhna hai |
+| P-12 | `survey.json` (Stage A output) mein `2023-a` aur `2023-b` ke `pages` field **galat hain** — likha hai 1 aur 2, PyMuPDF se verify kiya to asal mein **42 aur 49 pages** hain. Content extraction sahi tha (`textChars`, `sample` field dono mein meaningful text hai) — sirf page-count parsing buggy nikla in do files ke liye. Stage B ko block nahi karta (apna independent PyMuPDF render use hota hai), par Stage A ka survey script kabhi fix hona chahiye taaki future reports sahi ginti dein. | `data/quiz-bank/reports/survey.json` (`2023-a`, `2023-b` entries) | Stage B batch 6 planning, 2026-08-04 | 🟡 Medium — abhi kisi ko galat direction nahi de raha (batch planning hand-verify se hua), par agar koi survey.json pe bharosa kare to batch-sizing galat ho sakti hai |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -136,6 +137,42 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage B: `2022` finished (fresh session per F6 fix)
+- **Bana:** `data/quiz-bank/stage1-pages/2022/page-28.json` se `page-33.json` (baaki 6 pages) +
+  `_manifest.json` (33/33 pages, `sourceMd5` computed fresh). Backend `src/` ka koi file touch
+  nahi hua. **Fresh session mein shuru hua** (F6 fix ke mutabik) — poore 6 pages ek hi, chhoti
+  conversation mein khatam ho gaye, koi usage-limit issue nahi aaya. F6 ka fix confirm ho gaya.
+- **Poora paper structure confirm hua:** Section A objective Q1-80 (Biology-first order — Q1
+  reproductive organs in plants — 2021 se ulta, jo Physics-first tha). Section B: Physics
+  short-answer Q1-8 + long-answer Q9-10, Chemistry short-answer Q11-18 + long-answer Q19-20,
+  Biology short-answer Q21-28 + long-answer Q29-30 (kul 24 short + 6 long = 30 subjective).
+- **2 chhoti observation (blocker nahi, Stage C+ ke liye note):** Q13 ki dono reactions
+  ((i)/(ii)) source page pe **word-for-word dobara print** hui hain (iii)/(iv) ke roop mein —
+  jaisi dikhi transcribe ki. Q29/Q30 (aakhri 2 sawaal) pe per-question mark number print nahi
+  hai (baaki sab long-answer questions pe hai) — section header se 5 marks confirm hota hai.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi.
+- **Agla:** naye/fresh session mein `2025` (34 pages) — Stage B ka agla paper.
+
+### 2026-08-05 — Stage B batch 6 attempt: `2022` partial (27/33), session force-closed (F6)
+- **Bana:** `data/quiz-bank/stage1-pages/2022/page-01.json` se `page-27.json` (33 mein se 27) —
+  koi `_manifest.json` nahi bani abhi. `2025` shuru hi nahi hua. **Kuch commit nahi hua** — files
+  disk pe hain par git mein untracked (safe hain, khoyi nahi).
+- **Bada operational finding (F6, `QUIZ_DATA_PIPELINE.md` mein likha gaya):** ye session batch 5
+  ke turant baad, **usi lambi conversation mein** continue hua tha (naya session start nahi hua).
+  Batch 5 khatam hote-hote 70% token quota use ho chuka tha; batch 6 ke 27 pages mein hi baaki
+  30% bhi khatam, usage-limit error aaya. 5hr reset ke baad dobara try kiya — aur bhi tez khatam
+  hua. Root cause: har page ek vision image leta hai, aur lambi conversation mein **har naya
+  reply poori purani history (saare pehle ke images) dobara process karta hai** — cost snowball
+  ki tarah badhta hai. Data-quality issue nahi hai, session-sizing ka tha.
+- **Fix:** batching rule badla — ab **har naya paper fresh session mein shuru hoga**, purani
+  conversation ke upar continue nahi karenge (chhote papers, jaise 2016-b+2016-c jaisे 8+8 page
+  wale, abhi bhi ek saath ho sakte hain).
+- **Baseline:** is session mein baseline test nahi chalaya gaya (koi code-affecting kaam nahi
+  hua, sirf naya data + isi doc-update) — agla session shuru hote hi chalega.
+- **Agla:** naye/fresh session mein `2022` page 28 se resume, 33/33 poora karke manifest banao,
+  phir alag fresh session mein `2025` (34 pages).
 
 ### 2026-08-04 — Stage B bulk batch 5: `2020-b`, `2021` (bada paper, 2022 deferred)
 - **Bana:** `data/quiz-bank/stage1-pages/2020-b/`, `2021/` — manifest + 55 page files total
