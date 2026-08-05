@@ -1,0 +1,34 @@
+{
+  "flags": [
+    "groupA-classified-subjective",
+    "groupB-shape-ascending-classified-subjective"
+  ],
+  "paper": {
+    "board": "BSEB",
+    "class": 10,
+    "declaredMarks": {
+      "A": null,
+      "B": null
+    },
+    "duplicateOf": null,
+    "extractionRoute": "page-images",
+    "hasPrintedAnswerKey": false,
+    "paperId": "2024-b",
+    "pdfPages": 39,
+    "printedPages": 40,
+    "sourceFile": "2024 b.pdf",
+    "sourceMd5": "d6094ecbc54f293890674977124eb0ad",
+    "subject": "science"
+  },
+  "questions": [],
+  "schemaVersion": 1,
+  "totals": {
+    "marksGroupA": 0,
+    "marksGroupB": 0,
+    "objective": 0,
+    "questions": 0,
+    "subjective": 0,
+    "trilingualComplete": 0,
+    "usableInQuiz": 0
+  }
+}

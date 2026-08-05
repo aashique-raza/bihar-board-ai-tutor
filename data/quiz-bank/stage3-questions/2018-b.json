@@ -1,0 +1,3228 @@
+{
+  "flags": [
+    "hi: Group A header not found — segmenting from the top of the paper.",
+    "B: number jumped from 2 to 5 — a gap in the source, not a parsing skip.",
+    "groupA-classified-objective",
+    "groupB-shape-ascending-classified-subjective"
+  ],
+  "paper": {
+    "board": "BSEB",
+    "class": 10,
+    "declaredMarks": {
+      "A": null,
+      "B": null
+    },
+    "duplicateOf": null,
+    "extractionRoute": "page-images",
+    "hasPrintedAnswerKey": false,
+    "paperId": "2018-b",
+    "pdfPages": 20,
+    "printedPages": 20,
+    "sourceFile": "2018 b.pdf",
+    "sourceMd5": "115390174edf8005449b9fecb577b634",
+    "subject": "science"
+  },
+  "questions": [
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "objective",
+      "sourceId": "2018-b:A:1",
+      "subPart": null,
+      "text": {
+        "en": "Which mirror do the dentist use to use large images of teeth of patient? (A) plane mirror (B) concave mirror ©convex mirror (D) all of these Ans: concave mirror",
+        "hi": null,
+        "hinglish": "Dentist kaun sa darpan istemal karte hain taaki mareez ke daanton ka bada pratibimb mile? (A) samatal darpan (B) avatal darpan (C) uttal darpan (D) in sabhi ka Ans: avatal darpan"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "objective",
+      "sourceId": "2018-b:A:2",
+      "subPart": null,
+      "text": {
+        "en": "Which lens is called diverging lens? A) Concave lens (B) convex lens (C)Both concave and convex lens (D) none of these. Ans: concave mirror",
+        "hi": null,
+        "hinglish": "Kaun sa lens diverging lens kehlata hai? (A) avatal lens (B) uttal lens (C) dono avatal aur uttal lens (D) inme se koi nahi. Ans: avatal lens"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Ciliary Muscle",
+            "hi": null,
+            "hinglish": "Ciliary Muscle"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Iris",
+            "hi": null,
+            "hinglish": "Iris"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Eye lens",
+            "hi": null,
+            "hinglish": "Eye lens"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "retina Ans: Iris",
+            "hi": null,
+            "hinglish": "retina Ans: Iris"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "objective",
+      "sourceId": "2018-b:A:3",
+      "subPart": null,
+      "text": {
+        "en": "3 who controls Pupil size muscles?",
+        "hi": null,
+        "hinglish": "Pupil size muscles kaun control karta hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "objective",
+      "sourceId": "2018-b:A:4",
+      "subPart": null,
+      "text": {
+        "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens? (A) Myopia (B) hypermetropia ©presbyopia (D) cataract Ans: presbyopia",
+        "hi": null,
+        "hinglish": "Kaun sa aankh ka defect hai jise bifocal lens se theek kiya ja sakta hai jo avatal aur uttal lens dono ka milan hai? (A) Myopia (B) hypermetropia (C) presbyopia (D) cataract Ans: presbyopia"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "objective",
+      "sourceId": "2018-b:A:5",
+      "subPart": null,
+      "text": {
+        "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the (A) mirror and the screen (B) mirror and object ©both A and B (D) none of these Ans: mirror and the screen",
+        "hi": null,
+        "hinglish": "Ek prayog mein ek vastu ka pratibimb avatal darpan dwara screen par prapt kiya jata hai, darpan ki naabhiik doori nikalne ke liye prayog karta ko (A) darpan aur screen ke beech ki doori (B) darpan aur vastu ke beech ki doori (C) dono A aur B (D) inme se koi nahi Ans: darpan aur screen ke beech ki doori"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "objective",
+      "sourceId": "2018-b:A:6",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary? (A) A convex lens of focal length 50 cm (B) a concave lens of focal length 50 cm © Convex lens of focal length 5 cm (D) a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
+        "hi": null,
+        "hinglish": "Nimnalikhit mein se kaun sa lens aap chhote aksharon ko padhne ke liye istemal karna pasand karenge jo dictionary mein hote hain? (A) 50 cm naabhiik doori ka uttal lens (B) 50 cm naabhiik doori ka avatal lens (C) 5 cm naabhiik doori ka uttal lens (D) 5 cm naabhiik doori ka avatal lens Ans: 5 cm naabhiik doori ka uttal lens"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Volt",
+            "hi": null,
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ohm",
+            "hi": null,
+            "hinglish": "Ohm"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Volte per Columb",
+            "hi": null,
+            "hinglish": "Volte per Columb"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Ampere Ans: volt",
+            "hi": null,
+            "hinglish": "Ampere Ans: volt"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "objective",
+      "sourceId": "2018-b:A:7",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is the SI unit of electric potential energy?",
+        "hi": null,
+        "hinglish": "Nimnalikhit mein se kaun sa SI unit hai vidyut sambhavit urja ka?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "objective",
+      "sourceId": "2018-b:A:8",
+      "subPart": null,
+      "text": {
+        "en": "At the time of short circuiting the current in the circuit (A)Reduces the substantially (B) Does not change ©Increases heavily (D) Varies continuously Ans: Increases heavily",
+        "hi": null,
+        "hinglish": "Short circuit hone par circuit mein current (A) Kafi kam hota hai (B) Badalta nahi hai (C) Bahut zyada badhta hai (D) Lagataar badalta hai Ans: Bahut zyada badhta hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "objective",
+      "sourceId": "2018-b:A:9",
+      "subPart": null,
+      "text": {
+        "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is (A) Towards south (B) Towards east © Downward (D) upward Ans: upward",
+        "hi": null,
+        "hinglish": "Ek positively charged particle (Alpha particle) jo west ki taraf projected hai, magnetic field se north ki taraf deflect hota hai, magnetic field ki disha hai (A) South ki taraf (B) East ki taraf (C) Neeche (D) Upar Ans: Upar"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "objective",
+      "sourceId": "2018-b:A:10",
+      "subPart": null,
+      "text": {
+        "en": "A rectangular coil of copper wire is being rotated in a magnetic field the direction of the induced current in the coil changes once in each (A) Two revolution (B) one Revolution © Half Revolution ©One fourth revolution Ans: half Revolution",
+        "hi": null,
+        "hinglish": "Ek rectangular coil jo copper wire se bani hai, magnetic field mein ghoomaayi ja rahi hai, coil mein induced current ki disha har (A) Do revolution (B) Ek revolution (C) Aadhe revolution (D) Ek chouthai revolution Ans: Aadhe revolution"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 11,
+      "section": "objective",
+      "sourceId": "2018-b:A:11",
+      "subPart": null,
+      "text": {
+        "en": "The magnetic field inside a long straight solenoid carrying current is (A) Zero (B) decreases as we move towards its end",
+        "hi": null,
+        "hinglish": "Ek lambi seedhi solenoid jo current carry kar rahi hai, uske andar magnetic field hai (A) Zero (B) Iske end ki taraf jaane par kam hota hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 12,
+      "section": "objective",
+      "sourceId": "2018-b:A:12",
+      "subPart": null,
+      "text": {
+        "en": "What kind of mirror would be most suited for a solar cooker? (A) plane mirror (B) convex mirror ©concave mirror (D) all of these Ans: concave mirror",
+        "hi": null,
+        "hinglish": "Solar cooker ke liye kaunsa darpan sabse behtar hoga? (A) Plane darpan (B) Convex darpan (C) Concave darpan (D) In sabhi Ans: Concave darpan"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 13,
+      "section": "objective",
+      "sourceId": "2018-b:A:13",
+      "subPart": null,
+      "text": {
+        "en": "The main aim of Chipko movement was to (A) Conserve soil (B) Trees ©water (D) electricity Ans: Trees",
+        "hi": null,
+        "hinglish": "Chipko movement ka mukhya uddeshya kya tha? (A) Mitti ko sanrakshit karna (B) Ped (C) Pani (D) Bijli Ans: Ped"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 14,
+      "section": "objective",
+      "sourceId": "2018-b:A:14",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following solution is used for white washing walls? (A) CaH(CO3 )2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) Ans: Ca(OH)2",
+        "hi": null,
+        "hinglish": "Inme se kaunsa solution deewaron ko white washing ke liye istemal hota hai? (A) CaH(CO3)2 (B) Ca(OH)2 (C) NaOH (D) NaH(CO3) Ans: Ca(OH)2"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 15,
+      "section": "objective",
+      "sourceId": "2018-b:A:15",
+      "subPart": null,
+      "text": {
+        "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is (A) Combination reaction (B) decomposition reaction ©double displacement reaction (D) none of these Ans: double displacement reaction",
+        "hi": null,
+        "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) Upar diya gaya rasayanik samikaran hai (A) Combination abhikriya (B) decomposition abhikriya (C) double displacement abhikriya (D) inme se koi nahi Ans: double displacement abhikriya"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CaO",
+            "hi": null,
+            "hinglish": "CaO"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ca(OH)",
+            "hi": null,
+            "hinglish": "Ca(OH)"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "CaCO3",
+            "hi": null,
+            "hinglish": "CaCO3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Ca Ans: Ca(OH)",
+            "hi": null,
+            "hinglish": "Ca Ans: Ca(OH)"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 16,
+      "section": "objective",
+      "sourceId": "2018-b:A:16",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is slaked lime?",
+        "hi": null,
+        "hinglish": "Inme se kaunsa slaked lime hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 7,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "7",
+            "hi": null,
+            "hinglish": "7"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "More than",
+            "hi": null,
+            "hinglish": "Zyada hai"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Less than 7",
+            "hi": null,
+            "hinglish": "7 se kam hai"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans: More than",
+            "hi": null,
+            "hinglish": "Inme se koi nahi Ans: Zyada hai"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 17,
+      "section": "objective",
+      "sourceId": "2018-b:A:17",
+      "subPart": null,
+      "text": {
+        "en": "PH of aqueous solution of salt NaCo3 is",
+        "hi": null,
+        "hinglish": "PH of aqueous solution of salt NaCo3 hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Copper",
+            "hi": null,
+            "hinglish": "Copper"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "zinc",
+            "hi": null,
+            "hinglish": "Zinc"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "aluminium",
+            "hi": null,
+            "hinglish": "Aluminium"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "iron Ans: aluminium",
+            "hi": null,
+            "hinglish": "Iron Ans: Aluminium"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 18,
+      "section": "objective",
+      "sourceId": "2018-b:A:18",
+      "subPart": null,
+      "text": {
+        "en": "Of which metal the bauxite is an important ore",
+        "hi": null,
+        "hinglish": "Bauxite kis dhatu ka ek mahatvapurn ore hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Copper",
+            "hi": null,
+            "hinglish": "Copper"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Silver",
+            "hi": null,
+            "hinglish": "Silver"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Gold",
+            "hi": null,
+            "hinglish": "Gold"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Zinc Ans: Zinc",
+            "hi": null,
+            "hinglish": "Zinc Ans: Zinc"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 19,
+      "section": "objective",
+      "sourceId": "2018-b:A:19",
+      "subPart": null,
+      "text": {
+        "en": "Which metal the thin layer is coated over iron and steel to protect them from rusting?",
+        "hi": null,
+        "hinglish": "Kaunsa metal patli parat se dhaka hota hai loha aur steel par unhe rusting se bachane ke liye?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Bleaching powder",
+            "hi": null,
+            "hinglish": "Bleaching powder"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "gypsum",
+            "hi": null,
+            "hinglish": "Gypsum"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Limestone",
+            "hi": null,
+            "hinglish": "Limestone"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "quicklime Ans: gypsum",
+            "hi": null,
+            "hinglish": "Quicklime Ans: gypsum"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 20,
+      "section": "objective",
+      "sourceId": "2018-b:A:20",
+      "subPart": null,
+      "text": {
+        "en": "Which chemical compound on heating becomes plaster of Paris? Bleaching powder gypsum limestone quicklime?",
+        "hi": null,
+        "hinglish": "Kaunsa rasayanik yaugik garam karne par plaster of Paris ban jaata hai? Bleaching powder gypsum limestone quicklime?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 21,
+      "section": "objective",
+      "sourceId": "2018-b:A:21",
+      "subPart": null,
+      "text": {
+        "en": "The functional group present in propanol is Ans: ©",
+        "hi": null,
+        "hinglish": "Propanol mein maujood kriyaneel samuh hai Ans: ©"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "ethanoic acid",
+            "hi": null,
+            "hinglish": "ethanoic acid"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Methanoic acid",
+            "hi": null,
+            "hinglish": "Methanoic acid"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "propanone",
+            "hi": null,
+            "hinglish": "propanone"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans: ethanoic acid",
+            "hi": null,
+            "hinglish": "inme se koi nahi Ans: ethanoic acid"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 22,
+      "section": "objective",
+      "sourceId": "2018-b:A:22",
+      "subPart": null,
+      "text": {
+        "en": "The IUPAC name of Acetic acid is",
+        "hi": null,
+        "hinglish": "Acetic acid ka IUPAC naam hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Anode",
+            "hi": null,
+            "hinglish": "Anode"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Cathode",
+            "hi": null,
+            "hinglish": "Cathode"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Electrolyte",
+            "hi": null,
+            "hinglish": "Electrolyte"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "all of these Ans: Anode",
+            "hi": null,
+            "hinglish": "inme se sab Ans: Anode"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 23,
+      "section": "objective",
+      "sourceId": "2018-b:A:23",
+      "subPart": null,
+      "text": {
+        "en": "In electrolytic refining impure metal is taken as a",
+        "hi": null,
+        "hinglish": "Electrolytic refining me impure metal ko ek"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Dobereiner",
+            "hi": null,
+            "hinglish": "Dobereiner"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Newlands",
+            "hi": null,
+            "hinglish": "Newlands"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Mendal",
+            "hi": null,
+            "hinglish": "Mendal"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Henry Mosely Ans: Newlands",
+            "hi": null,
+            "hinglish": "Henry Mosely Ans: Newlands"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 24,
+      "section": "objective",
+      "sourceId": "2018-b:A:24",
+      "subPart": null,
+      "text": {
+        "en": "Who established law of octaves?",
+        "hi": null,
+        "hinglish": "Octaves ka niyam kisne sthapit kiya?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "atomic mass",
+            "hi": null,
+            "hinglish": "parmanoo mass"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "atomic number",
+            "hi": null,
+            "hinglish": "parmanoo sankhya"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Atomic size",
+            "hi": null,
+            "hinglish": "Parmanu aakar"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "atomic volume Ans: atomic number",
+            "hi": null,
+            "hinglish": "parmanu aakar Ans: parmanoo sankhya"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 25,
+      "section": "objective",
+      "sourceId": "2018-b:A:25",
+      "subPart": null,
+      "text": {
+        "en": "According to modern periodic law properties of elements are a periodic function of their",
+        "hi": null,
+        "hinglish": "Aadhunik avart sarni ke niyam ke anusar tatvon ke gun unke"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "H+",
+            "hi": null,
+            "hinglish": "H+"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "OH-",
+            "hi": null,
+            "hinglish": "OH-"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "C",
+            "hi": null,
+            "hinglish": "C"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "O2- Ans: OH-",
+            "hi": null,
+            "hinglish": "O2- Jawab: OH-"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 26,
+      "section": "objective",
+      "sourceId": "2018-b:A:26",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following and can turn red litmus solution?",
+        "hi": null,
+        "hinglish": "Nimnalikhit me se kaun sa laal litmus solution ko laal kar sakta hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 27,
+      "section": "objective",
+      "sourceId": "2018-b:A:27",
+      "subPart": null,
+      "text": {
+        "en": "The xylem in plant is responsible A) For transport of water (B) transport of food (C) Transport of food (D) transport of oxygen Ans: for transport of water",
+        "hi": null,
+        "hinglish": "Padap mein xylem paani ke parivahan ke liye zimmedar hai A) Paani ke parivahan ke liye (B) khadya ke parivahan ke liye (C) Khadya ke parivahan ke liye (D) oxygen ke parivahan ke liye Jawab: paani ke parivahan ke liye"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "ADP",
+            "hi": null,
+            "hinglish": "ADP"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "ATP",
+            "hi": null,
+            "hinglish": "ATP"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "DTP",
+            "hi": null,
+            "hinglish": "DTP"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "PDP Ans: ATP",
+            "hi": null,
+            "hinglish": "PDP Jawab: ATP"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 28,
+      "section": "objective",
+      "sourceId": "2018-b:A:28",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is known as energy currency of cell?",
+        "hi": null,
+        "hinglish": "Nimnalikhit mein se kisay cell ki urja mudra ke roop mein jaana jaata hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Vein",
+            "hi": null,
+            "hinglish": "Vein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "stomata",
+            "hi": null,
+            "hinglish": "stomata"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Mid rib",
+            "hi": null,
+            "hinglish": "Mid rib"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans: stomata",
+            "hi": null,
+            "hinglish": "inmein se koi nahi Jawab: stomata"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 29,
+      "section": "objective",
+      "sourceId": "2018-b:A:29",
+      "subPart": null,
+      "text": {
+        "en": "Where does the exchange of gases takes place in leaves?",
+        "hi": null,
+        "hinglish": "Patton mein gases ka adan-pradan kahan hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "The lungs",
+            "hi": null,
+            "hinglish": "Fefde"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ventricles",
+            "hi": null,
+            "hinglish": "Ventricles"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Artria",
+            "hi": null,
+            "hinglish": "Artria"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "all of these. Ans: Ventricles",
+            "hi": null,
+            "hinglish": "In sabhi ka jawab: Ventricles"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 30,
+      "section": "objective",
+      "sourceId": "2018-b:A:30",
+      "subPart": null,
+      "text": {
+        "en": "The blood is pumped from heart to entire body by the",
+        "hi": null,
+        "hinglish": "Khoon dil se poore sharir mein pump hota hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Auxin",
+            "hi": null,
+            "hinglish": "Auxin"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Cytokinin",
+            "hi": null,
+            "hinglish": "Cytokinin"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Abscisic Acid",
+            "hi": null,
+            "hinglish": "Abscisic Acid"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Gibberllin Ans: Abscisic Acid",
+            "hi": null,
+            "hinglish": "Gibberllin jawab: Abscisic Acid"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 31,
+      "section": "objective",
+      "sourceId": "2018-b:A:31",
+      "subPart": null,
+      "text": {
+        "en": "Which plant hormone is responsible for wilting of leaves?",
+        "hi": null,
+        "hinglish": "Kaunsa padap hormone patton ke wilting ke liye zimmedar hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Photo phototropism",
+            "hi": null,
+            "hinglish": "Photo phototropism"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "geotropism",
+            "hi": null,
+            "hinglish": "Geotropism"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Hydrotropism",
+            "hi": null,
+            "hinglish": "Hydrotropism"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Chemotropism Ans: geotropism",
+            "hi": null,
+            "hinglish": "Chemotropism Ans: geotropism"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 32,
+      "section": "objective",
+      "sourceId": "2018-b:A:32",
+      "subPart": null,
+      "text": {
+        "en": "Downward growth of root is",
+        "hi": null,
+        "hinglish": "Jadhon ka neeche ki taraf badhna hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Forebrain",
+            "hi": null,
+            "hinglish": "Forebrain"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "midbrain",
+            "hi": null,
+            "hinglish": "Midbrain"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Hindbrain",
+            "hi": null,
+            "hinglish": "Hindbrain"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "cerebellum Ans: Hindbrain",
+            "hi": null,
+            "hinglish": "Cerebellum Ans: Hindbrain"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 33,
+      "section": "objective",
+      "sourceId": "2018-b:A:33",
+      "subPart": null,
+      "text": {
+        "en": "Pons, medulla and cerebellum are parts",
+        "hi": null,
+        "hinglish": "Pons, medulla aur cerebellum hissa hain"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Vomiting",
+            "hi": null,
+            "hinglish": "Vomiting"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Chewing",
+            "hi": null,
+            "hinglish": "Chewing"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Salivation",
+            "hi": null,
+            "hinglish": "Salivation"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Heart Beat Ans: Chewing",
+            "hi": null,
+            "hinglish": "Heart Beat Ans: Chewing"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 34,
+      "section": "objective",
+      "sourceId": "2018-b:A:34",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is not an involuntary muscle?",
+        "hi": null,
+        "hinglish": "Inme se kaun sa ek anichchhit maanspeshiyon nahi hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Amoeba",
+            "hi": null,
+            "hinglish": "Amoeba"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Yeast",
+            "hi": null,
+            "hinglish": "Yeast"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Plasmodium",
+            "hi": null,
+            "hinglish": "Plasmodium"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Leisminia. Ans: Yeast",
+            "hi": null,
+            "hinglish": "Leisminia. Ans: Yeast"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 35,
+      "section": "objective",
+      "sourceId": "2018-b:A:35",
+      "subPart": null,
+      "text": {
+        "en": "Asexual reproduction takes place through budding in",
+        "hi": null,
+        "hinglish": "Asexual reproduction budding ke madhyam se hota hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "testis",
+            "hi": null,
+            "hinglish": "testis"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Uterus",
+            "hi": null,
+            "hinglish": "Uterus"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Ovary",
+            "hi": null,
+            "hinglish": "Ovary"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these Ans: testis",
+            "hi": null,
+            "hinglish": "In sabka Ans: testis hai"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 36,
+      "section": "objective",
+      "sourceId": "2018-b:A:36",
+      "subPart": null,
+      "text": {
+        "en": "The formation of sperms takes place in",
+        "hi": null,
+        "hinglish": "Sperms ka gathan testis mein hota hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Anther",
+            "hi": null,
+            "hinglish": "Anther"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Stigma",
+            "hi": null,
+            "hinglish": "Stigma"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Style",
+            "hi": null,
+            "hinglish": "Style"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "ovary Ans: Ovary",
+            "hi": null,
+            "hinglish": "Ovary"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 37,
+      "section": "objective",
+      "sourceId": "2018-b:A:37",
+      "subPart": null,
+      "text": {
+        "en": "Which part of a flower becomes fruit?",
+        "hi": null,
+        "hinglish": "Ek phool ka kaunsa hissa phal banta hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Male",
+            "hi": null,
+            "hinglish": "Male"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "female",
+            "hi": null,
+            "hinglish": "female"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Male and female both",
+            "hi": null,
+            "hinglish": "Male aur female dono"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans:female",
+            "hi": null,
+            "hinglish": "Inme se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 38,
+      "section": "objective",
+      "sourceId": "2018-b:A:38",
+      "subPart": null,
+      "text": {
+        "en": "The perfect pair of sex chromosomes are found in",
+        "hi": null,
+        "hinglish": "Sex chromosomes ka perfect jodi milta hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-hindi",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 22,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "21",
+            "hi": null,
+            "hinglish": "21"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "23",
+            "hi": null,
+            "hinglish": "23"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Ans:",
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 39,
+      "section": "objective",
+      "sourceId": "2018-b:A:39",
+      "subPart": null,
+      "text": {
+        "en": "How many pairs of chromosome are found in a normal cell of human body?",
+        "hi": null,
+        "hinglish": "Normal cell of human body me kitne pairs of chromosome hote hain?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "options-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "options-unparsed-english",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 40,
+      "section": "objective",
+      "sourceId": "2018-b:A:40",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following groups contain only one biodegradable items? (A) Grass, flower and leather (B) brass, wood and plastic © Fruits piece cake and Rubber. (D) Cake, wood and glass Ans: cake, wood and glass",
+        "hi": null,
+        "hinglish": "Inme se kaunse group mein sirf ek biodegradable item hai? (A) Ghas, phool aur chamda (B) brass, lakdi aur plastic (C) Fruits piece cake aur rubber (D) Cake, lakdi aur glass"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "diagram-required",
+        "missing-hindi",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": true
+      },
+      "flags": [
+        "missing-hindi",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "subjective",
+      "sourceId": "2018-b:B:1",
+      "subPart": null,
+      "text": {
+        "en": "State the new Cartesian sign convention for reflection by spherical mirror. Ans: The Cartesian Sign conventions for spherical mirrors are following: i) The object is always place to left of the mirror. ii) All distance parallel to principal Axis (X-Axis are measured from pole of the mirror. iii)Distance to the left of pole(-ve X Axis) are negative . iv) Distance to the right of the polar (+ve X Axis) are positive. v) Distance measured perpendicular above the principal Axis (along +Y-axis) are taken as positive. vi) Distance measured perpendicularly below the principal Axis (-Y-axis)are taken as negative Draw a ray diagram for image of an object placed at the centre of curvature of a convex lens write the nature position and size of the image formed by the lens. Ans: When the object is at center of curvature on the other side of the lens .the imagee formed is real, inverted and of the same sizeof object.",
+        "hi": null,
+        "hinglish": "Spherical darpan ke liye naya Cartesian sign convention batayein. Cartesian sign conventions spherical mirrors ke liye hain: i) Vastu hamesha darpan ke baayein taraf rakha jata hai. ii) Sabhi doori jo pramukh dhuri (X-Axis) ke saath hai, darpan ke pole se maapi jati hai. iii) Pole ke baayein taraf ki dooriyan (-ve X Axis) negative hoti hain. iv) Pole ke daayein taraf ki dooriyan (+ve X Axis) positive hoti hain. v) Pramukh dhuri ke upar maapi gayi dooriyan (+Y-axis) positive hoti hain. vi) Pramukh dhuri ke neeche maapi gayi dooriyan (-Y-axis) negative hoti hain. Ek ray diagram banayein jo ek vastu ke pratibimb ko darshata hai jo convex lens ke curvature ke kendra par rakha gaya hai, pratibimb ki prakriti, sthal aur aakar likhein. Jab vastu curvature ke kendra par hota hai lens ke doosri taraf, to pratibimb real, inverted aur vastu ke aakar ke barabar hota hai"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-hindi",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "subjective",
+      "sourceId": "2018-b:B:2",
+      "subPart": null,
+      "text": {
+        "en": "Why an ammeter and and a voltmeter are connected in an electrical circuit in series and in parallel respectively? Ans: An ammeter is a low resistance device so it is always connected in series through which the current is to be measured a voltmeter is a high resistance device so it is always connected in parallel through which the potential difference is to be measured. a) Draw magnetic field lines around a bar magnet. MAGNETIC LINES OF FORCE b) A current through a horizontal transmission by flows in East to West Direction .What is the direction of magnetic field at a point directly below it? Ans: Using Right Hand Thumb Rule the direction of field at a point above the line with the horizontal and toward the north and the at a point below will be horizontal and toward the south.",
+        "hi": null,
+        "hinglish": "Ammeter aur voltmeter ko ek electrical circuit mein series aur parallel mein kyun joda jata hai? Ammeter ek low resistance device hai isliye ise hamesha series mein joda jata hai jisse current ko maapa ja sake, voltmeter ek high resistance device hai isliye ise hamesha parallel mein joda jata hai jisse potential difference ko maapa ja sake. a) Ek bar magnet ke ird-gird chumbakiya kshetra ki rekhaen banayein. Chumbakiya balon ki rekhaen. b) Ek current horizontal transmission line mein East se West disha mein flow hota hai. Iske neeche ek bindu par chumbakiya kshetra ki disha kya hogi? Right Hand Thumb Rule ka istemal karte hue, line ke upar bindu par kshetra ki disha horizontal aur north ki taraf hogi aur neeche wale bindu par horizontal aur south ki taraf hogi"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text",
+        "provenance-note-stripped"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "subjective",
+      "sourceId": "2018-b:B:5",
+      "subPart": null,
+      "text": {
+        "en": "Two lamps one rated 100 watt at 220 volt and other 60 watt and 220 volt are connected in parallel to electric main supply. What current is drawn from the main line if the supply voltage is 220 volt? Ans: current drawn from 100w- I1 = P1/V = 100/220 = 0.4545A Current drawn from 60w I2 = P2/V = 60/220 = 0.2727A Current drawn from the main line, I = I1 + I2 = 0.4545 + 0.2727 = 0.727A",
+        "hi": null,
+        "hinglish": "Do lamp hain ek 100 watt par 220 volt aur doosra 60 watt aur 220 volt jo parallel mein electric main supply se jude hain. Agar supply voltage 220 volt hai to main line se kitni vidyut dhara kheechi ja rahi hai? Vidyut dhara jo 100w se kheechi ja rahi hai - I1 = P1/V = 100/220 = 0.4545A Vidyut dhara jo 60w se kheechi ja rahi hai - I2 = P2/V = 60/220 = 0.2727A Main line se kheechi ja rahi vidyut dhara, I = I1 + I2 = 0.4545 + 0.2727 = 0.727A"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-hindi",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "subjective",
+      "sourceId": "2018-b:B:6",
+      "subPart": null,
+      "text": {
+        "en": "What are the disadvantages of fossil fuels? Ans: a) Pollution is the primary disadvantage advantage of fossil fuels .Burning of fossil fuel can cause greenhouse effect which is harmful to the environment b).Destruction of wide area of land is another advantage disadvantage of mining physics fossil fuels mining fossil fuels also didn't endanger the lives of animal’s people living inside surrounding.",
+        "hi": null,
+        "hinglish": "Fossil fuels ke kya nuksan hain? a) Pollution fossil fuels ka pramukh nuksan hai. Fossil fuels ko jalane se greenhouse effect hota hai jo paryavaran ke liye harmful hai. b) Mining ke dauran vishal kshetra ka vinash hona bhi ek nuksan hai. Fossil fuels ki mining se jaanvar aur aas-paas ke logon ki zindagi khatre mein padti hai"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "missing-hindi",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": true,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2018-b:B:7",
+      "subPart": null,
+      "text": {
+        "en": "a)State type of defects of vision. Ans: The following are the the defect of vision related to eye vision. i) Myopia or short sightedness.- ii) Hypermetropia or long sightedness. iii) presbyopia iv) Astigmatism v) Cataract. b) Write these eye defects and their correction in brief. i) In short sightedness person can see nearby objects clearly but cannot see distant objects clearly the image is formed before retina and not retina. This defect can be corrected by using concave lens of appropriate power. ii) In long sightedness a person can see distant objects clearly but cannot see nearby objects clearly .A person with this defect has the near point farther away from the normal near point. The image is formed on the retina .The defect can be corrected by using convex lens of appropriate power. iii) In presbyopia one cannot read comfortably and clearly for oldest people do near. Gradually receipts away this effect can be corrected by using bifocal or very focal length which consists of both convex and concave lens. iv) In Astigmatisms a person cannot focus objects both in horizontal and vertical lines clearly. This defect can be corrected by using cylindrical lenses for refractive surgery. v) Cataract is a condition in which crystalline lens of eye becomes milky and cloudy due to growth of membrane over it this it is possible to restore vision for cataract surgery . c) The far point of a myopic person is 80cm in front of the eye. What is the nature and power of lens required to correct the problem? Ans: Concave lens is used to correct the problem. u = – ∞ v = – 80 cm, 1/-v – 1/-u = 1/f 1/-80 + 1/∞ = p P = 100/-80 = -1.25 D",
+        "hi": null,
+        "hinglish": "a) Drishti ke defects ke prakar batayein. Drishti ke defects jo aankhon se sambandhit hain, ye hain: i) Myopia ya short sightedness. ii) Hypermetropia ya long sightedness. iii) Presbyopia iv) Astigmatism v) Cataract. b) In aankhon ke defects aur unke correction ko sankshipt mein likhein. i) Short sightedness mein vyakti nazdeek ki vastu ko spasht dekh sakta hai par door ki vastu ko spasht nahi dekh sakta, pratibimb retina se pehle banta hai. Is defect ko sahi karne ke liye avatal lens ka istemal hota hai. ii) Long sightedness mein vyakti door ki vastu ko spasht dekh sakta hai par nazdeek ki vastu ko spasht nahi dekh sakta. Is defect wale vyakti ka near point normal near point se door hota hai. Pratibimb retina par banta hai. Is defect ko sahi karne ke liye uttal lens ka istemal hota hai. iii) Presbyopia mein vyakti aaram se nahi padh sakta, ye vriddh logon mein hota hai. Yeh dhire dhire khatam hota hai, is effect ko bifocal ya trifocal lens ka istemal karke sahi kiya ja sakta hai. iv) Astigmatism mein vyakti horizontal aur vertical lines dono ko spasht nahi dekh sakta. Is defect ko cylindrical lenses ya refractive surgery se sahi kiya ja sakta hai. v) Cataract ek aisi sthiti hai jisme aankh ka crystalline lens milky aur cloudy ho jata hai membrane ke vikas ke karan. Iska vision restore karna cataract surgery se sambhav hai. c) Ek myopic vyakti ka far point aankh ke saamne 80cm hai. Is samasya ko sahi karne ke liye lens ki prakriti aur power kya hogi? Is samasya ko sahi karne ke liye avatal lens ka istemal hota hai. u = – ∞ v = – 80 cm, 1/-v – 1/-u = 1/f 1/-80 + 1/∞ = p P = 100/-80 = -1.25 D"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "diagram-required",
+        "marks-missing",
+        "missing-hindi",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": true
+      },
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2018-b:B:7-or",
+      "subPart": "or",
+      "text": {
+        "en": "a) Draw a circuit diagram for studying Ohm’s law. Ans: b) State Ohm's law. Ans: According to this law the electric current flowing through a conductor is directly proportional to the potential difference applied across its and providing the physical condition such as temperature remain unchanged. c) Draw V-I graph that Verify Ohm's law.State the nature of graph. Ans: The graph is found to be a straight line passing through the origin for Ohmic conductors.",
+        "hi": null,
+        "hinglish": "a) Ohm’s law ke liye circuit diagram banao. b) Ohm's law ko batao. Ans: Is law ke anusar vidyut dhara jo ek conductor se guzar raha hai, wo vibhavantaar ke anupat hai jo is par lagaya gaya hai aur jab tak bhoutik sthiti jaise taapmaan badalta nahi hai. c) V-I graph banao jo Ohm's law ko verify kare. Graph ki prakriti batao. Ans: Graph ko Ohmic conductors ke liye ek seedhi line paayi gayi jo origin se guzar rahi hai"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": "2018-b:B:7"
+    }
+  ],
+  "schemaVersion": 1,
+  "totals": {
+    "marksGroupA": 31,
+    "marksGroupB": 6,
+    "objective": 40,
+    "questions": 46,
+    "subjective": 6,
+    "trilingualComplete": 0,
+    "usableInQuiz": 0
+  }
+}

@@ -1,0 +1,1118 @@
+{
+  "flags": [
+    "en: Group A header not found — segmenting from the top of the paper.",
+    "groupA-classified-subjective",
+    "groupB-shape-ascending-classified-objective"
+  ],
+  "paper": {
+    "board": "BSEB",
+    "class": 10,
+    "declaredMarks": {
+      "A": null,
+      "B": null
+    },
+    "duplicateOf": null,
+    "extractionRoute": "page-images",
+    "hasPrintedAnswerKey": false,
+    "paperId": "2017-d",
+    "pdfPages": 8,
+    "printedPages": 8,
+    "sourceFile": "2017 d.pdf",
+    "sourceMd5": "ec01a3c500728eb6ba8ef1dbca8dac6d",
+    "subject": "science"
+  },
+  "questions": [
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "subjective",
+      "sourceId": "2017-d:A:1",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "मोटर गाड़ी चालक के सामने कौन-सा दर्पण लगा रहता है ?",
+        "hinglish": "Motor gaadi chalak ke saamne kaun-sa darpan laga rehta hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "subjective",
+      "sourceId": "2017-d:A:2",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "प्रकाश के अपवर्तन के कितने नियम हैं ?",
+        "hinglish": "Prakash ke apvartan ke kitne niyam hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "subjective",
+      "sourceId": "2017-d:A:3",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "विद्युत ऊर्जा का व्यवसायिक मात्रक क्या है ?",
+        "hinglish": "Vidyut urja ka vyavsayik maatrak kya hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "subjective",
+      "sourceId": "2017-d:A:4",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "AIDS (एडस) का पूरा नाम लिखें।",
+        "hinglish": "AIDS (Aids) ka poora naam likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "subjective",
+      "sourceId": "2017-d:A:5",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "किस लेंस को अपसारी लेंस कहते हैं ?",
+        "hinglish": "Kis lens ko apsaari lens kehte hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "subjective",
+      "sourceId": "2017-d:A:6",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "आवर्धन किसे कहते हैं ? वर्णन करें।",
+        "hinglish": "Aavardhan kise kehte hain? Varnan karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text",
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2017-d:A:7",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "अवतल दर्पण में फोकस दूरी (f) और वक्रता त्रिज्या में क्या संबंध है ? PTO",
+        "hinglish": "Avatal darpan mein focal length (f) aur vkrta trijya mein kya sambandh hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "subjective",
+      "sourceId": "2017-d:A:8",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "विद्युत आवेश क्या है ? विद्युत आवेश कितने प्रकार के होते हैं ?",
+        "hinglish": "Vidyut aavesh kya hai? Vidyut aavesh kitne prakar ke hote hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "subjective",
+      "sourceId": "2017-d:A:9",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "प्रत्यावर्ती धारा एवं दिष्ट धारा में अंतर स्पष्ट करें।",
+        "hinglish": "Pratyavarti dhara evam disht dhara mein antar spasht karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 5,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "subjective",
+      "sourceId": "2017-d:A:10",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "विद्युत जेनरेटर से आप क्या समझते हैं ? यह किस सिद्धांत पर कार्य करता है ? इसकी बनावट एवं क्रिया विधि का वर्णन करें। अथवा, चालक, अचालक, अर्द्धचालक एवं अति चालक से क्या समझते हैं ? सोदाहरण व्याख्या करें।",
+        "hinglish": "Vidyut generator se aap kya samajhte hain? Yeh kis siddhant par karya karta hai? Iski banawat evam kriya vidhi ka varnana karein. Athva, chalak, achalak, ardha chalak evam ati chalak se kya samajhte hain? Sodaharan vyakhya karein."
+      },
+      "type": "long",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "सीधी रेखा में",
+            "hinglish": "Seedhi rekha mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "टेढ़ी रेखा में",
+            "hinglish": "Tedhi rekha mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "किसी भी दिशा में",
+            "hinglish": "Kisi bhi disha mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "objective",
+      "sourceId": "2017-d:B:1",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "प्रकाश की किरणें गमन करती है:",
+        "hinglish": "Prakash ki kiranen gaman karti hai:"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "objective",
+      "sourceId": "2017-d:B:2",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "हजामत के लिए किस दर्पण का उपयोग होता है ?",
+        "hinglish": "Hajamat ke liye kis darpan ka upyog hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "समतल",
+            "hinglish": "Samtal"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "objective",
+      "sourceId": "2017-d:B:3",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "सर्चलाइट का परावर्तक सतह होता है :",
+        "hinglish": "Searchlight ka paravartak satah hota hai:"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "C.N.G",
+            "hinglish": "C.N.G"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "L.P.G",
+            "hinglish": "L.P.G"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "Bio Gas",
+            "hinglish": "Bio Gas"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "objective",
+      "sourceId": "2017-d:B:4",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "निम्नलिखित में से किसका उपयोग खाना बनाने वाले ईंधन में नहीं होता है ?",
+        "hinglish": "Nimnalikhit mein se kiska upyog khana banane wale indhan mein nahi hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "ध्वनि ऊर्जा",
+            "hinglish": "Dhvani urja"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "विद्युत ऊर्जा",
+            "hinglish": "Vidyut urja"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "objective",
+      "sourceId": "2017-d:B:5",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "डायनेमो यांत्रिक ऊर्जा को किस ऊर्जा में परिणत करता है ?",
+        "hinglish": "Dynamo yantrik urja ko kis urja mein parinat karta hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "फ्यूज तार",
+            "hinglish": "Fuse taar"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "शॉर्ट शर्किट",
+            "hinglish": "Short circuit"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "उच्च धारा प्रवाह",
+            "hinglish": "Uch dhara pravah"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "objective",
+      "sourceId": "2017-d:B:6",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "घरों में विद्युत से दुर्घटना किसके कारण होती है ?",
+        "hinglish": "Gharon mein vidyut se durghatna kiske kaaran hoti hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "अवतल दर्पण की तरह",
+            "hinglish": "Avatal darpan ki tarah"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "उत्तल लेंस की तरह",
+            "hinglish": "Uttal lens ki tarah"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "समतल दर्पण की तरह",
+            "hinglish": "Samtal darpan ki tarah"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "objective",
+      "sourceId": "2017-d:B:7",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "आँख व्यवहार होता है :",
+        "hinglish": "Aankh vyavhaar hota hai :"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    }
+  ],
+  "schemaVersion": 1,
+  "totals": {
+    "marksGroupA": 20,
+    "marksGroupB": 7,
+    "objective": 7,
+    "questions": 17,
+    "subjective": 10,
+    "trilingualComplete": 0,
+    "usableInQuiz": 0
+  }
+}

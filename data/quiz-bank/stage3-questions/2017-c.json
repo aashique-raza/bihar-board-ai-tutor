@@ -1,0 +1,1168 @@
+{
+  "flags": [
+    "en: Group A header not found — segmenting from the top of the paper.",
+    "groupA-classified-subjective",
+    "groupB-shape-ascending-classified-objective"
+  ],
+  "paper": {
+    "board": "BSEB",
+    "class": 10,
+    "declaredMarks": {
+      "A": null,
+      "B": null
+    },
+    "duplicateOf": null,
+    "extractionRoute": "page-images",
+    "hasPrintedAnswerKey": false,
+    "paperId": "2017-c",
+    "pdfPages": 7,
+    "printedPages": 7,
+    "sourceFile": "2017 c.pdf",
+    "sourceMd5": "bce2f42fe645a454fbf0bf860e08baec",
+    "subject": "science"
+  },
+  "questions": [
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "subjective",
+      "sourceId": "2017-c:A:1",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "मनुष्य के शरीर का प्रतिरोध कितना होता है ?",
+        "hinglish": "Manushya ke sharir ka pratirodh kitna hota hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "subjective",
+      "sourceId": "2017-c:A:2",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "स्पष्ट देखने के लिए न्यूनतम दूरी क्या है ?",
+        "hinglish": "Spasht dekhne ke liye nyoonatam doori kya hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "subjective",
+      "sourceId": "2017-c:A:3",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "द्रवित पेट्रोलियम गैस (L.P.G) क्या है ?",
+        "hinglish": "Dravit petroleum gas (L.P.G) kya hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "subjective",
+      "sourceId": "2017-c:A:4",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "विद्युतीय आवेश का S.I. मात्रक लिखें।",
+        "hinglish": "Vidyut aaves ka S.I. maatrak likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "subjective",
+      "sourceId": "2017-c:A:5",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "लेंस की क्षमता का S.I. मात्रक लिखें।",
+        "hinglish": "Lens ki kshamata ka S.I. maatrak likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "subjective",
+      "sourceId": "2017-c:A:6",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "ओम के नियम को लिखें।",
+        "hinglish": "Om ke niyam ko likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2017-c:A:7",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "विद्युत फ्यूज क्या है, यह किस मिश्र धातु का बना होता है ?",
+        "hinglish": "Vidyut fuse kya hai, yeh kis mishradhatu ka bana hota hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "subjective",
+      "sourceId": "2017-c:A:8",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "अवतल दर्पण एवं उत्तल दर्पण में अंतर स्पष्ट करें।",
+        "hinglish": "Avatal darpan evam uttal darpan mein antar spasht karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "subjective",
+      "sourceId": "2017-c:A:9",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "रेलवे सिग्नल में लाल रंग का प्रयोग क्यों किया जाता है ?",
+        "hinglish": "Railway signal mein laal rang ka prayog kyun kiya jaata hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": true,
+      "marks": 5,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "subjective",
+      "sourceId": "2017-c:A:10",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "ओम के नियम को लिखें एवं सत्यापित करें।",
+        "hinglish": "Om ke niyam ko likhein evam satyapit karein."
+      },
+      "type": "long",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "diagram-required",
+        "missing-english",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": true
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 5,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "subjective",
+      "sourceId": "2017-c:A:10-or",
+      "subPart": "or",
+      "text": {
+        "en": null,
+        "hi": "दृष्टि दोष क्या है ? ये कितने प्रकार के होते हैं ? किसी एक दृष्टि दोष के निवारण का सचित्र वर्णन करें।",
+        "hinglish": "Drishti dosh kya hai ? Ye kitne prakar ke hote hain ? Kisi ek drishti dosh ke nivaran ka sachitra varnan karein."
+      },
+      "type": "long",
+      "usableInQuiz": false,
+      "variantOf": "2017-c:A:10"
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "जनित्र",
+            "hinglish": "Janitra"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "गैल्वेनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "ऐमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "objective",
+      "sourceId": "2017-c:B:1",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "विद्युत धारा उत्पन्न करने की युक्ति को कहते हैं :",
+        "hinglish": "Vidyut dhara utpann karne ki yukti ko kehte hain :"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "कैलोरी",
+            "hinglish": "Calorie"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "जूल",
+            "hinglish": "Joule"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "ताप",
+            "hinglish": "Taap"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "objective",
+      "sourceId": "2017-c:B:2",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "ऊर्जा का S.I. मात्रक होता है :",
+        "hinglish": "Urja ka S.I. maatrak hota hai :"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "पेट्रो",
+            "hinglish": "Petro"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "टरबो",
+            "hinglish": "Turbo"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "नाइट्रो",
+            "hinglish": "Nitro"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "हाइड्रो",
+            "hinglish": "Hydro"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "objective",
+      "sourceId": "2017-c:B:3",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "निम्न में से किसका अर्थ जल होता है ?",
+        "hinglish": "Nimn mein se kiska arth jal hota hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "3×10^8 m/sec",
+            "hinglish": "3×10^8 m/sec"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "3×10^8 cm/sec",
+            "hinglish": "3×10^8 cm/sec"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "3×10^8 km/sec",
+            "hinglish": "3×10^8 km/sec"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "objective",
+      "sourceId": "2017-c:B:4",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "निर्वात में प्रकाश की चाल क्या होती है ?",
+        "hinglish": "Nirvaat mein prakash ki chaal kya hoti hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "आपतन कोण = परावर्तन कोण",
+            "hinglish": "Aaptaan kon = paravartan kon"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "परावर्तन कोण = अपवर्तन कोण",
+            "hinglish": "Paravartan kon = apvartan kon"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "आपतन कोण = विचलन कोण",
+            "hinglish": "Aaptaan kon = vichalan kon"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "objective",
+      "sourceId": "2017-c:B:5",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "परावर्तन के नियम से निर्धारित होता है:",
+        "hinglish": "Paravartan ke niyam se nirdharit hota hai:"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "दो",
+            "hinglish": "Do"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "एक",
+            "hinglish": "Ek"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "तीन",
+            "hinglish": "Teen"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "objective",
+      "sourceId": "2017-c:B:6",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "लेंस में मुख्य फोकस की संख्या कितनी होती है ?",
+        "hinglish": "Lens mein mukhya fokus ki sankhya kitni hoti hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "missing-english",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-english",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": null,
+            "hi": "बढ़ता है",
+            "hinglish": "Badhata hai"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": null,
+            "hi": "घटता है",
+            "hinglish": "Ghatta hai"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": null,
+            "hi": "बढ़ता-घटता नहीं है",
+            "hinglish": "Badhata-ghatta nahi hai"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "objective",
+      "sourceId": "2017-c:B:7",
+      "subPart": null,
+      "text": {
+        "en": null,
+        "hi": "ताप बढ़ने से चालक का प्रतिरोध :",
+        "hinglish": "Taap badhne se chalaak ka pratirodh :"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    }
+  ],
+  "schemaVersion": 1,
+  "totals": {
+    "marksGroupA": 19,
+    "marksGroupB": 7,
+    "objective": 7,
+    "questions": 18,
+    "subjective": 11,
+    "trilingualComplete": 0,
+    "usableInQuiz": 0
+  }
+}

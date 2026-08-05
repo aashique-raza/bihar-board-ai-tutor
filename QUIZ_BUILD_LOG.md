@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage C (question blocks) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildBlocks.js` chala hua, `data/quiz-bank/stage2-blocks/<paperId>.json` ban chuki hai. 761 MCQ blocks total, 94.7% clean option-parse. Known residual gaps: `2024-b` = 0 blocks (Stage B data format issue, needs Stage B rerun — see Parking Lot), `2023-a` Group B mostly missing (genuine incomplete source PDF, F7, already documented), `2018-a` Q4 lost (scan clipping, documented inline by Stage B itself). |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B (bulk page-reading) complete. 🟢 Stage C (question blocks) complete — next is Stage D (structure + 3 languages) across all 18 papers. |
+| **Sub-stage** | **Stage D (structure + 3 languages) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildQuestions.js` chala hua, `data/quiz-bank/stage3-questions/<paperId>.json` ban chuki hai. 1152 questions total (761 objective), 872 trilingual-complete. Known residual gaps: `2024-b` = 0 questions (Stage C input hi empty hai, P-13, Stage B rerun se hi theek hoga), `2023-a` Group B mostly missing (F7, incomplete source), `2018-a` Q4 lost (scan clipping). |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B (bulk page-reading) complete. 🟢 Stage C (question blocks) complete. 🟢 Stage D (structure + 3 languages) complete — next is Stage E (answers + verification) across all 18 papers. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage C run twice via Antigravity (user experiment, see note below) then finished by Claude after Antigravity's fixes proved incomplete/wrongly verified. See Session History for full detail — this was a big, multi-round session. |
+| **Last session** | 2026-08-05 — Stage D run on all 18 papers. Text actually read (not just counts trusted, lesson from the Antigravity Stage C session) — found and fixed 2 real bugs: (1) Stage B's own inline page-break notes (e.g. `[Q1 continued]`, `[options continue on next page]`) had leaked into 135 questions' actual text and even into their Hinglish, (2) a Hinglish batch-translation run swapped 2 options' outputs. Both fixed, verified 0 residual, baseline green. See Session History. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -107,6 +107,8 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-11 | `2017-a` aur `2017-d` — **do alag PDF files (confirmed distinct MD5) ka poora question set (50/50) word-for-word identical hai**, Group A aur Group B dono. `2017-a` ke paas answer key nahi hai, `2017-d` ke paas hai — matlab Stage F dedup jab in dono ko link karega, `2017-d` ki key `2017-a` ke sawaalon ka bhi jawab de degi. Ye blocker nahi hai (Stage F apne aap handle karega dedup logic se), sirf ek note hai ki ye link zaroor bane. | `data/quiz-bank/stage1-pages/2017-a/`, `2017-d/` manifests | Stage B batch 2 session, 2026-08-04 | 🟢 Low — Stage F ke design ka hi hissa hai, sirf yaad rakhna hai |
 | P-12 | `survey.json` (Stage A output) mein `2023-a` aur `2023-b` ke `pages` field **galat hain** — likha hai 1 aur 2, PyMuPDF se verify kiya to asal mein **42 aur 49 pages** hain. Content extraction sahi tha (`textChars`, `sample` field dono mein meaningful text hai) — sirf page-count parsing buggy nikla in do files ke liye. Stage B ko block nahi karta (apna independent PyMuPDF render use hota hai), par Stage A ka survey script kabhi fix hona chahiye taaki future reports sahi ginti dein. | `data/quiz-bank/reports/survey.json` (`2023-a`, `2023-b` entries) | Stage B batch 6 planning, 2026-08-04 | 🟡 Medium — abhi kisi ko galat direction nahi de raha (batch planning hand-verify se hua), par agar koi survey.json pe bharosa kare to batch-sizing galat ho sakti hai |
 | P-13 | `2024-b` ka Stage C output **0 blocks** hai — Stage B ne is paper ka data `\|`-separated single mega-lines mein store kiya (koi `\n` nahi), isliye line-based segmentation (jo Stage C ka poora base hai) kaam nahi karta. Stage B page-reading is paper ke liye dobara karni hogi (sahi newline-separated format mein) — Stage C script khud theek hai, iska proof yehi hai ki baaki 17 papers pe sahi kaam karta hai. | `data/quiz-bank/stage1-pages/2024-b/` | Antigravity Stage C run, 2026-08-05 | 🟠 Medium — 1 paper ka poora data abhi quiz bank mein nahi hai |
+| P-15 | Stage D mein 146 questions ko `flags: ["provenance-note-stripped"]` mila — inke text mein Stage B ke apne inline notes (jaise `[Q1 continued]`) the jo strip kar diye gaye, par kuch mein us note ke baad ka **duplicate content** (jaise dobara likhe options "A. Oont B. Ghoda...") abhi bhi text ke end mein reh gaya hai — sirf bracket-note hata, poora duplicate hissa nahi. Ye har jagah nahi, sirf un cases mein jahan Stage B ne asli recap/duplicate hi likha tha. Stage G review in 146 questions ko zaroor spot-check kare. | `data/quiz-bank/stage3-questions/*.json` (`flags` field) | Stage D bulk session, 2026-08-05 | 🟡 Medium — 146 questions, sab visible via flag, koi silent nahi |
+| P-16 | Stage D ki Hinglish batch-translation (LLM se) mein ek confirm hua case mila jahan **2 options ka Hinglish output aapas mein badal gaya** (option C ko D ka translation mila, aur ulta) — `2022:A:13`. Turant pakda gaya kyunki us questions mein bracket-note bhi tha (isliye verify karte waqt dikh gaya); par ye ek **generic LLM batch-id risk** hai — agar kisi aur question mein aisa hua ho jahan koi bracket-note na ho (matlab kuch clue na ho), wo silently galat reh sakta hai. Is ek case ko fix kiya gaya (cache se hata ke dobara translate), poori bank mein aisa aur kahin dikha nahi (dedicated scan se), par ye scan sirf bracket-pattern dhoondta hai — pure swap (bina kisi text artifact ke) uss scan se nahi pakड़ेga. | `backend/scripts/quiz-bank/buildQuestions.js` (LLM batch translation) | Stage D bulk session, 2026-08-05 | 🟡 Medium — Stage G ke golden-set/10-sample-per-paper QC isko structurally catch karega, par abhi ek known blind-spot hai |
 | P-14 | `2018-a` mein Q4 ka number scan mein clip ho gaya tha (Stage B ne khud inline note likha: "question number clipped at top edge"). Stage C ka naya gap-tolerance fix (+3 tak) ne is wajah se hone wala bada cascade bug (dozens of questions ek hi option mein swallow ho jaana) रोक diya, par khud Q4 ka content ab bhi Q3 ke last option ke andar hi fused hai (uska apna sourceId kabhi nahi banega) — iske liye ya to us page ko manually dobara padhna hoga, ya Q4 ko permanently "lost" maan ke chhodna hoga. | `data/quiz-bank/stage2-blocks/2018-a.json` (`2018-a:A:3` ka option D) | Stage C fix session, 2026-08-05 | 🟢 Low — 1 question, already visible via paper flag `"A: number jumped from 3 to 5"` |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
@@ -139,6 +141,30 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage D: all 18 papers (structure + 3 languages)
+- **Bana:** `backend/scripts/quiz-bank/buildQuestions.js` (already existed from Pilot) sab 18
+  papers pe chalaya → `data/quiz-bank/stage3-questions/<paperId>.json`. **1152 questions total
+  (761 objective), 872 trilingual-complete.** `2024-b` = 0 questions (expected, P-13 — Stage C
+  input hi khaali hai).
+- **Lesson Antigravity session se seedha lagaya:** script chalane ke baad sirf counts/pass nahi
+  maane — kuch actual questions ka text padha. Isi se 2 real bug pakde:
+- **Bug 1 (bada):** Stage B ke apne inline notes (jaise `[Q1 continued]`, `[options continue on
+  next page]`) jo sirf Stage B ke apne liye breadcrumb the, seedha question text ke andar reh
+  gaye the — **135 jagah**, kai papers mein (`2021`, `2022`, `2025`, `2026` sabse zyada). Isi
+  contaminated text se Hinglish bhi ban rahi thi. Fix: `buildQuestions.js` mein
+  `stripProvenanceNotes()` add kiya (design ke mutabik cleanup Stage D ka hi kaam hai, Stage C
+  jaan-boojh kar text nahi chhedta) — bracket-notes hata di jaati hain, aur jis question mein
+  strip hua wahan `flags: ["provenance-note-stripped"]` lagta hai (chupchap fix nahi, visible
+  rehta hai). Re-run kiya, 0 residual confirm hua (script se scan karke).
+- **Bug 2 (chhota, alag tarah ka):** usi re-run mein ek question (`2022:A:13`) ke 2 options ka
+  Hinglish translation LLM ne **aapas mein badal diya** (option C ko D ka jawab mila). Cache se
+  wo 2 galat entries hata ke dobara translate karaya, fix confirm hua. Parking Lot P-16 mein
+  likha — ye ek generic risk hai (kisi aur jagah bina kisi clue ke bhi ho sakta hai), Stage G
+  review isko dhyan se dekhe.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi.
+- **Agla:** Stage E — answers + verification, sab 18 papers pe, naya session mein.
 
 ### 2026-08-05 — Stage C: all 18 papers (user's Antigravity experiment → Claude finished it)
 - **User experiment:** user ke paas Antigravity (Sonnet/Opus) bhi hai, wo test karna chahta tha

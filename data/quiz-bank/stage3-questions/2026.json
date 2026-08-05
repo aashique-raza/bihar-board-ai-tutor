@@ -1,0 +1,7898 @@
+{
+  "flags": [
+    "groupA-classified-objective",
+    "groupB-shape-ascending-classified-subjective"
+  ],
+  "paper": {
+    "board": "BSEB",
+    "class": 10,
+    "declaredMarks": {
+      "A": null,
+      "B": null
+    },
+    "duplicateOf": null,
+    "extractionRoute": "page-images",
+    "hasPrintedAnswerKey": false,
+    "paperId": "2026",
+    "pdfPages": 30,
+    "printedPages": 30,
+    "sourceFile": "2026.pdf",
+    "sourceMd5": "d20856e7ba0ca9fa8a6535dbc67f26ab",
+    "subject": "science"
+  },
+  "questions": [
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Zero",
+            "hi": "शून्य",
+            "hinglish": "Shunya"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Negative",
+            "hi": "ऋणात्मक",
+            "hinglish": "Rinatik"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Infinity",
+            "hi": "अनंत",
+            "hinglish": "Anant"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Positive",
+            "hi": "धनात्मक",
+            "hinglish": "Dhanatik"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "objective",
+      "sourceId": "2026:A:1",
+      "subPart": null,
+      "text": {
+        "en": "The focal length of a plane mirror is",
+        "hi": "समतल दर्पण की फोकस दूरी होती है –",
+        "hinglish": "Samtal darpan ki naabhiik doori hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Behind the mirror",
+            "hi": "दर्पण के पीछे",
+            "hinglish": "Darpan ke peeche"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "In front of mirror",
+            "hi": "दर्पण के आगे",
+            "hinglish": "Darpan ke aage"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Both A and B",
+            "hi": "(A) एवं (B) दोनों",
+            "hinglish": "(A) evam (B) dono"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "objective",
+      "sourceId": "2026:A:2",
+      "subPart": null,
+      "text": {
+        "en": "Real images are always formed on which side of mirror?",
+        "hi": "वास्तविक प्रतिबिंब दर्पण के किस ओर बनते हैं ?",
+        "hinglish": "Vastavik pratibimb darpan ke kis or bante hain ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "30°",
+            "hi": "30°",
+            "hinglish": "30°"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "15°",
+            "hi": "15°",
+            "hinglish": "15°"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "120°",
+            "hi": "120°",
+            "hinglish": "120°"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "60° [Q3 repeated header, already captured page",
+            "hi": "60° [Q3 repeated header, already captured page",
+            "hinglish": "60° [Q3 repeated header, already captured page"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "objective",
+      "sourceId": "2026:A:3",
+      "subPart": null,
+      "text": {
+        "en": "If the angle of incidence is 30°, then the angle between the reflected ray and the incident ray will be–",
+        "hi": "यदि आपतन कोण 30° हो, तो परावर्तित किरण एवं आपतित किरण के बीच कोण होगा–",
+        "hinglish": "Yadi aapatan kon 30° ho, to paravartit kiran evam aapatit kiran ke beech kon hoga–"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "C/2",
+            "hi": "C/2",
+            "hinglish": "C/2"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "C/3",
+            "hi": "C/3",
+            "hinglish": "C/3"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "C/4",
+            "hi": "C/4",
+            "hinglish": "C/4"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "C",
+            "hi": "C",
+            "hinglish": "C"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "objective",
+      "sourceId": "2026:A:4",
+      "subPart": null,
+      "text": {
+        "en": "If the speed of light incident on a mirror is C, then what will be the speed of the reflected light?",
+        "hi": "एक दर्पण पर आपतित प्रकाश की चाल C है, तो परावर्तित प्रकाश की चाल होगी ?",
+        "hinglish": "Ek darpan par aapitit prakash ki chaal C hai, to paravartit prakash ki chaal hogi?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "on focus",
+            "hi": "फोकस पर",
+            "hinglish": "fokus par"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "at the centre of curvature",
+            "hi": "वक्रता केन्द्र पर",
+            "hinglish": "vakrata kendra par"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "at the pole",
+            "hi": "ध्रुव पर",
+            "hinglish": "dhruv par"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "objective",
+      "sourceId": "2026:A:5",
+      "subPart": null,
+      "text": {
+        "en": "In a spherical mirror, according to the Cartesian sign convention, the origin is taken as",
+        "hi": "गोलीय दर्पण में, कार्तीय चिन्ह परिपाटी के अनुसार, मूल बिन्दु लिया जाता है –",
+        "hinglish": "Goliya darpan mein, kartiya chinh paripaaty ke anusar, mool bindu liya jaata hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "increases",
+            "hi": "बढ़ती है",
+            "hinglish": "badhati hai"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "decreases",
+            "hi": "घटती है",
+            "hinglish": "ghatati hai"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "remains Same",
+            "hi": "समान रहती है",
+            "hinglish": "samaan rahti hai"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "objective",
+      "sourceId": "2026:A:6",
+      "subPart": null,
+      "text": {
+        "en": "When light travels from denser to rarer medium, its speed",
+        "hi": "जब प्रकाश सघन से विरल माध्यम में जाता है, तो उसकी गति –",
+        "hinglish": "Jab prakash sadhan se viral madhyam mein jaata hai, to uski gati –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Frequency",
+            "hi": "आवृति",
+            "hinglish": "Aavriti"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Wavelength",
+            "hi": "तरंगदैर्ध्य",
+            "hinglish": "Tarangdairdhya"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Colour",
+            "hi": "रंग",
+            "hinglish": "Rang"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Both A and B",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "objective",
+      "sourceId": "2026:A:7",
+      "subPart": null,
+      "text": {
+        "en": "Which quantity changes during refraction?",
+        "hi": "अपवर्त्तन के कारण कौन सी राशि बदलती है ?",
+        "hinglish": "Apvartan ke kaaran kaun si rashi badalti hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "0.5 D",
+            "hi": "0.5 D",
+            "hinglish": "0.5 D"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2 D",
+            "hi": "2 D",
+            "hinglish": "2 D"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "1D",
+            "hi": "1D",
+            "hinglish": "1D"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "5D",
+            "hi": "5D",
+            "hinglish": "5D"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "objective",
+      "sourceId": "2026:A:8",
+      "subPart": null,
+      "text": {
+        "en": "The power of a lens having focal length 50 cm is",
+        "hi": "50 Cm फोकस दूरी वाले लेंस की शक्ति है –",
+        "hinglish": "50 Cm naabhiik doori wale lens ki shakti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Transparent",
+            "hi": "पारदर्शक",
+            "hinglish": "Paradarshak"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Opaque",
+            "hi": "अपारदर्शक",
+            "hinglish": "Aparadarshak"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Translucent",
+            "hi": "पारभाषक",
+            "hinglish": "Parabhashak"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "objective",
+      "sourceId": "2026:A:9",
+      "subPart": null,
+      "text": {
+        "en": "Oily paper is",
+        "hi": "तैलीय कागज होता है –",
+        "hinglish": "Tailiy kagaz hota hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "water",
+            "hi": "जल में",
+            "hinglish": "Jal mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "vacuum",
+            "hi": "निर्वात में",
+            "hinglish": "Nirvaat mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "glass",
+            "hi": "काँच में",
+            "hinglish": "Kaanch mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "air",
+            "hi": "वायु में",
+            "hinglish": "Vayu mein"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "objective",
+      "sourceId": "2026:A:10",
+      "subPart": null,
+      "text": {
+        "en": "Speed of light is minimum in –",
+        "hi": "प्रकाश की चाल न्यूनतम होती है –",
+        "hinglish": "Prakash ki chaal nyoonatam hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Iris",
+            "hi": "परितारिका",
+            "hinglish": "Paritarika"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Pupil",
+            "hi": "पुतली",
+            "hinglish": "Putli"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Retina",
+            "hi": "दृष्टि पटल",
+            "hinglish": "Drishti patal"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 11,
+      "section": "objective",
+      "sourceId": "2026:A:11",
+      "subPart": null,
+      "text": {
+        "en": "On which of the following parts is the image of an object formed in the human eye?",
+        "hi": "निम्नलिखित में से किस भाग पर मानव नेत्र में किसी वस्तु का प्रतिबिंब बनता है ?",
+        "hinglish": "Nimnalikhit mein se kis bhaag par maanav netra mein kisi vastu ka pratibimb banta hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Iris",
+            "hi": "आईरिस",
+            "hinglish": "Airis"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Lens",
+            "hi": "लेंस",
+            "hinglish": "Lens"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Retina",
+            "hi": "रेटिना",
+            "hinglish": "Retina"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 12,
+      "section": "objective",
+      "sourceId": "2026:A:12",
+      "subPart": null,
+      "text": {
+        "en": "The transparent front part of the eye is",
+        "hi": "नेत्र का पारदर्शी अग्र भाग कहलाता है –",
+        "hinglish": "Netra ka paardarshi agr bhaag kehlata hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Myopia",
+            "hi": "निकट दृष्टि दोष",
+            "hinglish": "Nikhat drishti dosh"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Hypermetropia",
+            "hi": "दूर दृष्टि दोष",
+            "hinglish": "Door drishti dosh"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Presbyopia",
+            "hi": "जरा–दृष्टिदोष़",
+            "hinglish": "Jara–drishti dosh"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 13,
+      "section": "objective",
+      "sourceId": "2026:A:13",
+      "subPart": null,
+      "text": {
+        "en": "Which defect is corrected by bifocal lens is",
+        "hi": "बाइफोकल लेंस द्वारा कौन–सा दोष सुधारा जाता है ?",
+        "hinglish": "Bifocal lens dwara kaun–sa dosh sudhaara jaata hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Colour",
+            "hi": "रंग",
+            "hinglish": "Rang"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Bright light",
+            "hi": "तेज रोशनी",
+            "hinglish": "Tez roshni"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Dim light",
+            "hi": "धुंधली रोशनी",
+            "hinglish": "Dhundhli roshni"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 14,
+      "section": "objective",
+      "sourceId": "2026:A:14",
+      "subPart": null,
+      "text": {
+        "en": "Rods cells are sensitive to",
+        "hi": "रॉड्स कोशिकाएं किसके प्रति संवेदनशील होते हैं ?",
+        "hinglish": "Rods koshikaen kis ke prati sanvedansheel hote hain?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Rods and cones",
+            "hi": "रॉड्स और कोन्स",
+            "hinglish": "Rods aur cones"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Pupil",
+            "hi": "पुतली",
+            "hinglish": "Putli"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Lens",
+            "hi": "लेंस",
+            "hinglish": "Lens"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 15,
+      "section": "objective",
+      "sourceId": "2026:A:15",
+      "subPart": null,
+      "text": {
+        "en": "The blind spot has no",
+        "hi": "ब्लाइंड स्पॉट में नहीं होता है –",
+        "hinglish": "Blind spot mein nahi hota hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Magnetic",
+            "hi": "चुम्बकीय",
+            "hinglish": "Chumbakiya"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Thermal",
+            "hi": "ऊष्मीय",
+            "hinglish": "Ushmiy"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Chemical",
+            "hi": "रासायनिक",
+            "hinglish": "Rasayanik"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 16,
+      "section": "objective",
+      "sourceId": "2026:A:16",
+      "subPart": null,
+      "text": {
+        "en": "On which effect of electric current does the electric fuse work?",
+        "hi": "विद्युत फ्यूज विद्युत धारा के किस प्रभाव पर कार्य करता है ?",
+        "hinglish": "Vidyut fuse vidyut dhara ke kis prabhav par karya karta hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 7,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Ammeter",
+            "hi": "ऐमीटर में",
+            "hinglish": "Ammeter mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Voltmeter",
+            "hi": "वोल्टमीटर में",
+            "hinglish": "Voltmeter mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Coil",
+            "hi": "कुंडली में",
+            "hinglish": "Kundali mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Electric cell] (A) Ammeter (B) Voltmeter (C) Coil (D) Electric cell",
+            "hi": "विद्युत सेल में [Q17 English continuation from page",
+            "hinglish": "Vidyut sel mein"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 17,
+      "section": "objective",
+      "sourceId": "2026:A:17",
+      "subPart": null,
+      "text": {
+        "en": "Which instrument does not have positive (+) and negative (-) signs? [English options continue on page 8",
+        "hi": "किस उपकरण में धन (+) और ऋण (–) का चिन्ह नहीं होता है ?",
+        "hinglish": "Kis upkaran mein dhan (+) aur rnan (–) ka chinh nahi hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "J/S",
+            "hi": "J/S",
+            "hinglish": "J/S"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "J/Sec²",
+            "hi": "J/Sec²",
+            "hinglish": "J/Sec²"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "J⁻¹S⁻¹",
+            "hi": "J⁻¹S⁻¹",
+            "hinglish": "J⁻¹S⁻¹"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "J⁻²S⁻²",
+            "hi": "J⁻²S⁻²",
+            "hinglish": "J⁻²S⁻²"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 18,
+      "section": "objective",
+      "sourceId": "2026:A:18",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following unit is equal to Watt (W)?",
+        "hi": "निम्नलिखित में कौन सा मात्रक वाट (W) के बराबर होता है ?",
+        "hinglish": "Nimnalikhit mein kaun sa maatrak Watt (W) ke barabar hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Copper",
+            "hi": "ताँबा की",
+            "hinglish": "Taanba ki"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Zinc",
+            "hi": "जस्ता की",
+            "hinglish": "Jasta ki"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Tungsten",
+            "hi": "टंगस्टन की",
+            "hinglish": "Tangstan ki"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Nichrome",
+            "hi": "नाइक्रोम की",
+            "hinglish": "Naikrom ki"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 19,
+      "section": "objective",
+      "sourceId": "2026:A:19",
+      "subPart": null,
+      "text": {
+        "en": "The coil of wire of an electric heater is made of.",
+        "hi": "विद्युत हीटर के तार की कुंडली बनी होती है –",
+        "hinglish": "Vidyut heater ke taar ki kundali bani hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Force",
+            "hi": "बल",
+            "hinglish": "Bal"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Power",
+            "hi": "शक्ति",
+            "hinglish": "Shakti"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Energy",
+            "hi": "ऊर्जा",
+            "hinglish": "Urja"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 20,
+      "section": "objective",
+      "sourceId": "2026:A:20",
+      "subPart": null,
+      "text": {
+        "en": "The ability to do work is called",
+        "hi": "कार्य करने की क्षमता को कहते हैं",
+        "hinglish": "Karya karne ki kshamata ko kehte hain"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Orsted",
+            "hi": "ऑस्टेंड",
+            "hinglish": "Austend"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ampere",
+            "hi": "ऐम्पियर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Bohr",
+            "hi": "बोर",
+            "hinglish": "Bohr"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Faraday",
+            "hi": "फैराडे",
+            "hinglish": "Faraday"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 21,
+      "section": "objective",
+      "sourceId": "2026:A:21",
+      "subPart": null,
+      "text": {
+        "en": "Who discovered the magnetic effect of electric current?",
+        "hi": "विद्युत–धारा के चुम्बकीय प्रभाव की खोज किसने की ?",
+        "hinglish": "Vidyut–dhara ke chumbakiya prabhav ki khoj kisne ki?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Imaginary",
+            "hi": "काल्पनिक",
+            "hinglish": "Kalpanik"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Real",
+            "hi": "वास्तविक",
+            "hinglish": "Vastavik"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Both A and B",
+            "hi": "(A) एवं (B) दोनों",
+            "hinglish": "(A) evam (B) dono"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 22,
+      "section": "objective",
+      "sourceId": "2026:A:22",
+      "subPart": null,
+      "text": {
+        "en": "The nature of magnetic field line is",
+        "hi": "चुंबकीय बल–रेखा की प्रकृति होती है –",
+        "hinglish": "Chumbakiya bal–rekha ki prakriti hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Generator",
+            "hi": "जनित्र",
+            "hinglish": "Janitra"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Galvanometer",
+            "hi": "गैल्वेनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Ammeter",
+            "hi": "ऐमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Motor",
+            "hi": "मोटर",
+            "hinglish": "Motor"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 23,
+      "section": "objective",
+      "sourceId": "2026:A:23",
+      "subPart": null,
+      "text": {
+        "en": "The device for producing electric current is called",
+        "hi": "विद्युत–धारा उत्पन्न करने की युक्ति को कहते हैं –",
+        "hinglish": "Vidyut–dhara utpann karne ki yuktika kehte hain –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing",
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "does not change",
+            "hi": "परिवर्तित नहीं होता है",
+            "hinglish": "parivartit nahi hota hai"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "decreases Considerably",
+            "hi": "बहुत कम हो जाता है",
+            "hinglish": "bahut kam ho jaata hai"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Increases very much",
+            "hi": "बहुत अधिक बढ़ जाता है",
+            "hinglish": "bahut adhik badh jaata hai"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 24,
+      "section": "objective",
+      "sourceId": "2026:A:24",
+      "subPart": null,
+      "text": {
+        "en": "Resistance of the circuit at the time of short circuit",
+        "hi": "लघुपथन के समय परिपथ का प्रतिरोध –",
+        "hinglish": "Laghupathan ke samay paripath ka pratirodh –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Helium",
+            "hi": "हीलियम",
+            "hinglish": "Helium"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Aluminium",
+            "hi": "एल्युमिनियम",
+            "hinglish": "Aluminium"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Uranium",
+            "hi": "यूरेनियम",
+            "hinglish": "Uranium"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Chromium",
+            "hi": "क्रोमियम",
+            "hinglish": "Chromium"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 25,
+      "section": "objective",
+      "sourceId": "2026:A:25",
+      "subPart": null,
+      "text": {
+        "en": "To obtain nuclear energy, the necessary element is",
+        "hi": "नाभिकीय ऊर्जा प्राप्त करने हेतु आवश्यक तत्व है –",
+        "hinglish": "Naabikiy urja prapt karne hetu avashyak tatva hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Sun",
+            "hi": "सूर्य",
+            "hinglish": "Surya"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Wood",
+            "hi": "लकड़ी",
+            "hinglish": "Lakdi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 26,
+      "section": "objective",
+      "sourceId": "2026:A:26",
+      "subPart": null,
+      "text": {
+        "en": "The main source of energy on earth in nature is",
+        "hi": "प्रकृति में पृथ्वी पर ऊर्जा का मुख्य स्रोत है",
+        "hinglish": "Prakriti mein prithvi par urja ka mukhya srot hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Petro",
+            "hi": "पेट्रो",
+            "hinglish": "Petro"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Turbo",
+            "hi": "टरबो",
+            "hinglish": "Turbo"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Nitro",
+            "hi": "नाइट्रो",
+            "hinglish": "Nitro"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Hydro",
+            "hi": "हाइड्रो",
+            "hinglish": "Hydro"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 27,
+      "section": "objective",
+      "sourceId": "2026:A:27",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following means water?",
+        "hi": "निम्न में किसका अर्थ जल होता है ?",
+        "hinglish": "Nimn mein kiska arth jal hota hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "NaCl solution and Copper metal",
+            "hi": "NaCl विलयन एवं कॉपर धातु",
+            "hinglish": "NaCl vilayan evam Copper dhatu"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "MgCl2 solution and Copper metal",
+            "hi": "MgCl2 विलयन एवं कॉपर धातु",
+            "hinglish": "MgCl2 vilayan evam Copper dhatu"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "FeSO4 solution and silver metal",
+            "hi": "FeSO4 विलयन एवं सिल्वर धातु",
+            "hinglish": "FeSO4 vilayan evam silver dhatu"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "AgNO3 solution and Copper metal",
+            "hi": "AgNO3 विलयन एवं कॉपर धातु",
+            "hinglish": "AgNO3 vilayan evam Copper dhatu"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 28,
+      "section": "objective",
+      "sourceId": "2026:A:28",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following pairs represents single displacement reaction?",
+        "hi": "निम्नलिखित में कौन–सा युग्म एकल विस्थापन अभिक्रिया प्रदर्शित करता है ?",
+        "hinglish": "Nimnalikhit mein kaun–sa yugm ekal visthapan abhikriya pradarshit karta hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Endothermic",
+            "hi": "उष्माशोषी",
+            "hinglish": "Ushmashoshi"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Exothermic",
+            "hi": "उष्माक्षेपी",
+            "hinglish": "Ushmakshepi"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Replacement",
+            "hi": "प्रतिस्थापन",
+            "hinglish": "Pratisthapan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 29,
+      "section": "objective",
+      "sourceId": "2026:A:29",
+      "subPart": null,
+      "text": {
+        "en": "The decomposition of vegetables and their conversion into compost is an example of which reaction?",
+        "hi": "शाक–सब्जियों का विघटित होकर कंपोस्ट बनना किस अभिक्रिया का उदाहरण है ?",
+        "hinglish": "Shak–sabjiyon ka vighatit hokar compost banna kis abhikriya ka udaharan hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Combustion",
+            "hi": "दहन",
+            "hinglish": "Dahan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Respiration",
+            "hi": "श्वसन",
+            "hinglish": "Shwasan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Digestion of food",
+            "hi": "भोजन का पचना",
+            "hinglish": "Bhojan ka pachna"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Precipitation",
+            "hi": "अवक्षेपन",
+            "hinglish": "Avakshepan"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 30,
+      "section": "objective",
+      "sourceId": "2026:A:30",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is not an oxidation reaction?",
+        "hi": "निम्न में से कौन ऑक्सीकरण की क्रिया नहीं है ?",
+        "hinglish": "Nimn mein se kaun oxidation ki kriya nahi hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 11,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "C2H5OH",
+            "hi": "C2H5OH",
+            "hinglish": "C2H5OH"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "C6H6O6",
+            "hi": "C6H6O6",
+            "hinglish": "C6H6O6"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "C6H12O6",
+            "hi": "C6H12O6",
+            "hinglish": "C6H12O6"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "C6H6 [Q31 English repeat from page",
+            "hi": "C6H6 [Q31 English repeat from page",
+            "hinglish": "C6H6 [Q31 English repeat from page"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 31,
+      "section": "objective",
+      "sourceId": "2026:A:31",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is the chemical formula of glucose?",
+        "hi": "ग्लूकोज का रासायनिक सूत्र निम्नलिखित में कौन है ?",
+        "hinglish": "Glucose ka rasayanik sutra nimnalikhit mein kaun hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "2H2+O2→2H2O",
+            "hi": "2H2+O2→2H2O",
+            "hinglish": "2H2+O2→2H2O"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2KClO3→2Kcl+3O2",
+            "hi": "2KClO3→2KCl+3O2",
+            "hinglish": "2KClO3→2KCl+3O2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "H2+Cl2→2HCl",
+            "hi": "H2+Cl2→2HCl",
+            "hinglish": "H2+Cl2→2HCl"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Pb(NO3)2→PbO+NO2+O2",
+            "hi": "Pb(NO3)2→PbO+NO2+O2",
+            "hinglish": "Pb(NO3)2→PbO+NO2+O2"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 32,
+      "section": "objective",
+      "sourceId": "2026:A:32",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following equations is not balanced?",
+        "hi": "निम्नलिखित में से कौन समीकरण संतुलित नहीं है ?",
+        "hinglish": "Nimnalikhit mein se kaun samikaran santulit nahi hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 5,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 33,
+      "section": "objective",
+      "sourceId": "2026:A:33",
+      "subPart": null,
+      "text": {
+        "en": "A solution turns red litmus blue, what would be its pH?",
+        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है, उसका pH संभवतः क्या होगा ?",
+        "hinglish": "Koi vilayan laal litmus ko neela kar deta hai, uska pH sambhavatah kya hoga ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "ZnSO4",
+            "hi": "ZnSO4",
+            "hinglish": "ZnSO4"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "ZnCl2",
+            "hi": "ZnCl2",
+            "hinglish": "ZnCl2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "ZnO",
+            "hi": "ZnO",
+            "hinglish": "ZnO"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "ZnS",
+            "hi": "ZnS",
+            "hinglish": "ZnS"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 34,
+      "section": "objective",
+      "sourceId": "2026:A:34",
+      "subPart": null,
+      "text": {
+        "en": "What is Philosopher's wool?",
+        "hi": "यशद् पुष्प क्या है ?",
+        "hinglish": "Yashad pushp kya hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Cl2",
+            "hi": "Cl2",
+            "hinglish": "Cl2"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "NO2",
+            "hi": "NO2",
+            "hinglish": "NO2"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 35,
+      "section": "objective",
+      "sourceId": "2026:A:35",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following gases turns lime water milky?",
+        "hi": "निम्नलिखित में से कौन गैस चूने के पानी को दूधिया कर देता है ?",
+        "hinglish": "Nimnalikhit mein se kaun gas choone ke paani ko doodhiya kar deta hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Methanoic acid",
+            "hi": "मेथेनॉइक अम्ल",
+            "hinglish": "Methanoic aml"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ethanoic acid",
+            "hi": "इथेनॉइक अम्ल",
+            "hinglish": "Ethanoic aml"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Citric acid",
+            "hi": "सिट्रिक अम्ल",
+            "hinglish": "Citric aml"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Oxalic acid",
+            "hi": "ऑक्जेलिक अम्ल",
+            "hinglish": "Oxalic acid"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 36,
+      "section": "objective",
+      "sourceId": "2026:A:36",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following acids is present in a bee sting?",
+        "hi": "मधुमक्खी के डंक में निम्नलिखित में से कौन–सा अम्ल होता है ?",
+        "hinglish": "Madhumakkhi ke dank mein nimnalikhit mein se kaunsa aml hota hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CaSO4.5H2O",
+            "hi": "CaSO4.5H2O",
+            "hinglish": "CaSO4.5H2O"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "CaSO4.1/2H2O",
+            "hi": "CaSO4.1/2H2O",
+            "hinglish": "CaSO4.1/2H2O"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "CaSO4.2H2O",
+            "hi": "CaSO4.2H2O",
+            "hinglish": "CaSO4.2H2O"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "CaSO4.H2O",
+            "hi": "CaSO4.H2O",
+            "hinglish": "CaSO4.H2O"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 37,
+      "section": "objective",
+      "sourceId": "2026:A:37",
+      "subPart": null,
+      "text": {
+        "en": "The chemical formula of 'Plaster of Paris' is",
+        "hi": "'प्लास्टर ऑफ पेरिस' का रासायनिक सूत्र है –",
+        "hinglish": "'Plaster of Paris' ka rasayanik sutra hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing",
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Strong base",
+            "hi": "प्रबल क्षार",
+            "hinglish": "Prabal kshaar"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Strong Acid",
+            "hi": "प्रबल अम्ल",
+            "hinglish": "Prabal aml"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Salt",
+            "hi": "लवण",
+            "hinglish": "Lavan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 38,
+      "section": "objective",
+      "sourceId": "2026:A:38",
+      "subPart": null,
+      "text": {
+        "en": "Acid and base react with each other to form–",
+        "hi": "अम्ल और क्षार आपस में अभिक्रिया कर बनाते हैं–",
+        "hinglish": "Aml aur kshaar aapas mein abhikraya kar banate hain–"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Si",
+            "hi": "Si",
+            "hinglish": "Si"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "P",
+            "hi": "P",
+            "hinglish": "P"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 39,
+      "section": "objective",
+      "sourceId": "2026:A:39",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following elements has the highest number of valence electrons?",
+        "hi": "निम्नलिखित में किस तत्व में संयोजी इलेक्ट्रॉनों की संख्या सबसे अधिक है ?",
+        "hinglish": "Nimnalikhit mein kis tatva mein sanyojak electronon ki sankhya sabse adhik hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Hg",
+            "hi": "Hg",
+            "hinglish": "Hg"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Zn",
+            "hi": "Zn",
+            "hinglish": "Zn"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 40,
+      "section": "objective",
+      "sourceId": "2026:A:40",
+      "subPart": null,
+      "text": {
+        "en": "Cuprite is an ore of which of the following metals?",
+        "hi": "क्यूप्राईट निम्नांकित में किस धातु का अयस्क है ?",
+        "hinglish": "Cuprite nimnalikhit mein kis dhatu ka ayask hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "0",
+            "hi": "0",
+            "hinglish": "0"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 41,
+      "section": "objective",
+      "sourceId": "2026:A:41",
+      "subPart": null,
+      "text": {
+        "en": "The valency of oxygen is",
+        "hi": "ऑक्सीजन की संयोजकता होती है –",
+        "hinglish": "Oxygen ki sanyojkta hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 17,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "15",
+            "hi": "15",
+            "hinglish": "15"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 42,
+      "section": "objective",
+      "sourceId": "2026:A:42",
+      "subPart": null,
+      "text": {
+        "en": "The atomic number of Sulphur is",
+        "hi": "गंधक की परमाणु संख्या है –",
+        "hinglish": "Gandhak ki parmanoo sankhya hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Aldehyde group",
+            "hi": "एल्डिहाइड समूह",
+            "hinglish": "Aldehyde samuh"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ether group",
+            "hi": "ईथर समूह",
+            "hinglish": "Ether samuh"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Alcohol group",
+            "hi": "ऐल्कोहॉल समूह",
+            "hinglish": "Alcohol samuh"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Carbonyl group",
+            "hi": "कार्बोनिल समूह",
+            "hinglish": "Carbonyl samuh"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 43,
+      "section": "objective",
+      "sourceId": "2026:A:43",
+      "subPart": null,
+      "text": {
+        "en": "The functional group )CO is called",
+        "hi": "अभिक्रियाशील समूह )CO को कहते हैं",
+        "hinglish": "Abhikriyaashil samuh )CO ko kehte hain"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Methane",
+            "hi": "मेथेन",
+            "hinglish": "Methane"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ethyne",
+            "hi": "एथाइन",
+            "hinglish": "Ethyne"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Ethane",
+            "hi": "एथेन",
+            "hinglish": "Ethane"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Ethene",
+            "hi": "एथीन",
+            "hinglish": "Aethin"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 44,
+      "section": "objective",
+      "sourceId": "2026:A:44",
+      "subPart": null,
+      "text": {
+        "en": "Which gas is used in welding?",
+        "hi": "वेल्डिंग में किस गैस का उपयोग होता है ?",
+        "hinglish": "Welding mein kis gas ka upyog hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 14,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "6",
+            "hi": "6",
+            "hinglish": "6"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "13",
+            "hi": "13",
+            "hinglish": "13"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "[Q45 English repeat from page",
+            "hi": "[Q45 English repeat from page",
+            "hinglish": "[Q45 English repeat from page"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 45,
+      "section": "objective",
+      "sourceId": "2026:A:45",
+      "subPart": null,
+      "text": {
+        "en": "Carbon is a member of which group of the periodic table?",
+        "hi": "कार्बन आवर्त सारणी के किस वर्ग का सदस्य है ?",
+        "hinglish": "Carbon aavart sarni ke kis varg ka sadasya hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-mismatch-hi-4-en-3"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 4,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 46,
+      "section": "objective",
+      "sourceId": "2026:A:46",
+      "subPart": null,
+      "text": {
+        "en": "How many covalent bonds are there between Carbon-carbon atoms in ethyne?",
+        "hi": "एथाइन में कार्बन –कार्बन परमाणुओं के बीच कितने सह–संयोजक बंधन होते हैं ?",
+        "hinglish": "Ethyne mein carbon – carbon parmanuon ke beech kitne sah–sanyojak bandhan hote hain?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "F",
+            "hi": "F",
+            "hinglish": "F"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Cl",
+            "hi": "Cl",
+            "hinglish": "Cl"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Br",
+            "hi": "Br",
+            "hinglish": "Br"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "I",
+            "hi": "I",
+            "hinglish": "I"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 47,
+      "section": "objective",
+      "sourceId": "2026:A:47",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is the most reactive halogen?",
+        "hi": "निम्नलिखित में कौन सबसे अधिक क्रियाशील हैलोजन है ?",
+        "hinglish": "Nimnalikhit mein kaun sabse adhik kriyasheel halojen hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 8,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "6",
+            "hi": "6",
+            "hinglish": "6"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 48,
+      "section": "objective",
+      "sourceId": "2026:A:48",
+      "subPart": null,
+      "text": {
+        "en": "How many periods are there in the periodic table?",
+        "hi": "आवर्त सारणी में कितने आवर्त्त होते हैं ?",
+        "hinglish": "Aavart sarni mein kitne aavart hote hain?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 4,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 49,
+      "section": "objective",
+      "sourceId": "2026:A:49",
+      "subPart": null,
+      "text": {
+        "en": "The atomic number of Potassium is 19. What is its valency?",
+        "hi": "पोटेशियम की परमाणु संख्या 19 है। इसकी संयोजकता क्या है ?",
+        "hinglish": "Potassium ki parmanu sankhya 19 hai. Iski sanyojkta kya hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "options-language-incomplete"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 18,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 50,
+      "section": "objective",
+      "sourceId": "2026:A:50",
+      "subPart": null,
+      "text": {
+        "en": "The number of vertical columns in the modern periodic table is",
+        "hi": "आधुनिक आर्वत सारणी में उर्ध्वाधर स्तंभों की संख्या होती है –",
+        "hinglish": "Aadhunik aavart sarni mein uardhvaadhar stambhon ki sankhya hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "¹⁹₉A",
+            "hi": "¹⁹₉A",
+            "hinglish": "¹⁹₉A"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "²⁴₁₂B",
+            "hi": "²⁴₁₂B",
+            "hinglish": "²⁴₁₂B"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "¹²₆C",
+            "hi": "¹²₆C",
+            "hinglish": "¹²₆C"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "¹⁶₈D",
+            "hi": "¹⁶₈D",
+            "hinglish": "¹⁶₈D"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 51,
+      "section": "objective",
+      "sourceId": "2026:A:51",
+      "subPart": null,
+      "text": {
+        "en": "Which of the element represented by the following symbols is a metal?",
+        "hi": "निम्नांकित संकेतों द्वारा व्यक्त तत्वों में कौन सा धातु है ?",
+        "hinglish": "Nimnankit sanketon dwara vyakt tatvon mein kaun sa dhatu hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 17,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Paper industry",
+            "hi": "कागज उद्योग",
+            "hinglish": "Kagaz udyog"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Timber industry",
+            "hi": "टिंबर उद्योग",
+            "hinglish": "Timber udyog"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Lac industry",
+            "hi": "लाख उद्योग",
+            "hinglish": "Laakh udyog"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these [Q52 English repeat from page",
+            "hi": "इनमें से सभी [Q52 English repeat from page",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 52,
+      "section": "objective",
+      "sourceId": "2026:A:52",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is a forest-based industry?",
+        "hi": "निम्नांकित में वनों पर आधारित उद्योग कौन है ?",
+        "hinglish": "Nimnankit mein vanon par aadhaarit udyog kaun hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Watering with rain water",
+            "hi": "वर्षा जल से सिंचाई",
+            "hinglish": "Varsha jal se sinchai"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Mechanical spraying",
+            "hi": "यांत्रिक छिड़काव",
+            "hinglish": "Yantrik chhidkaav"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Drip irrigation",
+            "hi": "टपकन सिंचाई",
+            "hinglish": "Tapkan sinchai"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Irrigation from Canal",
+            "hi": "नहर से सिंचाई",
+            "hinglish": "Nahar se sinchai"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 53,
+      "section": "objective",
+      "sourceId": "2026:A:53",
+      "subPart": null,
+      "text": {
+        "en": "The technique of delivering water right near the roots of plant for irrigation is",
+        "hi": "सिंचाई के लिए पौधों को ठीक जड़ों के समीप जल पहुँचाने की तकनीक है–",
+        "hinglish": "Sinchai ke liye paudhon ko theek jadon ke samip jal pahunchane ki takneek hai–"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1971",
+            "hi": "1971",
+            "hinglish": "1971"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "1973",
+            "hi": "1973",
+            "hinglish": "1973"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "1981",
+            "hi": "1981",
+            "hinglish": "1981"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "1988",
+            "hi": "1988",
+            "hinglish": "1988"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 54,
+      "section": "objective",
+      "sourceId": "2026:A:54",
+      "subPart": null,
+      "text": {
+        "en": "In which year did the 'Chipko Movement' start in Uttarakhand ?",
+        "hi": "उत्तराखण्ड में 'चिपको आंदोलन' किस वर्ष में आरंभ हुआ था ?",
+        "hinglish": "Uttarakhand mein 'Chipko Andolan' kis varsh mein aarambh hua tha?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Saprotrophic",
+            "hi": "मृतपोषी",
+            "hinglish": "Mritposhi"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Autotrophic",
+            "hi": "स्वपोषी",
+            "hinglish": "Swaposhi"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Holozoic",
+            "hi": "होलोजोइक",
+            "hinglish": "Holozoic"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 55,
+      "section": "objective",
+      "sourceId": "2026:A:55",
+      "subPart": null,
+      "text": {
+        "en": "Which method of nutrition is found in fungi ?",
+        "hi": "कवक में पोषण की कौन सी विधि पाई जाती है ?",
+        "hinglish": "Kavak mein poshan ki kaun si vidhi pai jaati hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Dead grass and leaves",
+            "hi": "मृत घास–पत्ते",
+            "hinglish": "Mrit ghaas–patte"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Polythene",
+            "hi": "पॉलीथीन",
+            "hinglish": "Polythene"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Rubber",
+            "hi": "रबर",
+            "hinglish": "Rubber"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 56,
+      "section": "objective",
+      "sourceId": "2026:A:56",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following substance is decomposed by biological process?",
+        "hi": "निम्न में से कौन एक जैविक प्रक्रम द्वारा अपघटित होने वाला पदार्थ है ?",
+        "hinglish": "Nimn mein se kaun ek jaivik prakriya dwara apghatit hone wala padarth hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "buccal cavity",
+            "hi": "मुखगुहा से",
+            "hinglish": "Mukhguhha se"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "pharynx",
+            "hi": "ग्रसनी से",
+            "hinglish": "Grasani se"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Stomach",
+            "hi": "आमाशय से",
+            "hinglish": "Aamashaya se"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Small intestine",
+            "hi": "छोटी आँत से",
+            "hinglish": "Chhoti aant se"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 57,
+      "section": "objective",
+      "sourceId": "2026:A:57",
+      "subPart": null,
+      "text": {
+        "en": "The process of digestion in humans being from",
+        "hi": "मनुष्य में पाचन क्रिया का आरंभ होता है –",
+        "hinglish": "Manushya mein pachan kriya ka aarambh hota hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "respiration",
+            "hi": "श्वसन",
+            "hinglish": "Shwasan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "nutrition",
+            "hi": "पोषण",
+            "hinglish": "Poshan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "reproduction",
+            "hi": "प्रजनन",
+            "hinglish": "Prajanann"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 58,
+      "section": "objective",
+      "sourceId": "2026:A:58",
+      "subPart": null,
+      "text": {
+        "en": "The biological processes found in living organisms are",
+        "hi": "सजीवों में पाये जाने वाले जैव प्रक्रम है –",
+        "hinglish": "Sajivon mein paaye jaane wale jaiv prakriya hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing",
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Hydra",
+            "hi": "हाइड्रा में",
+            "hinglish": "Hydra mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Amoeba",
+            "hi": "अमीबा में",
+            "hinglish": "Amoeba mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Yeast",
+            "hi": "यीस्ट में",
+            "hinglish": "Yeast mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 59,
+      "section": "objective",
+      "sourceId": "2026:A:59",
+      "subPart": null,
+      "text": {
+        "en": "Fermentation takes place in",
+        "hi": "किण्वन क्रिया होती है –",
+        "hinglish": "Kinvann kriya hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "SO2",
+            "hi": "SO2",
+            "hinglish": "SO2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "N2",
+            "hi": "N2",
+            "hinglish": "N2"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 60,
+      "section": "objective",
+      "sourceId": "2026:A:60",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following gases is taken in during aerobic respiration?",
+        "hi": "वायवीय श्वसन क्रिया में निम्नांकित में से किस गैस का प्रयोग किया जाता है ?",
+        "hinglish": "Vayaviya shwasan kriya mein nimnankit mein se kis gas ka prayog kiya jaata hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Fat",
+            "hi": "वसा को",
+            "hinglish": "Vasa ko"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Protein",
+            "hi": "प्रोटीन को",
+            "hinglish": "Protein ko"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Glucose",
+            "hi": "ग्लूकोस को",
+            "hinglish": "Glucose ko"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 61,
+      "section": "objective",
+      "sourceId": "2026:A:61",
+      "subPart": null,
+      "text": {
+        "en": "What is called cellular fuel?",
+        "hi": "कोशिकीय ईंधन किसे कहा जाता है ?",
+        "hinglish": "Koshikiya indhan kise kaha jaata hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "in flower",
+            "hi": "फूल में",
+            "hinglish": "Phool mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "in the stem",
+            "hi": "तना में",
+            "hinglish": "Tana mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "in leaves",
+            "hi": "पत्ती में",
+            "hinglish": "Patti mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इन सभी में",
+            "hinglish": "In sabhi mein"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 62,
+      "section": "objective",
+      "sourceId": "2026:A:62",
+      "subPart": null,
+      "text": {
+        "en": "In which organ does transpiration mainly take place in plants?",
+        "hi": "पौधों में वाष्पोत्सर्जन मुख्यतया किस अंग में होता है ?",
+        "hinglish": "Paudhon mein vaaspotsarjan mukhyata kahan hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "digestion",
+            "hi": "पाचन",
+            "hinglish": "Pachan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "respiration",
+            "hi": "श्वसन",
+            "hinglish": "Shwasan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "circulatory system",
+            "hi": "परिसंचरन तंत्र",
+            "hinglish": "Parisanchran tantra"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 63,
+      "section": "objective",
+      "sourceId": "2026:A:63",
+      "subPart": null,
+      "text": {
+        "en": "The human heart is a part of which system?",
+        "hi": "मानव हृदय किस तंत्र का भाग है ?",
+        "hinglish": "Manav hriday kis tantra ka bhaag hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "RBC",
+            "hi": "RBC",
+            "hinglish": "RBC"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Fibrinogen",
+            "hi": "फाइब्रिनोजिन",
+            "hinglish": "Fibrinogen"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "lymph",
+            "hi": "लसीका",
+            "hinglish": "Laseeka"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "oxyhaemoglobin",
+            "hi": "आक्सीहीमोग्लोबिन",
+            "hinglish": "Oxyhaemoglobin"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 64,
+      "section": "objective",
+      "sourceId": "2026:A:64",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following helps in clotting of blood?",
+        "hi": "निम्नलिखित में से कौन रक्त का थक्का बनाने में सहायक होता है ?",
+        "hinglish": "Nimnalikhit mein se kaun rakt ka thakka banane mein sahayak hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "bark",
+            "hi": "छाल में",
+            "hinglish": "Chhaal mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Cellular vacuoles",
+            "hi": "कोशिकीय रिक्तिकाओं में",
+            "hinglish": "Koshikiya riktiyon mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "leaves",
+            "hi": "पत्तियों में",
+            "hinglish": "Pattiyon mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 65,
+      "section": "objective",
+      "sourceId": "2026:A:65",
+      "subPart": null,
+      "text": {
+        "en": "Plant wastes are stored in",
+        "hi": "पादप अपशिष्ट संचित रहते हैं –",
+        "hinglish": "Padap apashisht sanchit rahte hain –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing",
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "SO2",
+            "hi": "SO2",
+            "hinglish": "SO2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "NH3",
+            "hi": "NH3",
+            "hinglish": "NH3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "CO",
+            "hi": "CO",
+            "hinglish": "CO"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 66,
+      "section": "objective",
+      "sourceId": "2026:A:66",
+      "subPart": null,
+      "text": {
+        "en": "What is formed by the breakdown of amino acids",
+        "hi": "एमीनो अम्ल के विखण्डन से क्या बनता है –",
+        "hinglish": "Amino amla ke vikhandon se kya banta hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "digestion",
+            "hi": "पाचन",
+            "hinglish": "Pachan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "reproduction",
+            "hi": "प्रजनन",
+            "hinglish": "Prajanann"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "ATP production",
+            "hi": "ATP निर्माण",
+            "hinglish": "ATP nirmaan"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 67,
+      "section": "objective",
+      "sourceId": "2026:A:67",
+      "subPart": null,
+      "text": {
+        "en": "The main function of the kidney is",
+        "hi": "वृक्क का प्रधान कार्य है –",
+        "hinglish": "Vrikka ka pradhan karya hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Insulin",
+            "hi": "इंसुलिन",
+            "hinglish": "Insulin"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Thyroxine",
+            "hi": "थाइरॉक्सिन",
+            "hinglish": "Thyroxine"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Estrogen",
+            "hi": "एस्ट्रोजेन",
+            "hinglish": "Estrogen"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Cytokinin",
+            "hi": "साइटोकाइनिन",
+            "hinglish": "Cytokinin"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 68,
+      "section": "objective",
+      "sourceId": "2026:A:68",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is a plant hormone?",
+        "hi": "इनमें से कौन पादप हार्मोन है ?",
+        "hinglish": "Inmein se kaun padap hormone hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Auxin",
+            "hi": "ऑक्सीन",
+            "hinglish": "Auxin"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Gibberellin",
+            "hi": "जिबरेलिन",
+            "hinglish": "Gibberellin"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Ethylene",
+            "hi": "एथिलीन",
+            "hinglish": "Ethylene"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 69,
+      "section": "objective",
+      "sourceId": "2026:A:69",
+      "subPart": null,
+      "text": {
+        "en": "The fruit ripening hormone is",
+        "hi": "फल पकाने वाला हॉर्मोन है –",
+        "hinglish": "Phal pakane wala hormone hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "12 pairs",
+            "hi": "12 जोड़ी",
+            "hinglish": "12 jodi"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "31 pairs",
+            "hi": "31 जोड़ी",
+            "hinglish": "31 jodi"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "10 pairs",
+            "hi": "10 जोड़ी",
+            "hinglish": "10 jodi"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "24 pairs",
+            "hi": "24 जोड़ी",
+            "hinglish": "24 jodi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 70,
+      "section": "objective",
+      "sourceId": "2026:A:70",
+      "subPart": null,
+      "text": {
+        "en": "The number of cranial nerves in human is",
+        "hi": "मनुष्य में कपाल तंत्रिकाओं की संख्या होती है –",
+        "hinglish": "Manushya mein kapal tantrikaon ki sankhya hoti hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Thymus",
+            "hi": "थाइमस द्वारा",
+            "hinglish": "Thymus"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Pancreas",
+            "hi": "अग्नाशय द्वारा",
+            "hinglish": "Agnashay dwara"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Adrenal",
+            "hi": "एड्रिनल द्वारा",
+            "hinglish": "Adrenal dwara"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Testis",
+            "hi": "वृषण द्वारा",
+            "hinglish": "Vrishan dwara"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 71,
+      "section": "objective",
+      "sourceId": "2026:A:71",
+      "subPart": null,
+      "text": {
+        "en": "Blood pressure is controlled by",
+        "hi": "रूधिर चाप नियंत्रित होता है –",
+        "hinglish": "Rudhir chaap niyantrit hota hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "binary fission",
+            "hi": "द्विखण्डन",
+            "hinglish": "Dvikhandan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Budding",
+            "hi": "मुकुलन",
+            "hinglish": "Mukulaan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "sexual reproduction",
+            "hi": "लैंगिक जनन",
+            "hinglish": "Laingik janan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 72,
+      "section": "objective",
+      "sourceId": "2026:A:72",
+      "subPart": null,
+      "text": {
+        "en": "By which method does reproduction take place in Hydra?",
+        "hi": "हाइड्रा में प्रजनन किस विधि से होता है ?",
+        "hinglish": "Hydra mein prajanann kis vidhi se hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing",
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Stamen",
+            "hi": "पुंकेशर",
+            "hinglish": "Punkeshar"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Petal",
+            "hi": "दलपत्र",
+            "hinglish": "Dalpatra"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Stigma",
+            "hi": "वर्तिकाग्र",
+            "hinglish": "Vartikagr"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 73,
+      "section": "objective",
+      "sourceId": "2026:A:73",
+      "subPart": null,
+      "text": {
+        "en": "The flower has a male reproductive organ",
+        "hi": "पुष्प में नर प्रजनन अंग होता है –",
+        "hinglish": "Pushp mein nar prajanann ang hota hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Uterus",
+            "hi": "गर्भाशय में",
+            "hinglish": "Garbhaashay mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Urinary bladder",
+            "hi": "मूत्राशय में",
+            "hinglish": "Mootraashay mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Ovary",
+            "hi": "अंडाशय में",
+            "hinglish": "Andashay mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Testis",
+            "hi": "वृषण में",
+            "hinglish": "Vrishan mein"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 74,
+      "section": "objective",
+      "sourceId": "2026:A:74",
+      "subPart": null,
+      "text": {
+        "en": "Sperm is produced in",
+        "hi": "शुक्राणु बनता है –",
+        "hinglish": "Shukranu banta hai –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "NO2",
+            "hi": "NO2",
+            "hinglish": "NO2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 75,
+      "section": "objective",
+      "sourceId": "2026:A:75",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following was not present on Earth before the origin of life?",
+        "hi": "जीवों के उत्त्पत्ति के पहले पृथ्वी पर निम्नलिखित में क्या नहीं था ?",
+        "hinglish": "Jeevon ke utpatti ke pehle Prithvi par nimnalikhit mein kya nahi tha?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "It is fossil",
+            "hi": "यह एक जीवाश्म है",
+            "hinglish": "Yeh ek jeevashm hai"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "It had teeth in its jaws and nails on its fingers",
+            "hi": "इसके जबड़े में दाँत और अँगुलियों में नख थे",
+            "hinglish": "Iske jabde mein daant aur ungliyon mein nakh the"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "It had wings and feathers",
+            "hi": "इसमें डैने तथा पंख विद्यमान थे",
+            "hinglish": "Ismein daine tatha pankh vidyamaan the"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 76,
+      "section": "objective",
+      "sourceId": "2026:A:76",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following statements is true regarding Archaeopteryx?",
+        "hi": "आर्कियोप्टेरिक्स के संबंध में निम्नांकित कौन कथन सत्य है ?",
+        "hinglish": "Archaeopteryx ke sambandh mein nimnankit kaun kathan satya hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Snails",
+            "hi": "घोंघे",
+            "hinglish": "Ghonghe"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Some reptiles",
+            "hi": "कुछ सरीसृप",
+            "hinglish": "Kuch sarisripa"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Birds",
+            "hi": "पंछी",
+            "hinglish": "Panchhi"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Honey bees",
+            "hi": "मधुमख्खी",
+            "hinglish": "Madhumakkhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 77,
+      "section": "objective",
+      "sourceId": "2026:A:77",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following organisms can change their sex?",
+        "hi": "निम्नलिखित में से कौन प्राणी अपना लिंग बदल सकते हैं ?",
+        "hinglish": "Nimnalikhit mein se kaun prani apna ling badal sakte hain?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "hydrosphere",
+            "hi": "जलमंडल",
+            "hinglish": "Jalmandal"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "lithosphere",
+            "hi": "स्थलमंडल",
+            "hinglish": "Sthalmandal"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "atmosphere",
+            "hi": "वायुमंडल",
+            "hinglish": "Vayumandal"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 78,
+      "section": "objective",
+      "sourceId": "2026:A:78",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following comes under environment?",
+        "hi": "निम्नलिखित में से कौन पर्यावरण के अंतर्गत आते हैं –",
+        "hinglish": "Nimnalikhit mein se kaun paryavaran ke antargat aate hain –"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "primary",
+            "hi": "प्राथमिक",
+            "hinglish": "Prathmik"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "secondary",
+            "hi": "द्वितीयक",
+            "hinglish": "Dvitiyak"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "tertiary",
+            "hi": "तृतीयक",
+            "hinglish": "Tritiyak"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "quaternary",
+            "hi": "चतुर्थीय",
+            "hinglish": "Chaturthiy"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 79,
+      "section": "objective",
+      "sourceId": "2026:A:79",
+      "subPart": null,
+      "text": {
+        "en": "What type of consumer is frog in the field ecosystem?",
+        "hi": "मैदानी पारिस्थितिक तंत्र में मेढ़क किस प्रकार का उपभोक्ता है ?",
+        "hinglish": "Maidani paristhitiki tantra mein mendak kis prakar ka upbhokta hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing",
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "DDT",
+            "hi": "DDT",
+            "hinglish": "DDT"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Paper",
+            "hi": "कागज",
+            "hinglish": "Kagaz"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Sewage",
+            "hi": "वाहित मल",
+            "hinglish": "Vahit mal"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 80,
+      "section": "objective",
+      "sourceId": "2026:A:80",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is a non-biodegradable substance?",
+        "hi": "निम्नांकित में कौन एक जैव अनिम्नीकरणीय पदार्थ है ?",
+        "hinglish": "Nimnankit mein kaun ek jaiv animnigrahaniya padarth hai ?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "subjective",
+      "sourceId": "2026:B:1",
+      "subPart": null,
+      "text": {
+        "en": "What is magnification? Describe it.",
+        "hi": "आवर्धन किसे कहते हैं ? वर्णन करें।",
+        "hinglish": "Aavardhan kise kehte hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "subjective",
+      "sourceId": "2026:B:2",
+      "subPart": null,
+      "text": {
+        "en": "Why is concave lens called a diverging lens?",
+        "hi": "अवतल लेंस को अपसारी लेंस क्यों कहा जाता है ?",
+        "hinglish": "Avatal lens ko apasari lens kyun kaha jaata hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "subjective",
+      "sourceId": "2026:B:3",
+      "subPart": null,
+      "text": {
+        "en": "What do you mean by lateral displacement?",
+        "hi": "पार्श्विक विस्थापन से आप क्या समझते हैं ?",
+        "hinglish": "Parshvik visthapan se aap kya samajhte hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "subjective",
+      "sourceId": "2026:B:4",
+      "subPart": null,
+      "text": {
+        "en": "Define the strength of electric current.",
+        "hi": "विद्युत धारा की प्रबलता की परिभाषा दें।",
+        "hinglish": "Vidyut dhara ki prabalta ki paribhasha dein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "subjective",
+      "sourceId": "2026:B:5",
+      "subPart": null,
+      "text": {
+        "en": "On which factors does the heating effect of electric current depend?",
+        "hi": "विद्युतधारा के उष्मीय प्रभाव किन कारकों पर निर्भर करता है ?",
+        "hinglish": "Vidyutdhara ke ushmaatmak prabhav kin karakon par nirbhar karta hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "subjective",
+      "sourceId": "2026:B:6",
+      "subPart": null,
+      "text": {
+        "en": "What is electromagnetic induction?",
+        "hi": "विद्युत चुम्बकीय प्रेरण किसे कहते हैं ?",
+        "hinglish": "Vidyut chumbakiya preran kise kehte hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2026:B:7",
+      "subPart": null,
+      "text": {
+        "en": "Write Maxwell's right-hand rule.",
+        "hi": "मैक्सवेल का दक्षिण हस्त नियम लिखें।",
+        "hinglish": "Maxwell ka dakshin hast niyam likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "subjective",
+      "sourceId": "2026:B:8",
+      "subPart": null,
+      "text": {
+        "en": "What is a good source of energy?",
+        "hi": "ऊर्जा का अच्छा स्रोत क्या है ?",
+        "hinglish": "Urja ka achha srot kya hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "diagram-required",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": true
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "subjective",
+      "sourceId": "2026:B:9",
+      "subPart": null,
+      "text": {
+        "en": "With the help of ray diagrams, explain the first and second principal focus of convex and concave lenses.",
+        "hi": "किरण आरेखों की मदद से उत्तल और अवतल लेंसों के प्रथम तथा द्वितीय मुख्य फोकस को समझाएं।",
+        "hinglish": "Kiran aarekhon ki madad se uttal aur avatal lenson ke pratham tatha dwitiya mukh naabhi ko samjhaein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "subjective",
+      "sourceId": "2026:B:10",
+      "subPart": null,
+      "text": {
+        "en": "Obtain expression for the equivalent resistances of resistors connected in series and resistors connected in parallel.",
+        "hi": "श्रेणीक्रम में संयोजित प्रतिरोधकों एवं समांतरक्रम में संयोजित प्रतिरोधकों के समतुल्य प्रतिरोधों के लिए व्यंजक प्राप्त करें।",
+        "hinglish": "Shrankram mein sanyojit pratirodhakon evam samaanparakram mein sanyojit pratirodhakon ke samatulya pratirodhon ke liye vyanjak prapt karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 11,
+      "section": "subjective",
+      "sourceId": "2026:B:11",
+      "subPart": null,
+      "text": {
+        "en": "What is a combination reaction?",
+        "hi": "संयोजन अभिक्रिया क्या है ?",
+        "hinglish": "Sanyojan abhikriya kya hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 12,
+      "section": "subjective",
+      "sourceId": "2026:B:12",
+      "subPart": null,
+      "text": {
+        "en": "What is rancidity? Explain with examples.",
+        "hi": "विकृतिगंधिता का क्या अर्थ है ? सोदाहरण समझाऐं।",
+        "hinglish": "Vikritigandhita ka kya arth hai ? Sodaharan samjhaein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 13,
+      "section": "subjective",
+      "sourceId": "2026:B:13",
+      "subPart": null,
+      "text": {
+        "en": "How is sodium carbonate used to soften salty water?",
+        "hi": "खारा जल को मृदु बनाने में सोडियम कार्बोनेट का उपयोग किस प्रकार होता है ?",
+        "hinglish": "Khara jal ko mridu banane mein Sodium carbonate ka upyog kis prakar hota hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 14,
+      "section": "subjective",
+      "sourceId": "2026:B:14",
+      "subPart": null,
+      "text": {
+        "en": "Distilled water is not a conductor of electricity, whereas rain water is a conductor of electricity. why?",
+        "hi": "आसवित जल विद्युत का चालक नहीं होता, जबकि वर्षा जल विद्युत का चालक होता है। क्यों ?",
+        "hinglish": "Aasvit jal vidyut ka chalaak nahi hota, jabki varsha jal vidyut ka chalaak hota hai. Kyon ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 15,
+      "section": "subjective",
+      "sourceId": "2026:B:15",
+      "subPart": null,
+      "text": {
+        "en": "What is the process of roasting?",
+        "hi": "भर्जन(roasting) की क्रिया क्या है ?",
+        "hinglish": "Bhargan (roasting) ki kriya kya hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 16,
+      "section": "subjective",
+      "sourceId": "2026:B:16",
+      "subPart": null,
+      "text": {
+        "en": "Write the structural formulae and names of the isomers of pentane.",
+        "hi": "पेंटेन के समावयवों के संरचना सूत्र एवं उनके नाम लिखें।",
+        "hinglish": "Pentene ke samavayavon ke sanrachna sutra evam unke naam likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 17,
+      "section": "subjective",
+      "sourceId": "2026:B:17",
+      "subPart": null,
+      "text": {
+        "en": "Why do metals have a tendency to lose electrons and form cations?",
+        "hi": "धातुओं में इलेक्ट्रॉन त्यागकर धनायन बनाने की प्रवृति होती है, क्यों ?",
+        "hinglish": "Dhaaton mein electron tyagkar dhanayan banane ki pravriti hoti hai, kyon ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 18,
+      "section": "subjective",
+      "sourceId": "2026:B:18",
+      "subPart": null,
+      "text": {
+        "en": "Mention various measures for conservation of wildlife.",
+        "hi": "वन्य जीवों के संरक्षण के विभिन्न उपायों का उल्लेख करें।",
+        "hinglish": "Vanya jeevon ke sanrakshan ke vibhinn upayon ka ullekh karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 19,
+      "section": "subjective",
+      "sourceId": "2026:B:19",
+      "subPart": null,
+      "text": {
+        "en": "What are natural indicators? How are acids and bases tested with them?",
+        "hi": "प्राकृतिक सूचक क्या होते हैं ? इनसे अम्ल तथा क्षार की जाँच कैसे की जाती है ?",
+        "hinglish": "Prakritik suchak kya hote hain ? Inse aml tatha kshaar ki jaanch kaise ki jaati hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 20,
+      "section": "subjective",
+      "sourceId": "2026:B:20",
+      "subPart": null,
+      "text": {
+        "en": "Differentiate between metals and nonmetals on the basis of physical and chemical properties.",
+        "hi": "भौतिक एवं रसायनिक गुणों के आधार पर धातु एवं अधातु में अंतर स्पष्ट करें।",
+        "hinglish": "Bhautik evam rasayanik gunon ke aadhar par dhatu evam adhatu mein antar spasht karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 21,
+      "section": "subjective",
+      "sourceId": "2026:B:21",
+      "subPart": null,
+      "text": {
+        "en": "What are villi and what is their function?",
+        "hi": "दीर्घरोम क्या है तथा इसका कार्य क्या है ?",
+        "hinglish": "Deerghrom kya hai tatha iska karya kya hai ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 22,
+      "section": "subjective",
+      "sourceId": "2026:B:22",
+      "subPart": null,
+      "text": {
+        "en": "What are stomata and where are they present?",
+        "hi": "स्टोमाटा क्या है तथा वे कहाँ उपस्थित होते हैं ?",
+        "hinglish": "Stomata kya hai tatha ve kahan upasthit hote hain ?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 23,
+      "section": "subjective",
+      "sourceId": "2026:B:23",
+      "subPart": null,
+      "text": {
+        "en": "How are metabolic wastes are removed in unicellular organisms?",
+        "hi": "एक कोशिकीय जीवों में उपापचयी उपशिष्टों को कैसे निष्कासित किया जाता है ?",
+        "hinglish": "Ek koshikiya jeevon mein upapachayi upashishton ko kaise nishkasit kiya jaata hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 24,
+      "section": "subjective",
+      "sourceId": "2026:B:24",
+      "subPart": null,
+      "text": {
+        "en": "What is dialysis?",
+        "hi": "डायलिसिस क्या है ?",
+        "hinglish": "Dialysis kya hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 25,
+      "section": "subjective",
+      "sourceId": "2026:B:25",
+      "subPart": null,
+      "text": {
+        "en": "What are roles of androecium and gynoecium?",
+        "hi": "पुमंग और जायांग का कार्य क्या है ?",
+        "hinglish": "Pumang aur jayang ka karya kya hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 26,
+      "section": "subjective",
+      "sourceId": "2026:B:26",
+      "subPart": null,
+      "text": {
+        "en": "What is neurotransmitter?",
+        "hi": "न्यूरोट्रांसमीटर क्या है ?",
+        "hinglish": "Neurotransmitter kya hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 27,
+      "section": "subjective",
+      "sourceId": "2026:B:27",
+      "subPart": null,
+      "text": {
+        "en": "What do you understand by homologous organs and analogous organs?",
+        "hi": "समजात अंग और समरूप अंग से आप क्या समझते हैं ?",
+        "hinglish": "Samjatiya ang aur samaroop ang se aap kya samajhte hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 28,
+      "section": "subjective",
+      "sourceId": "2026:B:28",
+      "subPart": null,
+      "text": {
+        "en": "What do you mean by producer?",
+        "hi": "उत्पादक से आप क्या समझते हैं ?",
+        "hinglish": "Utpadik se aap kya samajhte hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 29,
+      "section": "subjective",
+      "sourceId": "2026:B:29",
+      "subPart": null,
+      "text": {
+        "en": "What is nutrition? Describe the different modes of nutrition found in living organisms.",
+        "hi": "पोषण क्या है? जीवों में होने वाले विभिन्न पोषण विधियों का वर्णन करें।",
+        "hinglish": "Poshan kya hai? Jeevon mein hone wale vibhinn poshan vidhi ka varnan karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-missing",
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 30,
+      "section": "subjective",
+      "sourceId": "2026:B:30",
+      "subPart": null,
+      "text": {
+        "en": "Write any five differences between sexual and asexual reproduction.",
+        "hi": "लैंगिक तथा अलैंगिक जनन में कोई पाँच अन्तर लिखें।",
+        "hinglish": "Laingik tatha alainik janan mein koi paanch antar likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    }
+  ],
+  "schemaVersion": 1,
+  "totals": {
+    "marksGroupA": 111,
+    "marksGroupB": 46,
+    "objective": 80,
+    "questions": 110,
+    "subjective": 30,
+    "trilingualComplete": 103,
+    "usableInQuiz": 0
+  }
+}

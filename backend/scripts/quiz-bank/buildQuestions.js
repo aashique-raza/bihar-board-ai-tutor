@@ -48,6 +48,30 @@ const BATCH_SIZE = 12;
 const DEVANAGARI = /[ऀ-ॿ]/;
 
 /**
+ * Stage B sometimes wrote its own editorial notes inline into the raw page text — things like
+ * "[Q1 continued]", "[options continue on next page]", "[Section-A ends at Q48]",
+ * "...[continues next page]" — as a breadcrumb for whoever read that page next. Stage C joins
+ * pages faithfully (by design — cleanup is deliberately not its job), so these notes rode
+ * straight through into block text, and from there into what a student would eventually read
+ * and into what got fed to the Hinglish translator.
+ *
+ * This is the one cleanup Stage D is responsible for: strip the bracketed notes themselves
+ * (never delete real content around them) and record on the question that a strip happened, so
+ * it stays visible for review rather than silently "fixed".
+ */
+function stripProvenanceNotes(text) {
+  if (!text) return { text, dirty: false };
+  let cleaned = text
+    .replace(/\[[^\]]*\]/g, ' ')       // "[Q1 continued]" etc.
+    .replace(/\(\s*contd\.?\s*\)/gi, ' ') // "(contd)"
+    .replace(/^\s*\.{3,}\s*/, '')      // leading "..." continuation marker
+    .replace(/\s*\.{3,}\s*$/, '')      // trailing "..." continuation marker
+    .replace(/\s+/g, ' ')
+    .trim();
+  return { text: cleaned, dirty: cleaned !== text.trim() };
+}
+
+/**
  * Bumped whenever SYSTEM_PROMPT changes in a way that should change its output. It is part
  * of the cache key, so tightening the rules regenerates every string instead of leaving old
  * translations sitting next to new ones — which is the only way the cache stays honest.
@@ -224,6 +248,28 @@ async function ensureTranslations(needed, cache, { dryRun }) {
 // block -> question (§5.2)
 // ---------------------------------------------------------------------------
 
+/**
+ * Applies stripProvenanceNotes to every text field on a block (stem + options) and returns a
+ * clean copy alongside the list of sourceIds actually touched — so the caller can flag them.
+ */
+function cleanBlock(block) {
+  let dirty = false;
+  const cleanOne = (t) => {
+    if (!t) return t;
+    const hi = stripProvenanceNotes(t.hi);
+    const en = stripProvenanceNotes(t.en);
+    if (hi.dirty || en.dirty) dirty = true;
+    return { hi: hi.text || null, en: en.text || null };
+  };
+
+  const text = cleanOne(block.text);
+  const options = block.options
+    ? block.options.map((o) => ({ key: o.key, text: cleanOne(o.text) }))
+    : null;
+
+  return { ...block, text, options, __provenanceCleaned: dirty };
+}
+
 /** Every string in a paper that needs Hinglish, as {key, hi, en}. */
 function collectStrings(blocks) {
   const seen = new Map();
@@ -326,7 +372,7 @@ function toQuestion(block, cache) {
       pages: block.provenance?.pdfPages ?? [],
     },
 
-    flags: [...(block.flags || [])],
+    flags: [...(block.flags || []), ...(block.__provenanceCleaned ? ['provenance-note-stripped'] : [])],
   };
 
   question.blockers = computeBlockers(question);
@@ -368,8 +414,9 @@ async function processPaper(paperId, cache, options) {
     throw new Error(`No stage2-blocks/${paperId}.json — run Stage C first.`);
   }
   const source = JSON.parse(fs.readFileSync(blocksPath, 'utf8'));
+  const cleanedBlocks = source.blocks.map(cleanBlock);
 
-  const strings = collectStrings(source.blocks);
+  const strings = collectStrings(cleanedBlocks);
   const uncached = strings.filter((s) => !cache[s.key]).length;
   console.log(`  strings: ${strings.length}  (cached ${strings.length - uncached}, to translate ${uncached})`);
 
@@ -377,7 +424,7 @@ async function processPaper(paperId, cache, options) {
   if (called) console.log(`  llm calls: ${called}`);
   if (failed.length) console.log(`  untranslated after retry: ${failed.length}`);
 
-  const questions = source.blocks.map((block) => toQuestion(block, cache));
+  const questions = cleanedBlocks.map((block) => toQuestion(block, cache));
 
   const objective = questions.filter((q) => q.section === 'objective');
   const trilingual = questions.filter(
