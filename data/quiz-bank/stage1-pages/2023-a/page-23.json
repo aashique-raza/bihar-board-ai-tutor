@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2023-a",
+  "page": 23,
+  "readBy": "both",
+  "raw": {
+    "hi": "42. कौन-सी गैस श्वसन क्रिया में मुक्त होती है ?\n(A) O2\n(B) SO2\n(C) NO2\n(D) CO2\n\n43. [MISSING IN SOURCE - source PDF itself has a yellow-highlighted placeholder reading \"43. question missing\", no Hindi or English question text, no options present at all]\n\n44. ग्लूकोज के पूर्ण ओक्सीकरण से क्या मुक्त होता है?\n(A) केवल CO2\n(B) केवल ऊर्जा\n(C) केवल H2O\n(D) इन सब",
+    "en": "42. Which gas is liberated during respiration?\n(A) O2\n(B) SO2\n(C) NO2\n(D) CO2\n\n43. [MISSING IN SOURCE]\n\n44. What is liberated by complete oxidation of glucose?\n(A) Only CO2\n(B) Only energy\n(C) Only H2O\n(D) All of these\n\n[Page 23]"
+  },
+  "textLayer": "Matches vision for English; Hindi garbled per F2 pattern.",
+  "confidence": "low",
+  "notes": [
+    "Q43 is genuinely absent from the source PDF - not a reading/scan problem. The page itself has a yellow-highlighted placeholder text '43. question missing' baked into the page (both Hindi and English blocks), with no question text or options at all. This confirms the source PDF is a retyped/compiled version (like F5's 2018-b) rather than a raw scan, and the compiler themselves flagged this gap. Do not guess the content - Q43 should be treated as unavailable for this paper, same as any question with no printed answer key (F3-style skip)."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2023-a",
+  "page": 42,
+  "readBy": "both",
+  "raw": {
+    "hi": "खण्ड - ब / SECTION - B\nभौतिक शास्त्र / Physics\nलघु उत्तरीय प्रश्न / Short Answer Type Questions\nप्रश्न संख्या 1 से 8 तक लघु उत्तरीय हैं। इनमें से किन्हीं 4 प्रश्नों के उत्तर दें। प्रत्येक प्रश्न के लिए 2 अंक निर्धारित है।\n\n1. सूर्य की ऊर्जा का स्रोत क्या है ?\n\n2. नाभिकीय विखंडन क्या है?\n\n3. एक लेंस में प्रकाश-किरण किस प्रकार गंमन करती है ? एक आरेख द्वारा व्यक्त करें।",
+    "en": "SECTION - B\nPhysics\nShort Answer Type Questions\nQuestion Nos. 1 to 8 are Short Answer Type. Answer any 4 questions. Each question carries 2 marks.\n\n1. What is the source of energy of the sun?\n\n2. What is nuclear fission?\n\n3. How does a light ray proceed in a lens? Show by a diagram.\n\n[Page 42]"
+  },
+  "textLayer": "Matches vision for English; Hindi garbled per F2 pattern.",
+  "confidence": "high",
+  "notes": [
+    "This is the LAST page in the PDF (page 42 of 42). The cover page (page 1) declared 'Total Printed Pages: 48', but this PDF physically contains only 42 pages - the source is genuinely incomplete, not a reading/scan gap. Section B (subjective, 30 marks: Physics short+long, Chemistry short+long, Biology short+long per the paper's own 80+30=110 total) only got as far as Physics short-answer Q1-3 of 8 before the PDF ends abruptly mid-section. Missing: Physics Q4-8 + long-answer Q9-10, and all of Chemistry and Biology subjective sections (short+long). This paper (2023-a) should be treated as objective-section-complete (80/80 usable for quiz) but subjective-section-incomplete for any future subjective-question work. Matches the pattern seen at page-23 (Q43 'question missing' placeholder) confirming this PDF is a retyped/compiled source, not a raw scan, and the compiler ran out of source material before finishing Section B."
+  ]
+}

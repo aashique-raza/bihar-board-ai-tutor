@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2023-a",
+  "page": 6,
+  "readBy": "both",
+  "raw": {
+    "hi": "8. शुष्क बर्फ का रासायनिक सूत्र क्या है ?\n(A) CO\n(B) CO2\n(C) H2O\n(D) H2O2\n\n9. रक्त का लाल रंग निम्नांकित में से किस प्रोटीन की उपस्थिति के कारण होता है ?\n(A) हेपारीन\n(B) हीमोग्लोबीन\n(C) थ्रोम्बिन\n(D) फाइब्रीनोजेन",
+    "en": "8. What is the chemical formula of dry ice?\n(A) CO\n(B) CO2\n(C) H2O\n(D) H2O2\n\n9. Which one of the following proteins is responsible for the red colour of blood?\n(A) Heparin\n(B) Haemoglobin\n(C) Thrombin\n(D) Fibrinogen\n\n[Page 6]"
+  },
+  "textLayer": "Matches vision for English; Hindi garbled per F2 pattern.",
+  "confidence": "high",
+  "notes": ["Q9 Hindi option (C) rendered as 'थ्रोम्बिन'/'श्रोम्बिन'-like glyph in source, transcribed to match standard spelling 'थ्रोम्बिन' matching English 'Thrombin' - source glyph slightly unclear but unambiguous from English pairing."]
+}

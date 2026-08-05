@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 13/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2025`. `2023-a, 2023-b, 2024-a, 2024-b, 2026` not started (5 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2025` ab poora (34/34 pages + `_manifest.json`), fresh session mein shuru hua (F6 fix), koi usage-limit issue nahi aaya. 5 papers baaki: `2023-a, 2023-b, 2024-a, 2024-b, 2026`. |
+| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 14/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2025`. `2023-b, 2024-a, 2024-b, 2026` not started (4 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2023-a` ab poora (42/42 pages + `_manifest.json`), fresh session mein shuru hua (F6 fix), koi usage-limit issue nahi aaya. 4 papers baaki: `2023-b, 2024-a, 2024-b, 2026`. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage B: `2025` poora fresh session mein (F6 fix). 80+24+6=110 structure, Physics-first Section-A order (unlike 2022's Biology-first). PDF has 3 extra aglasem.com wrapper pages (1 cover + 2 trailing ad pages) beyond the 31 real printed pages — noted, not exam content. Cover-wrapper graphic said "YEAR 2024" but real exam cover confirmed 2025 — not a blocker, just a download-site typo. Several print typos found in the paper itself (English options garbled vs correct Hindi: Q38 mislabeled option letter, Q44/Q50/Q68/Q73 English text typos) — all transcribed as-is, correct version noted for Stage C+. |
+| **Last session** | 2026-08-05 — Stage B: `2023-a` poora fresh session mein (F6 fix). 80+30=110 structure (different split from 2022/2025's 80+24+6). **Bada finding (F7, likely goes in `QUIZ_DATA_PIPELINE.md`):** is PDF ki cover page "Total Printed Pages: 48" declare karti hai, par PDF mein sirf 42 pages hain — genuinely incomplete source, scan/reading issue nahi. Do confirming signals: (1) page-23 pe Q43 ki jagah source ke andar hi ek yellow-highlighted "43. question missing" placeholder mila (Hindi aur English dono block mein) — matlab ye ek retyped/compiled document hai (jaisa F5 ka `2018-b`), raw scan nahi; (2) PDF Section-A (80/80 objective, complete) ke baad Section-B (subjective) sirf Physics short-answer Q1-3 tak jaake achanak khatam ho jaata hai — Physics Q4-8+long, aur poora Chemistry+Biology subjective missing. Paper objective-section ke liye 100% usable hai (quiz ka primary source hai), subjective section ke liye incomplete hai. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -137,6 +137,23 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage B: `2023-a` finished (fresh session per F6 fix)
+- **Bana:** `data/quiz-bank/stage1-pages/2023-a/page-01.json` se `page-42.json` (42/42 pages) +
+  `_manifest.json` (`sourceMd5` computed fresh). Backend `src/` ka koi file touch nahi hua.
+  Fresh session mein shuru hua, poora paper ek hi conversation mein khatam ho gaya.
+- **Paper structure:** 80+30=110 declared (cover confirms), Section-A Physics-first order,
+  40-of-80 answer-any format same as other recent papers.
+- **Bada finding F7 (`QUIZ_DATA_PIPELINE.md` mein likha gaya):** PDF genuinely incomplete —
+  cover declares "Total Printed Pages: 48" par PDF mein sirf 42 hain. Page 23 pe Q43 ki jagah
+  source ke andar hi ek yellow-highlighted "43. question missing" placeholder mila (compiler ne
+  khud flag kiya gap). Section-B Physics short-answer Q1-3 (of 8) tak jaake achanak khatam ho
+  jaata hai — Physics Q4-8+long, aur poora Chemistry+Biology subjective missing. Objective
+  section (Q1-80) 100% usable hai; subjective section incomplete hai.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi (no `src/` file touched — data-only session).
+- **Agla:** naye/fresh session mein next paper from `2023-b, 2024-a, 2024-b, 2026`
+  (4 papers left in Stage B bulk).
 
 ### 2026-08-05 — Stage B: `2025` finished (fresh session per F6 fix)
 - **Bana:** `data/quiz-bank/stage1-pages/2025/page-01.json` se `page-34.json` (34/34 pages) +

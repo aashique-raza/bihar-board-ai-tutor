@@ -299,6 +299,32 @@ likha gaya taaki agla session isi rule se chale.
 
 ---
 
+#### 🟡 F7 — `2023-a` PDF genuinely incomplete: cover declares 48 printed pages, PDF has only 42 (Stage B batch 7, 2026-08-05)
+
+`2023 a.pdf` ka cover page (page 1) khud declare karta hai "Total Printed Pages : 48", par
+PyMuPDF se verify karne par PDF mein **sirf 42 pages** hain. Do independent signals confirm karte
+hain ki ye ek reading/scan problem nahi, balki source hi incomplete hai:
+
+1. **Page 23 pe Q43 ki jagah ek literal placeholder mila** — source ke andar hi yellow-highlighted
+   text "43. question missing" print hai (Hindi aur English dono block mein), na koi sawaal na
+   options. Ye khud compiler ne flag kiya hua gap hai.
+2. **Section-B achanak beech mein khatam ho jaata hai** — Section A (80/80 objective) poora hai,
+   par Section B (subjective, 30 marks declared: Physics+Chemistry+Biology short+long) sirf
+   Physics short-answer Q1-3 (of 8) tak jaake PDF khatam ho jaata hai. Physics Q4-8+long-answer,
+   aur poora Chemistry+Biology subjective section missing hai.
+
+**F5 se fark:** F5 (`2018-b`) poora paper retyped tha par **complete** tha. Ye alag hai — ye bhi
+retyped/compiled lagta hai (F7 ka signal #1 isi ki taraf ishara karta hai), par compiler khud
+**beech mein ruk gaya**, poora nahi kiya.
+
+**Impact:** `2023-a` objective section (Q1-80) ke liye **100% usable hai** — quiz ka primary
+source objective questions hain, isliye ye paper bank mein poora count hoga. Subjective section
+sirf partial hai (Physics Q1-3 of 8) — future kisi subjective-question phase mein iska use karte
+waqt ye incompleteness yaad rakhni hai. Stage B ka koi rework nahi chahiye — jo mila wahi likha
+gaya (rule "jo dikha wahi likho" ke mutabik), missing content guess nahi kiya gaya.
+
+---
+
 ### 3.2 Plan mein jo 18 kamiyan mili aur unka fix
 
 | # | Kami | Fix |

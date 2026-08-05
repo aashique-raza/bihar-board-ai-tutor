@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2023-a",
+  "page": 1,
+  "readBy": "both",
+  "raw": {
+    "hi": "प्रश्न पुस्तिका क्रमांक / Question Booklet Serial No.: 112-\nSECONDARY SCHOOL EXAMINATION - 2023\nमाध्यमिक स्कूल परीक्षा - 2023\n(ANNUAL / वार्षिक)\nविषय कोड / Subject Code: 112\nप्रश्न पुस्तिका सेट कोड / Question Booklet Set Code: J\nSCIENCE (Compulsory)\nविज्ञान (अनिवार्य)\nकुल प्रश्न / Total Questions: 80 + 30 = 110\n(समय: 2 घंटे 45 मिनट)\nकुल मुद्रित पृष्ठ / Total Printed Pages: 48\n(पूर्णांक: 80)\n\nपरीक्षार्थियों के लिये निर्देश:\n1. परीक्षार्थी OMR उत्तर पत्रक पर अपना प्रश्न पुस्तिका क्रमांक (10 अंकों का) अवश्य लिखें।\n2. परीक्षार्थी यथासंभव अपने शब्दों में ही उत्तर दें।\n3. दाहिनी ओर हाशिये पर दिये हुए अंक पूर्णांक निर्दिष्ट करते हैं।\n\n[Page 1]",
+    "en": "Question Booklet Serial No.: 112-\nSECONDARY SCHOOL EXAMINATION - 2023\n(ANNUAL)\nSubject Code: 112\nQuestion Booklet Set Code: J\nSCIENCE (Compulsory)\nTotal Questions: 80 + 30 = 110\n[Time: 2 Hours 45 Minutes]\nTotal Printed Pages: 48\n[Full Marks: 80]\n\nInstructions for the candidates:\n1. Candidates must enter his/her Question Booklet Serial No. (10 Digits) in the OMR Answer Sheet.\n2. Candidates are required to give their answers in their own words as far as practicable.\n3. Figures in the right hand margin indicate full marks.\n\n[Page 1]"
+  },
+  "textLayer": "PDF page 1 has almost no extractable text (title page is mostly graphic/stylized text) - vision was primary source here.",
+  "confidence": "high",
+  "notes": [
+    "Declared totals: 80 objective + 30 subjective = 110 questions, Full Marks 80, Total Printed Pages 48 - different split from 2022 (80+24+6=110). Need to confirm actual subjective breakdown in Section B.",
+    "Total Printed Pages declared as 48 but this PDF has only 42 pages - possible non-exam wrapper/extra pages missing from this PDF, or declared count includes blank/OMR pages not scanned. Flag for Stage C+."
+  ]
+}
