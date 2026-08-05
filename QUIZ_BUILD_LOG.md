@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk) — ✅ COMPLETE.** All 18/18 usable papers done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2024-a`, `2024-b`, `2025`, `2026`. (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B (bulk page-reading) complete — next is Stage C (question blocks) across all 18 papers. |
+| **Sub-stage** | **Stage C (question blocks) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildBlocks.js` chala hua, `data/quiz-bank/stage2-blocks/<paperId>.json` ban chuki hai. 761 MCQ blocks total, 94.7% clean option-parse. Known residual gaps: `2024-b` = 0 blocks (Stage B data format issue, needs Stage B rerun — see Parking Lot), `2023-a` Group B mostly missing (genuine incomplete source PDF, F7, already documented), `2018-a` Q4 lost (scan clipping, documented inline by Stage B itself). |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B (bulk page-reading) complete. 🟢 Stage C (question blocks) complete — next is Stage D (structure + 3 languages) across all 18 papers. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage B: `2026` poora fresh session mein (F6 fix). Page 1 par pehle confirm kiya (F8 lesson): ye paper Bihar Board ka apna official **"MODEL QUESTION PAPER"** hai 2026 exam ke liye, na ki koi real attempted paper — user se poochha (naya STOP jaisa F4/F8), user ne **include as-is confirm kiya**, clearly flag karke ki ye model paper hai (koi pen-marks nahi, kabhi attempt hi nahi hua). 30 PDF pages = 30 declared printed pages (bilkul match, is baar koi front-page ya trailing-page gap nahi). Structure confirm hua: 80+30=110 (cover ka "100+30+8=138" total galat hai, ignore kiya jaise 2024-b jaisi anomalies). Section-A subject blocks is baar clean/contiguous the (Physics Q1-27, Chemistry Q28-51, Biology Q52-80) — 2024-b ka interleaving is paper mein nahi. Do chhote print typo mile (Q46 option D duplicate, Q32 "2Kcl"), do jagah per-question marks missing (Q9/Q10, Q26-28) jahan section header source-of-truth hai. **Ye Stage B bulk ka aakhri paper tha — sab 18 usable papers ab done hain.** |
+| **Last session** | 2026-08-05 — Stage C run twice via Antigravity (user experiment, see note below) then finished by Claude after Antigravity's fixes proved incomplete/wrongly verified. See Session History for full detail — this was a big, multi-round session. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -106,6 +106,8 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-10 | Answer key ke andar **"देखें <year> ... का उत्तर" (cross-reference) answers** — `2017-c` aur `2017-d` dono mein mila (3 alag questions total: 2017-c Physics Q9-Q10, 2017-d Physics Q7+Q10-main, Biology Q10-OR). Ye guide-book key kabhi-kabhi asli jawab likhne ke bajaye kisi **doosre paper/shift** ka reference de deta hai (jaise "2014(A) द्वितीय पाली Q7") jo hamare 21-PDF set mein confirm nahi hai. Stage E jab is tarah ka answer text dekhe to usse "unanswered" treat kare, RAG/textbook route le — parse karne ki koshish na kare. | `data/quiz-bank/stage1-pages/2017-c/`, `2017-d/` (page-05, page-08 wagaira) | Stage B batch 2 session, 2026-08-04 | 🟡 Medium — Stage E ka logic isse aware hona chahiye, warna galat parse ho sakta hai |
 | P-11 | `2017-a` aur `2017-d` — **do alag PDF files (confirmed distinct MD5) ka poora question set (50/50) word-for-word identical hai**, Group A aur Group B dono. `2017-a` ke paas answer key nahi hai, `2017-d` ke paas hai — matlab Stage F dedup jab in dono ko link karega, `2017-d` ki key `2017-a` ke sawaalon ka bhi jawab de degi. Ye blocker nahi hai (Stage F apne aap handle karega dedup logic se), sirf ek note hai ki ye link zaroor bane. | `data/quiz-bank/stage1-pages/2017-a/`, `2017-d/` manifests | Stage B batch 2 session, 2026-08-04 | 🟢 Low — Stage F ke design ka hi hissa hai, sirf yaad rakhna hai |
 | P-12 | `survey.json` (Stage A output) mein `2023-a` aur `2023-b` ke `pages` field **galat hain** — likha hai 1 aur 2, PyMuPDF se verify kiya to asal mein **42 aur 49 pages** hain. Content extraction sahi tha (`textChars`, `sample` field dono mein meaningful text hai) — sirf page-count parsing buggy nikla in do files ke liye. Stage B ko block nahi karta (apna independent PyMuPDF render use hota hai), par Stage A ka survey script kabhi fix hona chahiye taaki future reports sahi ginti dein. | `data/quiz-bank/reports/survey.json` (`2023-a`, `2023-b` entries) | Stage B batch 6 planning, 2026-08-04 | 🟡 Medium — abhi kisi ko galat direction nahi de raha (batch planning hand-verify se hua), par agar koi survey.json pe bharosa kare to batch-sizing galat ho sakti hai |
+| P-13 | `2024-b` ka Stage C output **0 blocks** hai — Stage B ne is paper ka data `\|`-separated single mega-lines mein store kiya (koi `\n` nahi), isliye line-based segmentation (jo Stage C ka poora base hai) kaam nahi karta. Stage B page-reading is paper ke liye dobara karni hogi (sahi newline-separated format mein) — Stage C script khud theek hai, iska proof yehi hai ki baaki 17 papers pe sahi kaam karta hai. | `data/quiz-bank/stage1-pages/2024-b/` | Antigravity Stage C run, 2026-08-05 | 🟠 Medium — 1 paper ka poora data abhi quiz bank mein nahi hai |
+| P-14 | `2018-a` mein Q4 ka number scan mein clip ho gaya tha (Stage B ne khud inline note likha: "question number clipped at top edge"). Stage C ka naya gap-tolerance fix (+3 tak) ne is wajah se hone wala bada cascade bug (dozens of questions ek hi option mein swallow ho jaana) रोक diya, par khud Q4 ka content ab bhi Q3 ke last option ke andar hi fused hai (uska apna sourceId kabhi nahi banega) — iske liye ya to us page ko manually dobara padhna hoga, ya Q4 ko permanently "lost" maan ke chhodna hoga. | `data/quiz-bank/stage2-blocks/2018-a.json` (`2018-a:A:3` ka option D) | Stage C fix session, 2026-08-05 | 🟢 Low — 1 question, already visible via paper flag `"A: number jumped from 3 to 5"` |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -137,6 +139,43 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage C: all 18 papers (user's Antigravity experiment → Claude finished it)
+- **User experiment:** user ke paas Antigravity (Sonnet/Opus) bhi hai, wo test karna chahta tha
+  ki kya Stage C jaisa mechanical script-run stage Antigravity ko diya ja sakta hai. Do handoff
+  prompt files banaye (`tasks/handoff-stage-c-antigravity.md`, `tasks/handoff-stage-c-fix-antigravity.md`).
+- **Round 1 (Antigravity):** `npm run quiz:blocks` sab 18 papers pe chalaya, report diya "sab
+  paper-format diversity hai, expected hai". **Claude ne verify kiya to galat nikla** — asal
+  mein `buildBlocks.js` ka header-regex sirf pilot paper ki wording ("ग्रुप"/"GROUP") pehchanta
+  tha; 17/18 papers "खण्ड"/"भाग"/"SECTION" jaisi alag wording use karte hain, isliye har paper
+  (pilot chhodke) cover-page se hi galat segment ho raha tha.
+- **Round 2 (Antigravity):** header-regex fix kiya (`(?!\w)` lookahead Devanagari `\b` bug ke
+  liye bhi), verify kiya `2016-a` regression-safe hai. **Claude ne phir verify kiya to ek aur,
+  bahut bada issue mila** jo Antigravity ne count/flag hi dekha, block ka actual text kabhi
+  padha nahi: Group B (subjective section, paper ke 20-30 marks) har modern paper mein garbage
+  ya 0 blocks de raha tha, kyunki script ka poora Group-B-parsing logic sirf pilot ke MCQ
+  stem+roman-subpart shape ke liye tha — modern papers ka Group B ek bilkul alag shape hai
+  (ascending short/long-answer, subject-header breaks ke saath).
+- **User ne bola "ab tum khud handle karo".** Claude ne khud fix kiya — 5 real bugs, sab raw
+  Stage B text se verify karke (guess nahi): (1) header regex 3 variants (2) Group B shape
+  structurally detect karna (stem vs ascending, ek adjacent-ascending-pair test se) (3) MCQ
+  option letters 3 style (lowercase, uppercase, bare-dot, Devanagari अ/ब/स/द) (4) `[Page N]`
+  breadcrumb jo trailing marks ko chhupa raha tha (5) guide-book papers ka printed answer key
+  ("उत्तरमाला") Group B ke ascending-count ko confuse kar raha tha (6) ek missing/clipped
+  question-number (`2018-a` Q4) poore paper ke baaki hisse ko ek hi option mein swallow kar raha
+  tha — ±3 gap-tolerance add kiya, gap ab paper-flag mein visible hai, silent nahi.
+- **Result:** sab 18 papers ke `stage2-blocks/<paperId>.json` bane. **761 MCQ blocks total,
+  94.7% clean option-parse.** `2016-a` pilot byte-identical (sirf 2 naye transparency flags
+  add hue, block content zero-diff) — regression-safe confirm hua.
+- **Residual gaps (Parking Lot P-13, P-14):** `2024-b` = 0 blocks (Stage B data-format issue,
+  alag paper, Stage B rerun chahiye), `2023-a` Group B mostly missing (genuine incomplete
+  source, pehle se F7 mein documented), `2018-a` Q4 lost (source scan clipping, ab visible via
+  paper flag, permanently unrecoverable bina us page ko dobara padhe).
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6) · baad mein bilkul wahi. Koi regression.
+- **Lesson liya:** Antigravity mechanical-looking stages bhi verify kiye bina trust nahi kiye
+  ja sakte — dono round mein usne count/flag dekha, kabhi actual block **text** nahi padha, isi
+  wajah se dono baar galat "sab theek hai" report diya.
+- **Agla:** Stage D — structure + 3 languages (Hindi/English/Hinglish), sab 18 papers pe.
 
 ### 2026-08-05 — Stage B: `2026` finished — Stage B bulk COMPLETE (fresh session per F6 fix)
 - **Bana:** `data/quiz-bank/stage1-pages/2026/page-01.json` se `page-30.json` (30/30 pages) +

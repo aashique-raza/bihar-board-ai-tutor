@@ -1,0 +1,28 @@
+{
+  "blocks": [],
+  "flags": [
+    "groupA-classified-subjective",
+    "groupB-shape-ascending-classified-subjective"
+  ],
+  "paper": {
+    "declaredMarks": {
+      "A": null,
+      "B": null
+    },
+    "paperId": "2024-b",
+    "pdfPages": 39,
+    "printedPages": 40,
+    "sourceFile": "2024 b.pdf",
+    "sourceMd5": "d6094ecbc54f293890674977124eb0ad"
+  },
+  "schemaVersion": 1,
+  "totals": {
+    "alternatives": 0,
+    "blocks": 0,
+    "blocksWithFlags": 0,
+    "groupA": 0,
+    "groupB": 0,
+    "marksGroupA": 0,
+    "marksGroupB": 0
+  }
+}

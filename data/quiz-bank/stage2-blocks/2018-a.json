@@ -1,0 +1,2803 @@
+{
+  "blocks": [
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Principal focus",
+            "hi": "मुख्य फोकस"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Radius of curvature",
+            "hi": "वक्रता त्रिज्या"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Principal axis",
+            "hi": "प्रधान अक्ष"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Aperture",
+            "hi": "गोलीय दर्पण का द्वारक"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "objective",
+      "sourceId": "2018-a:A:1",
+      "subPart": null,
+      "text": {
+        "en": "The diameter of a circular outline of the reflecting surface of spherical mirror is called",
+        "hi": "गोलीय दर्पण के परावर्तक पृष्ठ की वृत्ताकार सीमा रेखा का व्यास कहलाता है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "+ 8cm",
+            "hi": "+ 8cm"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "- 8cm",
+            "hi": "– 8cm"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "+ 16 cm",
+            "hi": "+ 16 cm"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "- 16cm",
+            "hi": "– 16cm"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "objective",
+      "sourceId": "2018-a:A:2",
+      "subPart": null,
+      "text": {
+        "en": "Which one of the following is focal length of the convex mirror whose radius of curvature is 32cm?",
+        "hi": "निम्नलिखित में से कौन उत्तल दर्पण की फोकस दूरी है जिसकी वक्रता त्रिज्या 32 cm है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Real and inverted",
+            "hi": "वास्तविक और उल्टा"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Real and erect",
+            "hi": "वास्तविक और सीधा"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Virtual and erect",
+            "hi": "आभासी और सीधा"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Virtual and inverted [question number clipped at top edge — this is Q4, continuing straight after Q3 on page 2] Most of the refraction for the light rays entering the eye occurs at - (A) Interface of aqueous humour (B) Interface of eye lens (C) Outer surface of cornea (D) none of these",
+            "hi": "आभासी और उल्टा [क्रमांक शीर्ष पर कटा हुआ — यह प्रश्न 4 है, पृष्ठ 2 के प्रश्न 3 के तुरंत बाद] नेत्र में प्रवेश करने वाली प्रकाश किरणों का अधिकांश अपवर्तन होता है – (A) नेत्रोद अंतर पृष्ठ पर (B) अभिनेत्र के अंतरापृष्ठ पर (C) कॉर्निया के बाहरी पृष्ठ पर (D) इनमें से कोई नहीं"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "objective",
+      "sourceId": "2018-a:A:3",
+      "subPart": null,
+      "text": {
+        "en": "What will be the nature of the image of an object, if magnification of the image is negative?",
+        "hi": "यदि किसी बिम्ब का प्रतिबिम्ब का आवर्धन ऋणात्मक है तो उस प्रतिबिम्ब की प्रकृति क्या होगी?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Red",
+            "hi": "लाल"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Orange",
+            "hi": "नारंगी"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Green",
+            "hi": "हरा"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "objective",
+      "sourceId": "2018-a:A:5",
+      "subPart": null,
+      "text": {
+        "en": "When sunlight passes through the atmosphere, which colour of light gets scattered strongly by the fine particles in air?",
+        "hi": "जब सूर्य का प्रकाश वायुमंडल से गुजरता है, तो वायु के सूक्ष्म कण किस रंग के प्रकाश को अधिक प्रबलता से प्रकीर्ण करते हैं?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "50 Hz",
+            "hi": "50 Hz"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "60 Hz",
+            "hi": "60 Hz"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "70 Hz",
+            "hi": "70 Hz"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "80 Hz",
+            "hi": "80 Hz"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "objective",
+      "sourceId": "2018-a:A:6",
+      "subPart": null,
+      "text": {
+        "en": "In India, the frequency of produced alternating current is",
+        "hi": "भारत में उत्पादित प्रत्यावर्ती विद्युत धारा की आवृत्ति है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "0.5V",
+            "hi": "0.5V"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "0.05V",
+            "hi": "0.05V"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "0.005V",
+            "hi": "0.005V"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "0.0005V",
+            "hi": "0.0005V"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "objective",
+      "sourceId": "2018-a:A:7",
+      "subPart": null,
+      "text": {
+        "en": "There are 20 divisions between 0V and 1V on the scale of a voltmeter. The least count of the voltmeter is",
+        "hi": "किसी वोल्टमीटर के स्केल पर 0V और 1V के बीच 20 विभाजन चिन्ह हैं, तो उस वोल्टमीटर का अल्प मापांक (Least count) है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "10⁻⁴A",
+            "hi": "10⁻⁴A"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "10⁻⁵A",
+            "hi": "10⁻⁵A"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "10⁻⁶A",
+            "hi": "10⁻⁶A"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "10⁻⁷A",
+            "hi": "10⁻⁷A"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "objective",
+      "sourceId": "2018-a:A:8",
+      "subPart": null,
+      "text": {
+        "en": "Which one of the following is one micro ampere of electric current?",
+        "hi": "एक माइक्रो एम्पीयर विद्युत धारा निम्नलिखित में कौन सी है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "from North to South pole",
+            "hi": "उत्तर ध्रुव से दक्षिण ध्रुव"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "from South pole to North pole",
+            "hi": "दक्षिण ध्रुव से उत्तर ध्रुव"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "from North pole to Western pole",
+            "hi": "उत्तर ध्रुव से पश्चिमी ध्रुव"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "from South pole to Western pole",
+            "hi": "दक्षिण ध्रुव से पश्चिमी ध्रुव"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "objective",
+      "sourceId": "2018-a:A:9",
+      "subPart": null,
+      "text": {
+        "en": "What is the direction of magnetic field lines inside a bar magnet?",
+        "hi": "किसी छड़ चुम्बक के अंदर चुम्बकीय क्षेत्र रेखाओं की दिशा क्या होती है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Red",
+            "hi": "लाल"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Green",
+            "hi": "हरा"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Black",
+            "hi": "काला"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "objective",
+      "sourceId": "2018-a:A:10",
+      "subPart": null,
+      "text": {
+        "en": "In domestic electric circuit, the colour of neutral wire is",
+        "hi": "घरेलू विद्युत परिपथ में उदासीन तार का रंग होता है"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Electric generator",
+            "hi": "विद्युत जनित्र"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Electric motor",
+            "hi": "विद्युत मोटर"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Galvanometer",
+            "hi": "गैल्वेनोमीटर"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Volt meter",
+            "hi": "वोल्टमीटर"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 11,
+      "section": "objective",
+      "sourceId": "2018-a:A:11",
+      "subPart": null,
+      "text": {
+        "en": "In which device, the split ring acts as commutator?",
+        "hi": "किस युक्ति में विभक्त वलय दिक् परिवर्तन का कार्य करता है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Thermal energy",
+            "hi": "तापीय ऊर्जा"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Nuclear energy",
+            "hi": "नाभिकीय ऊर्जा"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Solar energy",
+            "hi": "सौर ऊर्जा"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Potential energy",
+            "hi": "स्थितिज ऊर्जा"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 12,
+      "section": "objective",
+      "sourceId": "2018-a:A:12",
+      "subPart": null,
+      "text": {
+        "en": "Which energy does a hydro electric power plant convert into electric energy?",
+        "hi": "जल विद्युत संयंत्र किस ऊर्जा को विद्युत ऊर्जा में रूपांतरित करता है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Rajasthan",
+            "hi": "राजस्थान"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Maharashtra",
+            "hi": "महाराष्ट्र"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Uttar Pradesh",
+            "hi": "उत्तर प्रदेश"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Gujarat",
+            "hi": "गुजरात"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 13,
+      "section": "objective",
+      "sourceId": "2018-a:A:13",
+      "subPart": null,
+      "text": {
+        "en": "In which State, Narora nuclear power reactor is situated?",
+        "hi": "नरौरा नाभिकीय विद्युत संयंत्र किस राज्य में स्थित है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CaO",
+            "hi": "CaO"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ca(OH)₂",
+            "hi": "Ca(OH)₂"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "CaCO₃",
+            "hi": "CaCO₃"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Ca",
+            "hi": "Ca"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 14,
+      "section": "objective",
+      "sourceId": "2018-a:A:14",
+      "subPart": null,
+      "text": {
+        "en": "Which one of the following is slaked lime?",
+        "hi": "निम्नलिखित में से कौन सा बुझा हुआ चूना है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Combination reaction",
+            "hi": "संयोजन अभिक्रिया"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "displacement reaction",
+            "hi": "विस्थापन अभिक्रिया"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Double displacement reaction",
+            "hi": "द्विविस्थापन अभिक्रिया"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "decomposition reaction",
+            "hi": "वियोजन अभिक्रिया"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 15,
+      "section": "objective",
+      "sourceId": "2018-a:A:15",
+      "subPart": null,
+      "text": {
+        "en": "Zn + CuSO₄ → ZnSO₄ + Cu The above reaction is an example of a",
+        "hi": "Zn + CuSO₄ → ZnSO₄ + Cu उपर दी गयी रासायनिक अभिक्रिया किस प्रकार की है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 5,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 16,
+      "section": "objective",
+      "sourceId": "2018-a:A:16",
+      "subPart": null,
+      "text": {
+        "en": "A solution turns blue litmus paper red; its pH is likely to be",
+        "hi": "कोई विलयन नीले लिटमस पत्र को लाल कर देता है, इसका pH संभवतः होगा –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Orange",
+            "hi": "संतरा"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Tomato",
+            "hi": "टमाटर"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Vinegar",
+            "hi": "सिरका"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Tamarind",
+            "hi": "इमली"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 17,
+      "section": "objective",
+      "sourceId": "2018-a:A:17",
+      "subPart": null,
+      "text": {
+        "en": "Which one of the following is the natural source of Oxalic acid?",
+        "hi": "ऑक्सैलिक अम्ल का प्राकृतिक स्रोत निम्नलिखित में कौन है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Mg",
+            "hi": "Mg"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ca",
+            "hi": "Ca"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Na",
+            "hi": "Na"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "K",
+            "hi": "K"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 18,
+      "section": "objective",
+      "sourceId": "2018-a:A:18",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is the most reactive metal?",
+        "hi": "निम्नलिखित में कौन सबसे अधिक अभिक्रियाशील धातु है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "3:2",
+            "hi": "3:2"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2:3",
+            "hi": "2:3"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3:1",
+            "hi": "3:1"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "1:3",
+            "hi": "1:3"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 19,
+      "section": "objective",
+      "sourceId": "2018-a:A:19",
+      "subPart": null,
+      "text": {
+        "en": "In what ratio, the concentrated Hydrochloric acid and the concentrated Nitric acid solutions are present in freshly prepared aqua regia (royal water) solution",
+        "hi": "ऐक्वा रेजिया (रॉयल जल) किस अनुपात में सान्द्र हाइड्रोक्लोरिक अम्ल एवं सांद्र नाइट्रिक अम्ल का ताजा मिश्रण होता है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Ketone",
+            "hi": "कीटोन"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Carboxylic acid",
+            "hi": "कार्बोक्सिलिक अम्ल"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Alcohol",
+            "hi": "ऐल्कोहॉल"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Aldehyde",
+            "hi": "ऐल्डिहाइड"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 20,
+      "section": "objective",
+      "sourceId": "2018-a:A:20",
+      "subPart": null,
+      "text": {
+        "en": "Which one of the following is the functional group of —C(H)(=O)— ?",
+        "hi": "—C(H)(=O)— का प्रकार्यात्मक समूह निम्नलिखित में कौन है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "7 covalent bonds",
+            "hi": "7 सह संयोजक आबंध हैं"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "8 covalent bonds",
+            "hi": "8 सह संयोजक आबंध हैं"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "9 covalent bonds",
+            "hi": "9 सह संयोजक आबंध हैं"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "10 covalent bonds",
+            "hi": "10 सह संयोजक आबंध हैं"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 21,
+      "section": "objective",
+      "sourceId": "2018-a:A:21",
+      "subPart": null,
+      "text": {
+        "en": "Propane, with the molecular formula C₃H₈ has",
+        "hi": "प्रोपेन का आण्विक सूत्र C₃H₈ है, इसमें –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "increases",
+            "hi": "बढ़ता है"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "decreases",
+            "hi": "घटता है"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "remains unchanged",
+            "hi": "अपरिवर्तित रहता है"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 22,
+      "section": "objective",
+      "sourceId": "2018-a:A:22",
+      "subPart": null,
+      "text": {
+        "en": "In moving from left to right across the period of the modern periodic table, the atomic size",
+        "hi": "आधुनिक आवर्त सारणी में बाई से दाई ओर जाने पर परमाणु साइज (आकार) –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 7,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "",
+            "hi": ""
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 23,
+      "section": "objective",
+      "sourceId": "2018-a:A:23",
+      "subPart": null,
+      "text": {
+        "en": "How many vertical column (Groups) are in modern periodic table?",
+        "hi": "आधुनिक आवर्त सारणी में कितने उर्ध्व स्तम्भ हैं?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Green",
+            "hi": "हरा"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Orange",
+            "hi": "नारंगी"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 24,
+      "section": "objective",
+      "sourceId": "2018-a:A:24",
+      "subPart": null,
+      "text": {
+        "en": "A student adds a few drops of universal indicator to a dilute solution of sodium bicarbonate taken in a test tube, which of the following colours would be observed?",
+        "hi": "एक छात्र जाँच परखनली में लिए गये सोडियम बाइकार्बोनेट के तनु विलयन में सार्वत्रिक सूचक की कुछ बूँदें मिलाता है, तो निम्नलिखित में कौन सा रंग दिखेगा?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीली"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Blue",
+            "hi": "नीली"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Dazzling white",
+            "hi": "चमकीला उजला"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Red",
+            "hi": "लाल"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 25,
+      "section": "objective",
+      "sourceId": "2018-a:A:25",
+      "subPart": null,
+      "text": {
+        "en": "When Magnesium ribbon is ignited, the flame produced by it is",
+        "hi": "जब मैग्नेशियम फीता को जलाया जाता है, तो उत्पन्न आग की लौ होती है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "ZnSO₄",
+            "hi": "ZnSO₄"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "CuSO₄",
+            "hi": "CuSO₄"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "FeSO₄",
+            "hi": "FeSO₄"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Al₂(SO₄)₃",
+            "hi": "Al₂(SO₄)₃"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 26,
+      "section": "objective",
+      "sourceId": "2018-a:A:26",
+      "subPart": null,
+      "text": {
+        "en": "An iron nail was dipped in solution kept in a test tube. After half an hour, it was observed that colour of the solution has changed. The solution in test tube was",
+        "hi": "एक जाँच परखनली में लिए गये विलयन में एक लोहे की कील को डुबाया गया। आधे घंटे के बाद यह देखा गया कि विलयन का रंग परिवर्तित हो चुका है। उस जाँच परखनली में विलयन था –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Barometer",
+            "hi": "बैरोमीटर"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Manometer",
+            "hi": "मैनोमीटर"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Sphygmomanometer",
+            "hi": "स्फाइग्नो-मैनोमीटर"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 27,
+      "section": "objective",
+      "sourceId": "2018-a:A:27",
+      "subPart": null,
+      "text": {
+        "en": "Which one of the following instruments is used for measuring Blood Pressure?",
+        "hi": "निम्नलिखित में कौन से यंत्र का उपयोग रक्तदाब मापने में किया जाता है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Red Blood cells",
+            "hi": "लाल रक्त कोशिकाएँ (R.B.C.)"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "White Blood cells",
+            "hi": "श्वेत रक्त कोशिकाएँ (W.B.C.)"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Platelets",
+            "hi": "प्लेटलेट्स"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Lymph",
+            "hi": "लसीका"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 28,
+      "section": "objective",
+      "sourceId": "2018-a:A:28",
+      "subPart": null,
+      "text": {
+        "en": "What component of Blood prevents bleeding by clot formation at points of injury?",
+        "hi": "रक्त का कौन सा अवयव घायल स्थान से रक्त स्राव के मार्ग को रक्त का थक्का बनाकर अवरुद्ध करता है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Sodium",
+            "hi": "सोडियम"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Chlorine",
+            "hi": "क्लोरीन"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Phosphorus",
+            "hi": "फॉस्फोरस"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से सभी"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 29,
+      "section": "objective",
+      "sourceId": "2018-a:A:29",
+      "subPart": null,
+      "text": {
+        "en": "What is the necessary element for the thyroid gland to make thyroxine hormone?",
+        "hi": "अवटुग्रंथि को थायरॉक्सिन हार्मोन बनाने के लिए क्या आवश्यक है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Fore - Brain",
+            "hi": "अग्र मस्तिष्क"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Mid - Brian",
+            "hi": "मध्य मस्तिष्क"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Cerebellum",
+            "hi": "अनुमस्तिष्क"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 30,
+      "section": "objective",
+      "sourceId": "2018-a:A:30",
+      "subPart": null,
+      "text": {
+        "en": "What part of the brain maintains posture and equilibrium of the body?",
+        "hi": "मस्तिष्क का कौन सा भाग शरीर की स्थिति तथा संतुलन का अनुरक्षण करता है।"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "growth of shoot tip in length",
+            "hi": "प्ररोह के अग्रभाग की लम्बाई में वृद्धि के लिए"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "growth of stem",
+            "hi": "तने के वृद्धि के लिए"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "bending the plant towards light",
+            "hi": "पादप का प्रकाश की ओर मुड़ने के लिए"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 31,
+      "section": "objective",
+      "sourceId": "2018-a:A:31",
+      "subPart": null,
+      "text": {
+        "en": "Plant hormone 'Cytokinins' is helpful for",
+        "hi": "पादप हार्मोन 'साइटोकिनिन' सहायक है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Vegetative propagation",
+            "hi": "कायिक प्रवर्धन"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Spore formation",
+            "hi": "बीजाणु समरागम"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Budding",
+            "hi": "मुकुलन"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Fission",
+            "hi": "विखंडन"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 32,
+      "section": "objective",
+      "sourceId": "2018-a:A:32",
+      "subPart": null,
+      "text": {
+        "en": "Which one of the following is the mode of reproduction in Hydra?",
+        "hi": "हाइड्रा में प्रजनन की विधि निम्नलिखित में से कौन है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Sepals",
+            "hi": "बाह्यदल"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Petals",
+            "hi": "पंखुड़ी"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Stamens",
+            "hi": "पुंकेसर"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Carpels",
+            "hi": "स्त्रीकेसर"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 33,
+      "section": "objective",
+      "sourceId": "2018-a:A:33",
+      "subPart": null,
+      "text": {
+        "en": "Which part of a flower produces pollen grains?",
+        "hi": "पुष्प का कौन सा भाग परागकण बनाता है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Ovary",
+            "hi": "अंडाशय"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Uterus",
+            "hi": "गर्भाशय"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Vas deferens",
+            "hi": "शुक्रवाहिका"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Oviduct",
+            "hi": "डिंब वाहिनी"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 34,
+      "section": "objective",
+      "sourceId": "2018-a:A:34",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is not a part of the female reproductive system in human being?",
+        "hi": "निम्न में से कौन मानव में मादा जनन तंत्र का भाग नहीं है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Charles Darwin",
+            "hi": "चार्ल्स डारविन"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Robert Hooke",
+            "hi": "रोबर्ट हूक"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "J.C. Bose",
+            "hi": "जे. सी. बोस"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Gregor Johann Mendel",
+            "hi": "ग्रेगर जोहान मेंडल"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 35,
+      "section": "objective",
+      "sourceId": "2018-a:A:35",
+      "subPart": null,
+      "text": {
+        "en": "Who propounded the laws of Inheritance?",
+        "hi": "वंशागत नियमों का प्रतिपादन किसने किया?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "XY",
+            "hi": "XY"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "XX",
+            "hi": "XX"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "YY",
+            "hi": "YY"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें सभी"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 36,
+      "section": "objective",
+      "sourceId": "2018-a:A:36",
+      "subPart": null,
+      "text": {
+        "en": "Women have a pair of Sex Chromosomes",
+        "hi": "स्त्रियों में लिंग गुणसूत्र का युग्म होता है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "dissolve starch",
+            "hi": "मंड को घोलने के लिए"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "dissolve chlorophyll",
+            "hi": "क्लोरोफिल को घोलने के लिए"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "soften the leaf",
+            "hi": "पत्ती को मुलायम करने के लिए"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "All of the above",
+            "hi": "इनमें से सभी के लिए"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 37,
+      "section": "objective",
+      "sourceId": "2018-a:A:37",
+      "subPart": null,
+      "text": {
+        "en": "A green leaf is boiled in Alcohol before using Iodine for starch test in order to",
+        "hi": "मंड परीक्षण के लिए हरी पत्ती पर आयोडीन डालने से पहले पत्ती को एल्कोहॉल में उबाला जाता है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "5x",
+            "hi": "5x पर"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "10x",
+            "hi": "10x पर"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "25x",
+            "hi": "25x पर"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "45x",
+            "hi": "45x पर"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 38,
+      "section": "objective",
+      "sourceId": "2018-a:A:38",
+      "subPart": null,
+      "text": {
+        "en": "The slide is first focussed under Compound Microscope at",
+        "hi": "स्लाइड को सर्वप्रथम कम्पाउंड माइक्रोस्कोप से देखा जाता है –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "dendrite",
+            "hi": "द्रुमिका"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Synapse",
+            "hi": "सिनेप्स"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Axon",
+            "hi": "एक्सॉन"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Impulse",
+            "hi": "आवेग"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 39,
+      "section": "objective",
+      "sourceId": "2018-a:A:39",
+      "subPart": null,
+      "text": {
+        "en": "The gap between two neurons is called a",
+        "hi": "दो तंत्रिका कोशिका के मध्य खाली स्थान को कहते हैं –"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Grass, wheat and mango",
+            "hi": "घास, गेहूँ तथा आम"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Grass, goat and human",
+            "hi": "घास, बकरी तथा मानव"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Goat, Cow and elephant",
+            "hi": "बकरी, गाय तथा हाथी"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Grass, Goat and fish",
+            "hi": "घास, बकरी तथा मछली"
+          }
+        }
+      ],
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 40,
+      "section": "objective",
+      "sourceId": "2018-a:A:40",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following constitutes a Food chain?",
+        "hi": "निम्न में कौन आहार श्रृंखला का निर्माण करता है?"
+      },
+      "type": "mcq",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": true,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "subjective",
+      "sourceId": "2018-a:B:1",
+      "subPart": null,
+      "text": {
+        "en": "Write laws of Reflection of Light and illustrate it with a Ray diagram. (2)",
+        "hi": "प्रकाश के परावर्तन के नियमों को लिखें और इसे किरण आरेख से दर्शायें। (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "subjective",
+      "sourceId": "2018-a:B:2",
+      "subPart": null,
+      "text": {
+        "en": "Why does the Sun appear Reddish early in the morning and in the evening? (2)",
+        "hi": "सूर्योदय एवं सूर्यास्त के समय सूर्य रक्ताभ क्यों प्रतीत होता है? (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": true,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "subjective",
+      "sourceId": "2018-a:B:3",
+      "subPart": null,
+      "text": {
+        "en": "Draw a schematic diagram of a circuit consisting of a battery of three cells of 2V each, a 5Ω resistor, an 8Ω resistor, a 12Ω resistor and a plug key, all connected in series. (2)",
+        "hi": "किसी विद्युत परिपथ का व्यवस्था आरेख खींचें जिसमें 2V के तीन सेलों की बैटरी, एक 5Ω प्रतिरोधक, एक 8Ω प्रतिरोधक तथा एक 12Ω प्रतिरोधक तथा एक प्लग कुंजी सभी श्रेणीक्रम में संयोजित हों। (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "subjective",
+      "sourceId": "2018-a:B:4",
+      "subPart": null,
+      "text": {
+        "en": "Why are coils of Electric Toasters and Electric Iron made of an alloy rather than a pure metal? (2)",
+        "hi": "विद्युत टोस्टरों तथा विद्युत इस्तरियों के तापन अवयव शुद्ध धातु के न बनाकर किसी मिश्रधातु के क्यों बनाये जाते हैं? (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "subjective",
+      "sourceId": "2018-a:B:5",
+      "subPart": null,
+      "text": {
+        "en": "Write the Fleming's right hand rule. (2)",
+        "hi": "फ्लेमिंग का दक्षिणहस्त नियम लिखें। (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "subjective",
+      "sourceId": "2018-a:B:6",
+      "subPart": null,
+      "text": {
+        "en": "Why are we looking at alternate sources of energy? (2) Long Answer Type question :-",
+        "hi": "हम ऊर्जा के वैकल्पिक स्रोतों की ओर क्यों ध्यान दे रहे हैं? (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": true,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2018-a:B:7",
+      "subPart": null,
+      "text": {
+        "en": "(a) What is electric power? (2+2+2=6) (b) Derive H = I²Rt, where H, is the amount of Heat produced by steady current (I) through a resistor (R) in time t. (c) How much energy is given to each Coulomb of charge passing through a 6V battery?",
+        "hi": "(a) विद्युत शक्ति क्या है? (2+2+2=6) (b) निगमन करें H = I²Rt जहाँ H, किसी प्रतिरोधक (R) में विद्युत धारा (I) द्वारा t समय में उत्पन्न ऊष्मा की मात्रा है। (c) 6V बैटरी से गुजरने वाले हर एक कूलॉम आवेश को कितनी ऊर्जा दी जाती है? अथवा / OR [Q7 का OR भाग, क्रमांक 'अथवा' पिछले पृष्ठ के अंत में] (a) प्रकाश के प्रकीर्ण से आप क्या समझते हैं? (b) प्रकाश वर्ण-पट क्या है? (c) काँच के प्रिज्म से गुजरते हुए श्वेत प्रकाश के वर्ण-विक्षेपन की व्याख्या करें।"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2018-a:B:7-or",
+      "subPart": "or",
+      "text": {
+        "en": "[Q7's OR part, 'OR' label carried over from the previous page] (a) What do you mean by scattering of Light? (b) What is Spectrum of Light? (c) Explain the dispersion of White light passing through a Glass Prism.",
+        "hi": null
+      },
+      "type": "short",
+      "variantOf": "2018-a:B:7"
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "subjective",
+      "sourceId": "2018-a:B:8",
+      "subPart": null,
+      "text": {
+        "en": "What do you mean by a Precipitation Reaction? Explain it by giving an example. (2)",
+        "hi": "अवक्षेपण अभिक्रिया से आप क्या समझते हैं? एक उदाहरण देकर समझाइए। (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "subjective",
+      "sourceId": "2018-a:B:9",
+      "subPart": null,
+      "text": {
+        "en": "Why acids do not show acidic behaviour in the absence of Water? (2)",
+        "hi": "जल की अनुपस्थिति में अम्ल का व्यवहार अम्लीय क्यों नहीं होता है? (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "subjective",
+      "sourceId": "2018-a:B:10",
+      "subPart": null,
+      "text": {
+        "en": "Write equations for the reactions of - (i) Sodium with steam (ii) Calcium with Water",
+        "hi": "इन अभिक्रियाओं के लिए समीकरण लिखिए – (i) वाष्प के साथ सोडा (ii) जल के साथ कैल्सियम"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 11,
+      "section": "subjective",
+      "sourceId": "2018-a:B:11",
+      "subPart": null,
+      "text": {
+        "en": "Draw the structure for the following compounds – (i) Chloropropane (ii) Propionic acid",
+        "hi": "निम्न यौगिकों की संरचनाएँ लिखिए – (i) क्लोरो प्रोपेन (ii) प्रोपेनॉइक अम्ल"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 12,
+      "section": "subjective",
+      "sourceId": "2018-a:B:12",
+      "subPart": null,
+      "text": {
+        "en": "Write electronic configuration of the following elements. (2) (i) Ca (ii) Cr",
+        "hi": "निम्न तत्वों का इलेक्ट्रॉनिक विन्यास लिखें। (2) (i) Ca (ii) Cr"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 13,
+      "section": "subjective",
+      "sourceId": "2018-a:B:13",
+      "subPart": null,
+      "text": {
+        "en": "(i) What happens when metals are burnt in air? (1+1=2) (ii) What happen when metals react with water? Long Answer Type Question",
+        "hi": "(i) क्या होता है, जब धातुओं का वायु में दहन होता है? (1+1=2) (ii) क्या होता है, जब धातुएँ जल के साथ अभिक्रिया करती हैं?"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": true,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 14,
+      "section": "subjective",
+      "sourceId": "2018-a:B:14",
+      "subPart": null,
+      "text": {
+        "en": "(a) What is a homologous series? Explain with an example. (2+3=5) (b) Write three Chemical properties of Carbon compounds with suitable Chemical reactions.",
+        "hi": "(a) समजातीय श्रेणी क्या है? उदाहरण देकर समझाइए। (2+3=5) (b) कार्बन यौगिकों के तीन रासायनिक गुणधर्मों का उपयुक्त रासायनिक अभिक्रिया के साथ उल्लेख करें। अथवा / OR (a) रासायनिक गुणधर्मों के आधार पर धातुओं एवं अधातुओं में विभेद कीजिए। (2+3=5) (b) दिये गये धातुओं की क्रियाशीलता को अवरोही क्रम में व्यवस्थित करें। (i) Zn (ii) Fe (iii) Ca (iv) Mg (v) K (vi) Na"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 14,
+      "section": "subjective",
+      "sourceId": "2018-a:B:14-or",
+      "subPart": "or",
+      "text": {
+        "en": "(a) Differentiate between metal and non-metal on the basis of their chemical properties. (2+3=5) (b) Arrange the metals given in the order of their decreasing reactivity. (i) Zn (ii) Fe (iii) Ca (iv) Mg (v) K (vi) Na",
+        "hi": null
+      },
+      "type": "short",
+      "variantOf": "2018-a:B:14"
+    },
+    {
+      "diagramMentioned": true,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 15,
+      "section": "subjective",
+      "sourceId": "2018-a:B:15",
+      "subPart": null,
+      "text": {
+        "en": "Draw a labelled diagram of the longitudinal section of a flower. (2)",
+        "hi": "पुष्प की अनुदैर्घ्य काट का नामांकित चित्र बनाइए। (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 16,
+      "section": "subjective",
+      "sourceId": "2018-a:B:16",
+      "subPart": null,
+      "text": {
+        "en": "How does the Nervous tissue act? (2)",
+        "hi": "तंत्रिका उत्तक कैसे क्रिया करता है? (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 17,
+      "section": "subjective",
+      "sourceId": "2018-a:B:17",
+      "subPart": null,
+      "text": {
+        "en": "What is Photosynthesis? Express it in Chemical equation. (2)",
+        "hi": "प्रकाश संश्लेषण क्या है? इसे रासायनिक समीकरण में व्यक्त करें। (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 18,
+      "section": "subjective",
+      "sourceId": "2018-a:B:18",
+      "subPart": null,
+      "text": {
+        "en": "What are Fossils? What do they tell us about the process of evolution? (2)",
+        "hi": "जीवाश्म क्या है? जैव विकास प्रक्रम के विषय में ये क्या बतलाते हैं? (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 19,
+      "section": "subjective",
+      "sourceId": "2018-a:B:19",
+      "subPart": null,
+      "text": {
+        "en": "What is the role of decomposers in the Ecosystem? (2)",
+        "hi": "परितंत्र में अपघटकों की क्या भूमिका है? (2)"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 20,
+      "section": "subjective",
+      "sourceId": "2018-a:B:20",
+      "subPart": null,
+      "text": {
+        "en": "What changes can you make in your habits to become environment - friendly? (2) Long Answer Type Question",
+        "hi": "पर्यावरण-मित्र बनने के लिए आप अपनी आदतों में कौन-कौन से परिवर्तन ला सकते हैं? (2) दीर्घ-उत्तरीय प्रश्न / Long Answer Type Question"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": true,
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "B",
+      "hasAlternative": true,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 21,
+      "section": "subjective",
+      "sourceId": "2018-a:B:21",
+      "subPart": null,
+      "text": {
+        "en": "Draw a labelled diagram of human digestive system and explain the digestion process of Food. (5)",
+        "hi": "मानव पाचन तंत्र का नामांकित चित्र खींचे एवं भोजन-पाचन प्रक्रिया का वर्णन करें। (5) अथवा / OR एक तंत्रिका कोशिका (न्यूरॉन) की संरचना का चित्र बनाइए तथा इसके कार्यों का वर्णन करें।"
+      },
+      "type": "short",
+      "variantOf": null
+    },
+    {
+      "diagramMentioned": false,
+      "flags": [
+        "missing-hindi",
+        "marks-missing",
+        "empty-text"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "pdfPages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 21,
+      "section": "subjective",
+      "sourceId": "2018-a:B:21-or",
+      "subPart": "or",
+      "text": {
+        "en": "Draw the structure of a neuron and explain its function.",
+        "hi": null
+      },
+      "type": "short",
+      "variantOf": "2018-a:B:21"
+    }
+  ],
+  "flags": [
+    "A: number jumped from 3 to 5 — a gap in the source, not a parsing skip.",
+    "A: number jumped from 3 to 5 — a gap in the source, not a parsing skip.",
+    "groupA-classified-objective",
+    "groupB-shape-ascending-classified-subjective",
+    "low-confidence-pages-,"
+  ],
+  "paper": {
+    "declaredMarks": {
+      "A": null,
+      "B": null
+    },
+    "paperId": "2018-a",
+    "pdfPages": 16,
+    "printedPages": 16,
+    "sourceFile": "2018 a.pdf",
+    "sourceMd5": "a39e1a02c731b04ece669232ab1f2f1a"
+  },
+  "schemaVersion": 1,
+  "totals": {
+    "alternatives": 3,
+    "blocks": 63,
+    "blocksWithFlags": 61,
+    "groupA": 39,
+    "groupB": 21,
+    "marksGroupA": 12,
+    "marksGroupB": 0
+  }
+}
