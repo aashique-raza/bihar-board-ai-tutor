@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 15/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2024-a`, `2025`. `2024-b, 2026` not started (2 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — 2 papers baaki: `2024-b, 2026`. |
+| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 16/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2024-a`, `2024-b`, `2025`. `2026` not started (1 paper left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — 1 paper baaki: `2026`. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage B: `2024-a` poora fresh session mein (F6 fix). 80+30=110 declared, 40 printed pages par PDF mein 37 hain — **is baar F7 jaisa incomplete NAHI nikla.** Cover page khud "Page 4 of 40" footer-label karta hai, matlab front ke 3 generic instruction pages (1-3) kabhi is PDF mein the hi nahi (subject-specific content nahi, sab subjects mein common). Paper Q30 tak saaf end-of-paper marker ke saath khatam hota hai — Section-A 80/80 aur Section-B saare 30 subjective questions (Physics Q1-10, Chemistry Q11-20, Biology Q21-30) poori tarah present hain. Ek chhota structural note: subjects symmetric nahi hain — Physics ka long-answer 6 marks (1×6=6) hai, par Chemistry aur Biology ka 5 marks (1×5=5) hai. Pen-marks bahut jagah the, kayi bar galat ya conflicting (jaise Q48, Q77 mein do options par alag marks) — F3 rule (marks kabhi answer-source nahi) ko aur confirm karta hai. |
+| **Last session** | 2026-08-05 — Stage B: `2024-b` poora fresh session mein (F6 fix), subject page-1 pe pehle confirm kiya (F8 lesson). 80+30=110 declared, 40 printed pages par PDF mein 39 hain — Q30 tak saaf khatam hota hai, koi content gap nahi (missing page bilkul aakhri trailing page lagta hai, 2024-a jaisa front-instruction-page gap nahi). Section-A 80/80 aur Section-B saare 30 subjective questions (Physics Q1-10, Chemistry Q11-20, Biology Q21-30) poori tarah present. **Naya observation: is paper mein subject-block order strictly grouped nahi hai** — Chemistry Q1-8/11-22 ke beech Physics Q9-10 aata hai, phir Q23 Physics, Q24 Biology — pehli baar interleaved subject order dekha (baaki sab papers mein clean per-subject blocks the). Ek website watermark ("bsebstudy.com") Q51 ke English text mein print artifact ke roop mein mila, exam content nahi. Pen-marks kai jagah the, kuch match karte the printed-correct se kuch nahi (Q66 mismatch) — F3 rule (marks kabhi answer-source nahi) firse confirm hua. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -137,6 +137,36 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage B: `2024-b` finished (fresh session per F6 fix)
+- **Bana:** `data/quiz-bank/stage1-pages/2024-b/page-01.json` se `page-39.json` (39/39 pages) +
+  `_manifest.json` (`sourceMd5` computed fresh). Backend `src/` ka koi file touch nahi hua.
+  Fresh session mein shuru hua, poora paper ek hi conversation mein khatam ho gaya.
+- **F8 lesson applied:** sabse pehle page 1 pe subject confirm kiya (SCIENCE, Subject Code 112,
+  Set Code I) — koi mismatch nahi, alag paper/shift hai `2024-a` (Subject Code 212) se.
+- **Paper structure confirmed:** 80+30=110 declared (cover confirms), Section-B 24 short-answer
+  (8+8+8, answer 4 of each, 2 marks) + 6 long-answer (2 Physics @6 marks, 2 Chemistry @5 marks,
+  2 Biology @5 marks, answer 1 of each) = 30 — same asymmetric long-answer marks pattern as
+  2024-a/2025 (Physics=6, Chemistry/Biology=5). Section-A ends exactly at Q80 (80/80 confirmed),
+  Section-B has all 30 subjective (Physics Q1-10, Chemistry Q11-20, Biology Q21-30).
+- **Naya observation: subject blocks interleaved, not strictly grouped** — Q1-8 Chemistry, Q9-10
+  Physics, Q11-22 Chemistry again, Q23 Physics, Q24 Biology, etc. Every paper so far (2021, 2022,
+  2024-a, 2025) had one clean contiguous block per subject; this is the first exception. Noted
+  per-page in the transcription, no impact on extraction quality since each question was still
+  read individually.
+- **40 printed pages declared, PDF has 39 — likely just a trailing blank/errata page 40, NOT a
+  content gap** (unlike 2024-a's front-instruction-page explanation or 2023-a's genuine F7
+  incompleteness). Page 1 here is correctly footer-labelled "Page 1 of 40" (a true cover, unlike
+  2024-a's "Page 4 of 40" cover), and Q30 (the paper's last question) ends cleanly with no
+  truncation — objective 80/80 and all 30 subjective present.
+- **Print/scan artifact:** a "https://www.bsebstudy.com" watermark appears inline in Q51's
+  English text (page 22) — a source-document artifact, not exam content, excluded from the
+  actual question text and noted in that page's file.
+- **Pen-marks again inconsistent with printed-correct answers** in places (e.g. Q66 pen mark on
+  wrong option) while matching in others — F3 rule (marks never answer-source) reconfirmed.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi (no `src/` file touched — data-only session).
+- **Agla:** naye/fresh session mein last paper `2026` (30 pages) — Stage B bulk ka aakhri paper.
 
 ### 2026-08-05 — Stage B: `2024-a` finished (fresh session per F6 fix)
 - **Bana:** `data/quiz-bank/stage1-pages/2024-a/page-01.json` se `page-37.json` (37/37 pages) +

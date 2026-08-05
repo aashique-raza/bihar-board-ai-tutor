@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2024-b",
+  "page": 3,
+  "readBy": "vision",
+  "raw": {
+    "hi": "7. खण्ड-ब में 24 लघु उत्तरीय प्रश्न हैं। इनमें 8 प्रश्न भौतिक शास्त्र के, 8 प्रश्न रसायन शास्त्र के एवं 8 प्रश्न जीव विज्ञान के हैं। प्रत्येक विषय (भौतिक शास्त्र, रसायन शास्त्र एवं जीव विज्ञान) से चार-चार प्रश्नों का उत्तर देना है। प्रत्येक के लिए 2 अंक निर्धारित हैं। इनके अतिरिक्त इस खण्ड में 6 दीर्घ उत्तरीय प्रश्न दिये गए हैं, जिनमें से 2 प्रश्न भौतिक शास्त्र के, 2 प्रश्न रसायन शास्त्र के एवं 2 प्रश्न जीव विज्ञान के हैं। भौतिक शास्त्र के प्रत्येक दीर्घ उत्तरीय प्रश्न के लिए 6 अंक, रसायन शास्त्र एवं जीव विज्ञान के लिए 5 अंक निर्धारित है। प्रत्येक विषय भौतिक शास्त्र, रसायन शास्त्र एवं जीव विज्ञान से एक-एक प्रश्न का उत्तर देना अनिवार्य है। 8. किसी प्रकार के इलेक्ट्रॉनिक उपकरण का प्रयोग पूर्णतया वर्जित है।",
+    "en": "7. In Section-B, there are 24 short answer type questions. Out of these, eight questions are from Physics, eight questions are from Chemistry and eight questions are from Biology. Four questions are to be answered from each subject (Physics, Chemistry and Biology). Each question carries 2 marks. Apart from these, there are 6 Long Answer type questions in which two questions each from Physics, Chemistry and Biology are there. Long Answer type questions from Physics carries 6 marks each, and from Chemistry and Biology carries 5 marks each. Answer of one question each from Physics, Chemistry and Biology is compulsory. 8. Use of any electronic appliances is strictly prohibited."
+  },
+  "textLayer": null,
+  "confidence": "high",
+  "notes": ["Section-B structure confirmed: 24 short-answer (8 Physics + 8 Chemistry + 8 Biology, answer 4 of each, 2 marks each) + 6 long-answer (2 Physics @6 marks, 2 Chemistry @5 marks, 2 Biology @5 marks, answer 1 of each) = 30. Matches 80+30=110 declared total. Same asymmetric long-answer marks pattern as 2024-a/2025 (Physics=6, Chemistry/Biology=5)."]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2024-b",
+  "page": 1,
+  "readBy": "vision",
+  "raw": {
+    "hi": "प्रश्न पुस्तिका क्रमांक / Question Booklet Serial No.: 112- | SECONDARY SCHOOL EXAMINATION - 2024 | माध्यमिक स्कूल परीक्षा - 2024 | (ANNUAL / वार्षिक) | प्रश्न पुस्तिका सेट कोड / Question Booklet Set Code: I | SCIENCE (Compulsory) | विज्ञान (अनिवार्य) | विषय कोड / Subject Code: 112 | कुल प्रश्न: 80 + 30 = 110 | Total Questions: 80 + 30 = 110 | (समय: 2 घंटे 45 मिनट) | Time: 2 Hours 45 Minutes | कुल मुद्रित पृष्ठ / Total Printed Pages: 40 | (पूर्णांक: 80) / Full Marks: 80 | परीक्षार्थियों के लिये निर्देश: 1. परीक्षार्थी OMR उत्तर पत्रक पर अपना प्रश्न पुस्तिका क्रमांक (10 अंकों का) अवश्य लिखें। 2. परीक्षार्थी यथासंभव अपने शब्दों में ही उत्तर दें। 3. दाहिनी ओर हाशिये पर दिये हुए अंक पूर्णांक निर्दिष्ट करते हैं।",
+    "en": "Question Booklet Serial No.: 112- | SECONDARY SCHOOL EXAMINATION - 2024 (ANNUAL) | Question Booklet Set Code: I | SCIENCE (Compulsory) | Subject Code: 112 | Total Questions: 80 + 30 = 110 | Time: 2 Hours 45 Minutes | Total Printed Pages: 40 | Full Marks: 80 | Instructions for the candidates: 1. Candidates must enter his/her Question Booklet Serial No. (10 Digits) in the OMR Answer Sheet. 2. Candidates are required to give their answers in their own words as far as practicable. 3. Figures in the right hand margin indicate full marks."
+  },
+  "textLayer": null,
+  "confidence": "high",
+  "notes": [
+    "Exam cover page confirms SCIENCE, Subject Code 112, Secondary School Examination 2024 (Annual) — correct subject, no F8-style mismatch (checked page 1 first per F8 lesson).",
+    "Footer says 'Page 1 of 40' — this cover page IS printed page 1 (unlike 2024-a, where the cover was footer-labelled 'Page 4 of 40'). PDF has 39 pages vs declared 40 — gap of exactly 1, to be watched for as pages are read.",
+    "Different Subject Code (112, Set Code I) and Question Booklet Serial prefix from 2024-a (212, Set Code G) — confirms this is a genuinely different paper/shift, not a duplicate."
+  ]
+}
