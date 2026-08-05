@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2026",
+  "page": 4,
+  "readBy": "vision",
+  "raw": {
+    "hi": "[Q3 repeated header, already captured page 3]\n4- एक दर्पण पर आपतित प्रकाश की चाल C है, तो परावर्तित प्रकाश की चाल होगी ?\n(A) C/2 (B) C/3 (C) C/4 (D) C\n5- गोलीय दर्पण में, कार्तीय चिन्ह परिपाटी के अनुसार, मूल बिन्दु लिया जाता है –\n(A) फोकस पर (B) वक्रता केन्द्र पर (C) ध्रुव पर (D) इनमें से कोई नहीं\n6- जब प्रकाश सघन से विरल माध्यम में जाता है, तो उसकी गति –\n(A) बढ़ती है (B) घटती है (C) समान रहती है (D) इनमें से कोई नहीं",
+    "en": "[Q3 repeated header, already captured page 3]\n4- If the speed of light incident on a mirror is C, then what will be the speed of the reflected light?\n(A) C/2 (B) C/3 (C) C/4 (D) C\n5- In a spherical mirror, according to the Cartesian sign convention, the origin is taken as\n(A) on focus (B) at the centre of curvature (C) at the pole (D) None of these\n6- When light travels from denser to rarer medium, its speed\n(A) increases (B) decreases (C) remains Same (D) None of these"
+  },
+  "textLayer": null,
+  "confidence": "high",
+  "notes": [
+    "Q3 text/options at top of page are a continuation-repeat of Q3 already fully captured on page-03.json (page split mid-question) — not double-counted."
+  ]
+}
