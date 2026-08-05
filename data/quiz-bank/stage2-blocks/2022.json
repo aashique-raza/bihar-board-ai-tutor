@@ -1984,14 +1984,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -2003,8 +2030,8 @@
       "sourceId": "2022:A:37",
       "subPart": null,
       "text": {
-        "en": "How many laws of reflection of light are? A. 1 B. C. 3 D.",
-        "hi": "प्रकाश के परावर्त्तन के कितने नियम हैं? अ. 1 ब. स. 3 द."
+        "en": "How many laws of reflection of light are?",
+        "hi": "प्रकाश के परावर्त्तन के कितने नियम हैं?"
       },
       "type": "mcq",
       "variantOf": null
@@ -2673,14 +2700,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-28-en-28"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "24",
+            "hi": "24"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "28",
+            "hi": "28"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "29",
+            "hi": "29"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "30",
+            "hi": "30"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -2692,8 +2746,8 @@
       "sourceId": "2022:A:50",
       "subPart": null,
       "text": {
-        "en": "The atomic number of zinc is - A. 24 B. C. 29 D.",
-        "hi": "जस्ता की परमाणु संख्या है - A. 24 B. C. 29 D."
+        "en": "The atomic number of zinc is",
+        "hi": "जस्ता की परमाणु संख्या है"
       },
       "type": "mcq",
       "variantOf": null
@@ -3087,14 +3141,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -3106,8 +3187,8 @@
       "sourceId": "2022:A:58",
       "subPart": null,
       "text": {
-        "en": "How many electrons are there in the outermost shell of lithium? A. 1 B. C. 3 D.",
-        "hi": "लिथियम के बाह्यतम शेल में कितने इलेक्ट्रॉन विद्यमान है ? A. 1 B. C. 3 D."
+        "en": "How many electrons are there in the outermost shell of lithium?",
+        "hi": "लिथियम के बाह्यतम शेल में कितने इलेक्ट्रॉन विद्यमान है ?"
       },
       "type": "mcq",
       "variantOf": null
@@ -3665,7 +3746,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-7-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3681,8 +3762,8 @@
         {
           "key": "b",
           "text": {
-            "en": "4, 5, 6 or",
-            "hi": "4, 5, 6 or"
+            "en": "4, 5, 6 or 7",
+            "hi": "4, 5, 6 or 7"
           }
         },
         {
@@ -3695,8 +3776,8 @@
         {
           "key": "d",
           "text": {
-            "en": "2, 3, 4 or",
-            "hi": "2, 3, 4 or"
+            "en": "2, 3, 4 or 5",
+            "hi": "2, 3, 4 or 5"
           }
         }
       ],
@@ -3941,14 +4022,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "15",
+            "hi": "15"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "16",
+            "hi": "16"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -3960,8 +4068,8 @@
       "sourceId": "2022:A:74",
       "subPart": null,
       "text": {
-        "en": "The atomic number of an element is 16. What is the group number of this element in periodic Table? A. 15 B. C. 16 D.",
-        "hi": "एक तत्व की परमाणु संख्या 16 है, आवर्त सारणी में इस तत्व की वर्ग संख्या क्या है? A. 15 B. C. 16 D."
+        "en": "The atomic number of an element is 16. What is the group number of this element in periodic Table?",
+        "hi": "एक तत्व की परमाणु संख्या 16 है, आवर्त सारणी में इस तत्व की वर्ग संख्या क्या है?"
       },
       "type": "mcq",
       "variantOf": null

@@ -2544,15 +2544,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-5-en-5"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2585,9 +2583,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
           }
         }
       ],
@@ -2608,7 +2606,7 @@
         "hinglish": "Koi vilayan laal litmus ko neela kar deta hai, uska pH sambhavatah kya hoga ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3175,15 +3173,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-3-en-3"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3216,9 +3212,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         }
       ],
@@ -3239,12 +3235,12 @@
         "hinglish": "Oxygen ki sanyojkta hoti hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3256,15 +3252,14 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-17-en-17"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3297,9 +3292,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
           }
         }
       ],
@@ -3502,7 +3497,7 @@
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-14-en-14"
+        "marks-defaulted-mcq-hi-15-en-15"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3535,9 +3530,9 @@
         {
           "key": "d",
           "text": {
-            "en": "[Q45 English repeat from page",
-            "hi": "[Q45 English repeat from page",
-            "hinglish": "[Q45 English repeat from page"
+            "en": "14 [Q45 English repeat from page",
+            "hi": "14 [Q45 English repeat from page",
+            "hinglish": "14 [Q45 English repeat from page"
           }
         }
       ],
@@ -3574,15 +3569,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-3"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3615,9 +3608,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -3638,7 +3631,7 @@
         "hinglish": "Ethyne mein carbon – carbon parmanuon ke beech kitne sah–sanyojak bandhan hote hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3734,15 +3727,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3775,9 +3766,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
           }
         }
       ],
@@ -3798,7 +3789,7 @@
         "hinglish": "Aavart sarni mein kitne aavart hote hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3814,15 +3805,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-4"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3855,9 +3844,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -3878,7 +3867,7 @@
         "hinglish": "Potassium ki parmanu sankhya 19 hai. Iski sanyojkta kya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3894,15 +3883,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-18-en-18"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3935,9 +3922,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
           }
         }
       ],
@@ -3958,7 +3945,7 @@
         "hinglish": "Aadhunik aavart sarni mein uardhvaadhar stambhon ki sankhya hoti hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7700,7 +7687,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 103,
-    "usableInQuiz": 55
+    "trilingualComplete": 110,
+    "usableInQuiz": 61
   }
 }

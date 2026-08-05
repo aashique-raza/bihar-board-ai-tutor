@@ -1136,15 +1136,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-5-en-5"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1153,33 +1151,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
           }
         }
       ],
@@ -1200,7 +1198,7 @@
         "hinglish": "Koi vilayan neele litmus patra ko laal kar deta hai, iska pH sambhavta hoga –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1688,15 +1686,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-7-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1705,33 +1701,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "9",
+            "hi": "9",
+            "hinglish": "9"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "15",
+            "hi": "15",
+            "hinglish": "15"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
           }
         }
       ],
@@ -1752,7 +1748,7 @@
         "hinglish": "Aadhunik avart sarani mein kitne urdhv stambh hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4265,7 +4261,7 @@
     "objective": 39,
     "questions": 63,
     "subjective": 24,
-    "trilingualComplete": 61,
-    "usableInQuiz": 28
+    "trilingualComplete": 63,
+    "usableInQuiz": 30
   }
 }

@@ -1158,7 +1158,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1174,8 +1174,8 @@
         {
           "key": "b",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "8",
+            "hi": "8"
           }
         },
         {
@@ -1188,8 +1188,8 @@
         {
           "key": "d",
           "text": {
-            "en": "How many pairs of spiracles are found in cockroach? (A) 2 (B) (C) 10 (D)",
-            "hi": ""
+            "en": "6 How many pairs of spiracles are found in cockroach? (A) 2 (B) 8 (C) 10 (D) 6",
+            "hi": "6"
           }
         }
       ],
@@ -1433,7 +1433,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-14-en-14"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1449,8 +1449,8 @@
         {
           "key": "b",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "14",
+            "hi": "14"
           }
         },
         {
@@ -1463,8 +1463,8 @@
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "20",
+            "hi": "20"
           }
         }
       ],
@@ -1653,7 +1653,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1669,8 +1669,8 @@
         {
           "key": "b",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "2",
+            "hi": "2"
           }
         },
         {
@@ -1683,8 +1683,8 @@
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "4",
+            "hi": "4"
           }
         }
       ],
@@ -1928,7 +1928,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-4"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1944,8 +1944,8 @@
         {
           "key": "b",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "4",
+            "hi": "4"
           }
         },
         {
@@ -1958,8 +1958,8 @@
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "7",
+            "hi": "7"
           }
         }
       ],

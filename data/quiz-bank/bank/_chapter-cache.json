@@ -640,6 +640,11 @@
       "confidence": 0.7708,
       "method": "rag"
     },
+    "175c78cf58f8fe46": {
+      "chapterId": "science.physics.chapter-01",
+      "confidence": 0.8179,
+      "method": "rag"
+    },
     "17cadde9737dbcb2": {
       "chapterId": "science.physics.chapter-01",
       "confidence": 0.7736,
@@ -1795,6 +1800,11 @@
       "confidence": 0.7801,
       "method": "rag"
     },
+    "49c26d13a9b70066": {
+      "chapterId": "science.chemistry.chapter-02",
+      "confidence": 0.7102,
+      "method": "rag"
+    },
     "4a138bb3e9633937": {
       "chapterId": "science.physics.chapter-03",
       "confidence": 0.599,
@@ -2153,6 +2163,11 @@
     "5a9992a710f060e8": {
       "chapterId": "science.physics.chapter-01",
       "confidence": 0.7299,
+      "method": "rag"
+    },
+    "5aa93b93a19e6d8e": {
+      "chapterId": "science.chemistry.chapter-02",
+      "confidence": 0.7634,
       "method": "rag"
     },
     "5abb95def0edc456": {
@@ -3190,6 +3205,11 @@
       "confidence": 0.8586,
       "method": "rag"
     },
+    "833071cb5e2a305f": {
+      "chapterId": "science.physics.chapter-01",
+      "confidence": 0.7913,
+      "method": "rag"
+    },
     "834bd1a36bc96c35": {
       "chapterId": "science.chemistry.chapter-04",
       "confidence": 0.6818,
@@ -3333,6 +3353,11 @@
     "8733997152bc1b84": {
       "chapterId": "science.biology.chapter-02",
       "confidence": 0.6947,
+      "method": "rag"
+    },
+    "874695b6a3fcc1d9": {
+      "chapterId": "science.chemistry.chapter-04",
+      "confidence": 0.7356,
       "method": "rag"
     },
     "87ae544f7326562c": {
@@ -5655,6 +5680,11 @@
       "confidence": 0.7403,
       "method": "rag"
     },
+    "e845f71d230f87e6": {
+      "chapterId": "science.chemistry.chapter-05",
+      "confidence": 0.7469,
+      "method": "rag"
+    },
     "e8b53f206944e0d3": {
       "chapterId": "science.biology.chapter-01",
       "confidence": 0.7233,
@@ -5900,6 +5930,11 @@
       "confidence": 0.7592,
       "method": "rag"
     },
+    "f456988eaf5a1c21": {
+      "chapterId": "science.chemistry.chapter-05",
+      "confidence": 0.7167,
+      "method": "rag"
+    },
     "f4703ab0e890de54": {
       "chapterId": "science.biology.chapter-06",
       "confidence": 0.6698,
@@ -6035,6 +6070,11 @@
       "confidence": 0.8011,
       "method": "rag"
     },
+    "f8f966cd8bc5ddde": {
+      "chapterId": "science.chemistry.chapter-05",
+      "confidence": 0.7153,
+      "method": "rag"
+    },
     "f915d12407fdd53f": {
       "chapterId": "science.chemistry.chapter-05",
       "confidence": 0.7121,
@@ -6158,6 +6198,11 @@
     "feebb9697659d702": {
       "chapterId": "science.physics.chapter-01",
       "confidence": 0.7642,
+      "method": "rag"
+    },
+    "ff12f53eaad706c1": {
+      "chapterId": "science.chemistry.chapter-04",
+      "confidence": 0.7181,
       "method": "rag"
     },
     "ff248d46ad2f0ac1": {

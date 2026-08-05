@@ -773,7 +773,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-5-en-5"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -782,29 +782,29 @@
         {
           "key": "a",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "5",
+            "hi": "5"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "7",
+            "hi": "7"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "8",
+            "hi": "8"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "10",
+            "hi": "10"
           }
         }
       ],
@@ -1158,7 +1158,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-7-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1167,29 +1167,29 @@
         {
           "key": "a",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "7",
+            "hi": "7"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "9",
+            "hi": "9"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "15",
+            "hi": "15"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "18",
+            "hi": "18"
           }
         }
       ],

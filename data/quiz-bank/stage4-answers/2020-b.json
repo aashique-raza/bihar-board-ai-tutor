@@ -114,15 +114,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -139,9 +137,9 @@
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
           }
         },
         {
@@ -155,9 +153,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
           }
         }
       ],
@@ -178,7 +176,7 @@
         "hinglish": "Carbon ki parmanoo sankhya hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3250,7 +3248,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3262,15 +3260,14 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-14-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3287,7 +3284,7 @@
         {
           "key": "b",
           "text": {
-            "en": "more than",
+            "en": "more than 7",
             "hi": "7 से अधिक",
             "hinglish": "7 se adhik"
           }
@@ -3303,9 +3300,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
           }
         }
       ],
@@ -5091,7 +5088,7 @@
     "objective": 48,
     "questions": 76,
     "subjective": 28,
-    "trilingualComplete": 74,
-    "usableInQuiz": 38
+    "trilingualComplete": 76,
+    "usableInQuiz": 39
   }
 }

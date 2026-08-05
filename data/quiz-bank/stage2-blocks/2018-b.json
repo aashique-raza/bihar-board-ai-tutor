@@ -512,7 +512,7 @@
         {
           "key": "b",
           "text": {
-            "en": "Ca(OH)",
+            "en": "Ca(OH) 2",
             "hi": null
           }
         },
@@ -569,7 +569,7 @@
         {
           "key": "b",
           "text": {
-            "en": "More than",
+            "en": "More than 7",
             "hi": null
           }
         },
@@ -1750,7 +1750,7 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "marks-defaulted-mcq-hi-null-en-22",
+        "marks-defaulted-mcq-hi-null-en-23",
         "empty-text"
       ],
       "group": "A",
@@ -1767,7 +1767,7 @@
         {
           "key": "b",
           "text": {
-            "en": "",
+            "en": "22",
             "hi": null
           }
         },
@@ -1781,7 +1781,7 @@
         {
           "key": "d",
           "text": {
-            "en": "Ans:",
+            "en": "46 Ans:",
             "hi": null
           }
         }

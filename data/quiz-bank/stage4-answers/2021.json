@@ -2305,34 +2305,62 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Acids, Bases and Salts: \"pH 10 is correct.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "options-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-10-en-10"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "'A' and 'B' both",
+            "hi": "'A' और 'B' दोनों",
+            "hinglish": "'A' aur 'B' dono"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -2345,45 +2373,73 @@
       "sourceId": "2021:A:30",
       "subPart": null,
       "text": {
-        "en": "A solution turns red litmus into blue, its pH value is - A. 11 B. C. 5 D. 'A' and 'B' both",
-        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है, उसका pH मान होगा - A. 11 B. C. 5 D. 'A' और 'B' दोनों",
-        "hinglish": "Koi vilayan laal litmus ko neela kar deta hai, uska pH maan hoga - A. 11 B. C. 5 D. 'A' aur 'B' dono"
+        "en": "A solution turns red litmus into blue, its pH value is",
+        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है, उसका pH मान होगा",
+        "hinglish": "Koi vilayan laal litmus ko neela kar deta hai, uska pH maan hoga"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Carbon and Its Compounds: \"Hydrocarbons with at least one triple bond are called **alkynes**.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "options-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2 How many covalent bonds are there between C-C atoms in alkyne? A. 1 B. 2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -2396,12 +2452,12 @@
       "sourceId": "2021:A:31",
       "subPart": null,
       "text": {
-        "en": "How many covalent bonds are there between carbon-carbon in alkyne ? A. 1 B. How many covalent bonds are there between C-C atoms in alkyne? A. 1 B. C. 3 D.",
-        "hi": "ऐल्काइन में कार्बन-कार्बन के बीच कितने सहसंयोजक बंधन होते हैं ? A. 1 B. C. 3 D.",
-        "hinglish": "Ailkin mein carbon-carbon ke beech kitne sahasanyojak bandhan hote hain? A. 1 B. C. 3 D."
+        "en": "How many covalent bonds are there between carbon-carbon in alkyne ?",
+        "hi": "ऐल्काइन में कार्बन-कार्बन के बीच कितने सहसंयोजक बंधन होते हैं ?",
+        "hinglish": "Alkyne mein carbon-carbon ke beech kitne sahsanyojak bandhan hote hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3512,34 +3568,62 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Acids, Bases and Salts: \"The pH of a neutral solution is 7.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "options-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "6",
+            "hi": "6",
+            "hinglish": "6"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -3552,12 +3636,12 @@
       "sourceId": "2021:A:46",
       "subPart": null,
       "text": {
-        "en": "The pH value of a neutral solution is - A. 7 B. C. 6 D.",
-        "hi": "उदासीन विलयन का pH मान होता है - A. 7 B. C. 6 D.",
-        "hinglish": "Udaasīn vilayan ka pH maan hota hai - A. 7 B. C. 6 D."
+        "en": "The pH value of a neutral solution is",
+        "hi": "उदासीन विलयन का pH मान होता है",
+        "hinglish": "Udasin vilayan ka pH maan hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3720,34 +3804,62 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Periodic Classification of Elements: \"Potassium | K | 39.0\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "options-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-18-en-18"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "19",
+            "hi": "19",
+            "hinglish": "19"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "20",
+            "hi": "20",
+            "hinglish": "20"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -3760,12 +3872,12 @@
       "sourceId": "2021:A:49",
       "subPart": null,
       "text": {
-        "en": "The atomic number of Potassium is - A. 17 B. C. 19 D.",
-        "hi": "पोटैशियम की परमाणु संख्या है - A. 17 B. C. 19 D.",
-        "hinglish": "Potassium ki parmanoo sankhya hai - A. 17 B. C. 19 D."
+        "en": "The atomic number of Potassium is",
+        "hi": "पोटैशियम की परमाणु संख्या है",
+        "hinglish": "Potassium ki parmanoo sankhya hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4086,34 +4198,62 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Carbon and Its Compounds: \"An unsaturated hydrocarbon containing at least one triple bond is called an alkyne.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "options-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-7-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -4126,12 +4266,12 @@
       "sourceId": "2021:A:54",
       "subPart": null,
       "text": {
-        "en": "The number of covalent bonds between carbon-carbon atoms in acetylene is - A. 5 B. C. 2 D.",
-        "hi": "एसीटिलीन में कार्बन-कार्बन के बीच सहसंयोजक बंधन की संख्या है - A. 5 B. C. 2 D.",
-        "hinglish": "Acetylene mein carbon-carbon ke beech sahasanyojak bandhan ki sankhya hai - A. 5 B. C. 2 D."
+        "en": "The number of covalent bonds between carbon-carbon atoms in acetylene is",
+        "hi": "एसीटिलीन में कार्बन-कार्बन के बीच सहसंयोजक बंधन की संख्या है",
+        "hinglish": "Acetylene mein carbon-carbon ke beech sahsanyojak bandhan ki sankhya hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7551,13 +7691,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 53,
+    "l3PlusConfidence": 58,
     "marksGroupA": 80,
     "marksGroupB": 80,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 105,
-    "usableInQuiz": 53
+    "trilingualComplete": 110,
+    "usableInQuiz": 58
   }
 }

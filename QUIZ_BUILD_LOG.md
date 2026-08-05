@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage G (review + final health) — IN PROGRESS, paused mid-phase.** `npm run quiz:review` chal chuka hai. Red queue items cleared from 355 → **47** (see below). Baaki 47 red + L3+ answer-confidence gap (72.2%, need 90%) still open. |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete. 🟡 Stage G IN PROGRESS — language-missing blocker mostly cleared, 47 red + L3+ gap next. |
+| **Sub-stage** | **Stage G (review + final health) — IN PROGRESS, paused mid-phase.** `npm run quiz:review` chal chuka hai. Red queue **0** (355→47→0, this session cleared the rest). Ab sirf ek cheez §12 ko rok rahi hai: **L3+ answer-confidence 73.1% (need ≥90%)**, not yet investigated. |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete. 🟡 Stage G IN PROGRESS — review queue 🔴 0 (done), L3+ confidence gap is the last thing left. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Language-backfill built into Stage D (`buildQuestions.js`): Bihar Board papers are printed bilingual, so a stem/option with Hindi but no English (or vice versa) is an extraction gap, not missing content — LLM-translate the missing side from the side that exists, flagged `language-backfilled-<lang>` (never silent). Re-ran D→E→F→G on all 18 papers. Red queue items 355→47, objective language-complete 86.8%→99.9%, usable-in-quiz 39.3%→45.6%. Remaining 47 red items have BOTH languages empty on specific MCQ options (real Stage B/C extraction gap, nothing to translate from — needs manual page re-read or a resolved.json acceptance). L3+ still 72.2% (need ≥90%) — that's an answer-verification gap, separate from language. Session paused here, baseline clean. See Session History. |
+| **Last session** | 2026-08-06 — Cleared the 47 remaining red items — turned out to be 2 real code bugs, not a source-data gap (previous session's assumption was wrong). **Bug 1** (`buildBlocks.js`, Stage C): `TRAILING_MARKS` regex stripped a numeric MCQ option's own answer value (e.g. "(A) 5" → "(A)") because it looked identical to a real marks annotation — fixed with a content-based `OPTION_LINE_START` guard (group-letter-based gating was tried first and broke the 2016-a pilot, reverted — pilot inverts Group A/B vs modern papers). **Bug 2** (`buildQuestions.js`, Stage D): language-backfill rejected any en→hi translation that had zero Devanagari characters, even though the prompt's own rules explicitly allow that for formulas/numbers/technical terms ("CaO", "21", "Stigma") — fixed by dropping that half of the check. Re-ran C→D→E→F→G on all 18 papers after each fix, verified 2016-a byte-identical both times (no regression), verified target questions fixed by direct inspection (not just counts). Final 3 red items were the already-documented genuine `2023-a:A:43` "question missing" placeholder — closed via one `resolved.json` decision (`field: "text.all"`). **Red queue: 47→0.** Usable-in-quiz 45.6%→49% (514→552). Baseline clean throughout. **Agla:** L3+ is 73.1% (need ≥90%) — root-cause investigation not yet started (likely out-of-syllabus questions or RAG-retrieval gaps, unconfirmed). Once that moves, re-check full §12 exit criteria + golden-set 30/30. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -142,6 +142,40 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-06 — Stage G continued: red queue 47→0 (2 real code bugs found, not a data gap)
+- **Investigated the 47 remaining red items before accepting the previous session's "genuine
+  source gap" conclusion.** Checked 3 samples directly against Stage B's raw page text
+  (`2018-a:A:16`, `2018-a:A:23`, `2020-a:A:22`) — all had fully-present options in the source.
+  The conclusion was wrong; this was a Stage C bug, not missing content.
+- **Bug 1 (`buildBlocks.js`):** `TRAILING_MARKS` (the same regex behind Parking Lot P17) runs
+  per-line during buffer accumulation and strips any trailing 1-2 digit number as "marks" —
+  including a numeric MCQ option's own answer value ("(A) 5" → "(A)", 5 silently discarded).
+  First fix attempt gated on `groupLetter === 'A'` — broke the 2016-a pilot (197 lines diffed),
+  because the pilot inverts Group A/B vs. every modern paper (file's own header comment already
+  documents this). Reverted, fixed properly with a content-based `OPTION_LINE_START` guard
+  instead (skip stripping only on lines that themselves start with an option marker) — re-ran,
+  2016-a byte-identical, all 44 originally-broken questions confirmed fixed by direct inspection.
+- **Bug 2 (`buildQuestions.js`):** language-backfill's `en-to-hi` direction rejected any
+  translation with zero Devanagari characters — but the prompt's own rules 2 and 5 explicitly
+  allow that for formulas, numbers, and scientific terms ("CaO", "21", "Stigma" are all legitimate
+  Hindi-field values with no Devanagari). This silently left 7 more questions' short-value options
+  un-backfilled even though the question-level flag claimed backfill succeeded. Fixed by dropping
+  that half of the check (kept the `hi-to-en` direction's Devanagari-reject, which is still valid).
+- **Re-ran C→D→E→F→G on all 18 papers after each fix** (baseline test suite checked before and
+  after both — pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing), same after both fixes, no
+  regression). Red queue: 47→10 (after Bug 1)→3 (after Bug 2). The final 3 were all the same
+  already-documented genuine placeholder (`2023-a:A:43`, paper's own printed "question missing" —
+  see F7 in `QUIZ_DATA_PIPELINE.md`), closed with one `resolved.json` decision
+  (`field: "text.all"`). **Red queue now 0.** Usable-in-quiz 45.6%→49% (514→552/1126).
+- **Lesson:** don't accept a "genuine source gap, nothing to do" conclusion from a prior session
+  without re-checking a sample against the actual source — the data looked identical to a real
+  gap until 3 pages were read directly (same lesson as the Stage C Antigravity session, logged
+  below: verify against the source, not against the summary).
+- **Agla:** L3+ is 73.1% (need ≥90%) — this is the only thing left blocking §12. Root cause not
+  investigated yet (why so many objective answers aren't textbook-verifiable — likely
+  out-of-syllabus content or RAG-retrieval gaps, unconfirmed). Once resolved, re-check full §12
+  exit criteria (golden-set 30/30 also not re-checked this session).
 
 ### 2026-08-05 — Stage G continued: language-backfill built, red queue 355→47
 - **Investigated the 355 🔴 red items** (all `language-missing`) before touching code. 271 unique

@@ -109,6 +109,12 @@ const SUBPART = new RegExp(`^\\s*\\((${ROMAN_ALT})\\)\\s*(.*)$`);
  * bracketed "…लिखें। [2]" in a couple of them (2021, 2022).
  */
 const TRAILING_MARKS = /\s{1,}\[?(\d{1,2})\]?\s*$/;
+/**
+ * A line that starts with an MCQ option marker — the same three label styles parseOptions()
+ * looks for: "(A) …", "A. …", or Devanagari "अ. …". Used to stop TRAILING_MARKS from eating a
+ * numeric option's own answer value (see segmentAscending).
+ */
+const OPTION_LINE_START = /^\([aAbBcCdD]\)|^[aAbBcCdD]\.\s|^(?:अ|ब|स|द)\.\s/;
 
 // ---------------------------------------------------------------------------
 // loading
@@ -310,7 +316,17 @@ function segmentAscending(lines, startIdx, endIdx, groupLetter, M, notes) {
       continue;
     }
 
-    const { text, marks } = splitMarks(line.text);
+    // A line that itself starts with an MCQ option marker ("(A) 5", "A. 5", "अ. 5" — same three
+    // styles parseOptions() looks for) is never a real trailing-marks annotation, even if it
+    // ends in a bare 1-2 digit number — that number is the option's own answer value. Without
+    // this guard, TRAILING_MARKS can't tell "(A) 5" from a genuine marks note ("...लिखें। [2]")
+    // and silently strips the "5", leaving "(A)" — this is what emptied out every numeric-answer
+    // MCQ option feeding the Stage G red queue (confirmed on 2018-a:A:16/:23, 2020-a:A:22 — all
+    // had fully-present options in Stage B's own raw text). Group-letter alone can't gate this
+    // (the pilot 2016-a inverts Group A/B vs. modern papers — see the header comment above), so
+    // this is content-based instead.
+    const isOptionLine = OPTION_LINE_START.test(line.text);
+    const { text, marks } = isOptionLine ? { text: line.text, marks: null } : splitMarks(line.text);
     if (marks !== null && current.marks === null) current.marks = marks;
     (alternative || current.buffer).push({ text, pdfPage: line.pdfPage });
   }

@@ -1598,14 +1598,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-10-en-10"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "11",
+            "hi": "11"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "10",
+            "hi": "10"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "5",
+            "hi": "5"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "'A' and 'B' both",
+            "hi": "'A' और 'B' दोनों"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -1617,8 +1644,8 @@
       "sourceId": "2021:A:30",
       "subPart": null,
       "text": {
-        "en": "A solution turns red litmus into blue, its pH value is - A. 11 B. C. 5 D. 'A' and 'B' both",
-        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है, उसका pH मान होगा - A. 11 B. C. 5 D. 'A' और 'B' दोनों"
+        "en": "A solution turns red litmus into blue, its pH value is",
+        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है, उसका pH मान होगा"
       },
       "type": "mcq",
       "variantOf": null
@@ -1626,14 +1653,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2 [Q31 continued] How many covalent bonds are there between C-C atoms in alkyne? A. 1 B. 2",
+            "hi": "2 [options C, D continue on next page] [Q31 continued]"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -1645,8 +1699,8 @@
       "sourceId": "2021:A:31",
       "subPart": null,
       "text": {
-        "en": "How many covalent bonds are there between carbon-carbon in alkyne ? A. 1 B. [Q31 continued] How many covalent bonds are there between C-C atoms in alkyne? A. 1 B. C. 3 D.",
-        "hi": "ऐल्काइन में कार्बन-कार्बन के बीच कितने सहसंयोजक बंधन होते हैं ? A. 1 B. [options C, D continue on next page] [Q31 continued] C. 3 D."
+        "en": "How many covalent bonds are there between carbon-carbon in alkyne ?",
+        "hi": "ऐल्काइन में कार्बन-कार्बन के बीच कितने सहसंयोजक बंधन होते हैं ?"
       },
       "type": "mcq",
       "variantOf": null
@@ -2424,14 +2478,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "7",
+            "hi": "7"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "8",
+            "hi": "8"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "6",
+            "hi": "6"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "14",
+            "hi": "14"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -2443,8 +2524,8 @@
       "sourceId": "2021:A:46",
       "subPart": null,
       "text": {
-        "en": "The pH value of a neutral solution is - A. 7 B. C. 6 D.",
-        "hi": "उदासीन विलयन का pH मान होता है - A. 7 B. C. 6 D."
+        "en": "The pH value of a neutral solution is",
+        "hi": "उदासीन विलयन का pH मान होता है"
       },
       "type": "mcq",
       "variantOf": null
@@ -2562,14 +2643,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-18-en-18"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "17",
+            "hi": "17"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "18",
+            "hi": "18"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "19",
+            "hi": "19"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "20",
+            "hi": "20"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -2581,8 +2689,8 @@
       "sourceId": "2021:A:49",
       "subPart": null,
       "text": {
-        "en": "The atomic number of Potassium is - A. 17 B. C. 19 D.",
-        "hi": "पोटैशियम की परमाणु संख्या है - A. 17 B. C. 19 D."
+        "en": "The atomic number of Potassium is",
+        "hi": "पोटैशियम की परमाणु संख्या है"
       },
       "type": "mcq",
       "variantOf": null
@@ -2810,14 +2918,41 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-7-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "5",
+            "hi": "5"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "7",
+            "hi": "7"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "2",
+            "hi": "2"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "3",
+            "hi": "3"
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -2829,8 +2964,8 @@
       "sourceId": "2021:A:54",
       "subPart": null,
       "text": {
-        "en": "The number of covalent bonds between carbon-carbon atoms in acetylene is - A. 5 B. C. 2 D.",
-        "hi": "एसीटिलीन में कार्बन-कार्बन के बीच सहसंयोजक बंधन की संख्या है - A. 5 B. C. 2 D."
+        "en": "The number of covalent bonds between carbon-carbon atoms in acetylene is",
+        "hi": "एसीटिलीन में कार्बन-कार्बन के बीच सहसंयोजक बंधन की संख्या है"
       },
       "type": "mcq",
       "variantOf": null

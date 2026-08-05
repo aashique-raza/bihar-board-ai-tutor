@@ -2644,7 +2644,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-30-en-30"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2674,8 +2674,8 @@
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "30",
+            "hi": "30"
           }
         }
       ],
@@ -3359,7 +3359,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-38-en-38"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3389,8 +3389,8 @@
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "38",
+            "hi": "38"
           }
         }
       ],

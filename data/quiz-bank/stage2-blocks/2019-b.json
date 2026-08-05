@@ -1490,10 +1490,12 @@
     },
     {
       "diagramMentioned": false,
-      "flags": [],
+      "flags": [
+        "marks-missing"
+      ],
       "group": "B",
       "hasAlternative": false,
-      "marks": 6,
+      "marks": null,
       "options": null,
       "provenance": {
         "pdfPages": [
@@ -1506,10 +1508,10 @@
       "sourceId": "2019-b:B:5",
       "subPart": null,
       "text": {
-        "en": "An object 5.0 cm in length is placed at a distance of 20 cm in front of a convex mirror of radius of curvature 30 cm. Find the position of the image, its nature and size. (2) 31. How does the sky appear to an astronaut? (A) Dark (B) Blue (C) Red (D) None of these 32. How many bonds are formed between the two oxygen atoms? (A) Single Bond (B) Double Bond (C) Triple Bond (D) None of these 33. Which non-metal is found in liquid state at room temperature? (A) Mercury (B) Bromine (C) Sulphur (D) Sodium 34. The autotrophic mode of nutrition requires - (A) Chlorophyll (B) Sunlight (C) Carbon dioxide (D) All of these 35. Which one of the following is a metalloid? (A) Zn (B) Ca (C) Ge (D) C 36. Which one of the following is unisexual flower? (A) Hibiscus flower (B) Mustard flower (C) Papaya flower (D) Rose flower 37. Toothpaste for cleaning the teeth are generally - (A) Basic (B) Acidic (C) Salty (D) None of these 38. The general formula for an alkane is - (A) CnH2n+2 (B) CnH2n (C) CnH2n-1 (D) CnH2n-2 39. Which one of the following mirrors has positive focal length? (A) Plane mirror (B) Convex mirror (C) Concave mirror (D) All of these 40. Which one of the following is a clean energy source? (A) Coal (B) Wood (C) Natural gas (D) All of these 26. The chemical formula for washing soda is - (A) NaHCO3 (B) Na2CO3.10H2O (C) Ca(OH)2 (D) None of these 27. Within which pH range our body works? (A) 4.0 to 4.8 (B) 5.0 to 5.8 (C) 6.0 to 6.8 (D) 7.0 to 7.8 28. What is SI unit of electric charge? (A) Volt (B) Ohm (C) Ampere (D) Coulomb 29. In which device, the split ring is used? (A) Electric Motor (B) Electric generator (C) Ammeter (D) Galvanometer 30. How many electrons are there in the outermost orbit of an atom of chlorine? (A) 5 (B) (C) 7 (D)",
-        "hi": "5.0 cm लंबाई का कोई बिंब 30 cm वक्रता त्रिज्या के किसी उत्तल दर्पण के सामने 20 cm दूरी पर रखा गया है। प्रतिबिंब की स्थिति, प्रकृति और साइज ज्ञात कीजिए। (2) 31. किसी अंतरिक्ष यात्री को आकाश कैसा प्रतीत होता है? (A) काला (B) नीला (C) लाल (D) इनमें से कोई नही 32. ऑक्सीजन के दो परमाणुओं के बीच कितने आबंध बनते हैं? (A) एक आबंध (B) द्वि आबंध (C) त्रि आबंध (D) इनमे से कोई नहीं 33. कौन - सा आतु कमरे के तापमान पर तरल अवस्था में पाया जाता है? (A) मरकरी (पारा) (B) ब्रोमीन (C) सल्फर (D) सोडियम 34. स्वपोषी पोषण के लिए आवश्यक है - (A) पर्णहरित (B) सूर्य का प्रकाश (C) कार्बन डाइऑक्साइड (D) इनमें से सभी 35. निम्न में से कौन - सा उपधातु है? (A) Zn (B) Ca (C) Ge (D) C 36. निम्न में से कौन एकलिंगी पुष्प है? (A) गुड़हल पुष्प (B) सरसों पुष्प (C) पपीता पुष्प (D) गुलाब पुष्प 37. दाँतों को साफ करने के लिए दंत - मंजन प्रायः होता है - (A) क्षारीय (B) अम्लीय (C) लवणयुक्त (D) इनमे से कोई नहीं 38. ऐल्केन (Alkanes) का सामान्य सूत्र है - (A) CnH2n+2 (B) CnH2n (C) CnH2n-1 (D) CnH2n-2 39. निम्न मे से किस दर्पण की फोकस दूरी धनात्मक होती है? (A) समतल दर्पण (B) उत्तल दर्पण (C) अवतल दर्पण (D) इनमे से सभी 40. निम्न में से कौन - सा स्वच्छ ऊर्जा स्त्रोत है? (A) कोयला (B) लकड़ी (C) प्राकृतिक गैस (D) इनमे से सभी 26. धोबिया सोडा का रासायनिक सूत्र है - (A) NaHCO3 (B) Na2CO3.10H2O (C) Ca(OH)2 (D) इनमें से कोई नहीं 27. हमारा शरीर किस pH परास के बीच कार्य करता है? (A) 4.0 से 4.8 (B) 5.0 से 5.8 (C) 6.0 से 6.8 (D) 7.0 से 7.8 28. विद्युत आवेश का SI मात्रक क्या है? (A) वोल्ट (B) ओम (C) ऐम्पियर (D) कूलॉम 29. विभक्त वलय का उपयोग किस उपकरण में किया जाता है? (A) विद्युत मोटर (B) विद्युत जनित्र (C) अमीटर (D) गैल्वेनोमीटर 30. क्लोरीन के परमाणु की बाह्यतम कक्षा में इलेक्ट्रॉनों की संख्या कितनी होती है? (A) 5 (B) (C) 7 (D)"
+        "en": "An object 5.0 cm in length is placed at a distance of 20 cm in front of a convex mirror of radius of curvature 30 cm. Find the position of the image, its nature and size. (2) 31. How does the sky appear to an astronaut? (A) Dark (B) Blue (C) Red (D) None of these 32. How many bonds are formed between the two oxygen atoms? (A) Single Bond (B) Double Bond (C) Triple Bond (D) None of these 33. Which non-metal is found in liquid state at room temperature? (A) Mercury (B) Bromine (C) Sulphur (D) Sodium 34. The autotrophic mode of nutrition requires - (A) Chlorophyll (B) Sunlight (C) Carbon dioxide (D) All of these 35. Which one of the following is a metalloid? (A) Zn (B) Ca (C) Ge (D) C 36. Which one of the following is unisexual flower? (A) Hibiscus flower (B) Mustard flower (C) Papaya flower (D) Rose flower 37. Toothpaste for cleaning the teeth are generally - (A) Basic (B) Acidic (C) Salty (D) None of these 38. The general formula for an alkane is - (A) CnH2n+2 (B) CnH2n (C) CnH2n-1 (D) CnH2n-2 39. Which one of the following mirrors has positive focal length? (A) Plane mirror (B) Convex mirror (C) Concave mirror (D) All of these 40. Which one of the following is a clean energy source? (A) Coal (B) Wood (C) Natural gas (D) All of these 26. The chemical formula for washing soda is - (A) NaHCO3 (B) Na2CO3.10H2O (C) Ca(OH)2 (D) None of these 27. Within which pH range our body works? (A) 4.0 to 4.8 (B) 5.0 to 5.8 (C) 6.0 to 6.8 (D) 7.0 to 7.8 28. What is SI unit of electric charge? (A) Volt (B) Ohm (C) Ampere (D) Coulomb 29. In which device, the split ring is used? (A) Electric Motor (B) Electric generator (C) Ammeter (D) Galvanometer 30. How many electrons are there in the outermost orbit of an atom of chlorine? (A) 5 (B) 6 (C) 7 (D) 8",
+        "hi": "5.0 cm लंबाई का कोई बिंब 30 cm वक्रता त्रिज्या के किसी उत्तल दर्पण के सामने 20 cm दूरी पर रखा गया है। प्रतिबिंब की स्थिति, प्रकृति और साइज ज्ञात कीजिए। (2) 31. किसी अंतरिक्ष यात्री को आकाश कैसा प्रतीत होता है? (A) काला (B) नीला (C) लाल (D) इनमें से कोई नही 32. ऑक्सीजन के दो परमाणुओं के बीच कितने आबंध बनते हैं? (A) एक आबंध (B) द्वि आबंध (C) त्रि आबंध (D) इनमे से कोई नहीं 33. कौन - सा आतु कमरे के तापमान पर तरल अवस्था में पाया जाता है? (A) मरकरी (पारा) (B) ब्रोमीन (C) सल्फर (D) सोडियम 34. स्वपोषी पोषण के लिए आवश्यक है - (A) पर्णहरित (B) सूर्य का प्रकाश (C) कार्बन डाइऑक्साइड (D) इनमें से सभी 35. निम्न में से कौन - सा उपधातु है? (A) Zn (B) Ca (C) Ge (D) C 36. निम्न में से कौन एकलिंगी पुष्प है? (A) गुड़हल पुष्प (B) सरसों पुष्प (C) पपीता पुष्प (D) गुलाब पुष्प 37. दाँतों को साफ करने के लिए दंत - मंजन प्रायः होता है - (A) क्षारीय (B) अम्लीय (C) लवणयुक्त (D) इनमे से कोई नहीं 38. ऐल्केन (Alkanes) का सामान्य सूत्र है - (A) CnH2n+2 (B) CnH2n (C) CnH2n-1 (D) CnH2n-2 39. निम्न मे से किस दर्पण की फोकस दूरी धनात्मक होती है? (A) समतल दर्पण (B) उत्तल दर्पण (C) अवतल दर्पण (D) इनमे से सभी 40. निम्न में से कौन - सा स्वच्छ ऊर्जा स्त्रोत है? (A) कोयला (B) लकड़ी (C) प्राकृतिक गैस (D) इनमे से सभी 26. धोबिया सोडा का रासायनिक सूत्र है - (A) NaHCO3 (B) Na2CO3.10H2O (C) Ca(OH)2 (D) इनमें से कोई नहीं 27. हमारा शरीर किस pH परास के बीच कार्य करता है? (A) 4.0 से 4.8 (B) 5.0 से 5.8 (C) 6.0 से 6.8 (D) 7.0 से 7.8 28. विद्युत आवेश का SI मात्रक क्या है? (A) वोल्ट (B) ओम (C) ऐम्पियर (D) कूलॉम 29. विभक्त वलय का उपयोग किस उपकरण में किया जाता है? (A) विद्युत मोटर (B) विद्युत जनित्र (C) अमीटर (D) गैल्वेनोमीटर 30. क्लोरीन के परमाणु की बाह्यतम कक्षा में इलेक्ट्रॉनों की संख्या कितनी होती है? (A) 5 (B) 6 (C) 7 (D) 8"
       },
-      "type": "long",
+      "type": "short",
       "variantOf": null
     },
     {
@@ -2133,10 +2135,10 @@
   "totals": {
     "alternatives": 0,
     "blocks": 53,
-    "blocksWithFlags": 52,
+    "blocksWithFlags": 53,
     "groupA": 25,
     "groupB": 28,
     "marksGroupA": 25,
-    "marksGroupB": 6
+    "marksGroupB": 0
   }
 }

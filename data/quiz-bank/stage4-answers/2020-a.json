@@ -1673,7 +1673,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1685,16 +1685,14 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8",
-        "language-backfilled-hindi"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1711,9 +1709,9 @@
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
           }
         },
         {
@@ -1727,9 +1725,9 @@
         {
           "key": "d",
           "text": {
-            "en": "How many pairs of spiracles are found in cockroach? (A) 2 (B) (C) 10 (D)",
-            "hi": "कोकरोच में कितने जोड़े स्पिराकल पाए जाते हैं? (A) 2 (B) (C) 10 (D)",
-            "hinglish": "Kokroach mein kitne jode spiracle paaye jaate hain? (A) 2 (B) (C) 10 (D)"
+            "en": "6 How many pairs of spiracles are found in cockroach? (A) 2 (B) 8 (C) 10 (D) 6",
+            "hi": "6",
+            "hinglish": "6 Cockroach mein kitne jode spiracles milte hain? (A) 2 (B) 8 (C) 10 (D) 6"
           }
         }
       ],
@@ -2069,7 +2067,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2081,15 +2079,14 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-14-en-14"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2106,9 +2103,9 @@
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
           }
         },
         {
@@ -2122,9 +2119,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "20",
+            "hi": "20",
+            "hinglish": "20"
           }
         }
       ],
@@ -2395,15 +2392,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2420,9 +2415,9 @@
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
           }
         },
         {
@@ -2436,9 +2431,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -2459,7 +2454,7 @@
         "hinglish": "Prakash ke paravartan ke kitne niyam hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2791,15 +2786,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-4"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2816,9 +2809,9 @@
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         },
         {
@@ -2832,9 +2825,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
           }
         }
       ],
@@ -2855,7 +2848,7 @@
         "hinglish": "Ithen ke ek anoo mein kitne sah-sanyojak bandhan hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5072,7 +5065,7 @@
     "objective": 48,
     "questions": 76,
     "subjective": 28,
-    "trilingualComplete": 72,
-    "usableInQuiz": 32
+    "trilingualComplete": 76,
+    "usableInQuiz": 34
   }
 }

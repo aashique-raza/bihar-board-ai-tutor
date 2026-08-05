@@ -1200,7 +1200,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1212,14 +1212,15 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-null-en-null"
+      ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
@@ -1227,33 +1228,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -1448,15 +1449,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-0-en-0"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1465,33 +1464,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "0",
+            "hi": "0",
+            "hinglish": "0"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
           }
         }
       ],
@@ -1512,7 +1511,7 @@
         "hinglish": "Kisi bhi udaasheen vilayan ka pH maan hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2305,7 +2304,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2317,14 +2316,15 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-null-en-null"
+      ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
@@ -2332,33 +2332,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -4029,14 +4029,14 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-null-en-null"
+      ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
@@ -4044,25 +4044,25 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         },
         {
@@ -4091,7 +4091,7 @@
         "hinglish": "Oxygen gas ke ek anoo ke do parmanuon ke beech kitne aaband paye jaate hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4568,7 +4568,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -4580,14 +4580,15 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-null-en-null"
+      ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
@@ -4595,33 +4596,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -4972,15 +4973,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4989,33 +4988,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
           }
         }
       ],
@@ -5036,7 +5035,7 @@
         "hinglish": "Ek prism kitne satohon se ghira hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5052,14 +5051,14 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-null-en-null"
+      ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
@@ -5067,33 +5066,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -5114,7 +5113,7 @@
         "hinglish": "Potassium ki parmanoo sankhya 19 hai. Iski sanyojkta kya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5208,15 +5207,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-9-en-9"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -5225,33 +5222,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "9",
+            "hi": "9",
+            "hinglish": "9"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "19",
+            "hi": "19",
+            "hinglish": "19"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "29",
+            "hi": "29",
+            "hinglish": "29"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "39",
+            "hi": "39",
+            "hinglish": "39"
           }
         }
       ],
@@ -5272,7 +5269,7 @@
         "hinglish": "Fluorine ki parmanoo sankhya kya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5288,15 +5285,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-7-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -5305,15 +5300,15 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": "more than",
+            "en": "more than 7",
             "hi": "7 से अधिक",
             "hinglish": "7 se adhik"
           }
@@ -5321,7 +5316,7 @@
         {
           "key": "c",
           "text": {
-            "en": "less than",
+            "en": "less than 7",
             "hi": "7 से कम",
             "hinglish": "7 se kam"
           }
@@ -5352,12 +5347,12 @@
         "hinglish": "Koi vilayan laal litmus ko neela kar deta hai. Is vilayan ka pH maan hoga"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -5369,15 +5364,14 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -5386,33 +5380,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "12",
+            "hi": "12",
+            "hinglish": "12"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
           }
         }
       ],
@@ -5752,7 +5746,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -5764,15 +5758,14 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-10-en-10"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -5781,33 +5774,33 @@
         {
           "key": "a",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "13",
+            "hi": "13",
+            "hinglish": "13"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         }
       ],
@@ -6455,7 +6448,7 @@
     "objective": 80,
     "questions": 83,
     "subjective": 3,
-    "trilingualComplete": 71,
-    "usableInQuiz": 46
+    "trilingualComplete": 82,
+    "usableInQuiz": 52
   }
 }

@@ -2585,7 +2585,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2597,15 +2597,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-5-en-5"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2638,9 +2637,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
           }
         }
       ],
@@ -3227,7 +3226,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3239,15 +3238,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-3-en-3"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3280,9 +3278,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
           }
         }
       ],
@@ -3308,7 +3306,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3320,15 +3318,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-17-en-17"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3361,9 +3358,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
           }
         }
       ],
@@ -3568,7 +3565,7 @@
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-14-en-14"
+        "marks-defaulted-mcq-hi-15-en-15"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3601,9 +3598,9 @@
         {
           "key": "d",
           "text": {
-            "en": "[Q45 English repeat from page",
-            "hi": "[Q45 English repeat from page",
-            "hinglish": "[Q45 English repeat from page"
+            "en": "14 [Q45 English repeat from page",
+            "hi": "14 [Q45 English repeat from page",
+            "hinglish": "14 [Q45 English repeat from page"
           }
         }
       ],
@@ -3629,7 +3626,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3641,15 +3638,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-3"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3682,9 +3678,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "3",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -3790,7 +3786,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3802,15 +3798,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3843,9 +3838,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
           }
         }
       ],
@@ -3871,7 +3866,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3883,15 +3878,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-4"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3924,9 +3918,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -3952,7 +3946,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3964,15 +3958,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-18-en-18"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4005,9 +3998,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
           }
         }
       ],
@@ -7845,7 +7838,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 103,
+    "trilingualComplete": 110,
     "usableInQuiz": 0
   }
 }

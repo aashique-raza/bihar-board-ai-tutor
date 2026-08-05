@@ -2866,34 +2866,62 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"Reflection follows two laws:\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "options-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -2906,12 +2934,12 @@
       "sourceId": "2022:A:37",
       "subPart": null,
       "text": {
-        "en": "How many laws of reflection of light are? A. 1 B. C. 3 D.",
-        "hi": "प्रकाश के परावर्त्तन के कितने नियम हैं? अ. 1 ब. स. 3 द.",
-        "hinglish": "Prakash ke paravartan ke kitne niyam hain? A. 1 B. C. 3 D."
+        "en": "How many laws of reflection of light are?",
+        "hi": "प्रकाश के परावर्त्तन के कितने नियम हैं?",
+        "hinglish": "Prakash ke paravartan ke kitne niyam hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3865,7 +3893,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3877,22 +3905,52 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-28-en-28"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "24",
+            "hi": "24",
+            "hinglish": "24"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "28",
+            "hi": "28",
+            "hinglish": "28"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "29",
+            "hi": "29",
+            "hinglish": "29"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "30",
+            "hi": "30",
+            "hinglish": "30"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -3905,9 +3963,9 @@
       "sourceId": "2022:A:50",
       "subPart": null,
       "text": {
-        "en": "The atomic number of zinc is - A. 24 B. C. 29 D.",
-        "hi": "जस्ता की परमाणु संख्या है - A. 24 B. C. 29 D.",
-        "hinglish": "Jasta ki parmanoo sankhya hai - A. 24 B. C. 29 D."
+        "en": "The atomic number of zinc is",
+        "hi": "जस्ता की परमाणु संख्या है",
+        "hinglish": "Zinc ki parmanoo sankhya hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -4469,34 +4527,62 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Periodic Classification of Elements: \"Group 1 elements have one valence electron.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "options-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -4509,12 +4595,12 @@
       "sourceId": "2022:A:58",
       "subPart": null,
       "text": {
-        "en": "How many electrons are there in the outermost shell of lithium? A. 1 B. C. 3 D.",
-        "hi": "लिथियम के बाह्यतम शेल में कितने इलेक्ट्रॉन विद्यमान है ? A. 1 B. C. 3 D.",
-        "hinglish": "Lithium ke baahytam shel mein kitne electron vidyamaan hai? A. 1 B. C. 3 D."
+        "en": "How many electrons are there in the outermost shell of lithium?",
+        "hi": "लिथियम के बाह्यतम शेल में कितने इलेक्ट्रॉन विद्यमान है ?",
+        "hinglish": "Lithium ke baahytam shell mein kitne electron vidyamaan hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5319,7 +5405,7 @@
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-7-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -5336,9 +5422,9 @@
         {
           "key": "b",
           "text": {
-            "en": "4, 5, 6 or",
-            "hi": "4, 5, 6 or",
-            "hinglish": "4, 5, 6 ya"
+            "en": "4, 5, 6 or 7",
+            "hi": "4, 5, 6 or 7",
+            "hinglish": "4, 5, 6 or 7"
           }
         },
         {
@@ -5352,9 +5438,9 @@
         {
           "key": "d",
           "text": {
-            "en": "2, 3, 4 or",
-            "hi": "2, 3, 4 or",
-            "hinglish": "2, 3, 4 ya"
+            "en": "2, 3, 4 or 5",
+            "hi": "2, 3, 4 or 5",
+            "hinglish": "2, 3, 4 or 5"
           }
         }
       ],
@@ -5391,9 +5477,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5401,7 +5485,8 @@
       "flags": [
         "options-unparsed-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -5411,7 +5496,7 @@
           "key": "a",
           "text": {
             "en": "Cu + Zn",
-            "hi": null,
+            "hi": "Cu + Zn",
             "hinglish": "Cu + Zn"
           }
         },
@@ -5419,7 +5504,7 @@
           "key": "b",
           "text": {
             "en": "Fe + Ni",
-            "hi": null,
+            "hi": "Fe + Ni",
             "hinglish": "Fe + Ni"
           }
         },
@@ -5427,7 +5512,7 @@
           "key": "c",
           "text": {
             "en": "Cu + Au",
-            "hi": null,
+            "hi": "Cu + Au",
             "hinglish": "Cu + Au"
           }
         },
@@ -5435,7 +5520,7 @@
           "key": "d",
           "text": {
             "en": "Cu + Sn",
-            "hi": null,
+            "hi": "Cu + Sn",
             "hinglish": "Cu + Sn"
           }
         }
@@ -5457,7 +5542,7 @@
         "hinglish": "Peetal nimnankit mein kinki mishradhatu hai ? A. Cu + Zn B. Fe + Ni S. Cu + Au D. Cu + Sn"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5701,7 +5786,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -5713,22 +5798,52 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-hindi",
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-2-en-2"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "15",
+            "hi": "15",
+            "hinglish": "15"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -5741,9 +5856,9 @@
       "sourceId": "2022:A:74",
       "subPart": null,
       "text": {
-        "en": "The atomic number of an element is 16. What is the group number of this element in periodic Table? A. 15 B. C. 16 D.",
-        "hi": "एक तत्व की परमाणु संख्या 16 है, आवर्त सारणी में इस तत्व की वर्ग संख्या क्या है? A. 15 B. C. 16 D.",
-        "hinglish": "Ek tatva ki parmanoo sankhya 16 hai, avart sarani mein is tatva ki varg sankhya kya hai? A. 15 B. C. 16 D."
+        "en": "The atomic number of an element is 16. What is the group number of this element in periodic Table?",
+        "hi": "एक तत्व की परमाणु संख्या 16 है, आवर्त सारणी में इस तत्व की वर्ग संख्या क्या है?",
+        "hinglish": "Ek tatva ki parmanoo sankhya 16 hai, avart sarni mein is tatva ki varg sankhya kya hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -7589,13 +7704,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 54,
+    "l3PlusConfidence": 56,
     "marksGroupA": 80,
     "marksGroupB": 58,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 105,
-    "usableInQuiz": 53
+    "trilingualComplete": 110,
+    "usableInQuiz": 56
   }
 }

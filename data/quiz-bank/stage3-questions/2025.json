@@ -2989,7 +2989,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3001,8 +3001,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -3011,7 +3010,8 @@
       "flags": [
         "options-unparsed-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3021,7 +3021,7 @@
           "key": "a",
           "text": {
             "en": "CaCl2",
-            "hi": null,
+            "hi": "CaCl2",
             "hinglish": "CaCl2"
           }
         },
@@ -3029,7 +3029,7 @@
           "key": "b",
           "text": {
             "en": "CO2",
-            "hi": null,
+            "hi": "CO2",
             "hinglish": "CO2"
           }
         },
@@ -3037,7 +3037,7 @@
           "key": "c",
           "text": {
             "en": "KCl",
-            "hi": null,
+            "hi": "KCl",
             "hinglish": "KCl"
           }
         },
@@ -3045,7 +3045,7 @@
           "key": "d",
           "text": {
             "en": "HCN",
-            "hi": null,
+            "hi": "एचसीएन",
             "hinglish": "HCN"
           }
         }
@@ -3874,7 +3874,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3886,15 +3886,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-30-en-30"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3927,9 +3926,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "30",
+            "hi": "30",
+            "hinglish": "30"
           }
         }
       ],
@@ -4917,7 +4916,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -4929,15 +4928,14 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-38-en-38"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4970,9 +4968,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "38",
+            "hi": "38",
+            "hinglish": "38"
           }
         }
       ],
@@ -7957,7 +7955,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 107,
+    "trilingualComplete": 110,
     "usableInQuiz": 0
   }
 }

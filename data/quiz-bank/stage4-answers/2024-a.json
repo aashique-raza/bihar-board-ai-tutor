@@ -1755,7 +1755,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1767,15 +1767,14 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-80-en-80",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
@@ -1809,9 +1808,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "80",
+            "hi": "80",
+            "hinglish": "80"
           }
         }
       ],
@@ -2400,15 +2399,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-22-en-22",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
@@ -2442,9 +2439,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "22",
+            "hi": "22",
+            "hinglish": "22"
           }
         }
       ],
@@ -2465,7 +2462,7 @@
         "hinglish": "Manav mein autosome ki jodiyon ki sankhya hoti hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2716,15 +2713,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2757,9 +2752,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
           }
         }
       ],
@@ -2780,7 +2775,7 @@
         "hinglish": "Aavart sarani ke tritiya varg mein tatvon ki sankhya kitni hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2874,15 +2869,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-19-en-19",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
@@ -2916,9 +2909,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "19",
+            "hi": "19",
+            "hinglish": "19"
           }
         }
       ],
@@ -2939,7 +2932,7 @@
         "hinglish": "Ek tatva ka electronic vinyaas 2, 8, 7 hai. Is tatva ki parmanoo sankhya kya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3749,15 +3742,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-6-en-6",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
@@ -3791,9 +3782,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "6",
+            "hi": "6",
+            "hinglish": "6"
           }
         }
       ],
@@ -3814,7 +3805,7 @@
         "hinglish": "Ek saadharan prism kitne satohon se ghira rahta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4235,9 +4226,8 @@
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-null-en-4",
-        "provenance-note-stripped",
-        "language-backfilled-english"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "provenance-note-stripped"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4270,7 +4260,7 @@
         {
           "key": "d",
           "text": {
-            "en": "four",
+            "en": "4",
             "hi": "चार",
             "hinglish": "Chaar"
           }
@@ -4786,15 +4776,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-4"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4827,9 +4815,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -4850,7 +4838,7 @@
         "hinglish": "Carbon ke kitne ravadar aparoop hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4945,15 +4933,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-4",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
@@ -4987,9 +4973,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -5010,7 +4996,7 @@
         "hinglish": "Nitrogen ke anoo mein do parmanuon ke beech kitne aaband hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5263,15 +5249,13 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-4-en-4",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
@@ -5305,9 +5289,9 @@
         {
           "key": "d",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
           }
         }
       ],
@@ -5328,7 +5312,7 @@
         "hinglish": "Prakash ke paravartan ke kitne niyam hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7724,7 +7708,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 102,
-    "usableInQuiz": 56
+    "trilingualComplete": 110,
+    "usableInQuiz": 63
   }
 }

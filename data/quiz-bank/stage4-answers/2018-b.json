@@ -874,9 +874,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -895,23 +893,23 @@
           "key": "a",
           "text": {
             "en": "CaO",
-            "hi": null,
+            "hi": "CaO",
             "hinglish": "CaO"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": "Ca(OH)",
-            "hi": null,
-            "hinglish": "Ca(OH)"
+            "en": "Ca(OH) 2",
+            "hi": "Ca(OH) 2",
+            "hinglish": "Ca(OH) 2"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "CaCO3",
-            "hi": null,
+            "hi": "CaCO3",
             "hinglish": "CaCO3"
           }
         },
@@ -941,7 +939,7 @@
         "hinglish": "Nimnalikhit mein se kaun sa choona hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -957,9 +955,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -978,16 +974,16 @@
           "key": "a",
           "text": {
             "en": "7",
-            "hi": null,
+            "hi": "7",
             "hinglish": "7"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": "More than",
-            "hi": "से अधिक",
-            "hinglish": "Se adhik"
+            "en": "More than 7",
+            "hi": "7 से अधिक",
+            "hinglish": "7 se adhik"
           }
         },
         {
@@ -1024,7 +1020,7 @@
         "hinglish": "Namak NaCo3 ka jal ghol ka PH hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1661,9 +1657,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1682,7 +1676,7 @@
           "key": "a",
           "text": {
             "en": "H+",
-            "hi": null,
+            "hi": "H+",
             "hinglish": "H+"
           }
         },
@@ -1690,7 +1684,7 @@
           "key": "b",
           "text": {
             "en": "OH-",
-            "hi": null,
+            "hi": "OH-",
             "hinglish": "OH-"
           }
         },
@@ -1728,7 +1722,7 @@
         "hinglish": "Nimnalikhit mein se kaun sa laal litmus ghol ko laal kar sakta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1785,7 +1779,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1797,8 +1791,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -1826,7 +1819,7 @@
           "key": "b",
           "text": {
             "en": "ATP",
-            "hi": null,
+            "hi": "एटीपी",
             "hinglish": "ATP"
           }
         },
@@ -2528,9 +2521,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2557,7 +2548,7 @@
           "key": "b",
           "text": {
             "en": "Stigma",
-            "hi": null,
+            "hi": "Stigma",
             "hinglish": "Stigma"
           }
         },
@@ -2595,7 +2586,7 @@
         "hinglish": "Phool ka kaun sa bhaag phal banta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2692,16 +2683,14 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
         "missing-hindi",
-        "marks-defaulted-mcq-hi-null-en-22",
+        "marks-defaulted-mcq-hi-null-en-23",
         "empty-text",
         "language-backfilled-hindi"
       ],
@@ -2713,32 +2702,32 @@
           "key": "a",
           "text": {
             "en": "21",
-            "hi": null,
+            "hi": "21",
             "hinglish": "21"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
+            "en": "22",
+            "hi": "22",
+            "hinglish": "22"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "23",
-            "hi": null,
+            "hi": "23",
             "hinglish": "23"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": "Ans:",
-            "hi": "उत्तर:",
-            "hinglish": "Uttar:"
+            "en": "46 Ans:",
+            "hi": "46 उत्तर:",
+            "hinglish": "46 Uttar:"
           }
         }
       ],
@@ -2759,7 +2748,7 @@
         "hinglish": "Manav sharir ki saamaanya koshika mein kitne gunasutron ke joode paaye jaate hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3126,7 +3115,7 @@
     "objective": 40,
     "questions": 46,
     "subjective": 6,
-    "trilingualComplete": 24,
-    "usableInQuiz": 17
+    "trilingualComplete": 30,
+    "usableInQuiz": 22
   }
 }

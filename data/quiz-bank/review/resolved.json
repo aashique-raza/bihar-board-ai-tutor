@@ -40,6 +40,14 @@
       "reason": "Textbook states the female reproductive system as a list (ovaries, oviducts, uterus, cervix, vagina) — no single quotable sentence naming what is excluded, so the automated check couldn't ground a quote (LLM's phrasing of this varied call to call). Already hand-verified in reports/pilot-findings.md §3.1 F3: vas deferens is part of the male reproductive system, so it is correctly excluded from the female one.",
       "decidedBy": "human",
       "decidedAt": "2026-08-04"
+    },
+    {
+      "target": "2023-a:A:43",
+      "field": "text.all",
+      "value": null,
+      "reason": "Not a missing-language extraction gap — the source PDF itself prints a yellow-highlighted 'question missing' placeholder at this position (paper's own compiler-flagged gap, confirmed in stage1-pages/2023-a/page-23.json during Stage B, and already documented as the paper's genuine incompleteness — see QUIZ_DATA_PIPELINE.md F7 and Parking Lot). Nothing to extract or translate in any language. Accepted permanently unusable, not a bug.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-06"
     }
   ]
 }

@@ -320,10 +320,15 @@ async function translateBackfillBatch(model, items) {
     const item = byId.get(String(entry.id));
     const text = typeof entry?.text === 'string' ? entry.text.trim() : '';
     if (!item || !text) continue;
-    const hasDevanagari = DEVANAGARI.test(text);
-    // hi-to-en output must be pure English; en-to-hi output must actually be Devanagari.
-    if (item.direction === 'hi-to-en' && hasDevanagari) continue;
-    if (item.direction === 'en-to-hi' && !hasDevanagari) continue;
+    // hi-to-en output must be pure English — Devanagari means the model failed the direction.
+    // The reverse is NOT checked the same way: per the prompt's own rules 2 and 5, a legitimate
+    // en-to-hi Hindi answer can have zero Devanagari characters — a formula ("CaO"), a bare
+    // number ("21"), or a scientific term kept in English on both sides ("Stigma"). Rejecting
+    // those for "not being Devanagari" is what silently left every short numeric/formula MCQ
+    // option un-backfilled (confirmed on 2018-b:A:16/17/26/37/39, 2025:A:38 — all left
+    // hi: null while only the one prose-shaped option among them ("More than 7") backfilled
+    // correctly).
+    if (item.direction === 'hi-to-en' && DEVANAGARI.test(text)) continue;
     out.set(String(entry.id), text);
   }
   return out;

@@ -58,7 +58,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -74,8 +74,8 @@
         {
           "key": "b",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "8",
+            "hi": "8"
           }
         },
         {
@@ -88,8 +88,8 @@
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "11",
+            "hi": "11"
           }
         }
       ],
@@ -2258,7 +2258,7 @@
     {
       "diagramMentioned": false,
       "flags": [
-        "marks-defaulted-mcq-hi-14-en-7"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2274,7 +2274,7 @@
         {
           "key": "b",
           "text": {
-            "en": "more than",
+            "en": "more than 7",
             "hi": "7 से अधिक"
           }
         },
@@ -2288,8 +2288,8 @@
         {
           "key": "d",
           "text": {
-            "en": "",
-            "hi": ""
+            "en": "14",
+            "hi": "14"
           }
         }
       ],
