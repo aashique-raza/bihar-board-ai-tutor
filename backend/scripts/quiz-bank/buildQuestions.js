@@ -42,6 +42,7 @@ dotenv.config({ path: path.join(BACKEND_ROOT, '.env') });
 const BLOCKS_DIR = path.join(REPO_ROOT, 'data/quiz-bank/stage2-blocks');
 const QUESTIONS_DIR = path.join(REPO_ROOT, 'data/quiz-bank/stage3-questions');
 const CACHE_PATH = path.join(QUESTIONS_DIR, '_hinglish-cache.json');
+const BACKFILL_CACHE_PATH = path.join(QUESTIONS_DIR, '_language-backfill-cache.json');
 
 const SCHEMA_VERSION = 1;
 const BATCH_SIZE = 12;
@@ -245,6 +246,172 @@ async function ensureTranslations(needed, cache, { dryRun }) {
 }
 
 // ---------------------------------------------------------------------------
+// language backfill (Stage G finding, 2026-08-05) — Bihar Board papers are printed
+// bilingual, so a question whose Hindi survived extraction but whose English didn't (or
+// vice versa) is an extraction gap, not a missing-content gap. Re-reading every affected
+// page by hand does not scale (271 questions across 15 papers); instead the missing side
+// is filled by translating the side that IS there. This is explicitly NOT "the paper's own
+// text" the way Stage B/C content is — every fragment this touches gets a visible
+// `language-backfilled-<lang>` flag so it is never mistaken for a verified source reading.
+// Same cache-by-content-hash approach as the Hinglish cache (P5): a re-run makes zero calls.
+// ---------------------------------------------------------------------------
+
+const BACKFILL_PROMPT_VERSION = 1;
+
+function backfillCacheKey(text, direction) {
+  return crypto
+    .createHash('sha256')
+    .update(`v${BACKFILL_PROMPT_VERSION} | ${direction} | ${text}`)
+    .digest('hex')
+    .slice(0, 16);
+}
+
+function loadBackfillCache() {
+  if (!fs.existsSync(BACKFILL_CACHE_PATH)) return {};
+  return JSON.parse(fs.readFileSync(BACKFILL_CACHE_PATH, 'utf8')).entries || {};
+}
+
+function saveBackfillCache(entries) {
+  fs.mkdirSync(QUESTIONS_DIR, { recursive: true });
+  fs.writeFileSync(BACKFILL_CACHE_PATH, stableStringify({ schemaVersion: SCHEMA_VERSION, entries }), 'utf8');
+}
+
+const BACKFILL_SYSTEM_PROMPT = `You translate a single fragment (a question stem or one MCQ option) from a
+Bihar Board Class 10 Science exam paper. The paper prints every question bilingually, but this
+particular fragment was only captured in one language during extraction — you are filling in the
+missing side, not improving or rewording the side that already exists.
+
+Rules, all of them hard:
+1. Translate literally, in the exam's own register. Do not simplify, explain, shorten, or answer
+   the question. Do not add content that is not in the source fragment.
+2. Scientific terms keep their standard English spelling in BOTH directions — photosynthesis,
+   mitochondria, voltmeter, auxin, pepsin, hydrocarbon. Never transliterate a scientific term into
+   Devanagari, and never leave one in Devanagari when translating into English.
+${GLOSSARY_LINES ? `3. Where a term appears in this list, prefer its English spelling exactly as written:\n${GLOSSARY_LINES.replace(/ -> .*/g, '')}` : ''}
+4. Direction "hi-to-en": output plain English only, not a single Devanagari character.
+   Direction "en-to-hi": output Devanagari script (Hindi), not transliterated Roman Hindi.
+5. Numbers, units and formulas stay plain in both directions: 100 W, 220 V, CO2, H2O, 10^8.
+6. Match the source fragment's own punctuation style (a question stem ending "?" stays a "?").
+
+Return ONLY a JSON object of this exact shape, nothing else:
+{"results":[{"id":"<the id you were given>","text":"<your translation>"}]}
+Return one entry for every id, in the same order.`;
+
+async function translateBackfillBatch(model, items) {
+  const response = await model.invoke([
+    { role: 'system', content: BACKFILL_SYSTEM_PROMPT },
+    { role: 'user', content: JSON.stringify({ items: items.map(({ id, direction, source }) => ({ id, direction, source })) }) },
+  ]);
+
+  const raw = typeof response.content === 'string'
+    ? response.content
+    : response.content.map((part) => part.text || '').join('');
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return new Map();
+  }
+
+  const byId = new Map(items.map((item) => [item.id, item]));
+  const out = new Map();
+  for (const entry of parsed.results || []) {
+    const item = byId.get(String(entry.id));
+    const text = typeof entry?.text === 'string' ? entry.text.trim() : '';
+    if (!item || !text) continue;
+    const hasDevanagari = DEVANAGARI.test(text);
+    // hi-to-en output must be pure English; en-to-hi output must actually be Devanagari.
+    if (item.direction === 'hi-to-en' && hasDevanagari) continue;
+    if (item.direction === 'en-to-hi' && !hasDevanagari) continue;
+    out.set(String(entry.id), text);
+  }
+  return out;
+}
+
+/**
+ * Collect every {hi,en} pair across a paper's blocks (stem + options) where exactly one side
+ * is present, request the missing side, and return a lookup the caller applies while building
+ * questions. Mirrors ensureTranslations's batch/retry/cache shape.
+ */
+async function ensureLanguageBackfill(blocks, cache, { dryRun }) {
+  const needed = new Map(); // backfillCacheKey -> {id, direction, source}
+  const collectPair = (t) => {
+    if (!t) return;
+    const hi = (t.hi || '').trim();
+    const en = (t.en || '').trim();
+    if (hi && !en) {
+      const id = backfillCacheKey(hi, 'hi-to-en');
+      if (!cache[id]) needed.set(id, { id, direction: 'hi-to-en', source: hi });
+    } else if (en && !hi) {
+      const id = backfillCacheKey(en, 'en-to-hi');
+      if (!cache[id]) needed.set(id, { id, direction: 'en-to-hi', source: en });
+    }
+  };
+  for (const block of blocks) {
+    collectPair(block.text);
+    for (const option of block.options || []) collectPair(option.text);
+  }
+
+  const missing = [...needed.values()];
+  if (!missing.length || dryRun) return { called: 0, failed: [] };
+
+  const model = makeModel();
+  const failed = [];
+  let called = 0;
+
+  for (let i = 0; i < missing.length; i += BATCH_SIZE) {
+    const batch = missing.slice(i, i + BATCH_SIZE);
+    let results = new Map();
+    try {
+      results = await translateBackfillBatch(model, batch);
+      called += 1;
+    } catch (err) {
+      console.error(`    backfill batch ${1 + i / BATCH_SIZE} failed: ${err.message}`);
+    }
+
+    const retry = batch.filter((item) => !results.has(item.id));
+    for (const item of retry) {
+      try {
+        const single = await translateBackfillBatch(model, [item]);
+        called += 1;
+        if (single.has(item.id)) results.set(item.id, single.get(item.id));
+        else failed.push(item.id);
+      } catch (err) {
+        console.error(`    backfill retry failed for ${item.id}: ${err.message}`);
+        failed.push(item.id);
+      }
+    }
+
+    for (const [id, text] of results) cache[id] = text;
+    saveBackfillCache(cache);
+    if (missing.length > BATCH_SIZE) {
+      console.log(`    language-backfill ${Math.min(i + BATCH_SIZE, missing.length)}/${missing.length}`);
+    }
+  }
+
+  return { called, failed };
+}
+
+/**
+ * Applies the backfill cache to a single {hi,en} pair. Returns the (possibly completed) pair
+ * plus whether a fill actually happened, so the caller can flag it.
+ */
+function applyLanguageBackfill(t, cache) {
+  if (!t) return { text: t, backfilled: null };
+  const hi = (t.hi || '').trim();
+  const en = (t.en || '').trim();
+  if (hi && !en) {
+    const filled = cache[backfillCacheKey(hi, 'hi-to-en')];
+    if (filled) return { text: { hi: t.hi, en: filled }, backfilled: 'english' };
+  } else if (en && !hi) {
+    const filled = cache[backfillCacheKey(en, 'en-to-hi')];
+    if (filled) return { text: { hi: filled, en: t.en }, backfilled: 'hindi' };
+  }
+  return { text: t, backfilled: null };
+}
+
+// ---------------------------------------------------------------------------
 // block -> question (§5.2)
 // ---------------------------------------------------------------------------
 
@@ -268,6 +435,24 @@ function cleanBlock(block) {
     : null;
 
   return { ...block, text, options, __provenanceCleaned: dirty };
+}
+
+/** Applies the language-backfill cache to a block's stem + options. Returns a new block plus
+ * the set of languages ('hindi' | 'english') that were filled anywhere on it, so toQuestion
+ * can flag it. */
+function backfillBlock(block, cache) {
+  const filledLangs = new Set();
+
+  const applyOne = (t) => {
+    const { text, backfilled } = applyLanguageBackfill(t, cache);
+    if (backfilled) filledLangs.add(backfilled);
+    return text;
+  };
+
+  const text = applyOne(block.text);
+  const options = block.options ? block.options.map((o) => ({ key: o.key, text: applyOne(o.text) })) : null;
+
+  return { ...block, text, options, __languageBackfilled: filledLangs };
 }
 
 /** Every string in a paper that needs Hinglish, as {key, hi, en}. */
@@ -372,7 +557,11 @@ function toQuestion(block, cache) {
       pages: block.provenance?.pdfPages ?? [],
     },
 
-    flags: [...(block.flags || []), ...(block.__provenanceCleaned ? ['provenance-note-stripped'] : [])],
+    flags: [
+      ...(block.flags || []),
+      ...(block.__provenanceCleaned ? ['provenance-note-stripped'] : []),
+      ...[...(block.__languageBackfilled || [])].map((lang) => `language-backfilled-${lang}`),
+    ],
   };
 
   question.blockers = computeBlockers(question);
@@ -408,7 +597,7 @@ function stableStringify(value) {
   return `${JSON.stringify(sortKeys(value), null, 2)}\n`;
 }
 
-async function processPaper(paperId, cache, options) {
+async function processPaper(paperId, cache, backfillCache, options) {
   const blocksPath = path.join(BLOCKS_DIR, `${paperId}.json`);
   if (!fs.existsSync(blocksPath)) {
     throw new Error(`No stage2-blocks/${paperId}.json — run Stage C first.`);
@@ -416,7 +605,12 @@ async function processPaper(paperId, cache, options) {
   const source = JSON.parse(fs.readFileSync(blocksPath, 'utf8'));
   const cleanedBlocks = source.blocks.map(cleanBlock);
 
-  const strings = collectStrings(cleanedBlocks);
+  const { called: backfillCalled, failed: backfillFailed } = await ensureLanguageBackfill(cleanedBlocks, backfillCache, options);
+  if (backfillCalled) console.log(`  language-backfill llm calls: ${backfillCalled}`);
+  if (backfillFailed.length) console.log(`  language-backfill untranslated after retry: ${backfillFailed.length}`);
+  const backfilledBlocks = cleanedBlocks.map((block) => backfillBlock(block, backfillCache));
+
+  const strings = collectStrings(backfilledBlocks);
   const uncached = strings.filter((s) => !cache[s.key]).length;
   console.log(`  strings: ${strings.length}  (cached ${strings.length - uncached}, to translate ${uncached})`);
 
@@ -424,7 +618,7 @@ async function processPaper(paperId, cache, options) {
   if (called) console.log(`  llm calls: ${called}`);
   if (failed.length) console.log(`  untranslated after retry: ${failed.length}`);
 
-  const questions = cleanedBlocks.map((block) => toQuestion(block, cache));
+  const questions = backfilledBlocks.map((block) => toQuestion(block, cache));
 
   const objective = questions.filter((q) => q.section === 'objective');
   const trilingual = questions.filter(
@@ -480,6 +674,7 @@ async function main() {
   }
 
   const cache = loadCache();
+  const backfillCache = loadBackfillCache();
   let failed = 0;
 
   for (const paperId of papers) {
@@ -487,7 +682,7 @@ async function main() {
     console.log('-'.repeat(60));
     let result;
     try {
-      result = await processPaper(paperId, cache, { dryRun });
+      result = await processPaper(paperId, cache, backfillCache, { dryRun });
     } catch (err) {
       console.error(`  FAILED: ${err.message}`);
       failed += 1;

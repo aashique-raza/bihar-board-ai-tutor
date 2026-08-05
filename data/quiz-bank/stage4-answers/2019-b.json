@@ -26,7 +26,7 @@
   "questions": [
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -38,8 +38,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -47,7 +46,8 @@
       },
       "flags": [
         "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -56,7 +56,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "decreases significantly",
             "hi": "बहुत कम हो जाता है",
             "hinglish": "Bahut kam ho jaata hai"
           }
@@ -64,15 +64,15 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "does not change",
             "hi": "परिवर्तित नहीं होता है",
-            "hinglish": "Parivartit nahi hota hai"
+            "hinglish": "parivartit nahi hota hai"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "increases significantly",
             "hi": "बहुत अधिक बढ़ जाता है",
             "hinglish": "Bahut adhik badh jaata hai"
           }
@@ -80,7 +80,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "none of these",
             "hi": "इनमें से कोई नही",
             "hinglish": "Inmein se koi nahi"
           }
@@ -108,7 +108,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -120,8 +120,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -129,7 +128,8 @@
       },
       "flags": [
         "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -138,7 +138,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "biomass",
             "hi": "जैव मात्रा (बायो-मास)",
             "hinglish": "Jaiv maatra (bio-mass)"
           }
@@ -146,23 +146,23 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "nuclear energy source",
             "hi": "नाभिकीय ऊर्जा स्त्रोत",
-            "hinglish": "Nabhikiy urja strot"
+            "hinglish": "Naabikiy urja strot"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "geothermal energy source",
             "hi": "भूतापीय ऊर्जा स्त्रोत",
-            "hinglish": "Bhootapiy urja strot"
+            "hinglish": "Bhootapeey urja strot"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "none of these",
             "hi": "इनमें से कोई नही",
             "hinglish": "Inmein se koi nahi"
           }
@@ -190,7 +190,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -202,8 +202,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -211,7 +210,8 @@
       },
       "flags": [
         "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -220,7 +220,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "selection",
             "hi": "अपचयन",
             "hinglish": "Apchayan"
           }
@@ -228,7 +228,7 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "substitution",
             "hi": "उपचयन",
             "hinglish": "Upchayan"
           }
@@ -236,7 +236,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "corrosion",
             "hi": "संक्षारण",
             "hinglish": "Sankharan"
           }
@@ -244,7 +244,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -272,7 +272,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -284,8 +284,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -293,7 +292,8 @@
       },
       "flags": [
         "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -302,15 +302,15 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "gibberellin",
             "hi": "जिब्रेलिन",
-            "hinglish": "Gibberellin"
+            "hinglish": "Jibrelin"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "adrenaline",
             "hi": "एड्रीनेलिन",
             "hinglish": "Adrenaline"
           }
@@ -318,7 +318,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "insulin",
             "hi": "इंसुलिन",
             "hinglish": "Insulin"
           }
@@ -326,7 +326,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "thyroxine",
             "hi": "थाइरॉक्सिन",
             "hinglish": "Thyroxine"
           }
@@ -365,16 +365,15 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
         "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -383,7 +382,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "on the length of the conductor",
             "hi": "चालक की लम्बाई पर",
             "hinglish": "Chalak ki lambai par"
           }
@@ -391,7 +390,7 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "on the cross-sectional area of the conductor",
             "hi": "चालक के अनुप्रस्थ काट क्षेत्रफल पर",
             "hinglish": "Chalak ke anuprast kaat kshetrafal par"
           }
@@ -399,7 +398,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "on the temperature of the conductor",
             "hi": "चालक के तापमान पर",
             "hinglish": "Chalak ke taapmaan par"
           }
@@ -407,7 +406,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "on the electric current flowing in the conductor",
             "hi": "चालक में प्रवाहित विद्युत धारा पर",
             "hinglish": "Chalak mein pravahit vidyut dhara par"
           }
@@ -430,7 +429,7 @@
         "hinglish": "Chalak ka pratirodh nirbhar nahi karta hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -905,7 +904,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -917,8 +916,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -926,7 +924,8 @@
       },
       "flags": [
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -936,15 +935,15 @@
           "key": "a",
           "text": {
             "en": "Crop field",
-            "hi": null,
-            "hinglish": "Kheti ka kshetra"
+            "hi": "फसल का खेत",
+            "hinglish": "Fasal ka khet"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "River Bank",
-            "hi": null,
+            "hi": "नदी का किनारा",
             "hinglish": "Nadi ka kinara"
           }
         },
@@ -952,15 +951,15 @@
           "key": "c",
           "text": {
             "en": "Sea Shore",
-            "hi": null,
-            "hinglish": "Sea Shore"
+            "hi": "समुद्र तट",
+            "hinglish": "Samudra tat"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "Everest",
-            "hi": null,
+            "hi": "एवरेस्ट",
             "hinglish": "Everest"
           }
         }
@@ -987,7 +986,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -999,9 +998,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "missing-hindi",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -1010,7 +1007,8 @@
       "flags": [
         "options-unparsed-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1020,7 +1018,7 @@
           "key": "a",
           "text": {
             "en": "Gonorrhoea",
-            "hi": null,
+            "hi": "गोनोरिया",
             "hinglish": "Gonorrhoea"
           }
         },
@@ -1028,24 +1026,24 @@
           "key": "b",
           "text": {
             "en": "Syphilis",
-            "hi": null,
-            "hinglish": "Syphilis"
+            "hi": "सिफलिस",
+            "hinglish": "Sifalis"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Warts",
-            "hi": null,
-            "hinglish": "Warts"
+            "hi": "कंडर",
+            "hinglish": "Kandar"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "All of these",
-            "hi": null,
-            "hinglish": "In sabhi"
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
           }
         }
       ],
@@ -1062,8 +1060,8 @@
       "subPart": null,
       "text": {
         "en": "Which one of the following is not a bacterial disease?",
-        "hi": null,
-        "hinglish": "Nimnalikhit me se kaun sa ek bacterial rog nahi hai?"
+        "hi": "निम्नलिखित में से कौन सा एक बैक्टीरियल रोग नहीं है?",
+        "hinglish": "Nimnalikhit mein se kaun sa ek bacterial rog nahi hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1082,10 +1080,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1093,7 +1088,8 @@
       "flags": [
         "options-unparsed-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1103,7 +1099,7 @@
           "key": "a",
           "text": {
             "en": "Lymph",
-            "hi": null,
+            "hi": "लिम्फ",
             "hinglish": "Lymph"
           }
         },
@@ -1111,7 +1107,7 @@
           "key": "b",
           "text": {
             "en": "Plasma",
-            "hi": null,
+            "hi": "प्लाज्मा",
             "hinglish": "Plasma"
           }
         },
@@ -1119,7 +1115,7 @@
           "key": "c",
           "text": {
             "en": "Platelets",
-            "hi": null,
+            "hi": "प्लेटलेट्स",
             "hinglish": "Platelets"
           }
         },
@@ -1127,8 +1123,8 @@
           "key": "d",
           "text": {
             "en": "None of these",
-            "hi": null,
-            "hinglish": "None of these"
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
           }
         }
       ],
@@ -1145,11 +1141,11 @@
       "subPart": null,
       "text": {
         "en": "Which component of the blood helps in stopping blood leakage?",
-        "hi": null,
-        "hinglish": "Khoon ka kaun sa tatva khoon ki leakage rokne me madad karta hai?"
+        "hi": "रक्त का कौन सा घटक रक्त रिसाव को रोकने में मदद करता है?",
+        "hinglish": "Rakt ka kaun sa ghatak rakt risav ko rokne mein madad karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1391,7 +1387,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1403,8 +1399,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "missing-hindi"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -1412,7 +1407,8 @@
       },
       "flags": [
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1464,8 +1460,8 @@
       "subPart": null,
       "text": {
         "en": "Which relation of the following is true?",
-        "hi": null,
-        "hinglish": "Nimnalikhit me se kaun sa sambandh sahi hai?"
+        "hi": "निम्नलिखित में से कौन सा संबंध सत्य है?",
+        "hinglish": "Nimnalikhit mein se kaun sa sambandh satya hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1552,7 +1548,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1564,9 +1560,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -1575,7 +1569,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1584,7 +1579,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "From the cerebrum",
             "hi": "प्रमस्तिष्क से",
             "hinglish": "Pramastishk se"
           }
@@ -1592,7 +1587,7 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "From the cerebellum",
             "hi": "अनुमस्तिष्क से",
             "hinglish": "Anumastishk se"
           }
@@ -1600,7 +1595,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "From the pons",
             "hi": "पोन्स से",
             "hinglish": "Pons se"
           }
@@ -1608,7 +1603,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "From the medulla",
             "hi": "मेडुला से",
             "hinglish": "Medula se"
           }
@@ -1626,7 +1621,7 @@
       "sourceId": "2019-b:A:20",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Meninges exits",
         "hi": "मैरुरज्जू निकलता है",
         "hinglish": "Mairurajju nikalta hai"
       },
@@ -3382,7 +3377,7 @@
     "objective": 25,
     "questions": 53,
     "subjective": 28,
-    "trilingualComplete": 43,
-    "usableInQuiz": 11
+    "trilingualComplete": 53,
+    "usableInQuiz": 13
   }
 }

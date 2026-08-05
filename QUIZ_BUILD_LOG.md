@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage G (review + final health) — IN PROGRESS, paused mid-phase.** `npm run quiz:review` chal chuka hai, `review/queue.json` (448 open items) aur `reports/health.json` bane hain. Ek bada blocker mila aur fix hua (neeche dekho) — baaki queue clearing (355 🔴 language-missing items) abhi baaki hai. |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete. 🟡 Stage G IN PROGRESS — blocker fixed, review queue clearing next. |
+| **Sub-stage** | **Stage G (review + final health) — IN PROGRESS, paused mid-phase.** `npm run quiz:review` chal chuka hai. Red queue items cleared from 355 → **47** (see below). Baaki 47 red + L3+ answer-confidence gap (72.2%, need 90%) still open. |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete. 🟡 Stage G IN PROGRESS — language-missing blocker mostly cleared, 47 red + L3+ gap next. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage G started. `npm run quiz:review` revealed only 41/1138 (3.6%) questions usable in quiz — traced to a real Stage C bug (see below), fixed, re-ran C→D→E→F→G. Now 447/1138 (39.3%) usable. Session paused here — queue still has 355 🔴 red items (language-missing) to clear next session. See Session History. |
+| **Last session** | 2026-08-05 — Language-backfill built into Stage D (`buildQuestions.js`): Bihar Board papers are printed bilingual, so a stem/option with Hindi but no English (or vice versa) is an extraction gap, not missing content — LLM-translate the missing side from the side that exists, flagged `language-backfilled-<lang>` (never silent). Re-ran D→E→F→G on all 18 papers. Red queue items 355→47, objective language-complete 86.8%→99.9%, usable-in-quiz 39.3%→45.6%. Remaining 47 red items have BOTH languages empty on specific MCQ options (real Stage B/C extraction gap, nothing to translate from — needs manual page re-read or a resolved.json acceptance). L3+ still 72.2% (need ≥90%) — that's an answer-verification gap, separate from language. Session paused here, baseline clean. See Session History. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -142,6 +142,38 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage G continued: language-backfill built, red queue 355→47
+- **Investigated the 355 🔴 red items** (all `language-missing`) before touching code. 271 unique
+  questions affected; only 1 had zero text anywhere (`2023-a:A:43`, a known source placeholder).
+  The other 270 had Hindi with no English or vice versa — and Bihar Board papers are always
+  printed bilingual, so a one-sided gap is an **extraction gap**, not a missing-content gap.
+- **User decision (delegated):** asked user how to handle `2018-b` (the retyped English-only
+  paper with no Hindi source at all — 40 questions). User said "you decide". Decision: LLM-
+  translate the missing side from whichever side exists, for every such gap paper-wide (not
+  just `2018-b`) — flagged transparently (`language-backfilled-<lang>`), never presented as a
+  verified source reading. Chosen because manually re-reading ~600 fragments across 15 papers
+  doesn't scale, and 94.7% (fixing everything except 2018-b) would still miss the ≥95% exit
+  criterion.
+- **Built:** `ensureLanguageBackfill`/`applyLanguageBackfill` in `buildQuestions.js` (Stage D) —
+  separate cache (`_language-backfill-cache.json`) from the Hinglish cache, separate prompt, same
+  batch/retry/P5-cache shape as the existing Hinglish step. Runs before Hinglish generation so
+  Hinglish always sees complete hi+en. Spot-checked output quality on `2016-b` before running the
+  full bank — translations correct, flags visible.
+- **Re-ran D→E→F→G on all 18 papers.** Stage E re-verified answers for questions that now have
+  English for the first time. Result: red queue 355→**47**, objective language-complete
+  86.8%→**99.9%**, usable-in-quiz 447→514 (39.3%→45.6%).
+- **Remaining 47 red items are a different, smaller problem:** specific MCQ options where BOTH
+  hi and en are empty (nothing for the backfill to translate from) — a genuine Stage B/C
+  extraction gap on ~40 questions across several papers. Needs manual page re-read (Stage B
+  territory) or a documented `resolved.json` acceptance — not attempted this session, flagged for
+  next.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi.
+- **Agla:** (1) 47 remaining red items — decide manual re-read vs accept-and-clear per item,
+  (2) L3+ confidence is 72.2%, need ≥90% — separate investigation into why so many objective
+  answers aren't textbook-verifiable (likely out-of-syllabus or RAG-retrieval gaps, not yet
+  looked into), (3) once both move, re-check full §12 exit criteria.
 
 ### 2026-08-05 — Stage G started: review queue + health report, marks-missing blocker found and fixed
 - **Chalaya:** `npm run quiz:review` (`buildReview.js`, already existed from Pilot) against the

@@ -2423,7 +2423,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2435,8 +2435,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -2444,7 +2443,8 @@
       },
       "flags": [
         "options-unparsed-hindi",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2454,7 +2454,7 @@
           "key": "a",
           "text": {
             "en": "Chimpanzee",
-            "hi": null,
+            "hi": "चिम्पांजी",
             "hinglish": "Chimpanzee"
           }
         },
@@ -2462,7 +2462,7 @@
           "key": "b",
           "text": {
             "en": "Spider",
-            "hi": null,
+            "hi": "मकड़ी",
             "hinglish": "Makdi"
           }
         },
@@ -2470,7 +2470,7 @@
           "key": "c",
           "text": {
             "en": "Orangutan",
-            "hi": null,
+            "hi": "ओरंगुटान",
             "hinglish": "Orangutan"
           }
         },
@@ -2478,7 +2478,7 @@
           "key": "d",
           "text": {
             "en": "Bacteria",
-            "hi": null,
+            "hi": "बैक्टीरिया",
             "hinglish": "Bacteria"
           }
         }
@@ -6555,7 +6555,7 @@
     "objective": 80,
     "questions": 83,
     "subjective": 3,
-    "trilingualComplete": 70,
+    "trilingualComplete": 71,
     "usableInQuiz": 0
   }
 }

@@ -6442,7 +6442,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6455,7 +6455,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6464,7 +6463,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6483,8 +6483,8 @@
       "subPart": null,
       "text": {
         "en": "Why is red colour used in railway signals?",
-        "hi": null,
-        "hinglish": "Railway signals mein laal rang kyun istemal hota hai?"
+        "hi": "रेलवे सिग्नल में लाल रंग का उपयोग क्यों किया जाता है?",
+        "hinglish": "Railway signal mein laal rang ka upyog kyun kiya jaata hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6506,7 +6506,6 @@
       "blockers": [
         "answer-missing",
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6517,7 +6516,8 @@
         "missing-hindi",
         "marks-missing",
         "empty-text",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6536,8 +6536,8 @@
       "subPart": null,
       "text": {
         "en": "What is the reason for total internal reflection in diamond?",
-        "hi": null,
-        "hinglish": "Diamond mein total internal reflection ka karan kya hai?"
+        "hi": "हीरा में कुल आंतरिक परावर्तन का कारण क्या है?",
+        "hinglish": "Heera mein kul aantarik paravartan ka kaaran kya hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6545,7 +6545,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6558,7 +6558,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6567,7 +6566,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6586,8 +6586,8 @@
       "subPart": null,
       "text": {
         "en": "Write three important features of fuse wire.",
-        "hi": null,
-        "hinglish": "Fuse wire ke teen zaroori visheshataen likhiye"
+        "hi": "फ्यूज वायर की तीन महत्वपूर्ण विशेषताएँ लिखिए।",
+        "hinglish": "Fuse wire ki teen mahatvapurn visheshataen likhiye."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6595,7 +6595,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6608,7 +6608,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6617,7 +6616,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6636,8 +6636,8 @@
       "subPart": null,
       "text": {
         "en": "Write the 'right-hand thumb' rule related to the magnetic effect of electric current.",
-        "hi": null,
-        "hinglish": "Vidyut dhara ke chumbakiya prabhav se sambandhit 'right-hand thumb' rule likhiye"
+        "hi": "चुंबकीय प्रभाव के लिए 'दाहिने हाथ की अंगुली' नियम लिखिए।",
+        "hinglish": "Chumbakiya prabhav ke liye 'daahine haath ki ungli' niyam likhiye."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6645,7 +6645,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6658,7 +6658,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6667,7 +6666,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6686,8 +6686,8 @@
       "subPart": null,
       "text": {
         "en": "What are the advantages of obtaining biogas from animal dung and bio-waste?",
-        "hi": null,
-        "hinglish": "Pashu gobar aur bio-waste se biogas prapt karne ke fayde kya hain?"
+        "hi": "पशु गोबर और जैविक अपशिष्ट से बायोगैस प्राप्त करने के क्या लाभ हैं?",
+        "hinglish": "Pashu gobar aur jaivik apashisht se biogas prapt karne ke kya labh hain?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6695,7 +6695,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6708,7 +6708,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6717,7 +6716,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6736,8 +6736,8 @@
       "subPart": null,
       "text": {
         "en": "Why series connection is not used in domestic electrical circuits?",
-        "hi": null,
-        "hinglish": "Ghar ke vidyut parpath mein series connection kyun nahi istemal hota?"
+        "hi": "घरेलू विद्युत सर्किट में श्रृंखला कनेक्शन का उपयोग क्यों नहीं किया जाता?",
+        "hinglish": "Gharelu vidyut circuit mein shrankhla connection ka upyog kyun nahi kiya jaata?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6745,7 +6745,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6758,7 +6758,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6767,7 +6766,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6786,8 +6786,8 @@
       "subPart": null,
       "text": {
         "en": "What are the advantage of getting energy from wind?",
-        "hi": null,
-        "hinglish": "Hawa se urja prapt karne ke fayde kya hain?"
+        "hi": "हवा से ऊर्जा प्राप्त करने के क्या लाभ हैं?",
+        "hinglish": "Hawa se urja prapt karne ke kya labh hain?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6795,7 +6795,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6808,7 +6808,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6817,7 +6816,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6836,8 +6836,8 @@
       "subPart": null,
       "text": {
         "en": "How is tidal energy produced? (Long Answer Type Questions, section header mislabeled 'Short Answer Type Questions' in source)",
-        "hi": null,
-        "hinglish": "Tidal energy kaise utpann hoti hai?"
+        "hi": "ज्वारीय ऊर्जा कैसे उत्पन्न होती है? (लंबी उत्तर प्रकार के प्रश्न, स्रोत में अनुभाग शीर्षक 'संक्षिप्त उत्तर प्रकार के प्रश्न' के रूप में गलत लेबल किया गया)",
+        "hinglish": "Jwaariy urja kaise utpann hoti hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6845,7 +6845,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6859,7 +6859,6 @@
       "blockers": [
         "answer-missing",
         "diagram-required",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6869,7 +6868,8 @@
       "flags": [
         "missing-hindi",
         "empty-text",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6888,8 +6888,8 @@
       "subPart": null,
       "text": {
         "en": "Using ray diagrams, explain the first and second principal focus of convex and concave lenses. 9. Explain the first and second principle focus of convex and concave lenses with the help of ray diagram.",
-        "hi": null,
-        "hinglish": "Ray diagrams ka istemal karke, uttal aur avatal lens ka pehla aur doosra pramukh kendr samjhao"
+        "hi": "रे डाइग्राम का उपयोग करते हुए, उत्तल और अवतल लेंस के पहले और दूसरे प्रमुख फोकस को समझाएं।",
+        "hinglish": "Ray diagram ka upyog karte hue, uttal aur avatal lens ke pehle aur doosre pramukh fokus ko samjhaayein."
       },
       "type": "long",
       "usableInQuiz": false,
@@ -6897,7 +6897,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6911,7 +6911,6 @@
       "blockers": [
         "answer-missing",
         "diagram-required",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6920,7 +6919,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6939,8 +6939,8 @@
       "subPart": null,
       "text": {
         "en": "What is dynamo? Describe its principles and working with the help of a neat diagram.",
-        "hi": null,
-        "hinglish": "Dynamo kya hai? Iske siddhant aur kaam ko saaf diagram ke saath varnit kijiye"
+        "hi": "डायनेमो क्या है? इसके सिद्धांत और कार्यप्रणाली को एक साफ चित्र की मदद से वर्णन करें।",
+        "hinglish": "Dynamo kya hai? Iske siddhant aur karya pranali ko ek saaf chitra ki madad se varnan karein."
       },
       "type": "long",
       "usableInQuiz": false,
@@ -6948,7 +6948,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6961,7 +6961,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -6970,7 +6969,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -6989,8 +6989,8 @@
       "subPart": null,
       "text": {
         "en": "Describe a precipitation reaction with an example.",
-        "hi": null,
-        "hinglish": "Ek precipitation reaction ko udaharan ke saath varnit kijiye"
+        "hi": "एक अवक्षेपण प्रतिक्रिया का वर्णन करें और एक उदाहरण दें।",
+        "hinglish": "Ek avakshepan pratikriya ka varnan karein aur ek udaharan dein."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -6998,7 +6998,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7011,7 +7011,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7020,7 +7019,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7039,8 +7039,8 @@
       "subPart": null,
       "text": {
         "en": "Why is the use of iodised salt recommended?",
-        "hi": null,
-        "hinglish": "Iodised lavan ka istemal kyun sujhaaya jaata hai?"
+        "hi": "आयोडाइज्ड नमक के उपयोग की सिफारिश क्यों की जाती है?",
+        "hinglish": "Iodised namak ke upyog ki sifarish kyun ki jaati hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7048,7 +7048,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7061,7 +7061,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7070,7 +7069,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7089,8 +7089,8 @@
       "subPart": null,
       "text": {
         "en": "Describe the functioning of HCl acid secreted in the human stomach.",
-        "hi": null,
-        "hinglish": "Manav pet mein chhootne wale HCl aml ka kaam kya hai?"
+        "hi": "मानव पेट में स्रावित HCl एसिड के कार्यप्रणाली का वर्णन करें।",
+        "hinglish": "Manav pet mein sraavit HCl aml ke karyapranali ka varnan karein."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7098,7 +7098,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7111,7 +7111,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7120,7 +7119,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7139,8 +7139,8 @@
       "subPart": null,
       "text": {
         "en": "Differentiate between saturated and unsaturated hydrocarbons. Give one example for each.",
-        "hi": null,
-        "hinglish": "Saturated aur unsaturated hydrocarbons mein kya antar hai? Har ek ka ek udaharan do"
+        "hi": "संतृप्त और असंतृप्त हाइड्रोकार्बन के बीच अंतर करें। प्रत्येक के लिए एक उदाहरण दें।",
+        "hinglish": "Santreet aur asantreet hydrocarbon ke beech antar karein. Pratyek ke liye ek udaharan dein."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7148,7 +7148,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7161,7 +7161,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7170,7 +7169,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7189,8 +7189,8 @@
       "subPart": null,
       "text": {
         "en": "Define a combination reaction. Give one example of an exothermic combination reaction.",
-        "hi": null,
-        "hinglish": "Samanvay abhikriya ko paribhashit karo. Ek exothermic samanvay abhikriya ka udaharan do"
+        "hi": "संयोग प्रतिक्रिया को परिभाषित करें। एक उष्मीय संयोग प्रतिक्रिया का एक उदाहरण दें।",
+        "hinglish": "Sanyog pratikriya ko paribhashit karein. Ek ushmak sanyog pratikriya ka ek udaharan dein."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7198,7 +7198,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7211,7 +7211,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7220,7 +7219,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7239,8 +7239,8 @@
       "subPart": null,
       "text": {
         "en": "What is vinegar? Explain its uses.",
-        "hi": null,
-        "hinglish": "Vinegar kya hai? Iske istemal samjhao"
+        "hi": "सिरका क्या है? इसके उपयोगों को समझाएं।",
+        "hinglish": "Sirka kya hai? Iske upyogon ko samjhaayein."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7248,7 +7248,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7261,7 +7261,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7270,7 +7269,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7289,8 +7289,8 @@
       "subPart": null,
       "text": {
         "en": "What is the process of esterification? Explain with the help of equation.",
-        "hi": null,
-        "hinglish": "Esterification ki prakriya kya hai? Samikaran ki madad se samjhao"
+        "hi": "एस्टरिफिकेशन की प्रक्रिया क्या है? समीकरण की मदद से समझाएं।",
+        "hinglish": "Esterification ki prakriya kya hai? Samikaran ki madad se samjhaayein."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7298,7 +7298,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7311,7 +7311,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7320,7 +7319,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7339,8 +7339,8 @@
       "subPart": null,
       "text": {
         "en": "What is drip irrigation system? (Long Answer Type Questions, section header mislabeled 'Short Answer Type Questions' in source, same pattern as Physics)",
-        "hi": null,
-        "hinglish": "Drip irrigation system kya hai?"
+        "hi": "ड्रिप सिंचाई प्रणाली क्या है? (लंबे उत्तर प्रकार के प्रश्न, स्रोत में अनुभाग शीर्षक 'संक्षिप्त उत्तर प्रकार के प्रश्न' गलत लेबल किया गया है, भौतिकी के समान पैटर्न)",
+        "hinglish": "Drip sinchai pranali kya hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7348,7 +7348,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7361,7 +7361,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7370,7 +7369,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7389,8 +7389,8 @@
       "subPart": null,
       "text": {
         "en": "What is chemical bond? How many types of it? Explain with examples.",
-        "hi": null,
-        "hinglish": "Rasayanik bandhan kya hai? Iske kitne prakar hain? Udaharan ke saath samjhao"
+        "hi": "रासायनिक बंधन क्या है? इसके कितने प्रकार हैं? उदाहरणों के साथ समझाएं।",
+        "hinglish": "Rasayanik bandhan kya hai? Iske kitne prakar hain? Udaharanon ke saath samjhaayein."
       },
       "type": "long",
       "usableInQuiz": false,
@@ -7398,7 +7398,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7411,7 +7411,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7420,7 +7419,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7439,8 +7439,8 @@
       "subPart": null,
       "text": {
         "en": "Mention some unique properties of carbon and explain why the number of compounds of carbon is innumerable?",
-        "hi": null,
-        "hinglish": "Carbon ke kuch vishesh gun batao aur kyun carbon ke yaugik anant hain?"
+        "hi": "कार्बन की कुछ अनोखी विशेषताओं का उल्लेख करें और समझाएं कि कार्बन के यौगिकों की संख्या अनगिनत क्यों है?",
+        "hinglish": "Carbon ki kuch anokhi visheshataon ka ullekh karein aur samjhaayein ki carbon ke yaugikon ki sankhya anginath kyun hai?"
       },
       "type": "long",
       "usableInQuiz": false,
@@ -7462,7 +7462,6 @@
       "blockers": [
         "answer-missing",
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7472,7 +7471,8 @@
       "flags": [
         "missing-hindi",
         "marks-missing",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7491,8 +7491,8 @@
       "subPart": null,
       "text": {
         "en": "What is the role of digestive juices in the stomach?",
-        "hi": null,
-        "hinglish": "Pet mein digestive juices ka kya role hai?"
+        "hi": "पाचन रसों की भूमिका क्या है?",
+        "hinglish": "Pachan rasoon ki bhumika kya hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7500,7 +7500,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7513,7 +7513,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7522,7 +7521,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7541,8 +7541,8 @@
       "subPart": null,
       "text": {
         "en": "Write the names of main respiratory organs of fish, earthworm, mosquito and human being.",
-        "hi": null,
-        "hinglish": "Machhli, earthworm, machhar aur manav ke mukhya shwasan angon ke naam likho"
+        "hi": "मछली, earthworm, मच्छर और मानव के मुख्य श्वसन अंगों के नाम लिखिए।",
+        "hinglish": "Machhli, earthworm, machchar aur manav ke mukhya shwasan angon ke naam likhiye."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7550,7 +7550,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7563,7 +7563,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7572,7 +7571,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7591,8 +7591,8 @@
       "subPart": null,
       "text": {
         "en": "What is double circulation of blood in humans?",
-        "hi": null,
-        "hinglish": "Manav mein rakt ka double circulation kya hai?"
+        "hi": "मनुष्यों में रक्त का डबल परिसंचरण क्या है?",
+        "hinglish": "Manushyon mein rakt ka double parisancharan kya hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7600,7 +7600,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7613,7 +7613,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7622,7 +7621,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7641,7 +7641,7 @@
       "subPart": null,
       "text": {
         "en": "What is the principle of dialysis?",
-        "hi": null,
+        "hi": "डायलिसिस का सिद्धांत क्या है?",
         "hinglish": "Dialysis ka siddhant kya hai?"
       },
       "type": "short",
@@ -7650,7 +7650,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7663,7 +7663,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7672,7 +7671,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7691,8 +7691,8 @@
       "subPart": null,
       "text": {
         "en": "What are the functions of nervous system?",
-        "hi": null,
-        "hinglish": "Tantrika tantra ke kya karye hote hain?"
+        "hi": "तंत्रिका तंत्र के कार्य क्या हैं?",
+        "hinglish": "Tantrika tantra ke karya kya hain?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7700,7 +7700,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7713,7 +7713,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7722,7 +7721,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7741,8 +7741,8 @@
       "subPart": null,
       "text": {
         "en": "Write the names of common sexually transmitted diseases in human.",
-        "hi": null,
-        "hinglish": "Manav mein aam sexually transmitted diseases ke naam likhiye"
+        "hi": "मानव में सामान्य यौन संचारित रोगों के नाम लिखिए।",
+        "hinglish": "Manav mein samanya yaun sancharit rog ke naam likhiye."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7750,7 +7750,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7763,7 +7763,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7772,7 +7771,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7791,8 +7791,8 @@
       "subPart": null,
       "text": {
         "en": "What do you understand by homologous organs and analogous organs?",
-        "hi": null,
-        "hinglish": "Homologous organs aur analogous organs se aap kya samajhte hain?"
+        "hi": "आप homologous अंगों और analogous अंगों से क्या समझते हैं?",
+        "hinglish": "Aap homologous angon aur analogous angon se kya samajhte hain?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7800,7 +7800,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7813,7 +7813,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7822,7 +7821,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7841,8 +7841,8 @@
       "subPart": null,
       "text": {
         "en": "What would happen if we eliminate all organisms at a trophic level? (Long Answer Type Questions, section header mislabeled 'Short Answer Type Questions' in source, same recurring pattern)",
-        "hi": null,
-        "hinglish": "Agar hum ek trophic level par sabhi organisms ko hata dete hain to kya hoga?"
+        "hi": "यदि हम किसी ट्रॉफिक स्तर पर सभी जीवों को समाप्त कर दें तो क्या होगा?",
+        "hinglish": "Yadi hum kisi trophic star par sabhi jeevon ko samapt kar den to kya hoga?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -7850,7 +7850,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7864,7 +7864,6 @@
       "blockers": [
         "answer-missing",
         "diagram-required",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7873,7 +7872,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7892,7 +7892,7 @@
       "subPart": null,
       "text": {
         "en": "How does respiration take place through gills? Explain with diagram?",
-        "hi": null,
+        "hi": "गिल्स के माध्यम से श्वसन कैसे होता है? चित्र के साथ समझाइए?",
         "hinglish": "Gills ke madhyam se shwasan kaise hota hai? Chitra ke saath samjhaiye?"
       },
       "type": "long",
@@ -7901,7 +7901,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -7914,7 +7914,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -7923,7 +7922,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -7942,8 +7942,8 @@
       "subPart": null,
       "text": {
         "en": "How does energy flow in an ecosystem? AglaSem Earn While You Learn Program! Share your recent question papers with us and get paid! To participate, email us with the following details: Your Name, Your Class, Your Board, Details of the Question Papers you have. Our team will reach out to you with the next steps. Email: support@aglasem.com Study Materials — aglasem.com. Model Papers: Sample Papers, Half Yearly Sample Papers. Important Resources: Periodic Table, Writing Skills/Formats, Maps of India/World. Notes: Class 6-12 Notes (checklist graphic). Books and Solutions: NCERT Books, NCERT Book Solutions, HC Verma Chapter Wise Solutions, RD Sharma Solutions, CGBSE Solutions.",
-        "hi": null,
-        "hinglish": "Ecosystem mein urja ka prabhav kaise hota hai?"
+        "hi": "एक पारिस्थितिकी तंत्र में ऊर्जा का प्रवाह कैसे होता है?",
+        "hinglish": "Ek paristhitiki tantra mein urja ka pravah kaise hota hai?"
       },
       "type": "long",
       "usableInQuiz": false,
@@ -7957,7 +7957,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 77,
+    "trilingualComplete": 107,
     "usableInQuiz": 0
   }
 }

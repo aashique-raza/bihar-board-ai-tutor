@@ -493,7 +493,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -506,7 +506,6 @@
       },
       "blockers": [
         "answer-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -515,7 +514,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -534,8 +534,8 @@
       "subPart": "or",
       "text": {
         "en": "Explain Conductor, Non - conductor, Semi - conductor and Super - conductor with example.",
-        "hi": null,
-        "hinglish": "Conductor, Non - conductor, Semi - conductor aur Super - conductor ko udaharan ke saath vyakhya karein"
+        "hi": "संवाहक, गैर-संवाहक, अर्ध-संवाहक और सुपर-संवाहक को उदाहरण के साथ समझाइए।",
+        "hinglish": "Sanvahak, gair-sanvahak, ardha-sanvahak aur super-sanvahak ko udaharan ke saath samjhaiye."
       },
       "type": "long",
       "usableInQuiz": false,
@@ -1099,7 +1099,7 @@
     "objective": 7,
     "questions": 18,
     "subjective": 11,
-    "trilingualComplete": 17,
+    "trilingualComplete": 18,
     "usableInQuiz": 0
   }
 }

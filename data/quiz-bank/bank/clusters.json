@@ -3,6 +3,42 @@
     {
       "clusterId": "c-0001",
       "members": [
+        "q-000006",
+        "q-001193"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.8
+    },
+    {
+      "clusterId": "c-0002",
+      "members": [
+        "q-000008",
+        "q-001195"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.75
+    },
+    {
+      "clusterId": "c-0003",
+      "members": [
+        "q-000010",
+        "q-001197"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.9
+    },
+    {
+      "clusterId": "c-0004",
+      "members": [
+        "q-000011",
+        "q-001198"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.75
+    },
+    {
+      "clusterId": "c-0005",
+      "members": [
         "q-000016",
         "q-000767"
       ],
@@ -10,7 +46,7 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0002",
+      "clusterId": "c-0006",
       "members": [
         "q-000018",
         "q-000474"
@@ -19,7 +55,16 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0003",
+      "clusterId": "c-0007",
+      "members": [
+        "q-000019",
+        "q-001204"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0008",
       "members": [
         "q-000020",
         "q-000885"
@@ -28,7 +73,16 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0004",
+      "clusterId": "c-0009",
+      "members": [
+        "q-000022",
+        "q-001205"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.857
+    },
+    {
+      "clusterId": "c-0010",
       "members": [
         "q-000026",
         "q-000777"
@@ -37,7 +91,214 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0005",
+      "clusterId": "c-0011",
+      "members": [
+        "q-000033",
+        "q-001212"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.875
+    },
+    {
+      "clusterId": "c-0012",
+      "members": [
+        "q-000035",
+        "q-001214"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.9
+    },
+    {
+      "clusterId": "c-0013",
+      "members": [
+        "q-000036",
+        "q-001215"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.9
+    },
+    {
+      "clusterId": "c-0014",
+      "members": [
+        "q-000040",
+        "q-001218"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.9
+    },
+    {
+      "clusterId": "c-0015",
+      "members": [
+        "q-000042",
+        "q-001220"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.8
+    },
+    {
+      "clusterId": "c-0016",
+      "members": [
+        "q-000045",
+        "q-001223"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.889
+    },
+    {
+      "clusterId": "c-0017",
+      "members": [
+        "q-000046",
+        "q-001224"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0018",
+      "members": [
+        "q-000051",
+        "q-001228"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0019",
+      "members": [
+        "q-001140",
+        "q-001247"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.778
+    },
+    {
+      "clusterId": "c-0020",
+      "members": [
+        "q-001169",
+        "q-000804"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.818
+    },
+    {
+      "clusterId": "c-0021",
+      "members": [
+        "q-001171",
+        "q-000248"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.8
+    },
+    {
+      "clusterId": "c-0022",
+      "members": [
+        "q-001173",
+        "q-000272"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.778
+    },
+    {
+      "clusterId": "c-0023",
+      "members": [
+        "q-001173",
+        "q-000394"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.889
+    },
+    {
+      "clusterId": "c-0024",
+      "members": [
+        "q-001174",
+        "q-000263"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.778
+    },
+    {
+      "clusterId": "c-0025",
+      "members": [
+        "q-001174",
+        "q-000660"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0026",
+      "members": [
+        "q-001177",
+        "q-000313"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.875
+    },
+    {
+      "clusterId": "c-0027",
+      "members": [
+        "q-001179",
+        "q-000266"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.75
+    },
+    {
+      "clusterId": "c-0028",
+      "members": [
+        "q-001179",
+        "q-000707"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.75
+    },
+    {
+      "clusterId": "c-0029",
+      "members": [
+        "q-001179",
+        "q-000758"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.875
+    },
+    {
+      "clusterId": "c-0030",
+      "members": [
+        "q-001185",
+        "q-000736"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.8
+    },
+    {
+      "clusterId": "c-0031",
+      "members": [
+        "q-001187",
+        "q-000262"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0032",
+      "members": [
+        "q-001221",
+        "q-000674"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0033",
+      "members": [
+        "q-001229",
+        "q-000694"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0034",
       "members": [
         "q-000069",
         "q-000426"
@@ -46,7 +307,43 @@
       "similarity": 0.833
     },
     {
-      "clusterId": "c-0006",
+      "clusterId": "c-0035",
+      "members": [
+        "q-001237",
+        "q-000865"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.778
+    },
+    {
+      "clusterId": "c-0036",
+      "members": [
+        "q-001241",
+        "q-000524"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 1
+    },
+    {
+      "clusterId": "c-0037",
+      "members": [
+        "q-001251",
+        "q-000974"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.8
+    },
+    {
+      "clusterId": "c-0038",
+      "members": [
+        "q-001259",
+        "q-000426"
+      ],
+      "reason": "near-duplicate text (proposed, not merged)",
+      "similarity": 0.75
+    },
+    {
+      "clusterId": "c-0039",
       "members": [
         "q-000075",
         "q-000747"
@@ -55,7 +352,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0007",
+      "clusterId": "c-0040",
       "members": [
         "q-000083",
         "q-000686"
@@ -64,7 +361,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0008",
+      "clusterId": "c-0041",
       "members": [
         "q-000085",
         "q-000151"
@@ -73,7 +370,7 @@
       "similarity": 0.875
     },
     {
-      "clusterId": "c-0009",
+      "clusterId": "c-0042",
       "members": [
         "q-000088",
         "q-000754"
@@ -82,7 +379,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0010",
+      "clusterId": "c-0043",
       "members": [
         "q-000089",
         "q-000411"
@@ -91,7 +388,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0011",
+      "clusterId": "c-0044",
       "members": [
         "q-000089",
         "q-000561"
@@ -100,7 +397,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0012",
+      "clusterId": "c-0045",
       "members": [
         "q-000089",
         "q-000940"
@@ -109,7 +406,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0013",
+      "clusterId": "c-0046",
       "members": [
         "q-000092",
         "q-000755"
@@ -118,7 +415,7 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0014",
+      "clusterId": "c-0047",
       "members": [
         "q-000132",
         "q-000305"
@@ -127,7 +424,7 @@
       "similarity": 0.889
     },
     {
-      "clusterId": "c-0015",
+      "clusterId": "c-0048",
       "members": [
         "q-000134",
         "q-000784"
@@ -136,7 +433,7 @@
       "similarity": 0.867
     },
     {
-      "clusterId": "c-0016",
+      "clusterId": "c-0049",
       "members": [
         "q-000151",
         "q-000817"
@@ -145,7 +442,7 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0017",
+      "clusterId": "c-0050",
       "members": [
         "q-000157",
         "q-000433"
@@ -154,7 +451,7 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0018",
+      "clusterId": "c-0051",
       "members": [
         "q-000160",
         "q-000332"
@@ -163,7 +460,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0019",
+      "clusterId": "c-0052",
       "members": [
         "q-000165",
         "q-000453"
@@ -172,7 +469,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0020",
+      "clusterId": "c-0053",
       "members": [
         "q-000169",
         "q-000445"
@@ -181,7 +478,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0021",
+      "clusterId": "c-0054",
       "members": [
         "q-000189",
         "q-000703"
@@ -190,7 +487,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0022",
+      "clusterId": "c-0055",
       "members": [
         "q-000191",
         "q-000704"
@@ -199,7 +496,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0023",
+      "clusterId": "c-0056",
       "members": [
         "q-000192",
         "q-000330"
@@ -208,7 +505,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0024",
+      "clusterId": "c-0057",
       "members": [
         "q-000197",
         "q-000509"
@@ -217,7 +514,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0025",
+      "clusterId": "c-0058",
       "members": [
         "q-000201",
         "q-000791"
@@ -226,7 +523,7 @@
       "similarity": 0.909
     },
     {
-      "clusterId": "c-0026",
+      "clusterId": "c-0059",
       "members": [
         "q-000202",
         "q-000847"
@@ -235,7 +532,7 @@
       "similarity": 0.833
     },
     {
-      "clusterId": "c-0027",
+      "clusterId": "c-0060",
       "members": [
         "q-000203",
         "q-000705"
@@ -244,7 +541,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0028",
+      "clusterId": "c-0061",
       "members": [
         "q-000207",
         "q-000580"
@@ -253,7 +550,7 @@
       "similarity": 0.9
     },
     {
-      "clusterId": "c-0029",
+      "clusterId": "c-0062",
       "members": [
         "q-000236",
         "q-000391"
@@ -262,7 +559,7 @@
       "similarity": 0.769
     },
     {
-      "clusterId": "c-0030",
+      "clusterId": "c-0063",
       "members": [
         "q-000239",
         "q-000536"
@@ -271,7 +568,7 @@
       "similarity": 0.889
     },
     {
-      "clusterId": "c-0031",
+      "clusterId": "c-0064",
       "members": [
         "q-000242",
         "q-000603"
@@ -280,7 +577,7 @@
       "similarity": 0.818
     },
     {
-      "clusterId": "c-0032",
+      "clusterId": "c-0065",
       "members": [
         "q-000258",
         "q-000925"
@@ -289,7 +586,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0033",
+      "clusterId": "c-0066",
       "members": [
         "q-000261",
         "q-000552"
@@ -298,7 +595,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0034",
+      "clusterId": "c-0067",
       "members": [
         "q-000263",
         "q-000660"
@@ -307,7 +604,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0035",
+      "clusterId": "c-0068",
       "members": [
         "q-000263",
         "q-000748"
@@ -316,7 +613,7 @@
       "similarity": 0.889
     },
     {
-      "clusterId": "c-0036",
+      "clusterId": "c-0069",
       "members": [
         "q-000266",
         "q-000707"
@@ -325,7 +622,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0037",
+      "clusterId": "c-0070",
       "members": [
         "q-000272",
         "q-000394"
@@ -334,7 +631,7 @@
       "similarity": 0.875
     },
     {
-      "clusterId": "c-0038",
+      "clusterId": "c-0071",
       "members": [
         "q-000284",
         "q-000470"
@@ -343,7 +640,7 @@
       "similarity": 0.818
     },
     {
-      "clusterId": "c-0039",
+      "clusterId": "c-0072",
       "members": [
         "q-000290",
         "q-000771"
@@ -352,7 +649,7 @@
       "similarity": 0.842
     },
     {
-      "clusterId": "c-0040",
+      "clusterId": "c-0073",
       "members": [
         "q-000305",
         "q-000598"
@@ -361,7 +658,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0041",
+      "clusterId": "c-0074",
       "members": [
         "q-000308",
         "q-000561"
@@ -370,7 +667,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0042",
+      "clusterId": "c-0075",
       "members": [
         "q-000313",
         "q-000536"
@@ -379,7 +676,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0043",
+      "clusterId": "c-0076",
       "members": [
         "q-000314",
         "q-000915"
@@ -388,7 +685,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0044",
+      "clusterId": "c-0077",
       "members": [
         "q-000322",
         "q-000728"
@@ -397,7 +694,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0045",
+      "clusterId": "c-0078",
       "members": [
         "q-000322",
         "q-000792"
@@ -406,7 +703,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0046",
+      "clusterId": "c-0079",
       "members": [
         "q-000323",
         "q-000635"
@@ -415,7 +712,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0047",
+      "clusterId": "c-0080",
       "members": [
         "q-000323",
         "q-000789"
@@ -424,7 +721,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0048",
+      "clusterId": "c-0081",
       "members": [
         "q-000329",
         "q-000401"
@@ -433,7 +730,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0049",
+      "clusterId": "c-0082",
       "members": [
         "q-000336",
         "q-000816"
@@ -442,7 +739,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0050",
+      "clusterId": "c-0083",
       "members": [
         "q-000336",
         "q-000928"
@@ -451,7 +748,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0051",
+      "clusterId": "c-0084",
       "members": [
         "q-000393",
         "q-000803"
@@ -460,7 +757,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0052",
+      "clusterId": "c-0085",
       "members": [
         "q-000396",
         "q-000916"
@@ -469,7 +766,7 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0053",
+      "clusterId": "c-0086",
       "members": [
         "q-000397",
         "q-000800"
@@ -478,7 +775,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0054",
+      "clusterId": "c-0087",
       "members": [
         "q-000400",
         "q-000795"
@@ -487,7 +784,7 @@
       "similarity": 0.857
     },
     {
-      "clusterId": "c-0055",
+      "clusterId": "c-0088",
       "members": [
         "q-000406",
         "q-000912"
@@ -496,7 +793,7 @@
       "similarity": 0.9
     },
     {
-      "clusterId": "c-0056",
+      "clusterId": "c-0089",
       "members": [
         "q-000411",
         "q-000561"
@@ -505,7 +802,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0057",
+      "clusterId": "c-0090",
       "members": [
         "q-000411",
         "q-000940"
@@ -514,7 +811,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0058",
+      "clusterId": "c-0091",
       "members": [
         "q-000412",
         "q-000827"
@@ -523,7 +820,7 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0059",
+      "clusterId": "c-0092",
       "members": [
         "q-000415",
         "q-000549"
@@ -532,7 +829,7 @@
       "similarity": 0.857
     },
     {
-      "clusterId": "c-0060",
+      "clusterId": "c-0093",
       "members": [
         "q-000425",
         "q-000718"
@@ -541,7 +838,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0061",
+      "clusterId": "c-0094",
       "members": [
         "q-000425",
         "q-000838"
@@ -550,7 +847,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0062",
+      "clusterId": "c-0095",
       "members": [
         "q-000430",
         "q-000739"
@@ -559,7 +856,7 @@
       "similarity": 0.889
     },
     {
-      "clusterId": "c-0063",
+      "clusterId": "c-0096",
       "members": [
         "q-000436",
         "q-000828"
@@ -568,7 +865,7 @@
       "similarity": 0.833
     },
     {
-      "clusterId": "c-0064",
+      "clusterId": "c-0097",
       "members": [
         "q-000470",
         "q-000574"
@@ -577,7 +874,7 @@
       "similarity": 0.818
     },
     {
-      "clusterId": "c-0065",
+      "clusterId": "c-0098",
       "members": [
         "q-000482",
         "q-000592"
@@ -586,7 +883,7 @@
       "similarity": 0.917
     },
     {
-      "clusterId": "c-0066",
+      "clusterId": "c-0099",
       "members": [
         "q-000495",
         "q-000498"
@@ -595,7 +892,7 @@
       "similarity": 0.75
     },
     {
-      "clusterId": "c-0067",
+      "clusterId": "c-0100",
       "members": [
         "q-000500",
         "q-000737"
@@ -604,7 +901,7 @@
       "similarity": 0.833
     },
     {
-      "clusterId": "c-0068",
+      "clusterId": "c-0101",
       "members": [
         "q-000508",
         "q-000676"
@@ -613,7 +910,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0069",
+      "clusterId": "c-0102",
       "members": [
         "q-000518",
         "q-000614"
@@ -622,7 +919,7 @@
       "similarity": 0.818
     },
     {
-      "clusterId": "c-0070",
+      "clusterId": "c-0103",
       "members": [
         "q-000528",
         "q-000665"
@@ -631,7 +928,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0071",
+      "clusterId": "c-0104",
       "members": [
         "q-000540",
         "q-000702"
@@ -640,7 +937,7 @@
       "similarity": 0.857
     },
     {
-      "clusterId": "c-0072",
+      "clusterId": "c-0105",
       "members": [
         "q-000544",
         "q-000623"
@@ -649,7 +946,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0073",
+      "clusterId": "c-0106",
       "members": [
         "q-000561",
         "q-000940"
@@ -658,7 +955,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0074",
+      "clusterId": "c-0107",
       "members": [
         "q-000620",
         "q-000760"
@@ -667,7 +964,7 @@
       "similarity": 0.875
     },
     {
-      "clusterId": "c-0075",
+      "clusterId": "c-0108",
       "members": [
         "q-000625",
         "q-000741"
@@ -676,7 +973,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0076",
+      "clusterId": "c-0109",
       "members": [
         "q-000627",
         "q-000962"
@@ -685,7 +982,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0077",
+      "clusterId": "c-0110",
       "members": [
         "q-000630",
         "q-000948"
@@ -694,7 +991,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0078",
+      "clusterId": "c-0111",
       "members": [
         "q-000635",
         "q-000789"
@@ -703,7 +1000,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0079",
+      "clusterId": "c-0112",
       "members": [
         "q-000637",
         "q-000806"
@@ -712,7 +1009,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0080",
+      "clusterId": "c-0113",
       "members": [
         "q-000654",
         "q-000927"
@@ -721,7 +1018,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0081",
+      "clusterId": "c-0114",
       "members": [
         "q-000665",
         "q-000729"
@@ -730,7 +1027,7 @@
       "similarity": 0.889
     },
     {
-      "clusterId": "c-0082",
+      "clusterId": "c-0115",
       "members": [
         "q-000666",
         "q-000942"
@@ -739,7 +1036,7 @@
       "similarity": 0.9
     },
     {
-      "clusterId": "c-0083",
+      "clusterId": "c-0116",
       "members": [
         "q-000671",
         "q-000933"
@@ -748,7 +1045,7 @@
       "similarity": 0.8
     },
     {
-      "clusterId": "c-0084",
+      "clusterId": "c-0117",
       "members": [
         "q-000718",
         "q-000838"
@@ -757,7 +1054,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0085",
+      "clusterId": "c-0118",
       "members": [
         "q-000722",
         "q-000851"
@@ -766,7 +1063,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0086",
+      "clusterId": "c-0119",
       "members": [
         "q-000728",
         "q-000792"
@@ -775,7 +1072,7 @@
       "similarity": 0.778
     },
     {
-      "clusterId": "c-0087",
+      "clusterId": "c-0120",
       "members": [
         "q-000787",
         "q-000895"
@@ -784,7 +1081,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0088",
+      "clusterId": "c-0121",
       "members": [
         "q-000799",
         "q-000912"
@@ -793,7 +1090,7 @@
       "similarity": 0.818
     },
     {
-      "clusterId": "c-0089",
+      "clusterId": "c-0122",
       "members": [
         "q-000816",
         "q-000928"
@@ -802,7 +1099,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0090",
+      "clusterId": "c-0123",
       "members": [
         "q-000848",
         "q-000955"
@@ -811,7 +1108,7 @@
       "similarity": 0.889
     },
     {
-      "clusterId": "c-0091",
+      "clusterId": "c-0124",
       "members": [
         "q-000850",
         "q-000958"
@@ -820,7 +1117,7 @@
       "similarity": 1
     },
     {
-      "clusterId": "c-0092",
+      "clusterId": "c-0125",
       "members": [
         "q-000873",
         "q-000982"

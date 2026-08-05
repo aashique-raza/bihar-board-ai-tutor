@@ -1693,7 +1693,8 @@
         "required": false
       },
       "flags": [
-        "marks-defaulted-mcq-hi-8-en-8"
+        "marks-defaulted-mcq-hi-8-en-8",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1727,8 +1728,8 @@
           "key": "d",
           "text": {
             "en": "How many pairs of spiracles are found in cockroach? (A) 2 (B) (C) 10 (D)",
-            "hi": null,
-            "hinglish": "Tilchhatta mein kitne jode shwas randhra paaye jaate hain? (A) 2 (B) (C) 10 (D)"
+            "hi": "कोकरोच में कितने जोड़े स्पिराकल पाए जाते हैं? (A) 2 (B) (C) 10 (D)",
+            "hinglish": "Kokroach mein kitne jode spiracle paaye jaate hain? (A) 2 (B) (C) 10 (D)"
           }
         }
       ],

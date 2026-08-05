@@ -1375,16 +1375,15 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
         "options-unparsed-hindi",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1394,7 +1393,7 @@
           "key": "a",
           "text": {
             "en": "CFC",
-            "hi": null,
+            "hi": "सीएफसी",
             "hinglish": "CFC"
           }
         },
@@ -1402,7 +1401,7 @@
           "key": "b",
           "text": {
             "en": "DDT",
-            "hi": null,
+            "hi": "डीडीटी",
             "hinglish": "DDT"
           }
         },
@@ -1410,7 +1409,7 @@
           "key": "c",
           "text": {
             "en": "ATP",
-            "hi": null,
+            "hi": "एटीपी",
             "hinglish": "ATP"
           }
         },
@@ -1418,8 +1417,8 @@
           "key": "d",
           "text": {
             "en": "None of these",
-            "hi": null,
-            "hinglish": "None of these"
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
           }
         }
       ],
@@ -1440,7 +1439,7 @@
         "hinglish": "Jaiw aavardhan pradarshit karne wala rasayan hai - A. CFC B. DDT C. ATP d. Inmein se koi nahi"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3403,16 +3402,15 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
         "options-unparsed-hindi",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3422,7 +3420,7 @@
           "key": "a",
           "text": {
             "en": "50 mm",
-            "hi": null,
+            "hi": "50 मिमी",
             "hinglish": "50 mm"
           }
         },
@@ -3430,7 +3428,7 @@
           "key": "b",
           "text": {
             "en": "50 cm",
-            "hi": null,
+            "hi": "50 सेमी",
             "hinglish": "50 cm"
           }
         },
@@ -3438,16 +3436,16 @@
           "key": "c",
           "text": {
             "en": "50 m",
-            "hi": null,
-            "hinglish": "Saghan madhyam se viral madhyam mein jaati hui kiran abhilamb se vichalit ho jaati hai"
+            "hi": "50 मीटर",
+            "hinglish": "50 m"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "None of these",
-            "hi": null,
-            "hinglish": "None of these"
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
           }
         }
       ],
@@ -3468,7 +3466,7 @@
         "hinglish": "Vakrata-trijya 1 m ke avatal darpan ki naabhiik doori hogi"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4086,9 +4084,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4096,7 +4092,8 @@
       "flags": [
         "options-unparsed-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4106,32 +4103,32 @@
           "key": "a",
           "text": {
             "en": "Zn",
-            "hi": null,
-            "hinglish": "Zn"
+            "hi": "जिंक",
+            "hinglish": "Zinc"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Fe",
-            "hi": null,
-            "hinglish": "Fe"
+            "hi": "आयरन",
+            "hinglish": "Iron"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Cu",
-            "hi": null,
-            "hinglish": "Cu"
+            "hi": "कॉपर",
+            "hinglish": "Copper"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "Au",
-            "hi": null,
-            "hinglish": "Au"
+            "hi": "सोना",
+            "hinglish": "Sona"
           }
         }
       ],
@@ -4152,7 +4149,7 @@
         "hinglish": "Hematite nimnankit mein kis dhatu ka ayask hai ? A. Zn B. Fe S. Cu D. Au"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -6157,16 +6154,15 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
         "options-unparsed-hindi",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -6176,15 +6172,15 @@
           "key": "a",
           "text": {
             "en": "malleability",
-            "hi": null,
-            "hinglish": "Malleability"
+            "hi": "मैलियाबिलिटी",
+            "hinglish": "Mailiyability"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "thermal conductivity",
-            "hi": null,
+            "hi": "थर्मल कंडक्टिविटी",
             "hinglish": "Thermal conductivity"
           }
         },
@@ -6192,7 +6188,7 @@
           "key": "c",
           "text": {
             "en": "ductility",
-            "hi": null,
+            "hi": "डक्टिलिटी",
             "hinglish": "Ductility"
           }
         },
@@ -6200,8 +6196,8 @@
           "key": "d",
           "text": {
             "en": "hardness",
-            "hi": null,
-            "hinglish": "Kathorta"
+            "hi": "हार्डनेस",
+            "hinglish": "Hardness"
           }
         }
       ],
@@ -6222,7 +6218,7 @@
         "hinglish": "Nimnalikhit mein kis gun ke kaaran dhaton ke taar banaye jaate hain? a. Aghaatvardhaneeyata b. Ushmiy chalaktaa s. Tanyata g. Kathorta"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7599,7 +7595,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 101,
-    "usableInQuiz": 49
+    "trilingualComplete": 105,
+    "usableInQuiz": 53
   }
 }

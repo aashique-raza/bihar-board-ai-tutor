@@ -24,7 +24,7 @@
   "questions": [
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -36,7 +36,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -45,7 +44,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -63,9 +63,9 @@
       "sourceId": "2017-c:A:1",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "What is the resistance of the human body?",
         "hi": "मनुष्य के शरीर का प्रतिरोध कितना होता है ?",
-        "hinglish": "Manushya ke sharir ka pratirodh kitna hota hai ?"
+        "hinglish": "Manushya ke sharir ka pratirodh kitna hota hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -73,7 +73,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -85,7 +85,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -94,7 +93,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -112,9 +112,9 @@
       "sourceId": "2017-c:A:2",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "What is the minimum distance for clear vision?",
         "hi": "स्पष्ट देखने के लिए न्यूनतम दूरी क्या है ?",
-        "hinglish": "Spasht dekhne ke liye nyoonatam doori kya hai ?"
+        "hinglish": "Spasht dekhne ke liye nyoonatam doori kya hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -122,7 +122,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -134,7 +134,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -143,7 +142,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -161,9 +161,9 @@
       "sourceId": "2017-c:A:3",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "What is liquefied petroleum gas (L.P.G)?",
         "hi": "द्रवित पेट्रोलियम गैस (L.P.G) क्या है ?",
-        "hinglish": "Dravit petroleum gas (L.P.G) kya hai ?"
+        "hinglish": "Dravit petrolayam gas (L.P.G) kya hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -171,7 +171,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -183,7 +183,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -192,7 +191,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -210,7 +210,7 @@
       "sourceId": "2017-c:A:4",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Write the S.I. unit of electric charge.",
         "hi": "विद्युतीय आवेश का S.I. मात्रक लिखें।",
         "hinglish": "Vidyut aaves ka S.I. maatrak likhein."
       },
@@ -220,7 +220,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -232,7 +232,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -241,7 +240,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -259,7 +259,7 @@
       "sourceId": "2017-c:A:5",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Write the S.I. unit of lens power.",
         "hi": "लेंस की क्षमता का S.I. मात्रक लिखें।",
         "hinglish": "Lens ki kshamata ka S.I. maatrak likhein."
       },
@@ -269,7 +269,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -281,7 +281,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -290,7 +289,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -308,7 +308,7 @@
       "sourceId": "2017-c:A:6",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Write Ohm's law.",
         "hi": "ओम के नियम को लिखें।",
         "hinglish": "Om ke niyam ko likhein."
       },
@@ -318,7 +318,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -330,7 +330,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -339,7 +338,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -357,9 +357,9 @@
       "sourceId": "2017-c:A:7",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "What is an electric fuse, and what alloy is it made of?",
         "hi": "विद्युत फ्यूज क्या है, यह किस मिश्र धातु का बना होता है ?",
-        "hinglish": "Vidyut fuse kya hai, yeh kis mishradhatu ka bana hota hai ?"
+        "hinglish": "Vidyut fuse kya hai, yeh kis mishradhatu ka bana hota hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -367,7 +367,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -379,7 +379,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -388,7 +387,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -406,7 +406,7 @@
       "sourceId": "2017-c:A:8",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Differentiate between concave mirror and convex mirror.",
         "hi": "अवतल दर्पण एवं उत्तल दर्पण में अंतर स्पष्ट करें।",
         "hinglish": "Avatal darpan evam uttal darpan mein antar spasht karein."
       },
@@ -416,7 +416,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -428,7 +428,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -437,7 +436,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -455,9 +455,9 @@
       "sourceId": "2017-c:A:9",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Why is red color used in railway signals?",
         "hi": "रेलवे सिग्नल में लाल रंग का प्रयोग क्यों किया जाता है ?",
-        "hinglish": "Railway signal mein laal rang ka prayog kyun kiya jaata hai ?"
+        "hinglish": "Railway signal mein laal rang ka prayog kyun kiya jaata hai?"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -465,7 +465,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -477,7 +477,6 @@
         }
       },
       "blockers": [
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -486,7 +485,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": true,
@@ -504,7 +504,7 @@
       "sourceId": "2017-c:A:10",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Write Ohm's law and verify it.",
         "hi": "ओम के नियम को लिखें एवं सत्यापित करें।",
         "hinglish": "Om ke niyam ko likhein evam satyapit karein."
       },
@@ -514,7 +514,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -527,7 +527,6 @@
       },
       "blockers": [
         "diagram-required",
-        "missing-english",
         "subjective"
       ],
       "diagram": {
@@ -536,7 +535,8 @@
       },
       "flags": [
         "missing-english",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -554,9 +554,9 @@
       "sourceId": "2017-c:A:10-or",
       "subPart": "or",
       "text": {
-        "en": null,
+        "en": "What is a vision defect? How many types are there? Describe the remedy for one vision defect with a diagram.",
         "hi": "दृष्टि दोष क्या है ? ये कितने प्रकार के होते हैं ? किसी एक दृष्टि दोष के निवारण का सचित्र वर्णन करें।",
-        "hinglish": "Drishti dosh kya hai ? Ye kitne prakar ke hote hain ? Kisi ek drishti dosh ke nivaran ka sachitra varnan karein."
+        "hinglish": "Drishti dosh kya hai? Ye kitne prakar ke hote hain? Kisi ek drishti dosh ke nivaran ka sachitra varnan karein."
       },
       "type": "long",
       "usableInQuiz": false,
@@ -564,22 +564,18 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Magnetic Effects of Electric Current: \"An electric generator is a device that converts mechanical energy into electrical energy.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -587,7 +583,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-1-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -596,15 +593,15 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "generator",
             "hi": "जनित्र",
-            "hinglish": "Janitra"
+            "hinglish": "generator"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "galvanometer",
             "hi": "गैल्वेनोमीटर",
             "hinglish": "Galvanometer"
           }
@@ -612,7 +609,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "ammeter",
             "hi": "ऐमीटर",
             "hinglish": "Ammeter"
           }
@@ -620,7 +617,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -638,17 +635,17 @@
       "sourceId": "2017-c:B:1",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "The device used to generate electric current is called:",
         "hi": "विद्युत धारा उत्पन्न करने की युक्ति को कहते हैं :",
-        "hinglish": "Vidyut dhara utpann karne ki yukti ko kehte hain :"
+        "hinglish": "Vidyut dhara utpann karne ki yukti ko kehte hain:"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -660,9 +657,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -671,7 +666,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-1-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -680,7 +676,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "calorie",
             "hi": "कैलोरी",
             "hinglish": "Calorie"
           }
@@ -688,7 +684,7 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "joule",
             "hi": "जूल",
             "hinglish": "Joule"
           }
@@ -696,7 +692,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "temperature",
             "hi": "ताप",
             "hinglish": "Taap"
           }
@@ -704,7 +700,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -722,7 +718,7 @@
       "sourceId": "2017-c:B:2",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "The S.I. unit of energy is:",
         "hi": "ऊर्जा का S.I. मात्रक होता है :",
         "hinglish": "Urja ka S.I. maatrak hota hai :"
       },
@@ -732,22 +728,18 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Management of Natural Resources: \"Water is a basic need for all living organisms.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -755,7 +747,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-1-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -764,7 +757,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "petro",
             "hi": "पेट्रो",
             "hinglish": "Petro"
           }
@@ -772,7 +765,7 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "turbo",
             "hi": "टरबो",
             "hinglish": "Turbo"
           }
@@ -780,7 +773,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "nitro",
             "hi": "नाइट्रो",
             "hinglish": "Nitro"
           }
@@ -788,7 +781,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "hydro",
             "hi": "हाइड्रो",
             "hinglish": "Hydro"
           }
@@ -806,32 +799,28 @@
       "sourceId": "2017-c:B:3",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Which of the following means water?",
         "hi": "निम्न में से किसका अर्थ जल होता है ?",
         "hinglish": "Nimn mein se kiska arth jal hota hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"c = 3 × 10^8 m/s\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -839,7 +828,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-1-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -848,7 +838,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "3×10^8 m/sec",
             "hi": "3×10^8 m/sec",
             "hinglish": "3×10^8 m/sec"
           }
@@ -856,7 +846,7 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "3×10^8 cm/sec",
             "hi": "3×10^8 cm/sec",
             "hinglish": "3×10^8 cm/sec"
           }
@@ -864,7 +854,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "3×10^8 km/sec",
             "hi": "3×10^8 km/sec",
             "hinglish": "3×10^8 km/sec"
           }
@@ -872,7 +862,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -890,32 +880,28 @@
       "sourceId": "2017-c:B:4",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "What is the speed of light in vacuum?",
         "hi": "निर्वात में प्रकाश की चाल क्या होती है ?",
-        "hinglish": "Nirvaat mein prakash ki chaal kya hoti hai ?"
+        "hinglish": "Nirvaak mein prakash ki chaal kya hoti hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"Angle of incidence equals angle of reflection.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -923,7 +909,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-1-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -932,31 +919,31 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "Angle of incidence = Angle of reflection",
             "hi": "आपतन कोण = परावर्तन कोण",
-            "hinglish": "Aaptaan kon = paravartan kon"
+            "hinglish": "Aaptaan kon = Paravartan kon"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "Angle of reflection = Angle of refraction",
             "hi": "परावर्तन कोण = अपवर्तन कोण",
-            "hinglish": "Paravartan kon = apvartan kon"
+            "hinglish": "Paravartan kon = Apvartan kon"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "Angle of incidence = Angle of deviation",
             "hi": "आपतन कोण = विचलन कोण",
-            "hinglish": "Aaptaan kon = vichalan kon"
+            "hinglish": "Aaptaan kon = Vichalan kon"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -974,32 +961,28 @@
       "sourceId": "2017-c:B:5",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Is determined by the law of reflection:",
         "hi": "परावर्तन के नियम से निर्धारित होता है:",
         "hinglish": "Paravartan ke niyam se nirdharit hota hai:"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"A lens has two principal foci:\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1007,7 +990,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-1-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -1016,7 +1000,7 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "Two",
             "hi": "दो",
             "hinglish": "Do"
           }
@@ -1024,7 +1008,7 @@
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "One",
             "hi": "एक",
             "hinglish": "Ek"
           }
@@ -1032,7 +1016,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "Three",
             "hi": "तीन",
             "hinglish": "Teen"
           }
@@ -1040,7 +1024,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -1058,32 +1042,28 @@
       "sourceId": "2017-c:B:6",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "How many principal foci does a lens have?",
         "hi": "लेंस में मुख्य फोकस की संख्या कितनी होती है ?",
-        "hinglish": "Lens mein mukhya fokus ki sankhya kitni hoti hai ?"
+        "hinglish": "Lens mein mukhya fokus ki sankhya kitni hoti hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Activity: Factors Affecting Resistance: \"R depends on length, area of cross-section, and material.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified",
-        "missing-english",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1091,7 +1071,8 @@
       "flags": [
         "missing-english",
         "marks-defaulted-mcq-hi-1-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-english"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -1100,31 +1081,31 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "increases",
             "hi": "बढ़ता है",
-            "hinglish": "Badhata hai"
+            "hinglish": "badhata hai"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "decreases",
             "hi": "घटता है",
-            "hinglish": "Ghatta hai"
+            "hinglish": "ghatata hai"
           }
         },
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "does not increase or decrease",
             "hi": "बढ़ता-घटता नहीं है",
-            "hinglish": "Badhata-ghatta nahi hai"
+            "hinglish": "Badhata-ghatata nahi hai"
           }
         },
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -1142,24 +1123,24 @@
       "sourceId": "2017-c:B:7",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "Resistance of a conductor with increase in temperature:",
         "hi": "ताप बढ़ने से चालक का प्रतिरोध :",
-        "hinglish": "Taap badhne se chalaak ka pratirodh :"
+        "hinglish": "Taap badhne se chalaak ka pratirodh:"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     }
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 0,
+    "l3PlusConfidence": 6,
     "marksGroupA": 19,
     "marksGroupB": 7,
     "objective": 7,
     "questions": 18,
     "subjective": 11,
-    "trilingualComplete": 0,
-    "usableInQuiz": 0
+    "trilingualComplete": 18,
+    "usableInQuiz": 6
   }
 }

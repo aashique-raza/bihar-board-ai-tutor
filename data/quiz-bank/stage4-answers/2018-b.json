@@ -38,7 +38,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -49,7 +48,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -68,8 +68,8 @@
       "subPart": null,
       "text": {
         "en": "Which mirror do the dentist use to use large images of teeth of patient? (A) plane mirror (B) concave mirror ©convex mirror (D) all of these Ans: concave mirror",
-        "hi": null,
-        "hinglish": "Dentist kaun sa darpan istemal karte hain taaki mareez ke daanton ka bada pratibimb mile? (A) samatal darpan (B) avatal darpan (C) uttal darpan (D) in sabhi ka Ans: avatal darpan"
+        "hi": "डेंटिस्ट किस दर्पण का उपयोग करते हैं ताकि मरीज के दांतों की बड़ी छवियाँ प्राप्त की जा सकें? (A) समतल दर्पण (B) अवतल दर्पण (C) उत्तल दर्पण (D) इनमें से सभी उत्तर: अवतल दर्पण",
+        "hinglish": "Dentist kis darpan ka upyog karte hain taaki mareez ke daanton ki badi chhaviyaan prapt ki ja sakein? (A) Samtal darpan (B) Avatal darpan (C) Uttal darpan (D) Inmein se sabhi Uttar: Avatal darpan"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -90,7 +90,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -101,7 +100,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -120,8 +120,8 @@
       "subPart": null,
       "text": {
         "en": "Which lens is called diverging lens? A) Concave lens (B) convex lens (C)Both concave and convex lens (D) none of these. Ans: concave mirror",
-        "hi": null,
-        "hinglish": "Kaun sa lens diverging lens kehlata hai? (A) avatal lens (B) uttal lens (C) dono avatal aur uttal lens (D) inme se koi nahi. Ans: avatal lens"
+        "hi": "कौन सा लेंस अवकर्षक लेंस कहलाता है? (A) अवतल लेंस (B) उत्तल लेंस (C) दोनों अवतल और उत्तल लेंस (D) इनमें से कोई नहीं। उत्तर: अवतल लेंस",
+        "hinglish": "Kaun sa lens avakarshak lens kaha jaata hai? (A) Avatal lens (B) Uttal lens (C) Dono avatal aur uttal lens (D) Inmein se koi nahi. Uttar: Avatal lens"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -140,10 +140,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -151,7 +148,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -161,32 +159,32 @@
           "key": "a",
           "text": {
             "en": "Ciliary Muscle",
-            "hi": null,
-            "hinglish": "Ciliary Muscle"
+            "hi": "सिलियरी मांसपेशी",
+            "hinglish": "Siliary mamspeeshi"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Iris",
-            "hi": null,
-            "hinglish": "Iris"
+            "hi": "आईरिस",
+            "hinglish": "Airis"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Eye lens",
-            "hi": null,
-            "hinglish": "Eye lens"
+            "hi": "आंख का लेंस",
+            "hinglish": "Aankh ka lens"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "retina Ans: Iris",
-            "hi": null,
-            "hinglish": "retina Ans: Iris"
+            "hi": "रेटिना उत्तर: आईरिस",
+            "hinglish": "Retina Uttar: Iris"
           }
         }
       ],
@@ -203,11 +201,11 @@
       "subPart": null,
       "text": {
         "en": "3 who controls Pupil size muscles?",
-        "hi": null,
-        "hinglish": "Pupil size muscles kaun control karta hai?"
+        "hi": "कौन मांसपेशियाँ पुतली के आकार को नियंत्रित करती हैं?",
+        "hinglish": "Kaun mamspeeshiyan putli ke aakar ko niyantrit karti hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -225,7 +223,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -236,7 +233,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -255,8 +253,8 @@
       "subPart": null,
       "text": {
         "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens? (A) Myopia (B) hypermetropia ©presbyopia (D) cataract Ans: presbyopia",
-        "hi": null,
-        "hinglish": "Kaun sa aankh ka defect hai jise bifocal lens se theek kiya ja sakta hai jo avatal aur uttal lens dono ka milan hai? (A) Myopia (B) hypermetropia (C) presbyopia (D) cataract Ans: presbyopia"
+        "hi": "कौन सी आंख की दोष को अवतल और उत्तल लेंस दोनों का उपयोग करके बाइफोकल लेंस से ठीक किया जा सकता है? (A) मायोपिया (B) हाइपरमेट्रोपिया (C) प्रिस्बायोपिया (D) मोतियाबिंद उत्तर: प्रिस्बायोपिया",
+        "hinglish": "Kaun si aankh ki dosh ko avatal aur uttal lens dono ka upyog karke bifocal lens se theek kiya ja sakta hai? (A) Myopia (B) Hypermetropia (C) Presbyopia (D) Motiyabind Uttar: Presbyopia"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -277,7 +275,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -288,7 +285,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -307,8 +305,8 @@
       "subPart": null,
       "text": {
         "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the (A) mirror and the screen (B) mirror and object ©both A and B (D) none of these Ans: mirror and the screen",
-        "hi": null,
-        "hinglish": "Ek prayog mein ek vastu ka pratibimb avatal darpan dwara screen par prapt kiya jata hai, darpan ki naabhiik doori nikalne ke liye prayog karta ko (A) darpan aur screen ke beech ki doori (B) darpan aur vastu ke beech ki doori (C) dono A aur B (D) inme se koi nahi Ans: darpan aur screen ke beech ki doori"
+        "hi": "एक प्रयोग में, एक अवतल दर्पण द्वारा एक वस्तु की छवि स्क्रीन पर प्राप्त की जाती है ताकि दर्पण की फोकल लंबाई निर्धारित की जा सके, प्रयोगकर्ता को (A) दर्पण और स्क्रीन के बीच की दूरी (B) दर्पण और वस्तु के बीच की दूरी (C) दोनों A और B (D) इनमें से कोई नहीं मापने की आवश्यकता है। उत्तर: दर्पण और स्क्रीन",
+        "hinglish": "Ek prayog mein, ek avatal darpan dwara ek vastu ki chhavi screen par prapt ki jaati hai taaki darpan ki naabhiik doori nirdharit ki ja sake, prayogakarta ko (A) darpan aur screen ke beech ki doori (B) darpan aur vastu ke beech ki doori (C) Dono A aur B (D) Inmein se koi nahi maapne ki avashyakta hai. Uttar: darpan aur screen"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -329,7 +327,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -340,7 +337,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -359,8 +357,8 @@
       "subPart": null,
       "text": {
         "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary? (A) A convex lens of focal length 50 cm (B) a concave lens of focal length 50 cm © Convex lens of focal length 5 cm (D) a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
-        "hi": null,
-        "hinglish": "Nimnalikhit mein se kaun sa lens aap chhote aksharon ko padhne ke liye istemal karna pasand karenge jo dictionary mein hote hain? (A) 50 cm naabhiik doori ka uttal lens (B) 50 cm naabhiik doori ka avatal lens (C) 5 cm naabhiik doori ka uttal lens (D) 5 cm naabhiik doori ka avatal lens Ans: 5 cm naabhiik doori ka uttal lens"
+        "hi": "आप निम्नलिखित में से किस लेंस का उपयोग करना पसंद करेंगे जब आप शब्दकोश में छोटे अक्षरों को पढ़ रहे हों? (A) 50 सेमी की फोकल लंबाई वाला उत्तल लेंस (B) 50 सेमी की फोकल लंबाई वाला अवतल लेंस (C) 5 सेमी की फोकल लंबाई वाला उत्तल लेंस (D) 5 सेमी की फोकल लंबाई वाला अवतल लेंस उत्तर: 5 सेमी की फोकल लंबाई वाला उत्तल लेंस",
+        "hinglish": "Aap nimnalikhit mein se kis lens ka upyog karna pasand karenge jab aap shabdakosh mein chhote aksharon ko padh rahe hon? (A) 50 cm ki naabhiik doori wala uttal lens (B) 50 cm ki naabhiik doori wala avatal lens (C) 5 cm ki naabhiik doori wala uttal lens (D) 5 cm ki naabhiik doori wala avatal lens Uttar: 5 cm ki naabhiik doori wala uttal lens"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -379,10 +377,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -390,7 +385,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -400,7 +396,7 @@
           "key": "a",
           "text": {
             "en": "Volt",
-            "hi": null,
+            "hi": "वोल्ट",
             "hinglish": "Volt"
           }
         },
@@ -408,7 +404,7 @@
           "key": "b",
           "text": {
             "en": "Ohm",
-            "hi": null,
+            "hi": "ओम",
             "hinglish": "Ohm"
           }
         },
@@ -416,16 +412,16 @@
           "key": "c",
           "text": {
             "en": "Volte per Columb",
-            "hi": null,
-            "hinglish": "Volte per Columb"
+            "hi": "वोल्ट प्रति कूलम्ब",
+            "hinglish": "Volt prati Coulomb"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "Ampere Ans: volt",
-            "hi": null,
-            "hinglish": "Ampere Ans: volt"
+            "hi": "एम्पीयर उत्तर: वोल्ट",
+            "hinglish": "Ampere Uttar: volt"
           }
         }
       ],
@@ -442,11 +438,11 @@
       "subPart": null,
       "text": {
         "en": "Which of the following is the SI unit of electric potential energy?",
-        "hi": null,
-        "hinglish": "Nimnalikhit mein se kaun sa SI unit hai vidyut sambhavit urja ka?"
+        "hi": "निम्नलिखित में से कौन सा विद्युत संभावित ऊर्जा की SI इकाई है?",
+        "hinglish": "Nimnalikhit mein se kaun sa vidyut sambhavit urja ki SI ikai hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -464,7 +460,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -475,7 +470,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -494,8 +490,8 @@
       "subPart": null,
       "text": {
         "en": "At the time of short circuiting the current in the circuit (A)Reduces the substantially (B) Does not change ©Increases heavily (D) Varies continuously Ans: Increases heavily",
-        "hi": null,
-        "hinglish": "Short circuit hone par circuit mein current (A) Kafi kam hota hai (B) Badalta nahi hai (C) Bahut zyada badhta hai (D) Lagataar badalta hai Ans: Bahut zyada badhta hai"
+        "hi": "शॉर्ट सर्किटिंग के समय सर्किट में करंट (A) काफी कम हो जाता है (B) नहीं बदलता © भारी बढ़ता है (D) लगातार बदलता है उत्तर: भारी बढ़ता है",
+        "hinglish": "Short circuiting ke samay circuit mein current (A) kaafi kam ho jaata hai (B) nahi badalta (C) bhaari badhta hai (D) lagataar badalta hai. Uttar: bhaari badhta hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -516,7 +512,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -527,7 +522,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -546,8 +542,8 @@
       "subPart": null,
       "text": {
         "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is (A) Towards south (B) Towards east © Downward (D) upward Ans: upward",
-        "hi": null,
-        "hinglish": "Ek positively charged particle (Alpha particle) jo west ki taraf projected hai, magnetic field se north ki taraf deflect hota hai, magnetic field ki disha hai (A) South ki taraf (B) East ki taraf (C) Neeche (D) Upar Ans: Upar"
+        "hi": "एक सकारात्मक चार्ज वाला कण (अल्फा कण) पश्चिम की ओर प्रक्षिप्त किया गया है, जिसे एक चुंबकीय क्षेत्र द्वारा उत्तर की ओर मोड़ा जाता है, चुंबकीय क्षेत्र की दिशा (A) दक्षिण की ओर (B) पूर्व की ओर © नीचे की ओर (D) ऊपर की ओर उत्तर: ऊपर की ओर",
+        "hinglish": "Ek sakaratmak charge wala karn (alpha karn) paschim ki or prakshipt kiya gaya hai, jise ek chumbakiya kshetra dwara uttar ki or moda jaata hai, chumbakiya kshetra ki disha (A) dakshin ki or (B) purv ki or (C) neeche ki or (D) upar ki or. Uttar: upar ki or"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -568,7 +564,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -579,7 +574,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -598,8 +594,8 @@
       "subPart": null,
       "text": {
         "en": "A rectangular coil of copper wire is being rotated in a magnetic field the direction of the induced current in the coil changes once in each (A) Two revolution (B) one Revolution © Half Revolution ©One fourth revolution Ans: half Revolution",
-        "hi": null,
-        "hinglish": "Ek rectangular coil jo copper wire se bani hai, magnetic field mein ghoomaayi ja rahi hai, coil mein induced current ki disha har (A) Do revolution (B) Ek revolution (C) Aadhe revolution (D) Ek chouthai revolution Ans: Aadhe revolution"
+        "hi": "एक आयताकार तांबे के तार का कुंडल एक चुंबकीय क्षेत्र में घुमाया जा रहा है, कुंडल में प्रेरित करंट की दिशा हर (A) दो क्रांति (B) एक क्रांति © आधी क्रांति © एक चौथाई क्रांति में बदलती है उत्तर: आधी क्रांति",
+        "hinglish": "Ek ayatakaar taambe ke taar ka kundal ek chumbakiya kshetra mein ghoomaaya ja raha hai, kundal mein prerit current ki disha har (A) do kranti (B) ek kranti (C) aadhi kranti (D) ek chauthai kranti mein badalti hai. Uttar: aadhi kranti"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -620,7 +616,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -631,7 +626,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -650,8 +646,8 @@
       "subPart": null,
       "text": {
         "en": "The magnetic field inside a long straight solenoid carrying current is (A) Zero (B) decreases as we move towards its end",
-        "hi": null,
-        "hinglish": "Ek lambi seedhi solenoid jo current carry kar rahi hai, uske andar magnetic field hai (A) Zero (B) Iske end ki taraf jaane par kam hota hai"
+        "hi": "एक लंबे सीधे सोलिनॉइड के अंदर चुंबकीय क्षेत्र जो करंट ले जा रहा है (A) शून्य (B) इसके अंत की ओर बढ़ने पर घटता है",
+        "hinglish": "Ek lambe seedhe solenoid ke andar chumbakiya kshetra jo current le ja raha hai (A) shoonya (B) iske ant ki or badhne par ghata hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -672,7 +668,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -683,7 +678,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -702,8 +698,8 @@
       "subPart": null,
       "text": {
         "en": "What kind of mirror would be most suited for a solar cooker? (A) plane mirror (B) convex mirror ©concave mirror (D) all of these Ans: concave mirror",
-        "hi": null,
-        "hinglish": "Solar cooker ke liye kaunsa darpan sabse behtar hoga? (A) Plane darpan (B) Convex darpan (C) Concave darpan (D) In sabhi Ans: Concave darpan"
+        "hi": "सौर कुकर के लिए सबसे उपयुक्त किस प्रकार का दर्पण होगा? (A) समतल दर्पण (B) उत्तल दर्पण © अवतल दर्पण (D) इनमें से सभी उत्तर: अवतल दर्पण",
+        "hinglish": "Saur cooker ke liye sabse upyukt kis prakar ka darpan hoga? (A) samtal darpan (B) uttal darpan (C) avatal darpan (D) inmein se sabhi. Uttar: avatal darpan"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -724,7 +720,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -735,7 +730,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -754,8 +750,8 @@
       "subPart": null,
       "text": {
         "en": "The main aim of Chipko movement was to (A) Conserve soil (B) Trees ©water (D) electricity Ans: Trees",
-        "hi": null,
-        "hinglish": "Chipko movement ka mukhya uddeshya kya tha? (A) Mitti ko sanrakshit karna (B) Ped (C) Pani (D) Bijli Ans: Ped"
+        "hi": "चिपको आंदोलन का मुख्य उद्देश्य था (A) मिट्टी का संरक्षण (B) पेड़ © पानी (D) बिजली उत्तर: पेड़",
+        "hinglish": "Chipko aandolan ka mukhya uddeshya tha (A) mitti ka sanrakshan (B) ped (C) paani (D) bijli. Uttar: ped"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -776,7 +772,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -787,7 +782,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -806,8 +802,8 @@
       "subPart": null,
       "text": {
         "en": "Which of the following solution is used for white washing walls? (A) CaH(CO3 )2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) Ans: Ca(OH)2",
-        "hi": null,
-        "hinglish": "Inme se kaunsa solution deewaron ko white washing ke liye istemal hota hai? (A) CaH(CO3)2 (B) Ca(OH)2 (C) NaOH (D) NaH(CO3) Ans: Ca(OH)2"
+        "hi": "दीवारों को सफेद करने के लिए निम्नलिखित में से कौन सा घोल उपयोग किया जाता है? (A) CaH(CO3)2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) उत्तर: Ca(OH)2",
+        "hinglish": "Deewaron ko safed karne ke liye nimnalikhit mein se kaun sa ghol upyog kiya jaata hai? (A) CaH(CO3)2 (B) Ca(OH)2 (C) NaOH (D) NaH(CO3). Uttar: Ca(OH)2"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -828,7 +824,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -839,7 +834,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -858,8 +854,8 @@
       "subPart": null,
       "text": {
         "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is (A) Combination reaction (B) decomposition reaction ©double displacement reaction (D) none of these Ans: double displacement reaction",
-        "hi": null,
-        "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) Upar diya gaya rasayanik samikaran hai (A) Combination abhikriya (B) decomposition abhikriya (C) double displacement abhikriya (D) inme se koi nahi Ans: double displacement abhikriya"
+        "hi": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) उपरोक्त रासायनिक समीकरण (A) संयोजन प्रतिक्रिया (B) विघटन प्रतिक्रिया © डबल विस्थापन प्रतिक्रिया (D) इनमें से कोई नहीं उत्तर: डबल विस्थापन प्रतिक्रिया",
+        "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) uparokta rasayanik samikaran (A) sanyojan pratikriya (B) vighatan pratikriya (C) double displacement pratikriya (D) inmein se koi nahi. Uttar: double displacement pratikriya"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -879,7 +875,6 @@
         }
       },
       "blockers": [
-        "missing-hindi",
         "options-language-incomplete"
       ],
       "diagram": {
@@ -889,7 +884,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-2",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -923,8 +919,8 @@
           "key": "d",
           "text": {
             "en": "Ca Ans: Ca(OH)",
-            "hi": null,
-            "hinglish": "Ca Ans: Ca(OH)"
+            "hi": "Ca उत्तर: Ca(OH)",
+            "hinglish": "Ca. Uttar: Ca(OH)"
           }
         }
       ],
@@ -941,8 +937,8 @@
       "subPart": null,
       "text": {
         "en": "Which of the following is slaked lime?",
-        "hi": null,
-        "hinglish": "Inme se kaunsa slaked lime hai?"
+        "hi": "निम्नलिखित में से कौन सा चूना है?",
+        "hinglish": "Nimnalikhit mein se kaun sa choona hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -962,7 +958,6 @@
         }
       },
       "blockers": [
-        "missing-hindi",
         "options-language-incomplete"
       ],
       "diagram": {
@@ -972,7 +967,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-7",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -990,24 +986,24 @@
           "key": "b",
           "text": {
             "en": "More than",
-            "hi": null,
-            "hinglish": "Zyada hai"
+            "hi": "से अधिक",
+            "hinglish": "Se adhik"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Less than 7",
-            "hi": null,
-            "hinglish": "7 se kam hai"
+            "hi": "7 से कम",
+            "hinglish": "7 se kam"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "none of these Ans: More than",
-            "hi": null,
-            "hinglish": "Inme se koi nahi Ans: Zyada hai"
+            "hi": "इनमें से कोई नहीं उत्तर: से अधिक",
+            "hinglish": "inmein se koi nahi uttar: se adhik"
           }
         }
       ],
@@ -1024,8 +1020,8 @@
       "subPart": null,
       "text": {
         "en": "PH of aqueous solution of salt NaCo3 is",
-        "hi": null,
-        "hinglish": "PH of aqueous solution of salt NaCo3 hai"
+        "hi": "नमक NaCo3 का जल घोल का PH है",
+        "hinglish": "Namak NaCo3 ka jal ghol ka PH hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1033,7 +1029,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1045,9 +1041,7 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "missing-hindi",
-        "options-language-incomplete"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
@@ -1056,7 +1050,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1066,23 +1061,23 @@
           "key": "a",
           "text": {
             "en": "Copper",
-            "hi": null,
-            "hinglish": "Copper"
+            "hi": "तांबा",
+            "hinglish": "Tamba"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "zinc",
-            "hi": null,
-            "hinglish": "Zinc"
+            "hi": "जस्ता",
+            "hinglish": "Jasta"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "aluminium",
-            "hi": null,
+            "hi": "एल्यूमिनियम",
             "hinglish": "Aluminium"
           }
         },
@@ -1090,8 +1085,8 @@
           "key": "d",
           "text": {
             "en": "iron Ans: aluminium",
-            "hi": null,
-            "hinglish": "Iron Ans: Aluminium"
+            "hi": "आयरन उत्तर: एल्यूमिनियम",
+            "hinglish": "Iron uttar: Aluminium"
           }
         }
       ],
@@ -1108,8 +1103,8 @@
       "subPart": null,
       "text": {
         "en": "Of which metal the bauxite is an important ore",
-        "hi": null,
-        "hinglish": "Bauxite kis dhatu ka ek mahatvapurn ore hai"
+        "hi": "किस धातु का बॉक्साइट एक महत्वपूर्ण अयस्क है",
+        "hinglish": "kis dhatu ka bauxite ek mahatvapurn ayask hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1128,10 +1123,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1139,7 +1131,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1149,32 +1142,32 @@
           "key": "a",
           "text": {
             "en": "Copper",
-            "hi": null,
-            "hinglish": "Copper"
+            "hi": "तांबा",
+            "hinglish": "Tamba"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Silver",
-            "hi": null,
-            "hinglish": "Silver"
+            "hi": "चांदी",
+            "hinglish": "Chandi"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Gold",
-            "hi": null,
-            "hinglish": "Gold"
+            "hi": "सोना",
+            "hinglish": "Sona"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "Zinc Ans: Zinc",
-            "hi": null,
-            "hinglish": "Zinc Ans: Zinc"
+            "hi": "जिंक उत्तर: जिंक",
+            "hinglish": "Zinc uttar: Zinc"
           }
         }
       ],
@@ -1191,11 +1184,11 @@
       "subPart": null,
       "text": {
         "en": "Which metal the thin layer is coated over iron and steel to protect them from rusting?",
-        "hi": null,
-        "hinglish": "Kaunsa metal patli parat se dhaka hota hai loha aur steel par unhe rusting se bachane ke liye?"
+        "hi": "कौन सा धातु आयरन और स्टील पर जंग से बचाने के लिए पतली परत के रूप में कोट किया जाता है?",
+        "hinglish": "Kaun sa dhatu iron aur steel par jung se bachane ke liye patli parat ke roop mein coat kiya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1211,10 +1204,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1222,7 +1212,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1232,7 +1223,7 @@
           "key": "a",
           "text": {
             "en": "Bleaching powder",
-            "hi": null,
+            "hi": "ब्लीचिंग पाउडर",
             "hinglish": "Bleaching powder"
           }
         },
@@ -1240,24 +1231,24 @@
           "key": "b",
           "text": {
             "en": "gypsum",
-            "hi": null,
-            "hinglish": "Gypsum"
+            "hi": "जिप्सम",
+            "hinglish": "Jipsam"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Limestone",
-            "hi": null,
-            "hinglish": "Limestone"
+            "hi": "चूना पत्थर",
+            "hinglish": "Chuna patthar"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "quicklime Ans: gypsum",
-            "hi": null,
-            "hinglish": "Quicklime Ans: gypsum"
+            "hi": "quicklime उत्तर: जिप्सम",
+            "hinglish": "Quicklime Uttar: Jipsam"
           }
         }
       ],
@@ -1274,11 +1265,11 @@
       "subPart": null,
       "text": {
         "en": "Which chemical compound on heating becomes plaster of Paris? Bleaching powder gypsum limestone quicklime?",
-        "hi": null,
-        "hinglish": "Kaunsa rasayanik yaugik garam karne par plaster of Paris ban jaata hai? Bleaching powder gypsum limestone quicklime?"
+        "hi": "कौन सा रासायनिक यौगिक गर्म करने पर प्लास्टर ऑफ पेरिस बनता है? ब्लीचिंग पाउडर, जिप्सम, चूना पत्थर,quicklime?",
+        "hinglish": "Kaun sa rasayanik yaugik garm karne par plaster of Paris banta hai? Bleaching powder, gypsum, chuna patthar, quicklime?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1296,7 +1287,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -1307,7 +1297,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1326,8 +1317,8 @@
       "subPart": null,
       "text": {
         "en": "The functional group present in propanol is Ans: ©",
-        "hi": null,
-        "hinglish": "Propanol mein maujood kriyaneel samuh hai Ans: ©"
+        "hi": "प्रोपानॉल में उपस्थित कार्यात्मक समूह है उत्तर: ©",
+        "hinglish": "Propanol mein upasthit kriyaneel samuh hai Uttar: ©"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1346,10 +1337,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1357,7 +1345,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1367,32 +1356,32 @@
           "key": "a",
           "text": {
             "en": "ethanoic acid",
-            "hi": null,
-            "hinglish": "ethanoic acid"
+            "hi": "एथेनोइक एसिड",
+            "hinglish": "Ethenoik acid"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Methanoic acid",
-            "hi": null,
-            "hinglish": "Methanoic acid"
+            "hi": "मेथेनोइक एसिड",
+            "hinglish": "Methenoik acid"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "propanone",
-            "hi": null,
-            "hinglish": "propanone"
+            "hi": "प्रोपेनोन",
+            "hinglish": "Propanon"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "none of these Ans: ethanoic acid",
-            "hi": null,
-            "hinglish": "inme se koi nahi Ans: ethanoic acid"
+            "hi": "इनमें से कोई नहीं उत्तर: एथेनोइक एसिड",
+            "hinglish": "Inmein se koi nahi Uttar: Ethenoik acid"
           }
         }
       ],
@@ -1409,11 +1398,11 @@
       "subPart": null,
       "text": {
         "en": "The IUPAC name of Acetic acid is",
-        "hi": null,
+        "hi": "एसीटिक एसिड का IUPAC नाम है",
         "hinglish": "Acetic acid ka IUPAC naam hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1429,10 +1418,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1440,7 +1426,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1450,23 +1437,23 @@
           "key": "a",
           "text": {
             "en": "Anode",
-            "hi": null,
-            "hinglish": "Anode"
+            "hi": "एनोड",
+            "hinglish": "Anod"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Cathode",
-            "hi": null,
-            "hinglish": "Cathode"
+            "hi": "कैथोड",
+            "hinglish": "Kathod"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Electrolyte",
-            "hi": null,
+            "hi": "इलेक्ट्रोलाइट",
             "hinglish": "Electrolyte"
           }
         },
@@ -1474,8 +1461,8 @@
           "key": "d",
           "text": {
             "en": "all of these Ans: Anode",
-            "hi": null,
-            "hinglish": "inme se sab Ans: Anode"
+            "hi": "इनमें से सभी उत्तर: एनोड",
+            "hinglish": "Inmein se sabhi uttar: Anode"
           }
         }
       ],
@@ -1492,11 +1479,11 @@
       "subPart": null,
       "text": {
         "en": "In electrolytic refining impure metal is taken as a",
-        "hi": null,
-        "hinglish": "Electrolytic refining me impure metal ko ek"
+        "hi": "इलेक्ट्रोलाइटिक रिफाइनिंग में अशुद्ध धातु को एक के रूप में लिया जाता है",
+        "hinglish": "Electrolytic refining mein ashuddh dhatu ko ek ke roop mein liya jaata hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1512,10 +1499,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1523,7 +1507,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1533,7 +1518,7 @@
           "key": "a",
           "text": {
             "en": "Dobereiner",
-            "hi": null,
+            "hi": "डोबेराइन",
             "hinglish": "Dobereiner"
           }
         },
@@ -1541,7 +1526,7 @@
           "key": "b",
           "text": {
             "en": "Newlands",
-            "hi": null,
+            "hi": "न्यूलैंड्स",
             "hinglish": "Newlands"
           }
         },
@@ -1549,7 +1534,7 @@
           "key": "c",
           "text": {
             "en": "Mendal",
-            "hi": null,
+            "hi": "मेंडेल",
             "hinglish": "Mendal"
           }
         },
@@ -1557,8 +1542,8 @@
           "key": "d",
           "text": {
             "en": "Henry Mosely Ans: Newlands",
-            "hi": null,
-            "hinglish": "Henry Mosely Ans: Newlands"
+            "hi": "हेनरी मोस्ली उत्तर: न्यूलैंड्स",
+            "hinglish": "Henry Mosely uttar: Newlands"
           }
         }
       ],
@@ -1575,11 +1560,11 @@
       "subPart": null,
       "text": {
         "en": "Who established law of octaves?",
-        "hi": null,
-        "hinglish": "Octaves ka niyam kisne sthapit kiya?"
+        "hi": "किसने ऑक्टेव का नियम स्थापित किया?",
+        "hinglish": "Kisne octaves ka niyam sthapit kiya?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1595,10 +1580,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1606,7 +1588,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1616,15 +1599,15 @@
           "key": "a",
           "text": {
             "en": "atomic mass",
-            "hi": null,
-            "hinglish": "parmanoo mass"
+            "hi": "परमाणु द्रव्यमान",
+            "hinglish": "parmanoo dravyamaan"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "atomic number",
-            "hi": null,
+            "hi": "परमाणु संख्या",
             "hinglish": "parmanoo sankhya"
           }
         },
@@ -1632,16 +1615,16 @@
           "key": "c",
           "text": {
             "en": "Atomic size",
-            "hi": null,
-            "hinglish": "Parmanu aakar"
+            "hi": "परमाणु आकार",
+            "hinglish": "parmanoo aakar"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "atomic volume Ans: atomic number",
-            "hi": null,
-            "hinglish": "parmanu aakar Ans: parmanoo sankhya"
+            "hi": "परमाणु आयतन उत्तर: परमाणु संख्या",
+            "hinglish": "parmanoo aayatan uttar: parmanoo sankhya"
           }
         }
       ],
@@ -1658,11 +1641,11 @@
       "subPart": null,
       "text": {
         "en": "According to modern periodic law properties of elements are a periodic function of their",
-        "hi": null,
-        "hinglish": "Aadhunik avart sarni ke niyam ke anusar tatvon ke gun unke"
+        "hi": "आधुनिक आवर्त कानून के अनुसार तत्वों के गुण उनके",
+        "hinglish": "Aadhunik avart niyam ke anusar tatvon ke gun unke"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1679,7 +1662,6 @@
         }
       },
       "blockers": [
-        "missing-hindi",
         "options-language-incomplete"
       ],
       "diagram": {
@@ -1689,7 +1671,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1715,16 +1698,16 @@
           "key": "c",
           "text": {
             "en": "C",
-            "hi": null,
-            "hinglish": "C"
+            "hi": "सी",
+            "hinglish": "Si"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "O2- Ans: OH-",
-            "hi": null,
-            "hinglish": "O2- Jawab: OH-"
+            "hi": "O2- उत्तर: OH-",
+            "hinglish": "O2- uttar: OH-"
           }
         }
       ],
@@ -1741,8 +1724,8 @@
       "subPart": null,
       "text": {
         "en": "Which of the following and can turn red litmus solution?",
-        "hi": null,
-        "hinglish": "Nimnalikhit me se kaun sa laal litmus solution ko laal kar sakta hai?"
+        "hi": "निम्नलिखित में से कौन सा लाल लिटमस घोल को लाल कर सकता है?",
+        "hinglish": "Nimnalikhit mein se kaun sa laal litmus ghol ko laal kar sakta hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1763,7 +1746,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -1774,7 +1756,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1793,8 +1776,8 @@
       "subPart": null,
       "text": {
         "en": "The xylem in plant is responsible A) For transport of water (B) transport of food (C) Transport of food (D) transport of oxygen Ans: for transport of water",
-        "hi": null,
-        "hinglish": "Padap mein xylem paani ke parivahan ke liye zimmedar hai A) Paani ke parivahan ke liye (B) khadya ke parivahan ke liye (C) Khadya ke parivahan ke liye (D) oxygen ke parivahan ke liye Jawab: paani ke parivahan ke liye"
+        "hi": "पौधे में जाइलम पानी के परिवहन के लिए जिम्मेदार है A) पानी के परिवहन के लिए (B) भोजन के परिवहन के लिए (C) भोजन के परिवहन के लिए (D) ऑक्सीजन के परिवहन के लिए उत्तर: पानी के परिवहन के लिए",
+        "hinglish": "Paudhe mein xylem paani ke parivahan ke liye zimmedar hai A) Paani ke parivahan ke liye (B) Bhojan ke parivahan ke liye (C) Bhojan ke parivahan ke liye (D) Aakshikshan ke parivahan ke liye uttar: paani ke parivahan ke liye"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1815,7 +1798,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-language-incomplete"
       ],
       "diagram": {
@@ -1825,7 +1807,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1835,7 +1818,7 @@
           "key": "a",
           "text": {
             "en": "ADP",
-            "hi": null,
+            "hi": "एडीपी",
             "hinglish": "ADP"
           }
         },
@@ -1851,7 +1834,7 @@
           "key": "c",
           "text": {
             "en": "DTP",
-            "hi": null,
+            "hi": "डीटीपी",
             "hinglish": "DTP"
           }
         },
@@ -1859,8 +1842,8 @@
           "key": "d",
           "text": {
             "en": "PDP Ans: ATP",
-            "hi": null,
-            "hinglish": "PDP Jawab: ATP"
+            "hi": "PDP उत्तर: ATP",
+            "hinglish": "PDP uttar: ATP"
           }
         }
       ],
@@ -1877,8 +1860,8 @@
       "subPart": null,
       "text": {
         "en": "Which of the following is known as energy currency of cell?",
-        "hi": null,
-        "hinglish": "Nimnalikhit mein se kisay cell ki urja mudra ke roop mein jaana jaata hai?"
+        "hi": "निम्नलिखित में से किसे कोशिका की ऊर्जा मुद्रा के रूप में जाना जाता है?",
+        "hinglish": "Nimnalikhit mein se kise koshika ki urja mudra ke roop mein jaana jaata hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -1897,10 +1880,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1908,7 +1888,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1918,23 +1899,23 @@
           "key": "a",
           "text": {
             "en": "Vein",
-            "hi": null,
-            "hinglish": "Vein"
+            "hi": "शिरा",
+            "hinglish": "Shira"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "stomata",
-            "hi": null,
-            "hinglish": "stomata"
+            "hi": "स्टोमाटा",
+            "hinglish": "Stomata"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Mid rib",
-            "hi": null,
+            "hi": "मिड रिब",
             "hinglish": "Mid rib"
           }
         },
@@ -1942,8 +1923,8 @@
           "key": "d",
           "text": {
             "en": "none of these Ans: stomata",
-            "hi": null,
-            "hinglish": "inmein se koi nahi Jawab: stomata"
+            "hi": "इनमें से कोई नहीं उत्तर: स्टोमाटा",
+            "hinglish": "Inmein se koi nahi uttar: stomata"
           }
         }
       ],
@@ -1960,11 +1941,11 @@
       "subPart": null,
       "text": {
         "en": "Where does the exchange of gases takes place in leaves?",
-        "hi": null,
-        "hinglish": "Patton mein gases ka adan-pradan kahan hota hai?"
+        "hi": "पत्तियों में गैसों का आदान-प्रदान कहाँ होता है?",
+        "hinglish": "Pattiyon mein gases ka aadaan-pradaan kahan hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1980,10 +1961,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1991,7 +1969,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2001,15 +1980,15 @@
           "key": "a",
           "text": {
             "en": "The lungs",
-            "hi": null,
-            "hinglish": "Fefde"
+            "hi": "फेफड़े",
+            "hinglish": "Phephde"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Ventricles",
-            "hi": null,
+            "hi": "वेंट्रिकल्स",
             "hinglish": "Ventricles"
           }
         },
@@ -2017,7 +1996,7 @@
           "key": "c",
           "text": {
             "en": "Artria",
-            "hi": null,
+            "hi": "आर्ट्रिया",
             "hinglish": "Artria"
           }
         },
@@ -2025,8 +2004,8 @@
           "key": "d",
           "text": {
             "en": "all of these. Ans: Ventricles",
-            "hi": null,
-            "hinglish": "In sabhi ka jawab: Ventricles"
+            "hi": "इनमें से सभी। उत्तर: वेंट्रिकल्स",
+            "hinglish": "Inmein se sabhi. Uttar: Ventricles"
           }
         }
       ],
@@ -2043,11 +2022,11 @@
       "subPart": null,
       "text": {
         "en": "The blood is pumped from heart to entire body by the",
-        "hi": null,
-        "hinglish": "Khoon dil se poore sharir mein pump hota hai"
+        "hi": "रक्त को हृदय से पूरे शरीर में पंप किया जाता है द्वारा",
+        "hinglish": "Rakt ko hriday se poore sharir mein pump kiya jaata hai dwara"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2063,10 +2042,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2074,7 +2050,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2084,7 +2061,7 @@
           "key": "a",
           "text": {
             "en": "Auxin",
-            "hi": null,
+            "hi": "ऑक्सिन",
             "hinglish": "Auxin"
           }
         },
@@ -2092,7 +2069,7 @@
           "key": "b",
           "text": {
             "en": "Cytokinin",
-            "hi": null,
+            "hi": "साइटोकाइनिन",
             "hinglish": "Cytokinin"
           }
         },
@@ -2100,7 +2077,7 @@
           "key": "c",
           "text": {
             "en": "Abscisic Acid",
-            "hi": null,
+            "hi": "एब्सिसिक एसिड",
             "hinglish": "Abscisic Acid"
           }
         },
@@ -2108,8 +2085,8 @@
           "key": "d",
           "text": {
             "en": "Gibberllin Ans: Abscisic Acid",
-            "hi": null,
-            "hinglish": "Gibberllin jawab: Abscisic Acid"
+            "hi": "गिब्बेरलिन उत्तर: एब्सिसिक एसिड",
+            "hinglish": "Gibberllin Uttar: Abscisic Acid"
           }
         }
       ],
@@ -2126,11 +2103,11 @@
       "subPart": null,
       "text": {
         "en": "Which plant hormone is responsible for wilting of leaves?",
-        "hi": null,
-        "hinglish": "Kaunsa padap hormone patton ke wilting ke liye zimmedar hai?"
+        "hi": "कौन सा पौधों का हार्मोन पत्तियों के मुरझाने के लिए जिम्मेदार है?",
+        "hinglish": "Kaun sa paudhon ka hormone pattion ke murjhaane ke liye zimmedar hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2146,10 +2123,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2157,7 +2131,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2167,7 +2142,7 @@
           "key": "a",
           "text": {
             "en": "Photo phototropism",
-            "hi": null,
+            "hi": "फोटो फोटोट्रॉपिज्म",
             "hinglish": "Photo phototropism"
           }
         },
@@ -2175,7 +2150,7 @@
           "key": "b",
           "text": {
             "en": "geotropism",
-            "hi": null,
+            "hi": "जियोट्रॉपिज़्म",
             "hinglish": "Geotropism"
           }
         },
@@ -2183,7 +2158,7 @@
           "key": "c",
           "text": {
             "en": "Hydrotropism",
-            "hi": null,
+            "hi": "हाइड्रोट्रॉपिज़्म",
             "hinglish": "Hydrotropism"
           }
         },
@@ -2191,8 +2166,8 @@
           "key": "d",
           "text": {
             "en": "Chemotropism Ans: geotropism",
-            "hi": null,
-            "hinglish": "Chemotropism Ans: geotropism"
+            "hi": "केमोट्रॉपिज़्म उत्तर: जियोट्रॉपिज़्म",
+            "hinglish": "Chemotropism Uttar: geotropism"
           }
         }
       ],
@@ -2209,11 +2184,11 @@
       "subPart": null,
       "text": {
         "en": "Downward growth of root is",
-        "hi": null,
-        "hinglish": "Jadhon ka neeche ki taraf badhna hai"
+        "hi": "जड़ की नीचे की ओर वृद्धि है",
+        "hinglish": "Jad ki neeche ki or vridhi hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2229,10 +2204,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2240,7 +2212,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2250,7 +2223,7 @@
           "key": "a",
           "text": {
             "en": "Forebrain",
-            "hi": null,
+            "hi": "फोरब्रेन",
             "hinglish": "Forebrain"
           }
         },
@@ -2258,15 +2231,15 @@
           "key": "b",
           "text": {
             "en": "midbrain",
-            "hi": null,
-            "hinglish": "Midbrain"
+            "hi": "मिडब्रेन",
+            "hinglish": "midbrain"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Hindbrain",
-            "hi": null,
+            "hi": "हिंदब्रेन",
             "hinglish": "Hindbrain"
           }
         },
@@ -2274,8 +2247,8 @@
           "key": "d",
           "text": {
             "en": "cerebellum Ans: Hindbrain",
-            "hi": null,
-            "hinglish": "Cerebellum Ans: Hindbrain"
+            "hi": "सेरेबेलम उत्तर: हिंदब्रेन",
+            "hinglish": "cerebellum Uttar: Hindbrain"
           }
         }
       ],
@@ -2292,11 +2265,11 @@
       "subPart": null,
       "text": {
         "en": "Pons, medulla and cerebellum are parts",
-        "hi": null,
-        "hinglish": "Pons, medulla aur cerebellum hissa hain"
+        "hi": "पोंस, मेडुला और सेरेबेलम भाग हैं",
+        "hinglish": "Pons, medulla aur cerebellum bhaag hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2312,10 +2285,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2323,7 +2293,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2333,23 +2304,23 @@
           "key": "a",
           "text": {
             "en": "Vomiting",
-            "hi": null,
-            "hinglish": "Vomiting"
+            "hi": "उल्टी",
+            "hinglish": "Ulti"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Chewing",
-            "hi": null,
-            "hinglish": "Chewing"
+            "hi": "चबाना",
+            "hinglish": "Chabana"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Salivation",
-            "hi": null,
+            "hi": "सलिवेशन",
             "hinglish": "Salivation"
           }
         },
@@ -2357,8 +2328,8 @@
           "key": "d",
           "text": {
             "en": "Heart Beat Ans: Chewing",
-            "hi": null,
-            "hinglish": "Heart Beat Ans: Chewing"
+            "hi": "दिल की धड़कन उत्तर: चबाना",
+            "hinglish": "Dil ki dhadkan Uttar: chabana"
           }
         }
       ],
@@ -2375,11 +2346,11 @@
       "subPart": null,
       "text": {
         "en": "Which of the following is not an involuntary muscle?",
-        "hi": null,
-        "hinglish": "Inme se kaun sa ek anichchhit maanspeshiyon nahi hai?"
+        "hi": "निम्नलिखित में से कौन सा अनैच्छिक मांसपेशी नहीं है?",
+        "hinglish": "Nimnalikhit mein se kaun sa anaichhik maanspeshiyon nahi hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2395,10 +2366,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2406,7 +2374,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2416,7 +2385,7 @@
           "key": "a",
           "text": {
             "en": "Amoeba",
-            "hi": null,
+            "hi": "अमूबा",
             "hinglish": "Amoeba"
           }
         },
@@ -2424,15 +2393,15 @@
           "key": "b",
           "text": {
             "en": "Yeast",
-            "hi": null,
-            "hinglish": "Yeast"
+            "hi": "खमीर",
+            "hinglish": "Khamir"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Plasmodium",
-            "hi": null,
+            "hi": "प्लास्मोडियम",
             "hinglish": "Plasmodium"
           }
         },
@@ -2440,8 +2409,8 @@
           "key": "d",
           "text": {
             "en": "Leisminia. Ans: Yeast",
-            "hi": null,
-            "hinglish": "Leisminia. Ans: Yeast"
+            "hi": "लेइस्मिनिया। उत्तर: खमीर",
+            "hinglish": "Leisminia. Uttar: Khamir"
           }
         }
       ],
@@ -2458,11 +2427,11 @@
       "subPart": null,
       "text": {
         "en": "Asexual reproduction takes place through budding in",
-        "hi": null,
-        "hinglish": "Asexual reproduction budding ke madhyam se hota hai"
+        "hi": "असामान्य प्रजनन बडिंग के माध्यम से होता है",
+        "hinglish": "Asamaanay prajanann budding ke madhyam se hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2478,10 +2447,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2489,7 +2455,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2499,32 +2466,32 @@
           "key": "a",
           "text": {
             "en": "testis",
-            "hi": null,
-            "hinglish": "testis"
+            "hi": "अंडकोष",
+            "hinglish": "Andkosh"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Uterus",
-            "hi": null,
-            "hinglish": "Uterus"
+            "hi": "गर्भाशय",
+            "hinglish": "Garbhashaya"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Ovary",
-            "hi": null,
-            "hinglish": "Ovary"
+            "hi": "अंड ovaries",
+            "hinglish": "And ovaries"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "All of these Ans: testis",
-            "hi": null,
-            "hinglish": "In sabka Ans: testis hai"
+            "hi": "इनमें से कौन सा भाग फल बनता है?",
+            "hinglish": "Inmein se kaun sa bhaag phal banta hai?"
           }
         }
       ],
@@ -2541,11 +2508,11 @@
       "subPart": null,
       "text": {
         "en": "The formation of sperms takes place in",
-        "hi": null,
-        "hinglish": "Sperms ka gathan testis mein hota hai"
+        "hi": "स्पर्म का निर्माण कहाँ होता है",
+        "hinglish": "Sperm ka nirmaan kahan hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2562,7 +2529,6 @@
         }
       },
       "blockers": [
-        "missing-hindi",
         "options-language-incomplete"
       ],
       "diagram": {
@@ -2572,7 +2538,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2582,7 +2549,7 @@
           "key": "a",
           "text": {
             "en": "Anther",
-            "hi": null,
+            "hi": "अंठर",
             "hinglish": "Anther"
           }
         },
@@ -2598,7 +2565,7 @@
           "key": "c",
           "text": {
             "en": "Style",
-            "hi": null,
+            "hi": "स्टाइल",
             "hinglish": "Style"
           }
         },
@@ -2606,8 +2573,8 @@
           "key": "d",
           "text": {
             "en": "ovary Ans: Ovary",
-            "hi": null,
-            "hinglish": "Ovary"
+            "hi": "अंडाशय उत्तर: अंडाशय",
+            "hinglish": "Andashay Uttar: Andashay"
           }
         }
       ],
@@ -2624,8 +2591,8 @@
       "subPart": null,
       "text": {
         "en": "Which part of a flower becomes fruit?",
-        "hi": null,
-        "hinglish": "Ek phool ka kaunsa hissa phal banta hai?"
+        "hi": "फूल का कौन सा भाग फल बनता है?",
+        "hinglish": "Phool ka kaun sa bhaag phal banta hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -2644,10 +2611,7 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "missing-hindi",
-        "options-language-incomplete"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2655,7 +2619,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2665,32 +2630,32 @@
           "key": "a",
           "text": {
             "en": "Male",
-            "hi": null,
-            "hinglish": "Male"
+            "hi": "पुरुष",
+            "hinglish": "Purush"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "female",
-            "hi": null,
-            "hinglish": "female"
+            "hi": "महिला",
+            "hinglish": "Mahila"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Male and female both",
-            "hi": null,
-            "hinglish": "Male aur female dono"
+            "hi": "पुरुष और महिला दोनों",
+            "hinglish": "Purush aur mahila dono"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "none of these Ans:female",
-            "hi": null,
-            "hinglish": "Inme se koi nahi"
+            "hi": "इनमें से कोई नहीं उत्तर: महिला",
+            "hinglish": "Inmein se koi nahi uttar: mahila"
           }
         }
       ],
@@ -2707,11 +2672,11 @@
       "subPart": null,
       "text": {
         "en": "The perfect pair of sex chromosomes are found in",
-        "hi": null,
-        "hinglish": "Sex chromosomes ka perfect jodi milta hai"
+        "hi": "परिपूर्ण यौन गुणसूत्रों की जोड़ी कहाँ पाई जाती है",
+        "hinglish": "Paripurn yaun gunasootron ki jodi kahan pai jaati hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2728,7 +2693,6 @@
         }
       },
       "blockers": [
-        "missing-hindi",
         "options-language-incomplete"
       ],
       "diagram": {
@@ -2738,7 +2702,8 @@
       "flags": [
         "missing-hindi",
         "marks-defaulted-mcq-hi-null-en-22",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2772,8 +2737,8 @@
           "key": "d",
           "text": {
             "en": "Ans:",
-            "hi": null,
-            "hinglish": null
+            "hi": "उत्तर:",
+            "hinglish": "Uttar:"
           }
         }
       ],
@@ -2790,8 +2755,8 @@
       "subPart": null,
       "text": {
         "en": "How many pairs of chromosome are found in a normal cell of human body?",
-        "hi": null,
-        "hinglish": "Normal cell of human body me kitne pairs of chromosome hote hain?"
+        "hi": "मानव शरीर की सामान्य कोशिका में कितने गुणसूत्रों के जोड़े पाए जाते हैं?",
+        "hinglish": "Manav sharir ki saamaanya koshika mein kitne gunasutron ke joode paaye jaate hain?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -2812,7 +2777,6 @@
       },
       "blockers": [
         "answer-unverified",
-        "missing-hindi",
         "options-incomplete"
       ],
       "diagram": {
@@ -2823,7 +2787,8 @@
         "missing-hindi",
         "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -2842,8 +2807,8 @@
       "subPart": null,
       "text": {
         "en": "Which of the following groups contain only one biodegradable items? (A) Grass, flower and leather (B) brass, wood and plastic © Fruits piece cake and Rubber. (D) Cake, wood and glass Ans: cake, wood and glass",
-        "hi": null,
-        "hinglish": "Inme se kaunse group mein sirf ek biodegradable item hai? (A) Ghas, phool aur chamda (B) brass, lakdi aur plastic (C) Fruits piece cake aur rubber (D) Cake, lakdi aur glass"
+        "hi": "निम्नलिखित में से कौन से समूह में केवल एक बायोडिग्रेडेबल वस्तुएं हैं? (A) घास, फूल और चमड़ा (B) पीतल, लकड़ी और प्लास्टिक (C) फल, टुकड़ा, केक और रबर। (D) केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
+        "hinglish": "Nimnalikhit mein se kaun se samuh mein keval ek biodegradable vastuyein hain? (A) Ghaas, phool aur chamda (B) Peetal, lakdi aur plastic (C) Phal, tukda, cake aur rubber. (D) Cake, lakdi aur kaanch uttar: Cake, lakdi aur kaanch"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -2851,7 +2816,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2864,7 +2829,6 @@
       },
       "blockers": [
         "diagram-required",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -2873,7 +2837,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -2892,8 +2857,8 @@
       "subPart": null,
       "text": {
         "en": "State the new Cartesian sign convention for reflection by spherical mirror. Ans: The Cartesian Sign conventions for spherical mirrors are following: i) The object is always place to left of the mirror. ii) All distance parallel to principal Axis (X-Axis are measured from pole of the mirror. iii)Distance to the left of pole(-ve X Axis) are negative . iv) Distance to the right of the polar (+ve X Axis) are positive. v) Distance measured perpendicular above the principal Axis (along +Y-axis) are taken as positive. vi) Distance measured perpendicularly below the principal Axis (-Y-axis)are taken as negative Draw a ray diagram for image of an object placed at the centre of curvature of a convex lens write the nature position and size of the image formed by the lens. Ans: When the object is at center of curvature on the other side of the lens .the imagee formed is real, inverted and of the same sizeof object.",
-        "hi": null,
-        "hinglish": "Spherical darpan ke liye naya Cartesian sign convention batayein. Cartesian sign conventions spherical mirrors ke liye hain: i) Vastu hamesha darpan ke baayein taraf rakha jata hai. ii) Sabhi doori jo pramukh dhuri (X-Axis) ke saath hai, darpan ke pole se maapi jati hai. iii) Pole ke baayein taraf ki dooriyan (-ve X Axis) negative hoti hain. iv) Pole ke daayein taraf ki dooriyan (+ve X Axis) positive hoti hain. v) Pramukh dhuri ke upar maapi gayi dooriyan (+Y-axis) positive hoti hain. vi) Pramukh dhuri ke neeche maapi gayi dooriyan (-Y-axis) negative hoti hain. Ek ray diagram banayein jo ek vastu ke pratibimb ko darshata hai jo convex lens ke curvature ke kendra par rakha gaya hai, pratibimb ki prakriti, sthal aur aakar likhein. Jab vastu curvature ke kendra par hota hai lens ke doosri taraf, to pratibimb real, inverted aur vastu ke aakar ke barabar hota hai"
+        "hi": "स्फेरिकल मिरर द्वारा परावर्तन के लिए नया कार्टेशियन साइन कन्वेंशन बताएं। उत्तर: स्फेरिकल मिरर के लिए कार्टेशियन साइन कन्वेंशन निम्नलिखित हैं: i) वस्तु हमेशा मिरर के बाईं ओर रखी जाती है। ii) सभी दूरी जो मुख्य धुरी (X-धुरी) के समानांतर होती हैं, मिरर के पोल से मापी जाती हैं। iii) पोल के बाईं ओर की दूरी (-ve X धुरी) नकारात्मक होती है। iv) पोल के दाईं ओर की दूरी (+ve X धुरी) सकारात्मक होती है। v) मुख्य धुरी के ऊपर लंबवत मापी गई दूरी (+Y-धुरी) को सकारात्मक माना जाता है। vi) मुख्य धुरी के नीचे लंबवत मापी गई दूरी (-Y-धुरी) को नकारात्मक माना जाता है। एक रे डायग्राम बनाएं जो एक वस्तु की छवि को दर्शाता है जो एक उत्तल लेंस के वक्रता के केंद्र पर रखी गई है, लेंस द्वारा निर्मित छवि की प्रकृति, स्थिति और आकार लिखें। उत्तर: जब वस्तु वक्रता के केंद्र पर होती है, तो लेंस के दूसरी ओर छवि वास्तविक, उल्टी और वस्तु के समान आकार की होती है।",
+        "hinglish": "Spherical mirror dwara paravartan ke liye naya Cartesian sign convention bataayein. Uttar: Spherical mirror ke liye Cartesian sign convention nimnalikhit hain: i) Vastu hamesha mirror ke baayin or rakhi jaati hai. ii) Sabhi doori jo mukhya dhuri (X-dhuri) ke samaanantar hoti hain, mirror ke pole se maapi jaati hain. iii) Pole ke baayin or ki doori (-ve X dhuri) nakaratmak hoti hai. iv) Pole ke daayin or ki doori (+ve X dhuri) sakaratmak hoti hai. v) Mukhya dhuri ke upar lambvat maapi gayi doori (+Y-dhuri) ko sakaratmak maana jaata hai. vi) Mukhya dhuri ke neeche lambvat maapi gayi doori (-Y-dhuri) ko nakaratmak maana jaata hai. Ek ray diagram banaayein jo ek vastu ki chhavi ko darshata hai jo ek uttal lens ke vkrta ke kendra par rakhi gayi hai, lens dwara nirmit chhavi ki prakriti, sthiti aur aakar likhein. Uttar: Jab vastu vkrta ke kendra par hoti hai, to lens ke doosri or chhavi vastavik, ulti aur vastu ke samaan aakar ki hoti hai."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -2901,7 +2866,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2913,7 +2878,6 @@
         }
       },
       "blockers": [
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -2922,7 +2886,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -2941,8 +2906,8 @@
       "subPart": null,
       "text": {
         "en": "Why an ammeter and and a voltmeter are connected in an electrical circuit in series and in parallel respectively? Ans: An ammeter is a low resistance device so it is always connected in series through which the current is to be measured a voltmeter is a high resistance device so it is always connected in parallel through which the potential difference is to be measured. a) Draw magnetic field lines around a bar magnet. MAGNETIC LINES OF FORCE b) A current through a horizontal transmission by flows in East to West Direction .What is the direction of magnetic field at a point directly below it? Ans: Using Right Hand Thumb Rule the direction of field at a point above the line with the horizontal and toward the north and the at a point below will be horizontal and toward the south.",
-        "hi": null,
-        "hinglish": "Ammeter aur voltmeter ko ek electrical circuit mein series aur parallel mein kyun joda jata hai? Ammeter ek low resistance device hai isliye ise hamesha series mein joda jata hai jisse current ko maapa ja sake, voltmeter ek high resistance device hai isliye ise hamesha parallel mein joda jata hai jisse potential difference ko maapa ja sake. a) Ek bar magnet ke ird-gird chumbakiya kshetra ki rekhaen banayein. Chumbakiya balon ki rekhaen. b) Ek current horizontal transmission line mein East se West disha mein flow hota hai. Iske neeche ek bindu par chumbakiya kshetra ki disha kya hogi? Right Hand Thumb Rule ka istemal karte hue, line ke upar bindu par kshetra ki disha horizontal aur north ki taraf hogi aur neeche wale bindu par horizontal aur south ki taraf hogi"
+        "hi": "क्यों एक एममीटर और एक वोल्टमीटर को क्रमशः एक विद्युत सर्किट में श्रृंखला और समानांतर में जोड़ा जाता है? उत्तर: एक एममीटर एक कम प्रतिरोध उपकरण है इसलिए इसे हमेशा श्रृंखला में जोड़ा जाता है जिसके माध्यम से मापा जाने वाला विद्युत प्रवाह होता है, एक वोल्टमीटर एक उच्च प्रतिरोध उपकरण है इसलिए इसे हमेशा समानांतर में जोड़ा जाता है जिसके माध्यम से मापी जाने वाली संभावित अंतर होती है। a) एक बार मैग्नेट के चारों ओर मैग्नेटिक फील्ड लाइन्स बनाएं। मैग्नेटिक लाइन्स ऑफ फोर्स b) एक क्षैतिज ट्रांसमिशन द्वारा प्रवाहित होने वाला प्रवाह पूर्व से पश्चिम दिशा में है। इसके ठीक नीचे एक बिंदु पर मैग्नेटिक फील्ड की दिशा क्या होगी? उत्तर: राइट हैंड थंब नियम का उपयोग करते हुए, लाइन के ऊपर बिंदु पर फील्ड की दिशा क्षैतिज और उत्तर की ओर होगी और नीचे एक बिंदु पर यह क्षैतिज और दक्षिण की ओर होगी।",
+        "hinglish": "Kyun ek ammeter aur ek voltmeter ko kramash: ek vidyut circuit mein shrankhla aur samaantar mein joda jaata hai? Uttar: Ek ammeter ek kam pratirodh upkaran hai isliye ise hamesha shrankhla mein joda jaata hai jiske madhyam se maapa jaane wala vidyut pravah hota hai, ek voltmeter ek uch pratirodh upkaran hai isliye ise hamesha samaantar mein joda jaata hai jiske madhyam se maapi jaane wali sambhavit antar hoti hai. a) Ek baar magnet ke chaaron or magnetic field lines banaayein. Magnetic lines of force b) Ek kshaitij transmission dwara pravahit hone wala pravah purv se pashchim disha mein hai. Iske theek neeche ek bindu par magnetic field ki disha kya hogi? Uttar: Right Hand Thumb Rule ka upyog karte hue, line ke upar bindu par field ki disha kshaitij aur uttar ki or hogi aur neeche ek bindu par yeh kshaitij aur dakshin ki or hogi."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -2963,7 +2928,6 @@
       },
       "blockers": [
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -2974,7 +2938,8 @@
         "missing-hindi",
         "marks-missing",
         "empty-text",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -2993,8 +2958,8 @@
       "subPart": null,
       "text": {
         "en": "Two lamps one rated 100 watt at 220 volt and other 60 watt and 220 volt are connected in parallel to electric main supply. What current is drawn from the main line if the supply voltage is 220 volt? Ans: current drawn from 100w- I1 = P1/V = 100/220 = 0.4545A Current drawn from 60w I2 = P2/V = 60/220 = 0.2727A Current drawn from the main line, I = I1 + I2 = 0.4545 + 0.2727 = 0.727A",
-        "hi": null,
-        "hinglish": "Do lamp hain ek 100 watt par 220 volt aur doosra 60 watt aur 220 volt jo parallel mein electric main supply se jude hain. Agar supply voltage 220 volt hai to main line se kitni vidyut dhara kheechi ja rahi hai? Vidyut dhara jo 100w se kheechi ja rahi hai - I1 = P1/V = 100/220 = 0.4545A Vidyut dhara jo 60w se kheechi ja rahi hai - I2 = P2/V = 60/220 = 0.2727A Main line se kheechi ja rahi vidyut dhara, I = I1 + I2 = 0.4545 + 0.2727 = 0.727A"
+        "hi": "दो लैंप, एक 100 वॉट पर 220 वोल्ट और दूसरा 60 वॉट और 220 वोल्ट, विद्युत मुख्य आपूर्ति के लिए समानांतर में जुड़े हुए हैं। यदि आपूर्ति वोल्टेज 220 वोल्ट है, तो मुख्य लाइन से कितना प्रवाह खींचा जाता है? उत्तर: 100W से खींचा गया प्रवाह- I1 = P1/V = 100/220 = 0.4545A 60W से खींचा गया प्रवाह I2 = P2/V = 60/220 = 0.2727A मुख्य लाइन से खींचा गया प्रवाह, I = I1 + I2 = 0.4545 + 0.2727 = 0.727A",
+        "hinglish": "Do lamp, ek 100 watt par 220 volt aur doosra 60 watt aur 220 volt, vidyut mukhya aapurti ke liye samaantar mein jude hue hain. Yadi aapurti voltage 220 volt hai, to mukhya line se kitna pravah kheenchha jaata hai? Uttar: 100W se kheenchha gaya pravah- I1 = P1/V = 100/220 = 0.4545A 60W se kheenchha gaya pravah I2 = P2/V = 60/220 = 0.2727A Mukhy line se kheenchha gaya pravah, I = I1 + I2 = 0.4545 + 0.2727 = 0.727A"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -3002,7 +2967,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3014,7 +2979,6 @@
         }
       },
       "blockers": [
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -3023,7 +2987,8 @@
       },
       "flags": [
         "missing-hindi",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -3042,8 +3007,8 @@
       "subPart": null,
       "text": {
         "en": "What are the disadvantages of fossil fuels? Ans: a) Pollution is the primary disadvantage advantage of fossil fuels .Burning of fossil fuel can cause greenhouse effect which is harmful to the environment b).Destruction of wide area of land is another advantage disadvantage of mining physics fossil fuels mining fossil fuels also didn't endanger the lives of animal’s people living inside surrounding.",
-        "hi": null,
-        "hinglish": "Fossil fuels ke kya nuksan hain? a) Pollution fossil fuels ka pramukh nuksan hai. Fossil fuels ko jalane se greenhouse effect hota hai jo paryavaran ke liye harmful hai. b) Mining ke dauran vishal kshetra ka vinash hona bhi ek nuksan hai. Fossil fuels ki mining se jaanvar aur aas-paas ke logon ki zindagi khatre mein padti hai"
+        "hi": "जीवाश्म ईंधनों के क्या नुकसान हैं? उत्तर: a) प्रदूषण जीवाश्म ईंधनों का प्राथमिक नुकसान है। जीवाश्म ईंधन का जलना ग्रीनहाउस प्रभाव का कारण बन सकता है जो पर्यावरण के लिए हानिकारक है। b) भूमि के विस्तृत क्षेत्र का विनाश खनन का एक और नुकसान है। जीवाश्म ईंधनों का खनन भी जानवरों और आसपास रहने वाले लोगों के जीवन को खतरे में नहीं डालता है।",
+        "hinglish": "Jeevashm indhanon ke kya nuksan hain? Uttar: a) Pradushan jeevashm indhanon ka prathmik nuksan hai. Jeevashm indhan ka jalna greenhouse prabhav ka kaaran ban sakta hai jo paryavaran ke liye haanikarak hai. b) Bhoomi ke vistaar kshetra ka vinash khanan ka ek aur nuksan hai. Jeevashm indhanon ka khanan bhi jaanwaron aur aaspaas rehne wale logon ke jeevan ko khatre mein nahi daalta hai."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -3064,7 +3029,6 @@
       },
       "blockers": [
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -3074,7 +3038,8 @@
       "flags": [
         "missing-hindi",
         "marks-missing",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": true,
@@ -3093,8 +3058,8 @@
       "subPart": null,
       "text": {
         "en": "a)State type of defects of vision. Ans: The following are the the defect of vision related to eye vision. i) Myopia or short sightedness.- ii) Hypermetropia or long sightedness. iii) presbyopia iv) Astigmatism v) Cataract. b) Write these eye defects and their correction in brief. i) In short sightedness person can see nearby objects clearly but cannot see distant objects clearly the image is formed before retina and not retina. This defect can be corrected by using concave lens of appropriate power. ii) In long sightedness a person can see distant objects clearly but cannot see nearby objects clearly .A person with this defect has the near point farther away from the normal near point. The image is formed on the retina .The defect can be corrected by using convex lens of appropriate power. iii) In presbyopia one cannot read comfortably and clearly for oldest people do near. Gradually receipts away this effect can be corrected by using bifocal or very focal length which consists of both convex and concave lens. iv) In Astigmatisms a person cannot focus objects both in horizontal and vertical lines clearly. This defect can be corrected by using cylindrical lenses for refractive surgery. v) Cataract is a condition in which crystalline lens of eye becomes milky and cloudy due to growth of membrane over it this it is possible to restore vision for cataract surgery . c) The far point of a myopic person is 80cm in front of the eye. What is the nature and power of lens required to correct the problem? Ans: Concave lens is used to correct the problem. u = – ∞ v = – 80 cm, 1/-v – 1/-u = 1/f 1/-80 + 1/∞ = p P = 100/-80 = -1.25 D",
-        "hi": null,
-        "hinglish": "a) Drishti ke defects ke prakar batayein. Drishti ke defects jo aankhon se sambandhit hain, ye hain: i) Myopia ya short sightedness. ii) Hypermetropia ya long sightedness. iii) Presbyopia iv) Astigmatism v) Cataract. b) In aankhon ke defects aur unke correction ko sankshipt mein likhein. i) Short sightedness mein vyakti nazdeek ki vastu ko spasht dekh sakta hai par door ki vastu ko spasht nahi dekh sakta, pratibimb retina se pehle banta hai. Is defect ko sahi karne ke liye avatal lens ka istemal hota hai. ii) Long sightedness mein vyakti door ki vastu ko spasht dekh sakta hai par nazdeek ki vastu ko spasht nahi dekh sakta. Is defect wale vyakti ka near point normal near point se door hota hai. Pratibimb retina par banta hai. Is defect ko sahi karne ke liye uttal lens ka istemal hota hai. iii) Presbyopia mein vyakti aaram se nahi padh sakta, ye vriddh logon mein hota hai. Yeh dhire dhire khatam hota hai, is effect ko bifocal ya trifocal lens ka istemal karke sahi kiya ja sakta hai. iv) Astigmatism mein vyakti horizontal aur vertical lines dono ko spasht nahi dekh sakta. Is defect ko cylindrical lenses ya refractive surgery se sahi kiya ja sakta hai. v) Cataract ek aisi sthiti hai jisme aankh ka crystalline lens milky aur cloudy ho jata hai membrane ke vikas ke karan. Iska vision restore karna cataract surgery se sambhav hai. c) Ek myopic vyakti ka far point aankh ke saamne 80cm hai. Is samasya ko sahi karne ke liye lens ki prakriti aur power kya hogi? Is samasya ko sahi karne ke liye avatal lens ka istemal hota hai. u = – ∞ v = – 80 cm, 1/-v – 1/-u = 1/f 1/-80 + 1/∞ = p P = 100/-80 = -1.25 D"
+        "hi": "a) दृष्टि के दोषों के प्रकार बताएं। उत्तर: निम्नलिखित दृष्टि के दोष हैं जो आंख की दृष्टि से संबंधित हैं। i) मायोपिया या निकट दृष्टि। ii) हाइपरमेट्रोपिया या दूर दृष्टि। iii) प्रेसीबायोपिया iv) ऐस्टिग्मेटिज्म v) मोतियाबिंद। b) इन आंखों के दोषों और उनके सुधार को संक्षेप में लिखें। i) निकट दृष्टि में व्यक्ति पास की वस्तुओं को स्पष्ट रूप से देख सकता है लेकिन दूर की वस्तुओं को स्पष्ट रूप से नहीं देख सकता। छवि रेटिना से पहले बनती है। इस दोष को उपयुक्त शक्ति के अवतल लेंस का उपयोग करके ठीक किया जा सकता है। ii) दूर दृष्टि में व्यक्ति दूर की वस्तुओं को स्पष्ट रूप से देख सकता है लेकिन पास की वस्तुओं को स्पष्ट रूप से नहीं देख सकता। इस दोष वाले व्यक्ति का निकट बिंदु सामान्य निकट बिंदु से दूर होता है। छवि रेटिना पर बनती है। इस दोष को उपयुक्त शक्ति के उत्तल लेंस का उपयोग करके ठीक किया जा सकता है। iii) प्रेसीबायोपिया में कोई आराम से और स्पष्ट रूप से नहीं पढ़ सकता है। यह वृद्ध लोगों के लिए होता है। यह धीरे-धीरे दूर होता है। इस प्रभाव को बिफोकल या ट्रिफोकल लेंस का उपयोग करके ठीक किया जा सकता है जिसमें उत्तल और अवतल लेंस दोनों होते हैं। iv) ऐस्टिग्मेटिज्म में व्यक्ति क्षैतिज और ऊर्ध्वाधर रेखाओं में वस्तुओं को स्पष्ट रूप से केंद्रित नहीं कर सकता। इस दोष को रिफ्रेक्टिव सर्जरी के लिए सिलेंड्रिकल लेंस का उपयोग करके ठीक किया जा सकता है। v) मोतियाबिंद एक ऐसी स्थिति है जिसमें आंख का क्रिस्टलीय लेंस दूधिया और धुंधला हो जाता है। इसके ऊपर झिल्ली के विकास के कारण दृष्टि को बहाल करना संभव है। मोतियाबिंद सर्जरी के लिए। c) एक मायोपिक व्यक्ति का दूर बिंदु आंख के सामने 80 सेमी है। समस्या को ठीक करने के लिए आवश्यक लेंस की प्रकृति और शक्ति क्या है? उत्तर: समस्या को ठीक करने के लिए अवतल लेंस का उपयोग किया जाता है। u = – ∞ v = – 80 सेमी, 1/-v – 1/-u = 1/f 1/-80 + 1/∞ = p P = 100/-80 = -1.25 D",
+        "hinglish": "a) Drishti ke doshon ke prakar bataayein. Uttar: Nimnalikhit drishti ke dosh hain jo aankh ki drishti se sambandhit hain. i) Myopia ya nikat drishti. ii) Hypermetropia ya door drishti. iii) Presbyopia iv) Astigmatism v) Motiyabind. b) In aankhon ke doshon aur unke sudhar ko sankshipt mein likhein. i) Nikat drishti mein vyakti paas ki vastuon ko spasht roop se dekh sakta hai lekin door ki vastuon ko spasht roop se nahi dekh sakta. Chhavi retina se pehle banti hai. Is dosh ko upyukt shakti ke avatal lens ka upyog karke theek kiya ja sakta hai. ii) Door drishti mein vyakti door ki vastuon ko spasht roop se dekh sakta hai lekin paas ki vastuon ko spasht roop se nahi dekh sakta. Is dosh wale vyakti ka nikat bindu samanya nikat bindu se door hota hai. Chhavi retina par banti hai. Is dosh ko upyukt shakti ke uttal lens ka upyog karke theek kiya ja sakta hai. iii) Presbyopia mein koi aaraam se aur spasht roop se nahi padh sakta. Yeh vriddh logon ke liye hota hai. Yeh dheere-dheere door hota hai. Is prabhav ko bifocal ya trifocal lens ka upyog karke theek kiya ja sakta hai jisme uttal aur avatal lens dono hote hain. iv) Astigmatism mein vyakti kshaitij aur uirdhvadhari rekhaon mein vastuon ko spasht roop se kendrit nahi kar sakta. Is dosh ko refractive surgery ke liye cylindrical lens ka upyog karke theek kiya ja sakta hai. v) Motiyabind ek aisi sthiti hai jisme aankh ka crystalline lens doodhiy aur dhundhla ho jaata hai. Iske upar jhilli ke vikas ke kaaran drishti ko bahal karna sambhav hai. Motiyabind surgery ke liye. c) Ek myopic vyakti ka door bindu aankh ke saamne 80 cm hai. Samasya ko theek karne ke liye aavashyak lens ki prakriti aur shakti kya hai? Uttar: Samasya ko theek karne ke liye avatal lens ka upyog kiya jaata hai. u = – ∞ v = – 80 cm, 1/-v – 1/-u = 1/f 1/-80 + 1/∞ = p P = 100/-80 = -1.25 D"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -3116,7 +3081,6 @@
       "blockers": [
         "diagram-required",
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -3126,7 +3090,8 @@
       "flags": [
         "missing-hindi",
         "marks-missing",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -3145,8 +3110,8 @@
       "subPart": "or",
       "text": {
         "en": "a) Draw a circuit diagram for studying Ohm’s law. Ans: b) State Ohm's law. Ans: According to this law the electric current flowing through a conductor is directly proportional to the potential difference applied across its and providing the physical condition such as temperature remain unchanged. c) Draw V-I graph that Verify Ohm's law.State the nature of graph. Ans: The graph is found to be a straight line passing through the origin for Ohmic conductors.",
-        "hi": null,
-        "hinglish": "a) Ohm’s law ke liye circuit diagram banao. b) Ohm's law ko batao. Ans: Is law ke anusar vidyut dhara jo ek conductor se guzar raha hai, wo vibhavantaar ke anupat hai jo is par lagaya gaya hai aur jab tak bhoutik sthiti jaise taapmaan badalta nahi hai. c) V-I graph banao jo Ohm's law ko verify kare. Graph ki prakriti batao. Ans: Graph ko Ohmic conductors ke liye ek seedhi line paayi gayi jo origin se guzar rahi hai"
+        "hi": "a) ओहम के नियम का अध्ययन करने के लिए एक सर्किट डायग्राम बनाएं। उत्तर: b) ओहम का नियम बताएं। उत्तर: इस नियम के अनुसार, एक चालक के माध्यम से प्रवाहित होने वाला विद्युत प्रवाह उस पर लागू संभावित अंतर के सीधे अनुपात में होता है, बशर्ते भौतिक स्थिति जैसे तापमान अपरिवर्तित रहें। c) V-I ग्राफ बनाएं जो ओहम के नियम को सत्यापित करता है। ग्राफ की प्रकृति बताएं। उत्तर: ग्राफ ओमिक चालक के लिए मूल बिंदु के माध्यम से गुजरने वाली सीधी रेखा पाई जाती है।",
+        "hinglish": "a) Ohm ke niyam ka adhyayan karne ke liye ek circuit diagram banayein. Uttar: b) Ohm ka niyam batayein. Uttar: Is niyam ke anusar, ek chalaak ke madhyam se pravahit hone wala vidyut pravah us par lagu sambhavit antar ke seedhe anupaat mein hota hai, basharte bhoutik sthiti jaise taapmaan aparivartit rahein. c) V-I graph banayein jo Ohm ke niyam ko satyapit karta hai. Graph ki prakriti batayein. Uttar: Graph omik chalaak ke liye mool bindu ke madhyam se guzarne wali seedhi rekha payi jaati hai."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -3161,7 +3126,7 @@
     "objective": 40,
     "questions": 46,
     "subjective": 6,
-    "trilingualComplete": 0,
-    "usableInQuiz": 0
+    "trilingualComplete": 24,
+    "usableInQuiz": 17
   }
 }

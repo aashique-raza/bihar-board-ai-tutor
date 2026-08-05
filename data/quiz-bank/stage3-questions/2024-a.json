@@ -3487,7 +3487,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3499,9 +3499,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "missing-english",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -3511,7 +3509,8 @@
         "missing-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3520,15 +3519,15 @@
         {
           "key": "a",
           "text": {
-            "en": null,
+            "en": "to see whether the food placed inside the cooker is cooking or not",
             "hi": "यह देखना कि कुकर के अंदर रखा भोजन पक रहा है या नहीं",
-            "hinglish": "ye dekhna ki cooker ke andar rakha bhojan pak raha hai ya nahi"
+            "hinglish": "Yeh dekhna ki cooker ke andar rakha bhojan pak raha hai ya nahi"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": null,
+            "en": "to prevent the loss of heat by radiation",
             "hi": "विकिरण द्वारा ऊष्मा की हानि को रोकना",
             "hinglish": "Vikiran dwara ooshma ki haani ko rokna"
           }
@@ -3536,7 +3535,7 @@
         {
           "key": "c",
           "text": {
-            "en": null,
+            "en": "to prevent dust particles from entering the box",
             "hi": "बाक्स के भीतर धूलकणों को जाने से रोकना",
             "hinglish": "Baaks ke bheetar dhoolkano ko jaane se rokna"
           }
@@ -3544,7 +3543,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "None of these",
             "hi": "इनमें से कोई नहीं",
             "hinglish": "Inmein se koi nahi"
           }
@@ -3562,9 +3561,9 @@
       "sourceId": "2024-a:A:44",
       "subPart": null,
       "text": {
-        "en": null,
+        "en": "The upper part of the box-type solar cooker has a glass lid. The reason for this is",
         "hi": "बॉक्स-टाइप सौर कुकर के ऊपरी भाग में काँच का ढक्कन रहता है। इसका कारण है",
-        "hinglish": "Box-type saur kukar ke upari bhaag mein kaanch ka dhakkan rahta hai. Iska kaaran hai"
+        "hinglish": "Box-type saur cooker ke upari bhaag mein kaanch ka dhakkan rehta hai. Iska kaaran hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -4299,7 +4298,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -4311,8 +4310,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -4320,7 +4318,8 @@
       },
       "flags": [
         "marks-defaulted-mcq-hi-null-en-4",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-english"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4353,7 +4352,7 @@
         {
           "key": "d",
           "text": {
-            "en": null,
+            "en": "four",
             "hi": "चार",
             "hinglish": "Chaar"
           }
@@ -7873,7 +7872,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 100,
+    "trilingualComplete": 102,
     "usableInQuiz": 0
   }
 }

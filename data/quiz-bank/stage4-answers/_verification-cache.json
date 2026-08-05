@@ -128,6 +128,12 @@
       "evidence": "",
       "verdict": "insufficient"
     },
+    "07f30edcf06123f4": {
+      "chapter": "Sources of Energy",
+      "correctOption": "b",
+      "evidence": "glass sheet allows sunlight to enter but prevents heat from escaping easily.",
+      "verdict": "answered"
+    },
     "085f83e72d284dff": {
       "chapter": "Metals and Non-metals",
       "correctOption": "a",
@@ -243,6 +249,12 @@
       "correctOption": "a",
       "evidence": "Aldehyde group | —CHO | Aldehyde | Ethanal",
       "verdict": "answered"
+    },
+    "0ec4ef83df97ea8c": {
+      "chapter": null,
+      "correctOption": null,
+      "evidence": "",
+      "verdict": "insufficient"
     },
     "0f353f90e566c7c9": {
       "chapter": "Control and Coordination",
@@ -432,6 +444,12 @@
       "evidence": "Noble gases were placed in a separate group without disturbing the table.",
       "verdict": "answered"
     },
+    "1986c3da9034b33b": {
+      "chapter": "Acids, Bases and Salts",
+      "correctOption": "b",
+      "evidence": "Less than 7 | Acidic",
+      "verdict": "answered"
+    },
     "1a1a4319b3f96a6c": {
       "chapter": "Metals and Non-metals",
       "correctOption": "c",
@@ -535,6 +553,12 @@
       "chapter": "Acids, Bases and Salts",
       "correctOption": "a",
       "evidence": "Examples:\n\n| Base | Formula |\n|---|---|\n| Sodium hydroxide | `NaOH` |",
+      "verdict": "answered"
+    },
+    "1fb7269eed5d586d": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "a",
+      "evidence": "Angle of incidence equals angle of reflection.",
       "verdict": "answered"
     },
     "21bb4b83e2756eb4": {
@@ -646,6 +670,12 @@
       "evidence": "The sky appears blue due to scattering of sunlight by tiny air molecules and fine particles in the atmosphere.",
       "verdict": "answered"
     },
+    "291436363d56d89e": {
+      "chapter": "Human Eye and Colourful World",
+      "correctOption": "b",
+      "evidence": "Myopia is corrected by using a **concave lens** of suitable power.",
+      "verdict": "answered"
+    },
     "297bf3b527418240": {
       "chapter": "Acids, Bases and Salts",
       "correctOption": "a",
@@ -664,10 +694,23 @@
       "evidence": "Platelets help prevent blood loss. When a blood vessel is injured, platelets help form a clot at the site of injury. This blocks the leak and reduces blood loss.",
       "verdict": "answered"
     },
+    "2b2145f46306d2ab": {
+      "chapter": "Sources of Energy",
+      "claimedOption": "b",
+      "correctOption": null,
+      "evidence": "The S.I. unit of energy is joule.",
+      "verdict": "ungrounded"
+    },
     "2b4c0b829aa11054": {
       "chapter": "Periodic Classification of Elements",
       "correctOption": "c",
       "evidence": "Metals are electropositive because they lose electrons.",
+      "verdict": "answered"
+    },
+    "2c5ab994c2e5644d": {
+      "chapter": "Convex Mirror vs Concave Lens",
+      "correctOption": "b",
+      "evidence": "Always forms virtual, erect, diminished image",
       "verdict": "answered"
     },
     "2c723c45aa899d43": {
@@ -748,6 +791,12 @@
       "evidence": "1 | Methane | CH₄ |",
       "verdict": "answered"
     },
+    "312d298d51af829d": {
+      "chapter": "Magnetic Effects of Electric Current",
+      "correctOption": "a",
+      "evidence": "Direct current flows in one direction only.",
+      "verdict": "answered"
+    },
     "3194988de24137ae": {
       "chapter": "Life Processes",
       "correctOption": "b",
@@ -758,6 +807,12 @@
       "chapter": "Carbon and Its Compounds",
       "correctOption": "d",
       "evidence": "Aldehyde group | —CHO | Aldehyde | Ethanal",
+      "verdict": "answered"
+    },
+    "33028f2cb9fd90ac": {
+      "chapter": "Acids, Bases and Salts",
+      "correctOption": "b",
+      "evidence": "A substance that produces `OH-` ions in aqueous solution.",
       "verdict": "answered"
     },
     "33051cd334a9e36d": {
@@ -965,6 +1020,12 @@
       "chapter": "Carbon and Its Compounds",
       "correctOption": "b",
       "evidence": "Hydrocarbons with at least one triple bond are called **alkynes**.",
+      "verdict": "answered"
+    },
+    "3f91d91cdcc48c67": {
+      "chapter": "Electricity",
+      "correctOption": "b",
+      "evidence": "A fuse protects circuits and appliances by melting and breaking the circuit when excessive current flows.",
       "verdict": "answered"
     },
     "3f9520851a4ce822": {
@@ -1350,6 +1411,12 @@
       "evidence": "Deficiency of iodine may reduce thyroxine production and cause goitre.",
       "verdict": "answered"
     },
+    "5334526434bd51e7": {
+      "chapter": "Management of Natural Resources",
+      "correctOption": "d",
+      "evidence": "Water is a basic need for all living organisms.",
+      "verdict": "answered"
+    },
     "53d52c181152b58b": {
       "chapter": null,
       "correctOption": null,
@@ -1384,6 +1451,12 @@
       "chapter": "Heredity and Evolution",
       "correctOption": "b",
       "evidence": "In females:\n\n```txt\nXX\n```",
+      "verdict": "answered"
+    },
+    "5727eac83ef3dfaa": {
+      "chapter": "Activity: Factors Affecting Resistance",
+      "correctOption": "a",
+      "evidence": "R depends on length, area of cross-section, and material.",
       "verdict": "answered"
     },
     "577c87b47542d38b": {
@@ -1563,6 +1636,12 @@
       "evidence": "The processes that together perform the maintenance function in living organisms are called life processes.",
       "verdict": "answered"
     },
+    "61206d9d3c73d5df": {
+      "chapter": "Metals and Non-metals",
+      "correctOption": "c",
+      "evidence": "Brass | Copper + zinc",
+      "verdict": "answered"
+    },
     "6223e6e58e302c57": {
       "chapter": "Acids, Bases and Salts",
       "correctOption": "c",
@@ -1586,6 +1665,12 @@
       "chapter": "Light - Reflection and Refraction",
       "correctOption": "b",
       "evidence": "Refraction happens because the speed of light changes in different media.",
+      "verdict": "answered"
+    },
+    "64d16a7424657d28": {
+      "chapter": "Control and Coordination",
+      "correctOption": "c",
+      "evidence": "Auxin promotes cell elongation and helps in phototropism.",
       "verdict": "answered"
     },
     "64f97cdb3cd59058": {
@@ -1629,6 +1714,12 @@
       "correctOption": null,
       "evidence": "",
       "verdict": "insufficient"
+    },
+    "688b202f3f35de45": {
+      "chapter": "Electricity",
+      "correctOption": "a",
+      "evidence": "When current exceeds the safe limit, heat produced in the fuse wire increases.",
+      "verdict": "answered"
     },
     "6926bfabe5755fd2": {
       "chapter": "Chemical Reactions and Equations",
@@ -1730,6 +1821,12 @@
       "chapter": "Light - Reflection and Refraction",
       "correctOption": "d",
       "evidence": "Speed of light in vacuum:",
+      "verdict": "answered"
+    },
+    "6e6b90cac862faba": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "a",
+      "evidence": "Used in headlights, shaving mirrors",
       "verdict": "answered"
     },
     "6edbca386138d79a": {
@@ -1940,6 +2037,18 @@
       "evidence": "Blood pressure is the force exerted by blood against the walls of blood vessels.",
       "verdict": "answered"
     },
+    "7b0a2750ea7b69d7": {
+      "chapter": "Periodic Classification of Elements",
+      "correctOption": "a",
+      "evidence": "The modern periodic table has: - 18 vertical columns called groups",
+      "verdict": "answered"
+    },
+    "7b577cf41f10b845": {
+      "chapter": "Control and Coordination",
+      "correctOption": "c",
+      "evidence": "This condition may lead to diabetes.",
+      "verdict": "answered"
+    },
     "7bf7ffad04b49a05": {
       "chapter": "Sources of Energy",
       "correctOption": "d",
@@ -2145,6 +2254,12 @@
       "evidence": "",
       "verdict": "insufficient"
     },
+    "887741d49543fcc9": {
+      "chapter": "How Do Organisms Reproduce?",
+      "correctOption": "c",
+      "evidence": "The male reproductive system includes testes, scrotum, vas deferens, seminal vesicles, prostate gland, urethra, and penis.",
+      "verdict": "answered"
+    },
     "88bd37525a7754f9": {
       "chapter": "How Do Organisms Reproduce?",
       "correctOption": "a",
@@ -2162,6 +2277,12 @@
       "correctOption": null,
       "evidence": "",
       "verdict": "insufficient"
+    },
+    "899093b2fcbef56c": {
+      "chapter": "Life Processes",
+      "correctOption": "a",
+      "evidence": "Main organ in humans is kidney.",
+      "verdict": "answered"
     },
     "89ed0211ae977120": {
       "chapter": "Periodic Classification of Elements",
@@ -2218,6 +2339,12 @@
       "evidence": "Silicon used for making solar cells is abundant, but high-grade silicon is limited.",
       "verdict": "answered"
     },
+    "8c781efec56daa77": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "a",
+      "evidence": "c = 3 × 10^8 m/s",
+      "verdict": "answered"
+    },
     "8c9a0e5d17729632": {
       "chapter": "Human Eye and Colourful World",
       "correctOption": "b",
@@ -2229,6 +2356,13 @@
       "correctOption": "b",
       "evidence": "Fish take water through the mouth and force it over the gills. Dissolved oxygen diffuses into blood at the gills.",
       "verdict": "answered"
+    },
+    "8ebd8bfe337e6719": {
+      "chapter": "Light - Reflection and Refraction",
+      "claimedOption": "a",
+      "correctOption": null,
+      "evidence": "A plane mirror always forms an image with these properties: 1. Virtual",
+      "verdict": "ungrounded"
     },
     "8ee20c211f20e10d": {
       "chapter": "Sources of Energy",
@@ -2339,6 +2473,13 @@
       "evidence": "The ozone layer protects the Earth from harmful ultraviolet radiation from the Sun.",
       "verdict": "answered"
     },
+    "93c9c62eeaa8c4ac": {
+      "chapter": "Life Processes",
+      "claimedOption": "d",
+      "correctOption": null,
+      "evidence": "Photosynthesis requires: | Carbon dioxide | Enters leaves mainly through stomata | | Water | Absorbed by roots from soil | | Sunlight | Provides energy | | Chlorophyll | Absorbs light energy |",
+      "verdict": "ungrounded"
+    },
     "942cf7334fe8e577": {
       "chapter": "Electricity",
       "correctOption": "b",
@@ -2411,6 +2552,12 @@
       "correctOption": null,
       "evidence": "",
       "verdict": "insufficient"
+    },
+    "978900c53b48e332": {
+      "chapter": "How Do Organisms Reproduce?",
+      "correctOption": "b",
+      "evidence": "The reproductive organ of flowering plants is the flower.",
+      "verdict": "answered"
     },
     "978de6d2e4751f35": {
       "chapter": "How Do Organisms Reproduce?",
@@ -2552,6 +2699,12 @@
       "evidence": "Fermentation in yeast produces ethanol and carbon dioxide.",
       "verdict": "answered"
     },
+    "9ff5ecfe048b79aa": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "a",
+      "evidence": "light travels in straight lines",
+      "verdict": "answered"
+    },
     "a13c41147cc6c74d": {
       "chapter": null,
       "correctOption": null,
@@ -2619,16 +2772,34 @@
       "evidence": "Zinc",
       "verdict": "answered"
     },
+    "a38b3df69afca32b": {
+      "chapter": "Magnetic Effects of Electric Current",
+      "correctOption": "a",
+      "evidence": "An electric generator is a device that converts mechanical energy into electrical energy.",
+      "verdict": "answered"
+    },
     "a3be3f127c404396": {
       "chapter": "Management of Natural Resources",
       "correctOption": "b",
       "evidence": "The Ganga Action Plan was started around 1985 because the water quality of the river Ganga had become very poor.",
       "verdict": "answered"
     },
+    "a3fe3512ac042d0e": {
+      "chapter": "Core Ideas",
+      "correctOption": "a",
+      "evidence": "The human eye acts like a camera.",
+      "verdict": "answered"
+    },
     "a49d1e6404d34e07": {
       "chapter": "Electricity",
       "correctOption": "c",
       "evidence": "1 kWh = 3.6 × 10^6 J",
+      "verdict": "answered"
+    },
+    "a503ac0801fd44fe": {
+      "chapter": "Control and Coordination",
+      "correctOption": "a",
+      "evidence": "Auxin is a plant hormone that promotes cell elongation and helps in growth movements such as phototropism.",
       "verdict": "answered"
     },
     "a50e441423f3c785": {
@@ -2653,6 +2824,12 @@
       "chapter": "Our Environment",
       "correctOption": "b",
       "evidence": "They are also called primary consumers.",
+      "verdict": "answered"
+    },
+    "a66217f8a8912d76": {
+      "chapter": "How Do Organisms Reproduce?",
+      "correctOption": "a",
+      "evidence": "Testes are the male reproductive organs that produce sperms.",
       "verdict": "answered"
     },
     "a71198694fb86a99": {
@@ -2697,10 +2874,28 @@
       "evidence": "Cornea | Transparent front part of the eye. Most refraction of light occurs here.",
       "verdict": "answered"
     },
+    "a856247966e201b5": {
+      "chapter": "Periodic Classification of Elements",
+      "correctOption": "b",
+      "evidence": "Group 1 elements have one valence electron.",
+      "verdict": "answered"
+    },
+    "a8772daa615819b2": {
+      "chapter": "Electricity",
+      "correctOption": "b",
+      "evidence": "A voltmeter is used to measure potential difference.",
+      "verdict": "answered"
+    },
     "a886bced6e3827b0": {
       "chapter": "Control and Coordination",
       "correctOption": "d",
       "evidence": "Iodine is necessary for the synthesis of thyroxine.",
+      "verdict": "answered"
+    },
+    "a8f3123040be09c8": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "b",
+      "evidence": "1. **Angle of incidence equals angle of reflection.**",
       "verdict": "answered"
     },
     "a955391df62820fb": {
@@ -2734,6 +2929,12 @@
       "evidence": "the ovary grows and becomes the fruit",
       "verdict": "answered"
     },
+    "ae63dddd6087a43c": {
+      "chapter": null,
+      "correctOption": null,
+      "evidence": "",
+      "verdict": "insufficient"
+    },
     "ae971b7fde9210c0": {
       "chapter": "Human Eye and Colourful World",
       "claimedOption": "a",
@@ -2745,6 +2946,12 @@
       "chapter": "Management of Natural Resources",
       "correctOption": "b",
       "evidence": "Tehri Dam on the Ganga",
+      "verdict": "answered"
+    },
+    "aef3c7f8d52c8fe8": {
+      "chapter": "Electricity",
+      "correctOption": "d",
+      "evidence": "The SI unit of electric current is ampere.",
       "verdict": "answered"
     },
     "af00e350caf26baa": {
@@ -2794,6 +3001,12 @@
       "chapter": "Life Processes",
       "correctOption": "d",
       "evidence": "C6H12O6 + 6O2 → 6CO2 + 6H2O + Energy",
+      "verdict": "answered"
+    },
+    "b19b7525d46c1427": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "b",
+      "evidence": "A concave mirror has its reflecting surface curved inward.",
       "verdict": "answered"
     },
     "b1aa40d5736ee884": {
@@ -3122,6 +3335,13 @@
       "evidence": "Formed by actual meeting of rays",
       "verdict": "answered"
     },
+    "c603f1f02f12a3b6": {
+      "chapter": "Sources of Energy",
+      "claimedOption": "b",
+      "correctOption": null,
+      "evidence": "the turbine rotates a generator, which converts mechanical energy into electrical energy.",
+      "verdict": "ungrounded"
+    },
     "c61654d33904338f": {
       "chapter": "Electricity",
       "correctOption": "a",
@@ -3156,6 +3376,12 @@
       "chapter": "Metals and Non-metals",
       "correctOption": "d",
       "evidence": "Au   Gold            Least reactive",
+      "verdict": "answered"
+    },
+    "c8c4d2b6c221f542": {
+      "chapter": "Metals and Non-metals",
+      "correctOption": "b",
+      "evidence": "Compounds formed by transfer of electrons from a metal to a non-metal are called ionic compounds or electrovalent compounds.",
       "verdict": "answered"
     },
     "c8d2bcf02b2f0688": {
@@ -3194,6 +3420,12 @@
       "correctOption": null,
       "evidence": "In India, the frequency of domestic AC supply in India is 50 Hz.",
       "verdict": "ungrounded"
+    },
+    "ca12d122d90a65d2": {
+      "chapter": "Carbon and Its Compounds",
+      "correctOption": "b",
+      "evidence": "A compound made only of carbon and hydrogen is called a hydrocarbon.",
+      "verdict": "answered"
     },
     "ca1a554398459093": {
       "chapter": "Control and Coordination",
@@ -3244,6 +3476,12 @@
       "evidence": "The human female reproductive system includes ovaries, oviducts, uterus, cervix, and vagina.",
       "verdict": "ungrounded"
     },
+    "cdd4aa2d2137d7a6": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "a",
+      "evidence": "Used in headlights, shaving mirrors",
+      "verdict": "answered"
+    },
     "ce2b930c69243b5e": {
       "chapter": null,
       "correctOption": null,
@@ -3293,6 +3531,12 @@
       "evidence": "The SI unit of resistance is **ohm (Ω)**.",
       "verdict": "answered"
     },
+    "d03d4af893fd5331": {
+      "chapter": "Carbon and Its Compounds",
+      "correctOption": "a",
+      "evidence": "| 1 | Methane | CH₄ |",
+      "verdict": "answered"
+    },
     "d0919a44c9c65a59": {
       "chapter": "Control and Coordination",
       "correctOption": "a",
@@ -3303,6 +3547,12 @@
       "chapter": "Carbon and Its Compounds",
       "correctOption": "c",
       "evidence": "Carboxylic acid group | —COOH | Carboxylic acid | Ethanoic acid",
+      "verdict": "answered"
+    },
+    "d1e8694e2f1f23e2": {
+      "chapter": "Periodic Classification of Elements",
+      "correctOption": "d",
+      "evidence": "Antimony",
       "verdict": "answered"
     },
     "d1ec2794cdb0a95c": {
@@ -3476,6 +3726,12 @@
       "evidence": "Neutral wire | Black | Completes circuit and is at low/zero potential",
       "verdict": "answered"
     },
+    "d832686f7a46a09b": {
+      "chapter": "Electricity",
+      "correctOption": "b",
+      "evidence": "R = V / I",
+      "verdict": "answered"
+    },
     "d85508938d6f8a80": {
       "chapter": null,
       "correctOption": null,
@@ -3506,10 +3762,22 @@
       "evidence": "Always forms virtual, erect, diminished image",
       "verdict": "answered"
     },
+    "d8f3631ed7f1bc55": {
+      "chapter": "Electricity",
+      "correctOption": "a",
+      "evidence": "The SI unit of potential difference is **volt (V)**.",
+      "verdict": "answered"
+    },
     "d90051402668dccf": {
       "chapter": "Management of Natural Resources",
       "correctOption": "a",
       "evidence": "It spreads out underground and recharges wells.",
+      "verdict": "answered"
+    },
+    "d900586298d5eab9": {
+      "chapter": "Chemical Reactions and Equations",
+      "correctOption": "d",
+      "evidence": "A reaction in which oxidation and reduction occur simultaneously is called a redox reaction.",
       "verdict": "answered"
     },
     "d901c1333d89be50": {
@@ -3534,6 +3802,12 @@
       "chapter": "How Do Organisms Reproduce?",
       "correctOption": "a",
       "evidence": "The uterus is a muscular organ where the embryo develops.",
+      "verdict": "answered"
+    },
+    "da46e3ff496632b8": {
+      "chapter": "How Do Organisms Reproduce?",
+      "correctOption": "d",
+      "evidence": "Pollen grains contain male gametes.",
       "verdict": "answered"
     },
     "daf41cbaaa0557b2": {
@@ -3638,6 +3912,12 @@
       "evidence": "It is basic, so its pH is greater than 7.",
       "verdict": "answered"
     },
+    "e219e9d39133d2e4": {
+      "chapter": "Core Ideas",
+      "correctOption": "a",
+      "evidence": "The eye lens forms a real and inverted image on the retina.",
+      "verdict": "answered"
+    },
     "e25002f4c5a697b9": {
       "chapter": "Chemical Reactions and Equations",
       "correctOption": "a",
@@ -3684,6 +3964,18 @@
       "chapter": "Carbon and Its Compounds",
       "correctOption": "d",
       "evidence": "Carbon compounds containing double or triple bonds between carbon atoms are called **unsaturated compounds**.",
+      "verdict": "answered"
+    },
+    "e3a2f7f3c80a0812": {
+      "chapter": "Electricity",
+      "correctOption": "b",
+      "evidence": "Good conductors like copper and aluminium have low resistance.",
+      "verdict": "answered"
+    },
+    "e3ab02a56cd159bd": {
+      "chapter": "Metals and Non-metals",
+      "correctOption": "c",
+      "evidence": "Brass | Copper + zinc | Decorative articles, instruments |",
       "verdict": "answered"
     },
     "e4bea97da43da0bf": {
@@ -3789,6 +4081,12 @@
       "evidence": "1 kWh = 3.6 × 10^6 J",
       "verdict": "answered"
     },
+    "ea1395243183ba53": {
+      "chapter": null,
+      "correctOption": null,
+      "evidence": "",
+      "verdict": "insufficient"
+    },
     "ea6d13fe0fd52bb0": {
       "chapter": null,
       "correctOption": null,
@@ -3837,6 +4135,13 @@
       "correctOption": null,
       "evidence": "",
       "verdict": "insufficient"
+    },
+    "edcaede2351a2150": {
+      "chapter": "Sources of Energy",
+      "claimedOption": "a",
+      "correctOption": null,
+      "evidence": "Examples of common fuels: CNG",
+      "verdict": "ungrounded"
     },
     "ee26d02243117a27": {
       "chapter": "Acids, Bases and Salts",
@@ -3952,6 +4257,18 @@
       "evidence": "",
       "verdict": "insufficient"
     },
+    "f69c43486e472b5d": {
+      "chapter": "Electricity",
+      "correctOption": "b",
+      "evidence": "1 V = 1 J / 1 C",
+      "verdict": "answered"
+    },
+    "f6a31d5c4b77c7ce": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "a",
+      "evidence": "A lens has two principal foci:",
+      "verdict": "answered"
+    },
     "f6d96868d6754dde": {
       "chapter": "Human Eye and Colourful World",
       "correctOption": "c",
@@ -3974,6 +4291,12 @@
       "chapter": "Electricity",
       "correctOption": "b",
       "evidence": "The SI unit of potential difference is **volt (V)**.",
+      "verdict": "answered"
+    },
+    "f766a7d3ce3b8f8e": {
+      "chapter": "Electricity",
+      "correctOption": "a",
+      "evidence": "It is always connected in **series** with the circuit.",
       "verdict": "answered"
     },
     "f8305cfc2d1b6187": {
@@ -4048,6 +4371,12 @@
       "chapter": "Light - Reflection and Refraction",
       "correctOption": "b",
       "evidence": "Diamond has a high refractive index:\n\n```txt\nn = 2.42\n```",
+      "verdict": "answered"
+    },
+    "fd6714ce20c6c8ca": {
+      "chapter": "Chemical Reactions and Equations",
+      "correctOption": "c",
+      "evidence": "Respiration is an exothermic reaction because glucose is broken down in the presence of oxygen to release energy.",
       "verdict": "answered"
     },
     "fde0abc3edc4408e": {

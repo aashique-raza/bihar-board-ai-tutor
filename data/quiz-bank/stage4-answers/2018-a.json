@@ -3443,7 +3443,6 @@
       },
       "blockers": [
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -3454,7 +3453,8 @@
         "missing-hindi",
         "marks-missing",
         "empty-text",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -3473,8 +3473,8 @@
       "subPart": "or",
       "text": {
         "en": "(a) What do you mean by scattering of Light? (b) What is Spectrum of Light? (c) Explain the dispersion of White light passing through a Glass Prism.",
-        "hi": null,
-        "hinglish": "(a) Prakash ke prakiran se aap kya samajhte hain? (b) Prakash varna patt kya hai? (c) Kanch ke prism se guzarte hue shvet prakash ke vikiran ki vyakhya karein"
+        "hi": "(a) प्रकाश के बिखराव से आपका क्या मतलब है? (b) प्रकाश का स्पेक्ट्रम क्या है? (c) एक कांच के प्रिज्म के माध्यम से गुजरने वाले सफेद प्रकाश के बिखराव को समझाइए।",
+        "hinglish": "(a) prakash ke bikharav se aapka kya matlab hai? (b) prakash ka spectrum kya hai? (c) ek kaanch ke prism ke madhyam se guzarte hue safed prakash ke bikharav ko samjhaiye."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -3831,7 +3831,6 @@
       },
       "blockers": [
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -3841,7 +3840,8 @@
       "flags": [
         "missing-hindi",
         "marks-missing",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -3860,8 +3860,8 @@
       "subPart": "or",
       "text": {
         "en": "(a) Differentiate between metal and non-metal on the basis of their chemical properties. (2+3=5) (b) Arrange the metals given in the order of their decreasing reactivity. (i) Zn (ii) Fe (iii) Ca (iv) Mg (v) K (vi) Na",
-        "hi": null,
-        "hinglish": "(a) Dhatu aur adhatu ke beech unke rasayanik gunadharmon ke aadhar par bhed karein. (2+3=5) (b) Diye gaye dhatuein ki kriyashilata ko avrohi kram mein vyavasthit karein. (i) Zn (ii) Fe (iii) Ca (iv) Mg (v) K (vi) Na"
+        "hi": "(a) उनके रासायनिक गुणों के आधार पर धातु और अधातु के बीच अंतर करें। (2+3=5) (b) धातुओं को उनकी घटती प्रतिक्रियाशीलता के क्रम में व्यवस्थित करें। (i) Zn (ii) Fe (iii) Ca (iv) Mg (v) K (vi) Na",
+        "hinglish": "(a) unke rasayanik gunon ke aadhar par dhatu aur adhatu ke beech antar karein. (2+3=5) (b) dhaton ko unki ghatati pratikriya ke kram mein vyavasthit karein. (i) Zn (ii) Fe (iii) Ca (iv) Mg (v) K (vi) Na"
       },
       "type": "short",
       "usableInQuiz": false,
@@ -4220,7 +4220,6 @@
       },
       "blockers": [
         "marks-missing",
-        "missing-hindi",
         "subjective"
       ],
       "diagram": {
@@ -4230,7 +4229,8 @@
       "flags": [
         "missing-hindi",
         "marks-missing",
-        "empty-text"
+        "empty-text",
+        "language-backfilled-hindi"
       ],
       "group": "B",
       "hasAlternative": false,
@@ -4249,8 +4249,8 @@
       "subPart": "or",
       "text": {
         "en": "Draw the structure of a neuron and explain its function.",
-        "hi": null,
-        "hinglish": "Neuron ka sanrachna banaiye aur iske kary ka varnan karein"
+        "hi": "एक न्यूरॉन की संरचना बनाएं और इसके कार्य को समझाएं।",
+        "hinglish": "ek neuron ki sanrachna banayein aur iske karya ko samjhaiye."
       },
       "type": "short",
       "usableInQuiz": false,
@@ -4265,7 +4265,7 @@
     "objective": 39,
     "questions": 63,
     "subjective": 24,
-    "trilingualComplete": 58,
+    "trilingualComplete": 61,
     "usableInQuiz": 28
   }
 }

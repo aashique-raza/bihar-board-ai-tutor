@@ -1386,7 +1386,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1398,8 +1398,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -1407,7 +1406,8 @@
       },
       "flags": [
         "options-unparsed-hindi",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -1417,7 +1417,7 @@
           "key": "a",
           "text": {
             "en": "CFC",
-            "hi": null,
+            "hi": "सीएफसी",
             "hinglish": "CFC"
           }
         },
@@ -1425,7 +1425,7 @@
           "key": "b",
           "text": {
             "en": "DDT",
-            "hi": null,
+            "hi": "डीडीटी",
             "hinglish": "DDT"
           }
         },
@@ -1433,7 +1433,7 @@
           "key": "c",
           "text": {
             "en": "ATP",
-            "hi": null,
+            "hi": "एटीपी",
             "hinglish": "ATP"
           }
         },
@@ -1441,8 +1441,8 @@
           "key": "d",
           "text": {
             "en": "None of these",
-            "hi": null,
-            "hinglish": "None of these"
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
           }
         }
       ],
@@ -3445,7 +3445,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3457,8 +3457,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -3466,7 +3465,8 @@
       },
       "flags": [
         "options-unparsed-hindi",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -3476,7 +3476,7 @@
           "key": "a",
           "text": {
             "en": "50 mm",
-            "hi": null,
+            "hi": "50 मिमी",
             "hinglish": "50 mm"
           }
         },
@@ -3484,7 +3484,7 @@
           "key": "b",
           "text": {
             "en": "50 cm",
-            "hi": null,
+            "hi": "50 सेमी",
             "hinglish": "50 cm"
           }
         },
@@ -3492,16 +3492,16 @@
           "key": "c",
           "text": {
             "en": "50 m",
-            "hi": null,
-            "hinglish": "Saghan madhyam se viral madhyam mein jaati hui kiran abhilamb se vichalit ho jaati hai"
+            "hi": "50 मीटर",
+            "hinglish": "50 m"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "None of these",
-            "hi": null,
-            "hinglish": "None of these"
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
           }
         }
       ],
@@ -4139,7 +4139,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -4151,8 +4151,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -4161,7 +4160,8 @@
       "flags": [
         "options-unparsed-hindi",
         "marks-defaulted-mcq-hi-null-en-null",
-        "provenance-note-stripped"
+        "provenance-note-stripped",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -4171,32 +4171,32 @@
           "key": "a",
           "text": {
             "en": "Zn",
-            "hi": null,
-            "hinglish": "Zn"
+            "hi": "जिंक",
+            "hinglish": "Zinc"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "Fe",
-            "hi": null,
-            "hinglish": "Fe"
+            "hi": "आयरन",
+            "hinglish": "Iron"
           }
         },
         {
           "key": "c",
           "text": {
             "en": "Cu",
-            "hi": null,
-            "hinglish": "Cu"
+            "hi": "कॉपर",
+            "hinglish": "Copper"
           }
         },
         {
           "key": "d",
           "text": {
             "en": "Au",
-            "hi": null,
-            "hinglish": "Au"
+            "hi": "सोना",
+            "hinglish": "Sona"
           }
         }
       ],
@@ -6248,7 +6248,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -6260,8 +6260,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-language-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -6269,7 +6268,8 @@
       },
       "flags": [
         "options-unparsed-hindi",
-        "marks-defaulted-mcq-hi-null-en-null"
+        "marks-defaulted-mcq-hi-null-en-null",
+        "language-backfilled-hindi"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -6279,15 +6279,15 @@
           "key": "a",
           "text": {
             "en": "malleability",
-            "hi": null,
-            "hinglish": "Malleability"
+            "hi": "मैलियाबिलिटी",
+            "hinglish": "Mailiyability"
           }
         },
         {
           "key": "b",
           "text": {
             "en": "thermal conductivity",
-            "hi": null,
+            "hi": "थर्मल कंडक्टिविटी",
             "hinglish": "Thermal conductivity"
           }
         },
@@ -6295,7 +6295,7 @@
           "key": "c",
           "text": {
             "en": "ductility",
-            "hi": null,
+            "hi": "डक्टिलिटी",
             "hinglish": "Ductility"
           }
         },
@@ -6303,8 +6303,8 @@
           "key": "d",
           "text": {
             "en": "hardness",
-            "hi": null,
-            "hinglish": "Kathorta"
+            "hi": "हार्डनेस",
+            "hinglish": "Hardness"
           }
         }
       ],
@@ -7731,7 +7731,7 @@
     "objective": 80,
     "questions": 110,
     "subjective": 30,
-    "trilingualComplete": 101,
+    "trilingualComplete": 105,
     "usableInQuiz": 0
   }
 }
