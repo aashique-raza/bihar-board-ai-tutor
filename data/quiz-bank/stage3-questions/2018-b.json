@@ -38,7 +38,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -49,12 +48,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -91,7 +90,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -102,12 +100,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -144,7 +142,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -154,12 +151,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -229,7 +226,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -240,12 +236,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -282,7 +278,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -293,12 +288,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -335,7 +330,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -346,12 +340,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -388,7 +382,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -398,12 +391,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -473,7 +466,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -484,12 +476,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -526,7 +518,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -537,12 +528,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -579,7 +570,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -590,12 +580,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -632,7 +622,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -643,12 +632,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -685,7 +674,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -696,12 +684,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -738,7 +726,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -749,12 +736,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -791,7 +778,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -802,12 +788,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -844,7 +830,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -855,12 +840,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -906,11 +891,12 @@
       },
       "flags": [
         "missing-hindi",
+        "marks-defaulted-mcq-hi-null-en-2",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 2,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -989,11 +975,12 @@
       },
       "flags": [
         "missing-hindi",
+        "marks-defaulted-mcq-hi-null-en-7",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 7,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1063,7 +1050,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1073,12 +1059,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1148,7 +1134,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1158,12 +1143,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1233,7 +1218,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1243,12 +1227,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1318,7 +1302,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -1329,12 +1312,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -1371,7 +1354,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1381,12 +1363,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1456,7 +1438,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1466,12 +1447,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1541,7 +1522,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1551,12 +1531,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1626,7 +1606,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1636,12 +1615,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1711,7 +1690,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1721,12 +1699,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1796,7 +1774,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -1807,12 +1784,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -1849,7 +1826,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1859,12 +1835,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1934,7 +1910,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -1944,12 +1919,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2019,7 +1994,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2029,12 +2003,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2104,7 +2078,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2114,12 +2087,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2189,7 +2162,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2199,12 +2171,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2274,7 +2246,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2284,12 +2255,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2359,7 +2330,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2369,12 +2339,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2444,7 +2414,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2454,12 +2423,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2529,7 +2498,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2539,12 +2507,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2614,7 +2582,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2624,12 +2591,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2699,7 +2666,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-language-incomplete"
       ],
@@ -2709,12 +2675,12 @@
       },
       "flags": [
         "missing-hindi",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2793,11 +2759,12 @@
       },
       "flags": [
         "missing-hindi",
+        "marks-defaulted-mcq-hi-null-en-22",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 22,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2867,7 +2834,6 @@
       },
       "blockers": [
         "answer-missing",
-        "marks-missing",
         "missing-hindi",
         "options-incomplete"
       ],
@@ -2878,12 +2844,12 @@
       "flags": [
         "missing-hindi",
         "options-unparsed-english",
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": null,
       "provenance": {
         "crossChecked": false,
@@ -3217,7 +3183,7 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "marksGroupA": 31,
+    "marksGroupA": 40,
     "marksGroupB": 6,
     "objective": 40,
     "questions": 46,

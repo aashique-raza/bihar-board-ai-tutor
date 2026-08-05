@@ -34,19 +34,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -98,7 +96,7 @@
         "hinglish": "Ammeter se nimnalikhit mein kise maapa jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -114,19 +112,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -178,7 +174,7 @@
         "hinglish": "Yeh upkaran jo vidyut urja ko yantrik urja mein badalta hai, hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -194,19 +190,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -258,7 +252,7 @@
         "hinglish": "Darpan ka sutra hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -274,19 +268,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -338,12 +330,12 @@
         "hinglish": "Nikhat drishti dosh ko nimnalikhit mein kis lens ke dwara hataaya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -355,19 +347,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -435,19 +426,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -499,12 +488,12 @@
         "hinglish": "Tooth paste kaisa hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -516,19 +505,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -596,19 +584,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -660,12 +646,12 @@
         "hinglish": "Nimnalikhit mein kaun carboxyl samuh hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -677,19 +663,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -746,7 +731,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -758,19 +743,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -838,19 +822,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -902,7 +884,7 @@
         "hinglish": "Manushya mein vrikk nimn mein kis se sambandhit hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -918,19 +900,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -982,7 +962,7 @@
         "hinglish": "Hydra mein kya paya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -998,19 +978,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1062,7 +1040,7 @@
         "hinglish": "Prakash ki kiranen gaman karti hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1078,19 +1056,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1142,7 +1118,7 @@
         "hinglish": "Nimnalikhit mein kaun lens ki kshamata ka maatrak hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1158,19 +1134,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1222,7 +1196,7 @@
         "hinglish": "Kis rang ka vichlan nyoonatam hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1238,19 +1212,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1302,12 +1274,12 @@
         "hinglish": "Battery se kis prakar ki dhara prapt hoti hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1319,19 +1291,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1399,19 +1370,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1463,7 +1432,7 @@
         "hinglish": "Paudhe mein utsarji padarth hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1479,19 +1448,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1543,12 +1510,12 @@
         "hinglish": "Tehri baandh ka nirman kis pradesh mein kiya gaya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1560,19 +1527,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1640,19 +1606,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1704,7 +1668,7 @@
         "hinglish": "Sabhi jeev-jantuon ke liye urja ka antim strot hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1728,10 +1692,12 @@
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-8-en-8"
+      ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 8,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1799,19 +1765,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1863,12 +1827,12 @@
         "hinglish": "Prakash sanshleshan ki kriya hoti hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1880,19 +1844,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1960,19 +1923,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2024,7 +1985,7 @@
         "hinglish": "Samikaran 2H2 + O2 → 2H2O hai ek"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2040,19 +2001,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2104,7 +2063,7 @@
         "hinglish": "Glucose ka rasayanik sutra nimnalikhit mein kaun hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2128,10 +2087,12 @@
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-14-en-14"
+      ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 14,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2199,19 +2160,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2263,7 +2222,7 @@
         "hinglish": "Ameeba mein adhikansh poshan kaisa hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2279,19 +2238,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2343,7 +2300,7 @@
         "hinglish": "Aavart sarani ke pratham varg ke sadasya hote hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2359,19 +2316,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2423,7 +2378,7 @@
         "hinglish": "Nimnalikhit mein kaun prakritik sansadhan nahi hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2446,10 +2401,12 @@
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-2-en-2"
+      ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 2,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2506,7 +2463,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2518,19 +2475,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2598,19 +2554,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2662,7 +2616,7 @@
         "hinglish": "Nimnalikhit mein kis dhatu se solar cell bana hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2678,19 +2632,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2742,12 +2694,12 @@
         "hinglish": "Nimnalikhit mein kaun lavan hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2759,19 +2711,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2846,10 +2797,12 @@
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-4-en-4"
+      ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 4,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2906,7 +2859,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2918,19 +2871,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2987,7 +2939,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2999,19 +2951,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3079,19 +3030,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3143,7 +3092,7 @@
         "hinglish": "Nimnalikhit mein kis maadhyam mein prakash ki chaal sabse adhik hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3159,19 +3108,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3223,7 +3170,7 @@
         "hinglish": "Vibhavantaar ka S.I. maatrak hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3239,19 +3186,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3303,7 +3248,7 @@
         "hinglish": "Paudhe mein janan ang kahan paaye jaate hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3319,19 +3264,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3383,7 +3326,7 @@
         "hinglish": "Mendel ne apne anuvanshiki prayog hetu kis paudhe ka upyog kiya tha?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3399,19 +3342,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3463,7 +3404,7 @@
         "hinglish": "Paristhitiki tantra mein urja ka pravah kis disha mein hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3479,19 +3420,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3543,7 +3482,7 @@
         "hinglish": "Ozone parat paaya jaata hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3559,19 +3498,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3623,12 +3560,12 @@
         "hinglish": "Paudhon mein gases ka aadaan-pradaan kiske dwara hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -3640,19 +3577,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3720,19 +3656,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3784,7 +3718,7 @@
         "hinglish": "Sajiv jeevdharion dwara kis prakar ki nitrogenous padarth (kachra) ka utsarjan hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3800,19 +3734,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3864,7 +3796,7 @@
         "hinglish": "Tantrika tantra ki rachnatmak evam kriyatmak ikai ko kehte hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5134,12 +5066,12 @@
   "schemaVersion": 1,
   "totals": {
     "l3PlusConfidence": 34,
-    "marksGroupA": 28,
+    "marksGroupA": 48,
     "marksGroupB": 74,
     "objective": 48,
     "questions": 76,
     "subjective": 28,
     "trilingualComplete": 72,
-    "usableInQuiz": 0
+    "usableInQuiz": 32
   }
 }

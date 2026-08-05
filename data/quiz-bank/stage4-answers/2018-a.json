@@ -37,19 +37,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -101,7 +99,7 @@
         "hinglish": "Goliya darpan ke paravartan pashch ki vrttakar seema rekha ka vyas kaha jaata hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -117,19 +115,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -181,7 +177,7 @@
         "hinglish": "Nimnalikhit mein se kaun uttal darpan ki fokus doori hai jiska vakrata trijya 32 cm hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -197,20 +193,18 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing",
+        "marks-defaulted-mcq-hi-null-en-null",
         "provenance-note-stripped"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -262,7 +256,7 @@
         "hinglish": "Yadi kisi bimb ka pratibimb ka aavardhan rnanatak hai to us pratibimb ki prakriti kya hogi?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -278,19 +272,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -342,12 +334,12 @@
         "hinglish": "Jab Surya ka prakash vayumandal se guzarata hai, to vayu ke suksma karn kis rang ke prakash ko adhik prabalta se prakiran karte hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -359,19 +351,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -428,7 +419,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -440,19 +431,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -520,19 +510,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -584,7 +572,7 @@
         "hinglish": "Ek micro ampere vidyut dhara nimnalikhit mein kaun si hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -600,19 +588,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -664,7 +650,7 @@
         "hinglish": "Kisi chhad chumbak ke andar chumbakiya kshetra rekhaon ki disha kya hoti hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -680,19 +666,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -744,7 +728,7 @@
         "hinglish": "Gharelu vidyut paripath mein udasin taar ka rang hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -760,19 +744,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -824,7 +806,7 @@
         "hinglish": "Kis yukti mein vibhakt valay dik parivartan ka karya karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -840,19 +822,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -904,12 +884,12 @@
         "hinglish": "Jal vidyut santran kis urja ko vidyut urja mein roopantarit karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -921,19 +901,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1001,19 +980,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1065,7 +1042,7 @@
         "hinglish": "Nimnalikhit mein se kaun sa bujha hua chuna hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1081,19 +1058,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1145,7 +1120,7 @@
         "hinglish": "Zn + CuSO₄ → ZnSO₄ + Cu upar di gayi rasayanik abhikriya kis prakar ki hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1168,10 +1143,12 @@
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-5-en-5"
+      ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 5,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1239,19 +1216,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1303,7 +1278,7 @@
         "hinglish": "Oxalic aml ka prakritik srot nimnalikhit mein kaun hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1319,19 +1294,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1383,12 +1356,12 @@
         "hinglish": "Nimnalikhit mein kaun sabse adhik abhikriyashil dhatu hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1400,19 +1373,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1480,19 +1452,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1544,12 +1514,12 @@
         "hinglish": "—C(H)(=O)— ka kriyaneel samuh nimnalikhit mein kaun hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -1561,19 +1531,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1641,19 +1610,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1705,7 +1672,7 @@
         "hinglish": "Aadhunik avart sarni mein bai se dai or jaane par parmanoo size (aakar) –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1728,10 +1695,12 @@
         "note": null,
         "required": false
       },
-      "flags": [],
+      "flags": [
+        "marks-defaulted-mcq-hi-7-en-7"
+      ],
       "group": "A",
       "hasAlternative": false,
-      "marks": 7,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1799,19 +1768,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1863,7 +1830,7 @@
         "hinglish": "Ek chaatra jaanch parakhanli mein liye gaye sodium bicarbonate ke tanu vilayan mein saarvatrik suchak ki kuch boondein milata hai, to nimnalikhit mein kaun sa rang dikhai dega?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1879,19 +1846,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -1943,7 +1908,7 @@
         "hinglish": "Jab Magnesium fita ko jalaya jaata hai, to utpann aag ki lau hoti hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1959,19 +1924,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2023,12 +1986,12 @@
         "hinglish": "Ek jaanch parakhanli mein liye gaye vilayan mein ek lohe ki keel ko dubaya gaya. Aadha ghante ke baad yeh dekha gaya ki vilayan ka rang parivartit ho chuka hai. Us jaanch parakhanli mein vilayan tha –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2040,19 +2003,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2120,19 +2082,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2184,7 +2144,7 @@
         "hinglish": "Rakt ka kaun sa avayav ghaayal sthan se rakt sraav ke maarg ko rakt ka thakka banaakar avaruddh karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2200,19 +2160,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2264,7 +2222,7 @@
         "hinglish": "Avatugranthi ko thyroxine hormone banane ke liye kya aavashyak hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2280,19 +2238,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2344,12 +2300,12 @@
         "hinglish": "Mastishk ka kaun sa bhaag sharir ki sthiti tatha santulan ka anurakshan karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2361,19 +2317,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2441,19 +2396,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2505,7 +2458,7 @@
         "hinglish": "Hydra mein prajanann ki vidhi nimnalikhit mein se kaun hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2521,19 +2474,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2585,7 +2536,7 @@
         "hinglish": "Pushp ka kaun sa bhaag paragkan banata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2601,19 +2552,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2665,7 +2614,7 @@
         "hinglish": "Nimn mein se kaun maanav mein maada janan tantra ka bhaag nahi hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2681,19 +2630,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2745,7 +2692,7 @@
         "hinglish": "Vansagat niyamon ka pratipadan kisne kiya?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2761,19 +2708,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2825,12 +2770,12 @@
         "hinglish": "Striyon mein ling gunasootra ka yugm hota hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2842,19 +2787,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -2911,7 +2855,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2923,19 +2867,18 @@
         }
       },
       "blockers": [
-        "answer-unverified",
-        "marks-missing"
+        "answer-unverified"
       ],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3003,19 +2946,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3067,7 +3008,7 @@
         "hinglish": "Do tantrika koshika ke madhya khaali sthan ko kehte hain –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3083,19 +3024,17 @@
           "hinglish": null
         }
       },
-      "blockers": [
-        "marks-missing"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "marks-missing"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
-      "marks": null,
+      "marks": 1,
       "options": [
         {
           "key": "a",
@@ -3147,7 +3086,7 @@
         "hinglish": "Nimn mein kaun aahar shrinkhla ka nirmaan karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4321,12 +4260,12 @@
   "schemaVersion": 1,
   "totals": {
     "l3PlusConfidence": 30,
-    "marksGroupA": 12,
+    "marksGroupA": 39,
     "marksGroupB": 0,
     "objective": 39,
     "questions": 63,
     "subjective": 24,
     "trilingualComplete": 58,
-    "usableInQuiz": 0
+    "usableInQuiz": 28
   }
 }

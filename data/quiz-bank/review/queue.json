@@ -1,4 +1,4037 @@
 {
-  "items": [],
+  "items": [
+    {
+      "category": "language-missing",
+      "id": "rq-000001",
+      "label": "🔴 language-missing",
+      "questionId": "q-001003",
+      "severity": "red",
+      "summary": "2016-b:A:1 is missing a language (missing-english)",
+      "target": "2016-b:A:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000002",
+      "label": "🔴 language-missing",
+      "questionId": "q-001012",
+      "severity": "red",
+      "summary": "2016-b:A:10 is missing a language (missing-english)",
+      "target": "2016-b:A:10"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000003",
+      "label": "🔴 language-missing",
+      "questionId": "q-001013",
+      "severity": "red",
+      "summary": "2016-b:A:11 is missing a language (missing-english)",
+      "target": "2016-b:A:11"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000004",
+      "label": "🔴 language-missing",
+      "questionId": "q-001014",
+      "severity": "red",
+      "summary": "2016-b:A:12 is missing a language (missing-english)",
+      "target": "2016-b:A:12"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000005",
+      "label": "🔴 language-missing",
+      "questionId": "q-001015",
+      "severity": "red",
+      "summary": "2016-b:A:13 is missing a language (missing-english)",
+      "target": "2016-b:A:13"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000006",
+      "label": "🔴 language-missing",
+      "questionId": "q-001016",
+      "severity": "red",
+      "summary": "2016-b:A:14 is missing a language (missing-english)",
+      "target": "2016-b:A:14"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000007",
+      "label": "🔴 language-missing",
+      "questionId": "q-001017",
+      "severity": "red",
+      "summary": "2016-b:A:15 is missing a language (missing-english)",
+      "target": "2016-b:A:15"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000008",
+      "label": "🔴 language-missing",
+      "questionId": "q-001018",
+      "severity": "red",
+      "summary": "2016-b:A:16 is missing a language (missing-english)",
+      "target": "2016-b:A:16"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000009",
+      "label": "🔴 language-missing",
+      "questionId": "q-001019",
+      "severity": "red",
+      "summary": "2016-b:A:17 is missing a language (missing-english)",
+      "target": "2016-b:A:17"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000010",
+      "label": "🔴 language-missing",
+      "questionId": "q-001020",
+      "severity": "red",
+      "summary": "2016-b:A:18 is missing a language (missing-english)",
+      "target": "2016-b:A:18"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000011",
+      "label": "🔴 language-missing",
+      "questionId": "q-001021",
+      "severity": "red",
+      "summary": "2016-b:A:19 is missing a language (missing-english)",
+      "target": "2016-b:A:19"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000012",
+      "label": "🔴 language-missing",
+      "questionId": "q-001004",
+      "severity": "red",
+      "summary": "2016-b:A:2 is missing a language (missing-english)",
+      "target": "2016-b:A:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000013",
+      "label": "🔴 language-missing",
+      "questionId": "q-001022",
+      "severity": "red",
+      "summary": "2016-b:A:20 is missing a language (missing-english)",
+      "target": "2016-b:A:20"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000014",
+      "label": "🔴 language-missing",
+      "questionId": "q-001023",
+      "severity": "red",
+      "summary": "2016-b:A:21 is missing a language (missing-english)",
+      "target": "2016-b:A:21"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000015",
+      "label": "🔴 language-missing",
+      "questionId": "q-001024",
+      "severity": "red",
+      "summary": "2016-b:A:22 is missing a language (missing-english)",
+      "target": "2016-b:A:22"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000016",
+      "label": "🔴 language-missing",
+      "questionId": "q-001025",
+      "severity": "red",
+      "summary": "2016-b:A:23 is missing a language (missing-english)",
+      "target": "2016-b:A:23"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000017",
+      "label": "🔴 language-missing",
+      "questionId": "q-001026",
+      "severity": "red",
+      "summary": "2016-b:A:24 is missing a language (missing-english)",
+      "target": "2016-b:A:24"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000018",
+      "label": "🔴 language-missing",
+      "questionId": "q-001027",
+      "severity": "red",
+      "summary": "2016-b:A:25 is missing a language (missing-english)",
+      "target": "2016-b:A:25"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000019",
+      "label": "🔴 language-missing",
+      "questionId": "q-001028",
+      "severity": "red",
+      "summary": "2016-b:A:26 is missing a language (missing-english)",
+      "target": "2016-b:A:26"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000020",
+      "label": "🔴 language-missing",
+      "questionId": "q-001029",
+      "severity": "red",
+      "summary": "2016-b:A:27 is missing a language (missing-english)",
+      "target": "2016-b:A:27"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000021",
+      "label": "🔴 language-missing",
+      "questionId": "q-001030",
+      "severity": "red",
+      "summary": "2016-b:A:28 is missing a language (missing-english)",
+      "target": "2016-b:A:28"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000022",
+      "label": "🔴 language-missing",
+      "questionId": "q-001031",
+      "severity": "red",
+      "summary": "2016-b:A:29 is missing a language (missing-english)",
+      "target": "2016-b:A:29"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000023",
+      "label": "🔴 language-missing",
+      "questionId": "q-001005",
+      "severity": "red",
+      "summary": "2016-b:A:3 is missing a language (missing-english)",
+      "target": "2016-b:A:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000024",
+      "label": "🔴 language-missing",
+      "questionId": "q-001032",
+      "severity": "red",
+      "summary": "2016-b:A:30 is missing a language (missing-english)",
+      "target": "2016-b:A:30"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000025",
+      "label": "🔴 language-missing",
+      "questionId": "q-001006",
+      "severity": "red",
+      "summary": "2016-b:A:4 is missing a language (missing-english)",
+      "target": "2016-b:A:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000026",
+      "label": "🔴 language-missing",
+      "questionId": "q-001007",
+      "severity": "red",
+      "summary": "2016-b:A:5 is missing a language (missing-english)",
+      "target": "2016-b:A:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000027",
+      "label": "🔴 language-missing",
+      "questionId": "q-001008",
+      "severity": "red",
+      "summary": "2016-b:A:6 is missing a language (missing-english)",
+      "target": "2016-b:A:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000028",
+      "label": "🔴 language-missing",
+      "questionId": "q-001009",
+      "severity": "red",
+      "summary": "2016-b:A:7 is missing a language (missing-english)",
+      "target": "2016-b:A:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000029",
+      "label": "🔴 language-missing",
+      "questionId": "q-001010",
+      "severity": "red",
+      "summary": "2016-b:A:8 is missing a language (missing-english)",
+      "target": "2016-b:A:8"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000030",
+      "label": "🔴 language-missing",
+      "questionId": "q-001011",
+      "severity": "red",
+      "summary": "2016-b:A:9 is missing a language (missing-english)",
+      "target": "2016-b:A:9"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000031",
+      "label": "🔴 language-missing",
+      "questionId": "q-001033",
+      "severity": "red",
+      "summary": "2016-b:B:31-i is missing a language (missing-english)",
+      "target": "2016-b:B:31-i"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000032",
+      "label": "🔴 language-missing",
+      "questionId": "q-001033",
+      "severity": "red",
+      "summary": "2016-b:B:31-i is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-i"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000033",
+      "label": "🔴 language-missing",
+      "questionId": "q-001034",
+      "severity": "red",
+      "summary": "2016-b:B:31-ii is missing a language (missing-english)",
+      "target": "2016-b:B:31-ii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000034",
+      "label": "🔴 language-missing",
+      "questionId": "q-001034",
+      "severity": "red",
+      "summary": "2016-b:B:31-ii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-ii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000035",
+      "label": "🔴 language-missing",
+      "questionId": "q-001035",
+      "severity": "red",
+      "summary": "2016-b:B:31-iii is missing a language (missing-english)",
+      "target": "2016-b:B:31-iii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000036",
+      "label": "🔴 language-missing",
+      "questionId": "q-001035",
+      "severity": "red",
+      "summary": "2016-b:B:31-iii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-iii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000037",
+      "label": "🔴 language-missing",
+      "questionId": "q-001036",
+      "severity": "red",
+      "summary": "2016-b:B:31-iv is missing a language (missing-english)",
+      "target": "2016-b:B:31-iv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000038",
+      "label": "🔴 language-missing",
+      "questionId": "q-001036",
+      "severity": "red",
+      "summary": "2016-b:B:31-iv is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-iv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000039",
+      "label": "🔴 language-missing",
+      "questionId": "q-001041",
+      "severity": "red",
+      "summary": "2016-b:B:31-ix is missing a language (missing-english)",
+      "target": "2016-b:B:31-ix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000040",
+      "label": "🔴 language-missing",
+      "questionId": "q-001041",
+      "severity": "red",
+      "summary": "2016-b:B:31-ix is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-ix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000041",
+      "label": "🔴 language-missing",
+      "questionId": "q-001037",
+      "severity": "red",
+      "summary": "2016-b:B:31-v is missing a language (missing-english)",
+      "target": "2016-b:B:31-v"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000042",
+      "label": "🔴 language-missing",
+      "questionId": "q-001037",
+      "severity": "red",
+      "summary": "2016-b:B:31-v is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-v"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000043",
+      "label": "🔴 language-missing",
+      "questionId": "q-001038",
+      "severity": "red",
+      "summary": "2016-b:B:31-vi is missing a language (missing-english)",
+      "target": "2016-b:B:31-vi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000044",
+      "label": "🔴 language-missing",
+      "questionId": "q-001038",
+      "severity": "red",
+      "summary": "2016-b:B:31-vi is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-vi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000045",
+      "label": "🔴 language-missing",
+      "questionId": "q-001039",
+      "severity": "red",
+      "summary": "2016-b:B:31-vii is missing a language (missing-english)",
+      "target": "2016-b:B:31-vii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000046",
+      "label": "🔴 language-missing",
+      "questionId": "q-001039",
+      "severity": "red",
+      "summary": "2016-b:B:31-vii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-vii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000047",
+      "label": "🔴 language-missing",
+      "questionId": "q-001040",
+      "severity": "red",
+      "summary": "2016-b:B:31-viii is missing a language (missing-english)",
+      "target": "2016-b:B:31-viii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000048",
+      "label": "🔴 language-missing",
+      "questionId": "q-001040",
+      "severity": "red",
+      "summary": "2016-b:B:31-viii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-viii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000049",
+      "label": "🔴 language-missing",
+      "questionId": "q-001042",
+      "severity": "red",
+      "summary": "2016-b:B:31-x is missing a language (missing-english)",
+      "target": "2016-b:B:31-x"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000050",
+      "label": "🔴 language-missing",
+      "questionId": "q-001042",
+      "severity": "red",
+      "summary": "2016-b:B:31-x is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-x"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000051",
+      "label": "🔴 language-missing",
+      "questionId": "q-001043",
+      "severity": "red",
+      "summary": "2016-b:B:31-xi is missing a language (missing-english)",
+      "target": "2016-b:B:31-xi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000052",
+      "label": "🔴 language-missing",
+      "questionId": "q-001043",
+      "severity": "red",
+      "summary": "2016-b:B:31-xi is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000053",
+      "label": "🔴 language-missing",
+      "questionId": "q-001044",
+      "severity": "red",
+      "summary": "2016-b:B:31-xii is missing a language (missing-english)",
+      "target": "2016-b:B:31-xii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000054",
+      "label": "🔴 language-missing",
+      "questionId": "q-001044",
+      "severity": "red",
+      "summary": "2016-b:B:31-xii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000055",
+      "label": "🔴 language-missing",
+      "questionId": "q-001045",
+      "severity": "red",
+      "summary": "2016-b:B:31-xiii is missing a language (missing-english)",
+      "target": "2016-b:B:31-xiii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000056",
+      "label": "🔴 language-missing",
+      "questionId": "q-001045",
+      "severity": "red",
+      "summary": "2016-b:B:31-xiii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xiii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000057",
+      "label": "🔴 language-missing",
+      "questionId": "q-001046",
+      "severity": "red",
+      "summary": "2016-b:B:31-xiv is missing a language (missing-english)",
+      "target": "2016-b:B:31-xiv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000058",
+      "label": "🔴 language-missing",
+      "questionId": "q-001046",
+      "severity": "red",
+      "summary": "2016-b:B:31-xiv is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xiv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000059",
+      "label": "🔴 language-missing",
+      "questionId": "q-001051",
+      "severity": "red",
+      "summary": "2016-b:B:31-xix is missing a language (missing-english)",
+      "target": "2016-b:B:31-xix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000060",
+      "label": "🔴 language-missing",
+      "questionId": "q-001051",
+      "severity": "red",
+      "summary": "2016-b:B:31-xix is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000061",
+      "label": "🔴 language-missing",
+      "questionId": "q-001047",
+      "severity": "red",
+      "summary": "2016-b:B:31-xv is missing a language (missing-english)",
+      "target": "2016-b:B:31-xv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000062",
+      "label": "🔴 language-missing",
+      "questionId": "q-001047",
+      "severity": "red",
+      "summary": "2016-b:B:31-xv is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000063",
+      "label": "🔴 language-missing",
+      "questionId": "q-001048",
+      "severity": "red",
+      "summary": "2016-b:B:31-xvi is missing a language (missing-english)",
+      "target": "2016-b:B:31-xvi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000064",
+      "label": "🔴 language-missing",
+      "questionId": "q-001048",
+      "severity": "red",
+      "summary": "2016-b:B:31-xvi is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xvi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000065",
+      "label": "🔴 language-missing",
+      "questionId": "q-001049",
+      "severity": "red",
+      "summary": "2016-b:B:31-xvii is missing a language (missing-english)",
+      "target": "2016-b:B:31-xvii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000066",
+      "label": "🔴 language-missing",
+      "questionId": "q-001049",
+      "severity": "red",
+      "summary": "2016-b:B:31-xvii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xvii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000067",
+      "label": "🔴 language-missing",
+      "questionId": "q-001050",
+      "severity": "red",
+      "summary": "2016-b:B:31-xviii is missing a language (missing-english)",
+      "target": "2016-b:B:31-xviii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000068",
+      "label": "🔴 language-missing",
+      "questionId": "q-001050",
+      "severity": "red",
+      "summary": "2016-b:B:31-xviii is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xviii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000069",
+      "label": "🔴 language-missing",
+      "questionId": "q-001052",
+      "severity": "red",
+      "summary": "2016-b:B:31-xx is missing a language (missing-english)",
+      "target": "2016-b:B:31-xx"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000070",
+      "label": "🔴 language-missing",
+      "questionId": "q-001052",
+      "severity": "red",
+      "summary": "2016-b:B:31-xx is missing a language (options-language-incomplete)",
+      "target": "2016-b:B:31-xx"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000071",
+      "label": "🔴 language-missing",
+      "questionId": "q-001053",
+      "severity": "red",
+      "summary": "2016-c:A:1 is missing a language (missing-english)",
+      "target": "2016-c:A:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000072",
+      "label": "🔴 language-missing",
+      "questionId": "q-001062",
+      "severity": "red",
+      "summary": "2016-c:A:10 is missing a language (missing-english)",
+      "target": "2016-c:A:10"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000073",
+      "label": "🔴 language-missing",
+      "questionId": "q-001063",
+      "severity": "red",
+      "summary": "2016-c:A:11 is missing a language (missing-english)",
+      "target": "2016-c:A:11"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000074",
+      "label": "🔴 language-missing",
+      "questionId": "q-001064",
+      "severity": "red",
+      "summary": "2016-c:A:12 is missing a language (missing-english)",
+      "target": "2016-c:A:12"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000075",
+      "label": "🔴 language-missing",
+      "questionId": "q-001065",
+      "severity": "red",
+      "summary": "2016-c:A:13 is missing a language (missing-english)",
+      "target": "2016-c:A:13"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000076",
+      "label": "🔴 language-missing",
+      "questionId": "q-001066",
+      "severity": "red",
+      "summary": "2016-c:A:14 is missing a language (missing-english)",
+      "target": "2016-c:A:14"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000077",
+      "label": "🔴 language-missing",
+      "questionId": "q-001067",
+      "severity": "red",
+      "summary": "2016-c:A:15 is missing a language (missing-english)",
+      "target": "2016-c:A:15"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000078",
+      "label": "🔴 language-missing",
+      "questionId": "q-001068",
+      "severity": "red",
+      "summary": "2016-c:A:16 is missing a language (missing-english)",
+      "target": "2016-c:A:16"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000079",
+      "label": "🔴 language-missing",
+      "questionId": "q-001069",
+      "severity": "red",
+      "summary": "2016-c:A:17 is missing a language (missing-english)",
+      "target": "2016-c:A:17"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000080",
+      "label": "🔴 language-missing",
+      "questionId": "q-001070",
+      "severity": "red",
+      "summary": "2016-c:A:18 is missing a language (missing-english)",
+      "target": "2016-c:A:18"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000081",
+      "label": "🔴 language-missing",
+      "questionId": "q-001071",
+      "severity": "red",
+      "summary": "2016-c:A:19 is missing a language (missing-english)",
+      "target": "2016-c:A:19"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000082",
+      "label": "🔴 language-missing",
+      "questionId": "q-001054",
+      "severity": "red",
+      "summary": "2016-c:A:2 is missing a language (missing-english)",
+      "target": "2016-c:A:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000083",
+      "label": "🔴 language-missing",
+      "questionId": "q-001072",
+      "severity": "red",
+      "summary": "2016-c:A:20 is missing a language (missing-english)",
+      "target": "2016-c:A:20"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000084",
+      "label": "🔴 language-missing",
+      "questionId": "q-001073",
+      "severity": "red",
+      "summary": "2016-c:A:21 is missing a language (missing-english)",
+      "target": "2016-c:A:21"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000085",
+      "label": "🔴 language-missing",
+      "questionId": "q-001074",
+      "severity": "red",
+      "summary": "2016-c:A:22 is missing a language (missing-english)",
+      "target": "2016-c:A:22"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000086",
+      "label": "🔴 language-missing",
+      "questionId": "q-001075",
+      "severity": "red",
+      "summary": "2016-c:A:23 is missing a language (missing-english)",
+      "target": "2016-c:A:23"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000087",
+      "label": "🔴 language-missing",
+      "questionId": "q-001076",
+      "severity": "red",
+      "summary": "2016-c:A:24 is missing a language (missing-english)",
+      "target": "2016-c:A:24"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000088",
+      "label": "🔴 language-missing",
+      "questionId": "q-001077",
+      "severity": "red",
+      "summary": "2016-c:A:25 is missing a language (missing-english)",
+      "target": "2016-c:A:25"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000089",
+      "label": "🔴 language-missing",
+      "questionId": "q-001078",
+      "severity": "red",
+      "summary": "2016-c:A:26 is missing a language (missing-english)",
+      "target": "2016-c:A:26"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000090",
+      "label": "🔴 language-missing",
+      "questionId": "q-001079",
+      "severity": "red",
+      "summary": "2016-c:A:27 is missing a language (missing-english)",
+      "target": "2016-c:A:27"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000091",
+      "label": "🔴 language-missing",
+      "questionId": "q-001080",
+      "severity": "red",
+      "summary": "2016-c:A:28 is missing a language (missing-english)",
+      "target": "2016-c:A:28"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000092",
+      "label": "🔴 language-missing",
+      "questionId": "q-001081",
+      "severity": "red",
+      "summary": "2016-c:A:29 is missing a language (missing-english)",
+      "target": "2016-c:A:29"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000093",
+      "label": "🔴 language-missing",
+      "questionId": "q-001055",
+      "severity": "red",
+      "summary": "2016-c:A:3 is missing a language (missing-english)",
+      "target": "2016-c:A:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000094",
+      "label": "🔴 language-missing",
+      "questionId": "q-001082",
+      "severity": "red",
+      "summary": "2016-c:A:30 is missing a language (missing-english)",
+      "target": "2016-c:A:30"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000095",
+      "label": "🔴 language-missing",
+      "questionId": "q-001056",
+      "severity": "red",
+      "summary": "2016-c:A:4 is missing a language (missing-english)",
+      "target": "2016-c:A:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000096",
+      "label": "🔴 language-missing",
+      "questionId": "q-001057",
+      "severity": "red",
+      "summary": "2016-c:A:5 is missing a language (missing-english)",
+      "target": "2016-c:A:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000097",
+      "label": "🔴 language-missing",
+      "questionId": "q-001058",
+      "severity": "red",
+      "summary": "2016-c:A:6 is missing a language (missing-english)",
+      "target": "2016-c:A:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000098",
+      "label": "🔴 language-missing",
+      "questionId": "q-001059",
+      "severity": "red",
+      "summary": "2016-c:A:7 is missing a language (missing-english)",
+      "target": "2016-c:A:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000099",
+      "label": "🔴 language-missing",
+      "questionId": "q-001060",
+      "severity": "red",
+      "summary": "2016-c:A:8 is missing a language (missing-english)",
+      "target": "2016-c:A:8"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000100",
+      "label": "🔴 language-missing",
+      "questionId": "q-001061",
+      "severity": "red",
+      "summary": "2016-c:A:9 is missing a language (missing-english)",
+      "target": "2016-c:A:9"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000101",
+      "label": "🔴 language-missing",
+      "questionId": "q-001083",
+      "severity": "red",
+      "summary": "2016-c:B:31-i is missing a language (missing-english)",
+      "target": "2016-c:B:31-i"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000102",
+      "label": "🔴 language-missing",
+      "questionId": "q-001083",
+      "severity": "red",
+      "summary": "2016-c:B:31-i is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-i"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000103",
+      "label": "🔴 language-missing",
+      "questionId": "q-001084",
+      "severity": "red",
+      "summary": "2016-c:B:31-ii is missing a language (missing-english)",
+      "target": "2016-c:B:31-ii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000104",
+      "label": "🔴 language-missing",
+      "questionId": "q-001084",
+      "severity": "red",
+      "summary": "2016-c:B:31-ii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-ii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000105",
+      "label": "🔴 language-missing",
+      "questionId": "q-001085",
+      "severity": "red",
+      "summary": "2016-c:B:31-iii is missing a language (missing-english)",
+      "target": "2016-c:B:31-iii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000106",
+      "label": "🔴 language-missing",
+      "questionId": "q-001085",
+      "severity": "red",
+      "summary": "2016-c:B:31-iii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-iii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000107",
+      "label": "🔴 language-missing",
+      "questionId": "q-001086",
+      "severity": "red",
+      "summary": "2016-c:B:31-iv is missing a language (missing-english)",
+      "target": "2016-c:B:31-iv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000108",
+      "label": "🔴 language-missing",
+      "questionId": "q-001086",
+      "severity": "red",
+      "summary": "2016-c:B:31-iv is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-iv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000109",
+      "label": "🔴 language-missing",
+      "questionId": "q-001091",
+      "severity": "red",
+      "summary": "2016-c:B:31-ix is missing a language (missing-english)",
+      "target": "2016-c:B:31-ix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000110",
+      "label": "🔴 language-missing",
+      "questionId": "q-001091",
+      "severity": "red",
+      "summary": "2016-c:B:31-ix is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-ix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000111",
+      "label": "🔴 language-missing",
+      "questionId": "q-001087",
+      "severity": "red",
+      "summary": "2016-c:B:31-v is missing a language (missing-english)",
+      "target": "2016-c:B:31-v"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000112",
+      "label": "🔴 language-missing",
+      "questionId": "q-001087",
+      "severity": "red",
+      "summary": "2016-c:B:31-v is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-v"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000113",
+      "label": "🔴 language-missing",
+      "questionId": "q-001088",
+      "severity": "red",
+      "summary": "2016-c:B:31-vi is missing a language (missing-english)",
+      "target": "2016-c:B:31-vi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000114",
+      "label": "🔴 language-missing",
+      "questionId": "q-001088",
+      "severity": "red",
+      "summary": "2016-c:B:31-vi is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-vi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000115",
+      "label": "🔴 language-missing",
+      "questionId": "q-001089",
+      "severity": "red",
+      "summary": "2016-c:B:31-vii is missing a language (missing-english)",
+      "target": "2016-c:B:31-vii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000116",
+      "label": "🔴 language-missing",
+      "questionId": "q-001089",
+      "severity": "red",
+      "summary": "2016-c:B:31-vii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-vii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000117",
+      "label": "🔴 language-missing",
+      "questionId": "q-001090",
+      "severity": "red",
+      "summary": "2016-c:B:31-viii is missing a language (missing-english)",
+      "target": "2016-c:B:31-viii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000118",
+      "label": "🔴 language-missing",
+      "questionId": "q-001090",
+      "severity": "red",
+      "summary": "2016-c:B:31-viii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-viii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000119",
+      "label": "🔴 language-missing",
+      "questionId": "q-001092",
+      "severity": "red",
+      "summary": "2016-c:B:31-x is missing a language (missing-english)",
+      "target": "2016-c:B:31-x"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000120",
+      "label": "🔴 language-missing",
+      "questionId": "q-001092",
+      "severity": "red",
+      "summary": "2016-c:B:31-x is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-x"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000121",
+      "label": "🔴 language-missing",
+      "questionId": "q-001093",
+      "severity": "red",
+      "summary": "2016-c:B:31-xi is missing a language (missing-english)",
+      "target": "2016-c:B:31-xi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000122",
+      "label": "🔴 language-missing",
+      "questionId": "q-001093",
+      "severity": "red",
+      "summary": "2016-c:B:31-xi is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000123",
+      "label": "🔴 language-missing",
+      "questionId": "q-001094",
+      "severity": "red",
+      "summary": "2016-c:B:31-xii is missing a language (missing-english)",
+      "target": "2016-c:B:31-xii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000124",
+      "label": "🔴 language-missing",
+      "questionId": "q-001094",
+      "severity": "red",
+      "summary": "2016-c:B:31-xii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000125",
+      "label": "🔴 language-missing",
+      "questionId": "q-001095",
+      "severity": "red",
+      "summary": "2016-c:B:31-xiii is missing a language (missing-english)",
+      "target": "2016-c:B:31-xiii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000126",
+      "label": "🔴 language-missing",
+      "questionId": "q-001095",
+      "severity": "red",
+      "summary": "2016-c:B:31-xiii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xiii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000127",
+      "label": "🔴 language-missing",
+      "questionId": "q-001096",
+      "severity": "red",
+      "summary": "2016-c:B:31-xiv is missing a language (missing-english)",
+      "target": "2016-c:B:31-xiv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000128",
+      "label": "🔴 language-missing",
+      "questionId": "q-001096",
+      "severity": "red",
+      "summary": "2016-c:B:31-xiv is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xiv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000129",
+      "label": "🔴 language-missing",
+      "questionId": "q-001101",
+      "severity": "red",
+      "summary": "2016-c:B:31-xix is missing a language (missing-english)",
+      "target": "2016-c:B:31-xix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000130",
+      "label": "🔴 language-missing",
+      "questionId": "q-001101",
+      "severity": "red",
+      "summary": "2016-c:B:31-xix is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xix"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000131",
+      "label": "🔴 language-missing",
+      "questionId": "q-001097",
+      "severity": "red",
+      "summary": "2016-c:B:31-xv is missing a language (missing-english)",
+      "target": "2016-c:B:31-xv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000132",
+      "label": "🔴 language-missing",
+      "questionId": "q-001097",
+      "severity": "red",
+      "summary": "2016-c:B:31-xv is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xv"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000133",
+      "label": "🔴 language-missing",
+      "questionId": "q-001098",
+      "severity": "red",
+      "summary": "2016-c:B:31-xvi is missing a language (missing-english)",
+      "target": "2016-c:B:31-xvi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000134",
+      "label": "🔴 language-missing",
+      "questionId": "q-001098",
+      "severity": "red",
+      "summary": "2016-c:B:31-xvi is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xvi"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000135",
+      "label": "🔴 language-missing",
+      "questionId": "q-001099",
+      "severity": "red",
+      "summary": "2016-c:B:31-xvii is missing a language (missing-english)",
+      "target": "2016-c:B:31-xvii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000136",
+      "label": "🔴 language-missing",
+      "questionId": "q-001099",
+      "severity": "red",
+      "summary": "2016-c:B:31-xvii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xvii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000137",
+      "label": "🔴 language-missing",
+      "questionId": "q-001100",
+      "severity": "red",
+      "summary": "2016-c:B:31-xviii is missing a language (missing-english)",
+      "target": "2016-c:B:31-xviii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000138",
+      "label": "🔴 language-missing",
+      "questionId": "q-001100",
+      "severity": "red",
+      "summary": "2016-c:B:31-xviii is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xviii"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000139",
+      "label": "🔴 language-missing",
+      "questionId": "q-001102",
+      "severity": "red",
+      "summary": "2016-c:B:31-xx is missing a language (missing-english)",
+      "target": "2016-c:B:31-xx"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000140",
+      "label": "🔴 language-missing",
+      "questionId": "q-001102",
+      "severity": "red",
+      "summary": "2016-c:B:31-xx is missing a language (options-language-incomplete)",
+      "target": "2016-c:B:31-xx"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000141",
+      "label": "🔴 language-missing",
+      "questionId": "q-000065",
+      "severity": "red",
+      "summary": "2017-a:A:10-or is missing a language (missing-hindi)",
+      "target": "2017-a:A:10-or"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000142",
+      "label": "🔴 language-missing",
+      "questionId": "q-001103",
+      "severity": "red",
+      "summary": "2017-c:A:1 is missing a language (missing-english)",
+      "target": "2017-c:A:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000143",
+      "label": "🔴 language-missing",
+      "questionId": "q-001112",
+      "severity": "red",
+      "summary": "2017-c:A:10 is missing a language (missing-english)",
+      "target": "2017-c:A:10"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000144",
+      "label": "🔴 language-missing",
+      "questionId": "q-001113",
+      "severity": "red",
+      "summary": "2017-c:A:10-or is missing a language (missing-english)",
+      "target": "2017-c:A:10-or"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000145",
+      "label": "🔴 language-missing",
+      "questionId": "q-001104",
+      "severity": "red",
+      "summary": "2017-c:A:2 is missing a language (missing-english)",
+      "target": "2017-c:A:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000146",
+      "label": "🔴 language-missing",
+      "questionId": "q-001105",
+      "severity": "red",
+      "summary": "2017-c:A:3 is missing a language (missing-english)",
+      "target": "2017-c:A:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000147",
+      "label": "🔴 language-missing",
+      "questionId": "q-001106",
+      "severity": "red",
+      "summary": "2017-c:A:4 is missing a language (missing-english)",
+      "target": "2017-c:A:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000148",
+      "label": "🔴 language-missing",
+      "questionId": "q-001107",
+      "severity": "red",
+      "summary": "2017-c:A:5 is missing a language (missing-english)",
+      "target": "2017-c:A:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000149",
+      "label": "🔴 language-missing",
+      "questionId": "q-001108",
+      "severity": "red",
+      "summary": "2017-c:A:6 is missing a language (missing-english)",
+      "target": "2017-c:A:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000150",
+      "label": "🔴 language-missing",
+      "questionId": "q-001109",
+      "severity": "red",
+      "summary": "2017-c:A:7 is missing a language (missing-english)",
+      "target": "2017-c:A:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000151",
+      "label": "🔴 language-missing",
+      "questionId": "q-001110",
+      "severity": "red",
+      "summary": "2017-c:A:8 is missing a language (missing-english)",
+      "target": "2017-c:A:8"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000152",
+      "label": "🔴 language-missing",
+      "questionId": "q-001111",
+      "severity": "red",
+      "summary": "2017-c:A:9 is missing a language (missing-english)",
+      "target": "2017-c:A:9"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000153",
+      "label": "🔴 language-missing",
+      "questionId": "q-001114",
+      "severity": "red",
+      "summary": "2017-c:B:1 is missing a language (missing-english)",
+      "target": "2017-c:B:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000154",
+      "label": "🔴 language-missing",
+      "questionId": "q-001114",
+      "severity": "red",
+      "summary": "2017-c:B:1 is missing a language (options-language-incomplete)",
+      "target": "2017-c:B:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000155",
+      "label": "🔴 language-missing",
+      "questionId": "q-001115",
+      "severity": "red",
+      "summary": "2017-c:B:2 is missing a language (missing-english)",
+      "target": "2017-c:B:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000156",
+      "label": "🔴 language-missing",
+      "questionId": "q-001115",
+      "severity": "red",
+      "summary": "2017-c:B:2 is missing a language (options-language-incomplete)",
+      "target": "2017-c:B:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000157",
+      "label": "🔴 language-missing",
+      "questionId": "q-001116",
+      "severity": "red",
+      "summary": "2017-c:B:3 is missing a language (missing-english)",
+      "target": "2017-c:B:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000158",
+      "label": "🔴 language-missing",
+      "questionId": "q-001116",
+      "severity": "red",
+      "summary": "2017-c:B:3 is missing a language (options-language-incomplete)",
+      "target": "2017-c:B:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000159",
+      "label": "🔴 language-missing",
+      "questionId": "q-001117",
+      "severity": "red",
+      "summary": "2017-c:B:4 is missing a language (missing-english)",
+      "target": "2017-c:B:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000160",
+      "label": "🔴 language-missing",
+      "questionId": "q-001117",
+      "severity": "red",
+      "summary": "2017-c:B:4 is missing a language (options-language-incomplete)",
+      "target": "2017-c:B:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000161",
+      "label": "🔴 language-missing",
+      "questionId": "q-001118",
+      "severity": "red",
+      "summary": "2017-c:B:5 is missing a language (missing-english)",
+      "target": "2017-c:B:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000162",
+      "label": "🔴 language-missing",
+      "questionId": "q-001118",
+      "severity": "red",
+      "summary": "2017-c:B:5 is missing a language (options-language-incomplete)",
+      "target": "2017-c:B:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000163",
+      "label": "🔴 language-missing",
+      "questionId": "q-001119",
+      "severity": "red",
+      "summary": "2017-c:B:6 is missing a language (missing-english)",
+      "target": "2017-c:B:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000164",
+      "label": "🔴 language-missing",
+      "questionId": "q-001119",
+      "severity": "red",
+      "summary": "2017-c:B:6 is missing a language (options-language-incomplete)",
+      "target": "2017-c:B:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000165",
+      "label": "🔴 language-missing",
+      "questionId": "q-001120",
+      "severity": "red",
+      "summary": "2017-c:B:7 is missing a language (missing-english)",
+      "target": "2017-c:B:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000166",
+      "label": "🔴 language-missing",
+      "questionId": "q-001120",
+      "severity": "red",
+      "summary": "2017-c:B:7 is missing a language (options-language-incomplete)",
+      "target": "2017-c:B:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000167",
+      "label": "🔴 language-missing",
+      "questionId": "q-001121",
+      "severity": "red",
+      "summary": "2017-d:A:1 is missing a language (missing-english)",
+      "target": "2017-d:A:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000168",
+      "label": "🔴 language-missing",
+      "questionId": "q-001130",
+      "severity": "red",
+      "summary": "2017-d:A:10 is missing a language (missing-english)",
+      "target": "2017-d:A:10"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000169",
+      "label": "🔴 language-missing",
+      "questionId": "q-001122",
+      "severity": "red",
+      "summary": "2017-d:A:2 is missing a language (missing-english)",
+      "target": "2017-d:A:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000170",
+      "label": "🔴 language-missing",
+      "questionId": "q-001123",
+      "severity": "red",
+      "summary": "2017-d:A:3 is missing a language (missing-english)",
+      "target": "2017-d:A:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000171",
+      "label": "🔴 language-missing",
+      "questionId": "q-001124",
+      "severity": "red",
+      "summary": "2017-d:A:4 is missing a language (missing-english)",
+      "target": "2017-d:A:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000172",
+      "label": "🔴 language-missing",
+      "questionId": "q-001125",
+      "severity": "red",
+      "summary": "2017-d:A:5 is missing a language (missing-english)",
+      "target": "2017-d:A:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000173",
+      "label": "🔴 language-missing",
+      "questionId": "q-001126",
+      "severity": "red",
+      "summary": "2017-d:A:6 is missing a language (missing-english)",
+      "target": "2017-d:A:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000174",
+      "label": "🔴 language-missing",
+      "questionId": "q-001127",
+      "severity": "red",
+      "summary": "2017-d:A:7 is missing a language (missing-english)",
+      "target": "2017-d:A:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000175",
+      "label": "🔴 language-missing",
+      "questionId": "q-001128",
+      "severity": "red",
+      "summary": "2017-d:A:8 is missing a language (missing-english)",
+      "target": "2017-d:A:8"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000176",
+      "label": "🔴 language-missing",
+      "questionId": "q-001129",
+      "severity": "red",
+      "summary": "2017-d:A:9 is missing a language (missing-english)",
+      "target": "2017-d:A:9"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000177",
+      "label": "🔴 language-missing",
+      "questionId": "q-001131",
+      "severity": "red",
+      "summary": "2017-d:B:1 is missing a language (missing-english)",
+      "target": "2017-d:B:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000178",
+      "label": "🔴 language-missing",
+      "questionId": "q-001131",
+      "severity": "red",
+      "summary": "2017-d:B:1 is missing a language (options-language-incomplete)",
+      "target": "2017-d:B:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000179",
+      "label": "🔴 language-missing",
+      "questionId": "q-001132",
+      "severity": "red",
+      "summary": "2017-d:B:2 is missing a language (missing-english)",
+      "target": "2017-d:B:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000180",
+      "label": "🔴 language-missing",
+      "questionId": "q-001132",
+      "severity": "red",
+      "summary": "2017-d:B:2 is missing a language (options-language-incomplete)",
+      "target": "2017-d:B:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000181",
+      "label": "🔴 language-missing",
+      "questionId": "q-001133",
+      "severity": "red",
+      "summary": "2017-d:B:3 is missing a language (missing-english)",
+      "target": "2017-d:B:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000182",
+      "label": "🔴 language-missing",
+      "questionId": "q-001133",
+      "severity": "red",
+      "summary": "2017-d:B:3 is missing a language (options-language-incomplete)",
+      "target": "2017-d:B:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000183",
+      "label": "🔴 language-missing",
+      "questionId": "q-001134",
+      "severity": "red",
+      "summary": "2017-d:B:4 is missing a language (missing-english)",
+      "target": "2017-d:B:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000184",
+      "label": "🔴 language-missing",
+      "questionId": "q-001134",
+      "severity": "red",
+      "summary": "2017-d:B:4 is missing a language (options-language-incomplete)",
+      "target": "2017-d:B:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000185",
+      "label": "🔴 language-missing",
+      "questionId": "q-001135",
+      "severity": "red",
+      "summary": "2017-d:B:5 is missing a language (missing-english)",
+      "target": "2017-d:B:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000186",
+      "label": "🔴 language-missing",
+      "questionId": "q-001135",
+      "severity": "red",
+      "summary": "2017-d:B:5 is missing a language (options-language-incomplete)",
+      "target": "2017-d:B:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000187",
+      "label": "🔴 language-missing",
+      "questionId": "q-001136",
+      "severity": "red",
+      "summary": "2017-d:B:6 is missing a language (missing-english)",
+      "target": "2017-d:B:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000188",
+      "label": "🔴 language-missing",
+      "questionId": "q-001136",
+      "severity": "red",
+      "summary": "2017-d:B:6 is missing a language (options-language-incomplete)",
+      "target": "2017-d:B:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000189",
+      "label": "🔴 language-missing",
+      "questionId": "q-001137",
+      "severity": "red",
+      "summary": "2017-d:B:7 is missing a language (missing-english)",
+      "target": "2017-d:B:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000190",
+      "label": "🔴 language-missing",
+      "questionId": "q-001137",
+      "severity": "red",
+      "summary": "2017-d:B:7 is missing a language (options-language-incomplete)",
+      "target": "2017-d:B:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000191",
+      "label": "🔴 language-missing",
+      "questionId": "q-000087",
+      "severity": "red",
+      "summary": "2018-a:A:16 is missing a language (options-language-incomplete)",
+      "target": "2018-a:A:16"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000192",
+      "label": "🔴 language-missing",
+      "questionId": "q-000094",
+      "severity": "red",
+      "summary": "2018-a:A:23 is missing a language (options-language-incomplete)",
+      "target": "2018-a:A:23"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000193",
+      "label": "🔴 language-missing",
+      "questionId": "q-000127",
+      "severity": "red",
+      "summary": "2018-a:B:14-or is missing a language (missing-hindi)",
+      "target": "2018-a:B:14-or"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000194",
+      "label": "🔴 language-missing",
+      "questionId": "q-000135",
+      "severity": "red",
+      "summary": "2018-a:B:21-or is missing a language (missing-hindi)",
+      "target": "2018-a:B:21-or"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000195",
+      "label": "🔴 language-missing",
+      "questionId": "q-000119",
+      "severity": "red",
+      "summary": "2018-a:B:7-or is missing a language (missing-hindi)",
+      "target": "2018-a:B:7-or"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000196",
+      "label": "🔴 language-missing",
+      "questionId": "q-000136",
+      "severity": "red",
+      "summary": "2018-b:A:1 is missing a language (missing-hindi)",
+      "target": "2018-b:A:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000197",
+      "label": "🔴 language-missing",
+      "questionId": "q-000145",
+      "severity": "red",
+      "summary": "2018-b:A:10 is missing a language (missing-hindi)",
+      "target": "2018-b:A:10"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000198",
+      "label": "🔴 language-missing",
+      "questionId": "q-000146",
+      "severity": "red",
+      "summary": "2018-b:A:11 is missing a language (missing-hindi)",
+      "target": "2018-b:A:11"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000199",
+      "label": "🔴 language-missing",
+      "questionId": "q-000147",
+      "severity": "red",
+      "summary": "2018-b:A:12 is missing a language (missing-hindi)",
+      "target": "2018-b:A:12"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000200",
+      "label": "🔴 language-missing",
+      "questionId": "q-000148",
+      "severity": "red",
+      "summary": "2018-b:A:13 is missing a language (missing-hindi)",
+      "target": "2018-b:A:13"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000201",
+      "label": "🔴 language-missing",
+      "questionId": "q-000149",
+      "severity": "red",
+      "summary": "2018-b:A:14 is missing a language (missing-hindi)",
+      "target": "2018-b:A:14"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000202",
+      "label": "🔴 language-missing",
+      "questionId": "q-000150",
+      "severity": "red",
+      "summary": "2018-b:A:15 is missing a language (missing-hindi)",
+      "target": "2018-b:A:15"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000203",
+      "label": "🔴 language-missing",
+      "questionId": "q-000151",
+      "severity": "red",
+      "summary": "2018-b:A:16 is missing a language (missing-hindi)",
+      "target": "2018-b:A:16"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000204",
+      "label": "🔴 language-missing",
+      "questionId": "q-000151",
+      "severity": "red",
+      "summary": "2018-b:A:16 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:16"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000205",
+      "label": "🔴 language-missing",
+      "questionId": "q-000152",
+      "severity": "red",
+      "summary": "2018-b:A:17 is missing a language (missing-hindi)",
+      "target": "2018-b:A:17"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000206",
+      "label": "🔴 language-missing",
+      "questionId": "q-000152",
+      "severity": "red",
+      "summary": "2018-b:A:17 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:17"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000207",
+      "label": "🔴 language-missing",
+      "questionId": "q-000153",
+      "severity": "red",
+      "summary": "2018-b:A:18 is missing a language (missing-hindi)",
+      "target": "2018-b:A:18"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000208",
+      "label": "🔴 language-missing",
+      "questionId": "q-000153",
+      "severity": "red",
+      "summary": "2018-b:A:18 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:18"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000209",
+      "label": "🔴 language-missing",
+      "questionId": "q-000154",
+      "severity": "red",
+      "summary": "2018-b:A:19 is missing a language (missing-hindi)",
+      "target": "2018-b:A:19"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000210",
+      "label": "🔴 language-missing",
+      "questionId": "q-000154",
+      "severity": "red",
+      "summary": "2018-b:A:19 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:19"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000211",
+      "label": "🔴 language-missing",
+      "questionId": "q-000137",
+      "severity": "red",
+      "summary": "2018-b:A:2 is missing a language (missing-hindi)",
+      "target": "2018-b:A:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000212",
+      "label": "🔴 language-missing",
+      "questionId": "q-000155",
+      "severity": "red",
+      "summary": "2018-b:A:20 is missing a language (missing-hindi)",
+      "target": "2018-b:A:20"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000213",
+      "label": "🔴 language-missing",
+      "questionId": "q-000155",
+      "severity": "red",
+      "summary": "2018-b:A:20 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:20"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000214",
+      "label": "🔴 language-missing",
+      "questionId": "q-000156",
+      "severity": "red",
+      "summary": "2018-b:A:21 is missing a language (missing-hindi)",
+      "target": "2018-b:A:21"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000215",
+      "label": "🔴 language-missing",
+      "questionId": "q-000157",
+      "severity": "red",
+      "summary": "2018-b:A:22 is missing a language (missing-hindi)",
+      "target": "2018-b:A:22"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000216",
+      "label": "🔴 language-missing",
+      "questionId": "q-000157",
+      "severity": "red",
+      "summary": "2018-b:A:22 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:22"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000217",
+      "label": "🔴 language-missing",
+      "questionId": "q-000158",
+      "severity": "red",
+      "summary": "2018-b:A:23 is missing a language (missing-hindi)",
+      "target": "2018-b:A:23"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000218",
+      "label": "🔴 language-missing",
+      "questionId": "q-000158",
+      "severity": "red",
+      "summary": "2018-b:A:23 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:23"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000219",
+      "label": "🔴 language-missing",
+      "questionId": "q-000159",
+      "severity": "red",
+      "summary": "2018-b:A:24 is missing a language (missing-hindi)",
+      "target": "2018-b:A:24"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000220",
+      "label": "🔴 language-missing",
+      "questionId": "q-000159",
+      "severity": "red",
+      "summary": "2018-b:A:24 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:24"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000221",
+      "label": "🔴 language-missing",
+      "questionId": "q-000160",
+      "severity": "red",
+      "summary": "2018-b:A:25 is missing a language (missing-hindi)",
+      "target": "2018-b:A:25"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000222",
+      "label": "🔴 language-missing",
+      "questionId": "q-000160",
+      "severity": "red",
+      "summary": "2018-b:A:25 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:25"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000223",
+      "label": "🔴 language-missing",
+      "questionId": "q-000161",
+      "severity": "red",
+      "summary": "2018-b:A:26 is missing a language (missing-hindi)",
+      "target": "2018-b:A:26"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000224",
+      "label": "🔴 language-missing",
+      "questionId": "q-000161",
+      "severity": "red",
+      "summary": "2018-b:A:26 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:26"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000225",
+      "label": "🔴 language-missing",
+      "questionId": "q-000162",
+      "severity": "red",
+      "summary": "2018-b:A:27 is missing a language (missing-hindi)",
+      "target": "2018-b:A:27"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000226",
+      "label": "🔴 language-missing",
+      "questionId": "q-000163",
+      "severity": "red",
+      "summary": "2018-b:A:28 is missing a language (missing-hindi)",
+      "target": "2018-b:A:28"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000227",
+      "label": "🔴 language-missing",
+      "questionId": "q-000163",
+      "severity": "red",
+      "summary": "2018-b:A:28 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:28"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000228",
+      "label": "🔴 language-missing",
+      "questionId": "q-000164",
+      "severity": "red",
+      "summary": "2018-b:A:29 is missing a language (missing-hindi)",
+      "target": "2018-b:A:29"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000229",
+      "label": "🔴 language-missing",
+      "questionId": "q-000164",
+      "severity": "red",
+      "summary": "2018-b:A:29 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:29"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000230",
+      "label": "🔴 language-missing",
+      "questionId": "q-000138",
+      "severity": "red",
+      "summary": "2018-b:A:3 is missing a language (missing-hindi)",
+      "target": "2018-b:A:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000231",
+      "label": "🔴 language-missing",
+      "questionId": "q-000138",
+      "severity": "red",
+      "summary": "2018-b:A:3 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000232",
+      "label": "🔴 language-missing",
+      "questionId": "q-000165",
+      "severity": "red",
+      "summary": "2018-b:A:30 is missing a language (missing-hindi)",
+      "target": "2018-b:A:30"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000233",
+      "label": "🔴 language-missing",
+      "questionId": "q-000165",
+      "severity": "red",
+      "summary": "2018-b:A:30 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:30"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000234",
+      "label": "🔴 language-missing",
+      "questionId": "q-000166",
+      "severity": "red",
+      "summary": "2018-b:A:31 is missing a language (missing-hindi)",
+      "target": "2018-b:A:31"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000235",
+      "label": "🔴 language-missing",
+      "questionId": "q-000166",
+      "severity": "red",
+      "summary": "2018-b:A:31 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:31"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000236",
+      "label": "🔴 language-missing",
+      "questionId": "q-000167",
+      "severity": "red",
+      "summary": "2018-b:A:32 is missing a language (missing-hindi)",
+      "target": "2018-b:A:32"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000237",
+      "label": "🔴 language-missing",
+      "questionId": "q-000167",
+      "severity": "red",
+      "summary": "2018-b:A:32 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:32"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000238",
+      "label": "🔴 language-missing",
+      "questionId": "q-000168",
+      "severity": "red",
+      "summary": "2018-b:A:33 is missing a language (missing-hindi)",
+      "target": "2018-b:A:33"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000239",
+      "label": "🔴 language-missing",
+      "questionId": "q-000168",
+      "severity": "red",
+      "summary": "2018-b:A:33 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:33"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000240",
+      "label": "🔴 language-missing",
+      "questionId": "q-000169",
+      "severity": "red",
+      "summary": "2018-b:A:34 is missing a language (missing-hindi)",
+      "target": "2018-b:A:34"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000241",
+      "label": "🔴 language-missing",
+      "questionId": "q-000169",
+      "severity": "red",
+      "summary": "2018-b:A:34 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:34"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000242",
+      "label": "🔴 language-missing",
+      "questionId": "q-000170",
+      "severity": "red",
+      "summary": "2018-b:A:35 is missing a language (missing-hindi)",
+      "target": "2018-b:A:35"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000243",
+      "label": "🔴 language-missing",
+      "questionId": "q-000170",
+      "severity": "red",
+      "summary": "2018-b:A:35 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:35"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000244",
+      "label": "🔴 language-missing",
+      "questionId": "q-000171",
+      "severity": "red",
+      "summary": "2018-b:A:36 is missing a language (missing-hindi)",
+      "target": "2018-b:A:36"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000245",
+      "label": "🔴 language-missing",
+      "questionId": "q-000171",
+      "severity": "red",
+      "summary": "2018-b:A:36 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:36"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000246",
+      "label": "🔴 language-missing",
+      "questionId": "q-000172",
+      "severity": "red",
+      "summary": "2018-b:A:37 is missing a language (missing-hindi)",
+      "target": "2018-b:A:37"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000247",
+      "label": "🔴 language-missing",
+      "questionId": "q-000172",
+      "severity": "red",
+      "summary": "2018-b:A:37 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:37"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000248",
+      "label": "🔴 language-missing",
+      "questionId": "q-000173",
+      "severity": "red",
+      "summary": "2018-b:A:38 is missing a language (missing-hindi)",
+      "target": "2018-b:A:38"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000249",
+      "label": "🔴 language-missing",
+      "questionId": "q-000173",
+      "severity": "red",
+      "summary": "2018-b:A:38 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:38"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000250",
+      "label": "🔴 language-missing",
+      "questionId": "q-000174",
+      "severity": "red",
+      "summary": "2018-b:A:39 is missing a language (missing-hindi)",
+      "target": "2018-b:A:39"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000251",
+      "label": "🔴 language-missing",
+      "questionId": "q-000174",
+      "severity": "red",
+      "summary": "2018-b:A:39 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:39"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000252",
+      "label": "🔴 language-missing",
+      "questionId": "q-000139",
+      "severity": "red",
+      "summary": "2018-b:A:4 is missing a language (missing-hindi)",
+      "target": "2018-b:A:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000253",
+      "label": "🔴 language-missing",
+      "questionId": "q-000175",
+      "severity": "red",
+      "summary": "2018-b:A:40 is missing a language (missing-hindi)",
+      "target": "2018-b:A:40"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000254",
+      "label": "🔴 language-missing",
+      "questionId": "q-000140",
+      "severity": "red",
+      "summary": "2018-b:A:5 is missing a language (missing-hindi)",
+      "target": "2018-b:A:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000255",
+      "label": "🔴 language-missing",
+      "questionId": "q-000141",
+      "severity": "red",
+      "summary": "2018-b:A:6 is missing a language (missing-hindi)",
+      "target": "2018-b:A:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000256",
+      "label": "🔴 language-missing",
+      "questionId": "q-000142",
+      "severity": "red",
+      "summary": "2018-b:A:7 is missing a language (missing-hindi)",
+      "target": "2018-b:A:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000257",
+      "label": "🔴 language-missing",
+      "questionId": "q-000142",
+      "severity": "red",
+      "summary": "2018-b:A:7 is missing a language (options-language-incomplete)",
+      "target": "2018-b:A:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000258",
+      "label": "🔴 language-missing",
+      "questionId": "q-000143",
+      "severity": "red",
+      "summary": "2018-b:A:8 is missing a language (missing-hindi)",
+      "target": "2018-b:A:8"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000259",
+      "label": "🔴 language-missing",
+      "questionId": "q-000144",
+      "severity": "red",
+      "summary": "2018-b:A:9 is missing a language (missing-hindi)",
+      "target": "2018-b:A:9"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000260",
+      "label": "🔴 language-missing",
+      "questionId": "q-000176",
+      "severity": "red",
+      "summary": "2018-b:B:1 is missing a language (missing-hindi)",
+      "target": "2018-b:B:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000261",
+      "label": "🔴 language-missing",
+      "questionId": "q-000177",
+      "severity": "red",
+      "summary": "2018-b:B:2 is missing a language (missing-hindi)",
+      "target": "2018-b:B:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000262",
+      "label": "🔴 language-missing",
+      "questionId": "q-000178",
+      "severity": "red",
+      "summary": "2018-b:B:5 is missing a language (missing-hindi)",
+      "target": "2018-b:B:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000263",
+      "label": "🔴 language-missing",
+      "questionId": "q-000179",
+      "severity": "red",
+      "summary": "2018-b:B:6 is missing a language (missing-hindi)",
+      "target": "2018-b:B:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000264",
+      "label": "🔴 language-missing",
+      "questionId": "q-000180",
+      "severity": "red",
+      "summary": "2018-b:B:7 is missing a language (missing-hindi)",
+      "target": "2018-b:B:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000265",
+      "label": "🔴 language-missing",
+      "questionId": "q-000181",
+      "severity": "red",
+      "summary": "2018-b:B:7-or is missing a language (missing-hindi)",
+      "target": "2018-b:B:7-or"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000266",
+      "label": "🔴 language-missing",
+      "questionId": "q-000182",
+      "severity": "red",
+      "summary": "2019-b:A:1 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000267",
+      "label": "🔴 language-missing",
+      "questionId": "q-000193",
+      "severity": "red",
+      "summary": "2019-b:A:12 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:12"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000268",
+      "label": "🔴 language-missing",
+      "questionId": "q-000194",
+      "severity": "red",
+      "summary": "2019-b:A:13 is missing a language (missing-hindi)",
+      "target": "2019-b:A:13"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000269",
+      "label": "🔴 language-missing",
+      "questionId": "q-000194",
+      "severity": "red",
+      "summary": "2019-b:A:13 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:13"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000270",
+      "label": "🔴 language-missing",
+      "questionId": "q-000195",
+      "severity": "red",
+      "summary": "2019-b:A:14 is missing a language (missing-hindi)",
+      "target": "2019-b:A:14"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000271",
+      "label": "🔴 language-missing",
+      "questionId": "q-000195",
+      "severity": "red",
+      "summary": "2019-b:A:14 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:14"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000272",
+      "label": "🔴 language-missing",
+      "questionId": "q-000199",
+      "severity": "red",
+      "summary": "2019-b:A:18 is missing a language (missing-hindi)",
+      "target": "2019-b:A:18"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000273",
+      "label": "🔴 language-missing",
+      "questionId": "q-000183",
+      "severity": "red",
+      "summary": "2019-b:A:2 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000274",
+      "label": "🔴 language-missing",
+      "questionId": "q-001138",
+      "severity": "red",
+      "summary": "2019-b:A:20 is missing a language (missing-english)",
+      "target": "2019-b:A:20"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000275",
+      "label": "🔴 language-missing",
+      "questionId": "q-001138",
+      "severity": "red",
+      "summary": "2019-b:A:20 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:20"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000276",
+      "label": "🔴 language-missing",
+      "questionId": "q-000184",
+      "severity": "red",
+      "summary": "2019-b:A:3 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000277",
+      "label": "🔴 language-missing",
+      "questionId": "q-000185",
+      "severity": "red",
+      "summary": "2019-b:A:4 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000278",
+      "label": "🔴 language-missing",
+      "questionId": "q-000186",
+      "severity": "red",
+      "summary": "2019-b:A:5 is missing a language (options-language-incomplete)",
+      "target": "2019-b:A:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000279",
+      "label": "🔴 language-missing",
+      "questionId": "q-000254",
+      "severity": "red",
+      "summary": "2020-a:A:22 is missing a language (options-language-incomplete)",
+      "target": "2020-a:A:22"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000280",
+      "label": "🔴 language-missing",
+      "questionId": "q-000259",
+      "severity": "red",
+      "summary": "2020-a:A:27 is missing a language (options-language-incomplete)",
+      "target": "2020-a:A:27"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000281",
+      "label": "🔴 language-missing",
+      "questionId": "q-000263",
+      "severity": "red",
+      "summary": "2020-a:A:31 is missing a language (options-language-incomplete)",
+      "target": "2020-a:A:31"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000282",
+      "label": "🔴 language-missing",
+      "questionId": "q-000268",
+      "severity": "red",
+      "summary": "2020-a:A:36 is missing a language (options-language-incomplete)",
+      "target": "2020-a:A:36"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000283",
+      "label": "🔴 language-missing",
+      "questionId": "q-000309",
+      "severity": "red",
+      "summary": "2020-b:A:2 is missing a language (options-language-incomplete)",
+      "target": "2020-b:A:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000284",
+      "label": "🔴 language-missing",
+      "questionId": "q-000349",
+      "severity": "red",
+      "summary": "2020-b:A:42 is missing a language (options-language-incomplete)",
+      "target": "2020-b:A:42"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000285",
+      "label": "🔴 language-missing",
+      "questionId": "q-000511",
+      "severity": "red",
+      "summary": "2022:A:18 is missing a language (options-language-incomplete)",
+      "target": "2022:A:18"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000286",
+      "label": "🔴 language-missing",
+      "questionId": "q-000537",
+      "severity": "red",
+      "summary": "2022:A:44 is missing a language (options-language-incomplete)",
+      "target": "2022:A:44"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000287",
+      "label": "🔴 language-missing",
+      "questionId": "q-000546",
+      "severity": "red",
+      "summary": "2022:A:53 is missing a language (options-language-incomplete)",
+      "target": "2022:A:53"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000288",
+      "label": "🔴 language-missing",
+      "questionId": "q-000563",
+      "severity": "red",
+      "summary": "2022:A:70 is missing a language (options-language-incomplete)",
+      "target": "2022:A:70"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000289",
+      "label": "🔴 language-missing",
+      "questionId": "q-000573",
+      "severity": "red",
+      "summary": "2022:A:80 is missing a language (options-language-incomplete)",
+      "target": "2022:A:80"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000290",
+      "label": "🔴 language-missing",
+      "questionId": "q-000618",
+      "severity": "red",
+      "summary": "2023-a:A:16 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:16"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000291",
+      "label": "🔴 language-missing",
+      "questionId": "q-000621",
+      "severity": "red",
+      "summary": "2023-a:A:19 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:19"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000292",
+      "label": "🔴 language-missing",
+      "questionId": "q-000632",
+      "severity": "red",
+      "summary": "2023-a:A:30 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:30"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000293",
+      "label": "🔴 language-missing",
+      "questionId": "q-000633",
+      "severity": "red",
+      "summary": "2023-a:A:31 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:31"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000294",
+      "label": "🔴 language-missing",
+      "questionId": "q-000053",
+      "severity": "red",
+      "summary": "2023-a:A:43 is missing a language (missing-english)",
+      "target": "2023-a:A:43"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000295",
+      "label": "🔴 language-missing",
+      "questionId": "q-000053",
+      "severity": "red",
+      "summary": "2023-a:A:43 is missing a language (missing-hindi)",
+      "target": "2023-a:A:43"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000296",
+      "label": "🔴 language-missing",
+      "questionId": "q-000053",
+      "severity": "red",
+      "summary": "2023-a:A:43 is missing a language (missing-hinglish)",
+      "target": "2023-a:A:43"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000297",
+      "label": "🔴 language-missing",
+      "questionId": "q-000653",
+      "severity": "red",
+      "summary": "2023-a:A:52 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:52"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000298",
+      "label": "🔴 language-missing",
+      "questionId": "q-000660",
+      "severity": "red",
+      "summary": "2023-a:A:59 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:59"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000299",
+      "label": "🔴 language-missing",
+      "questionId": "q-000665",
+      "severity": "red",
+      "summary": "2023-a:A:64 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:64"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000300",
+      "label": "🔴 language-missing",
+      "questionId": "q-000666",
+      "severity": "red",
+      "summary": "2023-a:A:65 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:65"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000301",
+      "label": "🔴 language-missing",
+      "questionId": "q-000668",
+      "severity": "red",
+      "summary": "2023-a:A:67 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:67"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000302",
+      "label": "🔴 language-missing",
+      "questionId": "q-000669",
+      "severity": "red",
+      "summary": "2023-a:A:68 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:68"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000303",
+      "label": "🔴 language-missing",
+      "questionId": "q-000670",
+      "severity": "red",
+      "summary": "2023-a:A:69 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:69"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000304",
+      "label": "🔴 language-missing",
+      "questionId": "q-000675",
+      "severity": "red",
+      "summary": "2023-a:A:74 is missing a language (options-language-incomplete)",
+      "target": "2023-a:A:74"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000305",
+      "label": "🔴 language-missing",
+      "questionId": "q-000706",
+      "severity": "red",
+      "summary": "2024-a:A:23 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:23"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000306",
+      "label": "🔴 language-missing",
+      "questionId": "q-000713",
+      "severity": "red",
+      "summary": "2024-a:A:31 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:31"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000307",
+      "label": "🔴 language-missing",
+      "questionId": "q-000717",
+      "severity": "red",
+      "summary": "2024-a:A:35 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:35"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000308",
+      "label": "🔴 language-missing",
+      "questionId": "q-000719",
+      "severity": "red",
+      "summary": "2024-a:A:37 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:37"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000309",
+      "label": "🔴 language-missing",
+      "questionId": "q-001139",
+      "severity": "red",
+      "summary": "2024-a:A:44 is missing a language (missing-english)",
+      "target": "2024-a:A:44"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000310",
+      "label": "🔴 language-missing",
+      "questionId": "q-001139",
+      "severity": "red",
+      "summary": "2024-a:A:44 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:44"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000311",
+      "label": "🔴 language-missing",
+      "questionId": "q-000729",
+      "severity": "red",
+      "summary": "2024-a:A:48 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:48"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000312",
+      "label": "🔴 language-missing",
+      "questionId": "q-000735",
+      "severity": "red",
+      "summary": "2024-a:A:54 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:54"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000313",
+      "label": "🔴 language-missing",
+      "questionId": "q-000742",
+      "severity": "red",
+      "summary": "2024-a:A:61 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:61"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000314",
+      "label": "🔴 language-missing",
+      "questionId": "q-000744",
+      "severity": "red",
+      "summary": "2024-a:A:63 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:63"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000315",
+      "label": "🔴 language-missing",
+      "questionId": "q-000748",
+      "severity": "red",
+      "summary": "2024-a:A:67 is missing a language (options-language-incomplete)",
+      "target": "2024-a:A:67"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000316",
+      "label": "🔴 language-missing",
+      "questionId": "q-000823",
+      "severity": "red",
+      "summary": "2025:A:38 is missing a language (options-language-incomplete)",
+      "target": "2025:A:38"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000317",
+      "label": "🔴 language-missing",
+      "questionId": "q-000833",
+      "severity": "red",
+      "summary": "2025:A:49 is missing a language (options-language-incomplete)",
+      "target": "2025:A:49"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000318",
+      "label": "🔴 language-missing",
+      "questionId": "q-000846",
+      "severity": "red",
+      "summary": "2025:A:62 is missing a language (options-language-incomplete)",
+      "target": "2025:A:62"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000319",
+      "label": "🔴 language-missing",
+      "questionId": "q-000865",
+      "severity": "red",
+      "summary": "2025:B:1 is missing a language (missing-hindi)",
+      "target": "2025:B:1"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000320",
+      "label": "🔴 language-missing",
+      "questionId": "q-000874",
+      "severity": "red",
+      "summary": "2025:B:10 is missing a language (missing-hindi)",
+      "target": "2025:B:10"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000321",
+      "label": "🔴 language-missing",
+      "questionId": "q-000875",
+      "severity": "red",
+      "summary": "2025:B:11 is missing a language (missing-hindi)",
+      "target": "2025:B:11"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000322",
+      "label": "🔴 language-missing",
+      "questionId": "q-000876",
+      "severity": "red",
+      "summary": "2025:B:12 is missing a language (missing-hindi)",
+      "target": "2025:B:12"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000323",
+      "label": "🔴 language-missing",
+      "questionId": "q-000877",
+      "severity": "red",
+      "summary": "2025:B:13 is missing a language (missing-hindi)",
+      "target": "2025:B:13"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000324",
+      "label": "🔴 language-missing",
+      "questionId": "q-000878",
+      "severity": "red",
+      "summary": "2025:B:14 is missing a language (missing-hindi)",
+      "target": "2025:B:14"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000325",
+      "label": "🔴 language-missing",
+      "questionId": "q-000879",
+      "severity": "red",
+      "summary": "2025:B:15 is missing a language (missing-hindi)",
+      "target": "2025:B:15"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000326",
+      "label": "🔴 language-missing",
+      "questionId": "q-000880",
+      "severity": "red",
+      "summary": "2025:B:16 is missing a language (missing-hindi)",
+      "target": "2025:B:16"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000327",
+      "label": "🔴 language-missing",
+      "questionId": "q-000881",
+      "severity": "red",
+      "summary": "2025:B:17 is missing a language (missing-hindi)",
+      "target": "2025:B:17"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000328",
+      "label": "🔴 language-missing",
+      "questionId": "q-000882",
+      "severity": "red",
+      "summary": "2025:B:18 is missing a language (missing-hindi)",
+      "target": "2025:B:18"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000329",
+      "label": "🔴 language-missing",
+      "questionId": "q-000883",
+      "severity": "red",
+      "summary": "2025:B:19 is missing a language (missing-hindi)",
+      "target": "2025:B:19"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000330",
+      "label": "🔴 language-missing",
+      "questionId": "q-000866",
+      "severity": "red",
+      "summary": "2025:B:2 is missing a language (missing-hindi)",
+      "target": "2025:B:2"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000331",
+      "label": "🔴 language-missing",
+      "questionId": "q-000884",
+      "severity": "red",
+      "summary": "2025:B:20 is missing a language (missing-hindi)",
+      "target": "2025:B:20"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000332",
+      "label": "🔴 language-missing",
+      "questionId": "q-000885",
+      "severity": "red",
+      "summary": "2025:B:21 is missing a language (missing-hindi)",
+      "target": "2025:B:21"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000333",
+      "label": "🔴 language-missing",
+      "questionId": "q-000886",
+      "severity": "red",
+      "summary": "2025:B:22 is missing a language (missing-hindi)",
+      "target": "2025:B:22"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000334",
+      "label": "🔴 language-missing",
+      "questionId": "q-000887",
+      "severity": "red",
+      "summary": "2025:B:23 is missing a language (missing-hindi)",
+      "target": "2025:B:23"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000335",
+      "label": "🔴 language-missing",
+      "questionId": "q-000888",
+      "severity": "red",
+      "summary": "2025:B:24 is missing a language (missing-hindi)",
+      "target": "2025:B:24"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000336",
+      "label": "🔴 language-missing",
+      "questionId": "q-000889",
+      "severity": "red",
+      "summary": "2025:B:25 is missing a language (missing-hindi)",
+      "target": "2025:B:25"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000337",
+      "label": "🔴 language-missing",
+      "questionId": "q-000890",
+      "severity": "red",
+      "summary": "2025:B:26 is missing a language (missing-hindi)",
+      "target": "2025:B:26"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000338",
+      "label": "🔴 language-missing",
+      "questionId": "q-000891",
+      "severity": "red",
+      "summary": "2025:B:27 is missing a language (missing-hindi)",
+      "target": "2025:B:27"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000339",
+      "label": "🔴 language-missing",
+      "questionId": "q-000892",
+      "severity": "red",
+      "summary": "2025:B:28 is missing a language (missing-hindi)",
+      "target": "2025:B:28"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000340",
+      "label": "🔴 language-missing",
+      "questionId": "q-000893",
+      "severity": "red",
+      "summary": "2025:B:29 is missing a language (missing-hindi)",
+      "target": "2025:B:29"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000341",
+      "label": "🔴 language-missing",
+      "questionId": "q-000867",
+      "severity": "red",
+      "summary": "2025:B:3 is missing a language (missing-hindi)",
+      "target": "2025:B:3"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000342",
+      "label": "🔴 language-missing",
+      "questionId": "q-000894",
+      "severity": "red",
+      "summary": "2025:B:30 is missing a language (missing-hindi)",
+      "target": "2025:B:30"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000343",
+      "label": "🔴 language-missing",
+      "questionId": "q-000868",
+      "severity": "red",
+      "summary": "2025:B:4 is missing a language (missing-hindi)",
+      "target": "2025:B:4"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000344",
+      "label": "🔴 language-missing",
+      "questionId": "q-000869",
+      "severity": "red",
+      "summary": "2025:B:5 is missing a language (missing-hindi)",
+      "target": "2025:B:5"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000345",
+      "label": "🔴 language-missing",
+      "questionId": "q-000870",
+      "severity": "red",
+      "summary": "2025:B:6 is missing a language (missing-hindi)",
+      "target": "2025:B:6"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000346",
+      "label": "🔴 language-missing",
+      "questionId": "q-000871",
+      "severity": "red",
+      "summary": "2025:B:7 is missing a language (missing-hindi)",
+      "target": "2025:B:7"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000347",
+      "label": "🔴 language-missing",
+      "questionId": "q-000872",
+      "severity": "red",
+      "summary": "2025:B:8 is missing a language (missing-hindi)",
+      "target": "2025:B:8"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000348",
+      "label": "🔴 language-missing",
+      "questionId": "q-000873",
+      "severity": "red",
+      "summary": "2025:B:9 is missing a language (missing-hindi)",
+      "target": "2025:B:9"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000349",
+      "label": "🔴 language-missing",
+      "questionId": "q-000926",
+      "severity": "red",
+      "summary": "2026:A:33 is missing a language (options-language-incomplete)",
+      "target": "2026:A:33"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000350",
+      "label": "🔴 language-missing",
+      "questionId": "q-000934",
+      "severity": "red",
+      "summary": "2026:A:41 is missing a language (options-language-incomplete)",
+      "target": "2026:A:41"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000351",
+      "label": "🔴 language-missing",
+      "questionId": "q-000935",
+      "severity": "red",
+      "summary": "2026:A:42 is missing a language (options-language-incomplete)",
+      "target": "2026:A:42"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000352",
+      "label": "🔴 language-missing",
+      "questionId": "q-000939",
+      "severity": "red",
+      "summary": "2026:A:46 is missing a language (options-language-incomplete)",
+      "target": "2026:A:46"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000353",
+      "label": "🔴 language-missing",
+      "questionId": "q-000941",
+      "severity": "red",
+      "summary": "2026:A:48 is missing a language (options-language-incomplete)",
+      "target": "2026:A:48"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000354",
+      "label": "🔴 language-missing",
+      "questionId": "q-000942",
+      "severity": "red",
+      "summary": "2026:A:49 is missing a language (options-language-incomplete)",
+      "target": "2026:A:49"
+    },
+    {
+      "category": "language-missing",
+      "id": "rq-000355",
+      "label": "🔴 language-missing",
+      "questionId": "q-000943",
+      "severity": "red",
+      "summary": "2026:A:50 is missing a language (options-language-incomplete)",
+      "target": "2026:A:50"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000356",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0001 proposes merging q-000016 + q-000767 (similarity 0.75)",
+      "target": "c-0001"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000357",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0002 proposes merging q-000018 + q-000474 (similarity 0.778)",
+      "target": "c-0002"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000358",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0003 proposes merging q-000020 + q-000885 (similarity 0.8)",
+      "target": "c-0003"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000359",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0004 proposes merging q-000026 + q-000777 (similarity 0.75)",
+      "target": "c-0004"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000360",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0005 proposes merging q-000069 + q-000426 (similarity 0.833)",
+      "target": "c-0005"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000361",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0006 proposes merging q-000075 + q-000747 (similarity 1)",
+      "target": "c-0006"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000362",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0007 proposes merging q-000083 + q-000686 (similarity 1)",
+      "target": "c-0007"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000363",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0008 proposes merging q-000085 + q-000151 (similarity 0.875)",
+      "target": "c-0008"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000364",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0009 proposes merging q-000088 + q-000754 (similarity 1)",
+      "target": "c-0009"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000365",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0010 proposes merging q-000089 + q-000411 (similarity 0.778)",
+      "target": "c-0010"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000366",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0011 proposes merging q-000089 + q-000561 (similarity 0.778)",
+      "target": "c-0011"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000367",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0012 proposes merging q-000089 + q-000940 (similarity 0.778)",
+      "target": "c-0012"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000368",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0013 proposes merging q-000092 + q-000755 (similarity 0.75)",
+      "target": "c-0013"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000369",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0014 proposes merging q-000132 + q-000305 (similarity 0.889)",
+      "target": "c-0014"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000370",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0015 proposes merging q-000134 + q-000784 (similarity 0.867)",
+      "target": "c-0015"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000371",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0016 proposes merging q-000151 + q-000817 (similarity 0.75)",
+      "target": "c-0016"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000372",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0017 proposes merging q-000157 + q-000433 (similarity 0.75)",
+      "target": "c-0017"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000373",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0018 proposes merging q-000160 + q-000332 (similarity 1)",
+      "target": "c-0018"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000374",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0019 proposes merging q-000165 + q-000453 (similarity 1)",
+      "target": "c-0019"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000375",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0020 proposes merging q-000169 + q-000445 (similarity 0.8)",
+      "target": "c-0020"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000376",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0021 proposes merging q-000189 + q-000703 (similarity 1)",
+      "target": "c-0021"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000377",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0022 proposes merging q-000191 + q-000704 (similarity 1)",
+      "target": "c-0022"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000378",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0023 proposes merging q-000192 + q-000330 (similarity 0.778)",
+      "target": "c-0023"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000379",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0024 proposes merging q-000197 + q-000509 (similarity 0.8)",
+      "target": "c-0024"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000380",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0025 proposes merging q-000201 + q-000791 (similarity 0.909)",
+      "target": "c-0025"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000381",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0026 proposes merging q-000202 + q-000847 (similarity 0.833)",
+      "target": "c-0026"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000382",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0027 proposes merging q-000203 + q-000705 (similarity 0.8)",
+      "target": "c-0027"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000383",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0028 proposes merging q-000207 + q-000580 (similarity 0.9)",
+      "target": "c-0028"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000384",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0029 proposes merging q-000236 + q-000391 (similarity 0.769)",
+      "target": "c-0029"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000385",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0030 proposes merging q-000239 + q-000536 (similarity 0.889)",
+      "target": "c-0030"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000386",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0031 proposes merging q-000242 + q-000603 (similarity 0.818)",
+      "target": "c-0031"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000387",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0032 proposes merging q-000258 + q-000925 (similarity 1)",
+      "target": "c-0032"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000388",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0033 proposes merging q-000261 + q-000552 (similarity 0.778)",
+      "target": "c-0033"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000389",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0034 proposes merging q-000263 + q-000660 (similarity 0.778)",
+      "target": "c-0034"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000390",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0035 proposes merging q-000263 + q-000748 (similarity 0.889)",
+      "target": "c-0035"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000391",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0036 proposes merging q-000266 + q-000707 (similarity 1)",
+      "target": "c-0036"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000392",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0037 proposes merging q-000272 + q-000394 (similarity 0.875)",
+      "target": "c-0037"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000393",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0038 proposes merging q-000284 + q-000470 (similarity 0.818)",
+      "target": "c-0038"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000394",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0039 proposes merging q-000290 + q-000771 (similarity 0.842)",
+      "target": "c-0039"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000395",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0040 proposes merging q-000305 + q-000598 (similarity 0.778)",
+      "target": "c-0040"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000396",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0041 proposes merging q-000308 + q-000561 (similarity 0.778)",
+      "target": "c-0041"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000397",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0042 proposes merging q-000313 + q-000536 (similarity 0.778)",
+      "target": "c-0042"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000398",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0043 proposes merging q-000314 + q-000915 (similarity 1)",
+      "target": "c-0043"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000399",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0044 proposes merging q-000322 + q-000728 (similarity 0.778)",
+      "target": "c-0044"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000400",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0045 proposes merging q-000322 + q-000792 (similarity 1)",
+      "target": "c-0045"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000401",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0046 proposes merging q-000323 + q-000635 (similarity 0.8)",
+      "target": "c-0046"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000402",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0047 proposes merging q-000323 + q-000789 (similarity 0.8)",
+      "target": "c-0047"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000403",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0048 proposes merging q-000329 + q-000401 (similarity 1)",
+      "target": "c-0048"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000404",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0049 proposes merging q-000336 + q-000816 (similarity 1)",
+      "target": "c-0049"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000405",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0050 proposes merging q-000336 + q-000928 (similarity 1)",
+      "target": "c-0050"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000406",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0051 proposes merging q-000393 + q-000803 (similarity 1)",
+      "target": "c-0051"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000407",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0052 proposes merging q-000396 + q-000916 (similarity 0.75)",
+      "target": "c-0052"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000408",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0053 proposes merging q-000397 + q-000800 (similarity 1)",
+      "target": "c-0053"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000409",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0054 proposes merging q-000400 + q-000795 (similarity 0.857)",
+      "target": "c-0054"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000410",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0055 proposes merging q-000406 + q-000912 (similarity 0.9)",
+      "target": "c-0055"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000411",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0056 proposes merging q-000411 + q-000561 (similarity 0.778)",
+      "target": "c-0056"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000412",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0057 proposes merging q-000411 + q-000940 (similarity 0.778)",
+      "target": "c-0057"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000413",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0058 proposes merging q-000412 + q-000827 (similarity 0.75)",
+      "target": "c-0058"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000414",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0059 proposes merging q-000415 + q-000549 (similarity 0.857)",
+      "target": "c-0059"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000415",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0060 proposes merging q-000425 + q-000718 (similarity 1)",
+      "target": "c-0060"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000416",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0061 proposes merging q-000425 + q-000838 (similarity 1)",
+      "target": "c-0061"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000417",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0062 proposes merging q-000430 + q-000739 (similarity 0.889)",
+      "target": "c-0062"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000418",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0063 proposes merging q-000436 + q-000828 (similarity 0.833)",
+      "target": "c-0063"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000419",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0064 proposes merging q-000470 + q-000574 (similarity 0.818)",
+      "target": "c-0064"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000420",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0065 proposes merging q-000482 + q-000592 (similarity 0.917)",
+      "target": "c-0065"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000421",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0066 proposes merging q-000495 + q-000498 (similarity 0.75)",
+      "target": "c-0066"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000422",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0067 proposes merging q-000500 + q-000737 (similarity 0.833)",
+      "target": "c-0067"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000423",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0068 proposes merging q-000508 + q-000676 (similarity 0.778)",
+      "target": "c-0068"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000424",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0069 proposes merging q-000518 + q-000614 (similarity 0.818)",
+      "target": "c-0069"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000425",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0070 proposes merging q-000528 + q-000665 (similarity 0.778)",
+      "target": "c-0070"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000426",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0071 proposes merging q-000540 + q-000702 (similarity 0.857)",
+      "target": "c-0071"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000427",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0072 proposes merging q-000544 + q-000623 (similarity 1)",
+      "target": "c-0072"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000428",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0073 proposes merging q-000561 + q-000940 (similarity 0.778)",
+      "target": "c-0073"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000429",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0074 proposes merging q-000620 + q-000760 (similarity 0.875)",
+      "target": "c-0074"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000430",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0075 proposes merging q-000625 + q-000741 (similarity 1)",
+      "target": "c-0075"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000431",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0076 proposes merging q-000627 + q-000962 (similarity 0.8)",
+      "target": "c-0076"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000432",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0077 proposes merging q-000630 + q-000948 (similarity 0.778)",
+      "target": "c-0077"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000433",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0078 proposes merging q-000635 + q-000789 (similarity 1)",
+      "target": "c-0078"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000434",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0079 proposes merging q-000637 + q-000806 (similarity 1)",
+      "target": "c-0079"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000435",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0080 proposes merging q-000654 + q-000927 (similarity 0.8)",
+      "target": "c-0080"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000436",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0081 proposes merging q-000665 + q-000729 (similarity 0.889)",
+      "target": "c-0081"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000437",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0082 proposes merging q-000666 + q-000942 (similarity 0.9)",
+      "target": "c-0082"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000438",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0083 proposes merging q-000671 + q-000933 (similarity 0.8)",
+      "target": "c-0083"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000439",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0084 proposes merging q-000718 + q-000838 (similarity 1)",
+      "target": "c-0084"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000440",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0085 proposes merging q-000722 + q-000851 (similarity 1)",
+      "target": "c-0085"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000441",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0086 proposes merging q-000728 + q-000792 (similarity 0.778)",
+      "target": "c-0086"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000442",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0087 proposes merging q-000787 + q-000895 (similarity 1)",
+      "target": "c-0087"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000443",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0088 proposes merging q-000799 + q-000912 (similarity 0.818)",
+      "target": "c-0088"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000444",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0089 proposes merging q-000816 + q-000928 (similarity 1)",
+      "target": "c-0089"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000445",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0090 proposes merging q-000848 + q-000955 (similarity 0.889)",
+      "target": "c-0090"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000446",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0091 proposes merging q-000850 + q-000958 (similarity 1)",
+      "target": "c-0091"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000447",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0092 proposes merging q-000873 + q-000982 (similarity 0.789)",
+      "target": "c-0092"
+    },
+    {
+      "category": "chapter-unmapped",
+      "id": "rq-000448",
+      "label": "🟡 chapter-unmapped",
+      "questionId": "q-000053",
+      "severity": "yellow",
+      "summary": "2023-a:A:43 has no chapter mapping",
+      "target": "2023-a:A:43"
+    }
+  ],
   "schemaVersion": 1
 }

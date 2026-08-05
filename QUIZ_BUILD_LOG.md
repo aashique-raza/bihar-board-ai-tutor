@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage F (dedup + chapter mapping) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildBank.js` (already existed from Pilot) run against all 18 papers' `stage4-answers/` → `data/quiz-bank/bank/{questions.json, clusters.json, id-ledger.json}`. **1152 raw questions → 1138 canonical entries** (14 real exact-match merges — repeat questions across years), 92 near-dup clusters proposed (not merged), 99.9% chapter-mapped (1 unmapped, a genuine source gap — `2023-a:A:43`, P-13-adjacent). |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete — next is Stage G (review + final health) across all 18 papers. |
+| **Sub-stage** | **Stage G (review + final health) — IN PROGRESS, paused mid-phase.** `npm run quiz:review` chal chuka hai, `review/queue.json` (448 open items) aur `reports/health.json` bane hain. Ek bada blocker mila aur fix hua (neeche dekho) — baaki queue clearing (355 🔴 language-missing items) abhi baaki hai. |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete. 🟡 Stage G IN PROGRESS — blocker fixed, review queue clearing next. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage F run on all 18 papers. Found and fixed a real blocker: `buildBank.js` fingerprinted questions on `text.en` only; subjective questions with no English translation all normalized to the same empty string and falsely merged (138+ distinct questions collapsed into 2 fake "duplicates" in the first run — `q-000053`/`q-000054` had repeatCount 82/56). Fixed by falling back to `text.hi` when `text.en` is empty. Re-ran, verified clean (max repeatCount now 2, realistic). See Session History. |
+| **Last session** | 2026-08-05 — Stage G started. `npm run quiz:review` revealed only 41/1138 (3.6%) questions usable in quiz — traced to a real Stage C bug (see below), fixed, re-ran C→D→E→F→G. Now 447/1138 (39.3%) usable. Session paused here — queue still has 355 🔴 red items (language-missing) to clear next session. See Session History. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -142,6 +142,38 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage G started: review queue + health report, marks-missing blocker found and fixed
+- **Chalaya:** `npm run quiz:review` (`buildReview.js`, already existed from Pilot) against the
+  full 18-paper bank. First result: **only 41/1138 (3.6%) questions usable in quiz** — far below
+  §12 exit criteria. Investigated instead of accepting the number.
+- **Root cause traced (not assumed):** the dominant blocker was `marks-missing` — 682/1138
+  questions (60%). Checked whether a cheap fix (backfill from the paper's declared section
+  total) would work — it wouldn't, `declaredMarks.A` is null for exactly the papers that need
+  it. Went further: sampled the 149 objective questions that *did* have a parsed `marks` value
+  and found garbage — e.g. "Zinc ka atomic number kya hai?" had `marks: 30`. Root cause: Stage C's
+  per-line trailing-number parser (`splitMarks`/`TRAILING_MARKS`) can't tell a marks annotation
+  from a numeric MCQ answer option (e.g. "...is 30") sitting on the last line of a question's
+  buffer — both look identical to the regex.
+- **Fix (Stage C, `backend/scripts/quiz-bank/buildBlocks.js`):** in `buildBlocks()`, once a
+  block is classified `isMcq`, marks is now set to `1` unconditionally (Bihar Board convention,
+  confirmed on every paper's own section header during Stage B reading — objective MCQs are
+  always 1 mark, no exceptions) instead of trusting the unreliable per-line parse. Every override
+  is recorded as a visible flag (`marks-defaulted-mcq-hi-<old>-en-<old>`), never silent.
+  Subjective marks logic (Group B long/short answer, where inline `[6]`/`[5]` marks ARE real)
+  untouched.
+- **Re-ran full pipeline C→D→E→F→G on all 18 papers** (Stage D reused its translation cache —
+  no LLM cost; Stage E re-verified answers via RAG, ~free, cache-hit heavy). Result: **usable in
+  quiz jumped from 41 to 447 (39.3%)**. Verified the fix directly on the sample case
+  (`2020-b:A:3`): `marks` now `1` (was `null`, had been mis-parsed as `20` before that), flag
+  visible, `blockers: []`.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi.
+- **Session paused here (not phase-complete):** `review/queue.json` still has 448 open items
+  (355 🔴 language-missing, 92 🟠 near-duplicate, 1 🟡 chapter-unmapped) — none cleared yet.
+  §12 exit criteria still not met: L3+ is 66.2% (need ≥90%), trilingual-complete is 86.8% (need
+  ≥95%). **Agla:** clear the review queue (start with the 355 red language-missing items),
+  re-run `quiz:review`, check numbers again against §12.
 
 ### 2026-08-05 — Stage F: all 18 papers (dedup + chapter mapping)
 - **Chalaya:** `backend/scripts/quiz-bank/buildBank.js` (already existed from Pilot, generic —

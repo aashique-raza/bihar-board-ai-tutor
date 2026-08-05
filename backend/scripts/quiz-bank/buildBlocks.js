@@ -552,12 +552,31 @@ function buildBlocks(paperId, hi, en, isMcqByGroup) {
 
     // Marks come from whichever language printed them; a disagreement is recorded, never
     // averaged away (A18 — per-question marks win, mismatches get flagged).
-    let marks = h?.marks ?? e?.marks ?? null;
-    if (h?.marks != null && e?.marks != null && h.marks !== e.marks) {
-      flags.push(`marks-mismatch-hi-${h.marks}-en-${e.marks}`);
-      marks = h.marks;
+    //
+    // MCQs are the one exception: per-line trailing-number parsing is unreliable on MCQ
+    // content, because a numeric-answer option (e.g. "...atomic number is 30") looks identical
+    // to a real marks annotation to `splitMarks()`. Confirmed by sampling the parsed values —
+    // objective blocks had "marks" of 20, 28, 30, 38, 80, none of which is a real Bihar Board
+    // MCQ mark. Every paper's own section header (read during Stage B) confirms the actual
+    // rule: objective MCQs are always 1 mark each, no exceptions — so that is set directly,
+    // overriding whatever the per-line parse guessed, and the override is recorded in flags
+    // whenever it changed something (never silent).
+    let marks;
+    if (isMcq) {
+      const rawHi = h?.marks ?? null;
+      const rawEn = e?.marks ?? null;
+      marks = 1;
+      if (rawHi !== 1 || rawEn !== 1) {
+        flags.push(`marks-defaulted-mcq-hi-${rawHi ?? 'null'}-en-${rawEn ?? 'null'}`);
+      }
+    } else {
+      marks = h?.marks ?? e?.marks ?? null;
+      if (h?.marks != null && e?.marks != null && h.marks !== e.marks) {
+        flags.push(`marks-mismatch-hi-${h.marks}-en-${e.marks}`);
+        marks = h.marks;
+      }
+      if (marks === null) flags.push('marks-missing');
     }
-    if (marks === null) flags.push('marks-missing');
 
     if (!text.hi || !text.en) flags.push('empty-text');
 
