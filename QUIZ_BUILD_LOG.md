@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 14/17 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2025`. `2024-a, 2024-b, 2026` not started (3 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2023-b` **excluded** (F8, Social Science not Science), session yahin roka gaya jaisa user ne bola. 3 papers baaki: `2024-a, 2024-b, 2026`. |
+| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 15/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2024-a`, `2025`. `2024-b, 2026` not started (2 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — 2 papers baaki: `2024-b, 2026`. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage B: `2023-a` poora fresh session mein (F6 fix). 80+30=110 structure (different split from 2022/2025's 80+24+6). **Bada finding (F7, likely goes in `QUIZ_DATA_PIPELINE.md`):** is PDF ki cover page "Total Printed Pages: 48" declare karti hai, par PDF mein sirf 42 pages hain — genuinely incomplete source, scan/reading issue nahi. Do confirming signals: (1) page-23 pe Q43 ki jagah source ke andar hi ek yellow-highlighted "43. question missing" placeholder mila (Hindi aur English dono block mein) — matlab ye ek retyped/compiled document hai (jaisa F5 ka `2018-b`), raw scan nahi; (2) PDF Section-A (80/80 objective, complete) ke baad Section-B (subjective) sirf Physics short-answer Q1-3 tak jaake achanak khatam ho jaata hai — Physics Q4-8+long, aur poora Chemistry+Biology subjective missing. Paper objective-section ke liye 100% usable hai (quiz ka primary source hai), subjective section ke liye incomplete hai. |
+| **Last session** | 2026-08-05 — Stage B: `2024-a` poora fresh session mein (F6 fix). 80+30=110 declared, 40 printed pages par PDF mein 37 hain — **is baar F7 jaisa incomplete NAHI nikla.** Cover page khud "Page 4 of 40" footer-label karta hai, matlab front ke 3 generic instruction pages (1-3) kabhi is PDF mein the hi nahi (subject-specific content nahi, sab subjects mein common). Paper Q30 tak saaf end-of-paper marker ke saath khatam hota hai — Section-A 80/80 aur Section-B saare 30 subjective questions (Physics Q1-10, Chemistry Q11-20, Biology Q21-30) poori tarah present hain. Ek chhota structural note: subjects symmetric nahi hain — Physics ka long-answer 6 marks (1×6=6) hai, par Chemistry aur Biology ka 5 marks (1×5=5) hai. Pen-marks bahut jagah the, kayi bar galat ya conflicting (jaise Q48, Q77 mein do options par alag marks) — F3 rule (marks kabhi answer-source nahi) ko aur confirm karta hai. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -137,6 +137,29 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage B: `2024-a` finished (fresh session per F6 fix)
+- **Bana:** `data/quiz-bank/stage1-pages/2024-a/page-01.json` se `page-37.json` (37/37 pages) +
+  `_manifest.json` (`sourceMd5` computed fresh). Backend `src/` ka koi file touch nahi hua.
+  Fresh session mein shuru hua, poora paper ek hi conversation mein khatam ho gaya.
+- **Paper structure confirmed:** 80+30=110 declared (cover confirms), Subject Code 212, Science
+  correctly confirmed on page 1 (F8 lesson applied — subject check pehle hi kiya). Section-A
+  Physics-first order (Q1 concave mirror magnification). Section-B: Physics short Q1-8(4 of 8)
+  +long Q9-10(1 of 2, **6 marks**), Chemistry short Q11-18(4 of 8)+long Q19-20(1 of 2, **5 marks**),
+  Biology short Q21-28(4 of 8)+long Q29-30(1 of 2, **5 marks**) — subjects NOT symmetric on
+  long-answer marks (Physics=6, Chemistry/Biology=5), naya observation is paper mein.
+- **40 printed pages declared par PDF mein sirf 37 — is baar F7 (2023-a) jaisa genuine
+  incompleteness NAHI hai.** Cover page khud footer mein "Page 4 of 40" print karta hai —
+  matlab is PDF mein printed pages 1-3 (generic candidate instructions, sab subjects ke beech
+  common, subject-specific nahi) kabhi scan/include nahi hue. Paper Q30 tak ek printed
+  end-of-paper double-line marker ke saath cleanly khatam hota hai; Section-A 80/80 aur
+  Section-B saare 30 subjective questions poori tarah present hain — content-wise 100% complete.
+- **Pen-marks kaafi jagah the, kai jagah galat ya ek dusre se conflicting** (jaise Q48 mein do
+  options par alag-alag marks, Q77 mein bhi) — F3 rule (marks kabhi answer source nahi) ko
+  concretely reconfirm karta hai.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi (no `src/` file touched — data-only session).
+- **Agla:** naye/fresh session mein next paper from `2024-b, 2026` (2 papers left in Stage B bulk).
 
 ### 2026-08-05 — Stage B batch 8: `2023-b` excluded (F8), session stopped on user request
 - **Bana:** kuch nahi repo mein. Sirf page 1-2 scratchpad mein render + vision-read hue (blocker

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "paperId": "2024-a",
+  "page": 1,
+  "readBy": "vision",
+  "raw": {
+    "hi": "प्रश्न पुस्तिका क्रमांक / Question Booklet Serial No.: 212- | SECONDARY SCHOOL EXAMINATION - 2024 | माध्यमिक स्कूल परीक्षा - 2024 | (ANNUAL / वार्षिक) | प्रश्न पुस्तिका सेट कोड / Question Booklet Set Code: G | SCIENCE (Compulsory) | विज्ञान (अनिवार्य) | विषय कोड / Subject Code: 212 | कुल प्रश्न: 80 + 30 = 110 | Total Questions: 80 + 30 = 110 | (समय: 2 घंटे 45 मिनट) | Time: 2 Hours 45 Minutes | कुल मुद्रित पृष्ठ / Total Printed Pages: 40 | (पूर्णांक: 80) / Full Marks: 80 | परीक्षार्थियों के लिये निर्देश: 1. परीक्षार्थी OMR उत्तर पत्रक पर अपना प्रश्न पुस्तिका क्रमांक (10 अंकों का) अवश्य लिखें। 2. परीक्षार्थी यथासंभव अपने शब्दों में ही उत्तर दें। 3. दाहिनी ओर हाशिये पर दिये हुए अंक पूर्णांक निर्दिष्ट करते हैं।",
+    "en": "Question Booklet Serial No.: 212- | SECONDARY SCHOOL EXAMINATION - 2024 (ANNUAL) | Question Booklet Set Code: G | SCIENCE (Compulsory) | Subject Code: 212 | Total Questions: 80 + 30 = 110 | Time: 2 Hours 45 Minutes | Total Printed Pages: 40 | Full Marks: 80 | Instructions for the candidates: 1. Candidates must enter his/her Question Booklet Serial No. (10 Digits) in the OMR Answer Sheet. 2. Candidates are required to give their answers in their own words as far as practicable. 3. Figures in the right hand margin indicate full marks."
+  },
+  "textLayer": null,
+  "confidence": "high",
+  "notes": ["Exam cover page confirms SCIENCE, Subject Code 212, Secondary School Examination 2024 (Annual) — correct subject, no F8-style mismatch.", "Footer of this cover page already prints 'Page 4 of 40' / code 'H/S-24(M)/72042-(77/80)'. Declared Total Printed Pages = 40, but PDF has only 37 pages — gap of exactly 3. Likely explanation (unlike F7's genuine-incompleteness case): the cover itself is labelled printed-page-4, meaning printed pages 1-3 (generic candidate instructions, probably shared across all subject booklets) were never part of this PDF/scan to begin with — the missing 3 = those 3 front pages, not missing exam content. To be confirmed as pages are read (watch for any jump in question numbering or subjective-section gap like F7 had)."]
+}
