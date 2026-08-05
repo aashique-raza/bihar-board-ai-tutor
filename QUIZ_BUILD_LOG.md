@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage E (answers + verification) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildAnswers.js` chala hua, `data/quiz-bank/stage4-answers/<paperId>.json` ban chuki hai. 761 objective MCQs processed, **503 L3+ (textbook-verified, quiz-eligible answer)**. `2024-b` = 0 (expected, P-13). |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete — next is Stage F (dedup + chapter mapping) across all 18 papers. |
+| **Sub-stage** | **Stage F (dedup + chapter mapping) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildBank.js` (already existed from Pilot) run against all 18 papers' `stage4-answers/` → `data/quiz-bank/bank/{questions.json, clusters.json, id-ledger.json}`. **1152 raw questions → 1138 canonical entries** (14 real exact-match merges — repeat questions across years), 92 near-dup clusters proposed (not merged), 99.9% chapter-mapped (1 unmapped, a genuine source gap — `2023-a:A:43`, P-13-adjacent). |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete — next is Stage G (review + final health) across all 18 papers. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage E run on all 18 papers. First run crashed on 7 papers (`2016-b`, `2016-c`, `2017-c`, `2017-d`, `2019-b`, `2023-a`, `2024-a`) — a real bug, not caught until output files were checked, not just exit code (`tee` masked the real exit code). Fixed, re-ran, verified. See Session History. |
+| **Last session** | 2026-08-05 — Stage F run on all 18 papers. Found and fixed a real blocker: `buildBank.js` fingerprinted questions on `text.en` only; subjective questions with no English translation all normalized to the same empty string and falsely merged (138+ distinct questions collapsed into 2 fake "duplicates" in the first run — `q-000053`/`q-000054` had repeatCount 82/56). Fixed by falling back to `text.hi` when `text.en` is empty. Re-ran, verified clean (max repeatCount now 2, realistic). See Session History. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -142,6 +142,31 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage F: all 18 papers (dedup + chapter mapping)
+- **Chalaya:** `backend/scripts/quiz-bank/buildBank.js` (already existed from Pilot, generic —
+  reads every paper in `stage4-answers/`) via `npm run quiz:bank`. **1152 total questions →
+  1138 canonical entries**, 92 near-duplicate clusters proposed (never auto-merged, human
+  review in Stage G), 99.9% chapter-mapped (1 unmapped, see below).
+- **Blocker found + fixed (Beat 3 CHECK, not trusting first-run numbers):** first run gave
+  1002 canonical entries with 150 "exact merges" — suspiciously high. Traced it: `questionFingerprint()`
+  only read `question.text.en`. Many subjective/short-answer questions never got an English
+  translation from Stage D (`text.en: null`), so `normalizeText(null)` → `""` for all of them —
+  every English-missing question got the *same* fingerprint and falsely merged. Two mega-groups
+  (`q-000053` repeatCount=82, `q-000054` repeatCount=56) turned out to be **138+ completely
+  unrelated questions** (e.g. "light reflection rules" merged with "aluminium alloy name")
+  silently collapsed into 2 fake entries, discarding all but one "best" version each time.
+  **Fix:** fingerprint falls back to `text.hi` when `text.en` is empty (Hindi is always
+  present). Re-ran: 1138 canonical entries, exact-merges dropped to 14 (real repeats across
+  years, max repeatCount 2 — realistic).
+- **The 1 remaining unmapped question checked and confirmed legitimate**, not a new bug:
+  `q-000053` (post-fix) = `2023-a:A:43`, the paper's own printed "question missing"
+  placeholder from Stage B (source PDF genuinely incomplete there) — correctly empty, correctly
+  flagged, correctly unmapped.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi.
+- **Agla:** Stage G — review queue + final health report, `QUIZ_DATA_PIPELINE.md` §12 exit
+  criteria ke against, naya session mein.
 
 ### 2026-08-05 — Stage E: all 18 papers (answers + verification)
 - **Bana:** `backend/scripts/quiz-bank/buildAnswers.js` (already existed from Pilot) sab 18

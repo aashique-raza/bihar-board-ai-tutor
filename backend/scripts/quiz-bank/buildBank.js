@@ -89,9 +89,14 @@ function normalizeText(text) {
 
 /** A8: identity is text AND options together — two questions with the same stem but
  * different options are NOT the same question. Subjective questions (no options) match on
- * text alone. */
+ * text alone.
+ *
+ * Falls back to Hindi when English is missing (some subjective/short-answer questions never
+ * got a `text.en` from Stage D) — without this, every English-missing question normalizes to
+ * the same empty string and falsely merges into one canonical entry, silently discarding all
+ * but one of them. */
 function questionFingerprint(question) {
-  const textPart = normalizeText(question.text?.en);
+  const textPart = normalizeText(question.text?.en || question.text?.hi);
   if (question.type !== 'mcq' || !Array.isArray(question.options)) return textPart;
   const optionsPart = question.options.map((o) => normalizeText(o.text?.en)).join('|');
   return `${textPart}::${optionsPart}`;
