@@ -152,6 +152,31 @@ exam text hai, aur ye document us tarah verify nahi ho sakta).
 
 ---
 
+#### 🔴 F8 — `2023 b.pdf` **Social Science** ka paper hai, Science ka nahi (Stage B batch 8, 2026-08-05)
+
+Stage B page-reading shuru karte hi (page 1, page 2 padhte waqt) pata chala: `2023 b.pdf` ek
+asli Bihar Board Secondary School Examination — 2023 paper hai, par **Subject Code 111,
+"SOCIAL SCIENCE (Compulsory) / सामाजिक विज्ञान"**. Page 2 ke Section-A objective questions
+confirm karte hain — sab history/civics content hai (Vallabhbhai Patel kisan andolan, Khan
+Abdul Ghaffar Khan, wagaira), Science se koi lena-dena nahi.
+
+**F4 se fark:** F4 (`2019-a`) ek fake/third-party guide-book tha (asli exam paper hi nahi).
+Ye genuine hai — asli Bihar Board paper, sahi saal (2023), par galat **subject**. Humare
+`data/quiz-bank/pdfs/` folder mein galti se ek Social Science paper Science ke naam se aa gaya
+(file naam `2023 b.pdf`, `2023-a` ke saath paired hone ki wajah se assume kiya gaya tha Science
+hoga — survey script subject check nahi karta, sirf text-layer quality dekhta hai).
+
+**Matlab humare paas ab 19 nahi, 18 usable unique papers hain.** `2023-b` ko `2019-a` jaisa
+treat kiya — permanently excluded, `stage1-pages/` mein iska folder kabhi nahi banega. Koi page
+file bani hi nahi thi (sirf page 1-2 scratchpad mein render hue, repo mein kuch save nahi hua) —
+isliye koi git revert bhi nahi karna. User ne 2026-08-05 ko confirm kiya (option: exclude).
+
+**Lesson for future papers:** Stage B ka pehla kaam ab hamesha **page 1 pe subject confirm
+karna** hai, page-by-page padhna shuru karne se pehle — agla galat-subject paper mile to isी
+tarah turant STOP + exclude.
+
+---
+
 #### 🔴 F2 — Kisi bhi paper se saaf Hindi (Unicode) nahi milti
 
 Test kiya saare 7 text-papers pe. Unicode Devanagari count: **sab mein 0**.

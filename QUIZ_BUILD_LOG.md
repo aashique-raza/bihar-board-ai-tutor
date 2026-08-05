@@ -23,8 +23,8 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 14/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2025`. `2023-b, 2024-a, 2024-b, 2026` not started (4 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2023-a` ab poora (42/42 pages + `_manifest.json`), fresh session mein shuru hua (F6 fix), koi usage-limit issue nahi aaya. 4 papers baaki: `2023-b, 2024-a, 2024-b, 2026`. |
+| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 14/17 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2025`. `2024-a, 2024-b, 2026` not started (3 papers left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
+| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — `2023-b` **excluded** (F8, Social Science not Science), session yahin roka gaya jaisa user ne bola. 3 papers baaki: `2024-a, 2024-b, 2026`. |
 | **Branch** | `quiz-phase0.5-bulk` |
 | **Last session** | 2026-08-05 — Stage B: `2023-a` poora fresh session mein (F6 fix). 80+30=110 structure (different split from 2022/2025's 80+24+6). **Bada finding (F7, likely goes in `QUIZ_DATA_PIPELINE.md`):** is PDF ki cover page "Total Printed Pages: 48" declare karti hai, par PDF mein sirf 42 pages hain — genuinely incomplete source, scan/reading issue nahi. Do confirming signals: (1) page-23 pe Q43 ki jagah source ke andar hi ek yellow-highlighted "43. question missing" placeholder mila (Hindi aur English dono block mein) — matlab ye ek retyped/compiled document hai (jaisa F5 ka `2018-b`), raw scan nahi; (2) PDF Section-A (80/80 objective, complete) ke baad Section-B (subjective) sirf Physics short-answer Q1-3 tak jaake achanak khatam ho jaata hai — Physics Q4-8+long, aur poora Chemistry+Biology subjective missing. Paper objective-section ke liye 100% usable hai (quiz ka primary source hai), subjective section ke liye incomplete hai. |
 
@@ -137,6 +137,20 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage B batch 8: `2023-b` excluded (F8), session stopped on user request
+- **Bana:** kuch nahi repo mein. Sirf page 1-2 scratchpad mein render + vision-read hue (blocker
+  turant mila), koi `stage1-pages/2023-b/` file kabhi banayi hi nahi gayi.
+- **Bada finding (F8, `QUIZ_DATA_PIPELINE.md` mein likha gaya):** `2023 b.pdf` **Social Science**
+  ka paper nikla (Subject Code 111), Science ka nahi — page 1 title aur page 2 ke objective
+  questions (history/civics) dono confirm karte hain. F4 (`2019-a`, fake paper) se alag — ye
+  genuine Bihar Board 2023 paper hai, bas galat subject. User ne turant exclude confirm kiya
+  (`2019-a` jaisa treat), aur session yahin rokne ko bola.
+  **Usable unique paper count 19 se 18 ho gaya.**
+- **Baseline:** nahi chalaya — koi `src/` file touch nahi hui, blocker itni jaldi mila ki koi
+  data-file bhi nahi bani.
+- **Agla:** naye/fresh session mein `2024-a` se shuru (3 papers baaki: `2024-a, 2024-b, 2026`).
+  Naya lesson: agle paper mein sabse pehle page 1 pe subject confirm karna (F8 se).
 
 ### 2026-08-05 — Stage B: `2023-a` finished (fresh session per F6 fix)
 - **Bana:** `data/quiz-bank/stage1-pages/2023-a/page-01.json` se `page-42.json` (42/42 pages) +
