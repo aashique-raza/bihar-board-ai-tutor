@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage B (bulk) — IN PROGRESS.** 16/18 usable fully done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2024-a`, `2024-b`, `2025`. `2026` not started (1 paper left). (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
-| **Status** | 🟢 Pilot (Stage P) complete. Bulk Stage B chal raha — 1 paper baaki: `2026`. |
+| **Sub-stage** | **Stage B (bulk) — ✅ COMPLETE.** All 18/18 usable papers done: `2016-b`, `2016-c`, `2017-a`, `2017-c`, `2017-d`, `2018-a`, `2018-b`, `2019-b`, `2020-a`, `2020-b`, `2021`, `2022`, `2023-a`, `2024-a`, `2024-b`, `2025`, `2026`. (`2017-b` skipped — exact duplicate of `2017-a`; `2019-a` excluded — not a real exam paper, see F4; `2023-b` excluded — Social Science paper, not Science, see F8). |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B (bulk page-reading) complete — next is Stage C (question blocks) across all 18 papers. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage B: `2024-b` poora fresh session mein (F6 fix), subject page-1 pe pehle confirm kiya (F8 lesson). 80+30=110 declared, 40 printed pages par PDF mein 39 hain — Q30 tak saaf khatam hota hai, koi content gap nahi (missing page bilkul aakhri trailing page lagta hai, 2024-a jaisa front-instruction-page gap nahi). Section-A 80/80 aur Section-B saare 30 subjective questions (Physics Q1-10, Chemistry Q11-20, Biology Q21-30) poori tarah present. **Naya observation: is paper mein subject-block order strictly grouped nahi hai** — Chemistry Q1-8/11-22 ke beech Physics Q9-10 aata hai, phir Q23 Physics, Q24 Biology — pehli baar interleaved subject order dekha (baaki sab papers mein clean per-subject blocks the). Ek website watermark ("bsebstudy.com") Q51 ke English text mein print artifact ke roop mein mila, exam content nahi. Pen-marks kai jagah the, kuch match karte the printed-correct se kuch nahi (Q66 mismatch) — F3 rule (marks kabhi answer-source nahi) firse confirm hua. |
+| **Last session** | 2026-08-05 — Stage B: `2026` poora fresh session mein (F6 fix). Page 1 par pehle confirm kiya (F8 lesson): ye paper Bihar Board ka apna official **"MODEL QUESTION PAPER"** hai 2026 exam ke liye, na ki koi real attempted paper — user se poochha (naya STOP jaisa F4/F8), user ne **include as-is confirm kiya**, clearly flag karke ki ye model paper hai (koi pen-marks nahi, kabhi attempt hi nahi hua). 30 PDF pages = 30 declared printed pages (bilkul match, is baar koi front-page ya trailing-page gap nahi). Structure confirm hua: 80+30=110 (cover ka "100+30+8=138" total galat hai, ignore kiya jaise 2024-b jaisi anomalies). Section-A subject blocks is baar clean/contiguous the (Physics Q1-27, Chemistry Q28-51, Biology Q52-80) — 2024-b ka interleaving is paper mein nahi. Do chhote print typo mile (Q46 option D duplicate, Q32 "2Kcl"), do jagah per-question marks missing (Q9/Q10, Q26-28) jahan section header source-of-truth hai. **Ye Stage B bulk ka aakhri paper tha — sab 18 usable papers ab done hain.** |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -137,6 +137,33 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage B: `2026` finished — Stage B bulk COMPLETE (fresh session per F6 fix)
+- **Bana:** `data/quiz-bank/stage1-pages/2026/page-01.json` se `page-30.json` (30/30 pages) +
+  `_manifest.json` (`sourceMd5` computed fresh). Backend `src/` ka koi file touch nahi hua.
+  Fresh session mein shuru hua, poora paper ek hi conversation mein khatam ho gaya.
+- **Bada finding (naya STOP, F4/F8 jaisa):** page 1 confirm karta hai ye `2026.pdf` Bihar
+  Board ka apna **official "MODEL QUESTION PAPER"** hai 2026 exam ke liye — real attempted
+  paper nahi. User ko poochha, user ne **include as-is confirm kiya** (F4's fake-CBSE-guide
+  jaisa nahi — genuine board content hai, bas kabhi attempt nahi hua). Koi pen-marks poore
+  paper mein nahi mile — expected, kyunki model paper kabhi kisi student ne bhara hi nahi.
+- **Paper structure confirmed:** 80+30=110 (cover ka "100+30+8=138" total instructions se
+  match nahi karta, ignore kiya — jaisa 2024-b mein bhi hua). Section-A subject blocks clean/
+  contiguous (Physics Q1-27, Chemistry Q28-51, Biology Q52-80) — 2024-b ka interleaving is
+  paper mein nahi dikha. Section-B: Physics short Q1-8+long Q9-10(6 marks), Chemistry short
+  Q11-18+long Q19-20(5 marks), Biology short Q21-28+long Q29-30(5 marks) — same recurring
+  asymmetric pattern.
+- **30 PDF pages = 30 declared printed pages, exact match** — is baar koi front-cover offset
+  ya trailing-page gap nahi (2024-a/2024-b/2025 unlike). Section-A 80/80 aur Section-B saare
+  30 subjective questions poori tarah present, paper Q30 tak saaf khatam hota hai.
+- **2 print typo mile** (Q46 English option D duplicate "3" instead of "4"; Q32 English
+  option B "2Kcl" instead of "2KCl") aur **2 jagah per-question marks missing** (Q9/Q10
+  Physics long-answer marked [2] instead of [6]; Biology Q26-28 no mark shown) — sab section
+  header ko source-of-truth maan ke resolve kiya, jaisa pichle papers mein bhi hua.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi (no `src/` file touched — data-only session).
+- **🎉 Stage B bulk poora ho gaya — sab 18 usable papers ab page-read hain.** Agla: Stage C
+  (question blocks) sab 18 papers pe, naya session mein.
 
 ### 2026-08-05 — Stage B: `2024-b` finished (fresh session per F6 fix)
 - **Bana:** `data/quiz-bank/stage1-pages/2024-b/page-01.json` se `page-39.json` (39/39 pages) +
