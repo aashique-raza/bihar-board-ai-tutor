@@ -317,6 +317,13 @@ async function resolveQuestion(model, question, cache, resolvedDecisions, stats)
         confidence: 'L4',
         conflicts: [],
       };
+    } else if (!question.text.en) {
+      // Already carries a `missing-english` blocker from Stage C/D (source never had an
+      // English transcription, or it's a genuine content gap) — retrieval needs an English
+      // query against the English textbook, so there is nothing to verify against. Skip
+      // rather than crash retrieveRelevantChunks() on an empty string (it throws).
+      stats.skippedNoEnglish += 1;
+      answer = { ...question.answer, source: 'none', sourceDetail: null };
     } else {
       const verdict = await resolveAnswer(model, question, cache, stats);
 
@@ -376,7 +383,7 @@ async function processPaper(paperId, model, cache, resolvedDecisions, options) {
   }
   const source = JSON.parse(fs.readFileSync(inPath, 'utf8'));
 
-  const stats = { mcqTotal: 0, retrieved: 0, noEvidence: 0, cacheHit: 0, llmCalls: 0, verified: 0, unverified: 0, groundingFailed: 0, humanConfirmed: 0 };
+  const stats = { mcqTotal: 0, retrieved: 0, noEvidence: 0, cacheHit: 0, llmCalls: 0, verified: 0, unverified: 0, groundingFailed: 0, humanConfirmed: 0, skippedNoEnglish: 0 };
 
   if (options.dryRun) {
     const mcq = source.questions.filter((q) => q.section === 'objective' && q.type === 'mcq');
@@ -453,6 +460,7 @@ async function main() {
       console.log(`  objective MCQ: ${s.mcqTotal}`);
       console.log(`  verified (L3, textbook): ${s.verified}`);
       console.log(`  human-confirmed (L4): ${s.humanConfirmed}`);
+      console.log(`  skipped (no English text — missing-english blocker): ${s.skippedNoEnglish}`);
       console.log(`  unverified (no usable evidence): ${s.unverified}  (zero-retrieval: ${s.noEvidence}, failed grounding check: ${s.groundingFailed})`);
       console.log(`  llm calls: ${s.llmCalls}  cache hits: ${s.cacheHit}`);
     }

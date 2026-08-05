@@ -1,0 +1,1087 @@
+{
+  "flags": [
+    "groupA-classified-subjective",
+    "groupB-shape-ascending-classified-objective",
+    "marks-mismatch-groupA-declared-60-computed-18",
+    "marks-mismatch-groupB-declared-20-computed-7"
+  ],
+  "paper": {
+    "board": "BSEB",
+    "class": 10,
+    "declaredMarks": {
+      "A": 60,
+      "B": 20
+    },
+    "duplicateOf": null,
+    "extractionRoute": "page-images",
+    "hasPrintedAnswerKey": false,
+    "paperId": "2017-a",
+    "pdfPages": 12,
+    "printedPages": 12,
+    "sourceFile": "2017 a.pdf",
+    "sourceMd5": "da3083d551861c6c26281103147ad2a5",
+    "subject": "science"
+  },
+  "questions": [
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "subjective",
+      "sourceId": "2017-a:A:1",
+      "subPart": null,
+      "text": {
+        "en": "Answer in one word or in one sentence the questions of 1 mark.",
+        "hi": "1 अंक वाले प्रश्नों के उत्तर एक शब्द या एक वाक्य में दें।",
+        "hinglish": "1 ank wale prashnon ke uttar ek shabd ya ek vaakya mein dein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "marks-missing",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "marks-missing"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": null,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "subjective",
+      "sourceId": "2017-a:A:2",
+      "subPart": null,
+      "text": {
+        "en": "Answer in about 50 words the questions of 2 marks, answer in about 75 words the questions of 3 marks and answer in about 150 words the questions of 5 marks.",
+        "hi": "2 अंक वाले प्रश्नों के उत्तर लगभग 50 शब्दों में, 3 अंक वाले प्रश्नों के उत्तर 75 शब्दों में एवं 5 अंक वाले प्रश्नों के उत्तर लगभग 150 शब्दों में दें।",
+        "hinglish": "2 ank wale prashnon ke uttar lagbhag 50 shabdon mein, 3 ank wale prashnon ke uttar 75 shabdon mein aur 5 ank wale prashnon ke uttar lagbhag 150 shabdon mein dein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "subjective",
+      "sourceId": "2017-a:A:3",
+      "subPart": null,
+      "text": {
+        "en": "What is commercial unit of electrical energy?",
+        "hi": "विद्युत ऊर्जा का व्यावसायिक मात्रक क्या है ?",
+        "hinglish": "Vidyut urja ka vyavsayik maatrak kya hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "subjective",
+      "sourceId": "2017-a:A:4",
+      "subPart": null,
+      "text": {
+        "en": "Write full form of AIDS.",
+        "hi": "AIDS (एडस) का पूरा नाम लिखें।",
+        "hinglish": "AIDS (Aids) ka poora naam likhein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "subjective",
+      "sourceId": "2017-a:A:5",
+      "subPart": null,
+      "text": {
+        "en": "Which lens is known as diverging lens?",
+        "hi": "किस लेंस को अपसारी लेंस कहते हैं ?",
+        "hinglish": "Kis lens ko apsaari lens kehte hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "provenance-note-stripped"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "subjective",
+      "sourceId": "2017-a:A:6",
+      "subPart": null,
+      "text": {
+        "en": "What is magnification? Explain it.",
+        "hi": "आवर्धन किसे कहते हैं ? वर्णन करें। Page 2 of",
+        "hinglish": "Aavardhan kise kehte hain ? Varnan karein"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 2,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "subjective",
+      "sourceId": "2017-a:A:7",
+      "subPart": null,
+      "text": {
+        "en": "Write formula of relation between focal length and radius of curvature in concave mirror.",
+        "hi": "अवतल दर्पण में फोकस दूरी (f) और वक्रता त्रिज्या में क्या सम्बन्ध है ?",
+        "hinglish": "Avatal darpan mein focal length (f) aur vakrata trijya mein kya sambandh hai?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 8,
+      "section": "subjective",
+      "sourceId": "2017-a:A:8",
+      "subPart": null,
+      "text": {
+        "en": "What do you mean by Electric charge? Write types of Electric charge.",
+        "hi": "विद्युत आवेश क्या है ? विद्युत आवेश कितने प्रकार के होते हैं ?",
+        "hinglish": "Vidyut aaves kya hai? Vidyut aaves kitne prakar ke hote hain?"
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 3,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 9,
+      "section": "subjective",
+      "sourceId": "2017-a:A:9",
+      "subPart": null,
+      "text": {
+        "en": "Write difference between Alterating and Direct current.",
+        "hi": "प्रत्यावर्ती धारा एवं दिष्ट धारा में अंतर स्पष्ट करें।",
+        "hinglish": "Pratyavarti dhara aur disht dhara mein antar spasht karein."
+      },
+      "type": "short",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "A",
+      "hasAlternative": true,
+      "marks": 5,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "subjective",
+      "sourceId": "2017-a:A:10",
+      "subPart": null,
+      "text": {
+        "en": "What is Electric Generator? Explain principle of its function. Describe its structure and working procedure.",
+        "hi": "विद्युत जेनरेटर से आप क्या समझते हैं ? यह किस सिद्धान्त पर कार्य करता है ? इसकी बनावट एवं क्रिया विधि का वर्णन करें। OR / अथवा चालक, अचालक, अर्द्धचालक एवं अति चालक से आप क्या समझते हैं ? सोदाहरण व्याख्या करें।",
+        "hinglish": "Vidyut generator se aap kya samajhte hain? Yeh kis siddhant par karya karta hai? Iski banavat aur kriya vidhi ka varnan karein."
+      },
+      "type": "long",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L0",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "missing-hindi",
+        "subjective"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "missing-hindi",
+        "empty-text"
+      ],
+      "group": "A",
+      "hasAlternative": false,
+      "marks": 5,
+      "options": null,
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 10,
+      "section": "subjective",
+      "sourceId": "2017-a:A:10-or",
+      "subPart": "or",
+      "text": {
+        "en": "Explain Conductor, Non - conductor, Semi - conductor and Super - conductor with example.",
+        "hi": null,
+        "hinglish": "Conductor, Non - conductor, Semi - conductor aur Super - conductor ko udaharan ke saath vyakhya karein"
+      },
+      "type": "long",
+      "usableInQuiz": false,
+      "variantOf": "2017-a:A:10"
+    },
+    {
+      "answer": {
+        "confidence": "L3",
+        "conflicts": [],
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"light travels in straight lines\"",
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "In straight line",
+            "hi": "सीधी रेखा में",
+            "hinglish": "Seedhi rekha mein"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "In Zig Zag line",
+            "hi": "टेढ़ी रेखा में",
+            "hinglish": "Tedhi rekha mein"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "In any direction",
+            "hi": "किसी भी दिशा में",
+            "hinglish": "Kisi bhi disha mein"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 1,
+      "section": "objective",
+      "sourceId": "2017-a:B:1",
+      "subPart": null,
+      "text": {
+        "en": "The ray of light passes through",
+        "hi": "प्रकाश की किरणें गमन करती है",
+        "hinglish": "Prakash ki kiranen gaman karti hai"
+      },
+      "type": "mcq",
+      "usableInQuiz": true,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L3",
+        "conflicts": [],
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"Used in headlights, shaving mirrors\"",
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "provenance-note-stripped"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं Page 7 of 12 [Turn over",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 2,
+      "section": "objective",
+      "sourceId": "2017-a:B:2",
+      "subPart": null,
+      "text": {
+        "en": "Which mirror is used as shaving mirror?",
+        "hi": "हजामत के लिए किस दर्पण का उपयोग होता है ?",
+        "hinglish": "Hajamat ke liye kis darpan ka upyog hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": true,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L3",
+        "conflicts": [],
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"Reflecting surface curves inward.\"",
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Plane",
+            "hi": "समतल",
+            "hinglish": "Samtal"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 3,
+      "section": "objective",
+      "sourceId": "2017-a:B:3",
+      "subPart": null,
+      "text": {
+        "en": "The reflective surface of search light is :",
+        "hi": "सर्चलाइट का परावर्तक सतह होता है :",
+        "hinglish": "Search light ka paravartan satih hota hai :"
+      },
+      "type": "mcq",
+      "usableInQuiz": true,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-unverified"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "C.N.G",
+            "hi": "C.N.G",
+            "hinglish": "C.N.G"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "L.P.G",
+            "hi": "L.P.G",
+            "hinglish": "L.P.G"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Bio Gas",
+            "hi": "बायो गैस",
+            "hinglish": "Bio Gas"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 4,
+      "section": "objective",
+      "sourceId": "2017-a:B:4",
+      "subPart": null,
+      "text": {
+        "en": "Which of the following is not used as a cooking fuel?",
+        "hi": "निम्नलिखित में से किसका उपयोग खाना बनाने वाले ईंधन में नहीं होता है ?",
+        "hinglish": "Nimnalikhit mein se kiska upyog khana banane wale indhan mein nahi hota hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-unverified"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Sound Energy",
+            "hi": "ध्वनि ऊर्जा",
+            "hinglish": "Dhvani urja"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Electrical Energy",
+            "hi": "विद्युत ऊर्जा",
+            "hinglish": "Vidyut urja"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Solar Energy",
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 5,
+      "section": "objective",
+      "sourceId": "2017-a:B:5",
+      "subPart": null,
+      "text": {
+        "en": "Dynamo converts mechanical energy into:",
+        "hi": "डायनेमो यांत्रिक ऊर्जा को किस ऊर्जा में परिणत करता है ?",
+        "hinglish": "Dynamo yaantrik urja ko kis urja mein parinat karta hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L3",
+        "conflicts": [],
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Electricity: \"high current → fuse wire heats up → fuse wire melts → circuit breaks\"",
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [
+        "provenance-note-stripped"
+      ],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Fuse wire",
+            "hi": "फ्यूज़ तार",
+            "hinglish": "Fuse taar"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Short Circuit",
+            "hi": "शॉर्ट सर्किट",
+            "hinglish": "Short Circuit"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "High voltage",
+            "hi": "उच्च धारा प्रवाह",
+            "hinglish": "Uch dhara pravah"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं Page 8 of",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 6,
+      "section": "objective",
+      "sourceId": "2017-a:B:6",
+      "subPart": null,
+      "text": {
+        "en": "The reason of accidents from electricity in houses is",
+        "hi": "घरों में विद्युत से दुर्घटना किसके कारण होती है ?",
+        "hinglish": "Gharon mein vidyut se durghatna kis ke kaaran hoti hai?"
+      },
+      "type": "mcq",
+      "usableInQuiz": true,
+      "variantOf": null
+    },
+    {
+      "answer": {
+        "confidence": "L1",
+        "conflicts": [],
+        "correctOption": null,
+        "source": "none",
+        "sourceDetail": null,
+        "text": {
+          "en": null,
+          "hi": null,
+          "hinglish": null
+        }
+      },
+      "blockers": [
+        "answer-unverified"
+      ],
+      "diagram": {
+        "note": null,
+        "required": false
+      },
+      "flags": [],
+      "group": "B",
+      "hasAlternative": false,
+      "marks": 1,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण की तरह",
+            "hinglish": "Avatal darpan ki tarah"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस की तरह",
+            "hinglish": "Uttal lens ki tarah"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Plane Mirror",
+            "hi": "समतल दर्पण की तरह",
+            "hinglish": "Samtal darpan ki tarah"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "provenance": {
+        "crossChecked": false,
+        "pages": [
+          null
+        ],
+        "readBy": "vision"
+      },
+      "questionNumber": 7,
+      "section": "objective",
+      "sourceId": "2017-a:B:7",
+      "subPart": null,
+      "text": {
+        "en": "The eye is used as:",
+        "hi": "आँख व्यवहार होता है :",
+        "hinglish": "Aankh vyavhaar hota hai :"
+      },
+      "type": "mcq",
+      "usableInQuiz": false,
+      "variantOf": null
+    }
+  ],
+  "schemaVersion": 1,
+  "totals": {
+    "l3PlusConfidence": 4,
+    "marksGroupA": 18,
+    "marksGroupB": 7,
+    "objective": 7,
+    "questions": 18,
+    "subjective": 11,
+    "trilingualComplete": 17,
+    "usableInQuiz": 4
+  }
+}

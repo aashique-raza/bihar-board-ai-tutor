@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage D (structure + 3 languages) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildQuestions.js` chala hua, `data/quiz-bank/stage3-questions/<paperId>.json` ban chuki hai. 1152 questions total (761 objective), 872 trilingual-complete. Known residual gaps: `2024-b` = 0 questions (Stage C input hi empty hai, P-13, Stage B rerun se hi theek hoga), `2023-a` Group B mostly missing (F7, incomplete source), `2018-a` Q4 lost (scan clipping). |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B (bulk page-reading) complete. 🟢 Stage C (question blocks) complete. 🟢 Stage D (structure + 3 languages) complete — next is Stage E (answers + verification) across all 18 papers. |
+| **Sub-stage** | **Stage E (answers + verification) — ✅ DONE for all 18 papers.** `backend/scripts/quiz-bank/buildAnswers.js` chala hua, `data/quiz-bank/stage4-answers/<paperId>.json` ban chuki hai. 761 objective MCQs processed, **503 L3+ (textbook-verified, quiz-eligible answer)**. `2024-b` = 0 (expected, P-13). |
+| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete — next is Stage F (dedup + chapter mapping) across all 18 papers. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-05 — Stage D run on all 18 papers. Text actually read (not just counts trusted, lesson from the Antigravity Stage C session) — found and fixed 2 real bugs: (1) Stage B's own inline page-break notes (e.g. `[Q1 continued]`, `[options continue on next page]`) had leaked into 135 questions' actual text and even into their Hinglish, (2) a Hinglish batch-translation run swapped 2 options' outputs. Both fixed, verified 0 residual, baseline green. See Session History. |
+| **Last session** | 2026-08-05 — Stage E run on all 18 papers. First run crashed on 7 papers (`2016-b`, `2016-c`, `2017-c`, `2017-d`, `2019-b`, `2023-a`, `2024-a`) — a real bug, not caught until output files were checked, not just exit code (`tee` masked the real exit code). Fixed, re-ran, verified. See Session History. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -109,6 +109,7 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-13 | `2024-b` ka Stage C output **0 blocks** hai — Stage B ne is paper ka data `\|`-separated single mega-lines mein store kiya (koi `\n` nahi), isliye line-based segmentation (jo Stage C ka poora base hai) kaam nahi karta. Stage B page-reading is paper ke liye dobara karni hogi (sahi newline-separated format mein) — Stage C script khud theek hai, iska proof yehi hai ki baaki 17 papers pe sahi kaam karta hai. | `data/quiz-bank/stage1-pages/2024-b/` | Antigravity Stage C run, 2026-08-05 | 🟠 Medium — 1 paper ka poora data abhi quiz bank mein nahi hai |
 | P-15 | Stage D mein 146 questions ko `flags: ["provenance-note-stripped"]` mila — inke text mein Stage B ke apne inline notes (jaise `[Q1 continued]`) the jo strip kar diye gaye, par kuch mein us note ke baad ka **duplicate content** (jaise dobara likhe options "A. Oont B. Ghoda...") abhi bhi text ke end mein reh gaya hai — sirf bracket-note hata, poora duplicate hissa nahi. Ye har jagah nahi, sirf un cases mein jahan Stage B ne asli recap/duplicate hi likha tha. Stage G review in 146 questions ko zaroor spot-check kare. | `data/quiz-bank/stage3-questions/*.json` (`flags` field) | Stage D bulk session, 2026-08-05 | 🟡 Medium — 146 questions, sab visible via flag, koi silent nahi |
 | P-16 | Stage D ki Hinglish batch-translation (LLM se) mein ek confirm hua case mila jahan **2 options ka Hinglish output aapas mein badal gaya** (option C ko D ka translation mila, aur ulta) — `2022:A:13`. Turant pakda gaya kyunki us questions mein bracket-note bhi tha (isliye verify karte waqt dikh gaya); par ye ek **generic LLM batch-id risk** hai — agar kisi aur question mein aisa hua ho jahan koi bracket-note na ho (matlab kuch clue na ho), wo silently galat reh sakta hai. Is ek case ko fix kiya gaya (cache se hata ke dobara translate), poori bank mein aisa aur kahin dikha nahi (dedicated scan se), par ye scan sirf bracket-pattern dhoondta hai — pure swap (bina kisi text artifact ke) uss scan se nahi pakड़ेga. | `backend/scripts/quiz-bank/buildQuestions.js` (LLM batch translation) | Stage D bulk session, 2026-08-05 | 🟡 Medium — Stage G ke golden-set/10-sample-per-paper QC isko structurally catch karega, par abhi ek known blind-spot hai |
+| P-17 | Objective-section MCQs mein `marks` field **zyada papers mein null hai** — sirf chhote/purane papers (`2016-a/b/c`, `2017-a/c/d`, sab ≤20 MCQ) mein marks bhara hai; baaki har full-size paper (`2018-a` se `2026` tak) mein 80-95% objective MCQs ka `marks: null` hai, jo `marks-missing` blocker laga deta hai aur `usableInQuiz` ko bahut neeche kar deta hai — jabki answer khud L3+ verified hai. Pattern itna consistent hai (chhote papers 0%, bade papers 80-95%) ki ye Stage C/D ka koi systemic gap lagta hai, per-paper fluke nahi. Stage E ka kaam nahi hai ise fix karna (sirf answers verify karta hai), par Stage F/G se pehle iski jaanch honi chahiye — warna quiz-eligible pool asli se bahut chhota dikhega. | `data/quiz-bank/stage3-questions/*.json`, `stage4-answers/*.json` (`marks` field, objective section) | Stage E bulk session, 2026-08-05 | 🟠 Medium — answers sahi hain, par bahut saare quiz-ready questions blocked dikh rahe hain jinka असli blocker sirf ek missing field hai |
 | P-14 | `2018-a` mein Q4 ka number scan mein clip ho gaya tha (Stage B ne khud inline note likha: "question number clipped at top edge"). Stage C ka naya gap-tolerance fix (+3 tak) ne is wajah se hone wala bada cascade bug (dozens of questions ek hi option mein swallow ho jaana) रोक diya, par khud Q4 ka content ab bhi Q3 ke last option ke andar hi fused hai (uska apna sourceId kabhi nahi banega) — iske liye ya to us page ko manually dobara padhna hoga, ya Q4 ko permanently "lost" maan ke chhodna hoga. | `data/quiz-bank/stage2-blocks/2018-a.json` (`2018-a:A:3` ka option D) | Stage C fix session, 2026-08-05 | 🟢 Low — 1 question, already visible via paper flag `"A: number jumped from 3 to 5"` |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
@@ -141,6 +142,32 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-05 — Stage E: all 18 papers (answers + verification)
+- **Bana:** `backend/scripts/quiz-bank/buildAnswers.js` (already existed from Pilot) sab 18
+  papers pe chalaya → `data/quiz-bank/stage4-answers/<paperId>.json`. **761 objective MCQs
+  processed, 503 L3+ (textbook-verified via RAG, quiz-eligible answer).** `2024-b` = 0
+  (expected, P-13 — Stage C input hi khaali hai).
+- **Real bug pakda (blocker, isi session mein fix hua):** pehla run **7 papers** (`2016-b`,
+  `2016-c`, `2017-c`, `2017-d`, `2019-b`, `2023-a`, `2024-a`) pe crash ho gaya —
+  `retrieveRelevantChunks()` empty string pe `throw` karta hai, aur `resolveAnswer()` seedha
+  `question.text.en` bhej deta tha bina check kiye. Kuch questions mein English text kabhi
+  tha hi nahi (Stage C se hi `missing-english` flag/blocker laga hua tha — Hindi-only source
+  ya genuine content gap), isliye crash hota, aur **poore paper ka kaam khaali reh jaata**
+  (koi partial output nahi bachta). `npm run` ke pipe (`| tee`) ne exit code bhi mask kar diya
+  tha — bash ne `0` dikhaya jabki node script khud `1` pe exit hua tha (`tee` ka exit code hi
+  liya gaya). **Sirf output files count karke hi pakda gaya** ("18 mein se sirf 11 files
+  bani"), console "completed" trust nahi kiya. Fix: `buildAnswers.js` mein English-missing
+  questions ko retrieval/LLM se pehle hi skip kiya jaata hai (waise bhi `missing-english`
+  blocker ki wajah se quiz-usable nahi hote), `stats.skippedNoEnglish` naya field print hota
+  hai. Baaki 7 papers dobara chalaye, sab 0 failures se pass hue.
+- **Naya finding (Parking Lot P-17, Stage E ka scope nahi):** bade papers mein 80-95%
+  objective MCQs ka `marks: null` hai (chhote 2016-17 papers mein 0%) — answer khud verified
+  hai (L3+) par `marks-missing` blocker ki wajah se `usableInQuiz: false` reh jaata hai. Ye
+  Stage C/D ka systemic gap lagta hai, Stage E ka nahi — likha gaya, fix nahi kiya.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · baad mein bilkul wahi.
+  Koi regression nahi.
+- **Agla:** Stage F — dedup + chapter mapping, sab 18 papers pe, naya session mein.
 
 ### 2026-08-05 — Stage D: all 18 papers (structure + 3 languages)
 - **Bana:** `backend/scripts/quiz-bank/buildQuestions.js` (already existed from Pilot) sab 18
