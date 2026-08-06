@@ -2542,20 +2542,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Acids, Bases and Salts: \"- Used in glass, soap and paper industries\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2617,7 +2615,7 @@
         "hinglish": "Uch vasiye amlon ke sodium lavan kehlate hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3410,20 +3408,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Chemical Reactions and Equations: \"Oxidation is a process in which:\n\n- Oxygen is added to a substance, or\n- Hydrogen is removed from a substance.\n\nExample:\n\n```txt\n2Cu + O2 --heat--> 2CuO\n```\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3485,7 +3481,7 @@
         "hinglish": "2Cu + O2 -> 2CuO hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4040,20 +4036,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Carbon and Its Compounds: \"Hydrocarbons with at least one triple bond are called **alkynes**.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4115,7 +4109,7 @@
         "hinglish": "Alkyne kaun hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5618,20 +5612,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — How Do Organisms Reproduce?: \"Examples: Gonorrhoea, Syphilis, Warts, HIV-AIDS\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5693,7 +5685,7 @@
         "hinglish": "Janan sancharit rog hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7691,13 +7683,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 58,
+    "l3PlusConfidence": 62,
     "marksGroupA": 80,
     "marksGroupB": 80,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
     "trilingualComplete": 110,
-    "usableInQuiz": 58
+    "usableInQuiz": 62
   }
 }

@@ -1442,20 +1442,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Heredity and Evolution: \"- Humans are not at the top of evolution; humans are one species among many.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1517,7 +1515,7 @@
         "hinglish": "Nimn mein se kaun ek avashesh ang hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5082,13 +5080,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 39,
+    "l3PlusConfidence": 40,
     "marksGroupA": 48,
     "marksGroupB": 72,
     "objective": 48,
     "questions": 76,
     "subjective": 28,
     "trilingualComplete": 76,
-    "usableInQuiz": 39
+    "usableInQuiz": 40
   }
 }

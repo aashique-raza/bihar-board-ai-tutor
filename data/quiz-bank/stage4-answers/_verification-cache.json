@@ -184,10 +184,9 @@
     },
     "0bcfd7929f69df79": {
       "chapter": "Chemical Reactions and Equations",
-      "claimedOption": "a",
-      "correctOption": null,
-      "evidence": "2Cu + O2 → 2CuO is oxidation.",
-      "verdict": "ungrounded"
+      "correctOption": "a",
+      "evidence": "Oxidation is a process in which:\n\n- Oxygen is added to a substance, or\n- Hydrogen is removed from a substance.\n\nExample:\n\n```txt\n2Cu + O2 --heat--> 2CuO\n```",
+      "verdict": "answered"
     },
     "0d24df7678d5d8e8": {
       "chapter": null,
@@ -313,10 +312,9 @@
     },
     "11a541bb3db6b2fb": {
       "chapter": "Electricity",
-      "claimedOption": "c",
-      "correctOption": null,
-      "evidence": "1 W = 1 J/s",
-      "verdict": "ungrounded"
+      "correctOption": "c",
+      "evidence": "1 W = 1 V × 1 A",
+      "verdict": "answered"
     },
     "1214cfd6c8f364cc": {
       "chapter": "Control and Coordination",
@@ -823,10 +821,9 @@
     },
     "33051cd334a9e36d": {
       "chapter": "Carbon and Its Compounds",
-      "claimedOption": "a",
-      "correctOption": null,
-      "evidence": "Hydrocarbons with at least one triple bond are called **alkynes**. Example: Ethyne: C₂H₂",
-      "verdict": "ungrounded"
+      "correctOption": "a",
+      "evidence": "Hydrocarbons with at least one triple bond are called **alkynes**.",
+      "verdict": "answered"
     },
     "3329b6b203d9fd68": {
       "chapter": "Electricity",
@@ -1168,10 +1165,9 @@
     },
     "484420ef5c57d23b": {
       "chapter": "Life Processes",
-      "claimedOption": "d",
-      "correctOption": null,
+      "correctOption": "d",
       "evidence": "Phloem transports: Sucrose",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "484825d4631c065c": {
       "chapter": null,
@@ -1528,10 +1524,9 @@
     },
     "5a079e624aafc757": {
       "chapter": "Life Processes",
-      "claimedOption": "a",
-      "correctOption": null,
-      "evidence": "It has four chambers: Right atrium, Right ventricle, Left atrium, Left ventricle",
-      "verdict": "ungrounded"
+      "correctOption": "d",
+      "evidence": "It has four chambers:",
+      "verdict": "answered"
     },
     "5a1b2a64b892c7f8": {
       "chapter": "Metals and Non-metals",
@@ -1555,7 +1550,7 @@
       "chapter": "Sources of Energy",
       "claimedOption": "a",
       "correctOption": null,
-      "evidence": "Examples of common fuels: CNG, LPG, Biogas, Charcoal",
+      "evidence": "Examples of common fuels: CNG, LPG, Biogas, Charcoal, Coal.",
       "verdict": "ungrounded"
     },
     "5afb52542b887c56": {
@@ -1674,10 +1669,9 @@
     },
     "6240a4a45a4c30ce": {
       "chapter": "Acids, Bases and Salts",
-      "claimedOption": "c",
-      "correctOption": null,
-      "evidence": "Sodium hydroxide may have pH close to 14.",
-      "verdict": "ungrounded"
+      "correctOption": "c",
+      "evidence": "Sodium hydroxide solution may have pH close to 14.",
+      "verdict": "answered"
     },
     "628017e5f025f4df": {
       "chapter": "Sources of Energy",
@@ -1873,10 +1867,9 @@
     },
     "6f3d3a7775fd32a2": {
       "chapter": "Chemical Reactions and Equations",
-      "claimedOption": "a",
-      "correctOption": null,
-      "evidence": "Substances that take part in a chemical reaction are called **reactants**.",
-      "verdict": "ungrounded"
+      "correctOption": "a",
+      "evidence": "Substances that take part in the reaction are called **reactants**.",
+      "verdict": "answered"
     },
     "6f48635d46baa29c": {
       "chapter": "Human Eye and Colourful World",
@@ -2026,10 +2019,9 @@
     },
     "78505e8975a0845e": {
       "chapter": "Sources of Energy",
-      "claimedOption": "b",
-      "correctOption": null,
+      "correctOption": "b",
       "evidence": "A good fuel should: Produce a large amount of heat on burning.",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "7883ce0296bec42d": {
       "chapter": "Nutrition",
@@ -2345,11 +2337,10 @@
       "verdict": "answered"
     },
     "8b9ceb2f134b7b1a": {
-      "chapter": "Life Processes",
-      "claimedOption": "c",
+      "chapter": null,
       "correctOption": null,
-      "evidence": "Green plants are called producers.",
-      "verdict": "ungrounded"
+      "evidence": "",
+      "verdict": "insufficient"
     },
     "8bede9716efd5a4f": {
       "chapter": "Metals and Non-metals",
@@ -2414,10 +2405,9 @@
     },
     "8f0316d9e3fa5732": {
       "chapter": "Light - Reflection and Refraction",
-      "claimedOption": "a",
-      "correctOption": null,
-      "evidence": "There are two laws of refraction.",
-      "verdict": "ungrounded"
+      "correctOption": "b",
+      "evidence": "The incident ray, refracted ray, and the normal at the point of incidence all lie in the same plane.",
+      "verdict": "answered"
     },
     "8f0dda7e5786b922": {
       "chapter": "Life Processes",
@@ -2513,7 +2503,7 @@
       "chapter": "Life Processes",
       "claimedOption": "d",
       "correctOption": null,
-      "evidence": "Photosynthesis requires: | Carbon dioxide | Enters leaves mainly through stomata | | Water | Absorbed by roots from soil | | Sunlight | Provides energy | | Chlorophyll | Absorbs light energy |",
+      "evidence": "Photosynthesis is the process by which green plants make food using carbon dioxide, water, sunlight, and chlorophyll",
       "verdict": "ungrounded"
     },
     "942cf7334fe8e577": {
@@ -2560,10 +2550,9 @@
     },
     "9647a540f36f6d6d": {
       "chapter": "Sources of Energy",
-      "claimedOption": "b",
-      "correctOption": null,
-      "evidence": "the turbine rotates a generator, which converts mechanical energy into electrical energy.",
-      "verdict": "ungrounded"
+      "correctOption": "b",
+      "evidence": "the turbine rotates a generator. Electricity is produced.",
+      "verdict": "answered"
     },
     "96ba5bad194ad17b": {
       "chapter": "Carbon and Its Compounds",
@@ -2597,10 +2586,9 @@
     },
     "978de6d2e4751f35": {
       "chapter": "How Do Organisms Reproduce?",
-      "claimedOption": "b",
-      "correctOption": null,
-      "evidence": "Stamen is the male reproductive part of a flower. It has two parts: Anther, Filament. The anther produces pollen grains. Pollen grains contain male gametes.",
-      "verdict": "ungrounded"
+      "correctOption": "b",
+      "evidence": "Stamen is the male reproductive part of a flower.",
+      "verdict": "answered"
     },
     "97c73d4576fa1b8e": {
       "chapter": "Periodic Classification of Elements",
@@ -2992,10 +2980,9 @@
     },
     "af00e350caf26baa": {
       "chapter": "Sources of Energy",
-      "claimedOption": "d",
-      "correctOption": null,
+      "correctOption": "d",
       "evidence": "Examples: Coal, Petroleum, Natural gas",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "af01990ed29d8389": {
       "chapter": "How Do Organisms Reproduce?",
@@ -3197,10 +3184,9 @@
     },
     "bc5b6e7702f3105d": {
       "chapter": "Acids, Bases and Salts",
-      "claimedOption": "a",
-      "correctOption": null,
-      "evidence": "Sodium hydroxide is used in soap and detergent manufacture",
-      "verdict": "ungrounded"
+      "correctOption": "a",
+      "evidence": "- Used in glass, soap and paper industries",
+      "verdict": "answered"
     },
     "bcbd774a375e44df": {
       "chapter": null,
@@ -4367,10 +4353,9 @@
     },
     "f9552debd3869613": {
       "chapter": "Heredity and Evolution",
-      "claimedOption": "d",
-      "correctOption": null,
-      "evidence": "Appendix is a vestigial organ in humans.",
-      "verdict": "ungrounded"
+      "correctOption": "d",
+      "evidence": "- Humans are not at the top of evolution; humans are one species among many.",
+      "verdict": "answered"
     },
     "fa25449af871edae": {
       "chapter": null,
@@ -4380,10 +4365,9 @@
     },
     "fbe74084011ff23e": {
       "chapter": "How Do Organisms Reproduce?",
-      "claimedOption": "d",
-      "correctOption": null,
+      "correctOption": "d",
       "evidence": "Examples: Gonorrhoea, Syphilis, Warts, HIV-AIDS",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "fc1f026b4773377d": {
       "chapter": "Light - Reflection and Refraction",

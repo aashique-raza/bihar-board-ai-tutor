@@ -180,20 +180,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Sources of Energy: \"A good fuel should: Produce a large amount of heat on burning.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -255,7 +253,7 @@
         "hinglish": "Jo 'dahan kar ooshma utpann karte hain' unhein kaha jaata hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2304,20 +2302,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Life Processes: \"It has four chambers:\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2379,7 +2375,7 @@
         "hinglish": "Manav hriday mein kitne koshthak paaye jaate hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4568,20 +4564,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"The incident ray, refracted ray, and the normal at the point of incidence all lie in the same plane.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4643,7 +4637,7 @@
         "hinglish": "Prakash ke apvartan ke kitne niyam hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -6442,13 +6436,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 52,
+    "l3PlusConfidence": 55,
     "marksGroupA": 80,
     "marksGroupB": 0,
     "objective": 80,
     "questions": 83,
     "subjective": 3,
     "trilingualComplete": 82,
-    "usableInQuiz": 52
+    "usableInQuiz": 55
   }
 }

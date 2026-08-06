@@ -181,12 +181,23 @@ function buildUserMessage(question, excerpts) {
   });
 }
 
-/** Strips markdown noise (bold markers, code fences, extra whitespace) so a quote and its
- * source can be compared on words alone, not formatting. */
+/** Strips markdown noise (bold markers, code fences, list markers, punctuation, extra
+ * whitespace) so a quote and its source can be compared on words alone, not formatting.
+ *
+ * v2 addition: source excerpts are often markdown bullet/numbered lists (e.g. "- Right
+ * atrium\n- Right ventricle"), but a model quoting them naturally flattens that into prose
+ * ("Right atrium, Right ventricle") — same words, same order, different punctuation. The
+ * original version required a literal substring match and rejected these as "ungrounded" even
+ * though the model's answer was correct and the quote was faithful. Stripping list markers and
+ * punctuation (not the words) keeps the check strict enough to catch genuine hallucination —
+ * wrong or reordered words still won't match — while tolerating list-vs-prose formatting. */
 function normalizeForMatch(text) {
   return String(text || '')
     .replace(/\*\*/g, '')
     .replace(/`/g, '')
+    .replace(/^[ \t]*[-*•][ \t]+/gm, ' ')
+    .replace(/^[ \t]*\d+\.[ \t]+/gm, ' ')
+    .replace(/[,.;:()[\]{}"']/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
     .toLowerCase();
@@ -249,7 +260,15 @@ async function resolveAnswer(model, question, cache, stats) {
   }
 
   const key = cacheKey(question.sourceId, retrieval.results);
-  if (cache[key]) {
+  // A cached "ungrounded" verdict is not trusted as-is (its own claimedOption was never
+  // actually verified against the evidence — grounding only checks the quote is real text, not
+  // that the quote supports that specific option letter). Under the old normalizeForMatch this
+  // bucket mixed two different failures: genuine hallucinated quotes, AND real quotes the model
+  // had mismapped to the wrong option. Reusing claimedOption for the latter would silently
+  // promote a wrong answer to L3 (confirmed on 2023-a:A:30 — heart chambers, model quoted the
+  // right passage but claimed option "a"/1 instead of "d"/4). So this bucket always gets a
+  // fresh LLM call under the fixed normalizer, never a free promotion from cache.
+  if (cache[key] && cache[key].verdict !== 'ungrounded') {
     stats.cacheHit += 1;
     return cache[key];
   }

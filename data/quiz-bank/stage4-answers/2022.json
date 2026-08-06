@@ -23,20 +23,18 @@
   "questions": [
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — How Do Organisms Reproduce?: \"Stamen is the male reproductive part of a flower.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -99,7 +97,7 @@
         "hinglish": "Paudhe mein janan ang kahan paye jaate hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4051,20 +4049,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Acids, Bases and Salts: \"Sodium hydroxide solution may have pH close to 14.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4126,7 +4122,7 @@
         "hinglish": "Nimnankit mein kaun prabal kshaarak hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7704,13 +7700,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 56,
+    "l3PlusConfidence": 58,
     "marksGroupA": 80,
     "marksGroupB": 58,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
     "trilingualComplete": 110,
-    "usableInQuiz": 56
+    "usableInQuiz": 58
   }
 }

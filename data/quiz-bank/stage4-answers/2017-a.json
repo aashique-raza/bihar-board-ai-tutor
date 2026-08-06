@@ -840,20 +840,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Sources of Energy: \"the turbine rotates a generator. Electricity is produced.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -913,7 +911,7 @@
         "hinglish": "Dynamo yaantrik urja ko kis urja mein parinat karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1075,13 +1073,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 4,
+    "l3PlusConfidence": 5,
     "marksGroupA": 18,
     "marksGroupB": 7,
     "objective": 7,
     "questions": 18,
     "subjective": 11,
     "trilingualComplete": 18,
-    "usableInQuiz": 4
+    "usableInQuiz": 5
   }
 }

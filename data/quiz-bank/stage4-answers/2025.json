@@ -1043,20 +1043,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Electricity: \"1 W = 1 V × 1 A\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1119,7 +1117,7 @@
         "hinglish": "Nimnalikhit mein kaun-sa maatrak Watt(W) ke barabar hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1827,20 +1825,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Sources of Energy: \"Examples: Coal, Petroleum, Natural gas\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1902,7 +1898,7 @@
         "hinglish": "Inmein se kaun jeevashm indhan hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7802,13 +7798,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 59,
+    "l3PlusConfidence": 61,
     "marksGroupA": 80,
     "marksGroupB": 76,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
     "trilingualComplete": 110,
-    "usableInQuiz": 59
+    "usableInQuiz": 61
   }
 }

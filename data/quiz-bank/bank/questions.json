@@ -5457,20 +5457,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "b",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Sources of Energy: \"the turbine rotates a generator. Electricity is produced.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -5530,7 +5528,7 @@
           "hinglish": "Dynamo yaantrik urja ko kis urja mein parinat karta hai?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -5541,7 +5539,7 @@
       "difficulty": null,
       "questionId": "q-000070",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2017
@@ -19270,20 +19268,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "a",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Chemical Reactions and Equations: \"Substances that take part in the reaction are called **reactants**.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -19345,7 +19341,7 @@
           "hinglish": "Rasayanik abhikriya mein bhaag lene wale padarth ko kaha jaata hai"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -19356,7 +19352,7 @@
       "difficulty": null,
       "questionId": "q-000237",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2020
@@ -21100,20 +21096,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "d",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Life Processes: \"Phloem transports: Sucrose\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -21175,7 +21169,7 @@
           "hinglish": "Phloem ootakon dwara carbohydrate ka parivahan hota hai"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -21186,7 +21180,7 @@
       "difficulty": null,
       "questionId": "q-000256",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2020
@@ -26937,20 +26931,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "d",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Heredity and Evolution: \"- Humans are not at the top of evolution; humans are one species among many.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -27012,7 +27004,7 @@
           "hinglish": "Nimn mein se kaun ek avashesh ang hai ?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -27023,7 +27015,7 @@
       "difficulty": null,
       "questionId": "q-000326",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2020
@@ -34873,20 +34865,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "a",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Acids, Bases and Salts: \"- Used in glass, soap and paper industries\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -34948,7 +34938,7 @@
           "hinglish": "Uch vasiye amlon ke sodium lavan kehlate hain"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -34959,7 +34949,7 @@
       "difficulty": null,
       "questionId": "q-000416",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2021
@@ -35994,20 +35984,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "a",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Chemical Reactions and Equations: \"Oxidation is a process in which:\n\n- Oxygen is added to a substance, or\n- Hydrogen is removed from a substance.\n\nExample:\n\n```txt\n2Cu + O2 --heat--> 2CuO\n```\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -36069,7 +36057,7 @@
           "hinglish": "2Cu + O2 -> 2CuO hai"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -36080,7 +36068,7 @@
       "difficulty": null,
       "questionId": "q-000427",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2021
@@ -36606,20 +36594,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "a",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Carbon and Its Compounds: \"Hydrocarbons with at least one triple bond are called **alkynes**.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -36681,7 +36667,7 @@
           "hinglish": "Alkyne kaun hai ?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -36692,7 +36678,7 @@
       "difficulty": null,
       "questionId": "q-000435",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2021
@@ -38543,20 +38529,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "d",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — How Do Organisms Reproduce?: \"Examples: Gonorrhoea, Syphilis, Warts, HIV-AIDS\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -38618,7 +38602,7 @@
           "hinglish": "Janan sancharit rog hai"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -38629,7 +38613,7 @@
       "difficulty": null,
       "questionId": "q-000455",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2021
@@ -41537,20 +41521,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "b",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — How Do Organisms Reproduce?: \"Stamen is the male reproductive part of a flower.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -41613,7 +41595,7 @@
           "hinglish": "Paudhe mein janan ang kahan paye jaate hain?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -41624,7 +41606,7 @@
       "difficulty": null,
       "questionId": "q-000494",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2022
@@ -46534,20 +46516,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Acids, Bases and Salts: \"Sodium hydroxide solution may have pH close to 14.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -46609,7 +46589,7 @@
           "hinglish": "Nimnankit mein kaun prabal kshaarak hai?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -46620,7 +46600,7 @@
       "difficulty": null,
       "questionId": "q-000545",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2022
@@ -51379,20 +51359,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "b",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Sources of Energy: \"A good fuel should: Produce a large amount of heat on burning.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -51454,7 +51432,7 @@
           "hinglish": "Jo 'dahan kar ooshma utpann karte hain' unhein kaha jaata hai"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -51465,7 +51443,7 @@
       "difficulty": null,
       "questionId": "q-000605",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2023
@@ -68254,20 +68232,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Electricity: \"1 W = 1 V × 1 A\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -68330,7 +68306,7 @@
           "hinglish": "Nimnalikhit mein kaun-sa maatrak Watt(W) ke barabar hota hai?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -68341,7 +68317,7 @@
       "difficulty": null,
       "questionId": "q-000799",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2025
@@ -69268,20 +69244,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "d",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Sources of Energy: \"Examples: Coal, Petroleum, Natural gas\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -69343,7 +69317,7 @@
           "hinglish": "Inmein se kaun jeevashm indhan hai?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -69354,7 +69328,7 @@
       "difficulty": null,
       "questionId": "q-000809",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2025
@@ -99821,20 +99795,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "d",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Life Processes: \"It has four chambers:\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -99896,7 +99868,7 @@
           "hinglish": "Manav hriday mein kitne koshthak paaye jaate hain?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -99907,7 +99879,7 @@
       "difficulty": null,
       "questionId": "q-001295",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2023
@@ -100025,20 +99997,18 @@
       ],
       "canonical": {
         "answer": {
-          "confidence": "L1",
+          "confidence": "L3",
           "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
+          "correctOption": "b",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"The incident ray, refracted ray, and the normal at the point of incidence all lie in the same plane.\"",
           "text": {
             "en": null,
             "hi": null,
             "hinglish": null
           }
         },
-        "blockers": [
-          "answer-unverified"
-        ],
+        "blockers": [],
         "diagram": {
           "note": null,
           "required": false
@@ -100100,7 +100070,7 @@
           "hinglish": "Prakash ke apvartan ke kitne niyam hain?"
         },
         "type": "mcq",
-        "usableInQuiz": false,
+        "usableInQuiz": true,
         "variantOf": null
       },
       "chapter": {
@@ -100111,7 +100081,7 @@
       "difficulty": null,
       "questionId": "q-001297",
       "repeatCount": 1,
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variants": [],
       "years": [
         2023

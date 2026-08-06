@@ -335,20 +335,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Chemical Reactions and Equations: \"Substances that take part in the reaction are called **reactants**.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -410,7 +408,7 @@
         "hinglish": "Rasayanik abhikriya mein bhaag lene wale padarth ko kaha jaata hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1831,20 +1829,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Life Processes: \"Phloem transports: Sucrose\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1906,7 +1902,7 @@
         "hinglish": "Phloem ootakon dwara carbohydrate ka parivahan hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5059,13 +5055,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 34,
+    "l3PlusConfidence": 36,
     "marksGroupA": 48,
     "marksGroupB": 74,
     "objective": 48,
     "questions": 76,
     "subjective": 28,
     "trilingualComplete": 76,
-    "usableInQuiz": 34
+    "usableInQuiz": 36
   }
 }
