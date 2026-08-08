@@ -4,22 +4,22 @@
     "pct": 99.9
   },
   "exitCriteriaNote": "These numbers describe only the papers currently in bank/questions.json. QUIZ_DATA_PIPELINE.md §12 exit criteria apply once all 20 papers have gone through Stage B-G, not to a single-paper pilot run.",
-  "generatedAt": "2026-08-05T19:12:48.221Z",
+  "generatedAt": "2026-08-08T17:31:17.018Z",
   "objectiveConfidenceCounts": {
-    "L0": 17,
-    "L1": 171,
-    "L3": 562,
+    "L0": 6,
+    "L1": 172,
+    "L3": 572,
     "L4": 5
   },
-  "objectiveL3OrAbovePct": 75.1,
+  "objectiveL3OrAbovePct": 76.4,
   "objectiveLanguageCompletePct": 99.9,
   "reviewQueue": {
     "bySeverity": {
-      "orange": 130,
+      "orange": 133,
       "red": 0,
       "yellow": 1
     },
-    "open": 131
+    "open": 134
   },
   "schemaVersion": 1,
   "totals": {
@@ -28,7 +28,7 @@
     "subjective": 371
   },
   "usableInQuiz": {
-    "count": 567,
-    "pct": 50.4
+    "count": 577,
+    "pct": 51.2
   }
 }

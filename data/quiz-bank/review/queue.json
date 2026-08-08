@@ -438,7 +438,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0049 proposes merging q-001273 + q-000817 (similarity 0.75)",
+      "summary": "Cluster c-0049 proposes merging q-001328 + q-000316 (similarity 0.81)",
       "target": "c-0049"
     },
     {
@@ -447,7 +447,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0050 proposes merging q-000157 + q-000433 (similarity 0.75)",
+      "summary": "Cluster c-0050 proposes merging q-001273 + q-000817 (similarity 0.75)",
       "target": "c-0050"
     },
     {
@@ -456,7 +456,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0051 proposes merging q-000160 + q-000332 (similarity 1)",
+      "summary": "Cluster c-0051 proposes merging q-000157 + q-000433 (similarity 0.75)",
       "target": "c-0051"
     },
     {
@@ -465,7 +465,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0052 proposes merging q-000165 + q-000453 (similarity 1)",
+      "summary": "Cluster c-0052 proposes merging q-000160 + q-000332 (similarity 1)",
       "target": "c-0052"
     },
     {
@@ -474,7 +474,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0053 proposes merging q-000169 + q-000445 (similarity 0.8)",
+      "summary": "Cluster c-0053 proposes merging q-000165 + q-000453 (similarity 1)",
       "target": "c-0053"
     },
     {
@@ -483,7 +483,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0054 proposes merging q-000189 + q-000703 (similarity 1)",
+      "summary": "Cluster c-0054 proposes merging q-000169 + q-000445 (similarity 0.8)",
       "target": "c-0054"
     },
     {
@@ -492,7 +492,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0055 proposes merging q-000191 + q-000704 (similarity 1)",
+      "summary": "Cluster c-0055 proposes merging q-001335 + q-000540 (similarity 0.857)",
       "target": "c-0055"
     },
     {
@@ -501,7 +501,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0056 proposes merging q-000192 + q-000330 (similarity 0.778)",
+      "summary": "Cluster c-0056 proposes merging q-001335 + q-000702 (similarity 1)",
       "target": "c-0056"
     },
     {
@@ -510,7 +510,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0057 proposes merging q-000197 + q-000509 (similarity 0.8)",
+      "summary": "Cluster c-0057 proposes merging q-000189 + q-000703 (similarity 1)",
       "target": "c-0057"
     },
     {
@@ -519,7 +519,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0058 proposes merging q-000201 + q-000791 (similarity 0.909)",
+      "summary": "Cluster c-0058 proposes merging q-000191 + q-000704 (similarity 1)",
       "target": "c-0058"
     },
     {
@@ -528,7 +528,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0059 proposes merging q-000202 + q-000847 (similarity 0.833)",
+      "summary": "Cluster c-0059 proposes merging q-000192 + q-000330 (similarity 0.778)",
       "target": "c-0059"
     },
     {
@@ -537,7 +537,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0060 proposes merging q-000203 + q-000705 (similarity 0.8)",
+      "summary": "Cluster c-0060 proposes merging q-000197 + q-000509 (similarity 0.8)",
       "target": "c-0060"
     },
     {
@@ -546,7 +546,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0061 proposes merging q-000207 + q-000580 (similarity 0.9)",
+      "summary": "Cluster c-0061 proposes merging q-000201 + q-000791 (similarity 0.909)",
       "target": "c-0061"
     },
     {
@@ -555,7 +555,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0062 proposes merging q-000236 + q-000391 (similarity 0.769)",
+      "summary": "Cluster c-0062 proposes merging q-000202 + q-000847 (similarity 0.833)",
       "target": "c-0062"
     },
     {
@@ -564,7 +564,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0063 proposes merging q-000239 + q-000536 (similarity 0.889)",
+      "summary": "Cluster c-0063 proposes merging q-000203 + q-000705 (similarity 0.8)",
       "target": "c-0063"
     },
     {
@@ -573,7 +573,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0064 proposes merging q-000242 + q-000603 (similarity 0.818)",
+      "summary": "Cluster c-0064 proposes merging q-000207 + q-000580 (similarity 0.9)",
       "target": "c-0064"
     },
     {
@@ -582,7 +582,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0065 proposes merging q-000258 + q-000925 (similarity 1)",
+      "summary": "Cluster c-0065 proposes merging q-000236 + q-000391 (similarity 0.769)",
       "target": "c-0065"
     },
     {
@@ -591,7 +591,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0066 proposes merging q-000261 + q-000552 (similarity 0.778)",
+      "summary": "Cluster c-0066 proposes merging q-000239 + q-000536 (similarity 0.889)",
       "target": "c-0066"
     },
     {
@@ -600,7 +600,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0067 proposes merging q-001279 + q-001288 (similarity 0.875)",
+      "summary": "Cluster c-0067 proposes merging q-000242 + q-000603 (similarity 0.818)",
       "target": "c-0067"
     },
     {
@@ -609,7 +609,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0068 proposes merging q-001279 + q-001297 (similarity 0.778)",
+      "summary": "Cluster c-0068 proposes merging q-000258 + q-000925 (similarity 1)",
       "target": "c-0068"
     },
     {
@@ -618,7 +618,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0069 proposes merging q-001279 + q-001312 (similarity 0.889)",
+      "summary": "Cluster c-0069 proposes merging q-000261 + q-000552 (similarity 0.778)",
       "target": "c-0069"
     },
     {
@@ -627,7 +627,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0070 proposes merging q-000266 + q-000707 (similarity 1)",
+      "summary": "Cluster c-0070 proposes merging q-001279 + q-001288 (similarity 0.875)",
       "target": "c-0070"
     },
     {
@@ -636,7 +636,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0071 proposes merging q-000272 + q-000394 (similarity 0.875)",
+      "summary": "Cluster c-0071 proposes merging q-001279 + q-001297 (similarity 0.778)",
       "target": "c-0071"
     },
     {
@@ -645,7 +645,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0072 proposes merging q-000284 + q-000470 (similarity 0.818)",
+      "summary": "Cluster c-0072 proposes merging q-001279 + q-001312 (similarity 0.889)",
       "target": "c-0072"
     },
     {
@@ -654,7 +654,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0073 proposes merging q-000290 + q-000771 (similarity 0.842)",
+      "summary": "Cluster c-0073 proposes merging q-000266 + q-000707 (similarity 1)",
       "target": "c-0073"
     },
     {
@@ -663,7 +663,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0074 proposes merging q-000305 + q-000598 (similarity 0.778)",
+      "summary": "Cluster c-0074 proposes merging q-000272 + q-000394 (similarity 0.875)",
       "target": "c-0074"
     },
     {
@@ -672,7 +672,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0075 proposes merging q-000308 + q-000561 (similarity 0.778)",
+      "summary": "Cluster c-0075 proposes merging q-000284 + q-000470 (similarity 0.818)",
       "target": "c-0075"
     },
     {
@@ -681,7 +681,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0076 proposes merging q-000313 + q-000536 (similarity 0.778)",
+      "summary": "Cluster c-0076 proposes merging q-000290 + q-000771 (similarity 0.842)",
       "target": "c-0076"
     },
     {
@@ -690,7 +690,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0077 proposes merging q-000314 + q-000915 (similarity 1)",
+      "summary": "Cluster c-0077 proposes merging q-000305 + q-000598 (similarity 0.778)",
       "target": "c-0077"
     },
     {
@@ -699,7 +699,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0078 proposes merging q-000322 + q-000728 (similarity 0.778)",
+      "summary": "Cluster c-0078 proposes merging q-000308 + q-000561 (similarity 0.778)",
       "target": "c-0078"
     },
     {
@@ -708,7 +708,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0079 proposes merging q-000322 + q-000792 (similarity 1)",
+      "summary": "Cluster c-0079 proposes merging q-000313 + q-000536 (similarity 0.778)",
       "target": "c-0079"
     },
     {
@@ -717,7 +717,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0080 proposes merging q-000323 + q-000635 (similarity 0.8)",
+      "summary": "Cluster c-0080 proposes merging q-000314 + q-000915 (similarity 1)",
       "target": "c-0080"
     },
     {
@@ -726,7 +726,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0081 proposes merging q-000323 + q-000789 (similarity 0.8)",
+      "summary": "Cluster c-0081 proposes merging q-000322 + q-000728 (similarity 0.778)",
       "target": "c-0081"
     },
     {
@@ -735,7 +735,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0082 proposes merging q-000329 + q-000401 (similarity 1)",
+      "summary": "Cluster c-0082 proposes merging q-000322 + q-000792 (similarity 1)",
       "target": "c-0082"
     },
     {
@@ -744,7 +744,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0083 proposes merging q-000336 + q-000816 (similarity 1)",
+      "summary": "Cluster c-0083 proposes merging q-000323 + q-000635 (similarity 0.8)",
       "target": "c-0083"
     },
     {
@@ -753,7 +753,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0084 proposes merging q-000336 + q-000928 (similarity 1)",
+      "summary": "Cluster c-0084 proposes merging q-000323 + q-000789 (similarity 0.8)",
       "target": "c-0084"
     },
     {
@@ -762,7 +762,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0085 proposes merging q-000393 + q-000803 (similarity 1)",
+      "summary": "Cluster c-0085 proposes merging q-000329 + q-000401 (similarity 1)",
       "target": "c-0085"
     },
     {
@@ -771,7 +771,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0086 proposes merging q-000396 + q-000916 (similarity 0.75)",
+      "summary": "Cluster c-0086 proposes merging q-000336 + q-000816 (similarity 1)",
       "target": "c-0086"
     },
     {
@@ -780,7 +780,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0087 proposes merging q-000397 + q-000800 (similarity 1)",
+      "summary": "Cluster c-0087 proposes merging q-000336 + q-000928 (similarity 1)",
       "target": "c-0087"
     },
     {
@@ -789,7 +789,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0088 proposes merging q-000400 + q-000795 (similarity 0.857)",
+      "summary": "Cluster c-0088 proposes merging q-000393 + q-000803 (similarity 1)",
       "target": "c-0088"
     },
     {
@@ -798,7 +798,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0089 proposes merging q-000406 + q-000912 (similarity 0.9)",
+      "summary": "Cluster c-0089 proposes merging q-000396 + q-000916 (similarity 0.75)",
       "target": "c-0089"
     },
     {
@@ -807,7 +807,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0090 proposes merging q-000411 + q-000561 (similarity 0.778)",
+      "summary": "Cluster c-0090 proposes merging q-000397 + q-000800 (similarity 1)",
       "target": "c-0090"
     },
     {
@@ -816,7 +816,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0091 proposes merging q-000411 + q-000940 (similarity 0.778)",
+      "summary": "Cluster c-0091 proposes merging q-000400 + q-000795 (similarity 0.857)",
       "target": "c-0091"
     },
     {
@@ -825,7 +825,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0092 proposes merging q-000412 + q-000827 (similarity 0.75)",
+      "summary": "Cluster c-0092 proposes merging q-000406 + q-000912 (similarity 0.9)",
       "target": "c-0092"
     },
     {
@@ -834,7 +834,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0093 proposes merging q-001284 + q-001319 (similarity 0.75)",
+      "summary": "Cluster c-0093 proposes merging q-000411 + q-000561 (similarity 0.778)",
       "target": "c-0093"
     },
     {
@@ -843,7 +843,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0094 proposes merging q-000415 + q-000549 (similarity 0.857)",
+      "summary": "Cluster c-0094 proposes merging q-000411 + q-000940 (similarity 0.778)",
       "target": "c-0094"
     },
     {
@@ -852,7 +852,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0095 proposes merging q-000425 + q-000718 (similarity 1)",
+      "summary": "Cluster c-0095 proposes merging q-000412 + q-000827 (similarity 0.75)",
       "target": "c-0095"
     },
     {
@@ -861,7 +861,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0096 proposes merging q-000425 + q-000838 (similarity 1)",
+      "summary": "Cluster c-0096 proposes merging q-001284 + q-001319 (similarity 0.75)",
       "target": "c-0096"
     },
     {
@@ -870,7 +870,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0097 proposes merging q-001285 + q-001294 (similarity 0.778)",
+      "summary": "Cluster c-0097 proposes merging q-000415 + q-000549 (similarity 0.857)",
       "target": "c-0097"
     },
     {
@@ -879,7 +879,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0098 proposes merging q-000430 + q-000739 (similarity 0.889)",
+      "summary": "Cluster c-0098 proposes merging q-000425 + q-000718 (similarity 1)",
       "target": "c-0098"
     },
     {
@@ -888,7 +888,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0099 proposes merging q-000436 + q-000828 (similarity 0.833)",
+      "summary": "Cluster c-0099 proposes merging q-000425 + q-000838 (similarity 1)",
       "target": "c-0099"
     },
     {
@@ -897,7 +897,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0100 proposes merging q-000470 + q-000574 (similarity 0.818)",
+      "summary": "Cluster c-0100 proposes merging q-001285 + q-001294 (similarity 0.778)",
       "target": "c-0100"
     },
     {
@@ -906,7 +906,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0101 proposes merging q-000482 + q-000592 (similarity 0.917)",
+      "summary": "Cluster c-0101 proposes merging q-000430 + q-000739 (similarity 0.889)",
       "target": "c-0101"
     },
     {
@@ -915,7 +915,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0102 proposes merging q-000495 + q-000498 (similarity 0.75)",
+      "summary": "Cluster c-0102 proposes merging q-000436 + q-000828 (similarity 0.833)",
       "target": "c-0102"
     },
     {
@@ -924,7 +924,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0103 proposes merging q-000500 + q-000737 (similarity 0.833)",
+      "summary": "Cluster c-0103 proposes merging q-000470 + q-000574 (similarity 0.818)",
       "target": "c-0103"
     },
     {
@@ -933,7 +933,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0104 proposes merging q-000508 + q-000676 (similarity 0.778)",
+      "summary": "Cluster c-0104 proposes merging q-000482 + q-000592 (similarity 0.917)",
       "target": "c-0104"
     },
     {
@@ -942,7 +942,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0105 proposes merging q-000518 + q-000614 (similarity 0.818)",
+      "summary": "Cluster c-0105 proposes merging q-000495 + q-000498 (similarity 0.75)",
       "target": "c-0105"
     },
     {
@@ -951,7 +951,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0106 proposes merging q-000528 + q-001298 (similarity 0.778)",
+      "summary": "Cluster c-0106 proposes merging q-000500 + q-000737 (similarity 0.833)",
       "target": "c-0106"
     },
     {
@@ -960,7 +960,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0107 proposes merging q-001288 + q-001312 (similarity 0.778)",
+      "summary": "Cluster c-0107 proposes merging q-000508 + q-000676 (similarity 0.778)",
       "target": "c-0107"
     },
     {
@@ -969,7 +969,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0108 proposes merging q-000540 + q-000702 (similarity 0.857)",
+      "summary": "Cluster c-0108 proposes merging q-000518 + q-000614 (similarity 0.818)",
       "target": "c-0108"
     },
     {
@@ -978,7 +978,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0109 proposes merging q-001289 + q-001313 (similarity 1)",
+      "summary": "Cluster c-0109 proposes merging q-000528 + q-001298 (similarity 0.778)",
       "target": "c-0109"
     },
     {
@@ -987,7 +987,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0110 proposes merging q-000544 + q-000623 (similarity 1)",
+      "summary": "Cluster c-0110 proposes merging q-001288 + q-001312 (similarity 0.778)",
       "target": "c-0110"
     },
     {
@@ -996,7 +996,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0111 proposes merging q-000561 + q-000940 (similarity 0.778)",
+      "summary": "Cluster c-0111 proposes merging q-000540 + q-000702 (similarity 0.857)",
       "target": "c-0111"
     },
     {
@@ -1005,7 +1005,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0112 proposes merging q-000620 + q-000760 (similarity 0.875)",
+      "summary": "Cluster c-0112 proposes merging q-001289 + q-001313 (similarity 1)",
       "target": "c-0112"
     },
     {
@@ -1014,7 +1014,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0113 proposes merging q-000625 + q-000741 (similarity 1)",
+      "summary": "Cluster c-0113 proposes merging q-000544 + q-000623 (similarity 1)",
       "target": "c-0113"
     },
     {
@@ -1023,7 +1023,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0114 proposes merging q-000627 + q-000962 (similarity 0.8)",
+      "summary": "Cluster c-0114 proposes merging q-000561 + q-000940 (similarity 0.778)",
       "target": "c-0114"
     },
     {
@@ -1032,7 +1032,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0115 proposes merging q-000630 + q-000948 (similarity 0.778)",
+      "summary": "Cluster c-0115 proposes merging q-000620 + q-000760 (similarity 0.875)",
       "target": "c-0115"
     },
     {
@@ -1041,7 +1041,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0116 proposes merging q-000635 + q-000789 (similarity 1)",
+      "summary": "Cluster c-0116 proposes merging q-000625 + q-000741 (similarity 1)",
       "target": "c-0116"
     },
     {
@@ -1050,7 +1050,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0117 proposes merging q-000637 + q-000806 (similarity 1)",
+      "summary": "Cluster c-0117 proposes merging q-000627 + q-000962 (similarity 0.8)",
       "target": "c-0117"
     },
     {
@@ -1059,7 +1059,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0118 proposes merging q-000654 + q-000927 (similarity 0.8)",
+      "summary": "Cluster c-0118 proposes merging q-000630 + q-000948 (similarity 0.778)",
       "target": "c-0118"
     },
     {
@@ -1068,7 +1068,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0119 proposes merging q-001298 + q-001308 (similarity 0.889)",
+      "summary": "Cluster c-0119 proposes merging q-000635 + q-000789 (similarity 1)",
       "target": "c-0119"
     },
     {
@@ -1077,7 +1077,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0120 proposes merging q-001299 + q-001321 (similarity 0.9)",
+      "summary": "Cluster c-0120 proposes merging q-000637 + q-000806 (similarity 1)",
       "target": "c-0120"
     },
     {
@@ -1086,7 +1086,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0121 proposes merging q-000671 + q-000933 (similarity 0.8)",
+      "summary": "Cluster c-0121 proposes merging q-000654 + q-000927 (similarity 0.8)",
       "target": "c-0121"
     },
     {
@@ -1095,7 +1095,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0122 proposes merging q-000718 + q-000838 (similarity 1)",
+      "summary": "Cluster c-0122 proposes merging q-001298 + q-001308 (similarity 0.889)",
       "target": "c-0122"
     },
     {
@@ -1104,7 +1104,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0123 proposes merging q-000722 + q-000851 (similarity 1)",
+      "summary": "Cluster c-0123 proposes merging q-001299 + q-001321 (similarity 0.9)",
       "target": "c-0123"
     },
     {
@@ -1113,7 +1113,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0124 proposes merging q-000728 + q-000792 (similarity 0.778)",
+      "summary": "Cluster c-0124 proposes merging q-000671 + q-000933 (similarity 0.8)",
       "target": "c-0124"
     },
     {
@@ -1122,7 +1122,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0125 proposes merging q-000787 + q-000895 (similarity 1)",
+      "summary": "Cluster c-0125 proposes merging q-000718 + q-000838 (similarity 1)",
       "target": "c-0125"
     },
     {
@@ -1131,7 +1131,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0126 proposes merging q-000799 + q-000912 (similarity 0.818)",
+      "summary": "Cluster c-0126 proposes merging q-000722 + q-000851 (similarity 1)",
       "target": "c-0126"
     },
     {
@@ -1140,7 +1140,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0127 proposes merging q-000816 + q-000928 (similarity 1)",
+      "summary": "Cluster c-0127 proposes merging q-000728 + q-000792 (similarity 0.778)",
       "target": "c-0127"
     },
     {
@@ -1149,7 +1149,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0128 proposes merging q-000848 + q-000955 (similarity 0.889)",
+      "summary": "Cluster c-0128 proposes merging q-000787 + q-000895 (similarity 1)",
       "target": "c-0128"
     },
     {
@@ -1158,7 +1158,7 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0129 proposes merging q-000850 + q-000958 (similarity 1)",
+      "summary": "Cluster c-0129 proposes merging q-000799 + q-000912 (similarity 0.818)",
       "target": "c-0129"
     },
     {
@@ -1167,12 +1167,39 @@
       "label": "🟠 near-duplicate",
       "questionId": null,
       "severity": "orange",
-      "summary": "Cluster c-0130 proposes merging q-000873 + q-000982 (similarity 0.789)",
+      "summary": "Cluster c-0130 proposes merging q-000816 + q-000928 (similarity 1)",
       "target": "c-0130"
     },
     {
-      "category": "chapter-unmapped",
+      "category": "near-duplicate",
       "id": "rq-000131",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0131 proposes merging q-000848 + q-000955 (similarity 0.889)",
+      "target": "c-0131"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000132",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0132 proposes merging q-000850 + q-000958 (similarity 1)",
+      "target": "c-0132"
+    },
+    {
+      "category": "near-duplicate",
+      "id": "rq-000133",
+      "label": "🟠 near-duplicate",
+      "questionId": null,
+      "severity": "orange",
+      "summary": "Cluster c-0133 proposes merging q-000873 + q-000982 (similarity 0.789)",
+      "target": "c-0133"
+    },
+    {
+      "category": "chapter-unmapped",
+      "id": "rq-000134",
       "label": "🟡 chapter-unmapped",
       "questionId": "q-000053",
       "severity": "yellow",

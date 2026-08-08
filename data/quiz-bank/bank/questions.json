@@ -11234,81 +11234,6 @@
         {
           "marks": 1,
           "paperId": "2018-b",
-          "sourceId": "2018-b:A:1",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 1,
-        "section": "objective",
-        "sourceId": "2018-b:A:1",
-        "subPart": null,
-        "text": {
-          "en": "Which mirror do the dentist use to use large images of teeth of patient? (A) plane mirror (B) concave mirror ©convex mirror (D) all of these Ans: concave mirror",
-          "hi": "डेंटिस्ट किस दर्पण का उपयोग करते हैं ताकि मरीज के दांतों की बड़ी छवियाँ प्राप्त की जा सकें? (A) समतल दर्पण (B) अवतल दर्पण (C) उत्तल दर्पण (D) इनमें से सभी उत्तर: अवतल दर्पण",
-          "hinglish": "Dentist kis darpan ka upyog karte hain taaki mareez ke daanton ki badi chhaviyaan prapt ki ja sakein? (A) Samtal darpan (B) Avatal darpan (C) Uttal darpan (D) Inmein se sabhi Uttar: Avatal darpan"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-01",
-        "confidence": 0.7395,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000136",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
           "sourceId": "2018-b:A:2",
           "year": 2018
         }
@@ -11488,231 +11413,6 @@
         {
           "marks": 1,
           "paperId": "2018-b",
-          "sourceId": "2018-b:A:4",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 4,
-        "section": "objective",
-        "sourceId": "2018-b:A:4",
-        "subPart": null,
-        "text": {
-          "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens? (A) Myopia (B) hypermetropia ©presbyopia (D) cataract Ans: presbyopia",
-          "hi": "कौन सी आंख की दोष को अवतल और उत्तल लेंस दोनों का उपयोग करके बाइफोकल लेंस से ठीक किया जा सकता है? (A) मायोपिया (B) हाइपरमेट्रोपिया (C) प्रिस्बायोपिया (D) मोतियाबिंद उत्तर: प्रिस्बायोपिया",
-          "hinglish": "Kaun si aankh ki dosh ko avatal aur uttal lens dono ka upyog karke bifocal lens se theek kiya ja sakta hai? (A) Myopia (B) Hypermetropia (C) Presbyopia (D) Motiyabind Uttar: Presbyopia"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-02",
-        "confidence": 0.8304,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000139",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:5",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 5,
-        "section": "objective",
-        "sourceId": "2018-b:A:5",
-        "subPart": null,
-        "text": {
-          "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the (A) mirror and the screen (B) mirror and object ©both A and B (D) none of these Ans: mirror and the screen",
-          "hi": "एक प्रयोग में, एक अवतल दर्पण द्वारा एक वस्तु की छवि स्क्रीन पर प्राप्त की जाती है ताकि दर्पण की फोकल लंबाई निर्धारित की जा सके, प्रयोगकर्ता को (A) दर्पण और स्क्रीन के बीच की दूरी (B) दर्पण और वस्तु के बीच की दूरी (C) दोनों A और B (D) इनमें से कोई नहीं मापने की आवश्यकता है। उत्तर: दर्पण और स्क्रीन",
-          "hinglish": "Ek prayog mein, ek avatal darpan dwara ek vastu ki chhavi screen par prapt ki jaati hai taaki darpan ki naabhiik doori nirdharit ki ja sake, prayogakarta ko (A) darpan aur screen ke beech ki doori (B) darpan aur vastu ke beech ki doori (C) Dono A aur B (D) Inmein se koi nahi maapne ki avashyakta hai. Uttar: darpan aur screen"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-01",
-        "confidence": 0.779,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000140",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:6",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 6,
-        "section": "objective",
-        "sourceId": "2018-b:A:6",
-        "subPart": null,
-        "text": {
-          "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary? (A) A convex lens of focal length 50 cm (B) a concave lens of focal length 50 cm © Convex lens of focal length 5 cm (D) a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
-          "hi": "आप निम्नलिखित में से किस लेंस का उपयोग करना पसंद करेंगे जब आप शब्दकोश में छोटे अक्षरों को पढ़ रहे हों? (A) 50 सेमी की फोकल लंबाई वाला उत्तल लेंस (B) 50 सेमी की फोकल लंबाई वाला अवतल लेंस (C) 5 सेमी की फोकल लंबाई वाला उत्तल लेंस (D) 5 सेमी की फोकल लंबाई वाला अवतल लेंस उत्तर: 5 सेमी की फोकल लंबाई वाला उत्तल लेंस",
-          "hinglish": "Aap nimnalikhit mein se kis lens ka upyog karna pasand karenge jab aap shabdakosh mein chhote aksharon ko padh rahe hon? (A) 50 cm ki naabhiik doori wala uttal lens (B) 50 cm ki naabhiik doori wala avatal lens (C) 5 cm ki naabhiik doori wala uttal lens (D) 5 cm ki naabhiik doori wala avatal lens Uttar: 5 cm ki naabhiik doori wala uttal lens"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-01",
-        "confidence": 0.8649,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000141",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
           "sourceId": "2018-b:A:7",
           "year": 2018
         }
@@ -11807,156 +11507,6 @@
       "questionId": "q-000142",
       "repeatCount": 1,
       "usableInQuiz": true,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:8",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 8,
-        "section": "objective",
-        "sourceId": "2018-b:A:8",
-        "subPart": null,
-        "text": {
-          "en": "At the time of short circuiting the current in the circuit (A)Reduces the substantially (B) Does not change ©Increases heavily (D) Varies continuously Ans: Increases heavily",
-          "hi": "शॉर्ट सर्किटिंग के समय सर्किट में करंट (A) काफी कम हो जाता है (B) नहीं बदलता © भारी बढ़ता है (D) लगातार बदलता है उत्तर: भारी बढ़ता है",
-          "hinglish": "Short circuiting ke samay circuit mein current (A) kaafi kam ho jaata hai (B) nahi badalta (C) bhaari badhta hai (D) lagataar badalta hai. Uttar: bhaari badhta hai"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-04",
-        "confidence": 0.7069,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000143",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:9",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 9,
-        "section": "objective",
-        "sourceId": "2018-b:A:9",
-        "subPart": null,
-        "text": {
-          "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is (A) Towards south (B) Towards east © Downward (D) upward Ans: upward",
-          "hi": "एक सकारात्मक चार्ज वाला कण (अल्फा कण) पश्चिम की ओर प्रक्षिप्त किया गया है, जिसे एक चुंबकीय क्षेत्र द्वारा उत्तर की ओर मोड़ा जाता है, चुंबकीय क्षेत्र की दिशा (A) दक्षिण की ओर (B) पूर्व की ओर © नीचे की ओर (D) ऊपर की ओर उत्तर: ऊपर की ओर",
-          "hinglish": "Ek sakaratmak charge wala karn (alpha karn) paschim ki or prakshipt kiya gaya hai, jise ek chumbakiya kshetra dwara uttar ki or moda jaata hai, chumbakiya kshetra ki disha (A) dakshin ki or (B) purv ki or (C) neeche ki or (D) upar ki or. Uttar: upar ki or"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-04",
-        "confidence": 0.6992,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000144",
-      "repeatCount": 1,
-      "usableInQuiz": false,
       "variants": [],
       "years": [
         2018
@@ -12105,306 +11655,6 @@
       },
       "difficulty": null,
       "questionId": "q-000146",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:12",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 12,
-        "section": "objective",
-        "sourceId": "2018-b:A:12",
-        "subPart": null,
-        "text": {
-          "en": "What kind of mirror would be most suited for a solar cooker? (A) plane mirror (B) convex mirror ©concave mirror (D) all of these Ans: concave mirror",
-          "hi": "सौर कुकर के लिए सबसे उपयुक्त किस प्रकार का दर्पण होगा? (A) समतल दर्पण (B) उत्तल दर्पण © अवतल दर्पण (D) इनमें से सभी उत्तर: अवतल दर्पण",
-          "hinglish": "Saur cooker ke liye sabse upyukt kis prakar ka darpan hoga? (A) samtal darpan (B) uttal darpan (C) avatal darpan (D) inmein se sabhi. Uttar: avatal darpan"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-05",
-        "confidence": 0.7612,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000147",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:13",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 13,
-        "section": "objective",
-        "sourceId": "2018-b:A:13",
-        "subPart": null,
-        "text": {
-          "en": "The main aim of Chipko movement was to (A) Conserve soil (B) Trees ©water (D) electricity Ans: Trees",
-          "hi": "चिपको आंदोलन का मुख्य उद्देश्य था (A) मिट्टी का संरक्षण (B) पेड़ © पानी (D) बिजली उत्तर: पेड़",
-          "hinglish": "Chipko aandolan ka mukhya uddeshya tha (A) mitti ka sanrakshan (B) ped (C) paani (D) bijli. Uttar: ped"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.biology.chapter-06",
-        "confidence": 0.7715,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000148",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:14",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 14,
-        "section": "objective",
-        "sourceId": "2018-b:A:14",
-        "subPart": null,
-        "text": {
-          "en": "Which of the following solution is used for white washing walls? (A) CaH(CO3 )2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) Ans: Ca(OH)2",
-          "hi": "दीवारों को सफेद करने के लिए निम्नलिखित में से कौन सा घोल उपयोग किया जाता है? (A) CaH(CO3)2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) उत्तर: Ca(OH)2",
-          "hinglish": "Deewaron ko safed karne ke liye nimnalikhit mein se kaun sa ghol upyog kiya jaata hai? (A) CaH(CO3)2 (B) Ca(OH)2 (C) NaOH (D) NaH(CO3). Uttar: Ca(OH)2"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.chemistry.chapter-02",
-        "confidence": 0.7376,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000149",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:15",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 15,
-        "section": "objective",
-        "sourceId": "2018-b:A:15",
-        "subPart": null,
-        "text": {
-          "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is (A) Combination reaction (B) decomposition reaction ©double displacement reaction (D) none of these Ans: double displacement reaction",
-          "hi": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) उपरोक्त रासायनिक समीकरण (A) संयोजन प्रतिक्रिया (B) विघटन प्रतिक्रिया © डबल विस्थापन प्रतिक्रिया (D) इनमें से कोई नहीं उत्तर: डबल विस्थापन प्रतिक्रिया",
-          "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) uparokta rasayanik samikaran (A) sanyojan pratikriya (B) vighatan pratikriya (C) double displacement pratikriya (D) inmein se koi nahi. Uttar: double displacement pratikriya"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.chemistry.chapter-01",
-        "confidence": 0.8436,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000150",
       "repeatCount": 1,
       "usableInQuiz": false,
       "variants": [],
@@ -14537,81 +13787,6 @@
       "questionId": "q-000173",
       "repeatCount": 1,
       "usableInQuiz": true,
-      "variants": [],
-      "years": [
-        2018
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2018-b",
-          "sourceId": "2018-b:A:40",
-          "year": 2018
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L0",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified",
-          "options-incomplete"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "missing-hindi",
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "empty-text",
-          "language-backfilled-hindi"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": null,
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 40,
-        "section": "objective",
-        "sourceId": "2018-b:A:40",
-        "subPart": null,
-        "text": {
-          "en": "Which of the following groups contain only one biodegradable items? (A) Grass, flower and leather (B) brass, wood and plastic © Fruits piece cake and Rubber. (D) Cake, wood and glass Ans: cake, wood and glass",
-          "hi": "निम्नलिखित में से कौन से समूह में केवल एक बायोडिग्रेडेबल वस्तुएं हैं? (A) घास, फूल और चमड़ा (B) पीतल, लकड़ी और प्लास्टिक (C) फल, टुकड़ा, केक और रबर। (D) केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
-          "hinglish": "Nimnalikhit mein se kaun se samuh mein keval ek biodegradable vastuyein hain? (A) Ghaas, phool aur chamda (B) Peetal, lakdi aur plastic (C) Phal, tukda, cake aur rubber. (D) Cake, lakdi aur kaanch uttar: Cake, lakdi aur kaanch"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.biology.chapter-05",
-        "confidence": 0.7452,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-000175",
-      "repeatCount": 1,
-      "usableInQuiz": false,
       "variants": [],
       "years": [
         2018
@@ -96639,529 +95814,6 @@
         {
           "marks": 1,
           "paperId": "2019-b",
-          "sourceId": "2019-b:A:1",
-          "year": 2019
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L1",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "language-backfilled-english"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": [
-          {
-            "key": "a",
-            "text": {
-              "en": "decreases significantly",
-              "hi": "बहुत कम हो जाता है",
-              "hinglish": "Bahut kam ho jaata hai"
-            }
-          },
-          {
-            "key": "b",
-            "text": {
-              "en": "does not change",
-              "hi": "परिवर्तित नहीं होता है",
-              "hinglish": "parivartit nahi hota hai"
-            }
-          },
-          {
-            "key": "c",
-            "text": {
-              "en": "increases significantly",
-              "hi": "बहुत अधिक बढ़ जाता है",
-              "hinglish": "Bahut adhik badh jaata hai"
-            }
-          },
-          {
-            "key": "d",
-            "text": {
-              "en": "none of these",
-              "hi": "इनमें से कोई नही",
-              "hinglish": "Inmein se koi nahi"
-            }
-          }
-        ],
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 1,
-        "section": "objective",
-        "sourceId": "2019-b:A:1",
-        "subPart": null,
-        "text": {
-          "en": "Candidates are required to give their answers in their own words as far as practicable.",
-          "hi": "अतिभारण के समय विद्युत परिपथ में विद्युत धारा का मान",
-          "hinglish": "Atibharan ke samay vidyut paripath mein vidyut dhara ka maan"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.chemistry.chapter-04",
-        "confidence": 0.6701,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-001263",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2019
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2019-b",
-          "sourceId": "2019-b:A:2",
-          "year": 2019
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L1",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "language-backfilled-english"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": [
-          {
-            "key": "a",
-            "text": {
-              "en": "biomass",
-              "hi": "जैव मात्रा (बायो-मास)",
-              "hinglish": "Jaiv maatra (bio-mass)"
-            }
-          },
-          {
-            "key": "b",
-            "text": {
-              "en": "nuclear energy source",
-              "hi": "नाभिकीय ऊर्जा स्त्रोत",
-              "hinglish": "Naabikiy urja strot"
-            }
-          },
-          {
-            "key": "c",
-            "text": {
-              "en": "geothermal energy source",
-              "hi": "भूतापीय ऊर्जा स्त्रोत",
-              "hinglish": "Bhootapeey urja strot"
-            }
-          },
-          {
-            "key": "d",
-            "text": {
-              "en": "none of these",
-              "hi": "इनमें से कोई नही",
-              "hinglish": "Inmein se koi nahi"
-            }
-          }
-        ],
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 2,
-        "section": "objective",
-        "sourceId": "2019-b:A:2",
-        "subPart": null,
-        "text": {
-          "en": "Figures in the right hand margin indicate full marks.",
-          "hi": "कौन - सा परम्परागत ऊर्जा स्त्रोत है?",
-          "hinglish": "Kaun - sa paramparagat urja strot hai?"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.meta.chapter-00",
-        "confidence": 0.6808,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-001264",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2019
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2019-b",
-          "sourceId": "2019-b:A:3",
-          "year": 2019
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L1",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "language-backfilled-english"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": [
-          {
-            "key": "a",
-            "text": {
-              "en": "selection",
-              "hi": "अपचयन",
-              "hinglish": "Apchayan"
-            }
-          },
-          {
-            "key": "b",
-            "text": {
-              "en": "substitution",
-              "hi": "उपचयन",
-              "hinglish": "Upchayan"
-            }
-          },
-          {
-            "key": "c",
-            "text": {
-              "en": "corrosion",
-              "hi": "संक्षारण",
-              "hinglish": "Sankharan"
-            }
-          },
-          {
-            "key": "d",
-            "text": {
-              "en": "None of these",
-              "hi": "इनमें से कोई नहीं",
-              "hinglish": "Inmein se koi nahi"
-            }
-          }
-        ],
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 3,
-        "section": "objective",
-        "sourceId": "2019-b:A:3",
-        "subPart": null,
-        "text": {
-          "en": "15 Minutes of extra time has been allotted for the candidates to read the questions carefully.",
-          "hi": "रासायनिक अभिक्रिया के दौरान किसी पदार्थ में ऑक्सीजन का योग कहलाता है?",
-          "hinglish": "Rasayanik abhikriya ke dauran kisi padarth mein oxygen ka yog kaha jaata hai?"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.physics.chapter-03",
-        "confidence": 0.6409,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-001265",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2019
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2019-b",
-          "sourceId": "2019-b:A:4",
-          "year": 2019
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L1",
-          "conflicts": [],
-          "correctOption": null,
-          "source": "none",
-          "sourceDetail": null,
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [
-          "answer-unverified"
-        ],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "language-backfilled-english"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": [
-          {
-            "key": "a",
-            "text": {
-              "en": "gibberellin",
-              "hi": "जिब्रेलिन",
-              "hinglish": "Jibrelin"
-            }
-          },
-          {
-            "key": "b",
-            "text": {
-              "en": "adrenaline",
-              "hi": "एड्रीनेलिन",
-              "hinglish": "Adrenaline"
-            }
-          },
-          {
-            "key": "c",
-            "text": {
-              "en": "insulin",
-              "hi": "इंसुलिन",
-              "hinglish": "Insulin"
-            }
-          },
-          {
-            "key": "d",
-            "text": {
-              "en": "thyroxine",
-              "hi": "थाइरॉक्सिन",
-              "hinglish": "Thyroxine"
-            }
-          }
-        ],
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 4,
-        "section": "objective",
-        "sourceId": "2019-b:A:4",
-        "subPart": null,
-        "text": {
-          "en": "This question paper is divided into two sections - Section - A and Section - B.",
-          "hi": "पादपों मे पाया जाने वाला वृद्धि हार्मोन निम्न में से कौन सा है?",
-          "hinglish": "Padapon mein paaya jaane wala vridhi hormone nimn mein se kaun sa hai?"
-        },
-        "type": "mcq",
-        "usableInQuiz": false,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.meta.chapter-00",
-        "confidence": 0.6962,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-001266",
-      "repeatCount": 1,
-      "usableInQuiz": false,
-      "variants": [],
-      "years": [
-        2019
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2019-b",
-          "sourceId": "2019-b:A:5",
-          "year": 2019
-        }
-      ],
-      "canonical": {
-        "answer": {
-          "confidence": "L3",
-          "conflicts": [],
-          "correctOption": "a",
-          "source": "textbook",
-          "sourceDetail": "RAG textbook match — Electricity: \"Resistance depends on:\n\n1. Length: resistance increases with length.\"",
-          "text": {
-            "en": null,
-            "hi": null,
-            "hinglish": null
-          }
-        },
-        "blockers": [],
-        "diagram": {
-          "note": null,
-          "required": false
-        },
-        "flags": [
-          "options-unparsed-english",
-          "marks-defaulted-mcq-hi-null-en-null",
-          "language-backfilled-english"
-        ],
-        "group": "A",
-        "hasAlternative": false,
-        "marks": 1,
-        "options": [
-          {
-            "key": "a",
-            "text": {
-              "en": "on the length of the conductor",
-              "hi": "चालक की लम्बाई पर",
-              "hinglish": "Chalak ki lambai par"
-            }
-          },
-          {
-            "key": "b",
-            "text": {
-              "en": "on the cross-sectional area of the conductor",
-              "hi": "चालक के अनुप्रस्थ काट क्षेत्रफल पर",
-              "hinglish": "Chalak ke anuprast kaat kshetrafal par"
-            }
-          },
-          {
-            "key": "c",
-            "text": {
-              "en": "on the temperature of the conductor",
-              "hi": "चालक के तापमान पर",
-              "hinglish": "Chalak ke taapmaan par"
-            }
-          },
-          {
-            "key": "d",
-            "text": {
-              "en": "on the electric current flowing in the conductor",
-              "hi": "चालक में प्रवाहित विद्युत धारा पर",
-              "hinglish": "Chalak mein pravahit vidyut dhara par"
-            }
-          }
-        ],
-        "provenance": {
-          "crossChecked": false,
-          "pages": [
-            null
-          ],
-          "readBy": "vision"
-        },
-        "questionNumber": 5,
-        "section": "objective",
-        "sourceId": "2019-b:A:5",
-        "subPart": null,
-        "text": {
-          "en": "In Section - A there are 40 objective type questions which are compulsory (1 mark each). Darken the circle with blue/black ball pen against the correct option on OMR Answer Sheet provided to you. Do not use Whitener/Liquid/Blade/Nail etc. on OMR Sheet, otherwise the result will be invalid. In Section - B, there are 22 short answer type questions. Out of these, eight questions are from Physics, seven questions are from Chemistry and seven questions are from Biology. Four questions are to be answered from each subject (Physics, Chemistry and Biology). Each question carries 2 marks. Apart from this, there are 6 Long Answer Type questions. Two questions from Physics, Chemistry and Biology each — long answer type questions from Physics carries 6 marks and from Chemistry and Biology carries 5 marks each. Answer of one from Physics, Chemistry and Biology is compulsory. Use of any electronic appliances is strictly prohibited.",
-          "hi": "चालक का प्रतिरोध निर्भर नही करता है",
-          "hinglish": "Chalak ka pratirodh nirbhar nahi karta hai"
-        },
-        "type": "mcq",
-        "usableInQuiz": true,
-        "variantOf": null
-      },
-      "chapter": {
-        "chapterId": "science.meta.chapter-00",
-        "confidence": 0.7933,
-        "method": "rag"
-      },
-      "difficulty": null,
-      "questionId": "q-001267",
-      "repeatCount": 1,
-      "usableInQuiz": true,
-      "variants": [],
-      "years": [
-        2019
-      ]
-    },
-    {
-      "appearances": [
-        {
-          "marks": 1,
-          "paperId": "2019-b",
           "sourceId": "2019-b:A:20",
           "year": 2019
         }
@@ -102633,6 +101285,1665 @@
       "variants": [],
       "years": [
         2026
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:1",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "b",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"5. Dentists' mirrors\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "plane mirror",
+              "hi": "समतल दर्पण",
+              "hinglish": "Samtal darpan"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "concave mirror",
+              "hi": "उत्कर्ण दर्पण",
+              "hinglish": "Utkaran darpan"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "convex mirror",
+              "hi": "उत्कृष्ट दर्पण",
+              "hinglish": "Utkrsht darpan"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "all of these Ans: concave mirror",
+              "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
+              "hinglish": "Inmein se sabhi uttar: Utkaran darpan"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 1,
+        "section": "objective",
+        "sourceId": "2018-b:A:1",
+        "subPart": null,
+        "text": {
+          "en": "Which mirror do the dentist use to use large images of teeth of patient?",
+          "hi": "डेंटिस्ट किस दर्पण का उपयोग करते हैं ताकि मरीज के दांतों की बड़ी छवियाँ प्राप्त की जा सकें?",
+          "hinglish": "Dentist kis darpan ka upyog karte hain taaki mareez ke daanton ki badi chhaviyaan prapt ki ja sakein?"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-01",
+        "confidence": 0.6851,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001323",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:4",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Human Eye and Colourful World: \"Some people may suffer from both myopia and hypermetropia. Such people may require **bifocal lenses**.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Myopia",
+              "hi": "मायोपिया",
+              "hinglish": "Myopia"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "hypermetropia",
+              "hi": "हाइपरमेट्रोपिया",
+              "hinglish": "Hypermetropia"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "presbyopia",
+              "hi": "प्रेस्बायोपिया",
+              "hinglish": "Presbyopia"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "cataract Ans: presbyopia",
+              "hi": "मोतियाबिंद उत्तर: प्रेस्बायोपिया",
+              "hinglish": "Motiya bindu uttar: Presbyopia"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 4,
+        "section": "objective",
+        "sourceId": "2018-b:A:4",
+        "subPart": null,
+        "text": {
+          "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens?",
+          "hi": "कौन सा नेत्र दोष बाइफोकल लेंस का उपयोग करके ठीक किया जा सकता है जिसमें उत्कर्ण और उत्कृष्ट लेंस दोनों होते हैं?",
+          "hinglish": "Kaun sa netra dosh bifocal lens ka upyog karke theek kiya ja sakta hai jismein utkaran aur utkrsht lens dono hote hain?"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-02",
+        "confidence": 0.826,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001324",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:5",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L1",
+          "conflicts": [],
+          "correctOption": null,
+          "source": "none",
+          "sourceDetail": null,
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [
+          "answer-unverified"
+        ],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "mirror and the screen",
+              "hi": "दर्पण और स्क्रीन",
+              "hinglish": "Darpan aur screen"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "mirror and object",
+              "hi": "दर्पण और वस्तु",
+              "hinglish": "Darpan aur vastu"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "both A and B",
+              "hi": "दोनों A और B",
+              "hinglish": "Dono A aur B"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "none of these Ans: mirror and the screen",
+              "hi": "इनमें से कोई नहीं उत्तर: दर्पण और स्क्रीन",
+              "hinglish": "Inmein se koi nahi uttar: darpan aur screen"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 5,
+        "section": "objective",
+        "sourceId": "2018-b:A:5",
+        "subPart": null,
+        "text": {
+          "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the",
+          "hi": "एक प्रयोग में, एक उत्कर्ण दर्पण द्वारा बनाए गए वस्तु की छवि को एक स्क्रीन पर प्राप्त किया जाता है ताकि दर्पण की फोकल लंबाई निर्धारित की जा सके, प्रयोगकर्ता को मापने की आवश्यकता होती है दूरी के बीच",
+          "hinglish": "Ek prayog mein, ek utkaran darpan dwara banaye gaye vastu ki chhavi ko ek screen par prapt kiya jaata hai taaki darpan ki naabhiik doori nirdharit ki ja sake, prayogakarta ko maapne ki avashyakta hoti hai doori ke beech"
+        },
+        "type": "mcq",
+        "usableInQuiz": false,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-01",
+        "confidence": 0.7705,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001325",
+      "repeatCount": 1,
+      "usableInQuiz": false,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:6",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"Convex lens of short focal length, such as 5 cm.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "A convex lens of focal length 50 cm",
+              "hi": "एक उत्तल लेंस जिसकी फोकल लंबाई 50 सेमी है",
+              "hinglish": "Ek uttal lens jiski focal lambai 50 cm hai"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "a concave lens of focal length 50 cm",
+              "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 50 सेमी है",
+              "hinglish": "Ek avatal lens jiski focal lambai 50 cm hai"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Convex lens of focal length 5 cm",
+              "hi": "उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
+              "hinglish": "Uttal lens jiski focal lambai 5 cm hai"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
+              "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 5 सेमी है उत्तर: उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
+              "hinglish": "Ek avatal lens jiski focal lambai 5 cm hai uttar: uttal lens jiski focal lambai 5 cm hai"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 6,
+        "section": "objective",
+        "sourceId": "2018-b:A:6",
+        "subPart": null,
+        "text": {
+          "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary?",
+          "hi": "निम्नलिखित में से कौन सा लेंस आप शब्दकोश में छोटे अक्षरों को पढ़ने के लिए उपयोग करना चाहेंगे?",
+          "hinglish": "Nimnalikhit mein se kaun sa lens aap shabdakosh mein chhote aksharon ko padhne ke liye istemal karna chahenge?"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-01",
+        "confidence": 0.8254,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001326",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:8",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Magnetic Effects of Electric Current: \"This causes a sudden large current.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Reduces the substantially",
+              "hi": "को काफी कम करता है",
+              "hinglish": "Ko kaafi kam karta hai"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Does not change",
+              "hi": "बदलता नहीं है",
+              "hinglish": "Badalta nahi hai"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Increases heavily",
+              "hi": "काफी बढ़ाता है",
+              "hinglish": "Kaafi badhata hai"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Varies continuously Ans: Increases heavily",
+              "hi": "लगातार बदलता है",
+              "hinglish": "Lagataar badalta hai uttar: Kaafi badhata hai"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 8,
+        "section": "objective",
+        "sourceId": "2018-b:A:8",
+        "subPart": null,
+        "text": {
+          "en": "At the time of short circuiting the current in the circuit",
+          "hi": "शॉर्ट सर्किटिंग के समय सर्किट में करंट",
+          "hinglish": "Short circuiting ke samay circuit mein current"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-04",
+        "confidence": 0.7338,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001327",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:9",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L1",
+          "conflicts": [],
+          "correctOption": null,
+          "source": "none",
+          "sourceDetail": null,
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [
+          "answer-unverified"
+        ],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Towards south",
+              "hi": "दक्षिण की ओर",
+              "hinglish": "Dakshin ki or"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Towards east",
+              "hi": "पूर्व की ओर",
+              "hinglish": "Purv ki or"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Downward",
+              "hi": "नीचे की ओर",
+              "hinglish": "Neeche ki or"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "upward Ans: upward",
+              "hi": "ऊपर की ओर",
+              "hinglish": "Upar ki or"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 9,
+        "section": "objective",
+        "sourceId": "2018-b:A:9",
+        "subPart": null,
+        "text": {
+          "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is",
+          "hi": "एक सकारात्मक चार्ज वाला कण (अल्फा कण) जो पश्चिम की ओर प्रक्षिप्त किया गया है, एक चुंबकीय क्षेत्र द्वारा उत्तर की ओर मोड़ा जाता है, चुंबकीय क्षेत्र की दिशा है",
+          "hinglish": "Ek sakaratmak charge wala karn (Alpha karn) jo paschim ki or prakshipt kiya gaya hai, ek chumbakiya kshetra dwara uttar ki or moda jaata hai, chumbakiya kshetra ki disha hai"
+        },
+        "type": "mcq",
+        "usableInQuiz": false,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-04",
+        "confidence": 0.6886,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001328",
+      "repeatCount": 1,
+      "usableInQuiz": false,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:12",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Sources of Energy: \"A concave mirror is most suitable because it focuses sunlight at one region and raises the temperature.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "plane mirror",
+              "hi": "समतल दर्पण",
+              "hinglish": "Samtal darpan"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "convex mirror",
+              "hi": "उत्कृष्ट दर्पण",
+              "hinglish": "Utkrsht darpan"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "concave mirror",
+              "hi": "उत्कर्ण दर्पण",
+              "hinglish": "Utkaran darpan"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "all of these Ans: concave mirror",
+              "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
+              "hinglish": "Inmein se sabhi uttar: Utkaran darpan"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 12,
+        "section": "objective",
+        "sourceId": "2018-b:A:12",
+        "subPart": null,
+        "text": {
+          "en": "What kind of mirror would be most suited for a solar cooker?",
+          "hi": "सौर कुकर के लिए सबसे उपयुक्त किस प्रकार का दर्पण होगा?",
+          "hinglish": "Saur cooker ke liye sabse upyukt kis prakar ka darpan hoga?"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-05",
+        "confidence": 0.792,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001329",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:13",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "b",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Management of Natural Resources: \"The Chipko Movement was a forest conservation movement in which local villagers, especially women, hugged trees to prevent contractors from cutting them.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Conserve soil",
+              "hi": "मिट्टी को संरक्षित करना",
+              "hinglish": "Mitti ko sanrakshit karna"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Trees",
+              "hi": "पेड़",
+              "hinglish": "Ped"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "water",
+              "hi": "पानी",
+              "hinglish": "Paani"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "electricity Ans: Trees",
+              "hi": "बिजली",
+              "hinglish": "Bijli"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 13,
+        "section": "objective",
+        "sourceId": "2018-b:A:13",
+        "subPart": null,
+        "text": {
+          "en": "The main aim of Chipko movement was to",
+          "hi": "चिपको आंदोलन का मुख्य उद्देश्य था",
+          "hinglish": "Chipko aandolan ka mukhya uddeshya tha"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.biology.chapter-06",
+        "confidence": 0.8075,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001330",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:14",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L1",
+          "conflicts": [],
+          "correctOption": null,
+          "source": "none",
+          "sourceDetail": null,
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [
+          "answer-unverified"
+        ],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "CaH(CO3 )2",
+              "hi": "CaH(CO3)2",
+              "hinglish": "CaH(CO3)2"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Ca(OH)2",
+              "hi": "Ca(OH)2",
+              "hinglish": "Ca(OH)2"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "NaOH",
+              "hi": "NaOH",
+              "hinglish": "NaOH"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "NaH(CO3) Ans: Ca(OH)2",
+              "hi": "NaH(CO3) उत्तर: Ca(OH)2",
+              "hinglish": "NaH(CO3) uttar: Ca(OH)2"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 14,
+        "section": "objective",
+        "sourceId": "2018-b:A:14",
+        "subPart": null,
+        "text": {
+          "en": "Which of the following solution is used for white washing walls?",
+          "hi": "दीवारों को सफेद करने के लिए निम्नलिखित में से कौन सा घोल उपयोग किया जाता है?",
+          "hinglish": "Deewaron ko safed karne ke liye nimnalikhit mein se kaun sa ghol upyog kiya jaata hai?"
+        },
+        "type": "mcq",
+        "usableInQuiz": false,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.chemistry.chapter-02",
+        "confidence": 0.6929,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001331",
+      "repeatCount": 1,
+      "usableInQuiz": false,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:15",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Chemical Reactions and Equations: \"A double displacement reaction is a reaction in which ions are exchanged between two reactants to form new compounds.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Combination reaction",
+              "hi": "संयोग प्रतिक्रिया",
+              "hinglish": "Sanyog abhikriya"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "decomposition reaction",
+              "hi": "विघटन प्रतिक्रिया",
+              "hinglish": "Vighatan abhikriya"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "double displacement reaction",
+              "hi": "डबल विस्थापन प्रतिक्रिया",
+              "hinglish": "Double displacement abhikriya"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "none of these Ans: double displacement reaction",
+              "hi": "इनमें से कोई नहीं उत्तर: डबल विस्थापन प्रतिक्रिया",
+              "hinglish": "Inmein se koi nahi uttar: double displacement abhikriya"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 15,
+        "section": "objective",
+        "sourceId": "2018-b:A:15",
+        "subPart": null,
+        "text": {
+          "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is",
+          "hi": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) उपरोक्त रासायनिक समीकरण है",
+          "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) uparokt rasayanik samikaran hai"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.chemistry.chapter-01",
+        "confidence": 0.783,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001332",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2018-b",
+          "sourceId": "2018-b:A:40",
+          "year": 2018
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L1",
+          "conflicts": [],
+          "correctOption": null,
+          "source": "none",
+          "sourceDetail": null,
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [
+          "answer-unverified"
+        ],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "missing-hindi",
+          "marks-defaulted-mcq-hi-null-en-null",
+          "empty-text",
+          "language-backfilled-hindi"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Grass, flower and leather",
+              "hi": "घास, फूल और चमड़ा",
+              "hinglish": "Ghaas, phool aur chamda"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "brass, wood and plastic",
+              "hi": "पीतल, लकड़ी और प्लास्टिक",
+              "hinglish": "Peetal, lakdi aur plastic"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Fruits piece cake and Rubber",
+              "hi": "फलों का टुकड़ा केक और रबर",
+              "hinglish": "Phalon ka tukda cake aur rubber"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Cake, wood and glass Ans: cake, wood and glass",
+              "hi": "केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
+              "hinglish": "Cake, lakdi aur kaanch uttar: cake, lakdi aur kaanch"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 40,
+        "section": "objective",
+        "sourceId": "2018-b:A:40",
+        "subPart": null,
+        "text": {
+          "en": "Which of the following groups contain only one biodegradable items?",
+          "hi": "निम्नलिखित में से कौन सी समूह केवल एक बायोडिग्रेडेबल वस्तुओं को शामिल करता है?",
+          "hinglish": "Nimnalikhit mein se kaun si samuh keval ek biodegradable vastuon ko shamil karta hai?"
+        },
+        "type": "mcq",
+        "usableInQuiz": false,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.biology.chapter-05",
+        "confidence": 0.7949,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001333",
+      "repeatCount": 1,
+      "usableInQuiz": false,
+      "variants": [],
+      "years": [
+        2018
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2019-b",
+          "sourceId": "2019-b:A:1",
+          "year": 2019
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "c",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Magnetic Effects of Electric Current: \"overloading occurs when too many appliances draw current from the same circuit, causing the current to exceed the safe limit.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "marks-defaulted-mcq-hi-null-en-null"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "reduces substantially",
+              "hi": "बहुत कम हो जाता है",
+              "hinglish": "Bahut kam ho jaata hai"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "does not change",
+              "hi": "परिवर्तित नहीं होता है",
+              "hinglish": "parivartit nahi hota hai"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "increases heavily",
+              "hi": "बहुत अधिक बढ़ जाता है",
+              "hinglish": "Bahut adhik badh jaata hai"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "none of these",
+              "hi": "इनमें से कोई नही",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 1,
+        "section": "objective",
+        "sourceId": "2019-b:A:1",
+        "subPart": null,
+        "text": {
+          "en": "At the time of overloading, the electric current in the circuit",
+          "hi": "अतिभारण के समय विद्युत परिपथ में विद्युत धारा का मान",
+          "hinglish": "Atibharaan ke samay vidyut paripath mein vidyut dhara ka maan"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-04",
+        "confidence": 0.7262,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001334",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2019
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2019-b",
+          "sourceId": "2019-b:A:2",
+          "year": 2019
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "a",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Sources of Energy: \"Biomass\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "marks-defaulted-mcq-hi-null-en-null"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Bio-Mass",
+              "hi": "जैव मात्रा (बायो-मास)",
+              "hinglish": "Jaiv maatra (Bio-Mass)"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Nuclear energy source",
+              "hi": "नाभिकीय ऊर्जा स्त्रोत",
+              "hinglish": "Naabikiy urja strot"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Geo-thermal energy source",
+              "hi": "भूतापीय ऊर्जा स्त्रोत",
+              "hinglish": "Bhootapeey urja strot"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नही",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 2,
+        "section": "objective",
+        "sourceId": "2019-b:A:2",
+        "subPart": null,
+        "text": {
+          "en": "Which is the conventional source of energy?",
+          "hi": "कौन - सा परम्परागत ऊर्जा स्त्रोत है?",
+          "hinglish": "Kaun - sa paramparagat urja strot hai?"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-05",
+        "confidence": 0.8691,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001335",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2019
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2019-b",
+          "sourceId": "2019-b:A:3",
+          "year": 2019
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L1",
+          "conflicts": [],
+          "correctOption": null,
+          "source": "none",
+          "sourceDetail": null,
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [
+          "answer-unverified"
+        ],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "marks-defaulted-mcq-hi-null-en-null"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Reduction",
+              "hi": "अपचयन",
+              "hinglish": "Apchayan"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Oxidation",
+              "hi": "उपचयन",
+              "hinglish": "Upchayan"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Corrosion",
+              "hi": "संक्षारण",
+              "hinglish": "Sankharan"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 3,
+        "section": "objective",
+        "sourceId": "2019-b:A:3",
+        "subPart": null,
+        "text": {
+          "en": "The gain of oxygen by a substance during chemical reaction is called",
+          "hi": "रासायनिक अभिक्रिया के दौरान किसी पदार्थ में ऑक्सीजन का योग कहलाता है?",
+          "hinglish": "Rasayanik abhikriya ke dauran kisi padarth mein oxygen ka yog kaha jaata hai?"
+        },
+        "type": "mcq",
+        "usableInQuiz": false,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.chemistry.chapter-01",
+        "confidence": 0.7455,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001336",
+      "repeatCount": 1,
+      "usableInQuiz": false,
+      "variants": [],
+      "years": [
+        2019
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2019-b",
+          "sourceId": "2019-b:A:4",
+          "year": 2019
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "a",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Control and Coordination: \"Gibberellin helps in stem growth.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "marks-defaulted-mcq-hi-null-en-null"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Gibberellin",
+              "hi": "जिब्रेलिन",
+              "hinglish": "Gibberellin"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Adrenaline",
+              "hi": "एड्रीनेलिन",
+              "hinglish": "Adrenaline"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Insulin",
+              "hi": "इंसुलिन",
+              "hinglish": "Insulin"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Thyroxine",
+              "hi": "थाइरॉक्सिन",
+              "hinglish": "Thyroxine"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 4,
+        "section": "objective",
+        "sourceId": "2019-b:A:4",
+        "subPart": null,
+        "text": {
+          "en": "Which one of the following is the growth hormone found in plants?",
+          "hi": "पादपों मे पाया जाने वाला वृद्धि हार्मोन निम्न में से कौन सा है?",
+          "hinglish": "Padapon mein paaya jaane wala vridhi hormone nimn mein se kaun sa hai?"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.biology.chapter-02",
+        "confidence": 0.7777,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001337",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2019
+      ]
+    },
+    {
+      "appearances": [
+        {
+          "marks": 1,
+          "paperId": "2019-b",
+          "sourceId": "2019-b:A:5",
+          "year": 2019
+        }
+      ],
+      "canonical": {
+        "answer": {
+          "confidence": "L3",
+          "conflicts": [],
+          "correctOption": "a",
+          "source": "textbook",
+          "sourceDetail": "RAG textbook match — Electricity: \"R depends on length, area of cross-section, and material.\"",
+          "text": {
+            "en": null,
+            "hi": null,
+            "hinglish": null
+          }
+        },
+        "blockers": [],
+        "diagram": {
+          "note": null,
+          "required": false
+        },
+        "flags": [
+          "marks-defaulted-mcq-hi-null-en-null"
+        ],
+        "group": "A",
+        "hasAlternative": false,
+        "marks": 1,
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "length of a conductor",
+              "hi": "चालक की लम्बाई पर",
+              "hinglish": "Chalak ki lambai par"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "cross sectional area of a conductor",
+              "hi": "चालक के अनुप्रस्थ काट क्षेत्रफल पर",
+              "hinglish": "Chalak ke anuprast kaat kshetrafal par"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Temperature of a conductor",
+              "hi": "चालक के तापमान पर",
+              "hinglish": "Chalak ke taapmaan par"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Electric current flowing through conductor",
+              "hi": "चालक में प्रवाहित विद्युत धारा पर",
+              "hinglish": "Chalak mein pravahit vidyut dhara par"
+            }
+          }
+        ],
+        "provenance": {
+          "crossChecked": false,
+          "pages": [
+            null
+          ],
+          "readBy": "vision"
+        },
+        "questionNumber": 5,
+        "section": "objective",
+        "sourceId": "2019-b:A:5",
+        "subPart": null,
+        "text": {
+          "en": "The resistance of a conductor does not depend on",
+          "hi": "चालक का प्रतिरोध निर्भर नही करता है",
+          "hinglish": "Chalak ka pratirodh nirbhar nahi karta hai"
+        },
+        "type": "mcq",
+        "usableInQuiz": true,
+        "variantOf": null
+      },
+      "chapter": {
+        "chapterId": "science.physics.chapter-03",
+        "confidence": 0.7561,
+        "method": "rag"
+      },
+      "difficulty": null,
+      "questionId": "q-001338",
+      "repeatCount": 1,
+      "usableInQuiz": true,
+      "variants": [],
+      "years": [
+        2019
       ]
     }
   ],

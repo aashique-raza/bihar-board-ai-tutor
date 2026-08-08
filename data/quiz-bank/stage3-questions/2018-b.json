@@ -25,7 +25,7 @@
   "questions": [
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -37,8 +37,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -46,7 +45,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -54,7 +52,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "concave mirror",
+            "hi": "उत्कर्ण दर्पण",
+            "hinglish": "Utkaran darpan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "convex mirror",
+            "hi": "उत्कृष्ट दर्पण",
+            "hinglish": "Utkrsht darpan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "all of these Ans: concave mirror",
+            "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
+            "hinglish": "Inmein se sabhi uttar: Utkaran darpan"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -67,9 +98,9 @@
       "sourceId": "2018-b:A:1",
       "subPart": null,
       "text": {
-        "en": "Which mirror do the dentist use to use large images of teeth of patient? (A) plane mirror (B) concave mirror ©convex mirror (D) all of these Ans: concave mirror",
-        "hi": "डेंटिस्ट किस दर्पण का उपयोग करते हैं ताकि मरीज के दांतों की बड़ी छवियाँ प्राप्त की जा सकें? (A) समतल दर्पण (B) अवतल दर्पण (C) उत्तल दर्पण (D) इनमें से सभी उत्तर: अवतल दर्पण",
-        "hinglish": "Dentist kis darpan ka upyog karte hain taaki mareez ke daanton ki badi chhaviyaan prapt ki ja sakein? (A) Samtal darpan (B) Avatal darpan (C) Uttal darpan (D) Inmein se sabhi Uttar: Avatal darpan"
+        "en": "Which mirror do the dentist use to use large images of teeth of patient?",
+        "hi": "डेंटिस्ट किस दर्पण का उपयोग करते हैं ताकि मरीज के दांतों की बड़ी छवियाँ प्राप्त की जा सकें?",
+        "hinglish": "Dentist kis darpan ka upyog karte hain taaki mareez ke daanton ki badi chhaviyaan prapt ki ja sakein?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -212,7 +243,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -224,8 +255,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -233,7 +263,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -241,7 +270,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Myopia",
+            "hi": "मायोपिया",
+            "hinglish": "Myopia"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "hypermetropia",
+            "hi": "हाइपरमेट्रोपिया",
+            "hinglish": "Hypermetropia"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "presbyopia",
+            "hi": "प्रेस्बायोपिया",
+            "hinglish": "Presbyopia"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "cataract Ans: presbyopia",
+            "hi": "मोतियाबिंद उत्तर: प्रेस्बायोपिया",
+            "hinglish": "Motiya bindu uttar: Presbyopia"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -254,9 +316,9 @@
       "sourceId": "2018-b:A:4",
       "subPart": null,
       "text": {
-        "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens? (A) Myopia (B) hypermetropia ©presbyopia (D) cataract Ans: presbyopia",
-        "hi": "कौन सी आंख की दोष को अवतल और उत्तल लेंस दोनों का उपयोग करके बाइफोकल लेंस से ठीक किया जा सकता है? (A) मायोपिया (B) हाइपरमेट्रोपिया (C) प्रिस्बायोपिया (D) मोतियाबिंद उत्तर: प्रिस्बायोपिया",
-        "hinglish": "Kaun si aankh ki dosh ko avatal aur uttal lens dono ka upyog karke bifocal lens se theek kiya ja sakta hai? (A) Myopia (B) Hypermetropia (C) Presbyopia (D) Motiyabind Uttar: Presbyopia"
+        "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens?",
+        "hi": "कौन सा नेत्र दोष बाइफोकल लेंस का उपयोग करके ठीक किया जा सकता है जिसमें उत्कर्ण और उत्कृष्ट लेंस दोनों होते हैं?",
+        "hinglish": "Kaun sa netra dosh bifocal lens ka upyog karke theek kiya ja sakta hai jismein utkaran aur utkrsht lens dono hote hain?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -264,7 +326,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -276,8 +338,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -285,7 +346,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -293,7 +353,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "mirror and the screen",
+            "hi": "दर्पण और स्क्रीन",
+            "hinglish": "Darpan aur screen"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "mirror and object",
+            "hi": "दर्पण और वस्तु",
+            "hinglish": "Darpan aur vastu"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "both A and B",
+            "hi": "दोनों A और B",
+            "hinglish": "Dono A aur B"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans: mirror and the screen",
+            "hi": "इनमें से कोई नहीं उत्तर: दर्पण और स्क्रीन",
+            "hinglish": "Inmein se koi nahi uttar: darpan aur screen"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -306,9 +399,9 @@
       "sourceId": "2018-b:A:5",
       "subPart": null,
       "text": {
-        "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the (A) mirror and the screen (B) mirror and object ©both A and B (D) none of these Ans: mirror and the screen",
-        "hi": "एक प्रयोग में, एक अवतल दर्पण द्वारा एक वस्तु की छवि स्क्रीन पर प्राप्त की जाती है ताकि दर्पण की फोकल लंबाई निर्धारित की जा सके, प्रयोगकर्ता को (A) दर्पण और स्क्रीन के बीच की दूरी (B) दर्पण और वस्तु के बीच की दूरी (C) दोनों A और B (D) इनमें से कोई नहीं मापने की आवश्यकता है। उत्तर: दर्पण और स्क्रीन",
-        "hinglish": "Ek prayog mein, ek avatal darpan dwara ek vastu ki chhavi screen par prapt ki jaati hai taaki darpan ki naabhiik doori nirdharit ki ja sake, prayogakarta ko (A) darpan aur screen ke beech ki doori (B) darpan aur vastu ke beech ki doori (C) Dono A aur B (D) Inmein se koi nahi maapne ki avashyakta hai. Uttar: darpan aur screen"
+        "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the",
+        "hi": "एक प्रयोग में, एक उत्कर्ण दर्पण द्वारा बनाए गए वस्तु की छवि को एक स्क्रीन पर प्राप्त किया जाता है ताकि दर्पण की फोकल लंबाई निर्धारित की जा सके, प्रयोगकर्ता को मापने की आवश्यकता होती है दूरी के बीच",
+        "hinglish": "Ek prayog mein, ek utkaran darpan dwara banaye gaye vastu ki chhavi ko ek screen par prapt kiya jaata hai taaki darpan ki naabhiik doori nirdharit ki ja sake, prayogakarta ko maapne ki avashyakta hoti hai doori ke beech"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -316,7 +409,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -328,8 +421,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -337,7 +429,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -345,7 +436,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "A convex lens of focal length 50 cm",
+            "hi": "एक उत्तल लेंस जिसकी फोकल लंबाई 50 सेमी है",
+            "hinglish": "Ek uttal lens jiski focal lambai 50 cm hai"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "a concave lens of focal length 50 cm",
+            "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 50 सेमी है",
+            "hinglish": "Ek avatal lens jiski focal lambai 50 cm hai"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Convex lens of focal length 5 cm",
+            "hi": "उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
+            "hinglish": "Uttal lens jiski focal lambai 5 cm hai"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
+            "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 5 सेमी है उत्तर: उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
+            "hinglish": "Ek avatal lens jiski focal lambai 5 cm hai uttar: uttal lens jiski focal lambai 5 cm hai"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -358,9 +482,9 @@
       "sourceId": "2018-b:A:6",
       "subPart": null,
       "text": {
-        "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary? (A) A convex lens of focal length 50 cm (B) a concave lens of focal length 50 cm © Convex lens of focal length 5 cm (D) a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
-        "hi": "आप निम्नलिखित में से किस लेंस का उपयोग करना पसंद करेंगे जब आप शब्दकोश में छोटे अक्षरों को पढ़ रहे हों? (A) 50 सेमी की फोकल लंबाई वाला उत्तल लेंस (B) 50 सेमी की फोकल लंबाई वाला अवतल लेंस (C) 5 सेमी की फोकल लंबाई वाला उत्तल लेंस (D) 5 सेमी की फोकल लंबाई वाला अवतल लेंस उत्तर: 5 सेमी की फोकल लंबाई वाला उत्तल लेंस",
-        "hinglish": "Aap nimnalikhit mein se kis lens ka upyog karna pasand karenge jab aap shabdakosh mein chhote aksharon ko padh rahe hon? (A) 50 cm ki naabhiik doori wala uttal lens (B) 50 cm ki naabhiik doori wala avatal lens (C) 5 cm ki naabhiik doori wala uttal lens (D) 5 cm ki naabhiik doori wala avatal lens Uttar: 5 cm ki naabhiik doori wala uttal lens"
+        "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary?",
+        "hi": "निम्नलिखित में से कौन सा लेंस आप शब्दकोश में छोटे अक्षरों को पढ़ने के लिए उपयोग करना चाहेंगे?",
+        "hinglish": "Nimnalikhit mein se kaun sa lens aap shabdakosh mein chhote aksharon ko padhne ke liye istemal karna chahenge?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -451,7 +575,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -463,8 +587,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -472,7 +595,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -480,7 +602,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Reduces the substantially",
+            "hi": "को काफी कम करता है",
+            "hinglish": "Ko kaafi kam karta hai"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Does not change",
+            "hi": "बदलता नहीं है",
+            "hinglish": "Badalta nahi hai"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Increases heavily",
+            "hi": "काफी बढ़ाता है",
+            "hinglish": "Kaafi badhata hai"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Varies continuously Ans: Increases heavily",
+            "hi": "लगातार बदलता है",
+            "hinglish": "Lagataar badalta hai uttar: Kaafi badhata hai"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -493,9 +648,9 @@
       "sourceId": "2018-b:A:8",
       "subPart": null,
       "text": {
-        "en": "At the time of short circuiting the current in the circuit (A)Reduces the substantially (B) Does not change ©Increases heavily (D) Varies continuously Ans: Increases heavily",
-        "hi": "शॉर्ट सर्किटिंग के समय सर्किट में करंट (A) काफी कम हो जाता है (B) नहीं बदलता © भारी बढ़ता है (D) लगातार बदलता है उत्तर: भारी बढ़ता है",
-        "hinglish": "Short circuiting ke samay circuit mein current (A) kaafi kam ho jaata hai (B) nahi badalta (C) bhaari badhta hai (D) lagataar badalta hai. Uttar: bhaari badhta hai"
+        "en": "At the time of short circuiting the current in the circuit",
+        "hi": "शॉर्ट सर्किटिंग के समय सर्किट में करंट",
+        "hinglish": "Short circuiting ke samay circuit mein current"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -503,7 +658,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -515,8 +670,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -524,7 +678,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -532,7 +685,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Towards south",
+            "hi": "दक्षिण की ओर",
+            "hinglish": "Dakshin ki or"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Towards east",
+            "hi": "पूर्व की ओर",
+            "hinglish": "Purv ki or"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Downward",
+            "hi": "नीचे की ओर",
+            "hinglish": "Neeche ki or"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "upward Ans: upward",
+            "hi": "ऊपर की ओर",
+            "hinglish": "Upar ki or"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -545,9 +731,9 @@
       "sourceId": "2018-b:A:9",
       "subPart": null,
       "text": {
-        "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is (A) Towards south (B) Towards east © Downward (D) upward Ans: upward",
-        "hi": "एक सकारात्मक चार्ज वाला कण (अल्फा कण) पश्चिम की ओर प्रक्षिप्त किया गया है, जिसे एक चुंबकीय क्षेत्र द्वारा उत्तर की ओर मोड़ा जाता है, चुंबकीय क्षेत्र की दिशा (A) दक्षिण की ओर (B) पूर्व की ओर © नीचे की ओर (D) ऊपर की ओर उत्तर: ऊपर की ओर",
-        "hinglish": "Ek sakaratmak charge wala karn (alpha karn) paschim ki or prakshipt kiya gaya hai, jise ek chumbakiya kshetra dwara uttar ki or moda jaata hai, chumbakiya kshetra ki disha (A) dakshin ki or (B) purv ki or (C) neeche ki or (D) upar ki or. Uttar: upar ki or"
+        "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is",
+        "hi": "एक सकारात्मक चार्ज वाला कण (अल्फा कण) जो पश्चिम की ओर प्रक्षिप्त किया गया है, एक चुंबकीय क्षेत्र द्वारा उत्तर की ओर मोड़ा जाता है, चुंबकीय क्षेत्र की दिशा है",
+        "hinglish": "Ek sakaratmak charge wala karn (Alpha karn) jo paschim ki or prakshipt kiya gaya hai, ek chumbakiya kshetra dwara uttar ki or moda jaata hai, chumbakiya kshetra ki disha hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -659,7 +845,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -671,8 +857,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -680,7 +865,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -688,7 +872,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "convex mirror",
+            "hi": "उत्कृष्ट दर्पण",
+            "hinglish": "Utkrsht darpan"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "concave mirror",
+            "hi": "उत्कर्ण दर्पण",
+            "hinglish": "Utkaran darpan"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "all of these Ans: concave mirror",
+            "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
+            "hinglish": "Inmein se sabhi uttar: Utkaran darpan"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -701,9 +918,9 @@
       "sourceId": "2018-b:A:12",
       "subPart": null,
       "text": {
-        "en": "What kind of mirror would be most suited for a solar cooker? (A) plane mirror (B) convex mirror ©concave mirror (D) all of these Ans: concave mirror",
-        "hi": "सौर कुकर के लिए सबसे उपयुक्त किस प्रकार का दर्पण होगा? (A) समतल दर्पण (B) उत्तल दर्पण © अवतल दर्पण (D) इनमें से सभी उत्तर: अवतल दर्पण",
-        "hinglish": "Saur cooker ke liye sabse upyukt kis prakar ka darpan hoga? (A) samtal darpan (B) uttal darpan (C) avatal darpan (D) inmein se sabhi. Uttar: avatal darpan"
+        "en": "What kind of mirror would be most suited for a solar cooker?",
+        "hi": "सौर कुकर के लिए सबसे उपयुक्त किस प्रकार का दर्पण होगा?",
+        "hinglish": "Saur cooker ke liye sabse upyukt kis prakar ka darpan hoga?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -711,7 +928,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -723,8 +940,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -732,7 +948,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -740,7 +955,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Conserve soil",
+            "hi": "मिट्टी को संरक्षित करना",
+            "hinglish": "Mitti ko sanrakshit karna"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Trees",
+            "hi": "पेड़",
+            "hinglish": "Ped"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "electricity Ans: Trees",
+            "hi": "बिजली",
+            "hinglish": "Bijli"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -753,9 +1001,9 @@
       "sourceId": "2018-b:A:13",
       "subPart": null,
       "text": {
-        "en": "The main aim of Chipko movement was to (A) Conserve soil (B) Trees ©water (D) electricity Ans: Trees",
-        "hi": "चिपको आंदोलन का मुख्य उद्देश्य था (A) मिट्टी का संरक्षण (B) पेड़ © पानी (D) बिजली उत्तर: पेड़",
-        "hinglish": "Chipko aandolan ka mukhya uddeshya tha (A) mitti ka sanrakshan (B) ped (C) paani (D) bijli. Uttar: ped"
+        "en": "The main aim of Chipko movement was to",
+        "hi": "चिपको आंदोलन का मुख्य उद्देश्य था",
+        "hinglish": "Chipko aandolan ka mukhya uddeshya tha"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -763,7 +1011,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -775,8 +1023,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -784,7 +1031,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -792,7 +1038,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CaH(CO3 )2",
+            "hi": "CaH(CO3)2",
+            "hinglish": "CaH(CO3)2"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ca(OH)2",
+            "hi": "Ca(OH)2",
+            "hinglish": "Ca(OH)2"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "NaOH",
+            "hi": "NaOH",
+            "hinglish": "NaOH"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "NaH(CO3) Ans: Ca(OH)2",
+            "hi": "NaH(CO3) उत्तर: Ca(OH)2",
+            "hinglish": "NaH(CO3) uttar: Ca(OH)2"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -805,9 +1084,9 @@
       "sourceId": "2018-b:A:14",
       "subPart": null,
       "text": {
-        "en": "Which of the following solution is used for white washing walls? (A) CaH(CO3 )2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) Ans: Ca(OH)2",
-        "hi": "दीवारों को सफेद करने के लिए निम्नलिखित में से कौन सा घोल उपयोग किया जाता है? (A) CaH(CO3)2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) उत्तर: Ca(OH)2",
-        "hinglish": "Deewaron ko safed karne ke liye nimnalikhit mein se kaun sa ghol upyog kiya jaata hai? (A) CaH(CO3)2 (B) Ca(OH)2 (C) NaOH (D) NaH(CO3). Uttar: Ca(OH)2"
+        "en": "Which of the following solution is used for white washing walls?",
+        "hi": "दीवारों को सफेद करने के लिए निम्नलिखित में से कौन सा घोल उपयोग किया जाता है?",
+        "hinglish": "Deewaron ko safed karne ke liye nimnalikhit mein se kaun sa ghol upyog kiya jaata hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -815,7 +1094,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -827,8 +1106,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -836,7 +1114,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -844,7 +1121,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Combination reaction",
+            "hi": "संयोग प्रतिक्रिया",
+            "hinglish": "Sanyog abhikriya"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "decomposition reaction",
+            "hi": "विघटन प्रतिक्रिया",
+            "hinglish": "Vighatan abhikriya"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "double displacement reaction",
+            "hi": "डबल विस्थापन प्रतिक्रिया",
+            "hinglish": "Double displacement abhikriya"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans: double displacement reaction",
+            "hi": "इनमें से कोई नहीं उत्तर: डबल विस्थापन प्रतिक्रिया",
+            "hinglish": "Inmein se koi nahi uttar: double displacement abhikriya"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -857,9 +1167,9 @@
       "sourceId": "2018-b:A:15",
       "subPart": null,
       "text": {
-        "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is (A) Combination reaction (B) decomposition reaction ©double displacement reaction (D) none of these Ans: double displacement reaction",
-        "hi": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) उपरोक्त रासायनिक समीकरण (A) संयोजन प्रतिक्रिया (B) विघटन प्रतिक्रिया © डबल विस्थापन प्रतिक्रिया (D) इनमें से कोई नहीं उत्तर: डबल विस्थापन प्रतिक्रिया",
-        "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) uparokta rasayanik samikaran (A) sanyojan pratikriya (B) vighatan pratikriya (C) double displacement pratikriya (D) inmein se koi nahi. Uttar: double displacement pratikriya"
+        "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is",
+        "hi": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) उपरोक्त रासायनिक समीकरण है",
+        "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) uparokt rasayanik samikaran hai"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -2797,7 +3107,7 @@
     },
     {
       "answer": {
-        "confidence": "L0",
+        "confidence": "L1",
         "conflicts": [],
         "correctOption": null,
         "source": "none",
@@ -2809,8 +3119,7 @@
         }
       },
       "blockers": [
-        "answer-missing",
-        "options-incomplete"
+        "answer-missing"
       ],
       "diagram": {
         "note": null,
@@ -2818,7 +3127,6 @@
       },
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text",
         "language-backfilled-hindi"
@@ -2826,7 +3134,40 @@
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Grass, flower and leather",
+            "hi": "घास, फूल और चमड़ा",
+            "hinglish": "Ghaas, phool aur chamda"
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "brass, wood and plastic",
+            "hi": "पीतल, लकड़ी और प्लास्टिक",
+            "hinglish": "Peetal, lakdi aur plastic"
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Fruits piece cake and Rubber",
+            "hi": "फलों का टुकड़ा केक और रबर",
+            "hinglish": "Phalon ka tukda cake aur rubber"
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Cake, wood and glass Ans: cake, wood and glass",
+            "hi": "केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
+            "hinglish": "Cake, lakdi aur kaanch uttar: cake, lakdi aur kaanch"
+          }
+        }
+      ],
       "provenance": {
         "crossChecked": false,
         "pages": [
@@ -2839,9 +3180,9 @@
       "sourceId": "2018-b:A:40",
       "subPart": null,
       "text": {
-        "en": "Which of the following groups contain only one biodegradable items? (A) Grass, flower and leather (B) brass, wood and plastic © Fruits piece cake and Rubber. (D) Cake, wood and glass Ans: cake, wood and glass",
-        "hi": "निम्नलिखित में से कौन से समूह में केवल एक बायोडिग्रेडेबल वस्तुएं हैं? (A) घास, फूल और चमड़ा (B) पीतल, लकड़ी और प्लास्टिक (C) फल, टुकड़ा, केक और रबर। (D) केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
-        "hinglish": "Nimnalikhit mein se kaun se samuh mein keval ek biodegradable vastuyein hain? (A) Ghaas, phool aur chamda (B) Peetal, lakdi aur plastic (C) Phal, tukda, cake aur rubber. (D) Cake, lakdi aur kaanch uttar: Cake, lakdi aur kaanch"
+        "en": "Which of the following groups contain only one biodegradable items?",
+        "hi": "निम्नलिखित में से कौन सी समूह केवल एक बायोडिग्रेडेबल वस्तुओं को शामिल करता है?",
+        "hinglish": "Nimnalikhit mein se kaun si samuh keval ek biodegradable vastuon ko shamil karta hai?"
       },
       "type": "mcq",
       "usableInQuiz": false,
@@ -3164,7 +3505,7 @@
     "objective": 40,
     "questions": 46,
     "subjective": 6,
-    "trilingualComplete": 30,
+    "trilingualComplete": 41,
     "usableInQuiz": 0
   }
 }

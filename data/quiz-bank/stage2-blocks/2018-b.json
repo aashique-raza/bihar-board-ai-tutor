@@ -4,14 +4,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "plane mirror",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "concave mirror",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "convex mirror",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "all of these Ans: concave mirror",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -23,7 +51,7 @@
       "sourceId": "2018-b:A:1",
       "subPart": null,
       "text": {
-        "en": "Which mirror do the dentist use to use large images of teeth of patient? (A) plane mirror (B) concave mirror ©convex mirror (D) all of these Ans: concave mirror",
+        "en": "Which mirror do the dentist use to use large images of teeth of patient?",
         "hi": null
       },
       "type": "mcq",
@@ -119,14 +147,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Myopia",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "hypermetropia",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "presbyopia",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "cataract Ans: presbyopia",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -138,7 +194,7 @@
       "sourceId": "2018-b:A:4",
       "subPart": null,
       "text": {
-        "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens? (A) Myopia (B) hypermetropia ©presbyopia (D) cataract Ans: presbyopia",
+        "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens?",
         "hi": null
       },
       "type": "mcq",
@@ -148,14 +204,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "mirror and the screen",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "mirror and object",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "both A and B",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans: mirror and the screen",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -167,7 +251,7 @@
       "sourceId": "2018-b:A:5",
       "subPart": null,
       "text": {
-        "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the (A) mirror and the screen (B) mirror and object ©both A and B (D) none of these Ans: mirror and the screen",
+        "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the",
         "hi": null
       },
       "type": "mcq",
@@ -177,14 +261,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "A convex lens of focal length 50 cm",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "a concave lens of focal length 50 cm",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Convex lens of focal length 5 cm",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -196,7 +308,7 @@
       "sourceId": "2018-b:A:6",
       "subPart": null,
       "text": {
-        "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary? (A) A convex lens of focal length 50 cm (B) a concave lens of focal length 50 cm © Convex lens of focal length 5 cm (D) a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
+        "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary?",
         "hi": null
       },
       "type": "mcq",
@@ -263,14 +375,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Reduces the substantially",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Does not change",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Increases heavily",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Varies continuously Ans: Increases heavily",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -282,7 +422,7 @@
       "sourceId": "2018-b:A:8",
       "subPart": null,
       "text": {
-        "en": "At the time of short circuiting the current in the circuit (A)Reduces the substantially (B) Does not change ©Increases heavily (D) Varies continuously Ans: Increases heavily",
+        "en": "At the time of short circuiting the current in the circuit",
         "hi": null
       },
       "type": "mcq",
@@ -292,14 +432,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Towards south",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Towards east",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Downward",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "upward Ans: upward",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -311,7 +479,7 @@
       "sourceId": "2018-b:A:9",
       "subPart": null,
       "text": {
-        "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is (A) Towards south (B) Towards east © Downward (D) upward Ans: upward",
+        "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is",
         "hi": null
       },
       "type": "mcq",
@@ -379,14 +547,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "plane mirror",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "convex mirror",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "concave mirror",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "all of these Ans: concave mirror",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -398,7 +594,7 @@
       "sourceId": "2018-b:A:12",
       "subPart": null,
       "text": {
-        "en": "What kind of mirror would be most suited for a solar cooker? (A) plane mirror (B) convex mirror ©concave mirror (D) all of these Ans: concave mirror",
+        "en": "What kind of mirror would be most suited for a solar cooker?",
         "hi": null
       },
       "type": "mcq",
@@ -408,14 +604,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Conserve soil",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Trees",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "water",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "electricity Ans: Trees",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -427,7 +651,7 @@
       "sourceId": "2018-b:A:13",
       "subPart": null,
       "text": {
-        "en": "The main aim of Chipko movement was to (A) Conserve soil (B) Trees ©water (D) electricity Ans: Trees",
+        "en": "The main aim of Chipko movement was to",
         "hi": null
       },
       "type": "mcq",
@@ -437,14 +661,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "CaH(CO3 )2",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "Ca(OH)2",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "NaOH",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "NaH(CO3) Ans: Ca(OH)2",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -456,7 +708,7 @@
       "sourceId": "2018-b:A:14",
       "subPart": null,
       "text": {
-        "en": "Which of the following solution is used for white washing walls? (A) CaH(CO3 )2 (B) Ca(OH)2 © NaOH (D) NaH(CO3) Ans: Ca(OH)2",
+        "en": "Which of the following solution is used for white washing walls?",
         "hi": null
       },
       "type": "mcq",
@@ -466,14 +718,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Combination reaction",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "decomposition reaction",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "double displacement reaction",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "none of these Ans: double displacement reaction",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -485,7 +765,7 @@
       "sourceId": "2018-b:A:15",
       "subPart": null,
       "text": {
-        "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is (A) Combination reaction (B) decomposition reaction ©double displacement reaction (D) none of these Ans: double displacement reaction",
+        "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is",
         "hi": null
       },
       "type": "mcq",
@@ -1807,14 +2087,42 @@
       "diagramMentioned": false,
       "flags": [
         "missing-hindi",
-        "options-unparsed-english",
         "marks-defaulted-mcq-hi-null-en-null",
         "empty-text"
       ],
       "group": "A",
       "hasAlternative": false,
       "marks": 1,
-      "options": null,
+      "options": [
+        {
+          "key": "a",
+          "text": {
+            "en": "Grass, flower and leather",
+            "hi": null
+          }
+        },
+        {
+          "key": "b",
+          "text": {
+            "en": "brass, wood and plastic",
+            "hi": null
+          }
+        },
+        {
+          "key": "c",
+          "text": {
+            "en": "Fruits piece cake and Rubber",
+            "hi": null
+          }
+        },
+        {
+          "key": "d",
+          "text": {
+            "en": "Cake, wood and glass Ans: cake, wood and glass",
+            "hi": null
+          }
+        }
+      ],
       "provenance": {
         "pdfPages": [
           null
@@ -1826,7 +2134,7 @@
       "sourceId": "2018-b:A:40",
       "subPart": null,
       "text": {
-        "en": "Which of the following groups contain only one biodegradable items? (A) Grass, flower and leather (B) brass, wood and plastic © Fruits piece cake and Rubber. (D) Cake, wood and glass Ans: cake, wood and glass",
+        "en": "Which of the following groups contain only one biodegradable items?",
         "hi": null
       },
       "type": "mcq",

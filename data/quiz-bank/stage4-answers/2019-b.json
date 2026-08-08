@@ -1,6 +1,6 @@
 {
   "flags": [
-    "en: Group A header not found — segmenting from the top of the paper.",
+    "en: Group A header not found — using the \"Question No. 1 to 40 have four options, …\" line as the starting gun instead of the top of the paper.",
     "A: number jumped from 19 to 21 — a gap in the source, not a parsing skip.",
     "groupA-classified-objective",
     "groupB-shape-ascending-classified-subjective",
@@ -26,28 +26,24 @@
   "questions": [
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Magnetic Effects of Electric Current: \"overloading occurs when too many appliances draw current from the same circuit, causing the current to exceed the safe limit.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null",
-        "language-backfilled-english"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -56,7 +52,7 @@
         {
           "key": "a",
           "text": {
-            "en": "decreases significantly",
+            "en": "reduces substantially",
             "hi": "बहुत कम हो जाता है",
             "hinglish": "Bahut kam ho jaata hai"
           }
@@ -72,7 +68,7 @@
         {
           "key": "c",
           "text": {
-            "en": "increases significantly",
+            "en": "increases heavily",
             "hi": "बहुत अधिक बढ़ जाता है",
             "hinglish": "Bahut adhik badh jaata hai"
           }
@@ -98,38 +94,34 @@
       "sourceId": "2019-b:A:1",
       "subPart": null,
       "text": {
-        "en": "Candidates are required to give their answers in their own words as far as practicable.",
+        "en": "At the time of overloading, the electric current in the circuit",
         "hi": "अतिभारण के समय विद्युत परिपथ में विद्युत धारा का मान",
-        "hinglish": "Atibharan ke samay vidyut paripath mein vidyut dhara ka maan"
+        "hinglish": "Atibharaan ke samay vidyut paripath mein vidyut dhara ka maan"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Sources of Energy: \"Biomass\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null",
-        "language-backfilled-english"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -138,15 +130,15 @@
         {
           "key": "a",
           "text": {
-            "en": "biomass",
+            "en": "Bio-Mass",
             "hi": "जैव मात्रा (बायो-मास)",
-            "hinglish": "Jaiv maatra (bio-mass)"
+            "hinglish": "Jaiv maatra (Bio-Mass)"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": "nuclear energy source",
+            "en": "Nuclear energy source",
             "hi": "नाभिकीय ऊर्जा स्त्रोत",
             "hinglish": "Naabikiy urja strot"
           }
@@ -154,7 +146,7 @@
         {
           "key": "c",
           "text": {
-            "en": "geothermal energy source",
+            "en": "Geo-thermal energy source",
             "hi": "भूतापीय ऊर्जा स्त्रोत",
             "hinglish": "Bhootapeey urja strot"
           }
@@ -162,7 +154,7 @@
         {
           "key": "d",
           "text": {
-            "en": "none of these",
+            "en": "None of these",
             "hi": "इनमें से कोई नही",
             "hinglish": "Inmein se koi nahi"
           }
@@ -180,12 +172,12 @@
       "sourceId": "2019-b:A:2",
       "subPart": null,
       "text": {
-        "en": "Figures in the right hand margin indicate full marks.",
+        "en": "Which is the conventional source of energy?",
         "hi": "कौन - सा परम्परागत ऊर्जा स्त्रोत है?",
         "hinglish": "Kaun - sa paramparagat urja strot hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -209,9 +201,7 @@
         "required": false
       },
       "flags": [
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null",
-        "language-backfilled-english"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -220,7 +210,7 @@
         {
           "key": "a",
           "text": {
-            "en": "selection",
+            "en": "Reduction",
             "hi": "अपचयन",
             "hinglish": "Apchayan"
           }
@@ -228,7 +218,7 @@
         {
           "key": "b",
           "text": {
-            "en": "substitution",
+            "en": "Oxidation",
             "hi": "उपचयन",
             "hinglish": "Upchayan"
           }
@@ -236,7 +226,7 @@
         {
           "key": "c",
           "text": {
-            "en": "corrosion",
+            "en": "Corrosion",
             "hi": "संक्षारण",
             "hinglish": "Sankharan"
           }
@@ -262,7 +252,7 @@
       "sourceId": "2019-b:A:3",
       "subPart": null,
       "text": {
-        "en": "15 Minutes of extra time has been allotted for the candidates to read the questions carefully.",
+        "en": "The gain of oxygen by a substance during chemical reaction is called",
         "hi": "रासायनिक अभिक्रिया के दौरान किसी पदार्थ में ऑक्सीजन का योग कहलाता है?",
         "hinglish": "Rasayanik abhikriya ke dauran kisi padarth mein oxygen ka yog kaha jaata hai?"
       },
@@ -272,28 +262,24 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Control and Coordination: \"Gibberellin helps in stem growth.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
       },
       "flags": [
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null",
-        "language-backfilled-english"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -302,15 +288,15 @@
         {
           "key": "a",
           "text": {
-            "en": "gibberellin",
+            "en": "Gibberellin",
             "hi": "जिब्रेलिन",
-            "hinglish": "Jibrelin"
+            "hinglish": "Gibberellin"
           }
         },
         {
           "key": "b",
           "text": {
-            "en": "adrenaline",
+            "en": "Adrenaline",
             "hi": "एड्रीनेलिन",
             "hinglish": "Adrenaline"
           }
@@ -318,7 +304,7 @@
         {
           "key": "c",
           "text": {
-            "en": "insulin",
+            "en": "Insulin",
             "hi": "इंसुलिन",
             "hinglish": "Insulin"
           }
@@ -326,7 +312,7 @@
         {
           "key": "d",
           "text": {
-            "en": "thyroxine",
+            "en": "Thyroxine",
             "hi": "थाइरॉक्सिन",
             "hinglish": "Thyroxine"
           }
@@ -344,12 +330,12 @@
       "sourceId": "2019-b:A:4",
       "subPart": null,
       "text": {
-        "en": "This question paper is divided into two sections - Section - A and Section - B.",
+        "en": "Which one of the following is the growth hormone found in plants?",
         "hi": "पादपों मे पाया जाने वाला वृद्धि हार्मोन निम्न में से कौन सा है?",
         "hinglish": "Padapon mein paaya jaane wala vridhi hormone nimn mein se kaun sa hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -358,7 +344,7 @@
         "conflicts": [],
         "correctOption": "a",
         "source": "textbook",
-        "sourceDetail": "RAG textbook match — Electricity: \"Resistance depends on:\n\n1. Length: resistance increases with length.\"",
+        "sourceDetail": "RAG textbook match — Electricity: \"R depends on length, area of cross-section, and material.\"",
         "text": {
           "en": null,
           "hi": null,
@@ -371,9 +357,7 @@
         "required": false
       },
       "flags": [
-        "options-unparsed-english",
-        "marks-defaulted-mcq-hi-null-en-null",
-        "language-backfilled-english"
+        "marks-defaulted-mcq-hi-null-en-null"
       ],
       "group": "A",
       "hasAlternative": false,
@@ -382,7 +366,7 @@
         {
           "key": "a",
           "text": {
-            "en": "on the length of the conductor",
+            "en": "length of a conductor",
             "hi": "चालक की लम्बाई पर",
             "hinglish": "Chalak ki lambai par"
           }
@@ -390,7 +374,7 @@
         {
           "key": "b",
           "text": {
-            "en": "on the cross-sectional area of the conductor",
+            "en": "cross sectional area of a conductor",
             "hi": "चालक के अनुप्रस्थ काट क्षेत्रफल पर",
             "hinglish": "Chalak ke anuprast kaat kshetrafal par"
           }
@@ -398,7 +382,7 @@
         {
           "key": "c",
           "text": {
-            "en": "on the temperature of the conductor",
+            "en": "Temperature of a conductor",
             "hi": "चालक के तापमान पर",
             "hinglish": "Chalak ke taapmaan par"
           }
@@ -406,7 +390,7 @@
         {
           "key": "d",
           "text": {
-            "en": "on the electric current flowing in the conductor",
+            "en": "Electric current flowing through conductor",
             "hi": "चालक में प्रवाहित विद्युत धारा पर",
             "hinglish": "Chalak mein pravahit vidyut dhara par"
           }
@@ -424,7 +408,7 @@
       "sourceId": "2019-b:A:5",
       "subPart": null,
       "text": {
-        "en": "In Section - A there are 40 objective type questions which are compulsory (1 mark each). Darken the circle with blue/black ball pen against the correct option on OMR Answer Sheet provided to you. Do not use Whitener/Liquid/Blade/Nail etc. on OMR Sheet, otherwise the result will be invalid. In Section - B, there are 22 short answer type questions. Out of these, eight questions are from Physics, seven questions are from Chemistry and seven questions are from Biology. Four questions are to be answered from each subject (Physics, Chemistry and Biology). Each question carries 2 marks. Apart from this, there are 6 Long Answer Type questions. Two questions from Physics, Chemistry and Biology each — long answer type questions from Physics carries 6 marks and from Chemistry and Biology carries 5 marks each. Answer of one from Physics, Chemistry and Biology is compulsory. Use of any electronic appliances is strictly prohibited.",
+        "en": "The resistance of a conductor does not depend on",
         "hi": "चालक का प्रतिरोध निर्भर नही करता है",
         "hinglish": "Chalak ka pratirodh nirbhar nahi karta hai"
       },
@@ -3374,13 +3358,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 13,
+    "l3PlusConfidence": 16,
     "marksGroupA": 25,
     "marksGroupB": 0,
     "objective": 25,
     "questions": 53,
     "subjective": 28,
     "trilingualComplete": 53,
-    "usableInQuiz": 13
+    "usableInQuiz": 16
   }
 }

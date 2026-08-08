@@ -189,7 +189,13 @@ function splitMarks(line) {
  * label only after the previous one has been passed keeps nested markers inside their own
  * option.
  */
-function parseOptions(text) {
+function parseOptions(rawText) {
+  // 2018-b confirmed: the vision OCR reads a handful of circled "(C)" option markers as the
+  // copyright glyph "©" instead. That one substitution breaks every style below (none of them
+  // expect "©"), so the whole options line falls through to null and drags the printed answer
+  // key text with it into the stem. "©" never legitimately appears in this exam content, so
+  // normalizing it to the bracket form it was misread from is safe.
+  const text = rawText.replace(/©/g, '(C)');
   const keys = ['a', 'b', 'c', 'd'];
   // Some papers (2022 confirmed) letter Hindi options with the Devanagari transliteration of
   // a/b/c/d instead of the Latin letters — अ./ब./स./द.
@@ -432,8 +438,23 @@ function segment(lines, lang) {
 
   let startIdx = lines.findIndex((l) => M.groupA.test(l.text));
   if (startIdx === -1) {
-    notes.push(`${lang}: Group A header not found — segmenting from the top of the paper.`);
-    startIdx = 0;
+    // 2019-b confirmed: this paper's English text never prints "SECTION - A" on its own line —
+    // it only appears inside prose ("...divided into two sections - Section - A and Section -
+    // B."), so the primary header search above never fires. Falling all the way back to line 0
+    // would hand the numbered candidate instructions on the cover page ("1. Candidates are
+    // required...") to segmentAscending as if "1." were question 1. Every paper seen with this
+    // shape prints "Question No. 1 to N have four options..." (en) / "प्रश्न संख्या 1 से..."
+    // (hi, already in sectionBreak) as the last line before the real question 1, so use that as
+    // the starting gun instead when the real header is missing. If neither is found either
+    // (e.g. the guide-book papers, whose en side is empty), still fall back to the top.
+    const sectionBreakIdx = lines.findIndex((l) => M.sectionBreak.test(l.text));
+    if (sectionBreakIdx !== -1) {
+      notes.push(`${lang}: Group A header not found — using the "${lines[sectionBreakIdx].text.slice(0, 40)}…" line as the starting gun instead of the top of the paper.`);
+      startIdx = sectionBreakIdx;
+    } else {
+      notes.push(`${lang}: Group A header not found — segmenting from the top of the paper.`);
+      startIdx = 0;
+    }
   } else {
     const marks = lines[startIdx].text.match(M.declaredMarks)
       || lines[startIdx + 1]?.text.match(M.declaredMarks);

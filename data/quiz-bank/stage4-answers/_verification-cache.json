@@ -164,6 +164,13 @@
       "evidence": "Yeast reproduces asexually by budding.",
       "verdict": "answered"
     },
+    "0a31aea0a9a95f60": {
+      "chapter": "Light - Reflection and Refraction",
+      "claimedOption": "a",
+      "correctOption": null,
+      "evidence": "distance between the mirror and the screen",
+      "verdict": "ungrounded"
+    },
     "0a4426d1af6013be": {
       "chapter": "Acids, Bases and Salts",
       "correctOption": "a",
@@ -483,7 +490,7 @@
       "chapter": "Management of Natural Resources",
       "claimedOption": "c",
       "correctOption": null,
-      "evidence": "The technique of delivering water right near the roots of plant for irrigation is called drip irrigation.",
+      "evidence": "Drip irrigation",
       "verdict": "ungrounded"
     },
     "1c591795d9be3cc4": {
@@ -635,7 +642,7 @@
       "chapter": "Sources of Energy",
       "claimedOption": "a",
       "correctOption": null,
-      "evidence": "Examples of common fuels: CNG, Biogas, Charcoal, LPG, Coal.",
+      "evidence": "Examples of common fuels: CNG, Biogas, LPG, Coal.",
       "verdict": "ungrounded"
     },
     "25ccd54a700f513e": {
@@ -745,6 +752,18 @@
       "chapter": "Periodic Classification of Elements",
       "correctOption": "c",
       "evidence": "| Cl, Br, I | Halogen triad |",
+      "verdict": "answered"
+    },
+    "2e13b12d41a38573": {
+      "chapter": "Magnetic Effects of Electric Current",
+      "correctOption": "c",
+      "evidence": "This causes a sudden large current.",
+      "verdict": "answered"
+    },
+    "2e1545eba42cd893": {
+      "chapter": "Magnetic Effects of Electric Current",
+      "correctOption": "c",
+      "evidence": "overloading occurs when too many appliances draw current from the same circuit, causing the current to exceed the safe limit.",
       "verdict": "answered"
     },
     "2ec88b488d4d3a1e": {
@@ -862,7 +881,7 @@
       "verdict": "answered"
     },
     "349c4ad71bb74653": {
-      "chapter": "Control and Coordination",
+      "chapter": "Heredity and Evolution",
       "claimedOption": "b",
       "correctOption": null,
       "evidence": "Cuscuta is a parasitic plant.",
@@ -946,6 +965,13 @@
       "correctOption": "d",
       "evidence": "to store water for irrigation, electricity generation, and other uses.",
       "verdict": "answered"
+    },
+    "3b3c05770bfd4dcf": {
+      "chapter": "Chemical Reactions and Equations",
+      "claimedOption": "b",
+      "correctOption": null,
+      "evidence": "Oxidation is a process in which: - Oxygen is added to a substance",
+      "verdict": "ungrounded"
     },
     "3b4bdc0d825e04f8": {
       "chapter": null,
@@ -1085,6 +1111,12 @@
       "evidence": "",
       "verdict": "insufficient"
     },
+    "41612dc7b22138ad": {
+      "chapter": "Sources of Energy",
+      "correctOption": "c",
+      "evidence": "A concave mirror is most suitable because it focuses sunlight at one region and raises the temperature.",
+      "verdict": "answered"
+    },
     "424e6768ce276b35": {
       "chapter": "Our Environment",
       "correctOption": "b",
@@ -1155,6 +1187,12 @@
       "chapter": "Metals and Non-metals",
       "correctOption": "d",
       "evidence": "Sulphide ores are converted into oxides by roasting.",
+      "verdict": "answered"
+    },
+    "4720776f1afa71e2": {
+      "chapter": "Electricity",
+      "correctOption": "a",
+      "evidence": "R depends on length, area of cross-section, and material.",
       "verdict": "answered"
     },
     "48085c7d80a1673d": {
@@ -1550,7 +1588,7 @@
       "chapter": "Sources of Energy",
       "claimedOption": "a",
       "correctOption": null,
-      "evidence": "Examples of common fuels: CNG, LPG, Biogas, Charcoal, Coal.",
+      "evidence": "Examples of common fuels: CNG, LPG, Biogas, Charcoal",
       "verdict": "ungrounded"
     },
     "5afb52542b887c56": {
@@ -1901,6 +1939,12 @@
       "evidence": "Examples:\n\n- bacteria\n- fungi\n\nDecomposers are important because they:\n\n- clean the environment\n- recycle nutrients\n- convert complex organic matter into simple substances\n- return minerals to the soil\n- maintain the natural balance of ecosystems",
       "verdict": "answered"
     },
+    "70118dd7ddb3387d": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "b",
+      "evidence": "5. Dentists' mirrors",
+      "verdict": "answered"
+    },
     "7024d22efa13f5fb": {
       "chapter": "Acids, Bases and Salts",
       "correctOption": "b",
@@ -2185,6 +2229,12 @@
       "correctOption": "a",
       "evidence": "Group 1 elements have one valence electron.",
       "verdict": "answered"
+    },
+    "837398fbc2675e6d": {
+      "chapter": null,
+      "correctOption": null,
+      "evidence": "",
+      "verdict": "insufficient"
     },
     "83ca98643ea81da4": {
       "chapter": "How Do Organisms Reproduce?",
@@ -2566,6 +2616,13 @@
       "evidence": "- Solar energy",
       "verdict": "answered"
     },
+    "9701f04bd6dc915e": {
+      "chapter": "Acids, Bases and Salts",
+      "claimedOption": "b",
+      "correctOption": null,
+      "evidence": "Calcium hydroxide is used for white washing.",
+      "verdict": "ungrounded"
+    },
     "973bdf66c2a95efb": {
       "chapter": "Our Environment",
       "correctOption": "d",
@@ -2637,6 +2694,12 @@
       "chapter": "Periodic Classification of Elements",
       "correctOption": "a",
       "evidence": "The modern periodic table has: - 18 vertical columns called groups",
+      "verdict": "answered"
+    },
+    "9bf5476f3270f68c": {
+      "chapter": "Management of Natural Resources",
+      "correctOption": "b",
+      "evidence": "The Chipko Movement was a forest conservation movement in which local villagers, especially women, hugged trees to prevent contractors from cutting them.",
       "verdict": "answered"
     },
     "9c1f636f2c33b411": {
@@ -2796,6 +2859,12 @@
       "evidence": "Zinc",
       "verdict": "answered"
     },
+    "a3262130169c9e8b": {
+      "chapter": "Sources of Energy",
+      "correctOption": "a",
+      "evidence": "Biomass",
+      "verdict": "answered"
+    },
     "a38b3df69afca32b": {
       "chapter": "Magnetic Effects of Electric Current",
       "correctOption": "a",
@@ -2915,6 +2984,12 @@
       "correctOption": "d",
       "evidence": "Iodine is necessary for the synthesis of thyroxine.",
       "verdict": "answered"
+    },
+    "a893c352849abfd6": {
+      "chapter": null,
+      "correctOption": null,
+      "evidence": "",
+      "verdict": "insufficient"
     },
     "a8f3123040be09c8": {
       "chapter": "Light - Reflection and Refraction",
@@ -3066,6 +3141,12 @@
       "chapter": "Life Processes",
       "correctOption": "c",
       "evidence": "Gastric glands secrete:",
+      "verdict": "answered"
+    },
+    "b5194d377a89361b": {
+      "chapter": "Control and Coordination",
+      "correctOption": "a",
+      "evidence": "Gibberellin helps in stem growth.",
       "verdict": "answered"
     },
     "b5859c1c37905024": {
@@ -3351,6 +3432,18 @@
       "evidence": "",
       "verdict": "insufficient"
     },
+    "c431ac92f79ea37d": {
+      "chapter": "Chemical Reactions and Equations",
+      "correctOption": "c",
+      "evidence": "A double displacement reaction is a reaction in which ions are exchanged between two reactants to form new compounds.",
+      "verdict": "answered"
+    },
+    "c5044bf08ebb6c05": {
+      "chapter": "Light - Reflection and Refraction",
+      "correctOption": "c",
+      "evidence": "Convex lens of short focal length, such as 5 cm.",
+      "verdict": "answered"
+    },
     "c53e6c07d8385e83": {
       "chapter": null,
       "correctOption": null,
@@ -3503,6 +3596,12 @@
       "correctOption": null,
       "evidence": "The human female reproductive system includes ovaries, oviducts, uterus, cervix, and vagina.",
       "verdict": "ungrounded"
+    },
+    "cdb3b550d8b67d4a": {
+      "chapter": "Human Eye and Colourful World",
+      "correctOption": "c",
+      "evidence": "Some people may suffer from both myopia and hypermetropia. Such people may require **bifocal lenses**.",
+      "verdict": "answered"
     },
     "cdd4aa2d2137d7a6": {
       "chapter": "Light - Reflection and Refraction",
@@ -3697,7 +3796,7 @@
       "chapter": "Life Processes",
       "claimedOption": "d",
       "correctOption": null,
-      "evidence": "\"### 10. Respiration\"",
+      "evidence": "\"Different animals have different respiratory organs, but the respiratory surface must be: - Thin - Moist - Large in surface area - Richly supplied with blood vessels\"",
       "verdict": "ungrounded"
     },
     "d6750433aebede49": {
