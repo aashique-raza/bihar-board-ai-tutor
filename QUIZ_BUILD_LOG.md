@@ -11,10 +11,23 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 0** — Prerequisite: chapter completion ko actually fire karana |
-| **Status** | ✅ **Phase 0 DONE** — code written, verified, ready to commit |
-| **Branch** | `quiz` |
-| **Last session** | 2026-08-02 — Phase 0 complete |
+| **Current Phase** | **Phase 1** — Question Models & Seed Data (Backend) |
+| **Status** | 🟡 **Planning done, code NOT started.** Blueprint rewritten (v3) to use the real 744-question bank instead of hand-writing 50 Qs × 3 chapters. Session paused before Beat 2 (BANAO) — next session starts Phase 1 code from this plan. |
+| **Branch** | `quiz-phase1` (Phase 0 already committed here: `4b32e34`) |
+| **Last session** | 2026-08-09 — Phase 1 replanned (no code yet) |
+
+### ⚠️ Read before starting Phase 1 code
+
+A separate branch `quiz-phase0.5-bulk` (commit `7b45b1b`) already extracted a real 744-question
+bank from Bihar Board 2016-2026 papers, covering all 16 chapters, 3 languages (en/hi/hinglish).
+This supersedes the old "hand-write 50 questions × 3 pilot chapters" plan. **Read
+`QUIZ_SYSTEM_BLUEPRINT.md` §19 first** — it explains what changed and why, then §3/§5/§11/§12/§16/§17
+have the actual updated schema, seed format, and deliverables. Do not start from the old plan.
+
+**One open decision before coding (blueprint §16, decision 16):** 6 of 16 chapters have fewer than
+50 real questions (chemistry ch01: 24, biology ch04: 23, biology ch06: 16, physics ch04: 34,
+physics ch05: 32, biology ch03: 40). Recommendation is ship as-is — confirm with user in Beat 1 of
+next session before writing code.
 
 ### ✅ Baseline (established 2026-08-02, before any Phase 0 code)
 
@@ -83,8 +96,8 @@
 
 | Phase | Kya | Status |
 |---|---|---|
-| **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** |
-| 1 | Question models + seed data (backend) | 🟡 **Next** |
+| **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** (committed on `quiz-phase1`, `4b32e34`) |
+| 1 | Question models + seed data (backend) — **replanned 2026-08-09, real 744-Q bank, see §19** | 🟡 **Planned, code not started — In Progress next session** |
 | 2 | Quiz engine + APIs (backend) | ⚪ Pending |
 | 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
 | 4 | Quiz runner modal UI (frontend) | ⚪ Pending |
@@ -102,6 +115,14 @@
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-09 — Phase 1 replanned (no code written)
+- **Kya hua:** User ne "Quiz pipeline continue karo" bola. Beat 1 (SAMJHO) shuru kiya — baseline test green (chat-db-models wahi red jo pehle se tha). Phase 1 explain karte waqt user confused hua "sirf 3 chapter, 50 hand-written questions kyun?" — investigate kiya toh pata chala: ek alag branch `quiz-phase0.5-bulk` pe already ek real 744-question bank ban chuka tha (2016-2026 ke Bihar Board papers se OCR + verify), saare 16 chapters cover karta hai, 3 languages (en/hi/hinglish) mein.
+- **User ne implementation rokne ko bola** ("abhi kuch bhi mat karo... sirf explain karo") — do rounds mein deep-dive explanation di (widgets se): pehle "kya/kyun" high-level, phir models/seedKey/connections/3-language schema ka detailed audit jo user ne khud maanga.
+- **Poora plan blueprint mein likha:** `QUIZ_SYSTEM_BLUEPRINT.md` ko v3 banaya — naya **§19** poori kahani ke saath, aur §3/§5/§11/§12/§16/§17 sab **[AUDIT 2026-08-09]** marks ke saath update kiye (3-language schema, real per-chapter counts, seed-format transform-script approach, future Question Management API concept, superseded decisions 5/6/10 → naye 16/17).
+- **Koi code nahi likha is session mein** — user ne explicitly bola implementation agli session mein.
+- **Ek open decision agli session ke Beat 1 mein confirm karni hai:** blueprint §16 decision 16 — 6 chapters 50-question target se kam hain (16 se 40 tak), recommend ship as-is.
+- **Agla:** naya session, "Quiz Phase 1 shuru karo" bolna. Beat 1 seedha blueprint §19 se shuru hoga, phir decision 16 confirm karke Beat 2 (BANAO) mein transform script + models + seed script banega.
 
 ### 2026-08-02 — Phase 0 complete
 - **Kya hua:** `step7.saveAndRespond.js` mein 2-line fix — `retrievedContext` ab sahi jagah se padha jata hai, `isComplete` check kaam karta hai.

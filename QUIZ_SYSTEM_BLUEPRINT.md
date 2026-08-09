@@ -1,12 +1,19 @@
 # Quiz System — Complete Product & Engineering Blueprint
 
 > **Project:** Bihar Board Class 10 AI Tutor ("Zuno")
-> **Status:** Draft v2 — audited against the live codebase 2026-08-02, not yet locked for execution
+> **Status:** Draft v3 — audited against the live codebase 2026-08-02, re-audited against the real
+> question bank 2026-08-09, not yet locked for execution
 >
 > **Audit note (2026-08-02):** every claim in this file was checked against the actual code.
 > Corrections are inline and marked **[AUDIT]**. The most important one: the chapter-completion
 > hook this whole quiz gate hangs off (§7) is **dead code in the current build** — see
 > **Phase 0** in §17, which must ship before Phase 3 or the gate silently never fires.
+>
+> **Audit note (2026-08-09):** a separate branch (`quiz-phase0.5-bulk`) finished extracting a real
+> 744-question bank from 2016-2026 Bihar Board papers, covering all 16 chapters — this happened
+> *after* the 2026-08-02 audit and makes several Phase 1 assumptions (§3, §5, §12, §16, §17) stale.
+> Corrections marked **[AUDIT 2026-08-09]**, full story in the new **§19**. Read §19 first if you
+> only have time for one section — it explains why every other change exists.
 
 ---
 
@@ -29,6 +36,7 @@
 16. [Open Product Decisions (Confirm Before Phase 1)](#16-open-product-decisions-confirm-before-phase-1)
 17. [Phased Execution Roadmap](#17-phased-execution-roadmap)
 18. [Audit Changelog (2026-08-02)](#18-audit-changelog-2026-08-02)
+19. [Audit Changelog (2026-08-09) — Real question bank supersedes the hand-curation plan](#19-audit-changelog-2026-08-09--real-question-bank-supersedes-the-hand-curation-plan)
 
 ---
 
@@ -159,7 +167,17 @@ No. Placing MCQs inside study markdown files corrupts RAG chunking and makes con
 **Q: After seeding MongoDB, can we delete the JSON files?**
 No. The JSON files are the developer source-of-truth stored in Git. If the database is ever wiped or migrated, `npm run quiz:seed` restores the complete question bank.
 
-### The 2-Source Static Bank
+### [AUDIT 2026-08-09] The 2-source plan below is superseded — read this first
+
+Everything in this section (the "50 curated + PYQ" plan) was written on 2026-08-02, before any
+real question extraction existed. Between 2026-08-03 and 2026-08-09, a **separate data pipeline**
+(`QUIZ_DATA_PIPELINE.md`, branch `quiz-phase0.5-bulk`) OCR'd all 26 Bihar Board Science papers
+from 2016-2026, tagged every question to a chapter, and hand-verified answers. That work is
+**done** — it produced a real bank, not a plan for one. Full detail in the new **§19 Audit
+Changelog (2026-08-09)**. The numbers below are historical context for why a 2-source design was
+originally proposed; they are not the current plan.
+
+### The 2-Source Static Bank (original design intent — see §19 for what actually shipped)
 
 ```
 Quiz Request (10-20 Questions)
@@ -185,13 +203,20 @@ Quiz Request (10-20 Questions)
 1. **Source 1 (Primary):** 10-Year Official Bihar Board Previous Year Questions (PYQs) tagged with `yearAsked` and `boardRelevance: "HIGH"`. Seeing *"Bihar Board 2023 Mein Pucha Gaya"* boosts student motivation.
 2. **Source 2 (Chapter Coverage):** Extra curated MCQs per chapter ensuring at least **50 questions per chapter** (not 20-30 — larger bank reduces repetition, see Section 4).
 
-### Seed Data Volume Plan
+**What actually happened:** Source 1 alone produced 744 usable MCQs (all real PYQs, 2016-2026),
+covering all 16 chapters. Source 2 ("curated MCQs" written by hand) was **never built and is no
+longer planned** — the real PYQ volume made a synthetic-question source unnecessary for the
+initial launch. See §19 for exact per-chapter counts, including which chapters fall short of the
+50-per-chapter target and what that means.
 
-Phase 1 target: **50 questions minimum per chapter** for Science.
-- 16 chapters × 50 = ~800 questions total
-- Sources: BSEB PYQs (10 years), NCERT Exemplar, curated from chapter content
-- Format: JSON files in `data/quiz-bank/science/` (one file per chapter)
-- A student doing a chapter 5 times (5 × 10 = 50 questions) will see mostly fresh questions each time with option shuffling on top
+### Seed Data Volume Plan — [AUDIT 2026-08-09] superseded, see §19
+
+~~Phase 1 target: 50 questions minimum per chapter for Science.~~ This was the pre-extraction
+target. Actual Phase 1 seed volume is **744 real PYQ questions across all 16 chapters**
+(16 to 103 per chapter — uneven, because it reflects how often each chapter was actually examined
+2016-2026, not a hand-picked quota). Format is JSON files in `data/quiz-bank/science/<section>/`,
+one file per chapter — that part of the original plan is unchanged, only the *content and origin*
+of those files changed. Full schema and example in the updated §12.
 
 ---
 
@@ -423,23 +448,40 @@ A `String`-typed field never satisfies `$type: 'objectId'`, so `user_chapter_uni
 
 ### Collection 1: `question_bank`
 
+**[AUDIT 2026-08-09] Schema changed from single-language strings to 3-language objects.** The
+original draft below assumed `questionText`/`options[].text`/`explanation` were plain strings.
+That was correct only because no real question data existed yet. The bulk-extraction pipeline
+(`quiz-phase0.5-bulk`) produces every question in **three languages simultaneously** — English,
+Hindi (Devanagari), and Hinglish — because a future language-toggle in the UI is a known
+requirement (see `CLAUDE.md` target-user section: students may read Hindi or English, even though
+Zuno currently *answers* only in Hinglish). Migrating a single-language schema to 3-language later
+would mean re-touching all 744+ documents; doing it now costs nothing extra, since the source
+data already has all three. Full reasoning and worked example in §19.
+
 ```javascript
+const localizedTextSchema = {
+  en:       { type: String, default: null },
+  hi:       { type: String, default: null },
+  hinglish: { type: String, default: null },
+};
+// _id: false — this is always embedded, never queried or referenced directly
+
 const questionSchema = new mongoose.Schema({
-  seedKey:        { type: String, required: true, unique: true },  // human-readable, used by seed script
+  seedKey:        { type: String, required: true, unique: true },  // human-readable, used by seed script + re-seed matching
   subjectId:      { type: String, required: true, index: true },
   sectionId:      { type: String, default: null },
   chapterId:      { type: String, required: true, index: true },
-  topicId:        { type: String, default: null, index: true },
+  topicId:        { type: String, default: null, index: true },   // [AUDIT] not yet populated in real data — see §19 gap list
 
-  questionText:   { type: String, required: true },
+  questionText:   { type: localizedTextSchema, required: true },  // { en, hi, hinglish } — at least one must be non-null (app-level check, not schema-level)
   options: [{
     key:          { type: String, required: true },   // 'A', 'B', 'C', 'D'
-    text:         { type: String, required: true }
+    text:         { type: localizedTextSchema, required: true }
   }],
-  correctAnswer:  { type: String, required: true },   // 'B'
-  explanation:    { type: String, required: true },   // Required — this is a learning tool
+  correctAnswer:  { type: String, required: true },   // 'B' — one of the option keys
+  explanation:    { type: localizedTextSchema, default: () => ({}) },  // [AUDIT] optional, not required — see §19, 0/744 real questions have one yet
 
-  difficulty:     { type: String, enum: ['easy', 'medium', 'hard'], default: 'medium' },
+  difficulty:     { type: String, enum: ['easy', 'medium', 'hard'], default: null },  // [AUDIT] nullable now — 0/744 real questions are tagged yet
   yearAsked:      { type: [Number], default: [] },    // [2021, 2023] — PYQ tagging
   isActive:       { type: Boolean, default: true },
   version:        { type: Number, default: 1 },       // Increment on content fix
@@ -457,9 +499,15 @@ questionSchema.index({ chapterId: 1, topicId: 1 });
   declaring `unique: true` in the schema above but then saying "no unique index needed, just a
   plain field" in both this list and §12. The schema is the correct one: the seed script upserts
   **by** `seedKey` (§12 step 3), so without a unique index two runs can race and insert
-  duplicates of the same question. Keep `unique: true`.
-- `topicId` added — required for weak-topic analysis (Section 8). Maps to `curriculum-index.json` topic IDs.
-- `explanation` changed to `required: true` — this is a learning tool, every question must explain why the answer is correct.
+  duplicates of the same question. Keep `unique: true`. **[AUDIT 2026-08-09]** a future
+  question-management API (see §11's new "Future: Question Management API" note) may insert
+  single questions without a hand-picked `seedKey` — in that case the controller generates one
+  (e.g. `` `api-${chapterId}-${Date.now()}` ``) so the field is always populated; it is never
+  optional at the schema level.
+- `topicId` added — required for weak-topic analysis (Section 8). Maps to `curriculum-index.json` topic IDs. **[AUDIT 2026-08-09]** stays `default: null` — real data has no topic mapping yet (§19). Weak-topic analysis (§8) will only be as granular as the data allows until this is backfilled.
+- **[AUDIT 2026-08-09]** `questionText`, `options[].text`, `explanation` changed from `String` to `localizedTextSchema` ( `{ en, hi, hinglish }` ) — see rationale above and §19.
+- **[AUDIT 2026-08-09]** `explanation` changed from `required: true` back to **optional** (`default: () => ({})`, all three sub-fields nullable). The original draft's reasoning — "this is a learning tool, every question must explain why" — is still the *goal*, but 0 of the 744 real seed questions have one today. Making it required would block seeding entirely. The quiz UI must handle a question with no explanation (skip that part of the results screen) rather than assume it always exists.
+- **[AUDIT 2026-08-09]** `difficulty` changed from `default: 'medium'` to `default: null` — 0 of the 744 real questions are difficulty-tagged. A fake default of `'medium'` on every question would be misleading data, not a real value.
 - `boardRelevance` removed — derivable from `yearAsked.length > 0`. No need for a subjective enum.
 - `version` added — for question correction tracking.
 
@@ -1234,6 +1282,17 @@ Full request/response specs in Section 11.
 
 ## 11. API Contract — Request/Response Specs
 
+**[AUDIT 2026-08-09] Response bodies below show `questionText`/`options[].text`/`explanation` as
+plain strings — that assumed the old single-language schema.** Since §5's `question_bank` schema
+is now 3-language (`{ en, hi, hinglish }`), Phase 2's `generateQuiz`/`submitQuiz` must pick one
+language before sending to the client — they can never forward the localized object as-is (the
+non-negotiable "response omits `correctAnswer`, `explanation`" rule stays, this is only about
+which single string represents `questionText`/`options[].text` in the trimmed response). **Default:
+`hinglish`** (matches the rest of the app — see `CLAUDE.md` language rules), with `en`/`hi` as
+fallback if `hinglish` is null for that question. This is a Phase 2 decision, not a Phase 1 one —
+flagged here so it isn't rediscovered as a surprise mid-phase. If/when a language toggle ships in
+the UI, `generateQuiz` gains an optional `lang` param and picks that language's string instead.
+
 ### POST /api/v1/quiz/generate
 
 **Request:**
@@ -1350,9 +1409,37 @@ session lookup, which then 404s because the session isn't theirs. See the securi
 
 **Response:** full attempt including all `results` with explanations. 404 if not owned by this student.
 
+### [AUDIT 2026-08-09] Future: Question Management API — concept only, not scheduled to a phase
+
+Real data gaps exist today (§19): 0/744 questions have an `explanation`, a `topicId`, or a
+`difficulty`. Bulk JSON re-seeding (§12) is the only way to fix that right now — edit the JSON
+file, re-run `quiz:seed`. That is fine for the initial 744, but is the wrong tool for ongoing
+one-off fixes ("this one question's Hindi text has a typo") or for adding freshly-written
+questions outside the PYQ pipeline.
+
+The `question_bank` schema (§5) is deliberately shaped so a thin admin CRUD layer can be added
+later **without another schema change**:
+
+| Endpoint (future, unscheduled) | Does |
+|---|---|
+| `POST /api/v1/admin/quiz/questions` | Insert one question. `seedKey` optional — server generates one if omitted (see §5's seedKey note). |
+| `PATCH /api/v1/admin/quiz/questions/:id` | Edit any field — e.g. backfill `explanation`, fix a Hindi typo, set `difficulty`. Bumps `version`. |
+| `PATCH /api/v1/admin/quiz/questions/:id/deactivate` | Sets `isActive: false`. **Never a real delete** — see §12's note on why deletion breaks attempt history. |
+
+**Why this is written down now, not built now:** documenting the shape prevents Phase 1's schema
+from accidentally choosing a design (e.g. required `explanation`, string-only text) that this
+future API couldn't work with later. It is explicitly **out of scope for every phase currently on
+the board (0-6)** — no phase number is assigned yet. Building it is a product call for a later
+session, once it's clear how much ongoing question-bank maintenance is actually needed.
+
 ---
 
 ## 12. JSON Seed File Format
+
+**[AUDIT 2026-08-09] Format changed to 3-language (`{ en, hi, hinglish }`) fields** — matches the
+§5 schema change. Also: this format is no longer hand-authored. It is the **output of a transform
+script**, not something anyone types by hand. See the new "Where the seed files come from" note
+below and §19 for the full reasoning.
 
 One file per chapter at `data/quiz-bank/<subject>/<section>/<chapter-id>.json`.
 
@@ -1366,31 +1453,53 @@ Example: `data/quiz-bank/science/physics/science.physics.chapter-01.json`
   "chapterTitle": "Light - Reflection and Refraction",
   "questions": [
     {
-      "seedKey": "sci-phy-ch01-001",
-      "topicId": "science.physics.chapter-01.topic-03",
-      "questionText": "Prakash ka veg vacuum mein kitna hota hai?",
+      "seedKey": "sci-phy-ch01-q000033",
+      "topicId": null,
+      "questionText": {
+        "en": "The image formed by plane mirror is",
+        "hi": "समतल दर्पण द्वारा बना प्रतिबिम्ब होता है",
+        "hinglish": "Samtal darpan dwara bana pratibimb hota hai"
+      },
       "options": [
-        { "key": "A", "text": "3 × 10⁸ km/s" },
-        { "key": "B", "text": "3 × 10⁸ m/s" },
-        { "key": "C", "text": "3 × 10⁶ m/s" },
-        { "key": "D", "text": "3 × 10¹⁰ m/s" }
+        { "key": "A", "text": { "en": "virtual", "hi": "काल्पनिक", "hinglish": "Kalpanik" } },
+        { "key": "B", "text": { "en": "real", "hi": "वास्तविक", "hinglish": "Vastavik" } },
+        { "key": "C", "text": { "en": "both (a) and (b)", "hi": "(a) और (b) दोनों", "hinglish": "(a) aur (b) dono" } },
+        { "key": "D", "text": { "en": "none of these", "hi": "इनमें से कोई नहीं", "hinglish": "Inmein se koi nahi" } }
       ],
-      "correctAnswer": "B",
-      "explanation": "Prakash ka veg vacuum mein 3 × 10⁸ m/s hota hai (SI unit m/s hai, km/s nahi).",
-      "difficulty": "easy",
-      "yearAsked": [2019, 2022]
+      "correctAnswer": "A",
+      "explanation": { "en": null, "hi": null, "hinglish": null },
+      "difficulty": null,
+      "yearAsked": [2016]
     }
   ]
 }
 ```
 
-**`seedKey`** is a human-readable stable ID used only for re-seeding (so `quiz:seed` can update an existing question by matching seedKey rather than creating a duplicate). It is stored on the Question document and **carries a unique index** — [AUDIT] the original text said "no unique index needed, just a plain field", which contradicted the schema in §5 and would let two seed runs race into duplicate questions. It is never used by the runtime quiz service.
+**`seedKey`** is a human-readable stable ID used only for re-seeding (so `quiz:seed` can update an existing question by matching seedKey rather than creating a duplicate). It is stored on the Question document and **carries a unique index** — [AUDIT] the original text said "no unique index needed, just a plain field", which contradicted the schema in §5 and would let two seed runs race into duplicate questions. It is never used by the runtime quiz service. **[AUDIT 2026-08-09]** real seed keys follow `<subject-abbr>-<section-abbr>-<chapter-num>-<original questionId>`, e.g. `sci-phy-ch01-q000033` — the suffix traces straight back to the bulk pipeline's `q-000033` for debugging, without exposing that pipeline's internal ID scheme to the runtime schema.
+
+### [AUDIT 2026-08-09] Where the seed files come from — one-time transform, not hand-authoring
+
+The 16 chapter JSON files above are **generated once** from `data/quiz-bank/bank/questions.json`
+on branch `quiz-phase0.5-bulk` (744 usable questions, all 16 chapters, produced by the pipeline in
+`QUIZ_DATA_PIPELINE.md`). Phase 1's actual data work is:
+
+1. Bring `quiz-phase0.5-bulk`'s `data/quiz-bank/bank/questions.json` onto this branch.
+2. Write a one-time transform script that reads that single bulk file and writes the 16 per-chapter
+   files in the format above — renaming fields (`questionId` → `seedKey` prefix, `canonical.text` →
+   `questionText`, `canonical.options` → `options`, `canonical.answer.correctOption` → uppercased
+   `correctAnswer`), splitting by `chapter.chapterId`, and leaving `explanation`/`topicId`/
+   `difficulty` as `null` since the source data doesn't have them yet (§19).
+3. From that point on, the 16 files are what `quiz:seed` reads — the transform script is not part
+   of the ongoing pipeline, it runs once to produce them.
+
+This replaces every earlier mention in this document of "hand-write 50 questions per chapter" —
+that plan predates the bulk extraction and is no longer how Phase 1 gets its data.
 
 ### Seed Script Behavior (`npm run quiz:seed`)
 
 1. Reads all `data/quiz-bank/**/*.json` files
 2. Validates every question:
-   - `questionText`, `explanation`, `correctAnswer` non-empty
+   - `questionText`, `correctAnswer` non-empty (at least one of `en`/`hi`/`hinglish` set on `questionText` and on every option's `text`) — **[AUDIT 2026-08-09]** `explanation` is NOT required (§5) — real data has none yet
    - Exactly 4 options with unique keys A/B/C/D
    - `correctAnswer` is one of the option keys
    - `chapterId` exists in `curriculum-index.json` **and is not in a non-browsable section**
@@ -1555,12 +1664,12 @@ These are the only judgment calls left in the blueprint. Confirm once and this d
 | 2 | Gate quiz question count | **10** | One constant |
 | 3 | Practice chapter-wise question count | **10** | One constant |
 | 4 | Mix practice question count | **20** | One constant |
-| 5 | Minimum questions per chapter (Phase 1) | **50** | Content work, no schema change |
-| 6 | PYQ vs curated ratio in seed | **60% PYQ preferred, 40% curated** (or all curated if PYQ pool small) | Content work only |
+| 5 | ~~Minimum questions per chapter (Phase 1)~~ | **[AUDIT 2026-08-09] SUPERSEDED — see decision 16 below** | — |
+| 6 | ~~PYQ vs curated ratio in seed~~ | **[AUDIT 2026-08-09] SUPERSEDED — see decision 16 below** | — |
 | 7 | Retry cool-down after fail | **None** (unlimited) | Add rate-limit rule |
-| 8 | Weak-topic threshold | **>= 50% wrong AND >= 2 questions on that topic** | One function |
+| 8 | Weak-topic threshold | **>= 50% wrong AND >= 2 questions on that topic** | One function — **[AUDIT 2026-08-09]** real data has no `topicId` yet (§19), so this threshold cannot actually run until topics are backfilled. Decision stands, just not exercisable on day one. |
 | 9 | Grandfathered chapters get optional quiz? | **Yes, show optional "test yourself" chip** | Frontend UX only |
-| 10 | Phase 1 pilot chapters | **Physics ch01 (Light) + Chemistry ch01 (Chemical Reactions) + Biology ch01 (Life Processes)** — one per section | Just pick and start |
+| 10 | ~~Phase 1 pilot chapters~~ | **[AUDIT 2026-08-09] SUPERSEDED — see decision 17 below** | — |
 | 11 | Question timer per-quiz? | **No timer** (Bihar Board exam has time limits but our practice tool shouldn't add pressure) | UX + one schema field if changed |
 
 ### [AUDIT] Additional decisions surfaced by the 2026-08-02 audit
@@ -1570,7 +1679,18 @@ These are the only judgment calls left in the blueprint. Confirm once and this d
 | 12 | Ship the Phase 0 `isComplete` fix as its own commit before any quiz work? | **Yes** | It changes live behaviour (chapters start completing that never did). Bundling it into a quiz commit makes it impossible to roll back independently. |
 | 13 | Does `awaiting_quiz` count as "in progress" in the summary API? | **Yes** — count it with `in_progress` | The student's work isn't done. Alternative is a separate `awaitingQuizCount`; either is fine, but frontend and backend must agree. |
 | 14 | Where does the Quiz Practice entry point live in the sidebar? | **Rail icon button** (matches how the rail already works) | The old nav-tab strip the draft assumed no longer exists — see §10. |
-| 15 | Mix Quiz with a partially-seeded subject | **Serve fewer + `partialBank: true`** | Phase 1 seeds 3 chapters, so Mix can only produce 6 questions. Silent short quizzes would look broken. |
+| 15 | Mix Quiz with a partially-seeded subject | **[AUDIT 2026-08-09] Original call ("serve fewer + `partialBank: true`") stands, but the trigger changed** | Originally worried about only 3 of 16 chapters being seeded. Now all 16 are seeded, but per-chapter counts are uneven (16 to 103 — see §19) — the same `partialBank` mechanism still needs to exist for whichever chapter combination is thin, it just won't fire as often as first thought. |
+
+### [AUDIT 2026-08-09] Decisions superseded by the real question bank (§19)
+
+Decisions 5, 6, and 10 above were written before any real question data existed. The bulk
+extraction pipeline (`quiz-phase0.5-bulk`) made them moot — not by answering them differently, but
+by making the underlying question no longer apply. Replaced with:
+
+| # | Decision | What actually happened | Anything to confirm? |
+|---|----------|-------------------------|------------------------|
+| 16 | Minimum questions per chapter / PYQ-vs-curated ratio (was 5 & 6) | Not a decision anymore — it's a measured fact. All 744 usable questions are real PYQs (100%, not 60%); curated/hand-written questions were never built. Per-chapter counts range **16 (biology ch06) to 103 (biology ch01)** — 6 of 16 chapters fall below the old 50-question target (chemistry ch01: 24, biology ch04: 23, biology ch06: 16, physics ch04: 34, physics ch05: 32, biology ch03: 40). | **Yes — one open call:** ship Phase 1 with these real, uneven counts as-is (a 16-question chapter still supports a 10-question gate quiz, just with less variety on repeat attempts), or hold off launch for the thin chapters until more PYQs/curated questions are added? Recommendation: **ship as-is** — 16 is still enough for every quiz type in §2, "less variety on retake" is a minor UX gap not a launch blocker, and this can be revisited per-chapter later without a schema change. |
+| 17 | Phase 1 pilot chapters (was 10) | Not applicable — the bulk pipeline extracted and chapter-tagged questions for **all 16 chapters** in one pass, not 3. There is no cheaper "pilot only" version of this work available now; picking 3 chapters would mean *discarding* 2/3 of already-finished work. | **No — recommendation is unambiguous:** seed all 16 chapters in Phase 1. |
 
 If you disagree with any recommendation, tell me before Phase 1 starts — code will bake these in.
 
@@ -1609,22 +1729,37 @@ records — and §15's grandfathering rule still holds, since those chapters hav
 
 ### Phase 1: Question Models & Seed Data (Backend)
 
+**[AUDIT 2026-08-09] Fully rewritten — see §19 for the full reasoning.** The original plan
+(hand-write 50 questions per chapter, 3 pilot chapters only) is replaced: real PYQ data already
+exists for all 16 chapters (744 usable questions, branch `quiz-phase0.5-bulk`). Phase 1 is now a
+data-migration-and-modeling phase, not a content-authoring one.
+
 **Deliverables:**
-- `backend/src/models/question.model.js` — Question schema (Section 5)
-- `backend/src/models/quizSession.model.js` — QuizSession schema (Section 5)
-- `backend/src/models/quizAttempt.model.js` — QuizAttempt schema (Section 5)
-- `data/quiz-bank/science/physics/science.physics.chapter-01.json` — pilot seed (50+ questions)
-- `data/quiz-bank/science/chemistry/science.chemistry.chapter-01.json` — pilot seed (50+ questions)
-- `data/quiz-bank/science/biology/science.biology.chapter-01.json` — pilot seed (50+ questions)
-- `backend/scripts/seed-quiz-bank.js` — seed engine (see Section 12 for behavior)
+- Bring `data/quiz-bank/bank/questions.json` from branch `quiz-phase0.5-bulk` onto this branch
+  (the 744-question bulk bank — see §12's "Where the seed files come from")
+- `backend/scripts/transform-bulk-to-seed.js` — **one-time** transform script: reads the bulk
+  bank, writes the 16 per-chapter seed files below in the §12 format (3-language, `null` for
+  `explanation`/`topicId`/`difficulty` since the source has none yet). Not part of the ongoing
+  pipeline — runs once, its output is what gets committed and what `quiz:seed` reads from then on.
+- `backend/src/models/question.model.js` — Question schema, **3-language fields** (§5)
+- `backend/src/models/quizSession.model.js` — QuizSession schema (§5, unchanged from original plan)
+- `backend/src/models/quizAttempt.model.js` — QuizAttempt schema (§5, unchanged from original plan)
+- 16 seed JSON files, one per chapter, `data/quiz-bank/science/<section>/<chapterId>.json`:
+  physics ch01-ch05 (86/48/48/34/32 questions), chemistry ch01-ch05 (24/67/57/50/40), biology
+  ch01-ch06 (103/49/40/23/26/16) — exact counts from the real bank, not a hand-picked target
+- `backend/scripts/seed-quiz-bank.js` — seed engine (see §12 for behavior)
 - npm scripts in `backend/package.json`: `quiz:seed`, `quiz:seed:dry-run`
 
 **Verification:**
-- `npm run quiz:seed:dry-run` passes on all seed files
+- `npm run quiz:seed:dry-run` passes on all 16 seed files
 - `npm run quiz:seed` populates DB, indexes visible in Atlas
-- Manual query in `mongosh`: `db.question_bank.find({ chapterId: 'science.physics.chapter-01' }).count()` returns >= 50
+- Manual query in `mongosh`: `db.question_bank.countDocuments({})` returns **744**
+- Manual query in `mongosh`: `db.question_bank.find({ chapterId: 'science.biology.chapter-01' }).count()` returns **103** (largest chapter)
+- Manual query in `mongosh`: `db.question_bank.find({ chapterId: 'science.biology.chapter-06' }).count()` returns **16** (smallest chapter — confirms uneven real counts made it through correctly, not silently dropped)
 
 **Existing tests that must still pass:** `test:chunks`, `test:study-map`, `test:curriculum-resolvers`, `test:chat-db-models`
+
+**Still NOT in scope for Phase 1** (unchanged from before, restated for clarity): quiz API/routes/controller (Phase 2), any UI (Phase 4-5), chapter gate integration or `awaiting_quiz` status (Phase 3), the future Question Management API concept (§11 — unscheduled).
 
 ### Phase 2: Quiz Engine & APIs (Backend)
 
@@ -1778,3 +1913,78 @@ pattern (`createRedisStore`, `createRateLimitResponse`, `passOnStoreError`) matc
 step7 response already carries a `chapterProgress` snapshot to the frontend, so
 `chapterStatusAfter` wiring is realistic · **the Layer 1 shuffle-map persistence design (§4 +
 `quiz_sessions`) is correct and is the strongest part of this document.**
+
+---
+
+## 19. Audit Changelog (2026-08-09) — Real question bank supersedes the hand-curation plan
+
+**Context:** everything in this document through §18 was written/audited on 2026-08-02, when no
+real quiz question existed anywhere in the project. Between 2026-08-03 and 2026-08-09, a separate
+effort on branch `quiz-phase0.5-bulk` (spec: `QUIZ_DATA_PIPELINE.md`) OCR'd and hand-verified all
+26 available Bihar Board Class 10 Science papers, 2016 through 2026. That work finished
+(`git log quiz-phase0.5-bulk`, commit `7b45b1b`, "Phase 0.5 — human review, golden set, L3+ to
+98.5%") **before** this Phase 1 session started. This changelog documents what that means for
+every section above.
+
+### What exists now — measured, not estimated
+
+Counted directly from `data/quiz-bank/bank/questions.json` on `quiz-phase0.5-bulk`
+(`data.questions`, filtered to `usableInQuiz === true`):
+
+| Metric | Value |
+|---|---|
+| Total questions extracted (all types) | 1126 |
+| Usable as quiz MCQs (`usableInQuiz: true`) | **744** |
+| Chapters covered | **16 / 16** (all of them — `science.meta.chapter-00` correctly excluded, matches §1 F2) |
+| Answer confidence | 171 human-verified (`L4`), 573 auto-verified via RAG grounding (`L3`) — 0 unverified |
+| Languages per question | 3 — `en`, `hi` (Devanagari), `hinglish` — all populated on every usable question |
+| Questions with `explanation` text | **0 / 744** |
+| Questions with `topicId` | **0 / 744** |
+| Questions with `difficulty` tag | **0 / 744** |
+
+Per-chapter breakdown (usable MCQs):
+
+```
+physics.chapter-01   86      chemistry.chapter-01   24      biology.chapter-01   103
+physics.chapter-02   48      chemistry.chapter-02   67      biology.chapter-02    49
+physics.chapter-03   48      chemistry.chapter-03   57      biology.chapter-03    40
+physics.chapter-04   34      chemistry.chapter-04   50      biology.chapter-04    23
+physics.chapter-05   32      chemistry.chapter-05   40      biology.chapter-05    26
+                                                              biology.chapter-06    16
+```
+
+### Why this changes Phase 1 specifically (not later phases)
+
+Phase 1's job was always "get questions into MongoDB, in a query-able shape." The original plan
+assumed that meant *writing* questions (§3's "50 curated + PYQ" design, §16 decisions 5/6/10). It
+now means *importing and reshaping already-extracted* questions. Phases 2 onward (quiz engine,
+gate integration, UI) are **unaffected in their own logic** — they consume whatever is in
+`question_bank` regardless of how it got there. The only phase-2+ ripple is the response-language
+choice noted in the updated §11 (DB now stores 3 languages, API must pick one to serve).
+
+### Every section touched, in one place
+
+| Section | What changed |
+|---|---|
+| §3 Question Bank Strategy | "2-source" design (PYQ + curated) marked as superseded; Source 2 (curated) never got built and isn't planned; real per-chapter counts documented |
+| §5 `question_bank` schema | `questionText`/`options[].text`/`explanation` changed from `String` to `{ en, hi, hinglish }`; `explanation` changed from required to optional; `difficulty` default changed from `'medium'` to `null`; `topicId` stays nullable (no source data yet); seedKey note extended for future single-question inserts |
+| §11 API Contract | Added note: `generateQuiz`/`submitQuiz` must pick one language (default `hinglish`) from the now-3-language DB fields before responding — a Phase 2 concern, flagged early; added "Future: Question Management API" concept (unscheduled) for ongoing CRUD on individual questions, addressing how fixes/additions happen after the initial 744-question bulk seed |
+| §12 Seed file format | Example rewritten to 3-language shape; added "Where the seed files come from" — the 16 files are the output of a one-time transform script reading the bulk bank, not hand-authored; seed script validation updated to not require `explanation` |
+| §16 Open decisions | Decisions 5 (min Qs/chapter), 6 (PYQ/curated ratio), 10 (3 pilot chapters) marked superseded; replaced with decisions 16 (uneven real per-chapter counts — recommend ship as-is, one open call) and 17 (seed all 16 chapters, not 3 — unambiguous) |
+| §17 Phase 1 roadmap | Deliverables rewritten: branch merge + one-time transform script + 3 models + 16 real seed files (not 3 hand-written ones) + seed engine; verification queries updated to real counts (744 total, 103 max, 16 min) |
+
+### Still open — needs a call before Phase 1 code starts
+
+**Decision 16** (§16): six chapters land below the old 50-question informal target — chemistry
+ch01 (24), biology ch04 (23), biology ch06 (16), physics ch04 (34), physics ch05 (32), biology
+ch03 (40). Recommendation is to ship Phase 1 with these real counts as-is; a 16-question chapter
+still supports every quiz type in §2, just with less variety across repeat attempts. This is
+flagged, not resolved — confirm before Phase 1 implementation begins.
+
+### Gaps carried forward honestly (not fixed by this changelog, just made visible)
+
+`explanation`, `topicId`, and `difficulty` are 0% populated in the real 744-question bank. Phase 1
+ships with all three nullable/optional — the quiz UI (Phase 4-5) and weak-topic analysis (§8) must
+degrade gracefully when they're absent, not assume they exist. Backfilling them is future work,
+most likely through the §11 "Future: Question Management API" once it's built, or another bulk
+JSON edit + re-seed pass.
