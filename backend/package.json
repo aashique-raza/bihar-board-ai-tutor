@@ -22,7 +22,9 @@
     "test:study-map": "node scripts/test-study-map.js",
     "test:embedding-smoke": "node scripts/test-langchain-embedding-smoke.js",
     "test:golden": "node scripts/run-golden-set.js",
-    "test:golden-save": "node scripts/run-golden-set.js --save-baseline"
+    "test:golden-save": "node scripts/run-golden-set.js --save-baseline",
+    "quiz:seed": "node scripts/seed-quiz-bank.js",
+    "quiz:seed:dry-run": "node scripts/seed-quiz-bank.js --dry-run"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
