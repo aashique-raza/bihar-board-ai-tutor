@@ -29,7 +29,7 @@ function loadChapterTitles() {
   return titles;
 }
 
-function toSeedKey(sectionId, chapterId, questionId) {
+function toQuestionCode(sectionId, chapterId, questionId) {
   const abbr = SECTION_ABBR[sectionId];
   const chapterNum = chapterId.split('-').pop(); // "01"
   const idSuffix = questionId.replace('q-', 'q'); // "q-000033" -> "q000033"
@@ -38,12 +38,12 @@ function toSeedKey(sectionId, chapterId, questionId) {
 
 function transformQuestion(q, sectionId, chapterId) {
   const options = q.canonical.options.map((opt) => ({
-    key: opt.key.toUpperCase(),
+    label: opt.key.toUpperCase(),
     text: { en: opt.text.en, hi: opt.text.hi, hinglish: opt.text.hinglish },
   }));
 
   return {
-    seedKey: toSeedKey(sectionId, chapterId, q.questionId),
+    questionCode: toQuestionCode(sectionId, chapterId, q.questionId),
     topicId: null,
     questionText: {
       en: q.canonical.text.en,
@@ -51,10 +51,10 @@ function transformQuestion(q, sectionId, chapterId) {
       hinglish: q.canonical.text.hinglish,
     },
     options,
-    correctAnswer: q.canonical.answer.correctOption.toUpperCase(),
+    correctOptionLabel: q.canonical.answer.correctOption.toUpperCase(),
     explanation: { en: null, hi: null, hinglish: null },
     difficulty: null,
-    yearAsked: [...q.years].sort((a, b) => a - b),
+    askedInYears: [...q.years].sort((a, b) => a - b),
   };
 }
 

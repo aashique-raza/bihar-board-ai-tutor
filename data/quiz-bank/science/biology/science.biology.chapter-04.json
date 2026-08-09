@@ -5,7 +5,7 @@
   "chapterTitle": "Heredity and Evolution",
   "questions": [
     {
-      "seedKey": "sci-bio-ch04-q000106",
+      "questionCode": "sci-bio-ch04-q000106",
       "topicId": null,
       "questionText": {
         "en": "Who propounded the laws of Inheritance?",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Charles Darwin",
             "hi": "चार्ल्स डारविन",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Robert Hooke",
             "hi": "रोबर्ट हूक",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "J.C. Bose",
             "hi": "जे. सी. बोस",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Gregor Johann Mendel",
             "hi": "ग्रेगर जोहान मेंडल",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000107",
+      "questionCode": "sci-bio-ch04-q000107",
       "topicId": null,
       "questionText": {
         "en": "Women have a pair of Sex Chromosomes",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "XY",
             "hi": "XY",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "XX",
             "hi": "XX",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "YY",
             "hi": "YY",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें सभी",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000173",
+      "questionCode": "sci-bio-ch04-q000173",
       "topicId": null,
       "questionText": {
         "en": "The perfect pair of sex chromosomes are found in",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Male",
             "hi": "पुरुष",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "female",
             "hi": "महिला",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Male and female both",
             "hi": "पुरुष और महिला दोनों",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these Ans:female",
             "hi": "इनमें से कोई नहीं उत्तर: महिला",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000194",
+      "questionCode": "sci-bio-ch04-q000194",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is not a bacterial disease?",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Gonorrhoea",
             "hi": "गोनोरिया",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Syphilis",
             "hi": "सिफलिस",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Warts",
             "hi": "कंडर",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000196",
+      "questionCode": "sci-bio-ch04-q000196",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following represents dwarf plant?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Tt",
             "hi": "Tt",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "tT",
             "hi": "tT",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "tt",
             "hi": "tt",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "TT",
             "hi": "TT",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000270",
+      "questionCode": "sci-bio-ch04-q000270",
       "topicId": null,
       "questionText": {
         "en": "Who wrote the book 'The Origin of Species'?",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Darwin",
             "hi": "डार्विन",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Lamarck",
             "hi": "लामार्क",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Oparin",
             "hi": "ओपेरिन",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Weismann",
             "hi": "वाइंसमान",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000274",
+      "questionCode": "sci-bio-ch04-q000274",
       "topicId": null,
       "questionText": {
         "en": "Which plant did Mendel use for his experiments in genetics?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Neem",
             "hi": "नीम",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Rose",
             "hi": "गुलाब",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Pea",
             "hi": "मटर",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Chrysanthemum",
             "hi": "गुलदाऊदी",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000325",
+      "questionCode": "sci-bio-ch04-q000325",
       "topicId": null,
       "questionText": {
         "en": "Which plant is selected by Mendel for his experiments ?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mango",
             "hi": "आम",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Rose",
             "hi": "गुलाब",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Wheat",
             "hi": "गेहूं",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Pea J 5012-J Page 7 of",
             "hi": "मटर J 5012-J Page 7 of",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000326",
+      "questionCode": "sci-bio-ch04-q000326",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is a vestigial organ ?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Backbone",
             "hi": "रीढ़ की हड्डी",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thumb",
             "hi": "अंगूठा",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ear",
             "hi": "कान",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Apendix",
             "hi": "एपेन्डिक्स",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000463",
+      "questionCode": "sci-bio-ch04-q000463",
       "topicId": null,
       "questionText": {
         "en": "Who selected pea as his experimental material ?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mendal",
             "hi": "मेंडल",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Darwin",
             "hi": "डार्विन",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Lamarck",
             "hi": "लामार्क",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Khorana",
             "hi": "खुराना (Section-A ends at Q80)",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000514",
+      "questionCode": "sci-bio-ch04-q000514",
       "topicId": null,
       "questionText": {
         "en": "The development of organism by natural selection is called",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mendelism",
             "hi": "मेंडलवाद",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Lamarkism",
             "hi": "लामार्कवाद",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Darwinism",
             "hi": "डार्विनवाद",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Micro-evolution",
             "hi": "सूक्ष्म-विकास",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000633",
+      "questionCode": "sci-bio-ch04-q000633",
       "topicId": null,
       "questionText": {
         "en": "According to evolutional view, we are more similar to",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Chimpanzee",
             "hi": "चिम्पांजी",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Spider",
             "hi": "मकड़ी",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Orangutan",
             "hi": "ओरंगुटान",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Bacteria",
             "hi": "बैक्टीरिया",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000679",
+      "questionCode": "sci-bio-ch04-q000679",
       "topicId": null,
       "questionText": {
         "en": "The forelimbs of man, cat and bat are",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "homologous organ",
             "hi": "समजात अंग",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "analogous organs",
             "hi": "असमजात अंग",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "vestigial organ",
             "hi": "अवशेषी अंग",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000681",
+      "questionCode": "sci-bio-ch04-q000681",
       "topicId": null,
       "questionText": {
         "en": "The genic constitution of an individual organism is called",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "genotype",
             "hi": "जीनोटाइप",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "phenotype",
             "hi": "फीनोटाइप",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "variation",
             "hi": "विभिन्नता",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "heredity",
             "hi": "आनुवंशिकता",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000709",
+      "questionCode": "sci-bio-ch04-q000709",
       "topicId": null,
       "questionText": {
         "en": "The place of origin of human is",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "India",
             "hi": "भारत",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "China",
             "hi": "चीन",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Africa",
             "hi": "अफ्रीका",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "America",
             "hi": "अमेरिका",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000796",
+      "questionCode": "sci-bio-ch04-q000796",
       "topicId": null,
       "questionText": {
         "en": "Where are large numbers of light-sensitive cells present?",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "In Cornea",
             "hi": "कॉर्निया में",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "In Pupil",
             "hi": "पुतली में",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "In Retina",
             "hi": "रेटिना में",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000859",
+      "questionCode": "sci-bio-ch04-q000859",
       "topicId": null,
       "questionText": {
         "en": "Who is called the 'Father of Genetics'?",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Harold Urey",
             "hi": "हैरोल्ड यूरे को",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Gregor John Mendel",
             "hi": "ग्रेगर जॉन मेंडल को",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Charles Robert Darwin",
             "hi": "चार्ल्स रॉबर्ट डार्विन को",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Sidney Fox 75. (A) Haroid Urey (B) Gregor Johann Mendel (C) Charles Robert Darwin (D) Sideny fox",
             "hi": "सिडने फॉक्स 75. (A) हैरोल्ड यूरे को (B) ग्रेगर जॉन मेंडल को (C) चार्ल्स रॉबर्ट डार्विन को (D) सिडने फॉक्स",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000860",
+      "questionCode": "sci-bio-ch04-q000860",
       "topicId": null,
       "questionText": {
         "en": "Mendel was priest of a Christian monastery of which country?",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "France",
             "hi": "फ्रांस",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Austria",
             "hi": "ऑस्ट्रिया",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Australia",
             "hi": "आस्ट्रेलिया",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "England",
             "hi": "इंगलैंड",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000861",
+      "questionCode": "sci-bio-ch04-q000861",
       "topicId": null,
       "questionText": {
         "en": "Which of these is located at the top of the classification?",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Genera",
             "hi": "वंश",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Order",
             "hi": "गण",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Class",
             "hi": "वर्ग",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Kingdom",
             "hi": "जगत",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000968",
+      "questionCode": "sci-bio-ch04-q000968",
       "topicId": null,
       "questionText": {
         "en": "Which of the following was not present on Earth before the origin of life?",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "NO2",
             "hi": "NO2",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "O2",
             "hi": "O2",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q000969",
+      "questionCode": "sci-bio-ch04-q000969",
       "topicId": null,
       "questionText": {
         "en": "Which of the following statements is true regarding Archaeopteryx?",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "It is fossil",
             "hi": "यह एक जीवाश्म है",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "It had teeth in its jaws and nails on its fingers",
             "hi": "इसके जबड़े में दाँत और अँगुलियों में नख थे",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "It had wings and feathers",
             "hi": "इसमें डैने तथा पंख विद्यमान थे",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q001275",
+      "questionCode": "sci-bio-ch04-q001275",
       "topicId": null,
       "questionText": {
         "en": "How many pairs of chromosome are found in a normal cell of human body?",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "21",
             "hi": "21",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "22",
             "hi": "22",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "23",
             "hi": "23",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "46 Ans:",
             "hi": "46 उत्तर:",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch04-q001305",
+      "questionCode": "sci-bio-ch04-q001305",
       "topicId": null,
       "questionText": {
         "en": "The number of pairs of autosomes in human is",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "24",
             "hi": "24",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "23",
             "hi": "23",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "11",
             "hi": "11",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "22",
             "hi": "22",
@@ -1212,14 +1212,14 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     }

@@ -5,7 +5,7 @@
   "chapterTitle": "Electricity",
   "questions": [
     {
-      "seedKey": "sci-phy-ch03-q000036",
+      "questionCode": "sci-phy-ch03-q000036",
       "topicId": null,
       "questionText": {
         "en": "The instrument used to measure the potential difference is called",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ammeter",
             "hi": "आमीटर",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "voltmeter",
             "hi": "वोल्टमीटर",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "galvanometer",
             "hi": "गैल्वनोमीटर",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000037",
+      "questionCode": "sci-phy-ch03-q000037",
       "topicId": null,
       "questionText": {
         "en": "Ammeter is connected in an electric circuit",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "in series",
             "hi": "श्रेणीक्रम",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "in parallel",
             "hi": "पार्श्वबद्ध",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "both (a) and (b)",
             "hi": "(a) और (b) दोनों",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000038",
+      "questionCode": "sci-phy-ch03-q000038",
       "topicId": null,
       "questionText": {
         "en": "The S.I. unit of electric current is",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "volt",
             "hi": "वोल्ट",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "coulomb",
             "hi": "कुलॉम",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "watt",
             "hi": "वाट",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ampere",
             "hi": "एम्पियर",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000078",
+      "questionCode": "sci-phy-ch03-q000078",
       "topicId": null,
       "questionText": {
         "en": "There are 20 divisions between 0V and 1V on the scale of a voltmeter. The least count of the voltmeter is",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0.5V",
             "hi": "0.5V",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "0.05V",
             "hi": "0.05V",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "0.005V",
             "hi": "0.005V",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "0.0005V",
             "hi": "0.0005V",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000079",
+      "questionCode": "sci-phy-ch03-q000079",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is one micro ampere of electric current?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "10⁻⁴A",
             "hi": "10⁻⁴A",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "10⁻⁵A",
             "hi": "10⁻⁵A",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "10⁻⁶A",
             "hi": "10⁻⁶A",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "10⁻⁷A",
             "hi": "10⁻⁷A",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000142",
+      "questionCode": "sci-phy-ch03-q000142",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the SI unit of electric potential energy?",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Volt",
             "hi": "वोल्ट",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ohm",
             "hi": "ओम",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Volte per Columb",
             "hi": "वोल्ट प्रति कूलम्ब",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ampere Ans: volt",
             "hi": "एम्पीयर उत्तर: वोल्ट",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000199",
+      "questionCode": "sci-phy-ch03-q000199",
       "topicId": null,
       "questionText": {
         "en": "Which relation of the following is true?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "V = I/R",
             "hi": "V = I/R",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "V = R/I",
             "hi": "V = R/I",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "V = IR",
             "hi": "V = IR",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "V = IR²",
             "hi": "V = IR² Which relation of the following is true? (A) V = I/R (B) V = R/I (C) V = IR (D) V = IR²",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000233",
+      "questionCode": "sci-phy-ch03-q000233",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is measured by ammeter?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Current",
             "hi": "धारा",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Charge",
             "hi": "आवेश",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Potential",
             "hi": "विभव",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Electric power",
             "hi": "विद्युत शक्ति",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000272",
+      "questionCode": "sci-phy-ch03-q000272",
       "topicId": null,
       "questionText": {
         "en": "S.I. unit of potential difference is",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "coulomb",
             "hi": "कूलम्ब",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "volt",
             "hi": "वोल्ट",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ampere",
             "hi": "एम्पियर",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ohm",
             "hi": "ओम",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000312",
+      "questionCode": "sci-phy-ch03-q000312",
       "topicId": null,
       "questionText": {
         "en": "The S.I. unit of the electrical resistivity is",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ohm",
             "hi": "ओम",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "ohm/metre",
             "hi": "ओम/मीटर",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "volt/metre",
             "hi": "वोल्ट/मीटर",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ohm-metre",
             "hi": "ओम-मीटर",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000394",
+      "questionCode": "sci-phy-ch03-q000394",
       "topicId": null,
       "questionText": {
         "en": "The S.I. unit of Potential difference is",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Volt",
             "hi": "वोल्ट",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ohm",
             "hi": "ओम",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ampere",
             "hi": "एम्पीयर",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Coulomb",
             "hi": "कूलम्ब",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000395",
+      "questionCode": "sci-phy-ch03-q000395",
       "topicId": null,
       "questionText": {
         "en": "In which of the following combination the value of resistance increases?",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Series",
             "hi": "श्रेणी क्रम",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Parallel",
             "hi": "समानान्तर क्रम",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both series and parallel",
             "hi": "श्रेणी एवं समानान्तर दोनों",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000397",
+      "questionCode": "sci-phy-ch03-q000397",
       "topicId": null,
       "questionText": {
         "en": "1 Kilowatt-hour is equal to",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0.36 x 10^10 Joule",
             "hi": "0.36 x 10^10 जूल",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "1.6 x 10^-19 Joule",
             "hi": "1.6 x 10^-19 जूल",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3.6 x 10^6 Joule",
             "hi": "3.6 x 10^6 जूल",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000402",
+      "questionCode": "sci-phy-ch03-q000402",
       "topicId": null,
       "questionText": {
         "en": "1 HP is equal to",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "746 Watt",
             "hi": "746 वाट",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "760 Watt 1 HP is equal to - A. 746 watt B. 760 watt",
             "hi": "760 वाट",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "780 watt",
             "hi": "780 वाट",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "550 watt",
             "hi": "550 वाट",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000404",
+      "questionCode": "sci-phy-ch03-q000404",
       "topicId": null,
       "questionText": {
         "en": "When electric current flows through a conducting wire then moving Particle is ?",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Atom",
             "hi": "परमाणु",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "ion",
             "hi": "आयन",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Proton",
             "hi": "प्रोटॉन",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Electron",
             "hi": "इलेक्ट्रॉन",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000405",
+      "questionCode": "sci-phy-ch03-q000405",
       "topicId": null,
       "questionText": {
         "en": "Ampere-hour is the unit of",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Power",
             "hi": "शक्ति का",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Charge ampere-hour is unit of - A. Power B. Charge",
             "hi": "आवेश का",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Energy",
             "hi": "ऊर्जा का",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000406",
+      "questionCode": "sci-phy-ch03-q000406",
       "topicId": null,
       "questionText": {
         "en": "Which of the following unit is equal to Watt ?",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "J/S",
             "hi": "J/S",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "J.S",
             "hi": "J.S",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "S/J",
             "hi": "S/J",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000407",
+      "questionCode": "sci-phy-ch03-q000407",
       "topicId": null,
       "questionText": {
         "en": "The unit of electrical current is",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ampere",
             "hi": "ऐम्पियर",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Volt",
             "hi": "वोल्ट",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ohm",
             "hi": "ओम",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Watt",
             "hi": "वाट",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000524",
+      "questionCode": "sci-phy-ch03-q000524",
       "topicId": null,
       "questionText": {
         "en": "The S.I. unit of energy is",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Joule",
             "hi": "जूल",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Joule/Sec",
             "hi": "जूल/से0",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Joule/Sec2",
             "hi": "जूल/से0²",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000637",
+      "questionCode": "sci-phy-ch03-q000637",
       "topicId": null,
       "questionText": {
         "en": "To increase the value of the resistance, resistors should be connected in",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "series",
             "hi": "पार्श्वक्रम में",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "parallel",
             "hi": "समानांतर क्रम में",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "both (A) and (B)",
             "hi": "(A) और (B) दोनों",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000638",
+      "questionCode": "sci-phy-ch03-q000638",
       "topicId": null,
       "questionText": {
         "en": "Which instrument does not have a positive (+) and a negative (-) sign?",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "In voltmeter",
             "hi": "वोल्टमीटर में",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "In ammeter",
             "hi": "एमीटर में",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "In electric cell",
             "hi": "विद्युत सेल में",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "In coil",
             "hi": "कुंडली में",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000640",
+      "questionCode": "sci-phy-ch03-q000640",
       "topicId": null,
       "questionText": {
         "en": "The SI unit of magnetic flux is",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "watt",
             "hi": "वाट",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "joule",
             "hi": "जूल",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "weber",
             "hi": "वेबर",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "newton",
             "hi": "न्यूटन",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000641",
+      "questionCode": "sci-phy-ch03-q000641",
       "topicId": null,
       "questionText": {
         "en": "There are 20 divisions between the zero (0) and 2A number of an ammeter. What is the least count of the ammeter?",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0.01 A",
             "hi": "0.01 A",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "0.1 A",
             "hi": "0.1 A",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "0.001 A",
             "hi": "0.001 A",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "2 A",
             "hi": "2 A",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000642",
+      "questionCode": "sci-phy-ch03-q000642",
       "topicId": null,
       "questionText": {
         "en": "If several resistances are parallel, their equivalent resistance will be",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "more than each resistance",
             "hi": "प्रत्येक प्रतिरोध से अधिक",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "less than each resistance",
             "hi": "प्रत्येक प्रतिरोध से कम",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "equal to each resistance",
             "hi": "प्रत्येक प्रतिरोध के बराबर",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000691",
+      "questionCode": "sci-phy-ch03-q000691",
       "topicId": null,
       "questionText": {
         "en": "The SI unit of resistance is",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ampere",
             "hi": "ऐम्पियर",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "watt",
             "hi": "वाट",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ohm",
             "hi": "ओम",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "volt",
             "hi": "वोल्ट",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000700",
+      "questionCode": "sci-phy-ch03-q000700",
       "topicId": null,
       "questionText": {
         "en": "Kilowatt-hour (kWh) is the unit of",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "energy",
             "hi": "ऊर्जा का",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "time",
             "hi": "समय का",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "mass",
             "hi": "द्रव्यमान का",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "power",
             "hi": "शक्ति का",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000726",
+      "questionCode": "sci-phy-ch03-q000726",
       "topicId": null,
       "questionText": {
         "en": "A resistor of power P1 at voltage of V1 is connected in series with another resistor of power P2 at voltage V2. The equivalent resistance will be",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "V1²/P1 + V2²/P2",
             "hi": "V1²/P1 + V2²/P2",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "P1²/V1 + P2²/V2",
             "hi": "P1²/V1 + P2²/V2",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "(P1+P2)/(V1+V2)²",
             "hi": "(P1+P2)/(V1+V2)²",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "P1/V1² + P2/V2²",
             "hi": "P1/V1² + P2/V2²",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000799",
+      "questionCode": "sci-phy-ch03-q000799",
       "topicId": null,
       "questionText": {
         "en": "Which of the following units is equal to Watt(W)?",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "J/sec²",
             "hi": "J/sec²",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "J/sec ... 14.",
             "hi": "J/sec ... 14.",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "J⁻¹S⁻¹",
             "hi": "J⁻¹S⁻¹",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "J⁻²S⁻²",
             "hi": "J⁻²S⁻²",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000800",
+      "questionCode": "sci-phy-ch03-q000800",
       "topicId": null,
       "questionText": {
         "en": "1 kilowatt-hour is equal to",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "100 unit",
             "hi": "100 यूनिट",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "10 unit",
             "hi": "10 यूनिट",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "1 unit",
             "hi": "1 यूनिट",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000801",
+      "questionCode": "sci-phy-ch03-q000801",
       "topicId": null,
       "questionText": {
         "en": "The SI unit of electric power is",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Volt",
             "hi": "वोल्ट",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Watt",
             "hi": "वाट",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Joule",
             "hi": "जूल",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Newton",
             "hi": "न्यूटन",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000802",
+      "questionCode": "sci-phy-ch03-q000802",
       "topicId": null,
       "questionText": {
         "en": "1 KWh is equal to",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "36 J",
             "hi": "36 J",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "36×10⁶ J",
             "hi": "36×10⁶ J",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3.6×10⁶ J",
             "hi": "3.6×10⁶ J",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "3600 J",
             "hi": "3600 J",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000804",
+      "questionCode": "sci-phy-ch03-q000804",
       "topicId": null,
       "questionText": {
         "en": "On which principle of electric current does an electric fuse work?",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Magnetic",
             "hi": "चुम्बकीय",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Chemical",
             "hi": "रासायनिक",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Thermal",
             "hi": "उष्मीय",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1689,19 +1689,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000805",
+      "questionCode": "sci-phy-ch03-q000805",
       "topicId": null,
       "questionText": {
         "en": "1 mA is equal to",
@@ -1710,7 +1710,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "10⁻¹ A",
             "hi": "10⁻¹ A",
@@ -1718,7 +1718,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "10⁻² A",
             "hi": "10⁻² A",
@@ -1726,7 +1726,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "10⁻³ A",
             "hi": "10⁻³ A",
@@ -1734,7 +1734,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "10⁻⁶ A",
             "hi": "10⁻⁶ A",
@@ -1742,19 +1742,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000806",
+      "questionCode": "sci-phy-ch03-q000806",
       "topicId": null,
       "questionText": {
         "en": "To increase the value of resistance, resistors should be connected in",
@@ -1763,7 +1763,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Series",
             "hi": "श्रेणीक्रम में",
@@ -1771,7 +1771,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Parallel",
             "hi": "पार्श्वक्रम में",
@@ -1779,7 +1779,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both (A) and (B)",
             "hi": "(A) और (B) दोनो",
@@ -1787,7 +1787,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these 21. (A) Series (B) Parallel (C) Both (A) and (B) (D) None of these",
             "hi": "इनमें से कोई नही 21. (A) श्रेणीक्रम में (B) पार्श्वक्रम में (C) (A) और (B) दोनो (D) इनमें से कोई नही",
@@ -1795,19 +1795,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000807",
+      "questionCode": "sci-phy-ch03-q000807",
       "topicId": null,
       "questionText": {
         "en": "Which material is used for making the coil of an electric heater?",
@@ -1816,7 +1816,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Iron",
             "hi": "लोहा",
@@ -1824,7 +1824,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Silver",
             "hi": "चाँदी",
@@ -1832,7 +1832,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Nichrome",
             "hi": "नाइक्रोम",
@@ -1840,7 +1840,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Copper",
             "hi": "ताँबा",
@@ -1848,19 +1848,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000910",
+      "questionCode": "sci-phy-ch03-q000910",
       "topicId": null,
       "questionText": {
         "en": "On which effect of electric current does the electric fuse work?",
@@ -1869,7 +1869,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Magnetic",
             "hi": "चुम्बकीय",
@@ -1877,7 +1877,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thermal",
             "hi": "ऊष्मीय",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Chemical",
             "hi": "रासायनिक",
@@ -1893,7 +1893,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1901,19 +1901,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000911",
+      "questionCode": "sci-phy-ch03-q000911",
       "topicId": null,
       "questionText": {
         "en": "Which instrument does not have positive (+) and negative (-) signs? [English options continue on page 8",
@@ -1922,7 +1922,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ammeter",
             "hi": "ऐमीटर में",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Voltmeter",
             "hi": "वोल्टमीटर में",
@@ -1938,7 +1938,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Coil",
             "hi": "कुंडली में",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Electric cell] (A) Ammeter (B) Voltmeter (C) Coil (D) Electric cell",
             "hi": "विद्युत सेल में [Q17 English continuation from page",
@@ -1954,19 +1954,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000912",
+      "questionCode": "sci-phy-ch03-q000912",
       "topicId": null,
       "questionText": {
         "en": "Which of the following unit is equal to Watt (W)?",
@@ -1975,7 +1975,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "J/S",
             "hi": "J/S",
@@ -1983,7 +1983,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "J/Sec²",
             "hi": "J/Sec²",
@@ -1991,7 +1991,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "J⁻¹S⁻¹",
             "hi": "J⁻¹S⁻¹",
@@ -1999,7 +1999,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "J⁻²S⁻²",
             "hi": "J⁻²S⁻²",
@@ -2007,19 +2007,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q000913",
+      "questionCode": "sci-phy-ch03-q000913",
       "topicId": null,
       "questionText": {
         "en": "The coil of wire of an electric heater is made of.",
@@ -2028,7 +2028,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Copper",
             "hi": "ताँबा की",
@@ -2036,7 +2036,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Zinc",
             "hi": "जस्ता की",
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Tungsten",
             "hi": "टंगस्टन की",
@@ -2052,7 +2052,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Nichrome",
             "hi": "नाइक्रोम की",
@@ -2060,19 +2060,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001169",
+      "questionCode": "sci-phy-ch03-q001169",
       "topicId": null,
       "questionText": {
         "en": "On which principle of electric current does an electric fuse operate?",
@@ -2081,7 +2081,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Thermal",
             "hi": "ऊष्मीय",
@@ -2089,7 +2089,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Magnetic",
             "hi": "चुम्बकीय",
@@ -2097,7 +2097,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Chemical",
             "hi": "रासायनिक",
@@ -2105,7 +2105,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2113,19 +2113,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001170",
+      "questionCode": "sci-phy-ch03-q001170",
       "topicId": null,
       "questionText": {
         "en": "What is the formula for determining the resistance of a coil?",
@@ -2134,7 +2134,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "R = V × I",
             "hi": "R = V × I",
@@ -2142,7 +2142,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "R = V/I",
             "hi": "R = V/I",
@@ -2150,7 +2150,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "R = I/V",
             "hi": "R = I/V",
@@ -2158,7 +2158,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "R = V - I",
             "hi": "R = V - I",
@@ -2166,19 +2166,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001173",
+      "questionCode": "sci-phy-ch03-q001173",
       "topicId": null,
       "questionText": {
         "en": "What is the S.I. unit of potential difference?",
@@ -2187,7 +2187,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Volt",
             "hi": "वोल्ट",
@@ -2195,7 +2195,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ampere",
             "hi": "एम्पियर",
@@ -2203,7 +2203,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Coulomb",
             "hi": "कुलॉम",
@@ -2211,7 +2211,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Watt",
             "hi": "वाट",
@@ -2219,19 +2219,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001175",
+      "questionCode": "sci-phy-ch03-q001175",
       "topicId": null,
       "questionText": {
         "en": "1 volt is called",
@@ -2240,7 +2240,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1 joule/second",
             "hi": "1 जूल/सेकण्ड",
@@ -2248,7 +2248,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "1 Joule/Coulomb",
             "hi": "1 जूल/कुलॉम",
@@ -2256,7 +2256,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "1 Joule/Ampere",
             "hi": "1 जूल/एम्पियर",
@@ -2264,7 +2264,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2272,19 +2272,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001215",
+      "questionCode": "sci-phy-ch03-q001215",
       "topicId": null,
       "questionText": {
         "en": "What is the instrument used to measure potential difference called?",
@@ -2293,7 +2293,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ammeter",
             "hi": "आमीटर",
@@ -2301,7 +2301,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "voltmeter",
             "hi": "वोल्टमीटर",
@@ -2309,7 +2309,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "galvanometer",
             "hi": "गैल्वनोमीटर",
@@ -2317,7 +2317,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2325,19 +2325,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001216",
+      "questionCode": "sci-phy-ch03-q001216",
       "topicId": null,
       "questionText": {
         "en": "How is the ammeter connected in the electric circuit?",
@@ -2346,7 +2346,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "series",
             "hi": "श्रेणीक्रम",
@@ -2354,7 +2354,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "lateral",
             "hi": "पार्श्वबद्ध",
@@ -2362,7 +2362,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both (a) and (b)",
             "hi": "(a) और (b) दोनों",
@@ -2370,7 +2370,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2378,19 +2378,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001241",
+      "questionCode": "sci-phy-ch03-q001241",
       "topicId": null,
       "questionText": {
         "en": "The S.I. unit of energy is:",
@@ -2399,7 +2399,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "calorie",
             "hi": "कैलोरी",
@@ -2407,7 +2407,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "joule",
             "hi": "जूल",
@@ -2415,7 +2415,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "temperature",
             "hi": "ताप",
@@ -2423,7 +2423,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2431,19 +2431,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001245",
+      "questionCode": "sci-phy-ch03-q001245",
       "topicId": null,
       "questionText": {
         "en": "Resistance of a conductor with increase in temperature:",
@@ -2452,7 +2452,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "increases",
             "hi": "बढ़ता है",
@@ -2460,7 +2460,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "decreases",
             "hi": "घटता है",
@@ -2468,7 +2468,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "does not increase or decrease",
             "hi": "बढ़ता-घटता नहीं है",
@@ -2476,7 +2476,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2484,19 +2484,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch03-q001338",
+      "questionCode": "sci-phy-ch03-q001338",
       "topicId": null,
       "questionText": {
         "en": "The resistance of a conductor does not depend on",
@@ -2505,7 +2505,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "length of a conductor",
             "hi": "चालक की लम्बाई पर",
@@ -2513,7 +2513,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "cross sectional area of a conductor",
             "hi": "चालक के अनुप्रस्थ काट क्षेत्रफल पर",
@@ -2521,7 +2521,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Temperature of a conductor",
             "hi": "चालक के तापमान पर",
@@ -2529,7 +2529,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Electric current flowing through conductor",
             "hi": "चालक में प्रवाहित विद्युत धारा पर",
@@ -2537,14 +2537,14 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     }

@@ -5,7 +5,7 @@
   "chapterTitle": "How Do Organisms Reproduce?",
   "questions": [
     {
-      "seedKey": "sci-bio-ch03-q000048",
+      "questionCode": "sci-bio-ch03-q000048",
       "topicId": null,
       "questionText": {
         "en": "is not a part of human female reproductive system.",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ovary",
             "hi": "अण्डाशय",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Uterus",
             "hi": "गर्भाशय",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Vas deferens",
             "hi": "शुक्रवाहिका",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Fallopian tube",
             "hi": "डिम्बवाहिनी",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000049",
+      "questionCode": "sci-bio-ch03-q000049",
       "topicId": null,
       "questionText": {
         "en": "The anther has",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "sepals",
             "hi": "बाह्य दल",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "ovary",
             "hi": "अण्डाशय",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ovules",
             "hi": "अंडप",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "pollens",
             "hi": "परागकण",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000103",
+      "questionCode": "sci-bio-ch03-q000103",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is the mode of reproduction in Hydra?",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Vegetative propagation",
             "hi": "कायिक प्रवर्धन",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Spore formation",
             "hi": "बीजाणु समरागम",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Budding",
             "hi": "मुकुलन",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Fission",
             "hi": "विखंडन",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000104",
+      "questionCode": "sci-bio-ch03-q000104",
       "topicId": null,
       "questionText": {
         "en": "Which part of a flower produces pollen grains?",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Sepals",
             "hi": "बाह्यदल",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Petals",
             "hi": "पंखुड़ी",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Stamens",
             "hi": "पुंकेसर",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Carpels",
             "hi": "स्त्रीकेसर",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000105",
+      "questionCode": "sci-bio-ch03-q000105",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not a part of the female reproductive system in human being?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ovary",
             "hi": "अंडाशय",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Uterus",
             "hi": "गर्भाशय",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Vas deferens",
             "hi": "शुक्रवाहिका",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Oviduct",
             "hi": "डिंब वाहिनी",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000170",
+      "questionCode": "sci-bio-ch03-q000170",
       "topicId": null,
       "questionText": {
         "en": "Asexual reproduction takes place through budding in",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Amoeba",
             "hi": "अमूबा",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Yeast",
             "hi": "खमीर",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plasmodium",
             "hi": "प्लास्मोडियम",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Leisminia. Ans: Yeast",
             "hi": "लेइस्मिनिया। उत्तर: खमीर",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000171",
+      "questionCode": "sci-bio-ch03-q000171",
       "topicId": null,
       "questionText": {
         "en": "The formation of sperms takes place in",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "testis",
             "hi": "अंडकोष",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Uterus",
             "hi": "गर्भाशय",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ovary",
             "hi": "अंड ovaries",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these Ans: testis",
             "hi": "इनमें से कौन सा भाग फल बनता है?",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000172",
+      "questionCode": "sci-bio-ch03-q000172",
       "topicId": null,
       "questionText": {
         "en": "Which part of a flower becomes fruit?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Anther",
             "hi": "अंठर",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Stigma",
             "hi": "Stigma",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Style",
             "hi": "स्टाइल",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ovary Ans: Ovary",
             "hi": "अंडाशय उत्तर: अंडाशय",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000197",
+      "questionCode": "sci-bio-ch03-q000197",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is a bisexual / hermaphrodite animal?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Earthworm",
             "hi": "केंचुआ",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Dog",
             "hi": "कुत्ता",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cat",
             "hi": "बिल्ली",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Goat",
             "hi": "बकरी",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000244",
+      "questionCode": "sci-bio-ch03-q000244",
       "topicId": null,
       "questionText": {
         "en": "What is found in hydra?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Brain",
             "hi": "मस्तिष्क",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Nerve",
             "hi": "तंत्रिका",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Mouth",
             "hi": "मुख",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Tentacles",
             "hi": "स्पर्शक",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000273",
+      "questionCode": "sci-bio-ch03-q000273",
       "topicId": null,
       "questionText": {
         "en": "Where is reproductive organ found in plants?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "In stem",
             "hi": "तना में",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "In roots",
             "hi": "जड़ में",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "In flower",
             "hi": "पुष्प में",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "In fruit",
             "hi": "फल में",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000324",
+      "questionCode": "sci-bio-ch03-q000324",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is bisexual ?",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Earthworm",
             "hi": "केंचुआ",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Frog",
             "hi": "मेंढक",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fish",
             "hi": "मछली",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Tortoise",
             "hi": "कछुआ",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000342",
+      "questionCode": "sci-bio-ch03-q000342",
       "topicId": null,
       "questionText": {
         "en": "Which method of asexual reproduction occurs in amoeba ?",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Budding",
             "hi": "मुकुलन",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fission",
             "hi": "विखंडन",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Sporulation",
             "hi": "बीजाणुजनन",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000343",
+      "questionCode": "sci-bio-ch03-q000343",
       "topicId": null,
       "questionText": {
         "en": "Which part of a flower changes into fruit ?",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Stamen",
             "hi": "पुंकेसर",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Carpel",
             "hi": "स्त्रीकेसर",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ovary",
             "hi": "अंडाशय",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ovule",
             "hi": "बीजाण्ड",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000446",
+      "questionCode": "sci-bio-ch03-q000446",
       "topicId": null,
       "questionText": {
         "en": "What is gestation period in human ?",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "270 days",
             "hi": "270 दिन",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "290 days",
             "hi": "290 दिन",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "200 days",
             "hi": "200 दिन",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "245 days",
             "hi": "245 दिन",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000448",
+      "questionCode": "sci-bio-ch03-q000448",
       "topicId": null,
       "questionText": {
         "en": "By budding, asexual reproduction occurs in which of the following?",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Yeast",
             "hi": "यीस्ट",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Plasomodium",
             "hi": "प्लाज्मोडियम",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Amoeba",
             "hi": "अमीबा",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें कोई नहीं",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000452",
+      "questionCode": "sci-bio-ch03-q000452",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is an example of Parasitic Plant ?",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Bacteria",
             "hi": "बैक्टीरिया",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cuscuta",
             "hi": "कस्कूटा",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Virus",
             "hi": "विषाणु",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Fungus",
             "hi": "कवक",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000454",
+      "questionCode": "sci-bio-ch03-q000454",
       "topicId": null,
       "questionText": {
         "en": "Asexual reproduction process in Hydra is",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Budding",
             "hi": "मुकुलन",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Regeneration",
             "hi": "पुनर्जनन",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fission",
             "hi": "विखंडन",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Spore Formation",
             "hi": "बिजाणुजनन",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000455",
+      "questionCode": "sci-bio-ch03-q000455",
       "topicId": null,
       "questionText": {
         "en": "Sexually Transmitted Disease is",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Syphilis",
             "hi": "सिफलिस",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "AIDS",
             "hi": "एड्स",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Gonorrhoea",
             "hi": "गोनोरिया",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of the above",
             "hi": "इनमें सभी",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000456",
+      "questionCode": "sci-bio-ch03-q000456",
       "topicId": null,
       "questionText": {
         "en": "The outermost part of a flower is",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Calyx",
             "hi": "बाह्य दलपुंज",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Corolla Outermost part of flower is A. Sepal B. Petal",
             "hi": "दलपुंज",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Stamen",
             "hi": "पुंकेसर",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Pistil",
             "hi": "स्त्रीकेसर",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000494",
+      "questionCode": "sci-bio-ch03-q000494",
       "topicId": null,
       "questionText": {
         "en": "Where are the reproductive organs found in a plant ? 1. Where are the reproductive organs found in plants?",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "in root",
             "hi": "जड़ में",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "in flower",
             "hi": "पुष्प में",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "in stem",
             "hi": "तना में",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "in fruit",
             "hi": "फल में",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000509",
+      "questionCode": "sci-bio-ch03-q000509",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a hermaphrodite animal?",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Elephant",
             "hi": "हाथी",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cow",
             "hi": "गाय",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Dog",
             "hi": "कुत्ता",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Earthworm",
             "hi": "केंचुआ",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000516",
+      "questionCode": "sci-bio-ch03-q000516",
       "topicId": null,
       "questionText": {
         "en": "Ovulation is caused by",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "LH",
             "hi": "LH",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Estrogen Cause of ovulation is - A. LH B. Estrogen",
             "hi": "एस्ट्रोजेन",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "FSH",
             "hi": "FSH",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000628",
+      "questionCode": "sci-bio-ch03-q000628",
       "topicId": null,
       "questionText": {
         "en": "Mushroom is",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "a saprophyte",
             "hi": "एक मृतजीवी",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "a parasite",
             "hi": "एक परजीवी",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "an autotroph",
             "hi": "एक स्वपोषी",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "an algae",
             "hi": "एक शैवाल",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000680",
+      "questionCode": "sci-bio-ch03-q000680",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is an example of regeneration?",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Hydra",
             "hi": "हाइड्रा",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Frog",
             "hi": "मेढ़क",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cow",
             "hi": "गाय",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000693",
+      "questionCode": "sci-bio-ch03-q000693",
       "topicId": null,
       "questionText": {
         "en": "In which of the following organisms does asexual reproduction occur through budding?",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Plasmodium",
             "hi": "प्लाज्मोडियम",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Leishmania",
             "hi": "लेस्मानिया",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Amoeba",
             "hi": "अमीबा",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Yeast",
             "hi": "यीस्ट",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000695",
+      "questionCode": "sci-bio-ch03-q000695",
       "topicId": null,
       "questionText": {
         "en": "Vegetative propagation in potato takes place by",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "root",
             "hi": "जड़ द्वारा",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "seed",
             "hi": "बीज द्वारा",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "fruit",
             "hi": "फल द्वारा",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "stem",
             "hi": "तना द्वारा",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000696",
+      "questionCode": "sci-bio-ch03-q000696",
       "topicId": null,
       "questionText": {
         "en": "Hydrilla is found",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "in water",
             "hi": "जल में",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "in soil",
             "hi": "मृदा में",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "on tree",
             "hi": "वृक्ष पर",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "all of these",
             "hi": "इनमें से सभी",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000856",
+      "questionCode": "sci-bio-ch03-q000856",
       "topicId": null,
       "questionText": {
         "en": "Self-pollination occurs in which of the following plants?",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Unisexual",
             "hi": "एकलिंगी",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Bisexual",
             "hi": "उभयलिंगी",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both (A) and (B)",
             "hi": "(A) तथा (B) दोनो",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें कोई नहीं",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000857",
+      "questionCode": "sci-bio-ch03-q000857",
       "topicId": null,
       "questionText": {
         "en": "In which part of the uterus does the embryo develop?",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Endometrium",
             "hi": "एंडोमेट्रियम",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Funds",
             "hi": "फंडस",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Vagina",
             "hi": "योनि",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000858",
+      "questionCode": "sci-bio-ch03-q000858",
       "topicId": null,
       "questionText": {
         "en": "Which of the following parts is found only in male genitalia?",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Labia minora",
             "hi": "लेबिया माइनोरा",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Mature follicle",
             "hi": "परिपक्व पुटक",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fallopian tube",
             "hi": "फैलोपिअन नलिका",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Vas deferens",
             "hi": "शुक्रवाहिका",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000965",
+      "questionCode": "sci-bio-ch03-q000965",
       "topicId": null,
       "questionText": {
         "en": "By which method does reproduction take place in Hydra?",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "binary fission",
             "hi": "द्विखण्डन",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Budding",
             "hi": "मुकुलन",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "sexual reproduction",
             "hi": "लैंगिक जनन",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -1689,19 +1689,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000966",
+      "questionCode": "sci-bio-ch03-q000966",
       "topicId": null,
       "questionText": {
         "en": "The flower has a male reproductive organ",
@@ -1710,7 +1710,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Stamen",
             "hi": "पुंकेशर",
@@ -1718,7 +1718,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Petal",
             "hi": "दलपत्र",
@@ -1726,7 +1726,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Stigma",
             "hi": "वर्तिकाग्र",
@@ -1734,7 +1734,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1742,19 +1742,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000967",
+      "questionCode": "sci-bio-ch03-q000967",
       "topicId": null,
       "questionText": {
         "en": "Sperm is produced in",
@@ -1763,7 +1763,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Uterus",
             "hi": "गर्भाशय में",
@@ -1771,7 +1771,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Urinary bladder",
             "hi": "मूत्राशय में",
@@ -1779,7 +1779,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ovary",
             "hi": "अंडाशय में",
@@ -1787,7 +1787,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Testis",
             "hi": "वृषण में",
@@ -1795,19 +1795,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q000970",
+      "questionCode": "sci-bio-ch03-q000970",
       "topicId": null,
       "questionText": {
         "en": "Which of the following organisms can change their sex?",
@@ -1816,7 +1816,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Snails",
             "hi": "घोंघे",
@@ -1824,7 +1824,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Some reptiles",
             "hi": "कुछ सरीसृप",
@@ -1832,7 +1832,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Birds",
             "hi": "पंछी",
@@ -1840,7 +1840,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Honey bees",
             "hi": "मधुमख्खी",
@@ -1848,19 +1848,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q001183",
+      "questionCode": "sci-bio-ch03-q001183",
       "topicId": null,
       "questionText": {
         "en": "In which is the ciliate found?",
@@ -1869,7 +1869,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Paramecium",
             "hi": "पैरामिशियम",
@@ -1877,7 +1877,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Euglena",
             "hi": "युग्लिना",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Amoeba",
             "hi": "अमीबा",
@@ -1893,7 +1893,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1901,19 +1901,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q001184",
+      "questionCode": "sci-bio-ch03-q001184",
       "topicId": null,
       "questionText": {
         "en": "In flowering plants, sexual reproduction occurs?",
@@ -1922,7 +1922,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "By leaves",
             "hi": "पत्तियों द्वारा",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "By flowers",
             "hi": "फूलों द्वारा",
@@ -1938,7 +1938,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "By stem",
             "hi": "तना द्वारा",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1954,19 +1954,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q001186",
+      "questionCode": "sci-bio-ch03-q001186",
       "topicId": null,
       "questionText": {
         "en": "Sperm is formed",
@@ -1975,7 +1975,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "In testis",
             "hi": "वृषण में",
@@ -1983,7 +1983,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "In bladder",
             "hi": "मूत्राशय में",
@@ -1991,7 +1991,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "in the uterus",
             "hi": "गर्भाशय में",
@@ -1999,7 +1999,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "in the ovary",
             "hi": "अण्डाशय में",
@@ -2007,19 +2007,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q001225",
+      "questionCode": "sci-bio-ch03-q001225",
       "topicId": null,
       "questionText": {
         "en": "is not a part of the female reproductive system of humans",
@@ -2028,7 +2028,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ovary",
             "hi": "अण्डाशय",
@@ -2036,7 +2036,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "uterus",
             "hi": "गर्भाशय",
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "sperm duct",
             "hi": "शुक्रवाहिका",
@@ -2052,7 +2052,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "fallopian tube",
             "hi": "डिम्बवाहिनी",
@@ -2060,19 +2060,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch03-q001226",
+      "questionCode": "sci-bio-ch03-q001226",
       "topicId": null,
       "questionText": {
         "en": "Are found in pollen sac?",
@@ -2081,7 +2081,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "outer whorl",
             "hi": "बाह्य दल",
@@ -2089,7 +2089,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "ovary",
             "hi": "अण्डाशय",
@@ -2097,7 +2097,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ovule",
             "hi": "अंडप",
@@ -2105,7 +2105,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "pollen grain",
             "hi": "परागकण",
@@ -2113,14 +2113,14 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     }

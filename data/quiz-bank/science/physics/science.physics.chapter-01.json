@@ -5,7 +5,7 @@
   "chapterTitle": "Light - Reflection and Refraction",
   "questions": [
     {
-      "seedKey": "sci-phy-ch01-q000033",
+      "questionCode": "sci-phy-ch01-q000033",
       "topicId": null,
       "questionText": {
         "en": "The image formed by plane mirror is",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "virtual",
             "hi": "काल्पनिक",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "real",
             "hi": "वास्तविक",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "both (a) and (b)",
             "hi": "(a) और (b) दोनों",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000035",
+      "questionCode": "sci-phy-ch01-q000035",
       "topicId": null,
       "questionText": {
         "en": "What type of lens is found in human eye ?",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ring",
             "hi": "वलयाकार",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Bifocal",
             "hi": "बाईफोकल",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000039",
+      "questionCode": "sci-phy-ch01-q000039",
       "topicId": null,
       "questionText": {
         "en": "By which lens only virtual image is formed ?",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Bifocal",
             "hi": "बाईफोकल",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000067",
+      "questionCode": "sci-phy-ch01-q000067",
       "topicId": null,
       "questionText": {
         "en": "Which mirror is used as shaving mirror?",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plane mirror",
             "hi": "समतल दर्पण",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें कोई नहीं Page 7 of 12 [Turn over",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000068",
+      "questionCode": "sci-phy-ch01-q000068",
       "topicId": null,
       "questionText": {
         "en": "The reflective surface of search light is :",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plane",
             "hi": "समतल",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें कोई नहीं",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000073",
+      "questionCode": "sci-phy-ch01-q000073",
       "topicId": null,
       "questionText": {
         "en": "The diameter of a circular outline of the reflecting surface of spherical mirror is called",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Principal focus",
             "hi": "मुख्य फोकस",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Radius of curvature",
             "hi": "वक्रता त्रिज्या",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Principal axis",
             "hi": "प्रधान अक्ष",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Aperture",
             "hi": "गोलीय दर्पण का द्वारक",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000074",
+      "questionCode": "sci-phy-ch01-q000074",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is focal length of the convex mirror whose radius of curvature is 32cm?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "+ 8cm",
             "hi": "+ 8cm",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "- 8cm",
             "hi": "– 8cm",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "+ 16 cm",
             "hi": "+ 16 cm",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "- 16cm",
             "hi": "– 16cm",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000075",
+      "questionCode": "sci-phy-ch01-q000075",
       "topicId": null,
       "questionText": {
         "en": "What will be the nature of the image of an object, if magnification of the image is negative?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Real and inverted",
             "hi": "वास्तविक और उल्टा",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Real and erect",
             "hi": "वास्तविक और सीधा",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Virtual and erect",
             "hi": "आभासी और सीधा",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Virtual and inverted Most of the refraction for the light rays entering the eye occurs at - (A) Interface of aqueous humour (B) Interface of eye lens (C) Outer surface of cornea (D) none of these",
             "hi": "आभासी और उल्टा नेत्र में प्रवेश करने वाली प्रकाश किरणों का अधिकांश अपवर्तन होता है – (A) नेत्रोद अंतर पृष्ठ पर (B) अभिनेत्र के अंतरापृष्ठ पर (C) कॉर्निया के बाहरी पृष्ठ पर (D) इनमें से कोई नहीं",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000109",
+      "questionCode": "sci-phy-ch01-q000109",
       "topicId": null,
       "questionText": {
         "en": "The slide is first focussed under Compound Microscope at",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "5x",
             "hi": "5x पर",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "10x",
             "hi": "10x पर",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "25x",
             "hi": "25x पर",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "45x",
             "hi": "45x पर",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000190",
+      "questionCode": "sci-phy-ch01-q000190",
       "topicId": null,
       "questionText": {
         "en": "Where does the most of refraction for light rays entering the eye, occurs?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "on the outer surface of cornea",
             "hi": "कॉर्निया के बाहरी पृष्ठ पर",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "on the eye-lens",
             "hi": "अभिनेत्र लेंस पर",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "in aqueous humour",
             "hi": "नेत्रोद में",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "on the retina",
             "hi": "दृष्टि पटल पर",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000198",
+      "questionCode": "sci-phy-ch01-q000198",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following works has maximum speed of light?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Air",
             "hi": "Air",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Water",
             "hi": "Water",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Glass",
             "hi": "Glass",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Diamond",
             "hi": "Diamond",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000201",
+      "questionCode": "sci-phy-ch01-q000201",
       "topicId": null,
       "questionText": {
         "en": "What is SI unit of magnification produced by a lens?",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "m",
             "hi": "मी",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "cm",
             "hi": "से.मी",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "mm",
             "hi": "मि.मी",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Unit less",
             "hi": "मात्रक विहीन",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000235",
+      "questionCode": "sci-phy-ch01-q000235",
       "topicId": null,
       "questionText": {
         "en": "Mirror's formula is",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1/v + 1/u = 1/f",
             "hi": "1/v + 1/u = 1/f",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "1/v - 1/u = 1/f",
             "hi": "1/v - 1/u = 1/f",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "1/f + 1/u = 1/v",
             "hi": "1/f + 1/u = 1/v",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "1/f + 1/v = 1/u",
             "hi": "1/f + 1/v = 1/u Mirror's formula is (A) 1/v + 1/u = 1/f (B) 1/v - 1/u = 1/f (C) 1/f + 1/u = 1/v (D) 1/f + 1/v = 1/u",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000236",
+      "questionCode": "sci-phy-ch01-q000236",
       "topicId": null,
       "questionText": {
         "en": "Which of the following lens is used to remove short sightedness?",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Bifocal",
             "hi": "बाइफोकल",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cylindrical",
             "hi": "बेलनाकार",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000245",
+      "questionCode": "sci-phy-ch01-q000245",
       "topicId": null,
       "questionText": {
         "en": "The rays of light travel in",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "straight line",
             "hi": "सीधी रेखा में",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "oblique line",
             "hi": "तिरछी रेखा में",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "any direction",
             "hi": "किसी भी दिशा में",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000246",
+      "questionCode": "sci-phy-ch01-q000246",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the unit of power of lens?",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "joule",
             "hi": "जूल",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "watt",
             "hi": "वाट",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "dioptre",
             "hi": "डाइऑप्टर",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "erg",
             "hi": "अर्ग",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000271",
+      "questionCode": "sci-phy-ch01-q000271",
       "topicId": null,
       "questionText": {
         "en": "In which of the following media is the speed of light maximum?",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Glass",
             "hi": "कांच",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Water",
             "hi": "पानी",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Iron",
             "hi": "लोहा",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Vacuum",
             "hi": "निर्वात",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000320",
+      "questionCode": "sci-phy-ch01-q000320",
       "topicId": null,
       "questionText": {
         "en": "If the image of an object is always erect for any distance of the object in front of the mirror, then the mirror is",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "only plane",
             "hi": "केवल समतल",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "only concave",
             "hi": "केवल अवतल",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "only convex",
             "hi": "केवल उत्तल",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "either plane or convex",
             "hi": "या तो समतल अथवा उत्तल",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000321",
+      "questionCode": "sci-phy-ch01-q000321",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the mirror used in the headlight of a car ?",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plane mirror",
             "hi": "समतल दर्पण",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Plane or convex mirror J 5012-J Page 6 of",
             "hi": "समतल या उत्तल दर्पण J 5012-J Page 6 of",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000322",
+      "questionCode": "sci-phy-ch01-q000322",
       "topicId": null,
       "questionText": {
         "en": "Which of the following has the highest refractive index ?",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Air",
             "hi": "वायु",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ice",
             "hi": "बर्फ",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Glass",
             "hi": "कांच",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Diamond",
             "hi": "हीरा",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000323",
+      "questionCode": "sci-phy-ch01-q000323",
       "topicId": null,
       "questionText": {
         "en": "Which of the following lenses is called converging lens ?",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both convex and concave lens",
             "hi": "उत्तल एवं अवतल लेंस दोनों",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Bifocal lens",
             "hi": "बाइफोकल लेंस",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000328",
+      "questionCode": "sci-phy-ch01-q000328",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the magnification (m) of a lens ?",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "u/v",
             "hi": "u/v",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "uv",
             "hi": "uv",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "u+v",
             "hi": "u+v",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "v/u",
             "hi": "v/u",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000384",
+      "questionCode": "sci-phy-ch01-q000384",
       "topicId": null,
       "questionText": {
         "en": "The focal length of which mirror is negative ?",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Plane mirror",
             "hi": "समतल दर्पण",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these A. Plane mirror B. Concave mirror C. Convex mirror D. None of these",
             "hi": "इनमें से कोई नहीं 1. A. Plane mirror B. Concave mirror C. Convex mirror D. None of these",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000385",
+      "questionCode": "sci-phy-ch01-q000385",
       "topicId": null,
       "questionText": {
         "en": "What is the relation between focal length (f) and radius of curvature (R) of a mirror?",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "f = R",
             "hi": "f = R",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "f = R/2",
             "hi": "f = R/2",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "f = 2R",
             "hi": "f = 2R",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "f = 3/2 R",
             "hi": "f = 3/2 R",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000390",
+      "questionCode": "sci-phy-ch01-q000390",
       "topicId": null,
       "questionText": {
         "en": "Which mirror makes a large image of the object?",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Plane mirror",
             "hi": "समतल दर्पण",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these A. Plane Mirror B. Concave Mirror C. Convex mirror D. None of these",
             "hi": "इनमें से कोई नहीं A. समतल दर्पण B. अवतल दर्पण C. उत्तल दर्पण D. इनमें से कोई नहीं",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000391",
+      "questionCode": "sci-phy-ch01-q000391",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following lens is used to correct short sightedness ?",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Plano Convex lens",
             "hi": "सम्मोत्तल लेंस",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000399",
+      "questionCode": "sci-phy-ch01-q000399",
       "topicId": null,
       "questionText": {
         "en": "Which lens is also called diverging lens ?",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Convex lens Which lens is also known as diverging lens ? A. Concave lens B. Convex lens",
             "hi": "उत्तल लेंस",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both Concave and Convex lens",
             "hi": "अवतल एवं उत्तल लेंस दोनों",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000403",
+      "questionCode": "sci-phy-ch01-q000403",
       "topicId": null,
       "questionText": {
         "en": "Magnifying glass is",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000522",
+      "questionCode": "sci-phy-ch01-q000522",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is used as a side mirror?",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस स. अवतल लेंस द. उत्तल लेंस",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000523",
+      "questionCode": "sci-phy-ch01-q000523",
       "topicId": null,
       "questionText": {
         "en": "The image obtained by a Concave lens is",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Virtual",
             "hi": "आभासी",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "erect",
             "hi": "सीधा",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "diminished",
             "hi": "छोटा",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "all of these",
             "hi": "इनमें से सभी",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000527",
+      "questionCode": "sci-phy-ch01-q000527",
       "topicId": null,
       "questionText": {
         "en": "The focal length of Convex lens is 50 cm, It's power will be",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "+5D",
             "hi": "+5D",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "-5D",
             "hi": "-5D",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "-2D",
             "hi": "-2D",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "+2D",
             "hi": "+2D",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000532",
+      "questionCode": "sci-phy-ch01-q000532",
       "topicId": null,
       "questionText": {
         "en": "If a ray is incident normally to the surface of a concave mirror, through which point will it pass after reflection?",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "From focus",
             "hi": "फोकस से",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "From Centre of Curvature",
             "hi": "वक्रता-केन्द्र से",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "From pole",
             "hi": "ध्रुव से",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें किसी से नहीं",
@@ -1689,19 +1689,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000535",
+      "questionCode": "sci-phy-ch01-q000535",
       "topicId": null,
       "questionText": {
         "en": "The power of a Concave lens of a glass in air is",
@@ -1710,7 +1710,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "negative",
             "hi": "ऋणात्मक",
@@ -1718,7 +1718,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "positive",
             "hi": "धनात्मक",
@@ -1726,7 +1726,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Sometimes positive",
             "hi": "कभी-कभी धनात्मक",
@@ -1734,7 +1734,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें कोई नहीं",
@@ -1742,19 +1742,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000537",
+      "questionCode": "sci-phy-ch01-q000537",
       "topicId": null,
       "questionText": {
         "en": "The focal length of a concave mirror having radius of curvature 1m is",
@@ -1763,7 +1763,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "50 mm",
             "hi": "50 मिमी",
@@ -1771,7 +1771,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "50 cm",
             "hi": "50 सेमी",
@@ -1779,7 +1779,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "50 m",
             "hi": "50 मीटर",
@@ -1787,7 +1787,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1795,19 +1795,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000541",
+      "questionCode": "sci-phy-ch01-q000541",
       "topicId": null,
       "questionText": {
         "en": "A white ray is incident obliquely on a glass slab with the first refraction. Which of the following will also occur?",
@@ -1816,7 +1816,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Deviation",
             "hi": "विचलन",
@@ -1824,7 +1824,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Dispersion",
             "hi": "विक्षेपण",
@@ -1832,7 +1832,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Reflection",
             "hi": "परावर्तन",
@@ -1840,7 +1840,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -1848,19 +1848,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000635",
+      "questionCode": "sci-phy-ch01-q000635",
       "topicId": null,
       "questionText": {
         "en": "Which of the following lenses is called diverging lens?",
@@ -1869,7 +1869,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1877,7 +1877,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Convex lens and concave lens",
             "hi": "उत्तल लेंस एवं अवतल लेंस",
@@ -1893,7 +1893,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Bifocal lens",
             "hi": "बाइफोकल लेंस",
@@ -1901,19 +1901,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000639",
+      "questionCode": "sci-phy-ch01-q000639",
       "topicId": null,
       "questionText": {
         "en": "A converging beam is incident on a plane mirror. The reflected beam will be",
@@ -1922,7 +1922,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "diverging",
             "hi": "अपसारी",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "converging",
             "hi": "अभिसारी",
@@ -1938,7 +1938,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "parallel",
             "hi": "समांतर",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1954,19 +1954,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000658",
+      "questionCode": "sci-phy-ch01-q000658",
       "topicId": null,
       "questionText": {
         "en": "The focal length of which mirror is taken as negative according to the convention of signs?",
@@ -1975,7 +1975,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Plane mirror",
             "hi": "समतल दर्पण",
@@ -1983,7 +1983,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -1991,7 +1991,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -1999,7 +1999,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2007,19 +2007,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000659",
+      "questionCode": "sci-phy-ch01-q000659",
       "topicId": null,
       "questionText": {
         "en": "Where is the object placed to form a magnified virtual image in a concave mirror?",
@@ -2028,7 +2028,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Between focus and pole",
             "hi": "फोकस और ध्रुव के बीच",
@@ -2036,7 +2036,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Beyond centre of curvature",
             "hi": "वक्रता केन्द्र से परे",
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "At focus",
             "hi": "फोकस पर",
@@ -2052,7 +2052,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Between centre of curvature and focus",
             "hi": "वक्रता केन्द्र और फोकस के बीच",
@@ -2060,19 +2060,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000661",
+      "questionCode": "sci-phy-ch01-q000661",
       "topicId": null,
       "questionText": {
         "en": "What is the value of refractive index of a medium?",
@@ -2081,7 +2081,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "sin i / sin r",
             "hi": "sin i / sin r",
@@ -2089,7 +2089,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "sin r / sin i",
             "hi": "sin r / sin i",
@@ -2097,7 +2097,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "sin i + sin r",
             "hi": "sin i + sin r",
@@ -2105,7 +2105,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "sin i × sin r",
             "hi": "sin i × sin r",
@@ -2113,19 +2113,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000662",
+      "questionCode": "sci-phy-ch01-q000662",
       "topicId": null,
       "questionText": {
         "en": "What is the S.I. unit of power of lens?",
@@ -2134,7 +2134,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "cm-1",
             "hi": "cm-1",
@@ -2142,7 +2142,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "m",
             "hi": "m",
@@ -2150,7 +2150,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "cm",
             "hi": "cm",
@@ -2158,7 +2158,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Dioptre",
             "hi": "डायोप्टर",
@@ -2166,19 +2166,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000663",
+      "questionCode": "sci-phy-ch01-q000663",
       "topicId": null,
       "questionText": {
         "en": "The magnification (m) in a concave lens is equal to",
@@ -2187,7 +2187,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "uv",
             "hi": "uv",
@@ -2195,7 +2195,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "u/v",
             "hi": "u/v",
@@ -2203,7 +2203,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "v/u",
             "hi": "v/u",
@@ -2211,7 +2211,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "u+v",
             "hi": "u+v",
@@ -2219,19 +2219,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000664",
+      "questionCode": "sci-phy-ch01-q000664",
       "topicId": null,
       "questionText": {
         "en": "What is the refractive index of diamond?",
@@ -2240,7 +2240,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1.42",
             "hi": "1.42",
@@ -2248,7 +2248,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "1.32",
             "hi": "1.32",
@@ -2256,7 +2256,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "2.24",
             "hi": "2.24",
@@ -2264,7 +2264,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "2.42",
             "hi": "2.42",
@@ -2272,19 +2272,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000684",
+      "questionCode": "sci-phy-ch01-q000684",
       "topicId": null,
       "questionText": {
         "en": "The magnification produced by a concave mirror of focal length 10 cm is positive, if the value of object distance is",
@@ -2293,7 +2293,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "more than 10 cm",
             "hi": "10 cm से अधिक",
@@ -2301,7 +2301,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "more than 20 cm",
             "hi": "20 cm से अधिक",
@@ -2309,7 +2309,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "less than 10 cm",
             "hi": "10 cm से कम",
@@ -2317,7 +2317,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -2325,19 +2325,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000685",
+      "questionCode": "sci-phy-ch01-q000685",
       "topicId": null,
       "questionText": {
         "en": "On moving from focus towards the pole, the magnification in a concave mirror",
@@ -2346,7 +2346,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "increases",
             "hi": "बढ़ता है",
@@ -2354,7 +2354,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "decreases",
             "hi": "घटता है",
@@ -2362,7 +2362,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "remains constant",
             "hi": "अचर रहता है",
@@ -2370,7 +2370,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -2378,19 +2378,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000688",
+      "questionCode": "sci-phy-ch01-q000688",
       "topicId": null,
       "questionText": {
         "en": "The image of an ant in a concave mirror is erect and goes on increasing as the ant moves along the principal axis. The direction of motion of the ant is",
@@ -2399,7 +2399,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "from focus to centre of curvature",
             "hi": "फोकस से वक्रता केन्द्र की ओर",
@@ -2407,7 +2407,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "from focus to pole",
             "hi": "फोकस से ध्रुव की ओर",
@@ -2415,7 +2415,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "from pole to focus",
             "hi": "ध्रुव से फोकस की ओर",
@@ -2423,7 +2423,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -2431,19 +2431,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000728",
+      "questionCode": "sci-phy-ch01-q000728",
       "topicId": null,
       "questionText": {
         "en": "Which of the following has the lowest refractive index?",
@@ -2452,7 +2452,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Turpentine",
             "hi": "तारपीन",
@@ -2460,7 +2460,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Benzene",
             "hi": "बेंजीन",
@@ -2468,7 +2468,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Water",
             "hi": "पानी",
@@ -2476,7 +2476,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Kerosine",
             "hi": "किरोसीन",
@@ -2484,19 +2484,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000747",
+      "questionCode": "sci-phy-ch01-q000747",
       "topicId": null,
       "questionText": {
         "en": "What will be the nature of the image of an object, if magnification of the image is negative?",
@@ -2505,7 +2505,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Real and erect",
             "hi": "वास्तविक और सीधा",
@@ -2513,7 +2513,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Virtual and erect",
             "hi": "आभासी और सीधा",
@@ -2521,7 +2521,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Virtual and inverted",
             "hi": "आभासी और उल्टा",
@@ -2529,7 +2529,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Real and inverted",
             "hi": "वास्तविक और उल्टा",
@@ -2537,19 +2537,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000749",
+      "questionCode": "sci-phy-ch01-q000749",
       "topicId": null,
       "questionText": {
         "en": "A ray of light is incident perpendicular to a plane mirror. The angle of reflection will be",
@@ -2558,7 +2558,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "135°",
             "hi": "135°",
@@ -2566,7 +2566,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "90°",
             "hi": "90°",
@@ -2574,7 +2574,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "45°",
             "hi": "45°",
@@ -2582,7 +2582,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "0°",
             "hi": "0°",
@@ -2590,19 +2590,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000751",
+      "questionCode": "sci-phy-ch01-q000751",
       "topicId": null,
       "questionText": {
         "en": "Converging lens in air is",
@@ -2611,7 +2611,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave lens of glass",
             "hi": "काँच का अवतल लेंस",
@@ -2619,7 +2619,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Plano-concave lens of glass",
             "hi": "काँच का समतलावतल लेंस",
@@ -2627,7 +2627,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Convex lens of glass",
             "hi": "काँच का उत्तल लेंस",
@@ -2635,7 +2635,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -2643,19 +2643,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000752",
+      "questionCode": "sci-phy-ch01-q000752",
       "topicId": null,
       "questionText": {
         "en": "If the lower half of a concave mirror gets broken then the image",
@@ -2664,7 +2664,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "will form erect",
             "hi": "सीधा बनेगा",
@@ -2672,7 +2672,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "will be halved",
             "hi": "आधा बनेगा",
@@ -2680,7 +2680,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "will be less intense",
             "hi": "कम तीव्र बनेगा",
@@ -2688,7 +2688,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -2696,19 +2696,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000753",
+      "questionCode": "sci-phy-ch01-q000753",
       "topicId": null,
       "questionText": {
         "en": "When a ray of light goes from air (rarer medium) to glass (denser medium), it bends",
@@ -2717,7 +2717,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "away from the normal",
             "hi": "अभिलंब से दूर",
@@ -2725,7 +2725,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "towards the normal",
             "hi": "अभिलंब की ओर",
@@ -2733,7 +2733,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "parallel to the normal",
             "hi": "अभिलंब के समांतर",
@@ -2741,7 +2741,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these 72 (cont.) When a ray of light travels from air (a rarer medium) to glass (a denser medium), it bends (A) away from the normal (B) towards the normal (C) parallel to the normal (D) none of these",
             "hi": "इनमें से कोई नहीं",
@@ -2749,19 +2749,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000786",
+      "questionCode": "sci-phy-ch01-q000786",
       "topicId": null,
       "questionText": {
         "en": "What is formed when an obstacle is placed in front of a light source?",
@@ -2770,7 +2770,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Shadow",
             "hi": "छाया",
@@ -2778,7 +2778,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Penumbra",
             "hi": "उपछाया",
@@ -2786,7 +2786,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both (A) and (B)",
             "hi": "(A) और (B) दोनों",
@@ -2794,7 +2794,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2802,19 +2802,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000787",
+      "questionCode": "sci-phy-ch01-q000787",
       "topicId": null,
       "questionText": {
         "en": "The focal length of a plane mirror is",
@@ -2823,7 +2823,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Zero",
             "hi": "शून्य",
@@ -2831,7 +2831,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "50 cm",
             "hi": "50 cm",
@@ -2839,7 +2839,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "100 cm",
             "hi": "100 cm",
@@ -2847,7 +2847,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Infinity",
             "hi": "अनंत",
@@ -2855,19 +2855,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000788",
+      "questionCode": "sci-phy-ch01-q000788",
       "topicId": null,
       "questionText": {
         "en": "Power of a convex lens with 1 metre focal length would be",
@@ -2876,7 +2876,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "−1 D",
             "hi": "−1 D",
@@ -2884,7 +2884,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "1.5 D",
             "hi": "1.5 D",
@@ -2892,7 +2892,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "..",
             "hi": "..",
@@ -2900,7 +2900,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "3. (C) 1 D (D) 2 D",
             "hi": "3. (C) 1 D (D) 2 D",
@@ -2908,19 +2908,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000789",
+      "questionCode": "sci-phy-ch01-q000789",
       "topicId": null,
       "questionText": {
         "en": "Which of the following lenses is called diverging lens?",
@@ -2929,7 +2929,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस",
@@ -2937,7 +2937,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -2945,7 +2945,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Bifocal lens",
             "hi": "बाइफोकल लेंस",
@@ -2953,7 +2953,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2961,19 +2961,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000790",
+      "questionCode": "sci-phy-ch01-q000790",
       "topicId": null,
       "questionText": {
         "en": "The speed of light in different media is",
@@ -2982,7 +2982,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Different",
             "hi": "भिन्न-भिन्न",
@@ -2990,7 +2990,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Same",
             "hi": "समान",
@@ -2998,7 +2998,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both (A) and (B)",
             "hi": "(A) और (B) दोनो",
@@ -3006,7 +3006,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3014,19 +3014,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000791",
+      "questionCode": "sci-phy-ch01-q000791",
       "topicId": null,
       "questionText": {
         "en": "What is the SI unit of magnification produced by a lens?",
@@ -3035,7 +3035,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Millimetre",
             "hi": "मिलीमीटर",
@@ -3043,7 +3043,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cm",
             "hi": "सेमी",
@@ -3051,7 +3051,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Metre",
             "hi": "मीटर",
@@ -3059,7 +3059,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Unitless",
             "hi": "मात्रक विहीन",
@@ -3067,19 +3067,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000792",
+      "questionCode": "sci-phy-ch01-q000792",
       "topicId": null,
       "questionText": {
         "en": "Which of the following has the highest refractive index?",
@@ -3088,7 +3088,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Glass",
             "hi": "काँच",
@@ -3096,7 +3096,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Diamond",
             "hi": "हीरा",
@@ -3104,7 +3104,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ice",
             "hi": "बर्फ",
@@ -3112,7 +3112,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Air",
             "hi": "वायु",
@@ -3120,19 +3120,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000793",
+      "questionCode": "sci-phy-ch01-q000793",
       "topicId": null,
       "questionText": {
         "en": "A Converging lens forms",
@@ -3141,7 +3141,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "A real image always",
             "hi": "सदैव वास्तविक प्रतिबिंब",
@@ -3149,7 +3149,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "A virtual image always",
             "hi": "सदैव आभासी प्रतिबिंब",
@@ -3157,7 +3157,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "A real or a virtual image",
             "hi": "कभी आभासी तो कभी वास्तविक प्रतिबिंब",
@@ -3165,7 +3165,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3173,19 +3173,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000895",
+      "questionCode": "sci-phy-ch01-q000895",
       "topicId": null,
       "questionText": {
         "en": "The focal length of a plane mirror is",
@@ -3194,7 +3194,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Zero",
             "hi": "शून्य",
@@ -3202,7 +3202,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Negative",
             "hi": "ऋणात्मक",
@@ -3210,7 +3210,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Infinity",
             "hi": "अनंत",
@@ -3218,7 +3218,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Positive",
             "hi": "धनात्मक",
@@ -3226,19 +3226,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000896",
+      "questionCode": "sci-phy-ch01-q000896",
       "topicId": null,
       "questionText": {
         "en": "Real images are always formed on which side of mirror?",
@@ -3247,7 +3247,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Behind the mirror",
             "hi": "दर्पण के पीछे",
@@ -3255,7 +3255,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "In front of mirror",
             "hi": "दर्पण के आगे",
@@ -3263,7 +3263,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both A and B",
             "hi": "(A) एवं (B) दोनों",
@@ -3271,7 +3271,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3279,19 +3279,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000898",
+      "questionCode": "sci-phy-ch01-q000898",
       "topicId": null,
       "questionText": {
         "en": "If the speed of light incident on a mirror is C, then what will be the speed of the reflected light?",
@@ -3300,7 +3300,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C/2",
             "hi": "C/2",
@@ -3308,7 +3308,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "C/3",
             "hi": "C/3",
@@ -3316,7 +3316,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "C/4",
             "hi": "C/4",
@@ -3324,7 +3324,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "C",
             "hi": "C",
@@ -3332,19 +3332,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000899",
+      "questionCode": "sci-phy-ch01-q000899",
       "topicId": null,
       "questionText": {
         "en": "In a spherical mirror, according to the Cartesian sign convention, the origin is taken as",
@@ -3353,7 +3353,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "on focus",
             "hi": "फोकस पर",
@@ -3361,7 +3361,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "at the centre of curvature",
             "hi": "वक्रता केन्द्र पर",
@@ -3369,7 +3369,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "at the pole",
             "hi": "ध्रुव पर",
@@ -3377,7 +3377,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3385,19 +3385,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000900",
+      "questionCode": "sci-phy-ch01-q000900",
       "topicId": null,
       "questionText": {
         "en": "When light travels from denser to rarer medium, its speed",
@@ -3406,7 +3406,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "increases",
             "hi": "बढ़ती है",
@@ -3414,7 +3414,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "decreases",
             "hi": "घटती है",
@@ -3422,7 +3422,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "remains Same",
             "hi": "समान रहती है",
@@ -3430,7 +3430,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3438,19 +3438,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000901",
+      "questionCode": "sci-phy-ch01-q000901",
       "topicId": null,
       "questionText": {
         "en": "Which quantity changes during refraction?",
@@ -3459,7 +3459,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Frequency",
             "hi": "आवृति",
@@ -3467,7 +3467,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Wavelength",
             "hi": "तरंगदैर्ध्य",
@@ -3475,7 +3475,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Colour",
             "hi": "रंग",
@@ -3483,7 +3483,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Both A and B",
             "hi": "(A) और (B) दोनों",
@@ -3491,19 +3491,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000902",
+      "questionCode": "sci-phy-ch01-q000902",
       "topicId": null,
       "questionText": {
         "en": "The power of a lens having focal length 50 cm is",
@@ -3512,7 +3512,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0.5 D",
             "hi": "0.5 D",
@@ -3520,7 +3520,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2 D",
             "hi": "2 D",
@@ -3528,7 +3528,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "1D",
             "hi": "1D",
@@ -3536,7 +3536,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "5D",
             "hi": "5D",
@@ -3544,19 +3544,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q000904",
+      "questionCode": "sci-phy-ch01-q000904",
       "topicId": null,
       "questionText": {
         "en": "Speed of light is minimum in –",
@@ -3565,7 +3565,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "water",
             "hi": "जल में",
@@ -3573,7 +3573,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "vacuum",
             "hi": "निर्वात में",
@@ -3581,7 +3581,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "glass",
             "hi": "काँच में",
@@ -3589,7 +3589,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "air",
             "hi": "वायु में",
@@ -3597,19 +3597,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001172",
+      "questionCode": "sci-phy-ch01-q001172",
       "topicId": null,
       "questionText": {
         "en": "What type of mirror is used for shaving?",
@@ -3618,7 +3618,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -3626,7 +3626,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -3634,7 +3634,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plane",
             "hi": "समतल",
@@ -3642,7 +3642,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3650,19 +3650,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001174",
+      "questionCode": "sci-phy-ch01-q001174",
       "topicId": null,
       "questionText": {
         "en": "How many laws are there of refraction of light?",
@@ -3671,7 +3671,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -3679,7 +3679,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -3687,7 +3687,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -3695,7 +3695,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -3703,19 +3703,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001212",
+      "questionCode": "sci-phy-ch01-q001212",
       "topicId": null,
       "questionText": {
         "en": "The image formed by a plane mirror is",
@@ -3724,7 +3724,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "imaginary",
             "hi": "काल्पनिक",
@@ -3732,7 +3732,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "real",
             "hi": "वास्तविक",
@@ -3740,7 +3740,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both (a) and (b)",
             "hi": "(a) और (b) दोनों",
@@ -3748,7 +3748,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3756,19 +3756,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001214",
+      "questionCode": "sci-phy-ch01-q001214",
       "topicId": null,
       "questionText": {
         "en": "What type of lens is found in the human eye?",
@@ -3777,7 +3777,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -3785,7 +3785,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -3793,7 +3793,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "circular",
             "hi": "वलयाकार",
@@ -3801,7 +3801,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "bifocal",
             "hi": "बाईफोकल",
@@ -3809,19 +3809,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001217",
+      "questionCode": "sci-phy-ch01-q001217",
       "topicId": null,
       "questionText": {
         "en": "Which lens produces only a virtual image?",
@@ -3830,7 +3830,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -3838,7 +3838,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -3846,7 +3846,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "bifocal",
             "hi": "बाईफोकल",
@@ -3854,7 +3854,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3862,19 +3862,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001242",
+      "questionCode": "sci-phy-ch01-q001242",
       "topicId": null,
       "questionText": {
         "en": "What is the speed of light in vacuum?",
@@ -3883,7 +3883,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "3×10^8 m/sec",
             "hi": "3×10^8 m/sec",
@@ -3891,7 +3891,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "3×10^8 cm/sec",
             "hi": "3×10^8 cm/sec",
@@ -3899,7 +3899,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3×10^8 km/sec",
             "hi": "3×10^8 km/sec",
@@ -3907,7 +3907,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3915,19 +3915,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001243",
+      "questionCode": "sci-phy-ch01-q001243",
       "topicId": null,
       "questionText": {
         "en": "Is determined by the law of reflection:",
@@ -3936,7 +3936,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Angle of incidence = Angle of reflection",
             "hi": "आपतन कोण = परावर्तन कोण",
@@ -3944,7 +3944,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Angle of reflection = Angle of refraction",
             "hi": "परावर्तन कोण = अपवर्तन कोण",
@@ -3952,7 +3952,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Angle of incidence = Angle of deviation",
             "hi": "आपतन कोण = विचलन कोण",
@@ -3960,7 +3960,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3968,19 +3968,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001244",
+      "questionCode": "sci-phy-ch01-q001244",
       "topicId": null,
       "questionText": {
         "en": "How many principal foci does a lens have?",
@@ -3989,7 +3989,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Two",
             "hi": "दो",
@@ -3997,7 +3997,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "One",
             "hi": "एक",
@@ -4005,7 +4005,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Three",
             "hi": "तीन",
@@ -4013,7 +4013,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -4021,19 +4021,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001256",
+      "questionCode": "sci-phy-ch01-q001256",
       "topicId": null,
       "questionText": {
         "en": "Light rays travel:",
@@ -4042,7 +4042,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "in a straight line",
             "hi": "सीधी रेखा में",
@@ -4050,7 +4050,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "in a curved line",
             "hi": "टेढ़ी रेखा में",
@@ -4058,7 +4058,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "in any direction",
             "hi": "किसी भी दिशा में",
@@ -4066,7 +4066,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -4074,19 +4074,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001257",
+      "questionCode": "sci-phy-ch01-q001257",
       "topicId": null,
       "questionText": {
         "en": "Which mirror is used for shaving?",
@@ -4095,7 +4095,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "concave mirror",
             "hi": "अवतल दर्पण",
@@ -4103,7 +4103,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "convex mirror",
             "hi": "उत्तल दर्पण",
@@ -4111,7 +4111,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "plane mirror",
             "hi": "समतल दर्पण",
@@ -4119,7 +4119,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -4127,19 +4127,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001258",
+      "questionCode": "sci-phy-ch01-q001258",
       "topicId": null,
       "questionText": {
         "en": "The reflecting surface of a searchlight is:",
@@ -4148,7 +4148,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -4156,7 +4156,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -4164,7 +4164,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plane",
             "hi": "समतल",
@@ -4172,7 +4172,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -4180,19 +4180,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001279",
+      "questionCode": "sci-phy-ch01-q001279",
       "topicId": null,
       "questionText": {
         "en": "How many laws are there of reflection of light?",
@@ -4201,7 +4201,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -4209,7 +4209,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -4217,7 +4217,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -4225,7 +4225,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -4233,19 +4233,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001288",
+      "questionCode": "sci-phy-ch01-q001288",
       "topicId": null,
       "questionText": {
         "en": "How many laws of reflection of light are?",
@@ -4254,7 +4254,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -4262,7 +4262,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -4270,7 +4270,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -4278,7 +4278,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -4286,19 +4286,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001297",
+      "questionCode": "sci-phy-ch01-q001297",
       "topicId": null,
       "questionText": {
         "en": "How many laws of refraction of light are there?",
@@ -4307,7 +4307,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -4315,7 +4315,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -4323,7 +4323,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -4331,7 +4331,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -4339,19 +4339,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001312",
+      "questionCode": "sci-phy-ch01-q001312",
       "topicId": null,
       "questionText": {
         "en": "How many laws are there for reflection of light?",
@@ -4360,7 +4360,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -4368,7 +4368,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -4376,7 +4376,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -4384,7 +4384,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -4392,19 +4392,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001323",
+      "questionCode": "sci-phy-ch01-q001323",
       "topicId": null,
       "questionText": {
         "en": "Which mirror do the dentist use to use large images of teeth of patient?",
@@ -4413,7 +4413,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "plane mirror",
             "hi": "समतल दर्पण",
@@ -4421,7 +4421,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "concave mirror",
             "hi": "उत्कर्ण दर्पण",
@@ -4429,7 +4429,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "convex mirror",
             "hi": "उत्कृष्ट दर्पण",
@@ -4437,7 +4437,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "all of these Ans: concave mirror",
             "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
@@ -4445,19 +4445,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001325",
+      "questionCode": "sci-phy-ch01-q001325",
       "topicId": null,
       "questionText": {
         "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the",
@@ -4466,7 +4466,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "mirror and the screen",
             "hi": "दर्पण और स्क्रीन",
@@ -4474,7 +4474,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "mirror and object",
             "hi": "दर्पण और वस्तु",
@@ -4482,7 +4482,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "both A and B",
             "hi": "दोनों A और B",
@@ -4490,7 +4490,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these Ans: mirror and the screen",
             "hi": "इनमें से कोई नहीं उत्तर: दर्पण और स्क्रीन",
@@ -4498,19 +4498,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch01-q001326",
+      "questionCode": "sci-phy-ch01-q001326",
       "topicId": null,
       "questionText": {
         "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary?",
@@ -4519,7 +4519,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "A convex lens of focal length 50 cm",
             "hi": "एक उत्तल लेंस जिसकी फोकल लंबाई 50 सेमी है",
@@ -4527,7 +4527,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "a concave lens of focal length 50 cm",
             "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 50 सेमी है",
@@ -4535,7 +4535,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Convex lens of focal length 5 cm",
             "hi": "उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
@@ -4543,7 +4543,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
             "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 5 सेमी है उत्तर: उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
@@ -4551,14 +4551,14 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     }

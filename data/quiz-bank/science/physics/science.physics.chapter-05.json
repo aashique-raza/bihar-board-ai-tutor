@@ -5,7 +5,7 @@
   "chapterTitle": "Sources of Energy",
   "questions": [
     {
-      "seedKey": "sci-phy-ch05-q000069",
+      "questionCode": "sci-phy-ch05-q000069",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not used as a cooking fuel?",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C.N.G",
             "hi": "C.N.G",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "L.P.G",
             "hi": "L.P.G",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Bio Gas",
             "hi": "बायो गैस",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000083",
+      "questionCode": "sci-phy-ch05-q000083",
       "topicId": null,
       "questionText": {
         "en": "Which energy does a hydro electric power plant convert into electric energy?",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Thermal energy",
             "hi": "तापीय ऊर्जा",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Nuclear energy",
             "hi": "नाभिकीय ऊर्जा",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Solar energy",
             "hi": "सौर ऊर्जा",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Potential energy",
             "hi": "स्थितिज ऊर्जा",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000084",
+      "questionCode": "sci-phy-ch05-q000084",
       "topicId": null,
       "questionText": {
         "en": "In which State, Narora nuclear power reactor is situated?",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Rajasthan",
             "hi": "राजस्थान",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Maharashtra",
             "hi": "महाराष्ट्र",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Uttar Pradesh",
             "hi": "उत्तर प्रदेश",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Gujarat",
             "hi": "गुजरात",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000242",
+      "questionCode": "sci-phy-ch05-q000242",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not the source of non-renewable energy?",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Petroleum",
             "hi": "पेट्रोलियम",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Biogas",
             "hi": "बायोगैस",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Natural gas",
             "hi": "प्राकृतिक गैस",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000253",
+      "questionCode": "sci-phy-ch05-q000253",
       "topicId": null,
       "questionText": {
         "en": "Ultimate source of energy for all living organisms is",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Planet",
             "hi": "ग्रह",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Moon",
             "hi": "चन्द्रमा",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Sun",
             "hi": "सूर्य",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000265",
+      "questionCode": "sci-phy-ch05-q000265",
       "topicId": null,
       "questionText": {
         "en": "With which of the following metals is solar cell made of?",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Zinc",
             "hi": "जस्ता",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Gold",
             "hi": "सोना",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Platinum",
             "hi": "प्लेटीनम",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Silicon",
             "hi": "सिलिकन",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000318",
+      "questionCode": "sci-phy-ch05-q000318",
       "topicId": null,
       "questionText": {
         "en": "In which day a solar water heater cannot be used to get hot water ?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "A sunny day",
             "hi": "धूप वाले दिन",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "A cloudy day",
             "hi": "बादलों वाले दिन",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "A hot day",
             "hi": "गरम दिन",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000319",
+      "questionCode": "sci-phy-ch05-q000319",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not derived from the solar energy ?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Geothermal energy",
             "hi": "भूतापीय ऊर्जा",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Wind energy",
             "hi": "पवन ऊर्जा",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Nuclear energy",
             "hi": "नाभिकीय ऊर्जा",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Biomass",
             "hi": "जैवमात्रा",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000398",
+      "questionCode": "sci-phy-ch05-q000398",
       "topicId": null,
       "questionText": {
         "en": "What is the source of Renewable energy ?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Nuclear Energy",
             "hi": "नाभिकीय ऊर्जा",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Solar Energy",
             "hi": "सौर ऊर्जा",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Coal Energy",
             "hi": "कोयले से प्राप्त ऊर्जा",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Natural Gas Energy",
             "hi": "प्राकृतिक गैस से प्राप्त ऊर्जा",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000425",
+      "questionCode": "sci-phy-ch05-q000425",
       "topicId": null,
       "questionText": {
         "en": "Which is used in Solar Cell ?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Plastic",
             "hi": "प्लास्टिक",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Silicon",
             "hi": "सिलिकॉन",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Uranium",
             "hi": "यूरेनियम",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Plutonium",
             "hi": "प्लूटोनियम",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000426",
+      "questionCode": "sci-phy-ch05-q000426",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not used as cooking fuel ? Which of the following is not used in cooking fuel ?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C.N.G",
             "hi": "C.N.G",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "L.P.G",
             "hi": "L.P.G",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Biogas",
             "hi": "बायो गैस",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000540",
+      "questionCode": "sci-phy-ch05-q000540",
       "topicId": null,
       "questionText": {
         "en": "The conventional source of energy is",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Wind energy",
             "hi": "पवन ऊर्जा",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Solar energy",
             "hi": "सौर ऊर्जा",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Biogas",
             "hi": "बायोगैस",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000603",
+      "questionCode": "sci-phy-ch05-q000603",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a non-renewable source of energy?",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Sun",
             "hi": "सूर्य",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Wind",
             "hi": "पवन",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Petroleum",
             "hi": "पेट्रोलियम",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Flowing water",
             "hi": "बहता पानी",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000604",
+      "questionCode": "sci-phy-ch05-q000604",
       "topicId": null,
       "questionText": {
         "en": "The actual source of energy of fossil fuel is",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "nuclear fusion",
             "hi": "नाभिकीय संलयन",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "sun",
             "hi": "सूर्य",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "moon",
             "hi": "चन्द्रमा",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000608",
+      "questionCode": "sci-phy-ch05-q000608",
       "topicId": null,
       "questionText": {
         "en": "The device which directly converts solar energy into electricity known as",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Daniel cell",
             "hi": "डेनियल सेल",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Leclanche cell",
             "hi": "लेक्लांशे सेल",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Solar cell",
             "hi": "सौर सेल",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000616",
+      "questionCode": "sci-phy-ch05-q000616",
       "topicId": null,
       "questionText": {
         "en": "Which is the main source of energy on earth?",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Wood",
             "hi": "लकड़ी",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Water",
             "hi": "पानी",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Sun",
             "hi": "सूर्य",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000686",
+      "questionCode": "sci-phy-ch05-q000686",
       "topicId": null,
       "questionText": {
         "en": "Which energy does a hydro-electric power plant convert into electric energy?",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Nuclear energy",
             "hi": "नाभिकीय ऊर्जा",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Solar energy",
             "hi": "सौर ऊर्जा",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Potential energy",
             "hi": "स्थितिज ऊर्जा",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Thermal energy",
             "hi": "तापीय ऊर्जा",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000702",
+      "questionCode": "sci-phy-ch05-q000702",
       "topicId": null,
       "questionText": {
         "en": "Which is the conventional source of energy?",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Nuclear energy source",
             "hi": "नाभिकीय ऊर्जा स्रोत",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Geo-thermal energy source",
             "hi": "भूतापीय ऊर्जा स्रोत",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Biomass",
             "hi": "जैव मात्रा (बायोमास)",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000718",
+      "questionCode": "sci-phy-ch05-q000718",
       "topicId": null,
       "questionText": {
         "en": "Which is used in Solar cell?",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Uranium",
             "hi": "यूरेनियम",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Plastic",
             "hi": "प्लास्टिक",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Silicon",
             "hi": "सिलिकन",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Plutonium",
             "hi": "प्लूटोनियम",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000723",
+      "questionCode": "sci-phy-ch05-q000723",
       "topicId": null,
       "questionText": {
         "en": "What should be the minimum speed of wind in a wind electric generator?",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1500 km/h",
             "hi": "1500 किमी/घंटा",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "150 km/h",
             "hi": "150 किमी/घंटा",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "15 km/h",
             "hi": "15 किमी/घंटा",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "1.5 km/h",
             "hi": "1.5 किमी/घंटा",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000810",
+      "questionCode": "sci-phy-ch05-q000810",
       "topicId": null,
       "questionText": {
         "en": "The source of vast energy emitted by Sun and other stars is",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Nuclear fission",
             "hi": "नाभिकीय विखण्डन",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Nuclear fusion ... 25.",
             "hi": "नाभिकीय संलयन ... 25.",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Both (A) and (B)",
             "hi": "(A) तथा (B) दोनो",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000812",
+      "questionCode": "sci-phy-ch05-q000812",
       "topicId": null,
       "questionText": {
         "en": "Which cell is used in toys?",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Daniel cell",
             "hi": "डेनियल सेल",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Solar cell",
             "hi": "सौर सेल",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Dry cell",
             "hi": "सुखा सेल",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000838",
+      "questionCode": "sci-phy-ch05-q000838",
       "topicId": null,
       "questionText": {
         "en": "Which is used in Solar cell?",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Uranium",
             "hi": "यूरेनियम",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Plutonium",
             "hi": "प्लूटोनियम",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Silicon",
             "hi": "सिलिकन",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Plastic",
             "hi": "प्लास्टिक",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000839",
+      "questionCode": "sci-phy-ch05-q000839",
       "topicId": null,
       "questionText": {
         "en": "Which of following is mainly a biogas?",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C2H6",
             "hi": "C₂H₆",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CH4",
             "hi": "CH₄",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "C4H10",
             "hi": "C₄H₁₀",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "H2",
             "hi": "H₂",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000914",
+      "questionCode": "sci-phy-ch05-q000914",
       "topicId": null,
       "questionText": {
         "en": "The ability to do work is called",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Force",
             "hi": "बल",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Power",
             "hi": "शक्ति",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Energy",
             "hi": "ऊर्जा",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000919",
+      "questionCode": "sci-phy-ch05-q000919",
       "topicId": null,
       "questionText": {
         "en": "To obtain nuclear energy, the necessary element is",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Helium",
             "hi": "हीलियम",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Aluminium",
             "hi": "एल्युमिनियम",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Uranium",
             "hi": "यूरेनियम",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Chromium",
             "hi": "क्रोमियम",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000920",
+      "questionCode": "sci-phy-ch05-q000920",
       "topicId": null,
       "questionText": {
         "en": "The main source of energy on earth in nature is",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Sun",
             "hi": "सूर्य",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Water",
             "hi": "पानी",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Wood",
             "hi": "लकड़ी",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q000937",
+      "questionCode": "sci-phy-ch05-q000937",
       "topicId": null,
       "questionText": {
         "en": "Which gas is used in welding?",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methane",
             "hi": "मेथेन",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ethyne",
             "hi": "एथाइन",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ethane",
             "hi": "एथेन",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ethene",
             "hi": "एथीन",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q001259",
+      "questionCode": "sci-phy-ch05-q001259",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not used in cooking fuels?",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C.N.G",
             "hi": "C.N.G",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "L.P.G",
             "hi": "L.P.G",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "What type of energy does a dynamo convert mechanical energy into?",
             "hi": "Bio Gas",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Coal",
             "hi": "कोयला",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q001269",
+      "questionCode": "sci-phy-ch05-q001269",
       "topicId": null,
       "questionText": {
         "en": "The upper part of the box-type solar cooker has a glass lid. The reason for this is",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "to see whether the food placed inside the cooker is cooking or not",
             "hi": "यह देखना कि कुकर के अंदर रखा भोजन पक रहा है या नहीं",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "to prevent the loss of heat by radiation",
             "hi": "विकिरण द्वारा ऊष्मा की हानि को रोकना",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "to prevent dust particles from entering the box",
             "hi": "बाक्स के भीतर धूलकणों को जाने से रोकना",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q001329",
+      "questionCode": "sci-phy-ch05-q001329",
       "topicId": null,
       "questionText": {
         "en": "What kind of mirror would be most suited for a solar cooker?",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "plane mirror",
             "hi": "समतल दर्पण",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "convex mirror",
             "hi": "उत्कृष्ट दर्पण",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "concave mirror",
             "hi": "उत्कर्ण दर्पण",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "all of these Ans: concave mirror",
             "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch05-q001335",
+      "questionCode": "sci-phy-ch05-q001335",
       "topicId": null,
       "questionText": {
         "en": "Which is the conventional source of energy?",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Bio-Mass",
             "hi": "जैव मात्रा (बायो-मास)",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Nuclear energy source",
             "hi": "नाभिकीय ऊर्जा स्त्रोत",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Geo-thermal energy source",
             "hi": "भूतापीय ऊर्जा स्त्रोत",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नही",
@@ -1689,14 +1689,14 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     }

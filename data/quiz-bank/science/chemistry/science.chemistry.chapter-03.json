@@ -5,7 +5,7 @@
   "chapterTitle": "Metals and Non-metals",
   "questions": [
     {
-      "seedKey": "sci-chem-ch03-q000041",
+      "questionCode": "sci-chem-ch03-q000041",
       "topicId": null,
       "questionText": {
         "en": "The compound formed by transfer of electrons is called",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "covalent",
             "hi": "सहसंयोजी",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "electrovalent",
             "hi": "वैद्युत संयोजी",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "carbonic",
             "hi": "कार्बनिक",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000042",
+      "questionCode": "sci-chem-ch03-q000042",
       "topicId": null,
       "questionText": {
         "en": "Brass is an example of",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "metal",
             "hi": "धातु का",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "non-metal",
             "hi": "अधातु का",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "alloy",
             "hi": "मिश्रधातु का",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "metalloid",
             "hi": "उपधातु का",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000089",
+      "questionCode": "sci-chem-ch03-q000089",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the most reactive metal?",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mg",
             "hi": "Mg",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ca",
             "hi": "Ca",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Na",
             "hi": "Na",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "K",
             "hi": "K",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000153",
+      "questionCode": "sci-chem-ch03-q000153",
       "topicId": null,
       "questionText": {
         "en": "Of which metal the bauxite is an important ore",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Copper",
             "hi": "तांबा",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "zinc",
             "hi": "जस्ता",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "aluminium",
             "hi": "एल्यूमिनियम",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "iron Ans: aluminium",
             "hi": "आयरन उत्तर: एल्यूमिनियम",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000154",
+      "questionCode": "sci-chem-ch03-q000154",
       "topicId": null,
       "questionText": {
         "en": "Which metal the thin layer is coated over iron and steel to protect them from rusting?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Copper",
             "hi": "तांबा",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Silver",
             "hi": "चांदी",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Gold",
             "hi": "सोना",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Zinc Ans: Zinc",
             "hi": "जिंक उत्तर: जिंक",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000158",
+      "questionCode": "sci-chem-ch03-q000158",
       "topicId": null,
       "questionText": {
         "en": "In electrolytic refining impure metal is taken as a",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Anode",
             "hi": "एनोड",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cathode",
             "hi": "कैथोड",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Electrolyte",
             "hi": "इलेक्ट्रोलाइट",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "all of these Ans: Anode",
             "hi": "इनमें से सभी उत्तर: एनोड",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000203",
+      "questionCode": "sci-chem-ch03-q000203",
       "topicId": null,
       "questionText": {
         "en": "Which metal of the following has the lowest melting point?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na",
             "hi": "Na",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000239",
+      "questionCode": "sci-chem-ch03-q000239",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a good conductor of electricity?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Sulphur",
             "hi": "सल्फर",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Chlorine",
             "hi": "क्लोरीन",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Graphite",
             "hi": "ग्रेफाइट",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Iodine",
             "hi": "आयोडीन",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000267",
+      "questionCode": "sci-chem-ch03-q000267",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the heaviest metal?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Lithium",
             "hi": "लिथियम",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Uranium",
             "hi": "यूरेनियम",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cesium",
             "hi": "सिजियम",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Iron",
             "hi": "आयरन",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000308",
+      "questionCode": "sci-chem-ch03-q000308",
       "topicId": null,
       "questionText": {
         "en": "Which of the following metals is least reactive ?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Zn",
             "hi": "Zn",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Mg",
             "hi": "Mg",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000313",
+      "questionCode": "sci-chem-ch03-q000313",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the best conductor of electricity ?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Silver",
             "hi": "चाँदी",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Iron",
             "hi": "लोहा",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Nichrome",
             "hi": "नाइक्रोम",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Rubber",
             "hi": "रबर",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000334",
+      "questionCode": "sci-chem-ch03-q000334",
       "topicId": null,
       "questionText": {
         "en": "Which of the following methods is suitable for preventing an iron frying pan from rusting ?",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Applying grease",
             "hi": "ग्रीज लगाकर",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Applying paint",
             "hi": "पेंट लगाकर",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Applying a coating of zinc",
             "hi": "जिंक की परत चढ़ाकर",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000335",
+      "questionCode": "sci-chem-ch03-q000335",
       "topicId": null,
       "questionText": {
         "en": "Which of the following metals can easily be cut with a knife ?",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na",
             "hi": "Na",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Mg",
             "hi": "Mg",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000339",
+      "questionCode": "sci-chem-ch03-q000339",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is evolved when zinc reacts with sulphuric acid ?",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "O2",
             "hi": "O2",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "H2",
             "hi": "H2",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "N2",
             "hi": "N2",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000411",
+      "questionCode": "sci-chem-ch03-q000411",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is most reactive ? 28. Which of the following is the most reactive ?",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Hg",
             "hi": "Hg",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ag",
             "hi": "Ag",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Au",
             "hi": "Au",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000420",
+      "questionCode": "sci-chem-ch03-q000420",
       "topicId": null,
       "questionText": {
         "en": "What is Silicon ? What is Silicon ?",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "metal",
             "hi": "धातु",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "non-metal",
             "hi": "अधातु",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "metalloid",
             "hi": "उपधातु",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000423",
+      "questionCode": "sci-chem-ch03-q000423",
       "topicId": null,
       "questionText": {
         "en": "Which of the following metal is kept immersed in kerosene ? Which of the following element is stored in Kerosene oil ?",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Magnesium",
             "hi": "मैग्नेशियम",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Sodium",
             "hi": "सोडियम",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Mercury",
             "hi": "पारा",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Tungston",
             "hi": "टंग्स्टन",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000427",
+      "questionCode": "sci-chem-ch03-q000427",
       "topicId": null,
       "questionText": {
         "en": "2Cu + O2 -> 2CuO is",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Oxidation",
             "hi": "ऑक्सीकरण",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Decomposition",
             "hi": "अपघटन",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Neutralization",
             "hi": "उदासीनीकरण",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Displacement",
             "hi": "विस्थापन",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000431",
+      "questionCode": "sci-chem-ch03-q000431",
       "topicId": null,
       "questionText": {
         "en": "Cryolite is an ore of",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Copper",
             "hi": "ताँबा का",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Iron",
             "hi": "लोहा का",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Magnesium",
             "hi": "मैग्नीशियम का",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Aluminium",
             "hi": "एल्युमिनियम का",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000536",
+      "questionCode": "sci-chem-ch03-q000536",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a conductor of electricity?",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Iodine",
             "hi": "आयोडीन",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Graphite",
             "hi": "ग्रेफाइट",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Sulphur",
             "hi": "सल्फर",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Diamond Which one of the following is a good conductor of electricity? A. Iodine B. Graphite C. Sulphur D. Diamond",
             "hi": "हीरा अ. आयोडीन ब. ग्रेफाइट स. सल्फर द. हीरा",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000546",
+      "questionCode": "sci-chem-ch03-q000546",
       "topicId": null,
       "questionText": {
         "en": "Haematite is an ore of which of the following metal ?",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Zn",
             "hi": "जिंक",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fe",
             "hi": "आयरन",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cu",
             "hi": "कॉपर",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Au",
             "hi": "सोना",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000547",
+      "questionCode": "sci-chem-ch03-q000547",
       "topicId": null,
       "questionText": {
         "en": "The sulphide ore is concentrated by which of the following process?",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Liquation",
             "hi": "द्रवण विधि",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Hand picking",
             "hi": "हाथ से चुनकर",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Calcination",
             "hi": "निस्तापन",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Froth-floatation process",
             "hi": "फेन उत्पलावन विधि",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000548",
+      "questionCode": "sci-chem-ch03-q000548",
       "topicId": null,
       "questionText": {
         "en": "The reaction, 2Zn + O2->2ZnO is which type of reaction.",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Oxidation",
             "hi": "उपचयन",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Displacement",
             "hi": "विस्थापन",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Neutralisation",
             "hi": "उदासीनीकरण",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Decomposition",
             "hi": "अपघटन",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000560",
+      "questionCode": "sci-chem-ch03-q000560",
       "topicId": null,
       "questionText": {
         "en": "A metal found in the Free State in nature is",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Zinc",
             "hi": "जिंक",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Gold",
             "hi": "सोना",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Iron",
             "hi": "लोहा",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Copper",
             "hi": "ताँबा",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000561",
+      "questionCode": "sci-chem-ch03-q000561",
       "topicId": null,
       "questionText": {
         "en": "Which of the following metals is the most reactive?",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Zn",
             "hi": "Zn",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ag",
             "hi": "Ag",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Au",
             "hi": "Au",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000563",
+      "questionCode": "sci-chem-ch03-q000563",
       "topicId": null,
       "questionText": {
         "en": "Brass is an alloy of which of the following ?",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cu + Zn",
             "hi": "Cu + Zn",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fe + Ni",
             "hi": "Fe + Ni",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cu + Au",
             "hi": "Cu + Au",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cu + Sn",
             "hi": "Cu + Sn",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000566",
+      "questionCode": "sci-chem-ch03-q000566",
       "topicId": null,
       "questionText": {
         "en": "When iron reacts with steam, which oxide of iron is formed.",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Fe3O4",
             "hi": "Fe3O4",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fe3O2",
             "hi": "Fe3O2",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fe2O3",
             "hi": "Fe2O3",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "FeO",
             "hi": "FeO",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000568",
+      "questionCode": "sci-chem-ch03-q000568",
       "topicId": null,
       "questionText": {
         "en": "Which of the following metals does not react with dilute sulphuric acid?",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Zn",
             "hi": "Zn",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Mg",
             "hi": "Mg",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000569",
+      "questionCode": "sci-chem-ch03-q000569",
       "topicId": null,
       "questionText": {
         "en": "An alloy contains 90% Cu and 10% Sn. The name of this alloy is",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Solder",
             "hi": "सोल्डर",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Bronze",
             "hi": "ब्रोंज",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Brass",
             "hi": "पीतल",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "German Silver",
             "hi": "जर्मन सिल्वर",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000570",
+      "questionCode": "sci-chem-ch03-q000570",
       "topicId": null,
       "questionText": {
         "en": "Zinc reacts with sodium hydroxide to form",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "H2 gas",
             "hi": "H2 गैस",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "O2 gas",
             "hi": "O2 गैस",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "both H2 and O2 gas",
             "hi": "H2 और O2 गैस दोनों",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ZnO",
             "hi": "ZnO",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000571",
+      "questionCode": "sci-chem-ch03-q000571",
       "topicId": null,
       "questionText": {
         "en": "Which of the following metals does not combine with oxygen even when heated at high temperature in air.",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ag",
             "hi": "Ag",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Hg",
             "hi": "Hg",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000572",
+      "questionCode": "sci-chem-ch03-q000572",
       "topicId": null,
       "questionText": {
         "en": "The impurities present in an ore are called.",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "minerals",
             "hi": "खनिज",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "slag",
             "hi": "धातुमल",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "gangue",
             "hi": "गैंग",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1689,19 +1689,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000573",
+      "questionCode": "sci-chem-ch03-q000573",
       "topicId": null,
       "questionText": {
         "en": "Due to which of the following properties of metal, wires are made?",
@@ -1710,7 +1710,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "malleability",
             "hi": "मैलियाबिलिटी",
@@ -1718,7 +1718,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "thermal conductivity",
             "hi": "थर्मल कंडक्टिविटी",
@@ -1726,7 +1726,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ductility",
             "hi": "डक्टिलिटी",
@@ -1734,7 +1734,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "hardness",
             "hi": "हार्डनेस",
@@ -1742,19 +1742,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000624",
+      "questionCode": "sci-chem-ch03-q000624",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a heterogeneous compound?",
@@ -1763,7 +1763,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Chalk",
             "hi": "खड़िया",
@@ -1771,7 +1771,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Limestone",
             "hi": "चूना पत्थर",
@@ -1779,7 +1779,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Marble",
             "hi": "संगमरमर",
@@ -1787,7 +1787,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Plaster of Paris",
             "hi": "प्लास्टर ऑफ पेरिस",
@@ -1795,19 +1795,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000652",
+      "questionCode": "sci-chem-ch03-q000652",
       "topicId": null,
       "questionText": {
         "en": "The alloy consisting of 90% Cu and 10% Sn is named as",
@@ -1816,7 +1816,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Solder",
             "hi": "सोल्डर",
@@ -1824,7 +1824,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Brass",
             "hi": "पीतल",
@@ -1832,7 +1832,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "German silver",
             "hi": "जर्मन सिल्वर",
@@ -1840,7 +1840,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Bronze",
             "hi": "काँसा",
@@ -1848,19 +1848,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000671",
+      "questionCode": "sci-chem-ch03-q000671",
       "topicId": null,
       "questionText": {
         "en": "Bauxite is an ore of which of the following metals?",
@@ -1869,7 +1869,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Hg",
             "hi": "Hg",
@@ -1877,7 +1877,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -1893,7 +1893,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Zn",
             "hi": "Zn",
@@ -1901,19 +1901,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000672",
+      "questionCode": "sci-chem-ch03-q000672",
       "topicId": null,
       "questionText": {
         "en": "The correct order of reactivity of metals is",
@@ -1922,7 +1922,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Na > Zn > Mg > Cu",
             "hi": "Na > Zn > Mg > Cu",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na > Mg > Cu > Zn",
             "hi": "Na > Mg > Cu > Zn",
@@ -1938,7 +1938,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Mg < Na < Zn < Cu",
             "hi": "Mg < Na < Zn < Cu",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Na > Mg > Zn > Cu",
             "hi": "Na > Mg > Zn > Cu",
@@ -1954,19 +1954,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000673",
+      "questionCode": "sci-chem-ch03-q000673",
       "topicId": null,
       "questionText": {
         "en": "Fe2O3 + 2Al → Al2O3 + 2Fe is which of the following types reaction?",
@@ -1975,7 +1975,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Combination",
             "hi": "संयोजन",
@@ -1983,7 +1983,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Decomposition",
             "hi": "विघटन",
@@ -1991,7 +1991,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Displacement",
             "hi": "विस्थापन",
@@ -1999,7 +1999,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Double displacement",
             "hi": "द्विविस्थापन",
@@ -2007,19 +2007,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000705",
+      "questionCode": "sci-chem-ch03-q000705",
       "topicId": null,
       "questionText": {
         "en": "Which of the following metals has the lowest melting point?",
@@ -2028,7 +2028,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Na",
             "hi": "Na",
@@ -2036,7 +2036,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -2052,7 +2052,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -2060,19 +2060,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000720",
+      "questionCode": "sci-chem-ch03-q000720",
       "topicId": null,
       "questionText": {
         "en": "Duralumin is an alloy of which metal?",
@@ -2081,7 +2081,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -2089,7 +2089,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Sn",
             "hi": "Sn",
@@ -2097,7 +2097,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -2105,7 +2105,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -2113,19 +2113,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000725",
+      "questionCode": "sci-chem-ch03-q000725",
       "topicId": null,
       "questionText": {
         "en": "Metallic conduction is based on motion of which particle in material?",
@@ -2134,7 +2134,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Electron",
             "hi": "इलेक्ट्रॉन",
@@ -2142,7 +2142,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Proton",
             "hi": "प्रोटॉन",
@@ -2150,7 +2150,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Neutron",
             "hi": "न्यूट्रॉन",
@@ -2158,7 +2158,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these 44 (Hindi text captured on this page; English translation continues on next page). 44 (cont.) The upper part of a box-type solar cooker has a glass cover. The reason for this is (A) to see whether the food kept inside the cooker is being cooked or not (B) to prevent loss of heat due to radiation (C) to prevent the passage of dust into the box (D) none of these",
             "hi": "इनमें से कोई नहीं",
@@ -2166,19 +2166,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000743",
+      "questionCode": "sci-chem-ch03-q000743",
       "topicId": null,
       "questionText": {
         "en": "Zinc blende is an ore of which metal?",
@@ -2187,7 +2187,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mg",
             "hi": "Mg",
@@ -2195,7 +2195,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Zn",
             "hi": "Zn",
@@ -2203,7 +2203,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Pb",
             "hi": "Pb",
@@ -2211,7 +2211,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Au",
             "hi": "Au",
@@ -2219,19 +2219,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000757",
+      "questionCode": "sci-chem-ch03-q000757",
       "topicId": null,
       "questionText": {
         "en": "Which non-metal is found in liquid state at room temperature?",
@@ -2240,7 +2240,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mercury",
             "hi": "पारा",
@@ -2248,7 +2248,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Bromine",
             "hi": "ब्रोमीन",
@@ -2256,7 +2256,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Sulphur",
             "hi": "सल्फर",
@@ -2264,7 +2264,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Sodium",
             "hi": "सोडियम",
@@ -2272,19 +2272,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000814",
+      "questionCode": "sci-chem-ch03-q000814",
       "topicId": null,
       "questionText": {
         "en": "Which statement is true regarding the reaction given below? ZnO + C → Zn + CO",
@@ -2293,7 +2293,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ZnO is being oxidized",
             "hi": "ZnO उपचयित हो रहा है",
@@ -2301,7 +2301,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Carbon is being reduced",
             "hi": "कार्बन अपचयित हो रहा है",
@@ -2309,7 +2309,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Carbon is being oxidizing",
             "hi": "कार्बन उपचयित हो रहा है",
@@ -2317,7 +2317,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Carbon monoxide is being oxidized",
             "hi": "कार्बन मोना-ऑक्साइड उपचयित हो रहा है",
@@ -2325,19 +2325,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000821",
+      "questionCode": "sci-chem-ch03-q000821",
       "topicId": null,
       "questionText": {
         "en": "An ore of Zinc is",
@@ -2346,7 +2346,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Bauxite",
             "hi": "बॉक्साइट",
@@ -2354,7 +2354,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Sodium chloride",
             "hi": "सोडियम क्लोराइड",
@@ -2362,7 +2362,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cinnabar",
             "hi": "सिनेवार",
@@ -2370,7 +2370,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Zinc blende",
             "hi": "जिंक ब्लेंड",
@@ -2378,19 +2378,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000822",
+      "questionCode": "sci-chem-ch03-q000822",
       "topicId": null,
       "questionText": {
         "en": "The metal which dissolves only in aqua regia is",
@@ -2399,7 +2399,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -2407,7 +2407,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -2415,7 +2415,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Au",
             "hi": "Au",
@@ -2423,7 +2423,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -2431,19 +2431,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000823",
+      "questionCode": "sci-chem-ch03-q000823",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not an ionic compound?",
@@ -2452,7 +2452,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaCl2",
             "hi": "CaCl2",
@@ -2460,7 +2460,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -2468,7 +2468,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "KCl",
             "hi": "KCl",
@@ -2476,7 +2476,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "HCN",
             "hi": "एचसीएन",
@@ -2484,19 +2484,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000831",
+      "questionCode": "sci-chem-ch03-q000831",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not an alkali metal",
@@ -2505,7 +2505,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mg",
             "hi": "Mg",
@@ -2513,7 +2513,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na ... 47.",
             "hi": "Na ... 47.",
@@ -2521,7 +2521,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Rb",
             "hi": "Rb",
@@ -2529,7 +2529,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Li",
             "hi": "Li",
@@ -2537,19 +2537,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000933",
+      "questionCode": "sci-chem-ch03-q000933",
       "topicId": null,
       "questionText": {
         "en": "Cuprite is an ore of which of the following metals?",
@@ -2558,7 +2558,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Hg",
             "hi": "Hg",
@@ -2566,7 +2566,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Zn",
             "hi": "Zn",
@@ -2574,7 +2574,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -2582,7 +2582,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -2590,19 +2590,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000940",
+      "questionCode": "sci-chem-ch03-q000940",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the most reactive halogen?",
@@ -2611,7 +2611,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "F",
             "hi": "F",
@@ -2619,7 +2619,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cl",
             "hi": "Cl",
@@ -2627,7 +2627,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Br",
             "hi": "Br",
@@ -2635,7 +2635,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "I",
             "hi": "I",
@@ -2643,19 +2643,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q000944",
+      "questionCode": "sci-chem-ch03-q000944",
       "topicId": null,
       "questionText": {
         "en": "Which of the element represented by the following symbols is a metal?",
@@ -2664,7 +2664,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "¹⁹₉A",
             "hi": "¹⁹₉A",
@@ -2672,7 +2672,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "²⁴₁₂B",
             "hi": "²⁴₁₂B",
@@ -2680,7 +2680,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "¹²₆C",
             "hi": "¹²₆C",
@@ -2688,7 +2688,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "¹⁶₈D",
             "hi": "¹⁶₈D",
@@ -2696,19 +2696,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q001177",
+      "questionCode": "sci-chem-ch03-q001177",
       "topicId": null,
       "questionText": {
         "en": "Which is the best conductor of electricity?",
@@ -2717,7 +2717,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cu",
             "hi": "Cu",
@@ -2725,7 +2725,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ag",
             "hi": "Ag",
@@ -2733,7 +2733,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Al",
             "hi": "Al",
@@ -2741,7 +2741,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Fe",
             "hi": "Fe",
@@ -2749,19 +2749,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q001180",
+      "questionCode": "sci-chem-ch03-q001180",
       "topicId": null,
       "questionText": {
         "en": "Brass is",
@@ -2770,7 +2770,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "metal",
             "hi": "धातु",
@@ -2778,7 +2778,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "non-metal",
             "hi": "अधातु",
@@ -2786,7 +2786,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "alloy",
             "hi": "मिश्र धातु",
@@ -2794,7 +2794,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "metalloid",
             "hi": "उपधातु",
@@ -2802,19 +2802,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q001219",
+      "questionCode": "sci-chem-ch03-q001219",
       "topicId": null,
       "questionText": {
         "en": "compounds formed by the transfer of electrons are called",
@@ -2823,7 +2823,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "coordinative",
             "hi": "सहसंयोजी",
@@ -2831,7 +2831,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "electrovalent",
             "hi": "वैद्युत संयोजी",
@@ -2839,7 +2839,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "organic",
             "hi": "कार्बनिक",
@@ -2847,7 +2847,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2855,19 +2855,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q001220",
+      "questionCode": "sci-chem-ch03-q001220",
       "topicId": null,
       "questionText": {
         "en": "brass is an example",
@@ -2876,7 +2876,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "of metal",
             "hi": "धातु का",
@@ -2884,7 +2884,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "of non-metal",
             "hi": "अधातु का",
@@ -2892,7 +2892,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "of alloy",
             "hi": "मिश्रधातु का",
@@ -2900,7 +2900,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "of submetal",
             "hi": "उपधातु का",
@@ -2908,19 +2908,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q001289",
+      "questionCode": "sci-chem-ch03-q001289",
       "topicId": null,
       "questionText": {
         "en": "The atomic number of zinc is",
@@ -2929,7 +2929,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "24",
             "hi": "24",
@@ -2937,7 +2937,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "28",
             "hi": "28",
@@ -2945,7 +2945,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "29",
             "hi": "29",
@@ -2953,7 +2953,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "30",
             "hi": "30",
@@ -2961,19 +2961,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch03-q001313",
+      "questionCode": "sci-chem-ch03-q001313",
       "topicId": null,
       "questionText": {
         "en": "The atomic number of Zinc is",
@@ -2982,7 +2982,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "27",
             "hi": "27",
@@ -2990,7 +2990,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "28",
             "hi": "28",
@@ -2998,7 +2998,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "29",
             "hi": "29",
@@ -3006,7 +3006,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "30",
             "hi": "30",
@@ -3014,14 +3014,14 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     }

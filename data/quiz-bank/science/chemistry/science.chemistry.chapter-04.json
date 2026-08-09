@@ -5,7 +5,7 @@
   "chapterTitle": "Carbon and Its Compounds",
   "questions": [
     {
-      "seedKey": "sci-chem-ch04-q000043",
+      "questionCode": "sci-chem-ch04-q000043",
       "topicId": null,
       "questionText": {
         "en": "Carbon combining with hydrogen forms",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ionic compound",
             "hi": "आयनिक यौगिक",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "hydrocarbon",
             "hi": "हाइड्रोकार्बन",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "halogen",
             "hi": "हैलोजन",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "aqua regia",
             "hi": "अम्लराज",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000091",
+      "questionCode": "sci-chem-ch04-q000091",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is the functional group of —C(H)(=O)— ?",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ketone",
             "hi": "कीटोन",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Carboxylic acid",
             "hi": "कार्बोक्सिलिक अम्ल",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Alcohol",
             "hi": "ऐल्कोहॉल",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Aldehyde",
             "hi": "ऐल्डिहाइड",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000092",
+      "questionCode": "sci-chem-ch04-q000092",
       "topicId": null,
       "questionText": {
         "en": "Propane, with the molecular formula C₃H₈ has",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "7 covalent bonds",
             "hi": "7 सह संयोजक आबंध हैं",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "8 covalent bonds",
             "hi": "8 सह संयोजक आबंध हैं",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "9 covalent bonds",
             "hi": "9 सह संयोजक आबंध हैं",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "10 covalent bonds",
             "hi": "10 सह संयोजक आबंध हैं",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000157",
+      "questionCode": "sci-chem-ch04-q000157",
       "topicId": null,
       "questionText": {
         "en": "The IUPAC name of Acetic acid is",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ethanoic acid",
             "hi": "एथेनोइक एसिड",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Methanoic acid",
             "hi": "मेथेनोइक एसिड",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "propanone",
             "hi": "प्रोपेनोन",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these Ans: ethanoic acid",
             "hi": "इनमें से कोई नहीं उत्तर: एथेनोइक एसिड",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000191",
+      "questionCode": "sci-chem-ch04-q000191",
       "topicId": null,
       "questionText": {
         "en": "Which hydrocarbon is the simplest compound?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methane",
             "hi": "मीथेन",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ethane",
             "hi": "इथेन",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Propane",
             "hi": "प्रोपेन",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Butane",
             "hi": "ब्यूटेन",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000240",
+      "questionCode": "sci-chem-ch04-q000240",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a carboxyl group?",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "- CHO",
             "hi": "- CHO",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "> CO",
             "hi": "> CO",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "- COOH",
             "hi": "- COOH",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "- O -",
             "hi": "- O -",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000252",
+      "questionCode": "sci-chem-ch04-q000252",
       "topicId": null,
       "questionText": {
         "en": "Which of the following causes acid rain?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "SO2",
             "hi": "SO2",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CO",
             "hi": "CO",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cl2",
             "hi": "Cl2",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000310",
+      "questionCode": "sci-chem-ch04-q000310",
       "topicId": null,
       "questionText": {
         "en": "Unsaturated hydrocarbons having triple bonds in between carbon-carbon atoms are called",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Alkane",
             "hi": "एल्कन",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Alkyne",
             "hi": "ऐल्काइन",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Alkene",
             "hi": "ऐल्कीन",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these J 5012-J Page 3 of",
             "hi": "इनमें से कोई नहीं J 5012-J Page 3 of",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000311",
+      "questionCode": "sci-chem-ch04-q000311",
       "topicId": null,
       "questionText": {
         "en": "The formula of functional group of ethanol is",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "-OH",
             "hi": "-OH",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "-CHO",
             "hi": "-CHO",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "-COOH",
             "hi": "-COOH",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": ">CO",
             "hi": ">CO",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000415",
+      "questionCode": "sci-chem-ch04-q000415",
       "topicId": null,
       "questionText": {
         "en": "What is the molecular formula of glucose ?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C6H12O6",
             "hi": "C6H12O6",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CH3COOH",
             "hi": "CH3COOH",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CH3CHO",
             "hi": "CH3CHO",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CHCl3",
             "hi": "CHCl3",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000417",
+      "questionCode": "sci-chem-ch04-q000417",
       "topicId": null,
       "questionText": {
         "en": "-CHO reactive radical is called",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Aldehyde",
             "hi": "एल्डिहाइड",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Alcohol Functional group -CHO is known as A. Aldehyde B. Alcohol",
             "hi": "ऐल्कोहॉल",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ketone",
             "hi": "कीटोन",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000424",
+      "questionCode": "sci-chem-ch04-q000424",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is made from detergent.",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Surf excel",
             "hi": "सर्फ एक्सल",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Shampoo",
             "hi": "शैंपु",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Easy Surf",
             "hi": "इजी सर्फ",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of the above",
             "hi": "उपरोक्त सभी",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000433",
+      "questionCode": "sci-chem-ch04-q000433",
       "topicId": null,
       "questionText": {
         "en": "The IUPAC name of formic acid is",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methanoic acid",
             "hi": "मेथेनोइक अम्ल",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Propanoic acid",
             "hi": "प्रोपेनोइक अम्ल",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ethanoic acid",
             "hi": "ऐथेनोइक अम्ल",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000434",
+      "questionCode": "sci-chem-ch04-q000434",
       "topicId": null,
       "questionText": {
         "en": "Molecular formula of ethyl alcohol is",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CH3OH",
             "hi": "CH3OH",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "C2H2OH",
             "hi": "C2H2OH",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "C2H5OH",
             "hi": "C2H5OH",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "C2H6OH",
             "hi": "C2H6OH",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000435",
+      "questionCode": "sci-chem-ch04-q000435",
       "topicId": null,
       "questionText": {
         "en": "Which is alkyne ?",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C2H2",
             "hi": "C2H2",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "C2H6",
             "hi": "C2H6",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CH4",
             "hi": "CH4",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "C2H4",
             "hi": "C2H4",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000436",
+      "questionCode": "sci-chem-ch04-q000436",
       "topicId": null,
       "questionText": {
         "en": "Chemical formula of Sugar is",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C6H12O6",
             "hi": "C6H12O6",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "C12H22O11",
             "hi": "C12H22O11",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CH3COOH",
             "hi": "CH3COOH",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CH3CHO",
             "hi": "CH3CHO",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000549",
+      "questionCode": "sci-chem-ch04-q000549",
       "topicId": null,
       "questionText": {
         "en": "The Molecular Formula of Glucose is",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C2H5OH",
             "hi": "C2H5OH",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "C6H12O6",
             "hi": "C6H12O6",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "H2SO4",
             "hi": "H2SO4",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "C5H15N7",
             "hi": "C5H15N7 A. C2H5OH B. C6H12O6 C. H2SO4 D. C5H15N7",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000564",
+      "questionCode": "sci-chem-ch04-q000564",
       "topicId": null,
       "questionText": {
         "en": "Which of the following are isomers?",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methyl alcohol and dimethyl ether",
             "hi": "मेथिल ऐल्कोहॉल और डाइमेथिल ईथर",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Acetone and Acetaldehyde",
             "hi": "ऐसीटोन और ऐसिटैल्डिहाइड",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ethyl alcohol and dimethyl ether",
             "hi": "एथिल ऐल्कोहल और डाइमेथिल ईथर",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ethene and Ethyne",
             "hi": "एथीन और एथाइन",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000565",
+      "questionCode": "sci-chem-ch04-q000565",
       "topicId": null,
       "questionText": {
         "en": "The name of CH3-O-C2H5 according to IUPAC system is",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methoxyethane",
             "hi": "मेथॉक्सीएथेन",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Propoxymethane",
             "hi": "प्रोपॉक्सीमेथेन",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ethorymethane",
             "hi": "एथॉक्सीमेथेन",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ethylmethyl ether",
             "hi": "एथिलमेथिल ईथर",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000605",
+      "questionCode": "sci-chem-ch04-q000605",
       "topicId": null,
       "questionText": {
         "en": "Those which 'produce heat on combustion' are called",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "engine",
             "hi": "इंजन",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "fuel",
             "hi": "ईंधन",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "heater",
             "hi": "तापक",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000625",
+      "questionCode": "sci-chem-ch04-q000625",
       "topicId": null,
       "questionText": {
         "en": "The hardest natural substance is",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "iron",
             "hi": "लोहा",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "gold",
             "hi": "सोना",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "silver",
             "hi": "चाँदी",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "diamond",
             "hi": "हीरा",
@@ -1106,20 +1106,20 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023,
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000654",
+      "questionCode": "sci-chem-ch04-q000654",
       "topicId": null,
       "questionText": {
         "en": "What is Philosopher wool?",
@@ -1128,7 +1128,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ZnO",
             "hi": "ZnO",
@@ -1136,7 +1136,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "ZnS",
             "hi": "ZnS",
@@ -1144,7 +1144,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ZnCl2",
             "hi": "ZnCl2",
@@ -1152,7 +1152,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ZnSO4",
             "hi": "ZnSO4",
@@ -1160,19 +1160,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000656",
+      "questionCode": "sci-chem-ch04-q000656",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a symbol of carbonyl group?",
@@ -1181,7 +1181,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "-CHO",
             "hi": "-CHO",
@@ -1189,7 +1189,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "-COOH",
             "hi": "-COOH",
@@ -1197,7 +1197,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": ">CO",
             "hi": ">CO",
@@ -1205,7 +1205,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "-O-",
             "hi": "-O-",
@@ -1213,19 +1213,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000657",
+      "questionCode": "sci-chem-ch04-q000657",
       "topicId": null,
       "questionText": {
         "en": "Which of the following organic compounds is an alkyne?",
@@ -1234,7 +1234,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ethene",
             "hi": "एथीन",
@@ -1242,7 +1242,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Methane",
             "hi": "मेथेन",
@@ -1250,7 +1250,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Acetylene",
             "hi": "एसीटिलीन",
@@ -1258,7 +1258,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Chloroform",
             "hi": "क्लोरोफॉर्म",
@@ -1266,19 +1266,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000667",
+      "questionCode": "sci-chem-ch04-q000667",
       "topicId": null,
       "questionText": {
         "en": "What is the general formula of an alkane?",
@@ -1287,7 +1287,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CnH2n",
             "hi": "CnH2n",
@@ -1295,7 +1295,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CnH2n+2",
             "hi": "CnH2n+2",
@@ -1303,7 +1303,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CnH2n-2",
             "hi": "CnH2n-2",
@@ -1311,7 +1311,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1319,19 +1319,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000674",
+      "questionCode": "sci-chem-ch04-q000674",
       "topicId": null,
       "questionText": {
         "en": "Carbon combines with hydrogen to form",
@@ -1340,7 +1340,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "aqua regia",
             "hi": "अम्लराज",
@@ -1348,7 +1348,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "halogen",
             "hi": "हैलोजन",
@@ -1356,7 +1356,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "hydrocarbon",
             "hi": "हाइड्रोकार्बन",
@@ -1364,7 +1364,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ionic compound",
             "hi": "आयनिक यौगिक",
@@ -1372,19 +1372,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000704",
+      "questionCode": "sci-chem-ch04-q000704",
       "topicId": null,
       "questionText": {
         "en": "Which hydrocarbon is the simplest compound?",
@@ -1393,7 +1393,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methane",
             "hi": "मीथेन",
@@ -1401,7 +1401,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Propane",
             "hi": "प्रोपेन",
@@ -1409,7 +1409,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Butane",
             "hi": "ब्यूटेन",
@@ -1417,7 +1417,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ethane",
             "hi": "इथेन",
@@ -1425,19 +1425,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000716",
+      "questionCode": "sci-chem-ch04-q000716",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is used as wine?",
@@ -1446,7 +1446,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ethanol",
             "hi": "एथेनॉल",
@@ -1454,7 +1454,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Methanol",
             "hi": "मेथेनॉल",
@@ -1462,7 +1462,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Vinegar",
             "hi": "सिरका",
@@ -1470,7 +1470,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Methanoic acid",
             "hi": "मेथेनोइक अम्ल",
@@ -1478,19 +1478,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000741",
+      "questionCode": "sci-chem-ch04-q000741",
       "topicId": null,
       "questionText": {
         "en": "The hardest natural substance is",
@@ -1499,7 +1499,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Silver",
             "hi": "चाँदी",
@@ -1507,7 +1507,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Gold",
             "hi": "सोना",
@@ -1515,7 +1515,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Diamond",
             "hi": "हीरा",
@@ -1523,7 +1523,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Iron",
             "hi": "लोहा",
@@ -1531,19 +1531,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000745",
+      "questionCode": "sci-chem-ch04-q000745",
       "topicId": null,
       "questionText": {
         "en": "The general formula of alkyne is",
@@ -1552,7 +1552,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CnH2n+2",
             "hi": "CnH2n+2",
@@ -1560,7 +1560,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CnH2n",
             "hi": "CnH2n",
@@ -1568,7 +1568,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CnH2n-2",
             "hi": "CnH2n-2",
@@ -1576,7 +1576,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CnH2n-1",
             "hi": "CnH2n-1",
@@ -1584,19 +1584,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000755",
+      "questionCode": "sci-chem-ch04-q000755",
       "topicId": null,
       "questionText": {
         "en": "Propane, with the molecular formula C3H8 has",
@@ -1605,7 +1605,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "7 covalent bonds",
             "hi": "7 सहसंयोजक आबंध है",
@@ -1613,7 +1613,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "8 covalent bonds",
             "hi": "8 सहसंयोजक आबंध है",
@@ -1621,7 +1621,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "9 covalent bonds",
             "hi": "9 सहसंयोजक आबंध है",
@@ -1629,7 +1629,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "10 covalent bonds",
             "hi": "10 सहसंयोजक आबंध है",
@@ -1637,19 +1637,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000761",
+      "questionCode": "sci-chem-ch04-q000761",
       "topicId": null,
       "questionText": {
         "en": "Which of the following causes acid rain in industrial areas?",
@@ -1658,7 +1658,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Chlorofluorocarbon",
             "hi": "क्लोरोफ्लोरोकार्बन",
@@ -1666,7 +1666,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Sulphur dioxide",
             "hi": "सल्फर डाईऑक्साइड",
@@ -1674,7 +1674,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ozone",
             "hi": "ओजोन",
@@ -1682,7 +1682,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Carbon dioxide",
             "hi": "कार्बन डाईऑक्साइड",
@@ -1690,19 +1690,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000825",
+      "questionCode": "sci-chem-ch04-q000825",
       "topicId": null,
       "questionText": {
         "en": "The molecular formula of benzene is",
@@ -1711,7 +1711,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C2H2",
             "hi": "C₂H₂",
@@ -1719,7 +1719,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "C2H4",
             "hi": "C₂H₄",
@@ -1727,7 +1727,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CH4",
             "hi": "CH₄",
@@ -1735,7 +1735,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "C6H6",
             "hi": "C₆H₆",
@@ -1743,19 +1743,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000826",
+      "questionCode": "sci-chem-ch04-q000826",
       "topicId": null,
       "questionText": {
         "en": "Which bonds is formed between two hydrogen atoms?",
@@ -1764,7 +1764,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Triple bond",
             "hi": "त्रि-आबंध",
@@ -1772,7 +1772,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Double bond",
             "hi": "द्वि-आबंध",
@@ -1780,7 +1780,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Single bond",
             "hi": "एक-आबंध",
@@ -1788,7 +1788,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1796,19 +1796,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000828",
+      "questionCode": "sci-chem-ch04-q000828",
       "topicId": null,
       "questionText": {
         "en": "The Chemical formula of sugar is",
@@ -1817,7 +1817,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CH3CHO",
             "hi": "CH₃CHO",
@@ -1825,7 +1825,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "C6H12C6",
             "hi": "C₆H₁₂O₆",
@@ -1833,7 +1833,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "C12H22O11",
             "hi": "C₁₂H₂₂O₁₁",
@@ -1841,7 +1841,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CH3COOH",
             "hi": "CH₃COOH",
@@ -1849,19 +1849,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000829",
+      "questionCode": "sci-chem-ch04-q000829",
       "topicId": null,
       "questionText": {
         "en": "Which of the following organic compounds is the most reactive?",
@@ -1870,7 +1870,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "C2H6",
             "hi": "C₂H₆",
@@ -1878,7 +1878,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CH4",
             "hi": "CH₄",
@@ -1886,7 +1886,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "C3H8",
             "hi": "C₃H₈",
@@ -1894,7 +1894,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "C2H4",
             "hi": "C₂H₄",
@@ -1902,19 +1902,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000834",
+      "questionCode": "sci-chem-ch04-q000834",
       "topicId": null,
       "questionText": {
         "en": "Which of the following are electronegative?",
@@ -1923,7 +1923,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "None-metals",
             "hi": "अधातु",
@@ -1931,7 +1931,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Metals",
             "hi": "धातु",
@@ -1939,7 +1939,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Alloy",
             "hi": "मिश्रधातु",
@@ -1947,7 +1947,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमे से कोई नहीं",
@@ -1955,19 +1955,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000927",
+      "questionCode": "sci-chem-ch04-q000927",
       "topicId": null,
       "questionText": {
         "en": "What is Philosopher's wool?",
@@ -1976,7 +1976,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ZnSO4",
             "hi": "ZnSO4",
@@ -1984,7 +1984,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "ZnCl2",
             "hi": "ZnCl2",
@@ -1992,7 +1992,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ZnO",
             "hi": "ZnO",
@@ -2000,7 +2000,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ZnS",
             "hi": "ZnS",
@@ -2008,19 +2008,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q000936",
+      "questionCode": "sci-chem-ch04-q000936",
       "topicId": null,
       "questionText": {
         "en": "The functional group )CO is called",
@@ -2029,7 +2029,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Aldehyde group",
             "hi": "एल्डिहाइड समूह",
@@ -2037,7 +2037,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ether group",
             "hi": "ईथर समूह",
@@ -2045,7 +2045,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Alcohol group",
             "hi": "ऐल्कोहॉल समूह",
@@ -2053,7 +2053,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Carbonyl group",
             "hi": "कार्बोनिल समूह",
@@ -2061,19 +2061,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001182",
+      "questionCode": "sci-chem-ch04-q001182",
       "topicId": null,
       "questionText": {
         "en": "is the simplest hydrocarbon",
@@ -2082,7 +2082,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "methane",
             "hi": "मिथेन",
@@ -2090,7 +2090,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "ethane",
             "hi": "इथेन",
@@ -2098,7 +2098,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "propane",
             "hi": "प्रोपेन",
@@ -2106,7 +2106,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "butane",
             "hi": "ब्युटेन",
@@ -2114,19 +2114,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001221",
+      "questionCode": "sci-chem-ch04-q001221",
       "topicId": null,
       "questionText": {
         "en": "Carbon combines with hydrogen to form",
@@ -2135,7 +2135,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ionic compound",
             "hi": "आयनिक यौगिक",
@@ -2143,7 +2143,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Hydrocarbon",
             "hi": "हाइड्रोकार्बन",
@@ -2151,7 +2151,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Halogen",
             "hi": "हैलोजन",
@@ -2159,7 +2159,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Acidic radical",
             "hi": "अम्लराज",
@@ -2167,19 +2167,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001280",
+      "questionCode": "sci-chem-ch04-q001280",
       "topicId": null,
       "questionText": {
         "en": "How many covalent bonds are there in one molecule of ethane?",
@@ -2188,7 +2188,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "2",
             "hi": "2",
@@ -2196,7 +2196,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "4",
             "hi": "4",
@@ -2204,7 +2204,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "6",
             "hi": "6",
@@ -2212,7 +2212,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "7",
             "hi": "7",
@@ -2220,19 +2220,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001281",
+      "questionCode": "sci-chem-ch04-q001281",
       "topicId": null,
       "questionText": {
         "en": "The atomic number of carbon is",
@@ -2241,7 +2241,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "6",
             "hi": "6",
@@ -2249,7 +2249,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "8",
             "hi": "8",
@@ -2257,7 +2257,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "9",
             "hi": "9",
@@ -2265,7 +2265,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "11",
             "hi": "11",
@@ -2273,19 +2273,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001284",
+      "questionCode": "sci-chem-ch04-q001284",
       "topicId": null,
       "questionText": {
         "en": "How many covalent bonds are there between carbon-carbon in alkyne ?",
@@ -2294,7 +2294,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -2302,7 +2302,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2 How many covalent bonds are there between C-C atoms in alkyne? A. 1 B. 2",
             "hi": "2",
@@ -2310,7 +2310,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2318,7 +2318,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -2326,19 +2326,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001287",
+      "questionCode": "sci-chem-ch04-q001287",
       "topicId": null,
       "questionText": {
         "en": "The number of covalent bonds between carbon-carbon atoms in acetylene is",
@@ -2347,7 +2347,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "5",
             "hi": "5",
@@ -2355,7 +2355,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "7",
             "hi": "7",
@@ -2363,7 +2363,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "2",
             "hi": "2",
@@ -2371,7 +2371,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2379,19 +2379,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001296",
+      "questionCode": "sci-chem-ch04-q001296",
       "topicId": null,
       "questionText": {
         "en": "How many bonds are there between two atoms of one molecule of oxygen gas?",
@@ -2400,7 +2400,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -2408,7 +2408,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -2416,7 +2416,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2424,7 +2424,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "No bond",
             "hi": "कोई आबंध नहीं",
@@ -2432,19 +2432,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001310",
+      "questionCode": "sci-chem-ch04-q001310",
       "topicId": null,
       "questionText": {
         "en": "How many crystalline allotropes of carbon are there?",
@@ -2453,7 +2453,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -2461,7 +2461,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -2469,7 +2469,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2477,7 +2477,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -2485,19 +2485,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001311",
+      "questionCode": "sci-chem-ch04-q001311",
       "topicId": null,
       "questionText": {
         "en": "How many bonds are there between two atoms in a molecule of nitrogen?",
@@ -2506,7 +2506,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -2514,7 +2514,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -2522,7 +2522,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2530,7 +2530,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -2538,19 +2538,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001318",
+      "questionCode": "sci-chem-ch04-q001318",
       "topicId": null,
       "questionText": {
         "en": "Carbon is a member of which group of the periodic table?",
@@ -2559,7 +2559,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2567,7 +2567,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "6",
             "hi": "6",
@@ -2575,7 +2575,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "13",
             "hi": "13",
@@ -2583,7 +2583,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "14 [Q45 English repeat from page",
             "hi": "14 [Q45 English repeat from page",
@@ -2591,19 +2591,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch04-q001319",
+      "questionCode": "sci-chem-ch04-q001319",
       "topicId": null,
       "questionText": {
         "en": "How many covalent bonds are there between Carbon-carbon atoms in ethyne?",
@@ -2612,7 +2612,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -2620,7 +2620,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -2628,7 +2628,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2636,7 +2636,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "3",
             "hi": "4",
@@ -2644,14 +2644,14 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     }

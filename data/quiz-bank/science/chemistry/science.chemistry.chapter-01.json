@@ -5,7 +5,7 @@
   "chapterTitle": "Chemical Reactions and Equations",
   "questions": [
     {
-      "seedKey": "sci-chem-ch01-q000040",
+      "questionCode": "sci-chem-ch01-q000040",
       "topicId": null,
       "questionText": {
         "en": "What type of reaction is CuO + H2 -> Cu + H2O ?",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Oxidation",
             "hi": "उपचयन",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Reduction",
             "hi": "अपचयन",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Neutralisation",
             "hi": "उदासीनीकरण",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Redox",
             "hi": "रेडॉक्स",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000086",
+      "questionCode": "sci-chem-ch01-q000086",
       "topicId": null,
       "questionText": {
         "en": "Zn + CuSO₄ → ZnSO₄ + Cu The above reaction is an example of a",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Combination reaction",
             "hi": "संयोजन अभिक्रिया",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "displacement reaction",
             "hi": "विस्थापन अभिक्रिया",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Double displacement reaction",
             "hi": "द्विविस्थापन अभिक्रिया",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "decomposition reaction",
             "hi": "वियोजन अभिक्रिया",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000096",
+      "questionCode": "sci-chem-ch01-q000096",
       "topicId": null,
       "questionText": {
         "en": "When Magnesium ribbon is ignited, the flame produced by it is",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Yellow",
             "hi": "पीली",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Blue",
             "hi": "नीली",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Dazzling white",
             "hi": "चमकीला उजला",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000097",
+      "questionCode": "sci-chem-ch01-q000097",
       "topicId": null,
       "questionText": {
         "en": "An iron nail was dipped in solution kept in a test tube. After half an hour, it was observed that colour of the solution has changed. The solution in test tube was",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ZnSO₄",
             "hi": "ZnSO₄",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CuSO₄",
             "hi": "CuSO₄",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "FeSO₄",
             "hi": "FeSO₄",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Al₂(SO₄)₃",
             "hi": "Al₂(SO₄)₃",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000237",
+      "questionCode": "sci-chem-ch01-q000237",
       "topicId": null,
       "questionText": {
         "en": "The substance which takes part in chemical reaction is called",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "reactant",
             "hi": "अभिकारक",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "product",
             "hi": "उत्पाद",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "both reactant and product",
             "hi": "अभिकारक एवं उत्पाद दोनों",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000257",
+      "questionCode": "sci-chem-ch01-q000257",
       "topicId": null,
       "questionText": {
         "en": "Equation 2H2 + O2 → 2H2O is a",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "combination reaction",
             "hi": "संयोजन अभिक्रिया",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "decomposition reaction",
             "hi": "वियोजन अभिक्रिया",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "precipitation reaction",
             "hi": "अवक्षेप अभिक्रिया",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "neutralisation reaction",
             "hi": "उदासीनीकरण अभिक्रिया",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000348",
+      "questionCode": "sci-chem-ch01-q000348",
       "topicId": null,
       "questionText": {
         "en": "When a substance gains oxygen during a reaction, what is it called ?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Oxidation",
             "hi": "उपचयन",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Reduction",
             "hi": "अपचयन",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Corrosion",
             "hi": "संक्षारण",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these J 5012-J Page 13 of If a substance gains oxygen during a reaction, then it is known as which of the following ? (A) Oxidation (B) Reduction (C) Corrosion (D) None of these",
             "hi": "इनमें से कोई नहीं J 5012-J Page 13 of",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000410",
+      "questionCode": "sci-chem-ch01-q000410",
       "topicId": null,
       "questionText": {
         "en": "Which type of reaction occurs when water is dropped on quick lime?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Exothermic",
             "hi": "उष्माक्षेपी",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Endothermic",
             "hi": "उष्माशोषी",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Explosive",
             "hi": "विस्फोटक",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000428",
+      "questionCode": "sci-chem-ch01-q000428",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not a balanced equation ?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "H2 + Cl2 -> 2HCl",
             "hi": "H2 + Cl2 -> 2HCl",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Pb(NO3)2 -> PbO + NO2 + O2",
             "hi": "Pb(NO3)2 -> PbO + NO2 + O2",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "2H2 + O2 -> 2H2O",
             "hi": "2H2 + O2 -> 2H2O",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "2KClO3 -> 2KCl + 3O2",
             "hi": "2KClO3 -> 2KCl + 3O2",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000554",
+      "questionCode": "sci-chem-ch01-q000554",
       "topicId": null,
       "questionText": {
         "en": "Which gas is deposited on Cathode in the electrolysis of water?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Oxygen",
             "hi": "ऑक्सीजन",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ozone",
             "hi": "ओजोन",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Hydrogen",
             "hi": "हाइड्रोजन",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000610",
+      "questionCode": "sci-chem-ch01-q000610",
       "topicId": null,
       "questionText": {
         "en": "What is the chemical formula of dry ice?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CO",
             "hi": "CO",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "H2O",
             "hi": "H2O",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "H2O2",
             "hi": "H2O2",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000619",
+      "questionCode": "sci-chem-ch01-q000619",
       "topicId": null,
       "questionText": {
         "en": "The reaction in which ions are exchanged is called",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "displacement",
             "hi": "विस्थापन",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "double displacement",
             "hi": "द्विविस्थापन",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "combination",
             "hi": "संयोजन",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "precipitation",
             "hi": "अवक्षेपण",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000620",
+      "questionCode": "sci-chem-ch01-q000620",
       "topicId": null,
       "questionText": {
         "en": "Which of the following equations is not balanced?",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "2H2+O2→2H2O",
             "hi": "2H2+O2→2H2O",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2KClO3→2Kcl+3O2",
             "hi": "2KClO3→2KCl+3O2",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "H2+Cl2→2HCl",
             "hi": "H2+Cl2→2HCl",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Pb(NO3)2→PbO+NO2+O2",
             "hi": "Pb(NO3)2→PbO+NO2+O2",
@@ -682,20 +682,20 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023,
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000634",
+      "questionCode": "sci-chem-ch01-q000634",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following reactions occurs in the formation of curd from milk?",
@@ -704,7 +704,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Dissociation",
             "hi": "अपघटन",
@@ -712,7 +712,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fermentation",
             "hi": "किण्वन",
@@ -720,7 +720,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Excretion",
             "hi": "उत्सर्जन",
@@ -728,7 +728,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Photosynthesis",
             "hi": "प्रकाश संश्लेषण",
@@ -736,19 +736,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000759",
+      "questionCode": "sci-chem-ch01-q000759",
       "topicId": null,
       "questionText": {
         "en": "CaCO3(s) → CaO(s) + CO2(g) is what type of reaction?",
@@ -757,7 +757,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Decomposition",
             "hi": "वियोजन",
@@ -765,7 +765,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Combination",
             "hi": "संयोजन",
@@ -773,7 +773,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Displacement",
             "hi": "विस्थापन",
@@ -781,7 +781,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Double displacement",
             "hi": "द्विविस्थापन",
@@ -789,19 +789,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000760",
+      "questionCode": "sci-chem-ch01-q000760",
       "topicId": null,
       "questionText": {
         "en": "Which of the following equations is balanced?",
@@ -810,7 +810,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mg + O2 → MgO",
             "hi": "Mg + O2 → MgO",
@@ -818,7 +818,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Zn + H2SO4 → ZnSO4 + H2",
             "hi": "Zn + H2SO4 → ZnSO4 + H2",
@@ -826,7 +826,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fe + Cl2 → FeCl3",
             "hi": "Fe + Cl2 → FeCl3",
@@ -834,7 +834,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "H2 + Cl2 → HCl",
             "hi": "H2 + Cl2 → HCl",
@@ -842,19 +842,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000815",
+      "questionCode": "sci-chem-ch01-q000815",
       "topicId": null,
       "questionText": {
         "en": "Which of the following gases is formed as a result of the reaction of Zinc and dilute hydrochloric acid?",
@@ -863,7 +863,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "N₂",
             "hi": "N₂",
@@ -871,7 +871,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "H₂",
             "hi": "H₂",
@@ -879,7 +879,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "SO₂",
             "hi": "SO₂",
@@ -887,7 +887,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CO₂",
             "hi": "CO₂",
@@ -895,19 +895,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000903",
+      "questionCode": "sci-chem-ch01-q000903",
       "topicId": null,
       "questionText": {
         "en": "Oily paper is",
@@ -916,7 +916,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Transparent",
             "hi": "पारदर्शक",
@@ -924,7 +924,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Opaque",
             "hi": "अपारदर्शक",
@@ -932,7 +932,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Translucent",
             "hi": "पारभाषक",
@@ -940,7 +940,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -948,19 +948,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000922",
+      "questionCode": "sci-chem-ch01-q000922",
       "topicId": null,
       "questionText": {
         "en": "Which of the following pairs represents single displacement reaction?",
@@ -969,7 +969,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "NaCl solution and Copper metal",
             "hi": "NaCl विलयन एवं कॉपर धातु",
@@ -977,7 +977,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "MgCl2 solution and Copper metal",
             "hi": "MgCl2 विलयन एवं कॉपर धातु",
@@ -985,7 +985,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "FeSO4 solution and silver metal",
             "hi": "FeSO4 विलयन एवं सिल्वर धातु",
@@ -993,7 +993,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "AgNO3 solution and Copper metal",
             "hi": "AgNO3 विलयन एवं कॉपर धातु",
@@ -1001,19 +1001,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q000923",
+      "questionCode": "sci-chem-ch01-q000923",
       "topicId": null,
       "questionText": {
         "en": "The decomposition of vegetables and their conversion into compost is an example of which reaction?",
@@ -1022,7 +1022,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Endothermic",
             "hi": "उष्माशोषी",
@@ -1030,7 +1030,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Exothermic",
             "hi": "उष्माक्षेपी",
@@ -1038,7 +1038,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Replacement",
             "hi": "प्रतिस्थापन",
@@ -1046,7 +1046,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1054,19 +1054,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q001176",
+      "questionCode": "sci-chem-ch01-q001176",
       "topicId": null,
       "questionText": {
         "en": "What type of chemical reaction is respiration?",
@@ -1075,7 +1075,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "substitution",
             "hi": "उपचयन",
@@ -1083,7 +1083,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "combination",
             "hi": "संयोजन",
@@ -1091,7 +1091,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "exothermic",
             "hi": "ऊष्माक्षेपी",
@@ -1099,7 +1099,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "endothermic",
             "hi": "ऊष्माशोषी",
@@ -1107,19 +1107,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q001218",
+      "questionCode": "sci-chem-ch01-q001218",
       "topicId": null,
       "questionText": {
         "en": "CuO + H2 → Cu + H2O What type of reaction is this?",
@@ -1128,7 +1128,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "substitution",
             "hi": "उपचयन",
@@ -1136,7 +1136,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "selection",
             "hi": "अपचयन",
@@ -1144,7 +1144,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "sadness formation",
             "hi": "उदासीनीकरण",
@@ -1152,7 +1152,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "redox",
             "hi": "रेडॉक्स",
@@ -1160,19 +1160,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q001332",
+      "questionCode": "sci-chem-ch01-q001332",
       "topicId": null,
       "questionText": {
         "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is",
@@ -1181,7 +1181,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Combination reaction",
             "hi": "संयोग प्रतिक्रिया",
@@ -1189,7 +1189,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "decomposition reaction",
             "hi": "विघटन प्रतिक्रिया",
@@ -1197,7 +1197,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "double displacement reaction",
             "hi": "डबल विस्थापन प्रतिक्रिया",
@@ -1205,7 +1205,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these Ans: double displacement reaction",
             "hi": "इनमें से कोई नहीं उत्तर: डबल विस्थापन प्रतिक्रिया",
@@ -1213,19 +1213,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch01-q001336",
+      "questionCode": "sci-chem-ch01-q001336",
       "topicId": null,
       "questionText": {
         "en": "The gain of oxygen by a substance during chemical reaction is called",
@@ -1234,7 +1234,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Reduction",
             "hi": "अपचयन",
@@ -1242,7 +1242,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Oxidation",
             "hi": "उपचयन",
@@ -1250,7 +1250,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Corrosion",
             "hi": "संक्षारण",
@@ -1258,7 +1258,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1266,14 +1266,14 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     }

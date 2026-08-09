@@ -5,7 +5,7 @@
   "chapterTitle": "Acids, Bases and Salts",
   "questions": [
     {
-      "seedKey": "sci-chem-ch02-q000045",
+      "questionCode": "sci-chem-ch02-q000045",
       "topicId": null,
       "questionText": {
         "en": "The presence of CO2 gas in atmosphere is",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0.01%",
             "hi": "0.01%",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "0.05%",
             "hi": "0.05%",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "0.03%",
             "hi": "0.03%",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "0.02%",
             "hi": "0.02%",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000046",
+      "questionCode": "sci-chem-ch02-q000046",
       "topicId": null,
       "questionText": {
         "en": "'NaOH' is",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "acid",
             "hi": "अम्ल",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "alkali",
             "hi": "क्षार",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "salt",
             "hi": "लवण",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000085",
+      "questionCode": "sci-chem-ch02-q000085",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is slaked lime?",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaO",
             "hi": "CaO",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ca(OH)₂",
             "hi": "Ca(OH)₂",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CaCO₃",
             "hi": "CaCO₃",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ca",
             "hi": "Ca",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000088",
+      "questionCode": "sci-chem-ch02-q000088",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is the natural source of Oxalic acid?",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Orange",
             "hi": "संतरा",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Tomato",
             "hi": "टमाटर",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Vinegar",
             "hi": "सिरका",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Tamarind",
             "hi": "इमली",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000090",
+      "questionCode": "sci-chem-ch02-q000090",
       "topicId": null,
       "questionText": {
         "en": "In what ratio, the concentrated Hydrochloric acid and the concentrated Nitric acid solutions are present in freshly prepared aqua regia (royal water) solution",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "3:2",
             "hi": "3:2",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2:3",
             "hi": "2:3",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3:1",
             "hi": "3:1",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "1:3",
             "hi": "1:3",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000095",
+      "questionCode": "sci-chem-ch02-q000095",
       "topicId": null,
       "questionText": {
         "en": "A student adds a few drops of universal indicator to a dilute solution of sodium bicarbonate taken in a test tube, which of the following colours would be observed?",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Green",
             "hi": "हरा",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Orange",
             "hi": "नारंगी",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Yellow",
             "hi": "पीला",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000155",
+      "questionCode": "sci-chem-ch02-q000155",
       "topicId": null,
       "questionText": {
         "en": "Which chemical compound on heating becomes plaster of Paris? Bleaching powder gypsum limestone quicklime?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Bleaching powder",
             "hi": "ब्लीचिंग पाउडर",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "gypsum",
             "hi": "जिप्सम",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Limestone",
             "hi": "चूना पत्थर",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "quicklime Ans: gypsum",
             "hi": "quicklime उत्तर: जिप्सम",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000161",
+      "questionCode": "sci-chem-ch02-q000161",
       "topicId": null,
       "questionText": {
         "en": "Which of the following and can turn red litmus solution?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "H+",
             "hi": "H+",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "OH-",
             "hi": "OH-",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "C",
             "hi": "सी",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "O2- Ans: OH-",
             "hi": "O2- उत्तर: OH-",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000204",
+      "questionCode": "sci-chem-ch02-q000204",
       "topicId": null,
       "questionText": {
         "en": "What is the chemical formula for marble?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaO",
             "hi": "CaO",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ca(OH)2",
             "hi": "Ca(OH)2",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CaCO3",
             "hi": "CaCO3",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमे से कोई नही",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000238",
+      "questionCode": "sci-chem-ch02-q000238",
       "topicId": null,
       "questionText": {
         "en": "Tooth paste is",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "acidic",
             "hi": "अम्लीय",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "basic (alkaline)",
             "hi": "क्षारीय",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "neutral",
             "hi": "उदासीन",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "all of these",
             "hi": "इनमें से सभी",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000266",
+      "questionCode": "sci-chem-ch02-q000266",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a salt?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "HCl",
             "hi": "HCl",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "NaOH",
             "hi": "NaOH",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "K2SO4",
             "hi": "K2SO4",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "NH4OH",
             "hi": "NH4OH",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000336",
+      "questionCode": "sci-chem-ch02-q000336",
       "topicId": null,
       "questionText": {
         "en": "Which of the following gases turns lime water milky ?",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cl2",
             "hi": "Cl2",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "SO2",
             "hi": "SO2",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "O2 J 5012-J Page 10 of",
             "hi": "O2 J 5012-J Page 10 of",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000337",
+      "questionCode": "sci-chem-ch02-q000337",
       "topicId": null,
       "questionText": {
         "en": "Tartaric acid is found in which one of the following ?",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Tomato",
             "hi": "टमाटर",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Orange",
             "hi": "संतरा",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Vinegar",
             "hi": "सिरका",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Tamarind",
             "hi": "इमली",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000338",
+      "questionCode": "sci-chem-ch02-q000338",
       "topicId": null,
       "questionText": {
         "en": "The chemical formula of Gypsum is",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaSO4.½H2O",
             "hi": "CaSO4.½H2O",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CaSO4.2H2O",
             "hi": "CaSO4.2H2O",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CaSO4.10H2O",
             "hi": "CaSO4.10H2O",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000350",
+      "questionCode": "sci-chem-ch02-q000350",
       "topicId": null,
       "questionText": {
         "en": "The molecular formula of washing soda is",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Na2CO3",
             "hi": "Na2CO3",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na2CO3.2H2O",
             "hi": "Na2CO3.2H2O",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Na2CO3.10H2O",
             "hi": "Na2CO3.10H2O",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Na2CO3.5H2O",
             "hi": "Na2CO3.5H2O",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000351",
+      "questionCode": "sci-chem-ch02-q000351",
       "topicId": null,
       "questionText": {
         "en": "Bee-sting leaves an acid which causes pain and irritation. The acid is",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methanoic acid",
             "hi": "मेथेनॉइक अम्ल",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ethanoic acid",
             "hi": "इथेनॉइक अम्ल",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Citric acid",
             "hi": "सिट्रिक अम्ल",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Oxalic acid J 5012-J Page 14 of",
             "hi": "आक्जेलिक अम्ल J 5012-J Page 14 of",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000412",
+      "questionCode": "sci-chem-ch02-q000412",
       "topicId": null,
       "questionText": {
         "en": "The chemical formula of lime water is",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaO",
             "hi": "CaO",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CaCl2",
             "hi": "CaCl2",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CaOCl2",
             "hi": "CaOCl2",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ca(OH)2",
             "hi": "Ca(OH)2",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000416",
+      "questionCode": "sci-chem-ch02-q000416",
       "topicId": null,
       "questionText": {
         "en": "Sodium salts of higher fatty acids are known as",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Soap",
             "hi": "साबुन",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Detergent",
             "hi": "अपमार्जक",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plastic",
             "hi": "प्लास्टिक",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Rubber",
             "hi": "रबर",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000430",
+      "questionCode": "sci-chem-ch02-q000430",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a weak acid ?",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "HNO3",
             "hi": "HNO3",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "HCl",
             "hi": "HCl",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CH3COOH",
             "hi": "CH3COOH",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "H2SO4",
             "hi": "H2SO4",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000544",
+      "questionCode": "sci-chem-ch02-q000544",
       "topicId": null,
       "questionText": {
         "en": "What is the chemical formula of washing soda ?",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Na2CO3.10H2O",
             "hi": "Na2CO3.10H2O",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na2CO3.7H2O",
             "hi": "Na2CO3.7H2O",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Na2CO3.5H2O",
             "hi": "Na2CO3.5H2O",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Na2CO3.H2O",
             "hi": "Na2CO3.H2O",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000545",
+      "questionCode": "sci-chem-ch02-q000545",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is the strongest base?",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Mg(OH)2",
             "hi": "Mg(OH)2",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "NH4OH",
             "hi": "NH4OH",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "NaOH",
             "hi": "NaOH",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cu(OH)2",
             "hi": "Cu(OH)2",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000550",
+      "questionCode": "sci-chem-ch02-q000550",
       "topicId": null,
       "questionText": {
         "en": "The aqueous solution of an acid conducts electricity because an acid is",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "soluble in water",
             "hi": "विलेय होता है",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "insoluble in water",
             "hi": "अविलेय होता है",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ionized in water",
             "hi": "आयनित होता है",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000555",
+      "questionCode": "sci-chem-ch02-q000555",
       "topicId": null,
       "questionText": {
         "en": "What is the pH value of our body?",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "2-3",
             "hi": "2-3",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "5-7",
             "hi": "5-7",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "7.0-7.8",
             "hi": "7.0-7.8",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "9.1-9.5",
             "hi": "9.1-9.5",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000556",
+      "questionCode": "sci-chem-ch02-q000556",
       "topicId": null,
       "questionText": {
         "en": "Which of the following compounds is an acid ?",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Na2O",
             "hi": "Na2O",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CuO",
             "hi": "CuO",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ca(OH)2",
             "hi": "Ca(OH)2",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "H2SO4 Which one of the following compounds is an acid? A. Na2O B. CuO C. Ca(OH)2 D. H2SO4",
             "hi": "H2SO4 A. Na2O B. CuO C. Ca(OH)2 D. H2SO4",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000557",
+      "questionCode": "sci-chem-ch02-q000557",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is Synthetic Indicator?",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Turmeric",
             "hi": "हल्दी",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Litmus Paper",
             "hi": "लिटमस पत्र",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Methyl Orange",
             "hi": "मेथिल ऑरेंज",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Red Cabbage",
             "hi": "लाल पत्तागोभी",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000558",
+      "questionCode": "sci-chem-ch02-q000558",
       "topicId": null,
       "questionText": {
         "en": "Carbon dioxide reacts with water to form",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Sulphuric acid",
             "hi": "सल्फ्यूरिक अम्ल",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Carbolic acid",
             "hi": "कार्बोलिक अम्ल",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Carbonic acid",
             "hi": "कार्बोनिक अम्ल",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Hydrochloric acid",
             "hi": "हाइड्रोक्लोरिक अम्ल",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000559",
+      "questionCode": "sci-chem-ch02-q000559",
       "topicId": null,
       "questionText": {
         "en": "The chemical composition of Copper pyrite is",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cu2FeS",
             "hi": "Cu2FeS",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CuFeS2",
             "hi": "CuFeS2",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CuFe2S",
             "hi": "CuFe2S",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cu2FeS2",
             "hi": "Cu2FeS2",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000609",
+      "questionCode": "sci-chem-ch02-q000609",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is a strong base?",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "NaOH",
             "hi": "NaOH",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cu(OH)2",
             "hi": "Cu(OH)2",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "NH4OH",
             "hi": "NH4OH",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Mg(OH)2",
             "hi": "Mg(OH)2",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000613",
+      "questionCode": "sci-chem-ch02-q000613",
       "topicId": null,
       "questionText": {
         "en": "The hardest part of the teeth is",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "dentine",
             "hi": "डेंटाइन",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "enamel",
             "hi": "इनामेल",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "pulp cavity",
             "hi": "मज्जा गुहा",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "canine",
             "hi": "केनाइन",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000622",
+      "questionCode": "sci-chem-ch02-q000622",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a natural indicator?",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Phenolphthalein",
             "hi": "फेनॉल्फ्थैलीन",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Turmeric",
             "hi": "हल्दी",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Methyl orange",
             "hi": "मेथिल ऑरेंज",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000623",
+      "questionCode": "sci-chem-ch02-q000623",
       "topicId": null,
       "questionText": {
         "en": "What is the chemical formula of washing soda?",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Na2CO3.7H2O",
             "hi": "Na2CO3.7H2O",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na2CO3.5H2O",
             "hi": "Na2CO3.5H2O",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Na2CO3.10H2O",
             "hi": "Na2CO3.10H2O",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Na2CO3.H2O",
             "hi": "Na2CO3.H2O",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000626",
+      "questionCode": "sci-chem-ch02-q000626",
       "topicId": null,
       "questionText": {
         "en": "Which of the following ions can turn red litmus paper blue?",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "H+",
             "hi": "H+",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "OH-",
             "hi": "OH-",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "O2-",
             "hi": "O2-",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1689,19 +1689,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000650",
+      "questionCode": "sci-chem-ch02-q000650",
       "topicId": null,
       "questionText": {
         "en": "What is the common name of CaOCl2?",
@@ -1710,7 +1710,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Calcium chloro oxide",
             "hi": "कैल्सियम क्लोरो ऑक्साइड",
@@ -1718,7 +1718,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Calcium oxy oxide",
             "hi": "कैल्सियम ऑक्सी ऑक्साइड",
@@ -1726,7 +1726,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Bleaching powder",
             "hi": "विरंजक चूर्ण",
@@ -1734,7 +1734,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Calcium chloride",
             "hi": "कैल्सियम क्लोराइड",
@@ -1742,19 +1742,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000651",
+      "questionCode": "sci-chem-ch02-q000651",
       "topicId": null,
       "questionText": {
         "en": "Iodized salt is",
@@ -1763,7 +1763,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "NaCl + KIO3",
             "hi": "NaCl + KIO3",
@@ -1771,7 +1771,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "NaCl + KI",
             "hi": "NaCl + KI",
@@ -1779,7 +1779,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "both (A) and (B)",
             "hi": "(A) और (B) दोनों",
@@ -1787,7 +1787,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1795,19 +1795,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000655",
+      "questionCode": "sci-chem-ch02-q000655",
       "topicId": null,
       "questionText": {
         "en": "The sodium salts of higher fatty acids are called",
@@ -1816,7 +1816,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "rubber",
             "hi": "रबर",
@@ -1824,7 +1824,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "plastic",
             "hi": "प्लास्टिक",
@@ -1832,7 +1832,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "soap",
             "hi": "साबुन",
@@ -1840,7 +1840,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "detergent",
             "hi": "अपमार्जक",
@@ -1848,19 +1848,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000707",
+      "questionCode": "sci-chem-ch02-q000707",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a salt?",
@@ -1869,7 +1869,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "HCl",
             "hi": "HCl",
@@ -1877,7 +1877,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "NH4OH",
             "hi": "NH4OH",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "NaOH",
             "hi": "NaOH",
@@ -1893,7 +1893,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "K2SO4",
             "hi": "K2SO4",
@@ -1901,19 +1901,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000721",
+      "questionCode": "sci-chem-ch02-q000721",
       "topicId": null,
       "questionText": {
         "en": "The molecular formula of sodium phosphate is",
@@ -1922,7 +1922,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "NaPO4",
             "hi": "NaPO4",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Na3PO4",
             "hi": "Na3PO4",
@@ -1938,7 +1938,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Na2(PO4)3",
             "hi": "Na2(PO4)3",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Na2PO4",
             "hi": "Na2PO4",
@@ -1954,19 +1954,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000738",
+      "questionCode": "sci-chem-ch02-q000738",
       "topicId": null,
       "questionText": {
         "en": "All acids dissolve in water to give",
@@ -1975,7 +1975,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "H+ ion",
             "hi": "H+ आयन",
@@ -1983,7 +1983,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "OH- ion",
             "hi": "OH- आयन",
@@ -1991,7 +1991,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "electron",
             "hi": "इलेक्ट्रॉन",
@@ -1999,7 +1999,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "neutron",
             "hi": "न्यूट्रॉन",
@@ -2007,19 +2007,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000739",
+      "questionCode": "sci-chem-ch02-q000739",
       "topicId": null,
       "questionText": {
         "en": "Which of the following compounds is a weak acid?",
@@ -2028,7 +2028,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "HCl",
             "hi": "HCl",
@@ -2036,7 +2036,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CH3COOH",
             "hi": "CH3COOH",
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "H2SO4",
             "hi": "H2SO4",
@@ -2052,7 +2052,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "HNO3",
             "hi": "HNO3",
@@ -2060,19 +2060,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000740",
+      "questionCode": "sci-chem-ch02-q000740",
       "topicId": null,
       "questionText": {
         "en": "What is the colour of silver iodide?",
@@ -2081,7 +2081,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "White",
             "hi": "श्वेत",
@@ -2089,7 +2089,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -2097,7 +2097,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Yellow",
             "hi": "पीला",
@@ -2105,7 +2105,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Green",
             "hi": "हरा",
@@ -2113,19 +2113,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000754",
+      "questionCode": "sci-chem-ch02-q000754",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is the natural source of oxalic acid?",
@@ -2134,7 +2134,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Tomato",
             "hi": "टमाटर",
@@ -2142,7 +2142,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Tamarind",
             "hi": "इमली",
@@ -2150,7 +2150,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Orange",
             "hi": "संतरा",
@@ -2158,7 +2158,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Vinegar",
             "hi": "सिरका",
@@ -2166,19 +2166,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000813",
+      "questionCode": "sci-chem-ch02-q000813",
       "topicId": null,
       "questionText": {
         "en": "Which gas is liberated at the Cathode during electrolysis in water?",
@@ -2187,7 +2187,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ozone",
             "hi": "ओजोन",
@@ -2195,7 +2195,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Oxygen",
             "hi": "आक्सीजन",
@@ -2203,7 +2203,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Hydrogen",
             "hi": "हाइड्रोजन",
@@ -2211,7 +2211,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2219,19 +2219,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000816",
+      "questionCode": "sci-chem-ch02-q000816",
       "topicId": null,
       "questionText": {
         "en": "Which of the following gases turns lime water milky?",
@@ -2240,7 +2240,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CO",
             "hi": "CO",
@@ -2248,7 +2248,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CO₂",
             "hi": "CO₂",
@@ -2256,7 +2256,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "O₂",
             "hi": "O₂",
@@ -2264,7 +2264,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cl₂",
             "hi": "Cl₂",
@@ -2272,19 +2272,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000817",
+      "questionCode": "sci-chem-ch02-q000817",
       "topicId": null,
       "questionText": {
         "en": "Which among the following is slaked lime?",
@@ -2293,7 +2293,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaO",
             "hi": "CaO",
@@ -2301,7 +2301,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CaCO3",
             "hi": "CaCO₃",
@@ -2309,7 +2309,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ca(OH)2",
             "hi": "Ca(OH)₂",
@@ -2317,7 +2317,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ca",
             "hi": "Ca",
@@ -2325,19 +2325,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000818",
+      "questionCode": "sci-chem-ch02-q000818",
       "topicId": null,
       "questionText": {
         "en": "Toothpaste is generally",
@@ -2346,7 +2346,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Acidic",
             "hi": "अम्लीय",
@@ -2354,7 +2354,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Salty",
             "hi": "लवण युक्त",
@@ -2362,7 +2362,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Alkaline",
             "hi": "क्षारीय",
@@ -2370,7 +2370,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2378,19 +2378,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000819",
+      "questionCode": "sci-chem-ch02-q000819",
       "topicId": null,
       "questionText": {
         "en": "Which acid is present in lemon?",
@@ -2399,7 +2399,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Citric acid",
             "hi": "सिट्रिक अम्ल",
@@ -2407,7 +2407,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Lactic acid",
             "hi": "लैक्टिक अम्ल",
@@ -2415,7 +2415,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Acetic acid",
             "hi": "ऐसीटिक अम्ल",
@@ -2423,7 +2423,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Formic acid",
             "hi": "फॉर्मिक अम्ल",
@@ -2431,19 +2431,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000820",
+      "questionCode": "sci-chem-ch02-q000820",
       "topicId": null,
       "questionText": {
         "en": "The pH value of milk of magnesia is",
@@ -2452,7 +2452,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "4",
             "hi": "4",
@@ -2460,7 +2460,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "5",
             "hi": "5",
@@ -2468,7 +2468,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "8",
             "hi": "8",
@@ -2476,7 +2476,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "10.5 35. (C) 8 (D) 10.5",
             "hi": "10.5 35. (C) 8 (D) 10.5",
@@ -2484,19 +2484,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000824",
+      "questionCode": "sci-chem-ch02-q000824",
       "topicId": null,
       "questionText": {
         "en": "Helium gas is",
@@ -2505,7 +2505,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Active",
             "hi": "सक्रिय",
@@ -2513,7 +2513,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Inert",
             "hi": "अक्रिय",
@@ -2521,7 +2521,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Neutral",
             "hi": "उदासीन",
@@ -2529,7 +2529,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these 39. (C) Neutral (D) None of these",
             "hi": "इनमें से कोई नहीं 39. (C) उदासीन (D) इनमें से कोई नहीं",
@@ -2537,19 +2537,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000827",
+      "questionCode": "sci-chem-ch02-q000827",
       "topicId": null,
       "questionText": {
         "en": "The chemical name of lime water is",
@@ -2558,7 +2558,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Slaked lime",
             "hi": "बुझा चुना",
@@ -2566,7 +2566,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Calcium hydroxide",
             "hi": "कैल्सियम हाइड्रोक्साइड",
@@ -2574,7 +2574,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Quick lime",
             "hi": "कली चुना",
@@ -2582,7 +2582,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Calcium oxide",
             "hi": "कैल्सियम ऑक्साइड",
@@ -2590,19 +2590,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000840",
+      "questionCode": "sci-chem-ch02-q000840",
       "topicId": null,
       "questionText": {
         "en": "The upper most layer of human teeth is",
@@ -2611,7 +2611,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Bone",
             "hi": "अस्थि",
@@ -2619,7 +2619,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Pulp cavity",
             "hi": "मज्जा गुहा",
@@ -2627,7 +2627,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Enamel",
             "hi": "इनामेल",
@@ -2635,7 +2635,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Dentine",
             "hi": "डेंटाइन",
@@ -2643,19 +2643,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000928",
+      "questionCode": "sci-chem-ch02-q000928",
       "topicId": null,
       "questionText": {
         "en": "Which of the following gases turns lime water milky?",
@@ -2664,7 +2664,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cl2",
             "hi": "Cl2",
@@ -2672,7 +2672,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "O2",
             "hi": "O2",
@@ -2680,7 +2680,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "NO2",
             "hi": "NO2",
@@ -2688,7 +2688,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -2696,19 +2696,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000929",
+      "questionCode": "sci-chem-ch02-q000929",
       "topicId": null,
       "questionText": {
         "en": "Which of the following acids is present in a bee sting?",
@@ -2717,7 +2717,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Methanoic acid",
             "hi": "मेथेनॉइक अम्ल",
@@ -2725,7 +2725,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ethanoic acid",
             "hi": "इथेनॉइक अम्ल",
@@ -2733,7 +2733,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Citric acid",
             "hi": "सिट्रिक अम्ल",
@@ -2741,7 +2741,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Oxalic acid",
             "hi": "ऑक्जेलिक अम्ल",
@@ -2749,19 +2749,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000930",
+      "questionCode": "sci-chem-ch02-q000930",
       "topicId": null,
       "questionText": {
         "en": "The chemical formula of 'Plaster of Paris' is",
@@ -2770,7 +2770,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaSO4.5H2O",
             "hi": "CaSO4.5H2O",
@@ -2778,7 +2778,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CaSO4.1/2H2O",
             "hi": "CaSO4.1/2H2O",
@@ -2786,7 +2786,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CaSO4.2H2O",
             "hi": "CaSO4.2H2O",
@@ -2794,7 +2794,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CaSO4.H2O",
             "hi": "CaSO4.H2O",
@@ -2802,19 +2802,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q000931",
+      "questionCode": "sci-chem-ch02-q000931",
       "topicId": null,
       "questionText": {
         "en": "Acid and base react with each other to form–",
@@ -2823,7 +2823,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Strong base",
             "hi": "प्रबल क्षार",
@@ -2831,7 +2831,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Strong Acid",
             "hi": "प्रबल अम्ल",
@@ -2839,7 +2839,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Salt",
             "hi": "लवण",
@@ -2847,7 +2847,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2855,19 +2855,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001181",
+      "questionCode": "sci-chem-ch02-q001181",
       "topicId": null,
       "questionText": {
         "en": "The pH value of an acidic solution is",
@@ -2876,7 +2876,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "7",
             "hi": "7",
@@ -2884,7 +2884,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "less than 7",
             "hi": "7 से कम",
@@ -2892,7 +2892,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "more than 7",
             "hi": "7 से अधिक",
@@ -2900,7 +2900,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2908,19 +2908,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001223",
+      "questionCode": "sci-chem-ch02-q001223",
       "topicId": null,
       "questionText": {
         "en": "There is presence of CO2 gas in the atmosphere",
@@ -2929,7 +2929,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0.01%",
             "hi": "0.01%",
@@ -2937,7 +2937,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "0.05%",
             "hi": "0.05%",
@@ -2945,7 +2945,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "0.03%",
             "hi": "0.03%",
@@ -2953,7 +2953,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "0.02%",
             "hi": "0.02%",
@@ -2961,19 +2961,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001224",
+      "questionCode": "sci-chem-ch02-q001224",
       "topicId": null,
       "questionText": {
         "en": "'NaOH' is",
@@ -2982,7 +2982,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "acid",
             "hi": "अम्ल",
@@ -2990,7 +2990,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "base",
             "hi": "क्षार",
@@ -2998,7 +2998,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "salt",
             "hi": "लवण",
@@ -3006,7 +3006,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -3014,19 +3014,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001271",
+      "questionCode": "sci-chem-ch02-q001271",
       "topicId": null,
       "questionText": {
         "en": "A solution turns blue litmus paper red; its pH is likely to be",
@@ -3035,7 +3035,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "5",
             "hi": "5",
@@ -3043,7 +3043,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "7",
             "hi": "7",
@@ -3051,7 +3051,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "8",
             "hi": "8",
@@ -3059,7 +3059,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "10",
             "hi": "10",
@@ -3067,19 +3067,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001273",
+      "questionCode": "sci-chem-ch02-q001273",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is slaked lime?",
@@ -3088,7 +3088,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaO",
             "hi": "CaO",
@@ -3096,7 +3096,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ca(OH) 2",
             "hi": "Ca(OH) 2",
@@ -3104,7 +3104,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CaCO3",
             "hi": "CaCO3",
@@ -3112,7 +3112,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ca Ans: Ca(OH)",
             "hi": "Ca उत्तर: Ca(OH)",
@@ -3120,19 +3120,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001274",
+      "questionCode": "sci-chem-ch02-q001274",
       "topicId": null,
       "questionText": {
         "en": "PH of aqueous solution of salt NaCo3 is",
@@ -3141,7 +3141,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "7",
             "hi": "7",
@@ -3149,7 +3149,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "More than 7",
             "hi": "7 से अधिक",
@@ -3157,7 +3157,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Less than 7",
             "hi": "7 से कम",
@@ -3165,7 +3165,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these Ans: More than",
             "hi": "इनमें से कोई नहीं उत्तर: से अधिक",
@@ -3173,19 +3173,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001282",
+      "questionCode": "sci-chem-ch02-q001282",
       "topicId": null,
       "questionText": {
         "en": "The pH value of an acid is",
@@ -3194,7 +3194,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "less than 7",
             "hi": "7 से कम",
@@ -3202,7 +3202,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "more than 7",
             "hi": "7 से अधिक",
@@ -3210,7 +3210,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "7",
             "hi": "7",
@@ -3218,7 +3218,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "14",
             "hi": "14",
@@ -3226,19 +3226,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001283",
+      "questionCode": "sci-chem-ch02-q001283",
       "topicId": null,
       "questionText": {
         "en": "A solution turns red litmus into blue, its pH value is",
@@ -3247,7 +3247,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "11",
             "hi": "11",
@@ -3255,7 +3255,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "10",
             "hi": "10",
@@ -3263,7 +3263,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "5",
             "hi": "5",
@@ -3271,7 +3271,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "'A' and 'B' both",
             "hi": "'A' और 'B' दोनों",
@@ -3279,19 +3279,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001285",
+      "questionCode": "sci-chem-ch02-q001285",
       "topicId": null,
       "questionText": {
         "en": "The pH value of a neutral solution is",
@@ -3300,7 +3300,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "7",
             "hi": "7",
@@ -3308,7 +3308,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "8",
             "hi": "8",
@@ -3316,7 +3316,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "6",
             "hi": "6",
@@ -3324,7 +3324,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "14",
             "hi": "14",
@@ -3332,19 +3332,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001294",
+      "questionCode": "sci-chem-ch02-q001294",
       "topicId": null,
       "questionText": {
         "en": "The pH value of any neutral solution is",
@@ -3353,7 +3353,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0",
             "hi": "0",
@@ -3361,7 +3361,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "4",
             "hi": "4",
@@ -3369,7 +3369,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "7",
             "hi": "7",
@@ -3377,7 +3377,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "14",
             "hi": "14",
@@ -3385,19 +3385,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001301",
+      "questionCode": "sci-chem-ch02-q001301",
       "topicId": null,
       "questionText": {
         "en": "A solution turns red litmus into blue. The pH value of this solution would be",
@@ -3406,7 +3406,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "7",
             "hi": "7",
@@ -3414,7 +3414,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "more than 7",
             "hi": "7 से अधिक",
@@ -3422,7 +3422,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "less than 7",
             "hi": "7 से कम",
@@ -3430,7 +3430,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -3438,19 +3438,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001315",
+      "questionCode": "sci-chem-ch02-q001315",
       "topicId": null,
       "questionText": {
         "en": "A solution turns red litmus blue, what would be its pH?",
@@ -3459,7 +3459,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "4",
             "hi": "4",
@@ -3467,7 +3467,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "11",
             "hi": "11",
@@ -3475,7 +3475,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "7",
             "hi": "7",
@@ -3483,7 +3483,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "5",
             "hi": "5",
@@ -3491,19 +3491,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-chem-ch02-q001331",
+      "questionCode": "sci-chem-ch02-q001331",
       "topicId": null,
       "questionText": {
         "en": "Which of the following solution is used for white washing walls?",
@@ -3512,7 +3512,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CaH(CO3 )2",
             "hi": "CaH(CO3)2",
@@ -3520,7 +3520,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Ca(OH)2",
             "hi": "Ca(OH)2",
@@ -3528,7 +3528,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "NaOH",
             "hi": "NaOH",
@@ -3536,7 +3536,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "NaH(CO3) Ans: Ca(OH)2",
             "hi": "NaH(CO3) उत्तर: Ca(OH)2",
@@ -3544,14 +3544,14 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     }

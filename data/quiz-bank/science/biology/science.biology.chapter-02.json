@@ -5,7 +5,7 @@
   "chapterTitle": "Control and Coordination",
   "questions": [
     {
-      "seedKey": "sci-bio-ch02-q000047",
+      "questionCode": "sci-bio-ch02-q000047",
       "topicId": null,
       "questionText": {
         "en": "Auxin is",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "a hormone",
             "hi": "एक हार्मोन",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "fat",
             "hi": "वसा",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "enzyme",
             "hi": "इन्जाइम",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "carbohydrate",
             "hi": "कार्बोहाइड्रेट",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000051",
+      "questionCode": "sci-bio-ch02-q000051",
       "topicId": null,
       "questionText": {
         "en": "The largest gland of human body is",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "liver",
             "hi": "लीवर",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "pancreas",
             "hi": "अग्न्याशय",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ovary",
             "hi": "अण्डाशय",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "adrenal",
             "hi": "एड्रीनल",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000052",
+      "questionCode": "sci-bio-ch02-q000052",
       "topicId": null,
       "questionText": {
         "en": "Example of phytohormone is",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "pepsin",
             "hi": "पेप्सीन",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "adrenaline",
             "hi": "एड्रीनलीन",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "auxin",
             "hi": "ऑक्सीन",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "testosterone",
             "hi": "टेस्टोस्टेरॉन",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000100",
+      "questionCode": "sci-bio-ch02-q000100",
       "topicId": null,
       "questionText": {
         "en": "What is the necessary element for the thyroid gland to make thyroxine hormone?",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Sodium",
             "hi": "सोडियम",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Chlorine",
             "hi": "क्लोरीन",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Phosphorus",
             "hi": "फॉस्फोरस",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से सभी",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000101",
+      "questionCode": "sci-bio-ch02-q000101",
       "topicId": null,
       "questionText": {
         "en": "What part of the brain maintains posture and equilibrium of the body?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Fore - Brain",
             "hi": "अग्र मस्तिष्क",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Mid - Brian",
             "hi": "मध्य मस्तिष्क",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cerebellum",
             "hi": "अनुमस्तिष्क",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000110",
+      "questionCode": "sci-bio-ch02-q000110",
       "topicId": null,
       "questionText": {
         "en": "The gap between two neurons is called a",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "dendrite",
             "hi": "द्रुमिका",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Synapse",
             "hi": "सिनेप्स",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Axon",
             "hi": "एक्सॉन",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Impulse",
             "hi": "आवेग",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000166",
+      "questionCode": "sci-bio-ch02-q000166",
       "topicId": null,
       "questionText": {
         "en": "Which plant hormone is responsible for wilting of leaves?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Auxin",
             "hi": "ऑक्सिन",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cytokinin",
             "hi": "साइटोकाइनिन",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Abscisic Acid",
             "hi": "एब्सिसिक एसिड",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Gibberllin Ans: Abscisic Acid",
             "hi": "गिब्बेरलिन उत्तर: एब्सिसिक एसिड",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000167",
+      "questionCode": "sci-bio-ch02-q000167",
       "topicId": null,
       "questionText": {
         "en": "Downward growth of root is",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Photo phototropism",
             "hi": "फोटो फोटोट्रॉपिज्म",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "geotropism",
             "hi": "जियोट्रॉपिज़्म",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Hydrotropism",
             "hi": "हाइड्रोट्रॉपिज़्म",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Chemotropism Ans: geotropism",
             "hi": "केमोट्रॉपिज़्म उत्तर: जियोट्रॉपिज़्म",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000168",
+      "questionCode": "sci-bio-ch02-q000168",
       "topicId": null,
       "questionText": {
         "en": "Pons, medulla and cerebellum are parts",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Forebrain",
             "hi": "फोरब्रेन",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "midbrain",
             "hi": "मिडब्रेन",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Hindbrain",
             "hi": "हिंदब्रेन",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "cerebellum Ans: Hindbrain",
             "hi": "सेरेबेलम उत्तर: हिंदब्रेन",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000169",
+      "questionCode": "sci-bio-ch02-q000169",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not an involuntary muscle?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Vomiting",
             "hi": "उल्टी",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Chewing",
             "hi": "चबाना",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Salivation",
             "hi": "सलिवेशन",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Heart Beat Ans: Chewing",
             "hi": "दिल की धड़कन उत्तर: चबाना",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000188",
+      "questionCode": "sci-bio-ch02-q000188",
       "topicId": null,
       "questionText": {
         "en": "Which is a plant hormone?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Insulin",
             "hi": "इंसुलिन",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thyroxin",
             "hi": "थाइरॉक्सिन",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Oestrogen",
             "hi": "एस्ट्रोजन",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cytokinin",
             "hi": "साइटोकाइनिन",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000200",
+      "questionCode": "sci-bio-ch02-q000200",
       "topicId": null,
       "questionText": {
         "en": "The spinal cord originates from",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cerebrum",
             "hi": "प्रमस्तिष्क से",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cerebellum",
             "hi": "अनुमस्तिष्क से",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Pons",
             "hi": "पोन्स से",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Medulla",
             "hi": "मेडुला से",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000269",
+      "questionCode": "sci-bio-ch02-q000269",
       "topicId": null,
       "questionText": {
         "en": "Which is called chemical messenger?",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Stimuli",
             "hi": "उद्दीपक",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Digestive juice",
             "hi": "पाचक रस",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Hormone",
             "hi": "हार्मोन",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Impulse",
             "hi": "आवेग",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000280",
+      "questionCode": "sci-bio-ch02-q000280",
       "topicId": null,
       "questionText": {
         "en": "The structural and functional unit of nervous system is called",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Nephron",
             "hi": "नेफ्रान",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Neuron",
             "hi": "न्यूरॉन",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cerebrum",
             "hi": "सेरीब्रम",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000340",
+      "questionCode": "sci-bio-ch02-q000340",
       "topicId": null,
       "questionText": {
         "en": "Which disease is caused by the deficiency of iodine ?",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Goitre",
             "hi": "घेंघा",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Diabetes",
             "hi": "मधुमेह",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Scurvy",
             "hi": "स्कर्वी",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "AIDS J 5012-J Page 11 of",
             "hi": "एड्स J 5012-J Page 11 of",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000341",
+      "questionCode": "sci-bio-ch02-q000341",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is a hormone secreted by pituitary gland ?",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Growth hormone",
             "hi": "वृद्धि हार्मोन",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thyroxine",
             "hi": "थायरॉक्सीन",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Insulin",
             "hi": "इंसुलिन",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Androgen",
             "hi": "एण्ड्रोजन",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000344",
+      "questionCode": "sci-bio-ch02-q000344",
       "topicId": null,
       "questionText": {
         "en": "Opening and closing of stomata is controlled by",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "guard cells",
             "hi": "द्वार कोशिकाएँ",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "companion cells",
             "hi": "सहचर कोशिकाएँ",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "sieve tubes",
             "hi": "चालनी नालिकाएँ",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "root hair J 5012-J Page 12 of",
             "hi": "मूल रोम J 5012-J Page 12 of",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000347",
+      "questionCode": "sci-bio-ch02-q000347",
       "topicId": null,
       "questionText": {
         "en": "What is Androgen ?",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Male sex hormone",
             "hi": "नर लिंग हार्मोन",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Female sex hormone",
             "hi": "मादा लिंग हार्मोन",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Digestive juice",
             "hi": "पाचक रस",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000442",
+      "questionCode": "sci-bio-ch02-q000442",
       "topicId": null,
       "questionText": {
         "en": "Ripening of fruits is controlled by which of the following ?",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Auxin",
             "hi": "ऑक्सीन",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Gibberellin",
             "hi": "जिबरेलिन्स",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ethylene",
             "hi": "इथीलीन",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cytokinin",
             "hi": "साइटोकाइनिन",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000443",
+      "questionCode": "sci-bio-ch02-q000443",
       "topicId": null,
       "questionText": {
         "en": "Part of the neuron where information acquired is - ?",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Dendrite",
             "hi": "डेन्ड्राइट",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Axon",
             "hi": "तंत्रिकाक्ष",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cell body",
             "hi": "कोशिका पिण्ड",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Nerve ending",
             "hi": "तंत्रिका अंत",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000444",
+      "questionCode": "sci-bio-ch02-q000444",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the emergency hormone ? Which of the following is Hormone of emergency ?",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Adrenaline",
             "hi": "एड्रिनैलिन",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Estrogen",
             "hi": "एस्ट्रोजेन",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Parathormone",
             "hi": "पाराथारेमोन",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Calcitonin",
             "hi": "कैल्सिटोनीन",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000445",
+      "questionCode": "sci-bio-ch02-q000445",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is not an involuntary action ?",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Vomiting",
             "hi": "उल्टी",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Salivation",
             "hi": "अत्यधिक लार निकलना",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Heart beat",
             "hi": "दिल की धड़कन",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Chewing",
             "hi": "चबाना",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000458",
+      "questionCode": "sci-bio-ch02-q000458",
       "topicId": null,
       "questionText": {
         "en": "In blood, amount of glucose is not controlled by which of the following ?",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Insulin",
             "hi": "इंसुलिन",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Glucagon",
             "hi": "ग्लूकागन",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Gastrin",
             "hi": "गैस्ट्रीन",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Somatostatin",
             "hi": "सोमैटोस्टैनीन",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000459",
+      "questionCode": "sci-bio-ch02-q000459",
       "topicId": null,
       "questionText": {
         "en": "Plant growth hormone is",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Gibberellin",
             "hi": "जिबरेलिन",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Adrenaline Plant growth hormone is - A. Gibberellins B. Adrenaline",
             "hi": "एड्रिनैलिन",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Insulin",
             "hi": "इंसुलिन",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Thyroxine",
             "hi": "थायरॉक्सिन",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000460",
+      "questionCode": "sci-bio-ch02-q000460",
       "topicId": null,
       "questionText": {
         "en": "Hormones are secreted from",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Endocrine gland",
             "hi": "अंतः स्रावित ग्रंथि से",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Exocrine gland",
             "hi": "बहिस्रावी ग्रंथि से",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Tube",
             "hi": "नलिका से",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000462",
+      "questionCode": "sci-bio-ch02-q000462",
       "topicId": null,
       "questionText": {
         "en": "Androgen is - Androgen hormone is",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Male hormone",
             "hi": "मेल हॉर्मोन",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Female hormone",
             "hi": "फीमेल हॉर्मोन",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Digestive juice",
             "hi": "पाचक रस",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Parathyroid hormone",
             "hi": "पाराथाइरॉइड हॉर्मोन",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000500",
+      "questionCode": "sci-bio-ch02-q000500",
       "topicId": null,
       "questionText": {
         "en": "Which is the smallest endocrine gland ?",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Adrenal",
             "hi": "एड्रिनल",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Pituitary",
             "hi": "पिट्यूटरी",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Medulla",
             "hi": "मेडुला",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Thyroid",
             "hi": "थॉयराइड",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000502",
+      "questionCode": "sci-bio-ch02-q000502",
       "topicId": null,
       "questionText": {
         "en": "Goiter disease develops from",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Blood loss",
             "hi": "रक्त की कमी से",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Due to lack of sugar",
             "hi": "चीनी की कमी से",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Iodine deficiency",
             "hi": "आयोडीन की कमी से",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Obesity",
             "hi": "मोटापा से",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000517",
+      "questionCode": "sci-bio-ch02-q000517",
       "topicId": null,
       "questionText": {
         "en": "Where are the islets of langerhans found in ?",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ovary",
             "hi": "अंडाशय में",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Stomach",
             "hi": "आमाशय में",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Pancreas",
             "hi": "अग्नाशय में",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Kidney",
             "hi": "वृक्क में",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000518",
+      "questionCode": "sci-bio-ch02-q000518",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is necessary in the synthesis of thyroxine hormone?",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Iron",
             "hi": "आयरन",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Manganese",
             "hi": "मैंगनीज",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Chlorine",
             "hi": "क्लोरीन",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Iodine",
             "hi": "आयोडीन",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000519",
+      "questionCode": "sci-bio-ch02-q000519",
       "topicId": null,
       "questionText": {
         "en": "Nissl's granules are found in",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Nephron",
             "hi": "नेफ्रॉन में",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Nucleus",
             "hi": "न्यूक्लियस में",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Neuron",
             "hi": "न्यूरॉन में",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं अ. नेफ्रॉन में ब. न्यूक्लियस में स. न्यूरॉन में द. इनमें से कोई नहीं",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000520",
+      "questionCode": "sci-bio-ch02-q000520",
       "topicId": null,
       "questionText": {
         "en": "The weight of human brain is",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1.5-2.0 Kg",
             "hi": "1.5-2.0 Kg",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "0.5-1.5 Kg",
             "hi": "0.5-1.5 Kg",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "1.2-1.4 Kg",
             "hi": "1.2-1.4 Kg",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1689,19 +1689,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000614",
+      "questionCode": "sci-bio-ch02-q000614",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is necessary in the synthesis of thyroxin hormone?",
@@ -1710,7 +1710,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Chlorine",
             "hi": "क्लोरीन",
@@ -1718,7 +1718,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Iodine",
             "hi": "आयोडीन",
@@ -1726,7 +1726,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Manganese",
             "hi": "मैंगनीज",
@@ -1734,7 +1734,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Iron",
             "hi": "आयरन",
@@ -1742,19 +1742,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000627",
+      "questionCode": "sci-bio-ch02-q000627",
       "topicId": null,
       "questionText": {
         "en": "Fruit-ripening hormone is",
@@ -1763,7 +1763,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ethylene",
             "hi": "एथिलीन",
@@ -1771,7 +1771,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "auxin",
             "hi": "ऑक्सीन",
@@ -1779,7 +1779,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "gibberellin",
             "hi": "जिबरेलिन",
@@ -1787,7 +1787,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "cytokinin",
             "hi": "साइटोकाइनिन",
@@ -1795,19 +1795,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000646",
+      "questionCode": "sci-bio-ch02-q000646",
       "topicId": null,
       "questionText": {
         "en": "What type of membrane is the cell membrane?",
@@ -1816,7 +1816,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Permeable",
             "hi": "पारगम्य",
@@ -1824,7 +1824,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Impermeable",
             "hi": "अपारगम्य",
@@ -1832,7 +1832,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Semi-permeable",
             "hi": "अर्ध-पारगम्य",
@@ -1840,7 +1840,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1848,19 +1848,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000694",
+      "questionCode": "sci-bio-ch02-q000694",
       "topicId": null,
       "questionText": {
         "en": "An example of plant hormone is",
@@ -1869,7 +1869,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "IAA",
             "hi": "IAA",
@@ -1877,7 +1877,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "TSH",
             "hi": "TSH",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ACH",
             "hi": "ACH",
@@ -1893,7 +1893,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ACTH",
             "hi": "ACTH",
@@ -1901,19 +1901,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000732",
+      "questionCode": "sci-bio-ch02-q000732",
       "topicId": null,
       "questionText": {
         "en": "Synaptic knobs are found in",
@@ -1922,7 +1922,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "kidney",
             "hi": "वृक्क में",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "brain",
             "hi": "मस्तिष्क में",
@@ -1938,7 +1938,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ovary",
             "hi": "अंडाशय में",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "neuron",
             "hi": "न्यूरॉन में",
@@ -1954,19 +1954,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000737",
+      "questionCode": "sci-bio-ch02-q000737",
       "topicId": null,
       "questionText": {
         "en": "The smallest endocrine gland is",
@@ -1975,7 +1975,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Adrenal",
             "hi": "एड्रिनल",
@@ -1983,7 +1983,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thyroid",
             "hi": "थाइरॉइड",
@@ -1991,7 +1991,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Pineal",
             "hi": "पीनियल",
@@ -1999,7 +1999,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2007,19 +2007,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000853",
+      "questionCode": "sci-bio-ch02-q000853",
       "topicId": null,
       "questionText": {
         "en": "The main center of memory is",
@@ -2028,7 +2028,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cerebral peduncle",
             "hi": "सेरीब्रल पेडकंल",
@@ -2036,7 +2036,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Diencephalon",
             "hi": "डाइएंसिफैलॉन",
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Optic lobe",
             "hi": "ऑप्टिक पालि",
@@ -2052,7 +2052,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cerebrum",
             "hi": "सेरीब्रम",
@@ -2060,19 +2060,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000854",
+      "questionCode": "sci-bio-ch02-q000854",
       "topicId": null,
       "questionText": {
         "en": "The downward growth of the roots is called",
@@ -2081,7 +2081,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Hydrotropism",
             "hi": "जलानुवर्त्तन",
@@ -2089,7 +2089,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Chemotropism",
             "hi": "रसायनानुवर्त्तन",
@@ -2097,7 +2097,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Phototropism",
             "hi": "प्रकाशनुवर्त्तन",
@@ -2105,7 +2105,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Geotropism",
             "hi": "गुरूत्वानुवर्त्तन",
@@ -2113,19 +2113,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000855",
+      "questionCode": "sci-bio-ch02-q000855",
       "topicId": null,
       "questionText": {
         "en": "Estrogen is secreted by",
@@ -2134,7 +2134,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Testis",
             "hi": "वृष्ण द्वारा",
@@ -2142,7 +2142,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thyroid",
             "hi": "थाइरॉइड",
@@ -2150,7 +2150,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ovary",
             "hi": "अंडाशय द्वारा",
@@ -2158,7 +2158,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Islets of Langerhans",
             "hi": "लैंगरहैंस की द्वीपिकाओं द्वारा",
@@ -2166,19 +2166,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000961",
+      "questionCode": "sci-bio-ch02-q000961",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a plant hormone?",
@@ -2187,7 +2187,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Insulin",
             "hi": "इंसुलिन",
@@ -2195,7 +2195,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thyroxine",
             "hi": "थाइरॉक्सिन",
@@ -2203,7 +2203,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Estrogen",
             "hi": "एस्ट्रोजेन",
@@ -2211,7 +2211,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cytokinin",
             "hi": "साइटोकाइनिन",
@@ -2219,19 +2219,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000962",
+      "questionCode": "sci-bio-ch02-q000962",
       "topicId": null,
       "questionText": {
         "en": "The fruit ripening hormone is",
@@ -2240,7 +2240,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Auxin",
             "hi": "ऑक्सीन",
@@ -2248,7 +2248,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Gibberellin",
             "hi": "जिबरेलिन",
@@ -2256,7 +2256,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ethylene",
             "hi": "एथिलीन",
@@ -2264,7 +2264,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2272,19 +2272,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q000963",
+      "questionCode": "sci-bio-ch02-q000963",
       "topicId": null,
       "questionText": {
         "en": "The number of cranial nerves in human is",
@@ -2293,7 +2293,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "12 pairs",
             "hi": "12 जोड़ी",
@@ -2301,7 +2301,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "31 pairs",
             "hi": "31 जोड़ी",
@@ -2309,7 +2309,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "10 pairs",
             "hi": "10 जोड़ी",
@@ -2317,7 +2317,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "24 pairs",
             "hi": "24 जोड़ी",
@@ -2325,19 +2325,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q001188",
+      "questionCode": "sci-bio-ch02-q001188",
       "topicId": null,
       "questionText": {
         "en": "What happens due to the deficiency of insulin?",
@@ -2346,7 +2346,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "goiter",
             "hi": "घेंघा",
@@ -2354,7 +2354,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "dwarfism",
             "hi": "बौनापन",
@@ -2362,7 +2362,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "diabetes",
             "hi": "मधुमेह",
@@ -2370,7 +2370,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2378,19 +2378,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q001228",
+      "questionCode": "sci-bio-ch02-q001228",
       "topicId": null,
       "questionText": {
         "en": "is the largest gland of the human body",
@@ -2399,7 +2399,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Liver",
             "hi": "लीवर",
@@ -2407,7 +2407,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Pancreas",
             "hi": "अग्न्याशय",
@@ -2415,7 +2415,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ovary",
             "hi": "अण्डाशय",
@@ -2423,7 +2423,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Adrenal",
             "hi": "एड्रीनल",
@@ -2431,19 +2431,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q001229",
+      "questionCode": "sci-bio-ch02-q001229",
       "topicId": null,
       "questionText": {
         "en": "is an example of plant hormone?",
@@ -2452,7 +2452,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Pepsin",
             "hi": "पेप्सीन",
@@ -2460,7 +2460,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Adrenaline",
             "hi": "एड्रीनलीन",
@@ -2468,7 +2468,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Auxin",
             "hi": "ऑक्सीन",
@@ -2476,7 +2476,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Testosterone",
             "hi": "टेस्टोस्टेरॉन",
@@ -2484,19 +2484,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q001268",
+      "questionCode": "sci-bio-ch02-q001268",
       "topicId": null,
       "questionText": {
         "en": "Meninges exits",
@@ -2505,7 +2505,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "From the cerebrum",
             "hi": "प्रमस्तिष्क से",
@@ -2513,7 +2513,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "From the cerebellum",
             "hi": "अनुमस्तिष्क से",
@@ -2521,7 +2521,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "From the pons",
             "hi": "पोन्स से",
@@ -2529,7 +2529,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "From the medulla",
             "hi": "मेडुला से",
@@ -2537,19 +2537,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-bio-ch02-q001337",
+      "questionCode": "sci-bio-ch02-q001337",
       "topicId": null,
       "questionText": {
         "en": "Which one of the following is the growth hormone found in plants?",
@@ -2558,7 +2558,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Gibberellin",
             "hi": "जिब्रेलिन",
@@ -2566,7 +2566,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Adrenaline",
             "hi": "एड्रीनेलिन",
@@ -2574,7 +2574,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Insulin",
             "hi": "इंसुलिन",
@@ -2582,7 +2582,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Thyroxine",
             "hi": "थाइरॉक्सिन",
@@ -2590,14 +2590,14 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     }

@@ -5,7 +5,7 @@
   "chapterTitle": "Our Environment",
   "questions": [
     {
-      "seedKey": "sci-bio-ch05-q000111",
+      "questionCode": "sci-bio-ch05-q000111",
       "topicId": null,
       "questionText": {
         "en": "Which of the following constitutes a Food chain?",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Grass, wheat and mango",
             "hi": "घास, गेहूँ तथा आम",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Grass, goat and human",
             "hi": "घास, बकरी तथा मानव",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Goat, Cow and elephant",
             "hi": "बकरी, गाय तथा हाथी",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Grass, Goat and fish",
             "hi": "घास, बकरी तथा मछली",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000205",
+      "questionCode": "sci-bio-ch05-q000205",
       "topicId": null,
       "questionText": {
         "en": "The earth is shielded by ozone layer from which harmful radiation?",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Infra-red",
             "hi": "अवरक्त विकिरण",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thermal",
             "hi": "तापीय विकिरण",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ultra-violet",
             "hi": "पराबैंगनी विकिरण",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमे से सभी",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000275",
+      "questionCode": "sci-bio-ch05-q000275",
       "topicId": null,
       "questionText": {
         "en": "In which direction does energy flow in an ecosystem?",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Unidirectional",
             "hi": "एकदिशीय",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Bidirectional",
             "hi": "द्विदिशीय",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Multidirectional",
             "hi": "बहुदिशीय",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Non-directional",
             "hi": "किसी भी दिशा में नहीं",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000276",
+      "questionCode": "sci-bio-ch05-q000276",
       "topicId": null,
       "questionText": {
         "en": "The ozone layer is found",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "in the lower layer of atmosphere",
             "hi": "वायुमंडल के निचली सतह में",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "in the upper layer of atmosphere",
             "hi": "वायुमंडल के ऊपरी सतह में",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "in the middle layer of atmosphere",
             "hi": "वायुमंडल के मध्य सतह में",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000408",
+      "questionCode": "sci-bio-ch05-q000408",
       "topicId": null,
       "questionText": {
         "en": "Which gas is responsible for Global Warming ?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "O2",
             "hi": "O2",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "NH3 Which gas is responsible for global warming ? A. O2 B. NH3",
             "hi": "NH3",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "CO2",
             "hi": "CO2",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "N2",
             "hi": "N2",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000511",
+      "questionCode": "sci-bio-ch05-q000511",
       "topicId": null,
       "questionText": {
         "en": "It is a chemical showing biomagnifications",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "CFC",
             "hi": "सीएफसी",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "DDT",
             "hi": "डीडीटी",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ATP",
             "hi": "एटीपी",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000512",
+      "questionCode": "sci-bio-ch05-q000512",
       "topicId": null,
       "questionText": {
         "en": "Which one of the followings is a Primary consumer?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Decomposer",
             "hi": "अपघटक",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Herbivores",
             "hi": "शाकाहारी",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Carnivores",
             "hi": "मांसाहारी",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Omnivores",
             "hi": "सर्वाहारी C. मांसाहारी D. सर्वाहारी",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000615",
+      "questionCode": "sci-bio-ch05-q000615",
       "topicId": null,
       "questionText": {
         "en": "Which is an example of a decomposer?",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cow",
             "hi": "गाय",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fungus",
             "hi": "कवक",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Tiger",
             "hi": "बाघ",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Grass",
             "hi": "घास",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000617",
+      "questionCode": "sci-bio-ch05-q000617",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is/are a part of environment?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Atmosphere",
             "hi": "वायुमंडल",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Hydrosphere",
             "hi": "जलमंडल",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Lithosphere",
             "hi": "स्थलमंडल",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000629",
+      "questionCode": "sci-bio-ch05-q000629",
       "topicId": null,
       "questionText": {
         "en": "The molecular formula of ozone is",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "O2",
             "hi": "O2",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "O3",
             "hi": "O3",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "O4",
             "hi": "O4",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "O5",
             "hi": "O5",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000631",
+      "questionCode": "sci-bio-ch05-q000631",
       "topicId": null,
       "questionText": {
         "en": "The flow of energy in an ecosystem is",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "unidirectional",
             "hi": "एकदिशीय",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "bidirectional",
             "hi": "द्विदिशीय",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "multidirectional",
             "hi": "बहुदिशीय",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "cyclic",
             "hi": "चक्रीय",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000677",
+      "questionCode": "sci-bio-ch05-q000677",
       "topicId": null,
       "questionText": {
         "en": "The tiger is a consumer of",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "first trophic level",
             "hi": "प्रथम पोषी स्तर का",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "second trophic level",
             "hi": "द्वितीय पोषी स्तर का",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "third trophic level",
             "hi": "तृतीय पोषी स्तर का",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -629,20 +629,20 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023,
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000692",
+      "questionCode": "sci-bio-ch05-q000692",
       "topicId": null,
       "questionText": {
         "en": "Depletion of ozone layer is due to",
@@ -651,7 +651,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ATP",
             "hi": "ATP",
@@ -659,7 +659,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "CFC",
             "hi": "CFC",
@@ -667,7 +667,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "NADP",
             "hi": "NADP",
@@ -675,7 +675,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "DDT",
             "hi": "DDT",
@@ -683,19 +683,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000698",
+      "questionCode": "sci-bio-ch05-q000698",
       "topicId": null,
       "questionText": {
         "en": "An example of bisexual organism is",
@@ -704,7 +704,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Hydra",
             "hi": "हाइड्रा",
@@ -712,7 +712,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Man",
             "hi": "मनुष्य",
@@ -720,7 +720,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fish",
             "hi": "मछली",
@@ -728,7 +728,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Goat",
             "hi": "बकरी",
@@ -736,19 +736,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000756",
+      "questionCode": "sci-bio-ch05-q000756",
       "topicId": null,
       "questionText": {
         "en": "Ozone layer protects earth from which harmful radiation?",
@@ -757,7 +757,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Infrared",
             "hi": "अवरक्त विकिरण",
@@ -765,7 +765,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Thermal",
             "hi": "तापीय विकिरण",
@@ -773,7 +773,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Ultraviolet",
             "hi": "पराबैंगनी विकिरण",
@@ -781,7 +781,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -789,19 +789,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000808",
+      "questionCode": "sci-bio-ch05-q000808",
       "topicId": null,
       "questionText": {
         "en": "Which among the following is responsible for global warming?",
@@ -810,7 +810,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "NH3",
             "hi": "NH₃",
@@ -818,7 +818,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "O2",
             "hi": "O₂",
@@ -826,7 +826,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "N2",
             "hi": "N₂",
@@ -834,7 +834,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "CO2",
             "hi": "CO₂",
@@ -842,19 +842,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000836",
+      "questionCode": "sci-bio-ch05-q000836",
       "topicId": null,
       "questionText": {
         "en": "Due to which of the following the balance in the environment gets disturbed?",
@@ -863,7 +863,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Afforestation",
             "hi": "वनरोपण",
@@ -871,7 +871,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Increasing human Population",
             "hi": "बढ़ती मानव जनसंख्या",
@@ -879,7 +879,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Growth of more green plants",
             "hi": "अधिक हरे पौधे का उगना",
@@ -887,7 +887,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Biodiversity",
             "hi": "जैव विविधता",
@@ -895,19 +895,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000862",
+      "questionCode": "sci-bio-ch05-q000862",
       "topicId": null,
       "questionText": {
         "en": "An example of micro-consumer is",
@@ -916,7 +916,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Bacteria",
             "hi": "जीवाणु",
@@ -924,7 +924,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Fungus",
             "hi": "कवक",
@@ -932,7 +932,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Algae",
             "hi": "शैवाल",
@@ -940,7 +940,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Both (A) and (B)",
             "hi": "(A) और (B) दोनो",
@@ -948,19 +948,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000863",
+      "questionCode": "sci-bio-ch05-q000863",
       "topicId": null,
       "questionText": {
         "en": "Carnivorous organisms are called- ... 79.",
@@ -969,7 +969,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Primary consumer",
             "hi": "प्राथमिक उपभोक्ता",
@@ -977,7 +977,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Secondary consumer",
             "hi": "द्वितीयक उपभोक्ता",
@@ -985,7 +985,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Tertiary consumer",
             "hi": "तृतीयक उपभोक्ता",
@@ -993,7 +993,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Both (A) and (B)",
             "hi": "(A) और (B) दोनो",
@@ -1001,19 +1001,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000864",
+      "questionCode": "sci-bio-ch05-q000864",
       "topicId": null,
       "questionText": {
         "en": "What percentage of total energy is transferred to the next trophic level at each trophic level of the food chain?",
@@ -1022,7 +1022,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "0.1%",
             "hi": "0.1%",
@@ -1030,7 +1030,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "01%",
             "hi": "01%",
@@ -1038,7 +1038,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "10%",
             "hi": "10%",
@@ -1046,7 +1046,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "100%",
             "hi": "100% खण्ड-अ/SECTION-B लघु उत्तरीय प्रश्न/Short Answer Type Questions",
@@ -1054,19 +1054,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000949",
+      "questionCode": "sci-bio-ch05-q000949",
       "topicId": null,
       "questionText": {
         "en": "Which of the following substance is decomposed by biological process?",
@@ -1075,7 +1075,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Dead grass and leaves",
             "hi": "मृत घास–पत्ते",
@@ -1083,7 +1083,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Polythene",
             "hi": "पॉलीथीन",
@@ -1091,7 +1091,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Rubber",
             "hi": "रबर",
@@ -1099,7 +1099,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1107,19 +1107,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000971",
+      "questionCode": "sci-bio-ch05-q000971",
       "topicId": null,
       "questionText": {
         "en": "Which of the following comes under environment?",
@@ -1128,7 +1128,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "hydrosphere",
             "hi": "जलमंडल",
@@ -1136,7 +1136,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "lithosphere",
             "hi": "स्थलमंडल",
@@ -1144,7 +1144,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "atmosphere",
             "hi": "वायुमंडल",
@@ -1152,7 +1152,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "इनमें से सभी",
@@ -1160,19 +1160,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000972",
+      "questionCode": "sci-bio-ch05-q000972",
       "topicId": null,
       "questionText": {
         "en": "What type of consumer is frog in the field ecosystem?",
@@ -1181,7 +1181,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "primary",
             "hi": "प्राथमिक",
@@ -1189,7 +1189,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "secondary",
             "hi": "द्वितीयक",
@@ -1197,7 +1197,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "tertiary",
             "hi": "तृतीयक",
@@ -1205,7 +1205,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "quaternary",
             "hi": "चतुर्थीय",
@@ -1213,19 +1213,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q000973",
+      "questionCode": "sci-bio-ch05-q000973",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is a non-biodegradable substance?",
@@ -1234,7 +1234,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "DDT",
             "hi": "DDT",
@@ -1242,7 +1242,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Paper",
             "hi": "कागज",
@@ -1250,7 +1250,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Sewage",
             "hi": "वाहित मल",
@@ -1258,7 +1258,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1266,19 +1266,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q001293",
+      "questionCode": "sci-bio-ch05-q001293",
       "topicId": null,
       "questionText": {
         "en": "How many trophic levels are there in a forest ecosystem?",
@@ -1287,7 +1287,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1",
             "hi": "1",
@@ -1295,7 +1295,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2",
             "hi": "2",
@@ -1303,7 +1303,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "3",
             "hi": "3",
@@ -1311,7 +1311,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "4",
             "hi": "4",
@@ -1319,19 +1319,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-bio-ch05-q001333",
+      "questionCode": "sci-bio-ch05-q001333",
       "topicId": null,
       "questionText": {
         "en": "Which of the following groups contain only one biodegradable items?",
@@ -1340,7 +1340,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Grass, flower and leather",
             "hi": "घास, फूल और चमड़ा",
@@ -1348,7 +1348,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "brass, wood and plastic",
             "hi": "पीतल, लकड़ी और प्लास्टिक",
@@ -1356,7 +1356,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Fruits piece cake and Rubber",
             "hi": "फलों का टुकड़ा केक और रबर",
@@ -1364,7 +1364,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Cake, wood and glass Ans: cake, wood and glass",
             "hi": "केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
@@ -1372,14 +1372,14 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     }

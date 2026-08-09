@@ -5,7 +5,7 @@
   "chapterTitle": "Human Eye and Colourful World",
   "questions": [
     {
-      "seedKey": "sci-phy-ch02-q000034",
+      "questionCode": "sci-phy-ch02-q000034",
       "topicId": null,
       "questionText": {
         "en": "Which lens is used to remove the near sightedness defect ?",
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cylindrical",
             "hi": "बेलनाकार",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -46,19 +46,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000066",
+      "questionCode": "sci-phy-ch02-q000066",
       "topicId": null,
       "questionText": {
         "en": "The ray of light passes through",
@@ -67,7 +67,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "In straight line",
             "hi": "सीधी रेखा में",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "In Zig Zag line",
             "hi": "टेढ़ी रेखा में",
@@ -83,7 +83,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "In any direction",
             "hi": "किसी भी दिशा में",
@@ -91,7 +91,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें कोई नहीं",
@@ -99,19 +99,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000072",
+      "questionCode": "sci-phy-ch02-q000072",
       "topicId": null,
       "questionText": {
         "en": "The eye is used as:",
@@ -120,7 +120,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण की तरह",
@@ -128,7 +128,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस की तरह",
@@ -136,7 +136,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Plane Mirror",
             "hi": "समतल दर्पण की तरह",
@@ -144,7 +144,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें कोई नहीं",
@@ -152,19 +152,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000076",
+      "questionCode": "sci-phy-ch02-q000076",
       "topicId": null,
       "questionText": {
         "en": "When sunlight passes through the atmosphere, which colour of light gets scattered strongly by the fine particles in air?",
@@ -173,7 +173,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -181,7 +181,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Orange",
             "hi": "नारंगी",
@@ -189,7 +189,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Green",
             "hi": "हरा",
@@ -197,7 +197,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -205,19 +205,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000138",
+      "questionCode": "sci-phy-ch02-q000138",
       "topicId": null,
       "questionText": {
         "en": "3 who controls Pupil size muscles?",
@@ -226,7 +226,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Ciliary Muscle",
             "hi": "सिलियरी मांसपेशी",
@@ -234,7 +234,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Iris",
             "hi": "आईरिस",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Eye lens",
             "hi": "आंख का लेंस",
@@ -250,7 +250,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "retina Ans: Iris",
             "hi": "रेटिना उत्तर: आईरिस",
@@ -258,19 +258,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000192",
+      "questionCode": "sci-phy-ch02-q000192",
       "topicId": null,
       "questionText": {
         "en": "Which colour of light scatters more in atmosphere?",
@@ -279,7 +279,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -295,7 +295,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Yellow",
             "hi": "पीला",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Orange",
             "hi": "नारंगी",
@@ -311,19 +311,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2019
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000247",
+      "questionCode": "sci-phy-ch02-q000247",
       "topicId": null,
       "questionText": {
         "en": "The deviation of which colour is minimum?",
@@ -332,7 +332,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -340,7 +340,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Yellow",
             "hi": "पीला",
@@ -348,7 +348,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -356,7 +356,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Violet",
             "hi": "बैंगनी",
@@ -364,19 +364,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000264",
+      "questionCode": "sci-phy-ch02-q000264",
       "topicId": null,
       "questionText": {
         "en": "Wavelength is generally expressed as",
@@ -385,7 +385,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "candela",
             "hi": "कैंडेला के रूप में",
@@ -393,7 +393,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "joule",
             "hi": "जूल के रूप में",
@@ -401,7 +401,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "ampere",
             "hi": "एम्पियर के रूप में",
@@ -409,7 +409,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "angstrom",
             "hi": "ऐंगस्ट्रम",
@@ -417,19 +417,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000329",
+      "questionCode": "sci-phy-ch02-q000329",
       "topicId": null,
       "questionText": {
         "en": "Which of the following is the coloured part of eye ?",
@@ -438,7 +438,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cornea",
             "hi": "कॉर्निया",
@@ -446,7 +446,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Retina",
             "hi": "रेटिना",
@@ -454,7 +454,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Iris",
             "hi": "परितारिका",
@@ -462,7 +462,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Pupil J 5012-J Page 8 of Which of the following is the coloured portion of an eye ? (A) Cornea (B) Retina (C) Iris (D) Pupil",
             "hi": "पुतली J 5012-J Page 8 of",
@@ -470,19 +470,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000330",
+      "questionCode": "sci-phy-ch02-q000330",
       "topicId": null,
       "questionText": {
         "en": "Light of which colour scatters more in atomsphere ?",
@@ -491,7 +491,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -499,7 +499,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Yellow",
             "hi": "पीला",
@@ -515,7 +515,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Orange",
             "hi": "नारंगी",
@@ -523,19 +523,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000331",
+      "questionCode": "sci-phy-ch02-q000331",
       "topicId": null,
       "questionText": {
         "en": "The sun is visible to us about 2 minutes before the actual sunrise due to which phenomenon of light ?",
@@ -544,7 +544,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Reflection",
             "hi": "परावर्तन",
@@ -552,7 +552,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Atmospheric refraction",
             "hi": "वायुमंडलीय अपवर्तन",
@@ -560,7 +560,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Scattering",
             "hi": "प्रकीर्णन",
@@ -568,7 +568,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Both atmospheric refraction and scattering",
             "hi": "वायुमंडलीय अपवर्तन एवं प्रकीर्णन दोनों",
@@ -576,19 +576,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2020
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000386",
+      "questionCode": "sci-phy-ch02-q000386",
       "topicId": null,
       "questionText": {
         "en": "The least distance of distinct vision for the normal eye is",
@@ -597,7 +597,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "25 m",
             "hi": "25 मीटर",
@@ -605,7 +605,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "25 cm",
             "hi": "25 सेन्टी मीटर",
@@ -613,7 +613,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "25 mm",
             "hi": "25 मीली मीटर",
@@ -621,7 +621,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -629,19 +629,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000387",
+      "questionCode": "sci-phy-ch02-q000387",
       "topicId": null,
       "questionText": {
         "en": "Which colour of white light bends least after passing through a prism ? 4. Which colour of white light bends least when the light passes through a prism ?",
@@ -650,7 +650,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Violet",
             "hi": "बैगनी",
@@ -658,7 +658,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -666,7 +666,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -674,7 +674,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Yellow",
             "hi": "पीला 4. श्वेत प्रकाश का कौन सा रंग (वर्ण) किसी प्रिज्म से गुजरने के पश्चात् सबसे कम झुकता है ? A. बैगनी B. नीला C. लाल D. पीला",
@@ -682,19 +682,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000388",
+      "questionCode": "sci-phy-ch02-q000388",
       "topicId": null,
       "questionText": {
         "en": "The image formed on the retina of human eye is",
@@ -703,7 +703,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Virtual and erect",
             "hi": "आभासी और सीधा",
@@ -711,7 +711,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Real and inverted",
             "hi": "वास्तविक और उल्टा",
@@ -719,7 +719,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Virtual and inverted",
             "hi": "आभासी और उल्टा",
@@ -727,7 +727,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Real and erect",
             "hi": "वास्तविक और सीधा",
@@ -735,19 +735,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000389",
+      "questionCode": "sci-phy-ch02-q000389",
       "topicId": null,
       "questionText": {
         "en": "The colour of sky appears blue.",
@@ -756,7 +756,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Due to reflection of light",
             "hi": "प्रकाश के परावर्तन के कारण",
@@ -764,7 +764,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Due to scattering of light",
             "hi": "प्रकाश के प्रकीर्णन के कारण",
@@ -772,7 +772,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Due to refraction of light",
             "hi": "प्रकाश के अपवर्त्तन के कारण",
@@ -780,7 +780,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -788,19 +788,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000400",
+      "questionCode": "sci-phy-ch02-q000400",
       "topicId": null,
       "questionText": {
         "en": "Which is the Primary colour of Light ?",
@@ -809,7 +809,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -817,7 +817,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -825,7 +825,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Green",
             "hi": "हरा",
@@ -833,7 +833,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these",
             "hi": "उपरोक्त सभी",
@@ -841,19 +841,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000401",
+      "questionCode": "sci-phy-ch02-q000401",
       "topicId": null,
       "questionText": {
         "en": "Which of the following part of eye is coloured ?",
@@ -862,7 +862,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cornea",
             "hi": "कॉर्निया",
@@ -870,7 +870,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Pupil",
             "hi": "पुपील",
@@ -878,7 +878,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Retina",
             "hi": "रेटिना",
@@ -886,7 +886,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Iris",
             "hi": "आईरिस",
@@ -894,19 +894,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2021
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000508",
+      "questionCode": "sci-phy-ch02-q000508",
       "topicId": null,
       "questionText": {
         "en": "Which pigment causes the yellow colour of urine?",
@@ -915,7 +915,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Leucoplast",
             "hi": "ल्यूकोप्लास्ट",
@@ -923,7 +923,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Chloroplasts",
             "hi": "क्लोरोप्लास्ट",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Urochrome",
             "hi": "यूरोक्रोम",
@@ -939,7 +939,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Chromoplasts",
             "hi": "क्रोमोप्लास्ट",
@@ -947,19 +947,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000521",
+      "questionCode": "sci-phy-ch02-q000521",
       "topicId": null,
       "questionText": {
         "en": "The image formed by remedial lens in short-sightedness or far sightedness is",
@@ -968,7 +968,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Real, erect",
             "hi": "वास्तविक, सीधा",
@@ -976,7 +976,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Virtual, erect",
             "hi": "काल्पनिक, सीधा",
@@ -984,7 +984,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Virtual, inverted",
             "hi": "काल्पनिक, उल्टा",
@@ -992,7 +992,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Real, inverted",
             "hi": "वास्तविक, उल्टा",
@@ -1000,19 +1000,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000525",
+      "questionCode": "sci-phy-ch02-q000525",
       "topicId": null,
       "questionText": {
         "en": "The blue colour of the sky is the result of which phenomenon?",
@@ -1021,7 +1021,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Refraction",
             "hi": "अपवर्तन",
@@ -1029,7 +1029,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Scattering",
             "hi": "प्रकीर्णन",
@@ -1037,7 +1037,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Reflection",
             "hi": "परावर्तन",
@@ -1045,7 +1045,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1053,19 +1053,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000526",
+      "questionCode": "sci-phy-ch02-q000526",
       "topicId": null,
       "questionText": {
         "en": "Minimum distance of distinct vision for normal eye is",
@@ -1074,7 +1074,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "25 m",
             "hi": "25 मी",
@@ -1082,7 +1082,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "2.5 cm Least distance of distinct vision for the normal eye is A. 25 m B. 2.5 cm",
             "hi": "2.5 सेमी",
@@ -1090,7 +1090,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "25 cm",
             "hi": "25 सेमी",
@@ -1098,7 +1098,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "2.5 m",
             "hi": "2.5 मी",
@@ -1106,19 +1106,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000528",
+      "questionCode": "sci-phy-ch02-q000528",
       "topicId": null,
       "questionText": {
         "en": "A prism is surrounded by how many surfaces?",
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Two",
             "hi": "दो",
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Three",
             "hi": "तीन",
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Four",
             "hi": "चार",
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Five",
             "hi": "पाँच",
@@ -1159,19 +1159,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000529",
+      "questionCode": "sci-phy-ch02-q000529",
       "topicId": null,
       "questionText": {
         "en": "The focal length of the eye lens is changed by",
@@ -1180,7 +1180,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Pupil",
             "hi": "पुतली द्वारा",
@@ -1188,7 +1188,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Iris",
             "hi": "परितारिका द्वारा",
@@ -1196,7 +1196,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Retina",
             "hi": "दृष्टिपटल द्वारा",
@@ -1204,7 +1204,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Ciliary muscles",
             "hi": "पक्ष्माभी पेशियों द्वारा स. दृष्टिपटल द्वारा द. पक्ष्माभी पेशियों द्वारा",
@@ -1212,19 +1212,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000531",
+      "questionCode": "sci-phy-ch02-q000531",
       "topicId": null,
       "questionText": {
         "en": "The objective of a photography camera is",
@@ -1233,7 +1233,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस",
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Convex mirror",
             "hi": "उत्तल दर्पण",
@@ -1257,7 +1257,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Concave mirror",
             "hi": "अवतल दर्पण",
@@ -1265,19 +1265,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000533",
+      "questionCode": "sci-phy-ch02-q000533",
       "topicId": null,
       "questionText": {
         "en": "If a monochromatic ray passes through a prism, it will not suffer",
@@ -1286,7 +1286,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "refraction",
             "hi": "अपवर्तन",
@@ -1294,7 +1294,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "dispersion",
             "hi": "वर्ण विक्षेपण",
@@ -1302,7 +1302,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "deviation",
             "hi": "विचलन",
@@ -1310,7 +1310,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1318,19 +1318,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000538",
+      "questionCode": "sci-phy-ch02-q000538",
       "topicId": null,
       "questionText": {
         "en": "A ray passing from denser to rarer medium deviates",
@@ -1339,7 +1339,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "away from normal",
             "hi": "अभिलंब से दूर",
@@ -1347,7 +1347,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "to coincide with the normal",
             "hi": "अभिलंब के साथ संपाती",
@@ -1355,7 +1355,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "towards the normal",
             "hi": "अभिलंब के नजदीक",
@@ -1363,7 +1363,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "none of these",
             "hi": "इनमें से कोई नहीं",
@@ -1371,19 +1371,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2022
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000607",
+      "questionCode": "sci-phy-ch02-q000607",
       "topicId": null,
       "questionText": {
         "en": "Dispersion of white light is produced by",
@@ -1392,7 +1392,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "glass slab",
             "hi": "काँच की सिल्ली",
@@ -1400,7 +1400,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "plane mirror",
             "hi": "समतल दर्पण",
@@ -1408,7 +1408,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "spherical mirror",
             "hi": "गोलीय दर्पण",
@@ -1416,7 +1416,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "prism",
             "hi": "प्रिज्म",
@@ -1424,19 +1424,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000636",
+      "questionCode": "sci-phy-ch02-q000636",
       "topicId": null,
       "questionText": {
         "en": "Which colour has maximum wavelength in visible light?",
@@ -1445,7 +1445,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Yellow",
             "hi": "पीला",
@@ -1453,7 +1453,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Violet",
             "hi": "बैंगनी",
@@ -1461,7 +1461,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -1469,7 +1469,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Green",
             "hi": "हरा",
@@ -1477,19 +1477,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000689",
+      "questionCode": "sci-phy-ch02-q000689",
       "topicId": null,
       "questionText": {
         "en": "The radius of curvature of the lens of an eye is controlled by",
@@ -1498,7 +1498,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "retina",
             "hi": "दृष्टि पटल",
@@ -1506,7 +1506,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "iris",
             "hi": "परितारिका",
@@ -1514,7 +1514,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "pupil",
             "hi": "पुतली",
@@ -1522,7 +1522,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "ciliary muscles",
             "hi": "पक्ष्माभी मांसपेशियाँ",
@@ -1530,19 +1530,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000690",
+      "questionCode": "sci-phy-ch02-q000690",
       "topicId": null,
       "questionText": {
         "en": "Why is the colour of some clouds white?",
@@ -1551,7 +1551,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Due to reflection",
             "hi": "परावर्तन के कारण",
@@ -1559,7 +1559,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Due to scattering",
             "hi": "प्रकीर्णन के कारण",
@@ -1567,7 +1567,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Due to absorption",
             "hi": "अवशोषण के कारण",
@@ -1575,7 +1575,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Due to refraction",
             "hi": "अपवर्तन के कारण",
@@ -1583,19 +1583,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000701",
+      "questionCode": "sci-phy-ch02-q000701",
       "topicId": null,
       "questionText": {
         "en": "The amount of light entering in human eye is controlled by",
@@ -1604,7 +1604,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "ciliary muscles",
             "hi": "पक्ष्माभ पेशी द्वारा",
@@ -1612,7 +1612,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "pupil",
             "hi": "पुतली द्वारा",
@@ -1620,7 +1620,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "cornea",
             "hi": "कॉर्निया द्वारा",
@@ -1628,7 +1628,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "iris",
             "hi": "परितारिका द्वारा",
@@ -1636,19 +1636,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000746",
+      "questionCode": "sci-phy-ch02-q000746",
       "topicId": null,
       "questionText": {
         "en": "The far point for the normal vision is",
@@ -1657,7 +1657,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "25 mm",
             "hi": "25 मिमी",
@@ -1665,7 +1665,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "25 cm",
             "hi": "25 सेमी",
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "25 m",
             "hi": "25 मी",
@@ -1681,7 +1681,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "infinity",
             "hi": "अनंत",
@@ -1689,19 +1689,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000750",
+      "questionCode": "sci-phy-ch02-q000750",
       "topicId": null,
       "questionText": {
         "en": "Which colour of light scatters more in atmosphere? (English translation continues on next page) 69 (cont.) Which colour of light scatters more in atmosphere?",
@@ -1710,7 +1710,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Yellow",
             "hi": "पीला",
@@ -1718,7 +1718,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Orange",
             "hi": "नारंगी",
@@ -1726,7 +1726,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -1734,7 +1734,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -1742,19 +1742,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000794",
+      "questionCode": "sci-phy-ch02-q000794",
       "topicId": null,
       "questionText": {
         "en": "Which phenomena is responsible for the blue colour of the sky?",
@@ -1763,7 +1763,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Refraction",
             "hi": "अपवर्तन",
@@ -1771,7 +1771,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Scattering",
             "hi": "प्रकीर्णन",
@@ -1779,7 +1779,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Reflection",
             "hi": "परावर्तन",
@@ -1787,7 +1787,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1795,19 +1795,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000795",
+      "questionCode": "sci-phy-ch02-q000795",
       "topicId": null,
       "questionText": {
         "en": "The primary colour of light is",
@@ -1816,7 +1816,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Red",
             "hi": "लाल",
@@ -1824,7 +1824,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Blue",
             "hi": "नीला",
@@ -1832,7 +1832,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Green",
             "hi": "हरा",
@@ -1840,7 +1840,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "All of these 10. (A) Red (B) Blue (C) Green (D) All of these",
             "hi": "इनमें सभी 10. (A) लाल (B) नीला (C) हरा (D) इनमें सभी",
@@ -1848,19 +1848,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000797",
+      "questionCode": "sci-phy-ch02-q000797",
       "topicId": null,
       "questionText": {
         "en": "Which lens is used for the treatment of farsightedness?",
@@ -1869,7 +1869,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex lens",
             "hi": "उत्तल लेंस",
@@ -1877,7 +1877,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave lens",
             "hi": "अवतल लेंस",
@@ -1885,7 +1885,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Cylindrical lens",
             "hi": "बेलनाकार लेंस",
@@ -1893,7 +1893,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1901,19 +1901,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000798",
+      "questionCode": "sci-phy-ch02-q000798",
       "topicId": null,
       "questionText": {
         "en": "The persistence of vision for human eye is",
@@ -1922,7 +1922,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "1/6 sec",
             "hi": "1/6 sec",
@@ -1930,7 +1930,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "1/10 sec",
             "hi": "1/10 sec",
@@ -1938,7 +1938,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "1/16 sec",
             "hi": "1/16 sec",
@@ -1946,7 +1946,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -1954,19 +1954,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2025
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000897",
+      "questionCode": "sci-phy-ch02-q000897",
       "topicId": null,
       "questionText": {
         "en": "If the angle of incidence is 30°, then the angle between the reflected ray and the incident ray will be–",
@@ -1975,7 +1975,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "30°",
             "hi": "30°",
@@ -1983,7 +1983,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "15°",
             "hi": "15°",
@@ -1991,7 +1991,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "120°",
             "hi": "120°",
@@ -1999,7 +1999,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "60° [Q3 repeated header, already captured page",
             "hi": "60° [Q3 repeated header, already captured page",
@@ -2007,19 +2007,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000905",
+      "questionCode": "sci-phy-ch02-q000905",
       "topicId": null,
       "questionText": {
         "en": "On which of the following parts is the image of an object formed in the human eye?",
@@ -2028,7 +2028,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cornea",
             "hi": "कॉर्निया",
@@ -2036,7 +2036,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Iris",
             "hi": "परितारिका",
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Pupil",
             "hi": "पुतली",
@@ -2052,7 +2052,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Retina",
             "hi": "दृष्टि पटल",
@@ -2060,19 +2060,19 @@
           }
         }
       ],
-      "correctAnswer": "D",
+      "correctOptionLabel": "D",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000906",
+      "questionCode": "sci-phy-ch02-q000906",
       "topicId": null,
       "questionText": {
         "en": "The transparent front part of the eye is",
@@ -2081,7 +2081,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Iris",
             "hi": "आईरिस",
@@ -2089,7 +2089,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Cornea",
             "hi": "कॉर्निया",
@@ -2097,7 +2097,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Lens",
             "hi": "लेंस",
@@ -2105,7 +2105,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Retina",
             "hi": "रेटिना",
@@ -2113,19 +2113,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000907",
+      "questionCode": "sci-phy-ch02-q000907",
       "topicId": null,
       "questionText": {
         "en": "Which defect is corrected by bifocal lens is",
@@ -2134,7 +2134,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Myopia",
             "hi": "निकट दृष्टि दोष",
@@ -2142,7 +2142,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Hypermetropia",
             "hi": "दूर दृष्टि दोष",
@@ -2150,7 +2150,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Presbyopia",
             "hi": "जरा–दृष्टिदोष़",
@@ -2158,7 +2158,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2166,19 +2166,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000908",
+      "questionCode": "sci-phy-ch02-q000908",
       "topicId": null,
       "questionText": {
         "en": "Rods cells are sensitive to",
@@ -2187,7 +2187,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Colour",
             "hi": "रंग",
@@ -2195,7 +2195,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Bright light",
             "hi": "तेज रोशनी",
@@ -2203,7 +2203,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Dim light",
             "hi": "धुंधली रोशनी",
@@ -2211,7 +2211,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2219,19 +2219,19 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q000909",
+      "questionCode": "sci-phy-ch02-q000909",
       "topicId": null,
       "questionText": {
         "en": "The blind spot has no",
@@ -2240,7 +2240,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Cornea",
             "hi": "कॉर्निया",
@@ -2248,7 +2248,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Rods and cones",
             "hi": "रॉड्स और कोन्स",
@@ -2256,7 +2256,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "Pupil",
             "hi": "पुतली",
@@ -2264,7 +2264,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "Lens",
             "hi": "लेंस",
@@ -2272,19 +2272,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2026
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q001213",
+      "questionCode": "sci-phy-ch02-q001213",
       "topicId": null,
       "questionText": {
         "en": "Which lens is used to correct nearsightedness?",
@@ -2293,7 +2293,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Convex",
             "hi": "उत्तल",
@@ -2301,7 +2301,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "Concave",
             "hi": "अवतल",
@@ -2309,7 +2309,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "cylindrical",
             "hi": "बेलनाकार",
@@ -2317,7 +2317,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2325,19 +2325,19 @@
           }
         }
       ],
-      "correctAnswer": "B",
+      "correctOptionLabel": "B",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2016
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q001262",
+      "questionCode": "sci-phy-ch02-q001262",
       "topicId": null,
       "questionText": {
         "en": "The eye behaves like:",
@@ -2346,7 +2346,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "a concave mirror",
             "hi": "अवतल दर्पण की तरह",
@@ -2354,7 +2354,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "a convex lens",
             "hi": "उत्तल लेंस की तरह",
@@ -2362,7 +2362,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "a plane mirror",
             "hi": "समतल दर्पण की तरह",
@@ -2370,7 +2370,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "None of these",
             "hi": "इनमें से कोई नहीं",
@@ -2378,19 +2378,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2017
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q001298",
+      "questionCode": "sci-phy-ch02-q001298",
       "topicId": null,
       "questionText": {
         "en": "A prism is bounded by how many surfaces?",
@@ -2399,7 +2399,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "2",
             "hi": "2",
@@ -2407,7 +2407,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2415,7 +2415,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "4",
             "hi": "4",
@@ -2423,7 +2423,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "5",
             "hi": "5",
@@ -2431,19 +2431,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2023
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q001308",
+      "questionCode": "sci-phy-ch02-q001308",
       "topicId": null,
       "questionText": {
         "en": "A simple prism is bounded by how many surfaces?",
@@ -2452,7 +2452,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "3",
             "hi": "3",
@@ -2460,7 +2460,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "4",
             "hi": "4",
@@ -2468,7 +2468,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "5",
             "hi": "5",
@@ -2476,7 +2476,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "6",
             "hi": "6",
@@ -2484,19 +2484,19 @@
           }
         }
       ],
-      "correctAnswer": "A",
+      "correctOptionLabel": "A",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2024
       ]
     },
     {
-      "seedKey": "sci-phy-ch02-q001324",
+      "questionCode": "sci-phy-ch02-q001324",
       "topicId": null,
       "questionText": {
         "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens?",
@@ -2505,7 +2505,7 @@
       },
       "options": [
         {
-          "key": "A",
+          "label": "A",
           "text": {
             "en": "Myopia",
             "hi": "मायोपिया",
@@ -2513,7 +2513,7 @@
           }
         },
         {
-          "key": "B",
+          "label": "B",
           "text": {
             "en": "hypermetropia",
             "hi": "हाइपरमेट्रोपिया",
@@ -2521,7 +2521,7 @@
           }
         },
         {
-          "key": "C",
+          "label": "C",
           "text": {
             "en": "presbyopia",
             "hi": "प्रेस्बायोपिया",
@@ -2529,7 +2529,7 @@
           }
         },
         {
-          "key": "D",
+          "label": "D",
           "text": {
             "en": "cataract Ans: presbyopia",
             "hi": "मोतियाबिंद उत्तर: प्रेस्बायोपिया",
@@ -2537,14 +2537,14 @@
           }
         }
       ],
-      "correctAnswer": "C",
+      "correctOptionLabel": "C",
       "explanation": {
         "en": null,
         "hi": null,
         "hinglish": null
       },
       "difficulty": null,
-      "yearAsked": [
+      "askedInYears": [
         2018
       ]
     }
