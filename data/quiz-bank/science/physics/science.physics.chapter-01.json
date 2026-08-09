@@ -1,0 +1,4566 @@
+{
+  "subjectId": "science",
+  "sectionId": "physics",
+  "chapterId": "science.physics.chapter-01",
+  "chapterTitle": "Light - Reflection and Refraction",
+  "questions": [
+    {
+      "seedKey": "sci-phy-ch01-q000033",
+      "topicId": null,
+      "questionText": {
+        "en": "The image formed by plane mirror is",
+        "hi": "समतल दर्पण द्वारा बना प्रतिबिम्ब होता है",
+        "hinglish": "Samtal darpan dwara bana pratibimb hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "virtual",
+            "hi": "काल्पनिक",
+            "hinglish": "Kalpanik"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "real",
+            "hi": "वास्तविक",
+            "hinglish": "Vastavik"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "both (a) and (b)",
+            "hi": "(a) और (b) दोनों",
+            "hinglish": "(a) aur (b) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000035",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of lens is found in human eye ?",
+        "hi": "मानव नेत्र में किस प्रकार का लेंस पाया जाता है ?",
+        "hinglish": "Manav netra mein kis prakar ka lens paaya jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ring",
+            "hi": "वलयाकार",
+            "hinglish": "Valayakar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Bifocal",
+            "hi": "बाईफोकल",
+            "hinglish": "Bifocal"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000039",
+      "topicId": null,
+      "questionText": {
+        "en": "By which lens only virtual image is formed ?",
+        "hi": "किस लेंस के द्वारा सिर्फ काल्पनिक प्रतिबिम्ब बनता है ?",
+        "hinglish": "Kis lens ke dwara sirf kalpanik pratibimb banta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Bifocal",
+            "hi": "बाईफोकल",
+            "hinglish": "Bifocal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000067",
+      "topicId": null,
+      "questionText": {
+        "en": "Which mirror is used as shaving mirror?",
+        "hi": "हजामत के लिए किस दर्पण का उपयोग होता है ?",
+        "hinglish": "Hajamat ke liye kis darpan ka upyog hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं Page 7 of 12 [Turn over",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000068",
+      "topicId": null,
+      "questionText": {
+        "en": "The reflective surface of search light is :",
+        "hi": "सर्चलाइट का परावर्तक सतह होता है :",
+        "hinglish": "Search light ka paravartan satih hota hai :"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Plane",
+            "hi": "समतल",
+            "hinglish": "Samtal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000073",
+      "topicId": null,
+      "questionText": {
+        "en": "The diameter of a circular outline of the reflecting surface of spherical mirror is called",
+        "hi": "गोलीय दर्पण के परावर्तक पृष्ठ की वृत्ताकार सीमा रेखा का व्यास कहलाता है –",
+        "hinglish": "Goliya darpan ke paravartan pashch ki vrttakar seema rekha ka vyas kaha jaata hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Principal focus",
+            "hi": "मुख्य फोकस",
+            "hinglish": "Mukhya fokus"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Radius of curvature",
+            "hi": "वक्रता त्रिज्या",
+            "hinglish": "Vakrata trijya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Principal axis",
+            "hi": "प्रधान अक्ष",
+            "hinglish": "Pradhan aksh"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Aperture",
+            "hi": "गोलीय दर्पण का द्वारक",
+            "hinglish": "Goliya darpan ka dwaarak"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000074",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is focal length of the convex mirror whose radius of curvature is 32cm?",
+        "hi": "निम्नलिखित में से कौन उत्तल दर्पण की फोकस दूरी है जिसकी वक्रता त्रिज्या 32 cm है?",
+        "hinglish": "Nimnalikhit mein se kaun uttal darpan ki fokus doori hai jiska vakrata trijya 32 cm hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "+ 8cm",
+            "hi": "+ 8cm",
+            "hinglish": "+ 8cm"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "- 8cm",
+            "hi": "– 8cm",
+            "hinglish": "– 8cm"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "+ 16 cm",
+            "hi": "+ 16 cm",
+            "hinglish": "+ 16 cm"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "- 16cm",
+            "hi": "– 16cm",
+            "hinglish": "– 16cm"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000075",
+      "topicId": null,
+      "questionText": {
+        "en": "What will be the nature of the image of an object, if magnification of the image is negative?",
+        "hi": "यदि किसी बिम्ब का प्रतिबिम्ब का आवर्धन ऋणात्मक है तो उस प्रतिबिम्ब की प्रकृति क्या होगी?",
+        "hinglish": "Yadi kisi bimb ka pratibimb ka aavardhan rnanatak hai to us pratibimb ki prakriti kya hogi?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Real and inverted",
+            "hi": "वास्तविक और उल्टा",
+            "hinglish": "Vastavik aur ulta"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Real and erect",
+            "hi": "वास्तविक और सीधा",
+            "hinglish": "Vastavik aur seedha"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Virtual and erect",
+            "hi": "आभासी और सीधा",
+            "hinglish": "Aabhasi aur seedha"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Virtual and inverted Most of the refraction for the light rays entering the eye occurs at - (A) Interface of aqueous humour (B) Interface of eye lens (C) Outer surface of cornea (D) none of these",
+            "hi": "आभासी और उल्टा नेत्र में प्रवेश करने वाली प्रकाश किरणों का अधिकांश अपवर्तन होता है – (A) नेत्रोद अंतर पृष्ठ पर (B) अभिनेत्र के अंतरापृष्ठ पर (C) कॉर्निया के बाहरी पृष्ठ पर (D) इनमें से कोई नहीं",
+            "hinglish": "Aabhasi aur ulta netr mein pravesh karne wali prakash kiranon ka adhikansh apvartan hota hai – (A) Netrud antarpurush par (B) Abhinetra ke antarpurush par (C) Cornia ke baahari purush par (D) Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000109",
+      "topicId": null,
+      "questionText": {
+        "en": "The slide is first focussed under Compound Microscope at",
+        "hi": "स्लाइड को सर्वप्रथम कम्पाउंड माइक्रोस्कोप से देखा जाता है –",
+        "hinglish": "Slide ko sarvpratham Compound Microscope se dekha jaata hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "5x",
+            "hi": "5x पर",
+            "hinglish": "5x par"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "10x",
+            "hi": "10x पर",
+            "hinglish": "10x par"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "25x",
+            "hi": "25x पर",
+            "hinglish": "25x par"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "45x",
+            "hi": "45x पर",
+            "hinglish": "45x par"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000190",
+      "topicId": null,
+      "questionText": {
+        "en": "Where does the most of refraction for light rays entering the eye, occurs?",
+        "hi": "नेत्र में प्रवेश करने वाली प्रकाश किरणों का अधिकांश अपवर्तन कहाँ होता है?",
+        "hinglish": "Netra mein pravesh karne wali prakash kiranon ka adhikansh apvartan kahan hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "on the outer surface of cornea",
+            "hi": "कॉर्निया के बाहरी पृष्ठ पर",
+            "hinglish": "Kornia ke baahari prishth par"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "on the eye-lens",
+            "hi": "अभिनेत्र लेंस पर",
+            "hinglish": "Abhinetra lens par"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "in aqueous humour",
+            "hi": "नेत्रोद में",
+            "hinglish": "Netrod mein"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "on the retina",
+            "hi": "दृष्टि पटल पर",
+            "hinglish": "Drishti patal par"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000198",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following works has maximum speed of light?",
+        "hi": "Which one of the following works has maximum speed of light?",
+        "hinglish": "Nimnalikhit me se kaun sa karya maximum speed of light rakhta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Air",
+            "hi": "Air",
+            "hinglish": "Hawa"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Water",
+            "hi": "Water",
+            "hinglish": "Pani"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Glass",
+            "hi": "Glass",
+            "hinglish": "Kanch"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Diamond",
+            "hi": "Diamond",
+            "hinglish": "Heera"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000201",
+      "topicId": null,
+      "questionText": {
+        "en": "What is SI unit of magnification produced by a lens?",
+        "hi": "किसी लेंस द्वारा उत्पन्न आवर्धन का SI मात्रक क्या है?",
+        "hinglish": "Kisi lens dwara utpann aavardhan ka SI maatrak kya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "m",
+            "hi": "मी",
+            "hinglish": "m"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "cm",
+            "hi": "से.मी",
+            "hinglish": "cm"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "mm",
+            "hi": "मि.मी",
+            "hinglish": "mm"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Unit less",
+            "hi": "मात्रक विहीन",
+            "hinglish": "Maatrik vihin"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000235",
+      "topicId": null,
+      "questionText": {
+        "en": "Mirror's formula is",
+        "hi": "दर्पण का सूत्र है",
+        "hinglish": "Darpan ka sutra hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1/v + 1/u = 1/f",
+            "hi": "1/v + 1/u = 1/f",
+            "hinglish": "1/v + 1/u = 1/f"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "1/v - 1/u = 1/f",
+            "hi": "1/v - 1/u = 1/f",
+            "hinglish": "1/v - 1/u = 1/f"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "1/f + 1/u = 1/v",
+            "hi": "1/f + 1/u = 1/v",
+            "hinglish": "1/f + 1/u = 1/v"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "1/f + 1/v = 1/u",
+            "hi": "1/f + 1/v = 1/u Mirror's formula is (A) 1/v + 1/u = 1/f (B) 1/v - 1/u = 1/f (C) 1/f + 1/u = 1/v (D) 1/f + 1/v = 1/u",
+            "hinglish": "1/f + 1/v = 1/u Mirror's formula hai (A) 1/v + 1/u = 1/f (B) 1/v - 1/u = 1/f (C) 1/f + 1/u = 1/v (D) 1/f + 1/v = 1/u"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000236",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following lens is used to remove short sightedness?",
+        "hi": "निकट दृष्टि दोष को निम्नलिखित में किस लेंस के द्वारा हटाया जाता है?",
+        "hinglish": "Nikhat drishti dosh ko nimnalikhit mein kis lens ke dwara hataaya jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Bifocal",
+            "hi": "बाइफोकल",
+            "hinglish": "Bifocal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Cylindrical",
+            "hi": "बेलनाकार",
+            "hinglish": "Belanakar"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000245",
+      "topicId": null,
+      "questionText": {
+        "en": "The rays of light travel in",
+        "hi": "प्रकाश की किरणें गमन करती हैं",
+        "hinglish": "Prakash ki kiranen gaman karti hain"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "straight line",
+            "hi": "सीधी रेखा में",
+            "hinglish": "Seedhi rekha mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "oblique line",
+            "hi": "तिरछी रेखा में",
+            "hinglish": "Tirchi rekha mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "any direction",
+            "hi": "किसी भी दिशा में",
+            "hinglish": "Kisi bhi disha mein"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000246",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the unit of power of lens?",
+        "hi": "निम्नलिखित में कौन लेन्स की क्षमता का मात्रक है?",
+        "hinglish": "Nimnalikhit mein kaun lens ki kshamata ka maatrak hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "joule",
+            "hi": "जूल",
+            "hinglish": "Joule"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "watt",
+            "hi": "वाट",
+            "hinglish": "Watt"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "dioptre",
+            "hi": "डाइऑप्टर",
+            "hinglish": "Dioptre"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "erg",
+            "hi": "अर्ग",
+            "hinglish": "Arg"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000271",
+      "topicId": null,
+      "questionText": {
+        "en": "In which of the following media is the speed of light maximum?",
+        "hi": "निम्नलिखित में किस माध्यम में प्रकाश की चाल सबसे अधिक होता है?",
+        "hinglish": "Nimnalikhit mein kis maadhyam mein prakash ki chaal sabse adhik hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Glass",
+            "hi": "कांच",
+            "hinglish": "Kanch"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Iron",
+            "hi": "लोहा",
+            "hinglish": "Loha"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Vacuum",
+            "hi": "निर्वात",
+            "hinglish": "Nirvaak"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000320",
+      "topicId": null,
+      "questionText": {
+        "en": "If the image of an object is always erect for any distance of the object in front of the mirror, then the mirror is",
+        "hi": "दर्पण के सामने किसी भी दूरी पर स्थित वस्तु का प्रतिबिम्ब सीधा प्रतीत होता है तो वह दर्पण है",
+        "hinglish": "Darpan ke saamne kisi bhi doori par sthit vastu ka pratibimb seedha prateet hota hai to vah darpan hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "only plane",
+            "hi": "केवल समतल",
+            "hinglish": "Keval samtal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "only concave",
+            "hi": "केवल अवतल",
+            "hinglish": "Keval avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "only convex",
+            "hi": "केवल उत्तल",
+            "hinglish": "Keval uttal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "either plane or convex",
+            "hi": "या तो समतल अथवा उत्तल",
+            "hinglish": "Ya to samtal athva uttal"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000321",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the mirror used in the headlight of a car ?",
+        "hi": "किसी कार के अग्रदीप में प्रयुक्त दर्पण निम्नलिखित में से कौन होता है ?",
+        "hinglish": "Kisi car ke agrdeep mein prayukt darpan nimnalikhit mein se kaun hota hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Plane or convex mirror J 5012-J Page 6 of",
+            "hi": "समतल या उत्तल दर्पण J 5012-J Page 6 of",
+            "hinglish": "Samtal ya uttal darpan J 5012-J Page 6 of"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000322",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following has the highest refractive index ?",
+        "hi": "निम्नलिखित में से किसका अपवर्तनांक सबसे अधिक होता है ?",
+        "hinglish": "Nimnalikhit mein se kiska apvartanank sabse adhik hota hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Air",
+            "hi": "वायु",
+            "hinglish": "Vayu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ice",
+            "hi": "बर्फ",
+            "hinglish": "Baraf"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Glass",
+            "hi": "कांच",
+            "hinglish": "Kanch"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Diamond",
+            "hi": "हीरा",
+            "hinglish": "Heera"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000323",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following lenses is called converging lens ?",
+        "hi": "निम्नलिखित में से किस लेंस को अभिसारी लेंस कहते हैं ?",
+        "hinglish": "Nimnalikhit mein se kis lens ko abhisari lens kehte hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both convex and concave lens",
+            "hi": "उत्तल एवं अवतल लेंस दोनों",
+            "hinglish": "Uttal aur avatel lens dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Bifocal lens",
+            "hi": "बाइफोकल लेंस",
+            "hinglish": "Bifocal lens"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000328",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the magnification (m) of a lens ?",
+        "hi": "निम्नलिखित में से कौन लेंस का आवर्धन (m) होता है ?",
+        "hinglish": "Nimnalikhit mein se kaun lens ka aavardhan (m) hota hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "u/v",
+            "hi": "u/v",
+            "hinglish": "u/v"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "uv",
+            "hi": "uv",
+            "hinglish": "uv"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "u+v",
+            "hi": "u+v",
+            "hinglish": "u+v"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "v/u",
+            "hi": "v/u",
+            "hinglish": "v/u"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000384",
+      "topicId": null,
+      "questionText": {
+        "en": "The focal length of which mirror is negative ?",
+        "hi": "किस दर्पण की फोकस दूरी ऋणात्मक होता है ?",
+        "hinglish": "Kis darpan ki focal doori rajnatik hota hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these A. Plane mirror B. Concave mirror C. Convex mirror D. None of these",
+            "hi": "इनमें से कोई नहीं 1. A. Plane mirror B. Concave mirror C. Convex mirror D. None of these",
+            "hinglish": "Inmein se koi nahi A. Plane mirror B. Concave mirror C. Convex mirror D. None of these"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000385",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the relation between focal length (f) and radius of curvature (R) of a mirror?",
+        "hi": "दर्पण की फोकस दूरी (f) और वक्रता त्रिज्या (R) में क्या संबंध है ?",
+        "hinglish": "Darpan ki focal doori (f) aur vakrata trijya (R) mein kya sambandh hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "f = R",
+            "hi": "f = R",
+            "hinglish": "f = R"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "f = R/2",
+            "hi": "f = R/2",
+            "hinglish": "f = R/2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "f = 2R",
+            "hi": "f = 2R",
+            "hinglish": "f = 2R"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "f = 3/2 R",
+            "hi": "f = 3/2 R",
+            "hinglish": "f = 3/2 R"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000390",
+      "topicId": null,
+      "questionText": {
+        "en": "Which mirror makes a large image of the object?",
+        "hi": "किस दर्पण से वस्तु का प्रतिबिम्ब बड़ा बनता है ?",
+        "hinglish": "Kis darpan se vastu ka pratibimb bada banta hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these A. Plane Mirror B. Concave Mirror C. Convex mirror D. None of these",
+            "hi": "इनमें से कोई नहीं A. समतल दर्पण B. अवतल दर्पण C. उत्तल दर्पण D. इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi A. Samtal darpan B. Avatal darpan C. Uttal darpan D. Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000391",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following lens is used to correct short sightedness ?",
+        "hi": "निम्नलिखित में कौन सा लेंस निकट-दृष्टि दोष को ठीक करने के लिए उपयोग किया जाता है ?",
+        "hinglish": "Nimnalikhit mein kaun sa lens nikat-drishti dosh ko theek karne ke liye istemal kiya jaata hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Plano Convex lens",
+            "hi": "सम्मोत्तल लेंस",
+            "hinglish": "Sammottal lens"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000399",
+      "topicId": null,
+      "questionText": {
+        "en": "Which lens is also called diverging lens ?",
+        "hi": "कौन सा लेंस अपसारी लेंस भी कहा जाता है ?",
+        "hinglish": "Kaun sa lens apasari lens bhi kaha jaata hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Convex lens Which lens is also known as diverging lens ? A. Concave lens B. Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens kaun sa lens hai jo diverging lens kehlata hai? A. Concave lens B. Convex lens"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both Concave and Convex lens",
+            "hi": "अवतल एवं उत्तल लेंस दोनों",
+            "hinglish": "Aavatal evam uttal lens dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000403",
+      "topicId": null,
+      "questionText": {
+        "en": "Magnifying glass is",
+        "hi": "विशालक शीशा (मैग्नीफाइंग ग्लास) होता है",
+        "hinglish": "Vishalak sheesha (Magnifying glass) hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000522",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is used as a side mirror?",
+        "hi": "साइड मिरर के रूप में निम्नलिखित में से कौन प्रयुक्त होता है?",
+        "hinglish": "Side mirror ke roop mein nimnalikhit mein se kaun prayukt hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस स. अवतल लेंस द. उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000523",
+      "topicId": null,
+      "questionText": {
+        "en": "The image obtained by a Concave lens is",
+        "hi": "अवतल लेंस द्वारा प्राप्त प्रतिबिंब होता है",
+        "hinglish": "Avatal lens dwara prapt pratibimb hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Virtual",
+            "hi": "आभासी",
+            "hinglish": "Aabhasi"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "erect",
+            "hi": "सीधा",
+            "hinglish": "Seedha"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "diminished",
+            "hi": "छोटा",
+            "hinglish": "Chhota"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "all of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000527",
+      "topicId": null,
+      "questionText": {
+        "en": "The focal length of Convex lens is 50 cm, It's power will be",
+        "hi": "किसी उत्तल लेंस का फोकसांतर 50 सेमी है। उसकी क्षमता होगी।",
+        "hinglish": "Kisi uttal lens ka fokaasantar 50 cm hai. Uski kshamata hogi."
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "+5D",
+            "hi": "+5D",
+            "hinglish": "+5D"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "-5D",
+            "hi": "-5D",
+            "hinglish": "-5D"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "-2D",
+            "hi": "-2D",
+            "hinglish": "-2D"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "+2D",
+            "hi": "+2D",
+            "hinglish": "+2D"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000532",
+      "topicId": null,
+      "questionText": {
+        "en": "If a ray is incident normally to the surface of a concave mirror, through which point will it pass after reflection?",
+        "hi": "यदि एक किरण अवतल दर्पण पर लंबवत आपतित हो, तो परावर्तन के बाद किरण किस बिंदु से गुजरेगी ?",
+        "hinglish": "Yadi ek kiran avatal darpan par lambvat aapit ho, to paravartan ke baad kiran kis bindu se guzregi?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "From focus",
+            "hi": "फोकस से",
+            "hinglish": "Focus se"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "From Centre of Curvature",
+            "hi": "वक्रता-केन्द्र से",
+            "hinglish": "Vakrata-kendra se"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "From pole",
+            "hi": "ध्रुव से",
+            "hinglish": "Dhruv se"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें किसी से नहीं",
+            "hinglish": "Inmein kisi se nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000535",
+      "topicId": null,
+      "questionText": {
+        "en": "The power of a Concave lens of a glass in air is",
+        "hi": "काँच की अवतल लेंस की वायु में शक्ति होती है",
+        "hinglish": "Kanch ki avatal lens ki vayu mein shakti hoti hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "negative",
+            "hi": "ऋणात्मक",
+            "hinglish": "Rinatik"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "positive",
+            "hi": "धनात्मक",
+            "hinglish": "Dhanatik"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Sometimes positive",
+            "hi": "कभी-कभी धनात्मक",
+            "hinglish": "Kabhi-kabhi dhanatik"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000537",
+      "topicId": null,
+      "questionText": {
+        "en": "The focal length of a concave mirror having radius of curvature 1m is",
+        "hi": "वक्रता-त्रिज्या 1 मी. के अवतल दर्पण की फोकस-दूरी होगी। A. 50 mm B. 50 cm C. 50 m द. इनमें से कोई नहीं",
+        "hinglish": "Vakrata-trijya 1 m ke avatal darpan ki naabhiik doori hogi"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "50 mm",
+            "hi": "50 मिमी",
+            "hinglish": "50 mm"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "50 cm",
+            "hi": "50 सेमी",
+            "hinglish": "50 cm"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "50 m",
+            "hi": "50 मीटर",
+            "hinglish": "50 m"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000541",
+      "topicId": null,
+      "questionText": {
+        "en": "A white ray is incident obliquely on a glass slab with the first refraction. Which of the following will also occur?",
+        "hi": "काँच की एक समांतर पट्टिका पर श्वेत किरण तिरछी आपतित होती है। निम्नांकित में कौन प्रथम अपवर्तन के साथ घटित होगा ?",
+        "hinglish": "Kaanch ki ek samaantar pattika par shvet kiran tirchi aapti hoti hai. Nimnankit mein kaun pratham apvartan ke saath ghatit hoga?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Deviation",
+            "hi": "विचलन",
+            "hinglish": "Vichalan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Dispersion",
+            "hi": "विक्षेपण",
+            "hinglish": "Vikiran"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Reflection",
+            "hi": "परावर्तन",
+            "hinglish": "Paravartan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000635",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following lenses is called diverging lens?",
+        "hi": "निम्नलिखित में से किस लेंस को अपसारी लेंस कहते हैं ?",
+        "hinglish": "Nimnalikhit mein se kis lens ko apasari lens kehte hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Convex lens and concave lens",
+            "hi": "उत्तल लेंस एवं अवतल लेंस",
+            "hinglish": "Uttal lens aur avatal lens"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Bifocal lens",
+            "hi": "बाइफोकल लेंस",
+            "hinglish": "Bifocal lens"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000639",
+      "topicId": null,
+      "questionText": {
+        "en": "A converging beam is incident on a plane mirror. The reflected beam will be",
+        "hi": "एक अभिसारी किरण पुंज समतल दर्पण पर आपतित होती है। परावर्तित किरण पुंज होगा",
+        "hinglish": "Ek abhisari kiran punj samtal darpan par aapit hoti hai. Paravartit kiran punj hoga"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "diverging",
+            "hi": "अपसारी",
+            "hinglish": "Apasari"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "converging",
+            "hi": "अभिसारी",
+            "hinglish": "Abhisari"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "parallel",
+            "hi": "समांतर",
+            "hinglish": "Samaanatar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000658",
+      "topicId": null,
+      "questionText": {
+        "en": "The focal length of which mirror is taken as negative according to the convention of signs?",
+        "hi": "किस दर्पण की फोकस दूरी, चिह्नों की परिपाटी के अनुसार, ऋणात्मक मानी जाती है ?",
+        "hinglish": "Kis darpan ki naabhiik doori, chihnon ki paripaaty ke anusar, rajnatik maani jaati hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000659",
+      "topicId": null,
+      "questionText": {
+        "en": "Where is the object placed to form a magnified virtual image in a concave mirror?",
+        "hi": "अवतल दर्पण में आवर्धित काल्पनिक प्रतिबिंब बनाने के लिए वस्तु को कहाँ रखा जाता है ?",
+        "hinglish": "Aavardhit kalpanik pratibimb banane ke liye vastu ko kahan rakha jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Between focus and pole",
+            "hi": "फोकस और ध्रुव के बीच",
+            "hinglish": "Focus aur dhruv ke beech"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Beyond centre of curvature",
+            "hi": "वक्रता केन्द्र से परे",
+            "hinglish": "Vakrata kendra se pare"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "At focus",
+            "hi": "फोकस पर",
+            "hinglish": "Focus par"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Between centre of curvature and focus",
+            "hi": "वक्रता केन्द्र और फोकस के बीच",
+            "hinglish": "Vakrata kendra aur focus ke beech"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000661",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the value of refractive index of a medium?",
+        "hi": "किसी माध्यम के अपवर्तनांक का मान क्या होता है ?",
+        "hinglish": "Kisi maadhyam ke apvartanank ka maan kya hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "sin i / sin r",
+            "hi": "sin i / sin r",
+            "hinglish": "sin i / sin r"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "sin r / sin i",
+            "hi": "sin r / sin i",
+            "hinglish": "sin r / sin i"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "sin i + sin r",
+            "hi": "sin i + sin r",
+            "hinglish": "sin i + sin r"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "sin i × sin r",
+            "hi": "sin i × sin r",
+            "hinglish": "sin i × sin r"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000662",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the S.I. unit of power of lens?",
+        "hi": "लेंस की क्षमता का S.I. मात्रक क्या है ?",
+        "hinglish": "Lens ki kshamata ka S.I. maatrak kya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "cm-1",
+            "hi": "cm-1",
+            "hinglish": "cm-1"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "m",
+            "hi": "m",
+            "hinglish": "m"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "cm",
+            "hi": "cm",
+            "hinglish": "cm"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Dioptre",
+            "hi": "डायोप्टर",
+            "hinglish": "Dioptre"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000663",
+      "topicId": null,
+      "questionText": {
+        "en": "The magnification (m) in a concave lens is equal to",
+        "hi": "अवतल लेंस में आवर्धन (m) बराबर होता है",
+        "hinglish": "Aavardhan (m) avatal lens mein barabar hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "uv",
+            "hi": "uv",
+            "hinglish": "uv"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "u/v",
+            "hi": "u/v",
+            "hinglish": "u/v"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "v/u",
+            "hi": "v/u",
+            "hinglish": "v/u"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "u+v",
+            "hi": "u+v",
+            "hinglish": "u+v"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000664",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the refractive index of diamond?",
+        "hi": "हीरे का अपवर्तनांक कितना है ?",
+        "hinglish": "Heere ka apvartanank kitna hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1.42",
+            "hi": "1.42",
+            "hinglish": "1.42"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "1.32",
+            "hi": "1.32",
+            "hinglish": "1.32"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "2.24",
+            "hi": "2.24",
+            "hinglish": "2.24"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "2.42",
+            "hi": "2.42",
+            "hinglish": "2.42"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000684",
+      "topicId": null,
+      "questionText": {
+        "en": "The magnification produced by a concave mirror of focal length 10 cm is positive, if the value of object distance is",
+        "hi": "फोकस दूरी 10 cm के अवतल दर्पण द्वारा उत्पन्न आवर्धन धनात्मक होगा यदि वस्तु दूरी का मान है",
+        "hinglish": "Focal doori 10 cm ke avatal darpan dwara utpann aavardhan dhanatak hoga yadi vastu doori ka maan hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "more than 10 cm",
+            "hi": "10 cm से अधिक",
+            "hinglish": "10 cm se adhik"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "more than 20 cm",
+            "hi": "20 cm से अधिक",
+            "hinglish": "20 cm se adhik"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "less than 10 cm",
+            "hi": "10 cm से कम",
+            "hinglish": "10 cm se kam"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000685",
+      "topicId": null,
+      "questionText": {
+        "en": "On moving from focus towards the pole, the magnification in a concave mirror",
+        "hi": "फोकस से ध्रुव की ओर आने पर अवतल दर्पण में आवर्धन का मान",
+        "hinglish": "Focal se dhruv ki aur aane par avatal darpan mein aavardhan ka maan"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "increases",
+            "hi": "बढ़ता है",
+            "hinglish": "badhata hai"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "decreases",
+            "hi": "घटता है",
+            "hinglish": "ghatata hai"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "remains constant",
+            "hi": "अचर रहता है",
+            "hinglish": "achar rehta hai"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000688",
+      "topicId": null,
+      "questionText": {
+        "en": "The image of an ant in a concave mirror is erect and goes on increasing as the ant moves along the principal axis. The direction of motion of the ant is",
+        "hi": "एक अवतल दर्पण के प्रधान अक्ष पर चलती चींटी का प्रतिबिम्ब सीधा है तथा बढ़ता जा रहा है। चींटी की गति की दिशा है",
+        "hinglish": "Ek avatal darpan ke pradhan aksh par chalti cheenti ka pratibimb seedha hai tatha badhta ja raha hai. Cheenti ki gati ki disha hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "from focus to centre of curvature",
+            "hi": "फोकस से वक्रता केन्द्र की ओर",
+            "hinglish": "Fokus se vakrata kendra ki or"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "from focus to pole",
+            "hi": "फोकस से ध्रुव की ओर",
+            "hinglish": "Fokus se dhruv ki or"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "from pole to focus",
+            "hi": "ध्रुव से फोकस की ओर",
+            "hinglish": "Dhruv se fokus ki or"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000728",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following has the lowest refractive index?",
+        "hi": "निम्नलिखित में किसका अपवर्तनांक सबसे कम होता है?",
+        "hinglish": "Nimnalikhit mein kiska apvartanank sabse kam hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Turpentine",
+            "hi": "तारपीन",
+            "hinglish": "Tarpin"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Benzene",
+            "hi": "बेंजीन",
+            "hinglish": "Benzene"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Kerosine",
+            "hi": "किरोसीन",
+            "hinglish": "kirosin"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000747",
+      "topicId": null,
+      "questionText": {
+        "en": "What will be the nature of the image of an object, if magnification of the image is negative?",
+        "hi": "यदि किसी बिम्ब का प्रतिबिम्ब का आवर्धन ऋणात्मक है, तो उस प्रतिबिम्ब की प्रकृति क्या होगी?",
+        "hinglish": "Yadi kisi bimb ka pratibimb ka aavardhan rajnatik hai, to us pratibimb ki prakriti kya hogi?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Real and erect",
+            "hi": "वास्तविक और सीधा",
+            "hinglish": "Vastavik aur seedha"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Virtual and erect",
+            "hi": "आभासी और सीधा",
+            "hinglish": "Aabhasi aur seedha"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Virtual and inverted",
+            "hi": "आभासी और उल्टा",
+            "hinglish": "Aabhasi aur ulta"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Real and inverted",
+            "hi": "वास्तविक और उल्टा",
+            "hinglish": "Vastavik aur ulta"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000749",
+      "topicId": null,
+      "questionText": {
+        "en": "A ray of light is incident perpendicular to a plane mirror. The angle of reflection will be",
+        "hi": "एक प्रकाश किरण एक समतल दर्पण पर लम्बवत आपतित होती है। परावर्तन कोण का मान होगा",
+        "hinglish": "Ek prakash kiran ek samatall darpan par lambavat aapatit hoti hai. Paravartan kon ka maan hoga"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "135°",
+            "hi": "135°",
+            "hinglish": "135°"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "90°",
+            "hi": "90°",
+            "hinglish": "90°"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "45°",
+            "hi": "45°",
+            "hinglish": "45°"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "0°",
+            "hi": "0°",
+            "hinglish": "0°"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000751",
+      "topicId": null,
+      "questionText": {
+        "en": "Converging lens in air is",
+        "hi": "वायु में अभिसारी लेंस है",
+        "hinglish": "Abhisari lens hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Concave lens of glass",
+            "hi": "काँच का अवतल लेंस",
+            "hinglish": "Kanch ka avatal lens"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Plano-concave lens of glass",
+            "hi": "काँच का समतलावतल लेंस",
+            "hinglish": "Kanch ka samtalavatal lens"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Convex lens of glass",
+            "hi": "काँच का उत्तल लेंस",
+            "hinglish": "Kanch ka uttal lens"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000752",
+      "topicId": null,
+      "questionText": {
+        "en": "If the lower half of a concave mirror gets broken then the image",
+        "hi": "यदि अवतल दर्पण का निचला आधा भाग टूट जाए, तो प्रतिबिंब",
+        "hinglish": "Yadi avatal darpan ka nichla aadha bhaag toot jaaye, to pratibimb"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "will form erect",
+            "hi": "सीधा बनेगा",
+            "hinglish": "seedha banega"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "will be halved",
+            "hi": "आधा बनेगा",
+            "hinglish": "aadha banega"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "will be less intense",
+            "hi": "कम तीव्र बनेगा",
+            "hinglish": "Kam teevr banega"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000753",
+      "topicId": null,
+      "questionText": {
+        "en": "When a ray of light goes from air (rarer medium) to glass (denser medium), it bends",
+        "hi": "जब प्रकाश की किरण हवा (विरल माध्यम) से काँच (सघन माध्यम) में जाती है, तो वह मुड़ जाती है",
+        "hinglish": "Jab prakash ki kiran hawa (viral madhyam) se kaanch (saghan madhyam) mein jaati hai, to vah mud jaati hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "away from the normal",
+            "hi": "अभिलंब से दूर",
+            "hinglish": "Abhilamb se door"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "towards the normal",
+            "hi": "अभिलंब की ओर",
+            "hinglish": "Abhilamb ki or"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "parallel to the normal",
+            "hi": "अभिलंब के समांतर",
+            "hinglish": "Abhilamb ke samaantar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these 72 (cont.) When a ray of light travels from air (a rarer medium) to glass (a denser medium), it bends (A) away from the normal (B) towards the normal (C) parallel to the normal (D) none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000786",
+      "topicId": null,
+      "questionText": {
+        "en": "What is formed when an obstacle is placed in front of a light source?",
+        "hi": "किसी प्रकाश स्त्रोत के सामने एक रूकावट रख देने पर क्या बनता है?",
+        "hinglish": "Kisi prakash strot ke samne ek rukawat rakh dene par kya banta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Shadow",
+            "hi": "छाया",
+            "hinglish": "Chhaya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Penumbra",
+            "hi": "उपछाया",
+            "hinglish": "Upchhaya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000787",
+      "topicId": null,
+      "questionText": {
+        "en": "The focal length of a plane mirror is",
+        "hi": "समतल दर्पण की फोकस दूरी होती है",
+        "hinglish": "Samtal darpan ki naabhiik doori hoti hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Zero",
+            "hi": "शून्य",
+            "hinglish": "Shunya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "50 cm",
+            "hi": "50 cm",
+            "hinglish": "50 cm"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "100 cm",
+            "hi": "100 cm",
+            "hinglish": "100 cm"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Infinity",
+            "hi": "अनंत",
+            "hinglish": "Anant"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000788",
+      "topicId": null,
+      "questionText": {
+        "en": "Power of a convex lens with 1 metre focal length would be",
+        "hi": "1 मीटर फोकस दूरी वाले उत्तल लेंस की क्षमता होगी",
+        "hinglish": "1 meter naabhiik doori wale uttal lens ki kshamata hogi"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "−1 D",
+            "hi": "−1 D",
+            "hinglish": "−1 D"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "1.5 D",
+            "hi": "1.5 D",
+            "hinglish": "1.5 D"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "..",
+            "hi": "..",
+            "hinglish": ".."
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "3. (C) 1 D (D) 2 D",
+            "hi": "3. (C) 1 D (D) 2 D",
+            "hinglish": "1 D 2 D"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000789",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following lenses is called diverging lens?",
+        "hi": "निम्नलिखित में से किस लेंस को अपसारी लेंस कहते हैं?",
+        "hinglish": "Nimnalikhit mein se kis lens ko apasari lens kehte hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Bifocal lens",
+            "hi": "बाइफोकल लेंस",
+            "hinglish": "Bifocal lens"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000790",
+      "topicId": null,
+      "questionText": {
+        "en": "The speed of light in different media is",
+        "hi": "प्रकाश की चाल विभिन्न माध्यमों में होता है",
+        "hinglish": "Prakash ki chaal vibhinn maadhyamon mein hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Different",
+            "hi": "भिन्न-भिन्न",
+            "hinglish": "Bhinn-bhinn"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Same",
+            "hi": "समान",
+            "hinglish": "Samaan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) और (B) दोनो",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000791",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the SI unit of magnification produced by a lens?",
+        "hi": "किसी लेंस द्वारा उत्पन्न आवर्धन का SI मात्रक क्या है?",
+        "hinglish": "Kisi lens dwara utpann aavardhan ka SI maatrak kya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Millimetre",
+            "hi": "मिलीमीटर",
+            "hinglish": "Millimetre"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Cm",
+            "hi": "सेमी",
+            "hinglish": "Seemi"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Metre",
+            "hi": "मीटर",
+            "hinglish": "Meter"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Unitless",
+            "hi": "मात्रक विहीन",
+            "hinglish": "Maatrak vihin"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000792",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following has the highest refractive index?",
+        "hi": "निम्नलिखित में से किसका अपवर्तनांक सबसे अधिक होता है?",
+        "hinglish": "Nimnalikhit mein se kiska apvartanank sabse adhik hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Glass",
+            "hi": "काँच",
+            "hinglish": "Kaanch"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Diamond",
+            "hi": "हीरा",
+            "hinglish": "Heera"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ice",
+            "hi": "बर्फ",
+            "hinglish": "Baraf"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Air",
+            "hi": "वायु",
+            "hinglish": "Vayu"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000793",
+      "topicId": null,
+      "questionText": {
+        "en": "A Converging lens forms",
+        "hi": "एक अभिसारी लेंस बनाता है",
+        "hinglish": "Ek abhisari lens banata hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "A real image always",
+            "hi": "सदैव वास्तविक प्रतिबिंब",
+            "hinglish": "Sadaiv vastavik pratibimb"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "A virtual image always",
+            "hi": "सदैव आभासी प्रतिबिंब",
+            "hinglish": "Sadaiv aabhasi pratibimb"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "A real or a virtual image",
+            "hi": "कभी आभासी तो कभी वास्तविक प्रतिबिंब",
+            "hinglish": "Kabhi aabhasi to kabhi vastavik pratibimb"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000895",
+      "topicId": null,
+      "questionText": {
+        "en": "The focal length of a plane mirror is",
+        "hi": "समतल दर्पण की फोकस दूरी होती है –",
+        "hinglish": "Samtal darpan ki naabhiik doori hoti hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Zero",
+            "hi": "शून्य",
+            "hinglish": "Shunya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Negative",
+            "hi": "ऋणात्मक",
+            "hinglish": "Rinatik"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Infinity",
+            "hi": "अनंत",
+            "hinglish": "Anant"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Positive",
+            "hi": "धनात्मक",
+            "hinglish": "Dhanatik"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000896",
+      "topicId": null,
+      "questionText": {
+        "en": "Real images are always formed on which side of mirror?",
+        "hi": "वास्तविक प्रतिबिंब दर्पण के किस ओर बनते हैं ?",
+        "hinglish": "Vastavik pratibimb darpan ke kis or bante hain ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Behind the mirror",
+            "hi": "दर्पण के पीछे",
+            "hinglish": "Darpan ke peeche"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "In front of mirror",
+            "hi": "दर्पण के आगे",
+            "hinglish": "Darpan ke aage"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both A and B",
+            "hi": "(A) एवं (B) दोनों",
+            "hinglish": "(A) evam (B) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000898",
+      "topicId": null,
+      "questionText": {
+        "en": "If the speed of light incident on a mirror is C, then what will be the speed of the reflected light?",
+        "hi": "एक दर्पण पर आपतित प्रकाश की चाल C है, तो परावर्तित प्रकाश की चाल होगी ?",
+        "hinglish": "Ek darpan par aapitit prakash ki chaal C hai, to paravartit prakash ki chaal hogi?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "C/2",
+            "hi": "C/2",
+            "hinglish": "C/2"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "C/3",
+            "hi": "C/3",
+            "hinglish": "C/3"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "C/4",
+            "hi": "C/4",
+            "hinglish": "C/4"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "C",
+            "hi": "C",
+            "hinglish": "C"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000899",
+      "topicId": null,
+      "questionText": {
+        "en": "In a spherical mirror, according to the Cartesian sign convention, the origin is taken as",
+        "hi": "गोलीय दर्पण में, कार्तीय चिन्ह परिपाटी के अनुसार, मूल बिन्दु लिया जाता है –",
+        "hinglish": "Goliya darpan mein, kartiya chinh paripaaty ke anusar, mool bindu liya jaata hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "on focus",
+            "hi": "फोकस पर",
+            "hinglish": "fokus par"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "at the centre of curvature",
+            "hi": "वक्रता केन्द्र पर",
+            "hinglish": "vakrata kendra par"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "at the pole",
+            "hi": "ध्रुव पर",
+            "hinglish": "dhruv par"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000900",
+      "topicId": null,
+      "questionText": {
+        "en": "When light travels from denser to rarer medium, its speed",
+        "hi": "जब प्रकाश सघन से विरल माध्यम में जाता है, तो उसकी गति –",
+        "hinglish": "Jab prakash sadhan se viral madhyam mein jaata hai, to uski gati –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "increases",
+            "hi": "बढ़ती है",
+            "hinglish": "badhati hai"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "decreases",
+            "hi": "घटती है",
+            "hinglish": "ghatati hai"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "remains Same",
+            "hi": "समान रहती है",
+            "hinglish": "samaan rahti hai"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000901",
+      "topicId": null,
+      "questionText": {
+        "en": "Which quantity changes during refraction?",
+        "hi": "अपवर्त्तन के कारण कौन सी राशि बदलती है ?",
+        "hinglish": "Apvartan ke kaaran kaun si rashi badalti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Frequency",
+            "hi": "आवृति",
+            "hinglish": "Aavriti"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Wavelength",
+            "hi": "तरंगदैर्ध्य",
+            "hinglish": "Tarangdairdhya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Colour",
+            "hi": "रंग",
+            "hinglish": "Rang"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Both A and B",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000902",
+      "topicId": null,
+      "questionText": {
+        "en": "The power of a lens having focal length 50 cm is",
+        "hi": "50 Cm फोकस दूरी वाले लेंस की शक्ति है –",
+        "hinglish": "50 Cm naabhiik doori wale lens ki shakti hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "0.5 D",
+            "hi": "0.5 D",
+            "hinglish": "0.5 D"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2 D",
+            "hi": "2 D",
+            "hinglish": "2 D"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "1D",
+            "hi": "1D",
+            "hinglish": "1D"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "5D",
+            "hi": "5D",
+            "hinglish": "5D"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q000904",
+      "topicId": null,
+      "questionText": {
+        "en": "Speed of light is minimum in –",
+        "hi": "प्रकाश की चाल न्यूनतम होती है –",
+        "hinglish": "Prakash ki chaal nyoonatam hoti hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "water",
+            "hi": "जल में",
+            "hinglish": "Jal mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "vacuum",
+            "hi": "निर्वात में",
+            "hinglish": "Nirvaat mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "glass",
+            "hi": "काँच में",
+            "hinglish": "Kaanch mein"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "air",
+            "hi": "वायु में",
+            "hinglish": "Vayu mein"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001172",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of mirror is used for shaving?",
+        "hi": "दाढ़ी बनाने में किस प्रकार के दर्पण का उपयोग किया जाता है ?",
+        "hinglish": "Daadhi banane mein kis prakar ke darpan ka upyog kiya jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Plane",
+            "hi": "समतल",
+            "hinglish": "Samtal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001174",
+      "topicId": null,
+      "questionText": {
+        "en": "How many laws are there of refraction of light?",
+        "hi": "प्रकाश के अपवर्तन के कितने नियम हैं ?",
+        "hinglish": "Prakash ke apvartan ke kitne niyam hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001212",
+      "topicId": null,
+      "questionText": {
+        "en": "The image formed by a plane mirror is",
+        "hi": "समतल दर्पण द्वारा बना प्रतिबिम्ब होता है",
+        "hinglish": "Samtal darpan dwara bana pratibimb hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "imaginary",
+            "hi": "काल्पनिक",
+            "hinglish": "Kalpanik"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "real",
+            "hi": "वास्तविक",
+            "hinglish": "Vastavik"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both (a) and (b)",
+            "hi": "(a) और (b) दोनों",
+            "hinglish": "(a) aur (b) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001214",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of lens is found in the human eye?",
+        "hi": "मानव नेत्र में किस प्रकार का लेंस पाया जाता है ?",
+        "hinglish": "Manav netra mein kis prakar ka lens paaya jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "circular",
+            "hi": "वलयाकार",
+            "hinglish": "Valayakar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "bifocal",
+            "hi": "बाईफोकल",
+            "hinglish": "Bifocal"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001217",
+      "topicId": null,
+      "questionText": {
+        "en": "Which lens produces only a virtual image?",
+        "hi": "किस लेंस के द्वारा सिर्फ काल्पनिक प्रतिबिम्ब बनता है ?",
+        "hinglish": "Kis lens ke dwara sirf kalpnik pratibimb banta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "bifocal",
+            "hi": "बाईफोकल",
+            "hinglish": "Bifocal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001242",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the speed of light in vacuum?",
+        "hi": "निर्वात में प्रकाश की चाल क्या होती है ?",
+        "hinglish": "Nirvaak mein prakash ki chaal kya hoti hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "3×10^8 m/sec",
+            "hi": "3×10^8 m/sec",
+            "hinglish": "3×10^8 m/sec"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "3×10^8 cm/sec",
+            "hi": "3×10^8 cm/sec",
+            "hinglish": "3×10^8 cm/sec"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3×10^8 km/sec",
+            "hi": "3×10^8 km/sec",
+            "hinglish": "3×10^8 km/sec"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001243",
+      "topicId": null,
+      "questionText": {
+        "en": "Is determined by the law of reflection:",
+        "hi": "परावर्तन के नियम से निर्धारित होता है:",
+        "hinglish": "Paravartan ke niyam se nirdharit hota hai:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Angle of incidence = Angle of reflection",
+            "hi": "आपतन कोण = परावर्तन कोण",
+            "hinglish": "Aaptaan kon = Paravartan kon"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Angle of reflection = Angle of refraction",
+            "hi": "परावर्तन कोण = अपवर्तन कोण",
+            "hinglish": "Paravartan kon = Apvartan kon"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Angle of incidence = Angle of deviation",
+            "hi": "आपतन कोण = विचलन कोण",
+            "hinglish": "Aaptaan kon = Vichalan kon"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001244",
+      "topicId": null,
+      "questionText": {
+        "en": "How many principal foci does a lens have?",
+        "hi": "लेंस में मुख्य फोकस की संख्या कितनी होती है ?",
+        "hinglish": "Lens mein mukhya fokus ki sankhya kitni hoti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Two",
+            "hi": "दो",
+            "hinglish": "Do"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "One",
+            "hi": "एक",
+            "hinglish": "Ek"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Three",
+            "hi": "तीन",
+            "hinglish": "Teen"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001256",
+      "topicId": null,
+      "questionText": {
+        "en": "Light rays travel:",
+        "hi": "प्रकाश की किरणें गमन करती है:",
+        "hinglish": "Prakash ki kiranen gaman karti hai:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "in a straight line",
+            "hi": "सीधी रेखा में",
+            "hinglish": "seedhi rekha mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "in a curved line",
+            "hi": "टेढ़ी रेखा में",
+            "hinglish": "tedhi rekha mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "in any direction",
+            "hi": "किसी भी दिशा में",
+            "hinglish": "Kisi bhi disha mein"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001257",
+      "topicId": null,
+      "questionText": {
+        "en": "Which mirror is used for shaving?",
+        "hi": "हजामत के लिए किस दर्पण का उपयोग होता है ?",
+        "hinglish": "Hajamat ke liye kis darpan ka upyog hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001258",
+      "topicId": null,
+      "questionText": {
+        "en": "The reflecting surface of a searchlight is:",
+        "hi": "सर्चलाइट का परावर्तक सतह होता है :",
+        "hinglish": "Searchlight ka paravartan satah hota hai:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Plane",
+            "hi": "समतल",
+            "hinglish": "Samtal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001279",
+      "topicId": null,
+      "questionText": {
+        "en": "How many laws are there of reflection of light?",
+        "hi": "प्रकाश के परावर्तन के कितने नियम हैं?",
+        "hinglish": "Prakash ke paravartan ke kitne niyam hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001288",
+      "topicId": null,
+      "questionText": {
+        "en": "How many laws of reflection of light are?",
+        "hi": "प्रकाश के परावर्त्तन के कितने नियम हैं?",
+        "hinglish": "Prakash ke paravartan ke kitne niyam hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001297",
+      "topicId": null,
+      "questionText": {
+        "en": "How many laws of refraction of light are there?",
+        "hi": "प्रकाश के अपवर्तन के कितने नियम हैं ?",
+        "hinglish": "Prakash ke apvartan ke kitne niyam hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001312",
+      "topicId": null,
+      "questionText": {
+        "en": "How many laws are there for reflection of light?",
+        "hi": "प्रकाश के परावर्तन के कितने नियम हैं?",
+        "hinglish": "Prakash ke paravartan ke kitne niyam hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001323",
+      "topicId": null,
+      "questionText": {
+        "en": "Which mirror do the dentist use to use large images of teeth of patient?",
+        "hi": "डेंटिस्ट किस दर्पण का उपयोग करते हैं ताकि मरीज के दांतों की बड़ी छवियाँ प्राप्त की जा सकें?",
+        "hinglish": "Dentist kis darpan ka upyog karte hain taaki mareez ke daanton ki badi chhaviyaan prapt ki ja sakein?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "concave mirror",
+            "hi": "उत्कर्ण दर्पण",
+            "hinglish": "Utkaran darpan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "convex mirror",
+            "hi": "उत्कृष्ट दर्पण",
+            "hinglish": "Utkrsht darpan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "all of these Ans: concave mirror",
+            "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
+            "hinglish": "Inmein se sabhi uttar: Utkaran darpan"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001325",
+      "topicId": null,
+      "questionText": {
+        "en": "In an experiment the image of an object formed by a concave mirror is obtained on a screen to determine the focal length of the mirror the experimenter needs to measure the distance between the",
+        "hi": "एक प्रयोग में, एक उत्कर्ण दर्पण द्वारा बनाए गए वस्तु की छवि को एक स्क्रीन पर प्राप्त किया जाता है ताकि दर्पण की फोकल लंबाई निर्धारित की जा सके, प्रयोगकर्ता को मापने की आवश्यकता होती है दूरी के बीच",
+        "hinglish": "Ek prayog mein, ek utkaran darpan dwara banaye gaye vastu ki chhavi ko ek screen par prapt kiya jaata hai taaki darpan ki naabhiik doori nirdharit ki ja sake, prayogakarta ko maapne ki avashyakta hoti hai doori ke beech"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "mirror and the screen",
+            "hi": "दर्पण और स्क्रीन",
+            "hinglish": "Darpan aur screen"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "mirror and object",
+            "hi": "दर्पण और वस्तु",
+            "hinglish": "Darpan aur vastu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "both A and B",
+            "hi": "दोनों A और B",
+            "hinglish": "Dono A aur B"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these Ans: mirror and the screen",
+            "hi": "इनमें से कोई नहीं उत्तर: दर्पण और स्क्रीन",
+            "hinglish": "Inmein se koi nahi uttar: darpan aur screen"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch01-q001326",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following lenses would you prefer to use while reading small letters found in a dictionary?",
+        "hi": "निम्नलिखित में से कौन सा लेंस आप शब्दकोश में छोटे अक्षरों को पढ़ने के लिए उपयोग करना चाहेंगे?",
+        "hinglish": "Nimnalikhit mein se kaun sa lens aap shabdakosh mein chhote aksharon ko padhne ke liye istemal karna chahenge?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "A convex lens of focal length 50 cm",
+            "hi": "एक उत्तल लेंस जिसकी फोकल लंबाई 50 सेमी है",
+            "hinglish": "Ek uttal lens jiski focal lambai 50 cm hai"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "a concave lens of focal length 50 cm",
+            "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 50 सेमी है",
+            "hinglish": "Ek avatal lens jiski focal lambai 50 cm hai"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Convex lens of focal length 5 cm",
+            "hi": "उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
+            "hinglish": "Uttal lens jiski focal lambai 5 cm hai"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "a concave lens of focal length 5 cm Ans: convex lens of focal length 5 cm",
+            "hi": "एक अवतल लेंस जिसकी फोकल लंबाई 5 सेमी है उत्तर: उत्तल लेंस जिसकी फोकल लंबाई 5 सेमी है",
+            "hinglish": "Ek avatal lens jiski focal lambai 5 cm hai uttar: uttal lens jiski focal lambai 5 cm hai"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    }
+  ]
+}

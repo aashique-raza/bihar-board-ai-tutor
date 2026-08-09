@@ -1,0 +1,857 @@
+{
+  "subjectId": "science",
+  "sectionId": "biology",
+  "chapterId": "science.biology.chapter-06",
+  "chapterTitle": "Management of Natural Resources",
+  "questions": [
+    {
+      "seedKey": "sci-bio-ch06-q000187",
+      "topicId": null,
+      "questionText": {
+        "en": "Which state has 'Surangam' water harvesting system?",
+        "hi": "सुरंगम किस राज्य की जल संग्रहण व्यवस्था है?",
+        "hinglish": "Surangam kis rajya ki jal sangrahann vyavastha hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Himachal Pradesh",
+            "hi": "हिमाचल प्रदेश",
+            "hinglish": "Himachal Pradesh"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Tamil Nadu",
+            "hi": "तमिलनाडु",
+            "hinglish": "Tamil Nadu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Kerala",
+            "hi": "केरल",
+            "hinglish": "Kerala"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Karnataka",
+            "hi": "कर्नाटक",
+            "hinglish": "Karnataka"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000251",
+      "topicId": null,
+      "questionText": {
+        "en": "In which state is Tehri Dam constructed?",
+        "hi": "टेहरी बाँध का निर्माण किस प्रदेश में किया गया है?",
+        "hinglish": "Tehri baandh ka nirman kis pradesh mein kiya gaya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Uttar Pradesh",
+            "hi": "उत्तर प्रदेश",
+            "hinglish": "Uttar Pradesh"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Uttarakhand",
+            "hi": "उत्तराखंड",
+            "hinglish": "Uttarakhand"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Rajasthan",
+            "hi": "राजस्थान",
+            "hinglish": "Rajasthan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Madhya Pradesh",
+            "hi": "मध्य प्रदेश",
+            "hinglish": "Madhya Pradesh"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000262",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not a natural resource?",
+        "hi": "निम्नलिखित में कौन प्राकृतिक संसाधन नहीं है?",
+        "hinglish": "Nimnalikhit mein kaun prakritik sansadhan nahi hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Air",
+            "hi": "वायु",
+            "hinglish": "Vayu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Water",
+            "hi": "जल",
+            "hinglish": "Jal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Soil",
+            "hi": "मिट्टी",
+            "hinglish": "Mitti"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Organism",
+            "hi": "जीवधारी",
+            "hinglish": "Jeevdhaari"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000327",
+      "topicId": null,
+      "questionText": {
+        "en": "'Chipko movement' is related to",
+        "hi": "'चिपको आन्दोलन' किससे संबंधित है ?",
+        "hinglish": "'Chipko aandolan' kis se sambandhit hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "forest conservation",
+            "hi": "वन संरक्षण",
+            "hinglish": "Van sanrakshan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "soil conservation",
+            "hi": "मृदा संरक्षण",
+            "hinglish": "Mrida sanrakshan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "water conservation",
+            "hi": "जल संरक्षण",
+            "hinglish": "Jal sanrakshan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "afforestation",
+            "hi": "वृक्षारोपण",
+            "hinglish": "Vriksharopan"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000422",
+      "topicId": null,
+      "questionText": {
+        "en": "Tehri dam has been constructed in which state ?",
+        "hi": "टिहरी बाँध का निर्माण किस प्रदेश में किया गया है ?",
+        "hinglish": "Tehri baandh ka nirmaan kis pradesh mein kiya gaya hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Uttar Pradesh",
+            "hi": "उत्तर प्रदेश",
+            "hinglish": "Uttar Pradesh"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Uttarakhand",
+            "hi": "उत्तराखंड",
+            "hinglish": "Uttarakhand"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Rajasthan",
+            "hi": "राजस्थान",
+            "hinglish": "Rajasthan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Bihar",
+            "hi": "बिहार",
+            "hinglish": "Bihar"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000447",
+      "topicId": null,
+      "questionText": {
+        "en": "When was the Ganga Action Plan started ?",
+        "hi": "गंगा एक्शन प्लान कब शुरू हुआ ?",
+        "hinglish": "Ganga Action Plan kab shuru hua ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1973",
+            "hi": "1973",
+            "hinglish": "1973"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "1985 When was Ganga action plan started ? A. 1973 B. 1985",
+            "hi": "1985",
+            "hinglish": "1985"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "1971",
+            "hi": "1971",
+            "hinglish": "1971"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "1983",
+            "hi": "1983",
+            "hinglish": "1983"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000513",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is an example of 'underground water'?",
+        "hi": "निम्नलिखित में कौन एक 'भूमिगत जल' का उदाहरण है?",
+        "hinglish": "Nimnalikhit mein kaun ek 'bhoomigat jal' ka udaharan hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Well",
+            "hi": "कुआँ",
+            "hinglish": "Kuaan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "River",
+            "hi": "नदी",
+            "hinglish": "Nadi"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Sea",
+            "hi": "समुद्र",
+            "hinglish": "Samudr"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Pond",
+            "hi": "तालाब",
+            "hinglish": "Talaab"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000809",
+      "topicId": null,
+      "questionText": {
+        "en": "Which among the following is a fossil fuel?",
+        "hi": "इनमें से कौन जीवाश्म ईंधन है?",
+        "hinglish": "Inmein se kaun jeevashm indhan hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Petroleum",
+            "hi": "पेट्रोलियम",
+            "hinglish": "Petroleum"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Natural gas",
+            "hi": "प्राकृतिक गैस",
+            "hinglish": "Prakritik gas"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of the above",
+            "hi": "उपर्युक्त सभी",
+            "hinglish": "Uparyukt sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000811",
+      "topicId": null,
+      "questionText": {
+        "en": "What was the purpose of construction of the Tehri Dam?",
+        "hi": "टिहरी बाँध निमार्ण का उद्देश्य क्या था?",
+        "hinglish": "Tehri bandh nimarn ka uddeshya kya tha?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Land irrigation",
+            "hi": "भूमि सिंचाई",
+            "hinglish": "Bhoomi sinchai"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Electricity generation",
+            "hi": "बिजली उत्पादन",
+            "hinglish": "Bijli utpadan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Water supply",
+            "hi": "जल आपूर्ति",
+            "hinglish": "Jal aapurti"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000835",
+      "topicId": null,
+      "questionText": {
+        "en": "In which village of Rajasthan did women sacrifice their lives during the 'Chipko Movement'?",
+        "hi": "राजस्थान के किस ग्राम में 'चिपको आंदोलन' के क्रम में महिलाओं ने जाने दी थी?",
+        "hinglish": "Rajasthan ke kis gram mein 'Chipko Andolan' ke kram mein mahilaon ne jaane di thi?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Pawna",
+            "hi": "पवना",
+            "hinglish": "Pawna"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Khejri",
+            "hi": "खेजरी",
+            "hinglish": "Khejri"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Rani",
+            "hi": "रनी",
+            "hinglish": "Rani"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Reni",
+            "hi": "रेनी",
+            "hinglish": "Reni"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000837",
+      "topicId": null,
+      "questionText": {
+        "en": "The best way to protect the environment from pollution is",
+        "hi": "पर्यावरण को प्रदूषण से बचाने का सबसे अच्छा तरीका है",
+        "hinglish": "Paryavaran ko pradushan se bachane ka sabse achha tareeka hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Recycling of goods",
+            "hi": "वस्तु का पुनर्चालन",
+            "hinglish": "Vastu ka punarchalan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Reuse of the object",
+            "hi": "वस्तु का पुनरूपयोग",
+            "hinglish": "Vastu ka punarupayog"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Decrease in use of the item",
+            "hi": "वस्तु के उपयोग में कमी",
+            "hinglish": "Vastu ke upyog mein kami"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें सभी",
+            "hinglish": "Inmein sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000921",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following means water?",
+        "hi": "निम्न में से किसका अर्थ जल होता है ?",
+        "hinglish": "Nimn mein se kiska arth jal hota hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "petro",
+            "hi": "पेट्रो",
+            "hinglish": "Petro"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "turbo",
+            "hi": "टरबो",
+            "hinglish": "Turbo"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "nitro",
+            "hi": "नाइट्रो",
+            "hinglish": "Nitro"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "hydro",
+            "hi": "हाइड्रो",
+            "hinglish": "Hydro"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017,
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000945",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a forest-based industry?",
+        "hi": "निम्नांकित में वनों पर आधारित उद्योग कौन है ?",
+        "hinglish": "Nimnankit mein vanon par aadhaarit udyog kaun hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Paper industry",
+            "hi": "कागज उद्योग",
+            "hinglish": "Kagaz udyog"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Timber industry",
+            "hi": "टिंबर उद्योग",
+            "hinglish": "Timber udyog"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Lac industry",
+            "hi": "लाख उद्योग",
+            "hinglish": "Laakh udyog"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these [Q52 English repeat from page",
+            "hi": "इनमें से सभी [Q52 English repeat from page",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q000947",
+      "topicId": null,
+      "questionText": {
+        "en": "In which year did the 'Chipko Movement' start in Uttarakhand ?",
+        "hi": "उत्तराखण्ड में 'चिपको आंदोलन' किस वर्ष में आरंभ हुआ था ?",
+        "hinglish": "Uttarakhand mein 'Chipko Andolan' kis varsh mein aarambh hua tha?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1971",
+            "hi": "1971",
+            "hinglish": "1971"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "1973",
+            "hi": "1973",
+            "hinglish": "1973"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "1981",
+            "hi": "1981",
+            "hinglish": "1981"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "1988",
+            "hi": "1988",
+            "hinglish": "1988"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q001187",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not a natural resource?",
+        "hi": "निम्न में से कौन प्राकृतिक संसाधन नहीं है ?",
+        "hinglish": "Nimn mein se kaun prakritik sansadhan nahi hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "air",
+            "hi": "वायु",
+            "hinglish": "Vayu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "soil",
+            "hi": "मृदा",
+            "hinglish": "Mrida"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "water",
+            "hi": "जल",
+            "hinglish": "Jal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "organism",
+            "hi": "जीवधारी",
+            "hinglish": "Jeevdhari"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch06-q001330",
+      "topicId": null,
+      "questionText": {
+        "en": "The main aim of Chipko movement was to",
+        "hi": "चिपको आंदोलन का मुख्य उद्देश्य था",
+        "hinglish": "Chipko aandolan ka mukhya uddeshya tha"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Conserve soil",
+            "hi": "मिट्टी को संरक्षित करना",
+            "hinglish": "Mitti ko sanrakshit karna"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Trees",
+            "hi": "पेड़",
+            "hinglish": "Ped"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "electricity Ans: Trees",
+            "hi": "बिजली",
+            "hinglish": "Bijli"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    }
+  ]
+}

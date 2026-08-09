@@ -1,0 +1,2552 @@
+{
+  "subjectId": "science",
+  "sectionId": "physics",
+  "chapterId": "science.physics.chapter-03",
+  "chapterTitle": "Electricity",
+  "questions": [
+    {
+      "seedKey": "sci-phy-ch03-q000036",
+      "topicId": null,
+      "questionText": {
+        "en": "The instrument used to measure the potential difference is called",
+        "hi": "विभवान्तर मापने वाले यंत्र को कहा जाता है",
+        "hinglish": "Vibhavantaar maapne wale yantra ko kaha jaata hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "ammeter",
+            "hi": "आमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "voltmeter",
+            "hi": "वोल्टमीटर",
+            "hinglish": "Voltmeter"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "galvanometer",
+            "hi": "गैल्वनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000037",
+      "topicId": null,
+      "questionText": {
+        "en": "Ammeter is connected in an electric circuit",
+        "hi": "आमीटर को विद्युत परिपथ में कैसे जोड़ा जाता है ?",
+        "hinglish": "Ammeter ko vidyut paripath mein kaise joda jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "in series",
+            "hi": "श्रेणीक्रम",
+            "hinglish": "Shrenikram"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "in parallel",
+            "hi": "पार्श्वबद्ध",
+            "hinglish": "Parshvabaddh"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "both (a) and (b)",
+            "hi": "(a) और (b) दोनों",
+            "hinglish": "(a) aur (b) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000038",
+      "topicId": null,
+      "questionText": {
+        "en": "The S.I. unit of electric current is",
+        "hi": "विद्युत धारा का S.I. मात्रक है",
+        "hinglish": "Vidyut dhara ka S.I. maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "coulomb",
+            "hi": "कुलॉम",
+            "hinglish": "Coulomb"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "watt",
+            "hi": "वाट",
+            "hinglish": "Watt"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "ampere",
+            "hi": "एम्पियर",
+            "hinglish": "Ampere"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000078",
+      "topicId": null,
+      "questionText": {
+        "en": "There are 20 divisions between 0V and 1V on the scale of a voltmeter. The least count of the voltmeter is",
+        "hi": "किसी वोल्टमीटर के स्केल पर 0V और 1V के बीच 20 विभाजन चिन्ह हैं, तो उस वोल्टमीटर का अल्प मापांक (Least count) है –",
+        "hinglish": "Kisi voltmeter ke scale par 0V aur 1V ke beech 20 vibhajan chinh hain, to us voltmeter ka alpa maapank hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "0.5V",
+            "hi": "0.5V",
+            "hinglish": "0.5V"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "0.05V",
+            "hi": "0.05V",
+            "hinglish": "0.05V"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "0.005V",
+            "hi": "0.005V",
+            "hinglish": "0.005V"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "0.0005V",
+            "hi": "0.0005V",
+            "hinglish": "0.0005V"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000079",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is one micro ampere of electric current?",
+        "hi": "एक माइक्रो एम्पीयर विद्युत धारा निम्नलिखित में कौन सी है?",
+        "hinglish": "Ek micro ampere vidyut dhara nimnalikhit mein kaun si hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "10⁻⁴A",
+            "hi": "10⁻⁴A",
+            "hinglish": "10⁻⁴A"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "10⁻⁵A",
+            "hi": "10⁻⁵A",
+            "hinglish": "10⁻⁵A"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "10⁻⁶A",
+            "hi": "10⁻⁶A",
+            "hinglish": "10⁻⁶A"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "10⁻⁷A",
+            "hi": "10⁻⁷A",
+            "hinglish": "10⁻⁷A"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000142",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the SI unit of electric potential energy?",
+        "hi": "निम्नलिखित में से कौन सा विद्युत संभावित ऊर्जा की SI इकाई है?",
+        "hinglish": "Nimnalikhit mein se kaun sa vidyut sambhavit urja ki SI ikai hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ohm",
+            "hi": "ओम",
+            "hinglish": "Ohm"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Volte per Columb",
+            "hi": "वोल्ट प्रति कूलम्ब",
+            "hinglish": "Volt prati Coulomb"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Ampere Ans: volt",
+            "hi": "एम्पीयर उत्तर: वोल्ट",
+            "hinglish": "Ampere Uttar: volt"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000199",
+      "topicId": null,
+      "questionText": {
+        "en": "Which relation of the following is true?",
+        "hi": "निम्नलिखित में से कौन सा संबंध सत्य है?",
+        "hinglish": "Nimnalikhit mein se kaun sa sambandh satya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "V = I/R",
+            "hi": "V = I/R",
+            "hinglish": "V = I/R"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "V = R/I",
+            "hi": "V = R/I",
+            "hinglish": "V = R/I"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "V = IR",
+            "hi": "V = IR",
+            "hinglish": "V = IR"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "V = IR²",
+            "hi": "V = IR² Which relation of the following is true? (A) V = I/R (B) V = R/I (C) V = IR (D) V = IR²",
+            "hinglish": "V = IR² Inme se kaun sa sambandh sahi hai? (A) V = I/R (B) V = R/I (C) V = IR (D) V = IR²"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000233",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is measured by ammeter?",
+        "hi": "आमीटर से निम्नलिखित में किसे मापा जाता है?",
+        "hinglish": "Ammeter se nimnalikhit mein kise maapa jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Current",
+            "hi": "धारा",
+            "hinglish": "Dhara"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Charge",
+            "hi": "आवेश",
+            "hinglish": "Aavesh"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Potential",
+            "hi": "विभव",
+            "hinglish": "Vibhav"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Electric power",
+            "hi": "विद्युत शक्ति",
+            "hinglish": "Vidyut shakti"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000272",
+      "topicId": null,
+      "questionText": {
+        "en": "S.I. unit of potential difference is",
+        "hi": "विभवान्तर का S.I. मात्रक होता है",
+        "hinglish": "Vibhavantaar ka S.I. maatrak hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "coulomb",
+            "hi": "कूलम्ब",
+            "hinglish": "Coulomb"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "ampere",
+            "hi": "एम्पियर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "ohm",
+            "hi": "ओम",
+            "hinglish": "Ohm"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000312",
+      "topicId": null,
+      "questionText": {
+        "en": "The S.I. unit of the electrical resistivity is",
+        "hi": "वैद्युत प्रतिरोधकता का S.I. मात्रक है",
+        "hinglish": "Vaidyut pratirodhakta ka S.I. maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "ohm",
+            "hi": "ओम",
+            "hinglish": "Ohm"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "ohm/metre",
+            "hi": "ओम/मीटर",
+            "hinglish": "Om/meetar"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "volt/metre",
+            "hi": "वोल्ट/मीटर",
+            "hinglish": "Volt/meetar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "ohm-metre",
+            "hi": "ओम-मीटर",
+            "hinglish": "Om-meetar"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000394",
+      "topicId": null,
+      "questionText": {
+        "en": "The S.I. unit of Potential difference is",
+        "hi": "विभवान्तर का S.I. मात्रक होता है :",
+        "hinglish": "Vibhavantaar ka S.I. maatrak hota hai:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ohm",
+            "hi": "ओम",
+            "hinglish": "Ohm"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ampere",
+            "hi": "एम्पीयर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Coulomb",
+            "hi": "कूलम्ब",
+            "hinglish": "Koolamb"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000395",
+      "topicId": null,
+      "questionText": {
+        "en": "In which of the following combination the value of resistance increases?",
+        "hi": "निम्नलिखित में किस संयोजन द्वारा प्रतिरोध का मान बढ़ता है ?",
+        "hinglish": "Nimnalikhit mein kis sanyojan dwara pratirodh ka maan badhta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Series",
+            "hi": "श्रेणी क्रम",
+            "hinglish": "Shreni kram"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Parallel",
+            "hi": "समानान्तर क्रम",
+            "hinglish": "Samaanantar kram"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both series and parallel",
+            "hi": "श्रेणी एवं समानान्तर दोनों",
+            "hinglish": "Shreni evam samaanantar dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000397",
+      "topicId": null,
+      "questionText": {
+        "en": "1 Kilowatt-hour is equal to",
+        "hi": "1 किलोवाट-घंटा किसके बराबर होता है ?",
+        "hinglish": "1 Kilowatt-ghanta kis ke barabar hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "0.36 x 10^10 Joule",
+            "hi": "0.36 x 10^10 जूल",
+            "hinglish": "0.36 x 10^10 Jool"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "1.6 x 10^-19 Joule",
+            "hi": "1.6 x 10^-19 जूल",
+            "hinglish": "1.6 x 10^-19 Jool"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3.6 x 10^6 Joule",
+            "hi": "3.6 x 10^6 जूल",
+            "hinglish": "3.6 x 10^6 Jool"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000402",
+      "topicId": null,
+      "questionText": {
+        "en": "1 HP is equal to",
+        "hi": "1 HP बराबर है",
+        "hinglish": "1 HP barabar hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "746 Watt",
+            "hi": "746 वाट",
+            "hinglish": "746 Watt"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "760 Watt 1 HP is equal to - A. 746 watt B. 760 watt",
+            "hi": "760 वाट",
+            "hinglish": "760 Watt 1 HP barabar hai - A. 746 watt B. 760 watt"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "780 watt",
+            "hi": "780 वाट",
+            "hinglish": "780 Watt"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "550 watt",
+            "hi": "550 वाट",
+            "hinglish": "550 Watt"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000404",
+      "topicId": null,
+      "questionText": {
+        "en": "When electric current flows through a conducting wire then moving Particle is ?",
+        "hi": "जब किसी चालक तार से विद्युत-धारा प्रवाहित होती है तो गतिशील कण हैं ?",
+        "hinglish": "Jab kisi chalaak taar se vidyut dhara pravahit hoti hai to gatisheel karn hain ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Atom",
+            "hi": "परमाणु",
+            "hinglish": "Parmanu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "ion",
+            "hi": "आयन",
+            "hinglish": "Ayan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Proton",
+            "hi": "प्रोटॉन",
+            "hinglish": "Proton"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Electron",
+            "hi": "इलेक्ट्रॉन",
+            "hinglish": "Electron"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000405",
+      "topicId": null,
+      "questionText": {
+        "en": "Ampere-hour is the unit of",
+        "hi": "ऐम्पियर-घंटा मात्रक है",
+        "hinglish": "Ampere-hour maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Power",
+            "hi": "शक्ति का",
+            "hinglish": "Shakti ka"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Charge ampere-hour is unit of - A. Power B. Charge",
+            "hi": "आवेश का",
+            "hinglish": "Aavesh ka"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Energy",
+            "hi": "ऊर्जा का",
+            "hinglish": "Urja ka"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000406",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following unit is equal to Watt ?",
+        "hi": "निम्नलिखित में कौन सा मात्रक वाट (W) के बराबर है ?",
+        "hinglish": "Nimnalikhit mein kaun sa maatrak Watt (W) ke barabar hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "J/S",
+            "hi": "J/S",
+            "hinglish": "J/S"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "J.S",
+            "hi": "J.S",
+            "hinglish": "J.S"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "S/J",
+            "hi": "S/J",
+            "hinglish": "S/J"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000407",
+      "topicId": null,
+      "questionText": {
+        "en": "The unit of electrical current is",
+        "hi": "विद्युत धारा का मात्रक है",
+        "hinglish": "Vidyut dhara ka maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Ampere",
+            "hi": "ऐम्पियर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ohm",
+            "hi": "ओम",
+            "hinglish": "Ohm"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Watt",
+            "hi": "वाट",
+            "hinglish": "Watt"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000524",
+      "topicId": null,
+      "questionText": {
+        "en": "The S.I. unit of energy is",
+        "hi": "ऊर्जा का S.I. मात्रक है",
+        "hinglish": "Urja ka S.I. maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Joule",
+            "hi": "जूल",
+            "hinglish": "Joule"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Joule/Sec",
+            "hi": "जूल/से0",
+            "hinglish": "Joule/Sec"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Joule/Sec2",
+            "hi": "जूल/से0²",
+            "hinglish": "Joule/Sec2"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000637",
+      "topicId": null,
+      "questionText": {
+        "en": "To increase the value of the resistance, resistors should be connected in",
+        "hi": "प्रतिरोध का मान बढ़ाने के लिए प्रतिरोधकों को जोड़ा जाना चाहिए",
+        "hinglish": "Pratirodh ka maan badhane ke liye pratirodhakon ko joda jana chahiye"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "series",
+            "hi": "पार्श्वक्रम में",
+            "hinglish": "Parshvakram mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "parallel",
+            "hi": "समानांतर क्रम में",
+            "hinglish": "Samanantar kram mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "both (A) and (B)",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000638",
+      "topicId": null,
+      "questionText": {
+        "en": "Which instrument does not have a positive (+) and a negative (-) sign?",
+        "hi": "किस उपकरण में धन (+) और ऋण (-) का चिह्न नहीं होता है ?",
+        "hinglish": "Kis upkaran mein dhan (+) aur rin (-) ka chihn nahi hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "In voltmeter",
+            "hi": "वोल्टमीटर में",
+            "hinglish": "V voltmeter mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "In ammeter",
+            "hi": "एमीटर में",
+            "hinglish": "A ammeter mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "In electric cell",
+            "hi": "विद्युत सेल में",
+            "hinglish": "Vidyut cell mein"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "In coil",
+            "hi": "कुंडली में",
+            "hinglish": "Kundali mein"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000640",
+      "topicId": null,
+      "questionText": {
+        "en": "The SI unit of magnetic flux is",
+        "hi": "चुम्बकीय फ्लक्स का S.I. मात्रक है",
+        "hinglish": "Chumbakiya flux ka S.I. maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "watt",
+            "hi": "वाट",
+            "hinglish": "Watt"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "joule",
+            "hi": "जूल",
+            "hinglish": "Joule"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "weber",
+            "hi": "वेबर",
+            "hinglish": "Weber"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "newton",
+            "hi": "न्यूटन",
+            "hinglish": "Newton"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000641",
+      "topicId": null,
+      "questionText": {
+        "en": "There are 20 divisions between the zero (0) and 2A number of an ammeter. What is the least count of the ammeter?",
+        "hi": "एक ऐमीटर के शून्य (0) तथा 2A अंकों के बीच 20 विभाग हैं। ऐमीटर का अल्पतमांक (least count) क्या है ?",
+        "hinglish": "Ek ammeter ke shoonya (0) tatha 2A ankon ke beech 20 vibhag hain. Ammeter ka alptamaank kya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "0.01 A",
+            "hi": "0.01 A",
+            "hinglish": "0.01 A"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "0.1 A",
+            "hi": "0.1 A",
+            "hinglish": "0.1 A"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "0.001 A",
+            "hi": "0.001 A",
+            "hinglish": "0.001 A"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "2 A",
+            "hi": "2 A",
+            "hinglish": "2 A"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000642",
+      "topicId": null,
+      "questionText": {
+        "en": "If several resistances are parallel, their equivalent resistance will be",
+        "hi": "यदि कई प्रतिरोध समानांतर हों, तो उनका समतुल्य प्रतिरोध होगा",
+        "hinglish": "Yadi kai pratirodh samaantar hon, to unka samatulya pratirodh hoga"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "more than each resistance",
+            "hi": "प्रत्येक प्रतिरोध से अधिक",
+            "hinglish": "Pratyek pratirodh se adhik"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "less than each resistance",
+            "hi": "प्रत्येक प्रतिरोध से कम",
+            "hinglish": "Pratyek pratirodh se kam"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "equal to each resistance",
+            "hi": "प्रत्येक प्रतिरोध के बराबर",
+            "hinglish": "Pratyek pratirodh ke barabar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000691",
+      "topicId": null,
+      "questionText": {
+        "en": "The SI unit of resistance is",
+        "hi": "प्रतिरोध का SI मात्रक होता है",
+        "hinglish": "Pratirodh ka SI maatrak hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "ampere",
+            "hi": "ऐम्पियर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "watt",
+            "hi": "वाट",
+            "hinglish": "Watt"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "ohm",
+            "hi": "ओम",
+            "hinglish": "Ohm"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000700",
+      "topicId": null,
+      "questionText": {
+        "en": "Kilowatt-hour (kWh) is the unit of",
+        "hi": "किलोवाट-घंटा (kWh) मात्रक है",
+        "hinglish": "Kilowatt-ghanta (kWh) maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "energy",
+            "hi": "ऊर्जा का",
+            "hinglish": "Urja ka"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "time",
+            "hi": "समय का",
+            "hinglish": "Samay ka"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "mass",
+            "hi": "द्रव्यमान का",
+            "hinglish": "Dravyamaan ka"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "power",
+            "hi": "शक्ति का",
+            "hinglish": "shakti ka"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000726",
+      "topicId": null,
+      "questionText": {
+        "en": "A resistor of power P1 at voltage of V1 is connected in series with another resistor of power P2 at voltage V2. The equivalent resistance will be",
+        "hi": "वोल्टता V1 पर शक्ति P1 का एक प्रतिरोधक, वोल्टता V2 पर शक्ति P2 के प्रतिरोधक से श्रेणी में जुड़ा है। समतुल्य प्रतिरोध होगा",
+        "hinglish": "Volta V1 par shakti P1 ka ek pratirodhak, volta V2 par shakti P2 ke pratirodhak se shreni mein juda hai. Samtulya pratirodh hoga"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "V1²/P1 + V2²/P2",
+            "hi": "V1²/P1 + V2²/P2",
+            "hinglish": "V1²/P1 + V2²/P2"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "P1²/V1 + P2²/V2",
+            "hi": "P1²/V1 + P2²/V2",
+            "hinglish": "P1²/V1 + P2²/V2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "(P1+P2)/(V1+V2)²",
+            "hi": "(P1+P2)/(V1+V2)²",
+            "hinglish": "(P1+P2)/(V1+V2)²"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "P1/V1² + P2/V2²",
+            "hi": "P1/V1² + P2/V2²",
+            "hinglish": "P1/V1² + P2/V2²"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000799",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following units is equal to Watt(W)?",
+        "hi": "निम्नलिखित में कौन-सा मात्रक वाट(W) के बराबर होता है?",
+        "hinglish": "Nimnalikhit mein kaun-sa maatrak Watt(W) ke barabar hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "J/sec²",
+            "hi": "J/sec²",
+            "hinglish": "J/sec²"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "J/sec ... 14.",
+            "hi": "J/sec ... 14.",
+            "hinglish": "J/sec ... 14."
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "J⁻¹S⁻¹",
+            "hi": "J⁻¹S⁻¹",
+            "hinglish": "J⁻¹S⁻¹"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "J⁻²S⁻²",
+            "hi": "J⁻²S⁻²",
+            "hinglish": "J⁻²S⁻²"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000800",
+      "topicId": null,
+      "questionText": {
+        "en": "1 kilowatt-hour is equal to",
+        "hi": "1 किलोवाट-घंटा बराबर होता है",
+        "hinglish": "1 kilowatt-ghanta barabar hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "100 unit",
+            "hi": "100 यूनिट",
+            "hinglish": "100 unit"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "10 unit",
+            "hi": "10 यूनिट",
+            "hinglish": "10 unit"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "1 unit",
+            "hi": "1 यूनिट",
+            "hinglish": "1 unit"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000801",
+      "topicId": null,
+      "questionText": {
+        "en": "The SI unit of electric power is",
+        "hi": "विधुत शक्ति का SI मात्रक है",
+        "hinglish": "Vidyut shakti ka SI maatrak hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Watt",
+            "hi": "वाट",
+            "hinglish": "Watt"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Joule",
+            "hi": "जूल",
+            "hinglish": "Joule"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Newton",
+            "hi": "न्यूटन",
+            "hinglish": "Newton"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000802",
+      "topicId": null,
+      "questionText": {
+        "en": "1 KWh is equal to",
+        "hi": "1 kWh बराबर है",
+        "hinglish": "1 kWh barabar hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "36 J",
+            "hi": "36 J",
+            "hinglish": "36 J"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "36×10⁶ J",
+            "hi": "36×10⁶ J",
+            "hinglish": "36×10⁶ J"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3.6×10⁶ J",
+            "hi": "3.6×10⁶ J",
+            "hinglish": "3.6×10⁶ J"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "3600 J",
+            "hi": "3600 J",
+            "hinglish": "\"Daaen haath ke anguthe\" ke niyam ko kisne pratipadit kiya tha?"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000804",
+      "topicId": null,
+      "questionText": {
+        "en": "On which principle of electric current does an electric fuse work?",
+        "hi": "विधुत फ्युज विधुत धारा के किस सिद्धांत पर कार्य करता है?",
+        "hinglish": "Vidyut fyooj vidyut dhara ke kis siddhant par karya karta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Magnetic",
+            "hi": "चुम्बकीय",
+            "hinglish": "Chumbakiya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Chemical",
+            "hi": "रासायनिक",
+            "hinglish": "Rasayanik"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Thermal",
+            "hi": "उष्मीय",
+            "hinglish": "Ushmiy"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000805",
+      "topicId": null,
+      "questionText": {
+        "en": "1 mA is equal to",
+        "hi": "1 mA बराबर है",
+        "hinglish": "1 mA barabar hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "10⁻¹ A",
+            "hi": "10⁻¹ A",
+            "hinglish": "10⁻¹ A"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "10⁻² A",
+            "hi": "10⁻² A",
+            "hinglish": "10⁻² A"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "10⁻³ A",
+            "hi": "10⁻³ A",
+            "hinglish": "10⁻³ A"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "10⁻⁶ A",
+            "hi": "10⁻⁶ A",
+            "hinglish": "10⁻⁶ A"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000806",
+      "topicId": null,
+      "questionText": {
+        "en": "To increase the value of resistance, resistors should be connected in",
+        "hi": "प्रतिरोध का मान बढाने के लिए प्रतिरोधकों को जोड़ा जाना चाहिए",
+        "hinglish": "Pratirodh ka maan badhane ke liye pratirodhakon ko joda jana chahiye"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Series",
+            "hi": "श्रेणीक्रम में",
+            "hinglish": "Shrinikram mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Parallel",
+            "hi": "पार्श्वक्रम में",
+            "hinglish": "Parshvakram mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) और (B) दोनो",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these 21. (A) Series (B) Parallel (C) Both (A) and (B) (D) None of these",
+            "hi": "इनमें से कोई नही 21. (A) श्रेणीक्रम में (B) पार्श्वक्रम में (C) (A) और (B) दोनो (D) इनमें से कोई नही",
+            "hinglish": "Inmein se koi nahi 21. (A) Shrenikram mein (B) Parshvakram mein (C) (A) aur (B) dono (D) Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000807",
+      "topicId": null,
+      "questionText": {
+        "en": "Which material is used for making the coil of an electric heater?",
+        "hi": "इलेक्ट्रिक हीटर की कुंडली बनाने में किस पदार्थ का प्रयोग किया जाता है?",
+        "hinglish": "Electric heater ki kundli banane mein kis padarth ka prayog kiya jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Iron",
+            "hi": "लोहा",
+            "hinglish": "Loha"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Silver",
+            "hi": "चाँदी",
+            "hinglish": "Chandi"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Nichrome",
+            "hi": "नाइक्रोम",
+            "hinglish": "Nikhrom"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Copper",
+            "hi": "ताँबा",
+            "hinglish": "Taanba"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000910",
+      "topicId": null,
+      "questionText": {
+        "en": "On which effect of electric current does the electric fuse work?",
+        "hi": "विद्युत फ्यूज विद्युत धारा के किस प्रभाव पर कार्य करता है ?",
+        "hinglish": "Vidyut fuse vidyut dhara ke kis prabhav par karya karta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Magnetic",
+            "hi": "चुम्बकीय",
+            "hinglish": "Chumbakiya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Thermal",
+            "hi": "ऊष्मीय",
+            "hinglish": "Ushmiy"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Chemical",
+            "hi": "रासायनिक",
+            "hinglish": "Rasayanik"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000911",
+      "topicId": null,
+      "questionText": {
+        "en": "Which instrument does not have positive (+) and negative (-) signs? [English options continue on page 8",
+        "hi": "किस उपकरण में धन (+) और ऋण (–) का चिन्ह नहीं होता है ?",
+        "hinglish": "Kis upkaran mein dhan (+) aur rnan (–) ka chinh nahi hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Ammeter",
+            "hi": "ऐमीटर में",
+            "hinglish": "Ammeter mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Voltmeter",
+            "hi": "वोल्टमीटर में",
+            "hinglish": "Voltmeter mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Coil",
+            "hi": "कुंडली में",
+            "hinglish": "Kundali mein"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Electric cell] (A) Ammeter (B) Voltmeter (C) Coil (D) Electric cell",
+            "hi": "विद्युत सेल में [Q17 English continuation from page",
+            "hinglish": "Vidyut sel mein"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000912",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following unit is equal to Watt (W)?",
+        "hi": "निम्नलिखित में कौन सा मात्रक वाट (W) के बराबर होता है ?",
+        "hinglish": "Nimnalikhit mein kaun sa maatrak Watt (W) ke barabar hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "J/S",
+            "hi": "J/S",
+            "hinglish": "J/S"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "J/Sec²",
+            "hi": "J/Sec²",
+            "hinglish": "J/Sec²"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "J⁻¹S⁻¹",
+            "hi": "J⁻¹S⁻¹",
+            "hinglish": "J⁻¹S⁻¹"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "J⁻²S⁻²",
+            "hi": "J⁻²S⁻²",
+            "hinglish": "J⁻²S⁻²"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q000913",
+      "topicId": null,
+      "questionText": {
+        "en": "The coil of wire of an electric heater is made of.",
+        "hi": "विद्युत हीटर के तार की कुंडली बनी होती है –",
+        "hinglish": "Vidyut heater ke taar ki kundali bani hoti hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Copper",
+            "hi": "ताँबा की",
+            "hinglish": "Taanba ki"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Zinc",
+            "hi": "जस्ता की",
+            "hinglish": "Jasta ki"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Tungsten",
+            "hi": "टंगस्टन की",
+            "hinglish": "Tangstan ki"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Nichrome",
+            "hi": "नाइक्रोम की",
+            "hinglish": "Naikrom ki"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001169",
+      "topicId": null,
+      "questionText": {
+        "en": "On which principle of electric current does an electric fuse operate?",
+        "hi": "विद्युत फ्यूज विद्युत धारा के किस सिद्धान्त पर कार्य करता है ?",
+        "hinglish": "Vidyut fuse vidyut dhara ke kis siddhant par kary karta hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Thermal",
+            "hi": "ऊष्मीय",
+            "hinglish": "Ushmiy"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Magnetic",
+            "hi": "चुम्बकीय",
+            "hinglish": "Chumbakiya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Chemical",
+            "hi": "रासायनिक",
+            "hinglish": "Rasayanik"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001170",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the formula for determining the resistance of a coil?",
+        "hi": "किस कुण्डली का प्रतिरोध ज्ञात करने का सूत्र है",
+        "hinglish": "Kis kundali ka pratirodh gyaat karne ka sutra hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "R = V × I",
+            "hi": "R = V × I",
+            "hinglish": "R = V × I"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "R = V/I",
+            "hi": "R = V/I",
+            "hinglish": "R = V/I"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "R = I/V",
+            "hi": "R = I/V",
+            "hinglish": "R = I/V"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "R = V - I",
+            "hi": "R = V - I",
+            "hinglish": "R = V - I"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001173",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the S.I. unit of potential difference?",
+        "hi": "विभवान्तर का S.I. मात्रक क्या है ?",
+        "hinglish": "Vibhavantaar ka S.I. maatrak kya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Volt",
+            "hi": "वोल्ट",
+            "hinglish": "Volt"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ampere",
+            "hi": "एम्पियर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Coulomb",
+            "hi": "कुलॉम",
+            "hinglish": "Coulomb"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Watt",
+            "hi": "वाट",
+            "hinglish": "Watt"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001175",
+      "topicId": null,
+      "questionText": {
+        "en": "1 volt is called",
+        "hi": "1 वोल्ट कहलाता है",
+        "hinglish": "1 volt kaha jaata hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1 joule/second",
+            "hi": "1 जूल/सेकण्ड",
+            "hinglish": "1 joule/second"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "1 Joule/Coulomb",
+            "hi": "1 जूल/कुलॉम",
+            "hinglish": "1 Joule/Coulomb"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "1 Joule/Ampere",
+            "hi": "1 जूल/एम्पियर",
+            "hinglish": "1 Joule/Ampere"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001215",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the instrument used to measure potential difference called?",
+        "hi": "विभवान्तर मापने वाले यंत्र को कहा जाता है ?",
+        "hinglish": "Vibhavantaar maapne wale yantra ko kya kaha jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "ammeter",
+            "hi": "आमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "voltmeter",
+            "hi": "वोल्टमीटर",
+            "hinglish": "Voltmeter"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "galvanometer",
+            "hi": "गैल्वनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001216",
+      "topicId": null,
+      "questionText": {
+        "en": "How is the ammeter connected in the electric circuit?",
+        "hi": "आमीटर को विद्युत परिपथ में कैसे जोड़ा जाता है ?",
+        "hinglish": "Ammeter ko vidyut paripath mein kaise joda jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "series",
+            "hi": "श्रेणीक्रम",
+            "hinglish": "Shrankram"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "lateral",
+            "hi": "पार्श्वबद्ध",
+            "hinglish": "Parshvbandh"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Both (a) and (b)",
+            "hi": "(a) और (b) दोनों",
+            "hinglish": "(a) aur (b) dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001241",
+      "topicId": null,
+      "questionText": {
+        "en": "The S.I. unit of energy is:",
+        "hi": "ऊर्जा का S.I. मात्रक होता है :",
+        "hinglish": "Urja ka S.I. maatrak hota hai :"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "calorie",
+            "hi": "कैलोरी",
+            "hinglish": "Calorie"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "joule",
+            "hi": "जूल",
+            "hinglish": "Joule"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "temperature",
+            "hi": "ताप",
+            "hinglish": "Taap"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001245",
+      "topicId": null,
+      "questionText": {
+        "en": "Resistance of a conductor with increase in temperature:",
+        "hi": "ताप बढ़ने से चालक का प्रतिरोध :",
+        "hinglish": "Taap badhne se chalaak ka pratirodh:"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "increases",
+            "hi": "बढ़ता है",
+            "hinglish": "badhata hai"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "decreases",
+            "hi": "घटता है",
+            "hinglish": "ghatata hai"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "does not increase or decrease",
+            "hi": "बढ़ता-घटता नहीं है",
+            "hinglish": "Badhata-ghatata nahi hai"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2017
+      ]
+    },
+    {
+      "seedKey": "sci-phy-ch03-q001338",
+      "topicId": null,
+      "questionText": {
+        "en": "The resistance of a conductor does not depend on",
+        "hi": "चालक का प्रतिरोध निर्भर नही करता है",
+        "hinglish": "Chalak ka pratirodh nirbhar nahi karta hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "length of a conductor",
+            "hi": "चालक की लम्बाई पर",
+            "hinglish": "Chalak ki lambai par"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "cross sectional area of a conductor",
+            "hi": "चालक के अनुप्रस्थ काट क्षेत्रफल पर",
+            "hinglish": "Chalak ke anuprast kaat kshetrafal par"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Temperature of a conductor",
+            "hi": "चालक के तापमान पर",
+            "hinglish": "Chalak ke taapmaan par"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Electric current flowing through conductor",
+            "hi": "चालक में प्रवाहित विद्युत धारा पर",
+            "hinglish": "Chalak mein pravahit vidyut dhara par"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    }
+  ]
+}

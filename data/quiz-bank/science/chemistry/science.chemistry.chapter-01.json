@@ -1,0 +1,1281 @@
+{
+  "subjectId": "science",
+  "sectionId": "chemistry",
+  "chapterId": "science.chemistry.chapter-01",
+  "chapterTitle": "Chemical Reactions and Equations",
+  "questions": [
+    {
+      "seedKey": "sci-chem-ch01-q000040",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of reaction is CuO + H2 -> Cu + H2O ?",
+        "hi": "CuO + H2 -> Cu + H2O किस प्रकार की अभिक्रिया है ?",
+        "hinglish": "CuO + H2 -> Cu + H2O kis prakar ki abhikriya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Oxidation",
+            "hi": "उपचयन",
+            "hinglish": "Upchayan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Reduction",
+            "hi": "अपचयन",
+            "hinglish": "Apchayan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Neutralisation",
+            "hi": "उदासीनीकरण",
+            "hinglish": "Udasinikan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Redox",
+            "hi": "रेडॉक्स",
+            "hinglish": "Redox"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000086",
+      "topicId": null,
+      "questionText": {
+        "en": "Zn + CuSO₄ → ZnSO₄ + Cu The above reaction is an example of a",
+        "hi": "Zn + CuSO₄ → ZnSO₄ + Cu उपर दी गयी रासायनिक अभिक्रिया किस प्रकार की है?",
+        "hinglish": "Zn + CuSO₄ → ZnSO₄ + Cu upar di gayi rasayanik abhikriya kis prakar ki hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Combination reaction",
+            "hi": "संयोजन अभिक्रिया",
+            "hinglish": "Sanyojan abhikraya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "displacement reaction",
+            "hi": "विस्थापन अभिक्रिया",
+            "hinglish": "Visthapan abhikraya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Double displacement reaction",
+            "hi": "द्विविस्थापन अभिक्रिया",
+            "hinglish": "Dvivisthapan abhikraya"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "decomposition reaction",
+            "hi": "वियोजन अभिक्रिया",
+            "hinglish": "Viyojan abhikraya"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000096",
+      "topicId": null,
+      "questionText": {
+        "en": "When Magnesium ribbon is ignited, the flame produced by it is",
+        "hi": "जब मैग्नेशियम फीता को जलाया जाता है, तो उत्पन्न आग की लौ होती है –",
+        "hinglish": "Jab Magnesium fita ko jalaya jaata hai, to utpann aag ki lau hoti hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीली",
+            "hinglish": "Peeli"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Blue",
+            "hi": "नीली",
+            "hinglish": "Neeli"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Dazzling white",
+            "hi": "चमकीला उजला",
+            "hinglish": "Chamkeela ujala"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000097",
+      "topicId": null,
+      "questionText": {
+        "en": "An iron nail was dipped in solution kept in a test tube. After half an hour, it was observed that colour of the solution has changed. The solution in test tube was",
+        "hi": "एक जाँच परखनली में लिए गये विलयन में एक लोहे की कील को डुबाया गया। आधे घंटे के बाद यह देखा गया कि विलयन का रंग परिवर्तित हो चुका है। उस जाँच परखनली में विलयन था –",
+        "hinglish": "Ek jaanch parakhanli mein liye gaye vilayan mein ek lohe ki keel ko dubaya gaya. Aadha ghante ke baad yeh dekha gaya ki vilayan ka rang parivartit ho chuka hai. Us jaanch parakhanli mein vilayan tha –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "ZnSO₄",
+            "hi": "ZnSO₄",
+            "hinglish": "ZnSO₄"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "CuSO₄",
+            "hi": "CuSO₄",
+            "hinglish": "CuSO₄"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "FeSO₄",
+            "hi": "FeSO₄",
+            "hinglish": "FeSO₄"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Al₂(SO₄)₃",
+            "hi": "Al₂(SO₄)₃",
+            "hinglish": "Al₂(SO₄)₃"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000237",
+      "topicId": null,
+      "questionText": {
+        "en": "The substance which takes part in chemical reaction is called",
+        "hi": "रासायनिक अभिक्रिया में भाग लेने वाले पदार्थ को कहा जाता है",
+        "hinglish": "Rasayanik abhikriya mein bhaag lene wale padarth ko kaha jaata hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "reactant",
+            "hi": "अभिकारक",
+            "hinglish": "Abhikarak"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "product",
+            "hi": "उत्पाद",
+            "hinglish": "Utpaad"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "both reactant and product",
+            "hi": "अभिकारक एवं उत्पाद दोनों",
+            "hinglish": "Abhikarak aur utpaad dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000257",
+      "topicId": null,
+      "questionText": {
+        "en": "Equation 2H2 + O2 → 2H2O is a",
+        "hi": "समीकरण 2H2 + O2 → 2H2O है एक",
+        "hinglish": "Samikaran 2H2 + O2 → 2H2O hai ek"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "combination reaction",
+            "hi": "संयोजन अभिक्रिया",
+            "hinglish": "Sanyojan abhikriya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "decomposition reaction",
+            "hi": "वियोजन अभिक्रिया",
+            "hinglish": "Viyojan abhikraya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "precipitation reaction",
+            "hi": "अवक्षेप अभिक्रिया",
+            "hinglish": "Avakshep abhikriya"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "neutralisation reaction",
+            "hi": "उदासीनीकरण अभिक्रिया",
+            "hinglish": "Udaasinikaran abhikriya"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000348",
+      "topicId": null,
+      "questionText": {
+        "en": "When a substance gains oxygen during a reaction, what is it called ?",
+        "hi": "जब किसी अभिक्रिया के समय किसी पदार्थ में ऑक्सीजन की वृद्धि होती है, तो निम्नलिखित में से क्या कहा जाता है ?",
+        "hinglish": "Jab kisi abhikriya ke samay kisi padarth mein oxygen ki vriddhi hoti hai, to nimnlikhit mein se kya kaha jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Oxidation",
+            "hi": "उपचयन",
+            "hinglish": "Upchayan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Reduction",
+            "hi": "अपचयन",
+            "hinglish": "Apchayan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Corrosion",
+            "hi": "संक्षारण",
+            "hinglish": "Sankharan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these J 5012-J Page 13 of If a substance gains oxygen during a reaction, then it is known as which of the following ? (A) Oxidation (B) Reduction (C) Corrosion (D) None of these",
+            "hi": "इनमें से कोई नहीं J 5012-J Page 13 of",
+            "hinglish": "Inmein se koi nahi J 5012-J Page 13 of If a substance gains oxygen during a reaction, then it is known as which of the following ? (A) Oxidation (B) Reduction (C) Corrosion (D) None of these"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000410",
+      "topicId": null,
+      "questionText": {
+        "en": "Which type of reaction occurs when water is dropped on quick lime?",
+        "hi": "कली चूना पर जब जल डाला जाता है, तब अभिक्रिया होती है",
+        "hinglish": "Kali choona par jab jal daala jaata hai, tab abhikriya hoti hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Exothermic",
+            "hi": "उष्माक्षेपी",
+            "hinglish": "Ushmakshepi"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Endothermic",
+            "hi": "उष्माशोषी",
+            "hinglish": "Ushmashoshi"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Explosive",
+            "hi": "विस्फोटक",
+            "hinglish": "Visphotak"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000428",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not a balanced equation ?",
+        "hi": "निम्नलिखित में कौन सा समीकरण संतुलित नहीं है ?",
+        "hinglish": "Nimnalikhit mein kaun sa samikaran santulit nahi hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "H2 + Cl2 -> 2HCl",
+            "hi": "H2 + Cl2 -> 2HCl",
+            "hinglish": "H2 + Cl2 -> 2HCl"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Pb(NO3)2 -> PbO + NO2 + O2",
+            "hi": "Pb(NO3)2 -> PbO + NO2 + O2",
+            "hinglish": "Pb(NO3)2 -> PbO + NO2 + O2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "2H2 + O2 -> 2H2O",
+            "hi": "2H2 + O2 -> 2H2O",
+            "hinglish": "2H2 + O2 -> 2H2O"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "2KClO3 -> 2KCl + 3O2",
+            "hi": "2KClO3 -> 2KCl + 3O2",
+            "hinglish": "2KClO3 -> 2KCl + 3O2"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000554",
+      "topicId": null,
+      "questionText": {
+        "en": "Which gas is deposited on Cathode in the electrolysis of water?",
+        "hi": "जल के वैद्युत अपघटन में कैथोड पर कौन सी गैस मुक्त होती है ?",
+        "hinglish": "Jal ke vidyut apghatan mein cathode par kaun si gas mukt hoti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Oxygen",
+            "hi": "ऑक्सीजन",
+            "hinglish": "Oxygen"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ozone",
+            "hi": "ओजोन",
+            "hinglish": "Ozone"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Hydrogen",
+            "hi": "हाइड्रोजन",
+            "hinglish": "Hydrogen"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000610",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the chemical formula of dry ice?",
+        "hi": "शुष्क बर्फ का रासायनिक सूत्र क्या है ?",
+        "hinglish": "Shushk baraf ka rasayanik sutra kya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "CO",
+            "hi": "CO",
+            "hinglish": "CO"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "H2O",
+            "hi": "H2O",
+            "hinglish": "H2O"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "H2O2",
+            "hi": "H2O2",
+            "hinglish": "H2O2"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000619",
+      "topicId": null,
+      "questionText": {
+        "en": "The reaction in which ions are exchanged is called",
+        "hi": "अभिक्रिया, जिसमें आयनों का आदान-प्रदान होता है, कहलाती है",
+        "hinglish": "Abhikriya, jismein aaynon ka aadaan-pradaan hota hai, kehlati hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "displacement",
+            "hi": "विस्थापन",
+            "hinglish": "Visthapan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "double displacement",
+            "hi": "द्विविस्थापन",
+            "hinglish": "Dvivisthapan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "combination",
+            "hi": "संयोजन",
+            "hinglish": "Sanyojan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "precipitation",
+            "hi": "अवक्षेपण",
+            "hinglish": "Avakshepan"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000620",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following equations is not balanced?",
+        "hi": "निम्नलिखित में से कौन समीकरण संतुलित नहीं है ?",
+        "hinglish": "Nimnalikhit mein se kaun samikaran santulit nahi hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "2H2+O2→2H2O",
+            "hi": "2H2+O2→2H2O",
+            "hinglish": "2H2+O2→2H2O"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2KClO3→2Kcl+3O2",
+            "hi": "2KClO3→2KCl+3O2",
+            "hinglish": "2KClO3→2KCl+3O2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "H2+Cl2→2HCl",
+            "hi": "H2+Cl2→2HCl",
+            "hinglish": "H2+Cl2→2HCl"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Pb(NO3)2→PbO+NO2+O2",
+            "hi": "Pb(NO3)2→PbO+NO2+O2",
+            "hinglish": "Pb(NO3)2→PbO+NO2+O2"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023,
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000634",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following reactions occurs in the formation of curd from milk?",
+        "hi": "दूध से दही बनने में निम्नांकित में से कौन-सी अभिक्रिया होती है ?",
+        "hinglish": "Doodh se dahi banne mein nimnankit mein se kaun-si abhikriya hoti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Dissociation",
+            "hi": "अपघटन",
+            "hinglish": "Apghatan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fermentation",
+            "hi": "किण्वन",
+            "hinglish": "Kinvann"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Photosynthesis",
+            "hi": "प्रकाश संश्लेषण",
+            "hinglish": "Prakash sanshleshan"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000759",
+      "topicId": null,
+      "questionText": {
+        "en": "CaCO3(s) → CaO(s) + CO2(g) is what type of reaction?",
+        "hi": "CaCO3(s) → CaO(s) + CO2(g) किस प्रकार की अभिक्रिया है?",
+        "hinglish": "CaCO3(s) → CaO(s) + CO2(g) kis prakar ki abhikriya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Decomposition",
+            "hi": "वियोजन",
+            "hinglish": "Viyojan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Combination",
+            "hi": "संयोजन",
+            "hinglish": "Sanyojan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Displacement",
+            "hi": "विस्थापन",
+            "hinglish": "Visthapan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Double displacement",
+            "hi": "द्विविस्थापन",
+            "hinglish": "Dvivisthapan"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000760",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following equations is balanced?",
+        "hi": "निम्नांकित में कौन समीकरण संतुलित है?",
+        "hinglish": "Nimnankit mein kaun samikaran santulit hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Mg + O2 → MgO",
+            "hi": "Mg + O2 → MgO",
+            "hinglish": "Mg + O2 → MgO"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Zn + H2SO4 → ZnSO4 + H2",
+            "hi": "Zn + H2SO4 → ZnSO4 + H2",
+            "hinglish": "Zn + H2SO4 → ZnSO4 + H2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Fe + Cl2 → FeCl3",
+            "hi": "Fe + Cl2 → FeCl3",
+            "hinglish": "Fe + Cl2 → FeCl3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "H2 + Cl2 → HCl",
+            "hi": "H2 + Cl2 → HCl",
+            "hinglish": "H2 + Cl2 → HCl"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000815",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following gases is formed as a result of the reaction of Zinc and dilute hydrochloric acid?",
+        "hi": "जस्ता तथा तनु हाइड्रोक्लोरिक अम्ल की अभिक्रिया के फलस्वरूप निम्न में से कौन-सा गैस बनता है?",
+        "hinglish": "Jasta tatha tanut hydrochloric aml ki abhikriya ke phalspoorv nimn mein se kaun-sa gas banta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "N₂",
+            "hi": "N₂",
+            "hinglish": "N₂"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "H₂",
+            "hi": "H₂",
+            "hinglish": "H₂"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "SO₂",
+            "hi": "SO₂",
+            "hinglish": "SO₂"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "CO₂",
+            "hi": "CO₂",
+            "hinglish": "CO₂"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000903",
+      "topicId": null,
+      "questionText": {
+        "en": "Oily paper is",
+        "hi": "तैलीय कागज होता है –",
+        "hinglish": "Tailiy kagaz hota hai –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Transparent",
+            "hi": "पारदर्शक",
+            "hinglish": "Paradarshak"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Opaque",
+            "hi": "अपारदर्शक",
+            "hinglish": "Aparadarshak"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Translucent",
+            "hi": "पारभाषक",
+            "hinglish": "Parabhashak"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000922",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following pairs represents single displacement reaction?",
+        "hi": "निम्नलिखित में कौन–सा युग्म एकल विस्थापन अभिक्रिया प्रदर्शित करता है ?",
+        "hinglish": "Nimnalikhit mein kaun–sa yugm ekal visthapan abhikriya pradarshit karta hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "NaCl solution and Copper metal",
+            "hi": "NaCl विलयन एवं कॉपर धातु",
+            "hinglish": "NaCl vilayan evam Copper dhatu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "MgCl2 solution and Copper metal",
+            "hi": "MgCl2 विलयन एवं कॉपर धातु",
+            "hinglish": "MgCl2 vilayan evam Copper dhatu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "FeSO4 solution and silver metal",
+            "hi": "FeSO4 विलयन एवं सिल्वर धातु",
+            "hinglish": "FeSO4 vilayan evam silver dhatu"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "AgNO3 solution and Copper metal",
+            "hi": "AgNO3 विलयन एवं कॉपर धातु",
+            "hinglish": "AgNO3 vilayan evam Copper dhatu"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q000923",
+      "topicId": null,
+      "questionText": {
+        "en": "The decomposition of vegetables and their conversion into compost is an example of which reaction?",
+        "hi": "शाक–सब्जियों का विघटित होकर कंपोस्ट बनना किस अभिक्रिया का उदाहरण है ?",
+        "hinglish": "Shak–sabjiyon ka vighatit hokar compost banna kis abhikriya ka udaharan hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Endothermic",
+            "hi": "उष्माशोषी",
+            "hinglish": "Ushmashoshi"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Exothermic",
+            "hi": "उष्माक्षेपी",
+            "hinglish": "Ushmakshepi"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Replacement",
+            "hi": "प्रतिस्थापन",
+            "hinglish": "Pratisthapan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q001176",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of chemical reaction is respiration?",
+        "hi": "श्वसन किस प्रकार की रासायनिक अभिक्रिया है ?",
+        "hinglish": "Shwasan kis prakar ki rasayanik abhikriya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "substitution",
+            "hi": "उपचयन",
+            "hinglish": "Upchayan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "combination",
+            "hi": "संयोजन",
+            "hinglish": "Sanyojan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "exothermic",
+            "hi": "ऊष्माक्षेपी",
+            "hinglish": "Ushmakshepi"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "endothermic",
+            "hi": "ऊष्माशोषी",
+            "hinglish": "Ushmashoshi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q001218",
+      "topicId": null,
+      "questionText": {
+        "en": "CuO + H2 → Cu + H2O What type of reaction is this?",
+        "hi": "CuO + H2 → Cu + H2O किस प्रकार की अभिक्रिया है ?",
+        "hinglish": "CuO + H2 → Cu + H2O kis prakar ki abhikriya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "substitution",
+            "hi": "उपचयन",
+            "hinglish": "Upchayan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "selection",
+            "hi": "अपचयन",
+            "hinglish": "Apchayan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "sadness formation",
+            "hi": "उदासीनीकरण",
+            "hinglish": "Udaasinikaran"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "redox",
+            "hi": "रेडॉक्स",
+            "hinglish": "Redox"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q001332",
+      "topicId": null,
+      "questionText": {
+        "en": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) The above chemical equation is",
+        "hi": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) उपरोक्त रासायनिक समीकरण है",
+        "hinglish": "Na2 SO4 (aq) + BaCl2 → BaSO4 (S) + 2NaCl(aq) uparokt rasayanik samikaran hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Combination reaction",
+            "hi": "संयोग प्रतिक्रिया",
+            "hinglish": "Sanyog abhikriya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "decomposition reaction",
+            "hi": "विघटन प्रतिक्रिया",
+            "hinglish": "Vighatan abhikriya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "double displacement reaction",
+            "hi": "डबल विस्थापन प्रतिक्रिया",
+            "hinglish": "Double displacement abhikriya"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these Ans: double displacement reaction",
+            "hi": "इनमें से कोई नहीं उत्तर: डबल विस्थापन प्रतिक्रिया",
+            "hinglish": "Inmein se koi nahi uttar: double displacement abhikriya"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch01-q001336",
+      "topicId": null,
+      "questionText": {
+        "en": "The gain of oxygen by a substance during chemical reaction is called",
+        "hi": "रासायनिक अभिक्रिया के दौरान किसी पदार्थ में ऑक्सीजन का योग कहलाता है?",
+        "hinglish": "Rasayanik abhikriya ke dauran kisi padarth mein oxygen ka yog kaha jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Reduction",
+            "hi": "अपचयन",
+            "hinglish": "Apchayan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Oxidation",
+            "hi": "उपचयन",
+            "hinglish": "Upchayan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Corrosion",
+            "hi": "संक्षारण",
+            "hinglish": "Sankharan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    }
+  ]
+}

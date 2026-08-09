@@ -1,0 +1,1387 @@
+{
+  "subjectId": "science",
+  "sectionId": "biology",
+  "chapterId": "science.biology.chapter-05",
+  "chapterTitle": "Our Environment",
+  "questions": [
+    {
+      "seedKey": "sci-bio-ch05-q000111",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following constitutes a Food chain?",
+        "hi": "निम्न में कौन आहार श्रृंखला का निर्माण करता है?",
+        "hinglish": "Nimn mein kaun aahar shrinkhla ka nirmaan karta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Grass, wheat and mango",
+            "hi": "घास, गेहूँ तथा आम",
+            "hinglish": "Ghaas, gehuin tatha aam"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Grass, goat and human",
+            "hi": "घास, बकरी तथा मानव",
+            "hinglish": "Ghaas, bakri tatha maanav"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Goat, Cow and elephant",
+            "hi": "बकरी, गाय तथा हाथी",
+            "hinglish": "Bakri, gaay tatha haathi"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Grass, Goat and fish",
+            "hi": "घास, बकरी तथा मछली",
+            "hinglish": "Ghaas, bakri tatha machhli"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000205",
+      "topicId": null,
+      "questionText": {
+        "en": "The earth is shielded by ozone layer from which harmful radiation?",
+        "hi": "ओज़ोन परत किस हानिकारक विकिरण से पृथ्वी को सुरक्षा प्रदान करती है?",
+        "hinglish": "Ozone parat kis hanikarak vikiran se prithvi ko suraksha pradan karti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Infra-red",
+            "hi": "अवरक्त विकिरण",
+            "hinglish": "Avarakt vikiran"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Thermal",
+            "hi": "तापीय विकिरण",
+            "hinglish": "Tapiya vikiran"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ultra-violet",
+            "hi": "पराबैंगनी विकिरण",
+            "hinglish": "Parabaingani vikiran"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमे से सभी",
+            "hinglish": "Inme se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000275",
+      "topicId": null,
+      "questionText": {
+        "en": "In which direction does energy flow in an ecosystem?",
+        "hi": "पारिस्थितिकी तंत्र में ऊर्जा का प्रवाह किस दिशा में होता है?",
+        "hinglish": "Paristhitiki tantra mein urja ka pravah kis disha mein hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Unidirectional",
+            "hi": "एकदिशीय",
+            "hinglish": "Ekdishiy"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Bidirectional",
+            "hi": "द्विदिशीय",
+            "hinglish": "Dwidishiy"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Multidirectional",
+            "hi": "बहुदिशीय",
+            "hinglish": "Bahudishiy"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Non-directional",
+            "hi": "किसी भी दिशा में नहीं",
+            "hinglish": "Kisi bhi disha mein nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000276",
+      "topicId": null,
+      "questionText": {
+        "en": "The ozone layer is found",
+        "hi": "ओज़ोन परत पाया जाता है",
+        "hinglish": "Ozone parat paaya jaata hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "in the lower layer of atmosphere",
+            "hi": "वायुमंडल के निचली सतह में",
+            "hinglish": "vayumandal ke nichli satih mein"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "in the upper layer of atmosphere",
+            "hi": "वायुमंडल के ऊपरी सतह में",
+            "hinglish": "vayumandal ke oopri satih mein"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "in the middle layer of atmosphere",
+            "hi": "वायुमंडल के मध्य सतह में",
+            "hinglish": "vayumandal ke madhya satih mein"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000408",
+      "topicId": null,
+      "questionText": {
+        "en": "Which gas is responsible for Global Warming ?",
+        "hi": "ग्लोबल वार्मिंग के लिए उत्तरदायी गैस कौन है ?",
+        "hinglish": "Global warming ke liye uttaradayee gas kaun hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "NH3 Which gas is responsible for global warming ? A. O2 B. NH3",
+            "hi": "NH3",
+            "hinglish": "NH3 Kaun si gas global warming ke liye zimmedar hai? A. O2 B. NH3"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "N2",
+            "hi": "N2",
+            "hinglish": "N2"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000511",
+      "topicId": null,
+      "questionText": {
+        "en": "It is a chemical showing biomagnifications",
+        "hi": "जैव आवर्धन प्रदर्शित करने वाला रसायन है - A. CFC B. DDT C. ATP द. इनमें से कोई नहीं",
+        "hinglish": "Jaiw aavardhan pradarshit karne wala rasayan hai - A. CFC B. DDT C. ATP d. Inmein se koi nahi"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "CFC",
+            "hi": "सीएफसी",
+            "hinglish": "CFC"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "DDT",
+            "hi": "डीडीटी",
+            "hinglish": "DDT"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "ATP",
+            "hi": "एटीपी",
+            "hinglish": "ATP"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000512",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the followings is a Primary consumer?",
+        "hi": "निम्नलिखित में से कौन एक प्राथमिक उपभोक्ता है?",
+        "hinglish": "Nimnalikhit mein se kaun ek prathmik upabhokta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Decomposer",
+            "hi": "अपघटक",
+            "hinglish": "Apghatak"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Herbivores",
+            "hi": "शाकाहारी",
+            "hinglish": "Shakahari"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Carnivores",
+            "hi": "मांसाहारी",
+            "hinglish": "Mansahari"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Omnivores",
+            "hi": "सर्वाहारी C. मांसाहारी D. सर्वाहारी",
+            "hinglish": "Sarvahari"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000615",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is an example of a decomposer?",
+        "hi": "अपघटक का उदाहरण है",
+        "hinglish": "Apghatak ka udaharan hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Cow",
+            "hi": "गाय",
+            "hinglish": "Gai"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fungus",
+            "hi": "कवक",
+            "hinglish": "Fungus"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Tiger",
+            "hi": "बाघ",
+            "hinglish": "Bagh"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Grass",
+            "hi": "घास",
+            "hinglish": "Ghaas"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000617",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is/are a part of environment?",
+        "hi": "निम्नलिखित में से कौन पर्यावरण का हिस्सा है ?",
+        "hinglish": "Nimnalikhit mein se kaun paryavaran ka hissa hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Atmosphere",
+            "hi": "वायुमंडल",
+            "hinglish": "Vayumandal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Hydrosphere",
+            "hi": "जलमंडल",
+            "hinglish": "Jalmandal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Lithosphere",
+            "hi": "स्थलमंडल",
+            "hinglish": "Sthalmandal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000629",
+      "topicId": null,
+      "questionText": {
+        "en": "The molecular formula of ozone is",
+        "hi": "ओजोन का आण्विक सूत्र है",
+        "hinglish": "Ozone ka aanvik sutra hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "O3",
+            "hi": "O3",
+            "hinglish": "O3"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "O4",
+            "hi": "O4",
+            "hinglish": "O4"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "O5",
+            "hi": "O5",
+            "hinglish": "O5"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000631",
+      "topicId": null,
+      "questionText": {
+        "en": "The flow of energy in an ecosystem is",
+        "hi": "पारिस्थितिक तंत्र में ऊर्जा का प्रवाह होता है",
+        "hinglish": "Paristhitiki tantra mein urja ka pravah hota hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "unidirectional",
+            "hi": "एकदिशीय",
+            "hinglish": "Ekdishiya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "bidirectional",
+            "hi": "द्विदिशीय",
+            "hinglish": "Dvidishiya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "multidirectional",
+            "hi": "बहुदिशीय",
+            "hinglish": "Bahudishiya"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "cyclic",
+            "hi": "चक्रीय",
+            "hinglish": "Chakriya"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000677",
+      "topicId": null,
+      "questionText": {
+        "en": "The tiger is a consumer of",
+        "hi": "बाघ उपभोक्ता है",
+        "hinglish": "Baagh upbhokta hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "first trophic level",
+            "hi": "प्रथम पोषी स्तर का",
+            "hinglish": "pratham poshi star ka"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "second trophic level",
+            "hi": "द्वितीय पोषी स्तर का",
+            "hinglish": "dvitiya poshi star ka"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "third trophic level",
+            "hi": "तृतीय पोषी स्तर का",
+            "hinglish": "tritiya poshi star ka"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023,
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000692",
+      "topicId": null,
+      "questionText": {
+        "en": "Depletion of ozone layer is due to",
+        "hi": "ओजोन परत का अवक्षय करता है",
+        "hinglish": "Ozone parat ka avakshay karta hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "ATP",
+            "hi": "ATP",
+            "hinglish": "ATP"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "CFC",
+            "hi": "CFC",
+            "hinglish": "CFC"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "NADP",
+            "hi": "NADP",
+            "hinglish": "NADP"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "DDT",
+            "hi": "DDT",
+            "hinglish": "DDT"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000698",
+      "topicId": null,
+      "questionText": {
+        "en": "An example of bisexual organism is",
+        "hi": "उभयलिंगी जीव का उदाहरण है",
+        "hinglish": "Ubhaylingi jeev ka udaharan hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Hydra",
+            "hi": "हाइड्रा",
+            "hinglish": "Hydra"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Man",
+            "hi": "मनुष्य",
+            "hinglish": "Manushya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Fish",
+            "hi": "मछली",
+            "hinglish": "Machhli"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Goat",
+            "hi": "बकरी",
+            "hinglish": "Bakri"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000756",
+      "topicId": null,
+      "questionText": {
+        "en": "Ozone layer protects earth from which harmful radiation?",
+        "hi": "ओजोन परत किस हानिकारक विकिरण से पृथ्वी को सुरक्षा प्रदान करती है?",
+        "hinglish": "Ozone parat kis hanikarak vikiran se prithvi ko suraksha pradan karti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Infrared",
+            "hi": "अवरक्त विकिरण",
+            "hinglish": "Avarakt vikiran"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Thermal",
+            "hi": "तापीय विकिरण",
+            "hinglish": "Tapiya vikiran"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ultraviolet",
+            "hi": "पराबैंगनी विकिरण",
+            "hinglish": "Parabaingni vikiran"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000808",
+      "topicId": null,
+      "questionText": {
+        "en": "Which among the following is responsible for global warming?",
+        "hi": "निम्नलिखित में से कौन ग्लोबल वार्मिंग के लिए उत्तरदायी है?",
+        "hinglish": "Nimnalikhit mein se kaun global warming ke liye uttaradayee hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "NH3",
+            "hi": "NH₃",
+            "hinglish": "NH3"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "O2",
+            "hi": "O₂",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "N2",
+            "hi": "N₂",
+            "hinglish": "N2"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "CO2",
+            "hi": "CO₂",
+            "hinglish": "CO2"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000836",
+      "topicId": null,
+      "questionText": {
+        "en": "Due to which of the following the balance in the environment gets disturbed?",
+        "hi": "निम्नलिखित में किसके कारण पर्यावरण में संतुलन बिगड़ जाता है?",
+        "hinglish": "Nimnalikhit mein kis ke kaaran paryavaran mein santulan bigad jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Afforestation",
+            "hi": "वनरोपण",
+            "hinglish": "Vanropan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Increasing human Population",
+            "hi": "बढ़ती मानव जनसंख्या",
+            "hinglish": "Badhte manav jansankhya"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Growth of more green plants",
+            "hi": "अधिक हरे पौधे का उगना",
+            "hinglish": "Adhik hare paudhe ka ugna"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Biodiversity",
+            "hi": "जैव विविधता",
+            "hinglish": "Jaiv vividhta"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000862",
+      "topicId": null,
+      "questionText": {
+        "en": "An example of micro-consumer is",
+        "hi": "सूक्ष्मउपभोक्ता का उदाहरण है",
+        "hinglish": "Sookshmupabhokta ka udaharan hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Bacteria",
+            "hi": "जीवाणु",
+            "hinglish": "Jivanu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fungus",
+            "hi": "कवक",
+            "hinglish": "Fungus"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Algae",
+            "hi": "शैवाल",
+            "hinglish": "Shaivaal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) और (B) दोनो",
+            "hinglish": "(A) aur (B) dono"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000863",
+      "topicId": null,
+      "questionText": {
+        "en": "Carnivorous organisms are called- ... 79.",
+        "hi": "मंसाहारी जीवों को कहा जाता है- ... 79.",
+        "hinglish": "Mansahari jeevon ko kaha jaata hai- ... 79."
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Primary consumer",
+            "hi": "प्राथमिक उपभोक्ता",
+            "hinglish": "Prathmik upabhokta"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Secondary consumer",
+            "hi": "द्वितीयक उपभोक्ता",
+            "hinglish": "Dvitiyak upabhokta"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Tertiary consumer",
+            "hi": "तृतीयक उपभोक्ता",
+            "hinglish": "Tritiyak upabhokta"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) और (B) दोनो",
+            "hinglish": "(A) aur (B) dono"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000864",
+      "topicId": null,
+      "questionText": {
+        "en": "What percentage of total energy is transferred to the next trophic level at each trophic level of the food chain?",
+        "hi": "खाद्य श्रृंखला के प्रत्येक पोषी स्तर पर कुल ऊर्जा का कितना प्रतिशत अगले पोषी स्तर को स्थानांतरित होता है?",
+        "hinglish": "Khadya shrinkhla ke pratyek poshi star par kul urja ka kitna pratishat agle poshi star ko sthaanantarit hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "0.1%",
+            "hi": "0.1%",
+            "hinglish": "0.1%"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "01%",
+            "hi": "01%",
+            "hinglish": "01%"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "10%",
+            "hi": "10%",
+            "hinglish": "10%"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "100%",
+            "hi": "100% खण्ड-अ/SECTION-B लघु उत्तरीय प्रश्न/Short Answer Type Questions",
+            "hinglish": "100% khand-A/SECTION-B laghu uttariy prashn/Short Answer Type Questions"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000949",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following substance is decomposed by biological process?",
+        "hi": "निम्न में से कौन एक जैविक प्रक्रम द्वारा अपघटित होने वाला पदार्थ है ?",
+        "hinglish": "Nimn mein se kaun ek jaivik prakriya dwara apghatit hone wala padarth hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Dead grass and leaves",
+            "hi": "मृत घास–पत्ते",
+            "hinglish": "Mrit ghaas–patte"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Polythene",
+            "hi": "पॉलीथीन",
+            "hinglish": "Polythene"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Rubber",
+            "hi": "रबर",
+            "hinglish": "Rubber"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000971",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following comes under environment?",
+        "hi": "निम्नलिखित में से कौन पर्यावरण के अंतर्गत आते हैं –",
+        "hinglish": "Nimnalikhit mein se kaun paryavaran ke antargat aate hain –"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "hydrosphere",
+            "hi": "जलमंडल",
+            "hinglish": "Jalmandal"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "lithosphere",
+            "hi": "स्थलमंडल",
+            "hinglish": "Sthalmandal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "atmosphere",
+            "hi": "वायुमंडल",
+            "hinglish": "Vayumandal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000972",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of consumer is frog in the field ecosystem?",
+        "hi": "मैदानी पारिस्थितिक तंत्र में मेढ़क किस प्रकार का उपभोक्ता है ?",
+        "hinglish": "Maidani paristhitiki tantra mein mendak kis prakar ka upbhokta hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "primary",
+            "hi": "प्राथमिक",
+            "hinglish": "Prathmik"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "secondary",
+            "hi": "द्वितीयक",
+            "hinglish": "Dvitiyak"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "tertiary",
+            "hi": "तृतीयक",
+            "hinglish": "Tritiyak"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "quaternary",
+            "hi": "चतुर्थीय",
+            "hinglish": "Chaturthiy"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q000973",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a non-biodegradable substance?",
+        "hi": "निम्नांकित में कौन एक जैव अनिम्नीकरणीय पदार्थ है ?",
+        "hinglish": "Nimnankit mein kaun ek jaiv animnigrahaniya padarth hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "DDT",
+            "hi": "DDT",
+            "hinglish": "DDT"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Paper",
+            "hi": "कागज",
+            "hinglish": "Kagaz"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Sewage",
+            "hi": "वाहित मल",
+            "hinglish": "Vahit mal"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q001293",
+      "topicId": null,
+      "questionText": {
+        "en": "How many trophic levels are there in a forest ecosystem?",
+        "hi": "एक वन पारिस्थितिक तंत्र में कितने पोषी स्तर होते हैं ?",
+        "hinglish": "Ek van paristhitiki tantra mein kitne poshi star hote hain?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-bio-ch05-q001333",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following groups contain only one biodegradable items?",
+        "hi": "निम्नलिखित में से कौन सी समूह केवल एक बायोडिग्रेडेबल वस्तुओं को शामिल करता है?",
+        "hinglish": "Nimnalikhit mein se kaun si samuh keval ek biodegradable vastuon ko shamil karta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Grass, flower and leather",
+            "hi": "घास, फूल और चमड़ा",
+            "hinglish": "Ghaas, phool aur chamda"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "brass, wood and plastic",
+            "hi": "पीतल, लकड़ी और प्लास्टिक",
+            "hinglish": "Peetal, lakdi aur plastic"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Fruits piece cake and Rubber",
+            "hi": "फलों का टुकड़ा केक और रबर",
+            "hinglish": "Phalon ka tukda cake aur rubber"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Cake, wood and glass Ans: cake, wood and glass",
+            "hi": "केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
+            "hinglish": "Cake, lakdi aur kaanch uttar: cake, lakdi aur kaanch"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    }
+  ]
+}

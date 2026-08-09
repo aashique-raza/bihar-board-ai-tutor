@@ -1,0 +1,3029 @@
+{
+  "subjectId": "science",
+  "sectionId": "chemistry",
+  "chapterId": "science.chemistry.chapter-03",
+  "chapterTitle": "Metals and Non-metals",
+  "questions": [
+    {
+      "seedKey": "sci-chem-ch03-q000041",
+      "topicId": null,
+      "questionText": {
+        "en": "The compound formed by transfer of electrons is called",
+        "hi": "इलेक्ट्रॉन के स्थानान्तरण से बने यौगिक कहलाते हैं",
+        "hinglish": "Electron ke sthanaantaran se bane yaugik kehte hain"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "covalent",
+            "hi": "सहसंयोजी",
+            "hinglish": "SahSanyojak"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "electrovalent",
+            "hi": "वैद्युत संयोजी",
+            "hinglish": "Vaidyut Sanyojak"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "carbonic",
+            "hi": "कार्बनिक",
+            "hinglish": "Carbonic"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000042",
+      "topicId": null,
+      "questionText": {
+        "en": "Brass is an example of",
+        "hi": "पीतल उदाहरण है",
+        "hinglish": "Peetal udaharan hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "metal",
+            "hi": "धातु का",
+            "hinglish": "Dhatu ka"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "non-metal",
+            "hi": "अधातु का",
+            "hinglish": "Adhatu ka"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "alloy",
+            "hi": "मिश्रधातु का",
+            "hinglish": "Mishradhatu ka"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "metalloid",
+            "hi": "उपधातु का",
+            "hinglish": "Upadhatu ka"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000089",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the most reactive metal?",
+        "hi": "निम्नलिखित में कौन सबसे अधिक अभिक्रियाशील धातु है?",
+        "hinglish": "Nimnalikhit mein kaun sabse adhik abhikriyashil dhatu hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Mg",
+            "hi": "Mg",
+            "hinglish": "Mg"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ca",
+            "hi": "Ca",
+            "hinglish": "Ca"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "K",
+            "hi": "K",
+            "hinglish": "K"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000153",
+      "topicId": null,
+      "questionText": {
+        "en": "Of which metal the bauxite is an important ore",
+        "hi": "किस धातु का बॉक्साइट एक महत्वपूर्ण अयस्क है",
+        "hinglish": "kis dhatu ka bauxite ek mahatvapurn ayask hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Copper",
+            "hi": "तांबा",
+            "hinglish": "Tamba"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "zinc",
+            "hi": "जस्ता",
+            "hinglish": "Jasta"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "aluminium",
+            "hi": "एल्यूमिनियम",
+            "hinglish": "Aluminium"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "iron Ans: aluminium",
+            "hi": "आयरन उत्तर: एल्यूमिनियम",
+            "hinglish": "Iron uttar: Aluminium"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000154",
+      "topicId": null,
+      "questionText": {
+        "en": "Which metal the thin layer is coated over iron and steel to protect them from rusting?",
+        "hi": "कौन सा धातु आयरन और स्टील पर जंग से बचाने के लिए पतली परत के रूप में कोट किया जाता है?",
+        "hinglish": "Kaun sa dhatu iron aur steel par jung se bachane ke liye patli parat ke roop mein coat kiya jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Copper",
+            "hi": "तांबा",
+            "hinglish": "Tamba"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Silver",
+            "hi": "चांदी",
+            "hinglish": "Chandi"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Gold",
+            "hi": "सोना",
+            "hinglish": "Sona"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Zinc Ans: Zinc",
+            "hi": "जिंक उत्तर: जिंक",
+            "hinglish": "Zinc uttar: Zinc"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000158",
+      "topicId": null,
+      "questionText": {
+        "en": "In electrolytic refining impure metal is taken as a",
+        "hi": "इलेक्ट्रोलाइटिक रिफाइनिंग में अशुद्ध धातु को एक के रूप में लिया जाता है",
+        "hinglish": "Electrolytic refining mein ashuddh dhatu ko ek ke roop mein liya jaata hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Anode",
+            "hi": "एनोड",
+            "hinglish": "Anod"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Cathode",
+            "hi": "कैथोड",
+            "hinglish": "Kathod"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Electrolyte",
+            "hi": "इलेक्ट्रोलाइट",
+            "hinglish": "Electrolyte"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "all of these Ans: Anode",
+            "hi": "इनमें से सभी उत्तर: एनोड",
+            "hinglish": "Inmein se sabhi uttar: Anode"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2018
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000203",
+      "topicId": null,
+      "questionText": {
+        "en": "Which metal of the following has the lowest melting point?",
+        "hi": "निम्न में से किस धातु का गलनांक सबसे कम है?",
+        "hinglish": "Nimn mein se kis dhatu ka galnaank sabse kam hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2019
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000239",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a good conductor of electricity?",
+        "hi": "निम्नलिखित में कौन विद्युत का सुचालक है?",
+        "hinglish": "Nimnalikhit mein kaun vidyut ka suchalak hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Sulphur",
+            "hi": "सल्फर",
+            "hinglish": "Sulphur"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Chlorine",
+            "hi": "क्लोरीन",
+            "hinglish": "Chlorine"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Graphite",
+            "hi": "ग्रेफाइट",
+            "hinglish": "Graphite"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Iodine",
+            "hi": "आयोडीन",
+            "hinglish": "Iodine"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000267",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the heaviest metal?",
+        "hi": "निम्नलिखित में सबसे भारी धातु कौन है?",
+        "hinglish": "Nimnalikhit mein sabse bhaari dhatu kaun hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Lithium",
+            "hi": "लिथियम",
+            "hinglish": "Lithium"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Uranium",
+            "hi": "यूरेनियम",
+            "hinglish": "Uranium"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Cesium",
+            "hi": "सिजियम",
+            "hinglish": "Siziyam"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Iron",
+            "hi": "आयरन",
+            "hinglish": "Aayran"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000308",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following metals is least reactive ?",
+        "hi": "निम्नलिखित में से कौन सबसे कम अभिक्रियाशील धातु है ?",
+        "hinglish": "Nimnalikhit mein se kaun sabse kam abhikrishil dhatu hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Zn",
+            "hi": "Zn",
+            "hinglish": "Zn"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Mg",
+            "hi": "Mg",
+            "hinglish": "Mg"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000313",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the best conductor of electricity ?",
+        "hi": "निम्नलिखित में से कौन विद्युत का सबसे अच्छा चालक है ?",
+        "hinglish": "Nimnalikhit mein se kaun vidyut ka sabse achha chalaak hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Silver",
+            "hi": "चाँदी",
+            "hinglish": "Chandi"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Iron",
+            "hi": "लोहा",
+            "hinglish": "Loha"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Nichrome",
+            "hi": "नाइक्रोम",
+            "hinglish": "Nikhrom"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Rubber",
+            "hi": "रबर",
+            "hinglish": "Rubber"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000334",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following methods is suitable for preventing an iron frying pan from rusting ?",
+        "hi": "लोहे के फ्राइंग पैन के जंग से बचाने के लिये निम्न में से कौन-सी विधि उपयुक्त है ?",
+        "hinglish": "Lohe ke frying pan ke jang se bachane ke liye nimn mein se kaun-si vidhi upyukt hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Applying grease",
+            "hi": "ग्रीज लगाकर",
+            "hinglish": "Grease laga kar"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Applying paint",
+            "hi": "पेंट लगाकर",
+            "hinglish": "Paint laga kar"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Applying a coating of zinc",
+            "hi": "जिंक की परत चढ़ाकर",
+            "hinglish": "Zinc ki parat chadha kar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000335",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following metals can easily be cut with a knife ?",
+        "hi": "निम्नलिखित में किस धातु को चाकू से आसानी से काटा जा सकता है ?",
+        "hinglish": "Nimnalikhit mein kis dhatu ko chaku se aasani se kaata ja sakta hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Mg",
+            "hi": "Mg",
+            "hinglish": "Mg"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000339",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is evolved when zinc reacts with sulphuric acid ?",
+        "hi": "जिंक तथा सल्फ्यूरिक अम्ल के बीच अभिक्रिया से निम्नलिखित में से कौन सी गैस निकलती है ?",
+        "hinglish": "Zinc tatha sulphuric aml ke beech abhikraya se nimnalikhit mein se kaun si gas nikalti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "H2",
+            "hi": "H2",
+            "hinglish": "H2"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "N2",
+            "hi": "N2",
+            "hinglish": "N2"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2020
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000411",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is most reactive ? 28. Which of the following is the most reactive ?",
+        "hi": "निम्नांकित में कौन सबसे अधिक अभिक्रियाशील है ? 28.",
+        "hinglish": "Nimnankit mein kaun sabse adhik abhikriyashil hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Hg",
+            "hi": "Hg",
+            "hinglish": "Hg"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ag",
+            "hi": "Ag",
+            "hinglish": "Ag"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Au",
+            "hi": "Au",
+            "hinglish": "Au"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000420",
+      "topicId": null,
+      "questionText": {
+        "en": "What is Silicon ? What is Silicon ?",
+        "hi": "सिलिकन क्या है ?",
+        "hinglish": "Silicon kya hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "metal",
+            "hi": "धातु",
+            "hinglish": "Dhatu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "non-metal",
+            "hi": "अधातु",
+            "hinglish": "Adhatu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "metalloid",
+            "hi": "उपधातु",
+            "hinglish": "Updhatu"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000423",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following metal is kept immersed in kerosene ? Which of the following element is stored in Kerosene oil ?",
+        "hi": "निम्नांकित में किस धातु को केरोसिन में डुबो कर रखते हैं ?",
+        "hinglish": "Nimnankit mein kis dhatu ko kerosene mein dubo kar rakhte hain ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Magnesium",
+            "hi": "मैग्नेशियम",
+            "hinglish": "Magnesium"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Sodium",
+            "hi": "सोडियम",
+            "hinglish": "Sodium"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Mercury",
+            "hi": "पारा",
+            "hinglish": "Para"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Tungston",
+            "hi": "टंग्स्टन",
+            "hinglish": "Tungston"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000427",
+      "topicId": null,
+      "questionText": {
+        "en": "2Cu + O2 -> 2CuO is",
+        "hi": "2Cu + O2 -> 2CuO है",
+        "hinglish": "2Cu + O2 -> 2CuO hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Oxidation",
+            "hi": "ऑक्सीकरण",
+            "hinglish": "Aml"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Decomposition",
+            "hi": "अपघटन",
+            "hinglish": "Apghatan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Neutralization",
+            "hi": "उदासीनीकरण",
+            "hinglish": "Udaasinikaran"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Displacement",
+            "hi": "विस्थापन",
+            "hinglish": "Visthapan"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000431",
+      "topicId": null,
+      "questionText": {
+        "en": "Cryolite is an ore of",
+        "hi": "क्रायोलाइट अयस्क है",
+        "hinglish": "Cryolite ayask hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Copper",
+            "hi": "ताँबा का",
+            "hinglish": "Taanba ka"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Iron",
+            "hi": "लोहा का",
+            "hinglish": "Loha ka"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Magnesium",
+            "hi": "मैग्नीशियम का",
+            "hinglish": "Magnesium ka"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Aluminium",
+            "hi": "एल्युमिनियम का",
+            "hinglish": "Aluminium ka"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2021
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000536",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a conductor of electricity?",
+        "hi": "निम्नांकित में कौन विद्युत का सुचालक है ?",
+        "hinglish": "Nimnankit mein kaun vidyut ka suchalak hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Iodine",
+            "hi": "आयोडीन",
+            "hinglish": "Iodine"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Graphite",
+            "hi": "ग्रेफाइट",
+            "hinglish": "Graphite"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Sulphur",
+            "hi": "सल्फर",
+            "hinglish": "Sulphur"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Diamond Which one of the following is a good conductor of electricity? A. Iodine B. Graphite C. Sulphur D. Diamond",
+            "hi": "हीरा अ. आयोडीन ब. ग्रेफाइट स. सल्फर द. हीरा",
+            "hinglish": "Heera"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000546",
+      "topicId": null,
+      "questionText": {
+        "en": "Haematite is an ore of which of the following metal ?",
+        "hi": "हेमाटाईट निम्नांकित में किस धातु का अयस्क है ? A. Zn B. Fe स. Cu द. Au",
+        "hinglish": "Hematite nimnankit mein kis dhatu ka ayask hai ? A. Zn B. Fe S. Cu D. Au"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Zn",
+            "hi": "जिंक",
+            "hinglish": "Zinc"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fe",
+            "hi": "आयरन",
+            "hinglish": "Iron"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Cu",
+            "hi": "कॉपर",
+            "hinglish": "Copper"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Au",
+            "hi": "सोना",
+            "hinglish": "Sona"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000547",
+      "topicId": null,
+      "questionText": {
+        "en": "The sulphide ore is concentrated by which of the following process?",
+        "hi": "सल्फाईड अयस्क का सांद्रण निम्नांकित में किस विधि द्वारा होता है ?",
+        "hinglish": "Sulfide ayask ka sandran nimnankit mein kis vidhi dwara hota hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Liquation",
+            "hi": "द्रवण विधि",
+            "hinglish": "Draavan vidhi"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Hand picking",
+            "hi": "हाथ से चुनकर",
+            "hinglish": "Haath se chunkar"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Calcination",
+            "hi": "निस्तापन",
+            "hinglish": "Nistapan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Froth-floatation process",
+            "hi": "फेन उत्पलावन विधि",
+            "hinglish": "Phen utpalavan vidhi"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000548",
+      "topicId": null,
+      "questionText": {
+        "en": "The reaction, 2Zn + O2->2ZnO is which type of reaction.",
+        "hi": "अभिक्रिया, 2Zn + O2->2ZnO किस प्रकार की अभिक्रिया है ?",
+        "hinglish": "Abhikriya, 2Zn + O2->2ZnO kis prakar ki abhikriya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Oxidation",
+            "hi": "उपचयन",
+            "hinglish": "Upchayan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Displacement",
+            "hi": "विस्थापन",
+            "hinglish": "Visthapan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Neutralisation",
+            "hi": "उदासीनीकरण",
+            "hinglish": "Udasinikan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Decomposition",
+            "hi": "अपघटन",
+            "hinglish": "Apghatan"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000560",
+      "topicId": null,
+      "questionText": {
+        "en": "A metal found in the Free State in nature is",
+        "hi": "प्रकृति में मुक्त अवस्था में पाई जानेवाली धातु है",
+        "hinglish": "Prakriti mein mukt avastha mein pai jaane wali dhatu hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Zinc",
+            "hi": "जिंक",
+            "hinglish": "Zinc"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Gold",
+            "hi": "सोना",
+            "hinglish": "Sona"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Iron",
+            "hi": "लोहा",
+            "hinglish": "Loha"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Copper",
+            "hi": "ताँबा",
+            "hinglish": "Taanba"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000561",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following metals is the most reactive?",
+        "hi": "निम्नांकित में कौन-सी धातु सबसे अधिक अभिक्रियाशील है ?",
+        "hinglish": "Nimnankit mein kaun-si dhatu sabse adhik abhikriyashil hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Zn",
+            "hi": "Zn",
+            "hinglish": "Zn"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ag",
+            "hi": "Ag",
+            "hinglish": "Ag"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Au",
+            "hi": "Au",
+            "hinglish": "Au"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000563",
+      "topicId": null,
+      "questionText": {
+        "en": "Brass is an alloy of which of the following ?",
+        "hi": "पीतल निम्नांकित में किनकी मिश्रधातु है ? A. Cu + Zn B. Fe + Ni स. Cu + Au द. Cu + Sn",
+        "hinglish": "Peetal nimnankit mein kinki mishradhatu hai ? A. Cu + Zn B. Fe + Ni S. Cu + Au D. Cu + Sn"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Cu + Zn",
+            "hi": "Cu + Zn",
+            "hinglish": "Cu + Zn"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fe + Ni",
+            "hi": "Fe + Ni",
+            "hinglish": "Fe + Ni"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Cu + Au",
+            "hi": "Cu + Au",
+            "hinglish": "Cu + Au"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Cu + Sn",
+            "hi": "Cu + Sn",
+            "hinglish": "Cu + Sn"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000566",
+      "topicId": null,
+      "questionText": {
+        "en": "When iron reacts with steam, which oxide of iron is formed.",
+        "hi": "लोहे की अभिक्रिया भाप से कराने पर लोहे का कौन सा ऑक्साइड बनता है।",
+        "hinglish": "Lohe ki abhikriya bhaap se karane par lohe ka kaun sa oxid banta hai."
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Fe3O4",
+            "hi": "Fe3O4",
+            "hinglish": "Fe3O4"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fe3O2",
+            "hi": "Fe3O2",
+            "hinglish": "Fe3O2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Fe2O3",
+            "hi": "Fe2O3",
+            "hinglish": "Fe2O3"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "FeO",
+            "hi": "FeO",
+            "hinglish": "FeO"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000568",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following metals does not react with dilute sulphuric acid?",
+        "hi": "निम्नलिखित में कौन सी धातु तनु सल्फ्यूरिक अम्ल के साथ अभिक्रिया नहीं करती है ?",
+        "hinglish": "Nimnalikhit mein kaun si dhatu tanu sulfyurik aml ke saath abhikraya nahi karti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Zn",
+            "hi": "Zn",
+            "hinglish": "Zn"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Mg",
+            "hi": "Mg",
+            "hinglish": "Mg"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000569",
+      "topicId": null,
+      "questionText": {
+        "en": "An alloy contains 90% Cu and 10% Sn. The name of this alloy is",
+        "hi": "एक मिश्रधातु में 90 प्रतिशत Cu और 10 प्रतिशत टिन है। इस मिश्रधातु का नाम है",
+        "hinglish": "Ek mishradhatu mein 90 pratishat Cu aur 10 pratishat tin hai. Is mishradhatu ka naam hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Solder",
+            "hi": "सोल्डर",
+            "hinglish": "Solder"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Bronze",
+            "hi": "ब्रोंज",
+            "hinglish": "Bronze"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Brass",
+            "hi": "पीतल",
+            "hinglish": "Brass"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "German Silver",
+            "hi": "जर्मन सिल्वर",
+            "hinglish": "German Silver"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000570",
+      "topicId": null,
+      "questionText": {
+        "en": "Zinc reacts with sodium hydroxide to form",
+        "hi": "जिंक सोडियम हाइड्राक्साइड के साथ प्रतिक्रिया कर बनाता है",
+        "hinglish": "Zinc sodium hydroxide ke saath pratikriya kar banata hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "H2 gas",
+            "hi": "H2 गैस",
+            "hinglish": "H2 gas"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "O2 gas",
+            "hi": "O2 गैस",
+            "hinglish": "O2 gas"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "both H2 and O2 gas",
+            "hi": "H2 और O2 गैस दोनों",
+            "hinglish": "H2 aur O2 gas dono"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "ZnO",
+            "hi": "ZnO",
+            "hinglish": "ZnO"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000571",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following metals does not combine with oxygen even when heated at high temperature in air.",
+        "hi": "निम्नलिखित में कौन सी धातु वायु में उच्च ताप पर गर्म किए जाने पर भी ऑक्सीजन से संयोग नहीं करती है ?",
+        "hinglish": "Nimnalikhit mein kaun si dhatu vayu mein uch taap par garam kiye jaane par bhi oxygen se sanyog nahi karti hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Ag",
+            "hi": "Ag",
+            "hinglish": "Ag"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Hg",
+            "hi": "Hg",
+            "hinglish": "Hg"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000572",
+      "topicId": null,
+      "questionText": {
+        "en": "The impurities present in an ore are called.",
+        "hi": "अयस्क में उपस्थित अपद्रव्य कहलाते हैं",
+        "hinglish": "Ayask mein upasthit apadravya kehlate hain"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "minerals",
+            "hi": "खनिज",
+            "hinglish": "Khanij"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "slag",
+            "hi": "धातुमल",
+            "hinglish": "Dhatumal"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "gangue",
+            "hi": "गैंग",
+            "hinglish": "Gang"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000573",
+      "topicId": null,
+      "questionText": {
+        "en": "Due to which of the following properties of metal, wires are made?",
+        "hi": "निम्नलिखित में किस गुण के कारण धातुओं के तार बनाए जाते हैं ? अ. आघातवर्धनीयता ब. उष्मीय चालकता स. तन्यता घ. कठोरता",
+        "hinglish": "Nimnalikhit mein kis gun ke kaaran dhaton ke taar banaye jaate hain? a. Aghaatvardhaneeyata b. Ushmiy chalaktaa s. Tanyata g. Kathorta"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "malleability",
+            "hi": "मैलियाबिलिटी",
+            "hinglish": "Mailiyability"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "thermal conductivity",
+            "hi": "थर्मल कंडक्टिविटी",
+            "hinglish": "Thermal conductivity"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "ductility",
+            "hi": "डक्टिलिटी",
+            "hinglish": "Ductility"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "hardness",
+            "hi": "हार्डनेस",
+            "hinglish": "Hardness"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000624",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a heterogeneous compound?",
+        "hi": "निम्नांकित में से कौन विजातीय यौगिक है ?",
+        "hinglish": "Nimnankit mein se kaun vijatiya yaugik hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Chalk",
+            "hi": "खड़िया",
+            "hinglish": "Khadiya"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Limestone",
+            "hi": "चूना पत्थर",
+            "hinglish": "Chuna patthar"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Marble",
+            "hi": "संगमरमर",
+            "hinglish": "Sangmarmar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Plaster of Paris",
+            "hi": "प्लास्टर ऑफ पेरिस",
+            "hinglish": "Plaster of Paris"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000652",
+      "topicId": null,
+      "questionText": {
+        "en": "The alloy consisting of 90% Cu and 10% Sn is named as",
+        "hi": "मिश्रधातु जिसमें 90% Cu और 10% Sn है, उसका नाम है",
+        "hinglish": "Mishradhatu jismein 90% Cu aur 10% Sn hai, uska naam hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Solder",
+            "hi": "सोल्डर",
+            "hinglish": "Solder"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Brass",
+            "hi": "पीतल",
+            "hinglish": "Brass"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "German silver",
+            "hi": "जर्मन सिल्वर",
+            "hinglish": "German silver"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Bronze",
+            "hi": "काँसा",
+            "hinglish": "Kansa"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000671",
+      "topicId": null,
+      "questionText": {
+        "en": "Bauxite is an ore of which of the following metals?",
+        "hi": "बॉक्साइट निम्नांकित में से किस धातु का अयस्क है ?",
+        "hinglish": "Bauxite nimnankit mein se kis dhatu ka ayask hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Hg",
+            "hi": "Hg",
+            "hinglish": "Hg"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Zn",
+            "hi": "Zn",
+            "hinglish": "Zn"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000672",
+      "topicId": null,
+      "questionText": {
+        "en": "The correct order of reactivity of metals is",
+        "hi": "धातुओं की क्रियाशीलता का सही क्रम है",
+        "hinglish": "Dhatuon ki kriyashilta ka sahi kram hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Na > Zn > Mg > Cu",
+            "hi": "Na > Zn > Mg > Cu",
+            "hinglish": "Na > Zn > Mg > Cu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Na > Mg > Cu > Zn",
+            "hi": "Na > Mg > Cu > Zn",
+            "hinglish": "Na > Mg > Cu > Zn"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Mg < Na < Zn < Cu",
+            "hi": "Mg < Na < Zn < Cu",
+            "hinglish": "Mg < Na < Zn < Cu"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Na > Mg > Zn > Cu",
+            "hi": "Na > Mg > Zn > Cu",
+            "hinglish": "Na > Mg > Zn > Cu"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000673",
+      "topicId": null,
+      "questionText": {
+        "en": "Fe2O3 + 2Al → Al2O3 + 2Fe is which of the following types reaction?",
+        "hi": "Fe2O3 + 2Al → Al2O3 + 2Fe निम्नलिखित में से किस प्रकार की अभिक्रिया है।",
+        "hinglish": "Fe2O3 + 2Al → Al2O3 + 2Fe nimnlikhit mein se kis prakar ki abhikriya hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Combination",
+            "hi": "संयोजन",
+            "hinglish": "Sanyojan"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Decomposition",
+            "hi": "विघटन",
+            "hinglish": "Vighatan"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Displacement",
+            "hi": "विस्थापन",
+            "hinglish": "Visthapan"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Double displacement",
+            "hi": "द्विविस्थापन",
+            "hinglish": "Dvivisthapan"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2023
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000705",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following metals has the lowest melting point?",
+        "hi": "निम्न में से किस धातु का गलनांक सबसे कम है?",
+        "hinglish": "Nimn mein se kis dhatu ka galnaank sabse kam hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000720",
+      "topicId": null,
+      "questionText": {
+        "en": "Duralumin is an alloy of which metal?",
+        "hi": "ड्यूरालुमिन किस धातु का मिश्रधातु है?",
+        "hinglish": "Duralumin kis dhatu ka mishradhatu hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Sn",
+            "hi": "Sn",
+            "hinglish": "Sn"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000725",
+      "topicId": null,
+      "questionText": {
+        "en": "Metallic conduction is based on motion of which particle in material?",
+        "hi": "धात्विक चालकता पदार्थ के अन्दर किस कण की गति पर आश्रित है?",
+        "hinglish": "Dhaatvik chalakiya padarth ke andar kis karn ki gati par aashrit hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Electron",
+            "hi": "इलेक्ट्रॉन",
+            "hinglish": "Electron"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Proton",
+            "hi": "प्रोटॉन",
+            "hinglish": "Proton"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Neutron",
+            "hi": "न्यूट्रॉन",
+            "hinglish": "Neutron"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these 44 (Hindi text captured on this page; English translation continues on next page). 44 (cont.) The upper part of a box-type solar cooker has a glass cover. The reason for this is (A) to see whether the food kept inside the cooker is being cooked or not (B) to prevent loss of heat due to radiation (C) to prevent the passage of dust into the box (D) none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000743",
+      "topicId": null,
+      "questionText": {
+        "en": "Zinc blende is an ore of which metal?",
+        "hi": "जिंक ब्लेंड किस धातु का अयस्क है?",
+        "hinglish": "Zinc blende kis dhatu ka ayask hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Mg",
+            "hi": "Mg",
+            "hinglish": "Mg"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Zn",
+            "hi": "Zn",
+            "hinglish": "Zn"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Pb",
+            "hi": "Pb",
+            "hinglish": "Pb"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Au",
+            "hi": "Au",
+            "hinglish": "Au"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000757",
+      "topicId": null,
+      "questionText": {
+        "en": "Which non-metal is found in liquid state at room temperature?",
+        "hi": "कौन-सा अधातु कमरे के तापमान पर तरल अवस्था में पाया जाता है?",
+        "hinglish": "Kaun-sa adhatu kamre ke taapmaan par taral avastha mein paaya jaata hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Mercury",
+            "hi": "पारा",
+            "hinglish": "Para"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Bromine",
+            "hi": "ब्रोमीन",
+            "hinglish": "Bromine"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Sulphur",
+            "hi": "सल्फर",
+            "hinglish": "Sulphur"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Sodium",
+            "hi": "सोडियम",
+            "hinglish": "Sodium"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2024
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000814",
+      "topicId": null,
+      "questionText": {
+        "en": "Which statement is true regarding the reaction given below? ZnO + C → Zn + CO",
+        "hi": "निचे दी गई अभिक्रिया के संबंध में कौन-सा कथन सत्य है? ZnO + C → Zn + CO",
+        "hinglish": "Niche di gayi abhikriya ke sambandh mein kaun-sa kathan satya hai? ZnO + C → Zn + CO"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "ZnO is being oxidized",
+            "hi": "ZnO उपचयित हो रहा है",
+            "hinglish": "ZnO upchayit ho raha hai"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Carbon is being reduced",
+            "hi": "कार्बन अपचयित हो रहा है",
+            "hinglish": "Carbon apchayit ho raha hai"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Carbon is being oxidizing",
+            "hi": "कार्बन उपचयित हो रहा है",
+            "hinglish": "Carbon upchayit ho raha hai"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Carbon monoxide is being oxidized",
+            "hi": "कार्बन मोना-ऑक्साइड उपचयित हो रहा है",
+            "hinglish": "Carbon monoxide upchayit ho raha hai"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000821",
+      "topicId": null,
+      "questionText": {
+        "en": "An ore of Zinc is",
+        "hi": "जस्ता का अयस्क है",
+        "hinglish": "Jasta ka ayask hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Bauxite",
+            "hi": "बॉक्साइट",
+            "hinglish": "Bauxite"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Sodium chloride",
+            "hi": "सोडियम क्लोराइड",
+            "hinglish": "Sodium chloride"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Cinnabar",
+            "hi": "सिनेवार",
+            "hinglish": "Cinnabar"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Zinc blende",
+            "hi": "जिंक ब्लेंड",
+            "hinglish": "Zinc blende"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000822",
+      "topicId": null,
+      "questionText": {
+        "en": "The metal which dissolves only in aqua regia is",
+        "hi": "धातु जो सिर्फ अम्लराज मे घुलता है, वह है",
+        "hinglish": "Dhatu jo sirf amlraj me ghulta hai, vah hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Au",
+            "hi": "Au",
+            "hinglish": "Au"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000823",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not an ionic compound?",
+        "hi": "निम्नलिखित में कौन आयनिक यौगिक नहीं है? (A) CaCl₂ (B) CO₂ (B) KCl (D) HCN",
+        "hinglish": "Nimnalikhit mein kaun aaynik yaugik nahi hai? (A) CaCl₂ (B) CO₂ (B) KCl (D) HCN"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "CaCl2",
+            "hi": "CaCl2",
+            "hinglish": "CaCl2"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "KCl",
+            "hi": "KCl",
+            "hinglish": "KCl"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "HCN",
+            "hi": "एचसीएन",
+            "hinglish": "HCN"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000831",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not an alkali metal",
+        "hi": "निम्नलिखित में कौन क्षार धातु नहीं है",
+        "hinglish": "Nimnalikhit mein kaun kshaar dhatu nahi hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Mg",
+            "hi": "Mg",
+            "hinglish": "Mg"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Na ... 47.",
+            "hi": "Na ... 47.",
+            "hinglish": "Na ... 47."
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Rb",
+            "hi": "Rb",
+            "hinglish": "Rb"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Li",
+            "hi": "Li",
+            "hinglish": "Li"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000933",
+      "topicId": null,
+      "questionText": {
+        "en": "Cuprite is an ore of which of the following metals?",
+        "hi": "क्यूप्राईट निम्नांकित में किस धातु का अयस्क है ?",
+        "hinglish": "Cuprite nimnalikhit mein kis dhatu ka ayask hai ?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Hg",
+            "hi": "Hg",
+            "hinglish": "Hg"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Zn",
+            "hi": "Zn",
+            "hinglish": "Zn"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000940",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the most reactive halogen?",
+        "hi": "निम्नलिखित में कौन सबसे अधिक क्रियाशील हैलोजन है ?",
+        "hinglish": "Nimnalikhit mein kaun sabse adhik kriyasheel halojen hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "F",
+            "hi": "F",
+            "hinglish": "F"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Cl",
+            "hi": "Cl",
+            "hinglish": "Cl"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Br",
+            "hi": "Br",
+            "hinglish": "Br"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "I",
+            "hi": "I",
+            "hinglish": "I"
+          }
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q000944",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the element represented by the following symbols is a metal?",
+        "hi": "निम्नांकित संकेतों द्वारा व्यक्त तत्वों में कौन सा धातु है ?",
+        "hinglish": "Nimnankit sanketon dwara vyakt tatvon mein kaun sa dhatu hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "¹⁹₉A",
+            "hi": "¹⁹₉A",
+            "hinglish": "¹⁹₉A"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "²⁴₁₂B",
+            "hi": "²⁴₁₂B",
+            "hinglish": "²⁴₁₂B"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "¹²₆C",
+            "hi": "¹²₆C",
+            "hinglish": "¹²₆C"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "¹⁶₈D",
+            "hi": "¹⁶₈D",
+            "hinglish": "¹⁶₈D"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2026
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q001177",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is the best conductor of electricity?",
+        "hi": "कौन विद्युत का सर्वोत्तम सुचालक है ?",
+        "hinglish": "Kaun vidyut ka sarvottam suchalak hai?"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "Ag",
+            "hi": "Ag",
+            "hinglish": "Ag"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q001180",
+      "topicId": null,
+      "questionText": {
+        "en": "Brass is",
+        "hi": "पीतल है",
+        "hinglish": "Peetal hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "metal",
+            "hi": "धातु",
+            "hinglish": "Dhatu"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "non-metal",
+            "hi": "अधातु",
+            "hinglish": "Adhatu"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "alloy",
+            "hi": "मिश्र धातु",
+            "hinglish": "Mishradhatu"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "metalloid",
+            "hi": "उपधातु",
+            "hinglish": "Updhatu"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q001219",
+      "topicId": null,
+      "questionText": {
+        "en": "compounds formed by the transfer of electrons are called",
+        "hi": "इलेक्ट्रॉन के स्थानान्तरण से बने यौगिक कहलाते हैं",
+        "hinglish": "Electron ke sthanaantaran se bane yaugik kehte hain"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "coordinative",
+            "hi": "सहसंयोजी",
+            "hinglish": "Sahasanyojak"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "electrovalent",
+            "hi": "वैद्युत संयोजी",
+            "hinglish": "Vaidyut Sanyojak"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "organic",
+            "hi": "कार्बनिक",
+            "hinglish": "Carbonik"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q001220",
+      "topicId": null,
+      "questionText": {
+        "en": "brass is an example",
+        "hi": "पीतल उदाहरण है",
+        "hinglish": "Peetal udaharan hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "of metal",
+            "hi": "धातु का",
+            "hinglish": "Dhatu ka"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "of non-metal",
+            "hi": "अधातु का",
+            "hinglish": "Adhatu ka"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "of alloy",
+            "hi": "मिश्रधातु का",
+            "hinglish": "Mishradhatu ka"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "of submetal",
+            "hi": "उपधातु का",
+            "hinglish": "Updhatu ka"
+          }
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2016
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q001289",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of zinc is",
+        "hi": "जस्ता की परमाणु संख्या है",
+        "hinglish": "Zinc ki parmanoo sankhya hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "24",
+            "hi": "24",
+            "hinglish": "24"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "28",
+            "hi": "28",
+            "hinglish": "28"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "29",
+            "hi": "29",
+            "hinglish": "29"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "30",
+            "hi": "30",
+            "hinglish": "30"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2022
+      ]
+    },
+    {
+      "seedKey": "sci-chem-ch03-q001313",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of Zinc is",
+        "hi": "जिंक की परमाणु संख्या है",
+        "hinglish": "Zinc ki parmanoo sankhya hai"
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": {
+            "en": "27",
+            "hi": "27",
+            "hinglish": "27"
+          }
+        },
+        {
+          "key": "B",
+          "text": {
+            "en": "28",
+            "hi": "28",
+            "hinglish": "28"
+          }
+        },
+        {
+          "key": "C",
+          "text": {
+            "en": "29",
+            "hi": "29",
+            "hinglish": "29"
+          }
+        },
+        {
+          "key": "D",
+          "text": {
+            "en": "30",
+            "hi": "30",
+            "hinglish": "30"
+          }
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "yearAsked": [
+        2025
+      ]
+    }
+  ]
+}
