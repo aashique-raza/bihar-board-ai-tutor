@@ -11,23 +11,34 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 1** — Question Models & Seed Data (Backend) |
-| **Status** | 🟡 **Planning done, code NOT started.** Blueprint rewritten (v3) to use the real 744-question bank instead of hand-writing 50 Qs × 3 chapters. Session paused before Beat 2 (BANAO) — next session starts Phase 1 code from this plan. |
-| **Branch** | `quiz-phase1` (Phase 0 already committed here: `4b32e34`) |
-| **Last session** | 2026-08-09 — Phase 1 replanned (no code yet) |
+| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — not started |
+| **Status** | ✅ **Phase 1 DONE.** 743 real PYQ questions seeded into MongoDB (`question_bank`), 16 chapters, all verified against blueprint counts. Session ends here (Rule 5) — next session starts fresh on Phase 2. |
+| **Branch** | `quiz-phase1` (Phase 0: `4b32e34`, Phase 1: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
+| **Last session** | 2026-08-09 — Phase 1 built, verified, seeded |
 
-### ⚠️ Read before starting Phase 1 code
+### ⚠️ Read before starting Phase 2 code
 
-A separate branch `quiz-phase0.5-bulk` (commit `7b45b1b`) already extracted a real 744-question
-bank from Bihar Board 2016-2026 papers, covering all 16 chapters, 3 languages (en/hi/hinglish).
-This supersedes the old "hand-write 50 questions × 3 pilot chapters" plan. **Read
-`QUIZ_SYSTEM_BLUEPRINT.md` §19 first** — it explains what changed and why, then §3/§5/§11/§12/§16/§17
-have the actual updated schema, seed format, and deliverables. Do not start from the old plan.
+Phase 1 field names deviate from `QUIZ_SYSTEM_BLUEPRINT.md` §5/§12 — the user asked for more
+human-readable names during Phase 1's Beat 1 review. **The blueprint text itself was not updated**
+(out of scope for a Phase 1 session — updating spec docs is not code). Use this mapping, not the
+blueprint's literal field names, when writing Phase 2:
 
-**One open decision before coding (blueprint §16, decision 16):** 6 of 16 chapters have fewer than
-50 real questions (chemistry ch01: 24, biology ch04: 23, biology ch06: 16, physics ch04: 34,
-physics ch05: 32, biology ch03: 40). Recommendation is ship as-is — confirm with user in Beat 1 of
-next session before writing code.
+| Blueprint name (§5/§12) | Actual field in code |
+|---|---|
+| `seedKey` | `questionCode` |
+| `options[].key` | `options[].label` |
+| `correctAnswer` (Question) | `correctOptionLabel` |
+| `shuffledCorrectKey` (Session/Attempt) | `correctOptionLabel` (same name everywhere now) |
+| `yearAsked` | `askedInYears` |
+| `servedQuestions` | `questions` |
+| `submittedAttemptId` | `attemptId` |
+| `quizSessionId` (Attempt) | `sessionId` |
+| `idempotencyKey` | `submissionKey` |
+| `*Snapshot` suffixes (`topicIdSnapshot`) | shortened to just `topicId` (context implies snapshot) |
+
+`userId`, `guestId`, `subjectId`, `chapterId`, `topicId` were **not** renamed — kept matching the
+app-wide convention from `chapterProgress`/`studyEvent`. Full field-by-field schema for all 3
+models is in this session's history entry below.
 
 ### ✅ Baseline (established 2026-08-02, before any Phase 0 code)
 
@@ -70,6 +81,44 @@ next session before writing code.
 
 ---
 
+## 🎯 PHASE 1 — Definition of Done
+
+> Full plan: `QUIZ_SYSTEM_BLUEPRINT.md` §19 · Phase spec: §17 Phase 1
+
+**Blast radius:**
+- `backend/scripts/transform-bulk-to-seed.js` (new)
+- `backend/scripts/seed-quiz-bank.js` (new)
+- `backend/src/models/question.model.js`, `quizSession.model.js`, `quizAttempt.model.js` (new)
+- `data/quiz-bank/science/**/*.json` (16 new seed files)
+- `backend/package.json` (`quiz:seed`, `quiz:seed:dry-run`)
+
+**Code:**
+- [x] Bulk bank (`data/quiz-bank/bank/questions.json`) brought onto `quiz-phase1` from `quiz-phase0.5-bulk`
+- [x] Transform script written — bulk → 16 per-chapter seed files, human-readable field names (see mapping table above)
+- [x] 3 Mongoose models written with field names finalized after user review
+- [x] Seed engine written — validate (localized text, 4 unique A-D labels, correctOptionLabel matches, real+browsable chapterId, valid topicId if present, no duplicate questionCode) then upsert by questionCode, deactivate anything dropped from seed set
+
+**Verify (dekha gaya, maana nahi gaya):**
+- [x] `quiz:seed:dry-run` — 16 files, 743 questions, 0 errors
+- [x] `quiz:seed` — 743 inserted, 0 updated, 0 deactivated
+- [x] `Question.countDocuments({})` = 743, `isActive: true` count = 743
+- [x] `chapterId: 'science.biology.chapter-01'` = 103 (max), `chapterId: 'science.biology.chapter-06'` = 16 (min)
+- [x] 16 distinct `chapterId` values in DB
+- [x] Sample document shape correct (4 options, `createdBy: 'seed-script'`, timestamps present)
+
+**Regression:**
+- [x] `test:chunks`, `test:study-map`, `test:curriculum-resolvers` — same as baseline
+- [x] `test:chat-db-models` — same pre-existing red (P-6), unrelated
+
+**Bahar — is phase mein ye NAHI kiya:**
+- ❌ Quiz API/routes/controller — Phase 2
+- ❌ Koi UI — Phase 4/5
+- ❌ Chapter gate / `awaiting_quiz` — Phase 3
+- ❌ `explanation`, `topicId`, `difficulty` backfill — data mein nahi hai abhi, sab `null` seeded
+- ❌ Redis quiz-cache clearing in seed script (blueprint §12 step 5) — 🅿️ parked (P-7), cache infra khud Phase 2 mein banegi
+
+---
+
 ## 🅿️ PARKING LOT
 
 > Yahan sab real cheezein hain. **Koi bhoolegi nahi.** Bas abhi nahi hongi.
@@ -84,6 +133,7 @@ next session before writing code.
 | P-4 | Email provider abhi Nodemailer (SMTP) hai; Render free tier SMTP block karta hai, isliye email verification bypass hai. Resend API pe migrate karna hai. | `backend/src/auth/emailHelpers.js` | `PRE_LAUNCH_BLOCKERS.md` P1 | 🔴 High — par real users se pehle, quiz se independent |
 | P-5 | 5 local branches (`logo`, `profile`, `feat/support-page`, `global`, `codex-curriculum-resolvers`) already `main` mein merged hain — sirf local pointer clutter hai, delete kiya ja sakta hai. | git | 2026-08-02 audit | 🟢 Low — housekeeping |
 | P-6 | `test:chat-db-models` crash karta hai — `src/models/chatState.model.js` dhundhta hai jo exist nahi karti. Pre-existing (archived `PROBLEMS.md` STB-008 note ke mutabik: `chatState` purane refactor mein `chatSession` ke andar embed hua, script kabhi update nahi hui). Phase 0 baseline mein red mila, isse Phase 0 se unrelated maan ke park kiya. | `backend/scripts/test-chat-db-models.js` | Phase 0 baseline, 2026-08-02 | 🟡 Medium — ek regression test permanently disabled jaisa hai |
+| P-7 | Seed script Redis quiz-cache clear nahi karta (`quiz:questions:*`) — blueprint §12 step 5 mein hai, par abhi koi cache key exist hi nahi karti (Phase 2 mein cache layer banegi). User-confirmed deferral. | `backend/scripts/seed-quiz-bank.js` | Phase 1, 2026-08-09 | 🟢 Low — Phase 2 mein cache banate waqt add karna |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -97,7 +147,7 @@ next session before writing code.
 | Phase | Kya | Status |
 |---|---|---|
 | **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** (committed on `quiz-phase1`, `4b32e34`) |
-| 1 | Question models + seed data (backend) — **replanned 2026-08-09, real 744-Q bank, see §19** | 🟡 **Planned, code not started — In Progress next session** |
+| 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
 | 2 | Quiz engine + APIs (backend) | ⚪ Pending |
 | 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
 | 4 | Quiz runner modal UI (frontend) | ⚪ Pending |
@@ -115,6 +165,17 @@ next session before writing code.
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-09 — Phase 1 built, verified, seeded (DONE)
+- **User ne 5 checkpoints maange** is phase ke andar (blueprint mein already allowed hai — "checkpoints banao, phase mat todo"): (1) bulk file laana, (2) transform script + seed files, (3) 3 models, (4) seed engine, (5) real seed. Har checkpoint: build → verify → commit, ya problem discuss karke turant fix / Parking Lot.
+- **Decision 16 confirm hua:** 6 kam-count chapters (16-40 questions) ship-as-is, no minimum enforce.
+- **Real bug pakda gaya Step 1 mein:** blueprint §17 ka "744" verify-target khud ke §19 per-chapter table (743) se contradict karta tha — `science.meta.chapter-00` ka 1 question uss 744 mein included tha lekin per-chapter table mein nahi. User-confirmed: **743 hi sahi target**, meta chapter transform script mein skip hota hai.
+- **User ne teeno models ka field naming reject kiya** — "robotic" laga. Poora rethink hua: `seedKey`→`questionCode`, `options[].key`→`options[].label`, `correctAnswer`/`shuffledCorrectKey`→ ek hi naam `correctOptionLabel` teeno models mein, `yearAsked`→`askedInYears`, `servedQuestions`→`questions`, `submittedAttemptId`→`attemptId`, `quizSessionId`→`sessionId`, `idempotencyKey`→`submissionKey`, `*Snapshot` suffixes chote kiye. `userId`/`guestId`/`subjectId`/`chapterId`/`topicId` **jaan-bujh kar nahi badle** — poore app mein already yahi naam use hote hain. `createdBy`/`updatedBy` add hue (Question mein `createdBy: 'seed-script'` default; Session/Attempt mein skip kiya, userId/guestId already creator batate hain).
+- **Ek mid-phase bug pakda gaya after Step 3:** Step 2 ke seed files purane field names use kar rahe the (rename se pehle bane the). Transform script update karke 16 files regenerate hui — ab seed JSON aur DB models exact same field names use karte hain.
+- **1 cheez deliberately skip hui:** blueprint §12 step 5 (Redis quiz-cache clear) — cache khud abhi exist nahi karta (Phase 2 mein banega). Parking Lot P-7.
+- **Final verify:** `quiz:seed` → 743 inserted, 0 updated, 0 deactivated. DB query se confirm: 743 total, 743 active, 16 distinct chapters, biology ch01 = 103 (max), biology ch06 = 16 (min). Baseline test suite same as before (koi regression).
+- **5 commits is phase mein:** `2d51287` (bulk file), `3ded7ca` (transform + seed files), `b4d8072` (3 models), `3a0e51b` (field-name fix on seed files), `db5b442` (seed engine + npm scripts).
+- **Agla:** naya session, "Quiz Phase 2 shuru karo" bolna. Phase 2 shuru karne se pehle blueprint §16 decisions 12/13/14/15 confirm karni hain (Phase Board ke neeche list hai), aur naye field names (is file ke top ke mapping table se) yaad rakhne hain — blueprint text khud purane naam use karta hai.
 
 ### 2026-08-09 — Phase 1 replanned (no code written)
 - **Kya hua:** User ne "Quiz pipeline continue karo" bola. Beat 1 (SAMJHO) shuru kiya — baseline test green (chat-db-models wahi red jo pehle se tha). Phase 1 explain karte waqt user confused hua "sirf 3 chapter, 50 hand-written questions kyun?" — investigate kiya toh pata chala: ek alag branch `quiz-phase0.5-bulk` pe already ek real 744-question bank ban chuka tha (2016-2026 ke Bihar Board papers se OCR + verify), saare 16 chapters cover karta hai, 3 languages (en/hi/hinglish) mein.
