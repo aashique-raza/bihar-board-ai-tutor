@@ -261,20 +261,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Standard fact: the direction of induced current in a rotating coil changes every half rotation. Option D's text is corrupted (OCR text leaked from the next question, same pattern as parked bug at 2017-d:B:4), but options A/B/C are clean and the correct fact is unambiguous. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -336,7 +334,7 @@
         "hinglish": "Tambe ki taar ki ek ayatakar kundali kisi chumbakiya kshetra mein gurni gati kar rahi hai. Is kundali mein prerit vidyut dhara ki disha mein kitne paribhraman ke pashchat parivartan hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -967,20 +965,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Hydrilla is a submerged aquatic plant, found in water. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1042,7 +1038,7 @@
         "hinglish": "Hydrilla paaya jaata hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1126,20 +1122,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Hydra is a bisexual (hermaphrodite) organism, possessing both male and female reproductive organs. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1202,7 +1196,7 @@
         "hinglish": "Ubhaylingi jeev ka udaharan hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1755,20 +1749,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Atomic number of gold (Au) is 79. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1831,7 +1823,7 @@
         "hinglish": "Sona ki parmanoo sankhya hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2229,20 +2221,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Insects such as butterflies have an open circulatory system; pigeon, man, and cat are all closed-circulatory vertebrates. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2305,7 +2295,7 @@
         "hinglish": "Khula parivahan tantra paaya jaata hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3015,20 +3005,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Molecular formula of sodium phosphate is Na3PO4. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3091,7 +3079,7 @@
         "hinglish": "Sodium phosphate ka anusootra hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3491,20 +3479,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "For each resistor, R = V^2/P. In series, resistances add: Req = V1^2/P1 + V2^2/P2. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3566,25 +3552,23 @@
         "hinglish": "Volta V1 par shakti P1 ka ek pratirodhak, volta V2 par shakti P2 ke pratirodhak se shreni mein juda hai. Samtulya pratirodh hoga"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Frequency of AC in Indian household electric circuits is 50 Hz. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3647,7 +3631,7 @@
         "hinglish": "Gharelu vidyut paripath mein pratyavarti dhara ki aavritti hoti hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3968,20 +3952,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Synaptic knobs are the bulb-like endings at axon terminals of a neuron. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4043,25 +4025,23 @@
         "hinglish": "Synaptic knobs paaya jaata hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Among elephant/human/rat/whale, small mammals have much faster heart rates; rat has the fastest heartbeat of the four. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4124,7 +4104,7 @@
         "hinglish": "Nimn mein sabse tez hriday dhadkan kiska hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4207,20 +4187,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "ATP (Adenosine TriPhosphate) has 3 phosphate groups. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4283,7 +4261,7 @@
         "hinglish": "ATP mein phosphate ki sankhya kitni hoti hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4366,20 +4344,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "The pineal gland is the smallest endocrine gland in the human body. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4442,7 +4418,7 @@
         "hinglish": "Sabse chhoti antahsraavi granthi hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4603,20 +4579,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Silver iodide (AgI) is pale yellow in colour. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4679,25 +4653,23 @@
         "hinglish": "Silver iodide ka rang kaisa hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Diamond is the hardest known natural substance. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4760,7 +4732,7 @@
         "hinglish": "Sabse kathor prakritik padarth hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5158,20 +5130,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Negative magnification indicates the image is real and inverted (sign convention). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5233,7 +5203,7 @@
         "hinglish": "Yadi kisi bimb ka pratibimb ka aavardhan rajnatik hai, to us pratibimb ki prakriti kya hogi?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5789,20 +5759,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Propane C3H8 has 2 C-C bonds and 8 C-H bonds = 10 covalent bonds total. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5864,7 +5832,7 @@
         "hinglish": "Propane, with the molecular formula C3H8 has"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5947,20 +5915,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Metals and Non-metals: \"Bromine is a liquid non-metal.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -6022,7 +5988,7 @@
         "hinglish": "Kaun-sa adhatu kamre ke taapmaan par taral avastha mein paaya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7702,13 +7668,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 63,
+    "l3PlusConfidence": 80,
     "marksGroupA": 80,
     "marksGroupB": 78,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
     "trilingualComplete": 110,
-    "usableInQuiz": 63
+    "usableInQuiz": 80
   }
 }

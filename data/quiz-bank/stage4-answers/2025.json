@@ -414,20 +414,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Magnification is a ratio (image size / object size or v/u) and has no unit. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -489,7 +487,7 @@
         "hinglish": "Kisi lens dwara utpann aavardhan ka SI maatrak kya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -963,20 +961,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Persistence of vision for the human eye is approximately 1/16 second (standard textbook value). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1038,7 +1034,7 @@
         "hinglish": "Manav netra ke liye drishti ka sthayitva hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2294,20 +2290,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Zinc reacts with dilute hydrochloric acid to release hydrogen gas (Zn + 2HCl -> ZnCl2 + H2). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2369,7 +2363,7 @@
         "hinglish": "Jasta tatha tanut hydrochloric aml ki abhikriya ke phalspoorv nimn mein se kaun-sa gas banta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2686,20 +2680,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "pH of milk of magnesia is approximately 10.5. Option D's printed text is corrupted (leaked OCR fragment '35. (C) 8 (D) 10.5' from the next question, same pattern as 2017-d:B:4/2024-a:A:4), but the value 10.5 itself is unambiguous. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2762,7 +2754,7 @@
         "hinglish": "Milk of magnesia ka pH maan hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2845,20 +2837,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Gold (Au) is a noble metal that dissolves only in aqua regia (mixture of concentrated HCl and HNO3). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2920,7 +2910,7 @@
         "hinglish": "Dhatu jo sirf amlraj me ghulta hai, vah hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3006,20 +2996,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Helium is a noble (inert) gas. Option D's printed text is corrupted (leaked OCR fragment from the next question, same pattern as 2025:A:35), but the correct fact is unambiguous. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3082,7 +3070,7 @@
         "hinglish": "Helium gas hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3167,20 +3155,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Carbon and Its Compounds: \"Benzene is also a cyclic hydrocarbon. Formula:\n\n```txt\nC₆H₆\n```\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3242,7 +3228,7 @@
         "hinglish": "Benzene ka anusootra hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3403,20 +3389,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Chemical formula of sugar (sucrose) is C12H22O11. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3478,7 +3462,7 @@
         "hinglish": "Cheeni ka rasayanik sutra hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3561,20 +3545,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Mendeleev arranged the periodic table by increasing atomic mass; atomic number as the ordering criterion came later with Moseley. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3636,7 +3618,7 @@
         "hinglish": "Mendeleev ne apni avart sarni tayar karne ke liye kaun-sa maapdand apnaya?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3798,20 +3780,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Atomic number of Zinc (Zn) is 30. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3873,7 +3853,7 @@
         "hinglish": "Zinc ki parmanoo sankhya hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4346,20 +4326,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Enamel is the uppermost (outermost) layer of human teeth. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4421,7 +4399,7 @@
         "hinglish": "Manushya ke daant ki sabse upari parat hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4583,20 +4561,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Bile juice is greenish in colour. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4658,7 +4634,7 @@
         "hinglish": "Pit ras ka rang hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4820,20 +4796,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Anaerobic fermentation nets 2 ATP per glucose molecule. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4895,7 +4869,7 @@
         "hinglish": "Kinvann ke phalsvaroop kitne ATP ka nirmaan hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5057,20 +5031,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Bone is a type of connective tissue. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5132,7 +5104,7 @@
         "hinglish": "Asthi kya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5919,20 +5891,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Gregor Mendel was a priest at a monastery in Austria (Brno, then part of the Austrian Empire). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5994,25 +5964,23 @@
         "hinglish": "Mendel kis desh mein Isaiyon ke ek math ke paadri the?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "In biological classification hierarchy, Kingdom is the topmost/broadest rank of the four options given. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -6074,25 +6042,23 @@
         "hinglish": "Inmein kaun vargikaran ke sabse upari paaydaan par avasthit hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Bacteria and fungi are both decomposers/micro-consumers. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -6154,25 +6120,23 @@
         "hinglish": "Sookshmupabhokta ka udaharan hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Carnivorous organisms that eat herbivores are standardly termed secondary consumers in Bihar Board textbook framing. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -6235,7 +6199,7 @@
         "hinglish": "Mansahari jeevon ko kaha jaata hai- ... 79."
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7798,13 +7762,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 61,
+    "l3PlusConfidence": 79,
     "marksGroupA": 80,
     "marksGroupB": 76,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
     "trilingualComplete": 110,
-    "usableInQuiz": 61
+    "usableInQuiz": 79
   }
 }

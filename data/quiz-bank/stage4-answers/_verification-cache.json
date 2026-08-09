@@ -14,10 +14,9 @@
     },
     "02b7aabf8e2e6e9c": {
       "chapter": "Metals and Non-metals",
-      "claimedOption": "c",
-      "correctOption": null,
+      "correctOption": "c",
       "evidence": "Silver and gold do not react with oxygen even at high temperature.",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "030c41068df88b2f": {
       "chapter": null,
@@ -168,7 +167,7 @@
       "chapter": "Light - Reflection and Refraction",
       "claimedOption": "a",
       "correctOption": null,
-      "evidence": "distance between the mirror and the screen",
+      "evidence": "दर्पण और स्क्रीन",
       "verdict": "ungrounded"
     },
     "0a4426d1af6013be": {
@@ -221,10 +220,9 @@
     },
     "0dc9fe32d861e679": {
       "chapter": "Acids, Bases and Salts",
-      "claimedOption": "a",
-      "correctOption": null,
+      "correctOption": "a",
       "evidence": "pH | Nature\n|---|---|\n| 1 | Strongly acidic |\n| 4 | Weakly acidic |\n| 7 | Neutral |",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "0e085ba9d2d26572": {
       "chapter": "Acids, Bases and Salts",
@@ -300,10 +298,9 @@
     },
     "10f9730fd4e1ae04": {
       "chapter": "Metals and Non-metals",
-      "claimedOption": "b",
-      "correctOption": null,
-      "evidence": "Bromine is a non-metal that is liquid at room temperature.",
-      "verdict": "ungrounded"
+      "correctOption": "b",
+      "evidence": "Bromine is a liquid non-metal.",
+      "verdict": "answered"
     },
     "110084a9581f1e36": {
       "chapter": "Life Processes",
@@ -642,7 +639,7 @@
       "chapter": "Sources of Energy",
       "claimedOption": "a",
       "correctOption": null,
-      "evidence": "Examples of common fuels: CNG, Biogas, LPG, Coal.",
+      "evidence": "Examples of common fuels: CNG, Biogas, Charcoal, LPG, Coal.",
       "verdict": "ungrounded"
     },
     "25ccd54a700f513e": {
@@ -970,7 +967,7 @@
       "chapter": "Chemical Reactions and Equations",
       "claimedOption": "b",
       "correctOption": null,
-      "evidence": "Oxidation is a process in which: - Oxygen is added to a substance",
+      "evidence": "Oxidation is a process in which: - Oxygen is added to a substance, or - Hydrogen is removed from a substance.",
       "verdict": "ungrounded"
     },
     "3b4bdc0d825e04f8": {
@@ -1270,10 +1267,9 @@
     },
     "4b6d29d3a15bdf29": {
       "chapter": "Metals and Non-metals",
-      "claimedOption": "d",
-      "correctOption": null,
+      "correctOption": "d",
       "evidence": "Silver and gold do not react with oxygen even at high temperature.",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "4baa406b8b6881a0": {
       "chapter": "How Do Organisms Reproduce?",
@@ -1588,7 +1584,7 @@
       "chapter": "Sources of Energy",
       "claimedOption": "a",
       "correctOption": null,
-      "evidence": "Examples of common fuels: CNG, LPG, Biogas, Charcoal",
+      "evidence": "Examples of common fuels: CNG, LPG, Biogas, Charcoal, Coal.",
       "verdict": "ungrounded"
     },
     "5afb52542b887c56": {
@@ -2149,7 +2145,7 @@
       "chapter": "Acids, Bases and Salts",
       "claimedOption": "c",
       "correctOption": null,
-      "evidence": "Sodium hydroxide is used in soap and detergent manufacture",
+      "evidence": "sodium hydroxide is used in soap and detergent manufacture",
       "verdict": "ungrounded"
     },
     "7e05459faa5fdff0": {
@@ -3397,10 +3393,9 @@
     },
     "c23796b633cc69fc": {
       "chapter": "Magnetic Effects of Electric Current",
-      "claimedOption": "a",
-      "correctOption": null,
+      "correctOption": "a",
       "evidence": "In India, frequency is 50 Hz",
-      "verdict": "ungrounded"
+      "verdict": "answered"
     },
     "c28d40c0a35e64b7": {
       "chapter": "Periodic Classification of Elements",
@@ -3707,10 +3702,10 @@
       "verdict": "answered"
     },
     "d3c7667e41438b07": {
-      "chapter": "Carbon and Its Compounds",
+      "chapter": "Acids, Bases and Salts",
       "claimedOption": "a",
       "correctOption": null,
-      "evidence": "formic acid is called methanoic acid",
+      "evidence": "फॉर्मिक अम्ल का IUPAC नाम मेथेनोइक अम्ल है।",
       "verdict": "ungrounded"
     },
     "d3de73b815e174ad": {
@@ -3796,7 +3791,7 @@
       "chapter": "Life Processes",
       "claimedOption": "d",
       "correctOption": null,
-      "evidence": "\"Different animals have different respiratory organs, but the respiratory surface must be: - Thin - Moist - Large in surface area - Richly supplied with blood vessels\"",
+      "evidence": "Both (B) and (C)",
       "verdict": "ungrounded"
     },
     "d6750433aebede49": {
@@ -4228,10 +4223,9 @@
     },
     "ea90ab8b309fe896": {
       "chapter": "Carbon and Its Compounds",
-      "claimedOption": "d",
-      "correctOption": null,
-      "evidence": "Benzene is also a cyclic hydrocarbon. Formula: C₆H₆",
-      "verdict": "ungrounded"
+      "correctOption": "d",
+      "evidence": "Benzene is also a cyclic hydrocarbon. Formula:\n\n```txt\nC₆H₆\n```",
+      "verdict": "answered"
     },
     "eae883f42d2fc696": {
       "chapter": "Control and Coordination",

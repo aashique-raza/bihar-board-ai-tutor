@@ -492,20 +492,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Pituitary gland is the classic textbook answer for smallest/pea-sized master endocrine gland among the given options. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -567,7 +565,7 @@
         "hinglish": "Sabse chhoti antahsravi granthi kaun hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -728,20 +726,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Plasma is the light-yellow sticky fluid component of blood. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -803,7 +799,7 @@
         "hinglish": "Rakt mein halke peele rang ke chipchipe drav ko kehte hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -964,20 +960,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Cockroach (insects) have an open circulatory system, unlike the closed system in camel, horse and humans. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1040,7 +1034,7 @@
         "hinglish": "Nimnalikhit mein kisme khula parisanchalan tantra paaya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1123,20 +1117,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Urochrome is the pigment responsible for the yellow colour of urine. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1198,25 +1190,23 @@
         "hinglish": "Mootr ka peela rang kis varnaka ke kaaran hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Earthworm is the classic hermaphrodite animal example. Same fact as 2019-b:A:16/2020-b:A:17. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1279,7 +1269,7 @@
         "hinglish": "Nimnalikhit mein kaun ek ubhaylingi jantu hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1677,20 +1667,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Green plants are called producers as they make their own food via photosynthesis. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1752,25 +1740,23 @@
         "hinglish": "Hare paudhe kehte hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "A surge in LH (luteinizing hormone) triggers ovulation. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1833,25 +1819,23 @@
         "hinglish": "Andotsarg ka kaaran hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Islets of Langerhans are found in the pancreas. Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1913,7 +1897,7 @@
         "hinglish": "Langerhans ki dweepikaen kahan pai jaati hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1996,20 +1980,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Nissl's granules are found in neurons. Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2072,25 +2054,23 @@
         "hinglish": "Nissl ke kanikayein pai jaati hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Average adult human brain weighs approximately 1.2-1.4 Kg. Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2152,7 +2132,7 @@
         "hinglish": "Manav mastishk ka wajan hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2392,20 +2372,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "SI unit of energy is the joule. Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2467,7 +2445,7 @@
         "hinglish": "Urja ka S.I. maatrak hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2942,20 +2920,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "The objective lens of a photography camera is a convex lens. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3017,7 +2993,7 @@
         "hinglish": "Photography camera ka abhidrushyak hota hai."
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3178,20 +3154,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "In a wind electric generator, air in motion (wind) turns the coil/turbine. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3253,7 +3227,7 @@
         "hinglish": "Pawan vidyut janitra mein kundali ko ghumane ka kaam moolatah karti hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3336,20 +3310,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Graphite is a non-metal conductor of electricity. Same fact as 2020-a:A:7. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3412,7 +3384,7 @@
         "hinglish": "Nimnankit mein kaun vidyut ka suchalak hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3810,20 +3782,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Household electricity supply is 220V alternating current (AC). Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3886,25 +3856,23 @@
         "hinglish": "Hamare gharon mein jo vidyut aapurti ki jaati hai vah hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Atomic number of zinc is 30. Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3966,7 +3934,7 @@
         "hinglish": "Zinc ki parmanoo sankhya hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4364,20 +4332,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Molecular formula of glucose is C6H12O6. Same fact as 2021:A:32. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4440,7 +4406,7 @@
         "hinglish": "Glucose ka aanvik sootra hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5148,20 +5114,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Chemical composition of copper pyrites is CuFeS2. Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5223,7 +5187,7 @@
         "hinglish": "Copper pyrites ka rasayanik sangathan hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5543,20 +5507,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Ethyl alcohol (C2H5OH) and dimethyl ether (CH3-O-CH3) both have molecular formula C2H6O with different structures, making them isomers. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5618,25 +5580,23 @@
         "hinglish": "Nimnalikhit mein kaun samavayavi hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "IUPAC ether naming uses the larger alkyl group as parent chain and smaller as alkoxy substituent: CH3-O-C2H5 = methoxyethane. General chemistry knowledge, not present in curated textbook content. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5698,7 +5658,7 @@
         "hinglish": "CH3-O-C2H5 ka IUPAC pranali ke anusar naam hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5782,20 +5742,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Element with atomic number 16 (sulfur) has electron configuration 2,8,6 -- 6 valence electrons places it in modern IUPAC group 16. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5857,7 +5815,7 @@
         "hinglish": "Ek tatva ki parmanoo sankhya 16 hai, avart sarni mein is tatva ki varg sankhya kya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -6096,20 +6054,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Metals and Non-metals: \"Silver and gold do not react with oxygen even at high temperature.\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -6171,7 +6127,7 @@
         "hinglish": "Nimnalikhit mein kaun si dhatu vayu mein uch taap par garam kiye jaane par bhi oxygen se sanyog nahi karti hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7700,13 +7656,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 58,
+    "l3PlusConfidence": 80,
     "marksGroupA": 80,
     "marksGroupB": 58,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
     "trilingualComplete": 110,
-    "usableInQuiz": 58
+    "usableInQuiz": 80
   }
 }

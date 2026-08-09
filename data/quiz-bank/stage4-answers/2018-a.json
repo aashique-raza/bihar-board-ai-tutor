@@ -339,20 +339,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L3",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "textbook",
+        "sourceDetail": "RAG textbook match — Magnetic Effects of Electric Current: \"In India, frequency is 50 Hz\"",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -414,25 +412,23 @@
         "hinglish": "Bharat mein utpadit pratyavarti vidyut dhara ki aavritti hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Least count = range / number of divisions = 1V / 20 = 0.05V. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -494,7 +490,7 @@
         "hinglish": "Kisi voltmeter ke scale par 0V aur 1V ke beech 20 vibhajan chinh hain, to us voltmeter ka alpa maapank hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -889,20 +885,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Narora nuclear power reactor is located in Bulandshahr district, Uttar Pradesh. General knowledge, not present in curated textbook content. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -964,7 +958,7 @@
         "hinglish": "Narora nabhik vidyut santran kis rajya mein sthit hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1359,20 +1353,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Aqua regia is a freshly prepared mixture of concentrated HCl and concentrated HNO3 in 3:1 ratio. Standard fact, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1434,7 +1426,7 @@
         "hinglish": "Aqua regia (Royal jal) kis anupaat mein saandr hydrochloric aml aur saandr nitric aml ka taza mishran hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1517,20 +1509,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Propane (C3H8, CH3-CH2-CH3 structure) has 2 C-C bonds + 8 C-H bonds = 10 covalent bonds total. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1592,7 +1582,7 @@
         "hinglish": "Propane ka aanvik sutra C₃H₈ hai, isme –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1675,11 +1665,11 @@
     },
     {
       "answer": {
-        "confidence": "L3",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": "a",
-        "source": "textbook",
-        "sourceDetail": "RAG textbook match — Periodic Classification of Elements: \"The modern periodic table has: - 18 vertical columns called groups\"",
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "CAUGHT DURING GOLDEN-SET VERIFICATION: pipeline's automated RAG verification had marked this L3 with correctOption 'a' (7), which is wrong. The modern periodic table has 18 vertical groups (7 is the number of periods, a different concept). Human-confirmed correct answer: 18.",
         "text": {
           "en": null,
           "hi": null,
@@ -1987,20 +1977,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Sphygmomanometer is the standard instrument for measuring blood pressure. General knowledge, human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2062,7 +2050,7 @@
         "hinglish": "Nimnalikhit mein kaun se yantra ka upyog raktdaab maapne mein kiya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2771,20 +2759,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Leaves are boiled in alcohol before the iodine starch test to dissolve out chlorophyll, so the color change from iodine is visible. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2846,25 +2832,23 @@
         "hinglish": "Mand parikshan ke liye hari patte par iodine daalne se pehle patte ko alcohol mein ubala jaata hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "A slide under a compound microscope is always first focused at the lowest available magnification (5x here) before moving to higher magnifications. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2926,7 +2910,7 @@
         "hinglish": "Slide ko sarvpratham Compound Microscope se dekha jaata hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4255,13 +4239,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 30,
+    "l3PlusConfidence": 38,
     "marksGroupA": 39,
     "marksGroupB": 0,
     "objective": 39,
     "questions": 63,
     "subjective": 24,
     "trilingualComplete": 63,
-    "usableInQuiz": 30
+    "usableInQuiz": 38
   }
 }

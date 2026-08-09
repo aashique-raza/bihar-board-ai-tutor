@@ -23,11 +23,11 @@
   "questions": [
     {
       "answer": {
-        "confidence": "L3",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": "a",
-        "source": "textbook",
-        "sourceDetail": "RAG textbook match — Light - Reflection and Refraction: \"The distance between the pole and the principal focus is called the **focal length**.\"",
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "CAUGHT DURING GOLDEN-SET VERIFICATION: pipeline's automated RAG verification had marked this L3 with correctOption 'a' (Zero), which is wrong. A plane mirror is flat (radius of curvature infinite), so its focal length is taken as infinity. Human-confirmed correct answer: Infinity.",
         "text": {
           "en": null,
           "hi": null,
@@ -257,20 +257,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "The speed of light is unchanged on reflection from a mirror. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -332,7 +330,7 @@
         "hinglish": "Ek darpan par aapitit prakash ki chaal C hai, to paravartit prakash ki chaal hogi?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -649,20 +647,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Oily paper is translucent, allowing partial light through unlike fully transparent or opaque materials. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -724,7 +720,7 @@
         "hinglish": "Tailiy kagaz hota hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1119,20 +1115,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "The blind spot is where the optic nerve exits the retina, so it has no photoreceptors (rods and cones). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1194,7 +1188,7 @@
         "hinglish": "Blind spot mein nahi hota hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1277,20 +1271,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Ammeter, voltmeter, and electric cells all have marked +/- terminals; a plain coil has no polarity marking. Same fact/pattern as 2023-a:A:36. Option D's text is corrupted (leaked OCR continuation), but options A/B/C are clean. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1353,7 +1345,7 @@
         "hinglish": "Kis upkaran mein dhan (+) aur rnan (–) ka chinh nahi hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1514,20 +1506,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "The ability to do work is called energy. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1589,7 +1579,7 @@
         "hinglish": "Karya karne ki kshamata ko kehte hain"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2611,20 +2601,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "'Philosopher's wool' is the old name for zinc oxide (ZnO). Same fact as 2023-a:A:53. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2686,7 +2674,7 @@
         "hinglish": "Yashad pushp kya hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3004,20 +2992,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Valence electrons: Si (group 14) = 4, Al (group 13) = 3, P (group 15) = 5, Na (group 1) = 1. P has the highest of the four. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3079,7 +3065,7 @@
         "hinglish": "Nimnalikhit mein kis tatva mein sanyojak electronon ki sankhya sabse adhik hai ?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3240,20 +3226,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Atomic number of Sulphur (S) is 16. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3315,7 +3299,7 @@
         "hinglish": "Gandhak ki parmanoo sankhya hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3398,20 +3382,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Ethyne (acetylene, C2H2) is used in oxy-acetylene welding. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3473,25 +3455,23 @@
         "hinglish": "Welding mein kis gas ka upyog hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Carbon belongs to group 14 of the periodic table. Option D's text has a leaked page-reference artifact appended, but the value '14' itself is clear on both Hindi and English sides. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3553,7 +3533,7 @@
         "hinglish": "Carbon aavart sarni ke kis varg ka sadasya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3636,20 +3616,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Fluorine (F) is the most reactive halogen. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3711,7 +3689,7 @@
         "hinglish": "Nimnalikhit mein kaun sabse adhik kriyasheel halojen hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3950,20 +3928,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Decoding the isotope notation (mass number, atomic number): A = Z9 (Fluorine, non-metal), B = Z12 (Magnesium, metal), C = Z6 (Carbon, non-metal), D = Z8 (Oxygen, non-metal). Only B is a metal. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4025,7 +4001,7 @@
         "hinglish": "Nimnankit sanketon dwara vyakt tatvon mein kaun sa dhatu hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -4108,20 +4084,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Drip irrigation delivers water right near plant roots. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -4183,7 +4157,7 @@
         "hinglish": "Sinchai ke liye paudhon ko theek jadon ke samip jal pahunchane ki takneek hai–"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5125,20 +5099,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Breakdown of amino acids (deamination) produces ammonia, NH3. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5201,7 +5173,7 @@
         "hinglish": "Amino amla ke vikhandon se kya banta hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5362,20 +5334,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Ethylene is the fruit-ripening hormone. Same fact as 2021:A:59/2023-a:A:25. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5437,25 +5407,23 @@
         "hinglish": "Phal pakane wala hormone hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Humans have 12 pairs of cranial nerves. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5517,7 +5485,7 @@
         "hinglish": "Manushya mein kapal tantrikaon ki sankhya hoti hai –"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -5913,20 +5881,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Archaeopteryx is a classic transitional fossil: it is a fossil, had teeth in its jaws and claws on its fingers (reptilian features), and had wings and feathers (bird features). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -5988,25 +5954,23 @@
         "hinglish": "Archaeopteryx ke sambandh mein nimnankit kaun kathan satya hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Many snail species are sequential hermaphrodites capable of changing sex. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -6068,7 +6032,7 @@
         "hinglish": "Nimnalikhit mein se kaun prani apna ling badal sakte hain?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -7681,13 +7645,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 61,
+    "l3PlusConfidence": 79,
     "marksGroupA": 80,
     "marksGroupB": 46,
     "objective": 80,
     "questions": 110,
     "subjective": 30,
     "trilingualComplete": 110,
-    "usableInQuiz": 61
+    "usableInQuiz": 79
   }
 }

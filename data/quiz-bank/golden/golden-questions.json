@@ -1,0 +1,1537 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-09",
+  "description": "Pipeline's own regression test (QUIZ_DATA_PIPELINE.md section 9 / A5). 30 hand-verified questions spanning all 17 papers with usable objective content, and Physics/Chemistry/Biology. After any pipeline code change, these 30 sourceIds should be re-checked against bank/questions.json to confirm text/options/correctOption still match expected.",
+  "questions": [
+    {
+      "sourceId": "2016-a:B:31-i",
+      "questionId": "q-000033",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "The image formed by plane mirror is",
+          "hi": "समतल दर्पण द्वारा बना प्रतिबिम्ब होता है",
+          "hinglish": "Samtal darpan dwara bana pratibimb hota hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "virtual",
+              "hi": "काल्पनिक",
+              "hinglish": "Kalpanik"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "real",
+              "hi": "वास्तविक",
+              "hinglish": "Vastavik"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "both (a) and (b)",
+              "hi": "(a) और (b) दोनों",
+              "hinglish": "(a) aur (b) dono"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "none of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2016-a:B:31-xx",
+      "questionId": "q-000052",
+      "chapterId": "science.biology.chapter-02",
+      "expected": {
+        "text": {
+          "en": "Example of phytohormone is",
+          "hi": "पादप हार्मोन का उदाहरण है",
+          "hinglish": "Padap hormone ka udaharan hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "pepsin",
+              "hi": "पेप्सीन",
+              "hinglish": "Pepsin"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "adrenaline",
+              "hi": "एड्रीनलीन",
+              "hinglish": "Adrenaline"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "auxin",
+              "hi": "ऑक्सीन",
+              "hinglish": "Auxin"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "testosterone",
+              "hi": "टेस्टोस्टेरॉन",
+              "hinglish": "Testosterone"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2016-b:B:31-i",
+      "questionId": "q-001169",
+      "chapterId": "science.physics.chapter-03",
+      "expected": {
+        "text": {
+          "en": "On which principle of electric current does an electric fuse operate?",
+          "hi": "विद्युत फ्यूज विद्युत धारा के किस सिद्धान्त पर कार्य करता है ?",
+          "hinglish": "Vidyut fuse vidyut dhara ke kis siddhant par kary karta hai ?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Thermal",
+              "hi": "ऊष्मीय",
+              "hinglish": "Ushmiy"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Magnetic",
+              "hi": "चुम्बकीय",
+              "hinglish": "Chumbakiya"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Chemical",
+              "hi": "रासायनिक",
+              "hinglish": "Rasayanik"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2016-b:B:31-xx",
+      "questionId": "q-001188",
+      "chapterId": "science.biology.chapter-02",
+      "expected": {
+        "text": {
+          "en": "What happens due to the deficiency of insulin?",
+          "hi": "इन्सुलीन की कमी से होता है ?",
+          "hinglish": "Insulin ki kami se hota hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "goiter",
+              "hi": "घेंघा",
+              "hinglish": "Gehnga"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "dwarfism",
+              "hi": "बौनापन",
+              "hinglish": "Baunapan"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "diabetes",
+              "hi": "मधुमेह",
+              "hinglish": "Madhumeh"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2016-c:B:31-i",
+      "questionId": "q-001212",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "The image formed by a plane mirror is",
+          "hi": "समतल दर्पण द्वारा बना प्रतिबिम्ब होता है",
+          "hinglish": "Samtal darpan dwara bana pratibimb hota hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "imaginary",
+              "hi": "काल्पनिक",
+              "hinglish": "Kalpanik"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "real",
+              "hi": "वास्तविक",
+              "hinglish": "Vastavik"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Both (a) and (b)",
+              "hi": "(a) और (b) दोनों",
+              "hinglish": "(a) aur (b) dono"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2016-c:B:31-xx",
+      "questionId": "q-001229",
+      "chapterId": "science.biology.chapter-02",
+      "expected": {
+        "text": {
+          "en": "is an example of plant hormone?",
+          "hi": "पादप हार्मोन का उदाहरण है ?",
+          "hinglish": "Padap hormone ka udaharan hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Pepsin",
+              "hi": "पेप्सीन",
+              "hinglish": "Pepsin"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Adrenaline",
+              "hi": "एड्रीनलीन",
+              "hinglish": "Adrenaline"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Auxin",
+              "hi": "ऑक्सीन",
+              "hinglish": "Auxin"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Testosterone",
+              "hi": "टेस्टोस्टेरॉन",
+              "hinglish": "Testosterone"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2017-a:B:1",
+      "questionId": "q-000066",
+      "chapterId": "science.physics.chapter-02",
+      "expected": {
+        "text": {
+          "en": "The ray of light passes through",
+          "hi": "प्रकाश की किरणें गमन करती है",
+          "hinglish": "Prakash ki kiranen gaman karti hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "In straight line",
+              "hi": "सीधी रेखा में",
+              "hinglish": "Seedhi rekha mein"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "In Zig Zag line",
+              "hi": "टेढ़ी रेखा में",
+              "hinglish": "Tedhi rekha mein"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "In any direction",
+              "hi": "किसी भी दिशा में",
+              "hinglish": "Kisi bhi disha mein"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें कोई नहीं",
+              "hinglish": "Inmein koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2017-a:B:7",
+      "questionId": "q-000072",
+      "chapterId": "science.physics.chapter-02",
+      "expected": {
+        "text": {
+          "en": "The eye is used as:",
+          "hi": "आँख व्यवहार होता है :",
+          "hinglish": "Aankh vyavhaar hota hai :"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Concave mirror",
+              "hi": "अवतल दर्पण की तरह",
+              "hinglish": "Avatal darpan ki tarah"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Convex lens",
+              "hi": "उत्तल लेंस की तरह",
+              "hinglish": "Uttal lens ki tarah"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Plane Mirror",
+              "hi": "समतल दर्पण की तरह",
+              "hinglish": "Samtal darpan ki tarah"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें कोई नहीं",
+              "hinglish": "Inmein koi nahi"
+            }
+          }
+        ],
+        "correctOption": "b",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2017-c:B:3",
+      "questionId": "q-000921",
+      "chapterId": "science.biology.chapter-06",
+      "expected": {
+        "text": {
+          "en": "Which of the following means water?",
+          "hi": "निम्न में से किसका अर्थ जल होता है ?",
+          "hinglish": "Nimn mein se kiska arth jal hota hai ?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "petro",
+              "hi": "पेट्रो",
+              "hinglish": "Petro"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "turbo",
+              "hi": "टरबो",
+              "hinglish": "Turbo"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "nitro",
+              "hi": "नाइट्रो",
+              "hinglish": "Nitro"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "hydro",
+              "hi": "हाइड्रो",
+              "hinglish": "Hydro"
+            }
+          }
+        ],
+        "correctOption": "d",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2017-c:B:7",
+      "questionId": "q-001245",
+      "chapterId": "science.physics.chapter-03",
+      "expected": {
+        "text": {
+          "en": "Resistance of a conductor with increase in temperature:",
+          "hi": "ताप बढ़ने से चालक का प्रतिरोध :",
+          "hinglish": "Taap badhne se chalaak ka pratirodh:"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "increases",
+              "hi": "बढ़ता है",
+              "hinglish": "badhata hai"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "decreases",
+              "hi": "घटता है",
+              "hinglish": "ghatata hai"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "does not increase or decrease",
+              "hi": "बढ़ता-घटता नहीं है",
+              "hinglish": "Badhata-ghatata nahi hai"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2017-d:B:1",
+      "questionId": "q-001256",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "Light rays travel:",
+          "hi": "प्रकाश की किरणें गमन करती है:",
+          "hinglish": "Prakash ki kiranen gaman karti hai:"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "in a straight line",
+              "hi": "सीधी रेखा में",
+              "hinglish": "seedhi rekha mein"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "in a curved line",
+              "hi": "टेढ़ी रेखा में",
+              "hinglish": "tedhi rekha mein"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "in any direction",
+              "hi": "किसी भी दिशा में",
+              "hinglish": "Kisi bhi disha mein"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2017-d:B:7",
+      "questionId": "q-001262",
+      "chapterId": "science.physics.chapter-02",
+      "expected": {
+        "text": {
+          "en": "The eye behaves like:",
+          "hi": "आँख व्यवहार होता है :",
+          "hinglish": "Aankh vyavhaar hota hai :"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "a concave mirror",
+              "hi": "अवतल दर्पण की तरह",
+              "hinglish": "Avatal darpan ki tarah"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "a convex lens",
+              "hi": "उत्तल लेंस की तरह",
+              "hinglish": "Uttal lens ki tarah"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "a plane mirror",
+              "hi": "समतल दर्पण की तरह",
+              "hinglish": "Samtal darpan ki tarah"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2018-a:A:1",
+      "questionId": "q-000073",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "The diameter of a circular outline of the reflecting surface of spherical mirror is called",
+          "hi": "गोलीय दर्पण के परावर्तक पृष्ठ की वृत्ताकार सीमा रेखा का व्यास कहलाता है –",
+          "hinglish": "Goliya darpan ke paravartan pashch ki vrttakar seema rekha ka vyas kaha jaata hai –"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Principal focus",
+              "hi": "मुख्य फोकस",
+              "hinglish": "Mukhya fokus"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Radius of curvature",
+              "hi": "वक्रता त्रिज्या",
+              "hinglish": "Vakrata trijya"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Principal axis",
+              "hi": "प्रधान अक्ष",
+              "hinglish": "Pradhan aksh"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Aperture",
+              "hi": "गोलीय दर्पण का द्वारक",
+              "hinglish": "Goliya darpan ka dwaarak"
+            }
+          }
+        ],
+        "correctOption": "d",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2018-a:A:23",
+      "questionId": "q-001272",
+      "chapterId": "science.chemistry.chapter-05",
+      "expected": {
+        "text": {
+          "en": "How many vertical column (Groups) are in modern periodic table?",
+          "hi": "आधुनिक आवर्त सारणी में कितने उर्ध्व स्तम्भ हैं?",
+          "hinglish": "Aadhunik avart sarani mein kitne urdhv stambh hain?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "7",
+              "hi": "7",
+              "hinglish": "7"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "9",
+              "hi": "9",
+              "hinglish": "9"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "15",
+              "hi": "15",
+              "hinglish": "15"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "18",
+              "hi": "18",
+              "hinglish": "18"
+            }
+          }
+        ],
+        "correctOption": "d",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": "Golden-set verification caught a wrong Stage-E answer here: pipeline had marked correctOption=a (7), corrected to d (18). See resolved.json."
+    },
+    {
+      "sourceId": "2018-b:A:3",
+      "questionId": "q-000138",
+      "chapterId": "science.physics.chapter-02",
+      "expected": {
+        "text": {
+          "en": "3 who controls Pupil size muscles?",
+          "hi": "कौन मांसपेशियाँ पुतली के आकार को नियंत्रित करती हैं?",
+          "hinglish": "Kaun mamspeeshiyan putli ke aakar ko niyantrit karti hain?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Ciliary Muscle",
+              "hi": "सिलियरी मांसपेशी",
+              "hinglish": "Siliary mamspeeshi"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Iris",
+              "hi": "आईरिस",
+              "hinglish": "Airis"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Eye lens",
+              "hi": "आंख का लेंस",
+              "hinglish": "Aankh ka lens"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "retina Ans: Iris",
+              "hi": "रेटिना उत्तर: आईरिस",
+              "hinglish": "Retina Uttar: Iris"
+            }
+          }
+        ],
+        "correctOption": "b",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2018-b:A:40",
+      "questionId": "q-001333",
+      "chapterId": "science.biology.chapter-05",
+      "expected": {
+        "text": {
+          "en": "Which of the following groups contain only one biodegradable items?",
+          "hi": "निम्नलिखित में से कौन सी समूह केवल एक बायोडिग्रेडेबल वस्तुओं को शामिल करता है?",
+          "hinglish": "Nimnalikhit mein se kaun si samuh keval ek biodegradable vastuon ko shamil karta hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Grass, flower and leather",
+              "hi": "घास, फूल और चमड़ा",
+              "hinglish": "Ghaas, phool aur chamda"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "brass, wood and plastic",
+              "hi": "पीतल, लकड़ी और प्लास्टिक",
+              "hinglish": "Peetal, lakdi aur plastic"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Fruits piece cake and Rubber",
+              "hi": "फलों का टुकड़ा केक और रबर",
+              "hinglish": "Phalon ka tukda cake aur rubber"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Cake, wood and glass Ans: cake, wood and glass",
+              "hi": "केक, लकड़ी और कांच उत्तर: केक, लकड़ी और कांच",
+              "hinglish": "Cake, lakdi aur kaanch uttar: cake, lakdi aur kaanch"
+            }
+          }
+        ],
+        "correctOption": "d",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2019-b:A:5",
+      "questionId": "q-001338",
+      "chapterId": "science.physics.chapter-03",
+      "expected": {
+        "text": {
+          "en": "The resistance of a conductor does not depend on",
+          "hi": "चालक का प्रतिरोध निर्भर नही करता है",
+          "hinglish": "Chalak ka pratirodh nirbhar nahi karta hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "length of a conductor",
+              "hi": "चालक की लम्बाई पर",
+              "hinglish": "Chalak ki lambai par"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "cross sectional area of a conductor",
+              "hi": "चालक के अनुप्रस्थ काट क्षेत्रफल पर",
+              "hinglish": "Chalak ke anuprast kaat kshetrafal par"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Temperature of a conductor",
+              "hi": "चालक के तापमान पर",
+              "hinglish": "Chalak ke taapmaan par"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Electric current flowing through conductor",
+              "hi": "चालक में प्रवाहित विद्युत धारा पर",
+              "hinglish": "Chalak mein pravahit vidyut dhara par"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2019-b:A:6",
+      "questionId": "q-000187",
+      "chapterId": "science.biology.chapter-06",
+      "expected": {
+        "text": {
+          "en": "Which state has 'Surangam' water harvesting system?",
+          "hi": "सुरंगम किस राज्य की जल संग्रहण व्यवस्था है?",
+          "hinglish": "Surangam kis rajya ki jal sangrahann vyavastha hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Himachal Pradesh",
+              "hi": "हिमाचल प्रदेश",
+              "hinglish": "Himachal Pradesh"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Tamil Nadu",
+              "hi": "तमिलनाडु",
+              "hinglish": "Tamil Nadu"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Kerala",
+              "hi": "केरल",
+              "hinglish": "Kerala"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Karnataka",
+              "hi": "कर्नाटक",
+              "hinglish": "Karnataka"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2020-a:A:1",
+      "questionId": "q-000233",
+      "chapterId": "science.physics.chapter-03",
+      "expected": {
+        "text": {
+          "en": "Which of the following is measured by ammeter?",
+          "hi": "आमीटर से निम्नलिखित में किसे मापा जाता है?",
+          "hinglish": "Ammeter se nimnalikhit mein kise maapa jaata hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Current",
+              "hi": "धारा",
+              "hinglish": "Dhara"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Charge",
+              "hi": "आवेश",
+              "hinglish": "Aavesh"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Potential",
+              "hi": "विभव",
+              "hinglish": "Vibhav"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Electric power",
+              "hi": "विद्युत शक्ति",
+              "hinglish": "Vidyut shakti"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2020-a:A:36",
+      "questionId": "q-001280",
+      "chapterId": "science.chemistry.chapter-04",
+      "expected": {
+        "text": {
+          "en": "How many covalent bonds are there in one molecule of ethane?",
+          "hi": "इथेन के एक अणु में कितने सह-संयोजक बन्धन हैं?",
+          "hinglish": "Ithen ke ek anoo mein kitne sah-sanyojak bandhan hain?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "2",
+              "hi": "2",
+              "hinglish": "2"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "4",
+              "hi": "4",
+              "hinglish": "4"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "6",
+              "hi": "6",
+              "hinglish": "6"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "7",
+              "hi": "7",
+              "hinglish": "7"
+            }
+          }
+        ],
+        "correctOption": "d",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": "Golden-set verification caught a wrong Stage-E answer here: pipeline had marked correctOption=a (2), corrected to d (7). See resolved.json."
+    },
+    {
+      "sourceId": "2020-b:A:1",
+      "questionId": "q-000308",
+      "chapterId": "science.chemistry.chapter-03",
+      "expected": {
+        "text": {
+          "en": "Which of the following metals is least reactive ?",
+          "hi": "निम्नलिखित में से कौन सबसे कम अभिक्रियाशील धातु है ?",
+          "hinglish": "Nimnalikhit mein se kaun sabse kam abhikrishil dhatu hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Al",
+              "hi": "Al",
+              "hinglish": "Al"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Zn",
+              "hi": "Zn",
+              "hinglish": "Zn"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Fe",
+              "hi": "Fe",
+              "hinglish": "Fe"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Mg",
+              "hi": "Mg",
+              "hinglish": "Mg"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": "Golden-set verification caught a wrong Stage-E answer here: pipeline had marked correctOption=d (Mg), corrected to c (Fe). See resolved.json."
+    },
+    {
+      "sourceId": "2020-b:A:42",
+      "questionId": "q-001282",
+      "chapterId": "science.chemistry.chapter-02",
+      "expected": {
+        "text": {
+          "en": "The pH value of an acid is",
+          "hi": "अम्ल का pH मान होता है",
+          "hinglish": "Aml ka pH maan hota hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "less than 7",
+              "hi": "7 से कम",
+              "hinglish": "7 se kam"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "more than 7",
+              "hi": "7 से अधिक",
+              "hinglish": "7 se adhik"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "7",
+              "hi": "7",
+              "hinglish": "7"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "14",
+              "hi": "14",
+              "hinglish": "14"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2021:A:1",
+      "questionId": "q-000384",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "The focal length of which mirror is negative ?",
+          "hi": "किस दर्पण की फोकस दूरी ऋणात्मक होता है ?",
+          "hinglish": "Kis darpan ki focal doori rajnatik hota hai ?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Plane mirror",
+              "hi": "समतल दर्पण",
+              "hinglish": "Samtal darpan"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Concave mirror",
+              "hi": "अवतल दर्पण",
+              "hinglish": "Avatal darpan"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Convex mirror",
+              "hi": "उत्तल दर्पण",
+              "hinglish": "Uttal darpan"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these A. Plane mirror B. Concave mirror C. Convex mirror D. None of these",
+              "hi": "इनमें से कोई नहीं 1. A. Plane mirror B. Concave mirror C. Convex mirror D. None of these",
+              "hinglish": "Inmein se koi nahi A. Plane mirror B. Concave mirror C. Convex mirror D. None of these"
+            }
+          }
+        ],
+        "correctOption": "b",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": "Golden-set verification caught a wrong Stage-E answer here: pipeline had marked correctOption=c (Convex), corrected to b (Concave). See resolved.json."
+    },
+    {
+      "sourceId": "2021:A:54",
+      "questionId": "q-001287",
+      "chapterId": "science.chemistry.chapter-04",
+      "expected": {
+        "text": {
+          "en": "The number of covalent bonds between carbon-carbon atoms in acetylene is",
+          "hi": "एसीटिलीन में कार्बन-कार्बन के बीच सहसंयोजक बंधन की संख्या है",
+          "hinglish": "Acetylene mein carbon-carbon ke beech sahsanyojak bandhan ki sankhya hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "5",
+              "hi": "5",
+              "hinglish": "5"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "7",
+              "hi": "7",
+              "hinglish": "7"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "2",
+              "hi": "2",
+              "hinglish": "2"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "3",
+              "hi": "3",
+              "hinglish": "3"
+            }
+          }
+        ],
+        "correctOption": "d",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2022:A:1",
+      "questionId": "q-000494",
+      "chapterId": "science.biology.chapter-03",
+      "expected": {
+        "text": {
+          "en": "Where are the reproductive organs found in a plant ? 1. Where are the reproductive organs found in plants?",
+          "hi": "पौधे में जनन अंग कहाँ पाये जाते हैं ?",
+          "hinglish": "Paudhe mein janan ang kahan paye jaate hain?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "in root",
+              "hi": "जड़ में",
+              "hinglish": "Jad mein"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "in flower",
+              "hi": "पुष्प में",
+              "hinglish": "Pushp mein"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "in stem",
+              "hi": "तना में",
+              "hinglish": "Tana mein"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "in fruit",
+              "hi": "फल में",
+              "hinglish": "Phal mein"
+            }
+          }
+        ],
+        "correctOption": "b",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2022:A:74",
+      "questionId": "q-001292",
+      "chapterId": "science.chemistry.chapter-05",
+      "expected": {
+        "text": {
+          "en": "The atomic number of an element is 16. What is the group number of this element in periodic Table?",
+          "hi": "एक तत्व की परमाणु संख्या 16 है, आवर्त सारणी में इस तत्व की वर्ग संख्या क्या है?",
+          "hinglish": "Ek tatva ki parmanoo sankhya 16 hai, avart sarni mein is tatva ki varg sankhya kya hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "15",
+              "hi": "15",
+              "hinglish": "15"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "2",
+              "hi": "2",
+              "hinglish": "2"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "16",
+              "hi": "16",
+              "hinglish": "16"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "4",
+              "hi": "4",
+              "hinglish": "4"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2023-a:A:1",
+      "questionId": "q-000603",
+      "chapterId": "science.physics.chapter-05",
+      "expected": {
+        "text": {
+          "en": "Which of the following is a non-renewable source of energy?",
+          "hi": "निम्नलिखित में से कौन ऊर्जा का अनवीकरणीय स्रोत है ?",
+          "hinglish": "Nimnalikhit mein se kaun urja ka anaveekarniya srot hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Sun",
+              "hi": "सूर्य",
+              "hinglish": "Surya"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Wind",
+              "hi": "पवन",
+              "hinglish": "Pawan"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Petroleum",
+              "hi": "पेट्रोलियम",
+              "hinglish": "Petroleum"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Flowing water",
+              "hi": "बहता पानी",
+              "hinglish": "Bahta paani"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2024-a:A:1",
+      "questionId": "q-000684",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "The magnification produced by a concave mirror of focal length 10 cm is positive, if the value of object distance is",
+          "hi": "फोकस दूरी 10 cm के अवतल दर्पण द्वारा उत्पन्न आवर्धन धनात्मक होगा यदि वस्तु दूरी का मान है",
+          "hinglish": "Focal doori 10 cm ke avatal darpan dwara utpann aavardhan dhanatak hoga yadi vastu doori ka maan hai"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "more than 10 cm",
+              "hi": "10 cm से अधिक",
+              "hinglish": "10 cm se adhik"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "more than 20 cm",
+              "hi": "20 cm से अधिक",
+              "hinglish": "20 cm se adhik"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "less than 10 cm",
+              "hi": "10 cm से कम",
+              "hinglish": "10 cm se kam"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "none of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2025:A:1",
+      "questionId": "q-000786",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "What is formed when an obstacle is placed in front of a light source?",
+          "hi": "किसी प्रकाश स्त्रोत के सामने एक रूकावट रख देने पर क्या बनता है?",
+          "hinglish": "Kisi prakash strot ke samne ek rukawat rakh dene par kya banta hai?"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Shadow",
+              "hi": "छाया",
+              "hinglish": "Chhaya"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Penumbra",
+              "hi": "उपछाया",
+              "hinglish": "Upchhaya"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Both (A) and (B)",
+              "hi": "(A) और (B) दोनों",
+              "hinglish": "(A) aur (B) dono"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "None of these",
+              "hi": "इनमें से कोई नहीं",
+              "hinglish": "Inmein se koi nahi"
+            }
+          }
+        ],
+        "correctOption": "a",
+        "confidence": "L3"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": null
+    },
+    {
+      "sourceId": "2026:A:1",
+      "questionId": "q-000895",
+      "chapterId": "science.physics.chapter-01",
+      "expected": {
+        "text": {
+          "en": "The focal length of a plane mirror is",
+          "hi": "समतल दर्पण की फोकस दूरी होती है –",
+          "hinglish": "Samtal darpan ki naabhiik doori hoti hai –"
+        },
+        "options": [
+          {
+            "key": "a",
+            "text": {
+              "en": "Zero",
+              "hi": "शून्य",
+              "hinglish": "Shunya"
+            }
+          },
+          {
+            "key": "b",
+            "text": {
+              "en": "Negative",
+              "hi": "ऋणात्मक",
+              "hinglish": "Rinatik"
+            }
+          },
+          {
+            "key": "c",
+            "text": {
+              "en": "Infinity",
+              "hi": "अनंत",
+              "hinglish": "Anant"
+            }
+          },
+          {
+            "key": "d",
+            "text": {
+              "en": "Positive",
+              "hi": "धनात्मक",
+              "hinglish": "Dhanatik"
+            }
+          }
+        ],
+        "correctOption": "c",
+        "confidence": "L4"
+      },
+      "verifiedBy": "human",
+      "verifiedAt": "2026-08-09",
+      "note": "Golden-set verification caught a wrong Stage-E answer here: pipeline had marked correctOption=a (Zero), corrected to c (Infinity). See resolved.json."
+    }
+  ]
+}

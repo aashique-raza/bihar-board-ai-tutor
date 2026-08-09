@@ -181,8 +181,8 @@ function buildUserMessage(question, excerpts) {
   });
 }
 
-/** Strips markdown noise (bold markers, code fences, list markers, punctuation, extra
- * whitespace) so a quote and its source can be compared on words alone, not formatting.
+/** Strips markdown noise (bold markers, code fences, list markers, table pipes, punctuation,
+ * extra whitespace) so a quote and its source can be compared on words alone, not formatting.
  *
  * v2 addition: source excerpts are often markdown bullet/numbered lists (e.g. "- Right
  * atrium\n- Right ventricle"), but a model quoting them naturally flattens that into prose
@@ -190,11 +190,20 @@ function buildUserMessage(question, excerpts) {
  * original version required a literal substring match and rejected these as "ungrounded" even
  * though the model's answer was correct and the quote was faithful. Stripping list markers and
  * punctuation (not the words) keeps the check strict enough to catch genuine hallucination —
- * wrong or reordered words still won't match — while tolerating list-vs-prose formatting. */
+ * wrong or reordered words still won't match — while tolerating list-vs-prose formatting.
+ *
+ * v3 addition: markdown table cells (e.g. "| In India | Frequency is 50 Hz | ... |") were never
+ * stripped of their `|` separators. A model naturally flattens a table cell into prose when
+ * quoting it ("In India, frequency is 50 Hz"), so the `|` characters break substring containment
+ * even though the words and their order are identical (confirmed on 2018-a:A:6 — the correct
+ * answer, "50 Hz", is a table cell, quoted correctly, and was rejected as ungrounded purely
+ * because of the pipe). Stripping `|` the same way list markers are stripped fixes this without
+ * loosening the check against genuine hallucination. */
 function normalizeForMatch(text) {
   return String(text || '')
     .replace(/\*\*/g, '')
     .replace(/`/g, '')
+    .replace(/\|/g, ' ')
     .replace(/^[ \t]*[-*•][ \t]+/gm, ' ')
     .replace(/^[ \t]*\d+\.[ \t]+/gm, ' ')
     .replace(/[,.;:()[\]{}"']/g, ' ')

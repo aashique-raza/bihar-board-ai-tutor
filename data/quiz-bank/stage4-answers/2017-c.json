@@ -645,20 +645,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "SI unit of energy is the joule. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -723,7 +721,7 @@
         "hinglish": "Urja ka S.I. maatrak hota hai :"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1134,13 +1132,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 6,
+    "l3PlusConfidence": 7,
     "marksGroupA": 19,
     "marksGroupB": 7,
     "objective": 7,
     "questions": 18,
     "subjective": 11,
     "trilingualComplete": 18,
-    "usableInQuiz": 6
+    "usableInQuiz": 7
   }
 }

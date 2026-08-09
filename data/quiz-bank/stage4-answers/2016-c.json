@@ -1496,20 +1496,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Plane mirror image is always virtual (imaginary), not real. Same fact as 2016-a:B:31-i, different paper. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1574,7 +1572,7 @@
         "hinglish": "Samtal darpan dwara bana pratibimb hota hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2470,20 +2468,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "This fact (CO2 is ~0.03% of atmosphere) is not present anywhere in data/class-10/science/. Same fact as 2016-a:B:31-xiii, different paper. Human-confirmed from outside the curated textbook content.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2548,7 +2544,7 @@
         "hinglish": "Vayumandal mein CO2 gas ki upasthiti hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2877,20 +2873,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "CO2, chlorophyll and sunlight are all required for autotrophic nutrition/photosynthesis, split across a sentence and a table in the textbook, so no single quotable line. Same fact as 2016-a:B:31-xviii, different paper. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2955,25 +2949,23 @@
         "hinglish": "Swaposhi poshan ke liye avashyak hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "This fact (liver is the largest gland in the human body) is not present anywhere in data/class-10/science/. Same fact as 2016-a:B:31-xix, different paper. Human-confirmed from outside the curated textbook content.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3038,7 +3030,7 @@
         "hinglish": "Manushya ke sharir ki sabse badi granthi hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3125,13 +3117,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 16,
+    "l3PlusConfidence": 20,
     "marksGroupA": 60,
     "marksGroupB": 20,
     "objective": 20,
     "questions": 50,
     "subjective": 30,
     "trilingualComplete": 50,
-    "usableInQuiz": 16
+    "usableInQuiz": 20
   }
 }

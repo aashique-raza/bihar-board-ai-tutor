@@ -758,20 +758,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Same question as 2017-a:B:4 (2017-a and 2017-d are confirmed duplicate papers, see Parking Lot P-11) — coal is not a standard cooking fuel, CNG/LPG/biogas are. Human-confirmed. Note: this question's option C English text is corrupted (leaked text from 2017-d:B:5) — tracked separately in Parking Lot, does not affect this answer decision.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -836,25 +834,23 @@
         "hinglish": "Nimnalikhit mein se kiska upyog khana banane wale indhan mein nahi hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Dynamo converts mechanical energy into electrical energy. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -919,7 +915,7 @@
         "hinglish": "Dynamo yantrik urja ko kis urja mein parinat karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1087,13 +1083,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 5,
+    "l3PlusConfidence": 7,
     "marksGroupA": 20,
     "marksGroupB": 7,
     "objective": 7,
     "questions": 17,
     "subjective": 10,
     "trilingualComplete": 17,
-    "usableInQuiz": 5
+    "usableInQuiz": 7
   }
 }

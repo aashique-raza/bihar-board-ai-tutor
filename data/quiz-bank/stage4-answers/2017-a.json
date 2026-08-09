@@ -762,20 +762,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "CNG, LPG and biogas are all used as cooking fuels; coal is not a standard household cooking fuel. Not a textbook-quotable fact, general knowledge. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -835,7 +833,7 @@
         "hinglish": "Nimnalikhit mein se kiska upyog khana banane wale indhan mein nahi hota hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -994,20 +992,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "The human eye's lens functions as a convex lens. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1067,19 +1063,19 @@
         "hinglish": "Aankh vyavhaar hota hai :"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     }
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 5,
+    "l3PlusConfidence": 7,
     "marksGroupA": 18,
     "marksGroupB": 7,
     "objective": 7,
     "questions": 18,
     "subjective": 11,
     "trilingualComplete": 18,
-    "usableInQuiz": 5
+    "usableInQuiz": 7
   }
 }

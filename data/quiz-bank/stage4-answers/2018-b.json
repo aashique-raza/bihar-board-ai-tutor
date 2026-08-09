@@ -320,20 +320,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "a",
+        "source": "human",
+        "sourceDetail": "Answer is printed inline in the source option text itself ('Ans: mirror and the screen') — to find focal length via image on screen, the mirror-to-screen distance is measured. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -398,7 +396,7 @@
         "hinglish": "Ek prayog mein, ek utkaran darpan dwara banaye gaye vastu ki chhavi ko ek screen par prapt kiya jaata hai taaki darpan ki naabhiik doori nirdharit ki ja sake, prayogakarta ko maapne ki avashyakta hoti hai doori ke beech"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -646,20 +644,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Answer is printed inline in the source option text itself ('Ans: upward'). Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -724,7 +720,7 @@
         "hinglish": "Ek sakaratmak charge wala karn (Alpha karn) jo paschim ki or prakshipt kiya gaya hai, ek chumbakiya kshetra dwara uttar ki or moda jaata hai, chumbakiya kshetra ki disha hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -995,20 +991,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Answer is printed inline in the source option text itself ('Ans: Ca(OH)2') — calcium hydroxide (slaked lime) solution is used for white-washing walls. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1073,7 +1067,7 @@
         "hinglish": "Deewaron ko safed karne ke liye nimnalikhit mein se kaun sa ghol upyog kiya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -1321,20 +1315,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Answer is printed inline in the source option text itself ('Ans: aluminium') — bauxite is the principal ore of aluminium. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -1399,7 +1391,7 @@
         "hinglish": "kis dhatu ka bauxite ek mahatvapurn ayask hai"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2075,20 +2067,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "b",
+        "source": "human",
+        "sourceDetail": "Answer is printed inline in the source option text itself ('Ans: ATP') — ATP is known as the energy currency of the cell. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2153,7 +2143,7 @@
         "hinglish": "Nimnalikhit mein se kise koshika ki urja mudra ke roop mein jaana jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3049,20 +3039,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Answer is printed inline in the source option text itself ('Ans: cake, wood and glass'). Human-confirmed from the printed key.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3127,7 +3115,7 @@
         "hinglish": "Nimnalikhit mein se kaun si samuh keval ek biodegradable vastuon ko shamil karta hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3436,13 +3424,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 29,
+    "l3PlusConfidence": 35,
     "marksGroupA": 40,
     "marksGroupB": 6,
     "objective": 40,
     "questions": 46,
     "subjective": 6,
     "trilingualComplete": 41,
-    "usableInQuiz": 29
+    "usableInQuiz": 35
   }
 }

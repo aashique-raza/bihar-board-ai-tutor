@@ -2632,20 +2632,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "c",
+        "source": "human",
+        "sourceDetail": "Question asks where pseudopodia (kootpaad) are found; Amoeba moves via pseudopodia. English translation in the bank says 'ciliate' which is a mistranslation of 'kootpaad' (pseudopodia), but the Hindi source and answer are correct. Human-confirmed.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -2710,7 +2708,7 @@
         "hinglish": "Kootpaad kismein paaya jaata hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -2958,20 +2956,18 @@
     },
     {
       "answer": {
-        "confidence": "L1",
+        "confidence": "L4",
         "conflicts": [],
-        "correctOption": null,
-        "source": "none",
-        "sourceDetail": null,
+        "correctOption": "d",
+        "source": "human",
+        "sourceDetail": "Standard natural-resource classification (air, soil/land, water, forests, minerals) does not include 'organism' as a category; not a single quotable textbook line, so automated check left it unverified. Human-confirmed from outside curated content.",
         "text": {
           "en": null,
           "hi": null,
           "hinglish": null
         }
       },
-      "blockers": [
-        "answer-unverified"
-      ],
+      "blockers": [],
       "diagram": {
         "note": null,
         "required": false
@@ -3036,7 +3032,7 @@
         "hinglish": "Nimn mein se kaun prakritik sansadhan nahi hai?"
       },
       "type": "mcq",
-      "usableInQuiz": false,
+      "usableInQuiz": true,
       "variantOf": null
     },
     {
@@ -3123,13 +3119,13 @@
   ],
   "schemaVersion": 1,
   "totals": {
-    "l3PlusConfidence": 18,
+    "l3PlusConfidence": 20,
     "marksGroupA": 60,
     "marksGroupB": 20,
     "objective": 20,
     "questions": 50,
     "subjective": 30,
     "trilingualComplete": 50,
-    "usableInQuiz": 18
+    "usableInQuiz": 20
   }
 }

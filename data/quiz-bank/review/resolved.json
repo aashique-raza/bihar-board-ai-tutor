@@ -48,6 +48,1334 @@
       "reason": "Not a missing-language extraction gap — the source PDF itself prints a yellow-highlighted 'question missing' placeholder at this position (paper's own compiler-flagged gap, confirmed in stage1-pages/2023-a/page-23.json during Stage B, and already documented as the paper's genuine incompleteness — see QUIZ_DATA_PIPELINE.md F7 and Parking Lot). Nothing to extract or translate in any language. Accepted permanently unusable, not a bug.",
       "decidedBy": "human",
       "decidedAt": "2026-08-06"
+    },
+    {
+      "target": "2016-b:B:31-xix",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Standard natural-resource classification (air, soil/land, water, forests, minerals) does not include 'organism' as a category; not a single quotable textbook line, so automated check left it unverified. Human-confirmed from outside curated content.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2016-b:B:31-xv",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Question asks where pseudopodia (kootpaad) are found; Amoeba moves via pseudopodia. English translation in the bank says 'ciliate' which is a mistranslation of 'kootpaad' (pseudopodia), but the Hindi source and answer are correct. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2016-c:B:31-i",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Plane mirror image is always virtual (imaginary), not real. Same fact as 2016-a:B:31-i, different paper. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2016-c:B:31-xiii",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "This fact (CO2 is ~0.03% of atmosphere) is not present anywhere in data/class-10/science/. Same fact as 2016-a:B:31-xiii, different paper. Human-confirmed from outside the curated textbook content.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2016-c:B:31-xix",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "This fact (liver is the largest gland in the human body) is not present anywhere in data/class-10/science/. Same fact as 2016-a:B:31-xix, different paper. Human-confirmed from outside the curated textbook content.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2016-c:B:31-xviii",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "CO2, chlorophyll and sunlight are all required for autotrophic nutrition/photosynthesis, split across a sentence and a table in the textbook, so no single quotable line. Same fact as 2016-a:B:31-xviii, different paper. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2017-a:B:4",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "CNG, LPG and biogas are all used as cooking fuels; coal is not a standard household cooking fuel. Not a textbook-quotable fact, general knowledge. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2017-a:B:7",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "The human eye's lens functions as a convex lens. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2017-c:B:2",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "SI unit of energy is the joule. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2017-d:B:4",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Same question as 2017-a:B:4 (2017-a and 2017-d are confirmed duplicate papers, see Parking Lot P-11) — coal is not a standard cooking fuel, CNG/LPG/biogas are. Human-confirmed. Note: this question's option C English text is corrupted (leaked text from 2017-d:B:5) — tracked separately in Parking Lot, does not affect this answer decision.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:13",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Narora nuclear power reactor is located in Bulandshahr district, Uttar Pradesh. General knowledge, not present in curated textbook content. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:19",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Aqua regia is a freshly prepared mixture of concentrated HCl and concentrated HNO3 in 3:1 ratio. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:21",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Propane (C3H8, CH3-CH2-CH3 structure) has 2 C-C bonds + 8 C-H bonds = 10 covalent bonds total. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:27",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Sphygmomanometer is the standard instrument for measuring blood pressure. General knowledge, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:37",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Leaves are boiled in alcohol before the iodine starch test to dissolve out chlorophyll, so the color change from iodine is visible. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:38",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "A slide under a compound microscope is always first focused at the lowest available magnification (5x here) before moving to higher magnifications. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:7",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Least count = range / number of divisions = 1V / 20 = 0.05V. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-b:A:14",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Answer is printed inline in the source option text itself ('Ans: Ca(OH)2') — calcium hydroxide (slaked lime) solution is used for white-washing walls. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-b:A:18",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Answer is printed inline in the source option text itself ('Ans: aluminium') — bauxite is the principal ore of aluminium. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-b:A:28",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Answer is printed inline in the source option text itself ('Ans: ATP') — ATP is known as the energy currency of the cell. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-b:A:40",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Answer is printed inline in the source option text itself ('Ans: cake, wood and glass'). Human-confirmed from the printed key.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-b:A:5",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Answer is printed inline in the source option text itself ('Ans: mirror and the screen') — to find focal length via image on screen, the mirror-to-screen distance is measured. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-b:A:9",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Answer is printed inline in the source option text itself ('Ans: upward'). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:13",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Warts are caused by a virus (HPV), while Gonorrhoea and Syphilis are bacterial diseases — Warts is the one that is not a bacterial disease. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:16",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Earthworm is the classic example of a bisexual/hermaphrodite animal taught at this level. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:18",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Ohm's law: V = IR. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:20",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Question (Hindi: 'meridulla ke exits') asks where the spinal cord originates/exits from — the spinal cord continues from the medulla oblongata. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:21",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Magnification is a ratio (image size / object size) and has no unit. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:23",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Among Al, Na, Cu, Fe — sodium (Na) has the lowest melting point (~98C vs Al 660C, Cu 1085C, Fe 1538C). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:3",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Gain of oxygen during a chemical reaction is called oxidation. Standard definition, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2019-b:A:9",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Most refraction of light entering the eye occurs at the outer surface of the cornea, not the eye-lens. Standard optics fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:10",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Biogas is a renewable energy source; petroleum, coal and natural gas are non-renewable fossil fuels. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:17",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Chlorophyll gives plants their green colour. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:20",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Sulphur dioxide (SO2) is a primary cause of acid rain. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:22",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Cockroaches have 10 pairs of spiracles (2 pairs on the thorax, 8 pairs on the abdomen). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:27",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Atomic number of sodium is 11. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:32",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Wavelength (especially of light) is commonly expressed in angstrom; candela/joule/ampere are units of other quantities entirely. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:35",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Uranium has the highest density (~19.1 g/cm3) among Lithium, Uranium, Cesium and Iron. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:37",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Hormones are called the chemical messengers of the body. Standard definition, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:7",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Graphite is a non-metal that conducts electricity, unlike sulphur, chlorine or iodine. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:9",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "For safety, switches are always connected in the live/hot wire, not the neutral (cold) wire. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-b:A:17",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Earthworm is the classic bisexual/hermaphrodite animal example. Same fact as 2019-b:A:16. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-b:A:30",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Tartaric acid is classically associated with tamarind (imli). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-b:A:40",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Androgen is the male sex hormone. Standard definition, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-b:A:5",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "SI unit of electrical resistivity is ohm-metre. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-b:A:6",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Silver is the best conductor of electricity among common metals. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-b:A:9",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "F = q(v x B): positive charge moving west deflected north requires the magnetic field to point upward (verified by right-hand rule / cross-product calculation). Same fact as 2018-b:A:9, different paper. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:19",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "1 HP = 746 Watt, standard conversion. Human-confirmed. (Note: option b's English text has leaked duplicate question text appended, a same-shape bug as Parking Lot's known LLM/extraction artifacts — does not affect this answer.)",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:21",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Electric current in a conducting wire is the flow of electrons. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:22",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Ampere-hour (current x time) is a practical unit of electric charge. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:25",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "CO2 is the primary gas responsible for global warming. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:32",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Molecular formula of glucose is C6H12O6. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:37",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Silicon is a metalloid. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:43",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Same fact as 2017-a:B:4/2017-d:B:4 — CNG, LPG and biogas are cooking fuels, coal is not. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:48",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Cryolite is an important ore/mineral source used in aluminium extraction. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:50",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "IUPAC name of formic acid (HCOOH) is methanoic acid. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:55",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Germinating seeds are used to study respiration since they show active metabolic/respiratory activity. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:59",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Fruit ripening is controlled by the plant hormone ethylene. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:66",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Both Tuberculosis and Pneumonia are respiratory system diseases; Diarrhoea is a digestive system disease. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:68",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Hypertension (high blood pressure) is the main cause of brain haemorrhage. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:69",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Cuscuta is a classic example of a parasitic plant. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:74",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Blood group A carries antigen A on red cells and anti-B antibody in plasma. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:78",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Humans have three pairs of salivary glands (parotid, submandibular, sublingual). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:10",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Plasma is the light-yellow sticky fluid component of blood. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:13",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Cockroach (insects) have an open circulatory system, unlike the closed system in camel, horse and humans. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:15",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Urochrome is the pigment responsible for the yellow colour of urine. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:16",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Earthworm is the classic hermaphrodite animal example. Same fact as 2019-b:A:16/2020-b:A:17. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:22",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Green plants are called producers as they make their own food via photosynthesis. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:23",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "A surge in LH (luteinizing hormone) triggers ovulation. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:24",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Islets of Langerhans are found in the pancreas. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:26",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Nissl's granules are found in neurons. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:27",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Average adult human brain weighs approximately 1.2-1.4 Kg. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:31",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "SI unit of energy is the joule. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:38",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "The objective lens of a photography camera is a convex lens. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:41",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "In a wind electric generator, air in motion (wind) turns the coil/turbine. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:43",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Graphite is a non-metal conductor of electricity. Same fact as 2020-a:A:7. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:49",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Household electricity supply is 220V alternating current (AC). Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:50",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Atomic number of zinc is 30. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:56",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Molecular formula of glucose is C6H12O6. Same fact as 2021:A:32. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:66",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Chemical composition of copper pyrites is CuFeS2. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:7",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Pituitary gland is the classic textbook answer for smallest/pea-sized master endocrine gland among the given options. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:71",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Ethyl alcohol (C2H5OH) and dimethyl ether (CH3-O-CH3) both have molecular formula C2H6O with different structures, making them isomers. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:72",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "IUPAC ether naming uses the larger alkyl group as parent chain and smaller as alkoxy substituent: CH3-O-C2H5 = methoxyethane. General chemistry knowledge, not present in curated textbook content. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2022:A:74",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Element with atomic number 16 (sulfur) has electron configuration 2,8,6 -- 6 valence electrons places it in modern IUPAC group 16. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:16",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "A forest ecosystem food chain typically has 4 trophic levels (producer + 3 consumer levels). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:22",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Chalk, limestone and marble are all forms of calcium carbonate (CaCO3); Plaster of Paris is chemically different (calcium sulfate hemihydrate), making it the heterogeneous/odd one out. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:23",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Diamond is the hardest known natural substance. Standard fact, human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:25",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Ethylene is the fruit-ripening hormone. Same fact as 2021:A:59. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2017-d:B:5",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Dynamo converts mechanical energy into electrical energy. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:38",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "'The Origin of Species' was written by Charles Darwin. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:46",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Among whale/rat/elephant/human, small mammals have much faster heart rates; rat has the fastest heartbeat of the four. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:63",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Human gestation period is approximately 270 days (~9 months). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:26",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Mushroom (fungus) is a saprophyte, feeding on dead/decaying organic matter. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:32",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Curd forms from milk via fermentation (lactic acid bacteria action). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:36",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Voltmeter, ammeter, and electric cells all have marked +/- terminals; a plain coil has no polarity marking. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:37",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "A plane mirror reflects a converging beam as a converging beam (it doesn't alter the beam's convergence/divergence character, only its direction). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:38",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "SI unit of magnetic flux is the weber (Wb). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:39",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Least count = range / number of divisions = 2A / 20 = 0.1 A. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:45",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Cell membrane is semi-permeable, allowing selective movement of substances. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:47",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Iodine solution is used to test for the presence of starch (turns blue-black). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:48",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Rate of photosynthesis depends on both the properties (quality) and the amount (intensity/quantity) of light. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:50",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Iodized salt is common salt (NaCl) fortified with potassium iodate (KIO3). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:53",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "'Philosopher's wool' is the old name for zinc oxide (ZnO), a white fluffy compound formed when zinc burns in air. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:54",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Sodium salts of higher fatty acids are called soap. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:62",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Magnification m = v/u (image distance over object distance) for lenses. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:69",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Atomic weight of oxygen is 16. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:70",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Bauxite is the principal ore of aluminium (Al). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:74",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Boron and aluminium belong to group 13 of the periodic table. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:75",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Urochrome is the pigment responsible for urine's yellow colour. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2023-a:A:8",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Dry ice is solid carbon dioxide, CO2. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:13",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Hydrilla is a submerged aquatic plant, found in water. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:15",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Hydra is a bisexual (hermaphrodite) organism, possessing both male and female reproductive organs. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:23",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Atomic number of gold (Au) is 79. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:29",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Insects such as butterflies have an open circulatory system; pigeon, man, and cat are all closed-circulatory vertebrates. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:39",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Molecular formula of sodium phosphate is Na3PO4. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:4",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Standard fact: the direction of induced current in a rotating coil changes every half rotation. Option D's text is corrupted (OCR text leaked from the next question, same pattern as parked bug at 2017-d:B:4), but options A/B/C are clean and the correct fact is unambiguous. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:45",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "For each resistor, R = V^2/P. In series, resistances add: Req = V1^2/P1 + V2^2/P2. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:46",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Frequency of AC in Indian household electric circuits is 50 Hz. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:51",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Synaptic knobs are the bulb-like endings at axon terminals of a neuron. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:52",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Among elephant/human/rat/whale, small mammals have much faster heart rates; rat has the fastest heartbeat of the four. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:54",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "ATP (Adenosine TriPhosphate) has 3 phosphate groups. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:56",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "The pineal gland is the smallest endocrine gland in the human body. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:59",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Silver iodide (AgI) is pale yellow in colour. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:60",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Diamond is the hardest known natural substance. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:66",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Negative magnification indicates the image is real and inverted (sign convention). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2024-a:A:74",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Propane C3H8 has 2 C-C bonds and 8 C-H bonds = 10 covalent bonds total. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:13",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Persistence of vision for the human eye is approximately 1/16 second (standard textbook value). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:30",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Zinc reacts with dilute hydrochloric acid to release hydrogen gas (Zn + 2HCl -> ZnCl2 + H2). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:35",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "pH of milk of magnesia is approximately 10.5. Option D's printed text is corrupted (leaked OCR fragment '35. (C) 8 (D) 10.5' from the next question, same pattern as 2017-d:B:4/2024-a:A:4), but the value 10.5 itself is unambiguous. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:37",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Gold (Au) is a noble metal that dissolves only in aqua regia (mixture of concentrated HCl and HNO3). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:39",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Helium is a noble (inert) gas. Option D's printed text is corrupted (leaked OCR fragment from the next question, same pattern as 2025:A:35), but the correct fact is unambiguous. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:44",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Chemical formula of sugar (sucrose) is C12H22O11. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:46",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Mendeleev arranged the periodic table by increasing atomic mass; atomic number as the ordering criterion came later with Moseley. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:49",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Atomic number of Zinc (Zn) is 30. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:56",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Enamel is the uppermost (outermost) layer of human teeth. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:59",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Bile juice is greenish in colour. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:6",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Magnification is a ratio (image size / object size or v/u) and has no unit. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:62",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Anaerobic fermentation nets 2 ATP per glucose molecule. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:65",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Bone is a type of connective tissue. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:76",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Gregor Mendel was a priest at a monastery in Austria (Brno, then part of the Austrian Empire). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:77",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "In biological classification hierarchy, Kingdom is the topmost/broadest rank of the four options given. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:78",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Bacteria and fungi are both decomposers/micro-consumers. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2025:A:79",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Carnivorous organisms that eat herbivores are standardly termed secondary consumers in Bihar Board textbook framing. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:15",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "The blind spot is where the optic nerve exits the retina, so it has no photoreceptors (rods and cones). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:17",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Ammeter, voltmeter, and electric cells all have marked +/- terminals; a plain coil has no polarity marking. Same fact/pattern as 2023-a:A:36. Option D's text is corrupted (leaked OCR continuation), but options A/B/C are clean. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:20",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "The ability to do work is called energy. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:34",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "'Philosopher's wool' is the old name for zinc oxide (ZnO). Same fact as 2023-a:A:53. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:39",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Valence electrons: Si (group 14) = 4, Al (group 13) = 3, P (group 15) = 5, Na (group 1) = 1. P has the highest of the four. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:4",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "The speed of light is unchanged on reflection from a mirror. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:42",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Atomic number of Sulphur (S) is 16. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:44",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Ethyne (acetylene, C2H2) is used in oxy-acetylene welding. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:45",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Carbon belongs to group 14 of the periodic table. Option D's text has a leaked page-reference artifact appended, but the value '14' itself is clear on both Hindi and English sides. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:47",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Fluorine (F) is the most reactive halogen. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:51",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "Decoding the isotope notation (mass number, atomic number): A = Z9 (Fluorine, non-metal), B = Z12 (Magnesium, metal), C = Z6 (Carbon, non-metal), D = Z8 (Oxygen, non-metal). Only B is a metal. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:53",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Drip irrigation delivers water right near plant roots. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:66",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Breakdown of amino acids (deamination) produces ammonia, NH3. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:69",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Ethylene is the fruit-ripening hormone. Same fact as 2021:A:59/2023-a:A:25. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:70",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Humans have 12 pairs of cranial nerves. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:76",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "Archaeopteryx is a classic transitional fossil: it is a fossil, had teeth in its jaws and claws on its fingers (reptilian features), and had wings and feathers (bird features). Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:77",
+      "field": "answer.correctOption",
+      "value": "a",
+      "reason": "Many snail species are sequential hermaphrodites capable of changing sex. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:9",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "Oily paper is translucent, allowing partial light through unlike fully transparent or opaque materials. Human-confirmed.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2018-a:A:23",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "CAUGHT DURING GOLDEN-SET VERIFICATION: pipeline's automated RAG verification had marked this L3 with correctOption 'a' (7), which is wrong. The modern periodic table has 18 vertical groups (7 is the number of periods, a different concept). Human-confirmed correct answer: 18.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-a:A:36",
+      "field": "answer.correctOption",
+      "value": "d",
+      "reason": "CAUGHT DURING GOLDEN-SET VERIFICATION: pipeline's automated RAG verification had marked this L3 with correctOption 'a' (2), which is wrong. Ethane (C2H6) has 1 C-C bond + 6 C-H bonds = 7 covalent bonds total. Human-confirmed correct answer: 7.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2020-b:A:1",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "CAUGHT DURING GOLDEN-SET VERIFICATION: pipeline's automated RAG verification had marked this L3 with correctOption 'd' (Mg), which is wrong. In the reactivity series, of Al/Zn/Fe/Mg, Fe is the least reactive (Mg is the most reactive of the four). Human-confirmed correct answer: Fe.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2021:A:1",
+      "field": "answer.correctOption",
+      "value": "b",
+      "reason": "CAUGHT DURING GOLDEN-SET VERIFICATION: pipeline's automated RAG verification had marked this L3 with correctOption 'c' (Convex mirror), which is wrong. By the New Cartesian Sign Convention, a concave mirror has negative focal length, a convex mirror has positive focal length. Human-confirmed correct answer: Concave mirror.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
+    },
+    {
+      "target": "2026:A:1",
+      "field": "answer.correctOption",
+      "value": "c",
+      "reason": "CAUGHT DURING GOLDEN-SET VERIFICATION: pipeline's automated RAG verification had marked this L3 with correctOption 'a' (Zero), which is wrong. A plane mirror is flat (radius of curvature infinite), so its focal length is taken as infinity. Human-confirmed correct answer: Infinity.",
+      "decidedBy": "human",
+      "decidedAt": "2026-08-09"
     }
   ]
 }

@@ -23,10 +23,10 @@ Bas itna. Claude khud ye file padhega, "ABHI KAHAN HAIN" se current stage uthaye
 | | |
 |---|---|
 | **Current Phase** | **Phase 0.5 — Quiz Data Pipeline** → spec: **`QUIZ_DATA_PIPELINE.md`** |
-| **Sub-stage** | **Stage G (review + final health) — IN PROGRESS, paused mid-phase.** `npm run quiz:review` chal chuka hai. Red queue **0**. **L3+ answer-confidence 76.4% (need ≥90%)** — root cause investigated across 2 sessions (3 causes found, 2 fixed, 1 remains). |
-| **Status** | 🟢 Pilot (Stage P) complete. 🟢 Stage B complete. 🟢 Stage C complete. 🟢 Stage D complete. 🟢 Stage E complete. 🟢 Stage F complete. 🟡 Stage G IN PROGRESS — review queue 🔴 0 (done), L3+ confidence gap is the last thing left. |
+| **Sub-stage** | **✅ PHASE 0.5 COMPLETE.** All §12 exit criteria met (see session 6 below). `QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 is now unblocked. |
+| **Status** | 🟢 Pilot (Stage P). 🟢 Stage B. 🟢 Stage C. 🟢 Stage D. 🟢 Stage E. 🟢 Stage F. 🟢 Stage G — review queue 🔴 0, human-review pool (173 questions) fully cleared, L3+ **98.5%** (need ≥90%), golden set (30/30) built and hand-verified. **Next session starts Phase 1**, not Phase 0.5. |
 | **Branch** | `quiz-phase0.5-bulk` |
-| **Last session** | 2026-08-08 (session 3) — Fixed cause (1) of the 3 found last session, the ~16 extraction bugs. Both were `buildBlocks.js` (Stage C) bugs, both confined to `2018-b`/`2019-b` (confirmed by scanning all 20 papers before touching code). **Bug A (`2018-b`, 15+ items estimated):** vision OCR read a handful of circled "(C)" option markers as "©"; `parseOptions()`'s bracket style never expected that glyph so the whole options-split failed and fell back to dumping the raw text (options + printed "Ans:" answer) into the stem. Fix: normalize "©"→"(C)" before matching. Actual impact was bigger than estimated — **35 MCQs got real options for the first time** (previously all `options: null`). **Bug B (`2019-b:A:1`):** this paper's English side never prints "SECTION - A" as its own line (only inside prose), so the Group-A-header search always missed and fell back to segmenting from page 1 — which handed the cover page's own numbered candidate instructions ("1. Candidates are required...") to the segmenter as if "1." were question 1, while Hindi (which does have a real header) segmented correctly. Fixed: when the primary header search misses, fall back to the "Question No. 1 to N..." instruction line (already in `MARKERS.sectionBreak`) as the starting gun instead of line 0. Verified: `2019-b:A:1` now has the real question in `en`, matching `hi`. **Scope decision (STOP condition, not silently expanded):** fixing 2018-b's options split also surfaced a same-paper pattern that turned out bigger than scoped — the printed "Ans: ..." text still trails inside option D's body for all 35 MCQs (needs new strip-and-route-to-answer logic that belongs in Stage D/E, not this file), and 10 questions in the paper are still broken for other, per-item reasons (missing bracket on option A, etc.). Both parked (P-18, P-19) rather than chased — user confirmed park-if-complex. **Re-ran C→D→E→F→G on all 20 papers** (git diff confirmed only `2018-b.json`/`2019-b.json` actually changed in Stage C; the other 16 files' git-dirty status was a CRLF line-ending artifact, not content — P5 held). Baseline clean before and after, no regression. **L3+: 75.1%→76.4%** (567→577 usable, 1126 canonical questions after dedup). **Agla:** one cause remains from the prior session — investigate the retrieval-miss cases in the "insufficient" verdict bucket (may need reranker/chunking work). Once that moves (and P-18/P-19 are decided), re-check full §12 exit criteria + golden-set 30/30. |
+| **Last session** | 2026-08-09 (session 6) — See full entry below. Finished the human-review pool (84 remaining questions, batches 10-17), fixed a real gap where session 5's 88 confirmed decisions had never actually been applied to the data, found and fixed 5 wrong "verified" answers while building the golden set, and closed out all §12 exit criteria. **Agla: start Phase 1** (`QUIZ_SYSTEM_BLUEPRINT.md`) — read its Phase 1 section fresh, confirm the 4 open decisions in §16 (items 12-15 below) with the user first. |
 
 > ⛔ **`QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 tab tak shuru nahi hoga** jab tak
 > `QUIZ_DATA_PIPELINE.md` §12 ke exit criteria tick nahi hote. Data pehle, feature baad mein.
@@ -112,6 +112,8 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | P-17 | Objective-section MCQs mein `marks` field **zyada papers mein null hai** — sirf chhote/purane papers (`2016-a/b/c`, `2017-a/c/d`, sab ≤20 MCQ) mein marks bhara hai; baaki har full-size paper (`2018-a` se `2026` tak) mein 80-95% objective MCQs ka `marks: null` hai, jo `marks-missing` blocker laga deta hai aur `usableInQuiz` ko bahut neeche kar deta hai — jabki answer khud L3+ verified hai. Pattern itna consistent hai (chhote papers 0%, bade papers 80-95%) ki ye Stage C/D ka koi systemic gap lagta hai, per-paper fluke nahi. Stage E ka kaam nahi hai ise fix karna (sirf answers verify karta hai), par Stage F/G se pehle iski jaanch honi chahiye — warna quiz-eligible pool asli se bahut chhota dikhega. | `data/quiz-bank/stage3-questions/*.json`, `stage4-answers/*.json` (`marks` field, objective section) | Stage E bulk session, 2026-08-05 | 🟠 Medium — answers sahi hain, par bahut saare quiz-ready questions blocked dikh rahe hain jinka असli blocker sirf ek missing field hai |
 | P-14 | `2018-a` mein Q4 ka number scan mein clip ho gaya tha (Stage B ne khud inline note likha: "question number clipped at top edge"). Stage C ka naya gap-tolerance fix (+3 tak) ne is wajah se hone wala bada cascade bug (dozens of questions ek hi option mein swallow ho jaana) रोक diya, par khud Q4 ka content ab bhi Q3 ke last option ke andar hi fused hai (uska apna sourceId kabhi nahi banega) — iske liye ya to us page ko manually dobara padhna hoga, ya Q4 ko permanently "lost" maan ke chhodna hoga. | `data/quiz-bank/stage2-blocks/2018-a.json` (`2018-a:A:3` ka option D) | Stage C fix session, 2026-08-05 | 🟢 Low — 1 question, already visible via paper flag `"A: number jumped from 3 to 5"` |
 | P-18 | `2018-b` ek guide-book style paper hai jahan **har MCQ ke saath uska printed answer wahi line mein baked hai** ("...(D) all of these Ans: concave mirror"). 2026-08-08 ke © fix ke baad options ab sahi split hote hain, par **"Ans: ..." text ab bhi option D ke body ke end mein reh jaata hai** — kisi ne use kaata nahi, na hi answer field mein route kiya. Ye is paper ke saare 35 objective MCQs ko affect karta hai. Fix ke liye naya logic chahiye (trailing "Ans:"/"Uttar:" detect karo, option se kaato, jis option ka text usse match kare use `correctOption` bana do) — aur ye Stage C (`buildBlocks.js`, jiska output mein `answer` field hota hi nahi) ka scope nahi hai, Stage D/E mein jaana chahiye jahan `answer` field banta hai, existing "printed answer key" handling se coordinate karke. | `backend/scripts/quiz-bank/buildQuestions.js` ya `buildAnswers.js` (abhi decide nahi hua kaunsa), affects `2018-b` ke 35 objective MCQ | © fix session, 2026-08-08 | 🟠 Medium — 35 questions abhi answer-less hain is wajah se, par current phase iske bina bhi complete ho sakta hai |
+| P-20 | **Systemic risk, not confirmed how widespread:** Golden-set hand-verification (session 6) checked 30 sample questions already marked L3/L4 ("verified") and found **5 wrong (17%)** — `2018-a:A:23` (periodic table groups, said 7 instead of 18), `2020-a:A:36` (ethane covalent bonds, said 2 instead of 7), `2020-b:A:1` (least reactive metal, said Mg instead of Fe), `2021:A:1` (negative-focal-length mirror, said Convex instead of Concave), `2026:A:1` (plane mirror focal length, said Zero instead of Infinity). All 5 fixed via `resolved.json` (now L4). **The concern:** Stage E's RAG-grounding check (`buildAnswers.js`) can apparently accept a wrong LLM answer as "textbook-verified" if the model's wrong claim still finds a superficial word-match in the retrieved excerpt. This was NOT re-checked against the full 671 L3+ pool — only this 30-question sample. If the same ~17% rate holds pipeline-wide, roughly 100+ "verified" answers could be silently wrong. Needs a dedicated future session: either a wider manual spot-check, or hardening the grounding check itself (e.g. require the claimed option's specific value to appear in the excerpt, not just any matching words). | `backend/scripts/quiz-bank/buildAnswers.js` (grounding check `normalizeForMatch`/verification logic) | Golden-set build, 2026-08-09 | 🟠 Medium — user explicitly deferred wider audit to a future session, decided not urgent enough to block Phase 0.5 close |
+| P-21 | **More instances of the OCR-leak-into-option-text bug** (same shape as `2017-d:B:4`, first flagged 2026-08-08) found during session 6's human-review batches: `2024-a:A:4` (option D text has leaked continuation of the same question from the next page), `2025:A:35` (option D has "35. (C) 8 (D) 10.5" leaked from itself), `2025:A:39` (option D has a leaked "39. (C)...(D)..." fragment), `2026:A:17` (option D has a leaked page-8 continuation), `2026:A:45` (option D has "[Q45 English repeat from page...]" leaked text). In every case the correct answer was still determinable from the other 3 clean options plus general science fact — none blocked a `resolved.json` decision — but the underlying option D text in the bank remains cosmetically wrong (shows leaked/garbled text to a student, not the real option). Needs a Stage C/D fix to detect and strip this kind of trailing cross-question leakage, or a dedicated per-question text cleanup pass. | `data/quiz-bank/stage3-questions/*.json` (option D text on the 6 listed sourceIds, including original `2017-d:B:4`) | Human-review batches, 2026-08-09 | 🟡 Low-medium — cosmetic (answer key is right, displayed option text is not), affects 6 known questions |
 | P-19 | `2018-b` ke 10 questions © fix ke baad bhi broken hain, **mixed alag-alag reasons se** — kuch confirmed: `A:2`/`A:27` mein option A ka opening bracket hi missing hai ("A)" likha hai "(A)" nahi, jo koi bhi parseOptions style match nahi karta); `A:10`/`A:21` ka reason abhi identify nahi hua. Group B ke 5 "broken" subjective items false-positive hain (unka "Ans:" hona hi normal hai, wo bug nahi). Ek-ek karke dekhna hoga. | `data/quiz-bank/stage2-blocks/2018-b.json` — `2018-b:A:2, A:10, A:21, A:27` + 6 aur (exact list us file mein `options===null` aur text mein "Ans"/"Uttar" dhoondh ke milega) | © fix session, 2026-08-08 | 🟢 Low — 10 questions, chhota impact, per-item bespoke fixes honge |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
@@ -126,6 +128,7 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 | Phase | Kya | Status |
 |---|---|---|
 | **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** |
+| **0.5** | Quiz Data Pipeline (question bank from 2016-2026 PYQs) | ✅ **DONE** (2026-08-09) |
 | 1 | Question models + seed data (backend) | 🟡 **Next** |
 | 2 | Quiz engine + APIs (backend) | ⚪ Pending |
 | 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
@@ -144,6 +147,43 @@ stage-wise immutable output, aur har answer ka confidence level. Poora design
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-09 — Stage G finished: human-review pool cleared, golden set built, Phase 0.5 CLOSED
+- **Found session 5's 88 confirmed decisions had never actually reached the data.** The backgrounded
+  `quiz:answers` run from session 5 had produced `L4: 5` (only the original decisions from before
+  session 5), not `L4: 93` as expected — the run must have completed before/without picking up the
+  new `resolved.json` entries. Re-ran Stage E properly: L3+ jumped **77.1% → 88.9%** from that fix
+  alone, before any new review work this session.
+- **Finished the human-review pool** — 84 remaining L1/L0 objective questions (batches 10-17),
+  same rhythm as session 5 (propose answer + reasoning, user confirms per batch, write to
+  `resolved.json` immediately). Left `2026:A:30` genuinely unresolved (ambiguous "not an oxidation
+  reaction" MCQ, same shape as the already-parked `2021:A:26`) rather than guessing. Re-ran
+  Stage E→F→G: **L3+ 88.9% → 98.5%**, well past the ≥90% exit criterion.
+- **Built the golden set** (`data/quiz-bank/golden/golden-questions.json`, §9/A5 — didn't exist
+  before this session, no prior schema to follow so designed one: `{sourceId, questionId,
+  chapterId, expected: {text, options, correctOption, confidence}, verifiedBy, verifiedAt, note}`).
+  Selected 30 questions spread across all 17 papers that have usable objective content, mixed
+  Physics/Chemistry/Biology, mixed L3/L4.
+- **Caught 5 wrong "verified" answers while hand-checking the 30** (17% of the sample) — see
+  Parking Lot P-20. Fixed all 5 via `resolved.json` (now L4). This is the golden set doing exactly
+  its job: catching pipeline errors automated checks missed. **User explicitly decided not to
+  widen the audit to the full 671-question pool this session** (deferred to a future dedicated
+  session, logged as P-20) — golden set of 30 is enough to close Phase 0.5's own DoD.
+- **Also flagged 5 more instances of the OCR-leak-into-option-text bug** (same pattern as the
+  already-known `2017-d:B:4`) found while reading through the review batches — logged as P-21,
+  none blocked an answer decision.
+- **Baseline:** pehle 🟢🟢🟢 + `chat-db-models` 🔴 (P-6, pre-existing) · re-checked twice more
+  during the session (after the Stage E re-run, after the 5 golden-set fixes) · bilkul wahi har
+  baar. Koi regression.
+- **§12 exit criteria — all 11 checked and met:** 18 usable papers all `done`, 0 pending pages,
+  trilingual 99.9% (≥95%), L3+ 98.5% (≥90%), 0 unresolved answer conflicts, chapter-mapped 99.9%
+  (≥85%), review queue 0 🔴, `bank/questions.json` rebuilds in one command, numbers in
+  `health.json`, and now golden set 30/30.
+- **🎉 Phase 0.5 is DONE.** `QUIZ_SYSTEM_BLUEPRINT.md` Phase 1 is unblocked.
+- **Agla:** start Phase 1. Read `QUIZ_SYSTEM_BLUEPRINT.md`'s Phase 1 section fresh (not from
+  memory — it's been a while). Confirm the 4 open decisions in this file's §16 list (Phase 1
+  entry point, `awaiting_quiz` status, sidebar UI, partial-bank behaviour) with the user before
+  writing any code.
 
 ### 2026-08-08 — Stage G continued: extraction bugs fixed (2018-b, 2019-b), L3+ 75.1%→76.4%
 - **Fixed both `buildBlocks.js` (Stage C) bugs from the 2026-08-06 investigation.** Bug A:
