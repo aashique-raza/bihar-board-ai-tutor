@@ -9,8 +9,10 @@
 import mongoose from 'mongoose';
 import { generateQuiz } from '../services/quiz/quizGenerator.js';
 import { submitQuiz } from '../services/quiz/quizSubmitter.js';
-import { QUIZ_TYPES, GUEST_ID_MAX_LENGTH } from '../constants/quizConstants.js';
+import { getQuizHistory } from '../services/quiz/quizHistoryService.js';
+import { QUIZ_TYPES, GUEST_ID_MAX_LENGTH, HISTORY_DEFAULT_LIMIT, HISTORY_MAX_LIMIT } from '../constants/quizConstants.js';
 import { sendResponse } from '../utils/sendResponse.js';
+import { toHistoryListResponse } from '../utils/quizResponse.js';
 import ApiError from '../utils/ApiError.js';
 
 const VALID_OPTION_LABELS = ['A', 'B', 'C', 'D'];
@@ -100,6 +102,54 @@ export const submitQuizController = async (req, res, next) => {
     return sendResponse(res, 200, {
       message: 'Quiz submitted.',
       data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// ─── GET /api/v1/quiz/history ─────────────────────────────────────────────────
+
+export const historyListController = async (req, res, next) => {
+  try {
+    const { userId, guestId } = extractIdentity(req);
+    if (!userId && !guestId) {
+      return next(new ApiError(400, 'Identity required — login or a valid X-Guest-Id header is missing.'));
+    }
+
+    const { quizType, chapterId, cursor: rawCursor, limit: rawLimit } = req.query;
+
+    if (quizType && !QUIZ_TYPES.includes(quizType)) {
+      return next(new ApiError(400, `quizType must be one of: ${QUIZ_TYPES.join(', ')}`));
+    }
+
+    let cursor = null;
+    if (rawCursor) {
+      const parsed = new Date(rawCursor);
+      if (Number.isNaN(parsed.getTime())) {
+        return next(new ApiError(400, 'cursor must be a valid date string.'));
+      }
+      cursor = parsed;
+    }
+
+    const parsedLimit = parseInt(rawLimit, 10);
+    const limit = Math.min(
+      Math.max(Number.isNaN(parsedLimit) ? HISTORY_DEFAULT_LIMIT : parsedLimit, 1),
+      HISTORY_MAX_LIMIT
+    );
+
+    const { attempts, nextCursor, hasMore } = await getQuizHistory({
+      userId,
+      guestId,
+      quizType: quizType || null,
+      chapterId: chapterId || null,
+      cursor,
+      limit,
+    });
+
+    return sendResponse(res, 200, {
+      message: 'Quiz history fetched.',
+      data: toHistoryListResponse(attempts, nextCursor, hasMore),
     });
   } catch (error) {
     next(error);

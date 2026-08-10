@@ -26,7 +26,8 @@
     "quiz:seed": "node scripts/seed-quiz-bank.js",
     "quiz:seed:dry-run": "node scripts/seed-quiz-bank.js --dry-run",
     "test:quiz-generate": "node scripts/test-quiz-generate.js",
-    "test:quiz-submit": "node scripts/test-quiz-submit.js"
+    "test:quiz-submit": "node scripts/test-quiz-submit.js",
+    "test:quiz-history": "node scripts/test-quiz-history.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

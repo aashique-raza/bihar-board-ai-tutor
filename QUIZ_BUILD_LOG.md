@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). **Checkpoint 2/4 built + DB-verified** (`POST /quiz/submit`), not yet committed. |
-| **Status** | 🟡 Phase 2 in progress. Checkpoint 1 (`generate`) code done; Postman scenarios 1-2/7 done, 3-7 still pending (unrelated to Checkpoint 2). Checkpoint 2 (`submit`) built, code-reviewed, **1 real race-condition bug found + fixed in-session**, `test:quiz-submit` 17/17 green + baseline regression green. **9 Postman requests added** (`Submit 0-8` in the `Quiz` folder) for manual verification next session — not yet run. Checkpoints 3 (`history` list), 4 (`history/:attemptId`) not started. **1 low-severity open item flagged for user decision — see Parking Lot P-11.** Ready to commit (user committing manually). |
+| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). **Checkpoint 2/4 DONE** (`POST /quiz/submit`). **Checkpoint 3/4 built + DB-verified** (`GET /quiz/history`), not yet committed. |
+| **Status** | 🟡 Phase 2 in progress. Checkpoints 1 and 2 done. Checkpoint 3 (`history` list) built, code-reviewed, **2 real bugs found + fixed in-session** (limit-clamp gap, chapterId filter missing mix_practice), `test:quiz-history` 21/21 green + baseline regression green. Postman scenarios for Checkpoint 2 (`Submit 0-8`) still not run — carried over, unrelated to Checkpoint 3. Checkpoint 4 (`history/:attemptId`) not started. Ready to commit (user committing manually). |
 | **Branch** | `quiz-phase2` (Phase 0/1 history on `quiz-phase1`, see below) |
-| **Last session** | 2026-08-10 — Phase 2 Checkpoint 2 (`submit`) built, DB-verified, race bug found+fixed, Postman scenarios added |
+| **Last session** | 2026-08-10 — Phase 2 Checkpoint 3 (`history` list) built, DB-verified, 2 bugs found+fixed |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -244,6 +244,68 @@ false-error bug only.
 
 ---
 
+## 🎯 PHASE 2 — Checkpoint 3/4: `GET /quiz/history`
+
+**Blast radius:**
+- `backend/src/services/quiz/quizHistoryService.js` (new)
+- `backend/src/controllers/quiz.controller.js`, `backend/src/routes/quiz.routes.js` (edit)
+- `backend/src/utils/quizResponse.js` (`toHistoryListItem`, `toHistoryListResponse` added)
+- `backend/src/constants/quizConstants.js` (`HISTORY_DEFAULT_LIMIT`, `HISTORY_MAX_LIMIT` added)
+- `backend/src/middlewares/rateLimiters.js` (`quizHistoryLimiter` added)
+- `backend/scripts/test-quiz-history.js` (new), `backend/package.json` (`test:quiz-history`)
+
+**Code:**
+- [x] `quizHistoryService.js` — `getQuizHistory()`: cursor-based pagination (`createdAt` cursor, `$lt`), identity filter, optional `quizType`/`chapterId` filters, `hasMore`/`nextCursor` via fetch-one-extra pattern
+- [x] `quiz.controller.js` — `historyListController`: identity check, `quizType` validation, cursor date validation, limit clamp
+- [x] `quiz.routes.js` — `GET /history`, `quizHistoryLimiter`
+- [x] `quizResponse.js` — `toHistoryListItem` (whitelist: attemptId/quizType/subjectId/chapterId/chapterIds/score/totalQuestions/percentage/passed/timeTakenSec/createdAt — never `answers`/`submissionKey`/`sessionId`/`userId`/`guestId`), `toHistoryListResponse`
+- [x] `rateLimiters.js` — `quizHistoryLimiter`, 30/min per identity (more generous than generate/submit — read-only)
+
+**[BUG FOUND + FIXED during post-implementation code review]** Two bugs found reviewing the fresh
+code, same pattern as Checkpoint 2's race-condition review. **User said fix both in this
+checkpoint** (not parked):
+1. **Limit clamp gap** — `parseInt(rawLimit) || HISTORY_DEFAULT_LIMIT` only falls back on `0`/`NaN`;
+   a negative value like `-5` is truthy in JS and passed through unclamped. Confirmed live against
+   MongoDB: `.limit(-4)` doesn't throw, just quietly returns fewer docs — but the service's own
+   `hasMore = docs.length > limit` (`1 > -5` = always true) and `docs.slice(0, limit)`
+   (`slice(0, -5)` on a short array = empty) combined to produce a broken response shape:
+   `{ attempts: [], hasMore: true, nextCursor: null }`. Fixed with an explicit `Math.max(..., 1)`
+   floor in the controller.
+2. **`chapterId` filter missed `mix_practice` attempts** — `QuizAttempt` stores the chapter in
+   `chapterId` for `chapter_gate`/`chapter_practice` but in `chapterIds[]` for `mix_practice`
+   (`chapterId` is `null` there). The filter only checked `chapterId`, so a chapter-scoped history
+   view would silently omit mix-quiz attempts that covered that chapter — no error, just an
+   incomplete list. Fixed with `$or: [{ chapterId }, { chapterIds: chapterId }]`.
+
+Both fixes covered by new assertions in `test:quiz-history` (limit-clamp formula check for
+`-5`/`0`/`9999`/garbage/missing; a real `mix_practice` attempt created and found via the
+`chapterIds[]` path).
+
+**Verify (dekha gaya, maana nahi gaya) — all via `test:quiz-history`, real DB, 21/21 green:**
+- [x] Happy path: 3 attempts seeded → all 3 returned, newest first
+- [x] Pagination: `limit=2` across 3 attempts → page 1 has 2 + `hasMore: true` + `nextCursor`; page 2 (with cursor) has the remaining 1 + `hasMore: false`
+- [x] `chapterId` filter → only matching-chapter attempts returned
+- [x] `chapterId` filter also matches `mix_practice` attempts via `chapterIds[]` (bug fix coverage)
+- [x] `quizType` filter → only matching-type attempts returned
+- [x] Identity isolation → unrelated guest sees 0 attempts (no error)
+- [x] Empty history → clean `{ attempts: [], hasMore: false, nextCursor: null }`, no crash
+- [x] Response shape → `passed` correctly `null` for `chapter_practice`; zero leak of `answers`/`submissionKey`/`sessionId`/`userId`/`guestId`
+- [x] Limit clamp formula → negative/zero/oversized/garbage/missing all resolve to a safe positive value (bug fix coverage)
+
+**Regression:**
+- [x] `test:chunks`, `test:study-map`, `test:curriculum-resolvers` — green, same as Checkpoint 2 baseline
+- [x] `test:chat-db-models` — same pre-existing red (P-6), unrelated
+
+**Bahar (Checkpoint 3 mein NAHI):**
+- ❌ Detail endpoint (`GET /history/:attemptId`, full `results`/`answers`) — Checkpoint 4
+- ❌ Chapter title enrichment in response — frontend resolves via curriculum index (existing pattern), history only returns `chapterId`
+- ❌ Postman manual verification — automated DB test done, Postman scenarios not created this session
+- ❌ Guest-to-user history migration on claim — out of scope, `QuizAttempt` has no TTL so it's naturally preserved, migration itself is a future/unscheduled concern
+- ❌ Redis caching — parked (P-7)
+- ❌ Any frontend — Phase 4/5
+
+---
+
 ## 🅿️ PARKING LOT
 
 > Yahan sab real cheezein hain. **Koi bhoolegi nahi.** Bas abhi nahi hongi.
@@ -277,7 +339,7 @@ false-error bug only.
 |---|---|---|
 | **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** (committed on `quiz-phase1`, `4b32e34`) |
 | 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
-| 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | 🟡 **In progress** — Checkpoint 1/4 done (`generate`) |
+| 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | 🟡 **In progress** — Checkpoints 1-3/4 done (`generate`, `submit`, `history`) |
 | 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
 | 4 | Quiz runner modal UI (frontend) | ⚪ Pending |
 | 5 | Practice Quiz Hub (frontend) | ⚪ Pending |
@@ -294,6 +356,16 @@ false-error bug only.
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-10 — Phase 2 Checkpoint 3/4 built + DB-verified (`GET /quiz/history`)
+- **Deep line-by-line audit hui pehle** — generate/submit code, models, response whitelisting, rate limiters, controller patterns (`chapterProgress.controller.js` ke listing endpoint sameet) sab padhe before planning, phir user ko Hinglish mein complete plan diya (payload, response shape, flow, hidden challenges, index analysis, security checklist, test plan) — approval milne ke baad hi code likha.
+- **User ne explicit instruction di:** implement karo, koi naya-mila bug apne se fix mat karo — bas flag karo report mein, decision user karega.
+- **Built:** `quizHistoryService.js` (`getQuizHistory()` — cursor-based pagination on `createdAt`, identity filter, optional `quizType`/`chapterId` filters, fetch-one-extra-to-detect-hasMore pattern), controller validation (identity, `quizType` enum, cursor date parse, limit clamp), route, rate limiter (30/min, more generous than generate/submit since read-only), 2 new response-shaping helpers reusing the whitelist pattern from Checkpoints 1-2.
+- **`test:quiz-history` written and run against live DB — first pass 17/17 PASS**: happy path ordering, pagination across pages, `chapterId`/`quizType` filters, identity isolation, empty history, response leak check, `passed` computation.
+- **Post-implementation code review round (self-initiated, same discipline as Checkpoint 2's race-bug review)**: re-read all touched files fresh, found 2 real bugs. **User said fix both in this checkpoint** (not parked): (1) limit-clamp gap — `-5` is truthy in JS so `parseInt || default` let negative limits through unclamped, which combined with the `hasMore`/`slice` logic to produce a broken `{ attempts: [], hasMore: true }` response (confirmed live against MongoDB: negative `.limit()` doesn't throw, just misbehaves silently); (2) `chapterId` filter only checked the `chapterId` field, silently missing `mix_practice` attempts (which store their chapters in `chapterIds[]` instead, `chapterId` is `null` there). Both fixed, both covered by new test assertions, re-ran full suite — **21/21 PASS**.
+- **Baseline**: `test:chunks`/`test:study-map`/`test:curriculum-resolvers` green, `test:chat-db-models` same pre-existing red (P-6) — no regression, before and after the fixes.
+- **User reviewed the report, said fix now — done in-session.** No Postman scenarios created this session (read-only GET endpoint, lower manual-verification priority than generate/submit's request-body endpoints — can be added alongside Checkpoint 4 if user wants).
+- **Agla:** new session — Checkpoint 4 (`GET /history/:attemptId`, full result detail with explanations), then Phase 2 is fully done and Phase 3 (chapter gate integration) can start. Carried-over item: Checkpoint 2's `Submit 0-8` Postman scenarios still not run.
 
 ### 2026-08-10 — Phase 2 Checkpoint 2/4 built + DB-verified (`POST /quiz/submit`)
 - **Deep line-by-line audit hui pehle** — full existing code (models, generate flow, response whitelisting, rate limiters) padha before planning, phir user ko Hinglish mein complete plan diya (payload, response shape, 9-step flow, hidden challenges, robustness checklist) — approval milne ke baad hi code likha.

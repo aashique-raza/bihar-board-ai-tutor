@@ -8,6 +8,7 @@
  */
 
 import { applyOptionOrder, pickLocalizedText } from '../services/quiz/optionShuffler.js';
+import { PASS_PERCENTAGE } from '../constants/quizConstants.js';
 
 export const toClientQuestion = (question, optionOrder) => ({
   questionId: String(question._id),
@@ -44,4 +45,30 @@ export const toSubmitResponse = (attempt, resultQuestions, passed) => ({
   timeTakenSec: attempt.timeTakenSec,
   passed,
   results: resultQuestions,
+});
+
+/**
+ * Summary shape for GET /quiz/history — one list item. No answers[], no
+ * submissionKey/sessionId/userId/guestId. `passed` is computed the same way
+ * as toSubmitResponse (percentage >= PASS_PERCENTAGE), meaningful only for
+ * chapter_gate — null otherwise, matching the submit response's contract.
+ */
+export const toHistoryListItem = (attempt) => ({
+  attemptId: String(attempt._id),
+  quizType: attempt.quizType,
+  subjectId: attempt.subjectId,
+  chapterId: attempt.chapterId,
+  chapterIds: attempt.chapterIds,
+  score: attempt.score,
+  totalQuestions: attempt.totalQuestions,
+  percentage: attempt.percentage,
+  passed: attempt.quizType === 'chapter_gate' ? attempt.percentage >= PASS_PERCENTAGE : null,
+  timeTakenSec: attempt.timeTakenSec,
+  createdAt: attempt.createdAt,
+});
+
+export const toHistoryListResponse = (attempts, nextCursor, hasMore) => ({
+  attempts: attempts.map(toHistoryListItem),
+  nextCursor,
+  hasMore,
 });
