@@ -240,6 +240,43 @@ export const markChapterComplete = async (userId, guestId, chapterId) => {
 };
 
 /**
+ * Move a chapter from in_progress to awaiting_quiz — called from step7 when
+ * CHAPTER_COMPLETE fires (Phase 3 gate, replaces the old auto-complete).
+ *
+ * Guarded to only transition FROM in_progress: if the chapter is already
+ * awaiting_quiz or completed (e.g. student revisits the last topic and
+ * CHAPTER_COMPLETE fires again), this is a no-op — the filter simply won't
+ * match and findOneAndUpdate returns null, so we re-fetch and return the
+ * unchanged doc instead of clobbering real state.
+ */
+export const setChapterAwaitingQuiz = async (userId, guestId, chapterId) => {
+  if (!chapterId) return null;
+
+  const filter = buildFilter(userId, guestId, chapterId);
+
+  const doc = await ChapterProgress.findOneAndUpdate(
+    { ...filter, status: 'in_progress' },
+    {
+      $set: {
+        status:        'awaiting_quiz',
+        lastStudiedAt: new Date(),
+      },
+    },
+    { returnDocument: 'after', new: true }
+  );
+
+  await invalidateCache(userId, guestId, chapterId);
+
+  if (doc) {
+    if (isDev) console.log(`[ChapterProgress] Chapter awaiting quiz: ${chapterId}`);
+    return doc;
+  }
+
+  // Already past in_progress (awaiting_quiz/completed) — return current state as-is.
+  return ChapterProgress.findOne(filter).lean();
+};
+
+/**
  * Reset chapter progress — clears the topic pointer and completed list so the
  * student starts fresh from topic 1.
  * Called from chapterProgress.controller POST /:chapterId/action { action: 'reset', status? }.
