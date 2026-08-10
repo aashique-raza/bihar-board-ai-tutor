@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). |
-| **Status** | 🟡 Phase 2 in progress. Checkpoint 1 (`generate`) built + code-verified, **not yet committed** (user wants to finish Postman verification first). Postman scenarios 1-2/7 done (found + fixed an `_id` leak bug); 3-7 still pending. Checkpoints 2 (`submit`), 3 (`history` list), 4 (`history/:attemptId`) not started. |
+| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). **Checkpoint 2/4 built + DB-verified** (`POST /quiz/submit`), not yet committed. |
+| **Status** | 🟡 Phase 2 in progress. Checkpoint 1 (`generate`) code done; Postman scenarios 1-2/7 done, 3-7 still pending (unrelated to Checkpoint 2). Checkpoint 2 (`submit`) built, code-reviewed, **1 real race-condition bug found + fixed in-session**, `test:quiz-submit` 17/17 green + baseline regression green. **9 Postman requests added** (`Submit 0-8` in the `Quiz` folder) for manual verification next session — not yet run. Checkpoints 3 (`history` list), 4 (`history/:attemptId`) not started. **1 low-severity open item flagged for user decision — see Parking Lot P-11.** Ready to commit (user committing manually). |
 | **Branch** | `quiz-phase2` (Phase 0/1 history on `quiz-phase1`, see below) |
-| **Last session** | 2026-08-09 — Phase 2 Checkpoint 1 built + verified, session paused mid-Postman-verification |
+| **Last session** | 2026-08-10 — Phase 2 Checkpoint 2 (`submit`) built, DB-verified, race bug found+fixed, Postman scenarios added |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -187,6 +187,63 @@ hinglish text can't serve English later. **New design:** server sends all 3 lang
 
 ---
 
+## 🎯 PHASE 2 — Checkpoint 2/4: `POST /quiz/submit`
+
+**Blast radius:**
+- `backend/src/services/quiz/quizSubmitter.js` (new)
+- `backend/src/controllers/quiz.controller.js`, `backend/src/routes/quiz.routes.js` (edit)
+- `backend/src/utils/quizResponse.js` (`toSubmitResultQuestion`, `toSubmitResponse` added)
+- `backend/src/constants/quizConstants.js` (`PASS_PERCENTAGE`, `MAX_TIME_TAKEN_SEC` added)
+- `backend/src/middlewares/rateLimiters.js` (`quizSubmitLimiter` added)
+- `backend/scripts/test-quiz-submit.js` (new), `backend/package.json` (`test:quiz-submit`)
+
+**Code:**
+- [x] `quizSubmitter.js` — idempotency fast path, atomic session lock (`pending`→`submitted`), scoring against `session.questions[i].correctOptionLabel` (never `Question.correctOptionLabel`), E11000 race handling, `attemptId` link-back to session
+- [x] `quiz.controller.js` — `submitQuizController`: identity + `quizId`/`submissionKey`/`answers` shape validation
+- [x] `quiz.routes.js` — `POST /submit`, `quizSubmitLimiter`
+- [x] `quizResponse.js` — `toSubmitResultQuestion` (options in served order + explanation, whitelist-based), `toSubmitResponse`
+- [x] `rateLimiters.js` — `quizSubmitLimiter`, 10/min per identity (same keying as generate)
+
+**Verify (dekha gaya, maana nahi gaya) — all via `test:quiz-submit`, real DB, 17/17 green:**
+- [x] All-correct submission → score 10/10, percentage 100, every result `isCorrect: true`
+- [x] `passed` is `null` for `chapter_practice` (gate-only field)
+- [x] Result options re-labeled A-D in the SAME order the student was served (session `optionOrder`, not DB order)
+- [x] Every result carries `text` + `explanation` (absent at generate time, present only here)
+- [x] Idempotency: same `submissionKey` resubmitted → same `attemptId`, original `timeTakenSec` wins, exactly 1 `QuizAttempt` doc exists
+- [x] New `submissionKey` on an already-submitted session → `409`
+- [x] Wrong identity on someone else's `quizId` → `404`
+- [x] Fake `quizId` → `404`
+- [x] Mixed correct/wrong/skipped answers → exact expected score; skipped → `selectedOption: null`, `isCorrect: false`
+- [x] Absurd `timeTakenSec` (999999999) → clamped to 3-hour max, no crash
+
+**[BUG FOUND + FIXED during post-implementation code review]** Concurrent requests carrying the
+SAME `submissionKey` (double-click, network retry) raced the session lock: the loser read
+`status: 'submitted'` (the winner had just flipped it) and threw a plain `409`, even though it
+was the identical submission, not a genuine conflict — violating the idempotency contract
+`QUIZ_SYSTEM_BLUEPRINT.md` §6 explicitly requires ("second attempt gets... the original
+attempt's result", not a bare error). Confirmed with a real concurrent-request test
+(`Promise.allSettled`, same `submissionKey`, same `quizId`) before fixing — reproduced 1/1.
+**Fix:** before throwing 409, a short bounded poll (`findRacedAttempt`, up to 4 tries / 75ms
+apart) checks whether the winner's `QuizAttempt` has committed yet; if so, its result is
+returned (200) instead of an error. Narrows the race window from "the whole request" down to
+"the DB round-trip between lock and create" — not a mathematical guarantee under extreme
+scheduling delay, but covers the realistic case. Re-ran the same concurrent test 5/5 rounds
+after the fix — all passed (same `attemptId` both sides, exactly 1 `QuizAttempt` created). Data
+integrity was never at risk (no duplicate attempts in either version) — this was a client-facing
+false-error bug only.
+
+**Regression:**
+- [x] `test:chunks`, `test:study-map`, `test:curriculum-resolvers` — green, same as Checkpoint 1 baseline
+
+**Bahar (Checkpoint 2 mein NAHI):**
+- ❌ `handleGateQuizResult` / `ChapterProgress` update on gate-quiz pass — Phase 3 (code has a comment marking exactly where it plugs in)
+- ❌ History APIs — Checkpoint 3, 4
+- ❌ Postman manual verification — code + automated DB test done, Postman scenarios for this endpoint not yet run
+- ❌ Any frontend — Phase 4/5
+- ❌ Fix for P-11 (found during this checkpoint, not blocking) — see Parking Lot
+
+---
+
 ## 🅿️ PARKING LOT
 
 > Yahan sab real cheezein hain. **Koi bhoolegi nahi.** Bas abhi nahi hongi.
@@ -204,6 +261,7 @@ hinglish text can't serve English later. **New design:** server sends all 3 lang
 | P-7 | Seed script Redis quiz-cache clear nahi karta (`quiz:questions:*`) — blueprint §12 step 5 mein hai, par abhi koi cache key exist hi nahi karti (Phase 2 mein cache layer banegi). User-confirmed deferral. | `backend/scripts/seed-quiz-bank.js` | Phase 1, 2026-08-09 | 🟢 Low — Phase 2 mein cache banate waqt add karna |
 | P-8 | Question bank mein near-duplicate questions ho sakte hain — Phase 1 ka dedup sirf `questionCode` se hua, text se nahi. Ek hi PYQ alag saal mein thodi alag wording ke saath aaya ho to dono ek quiz mein aa sakte hain. | `backend/scripts/transform-bulk-to-seed.js` | Checkpoint 1 audit, 2026-08-09 | 🟢 Low — data-quality, functional bug nahi |
 | P-9 | `chapterProgress` ka P-1 index bug (`user_chapter_unique` kabhi enforce nahi karta) `chapter_gate` ke gate-check query ko bhi index se vanchit karta hai — partial filter `$type: 'objectId'` kabhi match nahi hota. Guest path theek hai (guest index sahi bana hai). 16 chapters pe impact negligible. | `backend/src/models/chapterProgress.model.js:75-82` | Checkpoint 1 audit, 2026-08-09 | 🟡 Medium — P-1 ka hi extension, Phase 3 mein revisit karna |
+| P-11 | `quizAttempt.model.js`'s `answers[]` subdoc does **not** store `optionOrder` (only `quizSession.model.js` does). Idempotent-replay path in `quizSubmitter.js` (duplicate `submissionKey`, e.g. network retry) re-looks-up the original `QuizSession` by `attempt.sessionId` to render results in the exact order the student saw them. That session row is normally still there (`SESSION_TTL_MIN = 50`), so this works for the realistic retry case (seconds/minutes later). But if a duplicate submit is replayed **after** the session's 50-min TTL has expired and MongoDB auto-deleted it, the code falls back to the question's default DB option order — the replayed result would show options in a different order than what the student actually answered against. Score/`isCorrect`/`correctOption` are unaffected (those are already baked into `attempt.answers`), only the *option display order* in that one rare replay path could differ. Found while implementing Checkpoint 2, not blocking it — flagged, not fixed. | `backend/src/services/quiz/quizSubmitter.js` (`buildResponseForExistingAttempt`), `backend/src/models/quizAttempt.model.js` | Checkpoint 2, 2026-08-10 | 🟢 Low — extremely narrow window (duplicate-submit AND >50min-late AND same submissionKey), display-only, not a scoring bug |
 | P-10 | Question bank mein kuch options ke text field mein OCR/parsing garbage leak hua hai — dusre options ka text ya extra numbering usi option ke andar chipak gaya hai (e.g. option D mein "A. ... B. ... C. ... D. ..." poora list, ya "64. (C) ... (D) ..." jaisा leftover). API/controller ka bug nahi — root cause Phase 1 ke `transform-bulk-to-seed.js`/source PDF OCR mein hai, data seed ho chuki hai. Postman Scenario 3 (`mix_practice`, 20 Q) mein kam se kam 3 confirmed cases (Q3, Q12, Q17 us response mein). Extent (kitne total questions affected) abhi unknown — grep karna baaki hai. | `data/quiz-bank/science/**/*.json` seed source; `question_bank` collection | Postman Scenario 3 test, 2026-08-10 | 🟢 Low — data-quality, functional bug nahi (P-8 se related, dono seed-quality issues) |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
@@ -236,6 +294,18 @@ hinglish text can't serve English later. **New design:** server sends all 3 lang
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-10 — Phase 2 Checkpoint 2/4 built + DB-verified (`POST /quiz/submit`)
+- **Deep line-by-line audit hui pehle** — full existing code (models, generate flow, response whitelisting, rate limiters) padha before planning, phir user ko Hinglish mein complete plan diya (payload, response shape, 9-step flow, hidden challenges, robustness checklist) — approval milne ke baad hi code likha.
+- **User ne explicit instruction di:** implement karo, koi naya-mila bug apne se fix mat karo — bas flag karo report mein, decision user karega.
+- **Built:** `quizSubmitter.js` (idempotency fast path, atomic `pending→submitted` lock via `findOneAndUpdate`, scoring strictly against session's shuffled `correctOptionLabel`, E11000 race catch, 404-vs-409 distinguishing via a follow-up `findOne`), controller validation, route, rate limiter, 2 new response-shaping helpers (reusing Checkpoint 1's `pickLocalizedText`/`applyOptionOrder`).
+- **1 low-severity gap found mid-implementation, NOT fixed (per instruction), Parking Lot P-11 added:** `quizAttempt` doesn't store `optionOrder`, so idempotent-replay after a session's TTL expiry falls back to DB option order for display only — score unaffected, narrow window, flagged for user decision.
+- **`test:quiz-submit` written and run against live DB — 17/17 PASS**: all-correct scoring, idempotency (same key → same attempt, no duplicate), 409 on resubmit-with-new-key, 404 on wrong identity / fake quizId, mixed correct/wrong/skipped scoring, timeTakenSec clamp.
+- **Post-implementation code review round (user asked "review quickly before I commit")**: re-read all touched files fresh, reasoned through the concurrency path, then wrote a standalone concurrent-request test to check a suspicion — confirmed a real race bug (same `submissionKey`, 2 requests at once → one incorrectly got `409` instead of the shared result). **User said fix it in this checkpoint** (not parked) — fixed with a short bounded poll before the 409 branch, re-confirmed with the same concurrent test 5/5 rounds, then reran `test:quiz-submit` (17/17) and the baseline suite — both still green.
+- **Baseline**: `test:chunks`/`test:study-map`/`test:curriculum-resolvers` green — no regression, before and after the fix.
+- **Postman scenarios added** (user's Postman connector, collection `af2d5f30-ca6d-4ffc-93e0-ae1a855cfd71`, `Quiz` folder `530bf2a0-edcf-4093-889f-833181888c01`): 9 requests, `Submit 0` (SETUP — generates a real quiz, auto-captures `quizId`/`questionId`/`submissionKey` into collection variables via a test script) through `Submit 8` (rate limit probe). Covers 400×3, 404, 200 happy path, 200 idempotent replay (same `attemptId`), 409 genuine conflict, 429 rate limit. Not yet run by user — planned for next session.
+- **User reviewed the report, said "everything is okay," will commit manually.** Session closed here per protocol Rule 5 (checkpoint's DoD is met — code done, tested, reviewed, bug fixed, Postman scenarios ready).
+- **Agla:** new session — run the 9 Postman scenarios (`Submit 0-8`), then decide on P-11 (fix or park), then Checkpoint 3 (`history` list API).
 
 ### 2026-08-09 — Phase 2 Checkpoint 1/4 built, verified (`POST /quiz/generate`)
 - **User ne Phase 2 ko 4 checkpoints mein todne ko bola** (1 API = 1 discuss+implement session/beat). Naya branch `quiz-phase2`.

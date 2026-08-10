@@ -14,5 +14,34 @@ export const toClientQuestion = (question, optionOrder) => ({
   text: pickLocalizedText(question.questionText),
   options: applyOptionOrder(question, optionOrder),
   askedInYears: question.askedInYears,
-  
+
+});
+
+/**
+ * Builds one result entry for the submit response. Options are rendered in the
+ * SAME order the student saw them at generate time (session.optionOrder), not
+ * the question's DB order — otherwise "the B I picked" would silently point at
+ * a different option in the result view. Explanation is whitelisted here for
+ * the first time — it is never sent at generate time.
+ */
+export const toSubmitResultQuestion = (sessionQuestion, question, scoredAnswer) => ({
+  questionId: String(sessionQuestion.questionId),
+  text: pickLocalizedText(question.questionText),
+  options: applyOptionOrder(question, sessionQuestion.optionOrder),
+  selectedOption: scoredAnswer.selectedOption,
+  correctOption: sessionQuestion.correctOptionLabel,
+  isCorrect: scoredAnswer.isCorrect,
+  explanation: pickLocalizedText(question.explanation),
+  timeSpentMs: scoredAnswer.timeSpentMs,
+});
+
+export const toSubmitResponse = (attempt, resultQuestions, passed) => ({
+  attemptId: String(attempt._id),
+  quizType: attempt.quizType,
+  score: attempt.score,
+  totalQuestions: attempt.totalQuestions,
+  percentage: attempt.percentage,
+  timeTakenSec: attempt.timeTakenSec,
+  passed,
+  results: resultQuestions,
 });

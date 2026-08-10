@@ -6,10 +6,14 @@
  * — same identity pattern as chapterProgress.controller.js.
  */
 
+import mongoose from 'mongoose';
 import { generateQuiz } from '../services/quiz/quizGenerator.js';
+import { submitQuiz } from '../services/quiz/quizSubmitter.js';
 import { QUIZ_TYPES, GUEST_ID_MAX_LENGTH } from '../constants/quizConstants.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import ApiError from '../utils/ApiError.js';
+
+const VALID_OPTION_LABELS = ['A', 'B', 'C', 'D'];
 
 const extractIdentity = (req) => {
   const userId = req.user?.id || null;
@@ -49,6 +53,53 @@ export const generateQuizController = async (req, res, next) => {
     return sendResponse(res, 200, {
       message: 'Quiz generated.',
       data: quiz,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// ─── POST /api/v1/quiz/submit ─────────────────────────────────────────────────
+
+export const submitQuizController = async (req, res, next) => {
+  try {
+    const { userId, guestId } = extractIdentity(req);
+    if (!userId && !guestId) {
+      return next(new ApiError(400, 'Identity required — login or a valid X-Guest-Id header is missing.'));
+    }
+
+    const { quizId, submissionKey, timeTakenSec, answers } = req.body;
+
+    if (!quizId || typeof quizId !== 'string' || !mongoose.isValidObjectId(quizId)) {
+      return next(new ApiError(400, 'A valid quizId is required.'));
+    }
+    if (!submissionKey || typeof submissionKey !== 'string') {
+      return next(new ApiError(400, 'submissionKey is required.'));
+    }
+    if (!Array.isArray(answers)) {
+      return next(new ApiError(400, 'answers must be an array.'));
+    }
+    for (const answer of answers) {
+      if (!answer || typeof answer.questionId !== 'string') {
+        return next(new ApiError(400, 'Each answer requires a questionId.'));
+      }
+      if (answer.selectedOption != null && !VALID_OPTION_LABELS.includes(answer.selectedOption)) {
+        return next(new ApiError(400, `Invalid selectedOption for questionId ${answer.questionId}.`));
+      }
+    }
+
+    const result = await submitQuiz({
+      quizId,
+      submissionKey,
+      timeTakenSec,
+      answers,
+      userId,
+      guestId,
+    });
+
+    return sendResponse(res, 200, {
+      message: 'Quiz submitted.',
+      data: result,
     });
   } catch (error) {
     next(error);

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { optionalAuth } from '../auth/authMiddleware.js';
-import { quizGenerateLimiter } from '../middlewares/rateLimiters.js';
-import { generateQuizController } from '../controllers/quiz.controller.js';
+import { quizGenerateLimiter, quizSubmitLimiter } from '../middlewares/rateLimiters.js';
+import { generateQuizController, submitQuizController } from '../controllers/quiz.controller.js';
 
 const router = Router();
 
@@ -11,5 +11,6 @@ const router = Router();
 router.use(optionalAuth);
 
 router.post('/generate', quizGenerateLimiter, generateQuizController); // POST /api/v1/quiz/generate
+router.post('/submit', quizSubmitLimiter, submitQuizController);       // POST /api/v1/quiz/submit
 
 export default router;

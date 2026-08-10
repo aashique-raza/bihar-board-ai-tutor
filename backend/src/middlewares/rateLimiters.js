@@ -89,7 +89,28 @@ export const quizGenerateLimiter = rateLimit({
   },
 });
 
-// 5. Support Submission Limiter (Protects the support form from spam)
+// 5. Quiz Submit Limiter (Protects scoring/attempt-write work from abuse)
+// Max 10 submit calls per minute PER IDENTITY — same keying as quizGenerateLimiter.
+export const quizSubmitLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 10,
+  keyGenerator: (req) => {
+    if (req.user) return `user_${req.user.id}`;
+    const guestId = req.headers['x-guest-id'];
+    return guestId ? `guest_${guestId}` : ipKeyGenerator(req.ip);
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+  passOnStoreError: true,
+  store: createRedisStore('rl_quiz_sub:'),
+  handler: (req, res) => {
+    res.status(429).json(
+      createRateLimitResponse('Aap bahut tezi se quiz submit kar rahe hain. Ek minute rukiye.')
+    );
+  },
+});
+
+// 6. Support Submission Limiter (Protects the support form from spam)
 // Logged-in users get a higher ceiling (keyed by userId) than guests (keyed by IP).
 // Max 5/day for logged-in users, 3/day for guests.
 export const supportApiLimiter = rateLimit({
