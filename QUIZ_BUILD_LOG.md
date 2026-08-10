@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). **Checkpoint 2/4 DONE** (`POST /quiz/submit`). **Checkpoint 3/4 DONE** (`GET /quiz/history`). **Checkpoint 4/4 built + DB-verified** (`GET /quiz/history/:attemptId`) — **Phase 2 fully complete**, not yet committed. |
-| **Status** | 🟢 Phase 2 DONE — all 4 checkpoints built. Checkpoint 4 (`history/:attemptId` detail view) built, code-reviewed, **1 real bug found + fixed in-session** (missing-question crash guard in submit's idempotent-replay path, `quizSubmitter.js`), `test:quiz-history-detail` 24/24 green + `test:quiz-submit`/`test:quiz-history` re-run green (no regression from the fix) + baseline regression green. Postman scenarios for Checkpoint 2 (`Submit 0-8`) still not run — carried over, unrelated to Checkpoint 4. Ready to commit (user committing manually). |
-| **Branch** | `quiz-phase2` (Phase 0/1 history on `quiz-phase1`, see below) |
-| **Last session** | 2026-08-10 — Phase 2 Checkpoint 4 (`history/:attemptId` detail) built, DB-verified, 1 bug found+fixed — **Phase 2 complete** |
+| **Current Phase** | **Phase 3** — Chapter Gate Integration (Backend) — done in 3 steps. **Step 1 DONE** (`awaiting_quiz` status + quiz-gate fields on `ChapterProgress`). **Step 2 DONE** (step7 wiring + `recordGateQuizResult`/`handleGateQuizResult`). **Step 3 DONE** (summary/recommendation fixes + guest-claim quiz transfer + `test:quiz-gate`) — **Phase 3 fully complete and committed.** |
+| **Status** | 🟢 Phase 3 DONE — all 3 steps built, committed (`7120f87`, `ccc5dd3`, `2789ee1`). `test:quiz-gate` 28/28 green (real-DB, full `awaiting_quiz`→pass/fail→claim lifecycle), baseline + golden suite green, no regression. |
+| **Branch** | `quiz-phase3` (Phase 0/1 history on `quiz-phase1`, Phase 2 on `quiz-phase2`, see below) |
+| **Last session** | 2026-08-10 — Phase 3 Step 1/2/3 built, committed, DB-verified — **Phase 3 complete** |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -364,7 +364,71 @@ baseline suite — all green, no regression from the fix.
 - ❌ `studyEvent` logging for quiz — Phase 6
 
 **🎉 Phase 2 (Quiz Engine & APIs) is now fully complete — all 4 checkpoints built, DB-verified, and
-regression-clean.** Next is Phase 3 (Chapter gate integration), which depends on Phase 0 (already done).
+regression-clean.**
+
+---
+
+## 🎯 PHASE 3 — Chapter Gate Integration
+
+> Depends on Phase 0 (dead `CHAPTER_COMPLETE` branch fix — already done) and Phase 2 (submit API).
+> Done in 3 steps within one continuous session, committed separately per step.
+
+**Blast radius:**
+- `backend/src/models/chapterProgress.model.js` (`awaiting_quiz` added to status enum, 3 quiz-gate fields added)
+- `backend/src/services/chapterProgress.service.js` (`setChapterAwaitingQuiz`, `recordGateQuizResult` added; `claimGuestData` extended)
+- `backend/src/ask/step7.saveAndRespond.js` (edit — `markChapterComplete` → `setChapterAwaitingQuiz`)
+- `backend/src/services/quiz/quizSubmitter.js` (edit — `handleGateQuizResult` added, wired into `submitQuiz`)
+- `backend/src/controllers/chapterProgress.controller.js` (edit — summary count + recommendation branch)
+- `backend/scripts/test-quiz-gate.js` (new), `backend/package.json` (`test:quiz-gate`)
+
+### Step 1 — `7120f87` — Model groundwork
+**Code:**
+- [x] `chapterProgress.model.js` — `status` enum gets `awaiting_quiz` (between `in_progress` and `completed`)
+- [x] 3 new fields: `quizGateBestScore` (default `null`), `quizGateAttempts` (default `0`), `lastQuizAttemptId` (→ `QuizAttempt._id`)
+- [x] `chapterProgress.service.js` — `setChapterAwaitingQuiz(userId, guestId, chapterId)`: guarded `findOneAndUpdate` that only transitions FROM `in_progress`; if chapter is already `awaiting_quiz`/`completed` (e.g. student revisits last topic and `CHAPTER_COMPLETE` refires), it's a no-op — returns current state unchanged instead of clobbering it
+
+### Step 2 — `ccc5dd3` — Wire the gate into the completion + submit flow
+**Code:**
+- [x] `step7.saveAndRespond.js:309` — `CHAPTER_COMPLETE` now calls `setChapterAwaitingQuiz` instead of `markChapterComplete`; chapter no longer auto-completes on last topic
+- [x] `chapterProgress.service.js` — `recordGateQuizResult(userId, guestId, chapterId, { attemptId, percentage, passed })`: always bumps `quizGateAttempts` (+1) and raises `quizGateBestScore` (`Math.max`, never lowered); on `passed` also sets `status: 'completed'`, `completedAt`, `progressPercent: 100` in the same write; on fail, status is left untouched (stays `awaiting_quiz` — unlimited retries, no cooldown)
+- [x] `quizSubmitter.js` — `handleGateQuizResult()` added, called from `submitQuiz` only when `session.quizType === 'chapter_gate'` (never for `chapter_practice`/`mix_practice`); fire-after-create (not inside the `QuizAttempt` write) — attempt is the source of truth, `ChapterProgress` is a derived projection, so a failure here would leave scoring correct and only the gate bookkeeping stale (self-heals on next attempt)
+
+**Verify (dekha gaya, maana nahi gaya) — real DB, described in commit message:**
+- [x] Pass → `ChapterProgress.status` becomes `completed`
+- [x] Fail → stays `awaiting_quiz`, best score never lowered by a worse later attempt
+- [x] `chapter_practice` submit leaves `ChapterProgress` completely untouched
+- [x] Baseline + golden suite green, no regression
+
+### Step 3 — `2789ee1` — Summary/recommendation fixes + guest claim + gate test
+**Code:**
+- [x] `chapterProgress.controller.js` — `listChapterProgressController`'s summary: `inProgressCount` now counts `in_progress` **or** `awaiting_quiz` (a chapter waiting on its gate quiz is still "in progress" from the student's point of view, not invisible)
+- [x] `chapterProgress.controller.js` — `buildRecommendation()` gets an `awaiting_quiz` branch: `action: 'quiz_gate'`, Hinglish message telling the student to take the gate quiz (70%+ to pass), instead of silently falling through to the `in_progress` "continue studying" message
+- [x] `chapterProgress.service.js` — `claimGuestData()` extended: quiz-gate fields (`quizGateBestScore`/`quizGateAttempts`/`lastQuizAttemptId`) merge independently of the topic-progress "winner" pick — best score = `max`, attempts = `sum`, `lastQuizAttemptId` taken from whichever side has the higher best score (never lost just because the other side was further along on topics)
+- [x] `claimGuestData()` — `QuizAttempt` docs reassigned `guestId → userId` (permanent history, always transferred); pending `QuizSession` docs also reassigned (rare — usually TTL-expired before claim happens)
+- [x] `test-quiz-gate.js` (`npm run test:quiz-gate`) — new real-DB regression test, chosen over golden-set scenarios because golden tests LLM intent classification and doesn't fit DB-state gate-flow verification
+
+**Verify (dekha gaya, maana nahi gaya) — all via `test:quiz-gate`, real DB, 28/28 green:**
+- [x] `setChapterAwaitingQuiz`: `in_progress` → `awaiting_quiz`, `quizGateAttempts` starts at 0
+- [x] Re-trigger guard: calling it again on an already-`awaiting_quiz` chapter is a no-op
+- [x] `generateQuiz(chapter_gate)` succeeds once chapter is `awaiting_quiz`; still `409`s on a non-`awaiting_quiz` chapter
+- [x] Gate pass: all-correct submit → `passed: true`, `ChapterProgress.status` → `completed`, `quizGateBestScore` = 100, `quizGateAttempts` = 1, `completedAt` set, `lastQuizAttemptId` points to this attempt
+- [x] Gate fail: all-wrong submit (after resetting to `awaiting_quiz`) → `passed: false`, status stays `awaiting_quiz`, `quizGateAttempts` = 2, best score still 100 (not lowered by the worse attempt)
+- [x] `chapter_practice` submit → `passed: null`, `ChapterProgress` completely unchanged (attempts count, status both untouched)
+- [x] Summary logic: `awaiting_quiz` chapter + `in_progress` chapter both count toward `inProgressCount` (2)
+- [x] `claimGuestData` merge branch (both guest + user have a doc on the same chapter): `quizGateBestScore` = `max(guest 100, user 40)` = 100; `quizGateAttempts` = `sum(guest 2 + user 3)` = 5; `lastQuizAttemptId` = the higher-best-score side's own last attempt (not "the pass attempt" specifically)
+- [x] `claimGuestData`: guest-side `ChapterProgress` doc deleted after merge; `QuizAttempt` docs reassigned to `userId` with `guestId: null`
+
+**Regression:**
+- [x] Baseline suite green, no regression (per commit message)
+
+**Bahar (Phase 3 mein NAHI):**
+- ❌ Postman manual verification — real-DB script (`test:quiz-gate`) used instead, same rationale as skipping golden-set for this phase
+- ❌ Any frontend — Phase 4/5
+- ❌ `studyEvent` logging specific to gate pass/fail (beyond the existing `chapter_completed` event already logged in step7) — Phase 6
+- ❌ P-1/P-9 index bug fix (flagged as relevant to the gate's query in Checkpoint 1's audit) — still parked, no visible failure caused by it in this phase
+
+**🎉 Phase 3 (Chapter Gate Integration) is now fully complete — all 3 steps built, committed, and
+DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 
 ---
 
@@ -402,8 +466,8 @@ regression-clean.** Next is Phase 3 (Chapter gate integration), which depends on
 | **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** (committed on `quiz-phase1`, `4b32e34`) |
 | 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
 | 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | ✅ **DONE** — all 4/4 checkpoints (`generate`, `submit`, `history`, `history/:attemptId`) |
-| 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
-| 4 | Quiz runner modal UI (frontend) | ⚪ Pending |
+| 3 | Chapter gate integration (backend) | ✅ **DONE** (`quiz-phase3`: `7120f87`, `ccc5dd3`, `2789ee1`) |
+| 4 | Quiz runner modal UI (frontend) | ⚪ Pending — **next up** |
 | 5 | Practice Quiz Hub (frontend) | ⚪ Pending |
 | 6 | Polish + analytics (fullstack) | ⚪ Pending |
 
@@ -418,6 +482,14 @@ regression-clean.** Next is Phase 3 (Chapter gate integration), which depends on
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-10 — Phase 3 (Chapter Gate Integration) built, committed, DB-verified — **Phase 3 COMPLETE**
+- **3 steps, 1 continuous session, 1 commit per step** — new branch `quiz-phase3`.
+- **Step 1** (`7120f87`) — `ChapterProgress` model groundwork: `awaiting_quiz` added to status enum, 3 new fields (`quizGateBestScore`, `quizGateAttempts`, `lastQuizAttemptId`), `setChapterAwaitingQuiz()` service function with a re-trigger guard (only transitions FROM `in_progress`, no-ops otherwise).
+- **Step 2** (`ccc5dd3`) — Actual wiring: `step7.saveAndRespond.js` now moves a finished chapter to `awaiting_quiz` instead of auto-completing it (the old `markChapterComplete` call replaced). New `recordGateQuizResult()` + `quizSubmitter.js`'s `handleGateQuizResult()` pair: passing a `chapter_gate` quiz transitions `awaiting_quiz` → `completed` in the same request; failing leaves it `awaiting_quiz` with unlimited retries, best score never lowered. `chapter_practice`/`mix_practice` deliberately untouched. Verified end-to-end against real DB; baseline + golden suite green.
+- **Step 3** (`2789ee1`) — Polish + guest-claim support: summary API's `inProgressCount` now includes `awaiting_quiz` chapters (were vanishing from the count before); `buildRecommendation()` gets an `awaiting_quiz` branch telling the student to take the gate quiz instead of a generic "continue" message; `claimGuestData()` extended to transfer `QuizAttempt`/pending `QuizSession` docs on guest→user claim and merge quiz-gate fields on conflict (best score = max, attempts = sum). New `test-quiz-gate.js` (`npm run test:quiz-gate`) — real-DB test chosen over golden-set (golden tests LLM intent, doesn't fit DB-state verification), covers the full `awaiting_quiz` → pass/fail → claim lifecycle, **28/28 checks green**.
+- **Baseline**: green throughout, no regression across all 3 steps.
+- **Agla:** new session — Phase 4 (Quiz runner modal UI, frontend). No open decisions carried over from Phase 3 into Parking Lot this session.
 
 ### 2026-08-10 — Phase 2 Checkpoint 4/4 built + DB-verified (`GET /quiz/history/:attemptId`) — **Phase 2 COMPLETE**
 - **Deep line-by-line audit hui pehle** — teeno existing checkpoints (generate/submit/history), teeno models, response whitelisting pattern, rate limiters sab padhe, phir user ko Hinglish mein complete plan diya (payload, response shape, 6-step flow, hidden challenges, robustness checklist, reuse strategy) — approval milne ke baad hi code likha.
