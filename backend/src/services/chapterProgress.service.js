@@ -277,6 +277,50 @@ export const setChapterAwaitingQuiz = async (userId, guestId, chapterId) => {
 };
 
 /**
+ * Record the result of a chapter_gate quiz attempt against ChapterProgress.
+ * Called from quizSubmitter.js's handleGateQuizResult() after a chapter_gate
+ * QuizAttempt is created — never for chapter_practice/mix_practice.
+ *
+ * Always: increments quizGateAttempts, raises quizGateBestScore if this
+ * attempt beat it, remembers lastQuizAttemptId.
+ * On pass: transitions awaiting_quiz -> completed in the same write.
+ * On fail: status is left untouched (stays awaiting_quiz — no change needed,
+ * matching the "unlimited retries, no cooldown" rule).
+ */
+export const recordGateQuizResult = async (userId, guestId, chapterId, { attemptId, percentage, passed }) => {
+  if (!chapterId) return null;
+
+  const filter = buildFilter(userId, guestId, chapterId);
+
+  const current = await ChapterProgress.findOne(filter, { quizGateBestScore: 1 }).lean();
+  const currentBest = current?.quizGateBestScore ?? 0;
+  const newBest = Math.max(currentBest, percentage);
+
+  const setFields = {
+    quizGateBestScore: newBest,
+    lastQuizAttemptId: attemptId,
+    lastStudiedAt:     new Date(),
+  };
+
+  if (passed) {
+    setFields.status = 'completed';
+    setFields.completedAt = new Date();
+    setFields.progressPercent = 100;
+  }
+
+  const doc = await ChapterProgress.findOneAndUpdate(
+    filter,
+    { $set: setFields, $inc: { quizGateAttempts: 1 } },
+    { returnDocument: 'after', new: true }
+  );
+
+  await invalidateCache(userId, guestId, chapterId);
+
+  if (isDev) console.log(`[ChapterProgress] Gate quiz result recorded: ${chapterId} passed=${Boolean(passed)} best=${newBest}`);
+  return doc;
+};
+
+/**
  * Reset chapter progress — clears the topic pointer and completed list so the
  * student starts fresh from topic 1.
  * Called from chapterProgress.controller POST /:chapterId/action { action: 'reset', status? }.

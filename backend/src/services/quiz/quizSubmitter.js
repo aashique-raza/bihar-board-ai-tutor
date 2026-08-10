@@ -11,6 +11,7 @@
 import { Question }     from '../../models/question.model.js';
 import { QuizSession }  from '../../models/quizSession.model.js';
 import { QuizAttempt }  from '../../models/quizAttempt.model.js';
+import { recordGateQuizResult } from '../chapterProgress.service.js';
 import ApiError from '../../utils/ApiError.js';
 import { toSubmitResultQuestion, toSubmitResponse } from '../../utils/quizResponse.js';
 import { PASS_PERCENTAGE, MAX_TIME_TAKEN_SEC } from '../../constants/quizConstants.js';
@@ -38,6 +39,26 @@ const findRacedAttempt = async (submissionKey, identityFilter) => {
     if (attempt < RACED_ATTEMPT_RETRIES - 1) await sleep(RACED_ATTEMPT_RETRY_DELAY_MS);
   }
   return null;
+};
+
+/**
+ * Chapter-gate-only side effect: pushes the just-scored attempt's result into
+ * ChapterProgress (best score, attempt count, and the awaiting_quiz -> completed
+ * transition on pass). Never called for chapter_practice/mix_practice — those
+ * quizTypes have no gate to affect.
+ *
+ * Deliberately fire-after-create, not part of the QuizAttempt write itself:
+ * the attempt is the source of truth for "what happened", ChapterProgress is
+ * a derived projection of it. If this throws, the attempt still exists and
+ * scoring the student saw is still correct — only the chapter's status/best-score
+ * bookkeeping would be stale, which is recoverable (next attempt re-syncs it).
+ */
+const handleGateQuizResult = async (userId, guestId, chapterId, attempt, passed) => {
+  await recordGateQuizResult(userId, guestId, chapterId, {
+    attemptId: attempt._id,
+    percentage: attempt.percentage,
+    passed,
+  });
 };
 
 export const fetchQuestionsById = async (questionIds) => {
@@ -172,9 +193,11 @@ export const submitQuiz = async ({ quizId, submissionKey, timeTakenSec, answers,
     throw error;
   }
 
-  // Phase 3 will extend this branch with handleGateQuizResult() (ChapterProgress
-  // awaiting_quiz -> completed on pass) — deliberately out of scope here.
   await QuizSession.updateOne({ _id: session._id }, { $set: { attemptId: attempt._id } });
+
+  if (session.quizType === 'chapter_gate') {
+    await handleGateQuizResult(userId, guestId, session.chapterId, attempt, passed);
+  }
 
   const questionById = await fetchQuestionsById(session.questions.map((sq) => sq.questionId));
   const resultQuestions = session.questions.map((sq) => {

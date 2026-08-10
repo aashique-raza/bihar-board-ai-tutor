@@ -6,7 +6,7 @@
 
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
-import { upsertChapterProgress, markChapterComplete, logStudyEvent } from '../services/chapterProgress.service.js';
+import { upsertChapterProgress, setChapterAwaitingQuiz, logStudyEvent } from '../services/chapterProgress.service.js';
 import { env } from '../config/env.js';
 import redis from '../config/redisClient.js';
 import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../utils/tokenLogger.js';
@@ -309,10 +309,13 @@ export const saveAndRespond = async (
     const isComplete = retrievedContext === 'CHAPTER_COMPLETE';
 
     if (isComplete) {
-      // CHAPTER COMPLETE — critical milestone, must not be lost silently
+      // CHAPTER COMPLETE — critical milestone, must not be lost silently.
+      // Phase 3: don't auto-complete — move to awaiting_quiz. The chapter only
+      // reaches 'completed' once the gate quiz is passed (handleGateQuizResult
+      // in quizSubmitter.js).
       chapterProgressDoc = await withRetry(
-        () => markChapterComplete(userId, guestId, chapterId),
-        'markChapterComplete'
+        () => setChapterAwaitingQuiz(userId, guestId, chapterId),
+        'setChapterAwaitingQuiz'
       );
       logStudyEvent(userId, guestId, sessionId, chapterId, 'chapter_completed');
     } else {
