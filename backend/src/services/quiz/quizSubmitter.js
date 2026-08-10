@@ -40,7 +40,7 @@ const findRacedAttempt = async (submissionKey, identityFilter) => {
   return null;
 };
 
-const fetchQuestionsById = async (questionIds) => {
+export const fetchQuestionsById = async (questionIds) => {
   const docs = await Question.find(
     { _id: { $in: questionIds } },
     { questionText: 1, options: 1, explanation: 1 }
@@ -58,6 +58,11 @@ const fetchQuestionsById = async (questionIds) => {
  * order the student saw them. If that session has since TTL-expired, it
  * falls back to the question's default DB option order — score/isCorrect are
  * unaffected either way since those are already baked into the attempt.
+ *
+ * Defensive: a question could theoretically be missing (hard-deleted — never
+ * happens via the seed script, but not physically impossible). Skip that one
+ * result entry rather than crashing the whole replay response (same guard as
+ * quizHistoryService.js's getQuizAttemptDetail()).
  */
 const buildResponseForExistingAttempt = async (attempt) => {
   const questionIds = attempt.answers.map((a) => a.questionId);
@@ -68,17 +73,21 @@ const buildResponseForExistingAttempt = async (attempt) => {
     (session?.questions || []).map((sq) => [String(sq.questionId), sq])
   );
 
-  const resultQuestions = attempt.answers.map((a) => {
-    const question = questionById.get(String(a.questionId));
-    const sessionQuestion = sessionQuestionById.get(String(a.questionId));
-    const optionOrder = sessionQuestion?.optionOrder ?? question.options.map((o) => o.label);
+  const resultQuestions = attempt.answers
+    .map((a) => {
+      const question = questionById.get(String(a.questionId));
+      if (!question) return null;
 
-    return toSubmitResultQuestion(
-      { questionId: a.questionId, optionOrder, correctOptionLabel: a.correctOptionLabel },
-      question,
-      { selectedOption: a.selectedOption, isCorrect: a.isCorrect, timeSpentMs: a.timeSpentMs }
-    );
-  });
+      const sessionQuestion = sessionQuestionById.get(String(a.questionId));
+      const optionOrder = sessionQuestion?.optionOrder ?? question.options.map((o) => o.label);
+
+      return toSubmitResultQuestion(
+        { questionId: a.questionId, optionOrder, correctOptionLabel: a.correctOptionLabel },
+        question,
+        { selectedOption: a.selectedOption, isCorrect: a.isCorrect, timeSpentMs: a.timeSpentMs }
+      );
+    })
+    .filter(Boolean);
 
   const passed = attempt.quizType === 'chapter_gate' ? attempt.percentage >= PASS_PERCENTAGE : null;
   return toSubmitResponse(attempt, resultQuestions, passed);

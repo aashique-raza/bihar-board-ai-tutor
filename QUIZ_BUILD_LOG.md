@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). **Checkpoint 2/4 DONE** (`POST /quiz/submit`). **Checkpoint 3/4 built + DB-verified** (`GET /quiz/history`), not yet committed. |
-| **Status** | 🟡 Phase 2 in progress. Checkpoints 1 and 2 done. Checkpoint 3 (`history` list) built, code-reviewed, **2 real bugs found + fixed in-session** (limit-clamp gap, chapterId filter missing mix_practice), `test:quiz-history` 21/21 green + baseline regression green. Postman scenarios for Checkpoint 2 (`Submit 0-8`) still not run — carried over, unrelated to Checkpoint 3. Checkpoint 4 (`history/:attemptId`) not started. Ready to commit (user committing manually). |
+| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). **Checkpoint 2/4 DONE** (`POST /quiz/submit`). **Checkpoint 3/4 DONE** (`GET /quiz/history`). **Checkpoint 4/4 built + DB-verified** (`GET /quiz/history/:attemptId`) — **Phase 2 fully complete**, not yet committed. |
+| **Status** | 🟢 Phase 2 DONE — all 4 checkpoints built. Checkpoint 4 (`history/:attemptId` detail view) built, code-reviewed, **1 real bug found + fixed in-session** (missing-question crash guard in submit's idempotent-replay path, `quizSubmitter.js`), `test:quiz-history-detail` 24/24 green + `test:quiz-submit`/`test:quiz-history` re-run green (no regression from the fix) + baseline regression green. Postman scenarios for Checkpoint 2 (`Submit 0-8`) still not run — carried over, unrelated to Checkpoint 4. Ready to commit (user committing manually). |
 | **Branch** | `quiz-phase2` (Phase 0/1 history on `quiz-phase1`, see below) |
-| **Last session** | 2026-08-10 — Phase 2 Checkpoint 3 (`history` list) built, DB-verified, 2 bugs found+fixed |
+| **Last session** | 2026-08-10 — Phase 2 Checkpoint 4 (`history/:attemptId` detail) built, DB-verified, 1 bug found+fixed — **Phase 2 complete** |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -306,6 +306,68 @@ Both fixes covered by new assertions in `test:quiz-history` (limit-clamp formula
 
 ---
 
+## 🎯 PHASE 2 — Checkpoint 4/4: `GET /quiz/history/:attemptId`
+
+> Full plan discussed live in-session, deep line-by-line audit of Checkpoints 1-3 done first (payload,
+> response shape, flow, hidden challenges, robustness checklist) — approval taken before code.
+
+**Blast radius:**
+- `backend/src/services/quiz/quizHistoryService.js` (edit — `getQuizAttemptDetail()` added)
+- `backend/src/services/quiz/quizSubmitter.js` (edit — `fetchQuestionsById` exported for reuse, no logic change to the export itself)
+- `backend/src/controllers/quiz.controller.js`, `backend/src/routes/quiz.routes.js` (edit)
+- `backend/src/utils/quizResponse.js` (`toAttemptDetailResponse` added)
+- `backend/src/middlewares/rateLimiters.js` — **reused** `quizHistoryLimiter`, no new limiter
+- `backend/scripts/test-quiz-history-detail.js` (new), `backend/package.json` (`test:quiz-history-detail`)
+
+**Code:**
+- [x] `quizHistoryService.js` — `getQuizAttemptDetail()`: identity-checked `QuizAttempt.findOne()`, question content fetch (reused `fetchQuestionsById` from `quizSubmitter.js`), session lookup for served option order (same TTL-expiry fallback rule as submit's replay path), result-shaping via **reused** `toSubmitResultQuestion()` — no new question-rendering logic written, only new orchestration
+- [x] `quiz.controller.js` — `historyDetailController`: identity + `mongoose.isValidObjectId(attemptId)` validation, single generic `404` whether the attempt doesn't exist or isn't owned (never distinguishes, matches submit's IDOR-safe pattern)
+- [x] `quiz.routes.js` — `GET /history/:attemptId`, reuses `quizHistoryLimiter`
+- [x] `quizResponse.js` — `toAttemptDetailResponse()` (whitelist: same top-level fields as `toHistoryListItem` plus full `results[]`)
+
+**[BUG FOUND + FIXED during post-implementation code review]** While writing `getQuizAttemptDetail()`'s
+defensive missing-question guard (a question could theoretically be missing from `Question.find()` if
+ever hard-deleted — never happens via the seed script, only `isActive: false`, but not physically
+impossible), review of the **existing** `quizSubmitter.js:buildResponseForExistingAttempt()` (submit's
+idempotent-replay path, near-identical logic reused via `toSubmitResultQuestion`) found it had **no such
+guard** — `question.options.map(...)` would throw `TypeError` on a missing question instead of degrading
+gracefully. Pre-existing gap, not introduced this checkpoint, found only because this checkpoint's fresh
+eyes were on the same code path. **User said fix it in this checkpoint.** Fixed with the same
+`if (!question) return null` + `.filter(Boolean)` pattern now used in `getQuizAttemptDetail()`. Re-ran
+`test:quiz-submit` (16/16), `test:quiz-history` (21/21), `test:quiz-history-detail` (24/24), and the
+baseline suite — all green, no regression from the fix.
+
+**Verify (dekha gaya, maana nahi gaya) — all via `test:quiz-history-detail`, real DB, 24/24 green:**
+- [x] Happy path: full attempt detail returned, `score`/`percentage`/`totalQuestions` match the submit response, `results.length === totalQuestions`
+- [x] Every result carries `text`, 4 `options`, `selectedOption`, `correctOption`, `isCorrect`, `explanation`, `timeSpentMs`
+- [x] `passed` is `null` for `chapter_practice` (gate-only field, same contract as submit/history-list)
+- [x] Mixed correct/wrong/skipped answers all reflected correctly in `results[]`
+- [x] Sensitive field leak check — zero occurrences of `userId`/`guestId`/`submissionKey`/`sessionId`/raw `correctOptionLabel` key in the response
+- [x] Wrong identity on someone else's `attemptId` → service returns `null` (controller maps to generic `404`, no existence leak)
+- [x] Fake `attemptId` → `null` → `404`
+- [x] `mix_practice` attempt → `chapterId: null`, `chapterIds[]` populated on the detail response
+
+**Regression:**
+- [x] `test:chunks`, `test:study-map`, `test:curriculum-resolvers` — green, same as Checkpoint 3 baseline
+- [x] `test:chat-db-models` — same pre-existing red (P-6), unrelated
+- [x] `test:quiz-submit` (16/16) and `test:quiz-history` (21/21) re-run after the bug fix — both still fully green
+
+**Bahar (Checkpoint 4 mein NAHI):**
+- ❌ Postman manual verification — automated DB test done, Postman scenarios not created this session
+- ❌ Refactor to fully de-duplicate `buildResponseForExistingAttempt()` (submit) and `getQuizAttemptDetail()`
+  (history detail) — both now share `fetchQuestionsById` and `toSubmitResultQuestion`, but the outer
+  orchestration (~15 lines: session lookup, option-order fallback, map-and-filter) is still near-identical
+  between the two. Not extracted to a shared helper — would touch `quizSubmitter.js` further beyond this
+  checkpoint's declared scope. Flagged as a future cleanup, not a bug.
+- ❌ Redis caching — parked (P-7)
+- ❌ Any frontend — Phase 4/5
+- ❌ `studyEvent` logging for quiz — Phase 6
+
+**🎉 Phase 2 (Quiz Engine & APIs) is now fully complete — all 4 checkpoints built, DB-verified, and
+regression-clean.** Next is Phase 3 (Chapter gate integration), which depends on Phase 0 (already done).
+
+---
+
 ## 🅿️ PARKING LOT
 
 > Yahan sab real cheezein hain. **Koi bhoolegi nahi.** Bas abhi nahi hongi.
@@ -339,7 +401,7 @@ Both fixes covered by new assertions in `test:quiz-history` (limit-clamp formula
 |---|---|---|
 | **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** (committed on `quiz-phase1`, `4b32e34`) |
 | 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
-| 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | 🟡 **In progress** — Checkpoints 1-3/4 done (`generate`, `submit`, `history`) |
+| 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | ✅ **DONE** — all 4/4 checkpoints (`generate`, `submit`, `history`, `history/:attemptId`) |
 | 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
 | 4 | Quiz runner modal UI (frontend) | ⚪ Pending |
 | 5 | Practice Quiz Hub (frontend) | ⚪ Pending |
@@ -356,6 +418,16 @@ Both fixes covered by new assertions in `test:quiz-history` (limit-clamp formula
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-10 — Phase 2 Checkpoint 4/4 built + DB-verified (`GET /quiz/history/:attemptId`) — **Phase 2 COMPLETE**
+- **Deep line-by-line audit hui pehle** — teeno existing checkpoints (generate/submit/history), teeno models, response whitelisting pattern, rate limiters sab padhe, phir user ko Hinglish mein complete plan diya (payload, response shape, 6-step flow, hidden challenges, robustness checklist, reuse strategy) — approval milne ke baad hi code likha.
+- **User ne explicit instruction di:** implement karo, koi naya-mila bug apne se fix mat karo — bas flag karo, decision user karega.
+- **Built:** `getQuizAttemptDetail()` — identity-checked lookup + reused `fetchQuestionsById`/`toSubmitResultQuestion` (Checkpoint 2 se, exported for reuse) instead of writing new question-rendering logic; controller, route, `toAttemptDetailResponse()` response helper. Naya koi model/constant/middleware nahi — sabse chhota checkpoint ab tak.
+- **`test:quiz-history-detail` written and run against live DB — 24/24 PASS**: happy path shape, mixed correct/wrong/skipped scoring, sensitive-field leak check, wrong-identity → null, fake attemptId → null, mix_practice chapterIds.
+- **Post-implementation code review round (same discipline as Checkpoints 2-3)**: while writing this checkpoint's defensive missing-question guard, noticed the **pre-existing** `quizSubmitter.js:buildResponseForExistingAttempt()` (submit's idempotent-replay path) had no equivalent guard — `question.options.map(...)` would crash on a missing question instead of degrading. Not introduced this session, found via fresh eyes on shared logic. **User said fix it.** Fixed with the same guard pattern, re-ran `test:quiz-submit` (16/16), `test:quiz-history` (21/21), `test:quiz-history-detail` (24/24) + baseline — all green, no regression from the fix.
+- **Baseline**: `test:chunks`/`test:study-map`/`test:curriculum-resolvers` green, `test:chat-db-models` same pre-existing red (P-6) — no regression, before and after the fix.
+- **🎉 All 4 checkpoints of Phase 2 done.** Postman scenarios for Checkpoint 2 (`Submit 0-8`) still carried over, unrelated to Checkpoint 4's DoD.
+- **Agla:** new session — Phase 3 (Chapter gate integration), depends on Phase 0 (already done). Also decide: run carried-over Postman scenarios, and whether to extract the `buildResponseForExistingAttempt`/`getQuizAttemptDetail` shared orchestration into one helper (flagged, not done — see Checkpoint 4's "Bahar" list).
 
 ### 2026-08-10 — Phase 2 Checkpoint 3/4 built + DB-verified (`GET /quiz/history`)
 - **Deep line-by-line audit hui pehle** — generate/submit code, models, response whitelisting, rate limiters, controller patterns (`chapterProgress.controller.js` ke listing endpoint sameet) sab padhe before planning, phir user ko Hinglish mein complete plan diya (payload, response shape, flow, hidden challenges, index analysis, security checklist, test plan) — approval milne ke baad hi code likha.

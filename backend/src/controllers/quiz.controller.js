@@ -9,7 +9,7 @@
 import mongoose from 'mongoose';
 import { generateQuiz } from '../services/quiz/quizGenerator.js';
 import { submitQuiz } from '../services/quiz/quizSubmitter.js';
-import { getQuizHistory } from '../services/quiz/quizHistoryService.js';
+import { getQuizHistory, getQuizAttemptDetail } from '../services/quiz/quizHistoryService.js';
 import { QUIZ_TYPES, GUEST_ID_MAX_LENGTH, HISTORY_DEFAULT_LIMIT, HISTORY_MAX_LIMIT } from '../constants/quizConstants.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import { toHistoryListResponse } from '../utils/quizResponse.js';
@@ -150,6 +150,36 @@ export const historyListController = async (req, res, next) => {
     return sendResponse(res, 200, {
       message: 'Quiz history fetched.',
       data: toHistoryListResponse(attempts, nextCursor, hasMore),
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// ─── GET /api/v1/quiz/history/:attemptId ──────────────────────────────────────
+
+export const historyDetailController = async (req, res, next) => {
+  try {
+    const { userId, guestId } = extractIdentity(req);
+    if (!userId && !guestId) {
+      return next(new ApiError(400, 'Identity required — login or a valid X-Guest-Id header is missing.'));
+    }
+
+    const { attemptId } = req.params;
+    if (!attemptId || !mongoose.isValidObjectId(attemptId)) {
+      return next(new ApiError(400, 'A valid attemptId is required.'));
+    }
+
+    const detail = await getQuizAttemptDetail({ attemptId, userId, guestId });
+    if (!detail) {
+      // Same 404 whether the attempt doesn't exist or belongs to someone
+      // else — never reveal which, matching the submit endpoint's pattern.
+      return next(new ApiError(404, 'Quiz attempt not found.'));
+    }
+
+    return sendResponse(res, 200, {
+      message: 'Quiz attempt detail fetched.',
+      data: detail,
     });
   } catch (error) {
     next(error);

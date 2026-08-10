@@ -72,3 +72,23 @@ export const toHistoryListResponse = (attempts, nextCursor, hasMore) => ({
   nextCursor,
   hasMore,
 });
+
+/**
+ * Full shape for GET /quiz/history/:attemptId — same top-level metadata as
+ * toHistoryListItem plus the full `results[]` (options/explanation included,
+ * built via toSubmitResultQuestion — same helper the submit response uses).
+ */
+export const toAttemptDetailResponse = (attempt, resultQuestions) => ({
+  attemptId: String(attempt._id),
+  quizType: attempt.quizType,
+  subjectId: attempt.subjectId,
+  chapterId: attempt.chapterId,
+  chapterIds: attempt.chapterIds,
+  score: attempt.score,
+  totalQuestions: attempt.totalQuestions,
+  percentage: attempt.percentage,
+  passed: attempt.quizType === 'chapter_gate' ? attempt.percentage >= PASS_PERCENTAGE : null,
+  timeTakenSec: attempt.timeTakenSec,
+  createdAt: attempt.createdAt,
+  results: resultQuestions,
+});
