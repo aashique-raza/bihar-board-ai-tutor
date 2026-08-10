@@ -28,7 +28,8 @@
     "test:quiz-generate": "node scripts/test-quiz-generate.js",
     "test:quiz-submit": "node scripts/test-quiz-submit.js",
     "test:quiz-history": "node scripts/test-quiz-history.js",
-    "test:quiz-history-detail": "node scripts/test-quiz-history-detail.js"
+    "test:quiz-history-detail": "node scripts/test-quiz-history-detail.js",
+    "test:quiz-gate": "node scripts/test-quiz-gate.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

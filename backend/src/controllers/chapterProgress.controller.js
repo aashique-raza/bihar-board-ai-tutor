@@ -41,6 +41,16 @@ const buildRecommendation = (progress, topics) => {
     };
   }
 
+  if (progress.status === 'awaiting_quiz') {
+    return {
+      action:  'quiz_gate',
+      message: 'Saare topics ho gaye! Ab is chapter ka quiz do — 70% ya usse zyada laane par chapter complete hoga.',
+      chips: [
+        { type: 'start_gate_quiz', label: 'Quiz shuru karo' },
+      ],
+    };
+  }
+
   if (progress.status === 'completed') {
     return {
       action:  'revise',
@@ -184,7 +194,9 @@ export const listChapterProgressController = async (req, res, next) => {
     // Summary counts across all user progress (not limited by query)
     const allDocs = await listUserChapterProgress(userId, guestId, { limit: 50 });
     const summary = {
-      inProgressCount: allDocs.filter((d) => d.status === 'in_progress').length,
+      // awaiting_quiz counted alongside in_progress — the student's work on
+      // this chapter isn't finished yet (Decision 13, QUIZ_BUILD_LOG.md Phase Board).
+      inProgressCount: allDocs.filter((d) => d.status === 'in_progress' || d.status === 'awaiting_quiz').length,
       completedCount:  allDocs.filter((d) => d.status === 'completed').length,
       notStartedCount: Math.max(0, 16 - allDocs.length), // 16 total chapters
     };

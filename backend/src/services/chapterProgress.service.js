@@ -11,6 +11,8 @@
 
 import { ChapterProgress } from '../models/chapterProgress.model.js';
 import { StudyEvent }      from '../models/studyEvent.model.js';
+import { QuizAttempt }     from '../models/quizAttempt.model.js';
+import { QuizSession }     from '../models/quizSession.model.js';
 import redis               from '../config/redisClient.js';
 import { loadCurriculumIndex } from '../curriculum/curriculumIndexLoader.js';
 import { getChapterCoreTopics } from '../curriculum/topicResolver.js';
@@ -391,15 +393,30 @@ export const claimGuestData = async (userId, guestId) => {
       const guestIsFurther = (guestDoc.completedTopicIds?.length || 0) > (existing.completedTopicIds?.length || 0);
       const winner = guestIsFurther ? guestDoc : existing;
 
+      // Quiz gate fields merge independently of the topic-progress "winner" —
+      // a student's best quiz score/attempt count should never be lost just
+      // because the other side happened to be further along on topics.
+      const guestBest    = guestDoc.quizGateBestScore ?? 0;
+      const existingBest = existing.quizGateBestScore ?? 0;
+      const mergedBestScore = Math.max(guestBest, existingBest);
+      const mergedAttempts  = (guestDoc.quizGateAttempts || 0) + (existing.quizGateAttempts || 0);
+      // Blueprint §9: lastQuizAttemptId comes from whichever side has the higher best score.
+      const mergedLastAttemptId = guestBest >= existingBest
+        ? (guestDoc.lastQuizAttemptId ?? existing.lastQuizAttemptId ?? null)
+        : (existing.lastQuizAttemptId ?? guestDoc.lastQuizAttemptId ?? null);
+
       await ChapterProgress.updateOne(
         { _id: existing._id },
         {
           $set: {
-            status:            winner.status,
-            currentTopicId:    winner.currentTopicId,
-            completedTopicIds: winner.completedTopicIds,
-            progressPercent:   winner.progressPercent,
-            lastStudiedAt:     new Date(),
+            status:             winner.status,
+            currentTopicId:     winner.currentTopicId,
+            completedTopicIds:  winner.completedTopicIds,
+            progressPercent:    winner.progressPercent,
+            lastStudiedAt:      new Date(),
+            quizGateBestScore:  mergedBestScore || null,
+            quizGateAttempts:   mergedAttempts,
+            lastQuizAttemptId:  mergedLastAttemptId,
           },
           $inc: {
             totalTimeSpentSec:      guestDoc.totalTimeSpentSec      || 0,
@@ -418,7 +435,18 @@ export const claimGuestData = async (userId, guestId) => {
 
   await StudyEvent.updateMany({ guestId }, { $set: { userId, guestId: null } });
 
-  return { chaptersTransferred, chaptersMerged };
+  // Quiz attempts (permanent history) and any still-pending quiz sessions
+  // (rare — usually TTL-expired before claim happens) move to the new identity.
+  const quizAttemptResult = await QuizAttempt.updateMany(
+    { guestId },
+    { $set: { userId, guestId: null } }
+  );
+  await QuizSession.updateMany(
+    { guestId, status: 'pending' },
+    { $set: { userId, guestId: null } }
+  );
+
+  return { chaptersTransferred, chaptersMerged, quizAttemptsTransferred: quizAttemptResult.modifiedCount };
 };
 
 /**
