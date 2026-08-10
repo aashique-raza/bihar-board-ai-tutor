@@ -24,7 +24,8 @@
     "test:golden": "node scripts/run-golden-set.js",
     "test:golden-save": "node scripts/run-golden-set.js --save-baseline",
     "quiz:seed": "node scripts/seed-quiz-bank.js",
-    "quiz:seed:dry-run": "node scripts/seed-quiz-bank.js --dry-run"
+    "quiz:seed:dry-run": "node scripts/seed-quiz-bank.js --dry-run",
+    "test:quiz-generate": "node scripts/test-quiz-generate.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

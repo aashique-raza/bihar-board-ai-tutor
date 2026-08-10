@@ -2,11 +2,15 @@ import mongoose from 'mongoose';
 
 const servedQuestionSchema = new mongoose.Schema(
   {
-    questionId:              { type: mongoose.Schema.Types.ObjectId, required: true }, // -> Question._id
-    questionVersionSnapshot: { type: Number, required: true }, // Question.version at serve time
-    options:                 [{ label: String, text: String }], // exact options sent to client, post-shuffle
-    correctOptionLabel:      { type: String, required: true },  // authoritative correct label for THIS shuffle
-    topicId:                 { type: String, default: null },   // Question.topicId snapshot at serve time
+    questionId:      { type: mongoose.Schema.Types.ObjectId, required: true }, // -> Question._id
+    questionVersion: { type: Number, required: true }, // Question.version at serve time
+    // Original option labels ('A'-'D') in the order shown to the student, e.g. ['C','A','D','B'].
+    // Deliberately labels-only, not the localized text — the client already has the 3-language
+    // text from the response and can render any language without another server round trip.
+    // Storing text here would also freeze it to whichever language was chosen at generate time.
+    optionOrder:        { type: [String], required: true },
+    correctOptionLabel: { type: String, required: true }, // display label ('A'-'D') correct for THIS shuffle
+    topicId:             { type: String, default: null },  // Question.topicId snapshot at serve time
   },
   { _id: false }
 );

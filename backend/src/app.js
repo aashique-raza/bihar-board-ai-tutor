@@ -8,6 +8,7 @@ import askRoutes             from './routes/ask.routes.js';
 import authRoutes            from './routes/auth.routes.js';
 import chapterProgressRoutes from './routes/chapterProgress.routes.js';
 import healthRoutes          from './routes/health.routes.js';
+import quizRoutes            from './routes/quiz.routes.js';
 import sessionRoutes         from './routes/session.routes.js';
 import studyMapRoutes        from './routes/studyMap.routes.js';
 import supportRoutes         from './routes/support.routes.js';
@@ -64,6 +65,7 @@ app.use('/api/v1/auth',            authRoutes);
 app.use('/api/v1/sessions',        sessionRoutes);
 app.use('/api/v1/chapter-progress', chapterProgressRoutes);
 app.use('/api/v1/support',          supportRoutes);
+app.use('/api/v1/quiz',             quizRoutes);
 
 app.use((req, _res, next) => {
   next(new ApiError(404, `Route not found: ${req.originalUrl}`));

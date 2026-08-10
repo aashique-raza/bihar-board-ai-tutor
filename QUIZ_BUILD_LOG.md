@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — not started |
-| **Status** | ✅ **Phase 1 DONE.** 743 real PYQ questions seeded into MongoDB (`question_bank`), 16 chapters, all verified against blueprint counts. Session ends here (Rule 5) — next session starts fresh on Phase 2. |
-| **Branch** | `quiz-phase1` (Phase 0: `4b32e34`, Phase 1: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
-| **Last session** | 2026-08-09 — Phase 1 built, verified, seeded |
+| **Current Phase** | **Phase 2** — Quiz Engine & APIs (Backend) — split into 4 checkpoints (1 API per checkpoint). **Checkpoint 1/4 DONE** (`POST /quiz/generate`). |
+| **Status** | 🟡 Phase 2 in progress. Checkpoint 1 (`generate`) built + code-verified, **not yet committed** (user wants to finish Postman verification first). Postman scenarios 1-2/7 done (found + fixed an `_id` leak bug); 3-7 still pending. Checkpoints 2 (`submit`), 3 (`history` list), 4 (`history/:attemptId`) not started. |
+| **Branch** | `quiz-phase2` (Phase 0/1 history on `quiz-phase1`, see below) |
+| **Last session** | 2026-08-09 — Phase 2 Checkpoint 1 built + verified, session paused mid-Postman-verification |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -119,6 +119,74 @@ models is in this session's history entry below.
 
 ---
 
+## 🎯 PHASE 2 — Checkpoint 1/4: `POST /quiz/generate`
+
+> Full plan discussed live in-session (not pre-written in blueprint §17 at this granularity).
+> Blueprint §11 assumed a single-language response — **superseded below.**
+
+**[BUG FOUND + FIXED during Postman verification]** Response's `text` objects (`questionText`
+and every `options[].text`) leaked Mongoose's auto-generated subdocument `_id` — e.g.
+`"text": {"en": "...", "hi": "...", "hinglish": "...", "_id": "6a78..."}`. Root cause:
+`toClientQuestion`/`applyOptionOrder` forwarded the localized-text subdocument as-is instead of
+picking only `en`/`hi`/`hinglish` off it — the "whitelist, never blacklist" rule from Checkpoint
+1's design was stated but not actually followed for this one field. Fixed with a
+`pickLocalizedText()` helper in `optionShuffler.js`, used by both `toClientQuestion` and
+`applyOptionOrder`. Not a security leak (no secret data), but real response-shape noise that
+went to production shape without this fix. `test-quiz-generate.js` now also asserts no literal
+`"_id"` key appears anywhere in the response. Re-verified green after the fix, both via the
+automated test and manually in the user's own Postman workspace.
+
+**[SUPERSEDES blueprint §11 for this endpoint]** Blueprint said server picks one language
+(default hinglish) before responding, session stores flat `{label, text}` options. User's language-toggle
+requirement (client picks language, no re-fetch) makes that impossible — a session that only remembers
+hinglish text can't serve English later. **New design:** server sends all 3 languages in every response;
+`quiz_sessions.questions[]` stores `optionOrder` (label array) instead of full text — language-independent,
+~90% smaller, no text-comparison risk. `quizSession.model.js` changed with user's explicit permission
+(model was empty, zero-cost to change).
+
+**Blast radius:**
+- `backend/src/models/quizSession.model.js` (`options[]` → `optionOrder[]`, `questionVersionSnapshot` → `questionVersion`)
+- `backend/src/services/quiz/optionShuffler.js`, `questionSelector.js`, `quizGenerator.js` (new)
+- `backend/src/controllers/quiz.controller.js`, `backend/src/routes/quiz.routes.js` (new)
+- `backend/src/constants/quizConstants.js`, `backend/src/utils/quizResponse.js` (new)
+- `backend/src/app.js` (route registered), `backend/src/middlewares/rateLimiters.js` (`quizGenerateLimiter`)
+- `backend/scripts/test-quiz-generate.js` (new), `backend/package.json` (`test:quiz-generate`)
+
+**Code:**
+- [x] `quizSession.model.js` — `optionOrder`/`questionVersion` rename
+- [x] `optionShuffler.js` — `shuffle()`, `shuffleOptions()`, `applyOptionOrder()`, `isQuestionUsable()` — pure functions
+- [x] `questionSelector.js` — covered-index candidate query, seen-set aggregation (identity-only, no chapterId filter — §4 audit), chapter selection, mix-quiz proportional-with-baseline-1 distribution
+- [x] `quizGenerator.js` — orchestrates all 3 `quizType`s, persists `QuizSession`
+- [x] `quiz.controller.js` — identity extraction (mirrors `chapterProgress.controller.js`), validation
+- [x] `quiz.routes.js` — `POST /generate`, `optionalAuth` + `quizGenerateLimiter`
+- [x] `quizResponse.js` — whitelist-based client shape (never blacklist)
+- [x] `rateLimiters.js` — `quizGenerateLimiter`, 10/min, keyed by identity not IP
+
+**Verify (dekha gaya, maana nahi gaya):**
+- [x] `chapter_practice` → 10 questions, every `text`/`option.text` carries `en`+`hi`+`hinglish`
+- [x] Response JSON string-searched — zero occurrences of `correctOptionLabel`/`explanation`/`topicId`/`optionOrder`
+- [x] `mix_practice` → 20 questions across >1 chapter, `science.meta.chapter-00` excluded (0 seeded questions there → natural 404 if ever targeted directly)
+- [x] Repeated `generate` → at least one question's `optionOrder` differs (shuffle proof)
+- [x] DB `correctOptionLabel` manually mapped back to `Question.correctOptionLabel` — same option, different position
+- [x] Guest without `X-Guest-Id` → `400` (real HTTP test)
+- [x] Fake `chapterId` → `404`; unseeded `science.meta.chapter-00` → `404`
+- [x] `chapter_gate` on non-`awaiting_quiz` chapter → `409` (expected permanently until Phase 3)
+- [x] Rate limit: 11th request in 1 min → `429`; second identity same window → own bucket, `200` (real HTTP test)
+- [x] **Postman manual test** (real requests from user's own Postman workspace, not curl) — Scenario 1 (no identity → `400`) and Scenario 2 (`chapter_practice` happy path → `200`, 10 questions) both run and confirmed by user
+
+**Regression:**
+- [x] `test:chunks`, `test:study-map`, `test:curriculum-resolvers` — green, same as Phase 1 baseline
+
+**Bahar (Checkpoint 1 mein NAHI):**
+- ❌ Submit API — Checkpoint 2
+- ❌ History APIs — Checkpoint 3, 4
+- ❌ Redis cache for question reads — parked (P-7), current queries are index-covered and fast without it
+- ❌ `awaiting_quiz` status enum — Phase 3 (this is *why* `chapter_gate` always 409s right now — expected)
+- ❌ Any frontend — Phase 4/5
+- ❌ `studyEvent` logging for quiz — Phase 6
+
+---
+
 ## 🅿️ PARKING LOT
 
 > Yahan sab real cheezein hain. **Koi bhoolegi nahi.** Bas abhi nahi hongi.
@@ -134,6 +202,9 @@ models is in this session's history entry below.
 | P-5 | 5 local branches (`logo`, `profile`, `feat/support-page`, `global`, `codex-curriculum-resolvers`) already `main` mein merged hain — sirf local pointer clutter hai, delete kiya ja sakta hai. | git | 2026-08-02 audit | 🟢 Low — housekeeping |
 | P-6 | `test:chat-db-models` crash karta hai — `src/models/chatState.model.js` dhundhta hai jo exist nahi karti. Pre-existing (archived `PROBLEMS.md` STB-008 note ke mutabik: `chatState` purane refactor mein `chatSession` ke andar embed hua, script kabhi update nahi hui). Phase 0 baseline mein red mila, isse Phase 0 se unrelated maan ke park kiya. | `backend/scripts/test-chat-db-models.js` | Phase 0 baseline, 2026-08-02 | 🟡 Medium — ek regression test permanently disabled jaisa hai |
 | P-7 | Seed script Redis quiz-cache clear nahi karta (`quiz:questions:*`) — blueprint §12 step 5 mein hai, par abhi koi cache key exist hi nahi karti (Phase 2 mein cache layer banegi). User-confirmed deferral. | `backend/scripts/seed-quiz-bank.js` | Phase 1, 2026-08-09 | 🟢 Low — Phase 2 mein cache banate waqt add karna |
+| P-8 | Question bank mein near-duplicate questions ho sakte hain — Phase 1 ka dedup sirf `questionCode` se hua, text se nahi. Ek hi PYQ alag saal mein thodi alag wording ke saath aaya ho to dono ek quiz mein aa sakte hain. | `backend/scripts/transform-bulk-to-seed.js` | Checkpoint 1 audit, 2026-08-09 | 🟢 Low — data-quality, functional bug nahi |
+| P-9 | `chapterProgress` ka P-1 index bug (`user_chapter_unique` kabhi enforce nahi karta) `chapter_gate` ke gate-check query ko bhi index se vanchit karta hai — partial filter `$type: 'objectId'` kabhi match nahi hota. Guest path theek hai (guest index sahi bana hai). 16 chapters pe impact negligible. | `backend/src/models/chapterProgress.model.js:75-82` | Checkpoint 1 audit, 2026-08-09 | 🟡 Medium — P-1 ka hi extension, Phase 3 mein revisit karna |
+| P-10 | Question bank mein kuch options ke text field mein OCR/parsing garbage leak hua hai — dusre options ka text ya extra numbering usi option ke andar chipak gaya hai (e.g. option D mein "A. ... B. ... C. ... D. ..." poora list, ya "64. (C) ... (D) ..." jaisा leftover). API/controller ka bug nahi — root cause Phase 1 ke `transform-bulk-to-seed.js`/source PDF OCR mein hai, data seed ho chuki hai. Postman Scenario 3 (`mix_practice`, 20 Q) mein kam se kam 3 confirmed cases (Q3, Q12, Q17 us response mein). Extent (kitne total questions affected) abhi unknown — grep karna baaki hai. | `data/quiz-bank/science/**/*.json` seed source; `question_bank` collection | Postman Scenario 3 test, 2026-08-10 | 🟢 Low — data-quality, functional bug nahi (P-8 se related, dono seed-quality issues) |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -148,7 +219,7 @@ models is in this session's history entry below.
 |---|---|---|
 | **0** | Prerequisite — chapter completion fire karana | ✅ **DONE** (committed on `quiz-phase1`, `4b32e34`) |
 | 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
-| 2 | Quiz engine + APIs (backend) | ⚪ Pending |
+| 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | 🟡 **In progress** — Checkpoint 1/4 done (`generate`) |
 | 3 | Chapter gate integration (backend) | ⚪ Pending — **Phase 0 pe depend karta hai** |
 | 4 | Quiz runner modal UI (frontend) | ⚪ Pending |
 | 5 | Practice Quiz Hub (frontend) | ⚪ Pending |
@@ -165,6 +236,20 @@ models is in this session's history entry below.
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-09 — Phase 2 Checkpoint 1/4 built, verified (`POST /quiz/generate`)
+- **User ne Phase 2 ko 4 checkpoints mein todne ko bola** (1 API = 1 discuss+implement session/beat). Naya branch `quiz-phase2`.
+- **Do rethink rounds hue is checkpoint ke andar** (user ne khud dono maange): (1) robotic key names → simple relatable names (`totalQuestions`→`questionCount`, `partialBank`→`isPartial`, etc.), (2) **real schema bug pakda** — original design server-side language pick karta tha aur session mein sirf ek language freeze hoti thi; user ki language-toggle requirement se ye tootta. Fix: client teeno languages leta hai, session sirf `optionOrder` (labels) store karta hai, koi text nahi — language-independent, ~90% chhota session doc, text-comparison risk khatam.
+- **Model change ki permission li gayi** — `quizSession.model.js` blast radius se bahar tha (protocol §7 STOP condition), user ne explicitly "haan" bola. `options[]`→`optionOrder[]`, `questionVersionSnapshot`→`questionVersion`.
+- **Query optimization discuss + implement hui**: candidate selection sirf `_id` (index-covered), full content sirf selected 10/20 ke liye alag query; seen-set MongoDB aggregation se (500 subdocs load karne ke bajaye 1 summarized doc); `.lean()` har read pe.
+- **2 naye Parking Lot items mile**: P-8 (near-duplicate questions possible, text-level dedup nahi hua tha) aur P-9 (`chapterProgress` P-1 index bug `chapter_gate` gate-check query ko bhi affect karta hai).
+- **Real DB test (`test:quiz-generate`)**: 19/19 checks pass — 3-language response shape, forbidden-key leak check (`correctOptionLabel`/`explanation`/`topicId`/`optionOrder`), shuffle-correctness proof, mix-quiz multi-chapter spread, 404/409 error paths.
+- **HTTP-level test** (server manually chalake): guest-missing-identity → 400, guest happy path → 200, rate limit 11th request → 429, doosri identity ko alag bucket mila. Sab confirm hua, test data cleanup hua, server band kiya.
+- **Baseline**: `test:chunks`/`test:study-map`/`test:curriculum-resolvers` green, Phase 1 jaisa hi — koi regression nahi.
+- **User ne apne Postman workspace se manually verify kiya** (`Ai tutor > Quiz` folder, 7 requests banaye Postman API connector se — collection ID `af2d5f30-ca6d-4ffc-93e0-ae1a855cfd71`, folder ID `530bf2a0-edcf-4093-889f-833181888c01`). Scenario 1 (no identity) aur Scenario 2 (`chapter_practice` happy path) run kiye.
+- **Scenario 2 mein ek real bug pakda gaya** — `text` objects mein Mongoose ka auto `_id` leak ho raha tha. Turant fix hua (`pickLocalizedText()` helper), automated test mein permanent check add hua, dobara verify kiya (automated + Postman dono) — confirm hua `_id` ab kahin nahi hai.
+- **Session yahin roka gaya** (user ne bola) — Scenario 3-7 (mix_practice, chapter_gate, invalid inputs, rate limit) Postman mein bane hue hain par abhi run nahi hue.
+- **Agla:** Session shuru hote hi pehle bache hue Postman scenarios (3-7) complete karo, phir Checkpoint 2 — `POST /quiz/submit` — discuss karke implement.
 
 ### 2026-08-09 — Phase 1 built, verified, seeded (DONE)
 - **User ne 5 checkpoints maange** is phase ke andar (blueprint mein already allowed hai — "checkpoints banao, phase mat todo"): (1) bulk file laana, (2) transform script + seed files, (3) 3 models, (4) seed engine, (5) real seed. Har checkpoint: build → verify → commit, ya problem discuss karke turant fix / Parking Lot.
