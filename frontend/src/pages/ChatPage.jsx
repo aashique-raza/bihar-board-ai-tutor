@@ -20,6 +20,8 @@ import {
   GUEST_TURN_LIMIT,
 } from '../utils/guestLimit.js';
 import GuestLimitModal from '../components/GuestLimitModal.jsx';
+// TEMP-STEP1-TESTING: real trigger (start_gate_quiz suggested action) lands in Phase 4 Step 3.
+import QuizModal from '../components/QuizModal.jsx';
 import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
 import useSessionList from '../hooks/useSessionList.js';
@@ -165,6 +167,9 @@ function ChatPage({ theme, toggleTheme }) {
   const [isGuestLimited, setIsGuestLimited] = useState(false);
   const [guestLimitModal, setGuestLimitModal] = useState({ open: false, trigger: 'turn_limit' });
   const [historyOpen, setHistoryOpen] = useState(false);
+  // TEMP-STEP1-TESTING: remove this state + the floating button + <QuizModal> below
+  // once Step 3 wires the real start_gate_quiz suggested-action trigger.
+  const [isQuizTestOpen, setIsQuizTestOpen] = useState(false);
 
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -983,6 +988,29 @@ function ChatPage({ theme, toggleTheme }) {
       />
 
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
+
+      {/* TEMP-STEP1-TESTING: floating button + modal, remove both when Step 3 wires
+          the real start_gate_quiz trigger from the suggested-action chip. */}
+      <button
+        type="button"
+        onClick={() => setIsQuizTestOpen(true)}
+        style={{
+          position: 'fixed', bottom: 16, right: 16, zIndex: 1300,
+          padding: '8px 14px', borderRadius: 999,
+          border: '1px solid var(--border-strong)', background: 'var(--bg-surface)',
+          color: 'var(--text-secondary)', fontSize: '0.75rem', fontWeight: 700,
+          cursor: 'pointer',
+        }}
+      >
+        🧪 Quiz Test
+      </button>
+      <QuizModal
+        isOpen={isQuizTestOpen}
+        quizType="chapter_practice"
+        subjectId="science"
+        chapterId="science.physics.chapter-01"
+        onClose={() => setIsQuizTestOpen(false)}
+      />
     </Box>
   );
 }

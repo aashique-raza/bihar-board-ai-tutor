@@ -119,6 +119,44 @@ export const chapterProgressAction = async (chapterId, action, extra = {}) => {
   }
 };
 
+// ─── Quiz API ───────────────────────────────────────────────────────────────
+// Both use axiosInstance so auth token + X-Guest-Id are sent automatically.
+// error.code/status are attached (not just message) so QuizModal can branch on
+// 404 (no questions/chapter) vs 409 (not awaiting_quiz / already submitted) vs
+// 429 (rate limit) instead of only showing a generic failure string.
+
+export const generateQuiz = async ({ quizType, subjectId, chapterId }) => {
+  try {
+    const { data } = await axiosInstance.post('/api/v1/quiz/generate', {
+      quizType, subjectId, chapterId,
+    });
+    return data.data;
+  } catch (err) {
+    const error = new Error(
+      err.response?.data?.error?.message || 'Quiz generate nahi hui.'
+    );
+    error.code = err.response?.data?.error?.code || null;
+    error.status = err.response?.status || 0;
+    throw error;
+  }
+};
+
+export const submitQuiz = async ({ quizId, submissionKey, timeTakenSec, answers }) => {
+  try {
+    const { data } = await axiosInstance.post('/api/v1/quiz/submit', {
+      quizId, submissionKey, timeTakenSec, answers,
+    });
+    return data.data;
+  } catch (err) {
+    const error = new Error(
+      err.response?.data?.error?.message || 'Quiz submit nahi hui.'
+    );
+    error.code = err.response?.data?.error?.code || null;
+    error.status = err.response?.status || 0;
+    throw error;
+  }
+};
+
 // ─── Streaming Ask API ─────────────────────────────────────────────────────
 // Wraps fetch() with one silent token refresh on 401 — mirrors the axios interceptor pattern.
 // Only attempts refresh for logged-in users (accessToken present); guests are skipped.
