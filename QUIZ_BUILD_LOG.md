@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 4** — Quiz Runner Modal UI (Frontend), plan in `QUIZ_PHASE4_PLAN.md`, done in 3 steps. **Step 1 DONE** (`generateQuiz`/`submitQuiz` in `tutorApi.js` + `QuizModal.jsx` skeleton — loading/question/confirm screens). **Step 2 DONE** (submit wiring + result screen — score, pass/fail, confetti, per-question review, TTL/404/409/429 handling, close-confirmation). **Step 3 PENDING** (ChatPage `start_gate_quiz` integration + FocusModal "Quiz Pending" chip). |
-| **Status** | 🟡 Phase 4 in progress — Step 1/2 built + committed (`7f995b8`, `2c2a0ef`). Frontend `npm run build` clean after both steps. Backend baseline green (`test:chat-db-models` same pre-existing red, P-6, unrelated). **Not yet manually click-tested end-to-end in the browser** — that verification is still open before Step 3. |
+| **Current Phase** | **Phase 4** — Quiz Runner Modal UI (Frontend), plan in `QUIZ_PHASE4_PLAN.md`, done in 3 steps. **Step 1 DONE** (`generateQuiz`/`submitQuiz` in `tutorApi.js` + `QuizModal.jsx` skeleton). **Step 2 DONE** (submit wiring + result screen). **Step 3 DONE, not yet committed** (ChatPage `start_gate_quiz` case + real QuizModal wiring, `onQuizComplete` syncs `chapterStatus` + fires `chapter-progress-updated`, FocusModal "Quiz Pending" chip for `awaiting_quiz` chapters, `useChapterProgress` now fetches `awaiting_quiz` alongside `in_progress`). |
+| **Status** | 🟡 Phase 4 — Step 1/2 committed (`7f995b8`, `2c2a0ef`). **Step 3 built + `npm run build` clean, uncommitted.** Backend baseline green (`test:chat-db-models` same pre-existing red, P-6, unrelated) — confirmed this session, no backend file touched by any Phase 4 step. **Full end-to-end flow (complete chapter → quiz chip → pass → chapter shows completed → FocusModal chip clears) not yet manually click-tested in the browser** — that's the next thing to do, before or right after commit. |
 | **Branch** | `quiz-phase4` (Phase 0/1 on `quiz-phase1`, Phase 2 on `quiz-phase2`, Phase 3 on `quiz-phase3`) |
-| **Last session** | 2026-08-14 — Phase 4 Step 2 (submit + result screen) built, build-verified, committed |
+| **Last session** | 2026-08-14 — Phase 4 Step 2 (commit) + Step 3 (built, pending commit) in one continuous session |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -467,7 +467,7 @@ DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 | 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
 | 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | ✅ **DONE** — all 4/4 checkpoints (`generate`, `submit`, `history`, `history/:attemptId`) |
 | 3 | Chapter gate integration (backend) | ✅ **DONE** (`quiz-phase3`: `7120f87`, `ccc5dd3`, `2789ee1`) |
-| **4** | Quiz runner modal UI (frontend) — see `QUIZ_PHASE4_PLAN.md` | 🟡 In progress — Step 1/2 done (`quiz-phase4`: `7f995b8`, `2c2a0ef`), Step 3 next |
+| **4** | Quiz runner modal UI (frontend) — see `QUIZ_PHASE4_PLAN.md` | 🟡 In progress — Step 1/2 committed (`quiz-phase4`: `7f995b8`, `2c2a0ef`), Step 3 built + build-clean, pending commit + manual browser test |
 | 5 | Practice Quiz Hub (frontend) | ⚪ Pending |
 | 6 | Polish + analytics (fullstack) | ⚪ Pending |
 
@@ -483,20 +483,34 @@ DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
 
-### 2026-08-14 — Phase 4 Step 2 (Submit + Result Screen) built, committed
-- **Continued from Step 1** (already committed `7f995b8` in a prior session, log entry for it was
-  never written — backfilled here). New branch `quiz-phase4`, plan already in `QUIZ_PHASE4_PLAN.md`.
-- **Built:** Confirm screen now calls `submitQuiz()` (submissionKey/timeTakenSec/answers assembled
-  from local state); new result screen — score card, pass/fail badge, confetti on gate pass,
-  "Dobara quiz do" retry on fail, per-question review (correct/wrong highlighting, explanation
-  shown only if present); TTL-expiry soft check before submit; 404/409/429 handling; close-mid-quiz
-  confirmation dialog. Also added `TYPE_CONFIG` (per-quizType icon/purpose copy) and a `contextTitle`
-  prop, both beyond the original plan text but small/cohesive with Step 2's scope.
-- **Verify:** `npm run build` (frontend) clean. Backend baseline green (`test:chat-db-models` same
-  pre-existing red, P-6, unrelated). **Not manually click-tested in the browser yet** — that's still
-  open, carries into Step 3's session.
-- **Agla:** Step 3 — ChatPage `start_gate_quiz` case + FocusModal "Quiz Pending" chip (plan in
-  `QUIZ_PHASE4_PLAN.md` Step 3). Do a manual click-through of Step 1+2 first if not done already.
+### 2026-08-14 — Phase 4 Step 2 committed + Step 3 built, same session
+- **Step 2** (`2c2a0ef`) — Confirm screen now calls `submitQuiz()` (submissionKey/timeTakenSec/answers
+  assembled from local state); result screen — score card, pass/fail badge, confetti on gate pass,
+  "Dobara quiz do" retry on fail, per-question review (correct/wrong highlighting, explanation shown
+  only if present); TTL-expiry soft check before submit; 404/409/429 handling; close-mid-quiz
+  confirmation dialog. Also added `TYPE_CONFIG` (per-quizType icon/purpose copy) and `contextTitle`
+  prop, both beyond the original plan text but small/cohesive with Step 2's scope. Backfilled a log
+  entry for Step 1 (`7f995b8`, committed in an earlier session whose log entry was never written).
+- **Step 3** (built, not yet committed) — real `start_gate_quiz` wiring: `handleSuggestedAction` gets
+  a case that opens `QuizModal` (`quizType: 'chapter_gate'`, `chapterId`/`contextTitle` from already-
+  tracked `selectedChapterId`/`selectedChapter`); `QuizModal` gained an `onQuizComplete(result)` prop,
+  called right after a successful submit; ChatPage's `handleQuizComplete` sets `chapterStatus` to
+  `'completed'` and fires `chapter-progress-updated` on pass (mirrors the pattern `handleAsk` already
+  uses). `useChapterProgress.js` now fetches `awaiting_quiz` alongside `in_progress` (two parallel
+  calls, merged + sorted by `lastStudiedAt`) since the backend's `status` filter is single-value only
+  — no backend change needed. `FocusModal.jsx` shows a "Quiz Pending" pill (reused `.quiz-type-note`
+  class, no new CSS) instead of the percent line for `awaiting_quiz` chapters. Removed the
+  TEMP-STEP1-TESTING floating button + `isQuizTestOpen` scaffold entirely.
+- **Verify:** `npm run build` clean after both steps. Backend baseline (`test:chunks`/`test:study-map`/
+  `test:curriculum-resolvers` green, `test:chat-db-models` same pre-existing red, P-6) confirmed once
+  this session — unaffected by Step 3 since no backend file was touched.
+- **Not done yet:** manual click-through in the browser of the full flow (complete chapter → quiz
+  chip → answer → pass → chapter shows completed → FocusModal chip clears) — Step 1-3 code has never
+  been run against a live browser session. Per this project's standing convention the user does that
+  testing, not Claude.
+- **Agla:** commit Step 3, then manual browser test. If the test surfaces a bug, fix it in that same
+  session (it would be closing out Phase 4's DoD, not a new phase). Once confirmed, Phase 4 is done —
+  Phase 5 (Practice Quiz Hub) is next, new session.
 
 ### 2026-08-10 — Phase 3 (Chapter Gate Integration) built, committed, DB-verified — **Phase 3 COMPLETE**
 - **3 steps, 1 continuous session, 1 commit per step** — new branch `quiz-phase3`.

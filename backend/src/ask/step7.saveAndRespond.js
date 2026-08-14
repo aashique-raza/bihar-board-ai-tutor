@@ -41,7 +41,7 @@ const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
 
 // Pipeline-generated titles that should never become a session label in the sidebar.
-const SYSTEM_TITLES = new Set(['Chapter Complete!']);
+const SYSTEM_TITLES = new Set(['Chapter Complete!', 'Quiz Time!']);
 
 // Phase 3 — Session Integrity Guard.
 // UNSAFE_OR_ABUSIVE excluded from drift — abuse is tracked by its own abuseCount field.
@@ -314,7 +314,7 @@ export const saveAndRespond = async (
       // reaches 'completed' once the gate quiz is passed (handleGateQuizResult
       // in quizSubmitter.js).
       chapterProgressDoc = await withRetry(
-        () => setChapterAwaitingQuiz(userId, guestId, chapterId),
+        () => setChapterAwaitingQuiz(userId, guestId, chapterId, chapterProgress?.currentTopicId),
         'setChapterAwaitingQuiz'
       );
       logStudyEvent(userId, guestId, sessionId, chapterId, 'chapter_completed');

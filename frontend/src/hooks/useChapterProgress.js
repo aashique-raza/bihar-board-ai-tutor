@@ -30,8 +30,16 @@ export function useChapterProgress() {
 
     setIsLoading(true);
     try {
-      const result = await listChapterProgress({ status: 'in_progress', limit: 10 });
-      const chapters = result?.chapters ?? [];
+      // A chapter waiting on its gate quiz is still "unfinished" from the student's
+      // point of view — fetched alongside in_progress so it doesn't vanish from
+      // "Jahan Chhoda Tha" the moment the last topic is done (same reasoning as the
+      // backend's inProgressCount — see chapterProgress.controller.js summary logic).
+      const [inProgress, awaitingQuiz] = await Promise.all([
+        listChapterProgress({ status: 'in_progress', limit: 10 }),
+        listChapterProgress({ status: 'awaiting_quiz', limit: 10 }),
+      ]);
+      const chapters = [...(inProgress?.chapters ?? []), ...(awaitingQuiz?.chapters ?? [])]
+        .sort((a, b) => new Date(b.lastStudiedAt) - new Date(a.lastStudiedAt));
       cache['in_progress'] = { data: chapters, ts: Date.now() };
       if (mountedRef.current) setInProgressChapters(chapters);
     } catch {

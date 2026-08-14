@@ -251,19 +251,26 @@ export const markChapterComplete = async (userId, guestId, chapterId) => {
  * match and findOneAndUpdate returns null, so we re-fetch and return the
  * unchanged doc instead of clobbering real state.
  */
-export const setChapterAwaitingQuiz = async (userId, guestId, chapterId) => {
+export const setChapterAwaitingQuiz = async (userId, guestId, chapterId, currentTopicId = null) => {
   if (!chapterId) return null;
 
   const filter = buildFilter(userId, guestId, chapterId);
 
+  const updateOp = {
+    $set: {
+      status:          'awaiting_quiz',
+      progressPercent: 100,
+      lastStudiedAt:   new Date(),
+    },
+  };
+
+  if (currentTopicId) {
+    updateOp.$addToSet = { completedTopicIds: currentTopicId };
+  }
+
   const doc = await ChapterProgress.findOneAndUpdate(
     { ...filter, status: 'in_progress' },
-    {
-      $set: {
-        status:        'awaiting_quiz',
-        lastStudiedAt: new Date(),
-      },
-    },
+    updateOp,
     { returnDocument: 'after', new: true }
   );
 

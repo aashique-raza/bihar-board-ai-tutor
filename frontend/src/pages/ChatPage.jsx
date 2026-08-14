@@ -20,7 +20,6 @@ import {
   GUEST_TURN_LIMIT,
 } from '../utils/guestLimit.js';
 import GuestLimitModal from '../components/GuestLimitModal.jsx';
-// TEMP-STEP1-TESTING: real trigger (start_gate_quiz suggested action) lands in Phase 4 Step 3.
 import QuizModal from '../components/QuizModal.jsx';
 import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
@@ -167,9 +166,7 @@ function ChatPage({ theme, toggleTheme }) {
   const [isGuestLimited, setIsGuestLimited] = useState(false);
   const [guestLimitModal, setGuestLimitModal] = useState({ open: false, trigger: 'turn_limit' });
   const [historyOpen, setHistoryOpen] = useState(false);
-  // TEMP-STEP1-TESTING: remove this state + the floating button + <QuizModal> below
-  // once Step 3 wires the real start_gate_quiz suggested-action trigger.
-  const [isQuizTestOpen, setIsQuizTestOpen] = useState(false);
+  const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
 
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -655,6 +652,14 @@ function ChatPage({ theme, toggleTheme }) {
         handleAsk('Chapter overview batao', studyModeRef.current);
         break;
 
+      // Sent when chapterProgress.status === 'awaiting_quiz' (buildRecommendation
+      // on the backend). Opens QuizModal directly — this is a pure frontend
+      // action, no /ask call, since the modal makes its own generate/submit
+      // requests once it's open.
+      case 'start_gate_quiz':
+        setIsQuizModalOpen(true);
+        break;
+
       // Discards progress and starts over — needs a backend reset BEFORE asking,
       // otherwise NEXT_STEP would resolve from the old (unreset) topic pointer.
       case 'restart_topic':
@@ -683,6 +688,20 @@ function ChatPage({ theme, toggleTheme }) {
         handleAsk(action.label, studyModeRef.current);
     }
   }, [handleAsk, handleClearFocus, showToast, chapterTopics, currentTopicId, completedTopicIds]);
+
+  // QuizModal's state is local to itself — it doesn't know about chapterStatus or
+  // the FocusModal "Quiz Pending" chip. On a gate-quiz pass, we sync both: flip
+  // the header's status locally (same field NEXT_STEP responses already update)
+  // and bust useChapterProgress's cache so FocusModal drops the pending badge
+  // next time it's opened (same event handleAsk already fires on every response).
+  const handleQuizComplete = useCallback((result) => {
+    if (!result?.passed) return;
+    setChapterStatus('completed');
+    const chapterId = selectedChapterIdRef.current;
+    if (chapterId) {
+      window.dispatchEvent(new CustomEvent('chapter-progress-updated', { detail: { chapterId } }));
+    }
+  }, []);
 
   const handleSessionSwitch = useCallback(async (session) => {
     if (session.sessionId === sessionId) return; // already on this session
@@ -989,28 +1008,14 @@ function ChatPage({ theme, toggleTheme }) {
 
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
 
-      {/* TEMP-STEP1-TESTING: floating button + modal, remove both when Step 3 wires
-          the real start_gate_quiz trigger from the suggested-action chip. */}
-      <button
-        type="button"
-        onClick={() => setIsQuizTestOpen(true)}
-        style={{
-          position: 'fixed', bottom: 16, right: 16, zIndex: 1300,
-          padding: '8px 14px', borderRadius: 999,
-          border: '1px solid var(--border-strong)', background: 'var(--bg-surface)',
-          color: 'var(--text-secondary)', fontSize: '0.75rem', fontWeight: 700,
-          cursor: 'pointer',
-        }}
-      >
-        🧪 Quiz Test
-      </button>
       <QuizModal
-        isOpen={isQuizTestOpen}
-        quizType="chapter_practice"
+        isOpen={isQuizModalOpen}
+        quizType="chapter_gate"
         subjectId="science"
-        chapterId="science.physics.chapter-01"
-        contextTitle="Prakash — Paravartan aur Apvartan"
-        onClose={() => setIsQuizTestOpen(false)}
+        chapterId={selectedChapterId}
+        contextTitle={selectedChapter?.hinglishTitle || selectedChapter?.title}
+        onQuizComplete={handleQuizComplete}
+        onClose={() => setIsQuizModalOpen(false)}
       />
     </Box>
   );

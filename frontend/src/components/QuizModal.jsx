@@ -41,7 +41,7 @@ const TYPE_CONFIG = {
 // so that's the default; en is only a fallback if hinglish is somehow empty.
 const pickText = (text) => text?.hinglish || text?.en || '';
 
-function QuizModal({ isOpen, quizType, subjectId, chapterId, contextTitle, onClose }) {
+function QuizModal({ isOpen, quizType, subjectId, chapterId, contextTitle, onClose, onQuizComplete }) {
   const [screen, setScreen] = useState('loading'); // 'loading' | 'quiz' | 'confirm' | 'error'
   const [quizData, setQuizData] = useState(null);
   const [answers, setAnswers] = useState({}); // { [questionId]: { selectedOption, timeSpentMs } }
@@ -191,6 +191,10 @@ function QuizModal({ isOpen, quizType, subjectId, chapterId, contextTitle, onClo
       });
       setResult(data);
       setScreen('result');
+      // Let the parent know right away — QuizModal's state is local, so without
+      // this the page behind it (chapter status, "Quiz Pending" chip) would stay
+      // stale until something else happens to refetch it.
+      onQuizComplete?.(data);
     } catch (err) {
       if (err.status === 404) {
         // Session genuinely gone on the server side (rare — the soft check
