@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 4** — Quiz Runner Modal UI (Frontend), plan in `QUIZ_PHASE4_PLAN.md`, done in 3 steps. **Step 1 DONE** (`generateQuiz`/`submitQuiz` in `tutorApi.js` + `QuizModal.jsx` skeleton). **Step 2 DONE** (submit wiring + result screen). **Step 3 DONE, not yet committed** (ChatPage `start_gate_quiz` case + real QuizModal wiring, `onQuizComplete` syncs `chapterStatus` + fires `chapter-progress-updated`, FocusModal "Quiz Pending" chip for `awaiting_quiz` chapters, `useChapterProgress` now fetches `awaiting_quiz` alongside `in_progress`). |
-| **Status** | 🟡 Phase 4 — Step 1/2 committed (`7f995b8`, `2c2a0ef`). **Step 3 built + `npm run build` clean, uncommitted.** Backend baseline green (`test:chat-db-models` same pre-existing red, P-6, unrelated) — confirmed this session, no backend file touched by any Phase 4 step. **Full end-to-end flow (complete chapter → quiz chip → pass → chapter shows completed → FocusModal chip clears) not yet manually click-tested in the browser** — that's the next thing to do, before or right after commit. |
-| **Branch** | `quiz-phase4` (Phase 0/1 on `quiz-phase1`, Phase 2 on `quiz-phase2`, Phase 3 on `quiz-phase3`) |
-| **Last session** | 2026-08-14 — Phase 4 Step 2 (commit) + Step 3 (built, pending commit) in one continuous session |
+| **Current Phase** | **Phase 5** — Practice Quiz Hub (Frontend). Not started yet. |
+| **Status** | 🟢 **Phase 4 COMPLETE.** All 3 steps committed (`7f995b8`, `2c2a0ef`, `4c09bb2`). Manual browser click-through done by user — full gate flow (chapter complete → quiz chip → answer → pass → chapter shows completed) confirmed working. UI polish issues found during that test (see Parking Lot P-12) — explicitly deferred, not blocking. Baseline green (`test:chunks`/`test:study-map`/`test:curriculum-resolvers`), re-confirmed at phase close. |
+| **Branch** | `quiz-phase4` (Phase 0/1 on `quiz-phase1`, Phase 2 on `quiz-phase2`, Phase 3 on `quiz-phase3`) — Phase 5 will need a new branch |
+| **Last session** | 2026-08-14 — Phase 4 closed out: manual browser test confirmed the flow works, UI polish deferred to Parking Lot |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -451,6 +451,7 @@ DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 | P-9 | `chapterProgress` ka P-1 index bug (`user_chapter_unique` kabhi enforce nahi karta) `chapter_gate` ke gate-check query ko bhi index se vanchit karta hai — partial filter `$type: 'objectId'` kabhi match nahi hota. Guest path theek hai (guest index sahi bana hai). 16 chapters pe impact negligible. | `backend/src/models/chapterProgress.model.js:75-82` | Checkpoint 1 audit, 2026-08-09 | 🟡 Medium — P-1 ka hi extension, Phase 3 mein revisit karna |
 | P-11 | `quizAttempt.model.js`'s `answers[]` subdoc does **not** store `optionOrder` (only `quizSession.model.js` does). Idempotent-replay path in `quizSubmitter.js` (duplicate `submissionKey`, e.g. network retry) re-looks-up the original `QuizSession` by `attempt.sessionId` to render results in the exact order the student saw them. That session row is normally still there (`SESSION_TTL_MIN = 50`), so this works for the realistic retry case (seconds/minutes later). But if a duplicate submit is replayed **after** the session's 50-min TTL has expired and MongoDB auto-deleted it, the code falls back to the question's default DB option order — the replayed result would show options in a different order than what the student actually answered against. Score/`isCorrect`/`correctOption` are unaffected (those are already baked into `attempt.answers`), only the *option display order* in that one rare replay path could differ. Found while implementing Checkpoint 2, not blocking it — flagged, not fixed. | `backend/src/services/quiz/quizSubmitter.js` (`buildResponseForExistingAttempt`), `backend/src/models/quizAttempt.model.js` | Checkpoint 2, 2026-08-10 | 🟢 Low — extremely narrow window (duplicate-submit AND >50min-late AND same submissionKey), display-only, not a scoring bug |
 | P-10 | Question bank mein kuch options ke text field mein OCR/parsing garbage leak hua hai — dusre options ka text ya extra numbering usi option ke andar chipak gaya hai (e.g. option D mein "A. ... B. ... C. ... D. ..." poora list, ya "64. (C) ... (D) ..." jaisा leftover). API/controller ka bug nahi — root cause Phase 1 ke `transform-bulk-to-seed.js`/source PDF OCR mein hai, data seed ho chuki hai. Postman Scenario 3 (`mix_practice`, 20 Q) mein kam se kam 3 confirmed cases (Q3, Q12, Q17 us response mein). Extent (kitne total questions affected) abhi unknown — grep karna baaki hai. | `data/quiz-bank/science/**/*.json` seed source; `question_bank` collection | Postman Scenario 3 test, 2026-08-10 | 🟢 Low — data-quality, functional bug nahi (P-8 se related, dono seed-quality issues) |
+| P-12 | `QuizModal` ka UI polish ke level pe "impressive" nahi lag raha — user ke apne alfaz mein: question/options ka layout aur content presentation, aur submit ke baad ka result/report screen, dono weak lagte hain. Functional hai (flow kaam karta hai, manually confirm hua), sirf visual/UX quality ka gap hai — koi specific bug list nahi di gayi abhi, general impression hai. | `frontend/src/components/QuizModal.jsx` | Phase 4 close-out manual test, 2026-08-14 | 🟡 Medium — student-facing polish, functional nahi |
 
 **FIXED (baseline setup ke dauraan, Parking Lot mein nahi gaye — turant fix kiye kyunki baseline ko accurately padhna hi Phase 0 shuru karne ki shart thi):**
 
@@ -467,8 +468,8 @@ DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 | 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
 | 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | ✅ **DONE** — all 4/4 checkpoints (`generate`, `submit`, `history`, `history/:attemptId`) |
 | 3 | Chapter gate integration (backend) | ✅ **DONE** (`quiz-phase3`: `7120f87`, `ccc5dd3`, `2789ee1`) |
-| **4** | Quiz runner modal UI (frontend) — see `QUIZ_PHASE4_PLAN.md` | 🟡 In progress — Step 1/2 committed (`quiz-phase4`: `7f995b8`, `2c2a0ef`), Step 3 built + build-clean, pending commit + manual browser test |
-| 5 | Practice Quiz Hub (frontend) | ⚪ Pending |
+| **4** | Quiz runner modal UI (frontend) — see `QUIZ_PHASE4_PLAN.md` | ✅ **DONE** (`quiz-phase4`: `7f995b8`, `2c2a0ef`, `4c09bb2`) — manual browser test confirmed, UI polish deferred (P-12) |
+| **5** | Practice Quiz Hub (frontend) | ⚪ Pending — next up |
 | 6 | Polish + analytics (fullstack) | ⚪ Pending |
 
 **Phase 1 se pehle 4 decisions confirm karne hain** — blueprint §16 items **12, 13, 14, 15**:
@@ -482,6 +483,20 @@ DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-14 — Phase 4 closed out — **Phase 4 COMPLETE**
+- **User manually tested the full flow in the browser** (chapter complete → quiz chip → answer →
+  submit → pass → chapter shows completed) — confirmed working. This also confirms `4c09bb2`'s
+  fix (start_gate_quiz chip + last-topic progress recording) actually resolved the issue.
+- **Feedback from that test: UI is not polished** — quiz question/options layout and content
+  presentation, plus the post-submit result/report screen, both feel weak. No functional bug,
+  no specific list — general impression only. **User said don't fix now.** Logged as **Parking
+  Lot P-12** (Medium — student-facing polish, not blocking).
+- **Baseline re-run at phase close:** `test:chunks` (17/17), `test:study-map`, `test:curriculum-resolvers`
+  — all green, no regression.
+- **Agla:** new session — Phase 5 (Practice Quiz Hub, frontend), new branch off `quiz-phase4`/`main`.
+  P-12 (quiz UI polish) can be picked up as its own dedicated session whenever the user wants —
+  not bundled into Phase 5 unless it's explicitly decided to.
 
 ### 2026-08-14 — Phase 4 Step 2 committed + Step 3 built, same session
 - **Step 2** (`2c2a0ef`) — Confirm screen now calls `submitQuiz()` (submissionKey/timeTakenSec/answers
