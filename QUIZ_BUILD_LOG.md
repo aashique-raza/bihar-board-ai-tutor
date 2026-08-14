@@ -11,10 +11,10 @@
 
 | | |
 |---|---|
-| **Current Phase** | **Phase 3** — Chapter Gate Integration (Backend) — done in 3 steps. **Step 1 DONE** (`awaiting_quiz` status + quiz-gate fields on `ChapterProgress`). **Step 2 DONE** (step7 wiring + `recordGateQuizResult`/`handleGateQuizResult`). **Step 3 DONE** (summary/recommendation fixes + guest-claim quiz transfer + `test:quiz-gate`) — **Phase 3 fully complete and committed.** |
-| **Status** | 🟢 Phase 3 DONE — all 3 steps built, committed (`7120f87`, `ccc5dd3`, `2789ee1`). `test:quiz-gate` 28/28 green (real-DB, full `awaiting_quiz`→pass/fail→claim lifecycle), baseline + golden suite green, no regression. |
-| **Branch** | `quiz-phase3` (Phase 0/1 history on `quiz-phase1`, Phase 2 on `quiz-phase2`, see below) |
-| **Last session** | 2026-08-10 — Phase 3 Step 1/2/3 built, committed, DB-verified — **Phase 3 complete** |
+| **Current Phase** | **Phase 4** — Quiz Runner Modal UI (Frontend), plan in `QUIZ_PHASE4_PLAN.md`, done in 3 steps. **Step 1 DONE** (`generateQuiz`/`submitQuiz` in `tutorApi.js` + `QuizModal.jsx` skeleton — loading/question/confirm screens). **Step 2 DONE** (submit wiring + result screen — score, pass/fail, confetti, per-question review, TTL/404/409/429 handling, close-confirmation). **Step 3 PENDING** (ChatPage `start_gate_quiz` integration + FocusModal "Quiz Pending" chip). |
+| **Status** | 🟡 Phase 4 in progress — Step 1/2 built + committed (`7f995b8`, `2c2a0ef`). Frontend `npm run build` clean after both steps. Backend baseline green (`test:chat-db-models` same pre-existing red, P-6, unrelated). **Not yet manually click-tested end-to-end in the browser** — that verification is still open before Step 3. |
+| **Branch** | `quiz-phase4` (Phase 0/1 on `quiz-phase1`, Phase 2 on `quiz-phase2`, Phase 3 on `quiz-phase3`) |
+| **Last session** | 2026-08-14 — Phase 4 Step 2 (submit + result screen) built, build-verified, committed |
 
 ### ⚠️ Read before starting Phase 2 code
 
@@ -467,7 +467,7 @@ DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 | 1 | Question models + seed data (backend) — real 743-Q bank, see §19 | ✅ **DONE** (`quiz-phase1`: `2d51287`, `3ded7ca`, `b4d8072`, `3a0e51b`, `db5b442`) |
 | 2 | Quiz engine + APIs (backend) — split into 4 checkpoints (1 API each) | ✅ **DONE** — all 4/4 checkpoints (`generate`, `submit`, `history`, `history/:attemptId`) |
 | 3 | Chapter gate integration (backend) | ✅ **DONE** (`quiz-phase3`: `7120f87`, `ccc5dd3`, `2789ee1`) |
-| 4 | Quiz runner modal UI (frontend) | ⚪ Pending — **next up** |
+| **4** | Quiz runner modal UI (frontend) — see `QUIZ_PHASE4_PLAN.md` | 🟡 In progress — Step 1/2 done (`quiz-phase4`: `7f995b8`, `2c2a0ef`), Step 3 next |
 | 5 | Practice Quiz Hub (frontend) | ⚪ Pending |
 | 6 | Polish + analytics (fullstack) | ⚪ Pending |
 
@@ -482,6 +482,21 @@ DB-verified.** Next is Phase 4 (Quiz runner modal UI, frontend).
 ## 📓 SESSION HISTORY
 
 > Newest sabse upar. Har entry 3-5 line — isse zyada nahi.
+
+### 2026-08-14 — Phase 4 Step 2 (Submit + Result Screen) built, committed
+- **Continued from Step 1** (already committed `7f995b8` in a prior session, log entry for it was
+  never written — backfilled here). New branch `quiz-phase4`, plan already in `QUIZ_PHASE4_PLAN.md`.
+- **Built:** Confirm screen now calls `submitQuiz()` (submissionKey/timeTakenSec/answers assembled
+  from local state); new result screen — score card, pass/fail badge, confetti on gate pass,
+  "Dobara quiz do" retry on fail, per-question review (correct/wrong highlighting, explanation
+  shown only if present); TTL-expiry soft check before submit; 404/409/429 handling; close-mid-quiz
+  confirmation dialog. Also added `TYPE_CONFIG` (per-quizType icon/purpose copy) and a `contextTitle`
+  prop, both beyond the original plan text but small/cohesive with Step 2's scope.
+- **Verify:** `npm run build` (frontend) clean. Backend baseline green (`test:chat-db-models` same
+  pre-existing red, P-6, unrelated). **Not manually click-tested in the browser yet** — that's still
+  open, carries into Step 3's session.
+- **Agla:** Step 3 — ChatPage `start_gate_quiz` case + FocusModal "Quiz Pending" chip (plan in
+  `QUIZ_PHASE4_PLAN.md` Step 3). Do a manual click-through of Step 1+2 first if not done already.
 
 ### 2026-08-10 — Phase 3 (Chapter Gate Integration) built, committed, DB-verified — **Phase 3 COMPLETE**
 - **3 steps, 1 continuous session, 1 commit per step** — new branch `quiz-phase3`.
