@@ -1009,6 +1009,7 @@ function ChatPage({ theme, toggleTheme }) {
         quizType="chapter_practice"
         subjectId="science"
         chapterId="science.physics.chapter-01"
+        contextTitle="Prakash — Paravartan aur Apvartan"
         onClose={() => setIsQuizTestOpen(false)}
       />
     </Box>
