@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 import AddRounded from '@mui/icons-material/AddRounded';
 import ChevronLeftRounded from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRounded from '@mui/icons-material/ChevronRightRounded';
+import QuizRounded from '@mui/icons-material/QuizRounded';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
 import { useSidebarCollapsed } from '../hooks/useSidebarCollapsed.js';
 import { SessionListBody } from './SessionList.jsx';
@@ -30,6 +32,7 @@ export default function Sidebar({
   onSessionRename,
 }) {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [collapsed, setCollapsed] = useSidebarCollapsed();
   const [localSessions, setLocalSessions] = useState(sessions);
   const [searchQuery, setSearchQuery] = useState('');
@@ -107,6 +110,20 @@ export default function Sidebar({
               }}
             >
               <AddRounded sx={{ fontSize: 18 }} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Practice Quiz" placement="right">
+            <IconButton
+              aria-label="Practice Quiz"
+              onClick={() => navigate('/quiz')}
+              sx={{
+                width: 32, height: 32,
+                color: 'var(--text-muted)',
+                borderRadius: 'var(--radius-md)',
+                '&:hover': { color: 'var(--text-primary)', bgcolor: 'var(--bg-hover)' },
+              }}
+            >
+              <QuizRounded sx={{ fontSize: 18 }} />
             </IconButton>
           </Tooltip>
         </Box>
@@ -205,6 +222,30 @@ export default function Sidebar({
         >
           <AddRounded sx={{ fontSize: 16 }} />
           Naya chat
+        </Box>
+      </Box>
+
+      {/* Practice Quiz — standalone entry point, separate from chat sessions */}
+      <Box sx={{ px: 1.5, pb: 0.5, flexShrink: 0 }}>
+        <Box
+          component="button"
+          onClick={() => navigate('/quiz')}
+          sx={{
+            width: '100%',
+            display: 'flex', alignItems: 'center', gap: 1,
+            px: 1.25, py: 0.9,
+            border: '1px solid var(--border)',
+            borderRadius: 'var(--radius-md)',
+            bgcolor: 'transparent',
+            color: 'var(--text-secondary)',
+            fontSize: '0.8rem', fontWeight: 600,
+            fontFamily: 'inherit',
+            cursor: 'pointer',
+            '&:hover': { bgcolor: 'var(--bg-hover)', color: 'var(--text-primary)' },
+          }}
+        >
+          <QuizRounded sx={{ fontSize: 16 }} />
+          Practice Quiz
         </Box>
       </Box>
 

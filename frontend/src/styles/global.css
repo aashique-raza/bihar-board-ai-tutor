@@ -628,6 +628,125 @@ body {
 .quiz-confetti-piece:nth-child(11) { left: 10%; background: #3B82F6; animation-delay: 0.35s; }
 .quiz-confetti-piece:nth-child(12) { left: 90%; background: #EF4444; animation-delay: 0.2s; }
 
+/* ── QuizPage ── */
+
+/* Mix Quiz card — same focus-item-btn base, but visually promoted (tinted,
+   not a plain chapter card) since it's a distinct action, not one of a list. */
+.quiz-mix-card {
+  border-color: var(--primary-border) !important;
+  background: var(--primary-tint) !important;
+}
+
+@media (hover: hover) {
+  .quiz-mix-card:hover {
+    border-color: var(--primary) !important;
+    background: var(--primary-tint) !important;
+  }
+}
+
+/* History list card — a row, not a grid tile, so it needs its own layout
+   (focus-item-btn is block-only). Left accent border encodes quiz type at a
+   glance without adding a second badge element. */
+.quiz-history-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.quiz-history-card:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .quiz-history-card:hover {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+  }
+}
+
+.quiz-history-card.type-chapter_gate {
+  border-left-color: var(--primary);
+}
+
+.quiz-history-card.type-mix_practice {
+  border-left-color: #3B82F6;
+}
+
+/* Score pill — color-coded by percentage so a student scans history without
+   reading numbers. Same 3-tier split as the gate's 70% pass bar (high = pass
+   territory, mid = close, low = needs another attempt). */
+.quiz-score-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.quiz-score-pill.high {
+  color: var(--success);
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.quiz-score-pill.mid {
+  color: var(--warning);
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.quiz-score-pill.low {
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.quiz-history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 26px 12px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+/* Attempt-detail score ring — same 3-tier color coding as the score pill,
+   scaled up as the focal point of the detail view. */
+.quiz-detail-score-ring {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--border);
+  margin: 0 auto;
+}
+
+.quiz-detail-score-ring.high { border-color: var(--success); }
+.quiz-detail-score-ring.mid  { border-color: var(--warning); }
+.quiz-detail-score-ring.low  { border-color: var(--error); }
+
 /* Grids */
 .focus-grid-3 {
   display: grid;
