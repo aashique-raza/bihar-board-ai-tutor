@@ -396,6 +396,357 @@ body {
   opacity: 0.45;
 }
 
+/* ── QuizModal ── */
+
+/* Header identity — icon + chapter/subject title (primary) + type·purpose caption */
+.quiz-context-title {
+  font-size: 0.98rem !important;
+  font-weight: 800 !important;
+  color: var(--text-primary) !important;
+  line-height: 1.3 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.quiz-type-caption {
+  font-size: 0.72rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.4 !important;
+  margin-top: 1px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quiz-caption-dot {
+  margin: 0 5px;
+  opacity: 0.6;
+}
+
+/* Standalone note pill — used on the confirm screen for the gate pass threshold */
+.quiz-type-note {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary-label);
+  background: var(--primary-tint);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.quiz-progress-label {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: var(--text-muted) !important;
+  letter-spacing: 0.02em;
+}
+
+/* Option buttons */
+.quiz-option-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.quiz-option-btn:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .quiz-option-btn:hover {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.quiz-option-btn.selected {
+  border: 1.5px solid var(--primary);
+  background: var(--primary-tint);
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-option-label {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.quiz-option-btn.selected .quiz-option-label {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.quiz-option-text {
+  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.quiz-option-check {
+  flex-shrink: 0;
+  color: var(--primary) !important;
+}
+
+.quiz-pyq-badge {
+  flex-shrink: 0;
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary-label);
+  background: var(--primary-tint);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  padding: 3px 9px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.quiz-loading-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: quiz-spin 0.7s linear infinite;
+}
+
+@keyframes quiz-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── QuizModal — result screen, per-question review ── */
+.quiz-review-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.quiz-review-item:last-child {
+  border-bottom: none;
+}
+
+.quiz-review-question {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.quiz-review-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.quiz-review-option.correct {
+  border-color: var(--success);
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--text-primary);
+}
+
+.quiz-review-option.incorrect {
+  border-color: var(--error);
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--text-primary);
+}
+
+.quiz-review-explanation {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* ── QuizModal — pass celebration ── */
+.quiz-confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.quiz-confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: quiz-confetti-fall 1.6s ease-in forwards;
+}
+
+@keyframes quiz-confetti-fall {
+  to {
+    top: 110%;
+    transform: rotate(360deg);
+  }
+}
+
+.quiz-confetti-piece:nth-child(1)  { left: 5%;  background: #10B981; animation-delay: 0s; }
+.quiz-confetti-piece:nth-child(2)  { left: 15%; background: #F59E0B; animation-delay: 0.1s; }
+.quiz-confetti-piece:nth-child(3)  { left: 25%; background: #3B82F6; animation-delay: 0.05s; }
+.quiz-confetti-piece:nth-child(4)  { left: 35%; background: #EF4444; animation-delay: 0.15s; }
+.quiz-confetti-piece:nth-child(5)  { left: 45%; background: #10B981; animation-delay: 0.2s; }
+.quiz-confetti-piece:nth-child(6)  { left: 55%; background: #F59E0B; animation-delay: 0.05s; }
+.quiz-confetti-piece:nth-child(7)  { left: 65%; background: #3B82F6; animation-delay: 0.25s; }
+.quiz-confetti-piece:nth-child(8)  { left: 75%; background: #EF4444; animation-delay: 0.1s; }
+.quiz-confetti-piece:nth-child(9)  { left: 85%; background: #10B981; animation-delay: 0.3s; }
+.quiz-confetti-piece:nth-child(10) { left: 95%; background: #F59E0B; animation-delay: 0.15s; }
+.quiz-confetti-piece:nth-child(11) { left: 10%; background: #3B82F6; animation-delay: 0.35s; }
+.quiz-confetti-piece:nth-child(12) { left: 90%; background: #EF4444; animation-delay: 0.2s; }
+
+/* ── QuizPage ── */
+
+/* Mix Quiz card — same focus-item-btn base, but visually promoted (tinted,
+   not a plain chapter card) since it's a distinct action, not one of a list. */
+.quiz-mix-card {
+  border-color: var(--primary-border) !important;
+  background: var(--primary-tint) !important;
+}
+
+@media (hover: hover) {
+  .quiz-mix-card:hover {
+    border-color: var(--primary) !important;
+    background: var(--primary-tint) !important;
+  }
+}
+
+/* History list card — a row, not a grid tile, so it needs its own layout
+   (focus-item-btn is block-only). Left accent border encodes quiz type at a
+   glance without adding a second badge element. */
+.quiz-history-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.quiz-history-card:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .quiz-history-card:hover {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+  }
+}
+
+.quiz-history-card.type-chapter_gate {
+  border-left-color: var(--primary);
+}
+
+.quiz-history-card.type-mix_practice {
+  border-left-color: #3B82F6;
+}
+
+/* Score pill — color-coded by percentage so a student scans history without
+   reading numbers. Same 3-tier split as the gate's 70% pass bar (high = pass
+   territory, mid = close, low = needs another attempt). */
+.quiz-score-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.quiz-score-pill.high {
+  color: var(--success);
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.quiz-score-pill.mid {
+  color: var(--warning);
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.quiz-score-pill.low {
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.quiz-history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 26px 12px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+/* Attempt-detail score ring — same 3-tier color coding as the score pill,
+   scaled up as the focal point of the detail view. */
+.quiz-detail-score-ring {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--border);
+  margin: 0 auto;
+}
+
+.quiz-detail-score-ring.high { border-color: var(--success); }
+.quiz-detail-score-ring.mid  { border-color: var(--warning); }
+.quiz-detail-score-ring.low  { border-color: var(--error); }
+
 /* Grids */
 .focus-grid-3 {
   display: grid;

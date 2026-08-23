@@ -1,0 +1,1810 @@
+{
+  "subjectId": "science",
+  "sectionId": "physics",
+  "chapterId": "science.physics.chapter-04",
+  "chapterTitle": "Magnetic Effects of Electric Current",
+  "questions": [
+    {
+      "questionCode": "sci-phy-ch04-q000070",
+      "topicId": null,
+      "questionText": {
+        "en": "Dynamo converts mechanical energy into:",
+        "hi": "डायनेमो यांत्रिक ऊर्जा को किस ऊर्जा में परिणत करता है ?",
+        "hinglish": "Dynamo yaantrik urja ko kis urja mein parinat karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Sound Energy",
+            "hi": "ध्वनि ऊर्जा",
+            "hinglish": "Dhvani urja"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Electrical Energy",
+            "hi": "विद्युत ऊर्जा",
+            "hinglish": "Vidyut urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Solar Energy",
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000071",
+      "topicId": null,
+      "questionText": {
+        "en": "The reason of accidents from electricity in houses is",
+        "hi": "घरों में विद्युत से दुर्घटना किसके कारण होती है ?",
+        "hinglish": "Gharon mein vidyut se durghatna kis ke kaaran hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Fuse wire",
+            "hi": "फ्यूज़ तार",
+            "hinglish": "Fuse taar"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Short Circuit",
+            "hi": "शॉर्ट सर्किट",
+            "hinglish": "Short Circuit"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "High voltage",
+            "hi": "उच्च धारा प्रवाह",
+            "hinglish": "Uch dhara pravah"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं Page 8 of",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000077",
+      "topicId": null,
+      "questionText": {
+        "en": "In India, the frequency of produced alternating current is",
+        "hi": "भारत में उत्पादित प्रत्यावर्ती विद्युत धारा की आवृत्ति है –",
+        "hinglish": "Bharat mein utpadit pratyavarti vidyut dhara ki aavritti hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "50 Hz",
+            "hi": "50 Hz",
+            "hinglish": "50 Hz"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "60 Hz",
+            "hi": "60 Hz",
+            "hinglish": "60 Hz"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "70 Hz",
+            "hi": "70 Hz",
+            "hinglish": "70 Hz"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "80 Hz",
+            "hi": "80 Hz",
+            "hinglish": "80 Hz"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000080",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the direction of magnetic field lines inside a bar magnet?",
+        "hi": "किसी छड़ चुम्बक के अंदर चुम्बकीय क्षेत्र रेखाओं की दिशा क्या होती है?",
+        "hinglish": "Kisi chhad chumbak ke andar chumbakiya kshetra rekhaon ki disha kya hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "from North to South pole",
+            "hi": "उत्तर ध्रुव से दक्षिण ध्रुव",
+            "hinglish": "Uttar dhruv se dakshin dhruv"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "from South pole to North pole",
+            "hi": "दक्षिण ध्रुव से उत्तर ध्रुव",
+            "hinglish": "Dakshin dhruv se uttar dhruv"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "from North pole to Western pole",
+            "hi": "उत्तर ध्रुव से पश्चिमी ध्रुव",
+            "hinglish": "Uttar dhruv se paschimi dhruv"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "from South pole to Western pole",
+            "hi": "दक्षिण ध्रुव से पश्चिमी ध्रुव",
+            "hinglish": "Dakshin dhruv se paschimi dhruv"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000081",
+      "topicId": null,
+      "questionText": {
+        "en": "In domestic electric circuit, the colour of neutral wire is",
+        "hi": "घरेलू विद्युत परिपथ में उदासीन तार का रंग होता है",
+        "hinglish": "Gharelu vidyut paripath mein udasin taar ka rang hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Black",
+            "hi": "काला",
+            "hinglish": "Kala"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000082",
+      "topicId": null,
+      "questionText": {
+        "en": "In which device, the split ring acts as commutator?",
+        "hi": "किस युक्ति में विभक्त वलय दिक् परिवर्तन का कार्य करता है?",
+        "hinglish": "Kis yukti mein vibhakt valay dik parivartan ka karya karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Electric generator",
+            "hi": "विद्युत जनित्र",
+            "hinglish": "Vidyut janitra"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Electric motor",
+            "hi": "विद्युत मोटर",
+            "hinglish": "Vidyut motor"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Galvanometer",
+            "hi": "गैल्वेनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Volt meter",
+            "hi": "वोल्टमीटर",
+            "hinglish": "Voltmeter"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000234",
+      "topicId": null,
+      "questionText": {
+        "en": "The device which converts electrical energy into mechanical energy is",
+        "hi": "यह उपकरण जो विद्युत ऊर्जा को यांत्रिक ऊर्जा में बदलता है, होता है",
+        "hinglish": "Yeh upkaran jo vidyut urja ko yantrik urja mein badalta hai, hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Generator",
+            "hi": "जेनरेटर",
+            "hinglish": "Generator"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Electric motor",
+            "hi": "विद्युत मोटर",
+            "hinglish": "Vidyut motor"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "both Generator and Electric motor",
+            "hi": "जेनरेटर और विद्युत मोटर दोनों",
+            "hinglish": "Dono Generator aur Electric motor"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000241",
+      "topicId": null,
+      "questionText": {
+        "en": "Switches are set",
+        "hi": "स्विच लगाये जाते हैं",
+        "hinglish": "Switch lagaye jaate hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "in cold wire",
+            "hi": "ठंडे तार में",
+            "hinglish": "Thande taar mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "in hot wire",
+            "hi": "गर्म तार में",
+            "hinglish": "Garm taar mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "in underground (earth) wire",
+            "hi": "भू-योजित तार में",
+            "hinglish": "Bhoo-yojit taar mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "in all of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000248",
+      "topicId": null,
+      "questionText": {
+        "en": "Which type of current is obtained from a battery?",
+        "hi": "बैटरी से किस प्रकार की धारा प्राप्त होती है?",
+        "hinglish": "Battery se kis prakar ki dhara prapt hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Alternating current",
+            "hi": "प्रत्यावर्ती धारा",
+            "hinglish": "Pratyavarti dhara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Direct current",
+            "hi": "दिष्ट धारा",
+            "hinglish": "Disht dhara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000314",
+      "topicId": null,
+      "questionText": {
+        "en": "Who discovered the magnetic effect of electric current ?",
+        "hi": "विद्युत् धारा के चुंबकीय प्रभाव का खोज किसने किया था ?",
+        "hinglish": "Vidyut dhara ke chumbakiya prabhav ka khoj kisne kiya tha ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Faraday",
+            "hi": "फैराडे",
+            "hinglish": "Faraday"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Oersted",
+            "hi": "ओर्स्टेड",
+            "hinglish": "Oersted"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ampere",
+            "hi": "ऐम्पियर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Bohr J 5012-J Page 4 of",
+            "hi": "बोर J 5012-J Page 4 of",
+            "hinglish": "Bor J 5012-J Page 4 of"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000315",
+      "topicId": null,
+      "questionText": {
+        "en": "Electric motor converts",
+        "hi": "विद्युत मोटर परिवर्तित करता है",
+        "hinglish": "Vidyut motor parivartit karta hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "mechanical energy into electrical energy",
+            "hi": "यांत्रिक ऊर्जा को विद्युत ऊर्जा में",
+            "hinglish": "yaantrik urja ko vidyut urja mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "chemical energy into electrical energy",
+            "hi": "रासायनिक ऊर्जा को विद्युत ऊर्जा में",
+            "hinglish": "rasayanik urja ko vidyut urja mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "electrical energy into chemical energy",
+            "hi": "विद्युत ऊर्जा को रासायनिक ऊर्जा में",
+            "hinglish": "vidyut urja ko rasayanik urja mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "electrical energy into mechanical energy",
+            "hi": "विद्युत ऊर्जा को यांत्रिक ऊर्जा में",
+            "hinglish": "vidyut urja ko yaantrik urja mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000316",
+      "topicId": null,
+      "questionText": {
+        "en": "When positively charged particle (alpha-particle) is projected towards west and deflected towards north by a magnetic field, the direction of magnetic field will be",
+        "hi": "जब पश्चिम की ओर प्रक्षेपित कोई धनावेशित कण (अल्फा-कण) किसी चुंबकीय क्षेत्र द्वारा उत्तर की ओर विक्षेपित हो जाता है तो चुंबकीय क्षेत्र की दिशा होगी",
+        "hinglish": "Jab paschim ki or prakshipt koi dhanavashit karn (alpha-karn) kisi chumbakiya kshetra dwara uttar ki or vikshipt ho jaata hai to chumbakiya kshetra ki disha hogi"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "toward south",
+            "hi": "दक्षिण की ओर",
+            "hinglish": "dakshin ki or"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "towards east",
+            "hi": "पूर्व की ओर",
+            "hinglish": "purv ki or"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "downward",
+            "hi": "अधोमुखी",
+            "hinglish": "adhomukhi"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "upward",
+            "hi": "उपरिमुखी",
+            "hinglish": "Uparimukhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000317",
+      "topicId": null,
+      "questionText": {
+        "en": "The domestic supply of electric current is",
+        "hi": "हमारे घरों में जो विद्युत आपूर्ति की जाती है, वह",
+        "hinglish": "Hamare gharon mein jo vidyut aapurti ki jaati hai, vah"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "direct current at 220 V",
+            "hi": "220 V पर दिष्ट धारा होती है",
+            "hinglish": "220 V par disht dhara hoti hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "direct current at 12 V",
+            "hi": "12 V पर दिष्ट धारा होती है",
+            "hinglish": "12 V par disht dhara hoti hai"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "alternating current at 220 V",
+            "hi": "220 V पर प्रत्यावर्ती धारा होती है",
+            "hinglish": "220 V par pratyavarti dhara hoti hai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "alternating current at 12 V J 5012-J Page 5 of",
+            "hi": "12 V पर प्रत्यावर्ती धारा होती है J 5012-J Page 5 of",
+            "hinglish": "12 V par pratyavarti dhara hoti hai J 5012-J Page 5 of"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000392",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following instrument detects the presence of electric current ?",
+        "hi": "निम्नांकित में से कौन उपकरण विद्युत धारा की उपस्थिति दर्शाता है ?",
+        "hinglish": "Nimnankit mein se kaun upkaran vidyut dhara ki upasthiti darshata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Galvanometer",
+            "hi": "गैल्वेनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Motor",
+            "hi": "मोटर",
+            "hinglish": "Motor"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Generator",
+            "hi": "जेनरेटर",
+            "hinglish": "Generator"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Voltmeter",
+            "hi": "वोल्टमीटर",
+            "hinglish": "Voltmeter"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000393",
+      "topicId": null,
+      "questionText": {
+        "en": "Who propounded the \"Right hand thumb\" rule ?",
+        "hi": "''दायें हाथ के अंगुठे'' के नियम को किसने प्रतिपादित किया था ?",
+        "hinglish": "''Daayen haath ke anguthe'' ke niyam ko kisne pratipadit kiya tha?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Oersted",
+            "hi": "ऑर्स्टेड",
+            "hinglish": "Oersted"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Fleming Who stated the \"Right Hand Thumb rule\" ? A. Oersted B. Fleming",
+            "hi": "फ्लेमिंग",
+            "hinglish": "Fleming \"Right Hand Thumb rule\" kaun keh raha tha? A. Oersted B. Fleming"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Einstein",
+            "hi": "आंइस्टीन",
+            "hinglish": "Einstein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Maxwell",
+            "hi": "मैक्सवेल",
+            "hinglish": "Maxwell"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000396",
+      "topicId": null,
+      "questionText": {
+        "en": "The nature of magnetic line of force is.",
+        "hi": "चुम्बकीय बल रेखा की प्रकृति होती है।",
+        "hinglish": "Chumbakiya bal rekha ki prakriti hoti hai."
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Imaginary",
+            "hi": "काल्पनिक",
+            "hinglish": "Kalpanik"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Real Nature of magnetic lines of force is A. Imaginary B. Real",
+            "hi": "वास्तविक",
+            "hinglish": "Vastavik"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both Real and imaginary",
+            "hi": "वास्तविक एवं काल्पनिक दोनों",
+            "hinglish": "Vastavik evam kalpanik dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000534",
+      "topicId": null,
+      "questionText": {
+        "en": "In a wind electric generator, the coil is rotated basically by",
+        "hi": "पवन विद्युत जनित्र में कुंडली को घुमाने का काम मूलतः करती है",
+        "hinglish": "Pawan vidyut janitra mein kundali ko ghumane ka kaam moolatah karti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "at high pressure of Air",
+            "hi": "उच्च दाब की हवा",
+            "hinglish": "Uch daab ki hawa"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "air at rest",
+            "hi": "स्थिर हवा",
+            "hinglish": "Sthir hawa"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "air in motion",
+            "hi": "गतिमान हवा",
+            "hinglish": "Gatimaan hawa"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000539",
+      "topicId": null,
+      "questionText": {
+        "en": "The device used to produce electric current is",
+        "hi": "विद्युत धारा उत्पन्न करने की युक्ति है",
+        "hinglish": "Vidyut dhara utpann karne ki yukti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Generator",
+            "hi": "जनित्र",
+            "hinglish": "Janitra"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Motor",
+            "hi": "मोटर",
+            "hinglish": "Motor"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ammeter",
+            "hi": "एमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Galvanometer A. Generator B. Motor C. Ammeter D. Galvanometer",
+            "hi": "गैल्वेनोमीटर अ. जनित्र ब. मोटर स. एमीटर द. गैल्वेनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000542",
+      "topicId": null,
+      "questionText": {
+        "en": "The electricity supplied to our houses is",
+        "hi": "हमारे घरों में जो विद्युत आपूर्ति की जाती है वह है",
+        "hinglish": "Hamare gharon mein jo vidyut aapurti ki jaati hai vah hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "220 v direct current",
+            "hi": "220 v दिष्ट धारा",
+            "hinglish": "220 v disht dhara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "12 v direct current",
+            "hi": "12 v दिष्ट धारा",
+            "hinglish": "12 v disht dhara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "220 v alternating",
+            "hi": "220 v प्रत्यावर्ती धारा",
+            "hinglish": "220 v pratyavarti dhara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "12 v alternating current",
+            "hi": "12 v प्रत्यावर्ती धारा स. 220 v प्रत्यावर्ती धारा द. 12 v प्रत्यावर्ती धारा",
+            "hinglish": "12 v pratyaavarti dhara"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000687",
+      "topicId": null,
+      "questionText": {
+        "en": "A rectangular coil of copper wire is rotating in a magnetic field. After how many rotations does the direction of induced electric current in this coil change?",
+        "hi": "ताँबे की तार की एक आयताकार कुंडली किसी चुम्बकीय क्षेत्र में घूर्णी गति कर रही है। इस कुंडली में प्रेरित विद्युत धारा की दिशा में कितने परिभ्रमण के पश्चात परिवर्तन होता है?",
+        "hinglish": "Tambe ki taar ki ek ayatakar kundali kisi chumbakiya kshetra mein gurni gati kar rahi hai. Is kundali mein prerit vidyut dhara ki disha mein kitne paribhraman ke pashchat parivartan hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "one-fourth",
+            "hi": "एक-चौथाई",
+            "hinglish": "Ek-chauthai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "half",
+            "hi": "आधा",
+            "hinglish": "Aadha"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "one",
+            "hi": "एक",
+            "hinglish": "Ek"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "two 4 (cont.) A rectangular coil of a copper wire is rotated in a magnetic field. The direction of the induced current in the coil changes after (A) every one-fourth rotation (B) every half rotation (C) every one rotation (D) every two rotations",
+            "hi": "दो",
+            "hinglish": "Do 4 (cont.) Ek aayaat coil ek copper wire ka magnetic field mein ghoomaaya jaata hai. Coil mein induced current ki disha badalti hai (A) har ek chouthai ghoomne par (B) har aadha ghoomne par (C) har ek ghoomne par (D) har do ghoomne par"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000724",
+      "topicId": null,
+      "questionText": {
+        "en": "A split ring is used in",
+        "hi": "विभक्त वलय प्रयुक्त होता है",
+        "hinglish": "Vibhakt valay prayukt hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "galvanometer",
+            "hi": "गैल्वेनोमीटर में",
+            "hinglish": "Galvanometer mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "D.C. motor",
+            "hi": "D.C. मोटर में",
+            "hinglish": "D.C. motor mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "microscope",
+            "hi": "सूक्ष्मदर्शी में",
+            "hinglish": "Sookshmadarshi mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000727",
+      "topicId": null,
+      "questionText": {
+        "en": "The frequency of alternating current in household electric circuit is",
+        "hi": "घरेलू वैद्युत परिपथ में प्रत्यावर्ती धारा की आवृत्ति होती है",
+        "hinglish": "Gharelu vidyut paripath mein pratyavarti dhara ki aavritti hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "50 Hz",
+            "hi": "50 Hz",
+            "hinglish": "50 Hz"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "60 Hz",
+            "hi": "60 Hz",
+            "hinglish": "60 Hz"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "100 Hz",
+            "hi": "100 Hz",
+            "hinglish": "100 Hz"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "220 Hz",
+            "hi": "220 Hz",
+            "hinglish": "220 Hz"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000803",
+      "topicId": null,
+      "questionText": {
+        "en": "Who propounded the 'right hand thumb' rule?",
+        "hi": "\"दाएँ हाथ के अँगूठे\" के नियम को किसने प्रतिपादित किया था?",
+        "hinglish": "\"Daaen haath ke anguthe\" ke niyam ko kisne pratipadit kiya tha?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Maxwell",
+            "hi": "मैक्सवेल",
+            "hinglish": "Maxwell"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Einstein",
+            "hi": "आइंस्टीन",
+            "hinglish": "Einstein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Fleming",
+            "hi": "फ्लेमिंग",
+            "hinglish": "Fleming"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Oersted",
+            "hi": "ऑस्टेंड",
+            "hinglish": "Oersted"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000915",
+      "topicId": null,
+      "questionText": {
+        "en": "Who discovered the magnetic effect of electric current?",
+        "hi": "विद्युत–धारा के चुम्बकीय प्रभाव की खोज किसने की ?",
+        "hinglish": "Vidyut–dhara ke chumbakiya prabhav ki khoj kisne ki?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Orsted",
+            "hi": "ऑस्टेंड",
+            "hinglish": "Austend"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ampere",
+            "hi": "ऐम्पियर",
+            "hinglish": "Ampere"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Bohr",
+            "hi": "बोर",
+            "hinglish": "Bohr"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Faraday",
+            "hi": "फैराडे",
+            "hinglish": "Faraday"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000916",
+      "topicId": null,
+      "questionText": {
+        "en": "The nature of magnetic field line is",
+        "hi": "चुंबकीय बल–रेखा की प्रकृति होती है –",
+        "hinglish": "Chumbakiya bal–rekha ki prakriti hoti hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Imaginary",
+            "hi": "काल्पनिक",
+            "hinglish": "Kalpanik"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Real",
+            "hi": "वास्तविक",
+            "hinglish": "Vastavik"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both A and B",
+            "hi": "(A) एवं (B) दोनों",
+            "hinglish": "(A) evam (B) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000917",
+      "topicId": null,
+      "questionText": {
+        "en": "The device for producing electric current is called",
+        "hi": "विद्युत–धारा उत्पन्न करने की युक्ति को कहते हैं –",
+        "hinglish": "Vidyut–dhara utpann karne ki yuktika kehte hain –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Generator",
+            "hi": "जनित्र",
+            "hinglish": "Janitra"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Galvanometer",
+            "hi": "गैल्वेनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ammeter",
+            "hi": "ऐमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Motor",
+            "hi": "मोटर",
+            "hinglish": "Motor"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q000918",
+      "topicId": null,
+      "questionText": {
+        "en": "Resistance of the circuit at the time of short circuit",
+        "hi": "लघुपथन के समय परिपथ का प्रतिरोध –",
+        "hinglish": "Laghupathan ke samay paripath ka pratirodh –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "does not change",
+            "hi": "परिवर्तित नहीं होता है",
+            "hinglish": "parivartit nahi hota hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "decreases Considerably",
+            "hi": "बहुत कम हो जाता है",
+            "hinglish": "bahut kam ho jaata hai"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Increases very much",
+            "hi": "बहुत अधिक बढ़ जाता है",
+            "hinglish": "bahut adhik badh jaata hai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q001171",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of current is obtained from a battery?",
+        "hi": "बैटरी से किस प्रकार की धारा प्राप्त होती है ?",
+        "hinglish": "Battery se kis prakar ki dhara prapt hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Direct",
+            "hi": "दिष्ट",
+            "hinglish": "Disht"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Alternating",
+            "hi": "प्रत्यावर्ती",
+            "hinglish": "Pratyavarti"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both (a) and (b)",
+            "hi": "(a) और (b) दोनों",
+            "hinglish": "(a) aur (b) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q001240",
+      "topicId": null,
+      "questionText": {
+        "en": "The device used to generate electric current is called:",
+        "hi": "विद्युत धारा उत्पन्न करने की युक्ति को कहते हैं :",
+        "hinglish": "Vidyut dhara utpann karne ki yukti ko kehte hain:"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "generator",
+            "hi": "जनित्र",
+            "hinglish": "generator"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "galvanometer",
+            "hi": "गैल्वेनोमीटर",
+            "hinglish": "Galvanometer"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "ammeter",
+            "hi": "ऐमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q001260",
+      "topicId": null,
+      "questionText": {
+        "en": "What type of energy does a dynamo convert mechanical energy into?",
+        "hi": "डायनेमो यांत्रिक ऊर्जा को किस ऊर्जा में परिणत करता है ?",
+        "hinglish": "Dynamo yantrik urja ko kis urja mein parinat karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "sound energy",
+            "hi": "ध्वनि ऊर्जा",
+            "hinglish": "Dhvani urja"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "electric energy",
+            "hi": "विद्युत ऊर्जा",
+            "hinglish": "Vidyut urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "solar energy",
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q001261",
+      "topicId": null,
+      "questionText": {
+        "en": "What causes accidents due to electricity in homes?",
+        "hi": "घरों में विद्युत से दुर्घटना किसके कारण होती है ?",
+        "hinglish": "Gharon mein vidyut se durghatna kiske kaaran hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "fuse wire",
+            "hi": "फ्यूज तार",
+            "hinglish": "Fuse taar"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "short circuit",
+            "hi": "शॉर्ट शर्किट",
+            "hinglish": "Short circuit"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "high electric current",
+            "hi": "उच्च धारा प्रवाह",
+            "hinglish": "Uch dhara pravah"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q001327",
+      "topicId": null,
+      "questionText": {
+        "en": "At the time of short circuiting the current in the circuit",
+        "hi": "शॉर्ट सर्किटिंग के समय सर्किट में करंट",
+        "hinglish": "Short circuiting ke samay circuit mein current"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Reduces the substantially",
+            "hi": "को काफी कम करता है",
+            "hinglish": "Ko kaafi kam karta hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Does not change",
+            "hi": "बदलता नहीं है",
+            "hinglish": "Badalta nahi hai"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Increases heavily",
+            "hi": "काफी बढ़ाता है",
+            "hinglish": "Kaafi badhata hai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Varies continuously Ans: Increases heavily",
+            "hi": "लगातार बदलता है",
+            "hinglish": "Lagataar badalta hai uttar: Kaafi badhata hai"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q001328",
+      "topicId": null,
+      "questionText": {
+        "en": "A positively charged particle (Alpha particle) projected towards west is deflected towards north by a magnetic field the direction of the magnetic field is",
+        "hi": "एक सकारात्मक चार्ज वाला कण (अल्फा कण) जो पश्चिम की ओर प्रक्षिप्त किया गया है, एक चुंबकीय क्षेत्र द्वारा उत्तर की ओर मोड़ा जाता है, चुंबकीय क्षेत्र की दिशा है",
+        "hinglish": "Ek sakaratmak charge wala karn (Alpha karn) jo paschim ki or prakshipt kiya gaya hai, ek chumbakiya kshetra dwara uttar ki or moda jaata hai, chumbakiya kshetra ki disha hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Towards south",
+            "hi": "दक्षिण की ओर",
+            "hinglish": "Dakshin ki or"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Towards east",
+            "hi": "पूर्व की ओर",
+            "hinglish": "Purv ki or"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Downward",
+            "hi": "नीचे की ओर",
+            "hinglish": "Neeche ki or"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "upward Ans: upward",
+            "hi": "ऊपर की ओर",
+            "hinglish": "Upar ki or"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch04-q001334",
+      "topicId": null,
+      "questionText": {
+        "en": "At the time of overloading, the electric current in the circuit",
+        "hi": "अतिभारण के समय विद्युत परिपथ में विद्युत धारा का मान",
+        "hinglish": "Atibharaan ke samay vidyut paripath mein vidyut dhara ka maan"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "reduces substantially",
+            "hi": "बहुत कम हो जाता है",
+            "hinglish": "Bahut kam ho jaata hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "does not change",
+            "hi": "परिवर्तित नहीं होता है",
+            "hinglish": "parivartit nahi hota hai"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "increases heavily",
+            "hi": "बहुत अधिक बढ़ जाता है",
+            "hinglish": "Bahut adhik badh jaata hai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नही",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    }
+  ]
+}

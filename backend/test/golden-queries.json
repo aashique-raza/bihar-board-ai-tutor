@@ -111,16 +111,6 @@
     "note": "Named law query"
   },
   {
-    "id": "C07",
-    "category": "CONCEPT_QUESTION",
-    "query": "Cell membrane ka kya kaam hai?",
-    "studyMode": "global",
-    "expectedIntent": "CONCEPT_QUESTION",
-    "expectedResponseMode": "study_tutor",
-    "qualityChecks": ["cell", "membrane"],
-    "note": "Biology Hinglish query"
-  },
-  {
     "id": "C08",
     "category": "CONCEPT_QUESTION",
     "query": "Reproduction kya hai aur kitne types hain?",
@@ -207,40 +197,44 @@
     "category": "NEXT_STEP",
     "query": "Aage badho",
     "studyMode": "focus",
+    "chapterId": "science.physics.chapter-01",
     "expectedIntent": "NEXT_STEP",
     "expectedResponseMode": "study_tutor",
     "qualityChecks": [],
-    "note": "Classic next-step trigger"
+    "note": "Classic next-step trigger. Was missing chapterId, which step1.validateInput.js requires for studyMode:focus — every run threw ApiError(400, 'Focus Mode ke liye chapterId dena zaroori hai'), which askOrchestrator.js:68-69 converts into a status:'provider_error' response for any sub-500 ApiError. The golden-set runner's SKIP label ('rate limit / LLM unavailable') is hardcoded for that status regardless of cause, which is what made this look like an LLM/provider issue. It never was — verified 2026-08-02 by reading step1 + askOrchestrator directly. Fresh session (no prior chapterProgress) + a valid chapterId resolves to the chapter's first core topic via getNextTopic()'s currentTopicId===null branch."
   },
   {
     "id": "N02",
     "category": "NEXT_STEP",
     "query": "Next topic kya hai?",
     "studyMode": "focus",
+    "chapterId": "science.physics.chapter-01",
     "expectedIntent": "NEXT_STEP",
     "expectedResponseMode": "study_tutor",
     "qualityChecks": [],
-    "note": "Explicit next topic query"
+    "note": "Explicit next topic query. Same missing-chapterId issue as N01 — see its note."
   },
   {
     "id": "N03",
     "category": "NEXT_STEP",
     "query": "Aage kya padhna hai?",
     "studyMode": "focus",
+    "chapterId": "science.physics.chapter-01",
     "expectedIntent": "NEXT_STEP",
     "expectedResponseMode": "study_tutor",
     "qualityChecks": [],
-    "note": "Hinglish next step"
+    "note": "Hinglish next step. Same missing-chapterId issue as N01 — see its note."
   },
   {
     "id": "N04",
     "category": "NEXT_STEP",
     "query": "Chalte hain aage",
     "studyMode": "focus",
+    "chapterId": "science.physics.chapter-01",
     "expectedIntent": "NEXT_STEP",
     "expectedResponseMode": "study_tutor",
     "qualityChecks": [],
-    "note": "Casual next step"
+    "note": "Casual next step. Same missing-chapterId issue as N01 — see its note."
   },
 
   {
@@ -333,6 +327,16 @@
     "expectedResponseMode": "redirect",
     "qualityChecks": [],
     "note": "Wrong subject (History not Science)"
+  },
+  {
+    "id": "O06",
+    "category": "OUT_OF_CONTEXT",
+    "query": "Cell membrane ka kya kaam hai?",
+    "studyMode": "global",
+    "expectedIntent": "OUT_OF_CONTEXT",
+    "expectedResponseMode": "redirect",
+    "qualityChecks": [],
+    "note": "Was misfiled as CONCEPT_QUESTION (C07) — cell structure/membrane is not in the Bihar Board Class 10 Science syllabus (data/class-10/science/ has zero mentions of it; Biology chapters cover Life Processes, Control & Coordination, Reproduction, Heredity, Environment, Natural Resources — not cell structure, which is a Class 9 NCERT topic). Verified 2026-08-02 against the actual data source before reclassifying."
   },
 
   {

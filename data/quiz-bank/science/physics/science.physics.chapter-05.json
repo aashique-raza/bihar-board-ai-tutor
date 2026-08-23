@@ -1,0 +1,1704 @@
+{
+  "subjectId": "science",
+  "sectionId": "physics",
+  "chapterId": "science.physics.chapter-05",
+  "chapterTitle": "Sources of Energy",
+  "questions": [
+    {
+      "questionCode": "sci-phy-ch05-q000069",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not used as a cooking fuel?",
+        "hi": "निम्नलिखित में से किसका उपयोग खाना बनाने वाले ईंधन में नहीं होता है ?",
+        "hinglish": "Nimnalikhit mein se kiska upyog khana banane wale indhan mein nahi hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "C.N.G",
+            "hi": "C.N.G",
+            "hinglish": "C.N.G"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "L.P.G",
+            "hi": "L.P.G",
+            "hinglish": "L.P.G"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Bio Gas",
+            "hi": "बायो गैस",
+            "hinglish": "Bio Gas"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000083",
+      "topicId": null,
+      "questionText": {
+        "en": "Which energy does a hydro electric power plant convert into electric energy?",
+        "hi": "जल विद्युत संयंत्र किस ऊर्जा को विद्युत ऊर्जा में रूपांतरित करता है?",
+        "hinglish": "Jal vidyut santran kis urja ko vidyut urja mein roopantarit karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Thermal energy",
+            "hi": "तापीय ऊर्जा",
+            "hinglish": "Tapiya urja"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Nuclear energy",
+            "hi": "नाभिकीय ऊर्जा",
+            "hinglish": "Nabhikiy urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Solar energy",
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Potential energy",
+            "hi": "स्थितिज ऊर्जा",
+            "hinglish": "Sthitij urja"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000084",
+      "topicId": null,
+      "questionText": {
+        "en": "In which State, Narora nuclear power reactor is situated?",
+        "hi": "नरौरा नाभिकीय विद्युत संयंत्र किस राज्य में स्थित है?",
+        "hinglish": "Narora nabhik vidyut santran kis rajya mein sthit hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Rajasthan",
+            "hi": "राजस्थान",
+            "hinglish": "Rajasthan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Maharashtra",
+            "hi": "महाराष्ट्र",
+            "hinglish": "Maharashtra"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Uttar Pradesh",
+            "hi": "उत्तर प्रदेश",
+            "hinglish": "Uttar Pradesh"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Gujarat",
+            "hi": "गुजरात",
+            "hinglish": "Gujarat"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000242",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not the source of non-renewable energy?",
+        "hi": "निम्न में से कौन अनथीकरणीय ऊर्जा का स्त्रोत नहीं है?",
+        "hinglish": "Nimn mein se kaun anathikaraney urja ka strot nahi hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Petroleum",
+            "hi": "पेट्रोलियम",
+            "hinglish": "Petroleum"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Biogas",
+            "hi": "बायोगैस",
+            "hinglish": "Biogas"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Natural gas",
+            "hi": "प्राकृतिक गैस",
+            "hinglish": "Prakritik gas"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000253",
+      "topicId": null,
+      "questionText": {
+        "en": "Ultimate source of energy for all living organisms is",
+        "hi": "सभी जीव-जन्तुओं के लिए ऊर्जा का अंतिम स्त्रोत है",
+        "hinglish": "Sabhi jeev-jantuon ke liye urja ka antim strot hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Planet",
+            "hi": "ग्रह",
+            "hinglish": "Grah"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Moon",
+            "hi": "चन्द्रमा",
+            "hinglish": "Chandrama"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Sun",
+            "hi": "सूर्य",
+            "hinglish": "Surya"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000265",
+      "topicId": null,
+      "questionText": {
+        "en": "With which of the following metals is solar cell made of?",
+        "hi": "निम्नलिखित में किस धातु से सोलर सेल बना होता है?",
+        "hinglish": "Nimnalikhit mein kis dhatu se solar cell bana hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Zinc",
+            "hi": "जस्ता",
+            "hinglish": "Jasta"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Gold",
+            "hi": "सोना",
+            "hinglish": "Sona"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Platinum",
+            "hi": "प्लेटीनम",
+            "hinglish": "Platinum"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Silicon",
+            "hi": "सिलिकन",
+            "hinglish": "Silicon"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000318",
+      "topicId": null,
+      "questionText": {
+        "en": "In which day a solar water heater cannot be used to get hot water ?",
+        "hi": "गर्म जल प्राप्त करने के लिये हम सौर जल तापक का उपयोग किस दिन नहीं कर सकते हैं ?",
+        "hinglish": "Garm jal prapt karne ke liye hum saur jal taapak ka istemal kis din nahi kar sakte hain ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "A sunny day",
+            "hi": "धूप वाले दिन",
+            "hinglish": "Dhoop wale din"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "A cloudy day",
+            "hi": "बादलों वाले दिन",
+            "hinglish": "Baadlon wale din"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "A hot day",
+            "hi": "गरम दिन",
+            "hinglish": "Garam din"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000319",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not derived from the solar energy ?",
+        "hi": "निम्न में से कौन-सा ऊर्जा स्रोत सौर ऊर्जा के व्युत्पन्न नहीं है ?",
+        "hinglish": "Nimn mein se kaun-sa urja srot saur urja ke vyutpann nahi hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Geothermal energy",
+            "hi": "भूतापीय ऊर्जा",
+            "hinglish": "Bhootapiy urja"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Wind energy",
+            "hi": "पवन ऊर्जा",
+            "hinglish": "Pavan urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Nuclear energy",
+            "hi": "नाभिकीय ऊर्जा",
+            "hinglish": "Nabhikiy urja"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Biomass",
+            "hi": "जैवमात्रा",
+            "hinglish": "Jaivmaatra"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000398",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the source of Renewable energy ?",
+        "hi": "नवीकरणीय ऊर्जा का स्रोत क्या है ?",
+        "hinglish": "Navikarnīya urja ka srot kya hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Nuclear Energy",
+            "hi": "नाभिकीय ऊर्जा",
+            "hinglish": "Nabhikīya urja"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Solar Energy",
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Coal Energy",
+            "hi": "कोयले से प्राप्त ऊर्जा",
+            "hinglish": "Koyale se prapt urja"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Natural Gas Energy",
+            "hi": "प्राकृतिक गैस से प्राप्त ऊर्जा",
+            "hinglish": "Prakritik gas se prapt urja"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000425",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is used in Solar Cell ?",
+        "hi": "सौर सेल में किसका उपयोग होता है ?",
+        "hinglish": "Saur cell mein kiska upyog hota hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Plastic",
+            "hi": "प्लास्टिक",
+            "hinglish": "Plastic"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Silicon",
+            "hi": "सिलिकॉन",
+            "hinglish": "Silicon"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Uranium",
+            "hi": "यूरेनियम",
+            "hinglish": "Uranium"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Plutonium",
+            "hi": "प्लूटोनियम",
+            "hinglish": "Plutonium"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000426",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not used as cooking fuel ? Which of the following is not used in cooking fuel ?",
+        "hi": "निम्नलिखित में से किसका उपयोग खाना बनाने वाले ईंधन में नहीं होता है ?",
+        "hinglish": "Nimnalikhit mein se kiska upyog khana banane wale indhan mein nahi hota hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "C.N.G",
+            "hi": "C.N.G",
+            "hinglish": "C.N.G"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "L.P.G",
+            "hi": "L.P.G",
+            "hinglish": "L.P.G"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Biogas",
+            "hi": "बायो गैस",
+            "hinglish": "Bio gas"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000540",
+      "topicId": null,
+      "questionText": {
+        "en": "The conventional source of energy is",
+        "hi": "ऊर्जा का पारंपरिक स्त्रोत है",
+        "hinglish": "Urja ka paramparik strot hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Wind energy",
+            "hi": "पवन ऊर्जा",
+            "hinglish": "Pavan urja"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Solar energy",
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Biogas",
+            "hi": "बायोगैस",
+            "hinglish": "Biogas"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000603",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a non-renewable source of energy?",
+        "hi": "निम्नलिखित में से कौन ऊर्जा का अनवीकरणीय स्रोत है ?",
+        "hinglish": "Nimnalikhit mein se kaun urja ka anaveekarniya srot hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Sun",
+            "hi": "सूर्य",
+            "hinglish": "Surya"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Wind",
+            "hi": "पवन",
+            "hinglish": "Pawan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Petroleum",
+            "hi": "पेट्रोलियम",
+            "hinglish": "Petroleum"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Flowing water",
+            "hi": "बहता पानी",
+            "hinglish": "Bahta paani"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000604",
+      "topicId": null,
+      "questionText": {
+        "en": "The actual source of energy of fossil fuel is",
+        "hi": "जीवाश्म ईंधन की ऊर्जा का वास्तविक स्रोत है",
+        "hinglish": "Jivashm indhan ki urja ka vastavik srot hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "nuclear fusion",
+            "hi": "नाभिकीय संलयन",
+            "hinglish": "Naabikiy sanlayan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "sun",
+            "hi": "सूर्य",
+            "hinglish": "Surya"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "moon",
+            "hi": "चन्द्रमा",
+            "hinglish": "Chandrama"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000608",
+      "topicId": null,
+      "questionText": {
+        "en": "The device which directly converts solar energy into electricity known as",
+        "hi": "सौर ऊर्जा को सीधे विद्युत में बदलनेवाली युक्ति को कहते हैं",
+        "hinglish": "Saurya urja ko seedhe vidyut mein badalne wali yuktiko kehte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Daniel cell",
+            "hi": "डेनियल सेल",
+            "hinglish": "Daniel cell"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Leclanche cell",
+            "hi": "लेक्लांशे सेल",
+            "hinglish": "Leclanche cell"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Solar cell",
+            "hi": "सौर सेल",
+            "hinglish": "Solar cell"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000616",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is the main source of energy on earth?",
+        "hi": "पृथ्वी पर ऊर्जा का मुख्य स्रोत है",
+        "hinglish": "Prithvi par urja ka mukhya srot hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Wood",
+            "hi": "लकड़ी",
+            "hinglish": "Lakdi"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Sun",
+            "hi": "सूर्य",
+            "hinglish": "Surya"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000686",
+      "topicId": null,
+      "questionText": {
+        "en": "Which energy does a hydro-electric power plant convert into electric energy?",
+        "hi": "जल विद्युत संयंत्र किस ऊर्जा को विद्युत ऊर्जा में रूपांतरित करता है?",
+        "hinglish": "Jal vidyut sanyantra kis urja ko vidyut urja mein roopantarit karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Nuclear energy",
+            "hi": "नाभिकीय ऊर्जा",
+            "hinglish": "Nabhikiy urja"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Solar energy",
+            "hi": "सौर ऊर्जा",
+            "hinglish": "Saurya urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Potential energy",
+            "hi": "स्थितिज ऊर्जा",
+            "hinglish": "Sthitij urja"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Thermal energy",
+            "hi": "तापीय ऊर्जा",
+            "hinglish": "Tapiya urja"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000702",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is the conventional source of energy?",
+        "hi": "कौन-सा पंरपरागत ऊर्जा स्रोत है?",
+        "hinglish": "Kaun-sa paramparagat urja srot hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Nuclear energy source",
+            "hi": "नाभिकीय ऊर्जा स्रोत",
+            "hinglish": "Nabhikiy urja srot"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Geo-thermal energy source",
+            "hi": "भूतापीय ऊर्जा स्रोत",
+            "hinglish": "Bhootapeey urja srot"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Biomass",
+            "hi": "जैव मात्रा (बायोमास)",
+            "hinglish": "Jaiv maatra (biomass)"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000718",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is used in Solar cell?",
+        "hi": "सौर सेल में किसका उपयोग होता है?",
+        "hinglish": "Saur cell mein kiska istemal hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Uranium",
+            "hi": "यूरेनियम",
+            "hinglish": "Uranium"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Plastic",
+            "hi": "प्लास्टिक",
+            "hinglish": "Plastic"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Silicon",
+            "hi": "सिलिकन",
+            "hinglish": "Silicon"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Plutonium",
+            "hi": "प्लूटोनियम",
+            "hinglish": "Plutonium"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000723",
+      "topicId": null,
+      "questionText": {
+        "en": "What should be the minimum speed of wind in a wind electric generator?",
+        "hi": "पवन विद्युत जनित्र में पवन की चाल कम-से-कम कितनी होनी चाहिए?",
+        "hinglish": "Pawan vidyut janitra mein pawan ki chaal kam-se-kam kitni honi chahiye?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1500 km/h",
+            "hi": "1500 किमी/घंटा",
+            "hinglish": "1500 km/h"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "150 km/h",
+            "hi": "150 किमी/घंटा",
+            "hinglish": "150 km/h"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "15 km/h",
+            "hi": "15 किमी/घंटा",
+            "hinglish": "15 km/h"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "1.5 km/h",
+            "hi": "1.5 किमी/घंटा",
+            "hinglish": "1.5 km/h"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000810",
+      "topicId": null,
+      "questionText": {
+        "en": "The source of vast energy emitted by Sun and other stars is",
+        "hi": "सूर्य तथा अन्य तारों द्वारा उत्सर्जित विशाल ऊर्जा का स्त्रोत है",
+        "hinglish": "Surya tatha anya taaron dwara utsarjit vishal urja ka strot hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Nuclear fission",
+            "hi": "नाभिकीय विखण्डन",
+            "hinglish": "Naabhikiy vikhandon"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Nuclear fusion ... 25.",
+            "hi": "नाभिकीय संलयन ... 25.",
+            "hinglish": "Naabhikiy sanlayan ... 25."
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) तथा (B) दोनो",
+            "hinglish": "(A) tatha (B) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000812",
+      "topicId": null,
+      "questionText": {
+        "en": "Which cell is used in toys?",
+        "hi": "खिलौनों में किस सेल का उपयोग होता है?",
+        "hinglish": "Khilonon mein kis cell ka istemal hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Daniel cell",
+            "hi": "डेनियल सेल",
+            "hinglish": "Daniel cell"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Solar cell",
+            "hi": "सौर सेल",
+            "hinglish": "Solar cell"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Dry cell",
+            "hi": "सुखा सेल",
+            "hinglish": "Sukha cell"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000838",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is used in Solar cell?",
+        "hi": "सौर सेल में किसका उपयोग होता है?",
+        "hinglish": "Saur cell mein kiska istemal hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Uranium",
+            "hi": "यूरेनियम",
+            "hinglish": "Uranium"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Plutonium",
+            "hi": "प्लूटोनियम",
+            "hinglish": "Plutonium"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Silicon",
+            "hi": "सिलिकन",
+            "hinglish": "Silicon"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Plastic",
+            "hi": "प्लास्टिक",
+            "hinglish": "Plastic"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000839",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of following is mainly a biogas?",
+        "hi": "निम्नांकित में कौन मुख्यतः बायो गैस है?",
+        "hinglish": "Nimnankit mein kaun mukhyatah biogas hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "C2H6",
+            "hi": "C₂H₆",
+            "hinglish": "C2H6"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CH4",
+            "hi": "CH₄",
+            "hinglish": "CH4"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "C4H10",
+            "hi": "C₄H₁₀",
+            "hinglish": "C4H10"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "H2",
+            "hi": "H₂",
+            "hinglish": "H2"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000914",
+      "topicId": null,
+      "questionText": {
+        "en": "The ability to do work is called",
+        "hi": "कार्य करने की क्षमता को कहते हैं",
+        "hinglish": "Karya karne ki kshamata ko kehte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Force",
+            "hi": "बल",
+            "hinglish": "Bal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Power",
+            "hi": "शक्ति",
+            "hinglish": "Shakti"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Energy",
+            "hi": "ऊर्जा",
+            "hinglish": "Urja"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000919",
+      "topicId": null,
+      "questionText": {
+        "en": "To obtain nuclear energy, the necessary element is",
+        "hi": "नाभिकीय ऊर्जा प्राप्त करने हेतु आवश्यक तत्व है –",
+        "hinglish": "Naabikiy urja prapt karne hetu avashyak tatva hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Helium",
+            "hi": "हीलियम",
+            "hinglish": "Helium"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Aluminium",
+            "hi": "एल्युमिनियम",
+            "hinglish": "Aluminium"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Uranium",
+            "hi": "यूरेनियम",
+            "hinglish": "Uranium"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Chromium",
+            "hi": "क्रोमियम",
+            "hinglish": "Chromium"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000920",
+      "topicId": null,
+      "questionText": {
+        "en": "The main source of energy on earth in nature is",
+        "hi": "प्रकृति में पृथ्वी पर ऊर्जा का मुख्य स्रोत है",
+        "hinglish": "Prakriti mein prithvi par urja ka mukhya srot hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Sun",
+            "hi": "सूर्य",
+            "hinglish": "Surya"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Wood",
+            "hi": "लकड़ी",
+            "hinglish": "Lakdi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q000937",
+      "topicId": null,
+      "questionText": {
+        "en": "Which gas is used in welding?",
+        "hi": "वेल्डिंग में किस गैस का उपयोग होता है ?",
+        "hinglish": "Welding mein kis gas ka upyog hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Methane",
+            "hi": "मेथेन",
+            "hinglish": "Methane"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ethyne",
+            "hi": "एथाइन",
+            "hinglish": "Ethyne"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ethane",
+            "hi": "एथेन",
+            "hinglish": "Ethane"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Ethene",
+            "hi": "एथीन",
+            "hinglish": "Aethin"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q001259",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not used in cooking fuels?",
+        "hi": "निम्नलिखित में से किसका उपयोग खाना बनाने वाले ईंधन में नहीं होता है ?",
+        "hinglish": "Nimnalikhit mein se kiska upyog khana banane wale indhan mein nahi hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "C.N.G",
+            "hi": "C.N.G",
+            "hinglish": "C.N.G"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "L.P.G",
+            "hi": "L.P.G",
+            "hinglish": "L.P.G"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "What type of energy does a dynamo convert mechanical energy into?",
+            "hi": "Bio Gas",
+            "hinglish": "Bio Gas"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Coal",
+            "hi": "कोयला",
+            "hinglish": "Koyla"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q001269",
+      "topicId": null,
+      "questionText": {
+        "en": "The upper part of the box-type solar cooker has a glass lid. The reason for this is",
+        "hi": "बॉक्स-टाइप सौर कुकर के ऊपरी भाग में काँच का ढक्कन रहता है। इसका कारण है",
+        "hinglish": "Box-type saur cooker ke upari bhaag mein kaanch ka dhakkan rehta hai. Iska kaaran hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "to see whether the food placed inside the cooker is cooking or not",
+            "hi": "यह देखना कि कुकर के अंदर रखा भोजन पक रहा है या नहीं",
+            "hinglish": "Yeh dekhna ki cooker ke andar rakha bhojan pak raha hai ya nahi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "to prevent the loss of heat by radiation",
+            "hi": "विकिरण द्वारा ऊष्मा की हानि को रोकना",
+            "hinglish": "Vikiran dwara ooshma ki haani ko rokna"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "to prevent dust particles from entering the box",
+            "hi": "बाक्स के भीतर धूलकणों को जाने से रोकना",
+            "hinglish": "Baaks ke bheetar dhoolkano ko jaane se rokna"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q001329",
+      "topicId": null,
+      "questionText": {
+        "en": "What kind of mirror would be most suited for a solar cooker?",
+        "hi": "सौर कुकर के लिए सबसे उपयुक्त किस प्रकार का दर्पण होगा?",
+        "hinglish": "Saur cooker ke liye sabse upyukt kis prakar ka darpan hoga?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "convex mirror",
+            "hi": "उत्कृष्ट दर्पण",
+            "hinglish": "Utkrsht darpan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "concave mirror",
+            "hi": "उत्कर्ण दर्पण",
+            "hinglish": "Utkaran darpan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "all of these Ans: concave mirror",
+            "hi": "इनमें से सभी उत्तर: उत्कर्ण दर्पण",
+            "hinglish": "Inmein se sabhi uttar: Utkaran darpan"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch05-q001335",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is the conventional source of energy?",
+        "hi": "कौन - सा परम्परागत ऊर्जा स्त्रोत है?",
+        "hinglish": "Kaun - sa paramparagat urja strot hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Bio-Mass",
+            "hi": "जैव मात्रा (बायो-मास)",
+            "hinglish": "Jaiv maatra (Bio-Mass)"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Nuclear energy source",
+            "hi": "नाभिकीय ऊर्जा स्त्रोत",
+            "hinglish": "Naabikiy urja strot"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Geo-thermal energy source",
+            "hi": "भूतापीय ऊर्जा स्त्रोत",
+            "hinglish": "Bhootapeey urja strot"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नही",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    }
+  ]
+}

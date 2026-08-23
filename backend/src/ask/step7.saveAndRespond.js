@@ -6,7 +6,7 @@
 
 import { addChatMessages } from '../services/chatHistory.service.js';
 import { updateChatSession, updateChatSessionState, setSessionTitleIfDefault, setFirstQuestionIfEmpty } from '../services/chatSession.service.js';
-import { upsertChapterProgress, markChapterComplete, logStudyEvent } from '../services/chapterProgress.service.js';
+import { upsertChapterProgress, setChapterAwaitingQuiz, logStudyEvent } from '../services/chapterProgress.service.js';
 import { env } from '../config/env.js';
 import redis from '../config/redisClient.js';
 import { logTurnSummary, recordIntentSample, logIntentAggregates } from '../utils/tokenLogger.js';
@@ -41,7 +41,7 @@ const cleanText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
 const VALID_LEARNING_MODES = new Set(['idle', 'lesson', 'doubt', 'quiz']);
 
 // Pipeline-generated titles that should never become a session label in the sidebar.
-const SYSTEM_TITLES = new Set(['Chapter Complete!']);
+const SYSTEM_TITLES = new Set(['Chapter Complete!', 'Quiz Time!']);
 
 // Phase 3 — Session Integrity Guard.
 // UNSAFE_OR_ABUSIVE excluded from drift — abuse is tracked by its own abuseCount field.
@@ -189,7 +189,7 @@ export const saveAndRespond = async (
   { sessionId, chatState, chapterProgress },
   { language, driftSignal },
   decision,
-  { retrieval, sources, nextTopicSignal, lastRetrievalQuery, isOutOfFocusAnswer },
+  { retrieval, retrievedContext, sources, nextTopicSignal, lastRetrievalQuery, isOutOfFocusAnswer },
   response,
   userId = null,
   tokenUsage = 0,
@@ -306,13 +306,16 @@ export const saveAndRespond = async (
   let chapterProgressDoc = null;
   if (studyMode === 'focus' && chatState.currentChapterId) {
     const chapterId  = chatState.currentChapterId;
-    const isComplete = retrieval?.retrievedContext === 'CHAPTER_COMPLETE';
+    const isComplete = retrievedContext === 'CHAPTER_COMPLETE';
 
     if (isComplete) {
-      // CHAPTER COMPLETE — critical milestone, must not be lost silently
+      // CHAPTER COMPLETE — critical milestone, must not be lost silently.
+      // Phase 3: don't auto-complete — move to awaiting_quiz. The chapter only
+      // reaches 'completed' once the gate quiz is passed (handleGateQuizResult
+      // in quizSubmitter.js).
       chapterProgressDoc = await withRetry(
-        () => markChapterComplete(userId, guestId, chapterId),
-        'markChapterComplete'
+        () => setChapterAwaitingQuiz(userId, guestId, chapterId, chapterProgress?.currentTopicId),
+        'setChapterAwaitingQuiz'
       );
       logStudyEvent(userId, guestId, sessionId, chapterId, 'chapter_completed');
     } else {

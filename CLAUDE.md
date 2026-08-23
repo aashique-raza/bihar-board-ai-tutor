@@ -55,6 +55,9 @@ bihar-board-ai-tutor/
 ├── UI_PLAN.md                       Frontend redesign plan
 ├── HINGLISH_QUERY_FIX_PLAN.md       Active Hinglish query-handling fix plan
 ├── SESSION_DESIGN.md                Locked session architecture doc — don't change without discussion
+├── QUIZ_SYSTEM_BLUEPRINT.md         Quiz System spec (audited 2026-08-02, see its §18)
+├── QUIZ_EXECUTION_PROTOCOL.md       How Quiz work is run — rules, session rhythm, Parking Lot
+├── QUIZ_BUILD_LOG.md                Quiz living state — current phase, DoD, Parking Lot, history
 ├── ANALYSIS.md, DECISIONS.md         Historical snapshots — point-in-time, may be stale, prefer live code/TASKS.md
 ├── tasks/                           Individual task spec files (active: TASK-020, 024, 025)
 │   └── archive/                    Completed task specs (TASK-001–019, 021–023)
@@ -257,6 +260,46 @@ Zuno must answer ONLY from retrieved/indexed source content. If retrieved contex
 - After any frontend change, run: `npm run build` from `frontend/`
 - Full network-backed tests (`rag:test-retriever`, `rag:test-answer`, `test:ask-db`, `test:golden`) require live API keys and MongoDB access
 - Cross-check command names against `backend/package.json`'s `scripts` block before citing them here again — this list has gone stale before
+
+---
+
+## 🎯 Quiz System Work — Follow the Protocol (ACTIVE)
+
+If the user's request touches the Quiz System in any way (chapter gate quiz, practice quiz hub,
+question bank, `QUIZ_SYSTEM_BLUEPRINT.md`, or any "Phase N" of it), **a fixed working protocol
+applies. Do not improvise a different approach.**
+
+**Read these two files first, in this order — before doing anything else:**
+
+1. **`QUIZ_BUILD_LOG.md`** — living state: which phase we're on, its Definition of Done, the
+   Parking Lot, and what happened last session. This is the resume point. Read it so the user
+   never has to re-explain where things stand.
+2. **`QUIZ_EXECUTION_PROTOCOL.md`** — the rulebook. Roles, the 4-beat session rhythm, the
+   Parking Lot triage rule, the baseline-test rule, STOP conditions, and the banned-behaviour
+   list. Follow it exactly.
+
+Spec itself is `QUIZ_SYSTEM_BLUEPRINT.md` (audited 2026-08-02 — corrections are inline as
+`[AUDIT]` blocks, with a summary in its §18). Read only the section for the current phase, not
+the whole file.
+
+**The non-negotiables (full detail in the protocol):**
+
+- **Role:** act as Senior Software Engineer **and** Senior Product Manager, both, always. The
+  user must never have to restate this.
+- **One session = one phase.** Never two, never a partial jump ahead.
+- **Never write code before the user says they've understood.** Explain in simple Hinglish
+  first — what, why, which files, what "done" means, and what is explicitly out of scope.
+- **🅿️ Parking Lot:** any bug or idea found mid-phase that does not physically block the current
+  phase's Definition of Done goes into `QUIZ_BUILD_LOG.md`'s Parking Lot and is **not worked
+  on**. "It's a small fix" is not an exception — that is exactly how the loop starts.
+- **Baseline test before and after every phase**, same command both times. If it was green
+  before and is red after, that is a regression the current session caused — fix it now, in
+  this session; it does not go to the Parking Lot.
+- **Session ends when the phase's Definition of Done is ticked** — even if there is time left.
+- **One question at a time** when checking understanding. Never a batch of four.
+
+If the user types `status`, `protocol`, `checkpoint`, `loop`, `park <thing>`, or `blocker?`,
+those are defined shortcuts — see `QUIZ_EXECUTION_PROTOCOL.md` §10-11.
 
 ---
 

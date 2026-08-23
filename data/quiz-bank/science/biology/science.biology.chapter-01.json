@@ -1,0 +1,5467 @@
+{
+  "subjectId": "science",
+  "sectionId": "biology",
+  "chapterId": "science.biology.chapter-01",
+  "chapterTitle": "Life Processes",
+  "questions": [
+    {
+      "questionCode": "sci-bio-ch01-q000050",
+      "topicId": null,
+      "questionText": {
+        "en": "Essential for autotrophic nutrition is",
+        "hi": "स्वपोषी पोषण के लिए आवश्यक है",
+        "hinglish": "Swaposhi poshan ke liye avashyak hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "chlorophyll",
+            "hi": "क्लोरोफिल",
+            "hinglish": "Chlorophyll"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "sunlight",
+            "hi": "सौर प्रकाश",
+            "hinglish": "Saur prakash"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "all of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000098",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following instruments is used for measuring Blood Pressure?",
+        "hi": "निम्नलिखित में कौन से यंत्र का उपयोग रक्तदाब मापने में किया जाता है?",
+        "hinglish": "Nimnalikhit mein kaun se yantra ka upyog raktdaab maapne mein kiya jaata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Barometer",
+            "hi": "बैरोमीटर",
+            "hinglish": "Barometer"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Manometer",
+            "hi": "मैनोमीटर",
+            "hinglish": "Manometer"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Sphygmomanometer",
+            "hi": "स्फाइग्नो-मैनोमीटर",
+            "hinglish": "Sphygmomanometer"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000099",
+      "topicId": null,
+      "questionText": {
+        "en": "What component of Blood prevents bleeding by clot formation at points of injury?",
+        "hi": "रक्त का कौन सा अवयव घायल स्थान से रक्त स्राव के मार्ग को रक्त का थक्का बनाकर अवरुद्ध करता है?",
+        "hinglish": "Rakt ka kaun sa avayav ghaayal sthan se rakt sraav ke maarg ko rakt ka thakka banaakar avaruddh karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red Blood cells",
+            "hi": "लाल रक्त कोशिकाएँ (R.B.C.)",
+            "hinglish": "Laal rakt koshikaen (R.B.C.)"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "White Blood cells",
+            "hi": "श्वेत रक्त कोशिकाएँ (W.B.C.)",
+            "hinglish": "Shvet rakt koshikaen (W.B.C.)"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Platelets",
+            "hi": "प्लेटलेट्स",
+            "hinglish": "Platelets"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Lymph",
+            "hi": "लसीका",
+            "hinglish": "Laseeka"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000108",
+      "topicId": null,
+      "questionText": {
+        "en": "A green leaf is boiled in Alcohol before using Iodine for starch test in order to",
+        "hi": "मंड परीक्षण के लिए हरी पत्ती पर आयोडीन डालने से पहले पत्ती को एल्कोहॉल में उबाला जाता है –",
+        "hinglish": "Mand parikshan ke liye hari patte par iodine daalne se pehle patte ko alcohol mein ubala jaata hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "dissolve starch",
+            "hi": "मंड को घोलने के लिए",
+            "hinglish": "Mand ko gholne ke liye"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "dissolve chlorophyll",
+            "hi": "क्लोरोफिल को घोलने के लिए",
+            "hinglish": "Chlorophyll ko gholne ke liye"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "soften the leaf",
+            "hi": "पत्ती को मुलायम करने के लिए",
+            "hinglish": "Patti ko mulayam karne ke liye"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of the above",
+            "hi": "इनमें से सभी के लिए",
+            "hinglish": "Inmein se sabhi ke liye"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000163",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is known as energy currency of cell?",
+        "hi": "निम्नलिखित में से किसे कोशिका की ऊर्जा मुद्रा के रूप में जाना जाता है?",
+        "hinglish": "Nimnalikhit mein se kise koshika ki urja mudra ke roop mein jaana jaata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "ADP",
+            "hi": "एडीपी",
+            "hinglish": "ADP"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "ATP",
+            "hi": "एटीपी",
+            "hinglish": "ATP"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "DTP",
+            "hi": "डीटीपी",
+            "hinglish": "DTP"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "PDP Ans: ATP",
+            "hi": "PDP उत्तर: ATP",
+            "hinglish": "PDP uttar: ATP"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000164",
+      "topicId": null,
+      "questionText": {
+        "en": "Where does the exchange of gases takes place in leaves?",
+        "hi": "पत्तियों में गैसों का आदान-प्रदान कहाँ होता है?",
+        "hinglish": "Pattiyon mein gases ka aadaan-pradaan kahan hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Vein",
+            "hi": "शिरा",
+            "hinglish": "Shira"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "stomata",
+            "hi": "स्टोमाटा",
+            "hinglish": "Stomata"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Mid rib",
+            "hi": "मिड रिब",
+            "hinglish": "Mid rib"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these Ans: stomata",
+            "hi": "इनमें से कोई नहीं उत्तर: स्टोमाटा",
+            "hinglish": "Inmein se koi nahi uttar: stomata"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000165",
+      "topicId": null,
+      "questionText": {
+        "en": "The blood is pumped from heart to entire body by the",
+        "hi": "रक्त को हृदय से पूरे शरीर में पंप किया जाता है द्वारा",
+        "hinglish": "Rakt ko hriday se poore sharir mein pump kiya jaata hai dwara"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "The lungs",
+            "hi": "फेफड़े",
+            "hinglish": "Phephde"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ventricles",
+            "hi": "वेंट्रिकल्स",
+            "hinglish": "Ventricles"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Artria",
+            "hi": "आर्ट्रिया",
+            "hinglish": "Artria"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "all of these. Ans: Ventricles",
+            "hi": "इनमें से सभी। उत्तर: वेंट्रिकल्स",
+            "hinglish": "Inmein se sabhi. Uttar: Ventricles"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000195",
+      "topicId": null,
+      "questionText": {
+        "en": "Which component of the blood helps in stopping blood leakage?",
+        "hi": "रक्त का कौन सा घटक रक्त रिसाव को रोकने में मदद करता है?",
+        "hinglish": "Rakt ka kaun sa ghatak rakt risav ko rokne mein madad karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Lymph",
+            "hi": "लिम्फ",
+            "hinglish": "Lymph"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Plasma",
+            "hi": "प्लाज्मा",
+            "hinglish": "Plasma"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Platelets",
+            "hi": "प्लेटलेट्स",
+            "hinglish": "Platelets"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000202",
+      "topicId": null,
+      "questionText": {
+        "en": "The normal diastolic blood pressure is",
+        "hi": "सामान्य अनुशिथिलन रक्त दाब होता है",
+        "hinglish": "Saamaanya anushithilan rakt daab hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "80 mm",
+            "hi": "80 mm",
+            "hinglish": "80 mm"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "100 mm",
+            "hi": "100 mm",
+            "hinglish": "100 mm"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "120 mm",
+            "hi": "120 mm",
+            "hinglish": "120 mm"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "130 mm",
+            "hi": "130 mm",
+            "hinglish": "130 mm"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000243",
+      "topicId": null,
+      "questionText": {
+        "en": "To which of the following is human kidney related?",
+        "hi": "मनुष्य में वृक्क निम्न में किससे सम्बंधित है?",
+        "hinglish": "Manushya mein vrikk nimn mein kis se sambandhit hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Nutrition",
+            "hi": "पोषण",
+            "hinglish": "Poshan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Respiration",
+            "hi": "श्वसन",
+            "hinglish": "Shwasan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Transportation",
+            "hi": "परिवहन",
+            "hinglish": "Parivahan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000249",
+      "topicId": null,
+      "questionText": {
+        "en": "The green colour of plants is due to the presence of",
+        "hi": "किसकी उपस्थिति के कारण पौधे का रंग हरा होता है?",
+        "hinglish": "Kiski upasthiti ke kaaran paudhe ka rang hara hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Chlorophyll",
+            "hi": "क्लोरोफिल",
+            "hinglish": "Chlorophyll"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Leucoplast",
+            "hi": "लिउकोप्लास्ट",
+            "hinglish": "Leucoplast"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Phytochrome",
+            "hi": "फाइटोक्रोम",
+            "hinglish": "Phytochrome"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000250",
+      "topicId": null,
+      "questionText": {
+        "en": "Excretory substance in plants is",
+        "hi": "पौधे में उत्सर्जी पदार्थ है",
+        "hinglish": "Paudhe mein utsarji padarth hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Gum",
+            "hi": "गोंद",
+            "hinglish": "Gond"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Tannin",
+            "hi": "टैनिन",
+            "hinglish": "Tannin"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Resin",
+            "hi": "रेजिन",
+            "hinglish": "Rezine"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "all of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000255",
+      "topicId": null,
+      "questionText": {
+        "en": "Photosynthesis takes place in",
+        "hi": "प्रकाश संश्लेषण की क्रिया होती है",
+        "hinglish": "Prakash sanshleshan ki kriya hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Fungi",
+            "hi": "कवकों में",
+            "hinglish": "Kavkon mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Animals",
+            "hi": "जन्तुओं में",
+            "hinglish": "Jantoon mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Green plants",
+            "hi": "हरे पौधों में",
+            "hinglish": "Hare paudhon mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Parasites",
+            "hi": "परजीवियों में",
+            "hinglish": "Parjeeviyon mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000256",
+      "topicId": null,
+      "questionText": {
+        "en": "Transportation of carbohydrate through phloem tissues takes place in the form of",
+        "hi": "फ्लोएम ऊतकों द्वारा कार्बोहाइड्रेट का परिवहन होता है",
+        "hinglish": "Phloem ootakon dwara carbohydrate ka parivahan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Glucose",
+            "hi": "ग्लूकोज के रूप में",
+            "hinglish": "Glucose ke roop mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Fructose",
+            "hi": "फ्रक्टोज के रूप में",
+            "hinglish": "Fructose ke roop mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Lactose",
+            "hi": "लैक्टोज के रूप में",
+            "hinglish": "Lactose ke roop mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Sucrose",
+            "hi": "सुक्रोज के रूप में",
+            "hinglish": "Sucrose ke roop mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000258",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the chemical formula of glucose?",
+        "hi": "ग्लूकोज का रासायनिक सूत्र निम्नलिखित में कौन है?",
+        "hinglish": "Glucose ka rasayanik sutra nimnalikhit mein kaun hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "C2H5OH",
+            "hi": "C2H5OH",
+            "hinglish": "C2H5OH"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "C6H6O6",
+            "hi": "C6H6O6",
+            "hinglish": "C6H6O6"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "C6H12O6",
+            "hi": "C6H12O6",
+            "hinglish": "C6H12O6"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "C6H6",
+            "hi": "C6H6",
+            "hinglish": "C6H6"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000260",
+      "topicId": null,
+      "questionText": {
+        "en": "Most of the nutrition in an amoeba is",
+        "hi": "अमीबा में अधिकांश पोषण कैसा होता है?",
+        "hinglish": "Ameeba mein adhikansh poshan kaisa hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Herbivores",
+            "hi": "शाकाहारी",
+            "hinglish": "Shakahari"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Holozoic",
+            "hi": "अंतर्ग्रहण",
+            "hinglish": "Antargrahan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Omnivores",
+            "hi": "सर्वाहारी",
+            "hinglish": "Sarvahari"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Autotrophic",
+            "hi": "स्वपोषी",
+            "hinglish": "Swaposhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000277",
+      "topicId": null,
+      "questionText": {
+        "en": "By which of the following gases are exchanged in plants?",
+        "hi": "पौधों में गैसों का आदान-प्रदान किसके द्वारा होता है?",
+        "hinglish": "Paudhon mein gases ka aadaan-pradaan kiske dwara hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Stomata",
+            "hi": "रन्ध्र",
+            "hinglish": "Randhra"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Roots",
+            "hi": "जड़",
+            "hinglish": "Jad"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Stem",
+            "hi": "तना",
+            "hinglish": "Tana"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Shoot",
+            "hi": "टहनी",
+            "hinglish": "Tahani"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000278",
+      "topicId": null,
+      "questionText": {
+        "en": "Who has the fastest heartbeat?",
+        "hi": "निम्न में सबसे तेज हृदय धड़कन किसका होता है?",
+        "hinglish": "Nimn mein sabse tez hriday dhadkan kiska hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Whale",
+            "hi": "व्हेल",
+            "hinglish": "Whale"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Rat",
+            "hi": "चूहा",
+            "hinglish": "Chooha"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Elephant",
+            "hi": "हाथी",
+            "hinglish": "Haathi"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Human",
+            "hi": "आदमी",
+            "hinglish": "Aadmi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000279",
+      "topicId": null,
+      "questionText": {
+        "en": "Which type of nitrogenous wastes is excreted by living organisms?",
+        "hi": "सजीव जीवधारियों द्वारा किस प्रकार की नाइट्रोजनी पदार्थ (कचरा) का उत्सर्जन होता है?",
+        "hinglish": "Sajiv jeevdharion dwara kis prakar ki nitrogenous padarth (kachra) ka utsarjan hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Ammonia",
+            "hi": "अमोनिया",
+            "hinglish": "Ammonia"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Uric acid",
+            "hi": "यूरिक अम्ल",
+            "hinglish": "Yuric aml"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Urea",
+            "hi": "यूरिया",
+            "hinglish": "Yuria"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000345",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is structural and functional unit of kidney ?",
+        "hi": "निम्न में से कौन वृक्क की रचनात्मक एवं क्रियात्मक इकाई है ?",
+        "hinglish": "Nimn mein se kaun vrikk ki rachnatmak evam kriyatmak ikai hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Neuron",
+            "hi": "न्यूरॉन",
+            "hinglish": "Neuron"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Nephron",
+            "hi": "नेफ्रॉन",
+            "hinglish": "Nephron"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Glomerulus",
+            "hi": "ग्लोमेरुलस",
+            "hinglish": "Glomerulus"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Ventricle",
+            "hi": "निलय",
+            "hinglish": "Nilay"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000346",
+      "topicId": null,
+      "questionText": {
+        "en": "Main excretory organ of human beings in the following is",
+        "hi": "मानव का प्रमुख उत्सर्जी अंग निम्नांकित में कौन है ?",
+        "hinglish": "Manav ka pramukh utsarji ang nimnankit mein kaun hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "kidney",
+            "hi": "वृक्क",
+            "hinglish": "Vrikk"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "blood",
+            "hi": "रक्त",
+            "hinglish": "Rakt"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "sweat gland",
+            "hi": "स्वेद ग्रंथि",
+            "hinglish": "Swed granthi"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "pancreas",
+            "hi": "अग्न्याशय",
+            "hinglish": "Agnyaashay"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000352",
+      "topicId": null,
+      "questionText": {
+        "en": "How does amoeba catch its food ?",
+        "hi": "अमीबा अपना भोजन कैसे पकड़ता है ?",
+        "hinglish": "Amoeba apna bhojan kaise pakadta hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "By tentacles",
+            "hi": "ग्रसिका द्वारा",
+            "hinglish": "Grasika dwara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "By tongue",
+            "hi": "जीभ द्वारा",
+            "hinglish": "Jibh dwara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "By pseudopodia",
+            "hi": "कूटपाद द्वारा",
+            "hinglish": "Kootpaad dwara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "By mouth",
+            "hi": "मुँह द्वारा",
+            "hinglish": "Munh dwara"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000353",
+      "topicId": null,
+      "questionText": {
+        "en": "Which enzyme acts upon fat ?",
+        "hi": "कौन-सा एन्जाइम वसा पर क्रिया करता है ?",
+        "hinglish": "Kaun-sa enzyme vasa par kriya karta hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Pepsin",
+            "hi": "पेप्सीन",
+            "hinglish": "Pepsin"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Trypsin",
+            "hi": "ट्रिप्सीन",
+            "hinglish": "Trypsin"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Lypase",
+            "hi": "लाइपेज",
+            "hinglish": "Lypase"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Amylase",
+            "hi": "एमाइलेज",
+            "hinglish": "Amylase"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000354",
+      "topicId": null,
+      "questionText": {
+        "en": "Which type of respiration releases more energy ?",
+        "hi": "किस प्रकार के श्वसन से अधिक ऊर्जा मुक्त होती है ?",
+        "hinglish": "Kis prakar ke shwasan se adhik urja mukt hoti hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Aerobic",
+            "hi": "वायवीय",
+            "hinglish": "Vayaviya"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Anaerobic",
+            "hi": "अवायवीय",
+            "hinglish": "Avayaviya"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) एवं (B) दोनों",
+            "hinglish": "(A) evam (B) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000355",
+      "topicId": null,
+      "questionText": {
+        "en": "Respiratory organ of fish is",
+        "hi": "मछली का श्वसनांग है",
+        "hinglish": "Machhli ka shwasanang hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "trachea",
+            "hi": "ट्रेकिया",
+            "hinglish": "Trachea"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "gills",
+            "hi": "गिल्स",
+            "hinglish": "Gills"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "skin",
+            "hi": "त्वचा",
+            "hinglish": "Twacha"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "lungs J 5012-J Page 15 of",
+            "hi": "फेफड़ा J 5012-J Page 15 of",
+            "hinglish": "Phephda J 5012-J Page 15 of"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000438",
+      "topicId": null,
+      "questionText": {
+        "en": "Seeds used for the study of respiration are",
+        "hi": "श्वसन के अध्ययन के लिए उपयोग किए जाने वाले बीज हैं",
+        "hinglish": "Shwasan ke adhyayan ke liye istemal kiye jaane wale beej hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Dry Seeds",
+            "hi": "सूखे बीज",
+            "hinglish": "Sookhe beej"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Germinating Seeds",
+            "hi": "अंकुरित बीज",
+            "hinglish": "Ankurit beej"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Boiled Seeds",
+            "hi": "उबला हुआ बीज",
+            "hinglish": "Ubla hua beej"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Crushed Seeds",
+            "hi": "कुचले हुए बीज",
+            "hinglish": "Kuchle hue beej"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000439",
+      "topicId": null,
+      "questionText": {
+        "en": "The kidneys in human beings are a part of which system ?",
+        "hi": "मानव वृक्क किस प्रणाली का एक हिस्सा है ?",
+        "hinglish": "Manav vrikk kis pranali ka ek hissa hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Nutrition",
+            "hi": "पोषण",
+            "hinglish": "Poshan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Respiration",
+            "hi": "श्वसन",
+            "hinglish": "Shwasan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Transportation",
+            "hi": "परिवहन",
+            "hinglish": "Parivahan"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000440",
+      "topicId": null,
+      "questionText": {
+        "en": "The xylem in plants is responsible for the transportation of which of the following ?",
+        "hi": "पौधों में जाइलम निम्नांकित में से किसके परिवहन के लिए जिम्मेदार है ?",
+        "hinglish": "Paudhon mein xylem nimnankit mein se kis ke parivahan ke liye zimmedar hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Water",
+            "hi": "पानी",
+            "hinglish": "Paani"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Food",
+            "hi": "भोजन",
+            "hinglish": "Bhojan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Amino acid",
+            "hi": "एमीनो एसीड",
+            "hinglish": "Amino acid"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Oxygen",
+            "hi": "ऑक्सीजन",
+            "hinglish": "Oxygen"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000441",
+      "topicId": null,
+      "questionText": {
+        "en": "Which gas is evolved during respiration ?",
+        "hi": "श्वसन के दौरान कौन सी गैस निकलती है ?",
+        "hinglish": "Shwasan ke dauran kaun si gas nikalti hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CO",
+            "hi": "CO",
+            "hinglish": "CO"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "N2",
+            "hi": "N2",
+            "hinglish": "N2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000449",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following diseases are related to respiratory system ?",
+        "hi": "निम्न में से कौन-सी बीमारी श्वसनतंत्र से संबंधित है ?",
+        "hinglish": "Nimn mein se kaun-si bimari shwas tantra se sambandhit hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Diarrhoea",
+            "hi": "डायरिया",
+            "hinglish": "Diarrhoea"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Tuberculosis",
+            "hi": "टी0 बी0",
+            "hinglish": "T.B"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pneumonia",
+            "hi": "निमोनिया",
+            "hinglish": "Nimoniya"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Both (B) and (C)",
+            "hi": "(B) एवं (C) दोनों",
+            "hinglish": "(B) evam (C) dono"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000450",
+      "topicId": null,
+      "questionText": {
+        "en": "Human beings and other carnivorous cannot digest which of the following ?",
+        "hi": "मनुष्य और अन्य मांसाहारी जीव निम्नलिखित में किसका पाचन नहीं कर पाते ?",
+        "hinglish": "Manushya aur anya maansahari jeev nimnalikhit mein kiska pachan nahi kar paate?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Protein",
+            "hi": "प्रोटीन",
+            "hinglish": "Protein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Cellulose",
+            "hi": "सेल्युलोज",
+            "hinglish": "Cellulose"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Fat",
+            "hi": "वसा",
+            "hinglish": "Vasa"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these Which of the following is not digested by human being and other Carnivorous animals ? A. Protein B. Cellulose C. Fat D. All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000451",
+      "topicId": null,
+      "questionText": {
+        "en": "Main reason of brain haemorrhage is",
+        "hi": "ब्रेन हैमरेज का मुख्य कारण है",
+        "hinglish": "Brain haemorrhage ka mukhya kaaran hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Hypotension",
+            "hi": "हाइपोटेंशन",
+            "hinglish": "Hypotension"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Heart attack",
+            "hi": "हृदयघात",
+            "hinglish": "Hridayghaat"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Hypertension",
+            "hi": "हाइपरटेंशन",
+            "hinglish": "Hypertension"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Paralysis",
+            "hi": "पक्षाघात",
+            "hinglish": "Pakshaghat"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000453",
+      "topicId": null,
+      "questionText": {
+        "en": "Blood is pumped to the entire body from the heart by",
+        "hi": "हृदय से रक्त को संपूर्ण शरीर में पंप किया जाता है",
+        "hinglish": "Hriday se rakt ko sampoorn sharir mein pump kiya jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Lungs",
+            "hi": "फेफड़ों द्वारा",
+            "hinglish": "Phephdon dwara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ventricle Blood is pumped to whole body from heart by A. Lungs B. Ventricle",
+            "hi": "निलय द्वारा",
+            "hinglish": "Nilay dwara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Auricle",
+            "hi": "आलिंदो द्वारा",
+            "hinglish": "Aalindo dwara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000457",
+      "topicId": null,
+      "questionText": {
+        "en": "Which antibody is found in blood group A",
+        "hi": "ब्लड समूह A में कौन सा एंटीबॉडी होता है ?",
+        "hinglish": "Blood samuh A mein kaun sa antibody hota hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "'a'",
+            "hi": "'a'",
+            "hinglish": "'a'"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "'ab'",
+            "hi": "'ab'",
+            "hinglish": "'ab'"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "'b'",
+            "hi": "'b'",
+            "hinglish": "'b'"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "'O'",
+            "hi": "'O'",
+            "hinglish": "'O'"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000461",
+      "topicId": null,
+      "questionText": {
+        "en": "How many pairs of Salivary glands are found in human buccal cavity ?",
+        "hi": "मनुष्य के मुख गुहा में कितने जोड़े लार ग्रंथियाँ पाई जाती हैं ?",
+        "hinglish": "Manushya ke mukh guha mein kitne jode laar granthiyan pai jaati hain ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "One",
+            "hi": "एक",
+            "hinglish": "Ek"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Two",
+            "hi": "दो",
+            "hinglish": "Do"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Three",
+            "hi": "तीन",
+            "hinglish": "Teen"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Four",
+            "hi": "चार",
+            "hinglish": "Chaar"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000495",
+      "topicId": null,
+      "questionText": {
+        "en": "The process of photosynthesis takes place in",
+        "hi": "प्रकाश संश्लेषण की क्रिया होती है",
+        "hinglish": "Prakash sanshleshan ki prakriya hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "animal",
+            "hi": "जंतुओं में",
+            "hinglish": "Jantoon mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "fungus",
+            "hi": "कवको में",
+            "hinglish": "Kavko mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "parasite",
+            "hi": "परजीवियों में",
+            "hinglish": "Parjeeviyon mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "green plants",
+            "hi": "हरे पौधों में",
+            "hinglish": "Hare paudhon mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000496",
+      "topicId": null,
+      "questionText": {
+        "en": "From which oxygen comes out during the process of photosynthesis?",
+        "hi": "प्रकाश संश्लेषण क्रिया में ऑक्सीजन किस से बाहर निकलता है ?",
+        "hinglish": "Prakash sanshleshan kriya mein oxygen kis se baahar nikalta hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Water",
+            "hi": "जल से",
+            "hinglish": "Jal se"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "glucose",
+            "hi": "ग्लूकोज से",
+            "hinglish": "Glucose se"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "dictyosomes",
+            "hi": "डिक्टियासोम से",
+            "hinglish": "Dictyosomes se"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000497",
+      "topicId": null,
+      "questionText": {
+        "en": "Where are the gastric glands found in?",
+        "hi": "जठर ग्रंथियाँ कहाँ पाई जाती है ?",
+        "hinglish": "Jathar granthiyan kahan pai jaati hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Liver",
+            "hi": "यकृत में",
+            "hinglish": "Yakrit mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Stomach",
+            "hi": "आमाशय में",
+            "hinglish": "Aamashay mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pancreas",
+            "hi": "अग्नाशय में",
+            "hinglish": "Agnashay mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Mouth",
+            "hi": "मुँह में",
+            "hinglish": "Munh mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000498",
+      "topicId": null,
+      "questionText": {
+        "en": "The process of glycolysis takes place in",
+        "hi": "ग्लाइकोलिसिस की प्रक्रिया संपन्न होती है",
+        "hinglish": "Glycolysis ki prakriya sampann hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Stomata",
+            "hi": "स्टोमाटा में",
+            "hinglish": "Stomata mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Nucleus",
+            "hi": "केन्द्रक में",
+            "hinglish": "Kendrak mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Mitochondria",
+            "hi": "माइटोकॉण्ड्रिया में",
+            "hinglish": "Mitochondria mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Cytoplasm",
+            "hi": "कोशिका द्रव्य में",
+            "hinglish": "Koshika dravya mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000499",
+      "topicId": null,
+      "questionText": {
+        "en": "Ethyl alcohol is made from which type of respiration?",
+        "hi": "इथाइल एल्कोहल किस प्रकार के श्वसन से बनता है ?",
+        "hinglish": "Ethyl alcohol kis prakar ke shwasan se banta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Aerobic",
+            "hi": "वायवीय",
+            "hinglish": "Vayaviya"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Anaerobic",
+            "hi": "अवायवीय",
+            "hinglish": "Avayaviya"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both A and B",
+            "hi": "A एवं B दोनों",
+            "hinglish": "Dono A aur B"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000501",
+      "topicId": null,
+      "questionText": {
+        "en": "The process of loss of water from the aerial parts of the plant is called",
+        "hi": "पौधों के वायवीय भागों से जल के ह्रास की क्रिया कहलाती है",
+        "hinglish": "Poudhon ke vayavi bhaagon se jal ke hras ki kriya kehlati hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Diffusion",
+            "hi": "विसरण",
+            "hinglish": "Vikiran"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Transpiration",
+            "hi": "वाष्पोत्सर्जन",
+            "hinglish": "Vaspoatsarjan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pollination",
+            "hi": "परागण",
+            "hinglish": "Paragnayan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Fertilization",
+            "hi": "निषेचन",
+            "hinglish": "Nishechan"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000503",
+      "topicId": null,
+      "questionText": {
+        "en": "The light-yellow sticky fluid in blood is called",
+        "hi": "रक्त में हल्के पीले रंग के चिपचिपे द्रव को कहते हैं",
+        "hinglish": "Rakt mein halke peele rang ke chipchipe drav ko kehte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Plasma",
+            "hi": "प्लाज्मा",
+            "hinglish": "Plasma"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Lymph",
+            "hi": "लिम्फ",
+            "hinglish": "Lymph"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Serum",
+            "hi": "सीरम",
+            "hinglish": "Serum"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "WBC Light yellow colored sticky substance in the blood is called - A. Plasma B. Lymph C. Serum D. WBC",
+            "hi": "सफेद रक्त कणिकाएँ",
+            "hinglish": "Safed rakt kanikayein"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000504",
+      "topicId": null,
+      "questionText": {
+        "en": "The device for measuring blood pressure is called",
+        "hi": "रक्तचाप मापने के उपकरण को कहते हैं",
+        "hinglish": "Raktchaap maapne ke upkaran ko kehte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Stethoscope",
+            "hi": "स्टेथोस्कोप",
+            "hinglish": "Stethoscope"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ammeter",
+            "hi": "एमीटर",
+            "hinglish": "Ammeter"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Lactometer",
+            "hi": "लैक्टोमीटर",
+            "hinglish": "Lactometer"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Sphygmomanometer",
+            "hi": "स्फिग्मोमैनोमीटर",
+            "hinglish": "Sphygmomanometer"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000505",
+      "topicId": null,
+      "questionText": {
+        "en": "Transpiration is found in",
+        "hi": "वाष्पोत्सर्जन क्रिया पायी जाती है",
+        "hinglish": "Vaspoatsarjan kriya paayi jaati hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Animals",
+            "hi": "जंतुओं में",
+            "hinglish": "Jantoon mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Plants",
+            "hi": "पौधों में",
+            "hinglish": "Paudhon mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both plants and animals",
+            "hi": "पौधों और जंतुओं दोनों मे",
+            "hinglish": "Paudhon aur jantoon dono mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000506",
+      "topicId": null,
+      "questionText": {
+        "en": "Open circulatory system is found in which of the following?",
+        "hi": "निम्नलिखित में किसमें खुला परिसंचरण तंत्र पाया जाता है ?",
+        "hinglish": "Nimnalikhit mein kisme khula parisanchalan tantra paaya jaata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Camel",
+            "hi": "ऊँट में",
+            "hinglish": "Oont mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Horse",
+            "hi": "घोड़ा में",
+            "hinglish": "Ghoda mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Cockroach",
+            "hi": "तिलचट्टा",
+            "hinglish": "Tilchhatta"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Human",
+            "hi": "मानव में A. ऊँट B. घोड़ा C. तिलचट्टा D. मानव",
+            "hinglish": "Manav mein A. Oont B. Ghoda C. Tilchhatta D. Manav"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000507",
+      "topicId": null,
+      "questionText": {
+        "en": "What is blood?",
+        "hi": "रक्त क्या है ?",
+        "hinglish": "Rakt kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Matter",
+            "hi": "पदार्थ",
+            "hinglish": "Padarth"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Tissue",
+            "hi": "उत्तक",
+            "hinglish": "Uttak"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Cell",
+            "hi": "कोशिका",
+            "hinglish": "Koshika"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000510",
+      "topicId": null,
+      "questionText": {
+        "en": "Where does urea enter the blood from?",
+        "hi": "यूरिया रक्त में कहाँ से प्रवेश करती है?",
+        "hinglish": "Urea rakt mein kahan se pravesh karti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Kidney",
+            "hi": "वृक्क से",
+            "hinglish": "Vrikka se"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Lungs",
+            "hi": "फेफड़ा से",
+            "hinglish": "Phephda se"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Liver",
+            "hi": "यकृत से",
+            "hinglish": "Yakrit se"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000515",
+      "topicId": null,
+      "questionText": {
+        "en": "Green plants are called",
+        "hi": "हरे पौधे कहलाते हैं",
+        "hinglish": "Hare paudhe kehte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Consumer",
+            "hi": "उपभोक्ता",
+            "hinglish": "Upbhokta"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Decomposer",
+            "hi": "अपघटक",
+            "hinglish": "Apghatak"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Producer",
+            "hi": "उत्पादक",
+            "hinglish": "Utpadak"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000611",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following proteins is responsible for the red colour of blood?",
+        "hi": "रक्त का लाल रंग निम्नांकित में से किस प्रोटीन की उपस्थिति के कारण होता है ?",
+        "hinglish": "Rakt ka laal rang nimnankit mein se kis protein ki upasthiti ke kaaran hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Heparin",
+            "hi": "हेपारीन",
+            "hinglish": "Heparin"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Haemoglobin",
+            "hi": "हीमोग्लोबीन",
+            "hinglish": "Hemoglobin"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Thrombin",
+            "hi": "थ्रोम्बिन",
+            "hinglish": "Thrombin"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Fibrinogen",
+            "hi": "फाइब्रीनोजेन",
+            "hinglish": "Fibrinogen"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000612",
+      "topicId": null,
+      "questionText": {
+        "en": "The colour of chlorophyll pigment is",
+        "hi": "क्लोरोफिल वर्णक का रंग होता है।",
+        "hinglish": "Chlorophyll varnaka ka rang hota hai."
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "black",
+            "hi": "काला",
+            "hinglish": "Kala"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000630",
+      "topicId": null,
+      "questionText": {
+        "en": "Which mode of nutrition is found in fungi?",
+        "hi": "कवक में पोषण की कौन-सी विधि है ?",
+        "hinglish": "Kavak mein poshan ki kaun-si vidhi hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Autotrophic",
+            "hi": "स्वपोषी",
+            "hinglish": "Swaposhi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Holozoic",
+            "hi": "समभोजी",
+            "hinglish": "Samabhoji"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Saprophytic",
+            "hi": "मृतजीबी",
+            "hinglish": "Mrityajibi"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000643",
+      "topicId": null,
+      "questionText": {
+        "en": "The pores of the stomata are surrounded by which of the following?",
+        "hi": "निम्नलिखित में से किससे रंध्र के छिद्र घिरे रहते हैं ?",
+        "hinglish": "Nimnalikhit mein se kis se randhr ke chhidra ghire rahte hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cuticle",
+            "hi": "क्यूटिकल से",
+            "hinglish": "Cuticle"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Guard cells",
+            "hi": "गार्ड कोशिका से",
+            "hinglish": "Guard koshika se"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Lenticels",
+            "hi": "वात रंध्रों से",
+            "hinglish": "Vaat randhron se"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000644",
+      "topicId": null,
+      "questionText": {
+        "en": "Which gas is liberated during respiration?",
+        "hi": "कौन-सी गैस श्वसन क्रिया में मुक्त होती है ?",
+        "hinglish": "Kaun-si gas shwasan kriya mein mukt hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "SO2",
+            "hi": "SO2",
+            "hinglish": "SO2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "NO2",
+            "hi": "NO2",
+            "hinglish": "NO2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000645",
+      "topicId": null,
+      "questionText": {
+        "en": "What is liberated by complete oxidation of glucose?",
+        "hi": "ग्लूकोज के पूर्ण ओक्सीकरण से क्या मुक्त होता है?",
+        "hinglish": "Glucoz ke poorn oxidation se kya mukt hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Only CO2",
+            "hi": "केवल CO2",
+            "hinglish": "Keval CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Only energy",
+            "hi": "केवल ऊर्जा",
+            "hinglish": "Keval urja"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Only H2O",
+            "hi": "केवल H2O",
+            "hinglish": "Keval H2O"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इन सब",
+            "hinglish": "In sab"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000647",
+      "topicId": null,
+      "questionText": {
+        "en": "Full form of ATP is",
+        "hi": "ए.टी.पी. (ATP) का विस्तारित रूप है.",
+        "hinglish": "A.T.P. (ATP) ka vistaarit roop hai."
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Adenine thymine phosphate",
+            "hi": "एडिनिन थाइमिन फॉस्फेट",
+            "hinglish": "Adenine thymine phosphate"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Adenine triphosphate",
+            "hi": "एडिनिन ट्राईफॉस्फेट",
+            "hinglish": "Adenine triphosphate"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Adenosine triphosphate",
+            "hi": "एडिनोसिन ट्राइफॉस्फेट",
+            "hinglish": "Adenosine triphosphate"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Adenine thymine diphosphate",
+            "hi": "एडिनिन थाइमीन डाईफॉस्फेट",
+            "hinglish": "Adenine thimine diphosphate"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000648",
+      "topicId": null,
+      "questionText": {
+        "en": "Which solution is used to test the presence of starch?",
+        "hi": "स्टार्च की उपस्थिति की जाँच के लिए किस विलयन का उपयोग होता है ?",
+        "hinglish": "Starch ki upasthiti ki jaanch ke liye kis vilayan ka upyog hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Iodine",
+            "hi": "आयोडीन",
+            "hinglish": "Iodine"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Safranin",
+            "hi": "सैफ्रेनीन",
+            "hinglish": "Safranin"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Eosin",
+            "hi": "इओसीन",
+            "hinglish": "Eosin"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Methylene blue",
+            "hi": "मेथिलीन ब्लू",
+            "hinglish": "Methylene blue"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000649",
+      "topicId": null,
+      "questionText": {
+        "en": "Rate of photosynthesis is dependent on which factors?",
+        "hi": "प्रकाश संश्लेषण की दर निम्न में से किन कारकों पर निर्भर करती है ?",
+        "hinglish": "Prakash sanshleshan ki dar nimn mein se kin karakon par nirbhar karti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Properties of light",
+            "hi": "प्रकाश के गुण पर",
+            "hinglish": "Prakash ke gun par"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "The amount of light",
+            "hi": "प्रकाश की मात्रा पर",
+            "hinglish": "Prakash ki maatra par"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Both (A) and (B)",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000676",
+      "topicId": null,
+      "questionText": {
+        "en": "Which pigment makes the colour of urine yellow?",
+        "hi": "मूत्र का पीला रंग किस वर्णक के कारण होता है ?",
+        "hinglish": "Mootra ka peela rang kis varnaka ke karan hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Chromoplast",
+            "hi": "क्रोमोप्लास्ट",
+            "hinglish": "Chromoplast"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Urochrome",
+            "hi": "यूरोक्रोम",
+            "hinglish": "Urochrome"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Chloroplast",
+            "hi": "क्लोरोप्लास्ट",
+            "hinglish": "Chloroplast"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Leucoplast",
+            "hi": "ल्यूकोप्लास्ट",
+            "hinglish": "Leucoplast"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000678",
+      "topicId": null,
+      "questionText": {
+        "en": "Bile juice is secreted by",
+        "hi": "पित्त रस का स्राव होता है",
+        "hinglish": "Pitt ras ka sraav hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "small intestine",
+            "hi": "छोटी आँत द्वारा",
+            "hinglish": "chhoti aant dwara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "liver",
+            "hi": "यकृत द्वारा",
+            "hinglish": "Yakrit dwara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "pancreas",
+            "hi": "अग्न्याशय द्वारा",
+            "hinglish": "Agnyaashay dwara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "duodenum",
+            "hi": "ग्रहणी द्वारा",
+            "hinglish": "Grahani dwara"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000697",
+      "topicId": null,
+      "questionText": {
+        "en": "Systolic blood pressure of a healthy person is",
+        "hi": "स्वस्थ व्यक्ति का सिस्टोलिक रक्तचाप होता है",
+        "hinglish": "Swasth vyakti ka systolic raktchaap hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "140 mm Hg",
+            "hi": "140 mm Hg",
+            "hinglish": "140 mm Hg"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "120 mm Hg",
+            "hi": "120 mm Hg",
+            "hinglish": "120 mm Hg"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "100 mm Hg",
+            "hi": "100 mm Hg",
+            "hinglish": "100 mm Hg"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "80 mm Hg",
+            "hi": "80 mm Hg",
+            "hinglish": "80 mm Hg"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000699",
+      "topicId": null,
+      "questionText": {
+        "en": "In fish, respiration takes place through",
+        "hi": "मछली में श्वसन होता है",
+        "hinglish": "Machhli mein shwasan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "mouth",
+            "hi": "मुँह द्वारा",
+            "hinglish": "Munh dwara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "gills",
+            "hi": "गिल्स द्वारा",
+            "hinglish": "gills dwara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "nose",
+            "hi": "नाक द्वारा",
+            "hinglish": "Naak dwara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "lungs",
+            "hi": "फेंफड़ा द्वारा",
+            "hinglish": "Fenfda dwara"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000708",
+      "topicId": null,
+      "questionText": {
+        "en": "The expulsion of water through stomata in the form of vapour from the aerial part of the plant is known as",
+        "hi": "पौधों के वायवीय भागों से जल का स्टोमाटा द्वारा वाष्प के रूप में निष्कासन कहलाता है",
+        "hinglish": "Paudhon ke vayaveey bhaagon se jal ka stomata dwara vaapaar ke roop mein nishkasan kaha jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "osmosis",
+            "hi": "परासरण",
+            "hinglish": "Parasaran"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "transpiration",
+            "hi": "वाष्पोत्सर्जन",
+            "hinglish": "Vaapotsarjan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "diffusion",
+            "hi": "विसरण",
+            "hinglish": "Visaran"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000710",
+      "topicId": null,
+      "questionText": {
+        "en": "Peristalsis movement is found in",
+        "hi": "क्रमाकुंचन गति पाई जाती है",
+        "hinglish": "Kramakunchan gati pai jaati hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Colon",
+            "hi": "कोलन में",
+            "hinglish": "Colon"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Oesophagus",
+            "hi": "ग्रासनली में",
+            "hinglish": "Grasanali mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pancreas",
+            "hi": "अग्न्याशय में",
+            "hinglish": "Agnyaashay mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Small intestine",
+            "hi": "छोटी आँत में",
+            "hinglish": "Chhoti aant mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000711",
+      "topicId": null,
+      "questionText": {
+        "en": "Open circulatory system is found in",
+        "hi": "खुला परिवहन तंत्र पाया जाता है",
+        "hinglish": "Khula parivahan tantra paaya jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "pigeon",
+            "hi": "कबूतर में",
+            "hinglish": "Kabootar mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "butterfly",
+            "hi": "तितली में",
+            "hinglish": "titli mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "man",
+            "hi": "मनुष्य में",
+            "hinglish": "Manushya mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "cat",
+            "hi": "बिल्ली में",
+            "hinglish": "Billi mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000712",
+      "topicId": null,
+      "questionText": {
+        "en": "The carrier of oxygen in blood is",
+        "hi": "रक्त में ऑक्सीजन का वाहक है",
+        "hinglish": "Rakt mein oxygen ka vahak hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "fat",
+            "hi": "वसा",
+            "hinglish": "Vasa"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "hormone",
+            "hi": "हॉर्मोन",
+            "hinglish": "Hormone"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "haemoglobin",
+            "hi": "हीमोग्लोबिन",
+            "hinglish": "Hemoglobin"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "carbohydrate",
+            "hi": "कार्बोहाइड्रेट",
+            "hinglish": "Carbohydrate"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000714",
+      "topicId": null,
+      "questionText": {
+        "en": "The most effective colour of visible light spectrum for photosynthesis is",
+        "hi": "प्रकाश संश्लेषण के लिए दृश्य-प्रकाश स्पेक्ट्रम का सबसे प्रभावी रंग है",
+        "hinglish": "Prakash sanshleshan ke liye drishya-prakash spectrum ka sabse prabhavi rang hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "red",
+            "hi": "लाल",
+            "hinglish": "laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000722",
+      "topicId": null,
+      "questionText": {
+        "en": "The structural and functional unit of kidney is called",
+        "hi": "वृक्क की संरचनात्मक एवं क्रियात्मक इकाई को कहते हैं",
+        "hinglish": "Vrikka ki sanrachnaatmak evam kriyaatmak ikai ko kehte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Urinary bladder",
+            "hi": "मूत्राशय",
+            "hinglish": "Mootraashay"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Glomerulus",
+            "hi": "ग्लोमेरुलस",
+            "hinglish": "Glomerulus"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Bowman's capsule",
+            "hi": "बोमैन संपुट",
+            "hinglish": "Bowman's capsule"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Nephron",
+            "hi": "नेफ्रॉन",
+            "hinglish": "Nephron"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000730",
+      "topicId": null,
+      "questionText": {
+        "en": "Kidney helps in",
+        "hi": "वृक्क सहायता प्रदान करता है",
+        "hinglish": "Vrikka sahayata pradan karta hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "respiration",
+            "hi": "श्वसन में",
+            "hinglish": "Shwasan mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "reproduction",
+            "hi": "जनन में",
+            "hinglish": "Janann mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "excretion",
+            "hi": "उत्सर्जन में",
+            "hinglish": "Utsarjan mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "digestion",
+            "hi": "पाचन में",
+            "hinglish": "Pachan mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000731",
+      "topicId": null,
+      "questionText": {
+        "en": "Photosynthesis takes place during",
+        "hi": "प्रकाश संश्लेषण होता है",
+        "hinglish": "Prakash sanshleshan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Morning-evening",
+            "hi": "सुबह-शाम",
+            "hinglish": "Subah-shaam"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Day only",
+            "hi": "केवल दिन में",
+            "hinglish": "Keval din mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Day-night",
+            "hi": "दिन-रात",
+            "hinglish": "Din-raat"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Night only",
+            "hi": "केवल रात में",
+            "hinglish": "Keval raat mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000733",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following has the fastest heartbeat?",
+        "hi": "निम्न में सबसे तेज हृदय धड़कन किसका होता है?",
+        "hinglish": "Nimn mein sabse tez hriday dhadkan kiska hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Elephant",
+            "hi": "हाथी",
+            "hinglish": "Haathi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Human",
+            "hi": "आदमी",
+            "hinglish": "Aadmi"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Rat",
+            "hi": "चूहा",
+            "hinglish": "Chooha"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Whale",
+            "hi": "व्हेल",
+            "hinglish": "Whale"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000734",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is cellular fuel?",
+        "hi": "कोशिकीय ईंधन निम्न में से कौन है?",
+        "hinglish": "Koshikiy indhan nimn mein se kaun hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Protein",
+            "hi": "प्रोटीन",
+            "hinglish": "Protein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Glucose",
+            "hi": "ग्लूकोज",
+            "hinglish": "Glucose"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Fat",
+            "hi": "वसा",
+            "hinglish": "Vasa"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000736",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is not an excretory organ of human?",
+        "hi": "निम्नलिखित में कौन मनुष्य का एक उत्सर्जी अंग नहीं है?",
+        "hinglish": "Nimnalikhit mein kaun manushya ka ek utsarji ang nahi hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Lungs",
+            "hi": "फेंफड़ा",
+            "hinglish": "Fenfda"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Kidney",
+            "hi": "वृक्क",
+            "hinglish": "Vrikka"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pancreas",
+            "hi": "अग्न्याशय",
+            "hinglish": "Agnyaashay"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Skin",
+            "hi": "त्वचा",
+            "hinglish": "Tvacha"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000841",
+      "topicId": null,
+      "questionText": {
+        "en": "Gastric glands are found in",
+        "hi": "जठर ग्रंथिया पाई जाती है",
+        "hinglish": "Jathar granthiya pai jaati hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Liver",
+            "hi": "यकृत में",
+            "hinglish": "Yakrit mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Eye",
+            "hi": "आँख में",
+            "hinglish": "Aankh mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Stomach",
+            "hi": "अमाशय में",
+            "hinglish": "Amashay mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Pancreas 57. (A) Liver (B) Eye (C) Stomach (D) Pancreas",
+            "hi": "अग्नाशय में 57. (A) यकृत में (B) आँख में (C) अमाशय में (D) अग्नाशय में",
+            "hinglish": "Agnashay mein 57. (A) Yakrit mein (B) Aankh mein (C) Amashay mein (D) Agnashay mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000842",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following helps in the digestion of fat?",
+        "hi": "निम्नलिखित में कौन वसा के पाचन में सहायक होता है?",
+        "hinglish": "Nimnalikhit mein kaun vasa ke pachan mein sahayak hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Lipase",
+            "hi": "लाइपेज",
+            "hinglish": "Lipase"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Maltase",
+            "hi": "माल्टेज",
+            "hinglish": "Maltase"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Tylin",
+            "hi": "टाइलिन",
+            "hinglish": "Tylin"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Lactase",
+            "hi": "लैक्टेज",
+            "hinglish": "Lactase"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000843",
+      "topicId": null,
+      "questionText": {
+        "en": "The colour of bile juice is",
+        "hi": "पित रस का रंग होता है",
+        "hinglish": "Pit ras ka rang hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "White",
+            "hi": "सफेद",
+            "hinglish": "Safed"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000844",
+      "topicId": null,
+      "questionText": {
+        "en": "Respiration takes place in plants",
+        "hi": "पौधों में श्वसन होता है",
+        "hinglish": "Poudhon mein shwasan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "In the stem",
+            "hi": "तना में",
+            "hinglish": "Tana mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "In leaves",
+            "hi": "पत्तियों में",
+            "hinglish": "Pattiyon mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "In the root",
+            "hi": "जड़ में",
+            "hinglish": "Jad mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000845",
+      "topicId": null,
+      "questionText": {
+        "en": "Which gas do green plants release at night?",
+        "hi": "हरे पौधे रात्रि में किस गैस का निष्कासन करते है?",
+        "hinglish": "Hare poudhe raatri mein kis gas ka nishkasan karte hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO2",
+            "hi": "CO₂",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "O2 ... 61.",
+            "hi": "O₂ ... 61.",
+            "hinglish": "O₂ ... 61."
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "N2",
+            "hi": "N₂",
+            "hinglish": "N2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000847",
+      "topicId": null,
+      "questionText": {
+        "en": "Normal diastolic blood pressure is",
+        "hi": "सामान्य डायस्टोलिक रक्त दाब होता है",
+        "hinglish": "Samaanya diastolic rakt daab hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "80 mmHg",
+            "hi": "80 mmHg",
+            "hinglish": "80 mmHg"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "120 mmHg",
+            "hi": "120 mmHg",
+            "hinglish": "120 mmHg"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "100 mmHg",
+            "hi": "100 mmHg",
+            "hinglish": "100 mmHg"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "130 mmHg",
+            "hi": "130 mmHg",
+            "hinglish": "130 mmHg"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000848",
+      "topicId": null,
+      "questionText": {
+        "en": "In which organ does transpiration take place in plants?",
+        "hi": "पौधों मे वाष्पोत्सर्जन किस अंग में होता है?",
+        "hinglish": "Paudhon me vaaspostarjan kis ang me hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "In stem",
+            "hi": "तना में",
+            "hinglish": "Tana mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "In the leaf ... 64.",
+            "hi": "पत्ती में",
+            "hinglish": "Patti mein ... 64"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "In flower",
+            "hi": "फूल में",
+            "hinglish": "Phool me"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इन सभी में 64. (C) फूल में (D) इन सभी में",
+            "hinglish": "In sabhi mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000850",
+      "topicId": null,
+      "questionText": {
+        "en": "Plant wastes are stored in",
+        "hi": "पादप में अपशिष्ट संचित रहते है",
+        "hinglish": "Padap me apashisht sanchit rahte hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Bark",
+            "hi": "छाल में",
+            "hinglish": "Chhaal mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Leaves",
+            "hi": "पत्तियों में",
+            "hinglish": "Pattiyon mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Cellular vacuoles",
+            "hi": "कोशिकीय रिक्तिकाओं मे",
+            "hinglish": "Koshikiy riktiyon mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इन सभी में",
+            "hinglish": "In sabhi mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000851",
+      "topicId": null,
+      "questionText": {
+        "en": "The structural and functional unit of the kidney is called",
+        "hi": "वृक्क के संरचनात्मक एवं क्रियात्मक इकाई को कहते है",
+        "hinglish": "Vrik ke sanrachnaatmak evam kriyatmak ikai ko kehte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Ureter",
+            "hi": "मूत्रवाहिनी",
+            "hinglish": "Mootravahini"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Glomerulus",
+            "hi": "ग्लोमेरूलस",
+            "hinglish": "Glomerulus"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Nephron",
+            "hi": "नेफ्रॉन",
+            "hinglish": "Nephron"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Bowman's capsule",
+            "hi": "बोमेन-संपुट",
+            "hinglish": "Bowman's capsule"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000852",
+      "topicId": null,
+      "questionText": {
+        "en": "Excretory products of plants are",
+        "hi": "पौधे के उत्सर्जी पदार्थ है",
+        "hinglish": "Paudhe ke utsarji padarth hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Tannin",
+            "hi": "टैनिन",
+            "hinglish": "Tannin"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Resin",
+            "hi": "रेजिन",
+            "hinglish": "Rezine"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Gum",
+            "hi": "गोंद",
+            "hinglish": "Gond"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these 68. (A) Tannin (B) Resin (C) Lap (D) All of these",
+            "hi": "इनमें सभी 68. (A) टैनिन (B) रेजिन (C) गोंद (D) इनमें सभी",
+            "hinglish": "Inmein sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000925",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the chemical formula of glucose?",
+        "hi": "ग्लूकोज का रासायनिक सूत्र निम्नलिखित में कौन है ?",
+        "hinglish": "Glucose ka rasayanik sutra nimnalikhit mein kaun hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "C2H5OH",
+            "hi": "C2H5OH",
+            "hinglish": "C2H5OH"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "C6H6O6",
+            "hi": "C6H6O6",
+            "hinglish": "C6H6O6"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "C6H12O6",
+            "hi": "C6H12O6",
+            "hinglish": "C6H12O6"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "C6H6 [Q31 English repeat from page",
+            "hi": "C6H6 [Q31 English repeat from page",
+            "hinglish": "C6H6 [Q31 English repeat from page"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000946",
+      "topicId": null,
+      "questionText": {
+        "en": "The technique of delivering water right near the roots of plant for irrigation is",
+        "hi": "सिंचाई के लिए पौधों को ठीक जड़ों के समीप जल पहुँचाने की तकनीक है–",
+        "hinglish": "Sinchai ke liye paudhon ko theek jadon ke samip jal pahunchane ki takneek hai–"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Watering with rain water",
+            "hi": "वर्षा जल से सिंचाई",
+            "hinglish": "Varsha jal se sinchai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Mechanical spraying",
+            "hi": "यांत्रिक छिड़काव",
+            "hinglish": "Yantrik chhidkaav"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Drip irrigation",
+            "hi": "टपकन सिंचाई",
+            "hinglish": "Tapkan sinchai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Irrigation from Canal",
+            "hi": "नहर से सिंचाई",
+            "hinglish": "Nahar se sinchai"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000948",
+      "topicId": null,
+      "questionText": {
+        "en": "Which method of nutrition is found in fungi ?",
+        "hi": "कवक में पोषण की कौन सी विधि पाई जाती है ?",
+        "hinglish": "Kavak mein poshan ki kaun si vidhi pai jaati hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Saprotrophic",
+            "hi": "मृतपोषी",
+            "hinglish": "Mritposhi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Autotrophic",
+            "hi": "स्वपोषी",
+            "hinglish": "Swaposhi"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Holozoic",
+            "hi": "होलोजोइक",
+            "hinglish": "Holozoic"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000950",
+      "topicId": null,
+      "questionText": {
+        "en": "The process of digestion in humans being from",
+        "hi": "मनुष्य में पाचन क्रिया का आरंभ होता है –",
+        "hinglish": "Manushya mein pachan kriya ka aarambh hota hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "buccal cavity",
+            "hi": "मुखगुहा से",
+            "hinglish": "Mukhguhha se"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "pharynx",
+            "hi": "ग्रसनी से",
+            "hinglish": "Grasani se"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Stomach",
+            "hi": "आमाशय से",
+            "hinglish": "Aamashaya se"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Small intestine",
+            "hi": "छोटी आँत से",
+            "hinglish": "Chhoti aant se"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000951",
+      "topicId": null,
+      "questionText": {
+        "en": "The biological processes found in living organisms are",
+        "hi": "सजीवों में पाये जाने वाले जैव प्रक्रम है –",
+        "hinglish": "Sajivon mein paaye jaane wale jaiv prakriya hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "respiration",
+            "hi": "श्वसन",
+            "hinglish": "Shwasan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "nutrition",
+            "hi": "पोषण",
+            "hinglish": "Poshan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "reproduction",
+            "hi": "प्रजनन",
+            "hinglish": "Prajanann"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000952",
+      "topicId": null,
+      "questionText": {
+        "en": "Fermentation takes place in",
+        "hi": "किण्वन क्रिया होती है –",
+        "hinglish": "Kinvann kriya hoti hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Hydra",
+            "hi": "हाइड्रा में",
+            "hinglish": "Hydra mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Amoeba",
+            "hi": "अमीबा में",
+            "hinglish": "Amoeba mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Yeast",
+            "hi": "यीस्ट में",
+            "hinglish": "Yeast mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000953",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following gases is taken in during aerobic respiration?",
+        "hi": "वायवीय श्वसन क्रिया में निम्नांकित में से किस गैस का प्रयोग किया जाता है ?",
+        "hinglish": "Vayaviya shwasan kriya mein nimnankit mein se kis gas ka prayog kiya jaata hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "SO2",
+            "hi": "SO2",
+            "hinglish": "SO2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "N2",
+            "hi": "N2",
+            "hinglish": "N2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000954",
+      "topicId": null,
+      "questionText": {
+        "en": "What is called cellular fuel?",
+        "hi": "कोशिकीय ईंधन किसे कहा जाता है ?",
+        "hinglish": "Koshikiya indhan kise kaha jaata hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Fat",
+            "hi": "वसा को",
+            "hinglish": "Vasa ko"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Protein",
+            "hi": "प्रोटीन को",
+            "hinglish": "Protein ko"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Glucose",
+            "hi": "ग्लूकोस को",
+            "hinglish": "Glucose ko"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000955",
+      "topicId": null,
+      "questionText": {
+        "en": "In which organ does transpiration mainly take place in plants?",
+        "hi": "पौधों में वाष्पोत्सर्जन मुख्यतया किस अंग में होता है ?",
+        "hinglish": "Paudhon mein vaaspotsarjan mukhyata kahan hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "in flower",
+            "hi": "फूल में",
+            "hinglish": "Phool mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "in the stem",
+            "hi": "तना में",
+            "hinglish": "Tana mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "in leaves",
+            "hi": "पत्ती में",
+            "hinglish": "Patti mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इन सभी में",
+            "hinglish": "In sabhi mein"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000956",
+      "topicId": null,
+      "questionText": {
+        "en": "The human heart is a part of which system?",
+        "hi": "मानव हृदय किस तंत्र का भाग है ?",
+        "hinglish": "Manav hriday kis tantra ka bhaag hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "digestion",
+            "hi": "पाचन",
+            "hinglish": "Pachan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "respiration",
+            "hi": "श्वसन",
+            "hinglish": "Shwasan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "circulatory system",
+            "hi": "परिसंचरन तंत्र",
+            "hinglish": "Parisanchran tantra"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000957",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following helps in clotting of blood?",
+        "hi": "निम्नलिखित में से कौन रक्त का थक्का बनाने में सहायक होता है ?",
+        "hinglish": "Nimnalikhit mein se kaun rakt ka thakka banane mein sahayak hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "RBC",
+            "hi": "RBC",
+            "hinglish": "RBC"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Fibrinogen",
+            "hi": "फाइब्रिनोजिन",
+            "hinglish": "Fibrinogen"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "lymph",
+            "hi": "लसीका",
+            "hinglish": "Laseeka"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "oxyhaemoglobin",
+            "hi": "आक्सीहीमोग्लोबिन",
+            "hinglish": "Oxyhaemoglobin"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000958",
+      "topicId": null,
+      "questionText": {
+        "en": "Plant wastes are stored in",
+        "hi": "पादप अपशिष्ट संचित रहते हैं –",
+        "hinglish": "Padap apashisht sanchit rahte hain –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "bark",
+            "hi": "छाल में",
+            "hinglish": "Chhaal mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Cellular vacuoles",
+            "hi": "कोशिकीय रिक्तिकाओं में",
+            "hinglish": "Koshikiya riktiyon mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "leaves",
+            "hi": "पत्तियों में",
+            "hinglish": "Pattiyon mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000959",
+      "topicId": null,
+      "questionText": {
+        "en": "What is formed by the breakdown of amino acids",
+        "hi": "एमीनो अम्ल के विखण्डन से क्या बनता है –",
+        "hinglish": "Amino amla ke vikhandon se kya banta hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "SO2",
+            "hi": "SO2",
+            "hinglish": "SO2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "NH3",
+            "hi": "NH3",
+            "hinglish": "NH3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "CO",
+            "hi": "CO",
+            "hinglish": "CO"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000960",
+      "topicId": null,
+      "questionText": {
+        "en": "The main function of the kidney is",
+        "hi": "वृक्क का प्रधान कार्य है –",
+        "hinglish": "Vrikka ka pradhan karya hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "digestion",
+            "hi": "पाचन",
+            "hinglish": "Pachan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "excretion",
+            "hi": "उत्सर्जन",
+            "hinglish": "Utsarjan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "reproduction",
+            "hi": "प्रजनन",
+            "hinglish": "Prajanann"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "ATP production",
+            "hi": "ATP निर्माण",
+            "hinglish": "ATP nirmaan"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q000964",
+      "topicId": null,
+      "questionText": {
+        "en": "Blood pressure is controlled by",
+        "hi": "रूधिर चाप नियंत्रित होता है –",
+        "hinglish": "Rudhir chaap niyantrit hota hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Thymus",
+            "hi": "थाइमस द्वारा",
+            "hinglish": "Thymus"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Pancreas",
+            "hi": "अग्नाशय द्वारा",
+            "hinglish": "Agnashay dwara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Adrenal",
+            "hi": "एड्रिनल द्वारा",
+            "hinglish": "Adrenal dwara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Testis",
+            "hi": "वृषण द्वारा",
+            "hinglish": "Vrishan dwara"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q001185",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is an excretory organ?",
+        "hi": "निम्न में कौन उत्सर्जी अंग है ?",
+        "hinglish": "Nimn mein kaun utsarji ang hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Kidney",
+            "hi": "वृक्क",
+            "hinglish": "Vrikka"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Pancreas",
+            "hi": "अग्न्याशय",
+            "hinglish": "Agnyaashay"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Eye",
+            "hi": "आँख",
+            "hinglish": "Aankh"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q001227",
+      "topicId": null,
+      "questionText": {
+        "en": "Is necessary for autotrophic nutrition?",
+        "hi": "स्वपोषी पोषण के लिए आवश्यक है ?",
+        "hinglish": "Swaposhi poshan ke liye avashyak hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "chlorophyll",
+            "hi": "क्लोरोफिल",
+            "hinglish": "Chlorophyll"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "solar light",
+            "hi": "सौर प्रकाश",
+            "hinglish": "Saurya prakash"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q001277",
+      "topicId": null,
+      "questionText": {
+        "en": "How many pairs of spiracles are found in cockroach?",
+        "hi": "तिलचट्टा में कितने जोड़े श्वास रंध्र पाये जाते हैं?",
+        "hinglish": "Tilchhatta mein kitne jode shwas randhra paaye jaate hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "6 How many pairs of spiracles are found in cockroach? (A) 2 (B) 8 (C) 10 (D) 6",
+            "hi": "6",
+            "hinglish": "6 Cockroach mein kitne jode spiracles milte hain? (A) 2 (B) 8 (C) 10 (D) 6"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q001295",
+      "topicId": null,
+      "questionText": {
+        "en": "How many chambers are found in human heart?",
+        "hi": "मानव हृदय में कितने कोष्ठक पाये जाते हैं ?",
+        "hinglish": "Manav hriday mein kitne koshthak paaye jaate hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q001309",
+      "topicId": null,
+      "questionText": {
+        "en": "How many phosphates are there in ATP?",
+        "hi": "ATP में फॉस्फेट की संख्या कितनी होती है?",
+        "hinglish": "ATP mein phosphate ki sankhya kitni hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1",
+            "hi": "एक",
+            "hinglish": "Ek"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2",
+            "hi": "दो",
+            "hinglish": "Do"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "3",
+            "hi": "तीन",
+            "hinglish": "Teen"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "4",
+            "hi": "चार",
+            "hinglish": "Chaar"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch01-q001314",
+      "topicId": null,
+      "questionText": {
+        "en": "How many ATPs are produced as a result of fermentation?",
+        "hi": "किण्वन के फलस्वरूप कितने ATP का निर्माण होता है?",
+        "hinglish": "Kinvann ke phalsvaroop kitne ATP ka nirmaan hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "02",
+            "hi": "02",
+            "hinglish": "02"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "04",
+            "hi": "04",
+            "hinglish": "04"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "36",
+            "hi": "36",
+            "hinglish": "36"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "38",
+            "hi": "38",
+            "hinglish": "38"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    }
+  ]
+}

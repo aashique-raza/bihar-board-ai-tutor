@@ -11,6 +11,8 @@
 
 import { ChapterProgress } from '../models/chapterProgress.model.js';
 import { StudyEvent }      from '../models/studyEvent.model.js';
+import { QuizAttempt }     from '../models/quizAttempt.model.js';
+import { QuizSession }     from '../models/quizSession.model.js';
 import redis               from '../config/redisClient.js';
 import { loadCurriculumIndex } from '../curriculum/curriculumIndexLoader.js';
 import { getChapterCoreTopics } from '../curriculum/topicResolver.js';
@@ -240,6 +242,94 @@ export const markChapterComplete = async (userId, guestId, chapterId) => {
 };
 
 /**
+ * Move a chapter from in_progress to awaiting_quiz — called from step7 when
+ * CHAPTER_COMPLETE fires (Phase 3 gate, replaces the old auto-complete).
+ *
+ * Guarded to only transition FROM in_progress: if the chapter is already
+ * awaiting_quiz or completed (e.g. student revisits the last topic and
+ * CHAPTER_COMPLETE fires again), this is a no-op — the filter simply won't
+ * match and findOneAndUpdate returns null, so we re-fetch and return the
+ * unchanged doc instead of clobbering real state.
+ */
+export const setChapterAwaitingQuiz = async (userId, guestId, chapterId, currentTopicId = null) => {
+  if (!chapterId) return null;
+
+  const filter = buildFilter(userId, guestId, chapterId);
+
+  const updateOp = {
+    $set: {
+      status:          'awaiting_quiz',
+      progressPercent: 100,
+      lastStudiedAt:   new Date(),
+    },
+  };
+
+  if (currentTopicId) {
+    updateOp.$addToSet = { completedTopicIds: currentTopicId };
+  }
+
+  const doc = await ChapterProgress.findOneAndUpdate(
+    { ...filter, status: 'in_progress' },
+    updateOp,
+    { returnDocument: 'after', new: true }
+  );
+
+  await invalidateCache(userId, guestId, chapterId);
+
+  if (doc) {
+    if (isDev) console.log(`[ChapterProgress] Chapter awaiting quiz: ${chapterId}`);
+    return doc;
+  }
+
+  // Already past in_progress (awaiting_quiz/completed) — return current state as-is.
+  return ChapterProgress.findOne(filter).lean();
+};
+
+/**
+ * Record the result of a chapter_gate quiz attempt against ChapterProgress.
+ * Called from quizSubmitter.js's handleGateQuizResult() after a chapter_gate
+ * QuizAttempt is created — never for chapter_practice/mix_practice.
+ *
+ * Always: increments quizGateAttempts, raises quizGateBestScore if this
+ * attempt beat it, remembers lastQuizAttemptId.
+ * On pass: transitions awaiting_quiz -> completed in the same write.
+ * On fail: status is left untouched (stays awaiting_quiz — no change needed,
+ * matching the "unlimited retries, no cooldown" rule).
+ */
+export const recordGateQuizResult = async (userId, guestId, chapterId, { attemptId, percentage, passed }) => {
+  if (!chapterId) return null;
+
+  const filter = buildFilter(userId, guestId, chapterId);
+
+  const current = await ChapterProgress.findOne(filter, { quizGateBestScore: 1 }).lean();
+  const currentBest = current?.quizGateBestScore ?? 0;
+  const newBest = Math.max(currentBest, percentage);
+
+  const setFields = {
+    quizGateBestScore: newBest,
+    lastQuizAttemptId: attemptId,
+    lastStudiedAt:     new Date(),
+  };
+
+  if (passed) {
+    setFields.status = 'completed';
+    setFields.completedAt = new Date();
+    setFields.progressPercent = 100;
+  }
+
+  const doc = await ChapterProgress.findOneAndUpdate(
+    filter,
+    { $set: setFields, $inc: { quizGateAttempts: 1 } },
+    { returnDocument: 'after', new: true }
+  );
+
+  await invalidateCache(userId, guestId, chapterId);
+
+  if (isDev) console.log(`[ChapterProgress] Gate quiz result recorded: ${chapterId} passed=${Boolean(passed)} best=${newBest}`);
+  return doc;
+};
+
+/**
  * Reset chapter progress — clears the topic pointer and completed list so the
  * student starts fresh from topic 1.
  * Called from chapterProgress.controller POST /:chapterId/action { action: 'reset', status? }.
@@ -310,15 +400,30 @@ export const claimGuestData = async (userId, guestId) => {
       const guestIsFurther = (guestDoc.completedTopicIds?.length || 0) > (existing.completedTopicIds?.length || 0);
       const winner = guestIsFurther ? guestDoc : existing;
 
+      // Quiz gate fields merge independently of the topic-progress "winner" —
+      // a student's best quiz score/attempt count should never be lost just
+      // because the other side happened to be further along on topics.
+      const guestBest    = guestDoc.quizGateBestScore ?? 0;
+      const existingBest = existing.quizGateBestScore ?? 0;
+      const mergedBestScore = Math.max(guestBest, existingBest);
+      const mergedAttempts  = (guestDoc.quizGateAttempts || 0) + (existing.quizGateAttempts || 0);
+      // Blueprint §9: lastQuizAttemptId comes from whichever side has the higher best score.
+      const mergedLastAttemptId = guestBest >= existingBest
+        ? (guestDoc.lastQuizAttemptId ?? existing.lastQuizAttemptId ?? null)
+        : (existing.lastQuizAttemptId ?? guestDoc.lastQuizAttemptId ?? null);
+
       await ChapterProgress.updateOne(
         { _id: existing._id },
         {
           $set: {
-            status:            winner.status,
-            currentTopicId:    winner.currentTopicId,
-            completedTopicIds: winner.completedTopicIds,
-            progressPercent:   winner.progressPercent,
-            lastStudiedAt:     new Date(),
+            status:             winner.status,
+            currentTopicId:     winner.currentTopicId,
+            completedTopicIds:  winner.completedTopicIds,
+            progressPercent:    winner.progressPercent,
+            lastStudiedAt:      new Date(),
+            quizGateBestScore:  mergedBestScore || null,
+            quizGateAttempts:   mergedAttempts,
+            lastQuizAttemptId:  mergedLastAttemptId,
           },
           $inc: {
             totalTimeSpentSec:      guestDoc.totalTimeSpentSec      || 0,
@@ -337,7 +442,18 @@ export const claimGuestData = async (userId, guestId) => {
 
   await StudyEvent.updateMany({ guestId }, { $set: { userId, guestId: null } });
 
-  return { chaptersTransferred, chaptersMerged };
+  // Quiz attempts (permanent history) and any still-pending quiz sessions
+  // (rare — usually TTL-expired before claim happens) move to the new identity.
+  const quizAttemptResult = await QuizAttempt.updateMany(
+    { guestId },
+    { $set: { userId, guestId: null } }
+  );
+  await QuizSession.updateMany(
+    { guestId, status: 'pending' },
+    { $set: { userId, guestId: null } }
+  );
+
+  return { chaptersTransferred, chaptersMerged, quizAttemptsTransferred: quizAttemptResult.modifiedCount };
 };
 
 /**

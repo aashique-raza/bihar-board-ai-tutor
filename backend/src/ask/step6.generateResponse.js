@@ -138,12 +138,14 @@ export const generateResponse = async (input, context, decision, retrieval, stre
     const chapterCompleteResponse = {
       status: 'answered',
       responseMode: 'study_tutor',
-      title: 'Chapter Complete!',
+      title: 'Quiz Time!',
       sections: [{
         heading: '',
-        content: 'Iss chapter ke saare topics cover ho gaye! Bahut badhiya padha tumne. Aage kya karna chahte ho — agla chapter shuru karein ya koi topic dobara dekhna hai?',
+        content: 'Saare topics ho gaye! Ab is chapter ka quiz do — 70% ya usse zyada laane par chapter complete hoga.',
       }],
-      suggestedActions: [],
+      suggestedActions: [
+        { type: 'start_gate_quiz', label: 'Quiz shuru karo' },
+      ],
       memoryUpdate: {},
     };
     return { ...chapterCompleteResponse, answer: sectionsToAnswerText(chapterCompleteResponse), tokenUsage: 0 };

@@ -1,0 +1,2128 @@
+{
+  "subjectId": "science",
+  "sectionId": "chemistry",
+  "chapterId": "science.chemistry.chapter-05",
+  "chapterTitle": "Periodic Classification of Elements",
+  "questions": [
+    {
+      "questionCode": "sci-chem-ch05-q000044",
+      "topicId": null,
+      "questionText": {
+        "en": "The members of 1st group of the periodic table are",
+        "hi": "आवर्त सारणी के प्रथम वर्ग के सदस्य है",
+        "hinglish": "Aavart sarani ke pratham varg ke sadasya hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "acid metal",
+            "hi": "अम्लीय धातु",
+            "hinglish": "Amlī dhatu"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "alkaline metal",
+            "hi": "क्षारीय धातु",
+            "hinglish": "Kshariy dhatu"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "inert gas",
+            "hi": "अक्रिय गैस",
+            "hinglish": "Akriya gas"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "alloy",
+            "hi": "मिश्र धातु",
+            "hinglish": "Mishradhatu"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000093",
+      "topicId": null,
+      "questionText": {
+        "en": "In moving from left to right across the period of the modern periodic table, the atomic size",
+        "hi": "आधुनिक आवर्त सारणी में बाई से दाई ओर जाने पर परमाणु साइज (आकार) –",
+        "hinglish": "Aadhunik avart sarni mein bai se dai or jaane par parmanoo size (aakar) –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "increases",
+            "hi": "बढ़ता है",
+            "hinglish": "badhata hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "decreases",
+            "hi": "घटता है",
+            "hinglish": "ghatata hai"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "remains unchanged",
+            "hi": "अपरिवर्तित रहता है",
+            "hinglish": "Aparivartit rehta hai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000159",
+      "topicId": null,
+      "questionText": {
+        "en": "Who established law of octaves?",
+        "hi": "किसने ऑक्टेव का नियम स्थापित किया?",
+        "hinglish": "Kisne octaves ka niyam sthapit kiya?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Dobereiner",
+            "hi": "डोबेराइन",
+            "hinglish": "Dobereiner"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Newlands",
+            "hi": "न्यूलैंड्स",
+            "hinglish": "Newlands"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Mendal",
+            "hi": "मेंडेल",
+            "hinglish": "Mendal"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Henry Mosely Ans: Newlands",
+            "hi": "हेनरी मोस्ली उत्तर: न्यूलैंड्स",
+            "hinglish": "Henry Mosely uttar: Newlands"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000160",
+      "topicId": null,
+      "questionText": {
+        "en": "According to modern periodic law properties of elements are a periodic function of their",
+        "hi": "आधुनिक आवर्त कानून के अनुसार तत्वों के गुण उनके",
+        "hinglish": "Aadhunik avart niyam ke anusar tatvon ke gun unke"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "atomic mass",
+            "hi": "परमाणु द्रव्यमान",
+            "hinglish": "parmanoo dravyamaan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "atomic number",
+            "hi": "परमाणु संख्या",
+            "hinglish": "parmanoo sankhya"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Atomic size",
+            "hi": "परमाणु आकार",
+            "hinglish": "parmanoo aakar"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "atomic volume Ans: atomic number",
+            "hi": "परमाणु आयतन उत्तर: परमाणु संख्या",
+            "hinglish": "parmanoo aayatan uttar: parmanoo sankhya"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000189",
+      "topicId": null,
+      "questionText": {
+        "en": "The maximum number of electrons in a shell is",
+        "hi": "किसी कोश में इलेक्ट्रॉनों की अधिकतम संख्या होती है",
+        "hinglish": "Kisi kosh mein electronon ki adhiktam sankhya hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "n²",
+            "hi": "n²",
+            "hinglish": "n²"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2n²",
+            "hi": "2n²",
+            "hinglish": "2n²"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "3n²",
+            "hi": "3n²",
+            "hinglish": "3n²"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "4n²",
+            "hi": "4n²",
+            "hinglish": "4n²"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000261",
+      "topicId": null,
+      "questionText": {
+        "en": "The element of first group of the periodic table is",
+        "hi": "आवर्त सारणी के प्रथम वर्ग के सदस्य होते हैं",
+        "hinglish": "Aavart sarani ke pratham varg ke sadasya hote hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "acidic metal",
+            "hi": "अम्लीय धातु",
+            "hinglish": "Amlik dhatu"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "inert gas",
+            "hi": "अक्रिय गैस",
+            "hinglish": "Akriya gas"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "alkaline metal",
+            "hi": "क्षार धातु",
+            "hinglish": "Kshaar dhatu"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "alloy",
+            "hi": "मिश्र धातु",
+            "hinglish": "Mishradhatu"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000332",
+      "topicId": null,
+      "questionText": {
+        "en": "According to modern periodic law, properties of elements are a periodic function of their",
+        "hi": "आधुनिक आवर्त नियम के अनुसार तत्वों के गुणधर्म निम्नलिखित में किसके आवर्त फलन होते हैं ?",
+        "hinglish": "Aadhunik avart niyam ke anusar tatvon ke gunadharm nimnalikhit mein kiske avart phalan hote hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Atomic masses",
+            "hi": "परमाणु द्रव्यमानों के",
+            "hinglish": "Parmanu dravyamaanon ke"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Atomic numbers",
+            "hi": "परमाणु संख्याओं के",
+            "hinglish": "Parmanu sankhyaon ke"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Atomic size",
+            "hi": "परमाणु आकार के",
+            "hinglish": "Parmanu aakar ke"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Density J 5012-J Page 9 of",
+            "hi": "घनत्व के J 5012-J Page 9 of",
+            "hinglish": "Ghanatva ke J 5012-J Page 9 of"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000333",
+      "topicId": null,
+      "questionText": {
+        "en": "The horizontal rows of modern periodic table are known as which of the following ?",
+        "hi": "आधुनिक आवर्त सारणी की क्षैतिज कतारें निम्नलिखित में क्या कहलाती हैं ?",
+        "hinglish": "Aadhunik avart sarni ki kshetriya kataren nimnalikhit mein kya kehlati hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Periods",
+            "hi": "आवर्त",
+            "hinglish": "Avart"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Groups",
+            "hi": "समूह",
+            "hinglish": "Samuh"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Shells",
+            "hi": "कोश",
+            "hinglish": "Kosh"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000418",
+      "topicId": null,
+      "questionText": {
+        "en": "On moving from left to right in a period of periodic table, atomic radius of element",
+        "hi": "आवर्त सारणी के किसी आवर्त में बाएँ से दाँये जाने पर तत्वों की परमाणु त्रिज्या",
+        "hinglish": "Aavart sarani ke kisi aavart mein baaye se daaye jaane par tatvon ki parmanoo trijya"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "decreases",
+            "hi": "घटती है",
+            "hinglish": "ghatati hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "first decreases and then increase",
+            "hi": "पहले घटती है और पुनः बढ़ती है",
+            "hinglish": "pehle ghatati hai aur punah badhti hai"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "does not change",
+            "hi": "अपरिवर्तित रहती है",
+            "hinglish": "aparivartit rahti hai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "increases",
+            "hi": "बढ़ती है",
+            "hinglish": "badhati hai"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000419",
+      "topicId": null,
+      "questionText": {
+        "en": "Arrange the following elements in the order of their increasing non-metallic character Li, O, C, Be, F",
+        "hi": "निम्नांकित तत्वों को उनके अधातु गुण के अनुसार बढ़ते क्रम में सजाएँ Li, O, C, Be, F",
+        "hinglish": "Nimnankit tatvon ko unke adhatu gun ke anusar badhte kram mein sajaen Li, O, C, Be, F"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "F<O<C<Be<Li",
+            "hi": "F<O<C<Be<Li",
+            "hinglish": "F<O<C<Be<Li"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Li<Be<C<O<F",
+            "hi": "Li<Be<C<O<F",
+            "hinglish": "Li<Be<C<O<F"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "F<O<C<Li<Be",
+            "hi": "F<O<C<Li<Be",
+            "hinglish": "F<O<C<Li<Be"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "F<O<Be<C<Li",
+            "hi": "F<O<Be<C<Li",
+            "hinglish": "F<O<Be<C<Li"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000421",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is an electropositive element ?",
+        "hi": "निम्नांकित में कौन विद्युत् धनात्मक तत्व है ?",
+        "hinglish": "Nimnankit mein kaun vidyut dhanatmak tatva hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "C",
+            "hi": "C",
+            "hinglish": "C"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Cl",
+            "hi": "Cl",
+            "hinglish": "Cl"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "P",
+            "hi": "P",
+            "hinglish": "P"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000552",
+      "topicId": null,
+      "questionText": {
+        "en": "The element of zero group of the Periodic Table is",
+        "hi": "आवर्त्त सारणी के शून्य समूह का तत्व है",
+        "hinglish": "Aavart sarni ke shoonya samuh ka tatva hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cl",
+            "hi": "Cl",
+            "hinglish": "Cl"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "H",
+            "hi": "H",
+            "hinglish": "H"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "He",
+            "hi": "He",
+            "hinglish": "He"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000553",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is the most electronegative element?",
+        "hi": "निम्नांकित में सर्वाधिक विद्युतॠणात्मक तत्व कौन है ?",
+        "hinglish": "Nimnankit mein sarvadhik vidyutriṇatmak tatva kaun hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "F",
+            "hi": "F",
+            "hinglish": "F"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "K",
+            "hi": "K",
+            "hinglish": "K"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "I",
+            "hi": "I",
+            "hinglish": "I"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000703",
+      "topicId": null,
+      "questionText": {
+        "en": "The maximum number of electrons in a shell is",
+        "hi": "किसी कोश में इलेक्ट्रॉनों की अधिकतम संख्या होती है",
+        "hinglish": "Kisi kosh mein electronon ki adhiktam sankhya hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "4n²",
+            "hi": "4n²",
+            "hinglish": "4n²"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "3n²",
+            "hi": "3n²",
+            "hinglish": "3n²"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "2n²",
+            "hi": "2n²",
+            "hinglish": "2n²"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "n²",
+            "hi": "n²",
+            "hinglish": "n²"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000715",
+      "topicId": null,
+      "questionText": {
+        "en": "The valency of all elements in a group of the periodic table is",
+        "hi": "आवर्त सारणी के किसी समूह के सभी तत्वों की संयोजकता होती है",
+        "hinglish": "Aavart sarani ke kisi samuh ke sabhi tatvon ki sanyojkta hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "same",
+            "hi": "समान",
+            "hinglish": "Samaan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "different",
+            "hi": "भिन्न",
+            "hinglish": "Bhinn"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "both (A) and (B)",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000758",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is a metalloid?",
+        "hi": "निम्नांकित में कौन उपधातु है?",
+        "hinglish": "Nimnankit mein kaun upadhatu hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ni",
+            "hi": "Ni",
+            "hinglish": "Ni"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "As",
+            "hi": "As",
+            "hinglish": "As"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000830",
+      "topicId": null,
+      "questionText": {
+        "en": "Which criteria did Mendeleev adopt to prepare the periodic table?",
+        "hi": "मेंडलीफ ने अपनी आवर्त सारणी तैयार करने के लिए कौन-सा मापदंड अपनाया?",
+        "hinglish": "Mendeleev ne apni avart sarni tayar karne ke liye kaun-sa maapdand apnaya?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Number of Neutron",
+            "hi": "न्यूट्रॉन संख्या",
+            "hinglish": "Neutron sankhya"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Atomic mass",
+            "hi": "परमाणु द्रव्यमान",
+            "hinglish": "Parmanu dravyaman"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Atomic number",
+            "hi": "परमाणु संख्या",
+            "hinglish": "Parmanu sankhya"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Number of moles",
+            "hi": "मोल संख्या",
+            "hinglish": "Mol sankhya"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000832",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a member of the halogen group?",
+        "hi": "निम्नलिखित में कौन हैलोजन समूह का सदस्य है?",
+        "hinglish": "Nimnalikhit mein kaun halojen samuh ka sadasya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Barium",
+            "hi": "बेरियम",
+            "hinglish": "Barium"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Boron",
+            "hi": "बोरोन",
+            "hinglish": "Boron"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Bromine",
+            "hi": "ब्रोमिन",
+            "hinglish": "Bromine"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Beryllium",
+            "hi": "बेरिलियम",
+            "hinglish": "Beryllium"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q000932",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following elements has the highest number of valence electrons?",
+        "hi": "निम्नलिखित में किस तत्व में संयोजी इलेक्ट्रॉनों की संख्या सबसे अधिक है ?",
+        "hinglish": "Nimnalikhit mein kis tatva mein sanyojak electronon ki sankhya sabse adhik hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Si",
+            "hi": "Si",
+            "hinglish": "Si"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Al",
+            "hi": "Al",
+            "hinglish": "Al"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "P",
+            "hi": "P",
+            "hinglish": "P"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Na",
+            "hi": "Na",
+            "hinglish": "Na"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001178",
+      "topicId": null,
+      "questionText": {
+        "en": "The vertical columns of the periodic table are called",
+        "hi": "आवर्त सारणी के उदग्र स्तम्भों को कहा जाता है",
+        "hinglish": "Aavart sarani ke udgar stambhon ko kaha jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "group",
+            "hi": "वर्ग",
+            "hinglish": "Varg"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "period",
+            "hi": "आवर्त",
+            "hinglish": "Aavart"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "metalloid",
+            "hi": "अपररूप",
+            "hinglish": "Aparroop"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001179",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a metalloid?",
+        "hi": "निम्नांकित में कौन उपधातु है ?",
+        "hinglish": "Nimnankit mein kaun upadhatu hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Fe",
+            "hi": "Fe",
+            "hinglish": "Fe"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Cu",
+            "hi": "Cu",
+            "hinglish": "Cu"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ni",
+            "hi": "Ni",
+            "hinglish": "Ni"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Sb",
+            "hi": "Sb",
+            "hinglish": "Sb"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001222",
+      "topicId": null,
+      "questionText": {
+        "en": "Is a member of the first group of the periodic table",
+        "hi": "आवर्त सारणी के प्रथम वर्ग के सदस्य है",
+        "hinglish": "Aavart sarani ke pratham varg ke sadasya hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Acidic metal",
+            "hi": "अम्लीय धातु",
+            "hinglish": "Amlī dhatu"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Alkaline metal",
+            "hi": "क्षारीय धातु",
+            "hinglish": "Kshariy dhatu"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Noble gas",
+            "hi": "अक्रिय गैस",
+            "hinglish": "Akriya gas"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "alloy",
+            "hi": "मिश्र धातु",
+            "hinglish": "Mishradhatu"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001272",
+      "topicId": null,
+      "questionText": {
+        "en": "How many vertical column (Groups) are in modern periodic table?",
+        "hi": "आधुनिक आवर्त सारणी में कितने उर्ध्व स्तम्भ हैं?",
+        "hinglish": "Aadhunik avart sarani mein kitne urdhv stambh hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "9",
+            "hi": "9",
+            "hinglish": "9"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "15",
+            "hi": "15",
+            "hinglish": "15"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001278",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of sodium is",
+        "hi": "सोडियम की परमाणु संख्या है",
+        "hinglish": "Sodium ki parmanoo sankhya hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "20",
+            "hi": "20",
+            "hinglish": "20"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001286",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of Potassium is",
+        "hi": "पोटैशियम की परमाणु संख्या है",
+        "hinglish": "Potassium ki parmanoo sankhya hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "19",
+            "hi": "19",
+            "hinglish": "19"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "20",
+            "hi": "20",
+            "hinglish": "20"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001290",
+      "topicId": null,
+      "questionText": {
+        "en": "How many electrons are there in the outermost shell of lithium?",
+        "hi": "लिथियम के बाह्यतम शेल में कितने इलेक्ट्रॉन विद्यमान है ?",
+        "hinglish": "Lithium ke baahytam shell mein kitne electron vidyamaan hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001291",
+      "topicId": null,
+      "questionText": {
+        "en": "The number of electrons in the outermost shell of non-metal can be",
+        "hi": "किसी अधातु के बाह्तम शेल में इलेक्ट्रॉनों की संख्या हो सकती है ?",
+        "hinglish": "Kisi adhatu ke baahtham shell mein electronon ki sankhya ho sakti hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "3, 4, 5 or 6",
+            "hi": "3, 4, 5 or 6",
+            "hinglish": "3, 4, 5 ya 6"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "4, 5, 6 or 7",
+            "hi": "4, 5, 6 or 7",
+            "hinglish": "4, 5, 6 or 7"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "1, 2, 3 or 4",
+            "hi": "1, 2, 3 or 4",
+            "hinglish": "1, 2, 3 ya 4"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "2, 3, 4 or 5",
+            "hi": "2, 3, 4 or 5",
+            "hinglish": "2, 3, 4 or 5"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001292",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of an element is 16. What is the group number of this element in periodic Table?",
+        "hi": "एक तत्व की परमाणु संख्या 16 है, आवर्त सारणी में इस तत्व की वर्ग संख्या क्या है?",
+        "hinglish": "Ek tatva ki parmanoo sankhya 16 hai, avart sarni mein is tatva ki varg sankhya kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "15",
+            "hi": "15",
+            "hinglish": "15"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001299",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of potassium is 19. What is the valency?",
+        "hi": "पोटैशियम की परमाणु संख्या 19 है। इसकी संयोजकता क्या है ?",
+        "hinglish": "Potassium ki parmanoo sankhya 19 hai. Iski sanyojkta kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001300",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the atomic number of fluorine?",
+        "hi": "फ्लोरिन की परमाणु संख्या क्या है ?",
+        "hinglish": "Fluorine ki parmanoo sankhya kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "9",
+            "hi": "9",
+            "hinglish": "9"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "19",
+            "hi": "19",
+            "hinglish": "19"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "29",
+            "hi": "29",
+            "hinglish": "29"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "39",
+            "hi": "39",
+            "hinglish": "39"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001302",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the atomic weight of oxygen?",
+        "hi": "ऑक्सीजन का परमाणु भार क्या है ?",
+        "hinglish": "Oxygen ka parmanu bhaar kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "12",
+            "hi": "12",
+            "hinglish": "12"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001303",
+      "topicId": null,
+      "questionText": {
+        "en": "Boron and aluminium belong to which group of elements in periodic table?",
+        "hi": "बोरॉन एवं ऐलुमिनियम आवर्त सारणी के किस वर्ग के तत्व हैं ?",
+        "hinglish": "Boron aur aluminium avart sarni ke kis varg ke tatva hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "13",
+            "hi": "13",
+            "hinglish": "13"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001304",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of gold is",
+        "hi": "सोना की परमाणु संख्या है",
+        "hinglish": "Sona ki parmanoo sankhya hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "23",
+            "hi": "23",
+            "hinglish": "23"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "43",
+            "hi": "43",
+            "hinglish": "43"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "79",
+            "hi": "79",
+            "hinglish": "79"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "80",
+            "hi": "80",
+            "hinglish": "80"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001306",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the number of elements in the third group of the periodic table?",
+        "hi": "आवर्त सारणी के तृतीय वर्ग में तत्वों की संख्या कितनी है?",
+        "hinglish": "Aavart sarani ke tritiya varg mein tatvon ki sankhya kitni hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "12",
+            "hi": "12",
+            "hinglish": "12"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001307",
+      "topicId": null,
+      "questionText": {
+        "en": "The electronic configuration of an element is 2, 8, 7. What is the atomic number of the element?",
+        "hi": "एक तत्व का इलेक्ट्रॉनिक विन्यास 2, 8, 7 है। इस तत्व की परमाणु संख्या क्या है?",
+        "hinglish": "Ek tatva ka electronic vinyaas 2, 8, 7 hai. Is tatva ki parmanoo sankhya kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "19",
+            "hi": "19",
+            "hinglish": "19"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001316",
+      "topicId": null,
+      "questionText": {
+        "en": "The valency of oxygen is",
+        "hi": "ऑक्सीजन की संयोजकता होती है –",
+        "hinglish": "Oxygen ki sanyojkta hoti hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "0",
+            "hi": "0",
+            "hinglish": "0"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001317",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of Sulphur is",
+        "hi": "गंधक की परमाणु संख्या है –",
+        "hinglish": "Gandhak ki parmanoo sankhya hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "15",
+            "hi": "15",
+            "hinglish": "15"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "17",
+            "hi": "17",
+            "hinglish": "17"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001320",
+      "topicId": null,
+      "questionText": {
+        "en": "How many periods are there in the periodic table?",
+        "hi": "आवर्त सारणी में कितने आवर्त्त होते हैं ?",
+        "hinglish": "Aavart sarni mein kitne aavart hote hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "6",
+            "hi": "6",
+            "hinglish": "6"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001321",
+      "topicId": null,
+      "questionText": {
+        "en": "The atomic number of Potassium is 19. What is its valency?",
+        "hi": "पोटेशियम की परमाणु संख्या 19 है। इसकी संयोजकता क्या है ?",
+        "hinglish": "Potassium ki parmanu sankhya 19 hai. Iski sanyojkta kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1",
+            "hi": "1",
+            "hinglish": "1"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch05-q001322",
+      "topicId": null,
+      "questionText": {
+        "en": "The number of vertical columns in the modern periodic table is",
+        "hi": "आधुनिक आर्वत सारणी में उर्ध्वाधर स्तंभों की संख्या होती है –",
+        "hinglish": "Aadhunik aavart sarni mein uardhvaadhar stambhon ki sankhya hoti hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "16",
+            "hi": "16",
+            "hinglish": "16"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "18",
+            "hi": "18",
+            "hinglish": "18"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    }
+  ]
+}

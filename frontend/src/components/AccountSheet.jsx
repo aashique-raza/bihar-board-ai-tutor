@@ -3,6 +3,7 @@ import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import HelpOutlineRounded from '@mui/icons-material/HelpOutlineRounded';
 import LogoutRounded from '@mui/icons-material/LogoutRounded';
+import QuizRounded from '@mui/icons-material/QuizRounded';
 import { useNavigate } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout.js';
 
@@ -11,6 +12,11 @@ import { useLogout } from '../hooks/useLogout.js';
 export default function AccountSheet({ isOpen, onClose, user }) {
   const navigate = useNavigate();
   const logout = useLogout();
+
+  const handleQuiz = () => {
+    onClose();
+    navigate('/quiz');
+  };
 
   const handleSupport = () => {
     onClose();
@@ -71,6 +77,23 @@ export default function AccountSheet({ isOpen, onClose, user }) {
 
       {/* Menu items */}
       <Box sx={{ pb: 1 }}>
+        <Box
+          onClick={handleQuiz}
+          sx={{
+            px: 2,
+            py: 1.5,
+            fontSize: '0.875rem',
+            color: 'var(--text-primary)',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1.25,
+            '&:hover': { bgcolor: 'var(--bg-hover)' },
+          }}
+        >
+          <QuizRounded sx={{ fontSize: 20 }} />
+          Practice Quiz
+        </Box>
         <Box
           onClick={handleSupport}
           sx={{

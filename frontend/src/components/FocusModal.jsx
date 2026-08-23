@@ -230,6 +230,10 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
                   // no frontend lookup needed.
                   const hinglishTitle = cp.hinglishTitle || chapterTitleMap[cp.chapterId];
                   const pct = Math.round(cp.progressPercent ?? 0);
+                  // All topics are done, chapter just hasn't cleared its gate quiz yet —
+                  // show that instead of a "100% ho gaya" line, which would misleadingly
+                  // read as fully complete.
+                  const isAwaitingQuiz = cp.status === 'awaiting_quiz';
                   return (
                     <button
                       key={cp.chapterId}
@@ -238,16 +242,21 @@ function FocusModal({ isOpen, isLoading, selectedChapterId, studyMap, onClose, o
                       onClick={() => onSelectChapter(cp.chapterId)}
                       style={{ textAlign: 'left', flex: '1 1 180px', maxWidth: 260 }}
                     >
-                      <Typography component="span" sx={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.4, mb: 0.75 }}>
-                        {hinglishTitle}
-                      </Typography>
+                      <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 0.75, mb: 0.75 }}>
+                        <Typography component="span" sx={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1.4 }}>
+                          {hinglishTitle}
+                        </Typography>
+                        {isAwaitingQuiz && <span className="quiz-type-note">Quiz Pending</span>}
+                      </Box>
                       {/* Mini progress bar */}
                       <Box sx={{ width: '100%', height: 3, bgcolor: 'var(--border)', borderRadius: 2, overflow: 'hidden', mb: 0.5 }}>
                         <Box sx={{ height: '100%', bgcolor: 'var(--primary)', width: `${pct}%`, borderRadius: 2 }} />
                       </Box>
-                      <Typography component="span" sx={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
-                        {pct}% ho gaya
-                      </Typography>
+                      {!isAwaitingQuiz && (
+                        <Typography component="span" sx={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
+                          {pct}% ho gaya
+                        </Typography>
+                      )}
                     </button>
                   );
                 })}

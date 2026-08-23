@@ -26,9 +26,14 @@ const chapterProgressSchema = new mongoose.Schema(
     // ─── Status ──────────────────────────────────────────────────────────────
     status: {
       type:    String,
-      enum:    ['not_started', 'in_progress', 'completed', 'revising'],
+      enum:    ['not_started', 'in_progress', 'awaiting_quiz', 'completed', 'revising'],
       default: 'in_progress',
     },
+
+    // ─── Quiz Gate (Phase 3) ─────────────────────────────────────────────────
+    quizGateBestScore: { type: Number, default: null }, // best percentage achieved on this chapter's gate quiz
+    quizGateAttempts:  { type: Number, default: 0    }, // total gate quiz attempts
+    lastQuizAttemptId: { type: mongoose.Schema.Types.ObjectId, default: null }, // -> QuizAttempt._id
 
     // ─── Progress Pointers ───────────────────────────────────────────────────
     currentTopicId:    { type: String,   default: null },

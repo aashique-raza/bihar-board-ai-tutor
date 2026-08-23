@@ -1,0 +1,3559 @@
+{
+  "subjectId": "science",
+  "sectionId": "chemistry",
+  "chapterId": "science.chemistry.chapter-02",
+  "chapterTitle": "Acids, Bases and Salts",
+  "questions": [
+    {
+      "questionCode": "sci-chem-ch02-q000045",
+      "topicId": null,
+      "questionText": {
+        "en": "The presence of CO2 gas in atmosphere is",
+        "hi": "वायुमंडल में CO2 गैस की उपस्थिति है",
+        "hinglish": "Vayumandal mein CO2 gas ki upasthiti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "0.01%",
+            "hi": "0.01%",
+            "hinglish": "0.01%"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "0.05%",
+            "hi": "0.05%",
+            "hinglish": "0.05%"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "0.03%",
+            "hi": "0.03%",
+            "hinglish": "0.03%"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "0.02%",
+            "hi": "0.02%",
+            "hinglish": "0.02%"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000046",
+      "topicId": null,
+      "questionText": {
+        "en": "'NaOH' is",
+        "hi": "'NaOH' है",
+        "hinglish": "'NaOH' hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "acid",
+            "hi": "अम्ल",
+            "hinglish": "Aml"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "alkali",
+            "hi": "क्षार",
+            "hinglish": "Kshaar"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "salt",
+            "hi": "लवण",
+            "hinglish": "Lavan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000085",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is slaked lime?",
+        "hi": "निम्नलिखित में से कौन सा बुझा हुआ चूना है?",
+        "hinglish": "Nimnalikhit mein se kaun sa bujha hua chuna hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaO",
+            "hi": "CaO",
+            "hinglish": "CaO"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ca(OH)₂",
+            "hi": "Ca(OH)₂",
+            "hinglish": "Ca(OH)₂"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CaCO₃",
+            "hi": "CaCO₃",
+            "hinglish": "CaCO₃"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Ca",
+            "hi": "Ca",
+            "hinglish": "Ca"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000088",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is the natural source of Oxalic acid?",
+        "hi": "ऑक्सैलिक अम्ल का प्राकृतिक स्रोत निम्नलिखित में कौन है?",
+        "hinglish": "Oxalic aml ka prakritik srot nimnalikhit mein kaun hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Orange",
+            "hi": "संतरा",
+            "hinglish": "Santra"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Tomato",
+            "hi": "टमाटर",
+            "hinglish": "Tamatar"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Vinegar",
+            "hi": "सिरका",
+            "hinglish": "Sirka"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Tamarind",
+            "hi": "इमली",
+            "hinglish": "Imli"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000090",
+      "topicId": null,
+      "questionText": {
+        "en": "In what ratio, the concentrated Hydrochloric acid and the concentrated Nitric acid solutions are present in freshly prepared aqua regia (royal water) solution",
+        "hi": "ऐक्वा रेजिया (रॉयल जल) किस अनुपात में सान्द्र हाइड्रोक्लोरिक अम्ल एवं सांद्र नाइट्रिक अम्ल का ताजा मिश्रण होता है?",
+        "hinglish": "Aqua regia (Royal jal) kis anupaat mein saandr hydrochloric aml aur saandr nitric aml ka taza mishran hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "3:2",
+            "hi": "3:2",
+            "hinglish": "3:2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2:3",
+            "hi": "2:3",
+            "hinglish": "2:3"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "3:1",
+            "hi": "3:1",
+            "hinglish": "3:1"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "1:3",
+            "hi": "1:3",
+            "hinglish": "1:3"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000095",
+      "topicId": null,
+      "questionText": {
+        "en": "A student adds a few drops of universal indicator to a dilute solution of sodium bicarbonate taken in a test tube, which of the following colours would be observed?",
+        "hi": "एक छात्र जाँच परखनली में लिए गये सोडियम बाइकार्बोनेट के तनु विलयन में सार्वत्रिक सूचक की कुछ बूँदें मिलाता है, तो निम्नलिखित में कौन सा रंग दिखेगा?",
+        "hinglish": "Ek chaatra jaanch parakhanli mein liye gaye sodium bicarbonate ke tanu vilayan mein saarvatrik suchak ki kuch boondein milata hai, to nimnalikhit mein kaun sa rang dikhai dega?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Orange",
+            "hi": "नारंगी",
+            "hinglish": "Narangi"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000155",
+      "topicId": null,
+      "questionText": {
+        "en": "Which chemical compound on heating becomes plaster of Paris? Bleaching powder gypsum limestone quicklime?",
+        "hi": "कौन सा रासायनिक यौगिक गर्म करने पर प्लास्टर ऑफ पेरिस बनता है? ब्लीचिंग पाउडर, जिप्सम, चूना पत्थर,quicklime?",
+        "hinglish": "Kaun sa rasayanik yaugik garm karne par plaster of Paris banta hai? Bleaching powder, gypsum, chuna patthar, quicklime?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Bleaching powder",
+            "hi": "ब्लीचिंग पाउडर",
+            "hinglish": "Bleaching powder"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "gypsum",
+            "hi": "जिप्सम",
+            "hinglish": "Jipsam"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Limestone",
+            "hi": "चूना पत्थर",
+            "hinglish": "Chuna patthar"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "quicklime Ans: gypsum",
+            "hi": "quicklime उत्तर: जिप्सम",
+            "hinglish": "Quicklime Uttar: Jipsam"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000161",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following and can turn red litmus solution?",
+        "hi": "निम्नलिखित में से कौन सा लाल लिटमस घोल को लाल कर सकता है?",
+        "hinglish": "Nimnalikhit mein se kaun sa laal litmus ghol ko laal kar sakta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "H+",
+            "hi": "H+",
+            "hinglish": "H+"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "OH-",
+            "hi": "OH-",
+            "hinglish": "OH-"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "C",
+            "hi": "सी",
+            "hinglish": "Si"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "O2- Ans: OH-",
+            "hi": "O2- उत्तर: OH-",
+            "hinglish": "O2- uttar: OH-"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000204",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the chemical formula for marble?",
+        "hi": "संगमरमर का रासायनिक सूत्र क्या है?",
+        "hinglish": "Sangmarmar ka rasayanik sutra kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaO",
+            "hi": "CaO",
+            "hinglish": "CaO"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ca(OH)2",
+            "hi": "Ca(OH)2",
+            "hinglish": "Ca(OH)2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CaCO3",
+            "hi": "CaCO3",
+            "hinglish": "CaCO3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमे से कोई नही",
+            "hinglish": "Inme se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000238",
+      "topicId": null,
+      "questionText": {
+        "en": "Tooth paste is",
+        "hi": "टूथ पेस्ट कैसा होता है?",
+        "hinglish": "Tooth paste kaisa hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "acidic",
+            "hi": "अम्लीय",
+            "hinglish": "Amliya"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "basic (alkaline)",
+            "hi": "क्षारीय",
+            "hinglish": "Kshariy"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "neutral",
+            "hi": "उदासीन",
+            "hinglish": "Nimnalikhit mein kaun vidyut ka suchalak hai?"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "all of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000266",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a salt?",
+        "hi": "निम्नलिखित में कौन लवण है?",
+        "hinglish": "Nimnalikhit mein kaun lavan hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "HCl",
+            "hi": "HCl",
+            "hinglish": "HCl"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "NaOH",
+            "hi": "NaOH",
+            "hinglish": "NaOH"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "K2SO4",
+            "hi": "K2SO4",
+            "hinglish": "K2SO4"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "NH4OH",
+            "hi": "NH4OH",
+            "hinglish": "NH4OH"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000336",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following gases turns lime water milky ?",
+        "hi": "निम्नलिखित में से कौन गैस चूने के पानी को दुधिया कर देता है ?",
+        "hinglish": "Nimnalikhit mein se kaun gas chune ke paani ko dudhiya kar deta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cl2",
+            "hi": "Cl2",
+            "hinglish": "Cl2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "SO2",
+            "hi": "SO2",
+            "hinglish": "SO2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "O2 J 5012-J Page 10 of",
+            "hi": "O2 J 5012-J Page 10 of",
+            "hinglish": "O2 J 5012-J Page 10 of"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000337",
+      "topicId": null,
+      "questionText": {
+        "en": "Tartaric acid is found in which one of the following ?",
+        "hi": "टारटैरिक अम्ल निम्नलिखित में से किसमें पाया जाता है ?",
+        "hinglish": "Tartaric acid nimnalikhit mein se kis mein paaya jaata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Tomato",
+            "hi": "टमाटर",
+            "hinglish": "Tamatar"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Orange",
+            "hi": "संतरा",
+            "hinglish": "Santra"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Vinegar",
+            "hi": "सिरका",
+            "hinglish": "Sirka"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Tamarind",
+            "hi": "इमली",
+            "hinglish": "Imli"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000338",
+      "topicId": null,
+      "questionText": {
+        "en": "The chemical formula of Gypsum is",
+        "hi": "जिप्सम का रासायनिक सूत्र है",
+        "hinglish": "Gypsum ka rasayanik sutra hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaSO4.½H2O",
+            "hi": "CaSO4.½H2O",
+            "hinglish": "CaSO4.½H2O"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CaSO4.2H2O",
+            "hi": "CaSO4.2H2O",
+            "hinglish": "CaSO4.2H2O"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CaSO4.10H2O",
+            "hi": "CaSO4.10H2O",
+            "hinglish": "CaSO4.10H2O"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000350",
+      "topicId": null,
+      "questionText": {
+        "en": "The molecular formula of washing soda is",
+        "hi": "धोने का सोडा का आणविक सूत्र है",
+        "hinglish": "Dhone ka soda ka aanvik sutra hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Na2CO3",
+            "hi": "Na2CO3",
+            "hinglish": "Na2CO3"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Na2CO3.2H2O",
+            "hi": "Na2CO3.2H2O",
+            "hinglish": "Na2CO3.2H2O"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Na2CO3.10H2O",
+            "hi": "Na2CO3.10H2O",
+            "hinglish": "Na2CO3.10H2O"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Na2CO3.5H2O",
+            "hi": "Na2CO3.5H2O",
+            "hinglish": "Na2CO3.5H2O"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000351",
+      "topicId": null,
+      "questionText": {
+        "en": "Bee-sting leaves an acid which causes pain and irritation. The acid is",
+        "hi": "मधुमक्खी का डंक एक अम्ल छोड़ता है, जिसके कारण दर्द एवं जलन का अनुभव होता है। यह अम्ल है",
+        "hinglish": "Madhumakkhi ka dank ek aml chhodta hai, jiske karan dard aur jalan ka anubhav hota hai. Yeh aml hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Methanoic acid",
+            "hi": "मेथेनॉइक अम्ल",
+            "hinglish": "Methanoic aml"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ethanoic acid",
+            "hi": "इथेनॉइक अम्ल",
+            "hinglish": "Ethanoic aml"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Citric acid",
+            "hi": "सिट्रिक अम्ल",
+            "hinglish": "Citric aml"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Oxalic acid J 5012-J Page 14 of",
+            "hi": "आक्जेलिक अम्ल J 5012-J Page 14 of",
+            "hinglish": "Aakzelik aml J 5012-J Page 14 of"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000412",
+      "topicId": null,
+      "questionText": {
+        "en": "The chemical formula of lime water is",
+        "hi": "चूना जल का रासायनिक सूत्र है",
+        "hinglish": "Choona jal ka rasayanik sutra hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaO",
+            "hi": "CaO",
+            "hinglish": "CaO"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CaCl2",
+            "hi": "CaCl2",
+            "hinglish": "CaCl2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CaOCl2",
+            "hi": "CaOCl2",
+            "hinglish": "CaOCl2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Ca(OH)2",
+            "hi": "Ca(OH)2",
+            "hinglish": "Ca(OH)2"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000416",
+      "topicId": null,
+      "questionText": {
+        "en": "Sodium salts of higher fatty acids are known as",
+        "hi": "उच्च वसीय अम्लों के सोडियम लवण कहलाते हैं",
+        "hinglish": "Uch vasiye amlon ke sodium lavan kehlate hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Soap",
+            "hi": "साबुन",
+            "hinglish": "Sabun"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Detergent",
+            "hi": "अपमार्जक",
+            "hinglish": "Apmaarjak"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Plastic",
+            "hi": "प्लास्टिक",
+            "hinglish": "Plastic"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Rubber",
+            "hi": "रबर",
+            "hinglish": "Rubber"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000430",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a weak acid ?",
+        "hi": "निम्नलिखित में कौन दुर्बल अम्ल है ?",
+        "hinglish": "Nimnalikhit mein kaun durbal aml hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "HNO3",
+            "hi": "HNO3",
+            "hinglish": "HNO3"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "HCl",
+            "hi": "HCl",
+            "hinglish": "HCl"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CH3COOH",
+            "hi": "CH3COOH",
+            "hinglish": "CH3COOH"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "H2SO4",
+            "hi": "H2SO4",
+            "hinglish": "H2SO4"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000544",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the chemical formula of washing soda ?",
+        "hi": "धोबिया सोडा का रासायनिक सूत्र क्या है ?",
+        "hinglish": "Dhobiya soda ka rasayanik sutra kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Na2CO3.10H2O",
+            "hi": "Na2CO3.10H2O",
+            "hinglish": "Na2CO3.10H2O"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Na2CO3.7H2O",
+            "hi": "Na2CO3.7H2O",
+            "hinglish": "Na2CO3.7H2O"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Na2CO3.5H2O",
+            "hi": "Na2CO3.5H2O",
+            "hinglish": "Na2CO3.5H2O"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Na2CO3.H2O",
+            "hi": "Na2CO3.H2O",
+            "hinglish": "Na2CO3.H2O"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000545",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is the strongest base?",
+        "hi": "निम्नांकित में कौन प्रबल क्षारक है ?",
+        "hinglish": "Nimnankit mein kaun prabal kshaarak hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Mg(OH)2",
+            "hi": "Mg(OH)2",
+            "hinglish": "Mg(OH)2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "NH4OH",
+            "hi": "NH4OH",
+            "hinglish": "NH4OH"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "NaOH",
+            "hi": "NaOH",
+            "hinglish": "NaOH"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Cu(OH)2",
+            "hi": "Cu(OH)2",
+            "hinglish": "Cu(OH)2"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000550",
+      "topicId": null,
+      "questionText": {
+        "en": "The aqueous solution of an acid conducts electricity because an acid is",
+        "hi": "अम्ल का जलीय विलयन विद्युत का संचालन करता है, क्योंकि अम्ल जल में",
+        "hinglish": "Aml ka jaliye vilayan vidyut ka sancharan karta hai, kyunki aml jal mein"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "soluble in water",
+            "hi": "विलेय होता है",
+            "hinglish": "Vileya hota hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "insoluble in water",
+            "hi": "अविलेय होता है",
+            "hinglish": "Avileya hota hai"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "ionized in water",
+            "hi": "आयनित होता है",
+            "hinglish": "Ayanit hota hai"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000555",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the pH value of our body?",
+        "hi": "हमारा शरीर का pH मान क्या है ?",
+        "hinglish": "Hamara sharir ka pH maan kya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "2-3",
+            "hi": "2-3",
+            "hinglish": "2-3"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "5-7",
+            "hi": "5-7",
+            "hinglish": "5-7"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "7.0-7.8",
+            "hi": "7.0-7.8",
+            "hinglish": "7.0-7.8"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "9.1-9.5",
+            "hi": "9.1-9.5",
+            "hinglish": "9.1-9.5"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000556",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following compounds is an acid ?",
+        "hi": "निम्नांकित यौगिकों में कौन अम्ल है ?",
+        "hinglish": "Nimnankit yaugikon mein kaun aml hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Na2O",
+            "hi": "Na2O",
+            "hinglish": "Na2O"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CuO",
+            "hi": "CuO",
+            "hinglish": "CuO"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ca(OH)2",
+            "hi": "Ca(OH)2",
+            "hinglish": "Ca(OH)2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "H2SO4 Which one of the following compounds is an acid? A. Na2O B. CuO C. Ca(OH)2 D. H2SO4",
+            "hi": "H2SO4 A. Na2O B. CuO C. Ca(OH)2 D. H2SO4",
+            "hinglish": "H2SO4 A. Na2O B. CuO C. Ca(OH)2 D. H2SO4"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000557",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is Synthetic Indicator?",
+        "hi": "निम्नांकित में कौन संश्लेषित सूचक है ?",
+        "hinglish": "Nimnankit mein kaun sanshleshit suchak hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Turmeric",
+            "hi": "हल्दी",
+            "hinglish": "Haldi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Litmus Paper",
+            "hi": "लिटमस पत्र",
+            "hinglish": "Litmus patra"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Methyl Orange",
+            "hi": "मेथिल ऑरेंज",
+            "hinglish": "Methyl Orange"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Red Cabbage",
+            "hi": "लाल पत्तागोभी",
+            "hinglish": "Laal pattagobhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000558",
+      "topicId": null,
+      "questionText": {
+        "en": "Carbon dioxide reacts with water to form",
+        "hi": "कार्बन डाइऑक्साइड जल से अभिक्रिया करके बनाता है",
+        "hinglish": "Carbon dioxide jal se abhikraya karke banata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Sulphuric acid",
+            "hi": "सल्फ्यूरिक अम्ल",
+            "hinglish": "Sulphuric aml"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Carbolic acid",
+            "hi": "कार्बोलिक अम्ल",
+            "hinglish": "Carbolic aml"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Carbonic acid",
+            "hi": "कार्बोनिक अम्ल",
+            "hinglish": "Carbonic aml"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Hydrochloric acid",
+            "hi": "हाइड्रोक्लोरिक अम्ल",
+            "hinglish": "Hydrochloric aml"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000559",
+      "topicId": null,
+      "questionText": {
+        "en": "The chemical composition of Copper pyrite is",
+        "hi": "कॉपर पाइराइट्स का रासायनिक संघटन है ?",
+        "hinglish": "Copper pyrites ka rasayanik sangathan hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cu2FeS",
+            "hi": "Cu2FeS",
+            "hinglish": "Cu2FeS"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CuFeS2",
+            "hi": "CuFeS2",
+            "hinglish": "CuFeS2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CuFe2S",
+            "hi": "CuFe2S",
+            "hinglish": "CuFe2S"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Cu2FeS2",
+            "hi": "Cu2FeS2",
+            "hinglish": "Cu2FeS2"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000609",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is a strong base?",
+        "hi": "निम्नांकित में से कौन प्रबल क्षारक है ?",
+        "hinglish": "Nimnankit mein se kaun prabal kshaarak hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "NaOH",
+            "hi": "NaOH",
+            "hinglish": "NaOH"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Cu(OH)2",
+            "hi": "Cu(OH)2",
+            "hinglish": "Cu(OH)2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "NH4OH",
+            "hi": "NH4OH",
+            "hinglish": "NH4OH"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Mg(OH)2",
+            "hi": "Mg(OH)2",
+            "hinglish": "Mg(OH)2"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000613",
+      "topicId": null,
+      "questionText": {
+        "en": "The hardest part of the teeth is",
+        "hi": "दाँत का कठोरतम भाग है",
+        "hinglish": "Daant ka kathortam bhaag hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "dentine",
+            "hi": "डेंटाइन",
+            "hinglish": "Dentine"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "enamel",
+            "hi": "इनामेल",
+            "hinglish": "Inamel"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "pulp cavity",
+            "hi": "मज्जा गुहा",
+            "hinglish": "Majja guha"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "canine",
+            "hi": "केनाइन",
+            "hinglish": "K9"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000622",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a natural indicator?",
+        "hi": "निम्नांकित में से प्राकृतिक सूचक कौन है ?",
+        "hinglish": "Nimnankit mein se prakritik suchak kaun hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Phenolphthalein",
+            "hi": "फेनॉल्फ्थैलीन",
+            "hinglish": "Phenolphthalein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Turmeric",
+            "hi": "हल्दी",
+            "hinglish": "Haldi"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Methyl orange",
+            "hi": "मेथिल ऑरेंज",
+            "hinglish": "Methyl orange"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000623",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the chemical formula of washing soda?",
+        "hi": "धोबिया सोडा का रासायनिक सूत्र क्या है ?",
+        "hinglish": "Dhobiya soda ka rasayanik sutra kya hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Na2CO3.7H2O",
+            "hi": "Na2CO3.7H2O",
+            "hinglish": "Na2CO3.7H2O"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Na2CO3.5H2O",
+            "hi": "Na2CO3.5H2O",
+            "hinglish": "Na2CO3.5H2O"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Na2CO3.10H2O",
+            "hi": "Na2CO3.10H2O",
+            "hinglish": "Na2CO3.10H2O"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Na2CO3.H2O",
+            "hi": "Na2CO3.H2O",
+            "hinglish": "Na2CO3.H2O"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000626",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following ions can turn red litmus paper blue?",
+        "hi": "निम्नांकित में से कौन-सा आयन लाल लिटमस पत्र को नीला कर सकता है ?",
+        "hinglish": "Nimnankit mein se kaun-sa aayan laal litmus patra ko neela kar sakta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "H+",
+            "hi": "H+",
+            "hinglish": "H+"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "OH-",
+            "hi": "OH-",
+            "hinglish": "OH-"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "O2-",
+            "hi": "O2-",
+            "hinglish": "O2-"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000650",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the common name of CaOCl2?",
+        "hi": "CaOCl2 का प्रचलित (साधारण) नाम क्या है ?",
+        "hinglish": "CaOCl2 ka prachalit (sadharan) naam kya hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Calcium chloro oxide",
+            "hi": "कैल्सियम क्लोरो ऑक्साइड",
+            "hinglish": "Kailshiyam chloro oxide"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Calcium oxy oxide",
+            "hi": "कैल्सियम ऑक्सी ऑक्साइड",
+            "hinglish": "Kailshiyam oxy oxide"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Bleaching powder",
+            "hi": "विरंजक चूर्ण",
+            "hinglish": "Viranjak churna"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Calcium chloride",
+            "hi": "कैल्सियम क्लोराइड",
+            "hinglish": "Kailshiyam chloride"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000651",
+      "topicId": null,
+      "questionText": {
+        "en": "Iodized salt is",
+        "hi": "आयोडीनयुक्त नमक है",
+        "hinglish": "Iodized salt hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "NaCl + KIO3",
+            "hi": "NaCl + KIO3",
+            "hinglish": "NaCl + KIO3"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "NaCl + KI",
+            "hi": "NaCl + KI",
+            "hinglish": "NaCl + KI"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "both (A) and (B)",
+            "hi": "(A) और (B) दोनों",
+            "hinglish": "(A) aur (B) dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000655",
+      "topicId": null,
+      "questionText": {
+        "en": "The sodium salts of higher fatty acids are called",
+        "hi": "उच्च वसीय अम्लों के सोडियम लवण कहलाते हैं",
+        "hinglish": "Uch vasiye aml ke sodium lavan kehlate hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "rubber",
+            "hi": "रबर",
+            "hinglish": "Rubber"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "plastic",
+            "hi": "प्लास्टिक",
+            "hinglish": "Plastic"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "soap",
+            "hi": "साबुन",
+            "hinglish": "Sabun"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "detergent",
+            "hi": "अपमार्जक",
+            "hinglish": "Apmaarjak"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000707",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is a salt?",
+        "hi": "निम्नलिखित में कौन लवण है?",
+        "hinglish": "Nimnalikhit mein kaun lavan hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "HCl",
+            "hi": "HCl",
+            "hinglish": "HCl"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "NH4OH",
+            "hi": "NH4OH",
+            "hinglish": "NH4OH"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "NaOH",
+            "hi": "NaOH",
+            "hinglish": "NaOH"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "K2SO4",
+            "hi": "K2SO4",
+            "hinglish": "K2SO4"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000721",
+      "topicId": null,
+      "questionText": {
+        "en": "The molecular formula of sodium phosphate is",
+        "hi": "सोडियम फॉस्फेट का अणुसूत्र होता है",
+        "hinglish": "Sodium phosphate ka anusootra hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "NaPO4",
+            "hi": "NaPO4",
+            "hinglish": "NaPO4"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Na3PO4",
+            "hi": "Na3PO4",
+            "hinglish": "Na3PO4"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Na2(PO4)3",
+            "hi": "Na2(PO4)3",
+            "hinglish": "Na2(PO4)3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Na2PO4",
+            "hi": "Na2PO4",
+            "hinglish": "Na2PO4"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000738",
+      "topicId": null,
+      "questionText": {
+        "en": "All acids dissolve in water to give",
+        "hi": "सभी अम्ल जल में घुलकर प्रदान करते हैं",
+        "hinglish": "Sabhi aml jal mein ghulkar pradaan karte hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "H+ ion",
+            "hi": "H+ आयन",
+            "hinglish": "H+ aayan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "OH- ion",
+            "hi": "OH- आयन",
+            "hinglish": "OH- aayan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "electron",
+            "hi": "इलेक्ट्रॉन",
+            "hinglish": "electron"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "neutron",
+            "hi": "न्यूट्रॉन",
+            "hinglish": "neutron"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000739",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following compounds is a weak acid?",
+        "hi": "निम्नांकित यौगिकों में कौन दुर्बल अम्ल है?",
+        "hinglish": "Nimnankit yaugikon mein kaun durbal aml hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "HCl",
+            "hi": "HCl",
+            "hinglish": "HCl"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CH3COOH",
+            "hi": "CH3COOH",
+            "hinglish": "CH3COOH"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "H2SO4",
+            "hi": "H2SO4",
+            "hinglish": "H2SO4"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "HNO3",
+            "hi": "HNO3",
+            "hinglish": "HNO3"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000740",
+      "topicId": null,
+      "questionText": {
+        "en": "What is the colour of silver iodide?",
+        "hi": "सिल्वर आयोडाइड का रंग कैसा होता है?",
+        "hinglish": "Silver iodide ka rang kaisa hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "White",
+            "hi": "श्वेत",
+            "hinglish": "Shvet"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000754",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is the natural source of oxalic acid?",
+        "hi": "ऑक्सैलिक अम्ल का प्राकृतिक स्रोत निम्नलिखित में कौन है?",
+        "hinglish": "Oxalic aml ka prakritik srot nimnalikhit mein kaun hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Tomato",
+            "hi": "टमाटर",
+            "hinglish": "Tamatar"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Tamarind",
+            "hi": "इमली",
+            "hinglish": "Imli"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Orange",
+            "hi": "संतरा",
+            "hinglish": "Santra"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Vinegar",
+            "hi": "सिरका",
+            "hinglish": "Sirka"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000813",
+      "topicId": null,
+      "questionText": {
+        "en": "Which gas is liberated at the Cathode during electrolysis in water?",
+        "hi": "जल में वैधुत अपघटन में कैथोड पर कौन-सी गैस मुक्त होती है?",
+        "hinglish": "Jal mein vidyut apghatan mein cathode par kaun-si gas mukt hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Ozone",
+            "hi": "ओजोन",
+            "hinglish": "Ozone"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Oxygen",
+            "hi": "आक्सीजन",
+            "hinglish": "Aakshiyan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Hydrogen",
+            "hi": "हाइड्रोजन",
+            "hinglish": "Hydrogen"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000816",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following gases turns lime water milky?",
+        "hi": "निम्नांकित में कौन गैस चूना जल को दूधिया कर देती है?",
+        "hinglish": "Nimnankit mein kaun gas choona jal ko doodhiya kar deti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO",
+            "hi": "CO",
+            "hinglish": "CO"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CO₂",
+            "hi": "CO₂",
+            "hinglish": "CO₂"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "O₂",
+            "hi": "O₂",
+            "hinglish": "O₂"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Cl₂",
+            "hi": "Cl₂",
+            "hinglish": "Cl₂"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000817",
+      "topicId": null,
+      "questionText": {
+        "en": "Which among the following is slaked lime?",
+        "hi": "निम्नांकित मे से कौन बुझा हुआ चूना है?",
+        "hinglish": "Nimnankit me se kaun bujha hua choona hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaO",
+            "hi": "CaO",
+            "hinglish": "CaO"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CaCO3",
+            "hi": "CaCO₃",
+            "hinglish": "CaCO3"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ca(OH)2",
+            "hi": "Ca(OH)₂",
+            "hinglish": "Ca(OH)2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Ca",
+            "hi": "Ca",
+            "hinglish": "Ca"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000818",
+      "topicId": null,
+      "questionText": {
+        "en": "Toothpaste is generally",
+        "hi": "दंतमंजन प्राय होता है",
+        "hinglish": "Dantmanjan praya hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Acidic",
+            "hi": "अम्लीय",
+            "hinglish": "Amliya"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Salty",
+            "hi": "लवण युक्त",
+            "hinglish": "Lavan yukt"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Alkaline",
+            "hi": "क्षारीय",
+            "hinglish": "Kshariy"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000819",
+      "topicId": null,
+      "questionText": {
+        "en": "Which acid is present in lemon?",
+        "hi": "निबूं में कौन-सा अम्ल होता है",
+        "hinglish": "Nibun me kaun-sa aml hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Citric acid",
+            "hi": "सिट्रिक अम्ल",
+            "hinglish": "Citric aml"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Lactic acid",
+            "hi": "लैक्टिक अम्ल",
+            "hinglish": "Lactic aml"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Acetic acid",
+            "hi": "ऐसीटिक अम्ल",
+            "hinglish": "Acetic aml"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Formic acid",
+            "hi": "फॉर्मिक अम्ल",
+            "hinglish": "Formic aml"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000820",
+      "topicId": null,
+      "questionText": {
+        "en": "The pH value of milk of magnesia is",
+        "hi": "मिल्क ऑफ मैग्नीशिया का pH मान होता है",
+        "hinglish": "Milk of magnesia ka pH maan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "10.5 35. (C) 8 (D) 10.5",
+            "hi": "10.5 35. (C) 8 (D) 10.5",
+            "hinglish": "10.5 35. (C) 8 (D) 10.5"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000824",
+      "topicId": null,
+      "questionText": {
+        "en": "Helium gas is",
+        "hi": "हीलियम गैस है",
+        "hinglish": "Helium gas hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Active",
+            "hi": "सक्रिय",
+            "hinglish": "Sakriya"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Inert",
+            "hi": "अक्रिय",
+            "hinglish": "Akriya"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Neutral",
+            "hi": "उदासीन",
+            "hinglish": "Udaasin"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these 39. (C) Neutral (D) None of these",
+            "hi": "इनमें से कोई नहीं 39. (C) उदासीन (D) इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi 39. (C) Udaasin (D) Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000827",
+      "topicId": null,
+      "questionText": {
+        "en": "The chemical name of lime water is",
+        "hi": "चूना जल का रासायनिक नाम है",
+        "hinglish": "Chuna jal ka rasayanik naam hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Slaked lime",
+            "hi": "बुझा चुना",
+            "hinglish": "Bujha chuna"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Calcium hydroxide",
+            "hi": "कैल्सियम हाइड्रोक्साइड",
+            "hinglish": "Calcium hydroxide"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Quick lime",
+            "hi": "कली चुना",
+            "hinglish": "Kali chuna"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Calcium oxide",
+            "hi": "कैल्सियम ऑक्साइड",
+            "hinglish": "Calcium oxide"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000840",
+      "topicId": null,
+      "questionText": {
+        "en": "The upper most layer of human teeth is",
+        "hi": "मनुष्य के दाँत की सबसे उपरी परत है",
+        "hinglish": "Manushya ke daant ki sabse upari parat hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Bone",
+            "hi": "अस्थि",
+            "hinglish": "Asthi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Pulp cavity",
+            "hi": "मज्जा गुहा",
+            "hinglish": "Majja guha"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Enamel",
+            "hi": "इनामेल",
+            "hinglish": "Inamel"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Dentine",
+            "hi": "डेंटाइन",
+            "hinglish": "Dentine"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000928",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following gases turns lime water milky?",
+        "hi": "निम्नलिखित में से कौन गैस चूने के पानी को दूधिया कर देता है ?",
+        "hinglish": "Nimnalikhit mein se kaun gas choone ke paani ko doodhiya kar deta hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cl2",
+            "hi": "Cl2",
+            "hinglish": "Cl2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "NO2",
+            "hi": "NO2",
+            "hinglish": "NO2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000929",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following acids is present in a bee sting?",
+        "hi": "मधुमक्खी के डंक में निम्नलिखित में से कौन–सा अम्ल होता है ?",
+        "hinglish": "Madhumakkhi ke dank mein nimnalikhit mein se kaunsa aml hota hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Methanoic acid",
+            "hi": "मेथेनॉइक अम्ल",
+            "hinglish": "Methanoic aml"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ethanoic acid",
+            "hi": "इथेनॉइक अम्ल",
+            "hinglish": "Ethanoic aml"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Citric acid",
+            "hi": "सिट्रिक अम्ल",
+            "hinglish": "Citric aml"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Oxalic acid",
+            "hi": "ऑक्जेलिक अम्ल",
+            "hinglish": "Oxalic acid"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000930",
+      "topicId": null,
+      "questionText": {
+        "en": "The chemical formula of 'Plaster of Paris' is",
+        "hi": "'प्लास्टर ऑफ पेरिस' का रासायनिक सूत्र है –",
+        "hinglish": "'Plaster of Paris' ka rasayanik sutra hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaSO4.5H2O",
+            "hi": "CaSO4.5H2O",
+            "hinglish": "CaSO4.5H2O"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "CaSO4.1/2H2O",
+            "hi": "CaSO4.1/2H2O",
+            "hinglish": "CaSO4.1/2H2O"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CaSO4.2H2O",
+            "hi": "CaSO4.2H2O",
+            "hinglish": "CaSO4.2H2O"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "CaSO4.H2O",
+            "hi": "CaSO4.H2O",
+            "hinglish": "CaSO4.H2O"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q000931",
+      "topicId": null,
+      "questionText": {
+        "en": "Acid and base react with each other to form–",
+        "hi": "अम्ल और क्षार आपस में अभिक्रिया कर बनाते हैं–",
+        "hinglish": "Aml aur kshaar aapas mein abhikraya kar banate hain–"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Strong base",
+            "hi": "प्रबल क्षार",
+            "hinglish": "Prabal kshaar"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Strong Acid",
+            "hi": "प्रबल अम्ल",
+            "hinglish": "Prabal aml"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Salt",
+            "hi": "लवण",
+            "hinglish": "Lavan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001181",
+      "topicId": null,
+      "questionText": {
+        "en": "The pH value of an acidic solution is",
+        "hi": "अम्लीय विलयन का pH मान होता है",
+        "hinglish": "Amliya vilayan ka pH maan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "less than 7",
+            "hi": "7 से कम",
+            "hinglish": "7 se kam"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "more than 7",
+            "hi": "7 से अधिक",
+            "hinglish": "7 se adhik"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001223",
+      "topicId": null,
+      "questionText": {
+        "en": "There is presence of CO2 gas in the atmosphere",
+        "hi": "वायुमंडल में CO2 गैस की उपस्थिति है",
+        "hinglish": "Vayumandal mein CO2 gas ki upasthiti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "0.01%",
+            "hi": "0.01%",
+            "hinglish": "0.01%"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "0.05%",
+            "hi": "0.05%",
+            "hinglish": "0.05%"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "0.03%",
+            "hi": "0.03%",
+            "hinglish": "0.03%"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "0.02%",
+            "hi": "0.02%",
+            "hinglish": "0.02%"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001224",
+      "topicId": null,
+      "questionText": {
+        "en": "'NaOH' is",
+        "hi": "'NaOH' है",
+        "hinglish": "'NaOH' hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "acid",
+            "hi": "अम्ल",
+            "hinglish": "Aml"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "base",
+            "hi": "क्षार",
+            "hinglish": "Kshaar"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "salt",
+            "hi": "लवण",
+            "hinglish": "Lavan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001271",
+      "topicId": null,
+      "questionText": {
+        "en": "A solution turns blue litmus paper red; its pH is likely to be",
+        "hi": "कोई विलयन नीले लिटमस पत्र को लाल कर देता है, इसका pH संभवतः होगा –",
+        "hinglish": "Koi vilayan neele litmus patra ko laal kar deta hai, iska pH sambhavta hoga –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001273",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is slaked lime?",
+        "hi": "निम्नलिखित में से कौन सा चूना है?",
+        "hinglish": "Nimnalikhit mein se kaun sa choona hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaO",
+            "hi": "CaO",
+            "hinglish": "CaO"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ca(OH) 2",
+            "hi": "Ca(OH) 2",
+            "hinglish": "Ca(OH) 2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "CaCO3",
+            "hi": "CaCO3",
+            "hinglish": "CaCO3"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Ca Ans: Ca(OH)",
+            "hi": "Ca उत्तर: Ca(OH)",
+            "hinglish": "Ca. Uttar: Ca(OH)"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001274",
+      "topicId": null,
+      "questionText": {
+        "en": "PH of aqueous solution of salt NaCo3 is",
+        "hi": "नमक NaCo3 का जल घोल का PH है",
+        "hinglish": "Namak NaCo3 ka jal ghol ka PH hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "More than 7",
+            "hi": "7 से अधिक",
+            "hinglish": "7 se adhik"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Less than 7",
+            "hi": "7 से कम",
+            "hinglish": "7 se kam"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these Ans: More than",
+            "hi": "इनमें से कोई नहीं उत्तर: से अधिक",
+            "hinglish": "inmein se koi nahi uttar: se adhik"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001282",
+      "topicId": null,
+      "questionText": {
+        "en": "The pH value of an acid is",
+        "hi": "अम्ल का pH मान होता है",
+        "hinglish": "Aml ka pH maan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "less than 7",
+            "hi": "7 से कम",
+            "hinglish": "7 se kam"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "more than 7",
+            "hi": "7 से अधिक",
+            "hinglish": "7 se adhik"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001283",
+      "topicId": null,
+      "questionText": {
+        "en": "A solution turns red litmus into blue, its pH value is",
+        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है, उसका pH मान होगा",
+        "hinglish": "Koi vilayan laal litmus ko neela kar deta hai, uska pH maan hoga"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "10",
+            "hi": "10",
+            "hinglish": "10"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "'A' and 'B' both",
+            "hi": "'A' और 'B' दोनों",
+            "hinglish": "'A' aur 'B' dono"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001285",
+      "topicId": null,
+      "questionText": {
+        "en": "The pH value of a neutral solution is",
+        "hi": "उदासीन विलयन का pH मान होता है",
+        "hinglish": "Udasin vilayan ka pH maan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "8",
+            "hi": "8",
+            "hinglish": "8"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "6",
+            "hi": "6",
+            "hinglish": "6"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001294",
+      "topicId": null,
+      "questionText": {
+        "en": "The pH value of any neutral solution is",
+        "hi": "किसी भी उदासीन विलयन का pH मान होता है",
+        "hinglish": "Kisi bhi udaasheen vilayan ka pH maan hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "0",
+            "hi": "0",
+            "hinglish": "0"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "14",
+            "hi": "14",
+            "hinglish": "14"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001301",
+      "topicId": null,
+      "questionText": {
+        "en": "A solution turns red litmus into blue. The pH value of this solution would be",
+        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है। इस विलयन का pH मान होगा",
+        "hinglish": "Koi vilayan laal litmus ko neela kar deta hai. Is vilayan ka pH maan hoga"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "more than 7",
+            "hi": "7 से अधिक",
+            "hinglish": "7 se adhik"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "less than 7",
+            "hi": "7 से कम",
+            "hinglish": "7 se kam"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001315",
+      "topicId": null,
+      "questionText": {
+        "en": "A solution turns red litmus blue, what would be its pH?",
+        "hi": "कोई विलयन लाल लिटमस को नीला कर देता है, उसका pH संभवतः क्या होगा ?",
+        "hinglish": "Koi vilayan laal litmus ko neela kar deta hai, uska pH sambhavatah kya hoga ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "7",
+            "hi": "7",
+            "hinglish": "7"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-chem-ch02-q001331",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following solution is used for white washing walls?",
+        "hi": "दीवारों को सफेद करने के लिए निम्नलिखित में से कौन सा घोल उपयोग किया जाता है?",
+        "hinglish": "Deewaron ko safed karne ke liye nimnalikhit mein se kaun sa ghol upyog kiya jaata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CaH(CO3 )2",
+            "hi": "CaH(CO3)2",
+            "hinglish": "CaH(CO3)2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Ca(OH)2",
+            "hi": "Ca(OH)2",
+            "hinglish": "Ca(OH)2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "NaOH",
+            "hi": "NaOH",
+            "hinglish": "NaOH"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "NaH(CO3) Ans: Ca(OH)2",
+            "hi": "NaH(CO3) उत्तर: Ca(OH)2",
+            "hinglish": "NaH(CO3) uttar: Ca(OH)2"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    }
+  ]
+}

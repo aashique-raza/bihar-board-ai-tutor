@@ -1,0 +1,1227 @@
+{
+  "subjectId": "science",
+  "sectionId": "biology",
+  "chapterId": "science.biology.chapter-04",
+  "chapterTitle": "Heredity and Evolution",
+  "questions": [
+    {
+      "questionCode": "sci-bio-ch04-q000106",
+      "topicId": null,
+      "questionText": {
+        "en": "Who propounded the laws of Inheritance?",
+        "hi": "वंशागत नियमों का प्रतिपादन किसने किया?",
+        "hinglish": "Vansagat niyamon ka pratipadan kisne kiya?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Charles Darwin",
+            "hi": "चार्ल्स डारविन",
+            "hinglish": "Charles Darwin"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Robert Hooke",
+            "hi": "रोबर्ट हूक",
+            "hinglish": "Robert Hooke"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "J.C. Bose",
+            "hi": "जे. सी. बोस",
+            "hinglish": "J.C. Bose"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Gregor Johann Mendel",
+            "hi": "ग्रेगर जोहान मेंडल",
+            "hinglish": "Gregor Johann Mendel"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000107",
+      "topicId": null,
+      "questionText": {
+        "en": "Women have a pair of Sex Chromosomes",
+        "hi": "स्त्रियों में लिंग गुणसूत्र का युग्म होता है –",
+        "hinglish": "Striyon mein ling gunasootra ka yugm hota hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "XY",
+            "hi": "XY",
+            "hinglish": "XY"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "XX",
+            "hi": "XX",
+            "hinglish": "XX"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "YY",
+            "hi": "YY",
+            "hinglish": "YY"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें सभी",
+            "hinglish": "Inmein sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000173",
+      "topicId": null,
+      "questionText": {
+        "en": "The perfect pair of sex chromosomes are found in",
+        "hi": "परिपूर्ण यौन गुणसूत्रों की जोड़ी कहाँ पाई जाती है",
+        "hinglish": "Paripurn yaun gunasootron ki jodi kahan pai jaati hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Male",
+            "hi": "पुरुष",
+            "hinglish": "Purush"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "female",
+            "hi": "महिला",
+            "hinglish": "Mahila"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Male and female both",
+            "hi": "पुरुष और महिला दोनों",
+            "hinglish": "Purush aur mahila dono"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these Ans:female",
+            "hi": "इनमें से कोई नहीं उत्तर: महिला",
+            "hinglish": "Inmein se koi nahi uttar: mahila"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000194",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is not a bacterial disease?",
+        "hi": "निम्नलिखित में से कौन सा एक बैक्टीरियल रोग नहीं है?",
+        "hinglish": "Nimnalikhit mein se kaun sa ek bacterial rog nahi hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Gonorrhoea",
+            "hi": "गोनोरिया",
+            "hinglish": "Gonorrhoea"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Syphilis",
+            "hi": "सिफलिस",
+            "hinglish": "Sifalis"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Warts",
+            "hi": "कंडर",
+            "hinglish": "Kandar"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000196",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following represents dwarf plant?",
+        "hi": "निम्न में से कौन बौने पौधे को दर्शाता है?",
+        "hinglish": "Nimn mein se kaun baune paudhe ko darshata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Tt",
+            "hi": "Tt",
+            "hinglish": "Tt"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "tT",
+            "hi": "tT",
+            "hinglish": "tT"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "tt",
+            "hi": "tt",
+            "hinglish": "tt"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "TT",
+            "hi": "TT",
+            "hinglish": "TT"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000270",
+      "topicId": null,
+      "questionText": {
+        "en": "Who wrote the book 'The Origin of Species'?",
+        "hi": "'द ओरिजिन ऑफ स्पेशीज' नामक पुस्तक किसने लिखी है?",
+        "hinglish": "'The Origin of Species' naamak pustak kisne likhi hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Darwin",
+            "hi": "डार्विन",
+            "hinglish": "Darwin"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Lamarck",
+            "hi": "लामार्क",
+            "hinglish": "Lamarck"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Oparin",
+            "hi": "ओपेरिन",
+            "hinglish": "Oparin"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Weismann",
+            "hi": "वाइंसमान",
+            "hinglish": "Waisman"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000274",
+      "topicId": null,
+      "questionText": {
+        "en": "Which plant did Mendel use for his experiments in genetics?",
+        "hi": "मेंडल ने अपने आनुवंशिकी प्रयोग हेतु किस पौधे का उपयोग किया था?",
+        "hinglish": "Mendel ne apne anuvanshiki prayog hetu kis paudhe ka upyog kiya tha?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Neem",
+            "hi": "नीम",
+            "hinglish": "Neem"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Rose",
+            "hi": "गुलाब",
+            "hinglish": "Gulab"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pea",
+            "hi": "मटर",
+            "hinglish": "Matar"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Chrysanthemum",
+            "hi": "गुलदाऊदी",
+            "hinglish": "Guldawudi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000325",
+      "topicId": null,
+      "questionText": {
+        "en": "Which plant is selected by Mendel for his experiments ?",
+        "hi": "मेंडल ने अपने प्रयोगों के लिये किस पौधे को चुना ?",
+        "hinglish": "Mendel ne apne prayogon ke liye kis paudhe ko chuna?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Mango",
+            "hi": "आम",
+            "hinglish": "Aam"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Rose",
+            "hi": "गुलाब",
+            "hinglish": "Gulab"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Wheat",
+            "hi": "गेहूं",
+            "hinglish": "Gehu"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Pea J 5012-J Page 7 of",
+            "hi": "मटर J 5012-J Page 7 of",
+            "hinglish": "Matar J 5012-J Page 7 of"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000326",
+      "topicId": null,
+      "questionText": {
+        "en": "Which one of the following is a vestigial organ ?",
+        "hi": "निम्न में से कौन एक अवशेषी अंग है ?",
+        "hinglish": "Nimn mein se kaun ek avashesh ang hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Backbone",
+            "hi": "रीढ़ की हड्डी",
+            "hinglish": "Reedh ki haddi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Thumb",
+            "hi": "अंगूठा",
+            "hinglish": "Angutha"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Ear",
+            "hi": "कान",
+            "hinglish": "Kaan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Apendix",
+            "hi": "एपेन्डिक्स",
+            "hinglish": "Appendix"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000463",
+      "topicId": null,
+      "questionText": {
+        "en": "Who selected pea as his experimental material ?",
+        "hi": "मटर को अपने प्रयोग के लिये किसने चुना ?",
+        "hinglish": "Matar ko apne prayog ke liye kisne chuna ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Mendal",
+            "hi": "मेंडल",
+            "hinglish": "Mendal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Darwin",
+            "hi": "डार्विन",
+            "hinglish": "Darwin"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Lamarck",
+            "hi": "लामार्क",
+            "hinglish": "Lamarck"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Khorana",
+            "hi": "खुराना (Section-A ends at Q80)",
+            "hinglish": "Khorana"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000514",
+      "topicId": null,
+      "questionText": {
+        "en": "The development of organism by natural selection is called",
+        "hi": "'प्राकृतिक चुनाव' द्वारा जीवों का विकास कहलाता है?",
+        "hinglish": "'Prakritik chayan' dwara jeevon ka vikas kaha jaata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Mendelism",
+            "hi": "मेंडलवाद",
+            "hinglish": "Mendelwad"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Lamarkism",
+            "hi": "लामार्कवाद",
+            "hinglish": "Lamarckwad"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Darwinism",
+            "hi": "डार्विनवाद",
+            "hinglish": "Darwinwad"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Micro-evolution",
+            "hi": "सूक्ष्म-विकास",
+            "hinglish": "Sookshm-vikas"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000633",
+      "topicId": null,
+      "questionText": {
+        "en": "According to evolutional view, we are more similar to",
+        "hi": "विकासीय दृष्टिकोण से हमारी किससे अधिक समानता है ? A) चिम्पैंजी (B) मकड़ी (C) ओरंगउटान (D) जीवाणु",
+        "hinglish": "Vikasiy drishtikon se hamari kis se adhik samanata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Chimpanzee",
+            "hi": "चिम्पांजी",
+            "hinglish": "Chimpanzee"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Spider",
+            "hi": "मकड़ी",
+            "hinglish": "Makdi"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Orangutan",
+            "hi": "ओरंगुटान",
+            "hinglish": "Orangutan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Bacteria",
+            "hi": "बैक्टीरिया",
+            "hinglish": "Bacteria"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000679",
+      "topicId": null,
+      "questionText": {
+        "en": "The forelimbs of man, cat and bat are",
+        "hi": "मनुष्य, बिल्ली तथा चमगादड़ के अग्रपाद हैं",
+        "hinglish": "Manushya, billi tatha chamgadar ke agrapaad hain"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "homologous organ",
+            "hi": "समजात अंग",
+            "hinglish": "Samjatiya ang"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "analogous organs",
+            "hi": "असमजात अंग",
+            "hinglish": "Asamjatiya ang"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "vestigial organ",
+            "hi": "अवशेषी अंग",
+            "hinglish": "Avasheshi ang"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000681",
+      "topicId": null,
+      "questionText": {
+        "en": "The genic constitution of an individual organism is called",
+        "hi": "किसी जीव की जीनी संरचना कहलाती है",
+        "hinglish": "Kisi jeev ki jeeni sanrachna kaha jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "genotype",
+            "hi": "जीनोटाइप",
+            "hinglish": "Genotype"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "phenotype",
+            "hi": "फीनोटाइप",
+            "hinglish": "Phenotype"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "variation",
+            "hi": "विभिन्नता",
+            "hinglish": "Vibhinnata"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "heredity",
+            "hi": "आनुवंशिकता",
+            "hinglish": "Anuvanshikta"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000709",
+      "topicId": null,
+      "questionText": {
+        "en": "The place of origin of human is",
+        "hi": "मानव का उद्भव स्थान है",
+        "hinglish": "Manav ka udbhav sthan hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "India",
+            "hi": "भारत",
+            "hinglish": "Bharat"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "China",
+            "hi": "चीन",
+            "hinglish": "Cheen"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Africa",
+            "hi": "अफ्रीका",
+            "hinglish": "Afrika"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "America",
+            "hi": "अमेरिका",
+            "hinglish": "America"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000796",
+      "topicId": null,
+      "questionText": {
+        "en": "Where are large numbers of light-sensitive cells present?",
+        "hi": "वृहत संख्या में प्रकाश-सुग्राही कोशिकाएँ कहाँ होती है?",
+        "hinglish": "Vrihat sankhya mein prakash-sugraahi koshikaen kahan hoti hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "In Cornea",
+            "hi": "कॉर्निया में",
+            "hinglish": "Cornea mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "In Pupil",
+            "hi": "पुतली में",
+            "hinglish": "Putli mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "In Retina",
+            "hi": "रेटिना में",
+            "hinglish": "Retina mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000859",
+      "topicId": null,
+      "questionText": {
+        "en": "Who is called the 'Father of Genetics'?",
+        "hi": "'आनुवंशिकता' का पिता किसे कहा जाता है?",
+        "hinglish": "'Anuvanshikta' ka pita kise kaha jaata hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Harold Urey",
+            "hi": "हैरोल्ड यूरे को",
+            "hinglish": "Harold Urey"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Gregor John Mendel",
+            "hi": "ग्रेगर जॉन मेंडल को",
+            "hinglish": "Gregor John Mendel ko"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Charles Robert Darwin",
+            "hi": "चार्ल्स रॉबर्ट डार्विन को",
+            "hinglish": "Charles Robert Darwin ko"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Sidney Fox 75. (A) Haroid Urey (B) Gregor Johann Mendel (C) Charles Robert Darwin (D) Sideny fox",
+            "hi": "सिडने फॉक्स 75. (A) हैरोल्ड यूरे को (B) ग्रेगर जॉन मेंडल को (C) चार्ल्स रॉबर्ट डार्विन को (D) सिडने फॉक्स",
+            "hinglish": "Sidney Fox"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000860",
+      "topicId": null,
+      "questionText": {
+        "en": "Mendel was priest of a Christian monastery of which country?",
+        "hi": "मेंडल किस देश में ईसाइयों के एक मठ के पादरी थे?",
+        "hinglish": "Mendel kis desh mein Isaiyon ke ek math ke paadri the?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "France",
+            "hi": "फ्रांस",
+            "hinglish": "France"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Austria",
+            "hi": "ऑस्ट्रिया",
+            "hinglish": "Austria"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Australia",
+            "hi": "आस्ट्रेलिया",
+            "hinglish": "Australia"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "England",
+            "hi": "इंगलैंड",
+            "hinglish": "England"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000861",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of these is located at the top of the classification?",
+        "hi": "इनमें कौन वर्गीकरण के सबसे उपरी पायदान पर अवस्थित है?",
+        "hinglish": "Inmein kaun vargikaran ke sabse upari paaydaan par avasthit hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Genera",
+            "hi": "वंश",
+            "hinglish": "Vans"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Order",
+            "hi": "गण",
+            "hinglish": "Gan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Class",
+            "hi": "वर्ग",
+            "hinglish": "Varg"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Kingdom",
+            "hi": "जगत",
+            "hinglish": "Jagat"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000968",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following was not present on Earth before the origin of life?",
+        "hi": "जीवों के उत्त्पत्ति के पहले पृथ्वी पर निम्नलिखित में क्या नहीं था ?",
+        "hinglish": "Jeevon ke utpatti ke pehle Prithvi par nimnalikhit mein kya nahi tha?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "CO2",
+            "hi": "CO2",
+            "hinglish": "CO2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "NO2",
+            "hi": "NO2",
+            "hinglish": "NO2"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "O2",
+            "hi": "O2",
+            "hinglish": "O2"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q000969",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following statements is true regarding Archaeopteryx?",
+        "hi": "आर्कियोप्टेरिक्स के संबंध में निम्नांकित कौन कथन सत्य है ?",
+        "hinglish": "Archaeopteryx ke sambandh mein nimnankit kaun kathan satya hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "It is fossil",
+            "hi": "यह एक जीवाश्म है",
+            "hinglish": "Yeh ek jeevashm hai"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "It had teeth in its jaws and nails on its fingers",
+            "hi": "इसके जबड़े में दाँत और अँगुलियों में नख थे",
+            "hinglish": "Iske jabde mein daant aur ungliyon mein nakh the"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "It had wings and feathers",
+            "hi": "इसमें डैने तथा पंख विद्यमान थे",
+            "hinglish": "Ismein daine tatha pankh vidyamaan the"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "इनमें से सभी",
+            "hinglish": "Inmein se sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q001275",
+      "topicId": null,
+      "questionText": {
+        "en": "How many pairs of chromosome are found in a normal cell of human body?",
+        "hi": "मानव शरीर की सामान्य कोशिका में कितने गुणसूत्रों के जोड़े पाए जाते हैं?",
+        "hinglish": "Manav sharir ki saamaanya koshika mein kitne gunasutron ke joode paaye jaate hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "21",
+            "hi": "21",
+            "hinglish": "21"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "22",
+            "hi": "22",
+            "hinglish": "22"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "23",
+            "hi": "23",
+            "hinglish": "23"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "46 Ans:",
+            "hi": "46 उत्तर:",
+            "hinglish": "46 Uttar:"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-bio-ch04-q001305",
+      "topicId": null,
+      "questionText": {
+        "en": "The number of pairs of autosomes in human is",
+        "hi": "मानव में ऑटोसोम की जोड़ियों की संख्या होती है",
+        "hinglish": "Manav mein autosome ki jodiyon ki sankhya hoti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "24",
+            "hi": "24",
+            "hinglish": "24"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "23",
+            "hi": "23",
+            "hinglish": "23"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "11",
+            "hi": "11",
+            "hinglish": "11"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "22",
+            "hi": "22",
+            "hinglish": "22"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    }
+  ]
+}

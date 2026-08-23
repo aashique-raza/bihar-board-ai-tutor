@@ -1,0 +1,2552 @@
+{
+  "subjectId": "science",
+  "sectionId": "physics",
+  "chapterId": "science.physics.chapter-02",
+  "chapterTitle": "Human Eye and Colourful World",
+  "questions": [
+    {
+      "questionCode": "sci-phy-ch02-q000034",
+      "topicId": null,
+      "questionText": {
+        "en": "Which lens is used to remove the near sightedness defect ?",
+        "hi": "निकट दृष्टि दोष दूर करने के लिए किस लेंस का व्यवहार होता है ?",
+        "hinglish": "Nikhat drishti dosh door karne ke liye kis lens ka vyavhaar hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Cylindrical",
+            "hi": "बेलनाकार",
+            "hinglish": "Belanakar"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000066",
+      "topicId": null,
+      "questionText": {
+        "en": "The ray of light passes through",
+        "hi": "प्रकाश की किरणें गमन करती है",
+        "hinglish": "Prakash ki kiranen gaman karti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "In straight line",
+            "hi": "सीधी रेखा में",
+            "hinglish": "Seedhi rekha mein"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "In Zig Zag line",
+            "hi": "टेढ़ी रेखा में",
+            "hinglish": "Tedhi rekha mein"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "In any direction",
+            "hi": "किसी भी दिशा में",
+            "hinglish": "Kisi bhi disha mein"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000072",
+      "topicId": null,
+      "questionText": {
+        "en": "The eye is used as:",
+        "hi": "आँख व्यवहार होता है :",
+        "hinglish": "Aankh vyavhaar hota hai :"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण की तरह",
+            "hinglish": "Avatal darpan ki tarah"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस की तरह",
+            "hinglish": "Uttal lens ki tarah"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Plane Mirror",
+            "hi": "समतल दर्पण की तरह",
+            "hinglish": "Samtal darpan ki tarah"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें कोई नहीं",
+            "hinglish": "Inmein koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000076",
+      "topicId": null,
+      "questionText": {
+        "en": "When sunlight passes through the atmosphere, which colour of light gets scattered strongly by the fine particles in air?",
+        "hi": "जब सूर्य का प्रकाश वायुमंडल से गुजरता है, तो वायु के सूक्ष्म कण किस रंग के प्रकाश को अधिक प्रबलता से प्रकीर्ण करते हैं?",
+        "hinglish": "Jab Surya ka prakash vayumandal se guzarata hai, to vayu ke suksma karn kis rang ke prakash ko adhik prabalta se prakiran karte hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Orange",
+            "hi": "नारंगी",
+            "hinglish": "Narangi"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000138",
+      "topicId": null,
+      "questionText": {
+        "en": "3 who controls Pupil size muscles?",
+        "hi": "कौन मांसपेशियाँ पुतली के आकार को नियंत्रित करती हैं?",
+        "hinglish": "Kaun mamspeeshiyan putli ke aakar ko niyantrit karti hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Ciliary Muscle",
+            "hi": "सिलियरी मांसपेशी",
+            "hinglish": "Siliary mamspeeshi"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Iris",
+            "hi": "आईरिस",
+            "hinglish": "Airis"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Eye lens",
+            "hi": "आंख का लेंस",
+            "hinglish": "Aankh ka lens"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "retina Ans: Iris",
+            "hi": "रेटिना उत्तर: आईरिस",
+            "hinglish": "Retina Uttar: Iris"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000192",
+      "topicId": null,
+      "questionText": {
+        "en": "Which colour of light scatters more in atmosphere?",
+        "hi": "वायुमंडल में प्रकाश का कौन सा रंग (वर्ण) अधिक प्रकीर्णन करता है?",
+        "hinglish": "Vayumandal mein prakash ka kaun sa rang (varna) adhik prakeernan karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Orange",
+            "hi": "नारंगी",
+            "hinglish": "Narangi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2019
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000247",
+      "topicId": null,
+      "questionText": {
+        "en": "The deviation of which colour is minimum?",
+        "hi": "किस रंग का विचलन न्यूनतम होता है?",
+        "hinglish": "Kis rang ka vichlan nyoonatam hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Violet",
+            "hi": "बैंगनी",
+            "hinglish": "Baingani"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000264",
+      "topicId": null,
+      "questionText": {
+        "en": "Wavelength is generally expressed as",
+        "hi": "तरंगदैर्ध्य को सामान्यतः व्यक्त किया जाता है",
+        "hinglish": "Tarangdairdh ko saamaanyatah vyakt kiya jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "candela",
+            "hi": "कैंडेला के रूप में",
+            "hinglish": "kandela"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "joule",
+            "hi": "जूल के रूप में",
+            "hinglish": "jool"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "ampere",
+            "hi": "एम्पियर के रूप में",
+            "hinglish": "ampere"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "angstrom",
+            "hi": "ऐंगस्ट्रम",
+            "hinglish": "Aingstram"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000329",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following is the coloured part of eye ?",
+        "hi": "निम्नलिखित में से कौन नेत्र का रंगीन भाग होता है ?",
+        "hinglish": "Nimnalikhit mein se kaun netra ka rangeen bhaag hota hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Retina",
+            "hi": "रेटिना",
+            "hinglish": "Retina"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Iris",
+            "hi": "परितारिका",
+            "hinglish": "Paritarika"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Pupil J 5012-J Page 8 of Which of the following is the coloured portion of an eye ? (A) Cornea (B) Retina (C) Iris (D) Pupil",
+            "hi": "पुतली J 5012-J Page 8 of",
+            "hinglish": "Putli J 5012-J Page 8 of Which of the following is the coloured portion of an eye ? (A) Cornea (B) Retina (C) Iris (D) Pupil"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000330",
+      "topicId": null,
+      "questionText": {
+        "en": "Light of which colour scatters more in atomsphere ?",
+        "hi": "वायुमंडल में प्रकाश के किस वर्ण का प्रकीर्णन अधिक होता है ?",
+        "hinglish": "Vayumandal mein prakash ke kis varn ka prakiran adhik hota hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Orange",
+            "hi": "नारंगी",
+            "hinglish": "Narangi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000331",
+      "topicId": null,
+      "questionText": {
+        "en": "The sun is visible to us about 2 minutes before the actual sunrise due to which phenomenon of light ?",
+        "hi": "प्रकाश की किस घटना के कारण सूर्य हमें वास्तविक सूर्योदय से लगभग 2 मिनट पूर्व दिखाई देने लगता है ?",
+        "hinglish": "Prakash ki kis ghatna ke kaaran Surya humein vastavik suryodaya se lagbhag 2 minute poorv dikhai dene lagta hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Reflection",
+            "hi": "परावर्तन",
+            "hinglish": "Paravartan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Atmospheric refraction",
+            "hi": "वायुमंडलीय अपवर्तन",
+            "hinglish": "Vayumandaliye apvartan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Scattering",
+            "hi": "प्रकीर्णन",
+            "hinglish": "Prakirnan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Both atmospheric refraction and scattering",
+            "hi": "वायुमंडलीय अपवर्तन एवं प्रकीर्णन दोनों",
+            "hinglish": "Vayumandaliye apvartan aur prakirnan dono"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2020
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000386",
+      "topicId": null,
+      "questionText": {
+        "en": "The least distance of distinct vision for the normal eye is",
+        "hi": "सामान्य दृष्टि के लिए स्पष्ट दृष्टि की न्यूनतम दूरी है",
+        "hinglish": "Samaanya drishti ke liye spasht drishti ki nyoonatam doori hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "25 m",
+            "hi": "25 मीटर",
+            "hinglish": "25 meter"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "25 cm",
+            "hi": "25 सेन्टी मीटर",
+            "hinglish": "25 senti meter"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "25 mm",
+            "hi": "25 मीली मीटर",
+            "hinglish": "25 mili meter"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000387",
+      "topicId": null,
+      "questionText": {
+        "en": "Which colour of white light bends least after passing through a prism ? 4. Which colour of white light bends least when the light passes through a prism ?",
+        "hi": "श्वेत प्रकाश का कौन सा रंग (वर्ण) किसी प्रिज्म से गुजरने के पश्चात् सबसे कम झुकता है ?",
+        "hinglish": "Shvet prakash ka kaun sa rang (varna) kisi prism se guzarne ke pashchat sabse kam jhukta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Violet",
+            "hi": "बैगनी",
+            "hinglish": "Baigani"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला 4. श्वेत प्रकाश का कौन सा रंग (वर्ण) किसी प्रिज्म से गुजरने के पश्चात् सबसे कम झुकता है ? A. बैगनी B. नीला C. लाल D. पीला",
+            "hinglish": "Peela 4. Shvet prakash ka kaun sa rang (varna) kisi prism se guzarne ke pashchat sabse kam jhukta hai ? A. Baigani B. Neela C. Laal D. Peela"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000388",
+      "topicId": null,
+      "questionText": {
+        "en": "The image formed on the retina of human eye is",
+        "hi": "मानव आँख की रेटिना द्वारा बनाई गई छवि होती है।",
+        "hinglish": "Manav aankh ki retina dwara banai gayi chhavi hoti hai."
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Virtual and erect",
+            "hi": "आभासी और सीधा",
+            "hinglish": "Aabhasi aur seedha"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Real and inverted",
+            "hi": "वास्तविक और उल्टा",
+            "hinglish": "Vastavik aur ulta"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Virtual and inverted",
+            "hi": "आभासी और उल्टा",
+            "hinglish": "Aabhasi aur ulta"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Real and erect",
+            "hi": "वास्तविक और सीधा",
+            "hinglish": "Vastavik aur seedha"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000389",
+      "topicId": null,
+      "questionText": {
+        "en": "The colour of sky appears blue.",
+        "hi": "आकाश का रंग नीला प्रतीत होता है",
+        "hinglish": "Aakash ka rang neela prateet hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Due to reflection of light",
+            "hi": "प्रकाश के परावर्तन के कारण",
+            "hinglish": "Prakash ke paravartan ke kaaran"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Due to scattering of light",
+            "hi": "प्रकाश के प्रकीर्णन के कारण",
+            "hinglish": "Prakash ke prakiran ke kaaran"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Due to refraction of light",
+            "hi": "प्रकाश के अपवर्त्तन के कारण",
+            "hinglish": "Prakash ke apvartan ke kaaran"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000400",
+      "topicId": null,
+      "questionText": {
+        "en": "Which is the Primary colour of Light ?",
+        "hi": "प्रकाश का प्राथमिक वर्ण कौन है ?",
+        "hinglish": "Prakash ka prathamik varn kaun hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these",
+            "hi": "उपरोक्त सभी",
+            "hinglish": "Uparokta sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000401",
+      "topicId": null,
+      "questionText": {
+        "en": "Which of the following part of eye is coloured ?",
+        "hi": "निम्नलिखित में से कौन नेत्र का रंगीन भाग होता है ?",
+        "hinglish": "Nimnalikhit mein se kaun netra ka rangeen bhaag hota hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Pupil",
+            "hi": "पुपील",
+            "hinglish": "Putli"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Retina",
+            "hi": "रेटिना",
+            "hinglish": "Retina"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Iris",
+            "hi": "आईरिस",
+            "hinglish": "Airis"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2021
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000508",
+      "topicId": null,
+      "questionText": {
+        "en": "Which pigment causes the yellow colour of urine?",
+        "hi": "मूत्र का पीला रंग किस वर्णक के कारण होता है?",
+        "hinglish": "Mootr ka peela rang kis varnaka ke kaaran hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Leucoplast",
+            "hi": "ल्यूकोप्लास्ट",
+            "hinglish": "Leucoplast"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Chloroplasts",
+            "hi": "क्लोरोप्लास्ट",
+            "hinglish": "Chloroplasts"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Urochrome",
+            "hi": "यूरोक्रोम",
+            "hinglish": "Urochrome"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Chromoplasts",
+            "hi": "क्रोमोप्लास्ट",
+            "hinglish": "Chromoplasts"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000521",
+      "topicId": null,
+      "questionText": {
+        "en": "The image formed by remedial lens in short-sightedness or far sightedness is",
+        "hi": "निकट-दृष्टि दोष अथवा दूर-दृष्टि दोष के निवारण हेतु प्रयुक्त लेंस द्वारा बना प्रतिबिंब होता है",
+        "hinglish": "Nikath-drishti dosh athva door-drishti dosh ke nivaran hetu prayukt lens dwara bana pratibimb hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Real, erect",
+            "hi": "वास्तविक, सीधा",
+            "hinglish": "Vastavik, seedha"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Virtual, erect",
+            "hi": "काल्पनिक, सीधा",
+            "hinglish": "Kalpanik, seedha"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Virtual, inverted",
+            "hi": "काल्पनिक, उल्टा",
+            "hinglish": "Kalpanik, ulta"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Real, inverted",
+            "hi": "वास्तविक, उल्टा",
+            "hinglish": "Vastavik, ulta"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000525",
+      "topicId": null,
+      "questionText": {
+        "en": "The blue colour of the sky is the result of which phenomenon?",
+        "hi": "आकाश का नीला रंग होना किस परिघटना का परिणाम है?",
+        "hinglish": "Aakash ka neela rang hona kis parighatna ka parinaam hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Refraction",
+            "hi": "अपवर्तन",
+            "hinglish": "Apvartan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Scattering",
+            "hi": "प्रकीर्णन",
+            "hinglish": "Prakirnan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Reflection",
+            "hi": "परावर्तन",
+            "hinglish": "Paravartan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000526",
+      "topicId": null,
+      "questionText": {
+        "en": "Minimum distance of distinct vision for normal eye is",
+        "hi": "सामान्य नेत्र के लिए स्पष्ट दृष्टि का न्यूनतम दूरी होता है",
+        "hinglish": "Niyunatam doori of distinct vision for normal eye hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "25 m",
+            "hi": "25 मी",
+            "hinglish": "25 m"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "2.5 cm Least distance of distinct vision for the normal eye is A. 25 m B. 2.5 cm",
+            "hi": "2.5 सेमी",
+            "hinglish": "2.5 cm"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "25 cm",
+            "hi": "25 सेमी",
+            "hinglish": "25 cm"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "2.5 m",
+            "hi": "2.5 मी",
+            "hinglish": "2.5 m"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000528",
+      "topicId": null,
+      "questionText": {
+        "en": "A prism is surrounded by how many surfaces?",
+        "hi": "एक प्रिज्म कितने सतहों से घिरा रहता है?",
+        "hinglish": "Ek prism kitne satohon se ghira rahta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Two",
+            "hi": "दो",
+            "hinglish": "Do"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Three",
+            "hi": "तीन",
+            "hinglish": "Teen"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Four",
+            "hi": "चार",
+            "hinglish": "Chaar"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Five",
+            "hi": "पाँच",
+            "hinglish": "Paanch"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000529",
+      "topicId": null,
+      "questionText": {
+        "en": "The focal length of the eye lens is changed by",
+        "hi": "अभिनेत्र लेंस की फोकस-दूरी में परिवर्तन किया जाता है",
+        "hinglish": "Abhinetra lens ki fokaas-doori mein parivartan kiya jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Pupil",
+            "hi": "पुतली द्वारा",
+            "hinglish": "Putli dwara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Iris",
+            "hi": "परितारिका द्वारा",
+            "hinglish": "Paritarika dwara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Retina",
+            "hi": "दृष्टिपटल द्वारा",
+            "hinglish": "Drishtipatal dwara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Ciliary muscles",
+            "hi": "पक्ष्माभी पेशियों द्वारा स. दृष्टिपटल द्वारा द. पक्ष्माभी पेशियों द्वारा",
+            "hinglish": "Pakshmaabhi pesiyon dwara"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000531",
+      "topicId": null,
+      "questionText": {
+        "en": "The objective of a photography camera is",
+        "hi": "फोटोग्राफी कैमरा का अभिदृश्यक होता है।",
+        "hinglish": "Photography camera ka abhidrushyak hota hai."
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Convex mirror",
+            "hi": "उत्तल दर्पण",
+            "hinglish": "Uttal darpan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Concave mirror",
+            "hi": "अवतल दर्पण",
+            "hinglish": "Avatal darpan"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000533",
+      "topicId": null,
+      "questionText": {
+        "en": "If a monochromatic ray passes through a prism, it will not suffer",
+        "hi": "यदि एक प्रिज्म से एकवर्णी किरण गुजरे, तो इसका नहीं होगा।",
+        "hinglish": "Yadi ek prism se ekvarni kiran guzre, to iska nahi hoga."
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "refraction",
+            "hi": "अपवर्तन",
+            "hinglish": "Apvartan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "dispersion",
+            "hi": "वर्ण विक्षेपण",
+            "hinglish": "Varna vikshan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "deviation",
+            "hi": "विचलन",
+            "hinglish": "Vichalan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000538",
+      "topicId": null,
+      "questionText": {
+        "en": "A ray passing from denser to rarer medium deviates",
+        "hi": "सघन माध्यम से विरल माध्यम में जाती हुई किरण अभिलंब से विचलित हो जाती है",
+        "hinglish": "Saghan madhyam se viral madhyam mein jaati hui kiran abhilamb se vichalit ho jaati hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "away from normal",
+            "hi": "अभिलंब से दूर",
+            "hinglish": "Abhilamb se door"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "to coincide with the normal",
+            "hi": "अभिलंब के साथ संपाती",
+            "hinglish": "Abhilamb ke saath sampati"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "towards the normal",
+            "hi": "अभिलंब के नजदीक",
+            "hinglish": "Abhilamb ke nazdeek"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "none of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2022
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000607",
+      "topicId": null,
+      "questionText": {
+        "en": "Dispersion of white light is produced by",
+        "hi": "श्वेत प्रकाश में वर्ण-विक्षेपण उत्पन्न करता है",
+        "hinglish": "Shvet prakash mein varna-vikiran utpann karta hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "glass slab",
+            "hi": "काँच की सिल्ली",
+            "hinglish": "Kaanch ki sili"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "plane mirror",
+            "hi": "समतल दर्पण",
+            "hinglish": "Samtal darpan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "spherical mirror",
+            "hi": "गोलीय दर्पण",
+            "hinglish": "Goliya darpan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "prism",
+            "hi": "प्रिज्म",
+            "hinglish": "Prism"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000636",
+      "topicId": null,
+      "questionText": {
+        "en": "Which colour has maximum wavelength in visible light?",
+        "hi": "दृश्य प्रकाश में किस वर्ण का तरंगदैर्घ्य अधिकतम होता है ?",
+        "hinglish": "Drishya prakash mein kis varn ka tarangdaikshya adhikta hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Violet",
+            "hi": "बैंगनी",
+            "hinglish": "Baingani"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000689",
+      "topicId": null,
+      "questionText": {
+        "en": "The radius of curvature of the lens of an eye is controlled by",
+        "hi": "आँख के लेंस की वक्रता त्रिज्या को नियंत्रित करती है",
+        "hinglish": "Aankh ke lens ki vakrata trijya ko niyantrit karti hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "retina",
+            "hi": "दृष्टि पटल",
+            "hinglish": "Drishti patal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "iris",
+            "hi": "परितारिका",
+            "hinglish": "Paritarika"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "pupil",
+            "hi": "पुतली",
+            "hinglish": "Putli"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "ciliary muscles",
+            "hi": "पक्ष्माभी मांसपेशियाँ",
+            "hinglish": "Pakshmaabhi maanspeshiyaan"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000690",
+      "topicId": null,
+      "questionText": {
+        "en": "Why is the colour of some clouds white?",
+        "hi": "कुछ बादलों का रंग उजला क्यों होता है?",
+        "hinglish": "Kuch baadlon ka rang ujala kyun hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Due to reflection",
+            "hi": "परावर्तन के कारण",
+            "hinglish": "Paravartan ke kaaran"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Due to scattering",
+            "hi": "प्रकीर्णन के कारण",
+            "hinglish": "Prakirnan ke kaaran"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Due to absorption",
+            "hi": "अवशोषण के कारण",
+            "hinglish": "Avshoshan ke kaaran"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Due to refraction",
+            "hi": "अपवर्तन के कारण",
+            "hinglish": "Apvartan ke kaaran"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000701",
+      "topicId": null,
+      "questionText": {
+        "en": "The amount of light entering in human eye is controlled by",
+        "hi": "मानव की आँख में प्रवेश करने वाले प्रकाश की मात्रा को नियंत्रित किया जाता है",
+        "hinglish": "Manav ki aankh mein pravesh karne wale prakash ki maatra ko niyantrit kiya jaata hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "ciliary muscles",
+            "hi": "पक्ष्माभ पेशी द्वारा",
+            "hinglish": "Pakshmaabh peshi dwara"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "pupil",
+            "hi": "पुतली द्वारा",
+            "hinglish": "Putli dwara"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "cornea",
+            "hi": "कॉर्निया द्वारा",
+            "hinglish": "Kornia dwara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "iris",
+            "hi": "परितारिका द्वारा",
+            "hinglish": "Paritaarika dwara"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000746",
+      "topicId": null,
+      "questionText": {
+        "en": "The far point for the normal vision is",
+        "hi": "सामान्य नेत्र के लिए दूर बिन्दु है",
+        "hinglish": "Samaanya netra ke liye door bindu hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "25 mm",
+            "hi": "25 मिमी",
+            "hinglish": "25 mm"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "25 cm",
+            "hi": "25 सेमी",
+            "hinglish": "25 cm"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "25 m",
+            "hi": "25 मी",
+            "hinglish": "25 m"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "infinity",
+            "hi": "अनंत",
+            "hinglish": "Anant"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000750",
+      "topicId": null,
+      "questionText": {
+        "en": "Which colour of light scatters more in atmosphere? (English translation continues on next page) 69 (cont.) Which colour of light scatters more in atmosphere?",
+        "hi": "वायुमंडल में प्रकाश का कौन-सा रंग (वर्ण) अधिक प्रकीर्णन करता है?",
+        "hinglish": "Vayumandal mein prakash ka kaun-sa rang (varna) adhik prakiran karta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Yellow",
+            "hi": "पीला",
+            "hinglish": "Peela"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Orange",
+            "hi": "नारंगी",
+            "hinglish": "Narangi"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000794",
+      "topicId": null,
+      "questionText": {
+        "en": "Which phenomena is responsible for the blue colour of the sky?",
+        "hi": "आकाश का नीला रंग होना किस परिघटना का परिणाम है?",
+        "hinglish": "Aakash ka neela rang hona kis parighatana ka parinaam hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Refraction",
+            "hi": "अपवर्तन",
+            "hinglish": "Apvartan"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Scattering",
+            "hi": "प्रकीर्णन",
+            "hinglish": "Prakirnan"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Reflection",
+            "hi": "परावर्तन",
+            "hinglish": "Paravartan"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000795",
+      "topicId": null,
+      "questionText": {
+        "en": "The primary colour of light is",
+        "hi": "प्रकाश का प्राथमिक वर्ण है",
+        "hinglish": "Prakash ka prathmik varn hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Red",
+            "hi": "लाल",
+            "hinglish": "Laal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Blue",
+            "hi": "नीला",
+            "hinglish": "Neela"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Green",
+            "hi": "हरा",
+            "hinglish": "Hara"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "All of these 10. (A) Red (B) Blue (C) Green (D) All of these",
+            "hi": "इनमें सभी 10. (A) लाल (B) नीला (C) हरा (D) इनमें सभी",
+            "hinglish": "Inmein sabhi 10. (A) Laal (B) Neela (C) Hara (D) Inmein sabhi"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000797",
+      "topicId": null,
+      "questionText": {
+        "en": "Which lens is used for the treatment of farsightedness?",
+        "hi": "दूर-दृष्टिदोष के उपचार के लिए किस लेंस का प्रयोग होता है?",
+        "hinglish": "Door-drishti dosh ke upchar ke liye kis lens ka prayog hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Convex lens",
+            "hi": "उत्तल लेंस",
+            "hinglish": "Uttal lens"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Concave lens",
+            "hi": "अवतल लेंस",
+            "hinglish": "Avatel lens"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Cylindrical lens",
+            "hi": "बेलनाकार लेंस",
+            "hinglish": "Belanakar lens"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000798",
+      "topicId": null,
+      "questionText": {
+        "en": "The persistence of vision for human eye is",
+        "hi": "मानव नेत्र के लिए दृष्टि का स्थायित्व होता है",
+        "hinglish": "Manav netra ke liye drishti ka sthayitva hota hai"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "1/6 sec",
+            "hi": "1/6 sec",
+            "hinglish": "1/6 sec"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "1/10 sec",
+            "hi": "1/10 sec",
+            "hinglish": "1/10 sec"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "1/16 sec",
+            "hi": "1/16 sec",
+            "hinglish": "1/16 sec"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2025
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000897",
+      "topicId": null,
+      "questionText": {
+        "en": "If the angle of incidence is 30°, then the angle between the reflected ray and the incident ray will be–",
+        "hi": "यदि आपतन कोण 30° हो, तो परावर्तित किरण एवं आपतित किरण के बीच कोण होगा–",
+        "hinglish": "Yadi aapatan kon 30° ho, to paravartit kiran evam aapatit kiran ke beech kon hoga–"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "30°",
+            "hi": "30°",
+            "hinglish": "30°"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "15°",
+            "hi": "15°",
+            "hinglish": "15°"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "120°",
+            "hi": "120°",
+            "hinglish": "120°"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "60° [Q3 repeated header, already captured page",
+            "hi": "60° [Q3 repeated header, already captured page",
+            "hinglish": "60° [Q3 repeated header, already captured page"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000905",
+      "topicId": null,
+      "questionText": {
+        "en": "On which of the following parts is the image of an object formed in the human eye?",
+        "hi": "निम्नलिखित में से किस भाग पर मानव नेत्र में किसी वस्तु का प्रतिबिंब बनता है ?",
+        "hinglish": "Nimnalikhit mein se kis bhaag par maanav netra mein kisi vastu ka pratibimb banta hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Iris",
+            "hi": "परितारिका",
+            "hinglish": "Paritarika"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pupil",
+            "hi": "पुतली",
+            "hinglish": "Putli"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Retina",
+            "hi": "दृष्टि पटल",
+            "hinglish": "Drishti patal"
+          }
+        }
+      ],
+      "correctOptionLabel": "D",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000906",
+      "topicId": null,
+      "questionText": {
+        "en": "The transparent front part of the eye is",
+        "hi": "नेत्र का पारदर्शी अग्र भाग कहलाता है –",
+        "hinglish": "Netra ka paardarshi agr bhaag kehlata hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Iris",
+            "hi": "आईरिस",
+            "hinglish": "Airis"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Lens",
+            "hi": "लेंस",
+            "hinglish": "Lens"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Retina",
+            "hi": "रेटिना",
+            "hinglish": "Retina"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000907",
+      "topicId": null,
+      "questionText": {
+        "en": "Which defect is corrected by bifocal lens is",
+        "hi": "बाइफोकल लेंस द्वारा कौन–सा दोष सुधारा जाता है ?",
+        "hinglish": "Bifocal lens dwara kaun–sa dosh sudhaara jaata hai ?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Myopia",
+            "hi": "निकट दृष्टि दोष",
+            "hinglish": "Nikhat drishti dosh"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Hypermetropia",
+            "hi": "दूर दृष्टि दोष",
+            "hinglish": "Door drishti dosh"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Presbyopia",
+            "hi": "जरा–दृष्टिदोष़",
+            "hinglish": "Jara–drishti dosh"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000908",
+      "topicId": null,
+      "questionText": {
+        "en": "Rods cells are sensitive to",
+        "hi": "रॉड्स कोशिकाएं किसके प्रति संवेदनशील होते हैं ?",
+        "hinglish": "Rods koshikaen kis ke prati sanvedansheel hote hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Colour",
+            "hi": "रंग",
+            "hinglish": "Rang"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Bright light",
+            "hi": "तेज रोशनी",
+            "hinglish": "Tez roshni"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Dim light",
+            "hi": "धुंधली रोशनी",
+            "hinglish": "Dhundhli roshni"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q000909",
+      "topicId": null,
+      "questionText": {
+        "en": "The blind spot has no",
+        "hi": "ब्लाइंड स्पॉट में नहीं होता है –",
+        "hinglish": "Blind spot mein nahi hota hai –"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Cornea",
+            "hi": "कॉर्निया",
+            "hinglish": "Kornia"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Rods and cones",
+            "hi": "रॉड्स और कोन्स",
+            "hinglish": "Rods aur cones"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "Pupil",
+            "hi": "पुतली",
+            "hinglish": "Putli"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "Lens",
+            "hi": "लेंस",
+            "hinglish": "Lens"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2026
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q001213",
+      "topicId": null,
+      "questionText": {
+        "en": "Which lens is used to correct nearsightedness?",
+        "hi": "निकट दृष्टि दोष दूर करने के लिए किस लेंस का व्यवहार होता है ?",
+        "hinglish": "Nikhat drishti dosh door karne ke liye kis lens ka vyavhaar hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Convex",
+            "hi": "उत्तल",
+            "hinglish": "Uttal"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "Concave",
+            "hi": "अवतल",
+            "hinglish": "Avatal"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "cylindrical",
+            "hi": "बेलनाकार",
+            "hinglish": "Belanakar"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "B",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2016
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q001262",
+      "topicId": null,
+      "questionText": {
+        "en": "The eye behaves like:",
+        "hi": "आँख व्यवहार होता है :",
+        "hinglish": "Aankh vyavhaar hota hai :"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "a concave mirror",
+            "hi": "अवतल दर्पण की तरह",
+            "hinglish": "Avatal darpan ki tarah"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "a convex lens",
+            "hi": "उत्तल लेंस की तरह",
+            "hinglish": "Uttal lens ki tarah"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "a plane mirror",
+            "hi": "समतल दर्पण की तरह",
+            "hinglish": "Samtal darpan ki tarah"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "None of these",
+            "hi": "इनमें से कोई नहीं",
+            "hinglish": "Inmein se koi nahi"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2017
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q001298",
+      "topicId": null,
+      "questionText": {
+        "en": "A prism is bounded by how many surfaces?",
+        "hi": "एक प्रिज्म कितने सतहों से घिरा होता है ?",
+        "hinglish": "Ek prism kitne satohon se ghira hota hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "2",
+            "hi": "2",
+            "hinglish": "2"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2023
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q001308",
+      "topicId": null,
+      "questionText": {
+        "en": "A simple prism is bounded by how many surfaces?",
+        "hi": "एक साधारण प्रिज्म कितने सतहों से घिरा रहता है?",
+        "hinglish": "Ek saadharan prism kitne satohon se ghira rahta hai?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "3",
+            "hi": "3",
+            "hinglish": "3"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "4",
+            "hi": "4",
+            "hinglish": "4"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "5",
+            "hi": "5",
+            "hinglish": "5"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "6",
+            "hi": "6",
+            "hinglish": "6"
+          }
+        }
+      ],
+      "correctOptionLabel": "A",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2024
+      ]
+    },
+    {
+      "questionCode": "sci-phy-ch02-q001324",
+      "topicId": null,
+      "questionText": {
+        "en": "Which eye defect can be corrected by using bifocal lens consisting of both concave and convex lens?",
+        "hi": "कौन सा नेत्र दोष बाइफोकल लेंस का उपयोग करके ठीक किया जा सकता है जिसमें उत्कर्ण और उत्कृष्ट लेंस दोनों होते हैं?",
+        "hinglish": "Kaun sa netra dosh bifocal lens ka upyog karke theek kiya ja sakta hai jismein utkaran aur utkrsht lens dono hote hain?"
+      },
+      "options": [
+        {
+          "label": "A",
+          "text": {
+            "en": "Myopia",
+            "hi": "मायोपिया",
+            "hinglish": "Myopia"
+          }
+        },
+        {
+          "label": "B",
+          "text": {
+            "en": "hypermetropia",
+            "hi": "हाइपरमेट्रोपिया",
+            "hinglish": "Hypermetropia"
+          }
+        },
+        {
+          "label": "C",
+          "text": {
+            "en": "presbyopia",
+            "hi": "प्रेस्बायोपिया",
+            "hinglish": "Presbyopia"
+          }
+        },
+        {
+          "label": "D",
+          "text": {
+            "en": "cataract Ans: presbyopia",
+            "hi": "मोतियाबिंद उत्तर: प्रेस्बायोपिया",
+            "hinglish": "Motiya bindu uttar: Presbyopia"
+          }
+        }
+      ],
+      "correctOptionLabel": "C",
+      "explanation": {
+        "en": null,
+        "hi": null,
+        "hinglish": null
+      },
+      "difficulty": null,
+      "askedInYears": [
+        2018
+      ]
+    }
+  ]
+}

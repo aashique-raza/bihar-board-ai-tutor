@@ -20,6 +20,7 @@ import {
   GUEST_TURN_LIMIT,
 } from '../utils/guestLimit.js';
 import GuestLimitModal from '../components/GuestLimitModal.jsx';
+import QuizModal from '../components/QuizModal.jsx';
 import { useAuth } from '../hooks/useAuth.js';
 import { useToast } from '../hooks/useToast.js';
 import useSessionList from '../hooks/useSessionList.js';
@@ -165,6 +166,7 @@ function ChatPage({ theme, toggleTheme }) {
   const [isGuestLimited, setIsGuestLimited] = useState(false);
   const [guestLimitModal, setGuestLimitModal] = useState({ open: false, trigger: 'turn_limit' });
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
 
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -650,6 +652,14 @@ function ChatPage({ theme, toggleTheme }) {
         handleAsk('Chapter overview batao', studyModeRef.current);
         break;
 
+      // Sent when chapterProgress.status === 'awaiting_quiz' (buildRecommendation
+      // on the backend). Opens QuizModal directly — this is a pure frontend
+      // action, no /ask call, since the modal makes its own generate/submit
+      // requests once it's open.
+      case 'start_gate_quiz':
+        setIsQuizModalOpen(true);
+        break;
+
       // Discards progress and starts over — needs a backend reset BEFORE asking,
       // otherwise NEXT_STEP would resolve from the old (unreset) topic pointer.
       case 'restart_topic':
@@ -678,6 +688,20 @@ function ChatPage({ theme, toggleTheme }) {
         handleAsk(action.label, studyModeRef.current);
     }
   }, [handleAsk, handleClearFocus, showToast, chapterTopics, currentTopicId, completedTopicIds]);
+
+  // QuizModal's state is local to itself — it doesn't know about chapterStatus or
+  // the FocusModal "Quiz Pending" chip. On a gate-quiz pass, we sync both: flip
+  // the header's status locally (same field NEXT_STEP responses already update)
+  // and bust useChapterProgress's cache so FocusModal drops the pending badge
+  // next time it's opened (same event handleAsk already fires on every response).
+  const handleQuizComplete = useCallback((result) => {
+    if (!result?.passed) return;
+    setChapterStatus('completed');
+    const chapterId = selectedChapterIdRef.current;
+    if (chapterId) {
+      window.dispatchEvent(new CustomEvent('chapter-progress-updated', { detail: { chapterId } }));
+    }
+  }, []);
 
   const handleSessionSwitch = useCallback(async (session) => {
     if (session.sessionId === sessionId) return; // already on this session
@@ -983,6 +1007,16 @@ function ChatPage({ theme, toggleTheme }) {
       />
 
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
+
+      <QuizModal
+        isOpen={isQuizModalOpen}
+        quizType="chapter_gate"
+        subjectId="science"
+        chapterId={selectedChapterId}
+        contextTitle={selectedChapter?.hinglishTitle || selectedChapter?.title}
+        onQuizComplete={handleQuizComplete}
+        onClose={() => setIsQuizModalOpen(false)}
+      />
     </Box>
   );
 }
