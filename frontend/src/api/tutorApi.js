@@ -284,7 +284,15 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
           const dataStr = line.replace(/^data:\s*/, '').trim();
           if (!dataStr) continue;
 
-          const dataObj = JSON.parse(dataStr);
+          // D3 hardening: one malformed SSE frame must not kill the whole stream —
+          // skip it and keep reading rather than throwing out of the loop.
+          let dataObj;
+          try {
+            dataObj = JSON.parse(dataStr);
+          } catch (parseErr) {
+            console.warn('[askTutor] Skipping malformed SSE frame:', parseErr.message);
+            continue;
+          }
 
           if (dataObj.event === 'end') {
             finalPayload = dataObj.payload;
@@ -311,13 +319,23 @@ export const askTutor = async ({ question, studyMode, chapterId, sessionId }, si
           }
         }
       }
+
+      // D4 fix: stream ended (reader done) without ever seeing an 'end' event —
+      // e.g. connection dropped mid-response. Fail loudly here, before the caller
+      // dereferences payload.session on a null payload.
+      if (finalPayload === null) {
+        const incompleteError = new Error('Stream ended without a complete response');
+        incompleteError.name = 'StreamIncompleteError';
+        throw incompleteError;
+      }
+
       return finalPayload;
     } else {
       const data = await response.json();
       return data.data;
     }
   } catch (error) {
-    if (error.name === 'AbortError') {
+    if (error.name === 'AbortError' || error.name === 'StreamIncompleteError') {
       throw error;
     }
     if (

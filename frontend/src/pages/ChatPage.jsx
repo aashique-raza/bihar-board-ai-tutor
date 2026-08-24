@@ -544,6 +544,25 @@ function ChatPage({ theme, toggleTheme }) {
         } else {
           setMessages((prev) => [...prev, { ...createAnswerMessage({ status: 'cancelled', answer, sources: [] }), isNew: true }]);
         }
+      } else if (askError.name === 'StreamIncompleteError') {
+        // Connection dropped mid-stream (no 'end' event ever arrived). Whatever partial
+        // content rendered so far must NOT be shown as a finished answer (that was the
+        // root cause of the "Explanation here" bug) — mark it clearly incomplete and let
+        // the student retry via the ChatMessage banner instead of silently trusting it.
+        if (!isFirstUpdate) {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === tempMessageId
+                ? { ...m, status: 'stream_incomplete' }
+                : m
+            )
+          );
+        } else {
+          setMessages((prev) => [
+            ...prev,
+            { ...createAnswerMessage({ status: 'stream_incomplete', answer: '', sources: [] }), isNew: true },
+          ]);
+        }
       } else {
         if (!isFirstUpdate) {
           // Streaming had started — mark partial message as errored, preserve what arrived.
@@ -565,6 +584,13 @@ function ChatPage({ theme, toggleTheme }) {
       setThinkingStage(null);
     }
   }, [isLoggedIn]);
+
+  // Re-sends a failed/incomplete question — always in the CURRENT study mode
+  // (not whatever mode the failed turn happened to be in), same as a fresh ask.
+  const handleRetry = useCallback((question) => {
+    if (!question) return;
+    handleAsk(question);
+  }, [handleAsk]);
 
   const handleCancel = useCallback(() => {
     controllerRef.current?.abort();
@@ -920,6 +946,7 @@ function ChatPage({ theme, toggleTheme }) {
                   question={question}
                   onSwitchToGlobal={handleSwitchToGlobal}
                   onSuggestedAction={handleSuggestedAction}
+                  onRetry={handleRetry}
                   showHeader={showHeader}
                 />
               );

@@ -109,7 +109,7 @@ const generateShareText = (msg) => {
   return text;
 };
 
-function ChatMessage({ message, question, onSwitchToGlobal, onSuggestedAction, showHeader = true }) {
+function ChatMessage({ message, question, onSwitchToGlobal, onSuggestedAction, onRetry, showHeader = true }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -143,6 +143,11 @@ function ChatMessage({ message, question, onSwitchToGlobal, onSuggestedAction, s
   const isSystem = message.role === 'system';
   const isFocusMiss = message.status === 'focus_context_not_found';
   const isThinking = message.status === 'thinking';
+  // Stream dropped before the answer finished (network drop, timeout, or a bad
+  // provider response) — never let whatever partial text arrived look like a
+  // finished, trustworthy answer. Content stays visible (dimmed) but always
+  // paired with a clear "incomplete" banner + Retry.
+  const isStreamIncomplete = message.status === 'stream_incomplete';
   const showSections = !isStudent && !isThinking && hasStructuredSections(message);
   const showSources = !isStudent && !isThinking && Array.isArray(message.sources) && message.sources.length > 0;
   const isAcademic = message.responseMode === 'study_tutor' || showSources;
@@ -186,10 +191,27 @@ function ChatMessage({ message, question, onSwitchToGlobal, onSuggestedAction, s
 
         {isThinking ? (
           <ThinkingDots stage={message.stage} />
-        ) : showSections ? (
-          <MessageSections sections={message.sections} />
-        ) : (
-          <p className="prose-paragraph">{message.answer}</p>
+        ) : (showSections || message.answer) ? (
+          <div className={isStreamIncomplete ? 'incomplete-content' : undefined}>
+            {showSections ? (
+              <MessageSections sections={message.sections} />
+            ) : (
+              <p className="prose-paragraph">{message.answer}</p>
+            )}
+          </div>
+        ) : null}
+
+        {isStreamIncomplete && (
+          <div className="incomplete-banner">
+            <span>⚠️ Ye jawaab poora nahi aa paaya.</span>
+            <button
+              type="button"
+              className="retry-chip"
+              onClick={() => onRetry && onRetry(question)}
+            >
+              Dobara try karo
+            </button>
+          </div>
         )}
 
         {showSources && <SourceFootnote sources={message.sources} />}

@@ -1402,6 +1402,50 @@ body {
   }
 }
 
+/* ── Incomplete Stream (stream dropped mid-response) ── */
+.incomplete-content {
+  opacity: 0.55;
+}
+
+.incomplete-banner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md, 12px);
+  background: var(--bg-surface);
+  color: var(--warning);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.retry-chip {
+  padding: 6px 14px;
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.retry-chip:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) {
+  .retry-chip:hover {
+    background: var(--primary);
+    color: #ffffff;
+  }
+}
+
 .scroll-to-bottom-pill {
   position: absolute;
   bottom: 12px;
