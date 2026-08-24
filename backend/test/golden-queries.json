@@ -49,6 +49,26 @@
     "qualityChecks": ["aaj", "padh"],
     "note": "English time greeting"
   },
+  {
+    "id": "G06",
+    "category": "GREETING",
+    "query": "hii",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["aaj", "subject"],
+    "note": "Informal doubled-letter spelling — regression test for D5 (was misclassified as CONCEPT_QUESTION)"
+  },
+  {
+    "id": "G07",
+    "category": "GREETING",
+    "query": "heyy",
+    "studyMode": "global",
+    "expectedIntent": "GREETING",
+    "expectedResponseMode": "conversation",
+    "qualityChecks": ["aaj", "subject"],
+    "note": "Informal doubled-letter spelling — regression test for D5"
+  },
 
   {
     "id": "C01",

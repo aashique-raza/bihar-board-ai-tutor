@@ -9,7 +9,8 @@ INTENTS:
 
 1. GREETING — Casual message, check-in, personal question about Zuno, or student reacting/confused about Zuno's previous reply. No science question present.
    KEY: If student is questioning or correcting something Zuno said — classify as GREETING, not OUT_OF_CONTEXT.
-   MUST BE GREETING (examples): "kaise ho", "tum theek ho", "aap kaun ho", "hi", "hello", "bye", "okay", "theek hai", "achha", "haan", "nahi" as a reaction to Zuno's previous message, "samajh nahi aaya" without a topic, "mujhe nahi pata".
+   MUST BE GREETING (examples): "kaise ho", "tum theek ho", "aap kaun ho", "hi", "hii", "hiii", "hlo", "hey", "heyy", "hello", "bye", "okay", "theek hai", "achha", "haan", "nahi" as a reaction to Zuno's previous message, "samajh nahi aaya" without a topic, "mujhe nahi pata".
+   NOTE: Informal spelling variants of a greeting (doubled/extra letters like "hii", "hiii", "heyy", or short forms like "hlo") are STILL GREETING — do not require exact spelling match.
    CRITICAL: "kaise ho" after Zuno asks a question means the student is asking about Zuno's wellbeing — it is NOT a topic answer. Classify as GREETING.
 
 2. CHOOSE_COURSE — Student wants to start or switch to a subject or chapter. ("Physics padhna hai", "Chemistry shuru karo", "Biology chapter 1 padhao")
