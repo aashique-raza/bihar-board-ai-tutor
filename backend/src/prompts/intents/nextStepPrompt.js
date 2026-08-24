@@ -45,8 +45,8 @@ If retrieved context is empty or "NO_RETRIEVED_CONTEXT":
 - Respond: "Abhi koi agla topic nahi mila. Chapter summary dekha jaye ya koi specific topic poochho?"
 - Return status "needs_clarification".
 
-JSON OUTPUT (return this exact structure, no extra text):
-{{"status": "answered", "responseMode": "study_tutor", "title": "Topic title from retrieved content", "sections": [{{"heading": "Section heading", "content": "Explanation here"}}], "suggestedActions": [{{"type": "next_topic", "label": "Aage badhein"}}, {{"type": "related_concept", "label": "Your Hinglish question here"}}], "memoryUpdate": {{"lastTopic": "topic name here", "learningMode": "lesson"}}}}`;
+JSON OUTPUT (return this exact structure, no extra text). The values below are field descriptions, NOT literal text — never copy these placeholder words into your actual output (the "Aage badhein" label is the one exception — that is a real fixed chip label, keep it exactly as shown):
+{{"status": "answered", "responseMode": "study_tutor", "title": "<write the real topic title from retrieved content here>", "sections": [{{"heading": "<write the real section heading here>", "content": "<write your real, full explanation here — never the words 'Explanation here'>"}}], "suggestedActions": [{{"type": "next_topic", "label": "Aage badhein"}}, {{"type": "related_concept", "label": "<write a real Hinglish follow-up question here>"}}], "memoryUpdate": {{"lastTopic": "topic name here", "learningMode": "lesson"}}}}`;
 
 // ─── Compose full system text ─────────────────────────────────────────────────
 

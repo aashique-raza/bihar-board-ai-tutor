@@ -182,6 +182,23 @@ const normalizeSections = (sections) => {
     .slice(0, 5);
 };
 
+// Guard against the LLM literally echoing a prompt's example placeholder text
+// instead of writing a real answer (e.g. "Explanation here" from
+// conceptQuestionPrompt.js / nextStepPrompt.js). "Aage badhein" is deliberately
+// excluded — that's a real hardcoded chip label, not a leaked placeholder.
+const PLACEHOLDER_SIGNATURES = new Set([
+  'explanation here',
+  'section heading',
+  'short topic title',
+  'topic title from retrieved content',
+  'simple hinglish question',
+  'your hinglish question here',
+]);
+
+export const isPlaceholderResponse = (sections) =>
+  sections.length > 0 &&
+  sections.every((s) => PLACEHOLDER_SIGNATURES.has(s.content.trim().toLowerCase()));
+
 // Reads token usage from the LangChain callback. Same pattern as step4 and step6.
 const extractTokenBreakdown = (output) => {
   const usage    = output?.llmOutput?.tokenUsage || {};
@@ -302,6 +319,24 @@ export const routeToIntentHandler = async (input, context, decision, retrieval, 
     let sections = normalizeSections(parsed.sections);
     if (!sections.length && String(parsed.title || '').trim()) {
       sections = [{ heading: '', content: String(parsed.title).trim() }];
+    }
+
+    // Guard: LLM echoed a prompt example's placeholder text verbatim (e.g. "Explanation
+    // here") instead of a real answer. Fall back to the same curated message the
+    // parse-error path below already uses — proven to render safely through step6→step7.
+    if (isPlaceholderResponse(sections)) {
+      console.error(`[IntentRouter] Placeholder leak for "${intent}" — falling back`);
+      logCallTokens('TUTOR', capturedBreakdown, { mode: responseMode, intent, status: 'PLACEHOLDER_LEAK' });
+      return {
+        status:           'error',
+        responseMode:     responseMode || 'study_tutor',
+        title:            null,
+        sections:         [{ heading: '', content: 'Thodi technical dikkat aayi. Apna sawaal ek baar aur poochho.' }],
+        suggestedActions: [],
+        memoryUpdate:     {},
+        tokenUsage:       capturedBreakdown.total,
+        tokenBreakdown:   capturedBreakdown,
+      };
     }
 
     // Guard 1+3: GREETING and EMOTIONAL_SUPPORT must always return status="answered".

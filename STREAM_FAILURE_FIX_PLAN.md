@@ -285,9 +285,9 @@ npm run build                # syntax/build clean hona chahiye
 
 ## 12. Definition of Done
 
-- [ ] Fix B + C: stream toote toh `stream_incomplete` + Retry dikhta hai; `payload` null par crash nahi; kharab frame se loop nahi marta.
-- [ ] Fix A: placeholder-JSON kabhi student tak nahi pahunchti; normal answers untouched; golden test pass.
-- [ ] Baseline tests: pehle green thay, ab bhi green (no regression).
-- [ ] `frontend npm run build` clean.
-- [ ] Prompt hardening done (secondary).
-- [ ] Fix D alag se tracked.
+- [x] Fix B + C: stream toote toh `stream_incomplete` + Retry dikhta hai; `payload` null par crash nahi; kharab frame se loop nahi marta.
+- [x] Fix A: placeholder-JSON kabhi student tak nahi pahunchti; normal answers untouched; unit test (`npm run test:placeholder-guard`) pass — `isPlaceholderResponse` exported from `intentRouter.js`, 7 cases covered.
+- [x] Baseline tests: `test:chunks`, `test:study-map`, `test:curriculum-resolvers` — pehle green thay, ab bhi green. (`test:chat-db-models` pre-existing broken — stale import of a deleted `chatState.model.js`, unrelated to this fix, not touched.)
+- [ ] `frontend npm run build` clean. (no frontend changes this session — B/C already verified last session)
+- [x] Prompt hardening done (secondary) — `conceptQuestionPrompt.js` (2 spots) + `nextStepPrompt.js` (1 spot) placeholder text replaced with non-copyable field descriptions.
+- [ ] Fix D alag se tracked. (deferred to `DECIDER_GREETING_FIX` branch, as planned)

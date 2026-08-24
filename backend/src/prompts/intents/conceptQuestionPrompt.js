@@ -82,8 +82,8 @@ SUGGESTED ACTIONS RULE:
 - Base every suggestion ONLY on the topic/chapter actually covered in the retrieved context above — never introduce a topic from a different chapter or subject, even loosely.
 - Set the "type" field to "related_concept".
 
-JSON OUTPUT (return this exact structure, no extra text — status is ALWAYS "answered" here, content is guaranteed to exist below):
-{{"status": "answered", "responseMode": "study_tutor", "title": "Short topic title", "sections": [{{"heading": "Section heading", "content": "Explanation here"}}], "suggestedActions": [{{"type": "related_concept", "label": "Simple Hinglish question"}}], "memoryUpdate": {{"lastTopic": "topic name", "learningMode": "lesson"}}}}`;
+JSON OUTPUT (return this exact structure, no extra text — status is ALWAYS "answered" here, content is guaranteed to exist below). The values below are field descriptions, NOT literal text — never copy these placeholder words into your actual output:
+{{"status": "answered", "responseMode": "study_tutor", "title": "<write the real short topic title here>", "sections": [{{"heading": "<write the real section heading here>", "content": "<write your real, full explanation here — never the words 'Explanation here'>"}}], "suggestedActions": [{{"type": "related_concept", "label": "<write a real simple Hinglish follow-up question here>"}}], "memoryUpdate": {{"lastTopic": "topic name", "learningMode": "lesson"}}}}`;
 
 // ─── Variant B: no chunks were retrieved — graceful, honest redirect ────────
 
@@ -106,8 +106,8 @@ SUGGESTED ACTIONS RULE:
 - These MUST be written in simple, conversational Hinglish (exactly how a student would ask it).
 - Set the "type" field to "related_concept".
 
-JSON OUTPUT (return this exact structure, no extra text — status is ALWAYS "insufficient_context" here):
-{{"status": "insufficient_context", "responseMode": "study_tutor", "title": null, "sections": [{{"heading": "", "content": "Explanation here"}}], "suggestedActions": [{{"type": "related_concept", "label": "Simple Hinglish question"}}], "memoryUpdate": {{}}}}`;
+JSON OUTPUT (return this exact structure, no extra text — status is ALWAYS "insufficient_context" here). The values below are field descriptions, NOT literal text — never copy these placeholder words into your actual output:
+{{"status": "insufficient_context", "responseMode": "study_tutor", "title": null, "sections": [{{"heading": "", "content": "<write your real redirect message here — never the words 'Explanation here'>"}}], "suggestedActions": [{{"type": "related_concept", "label": "<write a real simple Hinglish question here>"}}], "memoryUpdate": {{}}}}`;
 
 // ─── Compose full system texts ────────────────────────────────────────────────
 
