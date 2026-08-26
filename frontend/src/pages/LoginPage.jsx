@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import TextField from '@mui/material/TextField';
@@ -119,7 +120,12 @@ function LoginPage() {
   }
 
   return (
-    <div className="auth-page">
+    <>
+      <Helmet>
+        <title>Login — Zuno AI Tutor</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      <div className="auth-page">
       <div className="auth-card">
 
         {/* Left — brand panel */}
@@ -266,7 +272,8 @@ function LoginPage() {
 
       </div>
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
-    </div>
+      </div>
+    </>
   );
 }
 

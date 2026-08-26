@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { askTutor, fetchSessionHistory, fetchStudyMap, fetchChapterProgress, chapterProgressAction } from '../api/tutorApi.js';
@@ -757,7 +758,16 @@ function ChatPage({ theme, toggleTheme }) {
   }, [sessionId, showToast]);
 
   return (
-    <Box
+    <>
+      <Helmet>
+        <title>Apna Sawaal Poochho — Zuno AI Tutor | Class 10 Science</title>
+        <meta
+          name="description"
+          content="Bihar Board Class 10 Science ka koi bhi doubt seedha poochho. Zuno AI Tutor Hinglish mein grounded jawab deta hai — Physics, Chemistry, Biology sab cover."
+        />
+        <link rel="canonical" href="https://learnzuno.in/chat" />
+      </Helmet>
+      <Box
       sx={{
         display: 'flex',
         flexDirection: 'row',
@@ -983,7 +993,8 @@ function ChatPage({ theme, toggleTheme }) {
       />
 
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
-    </Box>
+      </Box>
+    </>
   );
 }
 

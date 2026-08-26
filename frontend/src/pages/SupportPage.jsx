@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -205,7 +206,16 @@ function SupportPage() {
   }
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: 'var(--bg-page)', display: 'flex', flexDirection: 'column' }}>
+    <>
+      <Helmet>
+        <title>Help & Support — Zuno AI Tutor</title>
+        <meta
+          name="description"
+          content="Zuno AI Tutor se koi problem hai? Bug report karo, feedback do, ya koi sawaal poochho. Hum 24 ghante mein reply karte hain."
+        />
+        <link rel="canonical" href="https://learnzuno.in/support" />
+      </Helmet>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'var(--bg-page)', display: 'flex', flexDirection: 'column' }}>
       <SupportHeader onBack={goToChat} />
 
       <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', px: 2, py: { xs: 4, sm: 6 } }}>
@@ -349,7 +359,8 @@ function SupportPage() {
       </Box>
 
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
-    </Box>
+      </Box>
+    </>
   );
 }
 

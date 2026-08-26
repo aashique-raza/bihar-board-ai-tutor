@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import BoltRounded from '@mui/icons-material/BoltRounded';
 import LoginRounded from '@mui/icons-material/LoginRounded';
@@ -11,11 +12,20 @@ function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="landing-page">
+    <>
+      <Helmet>
+        <title>Zuno — Bihar Board Class 10 Science AI Tutor | Hindi Mein Padho</title>
+        <meta
+          name="description"
+          content="Zuno AI Tutor se Bihar Board Class 10 Science ke doubts poochho — Hindi aur Hinglish mein. Physics, Chemistry, Biology — sab kuch Bihar Board syllabus se grounded jawab."
+        />
+        <link rel="canonical" href="https://learnzuno.in/" />
+      </Helmet>
+      <div className="landing-page">
       <div className="landing-card">
 
         <div className="landing-brand-mark"><ZunoMark size={96} /></div>
-        <div className="landing-brand-name">Zuno</div>
+        <h1 className="landing-brand-name">Zuno</h1>
         <div className="landing-brand-tag">apni boli mein</div>
 
         <div className="landing-feat-row">
@@ -81,7 +91,8 @@ function LandingPage() {
         </div>
 
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

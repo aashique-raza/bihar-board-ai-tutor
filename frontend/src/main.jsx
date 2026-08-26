@@ -1,5 +1,3 @@
-
-// );
 import './styles/theme.css';
 import './styles/global.css';
 import React, { StrictMode } from 'react';

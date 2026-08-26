@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -195,7 +196,12 @@ function ResetPasswordPage() {
   }
 
   return (
-    <div className="auth-page">
+    <>
+      <Helmet>
+        <title>Password Reset Karo — Zuno AI Tutor</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      <div className="auth-page">
       <div className="auth-card-single">
         <div className="auth-logo-row">
           <ZunoMark />
@@ -308,7 +314,8 @@ function ResetPasswordPage() {
         </form>
       </div>
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
-    </div>
+      </div>
+    </>
   );
 }
 
