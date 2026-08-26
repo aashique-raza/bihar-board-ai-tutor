@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Zuno — Bihar Board Class 10 Science AI Tutor | Hindi Mein Padho</title>
-    <meta
-      name="description"
-      content="Zuno AI Tutor se Bihar Board Class 10 Science ke doubts poochho — Hindi aur Hinglish mein. Physics, Chemistry, Biology — sab kuch Bihar Board syllabus se grounded jawab."
-    />
+    <!--
+      No static title/description/canonical/robots tags here — every route sets these
+      itself via react-helmet-async (see src/pages/*.jsx). react-helmet-async inserts
+      its own tags via a React portal instead of replacing existing ones, so a static
+      default here would end up duplicated (not replaced) once a page's Helmet mounts —
+      e.g. an auth page's noindex tag would sit alongside this file's "index, follow"
+      instead of overriding it.
+    -->
     <meta
       name="keywords"
       content="Zuno AI, AI study companion, Class 10 Science, Class 10 Science AI, Science doubt solver, AI tutor, Class 10 tutor, Bihar Board Class 10 Science, NCERT Science, NCERT Class 10, Science questions and answers, AI education, online science tutor, Class 10 study app, AI learning assistant"
     />
-    <meta name="robots" content="index, follow" />
     <meta name="author" content="Zuno" />
-    <link rel="canonical" href="https://learnzuno.in/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
