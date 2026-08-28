@@ -117,6 +117,7 @@ Updated 2026-08-28:
 | Branch | Status |
 |---|---|
 | `main` | ✅ Source of truth. Quiz system + SEO + governance system + BUG-1/BUG-2 fix. |
+| `bug3-choose-course-dead-whitelist` | ✅ **Fixed, pending merge.** BUG-3: dead `CHOOSE_COURSE` whitelist entry → `[]`. New test `test:choose-course-memory`. Baseline unchanged. |
 | `bug1-decider-structured-output` | ✅ **Merged into `main`** 2026-08-28 (`--no-ff`). Carried the Stage 1 Section B triage + BUG-1/BUG-2 fix (ADR-011). Safe to delete. |
 | `quiz-phase0.5-bulk` | 🧊 **Frozen — will not be merged.** See `docs/decisions/010-freeze-quiz-bulk-branch.md`. Its finished output (the 1,126-question bank) already reached `main` via `quiz-phase1`; a byte-diff confirmed `data/quiz-bank/bank/questions.json` is identical on both branches. Kept as a rebuildable pipeline for later, not deleted. Pushed to GitHub 2026-08-28 as a backup, still frozen and unmerged. |
 
@@ -160,7 +161,7 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 > `npm run test:decider-structured` and a live dev-server run. See `BUG1_FIX_PLAN.md`
 > + `ADR-011`. Stage 1 slice of `BACKLOG.md` O2; the tutor/intentRouter side of O2
 > remains Stage 2.
-| BUG-3 | `CHOOSE_COURSE` memory whitelist is overwritten 180 lines later — chapter switching is dead code | `ask/step7.saveAndRespond.js:68` vs `:253` |
+| ~~BUG-3~~ | ✅ **Fixed** on branch `bug3-choose-course-dead-whitelist` (pending merge). `INTENT_MEMORY_WHITELIST.CHOOSE_COURSE` → `[]`; its fields were dead (overwritten every turn by the `studyMode` force-sync block). Chapter switching works only via the request `chapterId` param — untouched. Verified by `npm run test:choose-course-memory`. See `STAGE1_DONE.md` Section C. |
 | BUG-4 | Decider prompt hardcodes "Cell structure" and "Atomic structure" as out of scope, but both exist in `data/` (`### Atomic number`, `## 4. Neuron / Nerve Cell`) | `prompts/deciderPrompt.js:89,144` |
 | BUG-5 | `retrieveChunksByTopicId` has no projection (pulls 3072-float embeddings) and `metadata.topic_ids` has no index → collection scan on every NEXT_STEP | `rag/retriever.js:105`, `models/chunk.model.js` |
 | BUG-6 | Embedding cache stores Gemini fallback vectors under the OpenAI cache key for 30 days, silently corrupting retrieval after any OpenAI outage | `cache/embeddingCache.js:28` |
@@ -179,7 +180,8 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 | Quality checks | Substring matching only — **warns, never fails** |
 
 Other test scripts: `test:chunks`, `test:study-map`, `test:curriculum-resolvers`,
-`test:chat-db-models`, `rag:test-retriever`, `test:golden`
+`test:chat-db-models`, `rag:test-retriever`, `test:golden`,
+`test:decider-structured` (BUG-1/2), `test:choose-course-memory` (BUG-3)
 
 ### ⚠️ Two prescribed test commands are broken on `main` (verified 2026-08-28)
 
@@ -229,13 +231,12 @@ Do not start Stage 2 work before every Stage 1 box is ticked.
 |---|---|
 | A — Repository hygiene | ✅ 5/5 |
 | B — Infrastructure | I2, I3 ✅ verified. I1 (Render paid), I4 (error monitoring), I5 (Redis paid) **deferred by owner** with accepted-risk notes in `STAGE1_DONE.md`. |
-| C — The 8 bugs | **BUG-1, BUG-2 ✅** (ADR-011, `BUG1_FIX_PLAN.md`). BUG-3…BUG-8 not started. |
+| C — The 8 bugs | **BUG-1, BUG-2 ✅** (ADR-011, `BUG1_FIX_PLAN.md`). **BUG-3 ✅** (branch `bug3-choose-course-dead-whitelist`, pending merge). BUG-4…BUG-8 not started. |
 | D — Testing | Not started. Note: `test:chat-db-models` and `test:golden` are broken/no-op on `main` — see §5. |
 | E — Real students | Not started. |
 | F — Legal & student safety | Not started. |
 | G — Operations | Not started. |
 
-**Next task:** BUG-3 (`CHOOSE_COURSE` dead whitelist —
-`ask/step7.saveAndRespond.js:68` vs `:253`). Same protocol: new branch,
-failing-test → fix → passing-test, Rule 4 (remove the cause — here likely
-"delete the dead code", since chapter-switching via that path never worked).
+**Next task:** BUG-4 (decider prompt hardcodes "Cell structure" / "Atomic
+structure" as out of scope, but both exist in `data/` — `prompts/deciderPrompt.js`).
+Same protocol: new branch, failing-test → fix → passing-test, Rule 4.

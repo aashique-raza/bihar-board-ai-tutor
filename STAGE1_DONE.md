@@ -80,8 +80,17 @@ No fix is marked done on assertion alone.
       impossible; `normalizeDecision()`'s fallback is now unreachable **and** its target
       changed `GREETING` → `CONCEPT_QUESTION` as a defence-in-depth default. Verified by
       `test:decider-structured` (forces a bad value through the mock).
-- [ ] **BUG-3 fix** — `CHOOSE_COURSE` either works or the dead whitelist entry is removed
-      `ask/step7.saveAndRespond.js:68` / `:253`
+- [x] **BUG-3 fix** — dead whitelist entry removed. `INTENT_MEMORY_WHITELIST.CHOOSE_COURSE`
+      is now `[]` (`ask/step7.saveAndRespond.js:68`). Its old fields
+      (`currentSubjectId` / `currentSectionId` / `currentChapterId`) were unconditionally
+      overwritten every turn by the `studyMode` force-sync block (`:248-262`), which
+      persists chapter context from `chatState` — set by step2 from the request
+      `chapterId`, never the LLM. `learningMode` is code-managed. Chapter switching only
+      ever worked through the request `chapterId` param (frontend FocusModal path); that
+      path is untouched. Removes the cause (a whitelist entry promising a capability that
+      does not exist) per `AUDIT_RULES.md` Rule 4 — no guard added, force-sync block not
+      touched. Verified by `npm run test:choose-course-memory` (failing-test → passing-test);
+      baseline (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
 - [ ] **BUG-4 fix** — hardcoded out-of-scope topic list removed from the decider prompt
       `prompts/deciderPrompt.js:89,144`
 - [ ] **BUG-5 fix** — add `{ embedding: 0 }` projection + index on `metadata.topic_ids`
