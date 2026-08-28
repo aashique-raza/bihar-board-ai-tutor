@@ -64,18 +64,22 @@ Those are Stage 2 and Stage 3.
 Each one follows the same protocol: **failing test first → fix → passing test.**
 No fix is marked done on assertion alone.
 
-- [ ] **BUG-1 fix** — decider parse error must not produce a false "not in syllabus"
-      `ask/step4.decideRetrieval.js:210`
-      **Approach:** convert the decider chain to `model.withStructuredOutput(schema)`
-      (9-value `intent` enum); delete the `parse_error` fallback branch. Removes the
-      cause (fallible free-text JSON parsing) per `AUDIT_RULES.md` Rule 4 — not a
-      symptom patch. See `BUG1_FIX_PLAN.md` and **ADR-011**.
-- [ ] **BUG-2 fix** — unknown intent falls back to `CONCEPT_QUESTION`, never `GREETING`
-      `ask/step4.decideRetrieval.js:77`
-      **Approach:** same change as BUG-1 — the `intent` enum in the decider schema makes
-      an unrecognised intent value structurally impossible, so the fallback branch in
-      `normalizeDecision()` becomes unreachable and is removed. See `BUG1_FIX_PLAN.md`
-      and **ADR-011**.
+- [x] **BUG-1 fix** — decider parse error must not produce a false "not in syllabus"
+      (branch `bug1-decider-structured-output`, pending merge to `main`).
+      Decider chain converted to `model.withStructuredOutput(decisionSchema, { strict: true })`;
+      the `parse_error` fallback branch in `step4.decideRetrieval.js` is deleted. A
+      genuine decider failure now throws `ProviderUnavailableError` → honest "try again"
+      message, never a false scope rejection. Removes the cause (fallible free-text JSON
+      parsing) per `AUDIT_RULES.md` Rule 4. See `BUG1_FIX_PLAN.md` + **ADR-011**.
+      Verified: `npm run test:decider-structured` (mocked, failing-test → passing-test)
+      **and** a live dev-server run (real OpenAI, `strict: true` accepted; Hinglish →
+      English `searchQuery` translation still works).
+- [x] **BUG-2 fix** — unknown intent falls back to `CONCEPT_QUESTION`, never `GREETING`
+      (same branch/commit as BUG-1).
+      The `intent` enum in `decisionSchema` makes an unrecognised value structurally
+      impossible; `normalizeDecision()`'s fallback is now unreachable **and** its target
+      changed `GREETING` → `CONCEPT_QUESTION` as a defence-in-depth default. Verified by
+      `test:decider-structured` (forces a bad value through the mock).
 - [ ] **BUG-3 fix** — `CHOOSE_COURSE` either works or the dead whitelist entry is removed
       `ask/step7.saveAndRespond.js:68` / `:253`
 - [ ] **BUG-4 fix** — hardcoded out-of-scope topic list removed from the decider prompt
