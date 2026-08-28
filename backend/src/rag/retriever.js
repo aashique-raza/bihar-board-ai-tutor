@@ -102,7 +102,9 @@ export const retrieveChunksByTopicId = async (topicId, chapterMetadataFilter = {
     query[`metadata.${key}`] = value;
   }
 
-  const docs = await Chunk.find(query).lean();
+  // BUG-5: exclude the 3072-float `embedding` (~24 KB/doc) — this deterministic
+  // lookup never reads it (return shape below is id / content / metadata / score).
+  const docs = await Chunk.find(query, { embedding: 0 }).lean();
 
   return docs.map((document) => ({
     id: document.metadata?.chunk_id,

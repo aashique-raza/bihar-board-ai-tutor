@@ -110,8 +110,24 @@ No fix is marked done on assertion alone.
       guard/bypass added; no ADR needed (in-scope Section C fix, no BACKLOG pull).
       Verified by `npm run test:decider-scope` (failing-test → passing-test); baseline
       (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
-- [ ] **BUG-5 fix** — add `{ embedding: 0 }` projection + index on `metadata.topic_ids`
-      `rag/retriever.js:105`, `models/chunk.model.js`
+- [x] **BUG-5 fix** — `{ embedding: 0 }` projection + `metadata.topic_ids` index added
+      (branch `bug5-topic-id-projection-index`).
+      `retrieveChunksByTopicId()` (NEXT_STEP deterministic lookup) ran
+      `Chunk.find({ 'metadata.topic_ids': id }).lean()` with (1) no B-tree index on
+      that path → full COLLSCAN every "aage badhao" (`explain`: totalDocsExamined 629,
+      totalKeysExamined 0 — the Atlas `vector_index` topic_ids entry is a
+      `$vectorSearch` filter only, unusable by a plain `.find()`), and (2) no
+      projection → every matched doc pulled with its 3072-float `embedding` (~24 KB),
+      which the function never reads. Fix (Rule 4 — both causes removed, no guard):
+      `chunk.model.js` now declares `chunkSchema.index({ 'metadata.topic_ids': 1 })`;
+      the `.find()` passes `{ embedding: 0 }`. New `scripts/create-chunk-topic-id-index.js`
+      (matches the repo's `fix-*-index.js` pattern) for an explicit prod build — the
+      schema declaration also auto-creates it on next server start / `rag:index`.
+      Verified: `npm run test:topic-id-lookup` (failing → passing); live `explain`
+      now IXSCAN `metadata.topic_ids_1`, totalDocsExamined 4, `PROJECTION_SIMPLE
+      { embedding: 0 }`; `verify-topic-chunk-coverage.js` PASSED; baseline unchanged.
+      ⚠️ Prod: run `node scripts/create-chunk-topic-id-index.js` against `zuno_prod`
+      after deploy (or let autoIndex build it on restart).
 - [ ] **BUG-6 fix** — never cache an embedding produced by the fallback provider
       `cache/embeddingCache.js:28`
 - [ ] **BUG-7 fix** — science glossary applies to Devanagari answers too
