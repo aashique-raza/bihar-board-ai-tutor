@@ -32,4 +32,11 @@ const chunkSchema = new mongoose.Schema({
   timestamps: true,
 });
 
+// BUG-5: retrieveChunksByTopicId() does a plain Chunk.find({ 'metadata.topic_ids': id })
+// for the NEXT_STEP deterministic lookup. Without this index that is a full COLLSCAN
+// on every "aage badhao" (the metadata.topic_ids entry in the Atlas "vector_index" is
+// a $vectorSearch filter field only — a plain .find() cannot use it). Multikey index:
+// topic_ids is an array, so one key per linked topic id.
+chunkSchema.index({ 'metadata.topic_ids': 1 });
+
 export const Chunk = mongoose.model('Chunk', chunkSchema);
