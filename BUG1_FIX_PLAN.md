@@ -1,8 +1,13 @@
 # BUG-1 / BUG-2 FIX PLAN — Decider structured output
 
-> **Read this first. No code gets written until the owner says "samajh aa gaya".**
-> Stage 1, Section C. Follows `AUDIT_RULES.md` (Rule 4 especially) and
-> `QUIZ_EXECUTION_PROTOCOL` discipline (explain → confirm → one step at a time).
+> **STATUS: ✅ DONE — merged to `main` 2026-08-28 (ADR-011).**
+> Kept as the record of how it was done. Nothing here is pending.
+> Verified by `npm run test:decider-structured` + a live dev-server run
+> against real OpenAI (`strict: true` accepted; Hinglish→English `searchQuery`
+> translation still works). Baseline unchanged.
+>
+> Stage 1, Section C. Followed `AUDIT_RULES.md` Rule 4 (cause removed, no new
+> layer) and the explain → confirm → one-step-at-a-time discipline.
 
 ---
 

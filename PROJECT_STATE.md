@@ -2,7 +2,8 @@
 
 > **This is the single source of truth for "what exists right now".**
 > Any AI agent or developer starting work on this repo MUST read this file first.
-> Last verified: 2026-08-28 (verified against `main` @ 300 commits, not from memory)
+> Last verified: 2026-08-28 (verified against `main`, not from memory).
+> Latest merge: BUG-1/BUG-2 decider structured-output fix (ADR-011).
 
 ---
 
@@ -115,13 +116,14 @@ Updated 2026-08-28:
 
 | Branch | Status |
 |---|---|
-| `main` | ✅ Source of truth. Has quiz system + SEO work + this project system. |
-| `seo-work` | ✅ **Merged into `main`** 2026-08-28. One conflict in `ChatPage.jsx` (Helmet wrapper vs. QuizModal) resolved by keeping both. Full `npm run build` verified green post-merge, including the new Playwright pre-render step. Safe to delete. |
-| `quiz-phase0.5-bulk` | 🧊 **Frozen — will not be merged.** See `docs/decisions/010-freeze-quiz-bulk-branch.md`. Its finished output (the 1,126-question bank) already reached `main` via `quiz-phase1`; a byte-diff confirmed `data/quiz-bank/bank/questions.json` is identical on both branches. The branch itself is kept as a rebuildable pipeline for later, not deleted. It had never been pushed to GitHub before today — pushed 2026-08-28 as a backup, still frozen and unmerged. |
+| `main` | ✅ Source of truth. Quiz system + SEO + governance system + BUG-1/BUG-2 fix. |
+| `bug1-decider-structured-output` | ✅ **Merged into `main`** 2026-08-28 (`--no-ff`). Carried the Stage 1 Section B triage + BUG-1/BUG-2 fix (ADR-011). Safe to delete. |
+| `quiz-phase0.5-bulk` | 🧊 **Frozen — will not be merged.** See `docs/decisions/010-freeze-quiz-bulk-branch.md`. Its finished output (the 1,126-question bank) already reached `main` via `quiz-phase1`; a byte-diff confirmed `data/quiz-bank/bank/questions.json` is identical on both branches. Kept as a rebuildable pipeline for later, not deleted. Pushed to GitHub 2026-08-28 as a backup, still frozen and unmerged. |
 
 **Merged and safe to delete:** `quiz`, `quiz-phase1..4`, `global`, `profile`,
 `logo`, `feat/support-page`, `stalefilefixes`, `DECIDER_GREETING_FIX`,
-`STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`, `seo-work`
+`STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`, `seo-work`,
+`bug1-decider-structured-output`
 
 ### ⚠️ Lesson learned (2026-08-28) — two, from the same day
 
@@ -220,3 +222,20 @@ pre-router so greetings never reach an LLM.
 
 See `STAGE1_DONE.md` for the launch checklist and the definition of "done".
 Do not start Stage 2 work before every Stage 1 box is ticked.
+
+**Progress (2026-08-28):**
+
+| Section | State |
+|---|---|
+| A — Repository hygiene | ✅ 5/5 |
+| B — Infrastructure | I2, I3 ✅ verified. I1 (Render paid), I4 (error monitoring), I5 (Redis paid) **deferred by owner** with accepted-risk notes in `STAGE1_DONE.md`. |
+| C — The 8 bugs | **BUG-1, BUG-2 ✅** (ADR-011, `BUG1_FIX_PLAN.md`). BUG-3…BUG-8 not started. |
+| D — Testing | Not started. Note: `test:chat-db-models` and `test:golden` are broken/no-op on `main` — see §5. |
+| E — Real students | Not started. |
+| F — Legal & student safety | Not started. |
+| G — Operations | Not started. |
+
+**Next task:** BUG-3 (`CHOOSE_COURSE` dead whitelist —
+`ask/step7.saveAndRespond.js:68` vs `:253`). Same protocol: new branch,
+failing-test → fix → passing-test, Rule 4 (remove the cause — here likely
+"delete the dead code", since chapter-switching via that path never worked).

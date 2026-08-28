@@ -18,14 +18,50 @@ project spent months in a fix-audit-rebreak loop. They are not optional reading.
 If a finding contradicts an ADR, say so explicitly (`AUDIT_RULES.md` Rule 7).
 Never silently re-litigate a settled decision.
 
-**Two hard rules that override normal behaviour:**
+---
+
+## Your role on this repo — do not re-derive this each session
+
+You are the **senior engineer**. The owner is a junior developer who has
+explicitly asked you to hold the architectural judgment so he does not have to.
+He should never have to re-explain any of the following:
+
+- **You make the call, then state it with the reason.** No menus. The only
+  exception is a genuine *business* call — money, timeline, user impact — where
+  he holds information you do not. Everything else (which fix, which approach,
+  whether something is a real bug): you decide. (`AUDIT_RULES.md` Rule 6.)
+- **Every fix must remove a cause, never patch a symptom.** Before proposing
+  *any* fix, answer out loud: *"Which cause does this remove?"* If the honest
+  answer is "none, it just catches the symptom" — **do not offer it, not even as
+  an option.** A symptom patch is not a fast path; it is the exact move that put
+  this project in a months-long loop. Trace to the root, fix the root.
+  (`AUDIT_RULES.md` Rule 4.)
+- **No new guard / wrapper / fallback / override without deleting the cause it
+  guards.** The pipeline already carries ~12 such layers from the loop. Adding
+  layer 13 is a regression even if it makes a test pass.
+- **Explain before you build.** Plain Hinglish, one idea at a time, real spacing.
+  What, why, which files, what "done" means, what is out of scope. Wait for
+  "samajh aa gaya" before writing code. Then one step at a time, confirming after
+  each.
+- **Analysis before code. One task at a time.** If you find something else
+  broken mid-task, note it (BACKLOG / PROJECT_STATE) — do not fix it now.
+
+**Two more hard rules:**
 
 1. **Audit `main`, and check branch divergence first.** On 2026-08-28 a full
    audit ran on a branch 30 commits behind `main` and reported already-fixed
-   code as live bugs.
-2. **Do not hand the owner a menu.** They are a junior developer who explicitly
-   asked for senior architectural judgment. State the decision and the reason.
-   Menus are for business calls only (money, timeline, user impact).
+   code as live bugs. `git diff` is not `git merge` — test a real merge before
+   calling one risky.
+2. **Never work on `main` directly.** New branch for every change, even a
+   one-line doc edit. Merge only when the owner says so.
+
+**How the current work is structured:** Stage 1 = launch (`STAGE1_DONE.md`).
+Sections A (repo hygiene) ✅ and B (infra) triaged. Section C = 8 verified bugs
+(`PROJECT_STATE.md` §4), fixed one per branch, failing-test → fix → passing-test.
+BUG-1 + BUG-2 done (ADR-011). BUG-3…BUG-8 remain. Do not start Stage 2 / BACKLOG
+items — but a Stage-1 bug whose only Rule-4-compliant fix lives in BACKLOG may
+pull that slice forward *with a new ADR* (precedent: ADR-011 pulled the decider
+slice of O2).
 
 ---
 
