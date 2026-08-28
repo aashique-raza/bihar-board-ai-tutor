@@ -3,9 +3,10 @@
 > **This is the single source of truth for "what exists right now".**
 > Any AI agent or developer starting work on this repo MUST read this file first.
 > Last verified: 2026-08-28 (verified against `main`, not from memory).
-> Latest merge: BUG-7 fix — the science glossary (`scienceGlossary.js`) is now
-> appended to Devanagari (`answerLanguage='hindi'`) study-intent answers too, not
-> only Hinglish ones. Merged to `main` 2026-08-29 (`--no-ff`, `e0f9d69`).
+> Latest merge: frontend build fix — the Playwright browser-prerender step
+> (`chrome-headless-shell` exit 127, failed every Vercel deploy since 2026-08-28)
+> removed from the build; back to plain `vite build`. Merged to `main`
+> 2026-08-29 (`--no-ff`, `0253427`). Prior merge: BUG-7 (`e0f9d69`).
 
 ---
 
