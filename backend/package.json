@@ -18,6 +18,7 @@
     "curriculum:build": "node scripts/build-curriculum-index.js",
     "test:curriculum-resolvers": "node scripts/test-curriculum-resolvers.js",
     "test:placeholder-guard": "node scripts/test-placeholder-guard.js",
+    "test:decider-structured": "node --experimental-test-module-mocks scripts/test-decider-structured.js",
     "rag:test-retriever": "node scripts/test-retriever.js",
     "rag:test-answer": "node scripts/test-rag-answer.js",
     "test:study-map": "node scripts/test-study-map.js",
