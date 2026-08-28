@@ -60,12 +60,12 @@ const ALLOWED_STATE_FIELDS = [
 // When USE_INTENT_ROUTER=true, each intent only writes the fields it is
 // responsible for. Everything else is either set by step7 code directly,
 // or must never come from the LLM at all.
-const INTENT_MEMORY_WHITELIST = {
+export const INTENT_MEMORY_WHITELIST = {
   GREETING:          [],
   EMOTIONAL_SUPPORT: [],
   OUT_OF_CONTEXT:    [],
   UNSAFE_OR_ABUSIVE: [],
-  CHOOSE_COURSE:     ['currentSubjectId', 'currentSectionId', 'currentChapterId', 'learningMode'],
+  CHOOSE_COURSE:     [],                                          // BUG-3: chapter context comes from the request chapterId (step2), never the LLM; learningMode is code-managed. The old entry's fields were all overwritten by the force-sync block below.
   EXPLAIN_MORE:      ['lastDoubtTopic', 'lastDoubtQuestion'],     // NOT lastTopic — prevents drift
   CONCEPT_QUESTION:  ['lastTopic', 'lastDoubtTopic', 'lastDoubtQuestion', 'learningMode'],
   NEXT_STEP:         ['lastTopic', 'learningMode'],               // currentTopicId managed by step7 code
@@ -77,7 +77,7 @@ const INTENT_MEMORY_WHITELIST = {
  * When intent is provided and in the whitelist, only the fields allowed for that
  * intent are kept. Otherwise falls back to the broad ALLOWED_STATE_FIELDS list.
  */
-const sanitizeMemoryUpdate = ({ memoryUpdate, intent }) => {
+export const sanitizeMemoryUpdate = ({ memoryUpdate, intent }) => {
   const cleanUpdate = {};
   const allowedFields = Object.hasOwn(INTENT_MEMORY_WHITELIST, intent)
     ? INTENT_MEMORY_WHITELIST[intent]
