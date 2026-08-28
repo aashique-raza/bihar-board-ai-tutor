@@ -150,8 +150,29 @@ No fix is marked done on assertion alone.
       always false (Gemini is the primary, single space). Verified by
       `npm run test:no-cache-fallback` (failing-test → passing-test); baseline
       (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
-- [ ] **BUG-7 fix** — science glossary applies to Devanagari answers too
-      `utils/languageDetector.js:98`
+- [x] **BUG-7 fix** — science glossary applies to Devanagari answers too
+      (branch `bug7-glossary-devanagari-early-return`, pending merge).
+      `getAnswerLanguageInstruction()` returned the Hindi/Devanagari instruction
+      from an early `return` (`utils/languageDetector.js:98`) that sat *before*
+      the glossary-append block bolted onto the function tail (TASK-024). Only the
+      Hinglish fall-through reached the append, so students who asked in Devanagari
+      (`answerLanguage === 'hindi'`) never got the `scienceGlossary.js` term-
+      consistency vocabulary that Hinglish students get on every study turn — the
+      Hindi answer's term choices were left entirely to the LLM. Fix (Rule 4 —
+      remove the cause, no guard): `wantsGlossary` is computed once, independent
+      of the language branch; the glossary is appended to whichever base
+      instruction (Hindi or Hinglish) is returned. The Hindi glossary header tells
+      the model to render each term in Devanagari with the English term bracketed
+      on first mention. Query-time behaviour for non-study intents (GREETING,
+      EMOTIONAL_SUPPORT) unchanged — still glossary-free in both scripts.
+      Verified by `npm run test:glossary-devanagari` (failing-test → passing-test);
+      baseline (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`)
+      unchanged.
+      *Noted, not fixed (out of scope):* the legacy `step6.generateResponse.js:160`
+      path calls `getAnswerLanguageInstruction(language.answerLanguage)` with no
+      `intent`, so the glossary is never applied there for **any** language. That
+      path is dead in production (`USE_INTENT_ROUTER=true`). Tracked in
+      `PROJECT_STATE.md` §4.
 - [ ] **BUG-8 fix** — `askApiLimiter` keyed by identity, not raw IP (copy the quiz limiter pattern)
       `middlewares/rateLimiters.js:40`
 

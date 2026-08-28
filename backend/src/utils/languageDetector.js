@@ -95,8 +95,19 @@ export const detectConversationLanguage = ({ question, recentMessages = [] }) =>
  *                                  science glossary + vocabulary examples are appended.
  */
 export const getAnswerLanguageInstruction = (answerLanguage, intent = null) => {
+  // Glossary applies to every study-intent answer regardless of script. It must
+  // be decided independently of the language branch — the Hindi branch used to
+  // `return` before ever reaching the append below, so Devanagari answers never
+  // got the term-consistency vocabulary that Hinglish answers get (BUG-7).
+  const wantsGlossary = Boolean(intent && STUDY_INTENTS.has(intent));
+
   if (answerLanguage === 'hindi') {
-    return 'Write the final answer in simple, warm, and clear Hindi using Devanagari script since the student asked in Devanagari. Keep the explanation engaging like a Bihar classroom teacher addressing their student.';
+    const hindiInstruction =
+      'Write the final answer in simple, warm, and clear Hindi using Devanagari script since the student asked in Devanagari. Keep the explanation engaging like a Bihar classroom teacher addressing their student.';
+    if (wantsGlossary) {
+      return `${hindiInstruction}\n\nSCIENCE GLOSSARY (for each concept below, use the standard Hindi term on its first mention, written in Devanagari script, followed by the English term in brackets — e.g. reflection -> "paravartan / परावर्तन (reflection)"). The list gives each Hindi term as a Roman transliteration; convert it to Devanagari:\n${formatGlossaryForPrompt()}`;
+    }
+    return hindiInstruction;
   }
 
   const hinglishInstruction =
@@ -118,7 +129,7 @@ export const getAnswerLanguageInstruction = (answerLanguage, intent = null) => {
     '- ALSO AVOID: "Acids important hain because ye different processes mein used hote hain."\n' +
     '- USE: "Aml (acids) bahut zaroori hain kyunki ye kai alag-alag prakriyaon mein istemal hote hain."';
 
-  if (intent && STUDY_INTENTS.has(intent)) {
+  if (wantsGlossary) {
     return `${hinglishInstruction}\n\nSCIENCE GLOSSARY (use these exact translations on first mention of each term):\n${formatGlossaryForPrompt()}`;
   }
 
