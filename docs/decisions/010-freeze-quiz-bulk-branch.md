@@ -37,8 +37,19 @@ confirmed:
   survive the merge untouched, because the branch never modified them
 
 ## Decision
-**Do not merge `quiz-phase0.5-bulk`.** Leave it as-is on the remote.
-No content is at risk — the deliverable is already on `main`.
+**Do not merge `quiz-phase0.5-bulk`.** Push it to GitHub (`origin`) as a backup
+and leave it there, untouched. No content is at risk — the deliverable is
+already on `main`.
+
+## Additional finding (2026-08-28)
+This branch had **never been pushed to GitHub** — it existed only on the local
+development machine, with no remote tracking branch at all. The deliverable
+(the 1,126-question bank) was safe on `main`, but the entire 28-commit pipeline
+— 499 files of real, hard-won extraction and verification work — had a single
+point of failure: that one machine's disk.
+
+It has now been pushed: `git push -u origin quiz-phase0.5-bulk`. It remains
+frozen and unmerged, but is no longer at risk of being lost.
 
 ## Why
 - Merging would add 499 intermediate/scratch files to the working tree for

@@ -117,7 +117,7 @@ Updated 2026-08-28:
 |---|---|
 | `main` | ✅ Source of truth. Has quiz system + SEO work + this project system. |
 | `seo-work` | ✅ **Merged into `main`** 2026-08-28. One conflict in `ChatPage.jsx` (Helmet wrapper vs. QuizModal) resolved by keeping both. Full `npm run build` verified green post-merge, including the new Playwright pre-render step. Safe to delete. |
-| `quiz-phase0.5-bulk` | 🧊 **Frozen — will not be merged.** See `docs/decisions/010-freeze-quiz-bulk-branch.md`. Its finished output (the 1,126-question bank) already reached `main` via `quiz-phase1`; a byte-diff confirmed `data/quiz-bank/bank/questions.json` is identical on both branches. The branch itself is kept as a rebuildable pipeline for later, not deleted. |
+| `quiz-phase0.5-bulk` | 🧊 **Frozen — will not be merged.** See `docs/decisions/010-freeze-quiz-bulk-branch.md`. Its finished output (the 1,126-question bank) already reached `main` via `quiz-phase1`; a byte-diff confirmed `data/quiz-bank/bank/questions.json` is identical on both branches. The branch itself is kept as a rebuildable pipeline for later, not deleted. It had never been pushed to GitHub before today — pushed 2026-08-28 as a backup, still frozen and unmerged. |
 
 **Merged and safe to delete:** `quiz`, `quiz-phase1..4`, `global`, `profile`,
 `logo`, `feat/support-page`, `stalefilefixes`, `DECIDER_GREETING_FIX`,
