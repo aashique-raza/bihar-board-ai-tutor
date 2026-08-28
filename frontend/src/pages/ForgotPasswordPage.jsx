@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -89,7 +90,12 @@ function ForgotPasswordPage() {
   }
 
   return (
-    <div className="auth-page">
+    <>
+      <Helmet>
+        <title>Password Bhool Gaye? — Zuno AI Tutor</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      <div className="auth-page">
       <div className="auth-card-single">
         <div className="auth-logo-row">
           <ZunoMark />
@@ -146,7 +152,8 @@ function ForgotPasswordPage() {
         </div>
       </div>
       <Toast open={toast.open} message={toast.message} severity={toast.severity} onClose={hideToast} />
-    </div>
+      </div>
+    </>
   );
 }
 

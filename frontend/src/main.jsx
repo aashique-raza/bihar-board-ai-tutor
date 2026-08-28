@@ -8,6 +8,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { HelmetProvider } from 'react-helmet-async';
+
 import App from './App.jsx';
 import AppInitializer from './components/AppInitializer.jsx';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
@@ -22,20 +24,27 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* BrowserRouter must be outermost so useNavigate works anywhere in the tree */}
     <BrowserRouter>
-      <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || ''}>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <ThemeProvider theme={zunoTheme}>
-              <CssBaseline />
-              {/* Silently restores user session on page load — renders nothing */}
-              <AppInitializer />
-              <ErrorBoundary>
-                <App />
-              </ErrorBoundary>
-            </ThemeProvider>
-          </PersistGate>
-        </Provider>
-      </GoogleOAuthProvider>
+      <HelmetProvider>
+        <GoogleOAuthProvider
+          clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || ''}
+        >
+          <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+              <ThemeProvider theme={zunoTheme}>
+                <CssBaseline />
+
+                {/* Silently restores user session on page load — renders nothing */}
+                <AppInitializer />
+
+                <ErrorBoundary>
+                  <App />
+                </ErrorBoundary>
+
+              </ThemeProvider>
+            </PersistGate>
+          </Provider>
+        </GoogleOAuthProvider>
+      </HelmetProvider>
     </BrowserRouter>
   </StrictMode>
 );
