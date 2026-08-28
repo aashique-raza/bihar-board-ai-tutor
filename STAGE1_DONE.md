@@ -37,13 +37,25 @@ Those are Stage 2 and Stage 3.
 
 ## B. Infrastructure
 
-- [ ] **I1.** Render upgraded off the free tier — cold start under 3 seconds
+- [~] **I1.** Render upgraded off the free tier — cold start under 3 seconds
       *(Free tier sleeps after 15 min. The first student each morning waits ~50s and leaves.)*
-- [ ] **I2.** `USE_INTENT_ROUTER=true` confirmed in Render's environment
-      *(If unset, production runs the legacy non-streaming tutor — a different product than local.)*
-- [ ] **I3.** All required env vars present on Render (compare against `backend/.env.example`)
-- [ ] **I4.** Error monitoring live (Sentry free tier, or structured error logging you actually read)
-- [ ] **I5.** Upstash Redis usage checked against the free-tier ceiling; upgrade path known
+      **DEFERRED by owner 2026-08-28** — stay on free tier for the initial small-group
+      launch; paid plan to be taken later. Accepted risk: first request after 15 min
+      idle has a ~50s cold start. Acceptable for 20–50 known students who are told to
+      wait; revisit before any wider launch.
+- [x] **I2.** `USE_INTENT_ROUTER=true` confirmed in Render's environment
+      — verified by owner 2026-08-28, present and correct in production env.
+- [x] **I3.** All required env vars present on Render (compare against `backend/.env.example`)
+      — verified by owner 2026-08-28, all present.
+- [~] **I4.** Error monitoring live (Sentry free tier, or structured error logging you actually read)
+      **DEFERRED by owner 2026-08-28** — to be decided later. Accepted risk: during the
+      initial small-group launch there is no automatic alert when the backend errors;
+      relying on students reporting problems and manual Render log checks. Revisit
+      before wider launch — a student-facing product should have this.
+- [~] **I5.** Upstash Redis usage checked against the free-tier ceiling; upgrade path known
+      **DEFERRED by owner 2026-08-28** — stay on Upstash free tier for now; upgrade
+      plan to be decided later. Accepted risk: ~10k commands/day ceiling. At 20–50
+      students this is unlikely to be hit; revisit if usage grows.
 
 ---
 
