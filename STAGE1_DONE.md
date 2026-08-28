@@ -111,7 +111,7 @@ No fix is marked done on assertion alone.
       Verified by `npm run test:decider-scope` (failing-test → passing-test); baseline
       (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
 - [x] **BUG-5 fix** — `{ embedding: 0 }` projection + `metadata.topic_ids` index added
-      (branch `bug5-topic-id-projection-index`).
+      (merged to `main` 2026-08-28, `--no-ff`).
       `retrieveChunksByTopicId()` (NEXT_STEP deterministic lookup) ran
       `Chunk.find({ 'metadata.topic_ids': id }).lean()` with (1) no B-tree index on
       that path → full COLLSCAN every "aage badhao" (`explain`: totalDocsExamined 629,

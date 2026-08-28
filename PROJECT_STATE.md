@@ -3,11 +3,10 @@
 > **This is the single source of truth for "what exists right now".**
 > Any AI agent or developer starting work on this repo MUST read this file first.
 > Last verified: 2026-08-28 (verified against `main`, not from memory).
-> Latest merge: BUG-4 fix — stale decider-prompt scope exclusions
-> ("Cell structure" / "Atomic structure") removed.
-> In flight: BUG-5 fix — `metadata.topic_ids` index + `{ embedding: 0 }`
-> projection on the NEXT_STEP lookup (branch `bug5-topic-id-projection-index`,
-> pending merge). Prod needs `scripts/create-chunk-topic-id-index.js` after deploy.
+> Latest merge: BUG-5 fix — `metadata.topic_ids` index + `{ embedding: 0 }`
+> projection on the NEXT_STEP lookup.
+> ⚠️ Prod TODO: run `backend/scripts/create-chunk-topic-id-index.js` against
+> `zuno_prod` after deploy (or let Mongoose autoIndex build it on restart).
 
 ---
 
@@ -128,7 +127,7 @@ Updated 2026-08-28:
 `logo`, `feat/support-page`, `stalefilefixes`, `DECIDER_GREETING_FIX`,
 `STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`, `seo-work`,
 `bug1-decider-structured-output`, `bug3-choose-course-dead-whitelist`,
-`bug4-decider-stale-scope-exclusions`
+`bug4-decider-stale-scope-exclusions`, `bug5-topic-id-projection-index`
 
 ### ⚠️ Lesson learned (2026-08-28) — two, from the same day
 
@@ -167,7 +166,7 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 > remains Stage 2.
 | ~~BUG-3~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). `INTENT_MEMORY_WHITELIST.CHOOSE_COURSE` → `[]`; its fields were dead (overwritten every turn by the `studyMode` force-sync block). Chapter switching works only via the request `chapterId` param — untouched. Verified by `npm run test:choose-course-memory`. See `STAGE1_DONE.md` Section C. |
 | ~~BUG-4~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). Stale "Cell structure" / "Atomic structure" entries removed from the decider prompt's OUT_OF_CONTEXT list + rule-8 HARD LIMIT block; both are covered by indexed content (`### Atomic number` ch-05 chemistry, `## 4. Neuron / Nerve Cell` ch-02 biology). Genuinely-absent topics (Newton, Gravitation, Thermodynamics, …) stay excluded. Removes the cause (a stale hardcoded list) per Rule 4 — no guard added. Verified by `npm run test:decider-scope`. See `STAGE1_DONE.md` Section C. |
-| ~~BUG-5~~ | ✅ **Fixed** — branch `bug5-topic-id-projection-index` (pending merge). `chunk.model.js` declares `index({ 'metadata.topic_ids': 1 })`; `retrieveChunksByTopicId` `.find()` passes `{ embedding: 0 }`. `explain` confirms COLLSCAN(629) → IXSCAN(4). Migration `scripts/create-chunk-topic-id-index.js`. Verified by `npm run test:topic-id-lookup`. See `STAGE1_DONE.md` Section C. |
+| ~~BUG-5~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). `chunk.model.js` declares `index({ 'metadata.topic_ids': 1 })`; `retrieveChunksByTopicId` `.find()` passes `{ embedding: 0 }`. `explain` confirms COLLSCAN(629) → IXSCAN(4). Migration `scripts/create-chunk-topic-id-index.js`. Verified by `npm run test:topic-id-lookup`. See `STAGE1_DONE.md` Section C. |
 | BUG-6 | Embedding cache stores Gemini fallback vectors under the OpenAI cache key for 30 days, silently corrupting retrieval after any OpenAI outage | `cache/embeddingCache.js:28` |
 | BUG-7 | Science glossary is skipped for Devanagari answers because the Hindi branch returns early | `utils/languageDetector.js:98` |
 | BUG-8 | `askApiLimiter` is keyed by raw IP. Under CGNAT / school networks, one student's usage blocks everyone. The quiz limiters already do this correctly — copy that pattern. | `middlewares/rateLimiters.js:40` |
@@ -236,7 +235,7 @@ Do not start Stage 2 work before every Stage 1 box is ticked.
 |---|---|
 | A — Repository hygiene | ✅ 5/5 |
 | B — Infrastructure | I2, I3 ✅ verified. I1 (Render paid), I4 (error monitoring), I5 (Redis paid) **deferred by owner** with accepted-risk notes in `STAGE1_DONE.md`. |
-| C — The 8 bugs | **BUG-1, BUG-2 ✅** (ADR-011). **BUG-3 ✅** merged. **BUG-4 ✅** merged. **BUG-5 ✅** (branch `bug5-topic-id-projection-index`, pending merge). BUG-6…BUG-8 not started. |
+| C — The 8 bugs | **BUG-1, BUG-2 ✅** (ADR-011). **BUG-3 ✅** merged. **BUG-4 ✅** merged. **BUG-5 ✅** merged. BUG-6…BUG-8 not started. |
 | D — Testing | Not started. Note: `test:chat-db-models` and `test:golden` are broken/no-op on `main` — see §5. |
 | E — Real students | Not started. |
 | F — Legal & student safety | Not started. |
