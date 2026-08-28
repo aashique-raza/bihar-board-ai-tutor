@@ -91,8 +91,25 @@ No fix is marked done on assertion alone.
       does not exist) per `AUDIT_RULES.md` Rule 4 — no guard added, force-sync block not
       touched. Verified by `npm run test:choose-course-memory` (failing-test → passing-test);
       baseline (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
-- [ ] **BUG-4 fix** — hardcoded out-of-scope topic list removed from the decider prompt
-      `prompts/deciderPrompt.js:89,144`
+- [x] **BUG-4 fix** — stale out-of-scope entries removed from the decider prompt
+      (branch `bug4-decider-stale-scope-exclusions`).
+      `prompts/deciderPrompt.js` hardcoded "Cell structure" and "Atomic structure" as
+      always-OUT_OF_CONTEXT (both in the intent-8 exclusion list and the rule-8 HARD
+      LIMIT block that forces `searchQuery: null`). Both topics are in fact covered by
+      indexed Class 10 content — `chapter-05-periodic-classification` ("### Atomic
+      number", electronic configuration, K/L/M shells, valence electrons) and
+      `chapter-02-control-and-coordination` ("## 4. Neuron / Nerve Cell", full structure
+      + parts). With `searchQuery` nulled the SafetyNet English probe
+      (`askOrchestrator.js:96`) never ran, so "atomic number kya hai" / "neuron ki
+      structure batao" got a hardcoded false "not in your syllabus" reply and a drift-
+      counter increment. Fix (Rule 4 — remove the cause): deleted both entries from the
+      exclusion list, the HARD LIMIT block, and the two "cell ..." counter-examples.
+      Genuinely-absent topics (Newton, Gravitation, Force, Pressure, Motion, Velocity,
+      Work, Thermodynamics) stay excluded; generic Class 9 cell-organelle questions now
+      fail safely via retrieval (insufficient content) instead of a decider reject. No
+      guard/bypass added; no ADR needed (in-scope Section C fix, no BACKLOG pull).
+      Verified by `npm run test:decider-scope` (failing-test → passing-test); baseline
+      (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
 - [ ] **BUG-5 fix** — add `{ embedding: 0 }` projection + index on `metadata.topic_ids`
       `rag/retriever.js:105`, `models/chunk.model.js`
 - [ ] **BUG-6 fix** — never cache an embedding produced by the fallback provider

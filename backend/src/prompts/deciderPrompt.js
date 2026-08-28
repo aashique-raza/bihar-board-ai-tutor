@@ -86,8 +86,8 @@ INTENTS:
    - Other Class 10 subjects: Maths concepts, Hindi grammar, English essays, Social Science, History, Geography
    - Non-school topics: sports, entertainment, current events, personal advice
    - Science topics NOT covered in our indexed Bihar Board Class 10 Science material:
-     (Newton's Laws, Gravitation, Force/Pressure, Motion/Velocity, Work/Energy, Cell structure,
-     Atomic structure, Thermodynamics, and any topic not in the Class 10 chapters below)
+     (Newton's Laws, Gravitation, Force/Pressure, Motion/Velocity, Work/Energy,
+     Thermodynamics, and any topic not in the Class 10 chapters below)
 
    Our indexed material covers ONLY these Bihar Board Class 10 Science topics:
    Physics: Light Reflection/Refraction, Human Eye, Electricity, Magnetic Effects of Current, Sources of Energy
@@ -141,12 +141,10 @@ CONSERVATIVE BIAS RULES (apply in order):
    OUT_OF_CONTEXT with searchQuery null, even though they are science topics, and even when asked
    in everyday Hinglish:
      Newton's Laws, Gravitation, Force, Pressure, Motion, Velocity, Work,
-     Cell structure / cell organelles / parts of a cell / cell diagram,
-     Atomic structure, Thermodynamics.
+     Thermodynamics.
    Counter-examples (memorise these):
-   - "cell ki structure batao"      -> OUT_OF_CONTEXT, searchQuery null
-   - "cell ke parts kya hote hain"  -> OUT_OF_CONTEXT, searchQuery null
    - "gravitation kya hai"          -> OUT_OF_CONTEXT, searchQuery null
+   - "Newton ka teesra niyam"       -> OUT_OF_CONTEXT, searchQuery null
 
 SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 - Generate a DESCRIPTIVE PHRASE or SENTENCE of 8-15 words that captures the topic AND what is being asked. NOT 2-3 keywords — the vector search needs semantic richness to find the right chapter.
