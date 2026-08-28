@@ -1,9 +1,8 @@
 import { RunnableSequence } from '@langchain/core/runnables';
 import { createChatModel } from '../llm/chatModel.js';
 import { getDeciderConfig } from '../llm/llm.config.js';
-import { stringParser } from '../llm/stringParser.js';
+import { decisionSchema, DECISION_SCHEMA_NAME } from '../llm/decisionSchema.js';
 import { deciderPrompt } from '../prompts/deciderPrompt.js';
-import { parseJsonObject } from '../utils/jsonParser.js';
 import { ProviderUnavailableError, classifyProviderError } from '../utils/providerErrors.js';
 import { logCallTokens } from '../utils/tokenLogger.js';
 
@@ -53,10 +52,16 @@ let deciderChain = null;
 
 const getDeciderChain = () => {
   if (!deciderChain) {
+    // ADR-011: withStructuredOutput makes the provider return a guaranteed
+    // well-formed object matching decisionSchema. There is no free-text JSON to
+    // scrape, so there is no parse-error fallback (which used to produce a false
+    // "topic not in syllabus" reply — BUG-1). The `intent` enum in the schema
+    // makes an unrecognised intent value impossible (BUG-2).
+    // Decider uses DECIDER_PROVIDER/DECIDER_MODEL if set, else the global LLM_PROVIDER/LLM_MODEL.
+    const model = createChatModel({ ...getDeciderConfig(), maxTokens: 350 });
     deciderChain = RunnableSequence.from([
       deciderPrompt,
-      createChatModel({ ...getDeciderConfig(), maxTokens: 350 }), // Decider uses DECIDER_PROVIDER/DECIDER_MODEL if set, else falls back to global LLM_PROVIDER/LLM_MODEL
-      stringParser,
+      model.withStructuredOutput(decisionSchema, { name: DECISION_SCHEMA_NAME, strict: true }),
     ]);
   }
   return deciderChain;
@@ -71,10 +76,14 @@ const getDeciderChain = () => {
  * @returns {object} Predictable, strict bounded schema definition map
  */
 const normalizeDecision = (decision, rawQuestion) => {
-  // Validate and fall back on fine-grained intent maps
+  // Validate intent. With the decisionSchema `intent` enum (ADR-011) an
+  // out-of-set value is not representable, so this branch should be unreachable.
+  // If it ever fires (schema bypassed, provider switch), fall back to
+  // CONCEPT_QUESTION — never GREETING: misrouting a real question to small talk
+  // silently increments the drift counter toward a hard block (BUG-2).
   const isKnownIntent = VALID_INTENTS.has(decision.intent);
-  if (!isKnownIntent) console.warn(`[Step 4] Unknown intent "${decision.intent}" — falling back to GREETING`);
-  const intent = isKnownIntent ? decision.intent : 'GREETING';
+  if (!isKnownIntent) console.error(`[Step 4] Unknown intent "${decision.intent}" — should be impossible with the schema enum; defaulting to CONCEPT_QUESTION`);
+  const intent = isKnownIntent ? decision.intent : 'CONCEPT_QUESTION';
 
   // Calculate deterministic contextual scoping tags
   const inScope = (intent !== 'OUT_OF_CONTEXT' && intent !== 'UNSAFE_OR_ABUSIVE');
@@ -157,12 +166,10 @@ const normalizeDecision = (decision, rawQuestion) => {
 export const decideRetrieval = async ({ question }, { deciderHistory, language }, abortSignal = null) => {
   if (isDev) console.log('[Step 4] Running intent classifier...');
 
-  // Declared outside try so catch block can read the value on parse errors
-  // (LLM responded but output was malformed — tokens were still consumed)
   let capturedBreakdown = { input: 0, output: 0, total: 0 };
 
   try {
-    const rawDecision = await getDeciderChain().invoke(
+    const decision = await getDeciderChain().invoke(
       {
         message: question,
         detectedLanguage: language?.detectedLanguage ?? 'hinglish',
@@ -176,10 +183,10 @@ export const decideRetrieval = async ({ question }, { deciderHistory, language }
       }
     );
 
-    if (isDev) console.log('[Step 4] Response received. Parsing...');
+    if (isDev) console.log('[Step 4] Classification received.');
 
-    const parsed = parseJsonObject(rawDecision, 'Step 4 intent decision');
-    const finalDecision = normalizeDecision(parsed, question);
+    // `decision` is already a parsed object matching decisionSchema (ADR-011).
+    const finalDecision = normalizeDecision(decision, question);
 
     // STEP-0: Log decider token breakdown.
     logCallTokens('DECIDER', capturedBreakdown, {
@@ -193,31 +200,16 @@ export const decideRetrieval = async ({ question }, { deciderHistory, language }
     // Reset singleton — prevents reusing a broken chain on next request
     deciderChain = null;
 
-    const errorType = classifyProviderError(error);
-
     if (error.name === 'AbortError' || error.message === 'Timeout') {
       throw error;
     }
 
-    // Parse error means the provider responded but output was malformed.
-    // Safe to continue pipeline with a default decision.
-    if (errorType === 'parse_error') {
-      console.error('[Step 4] JSON parse failed. Using safe default decision.', error.message);
-      logCallTokens('DECIDER', capturedBreakdown, { intent: 'PARSE_ERROR_FALLBACK' });
-      return {
-        intent: 'CONCEPT_QUESTION',
-        inScope: true,
-        needsRetrieval: false,
-        responseMode: 'study_tutor',
-        searchQuery: null,
-        reason: 'Parse error fallback',
-        tokenUsage: capturedBreakdown.total,
-        tokenBreakdown: capturedBreakdown,
-      };
-    }
-
-    // Provider is down — throw so orchestrator can handle it centrally
-    console.error(`[Step 4] Provider error (${errorType}):`, error.message);
+    // ADR-011: there is no "malformed output" case any more — withStructuredOutput
+    // guarantees the shape. Any error here is a genuine provider failure (rate
+    // limit, auth, network, or a hard refusal). Throw so the orchestrator returns
+    // an honest "try again shortly" message — never a false scope rejection.
+    const errorType = classifyProviderError(error);
+    console.error(`[Step 4] Decider call failed (${errorType}):`, error.message);
     throw new ProviderUnavailableError(errorType, error.message);
   }
 };
