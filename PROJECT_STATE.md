@@ -3,9 +3,9 @@
 > **This is the single source of truth for "what exists right now".**
 > Any AI agent or developer starting work on this repo MUST read this file first.
 > Last verified: 2026-08-28 (verified against `main`, not from memory).
-> Latest merge: BUG-6 fix — fallback-provider (Gemini) query embeddings and the
-> chunks retrieved with them are never written to `embeddingCache` (30d) or
-> `retrievalCache` (24h). Merged to `main` 2026-08-29 (`--no-ff`, `b576d70`).
+> Latest merge: BUG-7 fix — the science glossary (`scienceGlossary.js`) is now
+> appended to Devanagari (`answerLanguage='hindi'`) study-intent answers too, not
+> only Hinglish ones. Merged to `main` 2026-08-29 (`--no-ff`, `e0f9d69`).
 
 ---
 
@@ -167,7 +167,7 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 | ~~BUG-4~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). Stale "Cell structure" / "Atomic structure" entries removed from the decider prompt's OUT_OF_CONTEXT list + rule-8 HARD LIMIT block; both are covered by indexed content (`### Atomic number` ch-05 chemistry, `## 4. Neuron / Nerve Cell` ch-02 biology). Genuinely-absent topics (Newton, Gravitation, Thermodynamics, …) stay excluded. Removes the cause (a stale hardcoded list) per Rule 4 — no guard added. Verified by `npm run test:decider-scope`. See `STAGE1_DONE.md` Section C. |
 | ~~BUG-5~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). `chunk.model.js` declares `index({ 'metadata.topic_ids': 1 })`; `retrieveChunksByTopicId` `.find()` passes `{ embedding: 0 }`. `explain` confirms COLLSCAN(629) → IXSCAN(4). Migration `scripts/create-chunk-topic-id-index.js`. Verified by `npm run test:topic-id-lookup`. See `STAGE1_DONE.md` Section C. |
 | ~~BUG-6~~ | ✅ **Fixed** — merged to `main` 2026-08-29 (`--no-ff`, `b576d70`). Fallback-provider embeddings and anything derived from them are never persisted: `geminiEmbeddings.js` `embedQueryWithMeta()` reports `usedFallback`; `embeddingCache` skips L1+L2 when `cacheable:false`; `retrievalCache` skips its 24h write when `result.usedFallback`. Query-time fallback itself untouched. Verified by `npm run test:no-cache-fallback`. See `STAGE1_DONE.md` Section C. |
-| ~~BUG-7~~ | ✅ **Fixed** — branch `bug7-glossary-devanagari-early-return` (pending merge). `getAnswerLanguageInstruction()` returned the Hindi/Devanagari instruction from an early `return` (`languageDetector.js:98`) sitting before the tail glossary-append (TASK-024), so only Hinglish answers ever got the `scienceGlossary.js` term vocabulary. Fix (Rule 4): `wantsGlossary` decided once, independent of the language branch; glossary appended to whichever base instruction is returned; Hindi header instructs Devanagari rendering. Verified by `npm run test:glossary-devanagari`. See `STAGE1_DONE.md` Section C. |
+| ~~BUG-7~~ | ✅ **Fixed** — merged to `main` 2026-08-29 (`--no-ff`, `e0f9d69`). `getAnswerLanguageInstruction()` returned the Hindi/Devanagari instruction from an early `return` (`languageDetector.js:98`) sitting before the tail glossary-append (TASK-024), so only Hinglish answers ever got the `scienceGlossary.js` term vocabulary. Fix (Rule 4): `wantsGlossary` decided once, independent of the language branch; glossary appended to whichever base instruction is returned; Hindi header instructs Devanagari rendering. Verified by `npm run test:glossary-devanagari`. See `STAGE1_DONE.md` Section C. |
 | BUG-7b (noted, deferred) | Legacy `step6.generateResponse.js:160` calls `getAnswerLanguageInstruction(language.answerLanguage)` with no `intent` → glossary never applied on that path for any language. Path is dead in prod (`USE_INTENT_ROUTER=true`). Not a Section C bug; fold into a Stage 2 cleanup of the legacy tutor path. | `ask/step6.generateResponse.js:160` |
 | BUG-8 | `askApiLimiter` is keyed by raw IP. Under CGNAT / school networks, one student's usage blocks everyone. The quiz limiters already do this correctly — copy that pattern. | `middlewares/rateLimiters.js:40` |
 
@@ -236,7 +236,7 @@ Do not start Stage 2 work before every Stage 1 box is ticked.
 |---|---|
 | A — Repository hygiene | ✅ 5/5 |
 | B — Infrastructure | I2, I3 ✅ verified. I1 (Render paid), I4 (error monitoring), I5 (Redis paid) **deferred by owner** with accepted-risk notes in `STAGE1_DONE.md`. |
-| C — The 8 bugs | **BUG-1..BUG-6 ✅** merged. **BUG-7 ✅** (pending merge). BUG-8 not started. |
+| C — The 8 bugs | **BUG-1..BUG-7 ✅** merged. BUG-8 not started. |
 | D — Testing | Not started. Note: `test:chat-db-models` and `test:golden` are broken/no-op on `main` — see §5. |
 | E — Real students | Not started. |
 | F — Legal & student safety | Not started. |

@@ -151,7 +151,7 @@ No fix is marked done on assertion alone.
       `npm run test:no-cache-fallback` (failing-test → passing-test); baseline
       (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
 - [x] **BUG-7 fix** — science glossary applies to Devanagari answers too
-      (branch `bug7-glossary-devanagari-early-return`, pending merge).
+      (merged to `main` 2026-08-29, `--no-ff`, `e0f9d69`).
       `getAnswerLanguageInstruction()` returned the Hindi/Devanagari instruction
       from an early `return` (`utils/languageDetector.js:98`) that sat *before*
       the glossary-append block bolted onto the function tail (TASK-024). Only the
