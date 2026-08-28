@@ -66,8 +66,16 @@ No fix is marked done on assertion alone.
 
 - [ ] **BUG-1 fix** — decider parse error must not produce a false "not in syllabus"
       `ask/step4.decideRetrieval.js:210`
+      **Approach:** convert the decider chain to `model.withStructuredOutput(schema)`
+      (9-value `intent` enum); delete the `parse_error` fallback branch. Removes the
+      cause (fallible free-text JSON parsing) per `AUDIT_RULES.md` Rule 4 — not a
+      symptom patch. See `BUG1_FIX_PLAN.md` and **ADR-011**.
 - [ ] **BUG-2 fix** — unknown intent falls back to `CONCEPT_QUESTION`, never `GREETING`
       `ask/step4.decideRetrieval.js:77`
+      **Approach:** same change as BUG-1 — the `intent` enum in the decider schema makes
+      an unrecognised intent value structurally impossible, so the fallback branch in
+      `normalizeDecision()` becomes unreachable and is removed. See `BUG1_FIX_PLAN.md`
+      and **ADR-011**.
 - [ ] **BUG-3 fix** — `CHOOSE_COURSE` either works or the dead whitelist entry is removed
       `ask/step7.saveAndRespond.js:68` / `:253`
 - [ ] **BUG-4 fix** — hardcoded out-of-scope topic list removed from the decider prompt

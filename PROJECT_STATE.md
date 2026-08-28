@@ -151,6 +151,11 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 |---|---|---|
 | BUG-1 | Decider parse error returns `needsRetrieval: false`, causing a false "topic not in syllabus" reply | `ask/step4.decideRetrieval.js:210` |
 | BUG-2 | Unknown intent falls back to `GREETING`, so a science question is treated as small talk and increments the drift counter | `ask/step4.decideRetrieval.js:77` |
+
+> **BUG-1 + BUG-2 — fix in progress** (branch `bug1-decider-structured-output`).
+> Approach: convert the decider chain to `withStructuredOutput` + `intent` enum;
+> delete the parse-error and unknown-intent fallbacks. See `BUG1_FIX_PLAN.md` and
+> `ADR-011`. This is a Stage 1 slice of `BACKLOG.md` O2.
 | BUG-3 | `CHOOSE_COURSE` memory whitelist is overwritten 180 lines later — chapter switching is dead code | `ask/step7.saveAndRespond.js:68` vs `:253` |
 | BUG-4 | Decider prompt hardcodes "Cell structure" and "Atomic structure" as out of scope, but both exist in `data/` (`### Atomic number`, `## 4. Neuron / Nerve Cell`) | `prompts/deciderPrompt.js:89,144` |
 | BUG-5 | `retrieveChunksByTopicId` has no projection (pulls 3072-float embeddings) and `metadata.topic_ids` has no index → collection scan on every NEXT_STEP | `rag/retriever.js:105`, `models/chunk.model.js` |

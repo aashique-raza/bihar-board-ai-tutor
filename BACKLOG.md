@@ -76,6 +76,13 @@ Switching to `.withStructuredOutput(schema, { strict: true })` would make parse
 errors structurally impossible and allow deleting `jsonParser.js` plus all three
 fallbacks. It also removes the cause behind Stage 1 bugs BUG-1 and BUG-2 — satisfying
 `AUDIT_RULES.md` Rule 4.
+
+**Partially pulled into Stage 1 (2026-08-28, ADR-011):** the **decider chain**
+slice is being converted now, because BUG-1/BUG-2 have no Rule 4-compliant fix
+without it. **Remaining Stage 2 scope:** the tutor / intentRouter chains
+(`step6`, `intentRouter.js`, the 10 intent prompts) — these stream, which makes
+structured output materially harder, and `utils/jsonParser.js` stays until they
+are converted too.
 **Stage 2 — highest priority in this list.**
 
 ### O3. Hybrid search (BM25 + vector + RRF)
