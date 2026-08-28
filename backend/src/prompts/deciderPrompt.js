@@ -169,8 +169,8 @@ SEARCH QUERY RULES (only for CONCEPT_QUESTION and EXPLAIN_MORE):
 
 examEntity: null for every intent EXCEPT EXAM_INFO (see rules under EXAM_INFO above).
 
-Return ONLY this JSON, no extra text or markdown:
-{{"intent": "CONCEPT_QUESTION", "searchQuery": "string or null", "examEntity": "string or null", "reason": "one sentence why"}}`;
+Classify into this structure (the response format itself is enforced by the model — you only need to choose the values):
+{{"intent": "one of the 9 intents above", "searchQuery": "string or null", "examEntity": "string or null", "reason": "one sentence why"}}`;
 
 export const deciderSystemText = DECIDER_SYSTEM_TEXT;
 
@@ -186,6 +186,6 @@ Student message language: {detectedLanguage}
 Recent Turn Conversational Logs (History):
 {history}
 
-Return JSON representation block matching the structural constraint maps.`
+Classify this message.`
   ]
 ]);

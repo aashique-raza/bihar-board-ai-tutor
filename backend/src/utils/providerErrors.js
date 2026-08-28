@@ -32,7 +32,11 @@ export const classifyProviderError = (error) => {
   if (code === 'ECONNRESET' || code === 'ETIMEDOUT' || code === 'ENOTFOUND' || message.includes('timeout')) {
     return 'network_error';
   }
-  // JSON parse failure or unknown
+  // JSON parse failure or anything unrecognised.
+  // The tutor side (step6 / intentRouter) still emits free-text JSON and relies on
+  // this bucket for its own parse-error fallback (BACKLOG O2, Stage 2). The decider
+  // no longer parses free text (ADR-011), so for step4 this value only ever means
+  // "unknown provider failure" — handled as an honest ProviderUnavailableError.
   return 'parse_error';
 };
 

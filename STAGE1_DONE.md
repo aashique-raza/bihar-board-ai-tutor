@@ -37,13 +37,25 @@ Those are Stage 2 and Stage 3.
 
 ## B. Infrastructure
 
-- [ ] **I1.** Render upgraded off the free tier — cold start under 3 seconds
+- [~] **I1.** Render upgraded off the free tier — cold start under 3 seconds
       *(Free tier sleeps after 15 min. The first student each morning waits ~50s and leaves.)*
-- [ ] **I2.** `USE_INTENT_ROUTER=true` confirmed in Render's environment
-      *(If unset, production runs the legacy non-streaming tutor — a different product than local.)*
-- [ ] **I3.** All required env vars present on Render (compare against `backend/.env.example`)
-- [ ] **I4.** Error monitoring live (Sentry free tier, or structured error logging you actually read)
-- [ ] **I5.** Upstash Redis usage checked against the free-tier ceiling; upgrade path known
+      **DEFERRED by owner 2026-08-28** — stay on free tier for the initial small-group
+      launch; paid plan to be taken later. Accepted risk: first request after 15 min
+      idle has a ~50s cold start. Acceptable for 20–50 known students who are told to
+      wait; revisit before any wider launch.
+- [x] **I2.** `USE_INTENT_ROUTER=true` confirmed in Render's environment
+      — verified by owner 2026-08-28, present and correct in production env.
+- [x] **I3.** All required env vars present on Render (compare against `backend/.env.example`)
+      — verified by owner 2026-08-28, all present.
+- [~] **I4.** Error monitoring live (Sentry free tier, or structured error logging you actually read)
+      **DEFERRED by owner 2026-08-28** — to be decided later. Accepted risk: during the
+      initial small-group launch there is no automatic alert when the backend errors;
+      relying on students reporting problems and manual Render log checks. Revisit
+      before wider launch — a student-facing product should have this.
+- [~] **I5.** Upstash Redis usage checked against the free-tier ceiling; upgrade path known
+      **DEFERRED by owner 2026-08-28** — stay on Upstash free tier for now; upgrade
+      plan to be decided later. Accepted risk: ~10k commands/day ceiling. At 20–50
+      students this is unlikely to be hit; revisit if usage grows.
 
 ---
 
@@ -52,10 +64,22 @@ Those are Stage 2 and Stage 3.
 Each one follows the same protocol: **failing test first → fix → passing test.**
 No fix is marked done on assertion alone.
 
-- [ ] **BUG-1 fix** — decider parse error must not produce a false "not in syllabus"
-      `ask/step4.decideRetrieval.js:210`
-- [ ] **BUG-2 fix** — unknown intent falls back to `CONCEPT_QUESTION`, never `GREETING`
-      `ask/step4.decideRetrieval.js:77`
+- [x] **BUG-1 fix** — decider parse error must not produce a false "not in syllabus"
+      (branch `bug1-decider-structured-output`, pending merge to `main`).
+      Decider chain converted to `model.withStructuredOutput(decisionSchema, { strict: true })`;
+      the `parse_error` fallback branch in `step4.decideRetrieval.js` is deleted. A
+      genuine decider failure now throws `ProviderUnavailableError` → honest "try again"
+      message, never a false scope rejection. Removes the cause (fallible free-text JSON
+      parsing) per `AUDIT_RULES.md` Rule 4. See `BUG1_FIX_PLAN.md` + **ADR-011**.
+      Verified: `npm run test:decider-structured` (mocked, failing-test → passing-test)
+      **and** a live dev-server run (real OpenAI, `strict: true` accepted; Hinglish →
+      English `searchQuery` translation still works).
+- [x] **BUG-2 fix** — unknown intent falls back to `CONCEPT_QUESTION`, never `GREETING`
+      (same branch/commit as BUG-1).
+      The `intent` enum in `decisionSchema` makes an unrecognised value structurally
+      impossible; `normalizeDecision()`'s fallback is now unreachable **and** its target
+      changed `GREETING` → `CONCEPT_QUESTION` as a defence-in-depth default. Verified by
+      `test:decider-structured` (forces a bad value through the mock).
 - [ ] **BUG-3 fix** — `CHOOSE_COURSE` either works or the dead whitelist entry is removed
       `ask/step7.saveAndRespond.js:68` / `:253`
 - [ ] **BUG-4 fix** — hardcoded out-of-scope topic list removed from the decider prompt
