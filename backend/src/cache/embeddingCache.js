@@ -38,7 +38,15 @@ const evictL1 = () => {
 export const embeddingCache = {
   /**
    * Returns the embedding for `query`, fetching from L1 → L2 → fetchFn in order.
-   * fetchFn: async () => number[]  (the actual embedQuery() call)
+   *
+   * fetchFn: async () => number[]
+   *        | async () => { embedding: number[], cacheable: boolean }
+   *
+   * When fetchFn reports `cacheable: false` (the query-time provider fell back
+   * to a different vector space — see geminiEmbeddings.embedQueryWithMeta), the
+   * embedding is returned to the caller for this request but is NEVER written to
+   * L1 or L2. Caching a foreign-space vector under the primary key would keep
+   * corrupting retrieval for the full 30-day TTL after the primary recovered.
    *
    * Guarantees: never throws, always returns a valid non-empty number[].
    * Invalid or corrupted cache entries are silently treated as misses.
@@ -76,12 +84,23 @@ export const embeddingCache = {
     // Cache miss — call embedding API (provider depends on EMBEDDING_PROVIDER env var)
     const embedStart = Date.now();
     if (isDev) console.log(`[EmbedCache] ✗ MISS — calling embedding API: "${query.slice(0, 50)}"`);
-    const embedding = await fetchFn();
+    const fetched = await fetchFn();
     if (isDev) console.log(`[EmbedCache]   done in ${Date.now() - embedStart}ms`);
+
+    // fetchFn may return a bare number[] (always cacheable) or
+    // { embedding, cacheable } (cacheable:false → provider fell back).
+    const embedding = Array.isArray(fetched) ? fetched : fetched?.embedding;
+    const cacheable = Array.isArray(fetched) ? true : fetched?.cacheable !== false;
 
     // Only cache a valid non-empty embedding — never cache an error or empty result
     if (!Array.isArray(embedding) || embedding.length === 0) {
       return embedding; // Return as-is; let the caller decide what to do
+    }
+
+    // Fallback-provider vector: use it for this request, but never persist it.
+    if (!cacheable) {
+      if (isDev) console.warn(`[EmbedCache] ⚠️  not caching fallback-provider embedding: "${query.slice(0, 50)}"`);
+      return embedding;
     }
 
     // Store in L1

@@ -96,6 +96,9 @@ export const retrievalCache = {
    * fetchFn: async () => { results: [], debug: {}, ... }
    *
    * Empty results and corrupted cache entries are never cached — treated as misses.
+   * A result flagged `usedFallback: true` (its query embedding came from the
+   * fallback provider's vector space) is also never cached — caching it would
+   * keep serving mismatched chunks for the 24h TTL after the primary recovered.
    */
   async getOrFetch(query, options, fetchFn) {
     const t0 = Date.now();
@@ -132,8 +135,10 @@ export const retrievalCache = {
     const result = await fetchFn();
     if (isDev) console.log(`[RetrievalCache]   Atlas done in ${Date.now() - atlasStart}ms  (${result.results?.length ?? 0} chunks)`);
 
-    // Only cache non-empty results — empty could be a transient Atlas error
-    if (Array.isArray(result.results) && result.results.length > 0) {
+    // Only cache non-empty results — empty could be a transient Atlas error.
+    // Never cache fallback-derived results (different vector space, would poison
+    // retrieval for the full TTL after the primary embedding provider recovers).
+    if (Array.isArray(result.results) && result.results.length > 0 && !result.usedFallback) {
       if (L1.size >= L1_MAX) evictL1();
       L1.set(key, result);
       // Fire-and-forget Redis write — don't block the response

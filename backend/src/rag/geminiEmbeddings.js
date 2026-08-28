@@ -88,6 +88,13 @@ class SequentialGoogleGenerativeAIEmbeddings extends GoogleGenerativeAIEmbedding
     throw new Error('Gemini query embedding failed after retry attempts.');
   }
 
+  // In google-only mode Gemini IS the primary provider — one vector space, safe
+  // to cache. usedFallback is always false here. (See ResilientEmbeddings for
+  // the OpenAI-primary case where this actually matters.)
+  async embedQueryWithMeta(document) {
+    return { embedding: await this.embedQuery(document), usedFallback: false };
+  }
+
   async embedOneDocument(document, documentNumber) {
     for (let attempt = 1; attempt <= MAX_FALLBACK_ATTEMPTS; attempt += 1) {
       try {
@@ -202,16 +209,30 @@ class ResilientEmbeddings {
     throw lastError;
   }
 
-  async embedQuery(text) {
+  /**
+   * Embeds `text` and reports which vector space the result lives in.
+   *
+   * @returns {Promise<{ embedding: number[], usedFallback: boolean }>}
+   *   usedFallback === true  → this vector came from Gemini, NOT the primary
+   *   OpenAI index's space. Callers MUST NOT persist it (embedding cache,
+   *   retrieval cache) — after OpenAI recovers it would keep poisoning
+   *   retrieval until the TTL expired. Use it for this one live request only.
+   */
+  async embedQueryWithMeta(text) {
     try {
-      return await this._runWithRetry(() => this.primary.embedQuery(text));
+      const embedding = await this._runWithRetry(() => this.primary.embedQuery(text));
+      return { embedding, usedFallback: false };
     } catch (primaryError) {
       if (!this.allowFallback) throw primaryError;
       console.error(`[Embed] ⚠️  OpenAI EXHAUSTED for query: ${primaryError.message}`);
-      console.error('[Embed] ⚠️  Falling back to GEMINI for this query. Retrieval quality WILL DEGRADE — OpenAI and Gemini live in different vector spaces. Investigate OpenAI billing/network NOW.');
+      console.error('[Embed] ⚠️  Falling back to GEMINI for this query. Retrieval quality WILL DEGRADE — OpenAI and Gemini live in different vector spaces. This vector will NOT be cached. Investigate OpenAI billing/network NOW.');
       const fallback = createGoogleEmbeddings(this.fallbackTaskType || TaskType.RETRIEVAL_QUERY);
-      return await fallback.embedQuery(text);
+      return { embedding: await fallback.embedQuery(text), usedFallback: true };
     }
+  }
+
+  async embedQuery(text) {
+    return (await this.embedQueryWithMeta(text)).embedding;
   }
 
   async embedDocuments(texts) {

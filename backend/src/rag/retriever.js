@@ -137,11 +137,19 @@ const _doRetrieve = async (query, options) => {
   const candidateTopK = options.candidateTopK || Math.max(topK * 10, 50);
   const embeddings = options.embeddings || getQueryEmbeddings();
 
-  // 1. Embed the user's query (cached: L1 memory → L2 Redis → Gemini API)
-  const queryEmbedding = await embeddingCache.getOrFetch(
-    query,
-    () => embeddings.embedQuery(query)
-  );
+  // 1. Embed the user's query (cached: L1 memory → L2 Redis → embedding API).
+  //    If the provider falls back to a different vector space, embedQueryWithMeta
+  //    flags it; the embedding is used for this request but never cached, and
+  //    usedFallback bubbles up so retrievalCache also skips it (see below).
+  let usedFallback = false;
+  const queryEmbedding = await embeddingCache.getOrFetch(query, async () => {
+    if (typeof embeddings.embedQueryWithMeta === 'function') {
+      const meta = await embeddings.embedQueryWithMeta(query);
+      usedFallback = meta.usedFallback;
+      return { embedding: meta.embedding, cacheable: !meta.usedFallback };
+    }
+    return embeddings.embedQuery(query);
+  });
 
   // 2. Build pre-filter for Vector Search if metadataFilter is provided
   let filter = undefined;
@@ -225,5 +233,8 @@ const _doRetrieve = async (query, options) => {
       returnedCount: results.length,
     },
     results,
+    // true → query was embedded via the fallback provider (different vector
+    // space). retrievalCache uses this to skip persisting these results.
+    usedFallback,
   };
 };
