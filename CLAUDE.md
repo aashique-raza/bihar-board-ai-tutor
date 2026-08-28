@@ -1,5 +1,34 @@
 # Bihar Board AI Tutor — CLAUDE.md
 
+---
+
+## ⛔ READ THESE FIRST — before any work, audit, or review
+
+These four files govern how work happens on this repo. They exist because this
+project spent months in a fix-audit-rebreak loop. They are not optional reading.
+
+| File | What it is | When |
+|---|---|---|
+| **`PROJECT_STATE.md`** | The single source of truth for what exists right now, which branch has it, and what is broken. | **Always read first.** Never describe project state from memory or from an old doc. |
+| **`AUDIT_RULES.md`** | Binding rules for any review work. 3 severity buckets, max 7 BROKEN, audit `main` only, no new layer without removing a cause. | Before any audit, review, or "let me check what's wrong" task. |
+| **`STAGE1_DONE.md`** | The written definition of "done" for the current stage. | Before starting any task — if it is not in here, it is not current work. |
+| **`BACKLOG.md`** | Parked items. Opinions and future ideas live here. | When tempted to propose work outside the current stage. |
+
+**`docs/decisions/`** holds the ADRs — why each architectural decision was made.
+If a finding contradicts an ADR, say so explicitly (`AUDIT_RULES.md` Rule 7).
+Never silently re-litigate a settled decision.
+
+**Two hard rules that override normal behaviour:**
+
+1. **Audit `main`, and check branch divergence first.** On 2026-08-28 a full
+   audit ran on a branch 30 commits behind `main` and reported already-fixed
+   code as live bugs.
+2. **Do not hand the owner a menu.** They are a junior developer who explicitly
+   asked for senior architectural judgment. State the decision and the reason.
+   Menus are for business calls only (money, timeline, user impact).
+
+---
+
 ## Project Name and Purpose
 
 **Zuno** — an AI-powered personal tutor for Bihar Board Class 10 Science students. Students ask questions in Hindi, Hinglish, or simple English and receive simple Hinglish answers grounded only in curated approved study content. The core rule: Zuno must never answer from general LLM knowledge when retrieved source content is insufficient — it must clearly say so.

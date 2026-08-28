@@ -1,0 +1,166 @@
+# BACKLOG.md
+
+> Everything here is **parked**. Nothing in this file is Stage 1 work.
+> Items are only picked up when the current stage's `*_DONE.md` is fully ticked.
+>
+> Classification follows `AUDIT_RULES.md` Rule 2.
+
+Source: full Ask-pipeline audit, 2026-08-28. That audit produced 25 findings.
+8 were BROKEN and moved to `STAGE1_DONE.md`. The rest are below, honestly
+re-classified — most were opinions presented as problems.
+
+---
+
+## 🟡 RISK — works today, fails at a named threshold
+
+### R1. Answer truncation destroys the whole response
+**Threshold:** any answer longer than `maxTokens: 1500`
+**Where:** `ask/intentRouter.js` streaming block
+
+Raw JSON is streamed to the browser and parsed only at the end. If the model
+hits the token cap, the JSON is cut mid-string, `findJsonEnd()` returns `-1`,
+and the student — who just watched a complete answer stream in — gets
+"Thodi technical dikkat aayi."
+
+**Fix direction:** check `finish_reason === 'length'` and salvage the partial
+`sections[0].content` instead of discarding everything.
+**Note:** Stage 2's structured output removes most of this class.
+
+---
+
+### R2. Redis free tier ceiling
+**Threshold:** ~2,000 turns/day (roughly 5 Redis ops per turn on ~10k/day free tier)
+**Impact:** rate limiting and caching degrade or fail
+**Fix direction:** paid Upstash tier before ~500 daily users
+
+---
+
+### R3. LLM cost at scale
+**Threshold:** measured ~$0.00125/turn → ~$2,800/month at 5,000 DAU, ~$28,000/month at 50,000 DAU
+**Fix direction:** O1 (answer cache) is the largest lever, then O2, then O3.
+This does not block launch, but it must shape Stage 2 and 3 design.
+
+---
+
+### R4. MongoDB Atlas tier
+**Threshold:** vector search on a shared/free tier degrades well before 50k users
+**Fix direction:** M10+ when daily actives cross ~1,000
+
+---
+
+### R5. NEXT_STEP chunk fetch is unbounded
+**Threshold:** any topic with many linked chunks
+**Where:** `rag/retriever.js:105` — no `.limit()`, no ordering
+**Impact:** floods the prompt, dilutes the answer, pushes toward R1
+**Fix direction:** `.limit(6)` + sort by `chunk_index`
+*(Partially addressed by Stage 1 bug BUG-5, which adds the projection and index.)*
+
+---
+
+## ⚪ OPINION — design improvements, not bugs
+
+These are things a reviewer would design differently. **None of them is a defect.**
+None may be presented as urgent or as a problem during an active stage.
+
+### O1. Answer cache (highest value item in this file)
+Students repeat the same questions constantly. "Photosynthesis kya hai" may be
+asked thousands of times and is recomputed from scratch every time.
+A semantic answer cache could serve an estimated 40–60% of traffic at near-zero cost.
+**Stage 2.**
+
+### O2. Structured output / JSON schema
+`chatModel.js` creates `ChatOpenAI` with no `response_format`. All JSON is
+scraped from free text by `utils/jsonParser.js`. Three parse-error fallback
+branches exist because this fails in practice.
+Switching to `.withStructuredOutput(schema, { strict: true })` would make parse
+errors structurally impossible and allow deleting `jsonParser.js` plus all three
+fallbacks. It also removes the cause behind Stage 1 bugs BUG-1 and BUG-2 — satisfying
+`AUDIT_RULES.md` Rule 4.
+**Stage 2 — highest priority in this list.**
+
+### O3. Hybrid search (BM25 + vector + RRF)
+Retrieval is vector-only. `reranker.js` hand-simulates a keyword leg using 14
+tuned constants, interacting with 4 more thresholds in `retriever.js`. Atlas
+already provides `$search` (BM25) next to `$vectorSearch`; Reciprocal Rank
+Fusion would replace most of `reranker.js` with a zero-tuning-constant algorithm.
+**Stage 2.**
+
+### O4. Keyword match should be a boost, not a gate
+`step5.retrieveContent.js:24` sets `requireTermMatchForLatinQuery: true`, which
+hard-rejects any chunk with zero keyword overlap regardless of vector score.
+Since the search query is a paraphrase the decider invented, vocabulary mismatch
+can produce zero chunks and a false "this topic is in another chapter" message.
+**Stage 2 — pairs with O3.**
+
+### O5. Remove the 12 defensive layers
+SafetyNet, DriftCap, Guard 1–4, Title Rescue, Intent Firewall, Out-of-Focus
+Fallback, 3 parse-error fallbacks. Many become unnecessary once O2 and Stage 1
+bug BUG-4 land.
+**Stage 2.**
+
+### O6. Deterministic pre-router
+Every "hi", "ok", "thanks", "bye" currently costs a full decider LLM call with a
+~2,000-token prompt. A small exact-match/regex router for the top ~30 phrases
+would skip the LLM on roughly 30–40% of turns and be more reliable than the
+model for those exact cases.
+**Stage 3.**
+
+### O7. Prompt caching
+System prompts (`corePersona` + per-intent rules) are static and therefore
+cacheable. Structuring them as a stable prefix would cut input cost significantly.
+**Stage 3.**
+
+### O8. Trim the science glossary per turn
+The full glossary (~1,200 tokens) is injected into every study prompt. Only the
+terms actually present in the retrieved chunks are needed — typically 5–10.
+**Stage 3.**
+
+### O9. Decider is blind to Focus Mode
+`ask/step4.decideRetrieval.js:157` destructures only `{ deciderHistory, language }`.
+Its own JSDoc claims it uses `focusChapterPrompt` and `currentStudyContext`, but
+neither is passed. The classifier does not know which chapter the student is in.
+**Stage 2.**
+
+### O10. Remove the legacy step6 path
+`ask/step6.generateResponse.js` still contains the full pre-router implementation
+behind `USE_INTENT_ROUTER`. It uses a different prompt and does not stream.
+Once STAGE1 I2 (env verification) confirms the router is live everywhere, delete it.
+**Stage 2.**
+
+### O11. Internal `decision` object is returned to the client
+`ask/step7.saveAndRespond.js` ships intent, reason, and searchQuery to the browser.
+**Stage 3.**
+
+### O12. `EXAM_INFO` gets a forced "Aage badhein" chip
+`ask/step7.saveAndRespond.js:125`. A student asking about marks receives an
+advance-the-chapter button.
+**Stage 3.**
+
+### O13. Unknown-intent recursion drops streaming and abort
+`ask/intentRouter.js` re-calls `routeToIntentHandler` without `streamCallbacks`
+or `abortSignal`.
+**Stage 2.**
+
+### O14. `answerLanguage: 'english'` is a dead branch
+`utils/languageDetector.js` can only ever return `'hindi'` or `'hinglish'`.
+The comment justifying this states the vector store is "indexed in Hinglish",
+which is factually wrong — `data/` is English, and `rag/retriever.js` says so.
+The decision may still be correct; the stated reason is not.
+**Stage 3 — fix the comment now, revisit the behaviour later.**
+
+### O15. Documentation sprawl
+16 markdown plan files in the repo root. Several are point-in-time snapshots
+that contradict current code. `PROJECT_STATE.md` now supersedes most of them.
+**Stage 2 — archive, don't delete.**
+
+---
+
+## Feature ideas (owner's stated goals, not yet scoped)
+
+| Idea | Notes |
+|---|---|
+| Subjective / long-answer practice | PYQ bank on `quiz-phase0.5-bulk` already has the raw material |
+| Previous-year paper mode | 2016–2026 papers exist on that stranded branch |
+| Weakness / strength analytics | `studyEvent.model.js` already logs events — the data foundation exists |
+| Other subjects (Maths first) | See ADR-007 — deliberately deferred until Science is proven |
+| Spaced repetition / revision | Not started |
