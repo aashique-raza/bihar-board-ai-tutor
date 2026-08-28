@@ -177,6 +177,18 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 Other test scripts: `test:chunks`, `test:study-map`, `test:curriculum-resolvers`,
 `test:chat-db-models`, `rag:test-retriever`, `test:golden`
 
+### ⚠️ Two prescribed test commands are broken on `main` (verified 2026-08-28)
+
+Both are pre-existing and tracked in `STAGE1_DONE.md` Section D (D4, D5) — not new.
+
+| Command | Problem |
+|---|---|
+| `test:chat-db-models` | `scripts/test-chat-db-models.js:4` imports `src/models/chatState.model.js`, which does not exist (state was folded into `chatSession.model.js`). Test crashes on load with `ERR_MODULE_NOT_FOUND`. |
+| `test:golden` | `scripts/run-golden-set.js` needs a live server on `localhost:5001` — it is **not** mocked, despite CLAUDE.md describing it as "mocked decider/responder scenarios". Without a running dev server it reports 0 queries and exits 0 (a silent no-op). |
+
+Working baseline (the 3 that pass): `test:chunks`, `test:study-map`,
+`test:curriculum-resolvers`.
+
 ---
 
 ## 6. Cost model — measured, not guessed
