@@ -265,6 +265,25 @@ Jab koi tumhara link WhatsApp ya Telegram mein share kare, toh ek achha dikhne w
 
 **Time: 3-4 hrs | Kaun: AI**
 
+> ⚠️ **STATUS 2026-08-29 — REVERTED. Never worked in production.**
+> The first attempt (commits `2b08f6b`, `d704a74`) added a Playwright prerender
+> step to the build: `vite build && npx playwright install chromium && node
+> scripts/prerender.js`. It passed locally but **every Vercel deploy since the
+> 2026-08-28 `seo-work` merge failed** — `chrome-headless-shell` exits with
+> code 127 (missing system shared libraries; Vercel's build sandbox has no
+> browser libs and no root/apt to install them). This kept the entire frontend
+> undeployable for a day.
+>
+> Fix (branch `frontend-vercel-build-fix`): build script back to plain
+> `vite build`; `playwright` devDependency, `scripts/prerender.js`, and the
+> `/support → /support.html` rewrite removed. All browser-free SEO (static
+> OG/Twitter/JSON-LD tags in `index.html`, `sitemap.xml`, `robots.txt`,
+> `og-image.png`, per-route react-helmet-async tags) still ships and works.
+>
+> If prerendering is revisited: use **Option A** below (`@sparticuz/chromium`),
+> and it MUST be verified on a real Vercel **preview** deploy before merging to
+> `main` — never again on local build alone. Tracked in `BACKLOG.md`.
+
 ### Problem
 Google ka robot tumhare page pe aata hai → use khali `<div id="root"></div>` milta hai → usse lagta hai page khali hai.
 

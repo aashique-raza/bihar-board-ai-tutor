@@ -73,7 +73,7 @@ Sanskrit = **0**. This is a deliberate v1 scope decision — see `ADR-007`.
 | Piece | Current | Note |
 |---|---|---|
 | Backend | Render **FREE** | ⚠️ Sleeps after 15 min. Cold start ~50s. Must upgrade before launch. |
-| Frontend | Vercel | OK |
+| Frontend | Vercel | ✅ Deploys again after the prerender revert (2026-08-29). |
 | Database | MongoDB Atlas | OK for now |
 | Cache / rate limit | Upstash Redis **free** | ⚠️ ~10k commands/day ceiling |
 | Domain | Purchased | — |
@@ -85,7 +85,7 @@ Sanskrit = **0**. This is a deliberate v1 scope decision — see `ADR-007`.
 | What | From | Notes |
 |---|---|---|
 | Backend | Render, from `main` | Start command: `node scripts/build-curriculum-index.js && node src/server.js` |
-| Frontend | Vercel, from `main` | Build now runs `vite build && npx playwright install chromium && node scripts/prerender.js` — verified working 2026-08-28 |
+| Frontend | Vercel, from `main` | Build is plain `vite build`. (A Playwright prerender step was added 2026-08-28 and reverted 2026-08-29 — it failed every Vercel deploy, `chrome-headless-shell` exit 127. See `SEO_PLAN.md` Phase 6 status note + `BACKLOG.md` S1.) |
 | Health check | `GET /health` | Note: **not** under `/api/v1` — known inconsistency, kept as-is |
 
 ⚠️ Deploying from any branch other than `main` risks shipping a partial product.
@@ -247,7 +247,18 @@ networks one student blocks everyone; copy the quiz limiter's identity-keyed
 pattern — `middlewares/rateLimiters.js:40`). Same protocol: new branch,
 failing-test → fix → passing-test, Rule 4.
 
-**Also flagged (not worked on):** Vercel frontend deploys on `main` are all
-showing **"Error"** (build failing) as of 2026-08-28. Backend is live and healthy
-(`/health` 200s in Render logs). This is a frontend build break, separate from the
-Section C bugs — needs its own branch. Owner deferred it during the BUG-6 session.
+**Frontend build break — FIXED 2026-08-29** (branch `frontend-vercel-build-fix`).
+Every Vercel deploy since the 2026-08-28 `seo-work` merge failed: the build ran
+`vite build && npx playwright install chromium && node scripts/prerender.js`, and
+`chrome-headless-shell` exits with code 127 on Vercel (missing system shared
+libraries; the build sandbox has no browser libs and no root/apt to add them).
+It passed locally, so it was never caught. Root cause: a real browser process on
+the critical deploy path in an environment that cannot run browsers. Fix (Rule 4
+— remove the cause, not a try/catch guard): build script back to plain
+`vite build`; `playwright` devDependency, `frontend/scripts/prerender.js`, and the
+`/support → /support.html` rewrite removed. All browser-free SEO still ships
+(static OG/Twitter/JSON-LD in `index.html`, `sitemap.xml`, `robots.txt`,
+`og-image.png`, per-route helmet tags). Proper prerendering → `BACKLOG.md` S1
+(must be verified on a Vercel preview deploy, never local-only, next time).
+Verified: `cd frontend && npm run build` clean; `dist/` has `index.html` +
+assets + the static SEO files, no `support.html`.
