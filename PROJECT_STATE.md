@@ -4,9 +4,8 @@
 > Any AI agent or developer starting work on this repo MUST read this file first.
 > Last verified: 2026-08-28 (verified against `main`, not from memory).
 > Latest merge: BUG-5 fix — `metadata.topic_ids` index + `{ embedding: 0 }`
-> projection on the NEXT_STEP lookup.
-> ⚠️ Prod TODO: run `backend/scripts/create-chunk-topic-id-index.js` against
-> `zuno_prod` after deploy (or let Mongoose autoIndex build it on restart).
+> projection on the NEXT_STEP lookup. Prod index `metadata.topic_ids_1`
+> created on `zuno_prod.chunks` and verified 2026-08-28.
 
 ---
 

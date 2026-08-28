@@ -126,8 +126,7 @@ No fix is marked done on assertion alone.
       Verified: `npm run test:topic-id-lookup` (failing → passing); live `explain`
       now IXSCAN `metadata.topic_ids_1`, totalDocsExamined 4, `PROJECTION_SIMPLE
       { embedding: 0 }`; `verify-topic-chunk-coverage.js` PASSED; baseline unchanged.
-      ⚠️ Prod: run `node scripts/create-chunk-topic-id-index.js` against `zuno_prod`
-      after deploy (or let autoIndex build it on restart).
+      Prod: `metadata.topic_ids_1` created on `zuno_prod.chunks` and verified 2026-08-28.
 - [ ] **BUG-6 fix** — never cache an embedding produced by the fallback provider
       `cache/embeddingCache.js:28`
 - [ ] **BUG-7 fix** — science glossary applies to Devanagari answers too
