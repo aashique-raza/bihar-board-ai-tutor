@@ -3,9 +3,9 @@
 > **This is the single source of truth for "what exists right now".**
 > Any AI agent or developer starting work on this repo MUST read this file first.
 > Last verified: 2026-08-28 (verified against `main`, not from memory).
-> Latest merge: BUG-5 fix — `metadata.topic_ids` index + `{ embedding: 0 }`
-> projection on the NEXT_STEP lookup. Prod index `metadata.topic_ids_1`
-> created on `zuno_prod.chunks` and verified 2026-08-28.
+> Latest merge: BUG-6 fix — fallback-provider (Gemini) query embeddings and the
+> chunks retrieved with them are never written to `embeddingCache` (30d) or
+> `retrievalCache` (24h). Merged to `main` 2026-08-29 (`--no-ff`, `b576d70`).
 
 ---
 
@@ -166,7 +166,7 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 | ~~BUG-3~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). `INTENT_MEMORY_WHITELIST.CHOOSE_COURSE` → `[]`; its fields were dead (overwritten every turn by the `studyMode` force-sync block). Chapter switching works only via the request `chapterId` param — untouched. Verified by `npm run test:choose-course-memory`. See `STAGE1_DONE.md` Section C. |
 | ~~BUG-4~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). Stale "Cell structure" / "Atomic structure" entries removed from the decider prompt's OUT_OF_CONTEXT list + rule-8 HARD LIMIT block; both are covered by indexed content (`### Atomic number` ch-05 chemistry, `## 4. Neuron / Nerve Cell` ch-02 biology). Genuinely-absent topics (Newton, Gravitation, Thermodynamics, …) stay excluded. Removes the cause (a stale hardcoded list) per Rule 4 — no guard added. Verified by `npm run test:decider-scope`. See `STAGE1_DONE.md` Section C. |
 | ~~BUG-5~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). `chunk.model.js` declares `index({ 'metadata.topic_ids': 1 })`; `retrieveChunksByTopicId` `.find()` passes `{ embedding: 0 }`. `explain` confirms COLLSCAN(629) → IXSCAN(4). Migration `scripts/create-chunk-topic-id-index.js`. Verified by `npm run test:topic-id-lookup`. See `STAGE1_DONE.md` Section C. |
-| ~~BUG-6~~ | ✅ **Fixed** on branch `bug6-no-cache-fallback-embeddings` (pending merge). Fallback-provider embeddings and anything derived from them are never persisted: `geminiEmbeddings.js` `embedQueryWithMeta()` reports `usedFallback`; `embeddingCache` skips L1+L2 when `cacheable:false`; `retrievalCache` skips its 24h write when `result.usedFallback`. Query-time fallback itself untouched. Verified by `npm run test:no-cache-fallback`. See `STAGE1_DONE.md` Section C. |
+| ~~BUG-6~~ | ✅ **Fixed** — merged to `main` 2026-08-29 (`--no-ff`, `b576d70`). Fallback-provider embeddings and anything derived from them are never persisted: `geminiEmbeddings.js` `embedQueryWithMeta()` reports `usedFallback`; `embeddingCache` skips L1+L2 when `cacheable:false`; `retrievalCache` skips its 24h write when `result.usedFallback`. Query-time fallback itself untouched. Verified by `npm run test:no-cache-fallback`. See `STAGE1_DONE.md` Section C. |
 | BUG-7 | Science glossary is skipped for Devanagari answers because the Hindi branch returns early | `utils/languageDetector.js:98` |
 | BUG-8 | `askApiLimiter` is keyed by raw IP. Under CGNAT / school networks, one student's usage blocks everyone. The quiz limiters already do this correctly — copy that pattern. | `middlewares/rateLimiters.js:40` |
 

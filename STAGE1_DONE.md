@@ -128,7 +128,7 @@ No fix is marked done on assertion alone.
       { embedding: 0 }`; `verify-topic-chunk-coverage.js` PASSED; baseline unchanged.
       Prod: `metadata.topic_ids_1` created on `zuno_prod.chunks` and verified 2026-08-28.
 - [x] **BUG-6 fix** — fallback-provider embeddings (and anything derived from them)
-      are never persisted (branch `bug6-no-cache-fallback-embeddings`, pending merge).
+      are never persisted (merged to `main` 2026-08-29, `--no-ff`, `b576d70`).
       `embeddingCache.getOrFetch()` stored whatever vector `fetchFn` returned with no
       idea which provider produced it. During an OpenAI outage
       `ResilientEmbeddings.embedQuery()` silently falls back to Gemini — a vector in a
