@@ -15,11 +15,23 @@ Those are Stage 2 and Stage 3.
 
 ## A. Repository hygiene
 
-- [ ] **A1.** `seo-work` rebased onto `main` (it is 30 commits behind and has no quiz system), then merged
-- [ ] **A2.** `quiz-phase0.5-bulk` decision made and recorded as an ADR — merge the 499 PYQ files, or freeze the branch and note why
-- [ ] **A3.** Merged branches deleted: `quiz`, `quiz-phase1..4`, `global`, `profile`, `logo`, `feat/support-page`, `stalefilefixes`, `DECIDER_GREETING_FIX`, `STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`
-- [ ] **A4.** `main` builds clean: `cd frontend && npm run build`
-- [ ] **A5.** `PROJECT_STATE.md` matches reality after the merges
+- [x] **A1.** `seo-work` merged into `main` (2026-08-28). One conflict in
+      `ChatPage.jsx` resolved by keeping both the Helmet SEO wrapper and the
+      QuizModal. Real merge tested with `--no-commit --no-ff` before committing.
+- [x] **A2.** `quiz-phase0.5-bulk` decision made and recorded — **ADR-010: freeze,
+      do not merge.** Its finished output (1,126 questions) was confirmed
+      byte-identical to `main`'s already, via `quiz-phase1`.
+- [x] **A3.** Merged branches deleted (2026-08-28): `quiz`, `quiz-phase1..4`,
+      `global`, `profile`, `logo`, `feat/support-page`, `stalefilefixes`,
+      `DECIDER_GREETING_FIX`, `STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`,
+      `seo-work`, plus a redundant branch `seo` (a superseded checkpoint of
+      `quiz-phase0.5-bulk` — every commit on it already existed there).
+      Local branches now: `main`, `quiz-phase0.5-bulk` only.
+- [x] **A4.** `main` builds clean: `cd frontend && npm run build` — verified
+      2026-08-28, including the new Playwright pre-render step. Quiz components
+      (`QuizModal`, `QuizPage`) confirmed present in the build output.
+- [x] **A5.** `PROJECT_STATE.md` matches reality after the merges — updated
+      2026-08-28
 
 ---
 

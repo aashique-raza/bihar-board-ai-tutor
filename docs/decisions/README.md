@@ -42,3 +42,4 @@ accepted — supersede it with a new ADR and mark the old one `Superseded by ADR
 | [007](007-science-only-v1-scope.md) | Science only for v1 — no other subjects | Accepted |
 | [008](008-hinglish-answer-language.md) | All answers in Roman-script Hinglish | Accepted |
 | [009](009-staged-delivery-model.md) | Staged delivery with written exit criteria | Accepted |
+| [010](010-freeze-quiz-bulk-branch.md) | Freeze `quiz-phase0.5-bulk`, do not merge — its output already reached `main` | Accepted |

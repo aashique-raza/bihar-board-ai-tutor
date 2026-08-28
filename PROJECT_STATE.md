@@ -75,18 +75,17 @@ Sanskrit = **0**. This is a deliberate v1 scope decision — see `ADR-007`.
 | Cache / rate limit | Upstash Redis **free** | ⚠️ ~10k commands/day ceiling |
 | Domain | Purchased | — |
 | Email | Official mail set up | — |
-| SEO | In progress on `seo-work` branch | Not merged |
+| SEO | ✅ Merged to `main` 2026-08-28 | Sitemap, meta tags, OG image, robots.txt, build-time pre-rendering of `/` and `/support` for crawlers |
 
 ### Deployment
 
 | What | From | Notes |
 |---|---|---|
 | Backend | Render, from `main` | Start command: `node scripts/build-curriculum-index.js && node src/server.js` |
-| Frontend | Vercel, from `main` | — |
+| Frontend | Vercel, from `main` | Build now runs `vite build && npx playwright install chromium && node scripts/prerender.js` — verified working 2026-08-28 |
 | Health check | `GET /health` | Note: **not** under `/api/v1` — known inconsistency, kept as-is |
 
 ⚠️ Deploying from any branch other than `main` risks shipping a partial product.
-`seo-work`, for example, has no quiz system at all.
 
 ### Verified clean (2026-08-28)
 
@@ -112,26 +111,35 @@ All four are tracked in `STAGE1_DONE.md` sections F and G.
 **`main` is the source of truth.** All audits and fixes happen on branches cut
 from `main`.
 
-Verified 2026-08-28:
+Updated 2026-08-28:
 
-| Branch | Ahead of main | Behind main | Note |
-|---|---|---|---|
-| `main` | — | — | ✅ Source of truth. Has quiz system. |
-| `seo-work` | 7 | **30** | ⚠️ Missing the entire quiz system. Do NOT merge into main without rebasing first. |
-| `quiz-phase0.5-bulk` | 28 | 27 | ⚠️ Holds 499 data files — full PYQ bank 2016–2026. **Stranded.** Needs a merge/freeze decision. |
+| Branch | Status |
+|---|---|
+| `main` | ✅ Source of truth. Has quiz system + SEO work + this project system. |
+| `seo-work` | ✅ **Merged into `main`** 2026-08-28. One conflict in `ChatPage.jsx` (Helmet wrapper vs. QuizModal) resolved by keeping both. Full `npm run build` verified green post-merge, including the new Playwright pre-render step. Safe to delete. |
+| `quiz-phase0.5-bulk` | 🧊 **Frozen — will not be merged.** See `docs/decisions/010-freeze-quiz-bulk-branch.md`. Its finished output (the 1,126-question bank) already reached `main` via `quiz-phase1`; a byte-diff confirmed `data/quiz-bank/bank/questions.json` is identical on both branches. The branch itself is kept as a rebuildable pipeline for later, not deleted. |
 
 **Merged and safe to delete:** `quiz`, `quiz-phase1..4`, `global`, `profile`,
 `logo`, `feat/support-page`, `stalefilefixes`, `DECIDER_GREETING_FIX`,
-`STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`
+`STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`, `seo-work`
 
-### ⚠️ Lesson learned (2026-08-28)
+### ⚠️ Lesson learned (2026-08-28) — two, from the same day
 
-An audit was performed on `seo-work`, which was 30 commits behind `main`.
-Two findings were reported as bugs that were **already fixed** on `main`
-(frontend SSE `JSON.parse` guard, and null-payload handling).
+**1. Audit the wrong branch.** A full pipeline audit ran on `seo-work`, 30
+commits behind `main`. Two findings were reported as bugs that were **already
+fixed** on `main` (frontend SSE `JSON.parse` guard, null-payload handling).
+This is why `AUDIT_RULES.md` Rule 1 exists — always audit `main`, always check
+divergence first.
 
-**This is why `AUDIT_RULES.md` Rule 1 exists.** Always audit `main`. Always
-check branch divergence first.
+**2. `git diff` is not `git merge`.** The first read of `seo-work` and
+`quiz-phase0.5-bulk` used raw `git diff --stat` against `main`, which shows
+files as "deleted" whenever the *other* branch never touched them — not
+because merging would delete anything. This was reported as a real risk
+("quiz system could disappear"). A real three-way merge test
+(`git merge --no-commit --no-ff`, inspected, then aborted) showed both merges
+were safe, with only small, resolvable conflicts. **Always test a real merge
+before describing one as risky — a diff alone can't tell you what a merge
+will do.**
 
 ---
 
