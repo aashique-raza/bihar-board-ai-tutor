@@ -127,8 +127,29 @@ No fix is marked done on assertion alone.
       now IXSCAN `metadata.topic_ids_1`, totalDocsExamined 4, `PROJECTION_SIMPLE
       { embedding: 0 }`; `verify-topic-chunk-coverage.js` PASSED; baseline unchanged.
       Prod: `metadata.topic_ids_1` created on `zuno_prod.chunks` and verified 2026-08-28.
-- [ ] **BUG-6 fix** — never cache an embedding produced by the fallback provider
-      `cache/embeddingCache.js:28`
+- [x] **BUG-6 fix** — fallback-provider embeddings (and anything derived from them)
+      are never persisted (branch `bug6-no-cache-fallback-embeddings`, pending merge).
+      `embeddingCache.getOrFetch()` stored whatever vector `fetchFn` returned with no
+      idea which provider produced it. During an OpenAI outage
+      `ResilientEmbeddings.embedQuery()` silently falls back to Gemini — a vector in a
+      *different* vector space — and that Gemini vector was written (1) into
+      `embeddingCache` under the OpenAI model's key for **30 days**, and (2) downstream
+      into `retrievalCache` as the chunks it retrieved for **24 hours**. After OpenAI
+      recovered, retrieval stayed silently corrupted (cosine similarity across two
+      vector spaces = noise) until those TTLs expired or `rag:index` ran. Same cause
+      in two places: fallback-derived data being persisted. Fix (Rule 4 — remove the
+      cause, no read-side guard): `geminiEmbeddings.js` adds `embedQueryWithMeta()`
+      → `{ embedding, usedFallback }` (plain `embedQuery()` unchanged for the
+      LangChain interface / `intentSafetyNet`); `embeddingCache.getOrFetch()` accepts
+      `fetchFn` returning `{ embedding, cacheable }` and skips **both** L1 and L2
+      writes when `cacheable === false`; `retriever.js` propagates `usedFallback` in
+      its result; `retrievalCache.getOrFetch()` skips its write when
+      `result.usedFallback`. Query-time fallback itself is untouched (accepted
+      degraded-mode tradeoff, ADR-locked in `geminiEmbeddings.js` header) — only its
+      *persistence* is removed. `EMBEDDING_PROVIDER=google` mode: `usedFallback` is
+      always false (Gemini is the primary, single space). Verified by
+      `npm run test:no-cache-fallback` (failing-test → passing-test); baseline
+      (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
 - [ ] **BUG-7 fix** — science glossary applies to Devanagari answers too
       `utils/languageDetector.js:98`
 - [ ] **BUG-8 fix** — `askApiLimiter` keyed by identity, not raw IP (copy the quiz limiter pattern)
