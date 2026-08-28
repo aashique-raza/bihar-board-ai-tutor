@@ -162,6 +162,30 @@ that contradict current code. `PROJECT_STATE.md` now supersedes most of them.
 
 ---
 
+## SEO
+
+### S1. Pre-render `/` and `/support` for non-JS crawlers
+**Where:** `frontend/` build, `SEO_PLAN.md` Phase 6
+
+The first attempt (Playwright prerender in the build) never worked on Vercel —
+`chrome-headless-shell` exits 127, missing system libs, no way to install them
+in Vercel's build sandbox. It blocked all frontend deploys for a day and was
+reverted on branch `frontend-vercel-build-fix` (2026-08-29).
+
+All browser-free SEO still ships and works: static OG/Twitter/JSON-LD tags in
+`index.html`, `sitemap.xml`, `robots.txt`, `og-image.png`, and per-route
+react-helmet-async tags (Googlebot executes JS, so it gets these). The only
+remaining gap: non-JS social unfurlers see `index.html`'s generic OG tags for
+`/support` instead of support-specific ones. `/` unfurls correctly already.
+
+**Fix direction:** `puppeteer-core` + `@sparticuz/chromium` (serverless-safe
+bundled Chromium). **Must be verified on a real Vercel preview deploy before
+merge** — local build success is not proof, that is exactly what went wrong
+last time.
+**Impact:** near-zero for the 20–50 student launch. Not Stage 1.
+
+---
+
 ## Feature ideas (owner's stated goals, not yet scoped)
 
 | Idea | Notes |
