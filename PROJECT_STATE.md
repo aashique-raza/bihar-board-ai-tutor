@@ -3,9 +3,8 @@
 > **This is the single source of truth for "what exists right now".**
 > Any AI agent or developer starting work on this repo MUST read this file first.
 > Last verified: 2026-08-28 (verified against `main`, not from memory).
-> Latest merge: BUG-3 fix — dead `CHOOSE_COURSE` memory whitelist entry removed.
-> In flight: BUG-4 fix — stale decider-prompt scope exclusions removed
-> (branch `bug4-decider-stale-scope-exclusions`, pending merge).
+> Latest merge: BUG-4 fix — stale decider-prompt scope exclusions
+> ("Cell structure" / "Atomic structure") removed.
 
 ---
 
@@ -118,15 +117,15 @@ Updated 2026-08-28:
 
 | Branch | Status |
 |---|---|
-| `main` | ✅ Source of truth. Quiz system + SEO + governance system + BUG-1/BUG-2 + BUG-3 fixes. |
-| `bug4-decider-stale-scope-exclusions` | ⏳ Pending merge. Removes stale "Cell structure" / "Atomic structure" out-of-scope entries from `deciderPrompt.js` + adds `test:decider-scope`. |
+| `main` | ✅ Source of truth. Quiz system + SEO + governance system + BUG-1/BUG-2 + BUG-3 + BUG-4 fixes. |
 | `bug1-decider-structured-output` | ✅ **Merged into `main`** 2026-08-28 (`--no-ff`). Carried the Stage 1 Section B triage + BUG-1/BUG-2 fix (ADR-011). Safe to delete. |
 | `quiz-phase0.5-bulk` | 🧊 **Frozen — will not be merged.** See `docs/decisions/010-freeze-quiz-bulk-branch.md`. Its finished output (the 1,126-question bank) already reached `main` via `quiz-phase1`; a byte-diff confirmed `data/quiz-bank/bank/questions.json` is identical on both branches. Kept as a rebuildable pipeline for later, not deleted. Pushed to GitHub 2026-08-28 as a backup, still frozen and unmerged. |
 
 **Merged and safe to delete:** `quiz`, `quiz-phase1..4`, `global`, `profile`,
 `logo`, `feat/support-page`, `stalefilefixes`, `DECIDER_GREETING_FIX`,
 `STREAM_FAILURE_FIX`, `codex-curriculum-resolvers`, `seo-work`,
-`bug1-decider-structured-output`, `bug3-choose-course-dead-whitelist`
+`bug1-decider-structured-output`, `bug3-choose-course-dead-whitelist`,
+`bug4-decider-stale-scope-exclusions`
 
 ### ⚠️ Lesson learned (2026-08-28) — two, from the same day
 
@@ -164,7 +163,7 @@ These are **BROKEN** (reproducible), not opinions. See `STAGE1_DONE.md`.
 > + `ADR-011`. Stage 1 slice of `BACKLOG.md` O2; the tutor/intentRouter side of O2
 > remains Stage 2.
 | ~~BUG-3~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). `INTENT_MEMORY_WHITELIST.CHOOSE_COURSE` → `[]`; its fields were dead (overwritten every turn by the `studyMode` force-sync block). Chapter switching works only via the request `chapterId` param — untouched. Verified by `npm run test:choose-course-memory`. See `STAGE1_DONE.md` Section C. |
-| ~~BUG-4~~ | ✅ **Fixed** — branch `bug4-decider-stale-scope-exclusions` (pending merge). Stale "Cell structure" / "Atomic structure" entries removed from the decider prompt's OUT_OF_CONTEXT list + rule-8 HARD LIMIT block; both are covered by indexed content (`### Atomic number` ch-05 chemistry, `## 4. Neuron / Nerve Cell` ch-02 biology). Genuinely-absent topics (Newton, Gravitation, Thermodynamics, …) stay excluded. Removes the cause (a stale hardcoded list) per Rule 4 — no guard added. Verified by `npm run test:decider-scope`. See `STAGE1_DONE.md` Section C. |
+| ~~BUG-4~~ | ✅ **Fixed** — merged to `main` 2026-08-28 (`--no-ff`). Stale "Cell structure" / "Atomic structure" entries removed from the decider prompt's OUT_OF_CONTEXT list + rule-8 HARD LIMIT block; both are covered by indexed content (`### Atomic number` ch-05 chemistry, `## 4. Neuron / Nerve Cell` ch-02 biology). Genuinely-absent topics (Newton, Gravitation, Thermodynamics, …) stay excluded. Removes the cause (a stale hardcoded list) per Rule 4 — no guard added. Verified by `npm run test:decider-scope`. See `STAGE1_DONE.md` Section C. |
 | BUG-5 | `retrieveChunksByTopicId` has no projection (pulls 3072-float embeddings) and `metadata.topic_ids` has no index → collection scan on every NEXT_STEP | `rag/retriever.js:105`, `models/chunk.model.js` |
 | BUG-6 | Embedding cache stores Gemini fallback vectors under the OpenAI cache key for 30 days, silently corrupting retrieval after any OpenAI outage | `cache/embeddingCache.js:28` |
 | BUG-7 | Science glossary is skipped for Devanagari answers because the Hindi branch returns early | `utils/languageDetector.js:98` |

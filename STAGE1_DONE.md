@@ -92,7 +92,7 @@ No fix is marked done on assertion alone.
       touched. Verified by `npm run test:choose-course-memory` (failing-test → passing-test);
       baseline (`test:chunks`, `test:study-map`, `test:curriculum-resolvers`) unchanged.
 - [x] **BUG-4 fix** — stale out-of-scope entries removed from the decider prompt
-      (branch `bug4-decider-stale-scope-exclusions`).
+      (merged to `main` 2026-08-28, `--no-ff`).
       `prompts/deciderPrompt.js` hardcoded "Cell structure" and "Atomic structure" as
       always-OUT_OF_CONTEXT (both in the intent-8 exclusion list and the rule-8 HARD
       LIMIT block that forces `searchQuery: null`). Both topics are in fact covered by
